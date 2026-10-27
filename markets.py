@@ -19,6 +19,7 @@ cents of the current price is the part that reflects real interest at that numbe
 
 import os
 import re
+import time
 from datetime import datetime, timezone
 
 import pandas as pd
@@ -55,9 +56,21 @@ def _depth(levels):
     return sum(_f(p) * _f(s) for p, s in levels if _f(p) is not None and _f(s) and _f(p) >= best - DEPTH_CENTS - 1e-9)
 
 
+def _get(url, params=None, tries=4):
+    """GET with a short pause between calls and backoff on 429 — Kalshi rate-limits bursts of requests."""
+    for attempt in range(tries):
+        time.sleep(0.25)
+        r = requests.get(url, params=params, timeout=30)
+        if r.status_code != 429:
+            r.raise_for_status()
+            return r.json()
+        time.sleep(2 * (attempt + 1))
+    r.raise_for_status()
+
+
 def _orderbook(ticker):
     try:
-        ob = requests.get(f'{KALSHI_BASE}/markets/{ticker}/orderbook', timeout=20).json().get('orderbook_fp', {})
+        ob = _get(f'{KALSHI_BASE}/markets/{ticker}/orderbook').get('orderbook_fp', {})
     except Exception:
         ob = {}
     return ob.get('yes_dollars') or [], ob.get('no_dollars') or []
@@ -65,9 +78,7 @@ def _orderbook(ticker):
 
 def _markets(**params):
     try:
-        r = requests.get(f'{KALSHI_BASE}/markets', params={'status': 'open', 'limit': 1000, **params}, timeout=30)
-        r.raise_for_status()
-        return r.json().get('markets', [])
+        return _get(f'{KALSHI_BASE}/markets', {'status': 'open', 'limit': 1000, **params}).get('markets', [])
     except Exception as e:
         print(f'  ! Kalshi unavailable: {e}')
         return []
