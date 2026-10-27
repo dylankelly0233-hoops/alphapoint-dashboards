@@ -10,7 +10,6 @@ p4_*.csv
 p4_*.html
 nfl_*.csv
 nfl_*.html
-cbb_torvik_*.csv
 news_cache_*.json
 odds_api_*.json
 injury_candidates_*.json

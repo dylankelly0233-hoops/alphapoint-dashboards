@@ -46,7 +46,7 @@ def _load_key():
     if not key and os.path.exists(path):
         with open(path, encoding='utf-8') as f:
             key = f.read().strip()
-    return key
+    return key.lstrip('﻿').strip()   # a byte-order mark sneaks in when the key is piped through PowerShell
 
 
 CFBD_API_KEY   = _load_key()

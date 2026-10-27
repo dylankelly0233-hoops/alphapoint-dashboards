@@ -52,7 +52,6 @@ jobs:
             p4_*.html
             nfl_*.csv
             nfl_*.html
-            cbb_torvik_*.csv
             news_cache_*.json
             logos
           key: data-${{ github.run_id }}
