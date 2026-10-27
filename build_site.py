@@ -121,7 +121,7 @@ def landing(results):
 def main():
     os.makedirs(SITE, exist_ok=True)
     results = {}
-    for page, script, output, _, _ in DASHBOARDS:
+    for page, script, output, *_ in DASHBOARDS:
         src = os.path.join(HERE, output)
         before = os.path.getmtime(src) if os.path.exists(src) else 0
         ok = run(script)
