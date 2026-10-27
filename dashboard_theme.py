@@ -453,16 +453,18 @@ details.method b { color: var(--ink); }
 JS = """
 function showTab(id) {
   const b = document.querySelector('nav.tabs button[data-page="' + id + '"]');
-  if (!b) return;
+  if (!b) return false;
   document.querySelectorAll('nav.tabs button, .page').forEach(e => e.classList.remove('on'));
   b.classList.add('on'); b.setAttribute('aria-selected', 'true');
   document.getElementById(id).classList.add('on');
+  return true;
 }
 document.querySelectorAll('nav.tabs button').forEach(b => b.onclick = () => {
   showTab(b.dataset.page);
   try { history.replaceState(null, '', '#' + b.dataset.page); } catch (e) {}
 });
-showTab((location.hash || '#power').slice(1));
+// Open the tab named in the link (#value, #info…), otherwise the first tab
+if (!showTab(location.hash.slice(1))) showTab(document.querySelector('nav.tabs button').dataset.page);
 
 // Filter: value matches the row's group exactly, or as a prefix ("AFC" matches "AFC East")
 document.querySelectorAll('select.filter').forEach(sel => sel.onchange = () => {
