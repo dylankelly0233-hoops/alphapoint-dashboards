@@ -1,0 +1,31 @@
+# Secrets — never commit
+cfbd_api_key.txt
+odds_api_key.txt
+
+# Downloaded data and caches (rebuilt automatically; cached between GitHub Actions runs)
+cfbv_*.csv
+nflv_*.csv
+cbbv_*.csv
+p4_*.csv
+p4_*.html
+nfl_*.csv
+nfl_*.html
+cbb_torvik_*.csv
+news_cache_*.json
+odds_api_*.json
+injury_candidates_*.json
+logos/
+
+# Build output
+site/
+*_dashboard.html
+*_dashboard_share.html
+cfb_p4_dashboard*.html
+cfb_value_metrics.html
+nfl_value_metrics.html
+
+# Local refresh notes (for the email digest)
+last_refresh_*.md
+
+__pycache__/
+.idea/

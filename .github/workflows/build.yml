@@ -1,0 +1,76 @@
+# Rebuild the AlphaPoint dashboards and publish them to GitHub Pages.
+# Runs every 2 hours from 8 AM to midnight Eastern, whenever Claude's daily run pushes new
+# Injury Wire / Sonny Moore files, and on demand (Actions tab → "Build dashboards" → Run workflow).
+name: Build dashboards
+
+on:
+  schedule:
+    - cron: '0 0,2,4,12,14,16,18,20,22 * * *'   # UTC; = 8 AM–midnight ET every 2 hours
+  push:
+    branches: [main]
+    paths: ['*.py', 'injury_wire_*.json', 'sonny_moore_*.txt', '.github/workflows/build.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: write      # commit the scorecard and line history back to the repo
+  pages: write
+  id-token: write
+
+concurrency:
+  group: build
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    env:
+      TZ: America/New_York            # "today", kickoff weeks and "Updated" times are Eastern
+      CFBD_API_KEY: ${{ secrets.CFBD_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      # Downloaded data (box scores, play-by-play, ratings pages, logos) carries over between runs,
+      # so each run only re-fetches what has gone stale — this keeps API usage low.
+      - uses: actions/cache@v4
+        with:
+          path: |
+            cfbv_*.csv
+            nflv_*.csv
+            cbbv_*.csv
+            p4_*.csv
+            p4_*.html
+            nfl_*.csv
+            nfl_*.html
+            cbb_torvik_*.csv
+            news_cache_*.json
+            logos
+          key: data-${{ github.run_id }}
+          restore-keys: data-
+
+      - name: Build dashboards
+        run: python build_site.py
+
+      - name: Save scorecard and line history
+        run: |
+          git config user.name "alphapoint-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add scorecard_*.csv line_history_*.csv
+          git diff --cached --quiet || (git commit -m "Update scorecard and line history [skip ci]" && git pull --rebase && git push)
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - id: deploy
+        uses: actions/deploy-pages@v4
