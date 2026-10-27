@@ -61,9 +61,12 @@ def main():
     os.makedirs(SITE, exist_ok=True)
     results = {}
     for page, script, output, _, _ in DASHBOARDS:
-        results[page] = run(script)
         src = os.path.join(HERE, output)
-        if results[page] and os.path.exists(src):
+        before = os.path.getmtime(src) if os.path.exists(src) else 0
+        ok = run(script)
+        # A script can exit cleanly without building (e.g. no data); only a freshly written page counts
+        results[page] = ok and os.path.exists(src) and os.path.getmtime(src) > before
+        if results[page]:
             shutil.copyfile(src, os.path.join(SITE, page))
     with open(os.path.join(SITE, 'index.html'), 'w', encoding='utf-8') as f:
         f.write(landing(results))
