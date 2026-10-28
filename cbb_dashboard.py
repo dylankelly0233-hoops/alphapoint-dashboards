@@ -53,6 +53,10 @@ ESPN_SCOREBOARD = 'https://site.api.espn.com/apis/site/v2/sports/basketball/mens
 AVG_POSSESSIONS = 68.0     # D1 average possessions per game; converts Torvik's per-100 margin to points
 HFA_POINTS      = 3.0      # home-court edge for an average team (markets ~3)
 GAME_DAYS       = 3        # how many upcoming game days to show
+# Sources already in points per game. Others (Warren Nolan's Elo) are only centered and rescaled,
+# so the common SD has to come from these — averaging in Elo's SD (~120) would blow up the scale.
+POINT_SOURCES   = {'TeamRankings', 'Torvik preseason'}
+FALLBACK_SD     = 9.5      # typical D1 SD in points, used if no points-based source loads
 LOGO_PX         = 48       # smaller logos: this page carries ~150 teams (displayed at 24–30px)
 LOOKAHEAD_DAYS  = 21
 
@@ -136,7 +140,8 @@ def build_power(teams, sources, unmatched):
     """Center each source on its D1 average, rescale to a common SD, blend equally."""
     df = teams[['team', 'espn_id', 'color', 'conference']].copy()
     stats = {s: (np.mean(list(v.values())), np.std(list(v.values()))) for s, v in sources.items() if v}
-    target_sd = np.mean([sd for _, sd in stats.values()]) if stats else 1.0
+    point_sds = [sd for s, (_, sd) in stats.items() if s in POINT_SOURCES]
+    target_sd = np.mean(point_sds) if point_sds else FALLBACK_SD
     for src, (mean, sd) in stats.items():
         df[src] = df['team'].map(lambda t: (sources[src][t] - mean) * target_sd / sd if t in sources[src] else np.nan)
     cols = list(stats)
@@ -273,7 +278,7 @@ def generate_html(power, metrics, days, info):
             f'projected margin at a neutral site. This build blends <b>{theme.esc(blend)}</b>, equally weighted. In season '
             f'that is TeamRankings\' predictive rating plus Warren Nolan\'s Elo; before TeamRankings switches to this season, '
             f'Warren Nolan is blended with Torvik\'s saved preseason ratings. Each source is centered on its D1 average and '
-            f'rescaled to a common spread (SD {s["target_sd"]:.2f} points; Elo and per-100-possession ratings convert to '
+            f'rescaled to the spread of the points-based source(s) (SD {s["target_sd"]:.2f} points), which converts Elo to '
             f'points this way). Raw scales: {stats_txt}. Unmatched names: {theme.esc(unmatched)}.'))
 
     # --- Value tab ---
