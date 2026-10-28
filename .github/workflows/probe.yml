@@ -1,0 +1,17 @@
+# Temporary: check which ratings sites GitHub's servers can reach. Delete after use.
+name: Probe sources
+on: workflow_dispatch
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          for u in https://kenpom.com/ \
+                   https://www.teamrankings.com/ncaa-basketball/ranking/predictive-by-other \
+                   https://www.warrennolan.com/basketball/2027/elo \
+                   "https://evanmiya.com/?team_ratings" \
+                   https://barttorvik.com/2027_team_results.csv \
+                   https://sonnymoorepowerratings.com/m-basket.htm; do
+            code=$(curl -s -o page.html -w '%{http_code}' -A 'python-requests/2.32' --max-time 30 "$u")
+            echo "$code $(wc -c < page.html) bytes  $u  duke=$(grep -c 'Duke' page.html)"
+          done
