@@ -4,7 +4,7 @@ AlphaPoint Sports — CFB Power & Value Dashboard (Power 4 + Notre Dame)
 Dylan Kelly
 
 One HTML dashboard (opens automatically) with three tabs:
-  1. Power Ratings  — composite of Sagarin + Sonny Moore, 0 = average FBS team
+  1. Power Ratings  — composite of Sagarin + SP+, 0 = average FBS team
   2. Value Metrics  — W − xW screener from cfb_value_metrics.py, P4 + ND only
   3. Week Schedule  — this week's P4/ND games, projected line (with home field),
                       BUY / SELL tags from the value metrics
@@ -26,10 +26,7 @@ Rating math
 
 Data
   Sagarin      http://sagarin.com/sports/cfsend.htm  (cached CACHE_HOURS)
-  Sonny Moore  https://sonnymoorepowerratings.com/col-foot.htm
-               The site rejects scripted requests, so when the fetch fails the
-               script reads SONNY_FALLBACK — save the page there (Ctrl+S, or
-               copy-paste the page text into the file) to refresh it.
+  SP+          Bill Connelly's ratings via the CFBD API (/ratings/sp), cached CACHE_HOURS
   CFBD         teams/conferences, calendar, week schedule, lines, value metrics
 """
 
@@ -60,18 +57,16 @@ P4_CONFERENCES  = ('ACC', 'Big Ten', 'Big 12', 'SEC')
 P4_EXTRA_TEAMS  = ('Notre Dame',)
 
 SAGARIN_URL     = 'http://sagarin.com/sports/cfsend.htm'   # https has a self-signed cert
-SONNY_URL       = 'https://sonnymoorepowerratings.com/col-foot.htm'
 SAGARIN_CACHE   = f'p4_sagarin_{YEAR}.html'
-SONNY_FALLBACK  = 'sonny_moore_cfb.txt'
 TEAMS_CACHE     = f'p4_fbs_teams_conf_{YEAR}.csv'
 META_CACHE      = f'p4_team_meta_v2_{YEAR}.csv'  # ESPN ids (for logos), team colors, mascots; FBS + FCS
 
 SAGARIN_BLEND   = {'predictor': 0.60, 'golden_mean': 0.20, 'recent': 0.20}
-SOURCE_WEIGHTS  = {'sagarin': 0.50, 'sonny': 0.50}
+SOURCE_WEIGHTS  = {'sagarin': 0.50, 'sp': 0.50}
 
 # Home-field advantage added to the home team's projected margin (0 at neutral sites).
 # CFB home field has shrunk from the old ~3+ points; markets price an average team at about
-# 2.5 now (Sagarin's 3.65 and Sonny's 4 include FCS mismatches and older seasons).
+# 2.5 now (Sagarin's 3.65 includes FCS mismatches and older seasons).
 HFA_POINTS      = 2.5
 
 # Source name → CFBD name. Anything not listed is matched after normalizing
@@ -84,20 +79,6 @@ SAGARIN_ALIASES = {
     'Miami-Florida': 'Miami',             'Miami-Ohio': 'Miami (OH)',
     'Mississippi': 'Ole Miss',            'Sam Houston State': 'Sam Houston',
     'San Jose State': 'San José State',   'Southern California': 'USC',
-}
-SONNY_ALIASES = {
-    'MIAMI FL.': 'Miami',                 'MISSISSIPPI': 'Ole Miss',
-    'PENN.ST.': 'Penn State',             'SOUTHERN CALIFORNIA': 'USC',
-    'CENTRAL FLORIDA': 'UCF',             'TEXAS SAN ANTONIO': 'UTSA',
-    'NORTH CAROLINA ST.': 'NC State',     'CONNECTICUT': 'UConn',
-    'NEVADA LAS VEGAS': 'UNLV',           'APPALACHIAN ST.': 'App State',
-    'GEORGIA ST': 'Georgia State',        'LOUISIANA-LAFAYETTE': 'Louisiana',
-    'OHIO UNIVERSITY': 'Ohio',            'HAWAII': "Hawai'i",
-    'MIAMI OHIO': 'Miami (OH)',           'ALABAMA BIRMINGHAM': 'UAB',
-    'SOUTHERN MISSISSIPPI': 'Southern Miss', 'SAM HOUSTON ST.': 'Sam Houston',
-    'SAN JOSE ST.': 'San José State',     'MIDDLE TENNESSEE ST.': 'Middle Tennessee',
-    'TROY ST.': 'Troy',                   'LOUISIANA-MONROE': 'UL Monroe',
-    'TEXAS EL PASO': 'UTEP',              'NORTH CAROLINA CHARLOTTE': 'Charlotte',
 }
 
 
@@ -190,55 +171,33 @@ def fetch_sagarin():
     return df, as_of
 
 
-def _parse_sonny(text):
-    text = _strip_tags(text)
-    as_of = None
-    m = re.search(r"Through .*?games (.+)", text)
-    if m:
-        as_of = m.group(1).strip()
-
-    rows, seen = [], set()
-    for line in text.splitlines():
-        m = re.match(r'^\s*\d+\s+(.+?)\s+(\d+)\s+(\d+)\s+(\d+)\s+([\d.]+)\s+([\d.]+)\s*$', line)
-        if not m or m.group(1) in seen:
-            continue
-        seen.add(m.group(1))
-        rows.append({'name': m.group(1), 'W': int(m.group(2)), 'L': int(m.group(3)),
-                     'rating': float(m.group(6))})
-    return pd.DataFrame(rows), as_of
-
-
-def fetch_sonny():
+def fetch_sp():
     """
-    Sonny Moore college football ratings (FBS only). Tries the live page first;
-    the site usually refuses scripted requests, so falls back to SONNY_FALLBACK.
-    Returns (df, as_of, source_label).
+    Bill Connelly's SP+ ratings via the CFBD API (points vs. an average team, CFBD team names).
+    Cached CACHE_HOURS like the other CFBD pulls. Returns DataFrame(name, rating).
     """
-    try:
-        r = requests.get(SONNY_URL, timeout=30)
-        r.raise_for_status()
-        df, as_of = _parse_sonny(r.text)
-        if len(df) > 100:
-            return df, as_of, 'live'
-    except Exception as e:
-        print(f'  ! Sonny Moore live fetch failed ({e}); using {SONNY_FALLBACK}')
-
-    if not os.path.exists(SONNY_FALLBACK):
-        print(f'  ! {SONNY_FALLBACK} not found — Sonny Moore ratings unavailable.')
-        return pd.DataFrame(), None, 'missing'
-    with open(SONNY_FALLBACK, encoding='utf-8', errors='ignore') as f:
-        df, as_of = _parse_sonny(f.read())
-    return df, as_of, 'saved file'
+    path = f'p4_sp_{YEAR}.csv'
+    if not vm.cache_stale(path):
+        return pd.read_csv(path)
+    data = vm.cfbd_get('/ratings/sp', params={'year': YEAR})
+    df = pd.DataFrame([{'name': t['team'], 'rating': t['rating']} for t in data
+                       if t.get('rating') is not None and t.get('team') not in (None, 'nationalAverages')])
+    if not df.empty:
+        df.to_csv(path, index=False)
+    elif os.path.exists(path):
+        print('  ! SP+ unavailable; using last saved copy')
+        return pd.read_csv(path)
+    return df
 
 
 # ==========================================
 # 4. COMPOSITE POWER RATING
 # ==========================================
-def build_power_ratings(teams, sag, sonny):
+def build_power_ratings(teams, sag, sp):
     """
     Put both sources on one scale (FBS average = 0, common SD) and blend.
     Returns (fbs_df, fcs_ratings, scale_info).
-      fbs_df      — one row per CFBD FBS team: sagarin, sonny, composite (all centered)
+      fbs_df      — one row per CFBD FBS team: sagarin, sp, composite (all centered)
       fcs_ratings — {normalized Sagarin name: centered rating} for FCS opponents
     """
     fbs_names = set(teams['team'])
@@ -251,10 +210,10 @@ def build_power_ratings(teams, sag, sonny):
         mapping = match_names(sag_fbs['name'], SAGARIN_ALIASES, fbs_names)
         unmatched['Sagarin'] = sorted(n for n, t in mapping.items() if t is None)
         sources['sagarin'] = {mapping[n]: r for n, r in zip(sag_fbs['name'], sag_fbs['rating']) if mapping[n]}
-    if not sonny.empty:
-        mapping = match_names(sonny['name'], SONNY_ALIASES, fbs_names)
-        unmatched['Sonny Moore'] = sorted(n for n, t in mapping.items() if t is None)
-        sources['sonny'] = {mapping[n]: r for n, r in zip(sonny['name'], sonny['rating']) if mapping[n]}
+    if not sp.empty:
+        mapping = match_names(sp['name'], {}, fbs_names)     # SP+ comes from CFBD, so names already match
+        unmatched['SP+'] = sorted(n for n, t in mapping.items() if t is None)
+        sources['sp'] = {mapping[n]: r for n, r in zip(sp['name'], sp['rating']) if mapping[n]}
 
     stats = {s: (np.mean(list(v.values())), np.std(list(v.values()))) for s, v in sources.items()}
     target_sd = np.mean([sd for _, sd in stats.values()]) if stats else 1.0
@@ -445,8 +404,7 @@ def generate_html(p4, vals, sched, week, season_type, info):
              for r in flagged[flagged['Composite'] > spot].sort_values('Composite', ascending=False).head(5).itertuples()]
 
     blend = ' / '.join(f'{int(w * 100)}% {k.replace("_", " ").title()}' for k, w in SAGARIN_BLEND.items())
-    stale = ' (saved copy — refresh it if this date is old)' if info['sonny_src'] == 'saved file' else ''
-    stats_txt = '; '.join(f'{n.title()} FBS mean {m:.2f}, SD {d:.2f}' for n, (m, d) in s['stats'].items())
+    stats_txt = '; '.join(f'{ {"sp": "SP+"}.get(n, n.title())} FBS mean {m:.2f}, SD {d:.2f}' for n, (m, d) in s['stats'].items())
     unmatched = '; '.join(f'{k}: {", ".join(v)}' for k, v in s['unmatched'].items()) or 'none'
     power_html = (
         f'<div class="grid3">{theme.summary_card("Top 5 power ratings", top5)}'
@@ -459,9 +417,9 @@ def generate_html(p4, vals, sched, week, season_type, info):
         + theme.method_note(
             f'<b>Rating</b> is points above or below an average FBS team (0.0); the gap between two teams is the projected '
             f'margin at a neutral site. Sagarin blend: {blend} (through {theme.esc(info["sag_asof"] or "unknown")}). '
-            f'Sonny Moore: PR (through {theme.esc(info["sonny_asof"] or "unknown")}){stale}. Each source is centered on '
+            f'SP+: Bill Connelly\'s ratings via collegefootballdata.com. Each source is centered on '
             f'its FBS average and rescaled to a common SD of {s["target_sd"]:.2f} points, then blended '
-            f'{int(SOURCE_WEIGHTS["sagarin"] * 100)}/{int(SOURCE_WEIGHTS["sonny"] * 100)}. Raw scales: {stats_txt}. '
+            f'{int(SOURCE_WEIGHTS["sagarin"] * 100)}/{int(SOURCE_WEIGHTS["sp"] * 100)}. Raw scales: {stats_txt}. '
             f'Unmatched names: {theme.esc(unmatched)}. Records include all games.'))
 
     # --- Value tab ---
@@ -534,7 +492,7 @@ def generate_html(p4, vals, sched, week, season_type, info):
         tabs=[('power', 'Power Ratings', power_html), ('value', 'Value Metrics', value_html),
               ('sched', f'{wk_label} Games', sched_html), ('markets', 'Markets', markets_html),
               ('injuries', 'Injury Wire', injury_html), ('scorecard', 'Scorecard', score_html)],
-        footer='AlphaPoint Sports · Data: Sagarin, Sonny Moore, collegefootballdata.com · Logos: ESPN · '
+        footer='AlphaPoint Sports · Data: Sagarin, SP+ (via collegefootballdata.com) · Logos: ESPN · '
                'Not financial or gambling advice')
     theme.write_outputs(page, HTML_OUTPUT, SHARE_OUTPUT, 'CFB_NO_BROWSER')
 
@@ -612,12 +570,11 @@ def main():
     p4_names = set(teams.loc[p4_mask, 'team'])
     print(f'  {len(p4_names)} P4 + Notre Dame teams.')
 
-    print('[2/5] Power ratings (Sagarin + Sonny Moore)...')
+    print('[2/5] Power ratings (Sagarin + SP+)...')
     sag, sag_asof = fetch_sagarin()
-    sonny, sonny_asof, sonny_src = fetch_sonny()
-    print(f'  Sagarin: {len(sag)} teams (through {sag_asof})  |  Sonny Moore: {len(sonny)} teams '
-          f'(through {sonny_asof}, {sonny_src})')
-    power, fcs, scale_info = build_power_ratings(teams, sag, sonny)
+    sp = fetch_sp()
+    print(f'  Sagarin: {len(sag)} teams (through {sag_asof})  |  SP+: {len(sp)} teams')
+    power, fcs, scale_info = build_power_ratings(teams, sag, sp)
     for src, names in scale_info['unmatched'].items():
         print(f'  ! {src} names not matched to CFBD: {", ".join(names)}')
 
@@ -665,8 +622,7 @@ def main():
     graded = scorecard.grade('cfb', cfb_results(season_type))
     print(f"  Scorecard: {graded['result'].notna().sum()} graded, {graded['result'].isna().sum()} pending.")
 
-    info = {'scale': scale_info, 'sag_asof': sag_asof, 'sonny_asof': sonny_asof, 'sonny_src': sonny_src,
-            'rating_sd': float(power['composite'].std()),   # FBS-wide spread, sets the rating chip colors
+    info = {'scale': scale_info, 'sag_asof': sag_asof, 'rating_sd': float(power['composite'].std()),   # FBS-wide spread, sets the rating chip colors
             'wire': wire_data, 'market_rows': market_rows}
     generate_html(p4, vals, sched, week, season_type, info)
 

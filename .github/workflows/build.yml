@@ -1,6 +1,6 @@
 # Rebuild the AlphaPoint dashboards and publish them to GitHub Pages.
-# Runs hourly from 8 AM to midnight Eastern, whenever Claude's daily run pushes new
-# Injury Wire / Sonny Moore / Torvik files, and on demand (Actions tab → "Build dashboards" → Run workflow).
+# Runs hourly from 8 AM to midnight Eastern, whenever Claude's daily run pushes a new
+# Injury Wire file, and on demand (Actions tab → "Build dashboards" → Run workflow).
 # GitHub's scheduler is best-effort and drops or delays runs at the top of the hour when busy,
 # so runs start at :17 and go hourly — a skipped run is covered by the next one.
 name: Build dashboards
@@ -10,7 +10,7 @@ on:
     - cron: '17 0-4,12-23 * * *'   # UTC; = :17 past every hour, 8 AM–midnight ET
   push:
     branches: [main]
-    paths: ['*.py', 'injury_wire_*.json', 'sonny_moore_*.txt', 'cbb_torvik_*.csv', '.github/workflows/build.yml']
+    paths: ['*.py', 'injury_wire_*.json', 'cbb_torvik_*.csv', '.github/workflows/build.yml']
   workflow_dispatch:
 
 permissions:
@@ -54,6 +54,9 @@ jobs:
             p4_*.html
             nfl_*.csv
             nfl_*.html
+            cbb_teamrankings_*.html
+            cbb_warrennolan_*.html
+            cbb_evanmiya.html
             news_cache_*.json
             logos
           key: data-${{ github.run_id }}

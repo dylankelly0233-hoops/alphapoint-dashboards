@@ -4,7 +4,7 @@ AlphaPoint Sports — NFL Power & Value Dashboard
 Dylan Kelly
 
 One HTML dashboard (opens automatically) with three tabs:
-  1. Power Ratings  — composite of nfelo + Sonny Moore, 0 = average NFL team
+  1. Power Ratings  — composite of nfelo + Sagarin, 0 = average NFL team
   2. Value Metrics  — W − xW screener from nfl_value_metrics.py
   3. Week Schedule  — this week's games, projected line (with home field),
                       BUY / SELL tags from the value metrics
@@ -15,17 +15,14 @@ Rating math
     1. Center each source on the league average → average team = 0
     2. Rescale each source's spread (SD) to the average SD of the two sources
     3. Composite = weighted average (SOURCE_WEIGHTS): nfelo is the primary
-       rating, Sonny Moore a second opinion
+       rating, Sagarin a second opinion
 
   nfelo: the "Spread Value" column (points vs an average team). nfelo is an
   Elo model with QB adjustments and market reversion built in.
 
 Data
   nfelo        https://www.nfeloapp.com/nfl-power-ratings/   (cached CACHE_HOURS)
-  Sonny Moore  https://sonnymoorepowerratings.com/nfl-foot.htm
-               The site rejects scripted requests, so when the fetch fails the
-               script reads SONNY_FALLBACK — paste the page text into that file
-               to refresh it.
+  Sagarin      http://sagarin.com/sports/nflsend.htm   (cached CACHE_HOURS)
   nflverse     schedules, spreads, play-by-play (via nfl_value_metrics.py)
 """
 
@@ -54,12 +51,12 @@ HTML_OUTPUT     = 'nfl_dashboard.html'         # full page, opened locally
 SHARE_OUTPUT    = 'nfl_dashboard_share.html'   # same page as a fragment, for publishing as a shared link
 
 NFELO_URL       = 'https://www.nfeloapp.com/nfl-power-ratings/'
-SONNY_URL       = 'https://sonnymoorepowerratings.com/nfl-foot.htm'
+SAGARIN_URL     = 'http://sagarin.com/sports/nflsend.htm'
 NFELO_CACHE     = f'nfl_nfelo_{SEASON}.html'
-SONNY_FALLBACK  = 'sonny_moore_nfl.txt'
+SAGARIN_CACHE   = f'nfl_sagarin_{SEASON}.html'
 META_CACHE      = 'nfl_team_meta.csv'         # ESPN logo paths and team colors (nflverse team table)
 
-SOURCE_WEIGHTS  = {'nfelo': 0.65, 'sonny': 0.35}
+SOURCE_WEIGHTS  = {'nfelo': 0.65, 'sagarin': 0.35}
 
 # Home-field advantage added to the home team's projected margin (0 at neutral sites).
 # NFL home field has fallen from the old 3 points to roughly 1.5–2 since 2020; markets
@@ -68,6 +65,8 @@ HFA_POINTS      = 1.7
 
 # nfelo abbreviation → nflverse abbreviation (anything not listed is used as-is)
 NFELO_ALIASES   = {'LAR': 'LA', 'WSH': 'WAS', 'JAC': 'JAX', 'OAK': 'LV', 'SD': 'LAC', 'STL': 'LA'}
+# Sagarin team name → nflverse full name (anything not listed matches as-is)
+SAGARIN_ALIASES = {'Washington Redskins': 'Washington Commanders', 'Washington Football Team': 'Washington Commanders'}
 
 DIVISIONS = {
     'AFC East':  ['BUF', 'MIA', 'NE', 'NYJ'],
@@ -128,48 +127,44 @@ def fetch_nfelo():
     return pd.DataFrame(rows).drop_duplicates('abbr')
 
 
-def _parse_sonny(text):
-    text = html.unescape(re.sub(r'<[^>]+>', '', text))
-    as_of = None
-    m = re.search(r"Through .*?games (.+)", text)
-    if m:
-        as_of = m.group(1).strip()
+def fetch_sagarin():
+    """
+    Sagarin NFL ratings (the overall rating, first number after "=").
+    Returns (DataFrame name/abbr/rating, as_of). Page cached CACHE_HOURS in SAGARIN_CACHE.
+    """
+    if vm.cache_stale(SAGARIN_CACHE, CACHE_HOURS):
+        try:
+            r = requests.get(SAGARIN_URL, timeout=30)
+            r.raise_for_status()
+            with open(SAGARIN_CACHE, 'w', encoding='utf-8') as f:
+                f.write(r.text)
+        except Exception as e:
+            print(f'  ! Sagarin fetch failed: {e}')
+            if not os.path.exists(SAGARIN_CACHE):
+                return pd.DataFrame(), None
+            print('    Using last cached copy.')
+
+    with open(SAGARIN_CACHE, encoding='utf-8', errors='ignore') as f:
+        text = html.unescape(re.sub(r'<[^>]+>', '', f.read()))
+    m = re.search(r'ratings through games of (.+)', text)
+    as_of = m.group(1).strip() if m else None
 
     by_name = {name.upper(): abbr for abbr, name in vm.NFL_TEAMS.items()}
     rows, seen = [], set()
     for line in text.splitlines():
-        m = re.match(r'^\s*\d+\s+(.+?)\s+(\d+)\s+(\d+)\s+(\d+)\s+([\d.]+)\s+([\d.]+)\s*$', line)
+        m = re.match(r'^\s*\d+\s+([A-Za-z0-9 .]+?)\s+=\s+(-?[\d.]+)\s+\d+\s+\d+', line)
         if not m or m.group(1) in seen:
             continue
         seen.add(m.group(1))
-        rows.append({'name': m.group(1), 'abbr': by_name.get(m.group(1).upper()),
-                     'rating': float(m.group(6))})
+        name = SAGARIN_ALIASES.get(m.group(1), m.group(1))
+        rows.append({'name': m.group(1), 'abbr': by_name.get(name.upper()), 'rating': float(m.group(2))})
     return pd.DataFrame(rows), as_of
-
-
-def fetch_sonny():
-    """Sonny Moore NFL ratings. Live page first, then SONNY_FALLBACK. Returns (df, as_of, source)."""
-    try:
-        r = requests.get(SONNY_URL, timeout=30)
-        r.raise_for_status()
-        df, as_of = _parse_sonny(r.text)
-        if len(df) >= 30:
-            return df, as_of, 'live'
-    except Exception as e:
-        print(f'  ! Sonny Moore live fetch failed ({e}); using {SONNY_FALLBACK}')
-
-    if not os.path.exists(SONNY_FALLBACK):
-        print(f'  ! {SONNY_FALLBACK} not found — Sonny Moore ratings unavailable.')
-        return pd.DataFrame(), None, 'missing'
-    with open(SONNY_FALLBACK, encoding='utf-8', errors='ignore') as f:
-        df, as_of = _parse_sonny(f.read())
-    return df, as_of, 'saved file'
 
 
 # ==========================================
 # 3. COMPOSITE POWER RATING
 # ==========================================
-def build_power_ratings(nfelo, sonny):
+def build_power_ratings(nfelo, sagarin):
     """Center both sources on the league average, match their SDs, blend. One row per team."""
     df = pd.DataFrame({'abbr': list(vm.NFL_TEAMS)})
     sources, unmatched = {}, {}
@@ -177,10 +172,10 @@ def build_power_ratings(nfelo, sonny):
     if not nfelo.empty:
         unmatched['nfelo'] = sorted(set(nfelo['abbr']) - set(vm.NFL_TEAMS))
         sources['nfelo'] = dict(zip(nfelo['abbr'], nfelo['value']))
-    if not sonny.empty:
-        unmatched['Sonny Moore'] = sorted(sonny.loc[sonny['abbr'].isna(), 'name'])
-        ok = sonny[sonny['abbr'].notna()]
-        sources['sonny'] = dict(zip(ok['abbr'], ok['rating']))
+    if not sagarin.empty:
+        unmatched['Sagarin'] = sorted(sagarin.loc[sagarin['abbr'].isna(), 'name'])
+        ok = sagarin[sagarin['abbr'].notna()]
+        sources['sagarin'] = dict(zip(ok['abbr'], ok['rating']))
 
     sources = {s: {t: v for t, v in vals.items() if t in vm.NFL_TEAMS} for s, vals in sources.items()}
     stats = {s: (np.mean(list(v.values())), np.std(list(v.values()))) for s, v in sources.items() if v}
@@ -329,7 +324,6 @@ def generate_html(power, vals, sched, week, info):
     buys = flag_items(flagged[flagged['Composite'] < -spot].sort_values('Composite')) if not flagged.empty else []
     sells = flag_items(flagged[flagged['Composite'] > spot].sort_values('Composite', ascending=False)) if not flagged.empty else []
 
-    stale = ' (saved copy — refresh it if this date is old)' if info['sonny_src'] == 'saved file' else ''
     stats_txt = '; '.join(f'{n} mean {m:.2f}, SD {d:.2f}' for n, (m, d) in s['stats'].items())
     unmatched = '; '.join(f'{k}: {", ".join(v)}' for k, v in s['unmatched'].items()) or 'none'
     power_html = (
@@ -343,9 +337,9 @@ def generate_html(power, vals, sched, week, info):
         + theme.method_note(
             f'<b>Rating</b> is points above or below an average NFL team (0.0); the gap between two teams is the projected '
             f'margin at a neutral site. nfelo: spread value, an Elo model with QB and market adjustments (fetched '
-            f'{theme.esc(info["nfelo_asof"])}). Sonny Moore: PR (through {theme.esc(info["sonny_asof"] or "unknown")}){stale}. '
+            f'{theme.esc(info["nfelo_asof"])}). Sagarin: overall rating (through {theme.esc(info["sagarin_asof"] or "unknown")}). '
             f'Each source is centered on the league average and rescaled to a common SD of {s["target_sd"]:.2f} points, then '
-            f'blended {int(SOURCE_WEIGHTS["nfelo"] * 100)}% nfelo / {int(SOURCE_WEIGHTS["sonny"] * 100)}% Sonny Moore. '
+            f'blended {int(SOURCE_WEIGHTS["nfelo"] * 100)}% nfelo / {int(SOURCE_WEIGHTS["sagarin"] * 100)}% Sagarin. '
             f'Raw scales: {stats_txt}. Unmatched names: {theme.esc(unmatched)}.'))
 
     # --- Value tab ---
@@ -421,7 +415,7 @@ def generate_html(power, vals, sched, week, info):
         tabs=[('power', 'Power Ratings', power_html), ('value', 'Value Metrics', value_html),
               ('sched', f'{wk_label} Games', sched_html), ('markets', 'Markets', markets_html),
               ('injuries', 'Injury Wire', injury_html), ('scorecard', 'Scorecard', score_html)],
-        footer='AlphaPoint Sports · Data: nfelo, Sonny Moore, nflverse · Logos: ESPN · Not financial or gambling advice')
+        footer='AlphaPoint Sports · Data: nfelo, Sagarin, nflverse · Logos: ESPN · Not financial or gambling advice')
     theme.write_outputs(page, HTML_OUTPUT, SHARE_OUTPUT, 'NFL_NO_BROWSER')
 
 
@@ -470,14 +464,14 @@ def main():
     print(f'  BLUECHIP ANALYTICS — NFL DASHBOARD  |  {SEASON}')
     print('█' * 80)
 
-    print('\n[1/4] Power ratings (nfelo + Sonny Moore)...')
+    print('\n[1/4] Power ratings (nfelo + Sagarin)...')
     nfelo = fetch_nfelo()
-    sonny, sonny_asof, sonny_src = fetch_sonny()
+    sagarin, sagarin_asof = fetch_sagarin()
     nfelo_asof = datetime.fromtimestamp(os.path.getmtime(NFELO_CACHE)).strftime('%Y-%m-%d %H:%M') \
         if os.path.exists(NFELO_CACHE) else 'unavailable'
-    print(f'  nfelo: {len(nfelo)} teams (fetched {nfelo_asof})  |  Sonny Moore: {len(sonny)} teams '
-          f'(through {sonny_asof}, {sonny_src})')
-    power, scale_info = build_power_ratings(nfelo, sonny)
+    print(f'  nfelo: {len(nfelo)} teams (fetched {nfelo_asof})  |  Sagarin: {len(sagarin)} teams '
+          f'(through {sagarin_asof})')
+    power, scale_info = build_power_ratings(nfelo, sagarin)
     for src, names in scale_info['unmatched'].items():
         print(f'  ! {src} names not matched: {", ".join(names)}')
     missing = power.loc[power['composite'].isna(), 'abbr'].tolist()
@@ -522,7 +516,7 @@ def main():
     graded = scorecard.grade('nfl', {str(g.game_id): (g.home_score, g.away_score, g.spread_line) for g in done.itertuples()})
     print(f"  Scorecard: {graded['result'].notna().sum()} graded, {graded['result'].isna().sum()} pending.")
 
-    info = {'scale': scale_info, 'nfelo_asof': nfelo_asof, 'sonny_asof': sonny_asof, 'sonny_src': sonny_src,
+    info = {'scale': scale_info, 'nfelo_asof': nfelo_asof, 'sagarin_asof': sagarin_asof,
             'wire': wire_data, 'market_rows': market_rows}
     generate_html(power, vals, sched, week, info)
 

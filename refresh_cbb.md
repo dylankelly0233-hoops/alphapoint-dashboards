@@ -1,34 +1,19 @@
 # CBB daily refresh + email digest: runbook for scheduled Claude runs
 
-The website (https://dylankelly0233-hoops.github.io/alphapoint-dashboards/) is built automatically by GitHub Actions every 2 hours. This run refreshes Sonny Moore's basketball ratings (his site blocks scripts), pushes them to GitHub, and then emails Dylan the daily digest. Don't edit code.
+The website (https://dylankelly0233-hoops.github.io/alphapoint-dashboards/) is built automatically by GitHub Actions every hour, ratings included (TeamRankings and Warren Nolan, fetched by `cbb_ratings.py`). This run checks the CBB build and emails Dylan the daily digest. Don't edit code.
 
 - **DIR**: `C:\Users\dylan\PyCharmMiscProject\alphapoint-dashboards`
 
 ## 1. Sync with GitHub
 In PowerShell, from DIR: `git pull --rebase`. If it reports a conflict, run `git rebase --abort`, report it, and skip to step 4.
 
-## 2. Refresh the Sonny Moore basketball ratings file
-Read the page in the built-in browser (`mcp__Claude_Browser__*`). This is ordinary page reading: don't spoof headers.
-1. Navigate to https://sonnymoorepowerratings.com/m-basket.htm
-2. Run this in the javascript tool. It keeps the ranked list and drops the alphabetical repeat:
-   `const t = document.body.innerText; const rows = t.split('\n').filter(l => /^\s*\d+\s+\S/.test(l) && /\d+\.\d+\s*$/.test(l)); const seen = new Set(); const out = []; for (const r of rows) { const m = r.trim().match(/^(\d+)\s+(.+?)\s+\d+\s+\d+\s+\d+\s+[\d.]+\s+[\d.]+$/); if (!m || seen.has(m[2])) continue; seen.add(m[2]); out.push(r.replace(/\s+/g,' ').trim()); } const hdr = t.split('\n').filter(l => /Compiled|Through/.test(l)); hdr.join('\n') + '\n' + out.length + '\n' + out.join('\n')`
-3. Overwrite `DIR\sonny_moore_cbb.txt` in its existing format. Read the file first.
-4. Leave the file unchanged if the page fails, returns fewer than 340 teams, or its Compiled date is not newer than the one in the file.
+## 2. Check the CBB build
+From DIR: `$env:PYTHONIOENCODING = "utf-8"; $env:CBB_NO_BROWSER = "1"; python cbb_dashboard.py > "$env:TEMP\cbb_build.log" 2>&1; Get-Content "$env:TEMP\cbb_build.log" | Select-String "Sources:|  ! |Traceback"`
+Then run `git checkout -- scorecard_cbb.csv line_history_cbb.csv` if those files exist; GitHub's builds own them.
 
-## 2b. Refresh Bart Torvik's ratings file
-Torvik blocks GitHub's servers, so this run downloads his file and commits it. From DIR:
-`$env:PYTHONIOENCODING = "utf-8"; python -c "import os, cbb_dashboard as d; p = f'cbb_torvik_{d.SEASON}.csv'; os.path.exists(p) and os.remove(p); print('Torvik teams:', len(d.fetch_torvik()))"`
-If it prints fewer than 300 teams, run `git checkout -- cbb_torvik_*.csv` to restore the previous copy, and note it in the report.
+Save a short report to `DIR\last_refresh_cbb.md` in the same format as the football reports: line 1 `Date: YYYY-MM-DD HH:MM`, line 2 `Status: ok` or `Status: failed — <reason>`, then 1–3 lines: the "Sources:" line and any warnings.
 
-## 3. Push to GitHub (only if a ratings file changed)
-From DIR:
-1. `git add sonny_moore_cbb.txt cbb_torvik_*.csv`
-2. `git -c user.name="Dylan Kelly" -c user.email="dylankelly0233@gmail.com" commit -m "CBB daily refresh"`. If it says there's nothing to commit, that's fine.
-3. `git pull --rebase`
-4. `git push`
-
-Then save a short report to `DIR\last_refresh_cbb.md` in the same format as the football reports: line 1 `Date: YYYY-MM-DD HH:MM`, line 2 `Status: pushed`, `Status: no change` or `Status: failed — <reason>`, then 1–3 lines on what changed.
-
+## 3. Check the site build
 To check the latest automatic site build, run:
 `& "C:\Program Files\GitHub CLI\gh.exe" run list --repo dylankelly0233-hoops/alphapoint-dashboards --limit 3`
 

@@ -55,7 +55,7 @@ INFO = [
     ('Every dashboard', [
         ('Power Ratings', 'One composite rating per team: points above or below an average team (0.0). The gap between two '
                           'teams is the projected margin on a neutral field. Built by blending public computer ratings '
-                          '(Sagarin + Sonny Moore for CFB, nfelo + Sonny Moore for NFL, Torvik + Sonny Moore for CBB) after '
+                          '(Sagarin + SP+ for CFB, nfelo + Sagarin for NFL, TeamRankings + Warren Nolan for CBB) after '
                           'putting them on the same scale.'),
         ('Value Metrics', 'Wins over expectation (W − xW): how many more or fewer games a team has won than its underlying '
                           'play supports. Below zero means the record is worse than the play (a buy candidate); above zero '
@@ -80,9 +80,9 @@ INFO = [
                 'expected), and the Vegas spread; close-game record and opponent 3-point shooting are shown as luck flags.'),
     ]),
     ('How the site updates', [
-        ('Every 2 hours', 'From 8 AM to midnight ET the site rebuilds automatically: lines, Kalshi markets, scores, ratings, '
+        ('Every hour', 'From 8 AM to midnight ET the site rebuilds automatically: lines, Kalshi markets, scores, ratings, '
                           'value metrics and scorecard grading.'),
-        ('Once a day', 'Sonny Moore and Torvik ratings are refreshed and the Injury Wire is curated each morning.'),
+        ('Once a day', 'The Injury Wire is curated each morning.'),
         ('Disclaimer', 'For information and entertainment. Not financial or gambling advice.'),
     ]),
 ]

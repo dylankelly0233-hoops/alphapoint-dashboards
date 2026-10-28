@@ -4,24 +4,24 @@ AlphaPoint Sports — CBB Power & Value Dashboard (Power 4 + Big East)
 Dylan Kelly
 
 Three tabs, same design as the football dashboards:
-  1. Power Ratings  — composite of Bart Torvik + Sonny Moore, 0 = average Division I team
+  1. Power Ratings  — composite of TeamRankings + Warren Nolan, 0 = average Division I team
   2. Value Metrics  — wins over expectation from cbb_value_metrics.py
   3. Games          — the next three game days with a P4 / Big East team: projected line
                       (with home court), market spread, edge, trade signals
 
-Rating math
-  Torvik rates teams in points per 100 possessions (AdjOE − AdjDE). Converting to points per
-  game (× average possessions / 100) puts it on the same scale as Sonny Moore's points rating.
-  Then, like football:
+Rating math (sources fetched by cbb_ratings.py; see load_sources)
+  Torvik's preseason file is in points per 100 possessions (AdjOE − AdjDE); × average
+  possessions / 100 converts it to points per game. Then, like football:
     1. Center each source on its Division I average → average D1 team = 0
-    2. Rescale each source's spread (SD) to the average of the two
-    3. Composite = weighted average (SOURCE_WEIGHTS)
+    2. Rescale each source's spread (SD) to the average of the sources
+    3. Composite = equal-weight average
   A rating gap = projected margin at a neutral site; HFA_POINTS is added for the home team.
 
 Data
-  Torvik       https://barttorvik.com/{season}_team_results.csv
-  Sonny Moore  https://sonnymoorepowerratings.com/m-basket.htm (scripted fetches are refused,
-               so the script falls back to SONNY_FALLBACK — paste the page text there)
+  TeamRankings predictive ratings (once its page switches to this season)
+  Warren Nolan Elo
+  Torvik       cbb_torvik_{season}.csv, a saved preseason file (Torvik blocks GitHub's servers);
+               used only until TeamRankings is current
   Schedule     ESPN scoreboard (D1), with posted spreads when available
   Box scores   collegebasketballdata.com via cbb_value_metrics.py
 """
@@ -36,6 +36,7 @@ import numpy as np
 import pandas as pd
 import requests
 
+import cbb_ratings as cbr
 import cbb_value_metrics as vm
 import dashboard_theme as theme
 
@@ -47,14 +48,10 @@ HTML_OUTPUT     = 'cbb_dashboard.html'
 SHARE_OUTPUT    = 'cbb_dashboard_share.html'
 CACHE_HOURS     = 6
 
-TORVIK_URL      = 'https://barttorvik.com/{season}_team_results.csv'
-SONNY_URL       = 'https://sonnymoorepowerratings.com/m-basket.htm'
-SONNY_FALLBACK  = 'sonny_moore_cbb.txt'
 ESPN_SCOREBOARD = 'https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/scoreboard'
 
-SOURCE_WEIGHTS  = {'torvik': 0.50, 'sonny': 0.50}
 AVG_POSSESSIONS = 68.0     # D1 average possessions per game; converts Torvik's per-100 margin to points
-HFA_POINTS      = 3.0      # home-court edge for an average team (markets ~3; Sonny lists 3.7)
+HFA_POINTS      = 3.0      # home-court edge for an average team (markets ~3)
 GAME_DAYS       = 3        # how many upcoming game days to show
 LOGO_PX         = 48       # smaller logos: this page carries ~150 teams (displayed at 24–30px)
 LOOKAHEAD_DAYS  = 21
@@ -75,30 +72,6 @@ TORVIK_ALIASES = {
     'Louisiana Monroe': 'UL Monroe', 'Tennessee Martin': 'UT Martin', 'Loyola MD': 'Loyola Maryland',
     'USC Upstate': 'South Carolina Upstate',
 }
-SONNY_ALIASES = {
-    'CONNECTICUT': 'UConn', 'MASS-LOWELL': 'UMass Lowell', 'MIAMI FLORIDA': 'Miami', "ST. MARY'S CA.": "Saint Mary's",
-    'NORTH CAROLINA ST.': 'NC State', 'MISSISSIPPI': 'Ole Miss', 'CENTRAL FLORIDA': 'UCF', 'McNEESE ST.': 'McNeese',
-    'SOUTHERN CAL': 'USC', 'MIAMI OHIO': 'Miami (OH)', 'ILLINOIS CHICAGO': 'UIC', 'UTAH VALLEY ST.': 'Utah Valley',
-    'CALIFORNIA IRVINE': 'UC Irvine', 'NEVADA LAS VEGAS': 'UNLV', "ST. JOSEPH'S PA.": "Saint Joseph's",
-    'S. F. AUSTIN': 'Stephen F. Austin', 'CAL BAPTIST': 'California Baptist', 'ALABAMA BIRMINGHAM': 'UAB',
-    'SEATTLE': 'Seattle U', 'SAM HOUSTON ST.': 'Sam Houston', 'NORTH CAROLINA WILMINGTON': 'UNC Wilmington',
-    'TOWSON ST.': 'Towson', 'TEXAS RIO GRANDE VALLEY': 'UT Rio Grande Valley', 'MIDDLE TENNESSEE ST.': 'Middle Tennessee',
-    'TROY ST.': 'Troy', 'MONMOUTH NJ': 'Monmouth', 'TEXAS ARLINGTON': 'UT Arlington', 'OAKLAND MI': 'Oakland',
-    'AMERICAN': 'American University', 'CALIFORNIA SANTA BARBARA': 'UC Santa Barbara', 'CALIFORNIA SAN DIEGO': 'UC San Diego',
-    'NORTH CAROLINA CHARLOTTE': 'Charlotte', 'COLLEGE OF CHARLESTON': 'Charleston', 'QUEENS NC': 'Queens University',
-    'MARYLAND BALTIMORE COUNTY': 'UMBC', 'SAN JOSE ST.': 'San José State', 'APPALACHIAN ST.': 'App State',
-    'ST. THOMAS MN.': 'St. Thomas-Minnesota', 'CALIFORNIA DAVIS': 'UC Davis', 'SOUTHERN MISSISSIPPI': 'Southern Miss',
-    'WISCONSIN GREEN BAY': 'Green Bay', 'TENNESSEE MARTIN': 'UT Martin', 'DETROIT': 'Detroit Mercy',
-    'PURDUE FT. WAYNE': 'Purdue Fort Wayne', 'OHIO UNIVERSITY': 'Ohio', 'LOYOLA ILLINOIS': 'Loyola Chicago',
-    'WISCONSIN MILWAUKEE': 'Milwaukee', 'TEXAS EL PASO': 'UTEP', 'ALBANY': 'UAlbany', 'NICHOLLS ST.': 'Nicholls',
-    'SE MISSOURI ST.': 'Southeast Missouri State', 'PRESBYTERIAN COLLEGE': 'Presbyterian',
-    'CENTRAL CONNECTICUT ST.': 'Central Connecticut', 'NORTH CAROLINA ASHEVILLE': 'UNC Asheville',
-    'TENNESSEE CHATTANOOGA': 'Chattanooga', "MT. ST. MARY'S MD.": "Mount St. Mary's", 'CALIFORNIA RIVERSIDE': 'UC Riverside',
-    'TEXAS SAN ANTONIO': 'UTSA', 'PRAIRIE VIEW': 'Prairie View A&M', 'LOUISIANA-LAFAYETTE': 'Louisiana',
-    'NORTH CAROLINA GREENSBORO': 'UNC Greensboro', 'NEBRASKA OMAHA': 'Omaha', 'IUPUI': 'IU Indianapolis',
-    'GRAMBLING ST.': 'Grambling', 'ARKANSAS LITTLE ROCK': 'Little Rock', 'N.J. TECH': 'NJIT', 'CITADEL': 'The Citadel',
-    'LOUISIANA MONROE': 'UL Monroe', 'MISSOURI KANSAS CITY': 'Kansas City',
-}
 
 
 # ==========================================
@@ -117,90 +90,60 @@ def match_names(names, aliases, canon):
     return {n: aliases.get(n) if aliases.get(n) in canon else lookup.get(_norm(n)) for n in names}
 
 
-def _fresh(path, hours=CACHE_HOURS):
-    return os.path.exists(path) and (datetime.now().timestamp() - os.path.getmtime(path)) / 3600 < hours
-
-
 def fetch_torvik():
-    """Torvik team results for this season (preseason projections before games are played)."""
+    """Torvik's saved preseason file for this season (committed to the repo)."""
     path = f'cbb_torvik_{SEASON}.csv'
-    if not _fresh(path):
-        try:
-            r = requests.get(TORVIK_URL.format(season=SEASON), timeout=30)
-            r.raise_for_status()
-            if 'adjoe' not in r.text[:500]:
-                raise ValueError('unexpected Torvik response')
-            with open(path, 'w', encoding='utf-8') as f:
-                f.write(r.text)
-        except Exception as e:
-            print(f'  ! Torvik fetch failed: {e}')
-            if not os.path.exists(path):
-                return pd.DataFrame()
+    if not os.path.exists(path):
+        print(f'  ! {path} not found')
+        return pd.DataFrame()
     df = pd.read_csv(path)
     df['pts'] = (df['adjoe'] - df['adjde']) * AVG_POSSESSIONS / 100
     return df[['team', 'conf', 'record', 'pts']]
 
 
-def _parse_sonny(text):
-    text = html.unescape(re.sub(r'<[^>]+>', '', text))
-    m = re.search(r'(Through .+|Compiled: .+)', text)
-    as_of = m.group(1).strip() if m else None
-    rows, seen = [], set()
-    for line in text.splitlines():
-        m = re.match(r'^\s*\d+\s+(.+?)\s+(\d+)\s+(\d+)\s+(\d+)\s+([\d.]+)\s+([\d.]+)\s*$', line)
-        if m and m.group(1) not in seen:
-            seen.add(m.group(1))
-            rows.append({'name': m.group(1), 'rating': float(m.group(6))})
-    return pd.DataFrame(rows), as_of
-
-
-def fetch_sonny():
-    try:
-        r = requests.get(SONNY_URL, timeout=30)
-        r.raise_for_status()
-        df, as_of = _parse_sonny(r.text)
-        if len(df) > 300:
-            return df, as_of, 'live'
-    except Exception as e:
-        print(f'  ! Sonny Moore live fetch failed ({e}); using {SONNY_FALLBACK}')
-    if not os.path.exists(SONNY_FALLBACK):
-        return pd.DataFrame(), None, 'missing'
-    with open(SONNY_FALLBACK, encoding='utf-8', errors='ignore') as f:
-        df, as_of = _parse_sonny(f.read())
-    return df, as_of, 'saved file'
-
-
 # ==========================================
 # 3. COMPOSITE POWER RATING
 # ==========================================
-def build_power(teams, torvik, sonny):
+def load_sources(teams):
+    """
+    The rating sources for this build, as {label: {CBBD team: rating}} plus unmatched names.
+    In season: TeamRankings predictive + Warren Nolan Elo. Before TeamRankings switches to this season
+    (it keeps last season's final ratings until then): Warren Nolan + Torvik's saved preseason file.
+    """
     canon = set(teams['team'])
-    df = teams[['team', 'espn_id', 'color']].copy()
-    sources, unmatched, conf = {}, {}, {}
-    if not torvik.empty:
-        mp = match_names(torvik['team'], TORVIK_ALIASES, canon)
-        unmatched['Torvik'] = sorted(n for n, t in mp.items() if not t)
-        sources['torvik'] = {mp[n]: p for n, p in zip(torvik['team'], torvik['pts']) if mp[n]}
-        conf = {mp[n]: c for n, c in zip(torvik['team'], torvik['conf']) if mp[n]}
-    if not sonny.empty:
-        mp = match_names(sonny['name'], SONNY_ALIASES, canon)
-        unmatched['Sonny Moore'] = sorted(n for n, t in mp.items() if not t)
-        sources['sonny'] = {mp[n]: r for n, r in zip(sonny['name'], sonny['rating']) if mp[n]}
+    raw = {}
+    tr, tr_current = cbr.fetch_teamrankings(SEASON)
+    if tr_current and len(tr) >= 300:
+        raw['TeamRankings'] = (tr, cbr.TEAMRANKINGS_ALIASES)
+    wn = cbr.fetch_warrennolan(SEASON)
+    if len(wn) >= 300:
+        raw['Warren Nolan'] = (wn, cbr.WARRENNOLAN_ALIASES)
+    if len(raw) < 2:
+        tv = fetch_torvik()          # the saved preseason file in the repo; Torvik blocks GitHub's servers
+        if not tv.empty:
+            raw['Torvik preseason'] = (dict(zip(tv['team'], tv['pts'])), TORVIK_ALIASES)
+    sources, unmatched = {}, {}
+    for label, (ratings, aliases) in raw.items():
+        mp = match_names(ratings, aliases, canon)
+        unmatched[label] = sorted(n for n, t in mp.items() if not t)
+        sources[label] = {mp[n]: r for n, r in ratings.items() if mp[n]}
+    print(f"  Sources: {', '.join(f'{k} ({len(v)})' for k, v in sources.items())}"
+          + ('' if tr_current else '  [TeamRankings still on last season]'))
+    return sources, {k: v for k, v in unmatched.items() if v}
 
+
+def build_power(teams, sources, unmatched):
+    """Center each source on its D1 average, rescale to a common SD, blend equally."""
+    df = teams[['team', 'espn_id', 'color', 'conference']].copy()
     stats = {s: (np.mean(list(v.values())), np.std(list(v.values()))) for s, v in sources.items() if v}
     target_sd = np.mean([sd for _, sd in stats.values()]) if stats else 1.0
-    for src in SOURCE_WEIGHTS:
-        if src in stats:
-            mean, sd = stats[src]
-            df[src] = df['team'].map(lambda t: (sources[src][t] - mean) * target_sd / sd if t in sources[src] else np.nan)
-        else:
-            df[src] = np.nan
-    w = pd.DataFrame({s: df[s].notna() * wt for s, wt in SOURCE_WEIGHTS.items()})
-    df['composite'] = sum(df[s].fillna(0) * wt for s, wt in SOURCE_WEIGHTS.items()) / w.sum(axis=1).replace(0, np.nan)
+    for src, (mean, sd) in stats.items():
+        df[src] = df['team'].map(lambda t: (sources[src][t] - mean) * target_sd / sd if t in sources[src] else np.nan)
+    cols = list(stats)
+    df['composite'] = df[cols].mean(axis=1) if cols else np.nan
     df['rank'] = df['composite'].rank(ascending=False, method='min')
-    df['conf_code'] = df['team'].map(conf).fillna('')
-    df['conference'] = df['conf_code'].map(CONFERENCES).fillna('')
-    return df, {'target_sd': target_sd, 'stats': stats, 'unmatched': {k: v for k, v in unmatched.items() if v}}
+    df['conference'] = df['conference'].where(df['conference'].isin(CONFERENCES.values()), '')
+    return df, {'target_sd': target_sd, 'stats': stats, 'unmatched': unmatched}
 
 
 # ==========================================
@@ -314,9 +257,9 @@ def generate_html(power, metrics, days, info):
         return [(r.Team, logo(r.Team), _pill(r.Composite, r.G), f'{r.W}-{r.L} · {r.Composite:+.2f}') for r in hits[:5]]
     early = 'Value metrics begin once teams have played 4 D1 games.' if fv.empty else ''
     s = info['scale']
-    stats_txt = '; '.join(f'{n.title()} D1 mean {m:.2f}, SD {d:.2f}' for n, (m, d) in s['stats'].items())
+    stats_txt = '; '.join(f'{n} D1 mean {m:.2f}, SD {d:.2f}' for n, (m, d) in s['stats'].items())
     unmatched = '; '.join(f'{k}: {", ".join(v)}' for k, v in s['unmatched'].items()) or 'none'
-    stale = ' (saved copy — refresh it if this date is old)' if info['sonny_src'] == 'saved file' else ''
+    blend = ' + '.join(s['stats']) or 'none'
     power_html = (
         f'<div class="grid3">{theme.summary_card("Top 5 power ratings", top5)}'
         f'{theme.summary_card("Buy candidates", flagged(-1), early or "Record · wins under expectation (W − xW).")}'
@@ -327,11 +270,11 @@ def generate_html(power, metrics, days, info):
                                       ('Trade Signal', '')], rows)
         + theme.method_note(
             f'<b>Rating</b> is points above or below an average Division I team (0.0); the gap between two teams is the '
-            f'projected margin at a neutral site. Torvik\'s adjusted efficiency margin (per 100 possessions) is converted '
-            f'to points per game at {AVG_POSSESSIONS:g} possessions. Sonny Moore: PR ({theme.esc(info["sonny_asof"] or "date unknown")})'
-            f'{stale}. Each source is centered on its D1 average and rescaled to a common SD of {s["target_sd"]:.2f} points, '
-            f'then blended {int(SOURCE_WEIGHTS["torvik"] * 100)}/{int(SOURCE_WEIGHTS["sonny"] * 100)}. Raw scales: {stats_txt}. '
-            f'Unmatched names: {theme.esc(unmatched)}.'))
+            f'projected margin at a neutral site. This build blends <b>{theme.esc(blend)}</b>, equally weighted. In season '
+            f'that is TeamRankings\' predictive rating plus Warren Nolan\'s Elo; before TeamRankings switches to this season, '
+            f'Warren Nolan is blended with Torvik\'s saved preseason ratings. Each source is centered on its D1 average and '
+            f'rescaled to a common spread (SD {s["target_sd"]:.2f} points; Elo and per-100-possession ratings convert to '
+            f'points this way). Raw scales: {stats_txt}. Unmatched names: {theme.esc(unmatched)}.'))
 
     # --- Value tab ---
     if fv.empty:
@@ -402,7 +345,7 @@ def generate_html(power, metrics, days, info):
         title='AlphaPoint CBB Dashboard', league='CBB', headline='CBB Power & Value',
         meta_items=[('Season', f'{SEASON - 1}-{str(SEASON)[2:]}'), ('Updated', datetime.now().strftime('%b %d, %I:%M %p'))],
         tabs=[('power', 'Power Ratings', power_html), ('value', 'Value Metrics', value_html), ('games', 'Games', games_html)],
-        footer='AlphaPoint Sports · Data: Bart Torvik, Sonny Moore, collegebasketballdata.com, ESPN · Logos: ESPN · '
+        footer='AlphaPoint Sports · Data: TeamRankings, Warren Nolan, Bart Torvik (preseason), collegebasketballdata.com, ESPN · Logos: ESPN · '
                'Not financial or gambling advice')
     theme.write_outputs(page, HTML_OUTPUT, SHARE_OUTPUT, 'CBB_NO_BROWSER')
 
@@ -416,12 +359,10 @@ def main():
     print(f'  ALPHAPOINT SPORTS — CBB DASHBOARD  |  {SEASON - 1}-{str(SEASON)[2:]}')
     print('█' * 80)
 
-    print('\n[1/4] Teams & power ratings (Torvik + Sonny Moore)...')
+    print('\n[1/4] Teams & power ratings...')
     teams = vm.d1_teams()
-    torvik = fetch_torvik()
-    sonny, sonny_asof, sonny_src = fetch_sonny()
-    print(f'  Teams: {len(teams)}  |  Torvik: {len(torvik)}  |  Sonny Moore: {len(sonny)} ({sonny_src})')
-    power, scale = build_power(teams, torvik, sonny)
+    sources, unmatched = load_sources(teams)
+    power, scale = build_power(teams, sources, unmatched)
     for src, names in scale['unmatched'].items():
         print(f'  ! {src} names not matched: {", ".join(names)}')
     print(f"  Power 4 + Big East teams: {(power['conference'] != '').sum()}")
@@ -437,7 +378,7 @@ def main():
           + (f" ({', '.join(d.strftime('%b %d') for d, _ in days)})" if days else ''))
 
     print('[4/4] Building dashboard...')
-    generate_html(power, metrics, days, {'scale': scale, 'sonny_asof': sonny_asof, 'sonny_src': sonny_src})
+    generate_html(power, metrics, days, {'scale': scale})
 
 
 if __name__ == '__main__':

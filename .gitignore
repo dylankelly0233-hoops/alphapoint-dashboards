@@ -10,6 +10,9 @@ p4_*.csv
 p4_*.html
 nfl_*.csv
 nfl_*.html
+cbb_teamrankings_*.html
+cbb_warrennolan_*.html
+cbb_evanmiya.html
 news_cache_*.json
 odds_api_*.json
 injury_candidates_*.json
