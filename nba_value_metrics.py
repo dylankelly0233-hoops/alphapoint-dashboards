@@ -71,7 +71,9 @@ def _stale(path, hours=CACHE_HOURS):
 def espn_get(path, params=None, tries=3):
     for attempt in range(tries):
         try:
-            r = requests.get(f'{ESPN_NBA}/{path}', params=params, timeout=30)
+            # Retries add a throwaway parameter: ESPN's CDN sometimes keeps serving a cached error for one exact URL
+            p = dict(params or {}, **({'_': int(time.time()) + attempt} if attempt else {}))
+            r = requests.get(f'{ESPN_NBA}/{path}', params=p, timeout=30)
             r.raise_for_status()
             return r.json()
         except Exception as e:
