@@ -98,7 +98,8 @@ def best_spots():
     """
     Upcoming games (from each dashboard's spots_{sport}.json) whose situational tags and trade signals all
     back the same team, and where our projected line agrees or leans the other way by no more than
-    SPOTS_TOLERANCE points. Strongest agreement first up to SPOTS_MAX, shown in kickoff order.
+    SPOTS_TOLERANCE points (strongest agreement first, up to SPOTS_MAX), plus every NFL teaser leg,
+    which always shows. Listed in kickoff order.
     """
     spots = []
     for sport in ('cfb', 'nfl', 'cbb'):
@@ -108,15 +109,18 @@ def best_spots():
         except (OSError, ValueError):
             continue
     now = datetime.now().astimezone()
-    keep = []
+    keep, teasers = [], []
     for s in spots:
         s['dt'] = datetime.fromisoformat(s['kick'])
         sides = {team for _, team in _backing(s)}
-        if s['dt'] > now and len(sides) == 1:
-            s['side'] = sides.pop()
-            if _lean(s, s['side']) >= -SPOTS_TOLERANCE:
-                keep.append(s)
-    keep = sorted(keep, key=lambda s: (len(_backing(s)), _lean(s, s['side'])), reverse=True)[:SPOTS_MAX]
+        if s['dt'] <= now or len(sides) != 1:
+            continue
+        s['side'] = sides.pop()
+        if any(label.startswith('Teaser') for label, _ in s['tags']):
+            teasers.append(s)           # every leg that fits the teaser research shows, whatever our line says
+        elif _lean(s, s['side']) >= -SPOTS_TOLERANCE:
+            keep.append(s)
+    keep = teasers + sorted(keep, key=lambda s: (len(_backing(s)), _lean(s, s['side'])), reverse=True)[:SPOTS_MAX]
     if not keep:
         return ('<section class="card spots"><div class="spots-head"><h2>Best spots</h2></div>'
                 '<p class="hint">No games this week where our line and a tag or trade signal agree yet.</p></section>')
@@ -146,7 +150,7 @@ def best_spots():
     title = "Today's best spots" if any(s['dt'].date() == today for s in keep) else 'Best spots this week'
     return (f'<section class="card spots"><div class="spots-head"><h2>{title}</h2>'
             f'<span class="hint">Tags and trade signals back one side, and our line agrees or is within '
-            f'{SPOTS_TOLERANCE:g} points · next 7 days</span></div>'
+            f'{SPOTS_TOLERANCE:g} points, plus every teaser leg · next 7 days</span></div>'
             f'<ol class="spotlist">{rows}</ol></section>')
 
 # Info tab: what each dashboard tab shows (dashboard → [(tab, description)])
@@ -175,9 +179,9 @@ INFO = [
     ('Research spots', [
         ('Best spots', 'The home page lists upcoming games where every situational tag (bounce-back, teaser leg) and trade '
                        'signal (a BUY team, or the opponent of a SELL team) backs the same side, and our projected line '
-                       'agrees with it or leans the other way by no more than 1.5 points. Teaser legs are judged against '
-                       'our line only, since trade signals are about covering the spread. The number on the right is our '
-                       'edge toward that side.'),
+                       'agrees with it or leans the other way by no more than 1.5 points. Every NFL teaser leg that fits '
+                       'the teaser research always shows, whatever our line or the trade signals say. The number on the '
+                       'right is our edge toward that side.'),
         ('Bounce-back (CFB)', 'An away team coming off a loss by 28+ points. In a 2016–25 backtest these teams covered 55.4% '
                               'of 739 games.'),
         ('Teaser legs (NFL)', 'Underdogs of +1.5 to +3 in games with a total of 46 or lower or a division matchup, teased 6 '
