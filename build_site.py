@@ -31,15 +31,17 @@ DASHBOARDS = [
 ]
 
 LANDING_CSS = """
-.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 210px), 1fr)); gap: 16px; margin-top: 6px; }
-.tile { display: flex; flex-direction: column; gap: 6px; padding: 26px 24px 22px; text-decoration: none; color: var(--ink);
-        border-top: 5px solid var(--accent); transition: transform .15s ease, box-shadow .15s ease; }
-.tile:hover, .tile:focus-visible { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(10, 20, 40, .12); outline: none; }
-.tile .abbr { font: 800 clamp(48px, 9vw, 72px)/.9 var(--display); letter-spacing: 1px; }
-.tile .name { font: 700 20px/1.1 var(--display); text-transform: uppercase; letter-spacing: .8px; }
-.tile .cov { color: var(--muted); font-size: 14px; }
-.tile .go { margin-top: 14px; font: 700 13px/1 var(--display); letter-spacing: 1.2px; text-transform: uppercase; color: var(--accent); }
-.tile .warn { color: var(--neg); font-size: 13px; }
+.tiles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 0 0 18px; }
+.tile { display: flex; flex-direction: column; gap: 4px; padding: 14px 16px 12px; text-decoration: none; color: var(--ink);
+        border-top: 4px solid var(--accent); transition: transform .15s ease, box-shadow .15s ease; }
+.tile:hover, .tile:focus-visible { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(10, 20, 40, .12); outline: none; }
+.tile .abbr { font: 800 clamp(30px, 5vw, 42px)/.9 var(--display); letter-spacing: 1px; }
+.tile .name { font: 700 15px/1.1 var(--display); text-transform: uppercase; letter-spacing: .6px; }
+.tile .cov { color: var(--muted); font-size: 13px; }
+.tile .go { margin-top: 6px; font: 700 12px/1 var(--display); letter-spacing: 1.2px; text-transform: uppercase; color: var(--accent); }
+.tile .warn { color: var(--neg); font-size: 12px; }
+@media (max-width: 560px) { .tiles { gap: 8px; } .tile { padding: 11px 10px 10px; } .tile .name { font-size: 12.5px; }
+                            .tile .cov { display: none; } }
 .updated { margin-top: 16px; }
 .info { display: grid; gap: 16px; }
 .info section { padding: 18px 20px 6px; }
@@ -218,9 +220,9 @@ def landing(results):
     for page, _, _, abbr, name, coverage in DASHBOARDS:
         warn = '' if results.get(page, True) else '<span class="warn">Last refresh failed — showing the previous version</span>'
         tiles += (f'<a class="card tile" href="{page}"><span class="abbr">{abbr}</span><span class="name">{theme.esc(name)}</span>'
-                  f'<span class="cov">{theme.esc(coverage)}</span>{warn}<span class="go">Open dashboard →</span></a>')
+                  f'<span class="cov">{theme.esc(coverage)}</span>{warn}<span class="go">Open →</span></a>')
     updated = datetime.now().strftime('%b %d, %I:%M %p').replace(' 0', ' ')
-    home = (f'{best_spots()}<div class="tiles">{tiles}</div>'
+    home = (f'<div class="tiles">{tiles}</div>{best_spots()}'
             f'<p class="hint updated">Updated {updated} ET · refreshes every hour, 8 AM to midnight</p>')
     info = '<div class="info">' + ''.join(
         f'<section class="card"><h3>{theme.esc(title)}</h3><dl>'
