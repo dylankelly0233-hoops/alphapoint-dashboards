@@ -206,7 +206,7 @@ def team_modal(data):
 # ==========================================
 def spot(sport, page, kick, away, home, ours, market, tags=(), signals=()):
     """
-    One upcoming game for the home page. ours / market = home margins; tags = plain-text labels;
+    One upcoming game for the home page. ours / market = home margins; tags = [(label, team the tag favors)];
     signals = [(team, 'BUY'|'SELL')]. Returns None for games already started or without a kickoff time.
     """
     if kick is None or (isinstance(kick, float) and kick != kick) or pd.isna(kick):
@@ -221,7 +221,7 @@ def spot(sport, page, kick, away, home, ours, market, tags=(), signals=()):
             'market': line_text(home, away, market) if not _nan(market) else '—',
             'edge': None if edge is None else round(abs(edge), 1),
             'edge_side': None if edge is None or abs(edge) < theme.EDGE_MIN else (home if edge > 0 else away),
-            'tags': list(tags), 'signals': [list(s) for s in signals if s[1]]}
+            'tags': [list(t) for t in tags], 'signals': [list(s) for s in signals if s[1]]}
 
 
 def write_spots(sport, spots):

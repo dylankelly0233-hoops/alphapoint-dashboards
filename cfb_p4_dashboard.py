@@ -401,13 +401,14 @@ def last_results(games, week, season_type):
 
 
 def blowout_tags(r, last):
-    """(tag html, labels) when the away team is coming off a 28+ point loss (the bounce-back spot)."""
+    """(tag html, [(label, team it favors)]) when the away team is coming off a 28+ point loss (the bounce-back spot)."""
     margin, opp = last.get(r.away, (0, ''))
     if r.completed or margin > -BLOWOUT_MARGIN:
         return '', []
     label = f'Bounce-back: {r.away}'
     return (ex.tag(label, 'bounce', f'{r.away} lost by {-margin} to {opp} last time out. Away teams off a '
-                                    f'{BLOWOUT_MARGIN}+ point loss covered 55.4% (739 games, 2016–25, +5.6% ROI).'), [label])
+                                    f'{BLOWOUT_MARGIN}+ point loss covered 55.4% (739 games, 2016–25, +5.6% ROI).'),
+            [(label, r.away)])
 
 
 def team_log(games, lines, team):

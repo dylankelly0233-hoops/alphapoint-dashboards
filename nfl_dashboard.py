@@ -308,7 +308,7 @@ def _line_text(team_fav, pts):
 
 
 def teaser_tag(r):
-    """(tag html, short label) when this game's underdog fits the teaser rules, else ('', '')."""
+    """(tag html, (label, team it favors)) when this game's underdog fits the teaser rules, else ('', '')."""
     if r.score or pd.isna(r.market):
         return '', ''
     pts = abs(r.market)
@@ -320,12 +320,12 @@ def teaser_tag(r):
     if pts in TEASER_MAX_LINES and low:
         return (ex.tag(f'Teaser ★ {label}', 'teaser max',
                        f'Max-edge teaser leg: +1.5 / +2.5 underdog, total {r.total:g} (≤{TEASER_TOTAL_MAX}). '
-                       f'~78.5% of legs won out of sample; full sample is lower. Needs −110 pricing.'), f'Teaser ★ {label}')
+                       f'~78.5% of legs won out of sample; full sample is lower. Needs −110 pricing.'), (f'Teaser ★ {label}', dog))
     if low or r.div:
         why = f'total {r.total:g}' if low else 'division game'
         return (ex.tag(f'Teaser {label}', 'teaser',
                        f'Core teaser leg: underdog +1.5 to +3, {why}. ~77% of legs won out of sample; '
-                       f'pair with another qualifying dog, never a favorite. Needs −110 pricing.'), f'Teaser {label}')
+                       f'pair with another qualifying dog, never a favorite. Needs −110 pricing.'), (f'Teaser {label}', dog))
     return '', ''
 
 

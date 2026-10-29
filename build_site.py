@@ -70,13 +70,21 @@ LANDING_CSS = """
                             .sday { grid-column: 1 / -1; } }
 """
 
-SPOTS_MAX = 10
+SPOTS_MAX = 12
+
+
+def _backing(s):
+    """[(label, team it favors)] for a spot's situational tags and trade signals (a SELL favors the opponent)."""
+    other = {s['home']: s['away'], s['away']: s['home']}
+    return ([(label, team) for label, team in s['tags']]
+            + [(f'{team} {sig}', team if sig == 'BUY' else other.get(team)) for team, sig in s['signals']])
 
 
 def best_spots():
     """
-    The strongest upcoming games from spots_{sport}.json (written by each dashboard): every game with a
-    situational tag, plus the biggest edges of EDGE_STRONG+ points up to SPOTS_MAX rows, in kickoff order.
+    Upcoming games (from each dashboard's spots_{sport}.json) where our projected line and every situational
+    tag / trade signal on the game point to the same team. Biggest edges first up to SPOTS_MAX, shown in
+    kickoff order. Games whose tags disagree with our number, or with each other, are left out.
     """
     spots = []
     for sport in ('cfb', 'nfl', 'cbb'):
@@ -86,16 +94,16 @@ def best_spots():
         except (OSError, ValueError):
             continue
     now = datetime.now().astimezone()
+    keep = []
     for s in spots:
         s['dt'] = datetime.fromisoformat(s['kick'])
-    upcoming = [s for s in spots if s['dt'] > now]
-    tagged = [s for s in upcoming if s['tags']]                     # rare, so every tagged spot is shown
-    edges = sorted((s for s in upcoming if not s['tags'] and (s['edge'] or 0) >= theme.EDGE_STRONG),
-                   key=lambda s: s['edge'], reverse=True)
-    keep = tagged + edges[:max(SPOTS_MAX - len(tagged), 4)]
+        backing = _backing(s)
+        if s['dt'] > now and s['edge_side'] and backing and all(team == s['edge_side'] for _, team in backing):
+            keep.append(s)
+    keep = sorted(keep, key=lambda s: (len(_backing(s)), s['edge']), reverse=True)[:SPOTS_MAX]
     if not keep:
         return ('<section class="card spots"><div class="spots-head"><h2>Best spots</h2></div>'
-                '<p class="hint">No edges of 3+ points or tagged spots in the next week yet.</p></section>')
+                '<p class="hint">No games this week where our line and a tag or trade signal agree yet.</p></section>')
     today = now.date()
     rows = ''
     for s in sorted(keep, key=lambda s: s['dt']):
@@ -107,7 +115,7 @@ def best_spots():
             cls = 'edge strong' if s['edge'] >= theme.EDGE_STRONG else 'edge'
             edge = f'<span class="{cls}">{theme.esc(s["edge_side"])} {theme.spread_num(s["edge"])}</span>'
         tags = ''.join(f'<span class="gtag {"bounce" if t.startswith("Bounce") else "teaser max" if "★" in t else "teaser"}">'
-                       f'{theme.esc(t)}</span>' for t in s['tags'])
+                       f'{theme.esc(t)}</span>' for t, _ in s['tags'])
         tags += ''.join(f'<span class="pill {sig.lower()}">{theme.esc(team)} {sig}</span>' for team, sig in s['signals'])
         rows += (f'<li><a href="{theme.esc(s["page"])}"><span class="sday">{theme.esc(when)}</span>'
                  f'<span class="ssport">{theme.esc(s["sport"])}</span>'
@@ -117,7 +125,7 @@ def best_spots():
                  f'<span class="sedge">{edge}</span></a></li>')
     title = "Today's best spots" if any(s['dt'].date() == today for s in keep) else 'Best spots this week'
     return (f'<section class="card spots"><div class="spots-head"><h2>{title}</h2>'
-            f'<span class="hint">Edges of {theme.EDGE_STRONG:g}+ points and tagged spots, next 7 days</span></div>'
+            f'<span class="hint">Our line and every tag or trade signal on the game back the same side · next 7 days</span></div>'
             f'<ol class="spotlist">{rows}</ol></section>')
 
 # Info tab: what each dashboard tab shows (dashboard → [(tab, description)])
@@ -144,8 +152,9 @@ INFO = [
                         'starters, and players returning. Curated once a day.'),
     ]),
     ('Research spots', [
-        ('Best spots', 'The home page lists the strongest upcoming games across all three sports: edges of 3+ points and '
-                       'games with a situational tag.'),
+        ('Best spots', 'The home page lists upcoming games where our projected line and the game\'s tags agree: the side '
+                       'our number likes is also the side backed by every situational tag (bounce-back, teaser leg) and '
+                       'trade signal (a BUY team, or the opponent of a SELL team). Games where they disagree are left out.'),
         ('Bounce-back (CFB)', 'An away team coming off a loss by 28+ points. In a 2016–25 backtest these teams covered 55.4% '
                               'of 739 games.'),
         ('Teaser legs (NFL)', 'Underdogs of +1.5 to +3 in games with a total of 46 or lower or a division matchup, teased 6 '
