@@ -56,6 +56,7 @@ jobs:
             nfl_*.html
             cbb_teamrankings_*.html
             nbav_*.csv
+            nbav_*.txt
             nba_*.html
             cbb_warrennolan_*.html
             cbb_evanmiya.html

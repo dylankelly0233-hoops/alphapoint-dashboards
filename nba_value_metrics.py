@@ -188,13 +188,18 @@ def fetch_games():
         return box, players, spreads, sched
 
     done_ids = set(box['game_id']) if not box.empty else set()
-    last_full = (pd.to_datetime(sched.loc[sched['completed'] == 1, 'date']).max().date()
-                 if not sched.empty and (sched['completed'] == 1).any() else SEASON_START)
-    start = max(SEASON_START, last_full - timedelta(days=RESCAN_DAYS))
+    # Days whose scoreboard and finished games all loaded are recorded, so a failed request is retried next run
+    scanned_path = _cache('scanned').replace('.csv', '.txt')
+    scanned = set(open(scanned_path).read().split()) if os.path.exists(scanned_path) else set()
+    recent = date.today() - timedelta(days=RESCAN_DAYS)
     new_box, new_players, new_spreads, sched_rows = [], [], [], []
-    day = start
+    day = SEASON_START
     while day <= date.today():
+        if day.isoformat() in scanned and day < recent:
+            day += timedelta(days=1)
+            continue
         sb = espn_get('scoreboard', {'dates': day.strftime('%Y%m%d')})
+        ok = 'events' in sb
         for ev in sb.get('events') or []:
             if (ev.get('season') or {}).get('type') not in (2, 3, 5):    # regular season, playoffs, play-in
                 continue
@@ -205,12 +210,19 @@ def fetch_games():
                                'away': side.get('away'), 'completed': int(completed)})
             if completed and str(ev['id']) not in done_ids:
                 b, p, sp = _summary(ev['id'], day.isoformat())
+                ok = ok and bool(b)
                 new_box += b
                 new_players += p
                 if sp:
                     new_spreads.append(dict(zip(['game_id', 'home_team', 'spread'], sp)))
                 time.sleep(0.2)
+            elif not completed:
+                ok = False                     # unfinished games: look at this day again next run
+        if ok:
+            scanned.add(day.isoformat())
         day += timedelta(days=1)
+    with open(scanned_path, 'w') as f:
+        f.write('\n'.join(sorted(scanned)))
 
     if sched_rows:
         sched = pd.concat([sched[~sched['game_id'].isin({r['game_id'] for r in sched_rows})], pd.DataFrame(sched_rows)],
