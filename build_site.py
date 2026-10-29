@@ -106,7 +106,7 @@ def best_spots():
         if s['edge_side'] and s['edge'] is not None:
             cls = 'edge strong' if s['edge'] >= theme.EDGE_STRONG else 'edge'
             edge = f'<span class="{cls}">{theme.esc(s["edge_side"])} {theme.spread_num(s["edge"])}</span>'
-        tags = ''.join(f'<span class="gtag {"bounce" if t.startswith("Bounce") else "fade" if t.startswith("Fade") else "teaser max" if "★" in t else "teaser"}">'
+        tags = ''.join(f'<span class="gtag {"bounce" if t.startswith("Bounce") else "teaser max" if "★" in t else "teaser"}">'
                        f'{theme.esc(t)}</span>' for t in s['tags'])
         tags += ''.join(f'<span class="pill {sig.lower()}">{theme.esc(team)} {sig}</span>' for team, sig in s['signals'])
         rows += (f'<li><a href="{theme.esc(s["page"])}"><span class="sday">{theme.esc(when)}</span>'
@@ -147,7 +147,7 @@ INFO = [
         ('Best spots', 'The home page lists the strongest upcoming games across all three sports: edges of 3+ points and '
                        'games with a situational tag.'),
         ('Bounce-back (CFB)', 'An away team coming off a loss by 28+ points. In a 2016–25 backtest these teams covered 55.4% '
-                              'of 739 games. A home team in the same spot covered only 47.2%, so it is tagged as a fade spot.'),
+                              'of 739 games.'),
         ('Teaser legs (NFL)', 'Underdogs of +1.5 to +3 in games with a total of 46 or lower or a division matchup, teased 6 '
                               'points through 3 and 7: about 77% of legs won out of sample (2015–25); +1.5 / +2.5 dogs with a '
                               'low total (★) about 78.5%. Break-even is 72.4% per leg at −110, so pricing matters.'),

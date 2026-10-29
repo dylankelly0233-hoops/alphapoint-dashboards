@@ -459,7 +459,7 @@ td.pos { color: var(--pos); font-weight: 600; } td.neg { color: var(--neg); font
 .gtags { display: flex; flex-wrap: wrap; gap: 6px; padding: 8px 14px 0; }
 .gtag { font: 700 11px/1 var(--display); letter-spacing: .9px; text-transform: uppercase; padding: 5px 8px; border-radius: 5px;
         color: var(--chip-ink); background: var(--accent); cursor: help; }
-.gtag.bounce { background: var(--pos); } .gtag.fade { background: var(--neg); }
+.gtag.bounce { background: var(--pos); }
 .gtag.teaser { background: #6d4bd8; } .gtag.teaser.max { background: #4a2fb0; }
 .lmove { padding: 8px 14px 10px; font-size: 13px; color: var(--muted); border-top: 1px solid var(--line); }
 .lmove .k { font: 700 11px/1 var(--display); letter-spacing: 1px; text-transform: uppercase; margin-right: 8px; }

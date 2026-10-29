@@ -71,7 +71,7 @@ SOURCE_WEIGHTS  = {'sagarin': 0.50, 'sp': 0.50}
 HFA_POINTS      = 2.5
 
 # Bounce-back tags, from Dylan's CFB backtest (2016–25): an AWAY team coming off a loss by 28+ points
-# covered 55.4% of 739 games (+5.6% ROI). The same spot for a HOME team covered only 47.2% (a fade).
+# covered 55.4% of 739 games (+5.6% ROI). Only away teams are tagged.
 BLOWOUT_MARGIN  = 28
 
 # Source name → CFBD name. Anything not listed is matched after normalizing
@@ -401,25 +401,13 @@ def last_results(games, week, season_type):
 
 
 def blowout_tags(r, last):
-    """(tag html, labels) for teams coming off a 28+ point loss: bounce-back when away, fade spot when home."""
-    if r.completed:
+    """(tag html, labels) when the away team is coming off a 28+ point loss (the bounce-back spot)."""
+    margin, opp = last.get(r.away, (0, ''))
+    if r.completed or margin > -BLOWOUT_MARGIN:
         return '', []
-    html_out, labels = '', []
-    for team, away in ((r.away, True), (r.home, False)):
-        margin, opp = last.get(team, (0, ''))
-        if margin > -BLOWOUT_MARGIN:
-            continue
-        lost = f'{team} lost by {-margin} to {opp} last time out.'
-        if away:
-            label = f'Bounce-back: {team}'
-            html_out += ex.tag(label, 'bounce', f'{lost} Away teams off a {BLOWOUT_MARGIN}+ point loss covered 55.4% '
-                                                f'(739 games, 2016–25, +5.6% ROI).')
-        else:
-            label = f'Fade spot: {team}'
-            html_out += ex.tag(label, 'fade', f'{lost} Home teams off a {BLOWOUT_MARGIN}+ point loss covered only 47.2% '
-                                              f'(2016–25).')
-        labels.append(label)
-    return html_out, labels
+    label = f'Bounce-back: {r.away}'
+    return (ex.tag(label, 'bounce', f'{r.away} lost by {-margin} to {opp} last time out. Away teams off a '
+                                    f'{BLOWOUT_MARGIN}+ point loss covered 55.4% (739 games, 2016–25, +5.6% ROI).'), [label])
 
 
 def team_log(games, lines, team):
@@ -548,8 +536,7 @@ def generate_html(p4, vals, sched, week, season_type, info):
             f'{theme.EDGE_MIN:g} show as None. FCS opponents are rated with Sagarin only. Trade signals come from the value metrics. '
             f'<b>Line</b> shows where the spread opened and where it is now, and whether the market has moved toward our '
             f'number (a good sign for the edge) or away from it. <b>Bounce-back</b> tags an away team coming off a '
-            f'{BLOWOUT_MARGIN}+ point loss: in Dylan\'s 2016–25 backtest those teams covered 55.4% of 739 games (+5.6% ROI). '
-            f'<b>Fade spot</b> tags a home team in the same spot, which covered only 47.2%.'))
+            f'{BLOWOUT_MARGIN}+ point loss: in Dylan\'s 2016–25 backtest those teams covered 55.4% of 739 games (+5.6% ROI).'))
 
     # --- Injury Wire tab ---
     games = [{'away': r.away, 'home': r.home,
