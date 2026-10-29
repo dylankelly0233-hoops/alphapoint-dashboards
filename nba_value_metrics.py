@@ -68,19 +68,29 @@ def _stale(path, hours=CACHE_HOURS):
     return not os.path.exists(path) or (time.time() - os.path.getmtime(path)) / 3600 > hours
 
 
-def espn_get(path, params=None, tries=3):
+ESPN_HOSTS = ['https://site.api.espn.com', 'https://site.web.api.espn.com']   # same API on two hosts
+
+
+def espn_get(path, params=None, tries=4):
+    """
+    GET an ESPN NBA endpoint. Retries alternate between ESPN's two API hosts and add a throwaway
+    parameter: from GitHub's servers, ESPN sometimes keeps answering one exact URL with a non-JSON error.
+    """
+    last = ''
     for attempt in range(tries):
+        host = ESPN_HOSTS[attempt % len(ESPN_HOSTS)]
+        p = dict(params or {}, **({'_': int(time.time()) + attempt} if attempt else {}))
+        r = None
         try:
-            # Retries add a throwaway parameter: ESPN's CDN sometimes keeps serving a cached error for one exact URL
-            p = dict(params or {}, **({'_': int(time.time()) + attempt} if attempt else {}))
-            r = requests.get(f'{ESPN_NBA}/{path}', params=p, timeout=30)
+            r = requests.get(f'{host}{ESPN_NBA[len(ESPN_HOSTS[0]):]}/{path}', params=p, timeout=30)
             r.raise_for_status()
             return r.json()
         except Exception as e:
-            if attempt == tries - 1:
-                print(f'  ! ESPN {path} {params or ""}: {e}')
-                return {}
-            time.sleep(1.5)
+            seen = f'HTTP {r.status_code}, {len(r.content)} bytes: {" ".join(r.text[:80].split())!r}' if r is not None else 'no response'
+            last = f'{e} [{seen}]'
+            time.sleep(1.5 * (attempt + 1))
+    print(f'  ! ESPN {path} {params or ""}: {last}')
+    return {}
 
 
 # ==========================================

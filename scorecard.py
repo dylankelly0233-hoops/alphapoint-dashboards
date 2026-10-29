@@ -32,12 +32,15 @@ def _path(sport):
     return f'scorecard_{sport}.csv'
 
 
+TEXT_COLS = ['sport', 'game_id', 'week', 'kickoff', 'home', 'away', 'kind', 'side', 'first_logged', 'last_logged', 'result']
+
+
 def load(sport):
     p = _path(sport)
-    if os.path.exists(p):
-        df = pd.read_csv(p, dtype={'game_id': str})
-        return df.reindex(columns=COLS)
-    return pd.DataFrame(columns=COLS)
+    df = pd.read_csv(p, dtype={'game_id': str}).reindex(columns=COLS) if os.path.exists(p) else pd.DataFrame(columns=COLS)
+    # A column that is still all blank reads as numbers; pandas 3 then refuses to write 'W' into it
+    df[TEXT_COLS] = df[TEXT_COLS].astype(object)
+    return df
 
 
 def log_picks(sport, games):
