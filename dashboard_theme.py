@@ -360,6 +360,8 @@ a.mark:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; bo
 .meta b { color: var(--mast-ink); font-weight: 600; }
 h1.title { font: 700 clamp(26px, 4vw, 38px)/1.05 var(--display); text-transform: uppercase; letter-spacing: .3px;
            margin: 14px 0 12px; text-wrap: balance; }
+h1.title.has-sub { margin-bottom: 6px; }
+.subtitle { margin: 0 0 14px; max-width: 70ch; color: var(--mast-muted); font-size: 15px; line-height: 1.45; text-wrap: pretty; }
 nav.tabs { display: flex; gap: 4px; overflow-x: auto; }
 nav.tabs button { font: 600 15px/1 var(--display); letter-spacing: .8px; text-transform: uppercase; color: var(--mast-muted);
                   background: none; border: 0; padding: 12px 14px 13px; border-bottom: 3px solid transparent; cursor: pointer;
@@ -703,10 +705,11 @@ document.querySelectorAll('table.sortable').forEach(t => {
 """
 
 
-def render_page(*, title, league, headline, meta_items, tabs, footer, extra=''):
+def render_page(*, title, league, headline, meta_items, tabs, footer, extra='', subtitle=''):
     """
     tabs: list of (id, label, html). The first tab opens by default (or the one in the link's #hash).
     meta_items: list of (label, value) shown in the masthead. extra: markup after the page (team pop-up).
+    subtitle: optional line under the headline.
     Returns the page as a fragment (title, fonts, style, markup, script).
     """
     meta = ''.join(f'<span>{esc(k)} <b>{esc(v)}</b></span>' for k, v in meta_items)
@@ -725,7 +728,7 @@ def render_page(*, title, league, headline, meta_items, tabs, footer, extra=''):
     <div class="brand"><a class="mark" href="index.html" title="AlphaPoint Sports home">Alpha<span>Point</span> Sports</a><span class="league">{esc(league)}</span></div>
     <div class="meta">{meta}</div>
   </div>
-  <h1 class="title">{esc(headline)}</h1>
+  <h1 class="title{' has-sub' if subtitle else ''}">{esc(headline)}</h1>{f'<p class="subtitle">{esc(subtitle)}</p>' if subtitle else ''}
   <nav class="tabs" role="tablist">{nav}</nav>
 </div></header>
 <main><div class="wrap">{pages}</div></main>

@@ -314,7 +314,9 @@ def landing(results):
         f'<section class="card"><h3>{theme.esc(title)}</h3><dl>'
         + ''.join(f'<dt>{theme.esc(k)}</dt><dd>{theme.esc(v)}</dd>' for k, v in rows) + '</dl></section>'
         for title, rows in INFO) + '</div>'
-    page = theme.render_page(title='AlphaPoint Sports', league='Home', headline='Power, value & markets',
+    page = theme.render_page(title='AlphaPoint Sports', league='Home', headline='Sharper research, every game',
+                             subtitle='Power ratings, value metrics and market data for the NFL, college football, '
+                                      'college basketball and the NBA. Research, not picks.',
                              meta_items=[('Updated', updated)],
                              tabs=[('home', 'Dashboards', home), ('guide', 'How to use', guide()), ('info', 'Info', info)],
                              footer='AlphaPoint Sports · Not financial or gambling advice')
