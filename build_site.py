@@ -75,10 +75,16 @@ SPOTS_TOLERANCE = 1.5   # a tagged side still shows when our line leans the othe
 
 
 def _backing(s):
-    """[(label, team it favors)] for a spot's situational tags and trade signals (a SELL favors the opponent)."""
+    """
+    [(label, team it favors)] for a spot's situational tags and trade signals (a SELL favors the opponent).
+    Teaser legs are judged on the tag alone: trade signals are about covering the spread, while a teased
+    dog only has to stay within 7–9 points.
+    """
     other = {s['home']: s['away'], s['away']: s['home']}
-    return ([(label, team) for label, team in s['tags']]
-            + [(f'{team} {sig}', team if sig == 'BUY' else other.get(team)) for team, sig in s['signals']])
+    tags = [(label, team) for label, team in s['tags']]
+    if any(label.startswith('Teaser') for label, _ in tags):
+        return tags
+    return tags + [(f'{team} {sig}', team if sig == 'BUY' else other.get(team)) for team, sig in s['signals']]
 
 
 def _lean(s, team):
@@ -129,7 +135,8 @@ def best_spots():
                     f'<span class="sline">{"no edge" if lean == 0 else f"our line −{theme.spread_num(-lean)}"}</span>')
         tags = ''.join(f'<span class="gtag {"bounce" if t.startswith("Bounce") else "teaser max" if "★" in t else "teaser"}">'
                        f'{theme.esc(t)}</span>' for t, _ in s['tags'])
-        tags += ''.join(f'<span class="pill {sig.lower()}">{theme.esc(team)} {sig}</span>' for team, sig in s['signals'])
+        if not any(t.startswith('Teaser') for t, _ in s['tags']):     # teaser rows ignore trade signals
+            tags += ''.join(f'<span class="pill {sig.lower()}">{theme.esc(team)} {sig}</span>' for team, sig in s['signals'])
         rows += (f'<li><a href="{theme.esc(s["page"])}"><span class="sday">{theme.esc(when)}</span>'
                  f'<span class="ssport">{theme.esc(s["sport"])}</span>'
                  f'<span class="smain"><span class="smatch">{theme.esc(s["away"])} @ {theme.esc(s["home"])}</span>'
@@ -168,7 +175,8 @@ INFO = [
     ('Research spots', [
         ('Best spots', 'The home page lists upcoming games where every situational tag (bounce-back, teaser leg) and trade '
                        'signal (a BUY team, or the opponent of a SELL team) backs the same side, and our projected line '
-                       'agrees with it or leans the other way by no more than 1.5 points. The number on the right is our '
+                       'agrees with it or leans the other way by no more than 1.5 points. Teaser legs are judged against '
+                       'our line only, since trade signals are about covering the spread. The number on the right is our '
                        'edge toward that side.'),
         ('Bounce-back (CFB)', 'An away team coming off a loss by 28+ points. In a 2016–25 backtest these teams covered 55.4% '
                               'of 739 games.'),
