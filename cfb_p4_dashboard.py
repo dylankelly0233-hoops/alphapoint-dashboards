@@ -41,6 +41,7 @@ import requests
 
 import cfb_value_metrics as vm
 import dashboard_theme as theme
+import extras as ex
 import injury_wire as wire
 import markets as mk
 import scorecard
@@ -68,6 +69,10 @@ SOURCE_WEIGHTS  = {'sagarin': 0.50, 'sp': 0.50}
 # CFB home field has shrunk from the old ~3+ points; markets price an average team at about
 # 2.5 now (Sagarin's 3.65 includes FCS mismatches and older seasons).
 HFA_POINTS      = 2.5
+
+# Bounce-back tags, from Dylan's CFB backtest (2016–25): an AWAY team coming off a loss by 28+ points
+# covered 55.4% of 739 games (+5.6% ROI). The same spot for a HOME team covered only 47.2% (a fade).
+BLOWOUT_MARGIN  = 28
 
 # Source name → CFBD name. Anything not listed is matched after normalizing
 # case, punctuation, accents, and a trailing "ST." → "STATE".
@@ -376,6 +381,61 @@ def _line_text(team_fav, pts):
     return 'PICK' if pts < 0.25 else f'{theme.esc(team_fav)} −{theme.spread_num(pts)}'
 
 
+def load_results():
+    """Every completed game this season (FBS and FCS) in play order, plus {game_id: closing spread} (CFBD convention)."""
+    games = pd.read_csv(vm.GAMES_CACHE) if os.path.exists(vm.GAMES_CACHE) else pd.DataFrame(
+        columns=['game_id', 'week', 'season_type', 'home_team', 'away_team', 'home_pts', 'away_pts', 'neutral'])
+    games['order'] = games['season_type'].map({'regular': 0, 'postseason': 1}).fillna(0) * 100 + games['week']
+    lines = pd.read_csv(vm.LINES_CACHE) if os.path.exists(vm.LINES_CACHE) else pd.DataFrame(columns=['game_id', 'spread'])
+    return games.sort_values('order'), dict(zip(lines['game_id'], lines['spread']))
+
+
+def last_results(games, week, season_type):
+    """{team: (margin, opponent)} for each team's most recent game before this week."""
+    cur = (0 if season_type == 'regular' else 100) + week
+    out = {}
+    for g in games[games['order'] < cur].itertuples():
+        out[g.home_team] = (g.home_pts - g.away_pts, g.away_team)
+        out[g.away_team] = (g.away_pts - g.home_pts, g.home_team)
+    return out
+
+
+def blowout_tags(r, last):
+    """(tag html, labels) for teams coming off a 28+ point loss: bounce-back when away, fade spot when home."""
+    if r.completed:
+        return '', []
+    html_out, labels = '', []
+    for team, away in ((r.away, True), (r.home, False)):
+        margin, opp = last.get(team, (0, ''))
+        if margin > -BLOWOUT_MARGIN:
+            continue
+        lost = f'{team} lost by {-margin} to {opp} last time out.'
+        if away:
+            label = f'Bounce-back: {team}'
+            html_out += ex.tag(label, 'bounce', f'{lost} Away teams off a {BLOWOUT_MARGIN}+ point loss covered 55.4% '
+                                                f'(739 games, 2016–25, +5.6% ROI).')
+        else:
+            label = f'Fade spot: {team}'
+            html_out += ex.tag(label, 'fade', f'{lost} Home teams off a {BLOWOUT_MARGIN}+ point loss covered only 47.2% '
+                                              f'(2016–25).')
+        labels.append(label)
+    return html_out, labels
+
+
+def team_log(games, lines, team):
+    """A team's completed games in order, with the closing spread and ATS result."""
+    out = []
+    for g in games[(games['home_team'] == team) | (games['away_team'] == team)].itertuples():
+        home = g.home_team == team
+        pts, opp_pts = (g.home_pts, g.away_pts) if home else (g.away_pts, g.home_pts)
+        spread = lines.get(g.game_id)                     # home perspective, negative = home favored
+        line = None if spread is None or spread != spread else (spread if home else -spread)
+        where = 'n' if g.neutral else 'vs' if home else '@'
+        when = f'Wk {g.week}' if g.season_type == 'regular' else 'Bowl'
+        out.append(ex.log_row(when, g.away_team if home else g.home_team, where, pts, opp_pts, line))
+    return out
+
+
 def generate_html(p4, vals, sched, week, season_type, info):
     meta = fetch_team_meta()
     sd = info['rating_sd']
@@ -389,7 +449,7 @@ def generate_html(p4, vals, sched, week, season_type, info):
     rows = ''
     for i, r in enumerate(ranked.itertuples(), 1):
         rows += (f'<tr data-group="{theme.esc(r.conference)}"><td class="rank">{i}</td>'
-                 f'<td class="l">{theme.team_cell(r.team, _logo(r.team, meta), r.conference)}</td>'
+                 f'<td class="l">{theme.team_cell(r.team, _logo(r.team, meta), r.conference, r.team)}</td>'
                  f'<td class="muted">{r.record}</td>'
                  f'<td data-v="{r.composite}">{theme.rating_chip(r.composite, sd)}</td>'
                  f'<td class="muted" data-v="{r.fbs_rank}">{"" if pd.isna(r.fbs_rank) else int(r.fbs_rank)}</td>'
@@ -403,11 +463,17 @@ def generate_html(p4, vals, sched, week, season_type, info):
     sells = [(r.Team, _logo(r.Team, meta), theme.signal_pill(r.Composite, spot, strong), f'{r.W}-{r.L} · {r.Composite:+.2f}')
              for r in flagged[flagged['Composite'] > spot].sort_values('Composite', ascending=False).head(5).itertuples()]
 
+    hist = info['history']
+    conf_of = dict(zip(p4['team'], p4['conference']))
+    moved, base = ex.movers(hist, p4['team'])
+    movers_html = ex.movers_card(moved, base, lambda t: (t, _logo(t, meta), conf_of.get(t, '')), ex.tracking_since(hist))
+
     blend = ' / '.join(f'{int(w * 100)}% {k.replace("_", " ").title()}' for k, w in SAGARIN_BLEND.items())
     stats_txt = '; '.join(f'{ {"sp": "SP+"}.get(n, n.title())} FBS mean {m:.2f}, SD {d:.2f}' for n, (m, d) in s['stats'].items())
     unmatched = '; '.join(f'{k}: {", ".join(v)}' for k, v in s['unmatched'].items()) or 'none'
     power_html = (
-        f'<div class="grid3">{theme.summary_card("Top 5 power ratings", top5)}'
+        ex.freshness_bar(info['freshness'])
+        + f'<div class="grid3">{theme.summary_card("Top 5 power ratings", top5)}{movers_html}'
         f'{theme.summary_card("Buy candidates", buys, "FBS record · wins under expectation (W − xW).")}'
         f'{theme.summary_card("Sell candidates", sells, "FBS record · wins over expectation (W − xW).")}</div>'
         f'<div class="sechead"><h2>Power ratings</h2>'
@@ -420,13 +486,14 @@ def generate_html(p4, vals, sched, week, season_type, info):
             f'SP+: Bill Connelly\'s ratings via collegefootballdata.com. Each source is centered on '
             f'its FBS average and rescaled to a common SD of {s["target_sd"]:.2f} points, then blended '
             f'{int(SOURCE_WEIGHTS["sagarin"] * 100)}/{int(SOURCE_WEIGHTS["sp"] * 100)}. Raw scales: {stats_txt}. '
-            f'Unmatched names: {theme.esc(unmatched)}. Records include all games.'))
+            f'Unmatched names: {theme.esc(unmatched)}. Records include all games. <b>Biggest movers</b> compares today\'s '
+            f'rating with the one saved about a week earlier. Click any team for its page.'))
 
     # --- Value tab ---
     rows = ''
     for r in vals.sort_values('Composite', na_position='last').itertuples():
         rows += (f'<tr data-group="{theme.esc(r.conference)}">'
-                 f'<td class="l">{theme.team_cell(r.Team, _logo(r.Team, meta), r.conference)}</td>'
+                 f'<td class="l">{theme.team_cell(r.Team, _logo(r.Team, meta), r.conference, r.Team)}</td>'
                  f'<td class="muted">{r.G}</td><td>{r.W}-{r.L}</td>'
                  f'{theme.num_td(r.EPA_xW, "{:.1f}", "muted")}{theme.diff_td(r.EPA_Diff, mild)}'
                  f'{theme.num_td(r.SR_xW, "{:.1f}", "muted")}{theme.diff_td(r.SR_Diff, mild)}'
@@ -447,7 +514,9 @@ def generate_html(p4, vals, sched, week, season_type, info):
             f'<b>SELL</b> above +{spot:.1f} (solid above +{strong:.1f}).'))
 
     # --- Schedule tab ---
-    cards = ''
+    cards, spots = '', []
+    p4_set = set(p4['team'])
+    sig = lambda v: 'BUY' if v is not None and v == v and v < -spot else 'SELL' if v is not None and v == v and v > spot else ''
     for r in sched.itertuples():
         when = theme.kick_text(r.kick if r.kick is not None and not pd.isna(r.kick) else None)
         venue = 'Neutral site' if r.neutral else ''
@@ -455,11 +524,18 @@ def generate_html(p4, vals, sched, week, season_type, info):
         proj = '—' if pd.isna(pm) else _line_text(r.home if pm >= 0 else r.away, abs(pm))
         mkt = '—' if pd.isna(r.market) else _line_text(r.home if r.market <= 0 else r.away, abs(r.market))
         side = lambda t, rt, v: {'name': t, 'logo': _logo(t, meta), 'rating': rt, 'sd': sd,
+                                 'key': t if t in p4_set else None,
                                  'signal': theme.signal_pill(v, spot, strong), 'color': meta.get(t, (None, ''))[1]}
         # CFBD spreads are home-perspective with negative = home favored, so the market's home margin is −spread
-        edge = theme.edge_text(pm, -r.market, r.home, r.away)
+        mkt_margin = -r.market if r.market == r.market else np.nan
+        edge = theme.edge_text(pm, mkt_margin, r.home, r.away)
+        tag_html, labels = blowout_tags(r, info['last'])
+        move = ex.line_move(info['opened'].get(str(r.game_id)), mkt_margin, pm, r.home, r.away)
         cards += theme.game_card(when, venue, side(r.away, r.away_rating, r.away_value),
-                                 side(r.home, r.home_rating, r.home_value), proj, mkt, r.score, edge)
+                                 side(r.home, r.home_rating, r.home_value), proj, mkt, r.score, edge, tag_html, move)
+        spots.append(ex.spot('CFB', 'cfb.html#sched', r.kick, r.away, r.home, r.margin, mkt_margin, labels,
+                             [(r.away, sig(r.away_value)), (r.home, sig(r.home_value))]))
+    ex.write_spots('cfb', spots)
     sched_html = (
         f'<div class="sechead"><h2>{wk_label} games</h2><span class="hint">Projected lines include {HFA_POINTS:g} points '
         f'of home field (none at neutral sites)</span></div>'
@@ -469,7 +545,11 @@ def generate_html(p4, vals, sched, week, season_type, info):
             f'{HFA_POINTS:g} points for the home team (no home field at neutral sites). <b>Market</b> is the posted '
             f'spread, for comparison. <b>Edge</b> is how many points our projected line differs from the market, shown as '
             f'the side we like at the market number; gaps of {theme.EDGE_STRONG:g}+ points are highlighted and gaps under '
-            f'{theme.EDGE_MIN:g} show as None. FCS opponents are rated with Sagarin only. Trade signals come from the value metrics.'))
+            f'{theme.EDGE_MIN:g} show as None. FCS opponents are rated with Sagarin only. Trade signals come from the value metrics. '
+            f'<b>Line</b> shows where the spread opened and where it is now, and whether the market has moved toward our '
+            f'number (a good sign for the edge) or away from it. <b>Bounce-back</b> tags an away team coming off a '
+            f'{BLOWOUT_MARGIN}+ point loss: in Dylan\'s 2016–25 backtest those teams covered 55.4% of 739 games (+5.6% ROI). '
+            f'<b>Fade spot</b> tags a home team in the same spot, which covered only 47.2%.'))
 
     # --- Injury Wire tab ---
     games = [{'away': r.away, 'home': r.home,
@@ -486,6 +566,18 @@ def generate_html(p4, vals, sched, week, season_type, info):
     markets_html = mk.markets_tab(info['market_rows'], wk_label)
     score_html = scorecard.scorecard_tab('cfb', lambda t: (t, _logo(t, meta)))
 
+    # --- Team pages ---
+    trend = ex.series(hist)
+    vrow = {r.Team: r for r in vals.itertuples()}
+    games, lines = info['results']
+    teams = {}
+    for r in ranked.itertuples():
+        v = vrow.get(r.team)
+        mets = [('EPA', v.EPA_Diff), ('Success rate', v.SR_Diff), ('Vegas', v.Veg_Diff), ('Composite', v.Composite)] if v else []
+        teams[r.team] = ex.team_entry(r.team, r.conference, _logo(r.team, meta), r.composite, sd, r.fbs_rank, r.record,
+                                      theme.signal_pill(r.value, spot, strong), mets, trend.get(r.team),
+                                      team_log(games, lines, r.team))
+
     page = theme.render_page(
         title='AlphaPoint CFB Dashboard', league='CFB', headline='CFB Power & Value',
         meta_items=[('Season', YEAR), ('Week', week), ('Updated', datetime.now().strftime('%b %d, %I:%M %p'))],
@@ -493,7 +585,8 @@ def generate_html(p4, vals, sched, week, season_type, info):
               ('sched', f'{wk_label} Games', sched_html), ('markets', 'Markets', markets_html),
               ('injuries', 'Injury Wire', injury_html), ('scorecard', 'Scorecard', score_html)],
         footer='AlphaPoint Sports · Data: Sagarin, SP+ (via collegefootballdata.com) · Logos: ESPN · '
-               'Not financial or gambling advice')
+               'Not financial or gambling advice',
+        extra=ex.team_modal(teams))
     theme.write_outputs(page, HTML_OUTPUT, SHARE_OUTPUT, 'CFB_NO_BROWSER')
 
 
@@ -622,8 +715,16 @@ def main():
     graded = scorecard.grade('cfb', cfb_results(season_type))
     print(f"  Scorecard: {graded['result'].notna().sum()} graded, {graded['result'].isna().sum()} pending.")
 
+    hist = ex.snapshot_ratings('cfb', dict(zip(power['team'], power['composite'])))
+    results = load_results()
+    freshness = [('Sagarin', f'through {sag_asof}' if sag_asof else 'not available', ex.fetched(SAGARIN_CACHE)[1]),
+                 ('SP+', *ex.fetched(f'p4_sp_{YEAR}.csv')), ('Scores', *ex.fetched(vm.GAMES_CACHE)),
+                 ('Lines', 'live each refresh', True), ('Play-by-play', *ex.fetched(vm.ADV_BOX_CACHE)),
+                 ex.wire_freshness(wire_data)]
     info = {'scale': scale_info, 'sag_asof': sag_asof, 'rating_sd': float(power['composite'].std()),   # FBS-wide spread, sets the rating chip colors
-            'wire': wire_data, 'market_rows': market_rows}
+            'wire': wire_data, 'market_rows': market_rows, 'history': hist, 'freshness': freshness, 'results': results,
+            'last': last_results(results[0], week, season_type),
+            'opened': {str(r['game_id']): r.get('opened') for r in market_rows}}
     generate_html(p4, vals, sched, week, season_type, info)
 
 

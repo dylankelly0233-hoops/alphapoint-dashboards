@@ -16,6 +16,7 @@ cbb_evanmiya.html
 news_cache_*.json
 odds_api_*.json
 injury_candidates_*.json
+spots_*.json
 logos/
 
 # Build output

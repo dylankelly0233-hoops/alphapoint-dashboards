@@ -1,6 +1,6 @@
 """
 dashboard_theme.py
-AlphaPoint Sports — shared look for the CFB and NFL dashboards
+AlphaPoint Sports — shared look for the CFB, NFL and CBB dashboards
 Dylan Kelly
 
 One place for the page shell, fonts, colors, components and team logos, so both
@@ -99,10 +99,17 @@ def logo_img(name, logo, size='md'):
     return f'<span class="logo {size} initials" aria-hidden="true">{esc(_initials(name))}</span>'
 
 
-def team_cell(name, logo, sub=''):
+def team_name(name, key=None):
+    """Team name; with a key it becomes a button that opens the team page."""
+    if key is None:
+        return esc(name)
+    return f'<button type="button" class="tlink" data-team="{esc(key)}">{esc(name)}</button>'
+
+
+def team_cell(name, logo, sub='', key=None):
     sub_html = f'<span class="sub">{esc(sub)}</span>' if sub else ''
     return (f'<div class="team">{logo_img(name, logo)}'
-            f'<div class="tname"><b>{esc(name)}</b>{sub_html}</div></div>')
+            f'<div class="tname"><b>{team_name(name, key)}</b>{sub_html}</div></div>')
 
 
 def rating_chip(v, sd):
@@ -191,22 +198,24 @@ def edge_text(proj_margin, market_margin, home, away):
     return f'<span class="{cls}">{esc(home if e > 0 else away)} {spread_num(abs(e))}</span>'
 
 
-def game_card(when, venue, away, home, projected, market, final='', edge=''):
+def game_card(when, venue, away, home, projected, market, final='', edge='', tags='', move=''):
     """
-    away / home: dict(name, logo, rating, sd, signal, color).
-    projected / market / edge: already-formatted strings.
+    away / home: dict(name, logo, rating, sd, signal, color, key). key makes the name open the team page.
+    projected / market / edge: already-formatted strings. tags: situational tag pills (extras.tag);
+    move: line-movement row (extras.line_move).
     """
     def side(t, label):
         stripe = f' style="--team:{t["color"]}"' if t.get('color') else ''
         return (f'<div class="side"{stripe}><span class="ha">{label}</span>{logo_img(t["name"], t["logo"])}'
-                f'<span class="gname">{esc(t["name"])}{t.get("signal", "")}</span>'
+                f'<span class="gname">{team_name(t["name"], t.get("key"))}{t.get("signal", "")}</span>'
                 f'{rating_chip(t["rating"], t["sd"])}</div>')
     final_html = f'<div><span class="k">Final</span><b>{esc(final)}</b></div>' if final else ''
+    tags_html = f'<div class="gtags">{tags}</div>' if tags else ''
     return (f'<article class="card game"><header><span>{esc(when)}</span><span>{esc(venue)}</span></header>'
-            f'{side(away, "A")}{side(home, "H")}'
+            f'{tags_html}{side(away, "A")}{side(home, "H")}'
             f'<footer><div><span class="k">Projected</span><b>{projected}</b></div>'
             f'<div><span class="k">Market</span><span>{market}</span></div>'
-            f'<div><span class="k">Edge</span>{edge or "—"}</div>{final_html}</footer></article>')
+            f'<div><span class="k">Edge</span>{edge or "—"}</div>{final_html}</footer>{move}</article>')
 
 
 WIRE_TAGS  = {'QB': ('qb', 'QB'), 'CLUSTER': ('cluster', 'Cluster'), 'RETURNING': ('ret', 'Returning'),
@@ -331,7 +340,7 @@ button:focus-visible, select:focus-visible, th:focus-visible, summary:focus-visi
 /* Pages */
 main .wrap { padding-block: 20px 8px; }
 .page { display: none; } .page.on { display: block; }
-.grid3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 210px), 1fr)); gap: 14px; margin-bottom: 18px; }
+.grid3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 178px), 1fr)); gap: 14px; margin-bottom: 18px; }
 .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); min-width: 0; }
 .summary { padding: 14px 16px 10px; }
 .summary h3, .sechead h2 { font: 700 14px/1 var(--display); letter-spacing: 1.2px; text-transform: uppercase; color: var(--muted); margin: 0 0 10px; }
@@ -439,6 +448,61 @@ td.pos { color: var(--pos); font-weight: 600; } td.neg { color: var(--neg); font
 .split-bar i { display: block; height: 100%; background: var(--accent); }
 .split.thin { opacity: .5; }
 
+/* Freshness strip, movers, situational tags, line movement */
+.freshbar { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 8px; margin: 0 0 14px; font-size: 12.5px; color: var(--muted); }
+.freshbar .fk { font: 700 11px/1 var(--display); letter-spacing: 1.2px; text-transform: uppercase; margin-right: 2px; }
+.fresh { padding: 4px 9px; border-radius: 999px; background: var(--surface); border: 1px solid var(--line); }
+.fresh b { color: var(--ink); font-weight: 600; }
+.fresh.stale { border-color: var(--t2); color: var(--t2); } .fresh.stale b { color: var(--t2); }
+.delta { font: 700 15px/1 var(--display); letter-spacing: .3px; white-space: nowrap; }
+.delta.up { color: var(--pos); } .delta.down { color: var(--neg); }
+.gtags { display: flex; flex-wrap: wrap; gap: 6px; padding: 8px 14px 0; }
+.gtag { font: 700 11px/1 var(--display); letter-spacing: .9px; text-transform: uppercase; padding: 5px 8px; border-radius: 5px;
+        color: var(--chip-ink); background: var(--accent); cursor: help; }
+.gtag.bounce { background: var(--pos); } .gtag.fade { background: var(--neg); }
+.gtag.teaser { background: #6d4bd8; } .gtag.teaser.max { background: #4a2fb0; }
+.lmove { padding: 8px 14px 10px; font-size: 13px; color: var(--muted); border-top: 1px solid var(--line); }
+.lmove .k { font: 700 11px/1 var(--display); letter-spacing: 1px; text-transform: uppercase; margin-right: 8px; }
+.lmove b { color: var(--ink); } .lmove .pos { color: var(--pos); font-weight: 600; } .lmove .neg { color: var(--neg); font-weight: 600; }
+.game footer { border-radius: 0; }
+.game footer:last-child { border-radius: 0 0 var(--radius) var(--radius); }
+
+/* Team pages (pop-up) */
+.tlink { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; text-align: left;
+         text-decoration: underline; text-decoration-color: transparent; text-underline-offset: 3px; }
+.tlink:hover { text-decoration-color: currentColor; color: var(--accent); }
+.tlink:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+dialog.tmodal { width: min(720px, calc(100vw - 24px)); max-height: calc(100vh - 32px); padding: 0; border: 1px solid var(--line);
+                border-radius: 14px; background: var(--surface); color: var(--ink); box-shadow: 0 24px 60px rgba(0, 0, 0, .35); }
+dialog.tmodal::backdrop { background: rgba(5, 10, 18, .6); }
+.tclose { position: absolute; top: 10px; right: 12px; width: 34px; height: 34px; border: 0; border-radius: 8px; cursor: pointer;
+          font-size: 24px; line-height: 1; color: var(--muted); background: var(--surface-2); }
+.tclose:hover { color: var(--ink); }
+.tbody { padding: 20px 20px 18px; }
+.thead { display: flex; align-items: center; gap: 12px; padding-right: 40px; }
+.thead .logo { width: 44px; height: 44px; }
+.thead h2 { margin: 0; font: 700 26px/1.05 var(--display); text-transform: uppercase; letter-spacing: .3px; }
+.thead .sub { color: var(--muted); font-size: 13px; }
+.tstats { display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 8px; margin: 16px 0 4px; }
+.tstats div { background: var(--surface-2); border: 1px solid var(--line); border-radius: 8px; padding: 9px 11px; }
+.tstats .k, .tsec h3 { display: block; font: 700 11px/1 var(--display); letter-spacing: 1px; text-transform: uppercase; color: var(--muted); margin: 0 0 6px; }
+.tstats b { font: 700 18px/1 var(--display); }
+.tstats .pill { margin-left: 0; }
+.tsec { margin-top: 16px; }
+.tsec h3 { font-size: 12.5px; margin-bottom: 8px; }
+.trend { width: 100%; height: 90px; display: block; }
+.trend .ln { fill: none; stroke: var(--accent); stroke-width: 2.5; }
+.trend .zero { stroke: var(--muted); stroke-opacity: .5; stroke-dasharray: 4 4; }
+.tmet { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 6px 14px; font-size: 14px; }
+.tmet > span { display: flex; justify-content: space-between; gap: 8px; border-bottom: 1px solid var(--line); padding: 4px 0; }
+.tmet .pos { color: var(--pos); font-weight: 600; } .tmet .neg { color: var(--neg); font-weight: 600; }
+.tlog { width: 100%; border-collapse: collapse; font-size: 13.5px; font-variant-numeric: tabular-nums; }
+.tlog th { font: 700 11px/1 var(--display); letter-spacing: 1px; text-transform: uppercase; color: var(--muted); text-align: left;
+           padding: 6px; border-bottom: 1px solid var(--line); }
+.tlog td { padding: 6px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+.tlog .W { color: var(--pos); font-weight: 700; } .tlog .L { color: var(--neg); font-weight: 700; }
+.tnote { color: var(--muted); font-size: 13px; margin: 4px 0 0; }
+
 /* Method + footer */
 details.method { margin: 16px 0 4px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); }
 details.method summary { cursor: pointer; padding: 11px 14px; font: 700 13px/1 var(--display); letter-spacing: 1px;
@@ -475,6 +539,74 @@ document.querySelectorAll('select.filter').forEach(sel => sel.onchange = () => {
   });
 });
 
+// Team pages: any element with data-team opens that team's pop-up (data embedded as JSON by extras.team_modal)
+(function () {
+  const dlg = document.getElementById('team-modal'), blob = document.getElementById('team-data');
+  if (!dlg || !blob || !dlg.showModal) return;
+  const data = JSON.parse(blob.textContent), body = dlg.querySelector('.tbody');
+  const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls;
+                                   if (text != null) e.textContent = text; return e; };
+  const sign = v => (v > 0 ? '+' : v < 0 ? '−' : '') + Math.abs(v).toFixed(2);
+  const md = d => /^[0-9]{4}-[0-9]{2}-[0-9]{2}/.test(d) ? d.slice(5).replace('-', '/') : d;   // dates → 10/31; "Wk 9" as is
+  function trend(hist) {
+    if (hist.length < 2) return null;
+    const W = 640, H = 90, P = 8, vals = hist.map(h => h[1]);
+    let lo = Math.min(...vals), hi = Math.max(...vals); if (hi - lo < 2) { hi += 1; lo -= 1; }
+    const x = i => P + i * (W - 2 * P) / (hist.length - 1), y = v => P + (hi - v) * (H - 2 * P) / (hi - lo);
+    const ns = 'http://www.w3.org/2000/svg', svg = document.createElementNS(ns, 'svg');
+    svg.setAttribute('viewBox', `0 0 ${W} ${H}`); svg.setAttribute('class', 'trend'); svg.setAttribute('preserveAspectRatio', 'none');
+    svg.setAttribute('role', 'img'); svg.setAttribute('aria-label', 'Rating trend');
+    if (lo < 0 && hi > 0) { const z = document.createElementNS(ns, 'line'); z.setAttribute('class', 'zero');
+      z.setAttribute('x1', 0); z.setAttribute('x2', W); z.setAttribute('y1', y(0)); z.setAttribute('y2', y(0));
+      z.setAttribute('vector-effect', 'non-scaling-stroke'); svg.appendChild(z); }
+    const p = document.createElementNS(ns, 'polyline'); p.setAttribute('class', 'ln'); p.setAttribute('vector-effect', 'non-scaling-stroke');
+    p.setAttribute('points', hist.map((h, i) => x(i) + ',' + y(h[1])).join(' ')); svg.appendChild(p);
+    return svg;
+  }
+  function open(key) {
+    const t = data[key]; if (!t) return;
+    body.replaceChildren();
+    const head = el('div', 'thead'), nm = el('div'), h = el('h2', null, t.name);
+    h.id = 'tm-name'; nm.append(h, el('span', 'sub', t.sub));
+    if (t.logo) { const lg = el('span', 'logo img ' + t.logo); lg.setAttribute('aria-hidden', 'true'); head.append(lg); }
+    head.append(nm); body.append(head);
+    const stats = el('div', 'tstats');
+    const stat = (k, html, text) => { const d = el('div'), b = el('b'); d.append(el('span', 'k', k));
+      if (html) b.innerHTML = html; else b.textContent = text || '—'; d.append(b); stats.append(d); };
+    stat('Rating', t.chip); stat('Rank', null, t.rank ? '#' + t.rank : ''); stat('Record', null, t.record);
+    stat('ATS', null, t.ats); stat('Trade signal', t.signal || null, 'None');
+    body.append(stats);
+    const sec = title => { const s = el('section', 'tsec'); s.append(el('h3', null, title)); body.append(s); return s; };
+    const tr = sec('Rating trend'), svg = trend(t.hist);
+    if (svg) { const a = t.hist[0], b = t.hist[t.hist.length - 1];
+               tr.append(svg, el('p', 'tnote', `${md(a[0])} ${sign(a[1])} → ${md(b[0])} ${sign(b[1])} (${sign(b[1] - a[1])} points)`)); }
+    else tr.append(el('p', 'tnote', t.hist.length ? `Tracking since ${md(t.hist[0][0])}; the trend line appears once the ratings update.` : 'No history yet.'));
+    if (t.metrics.length) {
+      const m = sec('Value metrics (W − xW)'), g = el('div', 'tmet');
+      t.metrics.forEach(([k, v]) => { const s = el('span');
+        s.append(el('span', null, k), el('b', v == null ? '' : v < -0.5 ? 'pos' : v > 0.5 ? 'neg' : '', v == null ? '—' : sign(v)));
+        g.append(s); });
+      m.append(g, el('p', 'tnote', 'Below 0 = fewer wins than the play supports (buy side).'));
+    }
+    const lg = sec('Game log');
+    if (t.log.length) {
+      const tb = el('table', 'tlog'), thead = el('thead'), hr = el('tr'), tbody = el('tbody');
+      ['Date', 'Opponent', 'Result', 'Line', 'ATS'].forEach(c => hr.append(el('th', null, c)));
+      thead.append(hr); tb.append(thead);
+      t.log.slice().reverse().forEach(g => { const r = el('tr');
+        r.append(el('td', null, md(g.d)), el('td', null, (g.w === '@' ? '@ ' : 'vs ') + g.opp + (g.w === 'n' ? ' (N)' : '')),
+                 el('td', g.r[0], g.r), el('td', null, g.line || '—'), el('td', g.ats, g.ats || '—'));
+        tbody.append(r); });
+      tb.append(tbody); const wrap = el('div', 'scroll'); wrap.append(tb); lg.append(wrap);
+      lg.append(el('p', 'tnote', "Line = the team's closing spread (− = favored). ATS = result against that spread."));
+    } else lg.append(el('p', 'tnote', 'No completed games yet.'));
+    dlg.showModal(); dlg.querySelector('.tclose').focus();
+  }
+  document.addEventListener('click', e => { const b = e.target.closest('[data-team]'); if (b) open(b.dataset.team); });
+  dlg.querySelector('.tclose').onclick = () => dlg.close();
+  dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
+})();
+
 // Sort: click a header; numbers sort by data-v when present
 document.querySelectorAll('table.sortable').forEach(t => {
   t.querySelectorAll('thead th').forEach((th, i) => th.onclick = () => {
@@ -494,10 +626,10 @@ document.querySelectorAll('table.sortable').forEach(t => {
 """
 
 
-def render_page(*, title, league, headline, meta_items, tabs, footer):
+def render_page(*, title, league, headline, meta_items, tabs, footer, extra=''):
     """
     tabs: list of (id, label, html). The first tab opens by default (or the one in the link's #hash).
-    meta_items: list of (label, value) shown in the masthead.
+    meta_items: list of (label, value) shown in the masthead. extra: markup after the page (team pop-up).
     Returns the page as a fragment (title, fonts, style, markup, script).
     """
     meta = ''.join(f'<span>{esc(k)} <b>{esc(v)}</b></span>' for k, v in meta_items)
@@ -519,6 +651,7 @@ def render_page(*, title, league, headline, meta_items, tabs, footer):
 </div></header>
 <main><div class="wrap">{pages}</div></main>
 <footer class="foot"><div class="wrap">{footer}</div></footer>
+{extra}
 <script>{JS}</script>"""
 
 

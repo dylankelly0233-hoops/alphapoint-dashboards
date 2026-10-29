@@ -102,6 +102,7 @@ def d1_teams():
         return pd.read_csv(path)
     data = cbbd_get('/teams', {'season': SEASON})
     df = pd.DataFrame([{'team': t['school'], 'espn_id': t.get('sourceId'), 'color': t.get('primaryColor') or '',
+                        'mascot': t.get('mascot') or '',
                         'conference': t.get('conference') or ''} for t in data])
     if not df.empty:
         df.to_csv(path, index=False)

@@ -13,13 +13,13 @@ Repo: github.com/dylankelly0233-hoops/alphapoint-dashboards (public). This folde
 ## Code map
 - `cfb_p4_dashboard.py`, `nfl_dashboard.py`, `cbb_dashboard.py`: one dashboard each (power ratings, value metrics, games, markets, injury wire, scorecard).
 - `*_value_metrics.py`: wins-over-expectation (W − xW) metrics for each sport.
-- `dashboard_theme.py`: the shared look (page shell, CSS, logos, cards). `markets.py`: Kalshi win probability and spread liquidity. `scorecard.py`: pick logging and grading (ATS and CLV). `injury_wire.py`: injury candidates and loading the curated file.
+- `dashboard_theme.py`: the shared look (page shell, CSS, logos, cards). `markets.py`: Kalshi win probability and spread liquidity. `scorecard.py`: pick logging and grading (ATS and CLV). `injury_wire.py`: injury candidates and loading the curated file. `extras.py`: rating history and movers, the data-freshness strip, line movement, situational tags (CFB bounce-back, NFL teasers), team pop-up pages, and the `spots_*.json` feed behind the home page's best spots.
 - Key settings sit near the top of each dashboard: `HFA_POINTS` (CFB 2.5, NFL 1.7, CBB 3.0), `SOURCE_WEIGHTS`, and the trade-signal thresholds in the value-metrics files.
 
 ## Working rules
 - Secrets: the CFBD key lives in the `CFBD_API_KEY` Actions secret and in the git-ignored `cfbd_api_key.txt`. Never put it in code or commit it.
 - Before pushing: `git pull --rebase`. The Actions bot commits scorecard and line-history updates often.
-- Don't commit local copies of `scorecard_*.csv` / `line_history_*.csv`. GitHub's builds own them; use `git checkout --` to discard local changes.
+- Don't commit local copies of `scorecard_*.csv`, `line_history_*.csv` or `ratings_history_*.csv`. GitHub's builds own them; use `git checkout --` to discard local changes.
 - Python: the NFL scripts need pyarrow (`C:\Users\dylan\PyCharmMiscProject\.venv\Scripts\python.exe` has it); the others run on the global `python`.
 - GitHub CLI: `C:\Program Files\GitHub CLI\gh.exe`, logged in as dylankelly0233-hoops.
 - To test a change locally, run the dashboard script with `CFB_NO_BROWSER` / `NFL_NO_BROWSER` / `CBB_NO_BROWSER` set. Pushing the change triggers a live rebuild.

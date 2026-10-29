@@ -36,6 +36,7 @@ import pandas as pd
 import requests
 
 import dashboard_theme as theme
+import extras as ex
 import injury_wire as wire
 import markets as mk
 import nfl_value_metrics as vm
@@ -79,6 +80,15 @@ DIVISIONS = {
     'NFC West':  ['ARI', 'LA', 'SEA', 'SF'],
 }
 TEAM_DIVISION = {t: d for d, teams in DIVISIONS.items() for t in teams}
+
+# Teaser tags, from Dylan's NFL teaser study (2-team, 6-point teasers priced at −110). Underdogs of
+# +1.5 to +3 teased through 3 and 7 won ~77% of legs out of sample (2015–25) when the game total was
+# 46 or lower or it was a division game; +1.5 / +2.5 dogs with a total of 46 or lower were the strongest
+# (~78.5%, only ~10–18 legs a year). Favorites, recent form (EPA) and rest/timing filters didn't help.
+TEASER_DOG_RANGE = (1.5, 3.0)
+TEASER_MAX_LINES = (1.5, 2.5)
+TEASER_TOTAL_MAX = 46
+TEASER_POINTS    = 6
 
 
 # ==========================================
@@ -255,6 +265,7 @@ def build_schedule(full, week, power, metrics):
             'home_rating': h_r, 'away_rating': a_r,
             'margin': h_r - a_r + (0.0 if getattr(g, 'neutral', 0) else HFA_POINTS),   # home − away, incl. HFA
             'market': g.spread_line,                                       # positive = home favored
+            'total': getattr(g, 'total_line', np.nan), 'div': getattr(g, 'div_game', 0) == 1,
             'home_value': comp.get(g.home_team), 'away_value': comp.get(g.away_team),
             'score': f'{int(g.away_score)}-{int(g.home_score)}' if done else '',
         })
@@ -296,6 +307,42 @@ def _line_text(team_fav, pts):
     return 'PICK' if pts < 0.25 else f'{theme.esc(team_fav)} −{theme.spread_num(pts)}'
 
 
+def teaser_tag(r):
+    """(tag html, short label) when this game's underdog fits the teaser rules, else ('', '')."""
+    if r.score or pd.isna(r.market):
+        return '', ''
+    pts = abs(r.market)
+    if not TEASER_DOG_RANGE[0] <= pts <= TEASER_DOG_RANGE[1]:
+        return '', ''
+    dog = vm.full_name(r.away if r.market > 0 else r.home).split()[-1]
+    low = not pd.isna(r.total) and r.total <= TEASER_TOTAL_MAX
+    label = f'{dog} +{theme.spread_num(pts)} → +{theme.spread_num(pts + TEASER_POINTS)}'
+    if pts in TEASER_MAX_LINES and low:
+        return (ex.tag(f'Teaser ★ {label}', 'teaser max',
+                       f'Max-edge teaser leg: +1.5 / +2.5 underdog, total {r.total:g} (≤{TEASER_TOTAL_MAX}). '
+                       f'~78.5% of legs won out of sample; full sample is lower. Needs −110 pricing.'), f'Teaser ★ {label}')
+    if low or r.div:
+        why = f'total {r.total:g}' if low else 'division game'
+        return (ex.tag(f'Teaser {label}', 'teaser',
+                       f'Core teaser leg: underdog +1.5 to +3, {why}. ~77% of legs won out of sample; '
+                       f'pair with another qualifying dog, never a favorite. Needs −110 pricing.'), f'Teaser {label}')
+    return '', ''
+
+
+def team_log(full, abbr):
+    """Completed games for one team, oldest first, with the closing spread and ATS result."""
+    games = full[full['result'].notna() & ((full['home_team'] == abbr) | (full['away_team'] == abbr))]
+    out = []
+    for g in games.sort_values('gameday').itertuples():
+        home = g.home_team == abbr
+        pts, opp_pts = (g.home_score, g.away_score) if home else (g.away_score, g.home_score)
+        line = -g.spread_line if home else g.spread_line       # spread_line = home margin the market expected
+        where = 'n' if getattr(g, 'neutral', 0) else 'vs' if home else '@'
+        out.append(ex.log_row(g.gameday, vm.full_name(g.away_team if home else g.home_team).split()[-1],
+                              where, pts, opp_pts, line))
+    return out
+
+
 def generate_html(power, vals, sched, week, info):
     meta = fetch_team_meta()
     sd = float(power['composite'].std())
@@ -309,7 +356,7 @@ def generate_html(power, vals, sched, week, info):
     rows = ''
     for i, r in enumerate(ranked.itertuples(), 1):
         rows += (f'<tr data-group="{theme.esc(r.division)}"><td class="rank">{i}</td>'
-                 f'<td class="l">{theme.team_cell(r.team, _logo(r.abbr, meta), r.division)}</td>'
+                 f'<td class="l">{theme.team_cell(r.team, _logo(r.abbr, meta), r.division, r.abbr)}</td>'
                  f'<td class="muted">{r.record}</td>'
                  f'<td data-v="{r.composite}">{theme.rating_chip(r.composite, sd)}</td>'
                  f'<td data-v="{"" if pd.isna(r.value) else r.value}">{theme.signal_pill(r.value, spot, strong)}</td></tr>')
@@ -324,10 +371,16 @@ def generate_html(power, vals, sched, week, info):
     buys = flag_items(flagged[flagged['Composite'] < -spot].sort_values('Composite')) if not flagged.empty else []
     sells = flag_items(flagged[flagged['Composite'] > spot].sort_values('Composite', ascending=False)) if not flagged.empty else []
 
+    hist = info['history']
+    moved, base = ex.movers(hist, power['abbr'])
+    movers_html = ex.movers_card(moved, base, lambda ab: (nick(vm.full_name(ab)), _logo(ab, meta), TEAM_DIVISION.get(ab, '')),
+                                 ex.tracking_since(hist))
+
     stats_txt = '; '.join(f'{n} mean {m:.2f}, SD {d:.2f}' for n, (m, d) in s['stats'].items())
     unmatched = '; '.join(f'{k}: {", ".join(v)}' for k, v in s['unmatched'].items()) or 'none'
     power_html = (
-        f'<div class="grid3">{theme.summary_card("Top 5 power ratings", top5)}'
+        ex.freshness_bar(info['freshness'])
+        + f'<div class="grid3">{theme.summary_card("Top 5 power ratings", top5)}{movers_html}'
         f'{theme.summary_card("Buy candidates", buys, "Record · wins under expectation (W − xW).")}'
         f'{theme.summary_card("Sell candidates", sells, "Record · wins over expectation (W − xW).")}</div>'
         f'<div class="sechead"><h2>Power ratings</h2>'
@@ -340,7 +393,8 @@ def generate_html(power, vals, sched, week, info):
             f'{theme.esc(info["nfelo_asof"])}). Sagarin: overall rating (through {theme.esc(info["sagarin_asof"] or "unknown")}). '
             f'Each source is centered on the league average and rescaled to a common SD of {s["target_sd"]:.2f} points, then '
             f'blended {int(SOURCE_WEIGHTS["nfelo"] * 100)}% nfelo / {int(SOURCE_WEIGHTS["sagarin"] * 100)}% Sagarin. '
-            f'Raw scales: {stats_txt}. Unmatched names: {theme.esc(unmatched)}.'))
+            f'Raw scales: {stats_txt}. Unmatched names: {theme.esc(unmatched)}. <b>Biggest movers</b> compares today\'s '
+            f'rating with the one saved about a week earlier. Click any team for its page.'))
 
     # --- Value tab ---
     rows = ''
@@ -349,7 +403,7 @@ def generate_html(power, vals, sched, week, info):
             to = r.TO_Margin
             to_cls = 'num pos' if to <= -5 else 'num neg' if to >= 5 else 'num'   # big +margin = lucky = sell side
             rows += (f'<tr data-group="{theme.esc(r.division)}">'
-                     f'<td class="l">{theme.team_cell(r.Team, _logo(r.Abbr, meta), r.division)}</td>'
+                     f'<td class="l">{theme.team_cell(r.Team, _logo(r.Abbr, meta), r.division, r.Abbr)}</td>'
                      f'<td class="muted">{r.G}</td><td>{theme.esc(r.record)}</td>'
                      f'{theme.num_td(r.EPA_xW, "{:.1f}", "muted")}{theme.diff_td(r.EPA_Diff, mild)}'
                      f'{theme.num_td(r.SR_xW, "{:.1f}", "muted")}{theme.diff_td(r.SR_Diff, mild)}'
@@ -373,18 +427,26 @@ def generate_html(power, vals, sched, week, info):
 
     # --- Schedule tab ---
     rating = dict(zip(power['abbr'], power['composite']))
-    cards = ''
+    sig = lambda v: 'BUY' if v is not None and v == v and v < -spot else 'SELL' if v is not None and v == v and v > spot else ''
+    cards, spots = '', []
     for r in sched.itertuples():
         home, away = vm.full_name(r.home), vm.full_name(r.away)
         pm = theme.round_half(r.margin)   # projected home margin, rounded to a half point like a posted spread
         proj = '—' if pd.isna(pm) else _line_text(home if pm >= 0 else away, abs(pm))
         mkt = '—' if pd.isna(r.market) else _line_text(home if r.market >= 0 else away, abs(r.market))
-        side = lambda ab, nm, v: {'name': nm, 'logo': _logo(ab, meta), 'rating': rating.get(ab), 'sd': sd,
+        side = lambda ab, nm, v: {'name': nm, 'logo': _logo(ab, meta), 'rating': rating.get(ab), 'sd': sd, 'key': ab,
                                   'signal': theme.signal_pill(v, spot, strong), 'color': meta.get(ab, ('', ''))[1]}
+        tag_html, tag_label = teaser_tag(r)
+        move = ex.line_move(info['opened'].get(str(r.game_id)), r.market, pm, nick(home), nick(away), 'First seen')
         cards += theme.game_card(theme.kick_text(r.kick), 'Neutral site' if r.neutral else '',
                                  side(r.away, away, r.away_value), side(r.home, home, r.home_value),
                                  proj, mkt, r.score,
-                                 theme.edge_text(pm, r.market, nick(home), nick(away)))   # spread_line is already the home margin
+                                 theme.edge_text(pm, r.market, nick(home), nick(away)),   # spread_line is already the home margin
+                                 tag_html, move)
+        spots.append(ex.spot('NFL', 'nfl.html#sched', r.kick, nick(away), nick(home), r.margin, r.market,
+                             [tag_label] if tag_label else [],
+                             [(nick(away), sig(r.away_value)), (nick(home), sig(r.home_value))]))
+    ex.write_spots('nfl', spots)
     sched_html = (
         f'<div class="sechead"><h2>{wk_label} games</h2><span class="hint">Projected lines include {HFA_POINTS:g} points '
         f'of home field (none at neutral sites)</span></div>'
@@ -394,7 +456,13 @@ def generate_html(power, vals, sched, week, info):
             f'team (no home field at neutral sites such as international games). <b>Market</b> is the posted spread, for '
             f'comparison. <b>Edge</b> is how many points our projected line differs from the market, shown as the side we '
             f'like at the market number; gaps of {theme.EDGE_STRONG:g}+ points are highlighted and gaps under '
-            f'{theme.EDGE_MIN:g} show as None. Trade signals come from the value metrics.'))
+            f'{theme.EDGE_MIN:g} show as None. Trade signals come from the value metrics. <b>Line</b> shows the spread when '
+            f'we first saw the game and where it is now, and whether the market has moved toward our number (a good sign '
+            f'for the edge) or away from it. <b>Teaser tags</b> come from Dylan\'s teaser study (2-team, 6-point teasers): '
+            f'underdogs of +1.5 to +3 in games with a total of {TEASER_TOTAL_MAX} or lower or a division matchup won about '
+            f'77% of legs out of sample (2015–25), and +1.5 / +2.5 dogs with a low total (★) about 78.5%. Break-even is '
+            f'72.4% per leg at −110, so the edge depends on getting −110 (about 73.9% at −120). The full-sample rates are '
+            f'lower (EV roughly +6.5% core, +13.7% ★). Tags follow the current line: a +3 that moves to +3.5 drops out.'))
 
     # --- Injury Wire tab ---
     games = [{'away': r.away, 'home': r.home, 'when': theme.kick_text(r.kick)} for r in sched.itertuples()]
@@ -409,13 +477,25 @@ def generate_html(power, vals, sched, week, info):
     markets_html = mk.markets_tab(info['market_rows'], wk_label)
     score_html = scorecard.scorecard_tab('nfl', lambda ab: (vm.full_name(ab), _logo(ab, meta)))
 
+    # --- Team pages ---
+    trend = ex.series(hist)
+    vrow = {r.Abbr: r for r in vals.itertuples()} if not vals.empty else {}
+    teams = {}
+    for i, r in enumerate(ranked.itertuples(), 1):
+        v = vrow.get(r.abbr)
+        mets = [('EPA', v.EPA_Diff), ('Success rate', v.SR_Diff), ('Vegas', v.Veg_Diff), ('Composite', v.Composite)] if v else []
+        teams[r.abbr] = ex.team_entry(r.team, r.division, _logo(r.abbr, meta), r.composite, sd, i, r.record,
+                                      theme.signal_pill(r.value, spot, strong), mets, trend.get(r.abbr),
+                                      team_log(info['full'], r.abbr))
+
     page = theme.render_page(
         title='AlphaPoint NFL Dashboard', league='NFL', headline='NFL Power & Value',
         meta_items=[('Season', SEASON), ('Week', week), ('Updated', datetime.now().strftime('%b %d, %I:%M %p'))],
         tabs=[('power', 'Power Ratings', power_html), ('value', 'Value Metrics', value_html),
               ('sched', f'{wk_label} Games', sched_html), ('markets', 'Markets', markets_html),
               ('injuries', 'Injury Wire', injury_html), ('scorecard', 'Scorecard', score_html)],
-        footer='AlphaPoint Sports · Data: nfelo, Sagarin, nflverse · Logos: ESPN · Not financial or gambling advice')
+        footer='AlphaPoint Sports · Data: nfelo, Sagarin, nflverse · Logos: ESPN · Not financial or gambling advice',
+        extra=ex.team_modal(teams))
     theme.write_outputs(page, HTML_OUTPUT, SHARE_OUTPUT, 'NFL_NO_BROWSER')
 
 
@@ -516,8 +596,14 @@ def main():
     graded = scorecard.grade('nfl', {str(g.game_id): (g.home_score, g.away_score, g.spread_line) for g in done.itertuples()})
     print(f"  Scorecard: {graded['result'].notna().sum()} graded, {graded['result'].isna().sum()} pending.")
 
+    hist = ex.snapshot_ratings('nfl', dict(zip(power['abbr'], power['composite'])))
+    freshness = [('nfelo', *ex.fetched(NFELO_CACHE)),
+                 ('Sagarin', f'through {sagarin_asof}' if sagarin_asof else 'not available', ex.fetched(SAGARIN_CACHE)[1]),
+                 ('Lines & scores', *ex.fetched(vm.SCHED_CACHE)), ('Play-by-play', *ex.fetched(vm.STATS_CACHE)),
+                 ex.wire_freshness(wire_data)]
     info = {'scale': scale_info, 'nfelo_asof': nfelo_asof, 'sagarin_asof': sagarin_asof,
-            'wire': wire_data, 'market_rows': market_rows}
+            'wire': wire_data, 'market_rows': market_rows, 'history': hist, 'full': full, 'freshness': freshness,
+            'opened': {str(r['game_id']): r.get('opened') for r in market_rows}}
     generate_html(power, vals, sched, week, info)
 
 

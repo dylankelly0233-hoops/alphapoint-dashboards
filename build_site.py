@@ -12,6 +12,7 @@ doesn't stop the others; its page simply keeps the last good copy.
 GitHub Actions runs this on a schedule (.github/workflows/build.yml); it also works locally.
 """
 
+import json
 import os
 import shutil
 import subprocess
@@ -48,7 +49,76 @@ LANDING_CSS = """
 .info dd { margin: 0 0 8px; max-width: 75ch; }
 @media (max-width: 560px) { .info dl { grid-template-columns: 1fr; } .info dd { margin-bottom: 12px; } }
 @media (prefers-reduced-motion: reduce) { .tile { transition: none; } .tile:hover { transform: none; } }
+.spots { padding: 16px 18px 8px; margin-bottom: 18px; }
+.spots-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 16px; margin-bottom: 6px; }
+.spots-head h2 { margin: 0; font: 700 20px/1.1 var(--display); text-transform: uppercase; letter-spacing: .6px; }
+.spotlist { list-style: none; margin: 0; padding: 0; }
+.spotlist a { display: grid; grid-template-columns: 112px 44px minmax(0, 1fr) auto; align-items: center; gap: 4px 12px;
+              padding: 10px 6px; border-top: 1px solid var(--line); color: var(--ink); text-decoration: none; border-radius: 6px; }
+.spotlist li:first-child a { border-top: 0; }
+.spotlist a:hover, .spotlist a:focus-visible { background: var(--surface-2); outline: none; }
+.sday { font: 600 13px/1.2 var(--display); letter-spacing: .5px; text-transform: uppercase; color: var(--muted); }
+.ssport { font: 700 11px/1 var(--display); letter-spacing: 1px; text-align: center; padding: 4px 0; border-radius: 4px;
+          background: var(--mast-2); color: var(--mast-ink); }
+.smain { min-width: 0; }
+.smatch { display: block; font-weight: 600; }
+.sline { display: block; font-size: 13px; color: var(--muted); }
+.stags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 5px; }
+.stags .gtag { cursor: inherit; }
+.sedge { text-align: right; }
+@media (max-width: 560px) { .spotlist a { grid-template-columns: 44px minmax(0, 1fr) auto; }
+                            .sday { grid-column: 1 / -1; } }
 """
+
+SPOTS_MAX = 10
+
+
+def best_spots():
+    """
+    The strongest upcoming games from spots_{sport}.json (written by each dashboard): every game with a
+    situational tag, plus the biggest edges of EDGE_STRONG+ points up to SPOTS_MAX rows, in kickoff order.
+    """
+    spots = []
+    for sport in ('cfb', 'nfl', 'cbb'):
+        try:
+            with open(os.path.join(HERE, f'spots_{sport}.json'), encoding='utf-8') as f:
+                spots += json.load(f)
+        except (OSError, ValueError):
+            continue
+    now = datetime.now().astimezone()
+    for s in spots:
+        s['dt'] = datetime.fromisoformat(s['kick'])
+    upcoming = [s for s in spots if s['dt'] > now]
+    tagged = [s for s in upcoming if s['tags']]                     # rare, so every tagged spot is shown
+    edges = sorted((s for s in upcoming if not s['tags'] and (s['edge'] or 0) >= theme.EDGE_STRONG),
+                   key=lambda s: s['edge'], reverse=True)
+    keep = tagged + edges[:max(SPOTS_MAX - len(tagged), 4)]
+    if not keep:
+        return ('<section class="card spots"><div class="spots-head"><h2>Best spots</h2></div>'
+                '<p class="hint">No edges of 3+ points or tagged spots in the next week yet.</p></section>')
+    today = now.date()
+    rows = ''
+    for s in sorted(keep, key=lambda s: s['dt']):
+        d = s['dt'].date()
+        day = 'Today' if d == today else 'Tomorrow' if (d - today).days == 1 else s['dt'].strftime('%a %m/%d')
+        when = f"{day} · {s['dt'].strftime('%I:%M %p').lstrip('0')}"
+        edge = ''
+        if s['edge_side'] and s['edge'] is not None:
+            cls = 'edge strong' if s['edge'] >= theme.EDGE_STRONG else 'edge'
+            edge = f'<span class="{cls}">{theme.esc(s["edge_side"])} {theme.spread_num(s["edge"])}</span>'
+        tags = ''.join(f'<span class="gtag {"bounce" if t.startswith("Bounce") else "fade" if t.startswith("Fade") else "teaser max" if "★" in t else "teaser"}">'
+                       f'{theme.esc(t)}</span>' for t in s['tags'])
+        tags += ''.join(f'<span class="pill {sig.lower()}">{theme.esc(team)} {sig}</span>' for team, sig in s['signals'])
+        rows += (f'<li><a href="{theme.esc(s["page"])}"><span class="sday">{theme.esc(when)}</span>'
+                 f'<span class="ssport">{theme.esc(s["sport"])}</span>'
+                 f'<span class="smain"><span class="smatch">{theme.esc(s["away"])} @ {theme.esc(s["home"])}</span>'
+                 f'<span class="sline">Ours {theme.esc(s["ours"])} · Market {theme.esc(s["market"])}</span>'
+                 f'{f"<span class=stags>{tags}</span>" if tags else ""}</span>'
+                 f'<span class="sedge">{edge}</span></a></li>')
+    title = "Today's best spots" if any(s['dt'].date() == today for s in keep) else 'Best spots this week'
+    return (f'<section class="card spots"><div class="spots-head"><h2>{title}</h2>'
+            f'<span class="hint">Edges of {theme.EDGE_STRONG:g}+ points and tagged spots, next 7 days</span></div>'
+            f'<ol class="spotlist">{rows}</ol></section>')
 
 # Info tab: what each dashboard tab shows (dashboard → [(tab, description)])
 INFO = [
@@ -63,14 +133,26 @@ INFO = [
         ('Trade Signal', 'BUY / SELL tags from the value metrics, shown wherever a team appears.'),
         ('Games', 'This week\'s games with our projected spread (home field included, rounded to the half point), the '
                   'posted market spread, and the Edge — how far our number is from the market and which side we like.'),
-    ]),
-    ('College Football & NFL', [
+        ('Line movement', 'Each game card shows where the spread opened (or was first seen) and where it is now, and whether '
+                          'the market has moved toward our number or away from it.'),
+        ('Team pages', 'Click any team name for its rating trend, value metrics, and game log with results against the spread.'),
+        ('Biggest movers', 'The teams whose composite rating changed most over about the last week.'),
+        ('Data strip', 'The top of each Power tab shows how current every data source is; anything out of date turns amber.'),
         ('Markets', 'Kalshi exchange data per game: win probability from the game-winner market, and liquidity — dollars '
                     'resting near the current price on each side — from the Kalshi spread market closest to the posted line.'),
         ('Injury Wire', 'Only injury news that can move a line: starting QB changes, clusters of starters out in one unit, key '
                         'starters, and players returning. Curated once a day.'),
-        ('Scorecard', 'Every Edge and Trade Signal is logged before kickoff and graded after the game against the spread and '
-                      'against the closing line, so you can see whether the edges hold up.'),
+    ]),
+    ('Research spots', [
+        ('Best spots', 'The home page lists the strongest upcoming games across all three sports: edges of 3+ points and '
+                       'games with a situational tag.'),
+        ('Bounce-back (CFB)', 'An away team coming off a loss by 28+ points. In a 2016–25 backtest these teams covered 55.4% '
+                              'of 739 games. A home team in the same spot covered only 47.2%, so it is tagged as a fade spot.'),
+        ('Teaser legs (NFL)', 'Underdogs of +1.5 to +3 in games with a total of 46 or lower or a division matchup, teased 6 '
+                              'points through 3 and 7: about 77% of legs won out of sample (2015–25); +1.5 / +2.5 dogs with a '
+                              'low total (★) about 78.5%. Break-even is 72.4% per leg at −110, so pricing matters.'),
+        ('Scorecard', 'Every football Edge and Trade Signal is logged before kickoff and graded after the game against the '
+                      'spread and against the closing line, so you can see whether the edges hold up.'),
     ]),
     ('Value metrics by sport', [
         ('CFB', 'Expected wins from EPA per play, success rate, and the Vegas moneyline.'),
@@ -102,8 +184,8 @@ def landing(results):
         tiles += (f'<a class="card tile" href="{page}"><span class="abbr">{abbr}</span><span class="name">{theme.esc(name)}</span>'
                   f'<span class="cov">{theme.esc(coverage)}</span>{warn}<span class="go">Open dashboard →</span></a>')
     updated = datetime.now().strftime('%b %d, %I:%M %p').replace(' 0', ' ')
-    home = (f'<div class="tiles">{tiles}</div>'
-            f'<p class="hint updated">Updated {updated} ET · refreshes every 2 hours, 8 AM to midnight</p>')
+    home = (f'{best_spots()}<div class="tiles">{tiles}</div>'
+            f'<p class="hint updated">Updated {updated} ET · refreshes every hour, 8 AM to midnight</p>')
     info = '<div class="info">' + ''.join(
         f'<section class="card"><h3>{theme.esc(title)}</h3><dl>'
         + ''.join(f'<dt>{theme.esc(k)}</dt><dd>{theme.esc(v)}</dd>' for k, v in rows) + '</dl></section>'

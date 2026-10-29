@@ -283,11 +283,25 @@ def _item(team, tag, text, row, source='ESPN', url=ESPN_NFL_PAGE):
 # ==========================================
 def cfb_candidates(week, games, mascots):
     """games: list of (away, home) CFBD names. mascots: school → mascot (for better news searches)."""
-    playing = sorted({t for g in games for t in g})
-    out = {'sport': 'cfb', 'week': week, 'collected': _now().isoformat(timespec='minutes'), 'games': games, 'teams': {}}
+    return news_candidates('cfb', week, games, mascots, 'football')
+
+
+def cbb_candidates(day_key, games, mascots, focus):
+    """
+    College basketball: the same headline scan, for the Power 4 + Big East teams in `focus` only (their
+    opponents are mostly small schools with little coverage). day_key (YYYYMMDD) plays the role of
+    the week, so a curated file only counts on the day it was written.
+    """
+    return news_candidates('cbb', day_key, games, mascots, 'basketball', focus)
+
+
+def news_candidates(sport, week, games, mascots, sport_word, only=None):
+    """Injury headlines per team for the games shown. only = restrict the searches to these teams."""
+    playing = sorted({t for g in games for t in g if only is None or t in only})
+    out = {'sport': sport, 'week': week, 'collected': _now().isoformat(timespec='minutes'), 'games': games, 'teams': {}}
     for team in playing:
-        query = f'"{team}" {mascots.get(team, "")} football injury'.replace('  ', ' ')
-        news = google_news(query, cache_file='news_cache_cfb.json')
+        query = f'"{team}" {mascots.get(team, "")} {sport_word} injury'.replace('  ', ' ')
+        news = google_news(query, cache_file=f'news_cache_{sport}.json')
         items = [{'team': team, 'tag': 'NEWS', 'text': n['title'], 'source': n['source'], 'url': n['url'], 'date': n['date']}
                  for n in news[:2]]
         out['teams'][team] = {'name': team, 'items': items, 'headlines': news}

@@ -56,7 +56,7 @@ MILD_DIFF      = 0.5     # ↓ watch / ↑ caution
 SPOTLIGHT_DIFF = 1.0     # undervalued / overvalued spotlight tables
 
 # v2: full schedule (incl. upcoming games) with neutral-site flag
-SCHED_CACHE    = f'nflv_schedules_v2_{SEASON}.csv'
+SCHED_CACHE    = f'nflv_schedules_v3_{SEASON}.csv'
 STATS_CACHE    = f'nflv_game_stats_{SEASON}.csv'  # aggregated per-game stats (derived from PBP)
 
 PBP_URL        = 'https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_{season}.parquet'
@@ -146,6 +146,7 @@ def load_full_schedule():
         'home_score', 'away_score', 'result',
         'spread_line',       # home spread in RESULT convention (positive = home favored)
         'home_moneyline', 'away_moneyline',
+        'total_line', 'div_game',   # for the teaser tags on the dashboard
     ]
     df = raw[[c for c in keep if c in raw.columns]].copy()
     df['neutral'] = (df.get('location', pd.Series('Home', index=df.index)) == 'Neutral').astype(int)

@@ -3,11 +3,13 @@ cbb_dashboard.py
 AlphaPoint Sports — CBB Power & Value Dashboard (Power 4 + Big East)
 Dylan Kelly
 
-Three tabs, same design as the football dashboards:
+Same design as the football dashboards:
   1. Power Ratings  — composite of TeamRankings + Warren Nolan, 0 = average Division I team
   2. Value Metrics  — wins over expectation from cbb_value_metrics.py
   3. Games          — the next three game days with a P4 / Big East team: projected line
-                      (with home court), market spread, edge, trade signals
+                      (with home court), market spread, edge, line movement, trade signals
+  4. Markets        — Kalshi win probability and spread liquidity (markets.py)
+  5. Injury Wire    — news headlines per P4 / Big East team, curated daily (injury_wire.py)
 
 Rating math (sources fetched by cbb_ratings.py; see load_sources)
   Torvik's preseason file is in points per 100 possessions (AdjOE − AdjDE); × average
@@ -39,6 +41,9 @@ import requests
 import cbb_ratings as cbr
 import cbb_value_metrics as vm
 import dashboard_theme as theme
+import extras as ex
+import injury_wire as wire
+import markets as mk
 
 # ==========================================
 # 1. CONFIGURATION
@@ -61,6 +66,10 @@ LOGO_PX         = 48       # smaller logos: this page carries ~150 teams (displa
 LOOKAHEAD_DAYS  = 21
 
 CONFERENCES     = {'SEC': 'SEC', 'B10': 'Big Ten', 'B12': 'Big 12', 'ACC': 'ACC', 'BE': 'Big East'}
+
+# Kalshi team labels that don't normalize to the CBBD name
+KALSHI_CBB_ALIASES = {'Connecticut': 'UConn', 'Miami (FL)': 'Miami', 'Mississippi': 'Ole Miss', 'N.C. State': 'NC State',
+                      'North Carolina St.': 'NC State', "St. John's (NY)": "St. John's", 'Southern California': 'USC'}
 
 # Source name → CBBD name (anything not listed matches after normalizing)
 TORVIK_ALIASES = {
@@ -197,6 +206,7 @@ def upcoming_games(by_espn, focus):
                 continue
             done = ev.get('status', {}).get('type', {}).get('completed')
             games.append({
+                'game_id': str(ev.get('id')),
                 'kick': pd.Timestamp(ev['date']).tz_convert('America/New_York'),
                 'home': hn, 'away': an, 'home_espn': h.get('id'), 'away_espn': a.get('id'),
                 'neutral': bool(comp.get('neutralSite')), 'market': _market(comp, h.get('abbreviation')),
@@ -228,6 +238,55 @@ def _pill(c, games):
     return theme.signal_pill(c, spot, strong)
 
 
+def _signal(c, games):
+    spot, _ = vm.thresholds(games)
+    return '' if c is None or c != c else 'BUY' if c < -spot else 'SELL' if c > spot else ''
+
+
+def _when(g):
+    return g['kick'].strftime('%a %m/%d · ') + g['kick'].strftime('%I:%M %p').lstrip('0') + ' ET'
+
+
+def build_markets(days, rating, names):
+    """Kalshi win probability + spread liquidity per game, plus line history. Returns (rows, unmatched Kalshi names)."""
+    lookup = {_norm(n): n for n in names}
+    key = lambda label: KALSHI_CBB_ALIASES.get(label) or lookup.get(_norm(label))
+    pairs = {frozenset((g['home'], g['away'])) for _, gs in days for g in gs}
+    kalshi, unmatched = mk.kalshi_games('KXNCAAMBGAME', key, pairs)
+    rows, hist = [], []
+    for _, gs in days:
+        for g in gs:
+            kg = kalshi.get(frozenset((g['home'], g['away'])))
+            posted = g['market'] if g['market'] == g['market'] else None      # home margin, positive = home favored
+            spread = None
+            if kg and posted is not None and abs(posted) >= 0.5:
+                fav, dog = (g['home'], g['away']) if posted > 0 else (g['away'], g['home'])
+                spread = mk.kalshi_spread(kg['event'], 'KXNCAAMBSPREAD', key, fav, abs(posted))
+                if spread:
+                    spread.update(fav=fav, dog=dog)
+            k = mk.kalshi_view(kg, g['home'], g['away'])
+            ours = rating.get(g['home'], np.nan) - rating.get(g['away'], np.nan) + (0.0 if g['neutral'] else HFA_POINTS)
+            rows.append({'game_id': g['game_id'], 'when': _when(g), 'home': g['home'], 'away': g['away'],
+                         'ours': ours, 'posted': posted, 'kalshi': k, 'spread': spread})
+            if not g['score']:
+                hist.append({'game_id': g['game_id'], 'market': posted, 'kalshi': k and k['p_home']})
+    firsts = mk.record_history('cbb', hist)
+    for row in rows:
+        row['opened'] = firsts.get(str(row['game_id']))
+    return rows, sorted(n for n in unmatched if n)
+
+
+def team_log(box, spreads, team):
+    """A team's completed D1 games in date order, with the closing spread and ATS result."""
+    out = []
+    for g in box[box['team'] == team].sort_values('date').itertuples():
+        home_team, spread = spreads.get(g.game_id, (None, None))       # spread: home perspective, negative = home favored
+        line = None if spread is None or spread != spread else (spread if home_team == team else -spread)
+        where = 'vs' if g.home == 1 else '@' if g.home == -1 else 'n'
+        out.append(ex.log_row(g.date, g.opponent, where, g.pts, g.opp_pts, line))
+    return out
+
+
 def generate_html(power, metrics, days, info):
     sd = float(power['composite'].std())
     focus = power[power['conference'] != '']
@@ -247,7 +306,7 @@ def generate_html(power, metrics, days, info):
     for i, r in enumerate(ranked.itertuples(), 1):
         c = comp.get(r.team)
         rows += (f'<tr data-group="{theme.esc(r.conference)}"><td class="rank">{i}</td>'
-                 f'<td class="l">{theme.team_cell(r.team, logo(r.team), r.conference)}</td>'
+                 f'<td class="l">{theme.team_cell(r.team, logo(r.team), r.conference, r.team)}</td>'
                  f'<td class="muted">{record.get(r.team, "0-0")}</td>'
                  f'<td data-v="{r.composite}">{theme.rating_chip(r.composite, sd)}</td>'
                  f'<td class="muted" data-v="{r.rank}">{"" if pd.isna(r.rank) else int(r.rank)}</td>'
@@ -265,8 +324,13 @@ def generate_html(power, metrics, days, info):
     stats_txt = '; '.join(f'{n} D1 mean {m:.2f}, SD {d:.2f}' for n, (m, d) in s['stats'].items())
     unmatched = '; '.join(f'{k}: {", ".join(v)}' for k, v in s['unmatched'].items()) or 'none'
     blend = ' + '.join(s['stats']) or 'none'
+    hist = info['history']
+    conf_of = dict(zip(focus['team'], focus['conference']))
+    moved, base = ex.movers(hist, focus['team'])
+    movers_html = ex.movers_card(moved, base, lambda t: (t, logo(t), conf_of.get(t, '')), ex.tracking_since(hist))
     power_html = (
-        f'<div class="grid3">{theme.summary_card("Top 5 power ratings", top5)}'
+        ex.freshness_bar(info['freshness'])
+        + f'<div class="grid3">{theme.summary_card("Top 5 power ratings", top5)}{movers_html}'
         f'{theme.summary_card("Buy candidates", flagged(-1), early or "Record · wins under expectation (W − xW).")}'
         f'{theme.summary_card("Sell candidates", flagged(1), early or "Record · wins over expectation (W − xW).")}</div>'
         f'<div class="sechead"><h2>Power ratings</h2>'
@@ -279,7 +343,9 @@ def generate_html(power, metrics, days, info):
             f'that is TeamRankings\' predictive rating plus Warren Nolan\'s Elo; before TeamRankings switches to this season, '
             f'Warren Nolan is blended with Torvik\'s saved preseason ratings. Each source is centered on its D1 average and '
             f'rescaled to the spread of the points-based source(s) (SD {s["target_sd"]:.2f} points), which converts Elo to '
-            f'points this way). Raw scales: {stats_txt}. Unmatched names: {theme.esc(unmatched)}.'))
+            f'points this way). Raw scales: {stats_txt}. Unmatched names: {theme.esc(unmatched)}. <b>Biggest movers</b> '
+            f'compares today\'s rating with the one saved about a week earlier; the day TeamRankings switches to this '
+            f'season the whole blend changes, so expect one big reshuffle then. Click any team for its page.'))
 
     # --- Value tab ---
     if fv.empty:
@@ -294,7 +360,7 @@ def generate_html(power, metrics, days, info):
             close = f'{r.Close_W}-{r.Close_L}'
             close_cls = 'num pos' if r.Close_L - r.Close_W >= 3 else 'num neg' if r.Close_W - r.Close_L >= 3 else 'num'
             rows += (f'<tr data-group="{theme.esc(conf_name)}">'
-                     f'<td class="l">{theme.team_cell(r.Team, logo(r.Team), conf_name)}</td>'
+                     f'<td class="l">{theme.team_cell(r.Team, logo(r.Team), conf_name, r.Team)}</td>'
                      f'<td class="muted">{r.G}</td><td>{r.W}-{r.L}</td>'
                      f'{theme.num_td(r.Pyth_xW, "{:.1f}", "muted")}{theme.diff_td(r.Pyth_Diff, mild)}'
                      f'{theme.num_td(r.Shoot_xW, "{:.1f}", "muted")}{theme.diff_td(r.Shoot_Diff, mild)}'
@@ -319,7 +385,8 @@ def generate_html(power, metrics, days, info):
                 f'(at least {vm.SPOT_MIN:g} / {vm.STRONG_MIN:g} wins, or {vm.SPOT_RATE:.0%} / {vm.STRONG_RATE:.0%} of games).'))
 
     # --- Games tab ---
-    sections = ''
+    sections, spots = '', []
+    focus_set = set(focus['team'])
     for day, games in days:
         cards = ''
         for g in games:
@@ -329,29 +396,66 @@ def generate_html(power, metrics, days, info):
             proj = '—' if pd.isna(pm) else _line_text(g['home'] if pm >= 0 else g['away'], abs(pm))
             mkt = '—' if pd.isna(g['market']) else _line_text(g['home'] if g['market'] >= 0 else g['away'], abs(g['market']))
             side = lambda t, rt, eid: {'name': t, 'logo': logo(t) or _logo(eid), 'rating': rt, 'sd': sd,
+                                       'key': t if t in focus_set else None,
                                        'signal': _pill(comp.get(t), games_played.get(t, 0)),
                                        'color': meta.get(t, (None, ''))[1]}
             when = g['kick'].strftime('%I:%M %p').lstrip('0') + ' ET'
+            move = ex.line_move(info['opened'].get(g['game_id']), g['market'], pm, g['home'], g['away'], 'First seen')
             cards += theme.game_card(when, 'Neutral site' if g['neutral'] else '',
                                      side(g['away'], a_r, g['away_espn']), side(g['home'], h_r, g['home_espn']),
-                                     proj, mkt, g['score'], theme.edge_text(pm, g['market'], g['home'], g['away']))
+                                     proj, mkt, g['score'], theme.edge_text(pm, g['market'], g['home'], g['away']),
+                                     move=move)
+            spots.append(ex.spot('CBB', 'cbb.html#games', g['kick'], g['away'], g['home'], margin, g['market'], [],
+                                 [(t, _signal(comp.get(t), games_played.get(t, 0))) for t in (g['away'], g['home'])]))
         sections += (f'<div class="sechead"><h2>{day.strftime("%A, %b %d").replace(" 0", " ")}</h2>'
                      f'<span class="hint">{len(games)} game{"" if len(games) == 1 else "s"}</span></div>'
                      f'<div class="games">{cards}</div>')
+    ex.write_spots('cbb', spots)
     games_html = (
         (sections or '<p class="hint">No P4 or Big East games in the next three weeks.</p>')
         + theme.method_note(
             f'The next {GAME_DAYS} game days with a Power 4 or Big East team. <b>Projected</b> is the composite rating gap '
             f'plus {HFA_POINTS:g} points for the home team (none at neutral sites), rounded to a half point. <b>Market</b> '
             f'is ESPN\'s posted spread when one exists. <b>Edge</b> is how far our line is from the market, shown as the '
-            f'side we like; gaps of {theme.EDGE_STRONG:g}+ points are highlighted. Opponents outside Division I have no rating.'))
+            f'side we like; gaps of {theme.EDGE_STRONG:g}+ points are highlighted. Opponents outside Division I have no rating. '
+            f'<b>Line</b> shows the spread when we first saw the game and where it is now, and whether the market has moved '
+            f'toward our number or away from it.'))
+
+    # --- Markets tab (games with a Kalshi market) ---
+    market_rows = [r for r in info['market_rows'] if r['kalshi']]
+    for row in market_rows:
+        row['home_logo'], row['away_logo'] = logo(row['home']), logo(row['away'])
+    markets_html = (mk.markets_tab(market_rows, 'Upcoming') if market_rows else
+                    '<div class="sechead"><h2>Markets</h2></div><p class="hint">Kalshi hasn\'t listed these games yet. '
+                    'Its college basketball markets usually open a day or two before tip-off.</p>')
+
+    # --- Injury Wire tab ---
+    wire_games = [{'away': g['away'], 'home': g['home'], 'when': _when(g)} for _, gs in days for g in gs
+                  if g['home'] in focus_set or g['away'] in focus_set]
+    injury_html = theme.injury_tab(
+        wire_games, info['wire'], lambda t: (t, logo(t)),
+        'College basketball has no official injury reports, so items come from recent news coverage of each Power 4 '
+        'and Big East team.')
+
+    # --- Team pages ---
+    trend = ex.series(hist)
+    vrow = {r.Team: r for r in metrics.itertuples()} if not metrics.empty else {}
+    teams = {}
+    for i, r in enumerate(ranked.itertuples(), 1):
+        v = vrow.get(r.team)
+        mets = [('Margin', v.Pyth_Diff), ('Shooting', v.Shoot_Diff), ('Vegas', v.Veg_Diff), ('Composite', v.Composite)] if v else []
+        teams[r.team] = ex.team_entry(r.team, r.conference, logo(r.team), r.composite, sd, r.rank,
+                                      record.get(r.team, '0-0'), _pill(comp.get(r.team), games_played.get(r.team, 0)),
+                                      mets, trend.get(r.team), team_log(*info['results'], r.team))
 
     page = theme.render_page(
         title='AlphaPoint CBB Dashboard', league='CBB', headline='CBB Power & Value',
         meta_items=[('Season', f'{SEASON - 1}-{str(SEASON)[2:]}'), ('Updated', datetime.now().strftime('%b %d, %I:%M %p'))],
-        tabs=[('power', 'Power Ratings', power_html), ('value', 'Value Metrics', value_html), ('games', 'Games', games_html)],
-        footer='AlphaPoint Sports · Data: TeamRankings, Warren Nolan, Bart Torvik (preseason), collegebasketballdata.com, ESPN · Logos: ESPN · '
-               'Not financial or gambling advice')
+        tabs=[('power', 'Power Ratings', power_html), ('value', 'Value Metrics', value_html), ('games', 'Games', games_html),
+              ('markets', 'Markets', markets_html), ('injuries', 'Injury Wire', injury_html)],
+        footer='AlphaPoint Sports · Data: TeamRankings, Warren Nolan, Bart Torvik (preseason), collegebasketballdata.com, ESPN, '
+               'Kalshi · Logos: ESPN · Not financial or gambling advice',
+        extra=ex.team_modal(teams))
     theme.write_outputs(page, HTML_OUTPUT, SHARE_OUTPUT, 'CBB_NO_BROWSER')
 
 
@@ -382,8 +486,37 @@ def main():
     print(f'  {sum(len(g) for _, g in days)} games over {len(days)} days'
           + (f" ({', '.join(d.strftime('%b %d') for d, _ in days)})" if days else ''))
 
-    print('[4/4] Building dashboard...')
-    generate_html(power, metrics, days, {'scale': scale})
+    print('[4/4] Markets, Injury Wire & dashboard...')
+    rating = dict(zip(power['team'], power['composite']))
+    market_rows, unmatched_k = build_markets(days, rating, teams['team'])
+    print(f"  Kalshi prices for {sum(1 for r in market_rows if r['kalshi'])} of {len(market_rows)} games.")
+    focus_set = set(power.loc[power['conference'] != '', 'team'])
+    unmatched_k = [n for n in unmatched_k if n]
+    if unmatched_k:
+        print(f'  Kalshi names not matched (mostly small schools): {len(unmatched_k)}')
+
+    day_key = int(datetime.now().strftime('%Y%m%d'))
+    mascots = dict(zip(teams['team'], teams['mascot'].fillna(''))) if 'mascot' in teams else {}
+    cands = wire.cbb_candidates(day_key, [(g['away'], g['home']) for _, gs in days for g in gs], mascots, focus_set)
+    wire.write_candidates('cbb', cands)
+    wire_data = wire.load_wire('cbb', day_key, cands)
+    print(f"  Injury Wire: {sum(len(v) for v in wire_data['items'].values())} items ({wire_data['mode']}).")
+
+    hist = ex.snapshot_ratings('cbb', rating)
+    box = vm.fetch_box()
+    sp = vm.fetch_spreads()
+    spreads = {gid: (h, s) for gid, h, s in zip(sp['game_id'], sp['home_team'], sp['spread'])}
+    tr_detail = (ex.fetched(f'cbb_teamrankings_{SEASON}.html') if 'TeamRankings' in sources
+                 else ('waiting for this season', True))
+    freshness = [('TeamRankings', *tr_detail), ('Warren Nolan', *ex.fetched(f'cbb_warrennolan_{SEASON}.html'))]
+    if 'Torvik preseason' in sources:
+        freshness.append(('Torvik', 'saved preseason file', True))
+    freshness += [('Box scores', *ex.fetched(vm._cache('box'))), ('Lines', 'ESPN, live each refresh', True),
+                  ex.wire_freshness(wire_data)]
+
+    generate_html(power, metrics, days, {'scale': scale, 'history': hist, 'freshness': freshness, 'wire': wire_data,
+                                         'market_rows': market_rows, 'results': (box, spreads),
+                                         'opened': {str(r['game_id']): r.get('opened') for r in market_rows}})
 
 
 if __name__ == '__main__':

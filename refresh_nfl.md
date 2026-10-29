@@ -17,7 +17,7 @@ Follow `DIR\refresh_injury_curation.md` with sport = `nfl`, writing `DIR\injury_
 
 ## 4. Push to GitHub
 From DIR, in order:
-1. `git checkout -- scorecard_nfl.csv line_history_nfl.csv`. GitHub's builds own these files; don't commit local copies.
+1. `git checkout -- scorecard_nfl.csv line_history_nfl.csv ratings_history_nfl.csv`. GitHub's builds own these files; don't commit local copies.
 2. `git add injury_wire_nfl.json`
 3. `git -c user.name="Dylan Kelly" -c user.email="dylankelly0233@gmail.com" commit -m "NFL daily refresh"`. If it says there's nothing to commit, that's fine.
 4. `git pull --rebase`
