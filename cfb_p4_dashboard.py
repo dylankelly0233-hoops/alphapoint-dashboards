@@ -44,7 +44,6 @@ import dashboard_theme as theme
 import extras as ex
 import injury_wire as wire
 import markets as mk
-import scorecard
 
 # ==========================================
 # 1. CONFIGURATION
@@ -548,11 +547,10 @@ def generate_html(p4, vals, sched, week, season_type, info):
         'College programs rarely publish structured injury reports, so CFB items come from recent news coverage '
         'of each team.')
 
-    # --- Markets + Scorecard tabs ---
+    # --- Markets tab ---
     for row in info['market_rows']:
         row['home_logo'], row['away_logo'] = _logo(row['home'], meta), _logo(row['away'], meta)
     markets_html = mk.markets_tab(info['market_rows'], wk_label)
-    score_html = scorecard.scorecard_tab('cfb', lambda t: (t, _logo(t, meta)))
 
     # --- Team pages ---
     trend = ex.series(hist)
@@ -571,7 +569,7 @@ def generate_html(p4, vals, sched, week, season_type, info):
         meta_items=[('Season', YEAR), ('Week', week), ('Updated', datetime.now().strftime('%b %d, %I:%M %p'))],
         tabs=[('power', 'Power Ratings', power_html), ('value', 'Value Metrics', value_html),
               ('sched', f'{wk_label} Games', sched_html), ('markets', 'Markets', markets_html),
-              ('injuries', 'Injury Wire', injury_html), ('scorecard', 'Scorecard', score_html)],
+              ('injuries', 'Injury Wire', injury_html)],
         footer='AlphaPoint Sports · Data: Sagarin, SP+ (via collegefootballdata.com) · Logos: ESPN · '
                'Not financial or gambling advice',
         extra=ex.team_modal(teams))
@@ -614,21 +612,6 @@ def build_markets(sched, meta):
     for row in rows:
         row['opened'] = row['cfbd_open'] if row['cfbd_open'] is not None else firsts.get(str(row['game_id']))
     return rows, missing
-
-
-def cfb_results(season_type):
-    """{game_id: (home pts, away pts, closing home margin)} for finished games with pending scorecard picks."""
-    sc = scorecard.load('cfb')
-    pending = sc[sc['result'].isna()]
-    if pending.empty:
-        return {}
-    games = vm.fetch_games()
-    scores = {str(g.game_id): (g.home_pts, g.away_pts) for g in games.itertuples()}
-    closes = {}
-    for wk in sorted({int(w) for w in pending['week'].dropna()}):
-        for gid, (spread, _, _) in fetch_week_lines(wk, season_type).items():
-            closes[str(gid)] = -spread      # after kickoff, CFBD's line is the closing line
-    return {gid: (*scores[gid], closes.get(gid)) for gid in pending['game_id'].astype(str) if gid in scores}
 
 
 # ==========================================
@@ -692,16 +675,10 @@ def main():
     wire_data = wire.load_wire('cfb', week, cands)
     print(f"  Injury Wire: {sum(len(v) for v in wire_data['items'].values())} items ({wire_data['mode']}).")
 
-    print('  Markets & scorecard...')
+    print('  Markets...')
     meta = fetch_team_meta()
     market_rows, no_kalshi = build_markets(sched, meta)
     print(f'  Kalshi prices for {len(market_rows) - len(no_kalshi)} of {len(market_rows)} games.')
-    sig = lambda t: ('BUY' if comp.get(t, 0) < -vm.SPOTLIGHT_DIFF else 'SELL' if comp.get(t, 0) > vm.SPOTLIGHT_DIFF else '')
-    scorecard.log_picks('cfb', [{'game_id': r.game_id, 'week': week, 'kickoff': r.kick, 'home': r.home, 'away': r.away,
-                                 'ours': theme.round_half(r.margin), 'market': -r.market if r.market == r.market else None,
-                                 'home_signal': sig(r.home), 'away_signal': sig(r.away)} for r in sched.itertuples()])
-    graded = scorecard.grade('cfb', cfb_results(season_type))
-    print(f"  Scorecard: {graded['result'].notna().sum()} graded, {graded['result'].isna().sum()} pending.")
 
     hist = ex.snapshot_ratings('cfb', dict(zip(power['team'], power['composite'])))
     results = load_results()

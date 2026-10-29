@@ -191,8 +191,6 @@ INFO = [
         ('Teaser legs (NFL)', 'Underdogs of +1.5 to +3 in games with a total of 46 or lower or a division matchup, teased 6 '
                               'points through 3 and 7: about 77% of legs won out of sample (2015–25); +1.5 / +2.5 dogs with a '
                               'low total (★) about 78.5%. Break-even is 72.4% per leg at −110, so pricing matters.'),
-        ('Scorecard', 'Every NFL, CFB and NBA Edge and Trade Signal is logged before tip-off or kickoff and graded after the game against the '
-                      'spread and against the closing line, so you can see whether the edges hold up.'),
     ]),
     ('Value metrics by sport', [
         ('CFB', 'Expected wins from EPA per play, success rate, and the Vegas moneyline.'),
@@ -205,8 +203,11 @@ INFO = [
     ]),
     ('How the site updates', [
         ('Every hour', 'From 8 AM to midnight ET the site rebuilds automatically: lines, Kalshi markets, scores, ratings, '
-                          'value metrics and scorecard grading.'),
+                          'and value metrics.'),
         ('Once a day', 'The Injury Wire is curated each morning.'),
+        ('Research, not picks', 'Everything here is a starting point for your own handicapping, not a list of bets to tail. '
+                                "Ratings, edges, signals and tags can't see everything that moves a game (late injury "
+                                'news, matchups, motivation, weather), so use them to decide where to dig deeper.'),
         ('Disclaimer', 'For information and entertainment. Not financial or gambling advice.'),
     ]),
 ]

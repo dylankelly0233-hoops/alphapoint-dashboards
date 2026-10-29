@@ -40,7 +40,6 @@ import extras as ex
 import injury_wire as wire
 import markets as mk
 import nfl_value_metrics as vm
-import scorecard
 
 # ==========================================
 # 1. CONFIGURATION
@@ -471,11 +470,10 @@ def generate_html(power, vals, sched, week, info):
         'Sources: ESPN injury reports (status and notes) and recent news headlines; starters are identified from '
         'nflverse snap counts.')
 
-    # --- Markets + Scorecard tabs ---
+    # --- Markets tab ---
     for row in info['market_rows']:
         row['home_logo'], row['away_logo'] = _logo(row['home_key'], meta), _logo(row['away_key'], meta)
     markets_html = mk.markets_tab(info['market_rows'], wk_label)
-    score_html = scorecard.scorecard_tab('nfl', lambda ab: (vm.full_name(ab), _logo(ab, meta)))
 
     # --- Team pages ---
     trend = ex.series(hist)
@@ -493,7 +491,7 @@ def generate_html(power, vals, sched, week, info):
         meta_items=[('Season', SEASON), ('Week', week), ('Updated', datetime.now().strftime('%b %d, %I:%M %p'))],
         tabs=[('power', 'Power Ratings', power_html), ('value', 'Value Metrics', value_html),
               ('sched', f'{wk_label} Games', sched_html), ('markets', 'Markets', markets_html),
-              ('injuries', 'Injury Wire', injury_html), ('scorecard', 'Scorecard', score_html)],
+              ('injuries', 'Injury Wire', injury_html)],
         footer='AlphaPoint Sports · Data: nfelo, Sagarin, nflverse · Logos: ESPN · Not financial or gambling advice',
         extra=ex.team_modal(teams))
     theme.write_outputs(page, HTML_OUTPUT, SHARE_OUTPUT, 'NFL_NO_BROWSER')
@@ -584,17 +582,10 @@ def main():
     wire_data = wire.load_wire('nfl', week, cands)
     print(f"  Injury Wire: {sum(len(v) for v in wire_data['items'].values())} items ({wire_data['mode']}).")
 
-    print('  Markets & scorecard...')
+    print('  Markets...')
     market_rows, unmatched = build_markets(sched)
     if unmatched:
         print(f'  ! Kalshi team names not matched: {", ".join(unmatched)}')
-    sig = lambda t: ('BUY' if comp.get(t, 0) < -vm.SPOTLIGHT_DIFF else 'SELL' if comp.get(t, 0) > vm.SPOTLIGHT_DIFF else '')
-    scorecard.log_picks('nfl', [{'game_id': r.game_id, 'week': week, 'kickoff': r.kick, 'home': r.home, 'away': r.away,
-                                 'ours': theme.round_half(r.margin), 'market': r.market,
-                                 'home_signal': sig(r.home), 'away_signal': sig(r.away)} for r in sched.itertuples()])
-    done = full[full['result'].notna()]   # spread_line on a finished game is the closing line
-    graded = scorecard.grade('nfl', {str(g.game_id): (g.home_score, g.away_score, g.spread_line) for g in done.itertuples()})
-    print(f"  Scorecard: {graded['result'].notna().sum()} graded, {graded['result'].isna().sum()} pending.")
 
     hist = ex.snapshot_ratings('nfl', dict(zip(power['abbr'], power['composite'])))
     freshness = [('nfelo', *ex.fetched(NFELO_CACHE)),

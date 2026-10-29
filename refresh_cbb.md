@@ -24,7 +24,7 @@ Add the number of Injury Wire items to the report in `last_refresh_cbb.md`.
 
 ## 2c. NBA build and Injury Wire
 From DIR: `$env:PYTHONIOENCODING = "utf-8"; $env:NBA_NO_BROWSER = "1"; python nba_dashboard.py > "$env:TEMP\nba_build.log" 2>&1; Get-Content "$env:TEMP\nba_build.log" | Select-String "Sagarin|Injury Wire|  ! |Traceback"`
-Then run `git checkout -- scorecard_nba.csv line_history_nba.csv ratings_history_nba.csv` if those files exist; GitHub's builds own them.
+Then run `git checkout -- line_history_nba.csv ratings_history_nba.csv` if those files exist; GitHub's builds own them.
 Follow `DIR\refresh_injury_curation.md` with sport = `nba`, writing `DIR\injury_wire_nba.json`. Then `git add injury_wire_nba.json`, commit with the message "NBA Injury Wire" (same author flags as above), `git pull --rebase`, and `git push`.
 Add an NBA line to `last_refresh_cbb.md`: the number of NBA Injury Wire items and the top 1–2 movers.
 

@@ -10,7 +10,6 @@ Same design as the other dashboards:
                       edge, line movement, trade signals
   4. Markets        — Kalshi win probability and spread liquidity (markets.py)
   5. Injury Wire    — ESPN injury report filtered to players who matter by minutes, curated daily
-  6. Scorecard      — every edge and trade signal graded against the spread and the close
 
 Rating math
   All three sources are in points (a rating gap = projected neutral-court margin):
@@ -36,7 +35,6 @@ import extras as ex
 import injury_wire as wire
 import markets as mk
 import nba_value_metrics as vm
-import scorecard
 
 # ==========================================
 # 1. CONFIGURATION
@@ -379,9 +377,6 @@ def generate_html(power, metrics, days, info):
         f'Source: ESPN injury reports. Who matters is judged by minutes per game this season: {wire.NBA_STAR_MPG}+ '
         f'minutes is a key player, {wire.NBA_ROTATION_MPG}+ a rotation player.')
 
-    # --- Scorecard tab ---
-    score_html = scorecard.scorecard_tab('nba', lambda t: (full.get(t, t), logo(t)))
-
     # --- Team pages ---
     trend = ex.series(hist)
     vrow = {r.Team: r for r in metrics.itertuples()} if not metrics.empty else {}
@@ -398,8 +393,7 @@ def generate_html(power, metrics, days, info):
         title='AlphaPoint NBA Dashboard', league='NBA', headline='NBA Power & Value',
         meta_items=[('Season', f'{SEASON - 1}-{str(SEASON)[2:]}'), ('Updated', datetime.now().strftime('%b %d, %I:%M %p'))],
         tabs=[('power', 'Power Ratings', power_html), ('value', 'Value Metrics', value_html), ('games', 'Games', games_html),
-              ('markets', 'Markets', markets_html), ('injuries', 'Injury Wire', injury_html),
-              ('scorecard', 'Scorecard', score_html)],
+              ('markets', 'Markets', markets_html), ('injuries', 'Injury Wire', injury_html)],
         footer='AlphaPoint Sports · Data: Sagarin, TeamRankings, ESPN, Kalshi · Logos: ESPN · Not financial or gambling advice',
         extra=ex.team_modal(teams))
     theme.write_outputs(page, HTML_OUTPUT, SHARE_OUTPUT, 'NBA_NO_BROWSER')
@@ -462,19 +456,6 @@ def main():
     wire.write_candidates('nba', cands)
     wire_data = wire.load_wire('nba', day_key, cands)
     print(f"  Injury Wire: {sum(len(v) for v in wire_data['items'].values())} items ({wire_data['mode']}).")
-
-    comp = dict(zip(metrics['Team'], metrics['Composite'])) if not metrics.empty else {}
-    gp = dict(zip(metrics['Team'], metrics['G'])) if not metrics.empty else {}
-    scorecard.log_picks('nba', [{'game_id': g['game_id'], 'week': day.isoformat(), 'kickoff': g['kick'], 'home': g['home'],
-                                 'away': g['away'], 'ours': theme.round_half(rating.get(g['home'], np.nan) - rating.get(g['away'], np.nan)
-                                                                            + (0.0 if g['neutral'] else HFA_POINTS)),
-                                 'market': g['market'] if g['market'] == g['market'] else None,
-                                 'home_signal': _signal(comp.get(g['home']), gp.get(g['home'], 0)),
-                                 'away_signal': _signal(comp.get(g['away']), gp.get(g['away'], 0))}
-                                for day, gs in days for g in gs])
-    final = box[box['home'] == 1]
-    graded = scorecard.grade('nba', {str(r.game_id): (r.pts, r.opp_pts, close.get(str(r.game_id))) for r in final.itertuples()})
-    print(f"  Scorecard: {graded['result'].notna().sum()} graded, {graded['result'].isna().sum()} pending.")
 
     hist = ex.snapshot_ratings('nba', rating)
     freshness = [('Sagarin', f'through {sag_asof}' if sag_asof else 'not available', ex.fetched(SAGARIN_CACHE)[1]),
