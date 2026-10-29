@@ -70,7 +70,8 @@ LANDING_CSS = """
                             .sday { grid-column: 1 / -1; } }
 """
 
-SPOTS_MAX = 12
+SPOTS_MAX      = 12
+SPOTS_TOLERANCE = 1.5   # a tagged side still shows when our line leans the other way by up to this many points
 
 
 def _backing(s):
@@ -80,11 +81,18 @@ def _backing(s):
             + [(f'{team} {sig}', team if sig == 'BUY' else other.get(team)) for team, sig in s['signals']])
 
 
+def _lean(s, team):
+    """Our edge toward `team` in points: positive when our line likes that side, negative when it likes the other."""
+    if not s['edge_side'] or s['edge'] is None:
+        return 0.0
+    return s['edge'] if s['edge_side'] == team else -s['edge']
+
+
 def best_spots():
     """
-    Upcoming games (from each dashboard's spots_{sport}.json) where our projected line and every situational
-    tag / trade signal on the game point to the same team. Biggest edges first up to SPOTS_MAX, shown in
-    kickoff order. Games whose tags disagree with our number, or with each other, are left out.
+    Upcoming games (from each dashboard's spots_{sport}.json) whose situational tags and trade signals all
+    back the same team, and where our projected line agrees or leans the other way by no more than
+    SPOTS_TOLERANCE points. Strongest agreement first up to SPOTS_MAX, shown in kickoff order.
     """
     spots = []
     for sport in ('cfb', 'nfl', 'cbb'):
@@ -97,10 +105,12 @@ def best_spots():
     keep = []
     for s in spots:
         s['dt'] = datetime.fromisoformat(s['kick'])
-        backing = _backing(s)
-        if s['dt'] > now and s['edge_side'] and backing and all(team == s['edge_side'] for _, team in backing):
-            keep.append(s)
-    keep = sorted(keep, key=lambda s: (len(_backing(s)), s['edge']), reverse=True)[:SPOTS_MAX]
+        sides = {team for _, team in _backing(s)}
+        if s['dt'] > now and len(sides) == 1:
+            s['side'] = sides.pop()
+            if _lean(s, s['side']) >= -SPOTS_TOLERANCE:
+                keep.append(s)
+    keep = sorted(keep, key=lambda s: (len(_backing(s)), _lean(s, s['side'])), reverse=True)[:SPOTS_MAX]
     if not keep:
         return ('<section class="card spots"><div class="spots-head"><h2>Best spots</h2></div>'
                 '<p class="hint">No games this week where our line and a tag or trade signal agree yet.</p></section>')
@@ -110,10 +120,13 @@ def best_spots():
         d = s['dt'].date()
         day = 'Today' if d == today else 'Tomorrow' if (d - today).days == 1 else s['dt'].strftime('%a %m/%d')
         when = f"{day} · {s['dt'].strftime('%I:%M %p').lstrip('0')}"
-        edge = ''
-        if s['edge_side'] and s['edge'] is not None:
-            cls = 'edge strong' if s['edge'] >= theme.EDGE_STRONG else 'edge'
-            edge = f'<span class="{cls}">{theme.esc(s["edge_side"])} {theme.spread_num(s["edge"])}</span>'
+        lean = _lean(s, s['side'])
+        if lean > 0:
+            cls = 'edge strong' if lean >= theme.EDGE_STRONG else 'edge'
+            edge = f'<span class="{cls}">{theme.esc(s["side"])} {theme.spread_num(lean)}</span>'
+        else:      # our line is neutral or leans slightly the other way; the tags carry this spot
+            edge = (f'<span class="edge none">{theme.esc(s["side"])}</span>'
+                    f'<span class="sline">{"no edge" if lean == 0 else f"our line −{theme.spread_num(-lean)}"}</span>')
         tags = ''.join(f'<span class="gtag {"bounce" if t.startswith("Bounce") else "teaser max" if "★" in t else "teaser"}">'
                        f'{theme.esc(t)}</span>' for t, _ in s['tags'])
         tags += ''.join(f'<span class="pill {sig.lower()}">{theme.esc(team)} {sig}</span>' for team, sig in s['signals'])
@@ -125,7 +138,8 @@ def best_spots():
                  f'<span class="sedge">{edge}</span></a></li>')
     title = "Today's best spots" if any(s['dt'].date() == today for s in keep) else 'Best spots this week'
     return (f'<section class="card spots"><div class="spots-head"><h2>{title}</h2>'
-            f'<span class="hint">Our line and every tag or trade signal on the game back the same side · next 7 days</span></div>'
+            f'<span class="hint">Tags and trade signals back one side, and our line agrees or is within '
+            f'{SPOTS_TOLERANCE:g} points · next 7 days</span></div>'
             f'<ol class="spotlist">{rows}</ol></section>')
 
 # Info tab: what each dashboard tab shows (dashboard → [(tab, description)])
@@ -152,9 +166,10 @@ INFO = [
                         'starters, and players returning. Curated once a day.'),
     ]),
     ('Research spots', [
-        ('Best spots', 'The home page lists upcoming games where our projected line and the game\'s tags agree: the side '
-                       'our number likes is also the side backed by every situational tag (bounce-back, teaser leg) and '
-                       'trade signal (a BUY team, or the opponent of a SELL team). Games where they disagree are left out.'),
+        ('Best spots', 'The home page lists upcoming games where every situational tag (bounce-back, teaser leg) and trade '
+                       'signal (a BUY team, or the opponent of a SELL team) backs the same side, and our projected line '
+                       'agrees with it or leans the other way by no more than 1.5 points. The number on the right is our '
+                       'edge toward that side.'),
         ('Bounce-back (CFB)', 'An away team coming off a loss by 28+ points. In a 2016–25 backtest these teams covered 55.4% '
                               'of 739 games.'),
         ('Teaser legs (NFL)', 'Underdogs of +1.5 to +3 in games with a total of 46 or lower or a division matchup, teased 6 '
