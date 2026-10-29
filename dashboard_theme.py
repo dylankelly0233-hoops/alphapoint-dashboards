@@ -78,7 +78,7 @@ TIPS = {
     'Market': 'The posted spread right now.',
     'Edge': 'How far our line is from the market, shown as the side our number likes. It is a reason to look closer, not a bet.',
     'Line': 'Where the spread opened (or was first seen) and where it is now. A move toward our number means the market is coming around to it; a move away means it disagrees.',
-    'Sources': 'The line each rating source projects on its own. When they agree, the blended line is on firmer ground; when they split, treat the edge with more caution.',
+    'Confidence': 'How much to trust our projected line, based only on whether the rating sources behind it agree: High = they land within 2 points of each other, Medium = 2 to 4 apart, Low = more than 4. It does not account for injuries, news or weather.',
     'Weather': 'Kickoff forecast for outdoor stadiums. Wind of 15+ mph and heavy rain cut into passing and scoring more than anything else the ratings miss.',
     'Trade Signal': 'From the value metrics: BUY = the team has won fewer games than its play supports (a luck-driven discount); SELL = more than it supports.',
     'Buy candidates': 'Teams whose record trails their underlying play the most (wins below expectation).',
@@ -492,7 +492,10 @@ td.pos { color: var(--pos); font-weight: 600; } td.neg { color: var(--neg); font
 .gtag.teaser { background: #6d4bd8; } .gtag.teaser.max { background: #4a2fb0; }
 .lmove { padding: 8px 14px 10px; font-size: 13px; color: var(--muted); border-top: 1px solid var(--line); }
 .lmove .k { font: 700 11px/1 var(--display); letter-spacing: 1px; text-transform: uppercase; margin-right: 8px; }
-.lmove b { color: var(--ink); } .lmove .pos { color: var(--pos); font-weight: 600; } .lmove .neg { color: var(--neg); font-weight: 600; }
+.lmove b { color: var(--ink); }
+.conf { display: inline-block; margin-right: 6px; padding: 2px 8px; border-radius: 999px; font: 700 12px/1.3 var(--display);
+        letter-spacing: .8px; text-transform: uppercase; color: var(--chip-ink); }
+.conf.high { background: var(--pos); } .conf.med { background: var(--t3); } .conf.low { background: var(--neg); } .lmove .pos { color: var(--pos); font-weight: 600; } .lmove .neg { color: var(--neg); font-weight: 600; }
 .game footer { border-radius: 0; }
 .game footer:last-child { border-radius: 0 0 var(--radius) var(--radius); }
 

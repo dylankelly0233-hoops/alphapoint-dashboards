@@ -95,11 +95,11 @@ GUIDE_STEPS = [
      "Open a sport's Games tab, or Best spots on this page. Edge is how far our projected line is from the posted "
      "spread, shown as the side our number likes; 3+ points is highlighted. Treat it as a reason to look closer, not a bet.",
      'Games tab · Edge'),
-    ('Check whether the ratings agree',
-     "The Sources row shows the line each rating projects on its own. When they agree, the blended number is on firm "
-     "ground. When they split, find out why before trusting the edge: one rating may be reacting to a single result, an "
-     "injury or a quarterback change.",
-     'Game card · Sources row'),
+    ('Check the confidence',
+     "The Confidence row says whether the ratings behind our line agree. High means they do, so the number is on firm "
+     "ground. Low means they disagree, so find out why before trusting the edge: one rating may be reacting to a single "
+     "result, an injury or a quarterback change. Confidence only reflects the ratings, not injuries, news or weather.",
+     'Game card · Confidence row'),
     ('Read the line movement',
      "If the market has moved toward our number since it opened, others see it too. If it moved away, the market likely "
      "knows something: injury news, weather, sharp money. The Markets tab adds Kalshi prices and how much money sits on "
@@ -129,13 +129,13 @@ def guide():
                     for t, body, w in GUIDE_STEPS)
     team = lambda name, rating, sig='': {'name': name, 'logo': None, 'rating': rating, 'sd': 4.0, 'signal': sig, 'color': ''}
     rows = (ex.line_move(3.5, 3.0, 4.5, 'Bills', 'Ravens', 'Opened')
-            + ex.source_lines({'nfelo': 2.6, 'Sagarin': 3.2}, {'nfelo': -0.3, 'Sagarin': 0.4}, 1.7, 'Bills', 'Ravens')
+            + ex.rating_confidence({'nfelo': 2.6, 'Sagarin': 3.2}, {'nfelo': -0.3, 'Sagarin': 0.4}, 1.7)
             + wx.weather_row({'temp': 38, 'wind': 18, 'gust': 29, 'wet': 30}))
     card = theme.game_card('Sun 11/08 · 1:00 PM ET', '', team('Baltimore Ravens', 0.6),
                            team('Buffalo Bills', 2.9, theme.signal_pill(-1.2, 0.75, 1.5)), 'Bills −4.5', 'Bills −3',
                            edge=theme.edge_text(4.5, 3.0, 'Bills', 'Ravens'), move=rows)
     read = ("<p><b>Gap:</b> we have Bills −4.5 against a market of −3, a 1.5-point edge toward Buffalo.</p>"
-            "<p><b>Ratings:</b> both sources land near −4.5, so the number isn't resting on one rating.</p>"
+            "<p><b>Confidence:</b> High. The ratings agree, so the number isn't resting on one source.</p>"
             "<p><b>Line:</b> the market has moved from −3.5 to −3, away from our number. Ask what it knows before "
             "trusting the edge.</p>"
             "<p><b>Outside the numbers:</b> 18 mph wind with gusts near 30 is a passing and scoring concern; check the "
@@ -248,8 +248,9 @@ INFO = [
                   'posted market spread, and the Edge — how far our number is from the market and which side we like.'),
         ('Line movement', 'Each game card shows where the spread opened (or was first seen) and where it is now, and whether '
                           'the market has moved toward our number or away from it.'),
-        ('Sources row', 'Each game card shows the line every rating source projects on its own, and whether they agree '
-                        '(within 2 points), are mixed, or split (more than 4 points apart).'),
+        ('Confidence', 'Each game card rates how much to trust our projected line, based only on whether the rating '
+                       'sources behind it agree: High (within 2 points of each other), Medium (2 to 4), Low (more than 4). '
+                       'It does not account for injuries, news or weather.'),
         ('Weather', 'Kickoff forecasts for outdoor football games (Open-Meteo): temperature, wind and chance of rain or '
                     'snow, highlighted at 15+ mph wind, 50%+ precipitation or freezing temperatures.'),
         ('Team pages', 'Click any team name for its rating trend, value metrics, and game log with results against the spread.'),

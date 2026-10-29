@@ -439,8 +439,7 @@ def generate_html(power, vals, sched, week, info):
                                   'signal': theme.signal_pill(v, spot, strong), 'color': meta.get(ab, ('', ''))[1]}
         tag_html, tag_label = teaser_tag(r)
         move = ex.line_move(info['opened'].get(str(r.game_id)), r.market, pm, nick(home), nick(away), 'First seen')
-        move += ex.source_lines(by_src.get(r.home, {}), by_src.get(r.away, {}), 0.0 if r.neutral else HFA_POINTS,
-                                nick(home), nick(away))
+        move += ex.rating_confidence(by_src.get(r.home, {}), by_src.get(r.away, {}), 0.0 if r.neutral else HFA_POINTS)
         if not r.score and not r.neutral and r.home in wx.NFL_STADIUMS:
             move += wx.weather_row(info['weather'].get(str(r.game_id)), wx.NFL_STADIUMS[r.home][2])
         cards += theme.game_card(theme.kick_text(r.kick), 'Neutral site' if r.neutral else '',

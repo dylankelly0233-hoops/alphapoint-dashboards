@@ -153,25 +153,28 @@ def line_move(opened, current, ours, home, away, label='Opened'):
     return f'<div class="lmove">{theme.k("Line")}{label} {was} → now <b>{now}</b>{verdict}</div>'
 
 
-AGREE_PTS = 2.0      # sources within this many points of each other "agree"
-SPLIT_PTS = 4.0      # more than this apart is a "split"
+AGREE_PTS = 2.0      # sources within this many points of each other → High confidence
+SPLIT_PTS = 4.0      # more than this apart → Low confidence (in between → Medium)
+CONFIDENCE = {'High': ('high', 'the rating sources agree on this line'),
+              'Medium': ('med', 'the rating sources differ by a few points'),
+              'Low': ('low', 'the rating sources disagree on this line')}
 
 
-def source_lines(home_vals, away_vals, hfa, home, away):
+def rating_confidence(home_vals, away_vals, hfa):
     """
-    One row comparing the line each rating source projects on its own (same scale and home field as the blend).
+    How much to trust our projected line, judged only by how closely the rating sources agree: each source's
+    own line (same scale and home field as the blend) is compared, and the spread between them sets
+    High / Medium / Low. Says nothing about injuries, news or weather.
     home_vals / away_vals: {source label: rescaled rating}. Needs at least two sources rating both teams.
     """
-    lines = {s: home_vals[s] - away_vals[s] + hfa for s in home_vals
-             if s in away_vals and not _nan(home_vals[s]) and not _nan(away_vals[s])}
+    lines = [home_vals[s] - away_vals[s] + hfa for s in home_vals
+             if s in away_vals and not _nan(home_vals[s]) and not _nan(away_vals[s])]
     if len(lines) < 2:
         return ''
-    gap = max(lines.values()) - min(lines.values())
-    word, cls = (('agree', 'pos') if gap <= AGREE_PTS else ('mixed', '') if gap <= SPLIT_PTS else ('split', 'neg'))
-    parts = ' · '.join(f'{theme.esc(s)} <b>{theme.esc(line_text(home, away, theme.round_half(v)))}</b>' for s, v in lines.items())
-    pts = theme.spread_num(theme.round_half(gap))
-    return (f'<div class="lmove">{theme.k("Sources")}{parts} · '
-            f'<span class="{cls}">{word} ({pts} pt{"" if pts == "1" else "s"} apart)</span></div>')
+    gap = max(lines) - min(lines)
+    level = 'High' if gap <= AGREE_PTS else 'Medium' if gap <= SPLIT_PTS else 'Low'
+    cls, why = CONFIDENCE[level]
+    return f'<div class="lmove">{theme.k("Confidence")}<span class="conf {cls}">{level}</span> {why}</div>'
 
 
 def tag(label, cls, tip):

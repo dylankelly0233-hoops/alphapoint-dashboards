@@ -536,8 +536,8 @@ def generate_html(p4, vals, sched, week, season_type, info):
         edge = theme.edge_text(pm, mkt_margin, r.home, r.away)
         tag_html, labels = blowout_tags(r, info['last'])
         move = ex.line_move(info['opened'].get(str(r.game_id)), mkt_margin, pm, r.home, r.away)
-        move += ex.source_lines(info['by_source'].get(r.home, {}), info['by_source'].get(r.away, {}),
-                                0.0 if r.neutral else HFA_POINTS, r.home, r.away)
+        move += ex.rating_confidence(info['by_source'].get(r.home, {}), info['by_source'].get(r.away, {}),
+                                     0.0 if r.neutral else HFA_POINTS)
         venue = info['roofs'].get(str(r.game_id))
         if venue and not r.completed:
             move += wx.weather_row(info['weather'].get(str(r.game_id)), venue[2])
