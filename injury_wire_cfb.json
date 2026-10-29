@@ -1,23 +1,31 @@
 {
   "sport": "cfb",
   "week": 9,
-  "generated": "2026-10-27T17:14:54-04:00",
+  "generated": "2026-10-28T20:41:45-04:00",
   "movers": [
-    {
-      "team": "Oregon",
-      "tag": "QB",
-      "text": "QB Dante Moore (concussion) is not expected to return this season. He had already missed recent games; Dylan Raiola and Brock Thomas have been the fill-ins.",
-      "source": "ESPN",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPTVF3ellReGRtazJyZllZNXRwcDBlQmVFZFF2blVDMU9kUDRMSG1RR2xFTWgydjRLZlR5ZlY1LTFGcUNZZC01OG5ndVk3Y0tzcF9zWW1IX3d4dGhPNnlqbnU2TkNjb1M5TlJackRya2J5a1p6ekZrRVViX0U1czI3UGRwd3NoeEtGRlZPR0ZyNTBnWmlQemljS2IwU20tbmVyRC03cEk4aTlhV1dMNXFTREFn?oc=5",
-      "date": "2026-10-27"
-    },
     {
       "team": "Ohio State",
       "tag": "QB",
-      "text": "QB Julian Sayin out indefinitely (throwing arm). True freshman Luke Fahey likely starts at USC; Tavien St. Clair also in the mix.",
-      "source": "Local12",
-      "url": "https://local12.com/sports/osu-buckeyes/ryan-day-putting-together-a-plan-in-case-qb-quarterback-julian-sayin-misses-rest-of-season-shoulder-injury-osu-ohio-state-buckeyes-college-football-usc-trojans-los-angeles-memorial-coliseum-luke-fahey",
-      "date": "2026-10-21"
+      "text": "QB Julian Sayin (right arm) listed OUT on the availability report for USC. True freshman Luke Fahey expected to start; Day says Tavien St. Clair could also play.",
+      "source": "Eleven Warriors",
+      "url": "https://www.elevenwarriors.com/ohio-state-football/2026/10/164906/ohio-state-injury-report-jay-timmons-brandon-inniss-kenyatta-jackson-jr-austin-siereveld-usc",
+      "date": "2026-10-28"
+    },
+    {
+      "team": "Rutgers",
+      "tag": "QB",
+      "text": "Starting QB Dylan Lonergan (head injury vs. Northwestern) listed out vs. Michigan. AJ Surace (7-of-18, 64 yds, INT in relief) or Sean Ashenfelder starts.",
+      "source": "Wolverines Wire",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQMEJ0UlB3MGVGOFdxMlJ4ZmsyN29EdThkdFl4Y1NKNzZXUWNoRE10STJKN2hodmpLeU1SSXhweU9sRmFjMFdaZ0VNUHF1Y1psbHVBYmFQTlV0eTZ1bjhxNFRCeFhibkhXck9xSHQwU3BaSzYxSXhTbmllV3pPTlFJOWFzdw?oc=5",
+      "date": "2026-10-28"
+    },
+    {
+      "team": "Kansas State",
+      "tag": "QB",
+      "text": "QB Avery Johnson day-to-day after missing the ASU game; backup Knuth has a sore ankle. Klein says every QB has been on the injury report and hasn't named a starter for Colorado.",
+      "source": "Yahoo Sports",
+      "url": "https://sports.yahoo.com/articles/kansas-state-qb-avery-johnson-170521718.html",
+      "date": "2026-10-28"
     },
     {
       "team": "Mississippi State",
@@ -28,19 +36,11 @@
       "date": "2026-10-27"
     },
     {
-      "team": "Texas",
-      "tag": "KEY",
-      "text": "LT Trevor Goosby out for the season; WR Cam Coleman also hurt. Sarkisian on both: 'Neither of them look very good.'",
-      "source": "USA Today",
-      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNUzZjMDlCeU1KUmpab1l1aGV3a1NNdDVCTEszWGZPOTQ1OEFYRnI1OHVhLXJHVzF6SEN0WTZubjZ4YzdrVzJXZFJwcjBlUXFXYlhZY2lWMkVQalZ6bGEzdC1QdzNFV01STF9hdGNGZ0k4Q0hIbHQzQ0M4UlBTVFpzYnVHaVpFeFhGdVNuX1lpZHU3aGF3bEd4Qm1zMk90Tl9mOWhuSGxUZGVfTWdG?oc=5",
-      "date": "2026-10-26"
-    },
-    {
       "team": "Arizona State",
       "tag": "QB",
-      "text": "QB Mikey Keene was injured vs. K-State (Cutter Boley finished); Jake Fette is likely to start at BYU.",
-      "source": "BYU Cougars Wire",
-      "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxQdHVKWUEwZWxHcmZUcHd4cDdNUVZMczRzVTRjSDYyVEpUU0FSeWVRR0lBUjUtZWU2R3BHdGZVTktPaENuWVNRcUlaYmliZHdGekYyX2VhLWtaTU1jMnRDblVuZnU2LVhLdWpzZm5yQ2VmREpDUjNZUzFwMjhTWW9rbHVISUx2ZE8zMlZHZU1XYVJWZTFIZHkwWXNlN3YzRHp4MWo4c3ZzWjExMXJTU1c4d09fZ2FqR05kSG9uSlU4d21ObHIyaWx4VHJBejZadzRseFpoLTl5ZENOUnpBWTVBNmxLN2RkTlhy?oc=5",
+      "text": "QB Mikey Keene (right leg) 'honestly questionable' for BYU, not doubtful, per Dillingham. True freshman Jake Fette starts if Keene can't go.",
+      "source": "Arizona Sports",
+      "url": "https://arizonasports.com/ncaa/arizona-state/asu-football/mikey-keene-byu-questionable",
       "date": "2026-10-26"
     }
   ],
@@ -49,25 +49,67 @@
       {
         "team": "Ohio State",
         "tag": "QB",
-        "text": "QB Julian Sayin out indefinitely (throwing arm). True freshman Luke Fahey likely starts at USC; Tavien St. Clair also in the mix.",
-        "source": "Local12",
-        "url": "https://local12.com/sports/osu-buckeyes/ryan-day-putting-together-a-plan-in-case-qb-quarterback-julian-sayin-misses-rest-of-season-shoulder-injury-osu-ohio-state-buckeyes-college-football-usc-trojans-los-angeles-memorial-coliseum-luke-fahey",
-        "date": "2026-10-21"
+        "text": "QB Julian Sayin (right arm) listed OUT on the availability report for USC. True freshman Luke Fahey expected to start; Day says Tavien St. Clair could also play.",
+        "source": "Eleven Warriors",
+        "url": "https://www.elevenwarriors.com/ohio-state-football/2026/10/164906/ohio-state-injury-report-jay-timmons-brandon-inniss-kenyatta-jackson-jr-austin-siereveld-usc",
+        "date": "2026-10-28"
       },
       {
         "team": "Ohio State",
         "tag": "RETURNING",
-        "text": "Ryan Day expects a 'full arsenal' on the OL and most injured players back vs. USC.",
+        "text": "DE Kenyatta Jackson Jr. and OL Austin Siereveld cleared to play vs. USC; WR Brandon Inniss questionable.",
         "source": "Eleven Warriors",
-        "url": "https://news.google.com/rss/articles/CBMiiAJBVV95cUxOMzhNVGlYNkpycXBtZ3JpVmxFa3JxOTU0cjZsNnBkd0gxQTN0TFEzYTRfTmppX1lDa0hYcmJLNXRXazA4WWcyclJOVE9LQWlGTEx1SkVqV05LOU01ZTVMOWowRW5wbVNzYnR1MWYwTldpMW5GRHpGbzdGSUh0Z01mV0FGTmdlaVpKNDdZWENfbWlLcHBEX05abXdOUHh4ZEY5bS1MaGRVYi1vMlNjaWd2T2RXMHc3Mmctbm53VkJqY1pXeTJJYS1GU3NZQ0JmbHRBamdfbVo5WXJNSklHZGZaQzFJdFhRektiZUlZUTV0NjVVYkt5TG1DdUVMTGRlUWdIbHJwMHlsRnk?oc=5",
+        "url": "https://www.elevenwarriors.com/ohio-state-football/2026/10/164906/ohio-state-injury-report-jay-timmons-brandon-inniss-kenyatta-jackson-jr-austin-siereveld-usc",
+        "date": "2026-10-28"
+      }
+    ],
+    "Rutgers": [
+      {
+        "team": "Rutgers",
+        "tag": "QB",
+        "text": "Starting QB Dylan Lonergan (head injury vs. Northwestern) listed out vs. Michigan. AJ Surace (7-of-18, 64 yds, INT in relief) or Sean Ashenfelder starts.",
+        "source": "Wolverines Wire",
+        "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQMEJ0UlB3MGVGOFdxMlJ4ZmsyN29EdThkdFl4Y1NKNzZXUWNoRE10STJKN2hodmpLeU1SSXhweU9sRmFjMFdaZ0VNUHF1Y1psbHVBYmFQTlV0eTZ1bjhxNFRCeFhibkhXck9xSHQwU3BaSzYxSXhTbmllV3pPTlFJOWFzdw?oc=5",
+        "date": "2026-10-28"
+      }
+    ],
+    "Kansas State": [
+      {
+        "team": "Kansas State",
+        "tag": "QB",
+        "text": "QB Avery Johnson day-to-day after missing the ASU game; backup Knuth has a sore ankle. Klein says every QB has been on the injury report and hasn't named a starter for Colorado.",
+        "source": "Yahoo Sports",
+        "url": "https://sports.yahoo.com/articles/kansas-state-qb-avery-johnson-170521718.html",
+        "date": "2026-10-28"
+      }
+    ],
+    "Mississippi State": [
+      {
+        "team": "Mississippi State",
+        "tag": "QB",
+        "text": "QB Kamario Taylor is out for the season with a toe injury that requires surgery. A backup starts at Texas.",
+        "source": "ESPN",
+        "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQd2tLQkgxMmFUeHZTSFFPYkpvOUJadzJxYkZINnNZN1NLR0VLN2gxQTFPVENoMjNOaTdsSmVfMld5cHpWWkVxRVJjNWdTWk1qQXlrV0VsVUF6MlJMRkJaTk1xbXZRajlwVlhQNEc2cHhZa3JrMDlLX0hOUDhFZTBNWi1vNUJJV1ZXenU3UVp1UlBaN2hRSW0wNURVRUpyU3VSYkk4Ql9HakE4dHBt?oc=5",
         "date": "2026-10-27"
-      },
+      }
+    ],
+    "Arizona State": [
       {
-        "team": "Ohio State",
-        "tag": "RETURNING",
-        "text": "Ryan Day expects a 'full arsenal' on the offensive line, with most injured players back vs. USC.",
-        "source": "Eleven Warriors",
-        "url": "https://news.google.com/rss/articles/CBMiiAJBVV95cUxOMzhNVGlYNkpycXBtZ3JpVmxFa3JxOTU0cjZsNnBkd0gxQTN0TFEzYTRfTmppX1lDa0hYcmJLNXRXazA4WWcyclJOVE9LQWlGTEx1SkVqV05LOU01ZTVMOWowRW5wbVNzYnR1MWYwTldpMW5GRHpGbzdGSUh0Z01mV0FGTmdlaVpKNDdZWENfbWlLcHBEX05abXdOUHh4ZEY5bS1MaGRVYi1vMlNjaWd2T2RXMHc3Mmctbm53VkJqY1pXeTJJYS1GU3NZQ0JmbHRBamdfbVo5WXJNSklHZGZaQzFJdFhRektiZUlZUTV0NjVVYkt5TG1DdUVMTGRlUWdIbHJwMHlsRnk?oc=5",
+        "team": "Arizona State",
+        "tag": "QB",
+        "text": "QB Mikey Keene (right leg) 'honestly questionable' for BYU, not doubtful, per Dillingham. True freshman Jake Fette starts if Keene can't go.",
+        "source": "Arizona Sports",
+        "url": "https://arizonasports.com/ncaa/arizona-state/asu-football/mikey-keene-byu-questionable",
+        "date": "2026-10-26"
+      }
+    ],
+    "Oregon": [
+      {
+        "team": "Oregon",
+        "tag": "QB",
+        "text": "QB Dante Moore (concussion) is not expected to return this season. He had already missed recent games; Dylan Raiola and Brock Thomas have been the fill-ins.",
+        "source": "ESPN",
+        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPTVF3ellReGRtazJyZllZNXRwcDBlQmVFZFF2blVDMU9kUDRMSG1RR2xFTWgydjRLZlR5ZlY1LTFGcUNZZC01OG5ndVk3Y0tzcF9zWW1IX3d4dGhPNnlqbnU2TkNjb1M5TlJackRya2J5a1p6ekZrRVViX0U1czI3UGRwd3NoeEtGRlZPR0ZyNTBnWmlQemljS2IwU20tbmVyRC03cEk4aTlhV1dMNXFTREFn?oc=5",
         "date": "2026-10-27"
       }
     ],
@@ -81,6 +123,24 @@
         "date": "2026-10-26"
       }
     ],
+    "Florida": [
+      {
+        "team": "Florida",
+        "tag": "QB",
+        "text": "Sumrall hasn't named a QB for Georgia: Aaron Philo (back from shoulder injury) and Tramell Jones Jr. (started the Texas win) are both available.",
+        "source": "Yahoo Sports",
+        "url": "https://sports.yahoo.com/articles/sumrall-delays-qb-decision-between-173634988.html",
+        "date": "2026-10-27"
+      },
+      {
+        "team": "Florida",
+        "tag": "RETURNING",
+        "text": "WR Vernell Brown III nearing a return from injury for Georgia.",
+        "source": "Sports Illustrated",
+        "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQbHNvUzBkM3VLU2tqVzdQTlFSUGNPcW9nNnM2d2hZelVvNGh0UUFtbXpSZUduRmNFNEltZDlqWWZmNndwOUZaazViOTJMS2I1M1NWYi15bk9CcTEzSVJ3aWxPN05fcS1KWnhvMmxiM1FjUTAxU0I0SS1Bd2ZrNlFsTEM3ZHhpbzZETmZQa2VPaFoyU2RTYVFtcU5ZLUNhcVcwSHcxM2NDeTIteXZfNEVUMg?oc=5",
+        "date": "2026-10-28"
+      }
+    ],
     "Indiana": [
       {
         "team": "Indiana",
@@ -89,46 +149,6 @@
         "source": "FOX Sports",
         "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxORGVMOWtoNEt1TjB0aV9VT0xnbk1xZUV1MWxPblNWT3lEYnU1Yk44VThnU1llc3l6Q0plMzV3YUoyMlJja3Z6SDBFU3VRc3VBODVXTUtRa01SQUtzMGsyX0pYUXRHSGZvcm1DU0RJQVZhUmR0RkNIZTFHd2todXVqR3UxWnFFMkpFajh3VW1PUWt1ZHZyaS11Z2JhMnFYeGNCRGthaE93cGxyZ9IBqgFBVV95cUxNVWh6YVdYY3MxM2FKbzNtSWg1VEZrOGhKNWNBb0FyNEtQSERSSDBCbUVOdFA2eExhbnBQa1Mtek16blZaMnVpWGE0TzM3eEl5cGhmNjNidnNTUkIxc0lZVjc0R05nbDFLU2IxdWxVUlpjUXVLaWVwNkZPMnlIVkt6Q2xtQWpfYkVEMEVxdzg4SUFBNmJsaXkxM2R1ejhsTEJGakMzQzBreWhCZw?oc=5",
         "date": "2026-10-26"
-      }
-    ],
-    "Arizona State": [
-      {
-        "team": "Arizona State",
-        "tag": "QB",
-        "text": "QB Mikey Keene was injured vs. K-State (Cutter Boley finished); Jake Fette is likely to start at BYU.",
-        "source": "BYU Cougars Wire",
-        "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxQdHVKWUEwZWxHcmZUcHd4cDdNUVZMczRzVTRjSDYyVEpUU0FSeWVRR0lBUjUtZWU2R3BHdGZVTktPaENuWVNRcUlaYmliZHdGekYyX2VhLWtaTU1jMnRDblVuZnU2LVhLdWpzZm5yQ2VmREpDUjNZUzFwMjhTWW9rbHVISUx2ZE8zMlZHZU1XYVJWZTFIZHkwWXNlN3YzRHp4MWo4c3ZzWjExMXJTU1c4d09fZ2FqR05kSG9uSlU4d21ObHIyaWx4VHJBejZadzRseFpoLTl5ZENOUnpBWTVBNmxLN2RkTlhy?oc=5",
-        "date": "2026-10-26"
-      }
-    ],
-    "Kansas State": [
-      {
-        "team": "Kansas State",
-        "tag": "QB",
-        "text": "QB room battered: Avery Johnson was doubtful last week and multiple QBs are hurt heading to Colorado.",
-        "source": "The Topeka Capital-Journal",
-        "url": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxNMy1wMEJLMVNFSzlGNG1lOVg0bjJ0TUd2ZDUtYTExUUp1TUMxZHhyTl9pelBkR1k3dE13bjZUMHliQ19BS01KQXZsWk1zV29TQkJramFEVWhhMHBkUmtmUmNwMDJxeDROWFE4ODljc1FPeHhGbXNoX1M3YVZEUzZLWWJLa29lNy1kZk5DNWYzcS1laFVYaENJZ2kycS1yLXU1MWQ4bDUxNFVyVFJOMWhoTDk2d1pCSmJEeVh4b2ZWSVowQmNYLWozWXo2U01ha0lZblBiUWljdjRmNXduelRUQ29YNnM1XzNTWEl6RE1n?oc=5",
-        "date": "2026-10-27"
-      }
-    ],
-    "Mississippi State": [
-      {
-        "team": "Mississippi State",
-        "tag": "QB",
-        "text": "QB Kamario Taylor is out for the season with a toe injury that requires surgery. A backup starts at Texas.",
-        "source": "ESPN",
-        "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQd2tLQkgxMmFUeHZTSFFPYkpvOUJadzJxYkZINnNZN1NLR0VLN2gxQTFPVENoMjNOaTdsSmVfMld5cHpWWkVxRVJjNWdTWk1qQXlrV0VsVUF6MlJMRkJaTk1xbXZRajlwVlhQNEc2cHhZa3JrMDlLX0hOUDhFZTBNWi1vNUJJV1ZXenU3UVp1UlBaN2hRSW0wNURVRUpyU3VSYkk4Ql9HakE4dHBt?oc=5",
-        "date": "2026-10-27"
-      }
-    ],
-    "Rutgers": [
-      {
-        "team": "Rutgers",
-        "tag": "QB",
-        "text": "QB Dylan Lonergan left the Northwestern loss in the 1st quarter; Schiano must 'make a decision' at QB after poor backup play.",
-        "source": "NJ.com",
-        "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxQMjN4ME1rLVVkTFJJaFdvaTVIWDIyZVNQMm9VWm1RN3hIa21oQ2lUbVRqMEFXWXVXVHVFY2ZQZ3JSRmV2RXNIRS1sWm9FWEQzQ0kzeXhrSDEtNno4Um5nVGJLci1PLTNpeWJseUhwaWZSbVdLWHZ2OXhNSk9UV0ZqQmFmRVBoakpKaWduZDNlQ1ZUSllWel9FanczVjNNNHdJZkxIaGR1R21CTVhwMER3Rmh0dGRJMUNtTnA1eEx3N2VaXzc2X0JoRUJmbGtaSFpOWDhWalpTUy1BVnFYRXdidA?oc=5",
-        "date": "2026-10-24"
       }
     ],
     "Washington": [
@@ -149,14 +169,14 @@
         "date": "2026-10-26"
       }
     ],
-    "Florida": [
+    "Penn State": [
       {
-        "team": "Florida",
-        "tag": "QB",
-        "text": "Florida is weighing Jones or Aaron Philo (shoulder) at QB vs. Georgia; Vernell Brown III is nearing a return.",
-        "source": "Sun Sentinel",
-        "url": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxPVGRpeVV2TjVfRC1DQmt6OEszRUk2YVJWU19tZm1IYmhQTUVHaUtoaEhwUjhNdERsUWtFMUtjXzhrR3VTQkEzRTNMZVBkMG5IMDh3TmFBdHNLUFltOWpxdDB6aUNWTkg1MzRIT0NxbHVUMGprcUlONG5EWVdaNW9ZTjZVcWZ5MzczX0NaVzBHT2g1STl6UVhldDhNVHlBUHVUbkpUd0NqQVFFNW1ydlFfakhuQVE2QkhNeHdXdnUxMW5GX0x3YnFhclJlTEVfQ2VXbFdmbGFNU3Y1VHZZLUVIRnF3czB2THlzRzNOdTlRY1k3YnQyeG1veXprSlA?oc=5",
-        "date": "2026-10-26"
+        "team": "Penn State",
+        "tag": "KEY",
+        "text": "Star WR Koby Howard returned to practice and is considered questionable vs. Purdue.",
+        "source": "247Sports",
+        "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQTkVfbnRwWE56Nlc0WUx2WEZKTUQzSGpaQ2pQeGd4UW1PTERVWkFVakE0aVVXLVd4MWw5VTFna2pJdDdHNGFjVFZzWXNNYTdRTWhNdDl1VWZBT19CT1JtTk5BTVlDc0I1Z1dlbXRLbHpWWnVKRm1zMjk2ekFPOGVRbDJhMFVDWnlrMFJDdk92SmJuX0kyTGpoY3NBdWoyRDV0ZjBCVE5hR1BYcUI1c2p2S3R5ZC1va2ZwRnhzV3U0OWJLWTRyeWdEOUNVZw?oc=5",
+        "date": "2026-10-27"
       }
     ],
     "Ole Miss": [
@@ -179,16 +199,6 @@
         "date": "2026-10-26"
       }
     ],
-    "Boston College": [
-      {
-        "team": "Boston College",
-        "tag": "KEY",
-        "text": "RB Evan Dickens reportedly out for the season.",
-        "source": "Sports Illustrated",
-        "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQUjBQTVpFR19mSW5xWGZwNW5hRnhUaVJCR2dMS0lWaVJsYl9DVTNIX196cTJxX2kwdEwwLTZHTlppLXZzZ01ReE9WcDE5WVdEbDVMZGprcVdNdzBpOXFnNkF5Y3g4OG1vdFpIM1pNbXctLVdUNEZtQlhFRzVBdndtRjhrZW1lOHZwaUlxNm82X3NiTkpjdkpaQThNTExSLS1JbFQzWEM5MDRhdG9zNDVfMnBhOFN4TWZSc3FFdVZWTTdFNEE?oc=5",
-        "date": "2026-10-22"
-      }
-    ],
     "Iowa": [
       {
         "team": "Iowa",
@@ -197,6 +207,16 @@
         "source": "The Gazette",
         "url": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxOS0lhSVZRTHVJR3RVWTdTTDdjTHpiUG5yVHVlRUZ5aE9mcUpuZHA0enZSS0NDLXZzNGduY3lhMFYyenUweU1Mb3lValhzQ2FEWGFlNWMwR2JNNFdtNmdPcjJDendvSHJ3clg2V0l3blRod1hkSVo3Yl9ZTzAtMFg3U1FTclloZV9CVWEwdlgyVVRkOG5kNDlBQlNPSEdIUlBrZHd2MVRGd0xfYzUyOGdJQVJTa1FWZ01SaDA0NFk3TkxsWDZKbkptYmV0NmdDd1VPZUhydkJ1b3FKMFFsRExxa2NlLWFPR1NoOTBLVy01YTl4QQ?oc=5",
         "date": "2026-10-27"
+      }
+    ],
+    "Boston College": [
+      {
+        "team": "Boston College",
+        "tag": "KEY",
+        "text": "RB Evan Dickens reportedly out for the season.",
+        "source": "Sports Illustrated",
+        "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQUjBQTVpFR19mSW5xWGZwNW5hRnhUaVJCR2dMS0lWaVJsYl9DVTNIX196cTJxX2kwdEwwLTZHTlppLXZzZ01ReE9WcDE5WVdEbDVMZGprcVdNdzBpOXFnNkF5Y3g4OG1vdFpIM1pNbXctLVdUNEZtQlhFRzVBdndtRjhrZW1lOHZwaUlxNm82X3NiTkpjdkpaQThNTExSLS1JbFQzWEM5MDRhdG9zNDVfMnBhOFN4TWZSc3FFdVZWTTdFNEE?oc=5",
+        "date": "2026-10-22"
       }
     ],
     "SMU": [
@@ -229,24 +249,14 @@
         "date": "2026-10-25"
       }
     ],
-    "Oregon": [
+    "Nebraska": [
       {
-        "team": "Oregon",
-        "tag": "QB",
-        "text": "QB Dante Moore (concussion) is not expected to return this season. He had already missed recent games; Dylan Raiola and Brock Thomas have been the fill-ins.",
-        "source": "ESPN",
-        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPTVF3ellReGRtazJyZllZNXRwcDBlQmVFZFF2blVDMU9kUDRMSG1RR2xFTWgydjRLZlR5ZlY1LTFGcUNZZC01OG5ndVk3Y0tzcF9zWW1IX3d4dGhPNnlqbnU2TkNjb1M5TlJackRya2J5a1p6ekZrRVViX0U1czI3UGRwd3NoeEtGRlZPR0ZyNTBnWmlQemljS2IwU20tbmVyRC03cEk4aTlhV1dMNXFTREFn?oc=5",
-        "date": "2026-10-27"
-      }
-    ],
-    "Penn State": [
-      {
-        "team": "Penn State",
-        "tag": "KEY",
-        "text": "Star WR Koby Howard's status for Purdue is in doubt; Matt Campbell gave no firm update.",
-        "source": "Victory Bell Rings",
-        "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOaVFITV9VQ1dZTWxfSjU4ang0RXJza3o3RVVhMzdmVXJEa2hSd0paWnhrY09XWnRtM0tVOVdhOEg3VU1ObTRFenpFYmpSWlZFR3ZBMmw3cWU4MU12MF85NlNYbUFObEc2SlFWcC00dU81TUFqR1ZIa3hnR3hvdG1NQlVZa0ZuR0g3aUJQMjN5dWFwZDBZUDBHUlZ0ZkdlSllDM3JIUGFnNGtEQ1IyVzU3RQ?oc=5",
-        "date": "2026-10-27"
+        "team": "Nebraska",
+        "tag": "RETURNING",
+        "text": "Nebraska expects its leading rusher back vs. Washington.",
+        "source": "Cornhuskers Wire",
+        "url": "https://news.google.com/rss/articles/CBMimAJBVV95cUxQaWFUWWVOOWYtUHg0Vjl1WF9hNWJUaHFCWEQ5OWZYQWNPc3hSNHpzYmpmYnEwV2RCZTR0ZDJDMEpPYVVDWlROUEQtM3lkdVAzRV8wTkVmNnRkQ1NyS0pESkN3Y3g4bUxINzhRaWZZUGo3UVVsYmt0MUR5STBPeHJSM3dDeDZobDdsbm9pbktDTERERFRiUVBRY01FNVRKZjRUbzQyb19RX2hDdFEySUdQMWk2cDluSFZ3aEJEVW1JNkhSRnpZLTJHQjZnR0JxMjRoYzEtZXA2NkpCY3RmUEhQak45YjM3dEdFV29WRDhfdmpfaGpiUEhQRzg4eEROOWVLN1c0NUVOUjBoSzBPUXZNNGhHMEFMZ21s?oc=5",
+        "date": "2026-10-28"
       }
     ]
   }
