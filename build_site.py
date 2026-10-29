@@ -28,10 +28,11 @@ DASHBOARDS = [
     ('cfb.html', 'cfb_p4_dashboard.py', 'cfb_p4_dashboard.html', 'CFB', 'College Football', 'Power 4 + Notre Dame'),
     ('nfl.html', 'nfl_dashboard.py', 'nfl_dashboard.html', 'NFL', 'Pro Football', 'All 32 teams'),
     ('cbb.html', 'cbb_dashboard.py', 'cbb_dashboard.html', 'CBB', 'College Basketball', 'Power 4 + Big East'),
+    ('nba.html', 'nba_dashboard.py', 'nba_dashboard.html', 'NBA', 'Pro Basketball', 'All 30 teams'),
 ]
 
 LANDING_CSS = """
-.tiles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 0 0 18px; }
+.tiles { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin: 0 0 18px; }
 .tile { display: flex; flex-direction: column; gap: 4px; padding: 14px 16px 12px; text-decoration: none; color: var(--ink);
         border-top: 4px solid var(--accent); transition: transform .15s ease, box-shadow .15s ease; }
 .tile:hover, .tile:focus-visible { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(10, 20, 40, .12); outline: none; }
@@ -40,7 +41,7 @@ LANDING_CSS = """
 .tile .cov { color: var(--muted); font-size: 13px; }
 .tile .go { margin-top: 6px; font: 700 12px/1 var(--display); letter-spacing: 1.2px; text-transform: uppercase; color: var(--accent); }
 .tile .warn { color: var(--neg); font-size: 12px; }
-@media (max-width: 560px) { .tiles { gap: 8px; } .tile { padding: 11px 10px 10px; } .tile .name { font-size: 12.5px; }
+@media (max-width: 560px) { .tiles { gap: 8px; grid-template-columns: repeat(2, minmax(0, 1fr)); } .tile { padding: 11px 10px 10px; } .tile .name { font-size: 12.5px; }
                             .tile .cov { display: none; } }
 .updated { margin-top: 16px; }
 .info { display: grid; gap: 16px; }
@@ -104,7 +105,7 @@ def best_spots():
     which always shows. Listed in kickoff order.
     """
     spots = []
-    for sport in ('cfb', 'nfl', 'cbb'):
+    for sport in ('cfb', 'nfl', 'cbb', 'nba'):
         try:
             with open(os.path.join(HERE, f'spots_{sport}.json'), encoding='utf-8') as f:
                 spots += json.load(f)
@@ -115,7 +116,7 @@ def best_spots():
     for s in spots:
         s['dt'] = datetime.fromisoformat(s['kick'])
         sides = {team for _, team in _backing(s)}
-        if s['dt'] <= now or len(sides) != 1:
+        if s['dt'] <= now or len(sides) != 1 or s['edge'] is None:      # needs a posted line and our projection
             continue
         s['side'] = sides.pop()
         if any(label.startswith('Teaser') for label, _ in s['tags']):
@@ -160,7 +161,8 @@ INFO = [
     ('Every dashboard', [
         ('Power Ratings', 'One composite rating per team: points above or below an average team (0.0). The gap between two '
                           'teams is the projected margin on a neutral field. Built by blending public computer ratings '
-                          '(Sagarin + SP+ for CFB, nfelo + Sagarin for NFL, TeamRankings + Warren Nolan for CBB) after '
+                          '(Sagarin + SP+ for CFB, nfelo + Sagarin for NFL, TeamRankings + Warren Nolan for CBB, Sagarin + TeamRankings + '
+                          'our own adjusted net rating for NBA) after '
                           'putting them on the same scale.'),
         ('Value Metrics', 'Wins over expectation (W − xW): how many more or fewer games a team has won than its underlying '
                           'play supports. Below zero means the record is worse than the play (a buy candidate); above zero '
@@ -189,7 +191,7 @@ INFO = [
         ('Teaser legs (NFL)', 'Underdogs of +1.5 to +3 in games with a total of 46 or lower or a division matchup, teased 6 '
                               'points through 3 and 7: about 77% of legs won out of sample (2015–25); +1.5 / +2.5 dogs with a '
                               'low total (★) about 78.5%. Break-even is 72.4% per leg at −110, so pricing matters.'),
-        ('Scorecard', 'Every football Edge and Trade Signal is logged before kickoff and graded after the game against the '
+        ('Scorecard', 'Every NFL, CFB and NBA Edge and Trade Signal is logged before tip-off or kickoff and graded after the game against the '
                       'spread and against the closing line, so you can see whether the edges hold up.'),
     ]),
     ('Value metrics by sport', [
@@ -198,6 +200,8 @@ INFO = [
                 'as a luck flag.'),
         ('CBB', 'Expected wins from scoring margin (Pythagorean), shooting luck (3-point and free-throw percentages set to '
                 'expected), and the Vegas spread; close-game record and opponent 3-point shooting are shown as luck flags.'),
+        ('NBA', 'Same three measures as CBB (Pythagorean exponent 14, close games = 5 points or fewer or overtime), from '
+                'ESPN box scores.'),
     ]),
     ('How the site updates', [
         ('Every hour', 'From 8 AM to midnight ET the site rebuilds automatically: lines, Kalshi markets, scores, ratings, '
@@ -209,7 +213,7 @@ INFO = [
 
 
 def run(script):
-    env = {**os.environ, 'CFB_NO_BROWSER': '1', 'NFL_NO_BROWSER': '1', 'CBB_NO_BROWSER': '1', 'PYTHONIOENCODING': 'utf-8'}
+    env = {**os.environ, 'CFB_NO_BROWSER': '1', 'NFL_NO_BROWSER': '1', 'CBB_NO_BROWSER': '1', 'NBA_NO_BROWSER': '1', 'PYTHONIOENCODING': 'utf-8'}
     print(f'\n=== {script} ===', flush=True)
     r = subprocess.run([sys.executable, script], cwd=HERE, env=env)
     return r.returncode == 0

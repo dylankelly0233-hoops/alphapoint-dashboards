@@ -11,6 +11,8 @@ p4_*.html
 nfl_*.csv
 nfl_*.html
 cbb_teamrankings_*.html
+nbav_*.csv
+nba_*.html
 cbb_warrennolan_*.html
 cbb_evanmiya.html
 news_cache_*.json

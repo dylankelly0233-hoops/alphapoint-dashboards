@@ -295,6 +295,77 @@ def cbb_candidates(day_key, games, mascots, focus):
     return news_candidates('cbb', day_key, games, mascots, 'basketball', focus)
 
 
+ESPN_NBA_INJURIES = 'https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries'
+ESPN_NBA_PAGE     = 'https://www.espn.com/nba/injuries'
+NBA_STAR_MPG      = 28     # minutes per game that make a player a KEY item on his own
+NBA_ROTATION_MPG  = 20     # rotation players: two or more out at once is a CLUSTER
+NBA_OUT           = {'Out', 'Doubtful', 'Suspension'}
+
+
+def nba_candidates(day_key, games, team_names, players):
+    """
+    games: [(away, home)] ESPN abbreviations. team_names: abbr → full name. players: per-game minutes
+    (nba_value_metrics) — the NBA has no snap counts, so minutes per game decide who matters.
+    day_key (YYYYMMDD) plays the role of the week.
+    """
+    abbr_by_name = {v: k for k, v in team_names.items()}
+    playing = {t for g in games for t in g}
+    mpg, in_last = {}, set()
+    if players is not None and not players.empty:
+        p = players.assign(key=[(t, _norm(n)) for t, n in zip(players['team'], players['player'])])
+        mpg = p.groupby('key')['minutes'].mean().to_dict()
+        last = p.assign(gid=p['game_id'].astype(int)).groupby('team')['gid'].transform('max')
+        in_last = set(p.loc[p['game_id'].astype(int) == last, 'key'])
+    try:
+        feed = requests.get(ESPN_NBA_INJURIES, timeout=30).json().get('injuries', [])
+    except Exception as e:
+        print(f'  ! ESPN NBA injury feed unavailable: {e}')
+        feed = []
+
+    now = _now()
+    out = {'sport': 'nba', 'week': day_key, 'collected': now.isoformat(timespec='minutes'), 'games': games, 'teams': {}}
+    by_team = {abbr_by_name.get(t.get('displayName')): t.get('injuries', []) for t in feed}
+    for abbr in sorted(playing):
+        rows = []
+        for i in by_team.get(abbr, []):
+            a = i.get('athlete', {})
+            name = a.get('displayName', '')
+            try:
+                updated = datetime.fromisoformat(i.get('date', '').replace('Z', '+00:00'))
+            except ValueError:
+                updated = None
+            key = (abbr, _norm(name))
+            rows.append({'name': name, 'pos': (a.get('position') or {}).get('abbreviation', ''),
+                         'status': i.get('status', ''), 'note': _clip(i.get('shortComment'), 220),
+                         'days_old': (now - updated).days if updated else 99,
+                         'date': updated.strftime('%Y-%m-%d') if updated else '',
+                         'mpg': round(mpg.get(key, 0.0), 1), 'missed_last': key in mpg and key not in in_last})
+        items, used = [], set()
+
+        # KEY: a star (by minutes) out, doubtful, questionable or day-to-day
+        for r in sorted((r for r in rows if r['mpg'] >= NBA_STAR_MPG and r['status'] != 'Active'), key=lambda r: -r['mpg'])[:3]:
+            used.add(r['name'])
+            items.append(_item(abbr, 'KEY', f"{r['name']} ({r['pos']}, {r['mpg']:.0f} min/game) {r['status'].lower()} — "
+                               f"{r['note']}", r, url=ESPN_NBA_PAGE))
+        # CLUSTER: two or more other rotation players out
+        hits = [r for r in rows if r['name'] not in used and r['status'] in NBA_OUT and r['mpg'] >= NBA_ROTATION_MPG]
+        if len(hits) >= 2:
+            used.update(r['name'] for r in hits)
+            who = ', '.join(f"{r['name']} ({r['mpg']:.0f} min)" for r in sorted(hits, key=lambda r: -r['mpg']))
+            items.append(_item(abbr, 'CLUSTER', f'{len(hits)} rotation players out: {who}',
+                               min(hits, key=lambda r: r['days_old']), url=ESPN_NBA_PAGE))
+        # RETURNING: a rotation player who missed the last game and is now day-to-day or probable
+        for r in rows:
+            if (r['name'] not in used and r['missed_last'] and r['mpg'] >= NBA_ROTATION_MPG and r['days_old'] <= RETURN_DAYS
+                    and r['status'] in ('Day-To-Day', 'Questionable', 'Probable')):
+                items.append(_item(abbr, 'RETURNING', f"{r['name']} ({r['mpg']:.0f} min/game) trending back — {r['note']}",
+                                   r, url=ESPN_NBA_PAGE))
+        # Raw notes for the curation step: rotation players, and anyone out who hasn't played yet this season
+        raw = [r for r in rows if r['mpg'] >= 15 or (r['mpg'] == 0 and r['status'] in NBA_OUT)]
+        out['teams'][abbr] = {'name': team_names.get(abbr, abbr), 'items': items, 'rotation_on_report': raw, 'headlines': []}
+    return out
+
+
 def news_candidates(sport, week, games, mascots, sport_word, only=None):
     """Injury headlines per team for the games shown. only = restrict the searches to these teams."""
     playing = sorted({t for g in games for t in g if only is None or t in only})

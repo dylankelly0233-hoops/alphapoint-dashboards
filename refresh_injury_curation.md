@@ -1,4 +1,4 @@
-# Injury Wire curation (shared by the CFB, NFL and CBB refreshes)
+# Injury Wire curation (shared by the CFB, NFL, CBB and NBA refreshes)
 
 Goal: from `injury_candidates_{sport}.json`, keep **only injury news that could move a betting line** this week. Write the result to `injury_wire_{sport}.json`. This is not an injury report. Most teams should have nothing.
 
@@ -36,6 +36,7 @@ Each item looks like this:
 ```
 - `week` must equal the `week` in the candidates file. `generated` is the current local time, in ISO format with its UTC offset.
 - **Team keys**: NFL uses the abbreviations in the candidates file (`KC`, `LA`, `WAS`, ...). CFB and CBB use the exact school names in the candidates file (`Ohio State`, `Miami`, `St. John's`, ...).
+- **NBA**: team keys are ESPN abbreviations in the candidates file (`BOS`, `GS`, `NY`, `UTAH`, ...), and `week` is today's date as a number, like CBB. The candidates list `rotation_on_report` with each player's minutes per game (`mpg`). KEY = a top player (about 28+ minutes) out, doubtful or questionable; CLUSTER = 2+ rotation players (20+ minutes) out; RETURNING = a rotation player back from missing games. Long-term injuries the market has priced in for weeks don't qualify. NBA statuses change late in the day, so note the report time in the text when it matters.
 - **CBB**: the candidates' `week` is today's date as a number (e.g. `20261102`); copy it exactly. College basketball has no injury reports, so only keep news about rotation players (starters and the top bench players) being out, limited or returning, and suspensions that change who plays.
 - Leave out teams that have nothing impactful. Every item in `movers` must also appear under its team.
 - Write valid JSON (UTF-8). If you're unsure about an item, leave it out.

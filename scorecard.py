@@ -1,6 +1,6 @@
 """
 scorecard.py
-AlphaPoint Sports — model scorecard for the football dashboards
+AlphaPoint Sports — model scorecard (NFL, CFB, NBA)
 Dylan Kelly
 
 Every refresh logs what the dashboard is saying about each upcoming game:
