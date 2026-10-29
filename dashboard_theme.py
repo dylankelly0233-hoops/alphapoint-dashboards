@@ -350,7 +350,9 @@ body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.45 var(
 .mast .wrap { padding-block: 18px 0; }
 .brandrow { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 20px; }
 .brand { display: flex; align-items: baseline; gap: 10px; }
-.brand .mark { font: 800 26px/1 var(--display); letter-spacing: .5px; text-transform: uppercase; }
+.brand .mark { font: 800 26px/1 var(--display); letter-spacing: .5px; text-transform: uppercase; color: inherit; text-decoration: none; }
+a.mark:hover { opacity: .85; }
+a.mark:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
 .brand .mark span { color: var(--accent); }
 .brand .league { font: 700 13px/1 var(--display); letter-spacing: 1.5px; text-transform: uppercase;
                  background: var(--accent); color: var(--accent-ink); padding: 4px 8px; border-radius: 4px; }
@@ -720,7 +722,7 @@ def render_page(*, title, league, headline, meta_items, tabs, footer, extra=''):
 <style>{logo_css}</style>
 <header class="mast"><div class="wrap">
   <div class="brandrow">
-    <div class="brand"><span class="mark">Alpha<span>Point</span> Sports</span><span class="league">{esc(league)}</span></div>
+    <div class="brand"><a class="mark" href="index.html" title="AlphaPoint Sports home">Alpha<span>Point</span> Sports</a><span class="league">{esc(league)}</span></div>
     <div class="meta">{meta}</div>
   </div>
   <h1 class="title">{esc(headline)}</h1>
