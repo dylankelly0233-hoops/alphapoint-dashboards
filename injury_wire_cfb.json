@@ -1,8 +1,16 @@
 {
   "sport": "cfb",
   "week": 9,
-  "generated": "2026-10-28T20:41:45-04:00",
+  "generated": "2026-10-29T17:34:59-04:00",
   "movers": [
+    {
+      "team": "Kansas State",
+      "tag": "QB",
+      "text": "QB Avery Johnson ruled OUT at Colorado; backup Jacob Knuth (ankle) listed doubtful. K-State expected to start a new QB.",
+      "source": "The Topeka Capital-Journal",
+      "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxPWDVfYkhKWmhuNjhPeEdMZ2dTZm5zYVBoaHJsaUstWGNVM0lFVmx3ZkFOQWtrMTJYV09fR3BpSWplcG5zREdJMWJGQWFralUxalBycE9sR2YxcU1DY0FZTVZZNHdFc0lrS0Fhb0tMd3l5NW5JR0tpbjl2RFRQSVhnZjZ2TU5mLWRNNFpzUmgzQnBkaGFoVkZmUGlacmpKeWhIaGY1WDZnenZ5T25pc1RveG9IZ1JuUDllc1BNOUExeDY5WEE2eHZNakhmOFQxT2pweEQ4MlQzNlVTWk0?oc=5",
+      "date": "2026-10-29"
+    },
     {
       "team": "Ohio State",
       "tag": "QB",
@@ -20,14 +28,6 @@
       "date": "2026-10-28"
     },
     {
-      "team": "Kansas State",
-      "tag": "QB",
-      "text": "QB Avery Johnson day-to-day after missing the ASU game; backup Knuth has a sore ankle. Klein says every QB has been on the injury report and hasn't named a starter for Colorado.",
-      "source": "Yahoo Sports",
-      "url": "https://sports.yahoo.com/articles/kansas-state-qb-avery-johnson-170521718.html",
-      "date": "2026-10-28"
-    },
-    {
       "team": "Mississippi State",
       "tag": "QB",
       "text": "QB Kamario Taylor is out for the season with a toe injury that requires surgery. A backup starts at Texas.",
@@ -36,12 +36,12 @@
       "date": "2026-10-27"
     },
     {
-      "team": "Arizona State",
+      "team": "Illinois",
       "tag": "QB",
-      "text": "QB Mikey Keene (right leg) 'honestly questionable' for BYU, not doubtful, per Dillingham. True freshman Jake Fette starts if Keene can't go.",
-      "source": "Arizona Sports",
-      "url": "https://arizonasports.com/ncaa/arizona-state/asu-football/mikey-keene-byu-questionable",
-      "date": "2026-10-26"
+      "text": "QB Katin Houser (broken throwing hand, Oct. 10) on the injury report with the door open for a return; Bielema addressed his status. Clayton has started since.",
+      "source": "Yahoo Sports",
+      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNenJ0S1BvNV83dHg3MEx6aHUtSWptdTVoYkYxeWdSblBHSDQ0ZW9aa1BaT2xPTk1HclExTTU5WFBPM3BDaTY5QVJSczB5bmU0QjZfa0g5MHNXelJvcHZXbDlqNXlxdjI0R19ocUhDYjg2Ql9tTWdpUWpodm9xcGE4clV3Ti1NNTV2SUlz?oc=5",
+      "date": "2026-10-29"
     }
   ],
   "teams": {
@@ -77,10 +77,10 @@
       {
         "team": "Kansas State",
         "tag": "QB",
-        "text": "QB Avery Johnson day-to-day after missing the ASU game; backup Knuth has a sore ankle. Klein says every QB has been on the injury report and hasn't named a starter for Colorado.",
-        "source": "Yahoo Sports",
-        "url": "https://sports.yahoo.com/articles/kansas-state-qb-avery-johnson-170521718.html",
-        "date": "2026-10-28"
+        "text": "QB Avery Johnson ruled OUT at Colorado; backup Jacob Knuth (ankle) listed doubtful. K-State expected to start a new QB.",
+        "source": "The Topeka Capital-Journal",
+        "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxPWDVfYkhKWmhuNjhPeEdMZ2dTZm5zYVBoaHJsaUstWGNVM0lFVmx3ZkFOQWtrMTJYV09fR3BpSWplcG5zREdJMWJGQWFralUxalBycE9sR2YxcU1DY0FZTVZZNHdFc0lrS0Fhb0tMd3l5NW5JR0tpbjl2RFRQSVhnZjZ2TU5mLWRNNFpzUmgzQnBkaGFoVkZmUGlacmpKeWhIaGY1WDZnenZ5T25pc1RveG9IZ1JuUDllc1BNOUExeDY5WEE2eHZNakhmOFQxT2pweEQ4MlQzNlVTWk0?oc=5",
+        "date": "2026-10-29"
       }
     ],
     "Mississippi State": [
@@ -127,10 +127,10 @@
       {
         "team": "Florida",
         "tag": "QB",
-        "text": "Sumrall hasn't named a QB for Georgia: Aaron Philo (back from shoulder injury) and Tramell Jones Jr. (started the Texas win) are both available.",
-        "source": "Yahoo Sports",
-        "url": "https://sports.yahoo.com/articles/sumrall-delays-qb-decision-between-173634988.html",
-        "date": "2026-10-27"
+        "text": "Both QBs Aaron Philo and Tramell Jones Jr. listed questionable for Georgia; Sumrall has not named a starter.",
+        "source": "Gainesville Sun",
+        "url": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxQYmdKOXlVOXhhbkp6NENqbWlxSHFyMlhIZnVJMzVSMzV6eTlLcGtIRWoyem8xZU5yU01JTWFQS3VQaDB5R1Q1VVZpOC1SMzNnSVd1UG1YWmMwMk9XZWRjRTd4WE8xbHlwYmFzVmYtbXNZcDg3Wnd2TDdocFE5R0VRSnIyQXpvbmkzSGZ2alR6Y25rUzZJWTVZS0g3UTd5UkN0czNILUJiaFpXUHhNMkRnQUVfU2RMTDZ4VUs4bHlnay0tNEI4QnZOVnJJdWs3TmVLTDRHd2hfTGRpbUE4dlNPUmlPUkZaS3JWbjEtekJBWnk?oc=5",
+        "date": "2026-10-29"
       },
       {
         "team": "Florida",
@@ -145,10 +145,10 @@
       {
         "team": "Indiana",
         "tag": "QB",
-        "text": "QB Josh Hoover playing through an injury (one second-half pass last week); Cignetti expects him to start and 'be better' vs. Minnesota.",
-        "source": "FOX Sports",
-        "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxORGVMOWtoNEt1TjB0aV9VT0xnbk1xZUV1MWxPblNWT3lEYnU1Yk44VThnU1llc3l6Q0plMzV3YUoyMlJja3Z6SDBFU3VRc3VBODVXTUtRa01SQUtzMGsyX0pYUXRHSGZvcm1DU0RJQVZhUmR0RkNIZTFHd2todXVqR3UxWnFFMkpFajh3VW1PUWt1ZHZyaS11Z2JhMnFYeGNCRGthaE93cGxyZ9IBqgFBVV95cUxNVWh6YVdYY3MxM2FKbzNtSWg1VEZrOGhKNWNBb0FyNEtQSERSSDBCbUVOdFA2eExhbnBQa1Mtek16blZaMnVpWGE0TzM3eEl5cGhmNjNidnNTUkIxc0lZVjc0R05nbDFLU2IxdWxVUlpjUXVLaWVwNkZPMnlIVkt6Q2xtQWpfYkVEMEVxdzg4SUFBNmJsaXkxM2R1ejhsTEJGakMzQzBreWhCZw?oc=5",
-        "date": "2026-10-26"
+        "text": "QB Josh Hoover (playing through injury) listed probable vs. Minnesota on the initial report; two Hoosiers ruled out.",
+        "source": "247Sports",
+        "url": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxQZktOY2psNU1jOEtNUEtNdENGTXFvRjZLQm9veFZVaVhoRFJyMGJPZmpSdjdxZXhOYWwxRlRtY3c1ZDFFZkRjYkJ0dGFWOUtNZ2l2Ri1jX0lrT3YxbEFqb0pQVHJaVUdZVGZhazRuSndCeTNIQVVneTVmSXFpR0t6V09HTXdlTnJLRi0xRWxLSVhmUUo0M3oybUpVUzV5TWlXWWdfY3YtNmNWcWNrTHVnM0dQTkZ4bHlLcE5WZVJQT1lwNmZtOVoyekRvZWszekVKZmg2c2NMRkIza25xdmctVG9oLUJWS2tkbGllZGhOMm5EQUcwWVhXVUZlaFc2YkU?oc=5",
+        "date": "2026-10-29"
       }
     ],
     "Washington": [
@@ -193,10 +193,10 @@
       {
         "team": "Notre Dame",
         "tag": "KEY",
-        "text": "CB DJ McKinney ruled out vs. Navy; two more starters questionable.",
+        "text": "Starting CB DJ McKinney (ankle) out vs. Navy and expected to miss 'an extended period.'",
         "source": "On3",
-        "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNZzRUQ014THlnWFFrTVk5Zk9sWW80WWJTLWhqMFZmcTNsak1nd3N1T1dxdUM5emFWekEyQzVTMmpmVmRJdUJ3LTJwNHIxdFVFRXFfSHRCaE5lVlJCSVhuaDBRRWs5aVlZNzQ5ekIySHBWS0liSFh2UW5iSnhvaFBTaHl1bk94OXh4N2pGeGkwLWlOQ3lLeWgtYTdMZllMZTJHa3FsZUJPN3F3aXRINkotZEJ4SXBVZDRDZDZ0dGRkaw?oc=5",
-        "date": "2026-10-26"
+        "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOWWdPYTAzUVFyR2lseUp5OTU0VnZLellFZTRGQ0g2LTlWWkhic3FNRzh3YzJKWFd0b1FBLXF5Rmk5Mm1ZWDBQLTctNDNDajVXcmZSS2NSV1pGQ1daMm5Jc1E3VUFXMDB5YzZNN0NyQ2VHZUU1SGlsdFZKY1ZsQ3FvaDRnLUpXNGRzZDQyT0hCekp1SV9yenR0cUNYNzdraF9iRVktc2VCU1F0dm0xQTR6RTFNSXFLeU4zalE?oc=5",
+        "date": "2026-10-29"
       }
     ],
     "Iowa": [
@@ -243,10 +243,10 @@
       {
         "team": "Missouri",
         "tag": "RETURNING",
-        "text": "RB Ahmad Hardy set to return to practice, per Eli Drinkwitz.",
-        "source": "Yahoo Sports",
-        "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxObmwtVXVXR0lKeTlXdUFLckhIcFg3bm8zME9wbDd1NWZPdnR4UDJVWnZ6alBsMHY1M0VHYjdFMC1lUEt4WEFWejh2Y0drbTRXRXAxSlF6SWt0cm9vVHp6RFE5SHRlUlJVbS1sblVqSmp1cWlocGlUQlhwVkMxeVdCaHZVaw?oc=5",
-        "date": "2026-10-25"
+        "text": "RB Ahmad Hardy not listed on Wednesday's availability report for Arkansas, after missing time.",
+        "source": "Sports Illustrated",
+        "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQT2FRNEdKNUp1T2g3SWhnaWZVUndyUzlNdElwY2d0eXFEdWFwR1Q3eHgtU3pmRTN1N3JWYkVaLXQ3aF9SR3ZtbVl4WnhDNlllVk13a0hUSFRNOFpURjVURW9wNVExT0N6ZFRzaWhoZnFULU5LaVRlS19rRHhpNm9jQ0dLbkNBY19WY2lES1kybnQ5WE1ibmNiS0RGcGZpNm45Q0xfc0lHRVZpVmM?oc=5",
+        "date": "2026-10-29"
       }
     ],
     "Nebraska": [
@@ -257,6 +257,46 @@
         "source": "Cornhuskers Wire",
         "url": "https://news.google.com/rss/articles/CBMimAJBVV95cUxQaWFUWWVOOWYtUHg0Vjl1WF9hNWJUaHFCWEQ5OWZYQWNPc3hSNHpzYmpmYnEwV2RCZTR0ZDJDMEpPYVVDWlROUEQtM3lkdVAzRV8wTkVmNnRkQ1NyS0pESkN3Y3g4bUxINzhRaWZZUGo3UVVsYmt0MUR5STBPeHJSM3dDeDZobDdsbm9pbktDTERERFRiUVBRY01FNVRKZjRUbzQyb19RX2hDdFEySUdQMWk2cDluSFZ3aEJEVW1JNkhSRnpZLTJHQjZnR0JxMjRoYzEtZXA2NkpCY3RmUEhQak45YjM3dEdFV29WRDhfdmpfaGpiUEhQRzg4eEROOWVLN1c0NUVOUjBoSzBPUXZNNGhHMEFMZ21s?oc=5",
         "date": "2026-10-28"
+      }
+    ],
+    "BYU": [
+      {
+        "team": "BYU",
+        "tag": "KEY",
+        "text": "RB LJ Martin and Evan Johnson officially ruled out vs. Arizona State.",
+        "source": "Sports Illustrated",
+        "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNTWpFcjUtS0xfLXMtcjJjNGFoSGVVX3BVZllmdURyVlRMVUhFUktORVE2c0J5ZXJWV1drcHhadDBWSHV0eGpuR0k2N2FqcG95Q2NPX3dyOVZqRHVXcWFEdEdLbFVtTGVzNF9LQUZjRjR2bXRaMFFySlo5cmlTbXVieDNZWXJKcmF1LXQxY0xhNEtYdWxBaFBIczNZTGJTRkFmSTB4TkRRV0V2QUk?oc=5",
+        "date": "2026-10-29"
+      }
+    ],
+    "Arkansas": [
+      {
+        "team": "Arkansas",
+        "tag": "KEY",
+        "text": "Top WR Chris Marshall listed questionable on the first availability report vs. Missouri.",
+        "source": "Whole Hog Sports",
+        "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPYmI2Tm1mNEJtYzdBR0xlZTNUNERNRlNtaDh3QTdsS0ZnYjJ4QXFESDJUUm5rY0FZcXlfZGJoTks3N0JHbjZoQ0g3MDlHSEJyZGh3NGxTeFhkS0NaUTY2MXh2cnd0QlIzM0c3enk0TlI5VnVqZ1V6UFlETzYwWmZsdXlQQktQR3dOVjkyMHkyNVhRV0tndjAzMlA5WmdnX01wbWJTVEY5VUp4dDBnZGlTWDFUTTY0OWJ1cXZMaW9jeEI0OTlkcFo1V3A0OA?oc=5",
+        "date": "2026-10-29"
+      }
+    ],
+    "Florida State": [
+      {
+        "team": "Florida State",
+        "tag": "KEY",
+        "text": "Starting CB Quindarrius Jones out vs. Clemson; FSU lists 16 players out on the initial report.",
+        "source": "On3",
+        "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOUEdsa1RhQm1QTWJSelVxelJjNFc5aV9HUUdSNUVZc2hmbXh1emhybEJMVFBsNC1melVwV25GT3RWNzVWUWx5RWJaQTFnV242bE5VUmgzWWRra1lvcjg0X1lQSFNhU1A4UHRHYnkxWmpNZE1FWXBKRm02RHlsQzRhUnlleXZHY0x1SWJQb2xLM0tJcFVhTEVlU0E1TW9kclhtRm8xb1dxaEdmMnhzQ1NBVEZIaG1Hdmp1RE9DMGMxWnpOTWZJMVUwQlVJMlRDQQ?oc=5",
+        "date": "2026-10-29"
+      }
+    ],
+    "Illinois": [
+      {
+        "team": "Illinois",
+        "tag": "QB",
+        "text": "QB Katin Houser (broken throwing hand, Oct. 10) on the injury report with the door open for a return; Bielema addressed his status. Clayton has started since.",
+        "source": "Yahoo Sports",
+        "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNenJ0S1BvNV83dHg3MEx6aHUtSWptdTVoYkYxeWdSblBHSDQ0ZW9aa1BaT2xPTk1HclExTTU5WFBPM3BDaTY5QVJSczB5bmU0QjZfa0g5MHNXelJvcHZXbDlqNXlxdjI0R19ocUhDYjg2Ql9tTWdpUWpodm9xcGE4clV3Ti1NNTV2SUlz?oc=5",
+        "date": "2026-10-29"
       }
     ]
   }
