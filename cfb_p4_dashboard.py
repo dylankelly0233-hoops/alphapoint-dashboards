@@ -42,6 +42,7 @@ import requests
 import cfb_value_metrics as vm
 import dashboard_theme as theme
 import extras as ex
+import weather as wx
 import injury_wire as wire
 import markets as mk
 
@@ -337,6 +338,7 @@ def build_schedule(week, season_type, p4_names, power, fcs, metrics):
         mkt = lines.get(g.get('id'))
         rows.append({
             'game_id': g.get('id'), 'kick': kick, 'home': home, 'away': away, 'neutral': bool(g.get('neutralSite')),
+            'venue_id': g.get('venueId'),
             'home_rating': h_r, 'away_rating': a_r, 'margin': margin,
             'market': mkt[0] if mkt else np.nan, 'market_book': mkt[1] if mkt else '',
             'market_open': mkt[2] if mkt else None,
@@ -353,6 +355,21 @@ def build_schedule(week, season_type, p4_names, power, fcs, metrics):
 # ==========================================
 # 7. HTML
 # ==========================================
+def fetch_venues():
+    """CFBD venue id → (latitude, longitude, 'dome' or 'outdoor'), cached a week (stadiums don't move)."""
+    path = f'p4_venues_{YEAR}.csv'
+    if not os.path.exists(path) or datetime.now().timestamp() - os.path.getmtime(path) > 7 * 86400:
+        data = vm.cfbd_get('/venues')
+        df = pd.DataFrame([{'id': v['id'], 'lat': v.get('latitude'), 'lon': v.get('longitude'), 'dome': bool(v.get('dome'))}
+                           for v in data or []])
+        if not df.empty:
+            df.to_csv(path, index=False)
+    if not os.path.exists(path):
+        return {}
+    df = pd.read_csv(path).dropna(subset=['lat', 'lon'])
+    return {int(r.id): (float(r.lat), float(r.lon), 'dome' if r.dome else 'outdoor') for r in df.itertuples()}
+
+
 def fetch_team_meta():
     """school → (ESPN team id, primary color, mascot) for every team CFBD lists this season, FBS and FCS."""
     if not vm.cache_stale(META_CACHE):
@@ -519,6 +536,11 @@ def generate_html(p4, vals, sched, week, season_type, info):
         edge = theme.edge_text(pm, mkt_margin, r.home, r.away)
         tag_html, labels = blowout_tags(r, info['last'])
         move = ex.line_move(info['opened'].get(str(r.game_id)), mkt_margin, pm, r.home, r.away)
+        move += ex.source_lines(info['by_source'].get(r.home, {}), info['by_source'].get(r.away, {}),
+                                0.0 if r.neutral else HFA_POINTS, r.home, r.away)
+        venue = info['roofs'].get(str(r.game_id))
+        if venue and not r.completed:
+            move += wx.weather_row(info['weather'].get(str(r.game_id)), venue[2])
         cards += theme.game_card(when, venue, side(r.away, r.away_rating, r.away_value),
                                  side(r.home, r.home_rating, r.home_value), proj, mkt, r.score, edge, tag_html, move)
         spots.append(ex.spot('CFB', 'cfb.html#sched', r.kick, r.away, r.home, r.margin, mkt_margin, labels,
@@ -686,9 +708,16 @@ def main():
                  ('SP+', *ex.fetched(f'p4_sp_{YEAR}.csv')), ('Scores', *ex.fetched(vm.GAMES_CACHE)),
                  ('Lines', 'live each refresh', True), ('Play-by-play', *ex.fetched(vm.ADV_BOX_CACHE)),
                  ex.wire_freshness(wire_data)]
+    venues = fetch_venues()
+    roofs = {str(r.game_id): venues.get(r.venue_id) for r in sched.itertuples()}
+    outdoor = [(gid, v[0], v[1], r.kick) for gid, v, r in zip(roofs, roofs.values(), sched.itertuples())
+               if v and v[2] != 'dome' and not r.completed]
+    weather = wx.forecasts(outdoor)
+    print(f'  Weather: forecasts for {len(weather)} of {len(outdoor)} outdoor games.')
     info = {'scale': scale_info, 'sag_asof': sag_asof, 'rating_sd': float(power['composite'].std()),   # FBS-wide spread, sets the rating chip colors
             'wire': wire_data, 'market_rows': market_rows, 'history': hist, 'freshness': freshness, 'results': results,
-            'last': last_results(results[0], week, season_type),
+            'last': last_results(results[0], week, season_type), 'weather': weather, 'roofs': roofs,
+            'by_source': {r.team: {'Sagarin': r.sagarin, 'SP+': r.sp} for r in power.itertuples()},
             'opened': {str(r['game_id']): r.get('opened') for r in market_rows}}
     generate_html(p4, vals, sched, week, season_type, info)
 

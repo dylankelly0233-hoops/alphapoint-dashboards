@@ -13,7 +13,7 @@ Repo: github.com/dylankelly0233-hoops/alphapoint-dashboards (public). This folde
 ## Code map
 - `cfb_p4_dashboard.py`, `nfl_dashboard.py`, `cbb_dashboard.py`, `nba_dashboard.py`: one dashboard each (power ratings, value metrics, games, markets, injury wire).
 - `*_value_metrics.py`: wins-over-expectation (W − xW) metrics for each sport.
-- `dashboard_theme.py`: the shared look (page shell, CSS, logos, cards). `markets.py`: Kalshi win probability and spread liquidity. `injury_wire.py`: injury candidates and loading the curated file. `extras.py`: rating history and movers, the data-freshness strip, line movement, situational tags (CFB bounce-back, NFL teasers), team pop-up pages, and the `spots_*.json` feed behind the home page's best spots.
+- `dashboard_theme.py`: the shared look (page shell, CSS, logos, cards). `markets.py`: Kalshi win probability and spread liquidity. `injury_wire.py`: injury candidates and loading the curated file. `weather.py`: kickoff forecasts for outdoor football games (Open-Meteo; NFL stadium table, CFBD venues for CFB). `extras.py`: rating history and movers, the per-source "Sources" agreement row, the data-freshness strip, line movement, situational tags (CFB bounce-back, NFL teasers), team pop-up pages, and the `spots_*.json` feed behind the home page's best spots.
 - Key settings sit near the top of each dashboard: `HFA_POINTS` (CFB 2.5, NFL 1.7, CBB 3.0, NBA 2.4), `SOURCE_WEIGHTS`, and the trade-signal thresholds in the value-metrics files.
 
 ## Working rules

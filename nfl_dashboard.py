@@ -37,6 +37,7 @@ import requests
 
 import dashboard_theme as theme
 import extras as ex
+import weather as wx
 import injury_wire as wire
 import markets as mk
 import nfl_value_metrics as vm
@@ -426,6 +427,7 @@ def generate_html(power, vals, sched, week, info):
 
     # --- Schedule tab ---
     rating = dict(zip(power['abbr'], power['composite']))
+    by_src = {r.abbr: {'nfelo': r.nfelo, 'Sagarin': r.sagarin} for r in power.itertuples()}
     sig = lambda v: 'BUY' if v is not None and v == v and v < -spot else 'SELL' if v is not None and v == v and v > spot else ''
     cards, spots = '', []
     for r in sched.itertuples():
@@ -437,6 +439,10 @@ def generate_html(power, vals, sched, week, info):
                                   'signal': theme.signal_pill(v, spot, strong), 'color': meta.get(ab, ('', ''))[1]}
         tag_html, tag_label = teaser_tag(r)
         move = ex.line_move(info['opened'].get(str(r.game_id)), r.market, pm, nick(home), nick(away), 'First seen')
+        move += ex.source_lines(by_src.get(r.home, {}), by_src.get(r.away, {}), 0.0 if r.neutral else HFA_POINTS,
+                                nick(home), nick(away))
+        if not r.score and not r.neutral and r.home in wx.NFL_STADIUMS:
+            move += wx.weather_row(info['weather'].get(str(r.game_id)), wx.NFL_STADIUMS[r.home][2])
         cards += theme.game_card(theme.kick_text(r.kick), 'Neutral site' if r.neutral else '',
                                  side(r.away, away, r.away_value), side(r.home, home, r.home_value),
                                  proj, mkt, r.score,
@@ -592,9 +598,13 @@ def main():
                  ('Sagarin', f'through {sagarin_asof}' if sagarin_asof else 'not available', ex.fetched(SAGARIN_CACHE)[1]),
                  ('Lines & scores', *ex.fetched(vm.SCHED_CACHE)), ('Play-by-play', *ex.fetched(vm.STATS_CACHE)),
                  ex.wire_freshness(wire_data)]
+    outdoor = [(str(r.game_id), *wx.NFL_STADIUMS[r.home][:2], r.kick) for r in sched.itertuples()
+               if not r.score and not r.neutral and wx.NFL_STADIUMS.get(r.home, (0, 0, 'dome'))[2] != 'dome']
+    weather = wx.forecasts(outdoor)
+    print(f'  Weather: forecasts for {len(weather)} of {len(outdoor)} outdoor games.')
     info = {'scale': scale_info, 'nfelo_asof': nfelo_asof, 'sagarin_asof': sagarin_asof,
             'wire': wire_data, 'market_rows': market_rows, 'history': hist, 'full': full, 'freshness': freshness,
-            'opened': {str(r['game_id']): r.get('opened') for r in market_rows}}
+            'weather': weather, 'opened': {str(r['game_id']): r.get('opened') for r in market_rows}}
     generate_html(power, vals, sched, week, info)
 
 

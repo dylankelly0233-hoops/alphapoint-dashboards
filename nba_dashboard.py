@@ -327,6 +327,7 @@ def generate_html(power, metrics, days, info):
 
     # --- Games tab ---
     sections, spots = '', []
+    by_src = power.set_index('abbr')[list(s['stats'])].to_dict('index')      # each source's rescaled rating
     for day, games in days:
         cards = ''
         for g in games:
@@ -341,6 +342,8 @@ def generate_html(power, metrics, days, info):
             when = g['kick'].strftime('%I:%M %p').lstrip('0') + ' ET'
             move = ex.line_move(info['opened'].get(g['game_id']), g['market'], pm, short[g['home']], short[g['away']],
                                 'First seen')
+            move += ex.source_lines(by_src.get(g['home'], {}), by_src.get(g['away'], {}),
+                                    0.0 if g['neutral'] else HFA_POINTS, short[g['home']], short[g['away']])
             cards += theme.game_card(when, 'Neutral site' if g['neutral'] else '', side(g['away'], a_r), side(g['home'], h_r),
                                      proj, mkt, g['score'],
                                      theme.edge_text(pm, g['market'], short[g['home']], short[g['away']]), move=move)

@@ -71,6 +71,35 @@ def logo_uri(key, espn_path, px=LOGO_PX):
 def esc(s):
     return html.escape(str(s))
 
+# Plain-language explainers behind the small "?" buttons (keyed by the label they sit next to)
+TIPS = {
+    'Rating': 'Points above or below an average team. The gap between two teams is the projected margin on a neutral field.',
+    'Projected': 'Our line: the rating gap plus home field, rounded to the half point.',
+    'Market': 'The posted spread right now.',
+    'Edge': 'How far our line is from the market, shown as the side our number likes. It is a reason to look closer, not a bet.',
+    'Line': 'Where the spread opened (or was first seen) and where it is now. A move toward our number means the market is coming around to it; a move away means it disagrees.',
+    'Sources': 'The line each rating source projects on its own. When they agree, the blended line is on firmer ground; when they split, treat the edge with more caution.',
+    'Weather': 'Kickoff forecast for outdoor stadiums. Wind of 15+ mph and heavy rain cut into passing and scoring more than anything else the ratings miss.',
+    'Trade Signal': 'From the value metrics: BUY = the team has won fewer games than its play supports (a luck-driven discount); SELL = more than it supports.',
+    'Buy candidates': 'Teams whose record trails their underlying play the most (wins below expectation).',
+    'Sell candidates': 'Teams whose record runs ahead of their underlying play the most (wins above expectation).',
+    'Biggest movers': 'Largest changes in our composite rating over about the last week.',
+    'Composite': 'Average of the value measures, in wins. Below 0 = fewer wins than the play supports.',
+}
+
+
+def tip(label):
+    """A small "?" button that shows TIPS[label]; empty if there is no explainer for it."""
+    text = TIPS.get(label)
+    return (f'<button type="button" class="tip" aria-label="What is {esc(label)}?" data-tip="{esc(text)}">?</button>'
+            if text else '')
+
+
+def k(label):
+    """A card label ("Projected", "Edge", ...) with its explainer button."""
+    return f'<span class="k">{esc(label)}{tip(label)}</span>'
+
+
 
 def _isnan(v):
     return v is None or (isinstance(v, float) and v != v)
@@ -150,12 +179,12 @@ def summary_card(title, items, note='', empty='None this week.'):
         for i, (n, lg, val, s) in enumerate(items, 1))
     body = f'<ol>{lis}</ol>' if items else f'<p class="empty">{esc(empty)}</p>'
     note_html = f'<p class="cardnote">{note}</p>' if note else ''
-    return f'<section class="card summary"><h3>{esc(title)}</h3>{body}{note_html}</section>'
+    return f'<section class="card summary"><h3>{esc(title)}{tip(title)}</h3>{body}{note_html}</section>'
 
 
 def table(table_id, headers, rows_html, sortable=True):
     """headers: list of (label, css_class). Rows are pre-rendered <tr> strings."""
-    ths = ''.join(f'<th class="{c}" scope="col">{esc(h)}</th>' for h, c in headers)
+    ths = ''.join(f'<th class="{c}" scope="col">{esc(h)}{tip(h)}</th>' for h, c in headers)
     cls = 'data sortable' if sortable else 'data'
     return (f'<div class="card tablecard"><div class="scroll"><table class="{cls}" id="{table_id}">'
             f'<thead><tr>{ths}</tr></thead><tbody>{rows_html}</tbody></table></div></div>')
@@ -213,9 +242,9 @@ def game_card(when, venue, away, home, projected, market, final='', edge='', tag
     tags_html = f'<div class="gtags">{tags}</div>' if tags else ''
     return (f'<article class="card game"><header><span>{esc(when)}</span><span>{esc(venue)}</span></header>'
             f'{tags_html}{side(away, "A")}{side(home, "H")}'
-            f'<footer><div><span class="k">Projected</span><b>{projected}</b></div>'
-            f'<div><span class="k">Market</span><span>{market}</span></div>'
-            f'<div><span class="k">Edge</span>{edge or "—"}</div>{final_html}</footer>{move}</article>')
+            f'<footer><div>{k("Projected")}<b>{projected}</b></div>'
+            f'<div>{k("Market")}<span>{market}</span></div>'
+            f'<div>{k("Edge")}{edge or "—"}</div>{final_html}</footer>{move}</article>')
 
 
 WIRE_TAGS  = {'QB': ('qb', 'QB'), 'CLUSTER': ('cluster', 'Cluster'), 'RETURNING': ('ret', 'Returning'),
@@ -503,6 +532,29 @@ dialog.tmodal::backdrop { background: rgba(5, 10, 18, .6); }
 .tlog .W { color: var(--pos); font-weight: 700; } .tlog .L { color: var(--neg); font-weight: 700; }
 .tnote { color: var(--muted); font-size: 13px; margin: 4px 0 0; }
 
+/* Explainer buttons ("?") and their bubble */
+.tip { display: inline-grid; place-items: center; width: 15px; height: 15px; margin-left: 5px; padding: 0; vertical-align: 1px;
+       border: 1px solid currentColor; border-radius: 50%; background: none; color: var(--muted); cursor: pointer;
+       font: 700 10px/1 var(--body); letter-spacing: 0; text-transform: none; opacity: .75; }
+.tip:hover, .tip[aria-expanded="true"] { opacity: 1; color: var(--accent); }
+.tipbox { position: absolute; z-index: 50; max-width: min(300px, calc(100vw - 32px)); padding: 9px 11px; border-radius: 8px;
+          background: var(--mast); color: var(--mast-ink); font: 400 13px/1.45 var(--body); letter-spacing: 0; text-transform: none;
+          box-shadow: 0 10px 28px rgba(0, 0, 0, .3); }
+.navlink { margin-left: auto; align-self: center; padding: 8px 4px; white-space: nowrap; color: var(--mast-muted);
+           font: 600 13px/1 var(--display); letter-spacing: .8px; text-transform: uppercase; text-decoration: none; }
+.navlink:hover { color: var(--mast-ink); }
+
+/* Phones: summary cards swipe sideways in one row and the data strip is one scrolling line,
+   so the main table or game list starts near the top instead of below a stack of cards */
+@media (max-width: 640px) {
+  .grid3 { display: flex; gap: 10px; overflow-x: auto; scroll-snap-type: x mandatory; margin: 0 -16px 14px; padding: 0 16px 6px;
+           scrollbar-width: none; }
+  .grid3::-webkit-scrollbar { display: none; }
+  .grid3 > .card { flex: 0 0 84%; scroll-snap-align: start; scroll-margin-left: 16px; }
+  .freshbar { flex-wrap: nowrap; overflow-x: auto; white-space: nowrap; margin: 0 -16px 12px; padding: 0 16px 4px; scrollbar-width: none; }
+  .freshbar::-webkit-scrollbar { display: none; }
+}
+
 /* Method + footer */
 details.method { margin: 16px 0 4px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); }
 details.method summary { cursor: pointer; padding: 11px 14px; font: 700 13px/1 var(--display); letter-spacing: 1px;
@@ -607,6 +659,26 @@ document.querySelectorAll('select.filter').forEach(sel => sel.onchange = () => {
   dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
 })();
 
+// Explainer buttons: tap a "?" to show its note; tap anywhere else (or press Escape) to close it
+(function () {
+  let box = null, owner = null;
+  const close = () => { if (box) box.remove(); if (owner) owner.setAttribute('aria-expanded', 'false'); box = owner = null; };
+  document.addEventListener('click', e => {
+    const b = e.target.closest('.tip');
+    if (!b) { if (box && !e.target.closest('.tipbox')) close(); return; }
+    e.stopPropagation(); e.preventDefault();
+    const same = b === owner; close(); if (same) return;
+    box = document.createElement('div'); box.className = 'tipbox'; box.setAttribute('role', 'tooltip');
+    box.textContent = b.dataset.tip; document.body.appendChild(box);
+    const r = b.getBoundingClientRect(), w = box.offsetWidth;
+    box.style.left = Math.max(12, Math.min(window.scrollX + r.left - w / 2 + r.width / 2, window.scrollX + innerWidth - w - 12)) + 'px';
+    box.style.top = (window.scrollY + r.bottom + 6) + 'px';
+    owner = b; b.setAttribute('aria-expanded', 'true');
+  }, true);
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+  window.addEventListener('scroll', close, {passive: true});
+})();
+
 // Sort: click a header; numbers sort by data-v when present
 document.querySelectorAll('table.sortable').forEach(t => {
   t.querySelectorAll('thead th').forEach((th, i) => th.onclick = () => {
@@ -634,6 +706,8 @@ def render_page(*, title, league, headline, meta_items, tabs, footer, extra=''):
     """
     meta = ''.join(f'<span>{esc(k)} <b>{esc(v)}</b></span>' for k, v in meta_items)
     nav = ''.join(f'<button data-page="{tid}" role="tab">{esc(lbl)}</button>' for tid, lbl, _ in tabs)
+    if league != 'Home':
+        nav += '<a class="navlink" href="index.html#guide">How to use</a>'
     pages = ''.join(f'<section class="page" id="{tid}">{body}</section>' for tid, _, body in tabs)
     logo_css = '\n'.join(f'.{c} {{ background-image: url({d}); }}' for c, d in _LOGO_CSS.items())
     return f"""<title>{esc(title)}</title>

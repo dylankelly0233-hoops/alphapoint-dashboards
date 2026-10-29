@@ -144,13 +144,34 @@ def line_move(opened, current, ours, home, away, label='Opened'):
         return ''
     was, now = theme.esc(line_text(home, away, opened)), theme.esc(line_text(home, away, current))
     if abs(current - opened) < 0.5:
-        return f'<div class="lmove"><span class="k">Line</span>{label} {was} · no move</div>'
+        return f'<div class="lmove">{theme.k("Line")}{label} {was} · no move</div>'
     verdict = ''
     if not _nan(ours) and abs(abs(ours - current) - abs(ours - opened)) >= 0.25:
         toward = abs(ours - current) < abs(ours - opened)
         verdict = (f' · <span class="{"pos" if toward else "neg"}">'
                    f'{"toward" if toward else "away from"} our number</span>')
-    return f'<div class="lmove"><span class="k">Line</span>{label} {was} → now <b>{now}</b>{verdict}</div>'
+    return f'<div class="lmove">{theme.k("Line")}{label} {was} → now <b>{now}</b>{verdict}</div>'
+
+
+AGREE_PTS = 2.0      # sources within this many points of each other "agree"
+SPLIT_PTS = 4.0      # more than this apart is a "split"
+
+
+def source_lines(home_vals, away_vals, hfa, home, away):
+    """
+    One row comparing the line each rating source projects on its own (same scale and home field as the blend).
+    home_vals / away_vals: {source label: rescaled rating}. Needs at least two sources rating both teams.
+    """
+    lines = {s: home_vals[s] - away_vals[s] + hfa for s in home_vals
+             if s in away_vals and not _nan(home_vals[s]) and not _nan(away_vals[s])}
+    if len(lines) < 2:
+        return ''
+    gap = max(lines.values()) - min(lines.values())
+    word, cls = (('agree', 'pos') if gap <= AGREE_PTS else ('mixed', '') if gap <= SPLIT_PTS else ('split', 'neg'))
+    parts = ' · '.join(f'{theme.esc(s)} <b>{theme.esc(line_text(home, away, theme.round_half(v)))}</b>' for s, v in lines.items())
+    pts = theme.spread_num(theme.round_half(gap))
+    return (f'<div class="lmove">{theme.k("Sources")}{parts} · '
+            f'<span class="{cls}">{word} ({pts} pt{"" if pts == "1" else "s"} apart)</span></div>')
 
 
 def tag(label, cls, tip):

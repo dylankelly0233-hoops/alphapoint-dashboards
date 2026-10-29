@@ -71,7 +71,83 @@ LANDING_CSS = """
 .sedge { text-align: right; }
 @media (max-width: 560px) { .spotlist a { grid-template-columns: 44px minmax(0, 1fr) auto; }
                             .sday { grid-column: 1 / -1; } }
+.guide { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 18px; align-items: start; }
+.guide-intro { grid-column: 1 / -1; padding: 18px 20px; }
+.guide-intro h2 { margin: 0 0 6px; font: 700 22px/1.1 var(--display); text-transform: uppercase; letter-spacing: .6px; }
+.guide-intro p { margin: 0; max-width: 80ch; color: var(--muted); }
+.steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; counter-reset: step; }
+.steps li { position: relative; padding: 14px 16px 12px 58px; counter-increment: step; }
+.steps li::before { content: counter(step); position: absolute; left: 16px; top: 14px; width: 28px; height: 28px; border-radius: 50%;
+                    display: grid; place-items: center; background: var(--accent); color: var(--accent-ink); font: 700 15px/1 var(--display); }
+.steps h3 { margin: 2px 0 4px; font: 700 16px/1.2 var(--display); text-transform: uppercase; letter-spacing: .5px; }
+.steps p { margin: 0; font-size: 14.5px; line-height: 1.5; }
+.steps .where { display: block; margin-top: 6px; font-size: 12.5px; color: var(--muted); }
+.example { position: sticky; top: 12px; display: grid; gap: 10px; }
+.example .k { display: block; font: 700 11px/1 var(--display); letter-spacing: 1px; text-transform: uppercase; color: var(--muted); }
+.example .label { font: 700 13px/1 var(--display); letter-spacing: 1px; text-transform: uppercase; color: var(--muted); }
+.example .read { padding: 12px 14px; font-size: 14px; line-height: 1.5; }
+.example .read p { margin: 0 0 6px; } .example .read p:last-child { margin: 0; }
+@media (max-width: 860px) { .guide { grid-template-columns: 1fr; } .example { position: static; } }
 """
+
+GUIDE_STEPS = [
+    ('Start with the gap',
+     "Open a sport's Games tab, or Best spots on this page. Edge is how far our projected line is from the posted "
+     "spread, shown as the side our number likes; 3+ points is highlighted. Treat it as a reason to look closer, not a bet.",
+     'Games tab · Edge'),
+    ('Check whether the ratings agree',
+     "The Sources row shows the line each rating projects on its own. When they agree, the blended number is on firm "
+     "ground. When they split, find out why before trusting the edge: one rating may be reacting to a single result, an "
+     "injury or a quarterback change.",
+     'Game card · Sources row'),
+    ('Read the line movement',
+     "If the market has moved toward our number since it opened, others see it too. If it moved away, the market likely "
+     "knows something: injury news, weather, sharp money. The Markets tab adds Kalshi prices and how much money sits on "
+     "each side.",
+     'Game card · Line row · Markets tab'),
+    ("Look for what the numbers can't see",
+     "Ratings react slowly to news. Check the Injury Wire (a missing quarterback or star can explain the whole edge), "
+     "the weather on outdoor football games (wind of 15+ mph hurts passing and scoring), and any situational tags.",
+     'Injury Wire · Weather row · tags'),
+    ('Check for luck',
+     "Value Metrics compare each team's record with what its play supports. A BUY team has won fewer games than it "
+     "should, so the market may still be pricing its record; a SELL team has been winning more than it should. Click a "
+     "team name for its rating trend and results against the spread.",
+     'Value Metrics · Trade Signal · team pages'),
+    ("Decide what you still don't know",
+     "If the edge holds up after these checks, it is worth your own deeper read and shopping for the best number. If "
+     "news or weather explains it, move on. Nothing here is a pick: it is research for your own handicapping.",
+     'Your call'),
+]
+
+
+def guide():
+    """The "How to use" tab: a step-by-step research routine next to an annotated example game card."""
+    import extras as ex
+    import weather as wx
+    steps = ''.join(f'<li class="card"><h3>{theme.esc(t)}</h3><p>{theme.esc(body)}</p><span class="where">Where: {theme.esc(w)}</span></li>'
+                    for t, body, w in GUIDE_STEPS)
+    team = lambda name, rating, sig='': {'name': name, 'logo': None, 'rating': rating, 'sd': 4.0, 'signal': sig, 'color': ''}
+    rows = (ex.line_move(3.5, 3.0, 4.5, 'Bills', 'Ravens', 'Opened')
+            + ex.source_lines({'nfelo': 2.6, 'Sagarin': 3.2}, {'nfelo': -0.3, 'Sagarin': 0.4}, 1.7, 'Bills', 'Ravens')
+            + wx.weather_row({'temp': 38, 'wind': 18, 'gust': 29, 'wet': 30}))
+    card = theme.game_card('Sun 11/08 · 1:00 PM ET', '', team('Baltimore Ravens', 0.6),
+                           team('Buffalo Bills', 2.9, theme.signal_pill(-1.2, 0.75, 1.5)), 'Bills −4.5', 'Bills −3',
+                           edge=theme.edge_text(4.5, 3.0, 'Bills', 'Ravens'), move=rows)
+    read = ("<p><b>Gap:</b> we have Bills −4.5 against a market of −3, a 1.5-point edge toward Buffalo.</p>"
+            "<p><b>Ratings:</b> both sources land near −4.5, so the number isn't resting on one rating.</p>"
+            "<p><b>Line:</b> the market has moved from −3.5 to −3, away from our number. Ask what it knows before "
+            "trusting the edge.</p>"
+            "<p><b>Outside the numbers:</b> 18 mph wind with gusts near 30 is a passing and scoring concern; check the "
+            "Injury Wire too.</p>"
+            "<p><b>Luck:</b> Buffalo is a BUY, with fewer wins than its play supports.</p>"
+            "<p><b>Verdict:</b> mixed. A real lean, but the line move and the wind are open questions to run down first.</p>")
+    return ('<div class="guide"><section class="card guide-intro"><h2>How to use AlphaPoint</h2>'
+            '<p>A research routine for any game, about five minutes. Tap any <b>?</b> on the dashboards for a quick '
+            'definition.</p></section>'
+            f'<ol class="steps">{steps}</ol>'
+            f'<div class="example"><span class="label">Example game (made-up numbers)</span>{card}'
+            f'<section class="card read">{read}</section></div></div>')
 
 SPOTS_MAX      = 12
 SPOTS_TOLERANCE = 1.5   # a tagged side still shows when our line leans the other way by up to this many points
@@ -172,6 +248,10 @@ INFO = [
                   'posted market spread, and the Edge — how far our number is from the market and which side we like.'),
         ('Line movement', 'Each game card shows where the spread opened (or was first seen) and where it is now, and whether '
                           'the market has moved toward our number or away from it.'),
+        ('Sources row', 'Each game card shows the line every rating source projects on its own, and whether they agree '
+                        '(within 2 points), are mixed, or split (more than 4 points apart).'),
+        ('Weather', 'Kickoff forecasts for outdoor football games (Open-Meteo): temperature, wind and chance of rain or '
+                    'snow, highlighted at 15+ mph wind, 50%+ precipitation or freezing temperatures.'),
         ('Team pages', 'Click any team name for its rating trend, value metrics, and game log with results against the spread.'),
         ('Biggest movers', 'The teams whose composite rating changed most over about the last week.'),
         ('Data strip', 'The top of each Power tab shows how current every data source is; anything out of date turns amber.'),
@@ -235,7 +315,7 @@ def landing(results):
         for title, rows in INFO) + '</div>'
     page = theme.render_page(title='AlphaPoint Sports', league='Home', headline='Power, value & markets',
                              meta_items=[('Updated', updated)],
-                             tabs=[('home', 'Dashboards', home), ('info', 'Info', info)],
+                             tabs=[('home', 'Dashboards', home), ('guide', 'How to use', guide()), ('info', 'Info', info)],
                              footer='AlphaPoint Sports · Not financial or gambling advice')
     page = page.replace('</style>', LANDING_CSS + '</style>', 1)
     return ('<!DOCTYPE html>\n<html lang="en">\n<head>\n<meta charset="utf-8">\n'
