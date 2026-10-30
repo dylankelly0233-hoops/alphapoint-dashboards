@@ -106,9 +106,10 @@ GUIDE_STEPS = [
      "each side.",
      'Game card · Line row · Markets tab'),
     ("Look for what the numbers can't see",
-     "Ratings react slowly to news. Check the Injury Wire (a missing quarterback or star can explain the whole edge), "
+     "Ratings react slowly to news and don't see styles. Open the Matchup panel (does one team's strength hit the "
+     "other's weakness?), check the Injury Wire (a missing quarterback or star can explain the whole edge), "
      "the weather on outdoor football games (wind of 15+ mph hurts passing and scoring), and any situational tags.",
-     'Injury Wire · Weather row · tags'),
+     'Matchup panel · Injury Wire · Weather row · tags'),
     ('Check for luck',
      "Value Metrics compare each team's record with what its play supports. A BUY team has won fewer games than it "
      "should, so the market may still be pricing its record; a SELL team has been winning more than it should. Click a "
@@ -251,6 +252,9 @@ INFO = [
         ('Confidence', 'Each game card rates how much to trust our projected line, based only on whether the rating '
                        'sources behind it agree: High (within 2 points of each other), Medium (2 to 4), Low (more than 4). '
                        'It does not account for injuries, news or weather.'),
+        ('Matchup', 'Football games show their biggest style mismatch (an offense against the defense it faces, by league '
+                    'percentile). Open it for every unit matchup and how each team has done against the spread versus '
+                    'opponents shaped like this one. Research context only: it does not change the projected line.'),
         ('Weather', 'Kickoff forecasts for outdoor football games (Open-Meteo): temperature, wind and chance of rain or '
                     'snow, highlighted at 15+ mph wind, 50%+ precipitation or freezing temperatures.'),
         ('Team pages', 'Click any team name for its rating trend, value metrics, and game log with results against the spread.'),

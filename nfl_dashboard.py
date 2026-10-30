@@ -37,6 +37,7 @@ import requests
 
 import dashboard_theme as theme
 import extras as ex
+import matchups as mu
 import weather as wx
 import injury_wire as wire
 import markets as mk
@@ -89,6 +90,20 @@ TEASER_DOG_RANGE = (1.5, 3.0)
 TEASER_MAX_LINES = (1.5, 2.5)
 TEASER_TOTAL_MAX = 46
 TEASER_POINTS    = 6
+
+# Matchup categories and style dimensions (matchups.py), from nfl_value_metrics.load_unit_stats().
+MU_CATS = [
+    mu.Cat('run', 'Run game', 'off_run', 'def_run', 'run game', 'run defense'),
+    mu.Cat('pass', 'Passing', 'off_pass', 'def_pass', 'passing game', 'pass defense'),
+    mu.Cat('protect', 'Protection', 'off_sack', 'def_sack', 'pass protection', 'pass rush', higher_is_better=False),
+    mu.Cat('explosive', 'Big plays', 'off_expl', 'def_expl', 'big-play offense', 'big-play defense'),
+]
+MU_STYLES = [
+    mu.Style('run_rate', 'run_rate', 'run-heavy offenses', 'pass-heavy offenses', 'off'),
+    mu.Style('run_def', 'def_run', 'top-third run defenses', 'bottom-third run defenses', 'def', higher_is_more=False),
+    mu.Style('pass_def', 'def_pass', 'top-third pass defenses', 'bottom-third pass defenses', 'def', higher_is_more=False),
+    mu.Style('pass_rush', 'def_sack', 'top-third pass rushes', 'bottom-third pass rushes', 'def'),
+]
 
 
 # ==========================================
@@ -429,7 +444,7 @@ def generate_html(power, vals, sched, week, info):
     rating = dict(zip(power['abbr'], power['composite']))
     by_src = {r.abbr: {'nfelo': r.nfelo, 'Sagarin': r.sagarin} for r in power.itertuples()}
     sig = lambda v: 'BUY' if v is not None and v == v and v < -spot else 'SELL' if v is not None and v == v and v > spot else ''
-    cards, spots = '', []
+    cards, spots, panels = '', [], {}
     for r in sched.itertuples():
         home, away = vm.full_name(r.home), vm.full_name(r.away)
         pm = theme.round_half(r.margin)   # projected home margin, rounded to a half point like a posted spread
@@ -442,6 +457,12 @@ def generate_html(power, vals, sched, week, info):
         move += ex.rating_confidence(by_src.get(r.home, {}), by_src.get(r.away, {}), 0.0 if r.neutral else HFA_POINTS)
         if not r.score and not r.neutral and r.home in wx.NFL_STADIUMS:
             move += wx.weather_row(info['weather'].get(str(r.game_id)), wx.NFL_STADIUMS[r.home][2])
+        prof = info['mu_prof']
+        if r.home in prof and r.away in prof:
+            short = lambda ab: nick(vm.full_name(ab))
+            move += mu.card_row(r.game_id, mu.headline(prof, MU_CATS, r.away, r.home, short))
+            panels[r.game_id] = mu.panel(r.away, r.home, short, prof, MU_CATS, MU_STYLES, info['mu_games'],
+                                         theme.kick_text(r.kick), ex.line_text(nick(home), nick(away), pm) if not pd.isna(pm) else '')
         cards += theme.game_card(theme.kick_text(r.kick), 'Neutral site' if r.neutral else '',
                                  side(r.away, away, r.away_value), side(r.home, home, r.home_value),
                                  proj, mkt, r.score,
@@ -498,7 +519,7 @@ def generate_html(power, vals, sched, week, info):
               ('sched', f'{wk_label} Games', sched_html), ('markets', 'Markets', markets_html),
               ('injuries', 'Injury Wire', injury_html)],
         footer='AlphaPoint Sports · Data: nfelo, Sagarin, nflverse · Logos: ESPN · Not financial or gambling advice',
-        extra=ex.team_modal(teams))
+        extra=ex.team_modal(teams) + mu.templates(panels))
     theme.write_outputs(page, HTML_OUTPUT, SHARE_OUTPUT, 'NFL_NO_BROWSER')
 
 
@@ -601,9 +622,16 @@ def main():
                if not r.score and not r.neutral and wx.NFL_STADIUMS.get(r.home, (0, 0, 'dome'))[2] != 'dome']
     weather = wx.forecasts(outdoor)
     print(f'  Weather: forecasts for {len(weather)} of {len(outdoor)} outdoor games.')
+    units = vm.load_unit_stats()
+    done = full[full['result'].notna() & full['spread_line'].notna()]
+    cover = {}
+    for g in done.itertuples():               # cover margin: result beyond the closing spread (spread_line = home margin)
+        cover.setdefault(g.home_team, []).append((g.away_team, g.result - g.spread_line))
+        cover.setdefault(g.away_team, []).append((g.home_team, g.spread_line - g.result))
     info = {'scale': scale_info, 'nfelo_asof': nfelo_asof, 'sagarin_asof': sagarin_asof,
             'wire': wire_data, 'market_rows': market_rows, 'history': hist, 'full': full, 'freshness': freshness,
-            'weather': weather, 'opened': {str(r['game_id']): r.get('opened') for r in market_rows}}
+            'weather': weather, 'opened': {str(r['game_id']): r.get('opened') for r in market_rows},
+            'mu_prof': mu.profiles(units, MU_CATS, MU_STYLES) if not units.empty else {}, 'mu_games': cover}
     generate_html(power, vals, sched, week, info)
 
 

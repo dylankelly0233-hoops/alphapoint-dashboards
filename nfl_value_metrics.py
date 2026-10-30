@@ -58,6 +58,7 @@ SPOTLIGHT_DIFF = 1.0     # undervalued / overvalued spotlight tables
 # v2: full schedule (incl. upcoming games) with neutral-site flag
 SCHED_CACHE    = f'nflv_schedules_v3_{SEASON}.csv'
 STATS_CACHE    = f'nflv_game_stats_{SEASON}.csv'  # aggregated per-game stats (derived from PBP)
+UNITS_CACHE    = f'nflv_units_{SEASON}.csv'       # season unit stats per team (offense and defense) for matchups
 
 PBP_URL        = 'https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_{season}.parquet'
 SCHED_URL      = 'https://github.com/nflverse/nfldata/raw/master/data/games.csv'   # same data nfl_data_py read
@@ -238,6 +239,45 @@ def load_and_aggregate_pbp():
 # ==========================================
 # 4. MASTER FRAME
 # ==========================================
+def load_unit_stats():
+    """
+    Season unit stats per team from play-by-play, for the matchup panels. Offense columns are what a team
+    produces; def_ columns are what its defense allows:
+      run     EPA per designed run          pass   EPA per dropback (sacks and scrambles included)
+      sack    sacks per dropback            expl   explosive play rate (runs of 10+, passes of 20+ yards)
+      run_rate  share of plays that are designed runs (offense style)
+    """
+    if not cache_stale(UNITS_CACHE):
+        return pd.read_csv(UNITS_CACHE, index_col='team')
+    cols = ['game_id', 'posteam', 'defteam', 'play_type', 'epa', 'yards_gained', 'sack', 'qb_dropback',
+            'qb_spike', 'qb_kneel']
+    try:
+        raw = pd.read_parquet(PBP_URL.format(season=SEASON), columns=cols)
+    except Exception as e:
+        print(f'  ! Unit stats unavailable: {e}')
+        return pd.read_csv(UNITS_CACHE, index_col='team') if os.path.exists(UNITS_CACHE) else pd.DataFrame()
+    p = raw[raw['play_type'].isin(['run', 'pass']) & (raw['qb_spike'].fillna(0) == 0) & (raw['qb_kneel'].fillna(0) == 0)].copy()
+    p['run'] = (p['play_type'] == 'run') & (p['qb_dropback'].fillna(0) == 0)
+    p['db'] = p['qb_dropback'].fillna(0) == 1
+    p['expl'] = (p['run'] & (p['yards_gained'] >= 10)) | (p['db'] & (p['yards_gained'] >= 20))
+
+    def side(key):
+        g = p.groupby(key)
+        return pd.DataFrame({
+            'run': g.apply(lambda x: x.loc[x['run'], 'epa'].mean()),
+            'pass': g.apply(lambda x: x.loc[x['db'], 'epa'].mean()),
+            'sack': g.apply(lambda x: x.loc[x['db'], 'sack'].fillna(0).mean()),
+            'expl': g['expl'].mean(),
+            'run_rate': g.apply(lambda x: x['run'].sum() / max(1, (x['run'] | x['db']).sum())),
+        })
+    off, dfn = side('posteam'), side('defteam')
+    units = off.add_prefix('off_').join(dfn.drop(columns=['run_rate']).add_prefix('def_'))
+    units = units.rename(columns={'off_run_rate': 'run_rate'})
+    units.index.name = 'team'
+    units.to_csv(UNITS_CACHE)
+    return units
+
+
 def build_master(df_sched, df_stats):
     """Join per-team stats onto schedule — one wide row per game."""
     df = df_sched.copy()

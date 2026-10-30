@@ -84,6 +84,7 @@ TIPS = {
     'Buy candidates': 'Teams whose record trails their underlying play the most (wins below expectation).',
     'Sell candidates': 'Teams whose record runs ahead of their underlying play the most (wins above expectation).',
     'Biggest movers': 'Largest changes in our composite rating over about the last week.',
+    'Matchup': 'The biggest style mismatch in the game: an offense against the defense it faces, by league percentile. Open it for every unit matchup and how each team has done against opponents like this one. Research context only; it does not change our line.',
     'Composite': 'Average of the value measures, in wins. Below 0 = fewer wins than the play supports.',
 }
 
@@ -562,6 +563,42 @@ dialog.tmodal::backdrop { background: rgba(5, 10, 18, .6); }
   .freshbar::-webkit-scrollbar { display: none; }
 }
 
+
+/* Matchup panel */
+.mu-line { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 6px; }
+.mu-line .k { margin-right: 4px; }
+.mubtn { margin-left: auto; font: 700 12px/1 var(--display); letter-spacing: .8px; text-transform: uppercase; color: var(--accent);
+         background: none; border: 1px solid var(--accent); border-radius: 6px; padding: 5px 9px; cursor: pointer; }
+.mubtn:hover { background: var(--accent); color: var(--accent-ink); }
+.mu-pill { display: inline-block; font: 700 11px/1.2 var(--display); letter-spacing: .6px; text-transform: uppercase; padding: 3px 7px;
+           border-radius: 5px; background: var(--surface-2); color: var(--muted); border: 1px solid var(--line); white-space: nowrap; }
+.mu-pill.pos { background: var(--pos-bg); color: var(--pos); border-color: transparent; }
+.mu-pill.neg { background: var(--neg-bg); color: var(--neg); border-color: transparent; }
+.mu-head { padding-right: 40px; margin-bottom: 12px; }
+.mu-head h2 { margin: 0; font: 700 22px/1.1 var(--display); text-transform: uppercase; letter-spacing: .3px; }
+.mu-head .sub { color: var(--muted); font-size: 13px; }
+.mu-card { border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; margin-bottom: 12px; background: var(--surface); }
+.mu-card h3 { margin: 0 0 8px; font: 700 12px/1 var(--display); letter-spacing: 1px; text-transform: uppercase; color: var(--muted); }
+.mu-tilt { display: flex; gap: 10px; align-items: flex-start; padding: 6px 0; }
+.mu-tilt p { margin: 0; font-size: 14.5px; line-height: 1.45; }
+.mu-row { display: grid; grid-template-columns: minmax(110px, 170px) minmax(0, 1fr) 84px; gap: 10px; align-items: center;
+          padding: 7px 0; border-top: 1px solid var(--line); font-size: 13.5px; }
+.mu-legend + .mu-row, .mu-card h3 + .mu-row { border-top: 0; }
+.mu-row .mu-pill { justify-self: end; }
+.mu-bar { position: relative; height: 8px; border-radius: 4px; background: var(--surface-2); border: 1px solid var(--line); }
+.mu-bar i, .mu-legend i { position: absolute; top: -4px; width: 4px; height: 14px; border-radius: 2px; margin-left: -2px; }
+.mu-bar i.o, .mu-legend i.o { background: var(--accent); }
+.mu-bar i.d, .mu-legend i.d { background: var(--t2); }
+.mu-legend { display: flex; flex-wrap: wrap; gap: 4px 16px; font-size: 12px; color: var(--muted); margin-bottom: 4px; }
+.mu-legend span { position: relative; padding-left: 10px; }
+.mu-legend i { top: 1px; left: 2px; height: 12px; }
+.mu-trend { grid-template-columns: minmax(0, 1fr) auto; }
+.mu-trend .pos { color: var(--pos); font-weight: 600; } .mu-trend .neg { color: var(--neg); font-weight: 600; }
+.mu-sub { color: var(--muted); border-top: 0; padding-top: 0; }
+.mu-note { margin: 6px 0 0; color: var(--muted); font-size: 12.5px; }
+@media (max-width: 560px) { .mu-row { grid-template-columns: minmax(0, 1fr) 76px; } .mu-row .mu-bar { grid-column: 1 / -1; grid-row: 2; }
+                            .mu-trend { grid-template-columns: 1fr; } }
+
 /* Method + footer */
 details.method { margin: 16px 0 4px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); }
 details.method summary { cursor: pointer; padding: 11px 14px; font: 700 13px/1 var(--display); letter-spacing: 1px;
@@ -684,6 +721,20 @@ document.querySelectorAll('select.filter').forEach(sel => sel.onchange = () => {
   }, true);
   document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
   window.addEventListener('scroll', close, {passive: true});
+})();
+
+// Matchup panels: a [data-matchup] button opens that game's hidden <template> in the matchup dialog
+(function () {
+  const dlg = document.getElementById('mu-modal');
+  if (!dlg || !dlg.showModal) return;
+  const body = dlg.querySelector('.tbody');
+  document.addEventListener('click', e => {
+    const b = e.target.closest('[data-matchup]'); if (!b) return;
+    const t = document.getElementById('mu-' + b.dataset.matchup); if (!t) return;
+    body.replaceChildren(t.content.cloneNode(true)); dlg.showModal(); dlg.querySelector('.tclose').focus();
+  });
+  dlg.querySelector('.tclose').onclick = () => dlg.close();
+  dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
 })();
 
 // Sort: click a header; numbers sort by data-v when present

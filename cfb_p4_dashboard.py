@@ -42,6 +42,7 @@ import requests
 import cfb_value_metrics as vm
 import dashboard_theme as theme
 import extras as ex
+import matchups as mu
 import weather as wx
 import injury_wire as wire
 import markets as mk
@@ -355,6 +356,62 @@ def build_schedule(week, season_type, p4_names, power, fcs, metrics):
 # ==========================================
 # 7. HTML
 # ==========================================
+# Matchup categories and style dimensions (matchups.py), from CFBD's season advanced stats.
+# Offense columns are what a unit produces; defense columns are what it allows.
+MU_CATS = [
+    mu.Cat('run', 'Run game', 'off_run', 'def_run', 'run game', 'run defense'),
+    mu.Cat('pass', 'Passing', 'off_pass', 'def_pass', 'passing game', 'pass defense'),
+    mu.Cat('line', 'Line play', 'off_line', 'def_line', 'offensive line', 'defensive front'),
+    mu.Cat('explosive', 'Big plays', 'off_expl', 'def_expl', 'big-play offense', 'big-play defense'),
+    mu.Cat('finish', 'Finishing drives', 'off_finish', 'def_finish', 'red-zone offense', 'red-zone defense'),
+]
+MU_STYLES = [
+    mu.Style('run_rate', 'run_rate', 'run-first offenses', 'pass-first offenses', 'off'),
+    mu.Style('run_def', 'def_run', 'top-third run defenses', 'bottom-third run defenses', 'def', higher_is_more=False),
+    mu.Style('pass_def', 'def_pass', 'top-third pass defenses', 'bottom-third pass defenses', 'def', higher_is_more=False),
+]
+
+
+def fetch_unit_stats():
+    """CFBD season advanced stats → one row per FBS team with offense / defense unit columns. Cached CACHE_HOURS."""
+    path = f'p4_adv_{YEAR}.csv'
+    if os.path.exists(path) and datetime.now().timestamp() - os.path.getmtime(path) < 6 * 3600:
+        return pd.read_csv(path, index_col='team')
+    try:
+        r = requests.get(f'{vm.CFBD_BASE}/stats/season/advanced', params={'year': YEAR}, headers=vm.CFBD_HEADERS, timeout=90)
+        r.raise_for_status()
+        rows = []
+        for t in r.json():
+            o, d = t.get('offense') or {}, t.get('defense') or {}
+            g = lambda side, *keys: (side.get(keys[0]) or {}).get(keys[1]) if len(keys) == 2 else side.get(keys[0])
+            rows.append({'team': t['team'],
+                         'off_run': g(o, 'rushingPlays', 'ppa'), 'def_run': g(d, 'rushingPlays', 'ppa'),
+                         'off_pass': g(o, 'passingPlays', 'ppa'), 'def_pass': g(d, 'passingPlays', 'ppa'),
+                         'off_line': g(o, 'lineYards'), 'def_line': g(d, 'lineYards'),
+                         'off_expl': g(o, 'explosiveness'), 'def_expl': g(d, 'explosiveness'),
+                         'off_finish': g(o, 'pointsPerOpportunity'), 'def_finish': g(d, 'pointsPerOpportunity'),
+                         'run_rate': g(o, 'rushingPlays', 'rate')})
+        df = pd.DataFrame(rows).set_index('team')
+        df.to_csv(path)
+        return df
+    except Exception as e:
+        print(f'  ! CFBD advanced stats unavailable: {e}')
+        return pd.read_csv(path, index_col='team') if os.path.exists(path) else pd.DataFrame()
+
+
+def cover_log(games, lines):
+    """{team: [(opponent, cover margin)]} for finished games with a closing line (cover margin > 0 = covered)."""
+    out = {}
+    for g in games.itertuples():
+        spread = lines.get(g.game_id)                     # home perspective, negative = home favored
+        if spread is None or spread != spread:
+            continue
+        home_cover = (g.home_pts - g.away_pts) + spread
+        out.setdefault(g.home_team, []).append((g.away_team, home_cover))
+        out.setdefault(g.away_team, []).append((g.home_team, -home_cover))
+    return out
+
+
 def fetch_venues():
     """CFBD venue id → (latitude, longitude, 'dome' or 'outdoor'), cached a week (stadiums don't move)."""
     path = f'p4_venues_{YEAR}.csv'
@@ -519,7 +576,7 @@ def generate_html(p4, vals, sched, week, season_type, info):
             f'<b>SELL</b> above +{spot:.1f} (solid above +{strong:.1f}).'))
 
     # --- Schedule tab ---
-    cards, spots = '', []
+    cards, spots, panels = '', [], {}
     p4_set = set(p4['team'])
     sig = lambda v: 'BUY' if v is not None and v == v and v < -spot else 'SELL' if v is not None and v == v and v > spot else ''
     for r in sched.itertuples():
@@ -538,9 +595,14 @@ def generate_html(p4, vals, sched, week, season_type, info):
         move = ex.line_move(info['opened'].get(str(r.game_id)), mkt_margin, pm, r.home, r.away)
         move += ex.rating_confidence(info['by_source'].get(r.home, {}), info['by_source'].get(r.away, {}),
                                      0.0 if r.neutral else HFA_POINTS)
-        venue = info['roofs'].get(str(r.game_id))
-        if venue and not r.completed:
-            move += wx.weather_row(info['weather'].get(str(r.game_id)), venue[2])
+        stadium = info['roofs'].get(str(r.game_id))
+        if stadium and not r.completed:
+            move += wx.weather_row(info['weather'].get(str(r.game_id)), stadium[2])
+        prof = info['mu_prof']
+        if r.home in prof and r.away in prof:
+            move += mu.card_row(r.game_id, mu.headline(prof, MU_CATS, r.away, r.home, str))
+            panels[r.game_id] = mu.panel(r.away, r.home, str, prof, MU_CATS, MU_STYLES, info['mu_games'], when,
+                                         ex.line_text(r.home, r.away, pm) if not pd.isna(pm) else '')
         cards += theme.game_card(when, venue, side(r.away, r.away_rating, r.away_value),
                                  side(r.home, r.home_rating, r.home_value), proj, mkt, r.score, edge, tag_html, move)
         spots.append(ex.spot('CFB', 'cfb.html#sched', r.kick, r.away, r.home, r.margin, mkt_margin, labels,
@@ -594,7 +656,7 @@ def generate_html(p4, vals, sched, week, season_type, info):
               ('injuries', 'Injury Wire', injury_html)],
         footer='AlphaPoint Sports · Data: Sagarin, SP+ (via collegefootballdata.com) · Logos: ESPN · '
                'Not financial or gambling advice',
-        extra=ex.team_modal(teams))
+        extra=ex.team_modal(teams) + mu.templates(panels))
     theme.write_outputs(page, HTML_OUTPUT, SHARE_OUTPUT, 'CFB_NO_BROWSER')
 
 
@@ -708,6 +770,8 @@ def main():
                  ('SP+', *ex.fetched(f'p4_sp_{YEAR}.csv')), ('Scores', *ex.fetched(vm.GAMES_CACHE)),
                  ('Lines', 'live each refresh', True), ('Play-by-play', *ex.fetched(vm.ADV_BOX_CACHE)),
                  ex.wire_freshness(wire_data)]
+    units = fetch_unit_stats()
+    print(f'  Matchups: unit stats for {len(units)} teams.')
     venues = fetch_venues()
     roofs = {str(r.game_id): venues.get(r.venue_id) for r in sched.itertuples()}
     outdoor = [(gid, v[0], v[1], r.kick) for gid, v, r in zip(roofs, roofs.values(), sched.itertuples())
@@ -718,6 +782,8 @@ def main():
             'wire': wire_data, 'market_rows': market_rows, 'history': hist, 'freshness': freshness, 'results': results,
             'last': last_results(results[0], week, season_type), 'weather': weather, 'roofs': roofs,
             'by_source': {r.team: {'Sagarin': r.sagarin, 'SP+': r.sp} for r in power.itertuples()},
+            'mu_prof': mu.profiles(units, MU_CATS, MU_STYLES) if not units.empty else {},
+            'mu_games': cover_log(*results),
             'opened': {str(r['game_id']): r.get('opened') for r in market_rows}}
     generate_html(p4, vals, sched, week, season_type, info)
 
