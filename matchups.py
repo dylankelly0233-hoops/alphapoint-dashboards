@@ -3,29 +3,27 @@ matchups.py
 AlphaPoint Sports — style matchups ("styles make fights")
 Dylan Kelly
 
-For each game, three layers, built from each sport's unit stats (one row per team, offense and defense):
-  1. Where this game could tilt  the biggest unit-vs-unit mismatches, in plain sentences with an edge badge
-  2. Unit vs unit                each offense against the defense it faces, on one percentile bar
-  3. Style trends                how each team has done against opponents shaped like this one,
-                                 measured against the spread (small samples are flagged)
+For each game, built from each sport's unit stats (one row per team, offense and defense):
+  Scoreboard     "Ravens have the edge in 3 of 8 matchups · Bills in 2"
+  Matchup grid   one row per category, one column for each team's possessions; each cell says who has the
+                 edge in words ("Ravens big edge") with the league ranks behind it ("#6 vs #29")
+  Style trends   chips for how each team has done against the spread versus opponents shaped like this one
 
-Percentiles are against every team in the league (FBS for CFB). An offense's percentile is how good it is
-(higher = better); a defense's "weakness" percentile is how easy it is to attack (higher = gives up more).
-Mismatch score = average of the two minus 50: an elite unit against a weak one scores high.
+Ranks and percentiles are against every team in the league (FBS for CFB). The mismatch score averages
+the offense's percentile (higher = better) and the defense's weakness percentile (higher = easier to
+attack), minus 50: an elite unit against a weak one scores high, a weak one against an elite one low.
 These are research context only; they do not change the projected line.
 """
 
 import html
 from dataclasses import dataclass
 
-import pandas as pd
-
 import dashboard_theme as theme
 
 # Mismatch-score thresholds (points above or below an even matchup). Each game has ~10 unit pairings, so the
-# bar is high: "Big edge" needs both units near the extremes (e.g. an 88th-percentile offense against a
-# defense in the bottom 20%), and only pairings of EDGE+ make the headline list.
-BIG, EDGE, EVEN = 33, 25, 10
+# bar is high: "Big edge" needs both units near the extremes (roughly a top-15% unit against a bottom-20%
+# one), and only pairings of EDGE+ count toward the scoreboard and the card's headline.
+BIG, EDGE, SLIGHT = 33, 25, 12
 HI, LO = 67, 33                   # style buckets: an opponent in the top or bottom third
 MIN_SPLIT = 2                     # games needed to show a style trend
 
@@ -34,7 +32,7 @@ MIN_SPLIT = 2                     # games needed to show a style trend
 class Cat:
     """One unit-vs-unit category. off/def_ are column names in the unit table (defense = what it allows)."""
     key: str
-    label: str            # row label: "Run game"
+    label: str            # grid row label: "Run game"
     off: str
     def_: str
     off_noun: str         # "run game"
@@ -58,18 +56,27 @@ def _pct(s, higher_is_better=True):
     return (s if higher_is_better else -s).rank(pct=True, method='average') * 100
 
 
+def _rank(s, best_is_high):
+    """League rank, 1 = best."""
+    return s.rank(ascending=not best_is_high, method='min')
+
+
 def profiles(units, cats, styles):
     """
     units: DataFrame indexed by team with the off / def_ / style columns.
-    Returns {team: {'cats': {key: (off_pct, def_weak_pct)}, 'style': {key: pct}}}.
-    def_weak_pct: 100 = the easiest defense in the league to attack in that category.
+    Returns {team: {'cats': {key: (off_pct, def_weak_pct)}, 'rank': {key: (off_rank, def_rank)}, 'style': {key: pct},
+    'n': teams}}. def_weak_pct: 100 = the easiest defense to attack; def_rank: 1 = the best defense.
     """
-    out = {t: {'cats': {}, 'style': {}} for t in units.index}
+    n = len(units)
+    out = {t: {'cats': {}, 'rank': {}, 'style': {}, 'n': n} for t in units.index}
     for c in cats:
         op = _pct(units[c.off], c.higher_is_better)
-        dw = _pct(units[c.def_], c.higher_is_better)          # a defense that "allows more" of a good thing is weaker
+        dw = _pct(units[c.def_], c.higher_is_better)            # a defense that "allows more" of a good thing is weaker
+        orank = _rank(units[c.off], c.higher_is_better)
+        drank = _rank(units[c.def_], not c.higher_is_better)    # best defense allows the least of a good thing
         for t in units.index:
             out[t]['cats'][c.key] = (op.get(t), dw.get(t))
+            out[t]['rank'][c.key] = (orank.get(t), drank.get(t))
     for s in styles:
         sp = _pct(units[s.col], s.higher_is_more)
         for t in units.index:
@@ -77,54 +84,60 @@ def profiles(units, cats, styles):
     return out
 
 
+def _verb(name):
+    """'have' for plural-looking names (Ravens, Hawkeyes), 'has' otherwise (Iowa, Ohio State)."""
+    return 'have' if name.endswith('s') else 'has'
+
+
 def _poss(name):
     """Possessive: Bills → Bills', Iowa → Iowa's."""
     return f"{name}'" if name.endswith('s') else f"{name}'s"
 
 
-def _ord(p):
-    p = int(round(max(1, min(99, p))))
-    suf = 'th' if 10 <= p % 100 <= 20 else {1: 'st', 2: 'nd', 3: 'rd'}.get(p % 10, 'th')
-    return f'{p}{suf}'
-
-
-def _level(score):
-    """(badge text, css class) for a mismatch score from the offense's side."""
-    if score >= BIG:
-        return 'Big edge', 'pos'
-    if score >= EDGE:
-        return 'Edge', 'pos'
-    if score <= -BIG:
-        return 'Big edge D', 'neg'
-    if score <= -EDGE:
-        return 'Edge D', 'neg'
-    return ('Even', '') if abs(score) < EVEN else ('Slight', '')
-
-
 def mismatches(prof, cats, off_team, def_team):
-    """[(cat, off_pct, def_weak_pct, score)] for one offense against one defense."""
+    """[(cat, off_pct, def_weak_pct, score, off_rank, def_rank)] for one offense against one defense."""
     rows = []
     for c in cats:
-        op, dw = prof[off_team]['cats'].get(c.key, (None, None))[0], prof[def_team]['cats'].get(c.key, (None, None))[1]
+        op = prof[off_team]['cats'].get(c.key, (None, None))[0]
+        dw = prof[def_team]['cats'].get(c.key, (None, None))[1]
         if op is None or dw is None or op != op or dw != dw:
             continue
-        rows.append((c, op, dw, (op + dw) / 2 - 50))
+        orank = prof[off_team]['rank'][c.key][0]
+        drank = prof[def_team]['rank'][c.key][1]
+        rows.append((c, op, dw, (op + dw) / 2 - 50, int(orank), int(drank)))
     return rows
 
 
+def verdict(score, off_name, def_name):
+    """(text, css class) for one cell: who has the edge, from the offense's point of view."""
+    if score >= BIG:
+        return f'{off_name} big edge', 'a-big'
+    if score >= EDGE:
+        return f'{off_name} edge', 'a'
+    if score <= -BIG:
+        return f'{def_name} big edge', 'd-big'
+    if score <= -EDGE:
+        return f'{def_name} edge', 'd'
+    if score >= SLIGHT:
+        return f'Slight {off_name}', 'slight'
+    if score <= -SLIGHT:
+        return f'Slight {def_name}', 'slight'
+    return 'Even', 'even'
+
+
 def headline(prof, cats, away, home, name):
-    """The single biggest mismatch in the game, for the one-line summary on the game card: (text, score) or None."""
+    """The single biggest mismatch in the game, for the line on the game card: (text, score) or None."""
     best = None
     for off_t, def_t in ((away, home), (home, away)):
-        for c, op, dw, s in mismatches(prof, cats, off_t, def_t):
+        for c, op, dw, s, orank, drank in mismatches(prof, cats, off_t, def_t):
             if best is None or abs(s) > abs(best[3]):
-                best = (off_t, def_t, c, s)
+                best = (off_t, def_t, c, s, orank, drank)
     if not best or abs(best[3]) < EDGE:
         return None
-    off_t, def_t, c, s = best
+    off_t, def_t, c, s, orank, drank = best
     if s > 0:
-        return f'{name(off_t)} {c.off_noun} vs a weak {name(def_t)} {c.def_noun}', s
-    return f'{name(def_t)} {c.def_noun} vs a weak {name(off_t)} {c.off_noun}', s
+        return f'{name(off_t)} {c.off_noun} (#{orank}) vs {name(def_t)} {c.def_noun} (#{drank})', s
+    return f'{name(def_t)} {c.def_noun} (#{drank}) vs {name(off_t)} {c.off_noun} (#{orank})', s
 
 
 def style_trends(team, games, prof, styles, opponent):
@@ -136,22 +149,23 @@ def style_trends(team, games, prof, styles, opponent):
     """
     out = []
     opp_style = prof.get(opponent, {}).get('style', {})
+
+    def rec(xs):
+        w, l, p = sum(x > 0 for x in xs), sum(x < 0 for x in xs), sum(x == 0 for x in xs)
+        return f'{w}-{l}' + (f'-{p}' if p else ''), sum(xs) / len(xs) if xs else 0.0
+
     for s in sorted(styles, key=lambda s: -abs((opp_style.get(s.key) or 50) - 50)):
         p = opp_style.get(s.key)
         if p is None or p != p or LO < p < HI:
             continue
         hi = p >= HI
-        label = s.hi if hi else s.lo
-        same = [cm for o, cm in games if o in prof and prof[o]['style'].get(s.key) is not None
-                and ((prof[o]['style'][s.key] >= HI) if hi else (prof[o]['style'][s.key] <= LO))]
-        rest = [cm for o, cm in games if o in prof and prof[o]['style'].get(s.key) is not None
-                and not ((prof[o]['style'][s.key] >= HI) if hi else (prof[o]['style'][s.key] <= LO))]
+        in_bucket = lambda o: (prof[o]['style'][s.key] >= HI) if hi else (prof[o]['style'][s.key] <= LO)
+        known = [(o, cm) for o, cm in games if o in prof and prof[o]['style'].get(s.key) is not None]
+        same = [cm for o, cm in known if in_bucket(o)]
+        rest = [cm for o, cm in known if not in_bucket(o)]
         if len(same) < MIN_SPLIT:
             continue
-        def rec(xs):
-            w, l, p = sum(x > 0 for x in xs), sum(x < 0 for x in xs), sum(x == 0 for x in xs)
-            return f'{w}-{l}' + (f'-{p}' if p else ''), sum(xs) / len(xs) if xs else 0.0
-        out.append((label, len(same), *rec(same), len(rest), *rec(rest)))
+        out.append((s.hi if hi else s.lo, len(same), *rec(same), len(rest), *rec(rest)))
         if len(out) == 2:
             break
     return out
@@ -160,73 +174,81 @@ def style_trends(team, games, prof, styles, opponent):
 # ==========================================
 # HTML
 # ==========================================
-def _bar_row(label, op, dw, score):
-    badge, cls = _level(score)
-    return (f'<div class="mu-row"><span>{theme.esc(label)}</span>'
-            f'<div class="mu-bar" role="img" aria-label="Offense {_ord(op)} percentile, defense weakness {_ord(dw)} percentile">'
-            f'<i class="o" style="left:{op:.0f}%"></i><i class="d" style="left:{dw:.0f}%"></i></div>'
-            f'<span class="mu-pill {cls}">{badge}</span></div>')
-
-
 def panel(away, home, name, prof, cats, styles, games_by_team, when='', our_line=''):
     """The full matchup panel for one game (rendered into a hidden <template>). name(team) → display name."""
-    sentences = []
-    for off_t, def_t in ((away, home), (home, away)):
-        for c, op, dw, s in mismatches(prof, cats, off_t, def_t):
-            if abs(s) >= EDGE:
-                sentences.append((abs(s), off_t, def_t, c, op, dw, s))
-    sentences.sort(key=lambda x: -x[0])
-    tilt = ''
-    for _, off_t, def_t, c, op, dw, s in sentences[:3]:
-        badge, cls = _level(s)
-        side = name(off_t) if s > 0 else f'{name(def_t)} D'
-        text = (f'{_poss(name(off_t))} {c.off_noun} ({_ord(op)} percentile) faces {_poss(name(def_t))} {c.def_noun} '
-                f'({_ord(100 - dw)})') if s > 0 else (
-                f'{_poss(name(def_t))} {c.def_noun} ({_ord(100 - dw)} percentile) faces {_poss(name(off_t))} {c.off_noun} '
-                f'({_ord(op)})')
-        tilt += (f'<div class="mu-tilt"><span class="mu-pill {cls}">{theme.esc(badge.replace(" D", ""))} · '
-                 f'{theme.esc(side)}</span><p>{theme.esc(text)}.</p></div>')
-    if not tilt:
-        tilt = '<p class="mu-note">No big mismatches: these units line up evenly, so the game likely turns on overall strength.</p>'
-
-    rows = ''
-    for off_t, def_t in ((away, home), (home, away)):
-        for c, op, dw, s in mismatches(prof, cats, off_t, def_t):
-            rows += _bar_row(f'{name(off_t)} {c.label.lower()}', op, dw, s)
-
-    trends = ''
-    for team, opp in ((away, home), (home, away)):
-        for label, n, rec1, avg, n2, rec2, avg2 in style_trends(team, games_by_team.get(team, []), prof, styles, opp):
-            cls = 'pos' if avg > 1.5 else 'neg' if avg < -1.5 else ''
-            cls2 = 'pos' if avg2 > 1.5 else 'neg' if avg2 < -1.5 else ''
-            trends += (f'<div class="mu-row mu-trend"><span>{theme.esc(name(team))} vs {theme.esc(label)} ({n} game{"s" if n != 1 else ""})</span>'
-                       f'<span class="{cls}">{rec1} ATS · {avg:+.1f} vs line</span></div>')
-            if n2:
-                trends += (f'<div class="mu-row mu-trend mu-sub"><span>{theme.esc(name(team))} vs everyone else ({n2})</span>'
-                           f'<span class="{cls2}">{rec2} ATS · {avg2:+.1f} vs line</span></div>')
-    if not trends:
-        trends = ('<p class="mu-note">Neither opponent has an extreme style yet, or there are too few games against similar '
-                  'teams to say anything.</p>')
+    a, h = name(away), name(home)
+    sides = {away: ('mg-away', a), home: ('mg-home', h)}
+    pairs = {(away, home): mismatches(prof, cats, away, home), (home, away): mismatches(prof, cats, home, away)}
+    n_total = sum(len(v) for v in pairs.values())
+    edges = {away: 0, home: 0}
+    for (off_t, def_t), rows in pairs.items():
+        for *_, s, _o, _d in rows:
+            if s >= EDGE:
+                edges[off_t] += 1
+            elif s <= -EDGE:
+                edges[def_t] += 1
+    if edges[away] or edges[home]:
+        lead, trail = (away, home) if edges[away] >= edges[home] else (home, away)
+        score = (f'{theme.esc(name(lead))} {_verb(name(lead))} the edge in '
+                 f'{edges[lead]} of {n_total} matchups · {theme.esc(name(trail))} in {edges[trail]}')
     else:
-        trends += '<p class="mu-note">Small samples: treat these as leads to check, not proof. "vs line" = average points beyond the spread.</p>'
+        score = 'No clear edges: these units line up evenly, so the game likely turns on overall strength'
 
-    head = f'{name(away)} @ {name(home)}'
+    # Grid: one row per category, a column for each team's possessions
+    by_cat = {k: {} for k in (c.key for c in cats)}
+    for (off_t, def_t), rows in pairs.items():
+        for c, op, dw, s, orank, drank in rows:
+            by_cat[c.key][off_t] = (s, orank, drank, def_t)
+    cells = (f'<div class="mg-h"></div><div class="mg-h">{theme.esc(a)} {_verb(a)} the ball</div>'
+             f'<div class="mg-h">{theme.esc(h)} {_verb(h)} the ball</div>')
+    for c in cats:
+        cells += f'<div class="mg-l">{theme.esc(c.label)}</div>'
+        for off_t in (away, home):
+            hit = by_cat[c.key].get(off_t)
+            if not hit:
+                cells += '<div class="mg-c even">—</div>'
+                continue
+            s, orank, drank, def_t = hit
+            text, cls = verdict(s, name(off_t), name(def_t))
+            team_cls = sides[off_t][0] if cls in ('a', 'a-big') else sides[def_t][0] if cls in ('d', 'd-big') else ''
+            big = ' big' if cls.endswith('big') else ''
+            cells += (f'<div class="mg-c {cls.split("-")[0]} {team_cls}{big}"><b>{theme.esc(text)}</b>'
+                      f'<span>#{orank} vs #{drank}</span></div>')
+    n = prof[away]['n']
+
+    # Style trends as chips
+    chips = ''
+    for team, opp in ((away, home), (home, away)):
+        for label, cnt, rec1, avg, n2, rec2, avg2 in style_trends(team, games_by_team.get(team, []), prof, styles, opp):
+            cls = 'pos' if avg > 1.5 else 'neg' if avg < -1.5 else ''
+            rest = f' · others {rec2}, {avg2:+.1f}' if n2 else ''
+            chips += (f'<span class="mu-chip {cls}"><b>{theme.esc(name(team))} vs {theme.esc(label)}</b>'
+                      f'{rec1} ATS, {avg:+.1f} ({cnt} games){rest}</span>')
+    trends = (f'<div class="mu-chips">{chips}</div><p class="mu-note">ATS record and average points beyond the spread '
+              f'against opponents like this one, next to the record against everyone else. Small samples: leads to '
+              f'check, not proof.</p>' if chips else
+              '<p class="mu-note">Neither opponent has an extreme style yet, or there are too few games against '
+              'similar teams to say anything.</p>')
+
     sub = ' · '.join(x for x in (when, f'our line {our_line}' if our_line else '') if x)
-    return (f'<div class="mu-head"><h2>{theme.esc(head)} · Matchup</h2><span class="sub">{theme.esc(sub)}</span></div>'
-            f'<section class="mu-card"><h3>Where this game could tilt</h3>{tilt}</section>'
-            f'<section class="mu-card"><h3>Unit vs unit</h3><div class="mu-legend"><span><i class="o"></i>Offense '
-            f'(right = better)</span><span><i class="d"></i>Defense it faces (right = easier to attack)</span></div>{rows}</section>'
+    return (f'<div class="mu-head"><h2>{theme.esc(a)} @ {theme.esc(h)} · Matchup</h2><span class="sub">{theme.esc(sub)}</span></div>'
+            f'<p class="mu-score">{score}</p>'
+            f'<div class="mu-grid">{cells}</div>'
+            f"<p class=\"mu-note\">Each cell shows the offense's rank vs the defense's rank, out of {n} teams (#1 = best "
+            f'in that category). Colors '
+            f'follow the team with the edge: {theme.esc(a)} <i class="mg-key mg-away"></i> · {theme.esc(h)} '
+            f'<i class="mg-key mg-home"></i>; darker = bigger edge.</p>'
             f'<section class="mu-card"><h3>Style trends · vs opponents like this one</h3>{trends}</section>'
-            f'<p class="mu-note">Percentiles are against the whole league and are not adjusted for opponents. Matchups are '
-            f'research context: they don\'t change our projected line.</p>')
+            f'<p class="mu-note">Season stats, not adjusted for opponents. Matchups are research context: they don\'t '
+            f'change our projected line.</p>')
 
 
 def card_row(game_id, text_score):
     """The one-line Matchup summary + button for a game card."""
     if text_score:
         text, s = text_score
-        badge, cls = _level(s if s > 0 else s)
-        summary = f'<span class="mu-pill {cls}">{badge.replace(" D", "")}</span> {theme.esc(text)}'
+        badge = 'Big edge' if abs(s) >= BIG else 'Edge'
+        summary = f'<span class="mu-pill{" big" if abs(s) >= BIG else ""}">{badge}</span> {theme.esc(text)}'
     else:
         summary = '<span class="hint">No big mismatches</span>'
     return (f'<div class="lmove mu-line">{theme.k("Matchup")}{summary}'
