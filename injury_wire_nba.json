@@ -1,44 +1,44 @@
 {
  "sport": "nba",
- "week": 20261029,
- "generated": "2026-10-29T17:34:42-04:00",
+ "week": 20261030,
+ "generated": "2026-10-30T11:19:52-04:00",
  "movers": [
   {
    "team": "MIN",
    "tag": "KEY",
-   "text": "Anthony Edwards (34 mpg) out after an arthroscopic procedure on his right knee Thursday, per the Timberwolves. No return timeline given.",
+   "text": "Anthony Edwards (34 mpg) is out after an arthroscopic procedure on his right knee Thursday; no return timeline yet.",
    "source": "ESPN",
    "url": "https://www.espn.com/nba/injuries",
    "date": "2026-10-29"
   },
   {
-   "team": "OKC",
+   "team": "POR",
    "tag": "KEY",
-   "text": "Jalen Williams (32 mpg) had surgery Wednesday on a fractured left fibula and ankle ligaments; long-term absence.",
+   "text": "Ja Morant (26 mpg) left Thursday's game vs. Memphis with a left hamstring injury and did not return; status for Friday at Utah not yet reported.",
    "source": "ESPN",
    "url": "https://www.espn.com/nba/injuries",
-   "date": "2026-10-28"
+   "date": "2026-10-30"
   },
   {
-   "team": "ORL",
+   "team": "PHI",
+   "tag": "KEY",
+   "text": "Jaylen Brown (36 mpg) is questionable for Friday vs. the Knicks with a knee issue (ESPN report as of Oct. 29).",
+   "source": "ESPN",
+   "url": "https://www.espn.com/nba/injuries",
+   "date": "2026-10-29"
+  },
+  {
+   "team": "IND",
    "tag": "CLUSTER",
-   "text": "Paolo Banchero (34 mpg) out 4-6 weeks with a right high-ankle sprain; Jalen Suggs (33 mpg) out with a knee bone bruise, re-evaluated in 2 weeks.",
-   "source": "ESPN",
-   "url": "https://www.espn.com/nba/injuries",
-   "date": "2026-10-26"
-  },
-  {
-   "team": "TOR",
-   "tag": "KEY",
-   "text": "Kawhi Leonard (26 mpg) expected out at least 3-4 weeks with a knee injury, per Chris Haynes.",
+   "text": "Tyrese Haliburton (33 mpg) is out at least two weeks with a hamstring injury; Ivica Zubac (22 mpg, ankle) is also out Friday vs. Miami.",
    "source": "ESPN",
    "url": "https://www.espn.com/nba/injuries",
    "date": "2026-10-29"
   },
   {
-   "team": "LAL",
+   "team": "HOU",
    "tag": "KEY",
-   "text": "Luka Doncic (36 mpg) missed Wednesday vs. the Clippers with a back injury; listed day-to-day (ESPN report, 10-29 5:30 PM ET).",
+   "text": "Alperen Sengun (34 mpg, back) is questionable Friday at Dallas; Reed Sheppard (back) is out and Marcus Smart (forearm) questionable.",
    "source": "ESPN",
    "url": "https://www.espn.com/nba/injuries",
    "date": "2026-10-29"
@@ -49,7 +49,47 @@
    {
     "team": "MIN",
     "tag": "KEY",
-    "text": "Anthony Edwards (34 mpg) out after an arthroscopic procedure on his right knee Thursday, per the Timberwolves. No return timeline given.",
+    "text": "Anthony Edwards (34 mpg) is out after an arthroscopic procedure on his right knee Thursday; no return timeline yet.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nba/injuries",
+    "date": "2026-10-29"
+   }
+  ],
+  "POR": [
+   {
+    "team": "POR",
+    "tag": "KEY",
+    "text": "Ja Morant (26 mpg) left Thursday's game vs. Memphis with a left hamstring injury and did not return; status for Friday at Utah not yet reported.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nba/injuries",
+    "date": "2026-10-30"
+   }
+  ],
+  "PHI": [
+   {
+    "team": "PHI",
+    "tag": "KEY",
+    "text": "Jaylen Brown (36 mpg) is questionable for Friday vs. the Knicks with a knee issue (ESPN report as of Oct. 29).",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nba/injuries",
+    "date": "2026-10-29"
+   }
+  ],
+  "IND": [
+   {
+    "team": "IND",
+    "tag": "CLUSTER",
+    "text": "Tyrese Haliburton (33 mpg) is out at least two weeks with a hamstring injury; Ivica Zubac (22 mpg, ankle) is also out Friday vs. Miami.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nba/injuries",
+    "date": "2026-10-29"
+   }
+  ],
+  "HOU": [
+   {
+    "team": "HOU",
+    "tag": "KEY",
+    "text": "Alperen Sengun (34 mpg, back) is questionable Friday at Dallas; Reed Sheppard (back) is out and Marcus Smart (forearm) questionable.",
     "source": "ESPN",
     "url": "https://www.espn.com/nba/injuries",
     "date": "2026-10-29"
@@ -59,25 +99,25 @@
    {
     "team": "OKC",
     "tag": "KEY",
-    "text": "Jalen Williams (32 mpg) had surgery Wednesday on a fractured left fibula and ankle ligaments; long-term absence.",
+    "text": "Jalen Williams (32 mpg) had surgery Wednesday on a fractured left fibula and ankle ligaments; long-term absence. Chet Holmgren (knee) is day-to-day.",
     "source": "ESPN",
     "url": "https://www.espn.com/nba/injuries",
     "date": "2026-10-28"
    },
    {
     "team": "OKC",
-    "tag": "KEY",
-    "text": "Chet Holmgren (30 mpg) missed Wednesday vs. Dallas with a knee injury; day-to-day. Alex Caruso also out with an ankle sprain.",
+    "tag": "CLUSTER",
+    "text": "Guards Alex Caruso (ankle sprain) and Cason Wallace (torn labrum, surgery) are also out.",
     "source": "ESPN",
     "url": "https://www.espn.com/nba/injuries",
-    "date": "2026-10-29"
+    "date": "2026-10-28"
    }
   ],
   "ORL": [
    {
     "team": "ORL",
     "tag": "CLUSTER",
-    "text": "Paolo Banchero (34 mpg) out 4-6 weeks with a right high-ankle sprain; Jalen Suggs (33 mpg) out with a knee bone bruise, re-evaluated in 2 weeks.",
+    "text": "Paolo Banchero (34 mpg) is out 4-6 weeks with a high-ankle sprain and Jalen Suggs (33 mpg) is out, re-evaluated in two weeks (bone bruise).",
     "source": "ESPN",
     "url": "https://www.espn.com/nba/injuries",
     "date": "2026-10-26"
@@ -87,27 +127,7 @@
    {
     "team": "TOR",
     "tag": "KEY",
-    "text": "Kawhi Leonard (26 mpg) expected out at least 3-4 weeks with a knee injury, per Chris Haynes.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nba/injuries",
-    "date": "2026-10-29"
-   }
-  ],
-  "LAL": [
-   {
-    "team": "LAL",
-    "tag": "KEY",
-    "text": "Luka Doncic (36 mpg) missed Wednesday vs. the Clippers with a back injury; listed day-to-day (ESPN report, 10-29 5:30 PM ET).",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nba/injuries",
-    "date": "2026-10-29"
-   }
-  ],
-  "HOU": [
-   {
-    "team": "HOU",
-    "tag": "CLUSTER",
-    "text": "Alperen Sengun (34 mpg, back) and Marcus Smart (24 mpg, forearm) questionable Friday vs. Dallas; Reed Sheppard (23 mpg, back) out.",
+    "text": "Kawhi Leonard (knee) is expected to miss at least three to four weeks.",
     "source": "ESPN",
     "url": "https://www.espn.com/nba/injuries",
     "date": "2026-10-29"
@@ -117,50 +137,60 @@
    {
     "team": "UTAH",
     "tag": "CLUSTER",
-    "text": "Jaren Jackson Jr. (26 mpg) out 6-8 weeks with a torn MCL; Lauri Markkanen (28 mpg, wrist) missed Wednesday vs. San Antonio.",
+    "text": "Jaren Jackson Jr. (torn MCL) is out 6-8 weeks; Lauri Markkanen (wrist, 29 mpg) missed Wednesday and is day-to-day.",
     "source": "ESPN",
     "url": "https://www.espn.com/nba/injuries",
     "date": "2026-10-29"
    }
   ],
-  "IND": [
+  "CHA": [
    {
-    "team": "IND",
+    "team": "CHA",
     "tag": "KEY",
-    "text": "Tyrese Haliburton (33 mpg) out at least two weeks with a hamstring injury; Ivica Zubac (ankle) out Friday vs. Miami.",
+    "text": "Dennis Schroder (33 mpg) is questionable for Friday vs. Washington with a foot injury.",
     "source": "ESPN",
     "url": "https://www.espn.com/nba/injuries",
     "date": "2026-10-29"
-   }
-  ],
-  "SAC": [
-   {
-    "team": "SAC",
-    "tag": "KEY",
-    "text": "Keegan Murray (27 mpg) out with an ankle injury, re-evaluated in 10-14 days.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nba/injuries",
-    "date": "2026-10-26"
    }
   ],
   "LAC": [
    {
     "team": "LAC",
     "tag": "KEY",
-    "text": "Rui Hachimura (31 mpg) missed Wednesday vs. the Lakers with a quadriceps injury; day-to-day.",
+    "text": "Rui Hachimura (31 mpg) is questionable for Friday vs. Minnesota with a quadriceps injury.",
     "source": "ESPN",
     "url": "https://www.espn.com/nba/injuries",
     "date": "2026-10-29"
    }
   ],
-  "WSH": [
+  "LAL": [
    {
-    "team": "WSH",
-    "tag": "RETURNING",
-    "text": "Tre Johnson (23 mpg) questionable Friday vs. Charlotte as he returns from an Achilles injury.",
+    "team": "LAL",
+    "tag": "KEY",
+    "text": "Ziaire Williams (29 mpg) is questionable for Friday vs. Golden State with a foot injury.",
     "source": "ESPN",
     "url": "https://www.espn.com/nba/injuries",
-    "date": "2026-10-29"
+    "date": "2026-10-30"
+   }
+  ],
+  "SAC": [
+   {
+    "team": "SAC",
+    "tag": "KEY",
+    "text": "Keegan Murray (27 mpg, ankle) is out and will be re-evaluated in 10-14 days.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nba/injuries",
+    "date": "2026-10-26"
+   }
+  ],
+  "NO": [
+   {
+    "team": "NO",
+    "tag": "KEY",
+    "text": "Dejounte Murray (32 mpg) missed Thursday's game vs. Sacramento for personal reasons; status for Saturday vs. Atlanta not yet reported.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nba/injuries",
+    "date": "2026-10-30"
    }
   ]
  }
