@@ -1,15 +1,23 @@
 {
   "sport": "cfb",
   "week": 9,
-  "generated": "2026-10-29T17:34:59-04:00",
+  "generated": "2026-10-30T11:18:16-04:00",
   "movers": [
     {
       "team": "Kansas State",
       "tag": "QB",
-      "text": "QB Avery Johnson ruled OUT at Colorado; backup Jacob Knuth (ankle) listed doubtful. K-State expected to start a new QB.",
+      "text": "QB Avery Johnson ruled OUT at Colorado; backup Jacob Knuth (ankle) doubtful. K-State turning to Blake Barnett and Dillon Duff at QB.",
       "source": "The Topeka Capital-Journal",
-      "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxPWDVfYkhKWmhuNjhPeEdMZ2dTZm5zYVBoaHJsaUstWGNVM0lFVmx3ZkFOQWtrMTJYV09fR3BpSWplcG5zREdJMWJGQWFralUxalBycE9sR2YxcU1DY0FZTVZZNHdFc0lrS0Fhb0tMd3l5NW5JR0tpbjl2RFRQSVhnZjZ2TU5mLWRNNFpzUmgzQnBkaGFoVkZmUGlacmpKeWhIaGY1WDZnenZ5T25pc1RveG9IZ1JuUDllc1BNOUExeDY5WEE2eHZNakhmOFQxT2pweEQ4MlQzNlVTWk0?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxNNF9MZ2hvNzMyVUNNZ1JQVUNnNnoxM3VzT3hYMlZEanRrQ0pycTlqaDZLeFc3VFVBSmltNlEzS1daOUpYOHNxc1E5TDhsWkx6bFJoMXI0MTF5ZEhzdXQ4aXEtaDBiWFFXWWR3dHh2TkswSzhGaVJxSVZHYUE5Y3hfMjhqVEZqUDk3aVdROUxuOHJPYy1lVmVhVEFSZkNBYjdkSllJZ083NTF2R1FyY3dqeDBrSGNINUExWTM4em9tNk1vT1FjVERweG5YaXJ2ZDF4VUtvNU8wc0QzY2ZHSEotUTh1Sm5PcXdBNzRKbFdZV1REWC01LTVJ?oc=5",
       "date": "2026-10-29"
+    },
+    {
+      "team": "Colorado",
+      "tag": "QB",
+      "text": "QB Julian Lewis downgraded to OUT vs. Kansas State after a medical emergency at the team facility Wednesday; hospitalized, family says he is recovering.",
+      "source": "Sports Illustrated",
+      "url": "https://www.si.com/college/colorado/football/julian-lewis-downgraded-colorado-buffaloes-latest-injury-report",
+      "date": "2026-10-30"
     },
     {
       "team": "Ohio State",
@@ -34,14 +42,6 @@
       "source": "ESPN",
       "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQd2tLQkgxMmFUeHZTSFFPYkpvOUJadzJxYkZINnNZN1NLR0VLN2gxQTFPVENoMjNOaTdsSmVfMld5cHpWWkVxRVJjNWdTWk1qQXlrV0VsVUF6MlJMRkJaTk1xbXZRajlwVlhQNEc2cHhZa3JrMDlLX0hOUDhFZTBNWi1vNUJJV1ZXenU3UVp1UlBaN2hRSW0wNURVRUpyU3VSYkk4Ql9HakE4dHBt?oc=5",
       "date": "2026-10-27"
-    },
-    {
-      "team": "Illinois",
-      "tag": "QB",
-      "text": "QB Katin Houser (broken throwing hand, Oct. 10) on the injury report with the door open for a return; Bielema addressed his status. Clayton has started since.",
-      "source": "Yahoo Sports",
-      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNenJ0S1BvNV83dHg3MEx6aHUtSWptdTVoYkYxeWdSblBHSDQ0ZW9aa1BaT2xPTk1HclExTTU5WFBPM3BDaTY5QVJSczB5bmU0QjZfa0g5MHNXelJvcHZXbDlqNXlxdjI0R19ocUhDYjg2Ql9tTWdpUWpodm9xcGE4clV3Ti1NNTV2SUlz?oc=5",
-      "date": "2026-10-29"
     }
   ],
   "teams": {
@@ -77,9 +77,9 @@
       {
         "team": "Kansas State",
         "tag": "QB",
-        "text": "QB Avery Johnson ruled OUT at Colorado; backup Jacob Knuth (ankle) listed doubtful. K-State expected to start a new QB.",
+        "text": "QB Avery Johnson ruled OUT at Colorado; backup Jacob Knuth (ankle) doubtful. K-State turning to Blake Barnett and Dillon Duff at QB.",
         "source": "The Topeka Capital-Journal",
-        "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxPWDVfYkhKWmhuNjhPeEdMZ2dTZm5zYVBoaHJsaUstWGNVM0lFVmx3ZkFOQWtrMTJYV09fR3BpSWplcG5zREdJMWJGQWFralUxalBycE9sR2YxcU1DY0FZTVZZNHdFc0lrS0Fhb0tMd3l5NW5JR0tpbjl2RFRQSVhnZjZ2TU5mLWRNNFpzUmgzQnBkaGFoVkZmUGlacmpKeWhIaGY1WDZnenZ5T25pc1RveG9IZ1JuUDllc1BNOUExeDY5WEE2eHZNakhmOFQxT2pweEQ4MlQzNlVTWk0?oc=5",
+        "url": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxNNF9MZ2hvNzMyVUNNZ1JQVUNnNnoxM3VzT3hYMlZEanRrQ0pycTlqaDZLeFc3VFVBSmltNlEzS1daOUpYOHNxc1E5TDhsWkx6bFJoMXI0MTF5ZEhzdXQ4aXEtaDBiWFFXWWR3dHh2TkswSzhGaVJxSVZHYUE5Y3hfMjhqVEZqUDk3aVdROUxuOHJPYy1lVmVhVEFSZkNBYjdkSllJZ083NTF2R1FyY3dqeDBrSGNINUExWTM4em9tNk1vT1FjVERweG5YaXJ2ZDF4VUtvNU8wc0QzY2ZHSEotUTh1Sm5PcXdBNzRKbFdZV1REWC01LTVJ?oc=5",
         "date": "2026-10-29"
       }
     ],
@@ -101,16 +101,6 @@
         "source": "Arizona Sports",
         "url": "https://arizonasports.com/ncaa/arizona-state/asu-football/mikey-keene-byu-questionable",
         "date": "2026-10-26"
-      }
-    ],
-    "Oregon": [
-      {
-        "team": "Oregon",
-        "tag": "QB",
-        "text": "QB Dante Moore (concussion) is not expected to return this season. He had already missed recent games; Dylan Raiola and Brock Thomas have been the fill-ins.",
-        "source": "ESPN",
-        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPTVF3ellReGRtazJyZllZNXRwcDBlQmVFZFF2blVDMU9kUDRMSG1RR2xFTWgydjRLZlR5ZlY1LTFGcUNZZC01OG5ndVk3Y0tzcF9zWW1IX3d4dGhPNnlqbnU2TkNjb1M5TlJackRya2J5a1p6ekZrRVViX0U1czI3UGRwd3NoeEtGRlZPR0ZyNTBnWmlQemljS2IwU20tbmVyRC03cEk4aTlhV1dMNXFTREFn?oc=5",
-        "date": "2026-10-27"
       }
     ],
     "Texas": [
@@ -243,9 +233,9 @@
       {
         "team": "Missouri",
         "tag": "RETURNING",
-        "text": "RB Ahmad Hardy not listed on Wednesday's availability report for Arkansas, after missing time.",
-        "source": "Sports Illustrated",
-        "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQT2FRNEdKNUp1T2g3SWhnaWZVUndyUzlNdElwY2d0eXFEdWFwR1Q3eHgtU3pmRTN1N3JWYkVaLXQ3aF9SR3ZtbVl4WnhDNlllVk13a0hUSFRNOFpURjVURW9wNVExT0N6ZFRzaWhoZnFULU5LaVRlS19rRHhpNm9jQ0dLbkNBY19WY2lES1kybnQ5WE1ibmNiS0RGcGZpNm45Q0xfc0lHRVZpVmM?oc=5",
+        "text": "Star RB Ahmad Hardy set for his season debut vs. Arkansas after recovering from a gunshot wound; not listed on the availability report.",
+        "source": "CBS Sports",
+        "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQZ1psU3VXaUlIdlhTOFNYYVBJdkVKRldqYTh2cWstN1RxanI2Uk9LamhHbGRuVHRmakhZTlloQl9qTm5RMFlJNmozTmxtRk1qaTJfVkgwYjdvaFU1S3ZMNFI1SnM1MHo2clJkLWVPM0FsUVRWUll6UTFseUs2M3ZJd09CSk5SRGpaTWJEVU5lVE1zei1qUW5rOWdIWV91VTJNdVR6MV9tVUZEU3NaZ1Nr?oc=5",
         "date": "2026-10-29"
       }
     ],
@@ -293,10 +283,30 @@
       {
         "team": "Illinois",
         "tag": "QB",
-        "text": "QB Katin Houser (broken throwing hand, Oct. 10) on the injury report with the door open for a return; Bielema addressed his status. Clayton has started since.",
-        "source": "Yahoo Sports",
-        "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNenJ0S1BvNV83dHg3MEx6aHUtSWptdTVoYkYxeWdSblBHSDQ0ZW9aa1BaT2xPTk1HclExTTU5WFBPM3BDaTY5QVJSczB5bmU0QjZfa0g5MHNXelJvcHZXbDlqNXlxdjI0R19ocUhDYjg2Ql9tTWdpUWpodm9xcGE4clV3Ti1NNTV2SUlz?oc=5",
-        "date": "2026-10-29"
+        "text": "QB Katin Houser (broken throwing hand, Oct. 10) listed doubtful vs. Maryland with no timeline; Clayton has started since the injury.",
+        "source": "247Sports",
+        "url": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxOYzJ3bWcxVkFuNU1GTnhwVXdPS1BBWUpoRDIyWDYzOEpxV3Q1RU9LekVublo0M0dyWjN0QmgtQng2bWlDWURzUjh2YkVGNWhqMnVfdWVERVg0c2RCMHBKVEZDTVk3VTA3dWxtc0xOYVlzcGR2WWhGMllrbk9RM3gxSXhCb1p4aXJ0ZTBBOVhmYzU3dXR0Z1BadjRYTEVLbDlVMHhidl9ZQndqenVla3dZVlp2NWIzcjhXM3RSS0FDb2pBTEcxdG0zNVhPTTZRckNwMkJ5VkE1NGxwT0lQRWlnQlIwcnBuaWxwQ2h6c0xwTQ?oc=5",
+        "date": "2026-10-30"
+      }
+    ],
+    "Colorado": [
+      {
+        "team": "Colorado",
+        "tag": "QB",
+        "text": "QB Julian Lewis downgraded to OUT vs. Kansas State after a medical emergency at the team facility Wednesday; hospitalized, family says he is recovering.",
+        "source": "Sports Illustrated",
+        "url": "https://www.si.com/college/colorado/football/julian-lewis-downgraded-colorado-buffaloes-latest-injury-report",
+        "date": "2026-10-30"
+      }
+    ],
+    "Kansas": [
+      {
+        "team": "Kansas",
+        "tag": "QB",
+        "text": "Starting QB Isaiah Marshall (started all 7 games) downgraded from probable to questionable at TCU on Thursday's report. Cole Ballard expected to start if he can't go.",
+        "source": "On3",
+        "url": "https://www.on3.com/sites/jayhawk-slant/news/isaiah-marshall-downgraded-to-questionable-in-latest-update/",
+        "date": "2026-10-30"
       }
     ]
   }
