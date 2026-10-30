@@ -1,7 +1,7 @@
 {
  "sport": "nfl",
  "week": 8,
- "generated": "2026-10-29T17:35:02-04:00",
+ "generated": "2026-10-30T11:16:17-04:00",
  "movers": [
   {
    "team": "BAL",
@@ -10,14 +10,6 @@
    "source": "CBS Sports",
    "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPcFQ4MDR0eUxxVmpyTXVRTzhZZERGclE1aTJfY3JmX1pZV2xpdi00YUxGcWIzREdDUXVpWnZ2UkIyekRYSHpBYWxSd3B2blN3c3hITy1VMlgxOXFtcVJUSlI4SzZZcS1weFpsVGlsbWtVTkZjYm1BUDRfSlc0UEdRNjFn?oc=5",
    "date": "2026-10-29"
-  },
-  {
-   "team": "GB",
-   "tag": "CLUSTER",
-   "text": "OL: OT Travis Glover (knee) and G Sean Rhyan (high ankle sprain) ruled out for Thursday vs. Carolina; C Jacob Monk on IR.",
-   "source": "Green Bay Packers – packers.com",
-   "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPTWczTHBBV3FEU25kck9oYzlLN3d5c3BGUUttOXRWRVN1elBWdmJIbkRDQXR1NkVnT2t0MnFlYms0UDFIT2dlWGdldlBfX0JXbloydTVXRkRVb2QxSGFHZVVEbGRhM1JPd1dSTVhjZmxEMVhGWUhkWnlieWlUSDlBMDFLVDY2ZWN3YTliLXJjSWg3dzlENmdncHFRX2dMSWlkTl9Ia1NBMjlKVU0?oc=5",
-   "date": "2026-10-28"
   },
   {
    "team": "PHI",
@@ -36,12 +28,20 @@
    "date": "2026-10-26"
   },
   {
-   "team": "WAS",
+   "team": "ARI",
    "tag": "CLUSTER",
-   "text": "WRs: Terry McLaurin (knee) placed on IR Wednesday; Stefon Diggs (hand/hamstring) did not practice Wednesday.",
-   "source": "Hogs Haven",
-   "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQNkxHZW8zb3FuU1hBMzFqaWp5MTJ2RG1kVThhTGx0NFJ1cWtET0R6dURFaVdfY09jZGxrVzN4SHphbzRnNy1uMDNFcHdHSFhoLVd5THhaTzlaa0hEejFKMlhGN0xMZUluQnFCc09FeU9IQ1k0dHBaNkthTUxHR19oVEh2OHRUdkFXdWJleDBXNXRXWjl6TzJzTk9zcnpfbnQ3emd0UkhtSTloeDJnNVNTOGFSZEFadHBYQy1PcFhuME95R25TYXZCRmZXSUxTeU82NjAwemMwT0lQUEpILXc?oc=5",
-   "date": "2026-10-28"
+   "text": "OL: C Hjalte Froholdt (knee), OT Elijah Wilkinson (knee) and G Jon Gaines II (ankle) all questionable vs. Dallas.",
+   "source": "USA Today",
+   "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPOTZWcFFCNkFZc0JGUUkwQzRRNlhPR3M3WG1qaTBhTEhYUUl1UTdrMFpCRjMzNmdZYmlDZUtpT3hDNEllXzNPTlFOT0VMbmd4Y1FKeGRSSW5YMXB6SzFTX1ktYVNSV05zZGE5VHR2ck9HYU9BQjNBS0V3NkV2Nk1kZy13d2ZySkY2UjhWdEYwSVlHbTBnWEQ0aFVFeGZWNE9NaENzNjJXWXF1UEpOdWs4MEhXWlJvYkE5cS1HdkpTWUVESWx6amJQOTRIdU9YUGZyZW9JS2pB?oc=5",
+   "date": "2026-10-30"
+  },
+  {
+   "team": "NE",
+   "tag": "KEY",
+   "text": "WR A.J. Brown (knee/ankle) did not practice Thursday with a new knee issue the NY Post calls degenerative; RB TreVeyon Henderson also sat out.",
+   "source": "New York Post",
+   "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQWHhNZ25pUFZuNUp5YWFrSkdfRlZaQjR1UmlQOFlqd3VGNWJwNjZUTFNxYURmcFE4eFdCRmJKT2hrdlRobW9oSDEwRDIxWTI2ckNBQ1BVN0x5amFWdTJWSURfYWRfWlh0ZFRRMVRMUGZiRVl5NDlBd1JRQVJRdVdRYlB2SHVXejJpN2RIUGdPM2Zuek0xMnVKa3k5OVhfTXUxeS1LemV3QklDaHFucEE?oc=5",
+   "date": "2026-10-30"
   }
  ],
  "teams": {
@@ -57,27 +57,9 @@
    {
     "team": "BAL",
     "tag": "KEY",
-    "text": "G Vega Ioane (knee/MCL), S Kyle Hamilton (knee) and LB Roquan Smith (knee) returned to practice Thursday. S Jaylinn Hawkins (knee) did not practice.",
+    "text": "G Vega Ioane (knee), S Kyle Hamilton (knee) and LB Roquan Smith (knee) limited Thursday, all questionable. S Jaylinn Hawkins (knee) did not practice.",
     "source": "Baltimore Ravens",
     "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQTzdWd2s2eGgxNzNhWE4xNDJYWXpJdi1NUVh0S3h0RmUtUzIwTGR0SjRaYWVkYVJEM3B1dU5wV1h1eUJXMzJGZ2ZWMk5oeDNDczV1SmlQOUV6blV6ZWRaS2k1V2RUbERYYkhzX2FFakhTempCZkFMVkEtNHdsVnlfQlppOERGbGJTTWRqVWVVOWMwY0lwOHJnVXpFTmlNWlYyeTZNZ19pcFFwR2w0MEJSVnFQZThrdGF6MTZ3MTRCbEg?oc=5",
-    "date": "2026-10-29"
-   }
-  ],
-  "GB": [
-   {
-    "team": "GB",
-    "tag": "CLUSTER",
-    "text": "OL: OT Travis Glover (knee) and G Sean Rhyan (high ankle sprain) ruled out for Thursday vs. Carolina; C Jacob Monk on IR.",
-    "source": "Green Bay Packers – packers.com",
-    "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPTWczTHBBV3FEU25kck9oYzlLN3d5c3BGUUttOXRWRVN1elBWdmJIbkRDQXR1NkVnT2t0MnFlYms0UDFIT2dlWGdldlBfX0JXbloydTVXRkRVb2QxSGFHZVVEbGRhM1JPd1dSTVhjZmxEMVhGWUhkWnlieWlUSDlBMDFLVDY2ZWN3YTliLXJjSWg3dzlENmdncHFRX2dMSWlkTl9Ia1NBMjlKVU0?oc=5",
-    "date": "2026-10-28"
-   },
-   {
-    "team": "GB",
-    "tag": "KEY",
-    "text": "LB Zaire Franklin (shin) ruled out vs. Carolina; CB Keisean Nixon (shoulder) added to the report as questionable for Thursday.",
-    "source": "Yahoo Sports",
-    "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPSE45cEFZV1pVUUloRkNFX044ZVl1ZU55UEw2Z1RLOFd0UXBQMlVUOHNGR2JoSEM2ckNkLTFnSWw3N0lwRVFGNHNVR1g3Ump2OHd2VEh6a0ZOblpKSHlGQ2dseUwtYld5Q1ZoVzlYRUZ0LTZ3Rl9nQnJnbjVPOUVnNzNkWXhrQQ?oc=5",
     "date": "2026-10-29"
    }
   ],
@@ -89,14 +71,6 @@
     "source": "Yahoo Sports",
     "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxObmVCc3RKRXgxMUFrY1ZxTUtBY0phLWNjVkxSX1BGeGtPd1BtbU4wbnMzY1BkVUE1RFIyYmkzc3BUR3BlUlBVZlVpVm95ZzFlMzZDSnQ2bHVBSWw1bnlRVmZuWUV5ZUNkTko2ZmI4NkhQVXZiU0Y1WUxsY18xY05YeWRqZWE3MHg0dXFjRQ?oc=5",
     "date": "2026-10-29"
-   },
-   {
-    "team": "PHI",
-    "tag": "RETURNING",
-    "text": "C Jake Majors back after missing a game.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-10-27"
    }
   ],
   "SEA": [
@@ -109,50 +83,50 @@
     "date": "2026-10-26"
    }
   ],
-  "WAS": [
+  "ARI": [
    {
-    "team": "WAS",
+    "team": "ARI",
     "tag": "CLUSTER",
-    "text": "WRs: Terry McLaurin (knee) placed on IR Wednesday; Stefon Diggs (hand/hamstring) did not practice Wednesday.",
-    "source": "Hogs Haven",
-    "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQNkxHZW8zb3FuU1hBMzFqaWp5MTJ2RG1kVThhTGx0NFJ1cWtET0R6dURFaVdfY09jZGxrVzN4SHphbzRnNy1uMDNFcHdHSFhoLVd5THhaTzlaa0hEejFKMlhGN0xMZUluQnFCc09FeU9IQ1k0dHBaNkthTUxHR19oVEh2OHRUdkFXdWJleDBXNXRXWjl6TzJzTk9zcnpfbnQ3emd0UkhtSTloeDJnNVNTOGFSZEFadHBYQy1PcFhuME95R25TYXZCRmZXSUxTeU82NjAwemMwT0lQUEpILXc?oc=5",
-    "date": "2026-10-28"
+    "text": "OL: C Hjalte Froholdt (knee), OT Elijah Wilkinson (knee) and G Jon Gaines II (ankle) all questionable vs. Dallas.",
+    "source": "USA Today",
+    "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPOTZWcFFCNkFZc0JGUUkwQzRRNlhPR3M3WG1qaTBhTEhYUUl1UTdrMFpCRjMzNmdZYmlDZUtpT3hDNEllXzNPTlFOT0VMbmd4Y1FKeGRSSW5YMXB6SzFTX1ktYVNSV05zZGE5VHR2ck9HYU9BQjNBS0V3NkV2Nk1kZy13d2ZySkY2UjhWdEYwSVlHbTBnWEQ0aFVFeGZWNE9NaENzNjJXWXF1UEpOdWs4MEhXWlJvYkE5cS1HdkpTWUVESWx6amJQOTRIdU9YUGZyZW9JS2pB?oc=5",
+    "date": "2026-10-30"
    },
    {
-    "team": "WAS",
-    "tag": "KEY",
-    "text": "DT Javon Kinlaw (knee) doubtful; Dan Quinn called him 'unlikely' to play vs. Philadelphia.",
-    "source": "Washington Commanders",
-    "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPYlpydVBsLUplekQzVklJNTU5ZjhPdHNaanBjR3Z0eE9Xb1B4VWdzX0xVNFVYeUltbDJDY0JOa080UXJrdXdzZzB2MnJqMnpHVWhleHRPYzN2d1B4RWV2ZTRhUEZHc2NvbTE0UmdYSEx0c2Q2NlRTM1ZKczQ5dUtNT0hacU8?oc=5",
-    "date": "2026-10-28"
+    "team": "ARI",
+    "tag": "RETURNING",
+    "text": "S Andrew Wingard (knee) and CB Max Melton (knee) questionable after missing last week. WR Michael Wilson (ribs) limited Thursday.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nfl/injuries",
+    "date": "2026-10-29"
    }
   ],
   "NE": [
    {
     "team": "NE",
     "tag": "KEY",
-    "text": "WR A.J. Brown (knee/ankle) did not practice Thursday with a new knee issue; RB TreVeyon Henderson also sat out.",
-    "source": "ESPN",
-    "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNQWtveFhfQk9vaFI0QWNwR3ZBTWNtZUxLaHpDTld4OUs0NWhjU0hPMTBIY21xdnF1SkpzcnNrbkxqWExHdFprWFpvRFp4ZFZvcHRNMDdmeGdCZ1BaWnlyd1ZzVjY1RWtlNnVEcnFldGM4cTgwRjB5R01MMV9oN21URExPRmVSdTgwUUJZVzFWaWo1alBKanByREJiaG0za2FO?oc=5",
-    "date": "2026-10-29"
+    "text": "WR A.J. Brown (knee/ankle) did not practice Thursday with a new knee issue the NY Post calls degenerative; RB TreVeyon Henderson also sat out.",
+    "source": "New York Post",
+    "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQWHhNZ25pUFZuNUp5YWFrSkdfRlZaQjR1UmlQOFlqd3VGNWJwNjZUTFNxYURmcFE4eFdCRmJKT2hrdlRobW9oSDEwRDIxWTI2ckNBQ1BVN0x5amFWdTJWSURfYWRfWlh0ZFRRMVRMUGZiRVl5NDlBd1JRQVJRdVdRYlB2SHVXejJpN2RIUGdPM2Zuek0xMnVKa3k5OVhfTXUxeS1LemV3QklDaHFucEE?oc=5",
+    "date": "2026-10-30"
    },
    {
     "team": "NE",
-    "tag": "RETURNING",
-    "text": "CB Carlton Davis III (neck) a full participant Wednesday after missing three games. OL: G Alijah Vera-Tucker on IR, C Ben Brown (knee) questionable.",
-    "source": "Pats Pulpit",
-    "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNWmR0anU3ZmNCbjJMeWpuODNzYWhqSExkZENZVXk0NjdGZnJNUEpUSDc2NUs3NVdGZmNjMjBXWFFSaGtHdnBYN0N5TGJQdjV6WVV4cmV1YkZrMEt4cUtYYzV5RGJyUU5TSFMtMmZBVHNoXzlQRnZ1REJ5OGlfa05uNFRhY1RDUUUtMjh5WkRYNkw5RVN3TnpFVmtfQ1FRMV9weWNpRTNZaDRGT0k?oc=5",
-    "date": "2026-10-28"
+    "tag": "CLUSTER",
+    "text": "OL: G Alijah Vera-Tucker on IR; OT Morgan Moses (foot) and C Ben Brown (knee) questionable.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nfl/injuries",
+    "date": "2026-10-29"
    }
   ],
-  "CAR": [
+  "WAS": [
    {
-    "team": "CAR",
-    "tag": "CLUSTER",
-    "text": "Four ruled out vs. Green Bay Thursday, including G Damien Lewis (knee) and OLB Jaelan Phillips (hamstring). RT Taylor Moton on IR.",
-    "source": "Carolina Panthers",
-    "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQb0lYN1Y3YXdhTkFtZjZUZFZUWWxyYlpYMENqUzR5V1FfRWF4MmdIdVpIdEZqb1I2b3JLWWF4cWotN2NpbzluNWtUNDBJUWdycjE5RThaS09FMlVFRmRxQUk1bXdNV0xLMVVNYkk4bTRjbDhHemM2ak9yb0tzYnZIVmE3TWp1ak9GelhSU1FWcTllTDB1RTI4?oc=5",
-    "date": "2026-10-28"
+    "team": "WAS",
+    "tag": "KEY",
+    "text": "WR Terry McLaurin (knee) on IR. DT Javon Kinlaw (knee) still out of practice Thursday. WR Stefon Diggs (hand/hamstring) was a full participant.",
+    "source": "Hogs Haven",
+    "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxQMWJmeWlmaXhiUVBMVm13Q2ZTaXFkVVNUR1FiMUp6amF5Nm55U3M2by1JN3BIc1NkUGxBZ0swZlVrYnRsU1RzdC1RUUZTT0VLSndPbENBWmtSbElrQ2lXUUI0aWhKOVk1RzRCNUY1MEZyUXpfNjhZZ191OEJ1WVplc2wzUzcya1FyUl9MelBIaVB6TG83OTc3UmlWN0FnS1ZKaFN0b3dXMDRXb1dkS0lMNHpIT3RILXJzNmtzeHFYdHJtamdlQzhVS2dBQ3hINWlZT0lVa1o3THE?oc=5",
+    "date": "2026-10-30"
    }
   ],
   "LAC": [
@@ -187,7 +161,7 @@
    {
     "team": "KC",
     "tag": "RETURNING",
-    "text": "WR Rashee Rice (hamstring/knee) limited again Thursday after missing last week; OT Jaylon Moore (concussion) full. TE Travis Kelce (ankle) limited; CB Mansoor Delane did not practice.",
+    "text": "WR Rashee Rice (hamstring/knee) limited again Thursday after missing last week; TE Travis Kelce (ankle) limited. CB Mansoor Delane (shoulder) did not practice.",
     "source": "Arrowhead Pride",
     "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQRzJOdHV0SFZ6VHFnSlIySmhacU5Xem5lMmhUaFRjMFBlZ0JISDIzZkRyNGtzSVJZOV9GTllWcDdXRkgwU1NheXpoaTU1dWpzaTY1TXlaeXFFbDlCQi12TVRIUGpCY2lVV0FLbkY0Zm1oa1lXa0NNYXBldjU3Z0lSQWswTk5sWGdmUHcxNFljcXNVU0RmOWpUalFPWGgtZ3BNVVVQSGxKS0FxRTE1OE9uZXg3b283RW5oMl9KZWRhVlJFM2FzWTF0MVBLcWo?oc=5",
     "date": "2026-10-29"
@@ -197,10 +171,10 @@
    {
     "team": "DEN",
     "tag": "KEY",
-    "text": "WR Jaylen Waddle (chest) did not practice Wednesday but avoided serious injury; DE Zach Allen (hamstring) questionable. CB Pat Surtain II full.",
-    "source": "Denver Broncos",
-    "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxNWkg4cU9YS1h4QktWVTBsNDhZekdnZW9KbUZSYkZKXzQ0T19xYlFzSlczTGd0aVlPbkpkb0g5c3JYdVpHQllNWEtaczVob2xiWWE3LV95Vkgtdkk4N1dZVVVadHRqdU9mZkI1U3Z6bnNoQ0FSR2ZQNlBzYU5mTU1GUElnNThwZDVSUWZVeVBVcVBtMy1GQUtwN1p4c05rU0pmY3ZVanMwaFVkd09VVGZRRGVIMlpUZXhLSGstSk1FMzA1YV9FUXZzX3cyWXc2SzVMQ1BSOGhORUFwck9mLWNhZFd6VQ?oc=5",
-    "date": "2026-10-28"
+    "text": "WR Jaylen Waddle (chest) and DE Zach Allen (hamstring) limited Thursday; S Talanoa Hufanga (ankle) did not practice. OT Garett Bolles (hip) questionable.",
+    "source": "Broncos Wire",
+    "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNSFJoMWkyc250dFVqLUNWRmhxOUdOY1dlYzdreGVGUXQwZnlsQWpFa2xMbURMck9tX1R3MHU0MDZMdEZiUk1MdjBNbUx6OGtCZlpmZkFwTktUVXVMN0pFM1ZOeTFuam9qMTNlYXFwbElaX3BiTTNIanJlLVpGcm1rbG5JQjlXX2tXLXdrc0E4RkRweHJBck04aC1rX09WcU92M3pna21jMzVIN0k4X1lUSGtKUnZUTjl5aEJvanNzUTFoajd5bTFyYVFURDM3MVRGSHNiNW4yQzBPdE5N?oc=5",
+    "date": "2026-10-30"
    }
   ],
   "CLE": [
@@ -225,10 +199,10 @@
    {
     "team": "BUF",
     "tag": "KEY",
-    "text": "WR DJ Moore limited Wednesday and his return vs. Baltimore isn't guaranteed; TE Dalton Kincaid (chest) limited Thursday.",
-    "source": "Yahoo Sports",
-    "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOOFAxVTVhRUI3blAwcWg3Tm1SWWRpNzBWb0QtT2lpbVJiSUVEYlpNbDExenp6ZFV0TjlYdnhaRjdWWWZWbGJxeDR1ZWhRRk9oOFJndW13bUdtVWJ2NGQtZHU4dlk4clc5SXpVTmc3SzJFN19VYjYwWV9rMk1xT2daUw?oc=5",
-    "date": "2026-10-29"
+    "text": "Optimism for WR DJ Moore and DT Ed Oliver vs. Baltimore; TE Dalton Kincaid (chest) limited Thursday; OT Spencer Brown (back) questionable.",
+    "source": "Sports Illustrated",
+    "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOd2tLX1E4am9jV1hKdkRLdW5CMzN3aUlFazFPUmVXZFhQeGFSX2FGSE9kUXRrcVFGbnVZZEh3VTZvdnI1NkwxeWFrOVRCYXJ6cW1yVkNkS1MyN1RzdDlMM1hadUZsMVBwRVV6VHVjTXhoMk8yYS1xNzBZM2o3OHZJblo4akNUa0F3NkJmRmRITFU2cllaTldvYXlwLVFKWWotVXFYQVp5dkJLUlZISFE?oc=5",
+    "date": "2026-10-30"
    }
   ],
   "TEN": [
@@ -255,20 +229,20 @@
    {
     "team": "IND",
     "tag": "RETURNING",
-    "text": "CB Sauce Gardner (calf) and TE Tyler Warren (groin) limited Wednesday after missing last week. CB Justin Walley (knee) questionable.",
-    "source": "Yahoo Sports",
-    "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNb0Q2REZvLS1VR2pIVzBvbmp5V1Z6Y1VTYWE2M3g1akJ3dnM0T0V5YWtTQV90eGEtbml1NXNWQy04Nnc4V196RV9JdmNzNDNfaUp4MkR2WjRjUXpwMUNhRUU1dXZHOWVwTjFFNzRZOTVBeTEyblZxX2dOWjhHekpoakZhNVdZMVVybTJxVGtiZw?oc=5",
-    "date": "2026-10-28"
+    "text": "CB Sauce Gardner (calf) full Thursday and TE Tyler Warren (groin) limited after missing last week. CB Justin Walley (knee) questionable.",
+    "source": "roundtable.io",
+    "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOekdXcVVYRzZfeEM4NFU0a0Z6YTJHRmUzVmQxQ2ZBX0NQWENUeWs0VjVkMkdnQ0hvM044bEo5ai1DMEpscmZqWng5MGJvM3IyaTgzQmNvdnprUkFFbXIyWWVGM1FfSEZpUmQ3N1l6U2cwdWloVWx0TnEtelFuWGl1Z0tLcnZOU1d3NVdCZWgzQzhZMW1CX3pJOUVNdXBEZWN2eVNXVDFXMDZKRFZIUFU4OTlQVUxJdw?oc=5",
+    "date": "2026-10-30"
    }
   ],
   "TB": [
    {
     "team": "TB",
     "tag": "RETURNING",
-    "text": "S Antoine Winfield Jr. (ribs) full and WR Emeka Egbuka (concussion/foot) limited Wednesday after missing last week; RT Luke Goedeke (calf) questionable.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-10-29"
+    "text": "S Antoine Winfield Jr. (ribs) full and WR Emeka Egbuka (concussion) limited Thursday after missing last week; RT Luke Goedeke (calf) did not practice.",
+    "source": "The Pewter Plank",
+    "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1KaFozS0QzLVB4b0t4V2lOcWFfQkJTWHZuSXRoSkh2NkZ5Njhxa0RqQ0s3TU55RW5KN1B4aTJkQjZMOENfSTU1S3Ixc1lycU1iakcwNmoxZk9XUTI1aXZRVHV5VHQ0YXd5QTJfWG8wdGdtLVEwbXJxQw?oc=5",
+    "date": "2026-10-30"
    }
   ],
   "CHI": [
@@ -285,20 +259,20 @@
    {
     "team": "JAX",
     "tag": "KEY",
-    "text": "OT Anton Harrison on IR with a torn ACL. S Antonio Johnson (ankle) missed Wednesday's practice; WR Jakobi Meyers (hamstring) limited.",
+    "text": "OT Anton Harrison on IR with a torn ACL. S Antonio Johnson (ankle) sat out Wednesday and Thursday; WR Jakobi Meyers (hamstring) limited.",
     "source": "FL Times-Union",
     "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNbWRkVGQ0OThuNUhVMGpuSHhzellYTTBta29lWFVUWGRTWjlSMUhZZW0xcGprWHNrU054MlBnYmJPZVpvbTFBaVc2Rmw1NENrZFdiR0ItTklzX1BVZmxRamVmVEZTSHJSV2wtUC13QlpDRDNQRFhaTEgxMzNLQ0lsYVdnczVCTkFNVnhmRmZsUzNGWm9aV0JUOHQ3Vy1QLWtuenlhUjV3bUNSdDlXMVVIYlFFRXpEZWdabWtobnpsbjBQblNCdVVkLWU0VDc?oc=5",
-    "date": "2026-10-28"
+    "date": "2026-10-29"
    }
   ],
-  "ARI": [
+  "NYJ": [
    {
-    "team": "ARI",
-    "tag": "RETURNING",
-    "text": "S Andrew Wingard, CB Max Melton and G Jon Gaines II questionable after missing last week. WR Michael Wilson (ribs) limited Wednesday.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-10-27"
+    "team": "NYJ",
+    "tag": "KEY",
+    "text": "Edge David Bailey (groin) did not practice Wednesday; his Week 8 status vs. Las Vegas is uncertain. G Dylan Parham (knee) questionable.",
+    "source": "The Jet Press",
+    "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQVndtLTA4dnNuRVQ1OXMtR2FEY2I4WHZ1aU81ZVEzRHFDMERfSmtwbUc1RkxhSjU5RzFvYmNtRVM5NzhXXzUwVkpfQmNwcllXUW9BWjRDNk5fd085US1aQ2lKblRxemd5cmlCUUtXUlVHOVZuY1BiQnduRnpMT2Z5VW9CSXl2Yzl2cXNTN09aazNuZjBu?oc=5",
+    "date": "2026-10-30"
    }
   ]
  }
