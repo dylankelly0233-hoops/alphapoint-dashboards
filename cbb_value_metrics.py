@@ -109,9 +109,25 @@ def d1_teams():
     return df
 
 
+BOX_STATS = ['fga', 'fg3m', 'fg3a', 'ftm', 'fta', 'oreb', 'dreb', 'tov', 'paint', 'fastbreak']
+
+
+def _box_stats(s):
+    """The box-score fields we keep from one side of a CBBD game (shooting, rebounds, turnovers, scoring types)."""
+    g = lambda k: s.get(k) or {}
+    return {'fga': g('fieldGoals').get('attempted', 0), 'fg3m': g('threePointFieldGoals').get('made', 0),
+            'fg3a': g('threePointFieldGoals').get('attempted', 0), 'ftm': g('freeThrows').get('made', 0),
+            'fta': g('freeThrows').get('attempted', 0), 'oreb': g('rebounds').get('offensive', 0),
+            'dreb': g('rebounds').get('defensive', 0), 'tov': g('turnovers').get('total', 0),
+            'paint': g('points').get('inPaint', 0), 'fastbreak': g('points').get('fastBreak', 0)}
+
+
 def fetch_box():
-    """One row per team per completed D1 game: points, 3PM/3PA, FTM/FTA for both sides."""
-    path = _cache('box')
+    """
+    One row per team per completed D1 game: points, possessions, and the box-score fields in BOX_STATS for
+    both sides (opponent's prefixed o_). Feeds the value metrics, the adjusted-efficiency model and matchups.
+    """
+    path = _cache('box2')
     if not _stale(path):
         return pd.read_csv(path)
     since = date.today() - timedelta(days=REFETCH_DAYS)
@@ -124,17 +140,16 @@ def fetch_box():
             tp, op = (ts.get('points') or {}).get('total'), (os_.get('points') or {}).get('total')
             if tp is None or op is None:
                 continue
-            t3, o3 = ts.get('threePointFieldGoals') or {}, os_.get('threePointFieldGoals') or {}
-            tf, of = ts.get('freeThrows') or {}, os_.get('freeThrows') or {}
+            poss = [p for p in (ts.get('possessions'), os_.get('possessions')) if p]
             rows.append({
                 'game_id': g['gameId'], 'date': g['startDate'][:10], 'team': g['team'], 'opponent': g['opponent'],
                 'home': 0 if g.get('neutralSite') else (1 if g.get('isHome') else -1),
                 'pts': tp, 'opp_pts': op, 'minutes': g.get('gameMinutes') or 40,
-                'fg3m': t3.get('made', 0), 'fg3a': t3.get('attempted', 0), 'ftm': tf.get('made', 0), 'fta': tf.get('attempted', 0),
-                'o_fg3m': o3.get('made', 0), 'o_fg3a': o3.get('attempted', 0), 'o_ftm': of.get('made', 0), 'o_fta': of.get('attempted', 0),
+                'poss': sum(poss) / len(poss) if poss else None,
+                **_box_stats(ts), **{f'o_{k}': v for k, v in _box_stats(os_).items()},
             })
-    cols = ['game_id', 'date', 'team', 'opponent', 'home', 'pts', 'opp_pts', 'minutes', 'fg3m', 'fg3a', 'ftm', 'fta',
-            'o_fg3m', 'o_fg3a', 'o_ftm', 'o_fta']
+    cols = (['game_id', 'date', 'team', 'opponent', 'home', 'pts', 'opp_pts', 'minutes', 'poss']
+            + BOX_STATS + [f'o_{k}' for k in BOX_STATS])
     df = pd.DataFrame(rows, columns=cols).drop_duplicates(['game_id', 'team'])   # keeps a header even before opening night
     df.to_csv(path, index=False)
     return df

@@ -46,7 +46,7 @@ TEAMRANKINGS_ALIASES = {
     'N Florida': 'North Florida', 'N Illinois': 'Northern Illinois', 'N Iowa': 'Northern Iowa',
     'N Kentucky': 'Northern Kentucky', 'N Texas': 'North Texas', 'NC A&T': 'North Carolina A&T',
     'NC Asheville': 'UNC Asheville', 'NC Central': 'North Carolina Central', 'NC Greensboro': 'UNC Greensboro',
-    'NC Wilmington': 'UNC Wilmington', 'NW State': 'Northwestern State', 'Penn': 'Pennsylvania',
+    'NC Wilmington': 'UNC Wilmington', 'NW State': 'Northwestern State', 'Penn': 'Pennsylvania', 'W Florida': 'West Florida',
     'Prairie View': 'Prairie View A&M', 'Purdue FW': 'Purdue Fort Wayne', 'Queens': 'Queens University',
     'S Alabama': 'South Alabama', 'S Carolina St': 'South Carolina State', 'S Dakota St': 'South Dakota State',
     'S Florida': 'South Florida', 'S Illinois': 'Southern Illinois', 'S Indiana': 'Southern Indiana',

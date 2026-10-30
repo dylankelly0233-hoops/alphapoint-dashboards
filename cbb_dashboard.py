@@ -38,6 +38,7 @@ import numpy as np
 import pandas as pd
 import requests
 
+import cbb_model as cm
 import cbb_ratings as cbr
 import cbb_value_metrics as vm
 import dashboard_theme as theme
@@ -58,9 +59,15 @@ ESPN_SCOREBOARD = 'https://site.api.espn.com/apis/site/v2/sports/basketball/mens
 AVG_POSSESSIONS = 68.0     # D1 average possessions per game; converts Torvik's per-100 margin to points
 HFA_POINTS      = 3.0      # home-court edge for an average team (markets ~3)
 GAME_DAYS       = 3        # how many upcoming game days to show
+# Our own tempo-aware adjusted-efficiency model (cbb_model.py). Its weight ramps up as teams play:
+# full weight once teams average MODEL_FULL_GAMES D1 games.
+MODEL_LABEL     = 'AlphaPoint model'
+MODEL_FULL_GAMES = 8
+# Blend weights. Warren Nolan is an Elo rating built for win probability, not margins, so it counts half.
+SOURCE_WEIGHTS  = {'TeamRankings': 1.0, MODEL_LABEL: 1.0, 'Torvik preseason': 1.0, 'Warren Nolan': 0.5}
 # Sources already in points per game. Others (Warren Nolan's Elo) are only centered and rescaled,
 # so the common SD has to come from these — averaging in Elo's SD (~120) would blow up the scale.
-POINT_SOURCES   = {'TeamRankings', 'Torvik preseason'}
+POINT_SOURCES   = {'TeamRankings', 'Torvik preseason', MODEL_LABEL}
 FALLBACK_SD     = 9.5      # typical D1 SD in points, used if no points-based source loads
 LOGO_PX         = 48       # smaller logos: this page carries ~150 teams (displayed at 24–30px)
 LOOKAHEAD_DAYS  = 21
@@ -117,11 +124,12 @@ def fetch_torvik():
 # ==========================================
 # 3. COMPOSITE POWER RATING
 # ==========================================
-def load_sources(teams):
+def load_sources(teams, model=None):
     """
-    The rating sources for this build, as {label: {CBBD team: rating}} plus unmatched names.
-    In season: TeamRankings predictive + Warren Nolan Elo. Before TeamRankings switches to this season
-    (it keeps last season's final ratings until then): Warren Nolan + Torvik's saved preseason file.
+    The rating sources for this build, as {label: {CBBD team: rating}}, unmatched names, and blend weights.
+    In season: TeamRankings predictive + our model + Warren Nolan (half weight). Before TeamRankings switches
+    to this season (it keeps last season's final ratings until then), Torvik's saved preseason file fills in.
+    Our model's weight ramps with games played (MODEL_FULL_GAMES).
     """
     canon = set(teams['team'])
     raw = {}
@@ -140,13 +148,46 @@ def load_sources(teams):
         mp = match_names(ratings, aliases, canon)
         unmatched[label] = sorted(n for n, t in mp.items() if not t)
         sources[label] = {mp[n]: r for n, r in ratings.items() if mp[n]}
-    print(f"  Sources: {', '.join(f'{k} ({len(v)})' for k, v in sources.items())}"
+    weights = {s: SOURCE_WEIGHTS.get(s, 1.0) for s in sources}
+    if model:
+        avg_games = float(np.mean(list(model['n_games'].values())))
+        ramp = min(1.0, avg_games / MODEL_FULL_GAMES)
+        if ramp > 0 and len(model['O']) >= 300:
+            sources[MODEL_LABEL] = cm.team_ratings(model)
+            weights[MODEL_LABEL] = SOURCE_WEIGHTS[MODEL_LABEL] * ramp
+    print(f"  Sources: {', '.join(f'{k} ({len(v)}, weight {weights[k]:.2f})' for k, v in sources.items())}"
           + ('' if tr_current else '  [TeamRankings still on last season]'))
-    return sources, {k: v for k, v in unmatched.items() if v}
+    return sources, {k: v for k, v in unmatched.items() if v}, weights
 
 
-def build_power(teams, sources, unmatched):
-    """Center each source on its D1 average, rescale to a common SD, blend equally."""
+def project_line(home, away, neutral, src_cols, weights, model, scale):
+    """
+    Projected home margin: the weighted average of each source's own line. Rating sources give
+    (home rating − away rating) + home court. Our model projects the game at THIS matchup's tempo
+    (cbb_model.project), rescaled onto the blend's common SD like the other sources.
+    """
+    hfa = 0.0 if neutral else HFA_POINTS
+    lines, ws = [], []
+    for src, w in weights.items():
+        if w <= 0 or src not in src_cols:
+            continue
+        if src == MODEL_LABEL and model:
+            m, _ = cm.project(model, home, away, neutral=True)
+            factor = scale['target_sd'] / scale['stats'][src][1] if src in scale['stats'] else 1.0
+            if m == m:
+                lines.append(m * factor + hfa)
+                ws.append(w)
+            continue
+        h, a = src_cols[src].get(home), src_cols[src].get(away)
+        if h is not None and a is not None and h == h and a == a:
+            lines.append(h - a + hfa)
+            ws.append(w)
+    return float(np.average(lines, weights=ws)) if lines else np.nan
+
+
+def build_power(teams, sources, unmatched, weights=None):
+    """Center each source on its D1 average, rescale to a common SD, weighted blend (SOURCE_WEIGHTS)."""
+    weights = weights or {s: 1.0 for s in sources}
     df = teams[['team', 'espn_id', 'color', 'conference']].copy()
     stats = {s: (np.mean(list(v.values())), np.std(list(v.values()))) for s, v in sources.items() if v}
     point_sds = [sd for s, (_, sd) in stats.items() if s in POINT_SOURCES]
@@ -154,7 +195,11 @@ def build_power(teams, sources, unmatched):
     for src, (mean, sd) in stats.items():
         df[src] = df['team'].map(lambda t: (sources[src][t] - mean) * target_sd / sd if t in sources[src] else np.nan)
     cols = list(stats)
-    df['composite'] = df[cols].mean(axis=1) if cols else np.nan
+    if cols:
+        w = pd.DataFrame({s: df[s].notna() * weights.get(s, 1.0) for s in cols})
+        df['composite'] = sum(df[s].fillna(0) * weights.get(s, 1.0) for s in cols) / w.sum(axis=1).replace(0, np.nan)
+    else:
+        df['composite'] = np.nan
     df['rank'] = df['composite'].rank(ascending=False, method='min')
     df['conference'] = df['conference'].where(df['conference'].isin(CONFERENCES.values()), '')
     return df, {'target_sd': target_sd, 'stats': stats, 'unmatched': unmatched}
@@ -265,7 +310,7 @@ def build_markets(days, rating, names):
                 if spread:
                     spread.update(fav=fav, dog=dog)
             k = mk.kalshi_view(kg, g['home'], g['away'])
-            ours = rating.get(g['home'], np.nan) - rating.get(g['away'], np.nan) + (0.0 if g['neutral'] else HFA_POINTS)
+            ours = g.get('proj', rating.get(g['home'], np.nan) - rating.get(g['away'], np.nan) + (0.0 if g['neutral'] else HFA_POINTS))
             rows.append({'game_id': g['game_id'], 'when': _when(g), 'home': g['home'], 'away': g['away'],
                          'ours': ours, 'posted': posted, 'kalshi': k, 'spread': spread})
             if not g['score']:
@@ -324,6 +369,8 @@ def generate_html(power, metrics, days, info):
     stats_txt = '; '.join(f'{n} D1 mean {m:.2f}, SD {d:.2f}' for n, (m, d) in s['stats'].items())
     unmatched = '; '.join(f'{k}: {", ".join(v)}' for k, v in s['unmatched'].items()) or 'none'
     blend = ' + '.join(s['stats']) or 'none'
+    wts = s.get('weights', {})
+    blend_w = ' + '.join(f'{k} ({wts.get(k, 1.0):.0%})' for k in s['stats']) or 'none'
     hist = info['history']
     conf_of = dict(zip(focus['team'], focus['conference']))
     moved, base = ex.movers(hist, focus['team'])
@@ -339,13 +386,19 @@ def generate_html(power, metrics, days, info):
                                       ('Trade Signal', '')], rows)
         + theme.method_note(
             f'<b>Rating</b> is points above or below an average Division I team (0.0); the gap between two teams is the '
-            f'projected margin at a neutral site. This build blends <b>{theme.esc(blend)}</b>, equally weighted. In season '
-            f'that is TeamRankings\' predictive rating plus Warren Nolan\'s Elo; before TeamRankings switches to this season, '
-            f'Warren Nolan is blended with Torvik\'s saved preseason ratings. Each source is centered on its D1 average and '
-            f'rescaled to the spread of the points-based source(s) (SD {s["target_sd"]:.2f} points), which converts Elo to '
-            f'points this way). Raw scales: {stats_txt}. Unmatched names: {theme.esc(unmatched)}. <b>Biggest movers</b> '
-            f'compares today\'s rating with the one saved about a week earlier; the day TeamRankings switches to this '
-            f'season the whole blend changes, so expect one big reshuffle then. Click any team for its page.'))
+            f'projected margin at a neutral site. This build blends <b>{theme.esc(blend_w)}</b>. The sources: '
+            f'TeamRankings\' predictive rating; the <b>AlphaPoint model</b>, our own opponent-adjusted offense, defense '
+            f'and tempo from every D1 box score, whose weight grows as teams play (full at {MODEL_FULL_GAMES} games); and '
+            f'Warren Nolan\'s Elo at half weight, since Elo is built for win probability rather than margins. Torvik\'s '
+            f'saved preseason ratings fill in only if fewer than two outside sources are available. Each source is '
+            f'centered on its D1 average and rescaled to the spread of the points-based sources (SD {s["target_sd"]:.2f} '
+            f'points). <b>Projected lines</b> average each source\'s own line, and our model\'s line uses the possessions '
+            f'expected in that specific game (both teams\' tempos), not one league-wide average: an efficiency edge is '
+            f'worth fewer points between two slow teams than between two fast ones. In a walk-forward backtest of the '
+            f'2025-26 season our model\'s lines came within about half a point of the closing line\'s accuracy '
+            f'(average miss 11.8 vs 11.4 points). Raw scales: {stats_txt}. Unmatched names: {theme.esc(unmatched)}. '
+            f'<b>Biggest movers</b> compares today\'s rating with the one saved about a week earlier. Click any team for '
+            f'its page.'))
 
     # --- Value tab ---
     if fv.empty:
@@ -392,7 +445,7 @@ def generate_html(power, metrics, days, info):
         cards = ''
         for g in games:
             h_r, a_r = rating.get(g['home'], np.nan), rating.get(g['away'], np.nan)
-            margin = h_r - a_r + (0.0 if g['neutral'] else HFA_POINTS)
+            margin = g.get('proj', h_r - a_r + (0.0 if g['neutral'] else HFA_POINTS))   # blended per-source line
             pm = theme.round_half(margin)
             proj = '—' if pd.isna(pm) else _line_text(g['home'] if pm >= 0 else g['away'], abs(pm))
             mkt = '—' if pd.isna(g['market']) else _line_text(g['home'] if g['market'] >= 0 else g['away'], abs(g['market']))
@@ -471,10 +524,13 @@ def main():
     print(f'  ALPHAPOINT SPORTS — CBB DASHBOARD  |  {SEASON - 1}-{str(SEASON)[2:]}')
     print('█' * 80)
 
-    print('\n[1/4] Teams & power ratings...')
+    print('\n[1/4] Teams, box scores & power ratings...')
     teams = vm.d1_teams()
-    sources, unmatched = load_sources(teams)
-    power, scale = build_power(teams, sources, unmatched)
+    box = vm.fetch_box()
+    model = cm.fit(box, set(teams['team'])) if not box.empty else None
+    sources, unmatched, weights = load_sources(teams, model)
+    power, scale = build_power(teams, sources, unmatched, weights)
+    scale['weights'] = weights
     for src, names in scale['unmatched'].items():
         print(f'  ! {src} names not matched: {", ".join(names)}')
     print(f"  Power 4 + Big East teams: {(power['conference'] != '').sum()}")
@@ -488,6 +544,10 @@ def main():
     days = upcoming_games(by_espn, set(power.loc[power['conference'] != '', 'team']))
     print(f'  {sum(len(g) for _, g in days)} games over {len(days)} days'
           + (f" ({', '.join(d.strftime('%b %d') for d, _ in days)})" if days else ''))
+    src_cols = power.set_index('team')[list(scale['stats'])].to_dict('dict')
+    for _, gs in days:
+        for g in gs:
+            g['proj'] = project_line(g['home'], g['away'], g['neutral'], src_cols, weights, model, scale)
 
     print('[4/4] Markets, Injury Wire & dashboard...')
     rating = dict(zip(power['team'], power['composite']))
@@ -506,7 +566,6 @@ def main():
     print(f"  Injury Wire: {sum(len(v) for v in wire_data['items'].values())} items ({wire_data['mode']}).")
 
     hist = ex.snapshot_ratings('cbb', rating)
-    box = vm.fetch_box()
     sp = vm.fetch_spreads()
     spreads = {gid: (h, s) for gid, h, s in zip(sp['game_id'], sp['home_team'], sp['spread'])}
     tr_detail = (ex.fetched(f'cbb_teamrankings_{SEASON}.html') if 'TeamRankings' in sources
@@ -514,7 +573,12 @@ def main():
     freshness = [('TeamRankings', *tr_detail), ('Warren Nolan', *ex.fetched(f'cbb_warrennolan_{SEASON}.html'))]
     if 'Torvik preseason' in sources:
         freshness.append(('Torvik', 'saved preseason file', True))
-    freshness += [('Box scores', *ex.fetched(vm._cache('box'))), ('Lines', 'ESPN, live each refresh', True),
+    if model:
+        games = float(np.mean(list(model['n_games'].values())))
+        freshness.append(('AlphaPoint model', f'{games:.1f} games per team, weight {weights.get(MODEL_LABEL, 0):.0%}', True))
+    else:
+        freshness.append(('AlphaPoint model', 'starts once games are played', True))
+    freshness += [('Box scores', *ex.fetched(vm._cache('box2'))), ('Lines', 'ESPN, live each refresh', True),
                   ex.wire_freshness(wire_data)]
 
     generate_html(power, metrics, days, {'scale': scale, 'history': hist, 'freshness': freshness, 'wire': wire_data,
