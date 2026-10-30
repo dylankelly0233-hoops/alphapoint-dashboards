@@ -34,6 +34,7 @@ import dashboard_theme as theme
 import extras as ex
 import injury_wire as wire
 import markets as mk
+import matchups as mu
 import nba_value_metrics as vm
 
 # ==========================================
@@ -326,7 +327,7 @@ def generate_html(power, metrics, days, info):
                 f'{vm.SPOT_MIN:g} / {vm.STRONG_MIN:g} wins, or {vm.SPOT_RATE:.0%} / {vm.STRONG_RATE:.0%} of games).'))
 
     # --- Games tab ---
-    sections, spots = '', []
+    sections, spots, panels = '', [], {}
     by_src = power.set_index('abbr')[list(s['stats'])].to_dict('index')      # each source's rescaled rating
     for day, games in days:
         cards = ''
@@ -344,6 +345,14 @@ def generate_html(power, metrics, days, info):
                                 'First seen')
             move += ex.rating_confidence(by_src.get(g['home'], {}), by_src.get(g['away'], {}),
                                          0.0 if g['neutral'] else HFA_POINTS)
+            mprof = info['mu_prof']
+            if g['home'] in mprof and g['away'] in mprof:
+                nm = lambda t: short.get(t, t)
+                move += mu.card_row(g['game_id'], mu.headline(mprof, mu.BASKETBALL_CATS, g['away'], g['home'], nm))
+                panels[g['game_id']] = mu.panel(
+                    g['away'], g['home'], nm, mprof, mu.BASKETBALL_CATS, mu.BASKETBALL_STYLES, info['mu_games'], _when(g),
+                    ex.line_text(nm(g['home']), nm(g['away']), pm) if not pd.isna(pm) else '',
+                    mu.pace_line(info['mu_units'], g['away'], g['home'], nm))
             cards += theme.game_card(when, 'Neutral site' if g['neutral'] else '', side(g['away'], a_r), side(g['home'], h_r),
                                      proj, mkt, g['score'],
                                      theme.edge_text(pm, g['market'], short[g['home']], short[g['away']]), move=move)
@@ -398,7 +407,7 @@ def generate_html(power, metrics, days, info):
         tabs=[('power', 'Power Ratings', power_html), ('value', 'Value Metrics', value_html), ('games', 'Games', games_html),
               ('markets', 'Markets', markets_html), ('injuries', 'Injury Wire', injury_html)],
         footer='AlphaPoint Sports · Data: Sagarin, TeamRankings, ESPN, Kalshi · Logos: ESPN · Not financial or gambling advice',
-        extra=ex.team_modal(teams))
+        extra=ex.team_modal(teams) + mu.templates(panels))
     theme.write_outputs(page, HTML_OUTPUT, SHARE_OUTPUT, 'NBA_NO_BROWSER')
 
 
@@ -461,6 +470,8 @@ def main():
     print(f"  Injury Wire: {sum(len(v) for v in wire_data['items'].values())} items ({wire_data['mode']}).")
 
     hist = ex.snapshot_ratings('nba', rating)
+    units = mu.basketball_units(box) if not box.empty else pd.DataFrame()
+    print(f'  Matchups: unit stats for {len(units)} teams.')
     freshness = [('Sagarin', f'through {sag_asof}' if sag_asof else 'not available', ex.fetched(SAGARIN_CACHE)[1]),
                  ('TeamRankings', *ex.fetched(TR_CACHE)), ('Box scores', *ex.fetched(vm._cache('box'))),
                  ('Lines', 'ESPN, live each refresh', True), ex.wire_freshness(wire_data)]
@@ -468,6 +479,8 @@ def main():
         'scale': scale, 'weights': weights, 'sag_asof': sag_asof, 'unmatched': {'Sagarin': sag_un, 'TeamRankings': tr_un},
         'history': hist, 'freshness': freshness, 'wire': wire_data, 'market_rows': market_rows,
         'records': vm.records(box), 'results': (box, spreads),
+        'mu_units': units, 'mu_games': mu.cover_log_box(box, spreads),
+        'mu_prof': mu.profiles(units, mu.BASKETBALL_CATS, mu.BASKETBALL_STYLES) if not units.empty else {},
         'opened': {str(r['game_id']): r.get('opened') for r in market_rows}})
 
 

@@ -20,6 +20,7 @@ OPEN_METEO = 'https://api.open-meteo.com/v1/forecast'
 WIND_FLAG  = 15     # mph
 WET_FLAG   = 50     # % chance of precipitation
 COLD_FLAG  = 32     # °F
+SNOW_MIX_MAX = 38   # °F; between freezing and this, precipitation is labeled rain/snow
 
 # NFL home stadiums: (latitude, longitude, roof). Shared stadiums appear under both teams.
 NFL_STADIUMS = {
@@ -97,6 +98,9 @@ def weather_row(fc, roof='outdoor'):
         gust = f', gusts {round(fc["gust"])}' if fc['gust'] and fc['gust'] >= fc['wind'] + 8 else ''
         bits.append(f'<b class="neg">wind {w} mph{gust}</b>' if w >= WIND_FLAG else f'wind {w} mph{gust}')
     if fc['wet'] is not None:
-        bits.append(f'<b class="neg">{fc["wet"]}% rain/snow</b>' if fc['wet'] >= WET_FLAG else f'{fc["wet"]}% rain/snow')
+        # What falls depends on the temperature: snow at or below freezing, a mix just above, rain otherwise
+        t = fc['temp']
+        kind = 'rain' if t is None or t > SNOW_MIX_MAX else 'snow' if t <= COLD_FLAG else 'rain/snow'
+        bits.append(f'<b class="neg">{fc["wet"]}% {kind}</b>' if fc['wet'] >= WET_FLAG else f'{fc["wet"]}% {kind}')
     roof_note = ' · retractable roof' if roof == 'retractable' else ''
     return f'<div class="lmove">{theme.k("Weather")}{" · ".join(bits)}{roof_note}</div>' if bits else ''

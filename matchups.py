@@ -18,6 +18,8 @@ These are research context only; they do not change the projected line.
 import html
 from dataclasses import dataclass
 
+import pandas as pd
+
 import dashboard_theme as theme
 
 # Mismatch-score thresholds (points above or below an even matchup). Each game has ~10 unit pairings, so the
@@ -172,10 +174,107 @@ def style_trends(team, games, prof, styles, opponent):
 
 
 # ==========================================
+# BASKETBALL (CBB and NBA share these)
+# ==========================================
+# The Four Factors plus 3-point shooting. Offense columns are what a team does; def_ columns what it allows.
+BASKETBALL_CATS = [
+    Cat('shoot', 'Shooting', 'off_efg', 'def_efg', 'shooting', 'shooting defense'),
+    Cat('tov', 'Turnovers', 'off_tov', 'def_tov', 'ball security', 'pressure defense', higher_is_better=False),
+    Cat('orb', 'Offensive glass', 'off_orb', 'def_orb', 'offensive rebounding', 'defensive rebounding'),
+    Cat('ftr', 'Free throws', 'off_ftr', 'def_ftr', 'free-throw attack', 'foul discipline'),
+    Cat('three', '3-point shooting', 'off_3p', 'def_3p', '3-point shooting', '3-point defense'),
+]
+BASKETBALL_STYLES = [
+    Style('tempo', 'tempo', 'fast-paced teams', 'slow-paced teams', 'off'),
+    Style('three_rate', 'three_rate', '3-point-heavy offenses', 'inside-first offenses', 'off'),
+    Style('glass', 'off_orb', 'glass-crashing teams', "teams that don't crash the glass", 'off'),
+    Style('press', 'def_tov', 'turnover-forcing defenses', 'low-pressure defenses', 'def'),
+    Style('def_efg', 'def_efg', 'top-third shooting defenses', 'bottom-third shooting defenses', 'def', higher_is_more=False),
+]
+
+
+def basketball_units(box, teams=None, min_games=3):
+    """
+    Season unit stats per team from team box scores (one row per team per game, opponent columns prefixed o_):
+      efg   effective FG% = (points − free throws made) / (2 × FGA)
+      tov   turnovers per possession            orb   offensive rebounds per missed field goal
+      ftr   free-throw attempts per FGA         3p    3-point percentage
+      tempo possessions per 40 (CBB) or 48 (NBA) minutes      three_rate  share of FGA that are 3s
+    Possessions come from the box score when present, else the standard estimate. Teams need min_games.
+    """
+    b = box.copy()
+    est = lambda p: (b[f'{p}fga'] - b[f'{p}oreb'] + b[f'{p}tov'] + 0.44 * b[f'{p}fta'])
+    poss_est = (est('') + est('o_')) / 2
+    b['poss'] = b['poss'].fillna(poss_est) if 'poss' in b else poss_est
+    if teams is not None:
+        b = b[b['team'].isin(teams) & b['opponent'].isin(teams)]
+    cols = ['pts', 'ftm', 'fga', 'fg3m', 'fg3a', 'fta', 'oreb', 'tov', 'poss',
+            'opp_pts', 'o_ftm', 'o_fga', 'o_fg3m', 'o_fg3a', 'o_fta', 'o_oreb', 'o_tov']
+    g = b.groupby('team')
+    t = g[cols].sum()
+    t['games'] = g.size()
+    full = 40.0 if 'minutes' in b else 48.0
+    t['minutes'] = g['minutes'].sum() if 'minutes' in b else t['games'] * full
+    t = t[t['games'] >= min_games]
+    if t.empty:
+        return pd.DataFrame()
+    miss = lambda pts, ftm, fg3m, fga: fga - (pts - ftm - fg3m) / 2
+    u = pd.DataFrame(index=t.index)
+    u['off_efg'] = (t['pts'] - t['ftm']) / (2 * t['fga'])
+    u['def_efg'] = (t['opp_pts'] - t['o_ftm']) / (2 * t['o_fga'])
+    u['off_tov'] = t['tov'] / t['poss']
+    u['def_tov'] = t['o_tov'] / t['poss']
+    u['off_orb'] = t['oreb'] / miss(t['pts'], t['ftm'], t['fg3m'], t['fga'])
+    u['def_orb'] = t['o_oreb'] / miss(t['opp_pts'], t['o_ftm'], t['o_fg3m'], t['o_fga'])
+    u['off_ftr'] = t['fta'] / t['fga']
+    u['def_ftr'] = t['o_fta'] / t['o_fga']
+    u['off_3p'] = t['fg3m'] / t['fg3a']
+    u['def_3p'] = t['o_fg3m'] / t['o_fg3a']
+    u['tempo'] = t['poss'] / t['minutes'] * full
+    u['three_rate'] = t['fg3a'] / t['fga']
+    return u
+
+
+def pace_line(units, away, home, name):
+    """One line on each team's tempo, flagging a fast-vs-slow style clash."""
+    if away not in units.index or home not in units.index:
+        return ''
+    rank = units['tempo'].rank(ascending=False, method='min')
+    n = len(units)
+    pct = units['tempo'].rank(pct=True) * 100
+    word = lambda p: 'fast' if p >= HI else 'slow' if p <= LO else 'average pace'
+    pa, ph = pct[away], pct[home]
+    clash = (' · <b>style clash</b>: someone has to play at the other\'s speed'
+             if (pa >= HI and ph <= LO) or (ph >= HI and pa <= LO) else '')
+    part = lambda t, p: (f'{theme.esc(name(t))} {units.at[t, "tempo"]:.1f} possessions (#{int(rank[t])} of {n}, '
+                         f'{word(p)})')
+    return f'<p class="mu-pace"><b>Pace</b> · {part(away, pa)} · {part(home, ph)}{clash}</p>'
+
+
+def cover_log_box(box, spreads):
+    """
+    {team: [(opponent, cover margin)]} from team box scores and closing spreads.
+    spreads: DataFrame(game_id, home_team, spread) — home perspective, negative = home favored.
+    """
+    sp = {str(gid): (h, s) for gid, h, s in zip(spreads['game_id'], spreads['home_team'], spreads['spread']) if s == s}
+    out = {}
+    for r in box.itertuples():
+        hit = sp.get(str(r.game_id))
+        if not hit:
+            continue
+        line = hit[1] if r.team == hit[0] else -hit[1]       # the team's own line (− = favored)
+        out.setdefault(r.team, []).append((r.opponent, (r.pts - r.opp_pts) + line))
+    return out
+
+
+# ==========================================
 # HTML
 # ==========================================
-def panel(away, home, name, prof, cats, styles, games_by_team, when='', our_line=''):
-    """The full matchup panel for one game (rendered into a hidden <template>). name(team) → display name."""
+def panel(away, home, name, prof, cats, styles, games_by_team, when='', our_line='', extra=''):
+    """
+    The full matchup panel for one game (rendered into a hidden <template>). name(team) → display name.
+    extra: optional line under the scoreboard (basketball's pace line).
+    """
     a, h = name(away), name(home)
     sides = {away: ('mg-away', a), home: ('mg-home', h)}
     pairs = {(away, home): mismatches(prof, cats, away, home), (home, away): mismatches(prof, cats, home, away)}
@@ -232,7 +331,7 @@ def panel(away, home, name, prof, cats, styles, games_by_team, when='', our_line
 
     sub = ' · '.join(x for x in (when, f'our line {our_line}' if our_line else '') if x)
     return (f'<div class="mu-head"><h2>{theme.esc(a)} @ {theme.esc(h)} · Matchup</h2><span class="sub">{theme.esc(sub)}</span></div>'
-            f'<p class="mu-score">{score}</p>'
+            f'<p class="mu-score">{score}</p>{extra}'
             f'<div class="mu-grid">{cells}</div>'
             f"<p class=\"mu-note\">Each cell shows the offense's rank vs the defense's rank, out of {n} teams (#1 = best "
             f'in that category). Colors '

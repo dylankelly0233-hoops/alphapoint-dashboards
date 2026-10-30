@@ -45,6 +45,7 @@ import dashboard_theme as theme
 import extras as ex
 import injury_wire as wire
 import markets as mk
+import matchups as mu
 
 # ==========================================
 # 1. CONFIGURATION
@@ -438,7 +439,7 @@ def generate_html(power, metrics, days, info):
                 f'(at least {vm.SPOT_MIN:g} / {vm.STRONG_MIN:g} wins, or {vm.SPOT_RATE:.0%} / {vm.STRONG_RATE:.0%} of games).'))
 
     # --- Games tab ---
-    sections, spots = '', []
+    sections, spots, panels = '', [], {}
     focus_set = set(focus['team'])
     by_src = power.set_index('team')[list(s['stats'])].to_dict('index')      # each source's rescaled rating
     for day, games in days:
@@ -457,6 +458,13 @@ def generate_html(power, metrics, days, info):
             move = ex.line_move(info['opened'].get(g['game_id']), g['market'], pm, g['home'], g['away'], 'First seen')
             move += ex.rating_confidence(by_src.get(g['home'], {}), by_src.get(g['away'], {}),
                                          0.0 if g['neutral'] else HFA_POINTS)
+            mprof = info['mu_prof']
+            if g['home'] in mprof and g['away'] in mprof:
+                move += mu.card_row(g['game_id'], mu.headline(mprof, mu.BASKETBALL_CATS, g['away'], g['home'], str))
+                panels[g['game_id']] = mu.panel(
+                    g['away'], g['home'], str, mprof, mu.BASKETBALL_CATS, mu.BASKETBALL_STYLES, info['mu_games'], _when(g),
+                    ex.line_text(g['home'], g['away'], pm) if not pd.isna(pm) else '',
+                    mu.pace_line(info['mu_units'], g['away'], g['home'], str))
             cards += theme.game_card(when, 'Neutral site' if g['neutral'] else '',
                                      side(g['away'], a_r, g['away_espn']), side(g['home'], h_r, g['home_espn']),
                                      proj, mkt, g['score'], theme.edge_text(pm, g['market'], g['home'], g['away']),
@@ -511,7 +519,7 @@ def generate_html(power, metrics, days, info):
               ('markets', 'Markets', markets_html), ('injuries', 'Injury Wire', injury_html)],
         footer='AlphaPoint Sports · Data: TeamRankings, Warren Nolan, Bart Torvik (preseason), collegebasketballdata.com, ESPN, '
                'Kalshi · Logos: ESPN · Not financial or gambling advice',
-        extra=ex.team_modal(teams))
+        extra=ex.team_modal(teams) + mu.templates(panels))
     theme.write_outputs(page, HTML_OUTPUT, SHARE_OUTPUT, 'CBB_NO_BROWSER')
 
 
@@ -578,11 +586,16 @@ def main():
         freshness.append(('AlphaPoint model', f'{games:.1f} games per team, weight {weights.get(MODEL_LABEL, 0):.0%}', True))
     else:
         freshness.append(('AlphaPoint model', 'starts once games are played', True))
+    units = mu.basketball_units(box, set(teams['team'])) if not box.empty else pd.DataFrame()
+    print(f'  Matchups: unit stats for {len(units)} teams.')
     freshness += [('Box scores', *ex.fetched(vm._cache('box2'))), ('Lines', 'ESPN, live each refresh', True),
                   ex.wire_freshness(wire_data)]
 
     generate_html(power, metrics, days, {'scale': scale, 'history': hist, 'freshness': freshness, 'wire': wire_data,
                                          'market_rows': market_rows, 'results': (box, spreads),
+                                         'mu_units': units, 'mu_games': mu.cover_log_box(box, sp),
+                                         'mu_prof': mu.profiles(units, mu.BASKETBALL_CATS, mu.BASKETBALL_STYLES)
+                                         if not units.empty else {},
                                          'opened': {str(r['game_id']): r.get('opened') for r in market_rows}})
 
 

@@ -577,6 +577,9 @@ dialog.tmodal::backdrop { background: rgba(5, 10, 18, .6); }
 .mu-head h2 { margin: 0; font: 700 22px/1.1 var(--display); text-transform: uppercase; letter-spacing: .3px; }
 .mu-head .sub { color: var(--muted); font-size: 13px; }
 .mu-score { margin: 0 0 12px; font: 700 18px/1.25 var(--display); letter-spacing: .2px; }
+.mu-pace { margin: -4px 0 12px; padding: 8px 10px; border-radius: 8px; background: var(--surface-2); border: 1px solid var(--line);
+           font-size: 13px; line-height: 1.45; }
+.mu-pace b { font-weight: 700; }
 .mu-grid { display: grid; grid-template-columns: minmax(86px, .75fr) minmax(0, 1fr) minmax(0, 1fr); gap: 6px; margin-bottom: 8px; }
 .mg-h { padding: 2px 4px; font: 700 11px/1.2 var(--display); letter-spacing: .8px; text-transform: uppercase; color: var(--muted); }
 .mg-l { align-self: center; font-weight: 600; font-size: 13.5px; }

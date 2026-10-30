@@ -252,9 +252,12 @@ INFO = [
         ('Confidence', 'Each game card rates how much to trust our projected line, based only on whether the rating '
                        'sources behind it agree: High (within 2 points of each other), Medium (2 to 4), Low (more than 4). '
                        'It does not account for injuries, news or weather.'),
-        ('Matchup', 'Football games show their biggest style mismatch (an offense against the defense it faces, by league '
-                    'percentile). Open it for every unit matchup and how each team has done against the spread versus '
-                    'opponents shaped like this one. Research context only: it does not change the projected line.'),
+        ('Matchup', 'Each game shows its biggest style mismatch: an offense against the defense it faces, by league rank. '
+                    'Open it for a grid of every unit matchup (football: run, pass, protection, big plays; basketball: '
+                    "shooting, turnovers, the offensive glass, free throws and 3-point shooting, plus each team's pace) "
+                    'and how each team has done against the spread versus opponents shaped like this one. College '
+                    'basketball matchups start once teams have played three games. Research context only: it does not '
+                    'change the projected line.'),
         ('Weather', 'Kickoff forecasts for outdoor football games (Open-Meteo): temperature, wind and chance of rain or '
                     'snow, highlighted at 15+ mph wind, 50%+ precipitation or freezing temperatures.'),
         ('Team pages', 'Click any team name for its rating trend, value metrics, and game log with results against the spread.'),
