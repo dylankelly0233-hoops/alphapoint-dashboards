@@ -1,8 +1,16 @@
 {
   "sport": "cfb",
   "week": 9,
-  "generated": "2026-10-30T11:18:16-04:00",
+  "generated": "2026-10-31T09:16:58-04:00",
   "movers": [
+    {
+      "team": "Ohio State",
+      "tag": "QB",
+      "text": "QB Julian Sayin (right arm) listed OUT on the availability report for USC. True freshman Luke Fahey expected to start; Day says Tavien St. Clair could also play.",
+      "source": "Eleven Warriors",
+      "url": "https://www.elevenwarriors.com/ohio-state-football/2026/10/164906/ohio-state-injury-report-jay-timmons-brandon-inniss-kenyatta-jackson-jr-austin-siereveld-usc",
+      "date": "2026-10-28"
+    },
     {
       "team": "Kansas State",
       "tag": "QB",
@@ -20,14 +28,6 @@
       "date": "2026-10-30"
     },
     {
-      "team": "Ohio State",
-      "tag": "QB",
-      "text": "QB Julian Sayin (right arm) listed OUT on the availability report for USC. True freshman Luke Fahey expected to start; Day says Tavien St. Clair could also play.",
-      "source": "Eleven Warriors",
-      "url": "https://www.elevenwarriors.com/ohio-state-football/2026/10/164906/ohio-state-injury-report-jay-timmons-brandon-inniss-kenyatta-jackson-jr-austin-siereveld-usc",
-      "date": "2026-10-28"
-    },
-    {
       "team": "Rutgers",
       "tag": "QB",
       "text": "Starting QB Dylan Lonergan (head injury vs. Northwestern) listed out vs. Michigan. AJ Surace (7-of-18, 64 yds, INT in relief) or Sean Ashenfelder starts.",
@@ -36,12 +36,12 @@
       "date": "2026-10-28"
     },
     {
-      "team": "Mississippi State",
+      "team": "Arizona State",
       "tag": "QB",
-      "text": "QB Kamario Taylor is out for the season with a toe injury that requires surgery. A backup starts at Texas.",
-      "source": "ESPN",
-      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQd2tLQkgxMmFUeHZTSFFPYkpvOUJadzJxYkZINnNZN1NLR0VLN2gxQTFPVENoMjNOaTdsSmVfMld5cHpWWkVxRVJjNWdTWk1qQXlrV0VsVUF6MlJMRkJaTk1xbXZRajlwVlhQNEc2cHhZa3JrMDlLX0hOUDhFZTBNWi1vNUJJV1ZXenU3UVp1UlBaN2hRSW0wNURVRUpyU3VSYkk4Ql9HakE4dHBt?oc=5",
-      "date": "2026-10-27"
+      "text": "True freshman Jake Fette set to start vs. BYU with QB Mikey Keene (right leg) injured.",
+      "source": "Yahoo Sports",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxON1YtVGw5X2E4MDhLZlBkMGtwbklwQldFTUhzd2ZLRDlzck54bFI0VFpkZ1pBcVRwYTZNZUtJUHlFb1ZNOTJnM2Z2dlZWZ2p4ODNRaVhyVmxLQ2pXT3RVOWdZVnI3WHFXakFod1JONzAxWnc3WmNjVFpacDlLQ0pfb0FfaFA0NHhU?oc=5",
+      "date": "2026-10-30"
     }
   ],
   "teams": {
@@ -57,10 +57,10 @@
       {
         "team": "Ohio State",
         "tag": "RETURNING",
-        "text": "DE Kenyatta Jackson Jr. and OL Austin Siereveld cleared to play vs. USC; WR Brandon Inniss questionable.",
+        "text": "Final report: DE Kenyatta Jackson Jr. and OL Austin Siereveld cleared vs. USC; WR Brandon Inniss questionable, Jay Timmons doubtful.",
         "source": "Eleven Warriors",
-        "url": "https://www.elevenwarriors.com/ohio-state-football/2026/10/164906/ohio-state-injury-report-jay-timmons-brandon-inniss-kenyatta-jackson-jr-austin-siereveld-usc",
-        "date": "2026-10-28"
+        "url": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxQR0NaNU5XSG9uc1QtNmtfeVVFNzVhTkpyWWtlbXF6cG9fWkZ2M1JxTTZXeXJSc0FKdnFHZEF2aEZnU2ZFdkxVQklTT0ZVN1BaZHdOS0N3bTNxWjZYZ2lxTjN4T2xGRWVqNk9fVW0tOWNpcnZFWE4ybWhQS3V5eG5Ya1h0azJWVnBES25FQkRBdy1IMVJFQ25CTHpRY3FPNlhueHVJX254NXlXNEotYjhVUWVfWkFqME9vM1V5VERqR1FXbURCNk9uRHMtYVVBNlRCWmhTcGl5S2lWV2NmT0x6Q0RpMVRONDBwS09sN3RkYw?oc=5",
+        "date": "2026-10-31"
       }
     ],
     "Rutgers": [
@@ -97,13 +97,21 @@
       {
         "team": "Arizona State",
         "tag": "QB",
-        "text": "QB Mikey Keene (right leg) 'honestly questionable' for BYU, not doubtful, per Dillingham. True freshman Jake Fette starts if Keene can't go.",
-        "source": "Arizona Sports",
-        "url": "https://arizonasports.com/ncaa/arizona-state/asu-football/mikey-keene-byu-questionable",
-        "date": "2026-10-26"
+        "text": "True freshman Jake Fette set to start vs. BYU with QB Mikey Keene (right leg) injured.",
+        "source": "Yahoo Sports",
+        "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxON1YtVGw5X2E4MDhLZlBkMGtwbklwQldFTUhzd2ZLRDlzck54bFI0VFpkZ1pBcVRwYTZNZUtJUHlFb1ZNOTJnM2Z2dlZWZ2p4ODNRaVhyVmxLQ2pXT3RVOWdZVnI3WHFXakFod1JONzAxWnc3WmNjVFpacDlLQ0pfb0FfaFA0NHhU?oc=5",
+        "date": "2026-10-30"
       }
     ],
     "Texas": [
+      {
+        "team": "Texas",
+        "tag": "KEY",
+        "text": "Edge Colin Simmons ruled out vs. Mississippi State.",
+        "source": "Yahoo Sports",
+        "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxON0ZJOGdoZHg5elU0YkdOaEVOWWh1SHBUVnI2T0gwZ0RNSWlnTmZWQUI0R1FaWXpVbnljZ19aMnJxcFRkX200ZDNCTTl2TGtkR2FFbmx4OU5NQkFRcmo0eWJ3cUYxT1lzcV9UR3UyMkZxV1AyY3V5a0pVNS1sWDBrYVBwejZLaTF2Vi1iWWNEcw?oc=5",
+        "date": "2026-10-31"
+      },
       {
         "team": "Texas",
         "tag": "KEY",
@@ -159,16 +167,6 @@
         "date": "2026-10-26"
       }
     ],
-    "Penn State": [
-      {
-        "team": "Penn State",
-        "tag": "KEY",
-        "text": "Star WR Koby Howard returned to practice and is considered questionable vs. Purdue.",
-        "source": "247Sports",
-        "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQTkVfbnRwWE56Nlc0WUx2WEZKTUQzSGpaQ2pQeGd4UW1PTERVWkFVakE0aVVXLVd4MWw5VTFna2pJdDdHNGFjVFZzWXNNYTdRTWhNdDl1VWZBT19CT1JtTk5BTVlDc0I1Z1dlbXRLbHpWWnVKRm1zMjk2ekFPOGVRbDJhMFVDWnlrMFJDdk92SmJuX0kyTGpoY3NBdWoyRDV0ZjBCVE5hR1BYcUI1c2p2S3R5ZC1va2ZwRnhzV3U0OWJLWTRyeWdEOUNVZw?oc=5",
-        "date": "2026-10-27"
-      }
-    ],
     "Ole Miss": [
       {
         "team": "Ole Miss",
@@ -197,26 +195,6 @@
         "source": "The Gazette",
         "url": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxOS0lhSVZRTHVJR3RVWTdTTDdjTHpiUG5yVHVlRUZ5aE9mcUpuZHA0enZSS0NDLXZzNGduY3lhMFYyenUweU1Mb3lValhzQ2FEWGFlNWMwR2JNNFdtNmdPcjJDendvSHJ3clg2V0l3blRod1hkSVo3Yl9ZTzAtMFg3U1FTclloZV9CVWEwdlgyVVRkOG5kNDlBQlNPSEdIUlBrZHd2MVRGd0xfYzUyOGdJQVJTa1FWZ01SaDA0NFk3TkxsWDZKbkptYmV0NmdDd1VPZUhydkJ1b3FKMFFsRExxa2NlLWFPR1NoOTBLVy01YTl4QQ?oc=5",
         "date": "2026-10-27"
-      }
-    ],
-    "Boston College": [
-      {
-        "team": "Boston College",
-        "tag": "KEY",
-        "text": "RB Evan Dickens reportedly out for the season.",
-        "source": "Sports Illustrated",
-        "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQUjBQTVpFR19mSW5xWGZwNW5hRnhUaVJCR2dMS0lWaVJsYl9DVTNIX196cTJxX2kwdEwwLTZHTlppLXZzZ01ReE9WcDE5WVdEbDVMZGprcVdNdzBpOXFnNkF5Y3g4OG1vdFpIM1pNbXctLVdUNEZtQlhFRzVBdndtRjhrZW1lOHZwaUlxNm82X3NiTkpjdkpaQThNTExSLS1JbFQzWEM5MDRhdG9zNDVfMnBhOFN4TWZSc3FFdVZWTTdFNEE?oc=5",
-        "date": "2026-10-22"
-      }
-    ],
-    "SMU": [
-      {
-        "team": "SMU",
-        "tag": "KEY",
-        "text": "S Tyren Polley out for the season.",
-        "source": "WFAA",
-        "url": "https://news.google.com/rss/articles/CBMiogJBVV95cUxPcHh1cWNoNFo3a01vckJZT0hqWF9FX2VEWUlVQ3Q4NGx2UDdwS05wRkNhenBwMlhqWXR0bWZsZ0FZUXhudWxSRTVPR3JzcTVZVVBmai0wbFNBbFR2cHMyWmNSZTB5bktfUGRTRTNZZnF2R242a3BLdDROVU11VkdnWjRrWDlnQU55QWNUa25KcHNSZENiSXY3TEdqVkRKcElQZnlMdWUyZWRpSkVBNmxKY2lxUlN2a1ZnenhMSjkydFBNS2N6YUJkWmJaUXN1Y25YcnBKaDFhTjVRN3V3X1FxSl9RUmlVaHQwSGRZMjlYUlhaMHpLVlYyMFBrNU1hYjVONzdHakFicjJNcjlEOUpqdmFsOE5JLXVfUG1jNW5FOGZzQQ?oc=5",
-        "date": "2026-10-22"
       }
     ],
     "Texas Tech": [
@@ -283,10 +261,10 @@
       {
         "team": "Illinois",
         "tag": "QB",
-        "text": "QB Katin Houser (broken throwing hand, Oct. 10) listed doubtful vs. Maryland with no timeline; Clayton has started since the injury.",
-        "source": "247Sports",
-        "url": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxOYzJ3bWcxVkFuNU1GTnhwVXdPS1BBWUpoRDIyWDYzOEpxV3Q1RU9LekVublo0M0dyWjN0QmgtQng2bWlDWURzUjh2YkVGNWhqMnVfdWVERVg0c2RCMHBKVEZDTVk3VTA3dWxtc0xOYVlzcGR2WWhGMllrbk9RM3gxSXhCb1p4aXJ0ZTBBOVhmYzU3dXR0Z1BadjRYTEVLbDlVMHhidl9ZQndqenVla3dZVlp2NWIzcjhXM3RSS0FDb2pBTEcxdG0zNVhPTTZRckNwMkJ5VkE1NGxwT0lQRWlnQlIwcnBuaWxwQ2h6c0xwTQ?oc=5",
-        "date": "2026-10-30"
+        "text": "QB Katin Houser (broken throwing hand, Oct. 10) is a gametime decision vs. Maryland after being listed doubtful; Clayton has started since the injury.",
+        "source": "roundtable.io",
+        "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOU3pDUkxCRFFCdV9vVEF6c2pxeGVpcDJhaXdpVTdGeXA5aWdMbFRNMkF6YlFYZ0RRRlZaNHhqQm9jUVA4UjJoU2dFRHpfQjNVNVdjYUZkZzlyTDkwcE5GZk5FM2diZGtUcEZxMHUyd1h2SnVNMk55c3VkSHd1eXlIUWVEYWUtdG5UQThrMmRiMmxTSHVCa0pqQXZmaU53WEJxeDJ0dnp1VDNUcm1zc200?oc=5",
+        "date": "2026-10-31"
       }
     ],
     "Colorado": [
@@ -307,6 +285,16 @@
         "source": "On3",
         "url": "https://www.on3.com/sites/jayhawk-slant/news/isaiah-marshall-downgraded-to-questionable-in-latest-update/",
         "date": "2026-10-30"
+      }
+    ],
+    "Auburn": [
+      {
+        "team": "Auburn",
+        "tag": "KEY",
+        "text": "Key WR Jeremiah Koger ruled out vs. Ole Miss on the SEC availability report.",
+        "source": "Yahoo Sports",
+        "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQUlVVZmlIbFh1a2dsRG40MzZrNEhNeHhwaGoyUEdURjQ2SUc3WTZiM2VlbUpyMURSeGJ1WkZMQzBSZ29DdzB3aHpmQjdjcEFyM291dWpTM0ZYTFNxOXAxUWk0YklnbGVGS0tKU2lCM2hxamFyNm9IeWFhdGt0eUROTVVfR0w4Zw?oc=5",
+        "date": "2026-10-31"
       }
     ]
   }
