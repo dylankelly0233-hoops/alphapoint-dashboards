@@ -310,6 +310,19 @@ def method_note(html_body):
     return f'<details class="method"><summary>How this is calculated</summary><div>{html_body}</div></details>'
 
 
+def week_switch(group, panes):
+    """
+    A segmented switch between weeks ("This week / Next week") above their game lists.
+    panes: [(label, sublabel, html)]; the first opens by default. group: unique id on the page.
+    """
+    buttons = ''.join(f'<button type="button" class="wk{" on" if i == 0 else ""}" data-wkgroup="{esc(group)}" data-wk="{i}" '
+                      f'aria-pressed="{"true" if i == 0 else "false"}"><b>{esc(label)}</b><span>{esc(sub)}</span></button>'
+                      for i, (label, sub, _) in enumerate(panes))
+    bodies = ''.join(f'<div class="wkpane{" on" if i == 0 else ""}" data-wkgroup="{esc(group)}" data-wk="{i}">{body}</div>'
+                     for i, (_, _, body) in enumerate(panes))
+    return f'<div class="wkswitch" role="group" aria-label="Choose week">{buttons}</div>{bodies}'
+
+
 # ==========================================
 # PAGE
 # ==========================================
@@ -606,6 +619,17 @@ dialog.tmodal::backdrop { background: rgba(5, 10, 18, .6); }
 @media (max-width: 560px) { .mu-grid { grid-template-columns: minmax(60px, .55fr) minmax(0, 1fr) minmax(0, 1fr); gap: 5px; }
                             .mg-c { padding: 7px 8px; font-size: 12.5px; } .mg-l { font-size: 12.5px; } }
 
+/* Week switch (This week / Next week) */
+.wkswitch { display: inline-flex; gap: 4px; padding: 4px; margin: 2px 0 12px; border-radius: 10px; background: var(--surface);
+            border: 1px solid var(--line); }
+.wk { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; padding: 7px 14px; border: 0; border-radius: 7px;
+      background: none; color: var(--muted); cursor: pointer; text-align: left; }
+.wk b { font: 700 15px/1 var(--display); letter-spacing: .6px; text-transform: uppercase; }
+.wk span { font-size: 12px; }
+.wk:hover { color: var(--ink); }
+.wk.on { background: var(--accent); color: var(--accent-ink); }
+.wkpane { display: none; } .wkpane.on { display: block; }
+
 /* Method + footer */
 details.method { margin: 16px 0 4px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); }
 details.method summary { cursor: pointer; padding: 11px 14px; font: 700 13px/1 var(--display); letter-spacing: 1px;
@@ -743,6 +767,16 @@ document.querySelectorAll('select.filter').forEach(sel => sel.onchange = () => {
   dlg.querySelector('.tclose').onclick = () => dlg.close();
   dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
 })();
+
+// Week switch: show the chosen week's games
+document.addEventListener('click', e => {
+  const b = e.target.closest('.wk[data-wkgroup]'); if (!b) return;
+  const g = b.dataset.wkgroup;
+  document.querySelectorAll('[data-wkgroup="' + g + '"]').forEach(el => {
+    const on = el.dataset.wk === b.dataset.wk; el.classList.toggle('on', on);
+    if (el.classList.contains('wk')) el.setAttribute('aria-pressed', on ? 'true' : 'false');
+  });
+});
 
 // Sort: click a header; numbers sort by data-v when present
 document.querySelectorAll('table.sortable').forEach(t => {

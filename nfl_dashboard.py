@@ -440,16 +440,18 @@ def generate_html(power, vals, sched, week, info):
             f'to improve). It is not part of the composite. <b>BUY</b> when the composite is below −{spot:.1f} (solid below '
             f'−{strong:.1f}); <b>SELL</b> above +{spot:.1f} (solid above +{strong:.1f}).'))
 
-    # --- Schedule tab ---
+    # --- Games tab: this week and next week, behind a switch ---
     rating = dict(zip(power['abbr'], power['composite']))
     by_src = {r.abbr: {'nfelo': r.nfelo, 'Sagarin': r.sagarin} for r in power.itertuples()}
     sig = lambda v: 'BUY' if v is not None and v == v and v < -spot else 'SELL' if v is not None and v == v and v > spot else ''
-    cards, spots, panels = '', [], {}
-    for r in sched.itertuples():
+    spots, panels = [], {}
+
+    def game_html(r):
+        """One game card (and its best-spots entry and matchup panel)."""
         home, away = vm.full_name(r.home), vm.full_name(r.away)
         pm = theme.round_half(r.margin)   # projected home margin, rounded to a half point like a posted spread
         proj = '—' if pd.isna(pm) else _line_text(home if pm >= 0 else away, abs(pm))
-        mkt = '—' if pd.isna(r.market) else _line_text(home if r.market >= 0 else away, abs(r.market))
+        mkt = ('Not posted yet' if not r.score else '—') if pd.isna(r.market) else _line_text(home if r.market >= 0 else away, abs(r.market))
         side = lambda ab, nm, v: {'name': nm, 'logo': _logo(ab, meta), 'rating': rating.get(ab), 'sd': sd, 'key': ab,
                                   'signal': theme.signal_pill(v, spot, strong), 'color': meta.get(ab, ('', ''))[1]}
         tag_html, tag_label = teaser_tag(r)
@@ -463,21 +465,32 @@ def generate_html(power, vals, sched, week, info):
             move += mu.card_row(r.game_id, mu.headline(prof, MU_CATS, r.away, r.home, short))
             panels[r.game_id] = mu.panel(r.away, r.home, short, prof, MU_CATS, MU_STYLES, info['mu_games'],
                                          theme.kick_text(r.kick), ex.line_text(nick(home), nick(away), pm) if not pd.isna(pm) else '')
-        cards += theme.game_card(theme.kick_text(r.kick), 'Neutral site' if r.neutral else '',
-                                 side(r.away, away, r.away_value), side(r.home, home, r.home_value),
-                                 proj, mkt, r.score,
-                                 theme.edge_text(pm, r.market, nick(home), nick(away)),   # spread_line is already the home margin
-                                 tag_html, move)
         spots.append(ex.spot('NFL', 'nfl.html#sched', r.kick, nick(away), nick(home), r.margin, r.market,
                              [tag_label] if tag_label else [],
                              [(nick(away), sig(r.away_value)), (nick(home), sig(r.home_value))]))
+        return theme.game_card(theme.kick_text(r.kick), 'Neutral site' if r.neutral else '',
+                               side(r.away, away, r.away_value), side(r.home, home, r.home_value),
+                               proj, mkt, r.score,
+                               theme.edge_text(pm, r.market, nick(home), nick(away)),   # spread_line is already the home margin
+                               tag_html, move)
+
+    panes = []
+    for wi, (wk, wsched) in enumerate(info['weeks']):
+        # Games still to play first (on a Monday, the Monday night game leads), finished games after
+        order = wsched.assign(done=wsched['score'] != '').sort_values(['done', 'kick'], kind='stable') if not wsched.empty else wsched
+        cards = ''.join(game_html(r) for r in order.itertuples())
+        note = ('' if wi == 0 else
+                '<p class="hint wknote">Next week: lines are early and ratings will move after this week\'s games. '
+                'The Injury Wire and Kalshi markets cover this week only.</p>')
+        panes.append((f'Week {wk}', 'this week' if wi == 0 else 'next week',
+                      note + (f'<div class="games">{cards}</div>' if cards else '<p class="hint">No games found for this week.</p>')))
     ex.write_spots('nfl', spots)
     sched_html = (
-        f'<div class="sechead"><h2>{wk_label} games</h2><span class="hint">Projected lines include {HFA_POINTS:g} points '
+        f'<div class="sechead"><h2>Games</h2><span class="hint">Projected lines include {HFA_POINTS:g} points '
         f'of home field (none at neutral sites)</span></div>'
-        + (f'<div class="games">{cards}</div>' if cards else '<p class="hint">No games found for this week.</p>')
+        + (theme.week_switch('nfl-weeks', panes) if len(panes) > 1 else panes[0][2])
         + theme.method_note(
-            f'Every {wk_label} game. <b>Projected</b> is the composite rating gap plus {HFA_POINTS:g} points for the home '
+            f'Every game this week and next (use the switch). <b>Projected</b> is the composite rating gap plus {HFA_POINTS:g} points for the home '
             f'team (no home field at neutral sites such as international games). <b>Market</b> is the posted spread, for '
             f'comparison. <b>Edge</b> is how many points our projected line differs from the market, shown as the side we '
             f'like at the market number; gaps of {theme.EDGE_STRONG:g}+ points are highlighted and gaps under '
@@ -516,7 +529,7 @@ def generate_html(power, vals, sched, week, info):
         title='AlphaPoint NFL Dashboard', league='NFL', headline='NFL Power & Value',
         meta_items=[('Season', SEASON), ('Week', week), ('Updated', datetime.now().strftime('%b %d, %I:%M %p'))],
         tabs=[('power', 'Power Ratings', power_html), ('value', 'Value Metrics', value_html),
-              ('sched', f'{wk_label} Games', sched_html), ('markets', 'Markets', markets_html),
+              ('sched', 'Games', sched_html), ('markets', 'Markets', markets_html),
               ('injuries', 'Injury Wire', injury_html)],
         footer='AlphaPoint Sports · Data: nfelo, Sagarin, nflverse · Logos: ESPN · Not financial or gambling advice',
         extra=ex.team_modal(teams) + mu.templates(panels))
@@ -589,6 +602,8 @@ def main():
     full = vm.load_full_schedule()
     week = WEEK or current_week(full)
     sched = build_schedule(full, week, power, metrics)
+    next_sched = build_schedule(full, week + 1, power, metrics) if (full['week'] == week + 1).any() else pd.DataFrame()
+    print(f'  Next week (Week {week + 1}): {len(next_sched)} games.')
     print(f'  Week {week}: {len(sched)} games.')
 
     print('[4/4] Building dashboard...')
@@ -618,10 +633,14 @@ def main():
                  ('Sagarin', f'through {sagarin_asof}' if sagarin_asof else 'not available', ex.fetched(SAGARIN_CACHE)[1]),
                  ('Lines & scores', *ex.fetched(vm.SCHED_CACHE)), ('Play-by-play', *ex.fetched(vm.STATS_CACHE)),
                  ex.wire_freshness(wire_data)]
-    outdoor = [(str(r.game_id), *wx.NFL_STADIUMS[r.home][:2], r.kick) for r in sched.itertuples()
+    both = pd.concat([sched, next_sched], ignore_index=True) if not next_sched.empty else sched
+    outdoor = [(str(r.game_id), *wx.NFL_STADIUMS[r.home][:2], r.kick) for r in both.itertuples()
                if not r.score and not r.neutral and wx.NFL_STADIUMS.get(r.home, (0, 0, 'dome'))[2] != 'dome']
     weather = wx.forecasts(outdoor)
     print(f'  Weather: forecasts for {len(weather)} of {len(outdoor)} outdoor games.')
+    # Next week's lines are tracked too, so the switch can show movement since we first saw them
+    next_opened = mk.record_history('nfl', [{'game_id': r.game_id, 'market': r.market if r.market == r.market else None,
+                                             'kalshi': None} for r in next_sched.itertuples()]) if not next_sched.empty else {}
     units = vm.load_unit_stats()
     done = full[full['result'].notna() & full['spread_line'].notna()]
     cover = {}
@@ -630,7 +649,8 @@ def main():
         cover.setdefault(g.away_team, []).append((g.home_team, g.spread_line - g.result))
     info = {'scale': scale_info, 'nfelo_asof': nfelo_asof, 'sagarin_asof': sagarin_asof,
             'wire': wire_data, 'market_rows': market_rows, 'history': hist, 'full': full, 'freshness': freshness,
-            'weather': weather, 'opened': {str(r['game_id']): r.get('opened') for r in market_rows},
+            'weather': weather, 'weeks': [(week, sched)] + ([(week + 1, next_sched)] if not next_sched.empty else []),
+            'opened': {**next_opened, **{str(r['game_id']): r.get('opened') for r in market_rows}},
             'mu_prof': mu.profiles(units, MU_CATS, MU_STYLES) if not units.empty else {}, 'mu_games': cover}
     generate_html(power, vals, sched, week, info)
 
