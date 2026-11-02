@@ -1,41 +1,169 @@
 {
  "sport": "nba",
  "week": 20261102,
- "generated": "2026-11-02T07:57:00-05:00",
+ "generated": "2026-11-02T11:15:15-05:00",
  "movers": [
-  {"team": "PHI", "tag": "KEY", "text": "Joel Embiid (C, 35 mpg) questionable for Monday vs. the Bulls with a foot injury after missing the last game (ESPN report, Monday morning).", "source": "ESPN", "url": "https://www.espn.com/nba/injuries", "date": "2026-11-01"},
-  {"team": "ATL", "tag": "KEY", "text": "Jalen Johnson (F, 33 mpg) questionable for Monday vs. Indiana (ankle). Kingston Flemings (20 mpg) suspended and Jock Landale (hip) ruled out.", "source": "ESPN", "url": "https://www.espn.com/nba/injuries", "date": "2026-11-02"},
-  {"team": "SAC", "tag": "KEY", "text": "Zach LaVine (G, 34 mpg) questionable for Monday vs. Dallas (elbow). Keegan Murray (27 mpg, ankle) remains out, re-evaluation in 10-14 days.", "source": "ESPN", "url": "https://www.espn.com/nba/injuries", "date": "2026-11-01"},
-  {"team": "DAL", "tag": "KEY", "text": "Kyrie Irving (G, 29 mpg) questionable for Monday vs. Sacramento (knee). Dereck Lively II (foot) out; Santi Aldama (knee) doubtful.", "source": "ESPN", "url": "https://www.espn.com/nba/injuries", "date": "2026-11-01"},
-  {"team": "OKC", "tag": "CLUSTER", "text": "Chet Holmgren (30 mpg, patellar tendon, 8-10 weeks) and Jalen Williams (32 mpg, fibula surgery) out; Alex Caruso (ankle) also out. Monday vs. Cleveland.", "source": "ESPN", "url": "https://www.espn.com/nba/injuries", "date": "2026-10-31"}
+  {
+   "team": "PHI",
+   "tag": "KEY",
+   "text": "Joel Embiid (C, 35 mpg) questionable for Monday vs. the Bulls with a foot injury after missing the last game (ESPN report, Monday morning).",
+   "source": "ESPN",
+   "url": "https://www.espn.com/nba/injuries",
+   "date": "2026-11-01"
+  },
+  {
+   "team": "OKC",
+   "tag": "CLUSTER",
+   "text": "Chet Holmgren (30 mpg, patellar tendon, 8-10 weeks) and Jalen Williams (32 mpg, fibula surgery) out; Alex Caruso (ankle) also out. Monday vs. Cleveland.",
+   "source": "ESPN",
+   "url": "https://www.espn.com/nba/injuries",
+   "date": "2026-10-31"
+  },
+  {
+   "team": "ORL",
+   "tag": "CLUSTER",
+   "text": "Paolo Banchero (34 mpg, high-ankle sprain, 4-6 weeks from 10/24) and Jalen Suggs (33 mpg, knee bone bruise, re-eval ~11/9) both out. Monday vs. Washington.",
+   "source": "ESPN",
+   "url": "https://www.espn.com/nba/injuries",
+   "date": "2026-10-26"
+  },
+  {
+   "team": "MIN",
+   "tag": "KEY",
+   "text": "Anthony Edwards (G, 34 mpg) out after arthroscopic right knee surgery on Thursday; no return timeline given.",
+   "source": "ESPN",
+   "url": "https://www.espn.com/nba/injuries",
+   "date": "2026-10-29"
+  },
+  {
+   "team": "ATL",
+   "tag": "KEY",
+   "text": "Jalen Johnson (F, 33 mpg) questionable for Monday vs. Indiana (ankle). Kingston Flemings (20 mpg) suspended and Jock Landale (hip) ruled out.",
+   "source": "ESPN",
+   "url": "https://www.espn.com/nba/injuries",
+   "date": "2026-11-02"
+  }
  ],
  "teams": {
   "PHI": [
-   {"team": "PHI", "tag": "KEY", "text": "Joel Embiid (C, 35 mpg) questionable for Monday vs. the Bulls with a foot injury after missing the last game (ESPN report, Monday morning).", "source": "ESPN", "url": "https://www.espn.com/nba/injuries", "date": "2026-11-01"}
+   {
+    "team": "PHI",
+    "tag": "KEY",
+    "text": "Joel Embiid (C, 35 mpg) questionable for Monday vs. the Bulls with a foot injury after missing the last game (ESPN report, Monday morning).",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nba/injuries",
+    "date": "2026-11-01"
+   }
   ],
   "ATL": [
-   {"team": "ATL", "tag": "KEY", "text": "Jalen Johnson (F, 33 mpg) questionable for Monday vs. Indiana (ankle). Kingston Flemings (20 mpg) suspended and Jock Landale (hip) ruled out.", "source": "ESPN", "url": "https://www.espn.com/nba/injuries", "date": "2026-11-02"}
+   {
+    "team": "ATL",
+    "tag": "KEY",
+    "text": "Jalen Johnson (F, 33 mpg) questionable for Monday vs. Indiana (ankle). Kingston Flemings (20 mpg) suspended and Jock Landale (hip) ruled out.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nba/injuries",
+    "date": "2026-11-02"
+   }
   ],
   "SAC": [
-   {"team": "SAC", "tag": "KEY", "text": "Zach LaVine (G, 34 mpg) questionable for Monday vs. Dallas (elbow). Keegan Murray (27 mpg, ankle) remains out, re-evaluation in 10-14 days.", "source": "ESPN", "url": "https://www.espn.com/nba/injuries", "date": "2026-11-01"}
+   {
+    "team": "SAC",
+    "tag": "KEY",
+    "text": "Zach LaVine (G, 34 mpg) questionable for Monday vs. Dallas (elbow). Keegan Murray (27 mpg, ankle) remains out, re-evaluation in 10-14 days.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nba/injuries",
+    "date": "2026-11-01"
+   }
   ],
   "DAL": [
-   {"team": "DAL", "tag": "KEY", "text": "Kyrie Irving (G, 29 mpg) questionable for Monday vs. Sacramento (knee). Dereck Lively II (foot) out; Santi Aldama (knee) doubtful.", "source": "ESPN", "url": "https://www.espn.com/nba/injuries", "date": "2026-11-01"}
+   {
+    "team": "DAL",
+    "tag": "KEY",
+    "text": "Kyrie Irving (G, 29 mpg) questionable for Monday vs. Sacramento (knee). Dereck Lively II (foot) out; Santi Aldama (knee) doubtful.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nba/injuries",
+    "date": "2026-11-01"
+   }
   ],
   "OKC": [
-   {"team": "OKC", "tag": "CLUSTER", "text": "Chet Holmgren (30 mpg, patellar tendon, 8-10 weeks) and Jalen Williams (32 mpg, fibula surgery) out; Alex Caruso (ankle) also out. Monday vs. Cleveland.", "source": "ESPN", "url": "https://www.espn.com/nba/injuries", "date": "2026-10-31"}
+   {
+    "team": "OKC",
+    "tag": "CLUSTER",
+    "text": "Chet Holmgren (30 mpg, patellar tendon, 8-10 weeks) and Jalen Williams (32 mpg, fibula surgery) out; Alex Caruso (ankle) also out. Monday vs. Cleveland.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nba/injuries",
+    "date": "2026-10-31"
+   }
   ],
   "CLE": [
-   {"team": "CLE", "tag": "KEY", "text": "Peyton Watson (G, 28 mpg) questionable for Monday vs. Oklahoma City (hamstring); Jaylon Tyson (21 mpg, ankle) ruled out.", "source": "ESPN", "url": "https://www.espn.com/nba/injuries", "date": "2026-11-01"}
+   {
+    "team": "CLE",
+    "tag": "KEY",
+    "text": "Peyton Watson (G, 28 mpg) questionable for Monday vs. Oklahoma City (hamstring); Jaylon Tyson (21 mpg, ankle) ruled out.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nba/injuries",
+    "date": "2026-11-01"
+   }
   ],
   "IND": [
-   {"team": "IND", "tag": "CLUSTER", "text": "Tyrese Haliburton (33 mpg, hamstring) out at least two weeks; Ivica Zubac (22 mpg, ankle) also out. Monday vs. Atlanta.", "source": "ESPN", "url": "https://www.espn.com/nba/injuries", "date": "2026-10-28"}
+   {
+    "team": "IND",
+    "tag": "CLUSTER",
+    "text": "Tyrese Haliburton (33 mpg, hamstring) out at least two weeks; Ivica Zubac (22 mpg, ankle) also out. Monday vs. Atlanta.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nba/injuries",
+    "date": "2026-10-28"
+   }
   ],
   "MIN": [
-   {"team": "MIN", "tag": "KEY", "text": "Anthony Edwards (G, 34 mpg) out after arthroscopic right knee surgery on Thursday; no return timeline given.", "source": "ESPN", "url": "https://www.espn.com/nba/injuries", "date": "2026-10-29"}
+   {
+    "team": "MIN",
+    "tag": "KEY",
+    "text": "Anthony Edwards (G, 34 mpg) out after arthroscopic right knee surgery on Thursday; no return timeline given.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nba/injuries",
+    "date": "2026-10-29"
+   }
   ],
   "HOU": [
-   {"team": "HOU", "tag": "RETURNING", "text": "Reed Sheppard (G, 23 mpg) questionable for Monday vs. Boston (back) after missing the last game.", "source": "ESPN", "url": "https://www.espn.com/nba/injuries", "date": "2026-11-01"}
+   {
+    "team": "HOU",
+    "tag": "RETURNING",
+    "text": "Reed Sheppard (G, 23 mpg) questionable for Monday vs. Boston (back) after missing the last game.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nba/injuries",
+    "date": "2026-11-01"
+   }
+  ],
+  "ORL": [
+   {
+    "team": "ORL",
+    "tag": "CLUSTER",
+    "text": "Paolo Banchero (34 mpg, high-ankle sprain, 4-6 weeks from 10/24) and Jalen Suggs (33 mpg, knee bone bruise, re-eval ~11/9) both out. Monday vs. Washington.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nba/injuries",
+    "date": "2026-10-26"
+   }
+  ],
+  "POR": [
+   {
+    "team": "POR",
+    "tag": "KEY",
+    "text": "Ja Morant (G, 26 mpg) out with a Grade 2 left hamstring strain; Portland said 10/30 he is expected to miss four weeks.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nba/injuries",
+    "date": "2026-10-30"
+   }
+  ],
+  "TOR": [
+   {
+    "team": "TOR",
+    "tag": "KEY",
+    "text": "Kawhi Leonard (F, 26 mpg) out with a knee injury, expected to miss at least three to four weeks (reported 10/29).",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nba/injuries",
+    "date": "2026-10-29"
+   }
   ]
  }
 }
