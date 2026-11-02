@@ -619,6 +619,25 @@ dialog.tmodal::backdrop { background: rgba(5, 10, 18, .6); }
 @media (max-width: 560px) { .mu-grid { grid-template-columns: minmax(60px, .55fr) minmax(0, 1fr) minmax(0, 1fr); gap: 5px; }
                             .mg-c { padding: 7px 8px; font-size: 12.5px; } .mg-l { font-size: 12.5px; } }
 
+/* Featured games */
+.fx { margin-bottom: 18px; overflow: hidden; }
+.fx-top { display: flex; flex-wrap: wrap; gap: 6px; padding: 12px 16px 0; }
+.fx-reason { font: 700 12px/1.2 var(--display); letter-spacing: .8px; text-transform: uppercase; padding: 5px 9px; border-radius: 6px;
+             background: var(--accent); color: var(--accent-ink); }
+.fx-body { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 16px; padding: 10px 16px 14px; align-items: start; }
+.fx-text h3 { margin: 4px 0 2px; font: 700 26px/1.1 var(--display); text-transform: uppercase; letter-spacing: .3px; }
+.fx-when { margin: 0 0 10px; color: var(--muted); font-size: 13px; }
+.fx-text p { margin: 0 0 10px; font-size: 15px; line-height: 1.6; max-width: 70ch; }
+.fx-text .fx-bottom { padding: 10px 12px; border-left: 4px solid var(--accent); background: var(--surface-2); border-radius: 0; }
+.fx-side .card.game { margin: 0; }
+.fx-notes { display: grid; gap: 8px; margin-top: 10px; }
+.fx-note { padding: 9px 11px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface-2); font-size: 13px; }
+.fx-note b { display: block; margin-bottom: 2px; }
+.fx-note span { display: block; color: var(--muted); line-height: 1.4; }
+.fx-matchup { padding: 4px 16px 16px; border-top: 1px solid var(--line); }
+.fx-mu-title { margin: 12px 0 6px; font: 700 13px/1 var(--display); letter-spacing: 1px; text-transform: uppercase; color: var(--muted); }
+@media (max-width: 860px) { .fx-body { grid-template-columns: 1fr; } }
+
 /* Week switch (This week / Next week) */
 .wkswitch { display: inline-flex; gap: 4px; padding: 4px; margin: 2px 0 12px; border-radius: 10px; background: var(--surface);
             border: 1px solid var(--line); }

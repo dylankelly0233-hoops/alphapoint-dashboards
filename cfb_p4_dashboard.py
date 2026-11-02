@@ -42,6 +42,7 @@ import requests
 import cfb_value_metrics as vm
 import dashboard_theme as theme
 import extras as ex
+import featured as fx
 import matchups as mu
 import weather as wx
 import injury_wire as wire
@@ -412,6 +413,29 @@ def cover_log(games, lines):
     return out
 
 
+def fetch_ap_ranks():
+    """{school: AP rank} from the latest AP Top 25 this season (CFBD), cached CACHE_HOURS."""
+    path = f'p4_ap_{YEAR}.csv'
+    if os.path.exists(path) and datetime.now().timestamp() - os.path.getmtime(path) < 6 * 3600:
+        df = pd.read_csv(path)
+        return dict(zip(df['team'], df['rank']))
+    try:
+        r = requests.get(f'{vm.CFBD_BASE}/rankings', params={'year': YEAR}, headers=vm.CFBD_HEADERS, timeout=60)
+        r.raise_for_status()
+        weeks = [w for w in r.json() if any(p['poll'] == 'AP Top 25' for p in w.get('polls', []))]
+        latest = max(weeks, key=lambda w: (w.get('seasonType') == 'postseason', w['week']))
+        ap = next(p for p in latest['polls'] if p['poll'] == 'AP Top 25')
+        df = pd.DataFrame([{'team': x['school'], 'rank': int(x['rank'])} for x in ap['ranks']])
+        df.to_csv(path, index=False)
+        return dict(zip(df['team'], df['rank']))
+    except Exception as e:
+        print(f'  ! AP poll unavailable: {e}')
+        if os.path.exists(path):
+            df = pd.read_csv(path)
+            return dict(zip(df['team'], df['rank']))
+        return {}
+
+
 def fetch_venues():
     """CFBD venue id → (latitude, longitude, 'dome' or 'outdoor'), cached a week (stadiums don't move)."""
     path = f'p4_venues_{YEAR}.csv'
@@ -576,7 +600,7 @@ def generate_html(p4, vals, sched, week, season_type, info):
             f'<b>SELL</b> above +{spot:.1f} (solid above +{strong:.1f}).'))
 
     # --- Games tab: this week and next week, behind a switch ---
-    spots, panels = [], {}
+    spots, panels, features = [], {}, []
     p4_set = set(p4['team'])
     sig = lambda v: 'BUY' if v is not None and v == v and v < -spot else 'SELL' if v is not None and v == v and v > spot else ''
 
@@ -608,8 +632,25 @@ def generate_html(p4, vals, sched, week, season_type, info):
                                          ex.line_text(r.home, r.away, pm) if not pd.isna(pm) else '')
         spots.append(ex.spot('CFB', 'cfb.html#sched', r.kick, r.away, r.home, r.margin, mkt_margin, labels,
                              [(r.away, sig(r.away_value)), (r.home, sig(r.home_value))]))
-        return theme.game_card(when, venue, side(r.away, r.away_rating, r.away_value),
+        card = theme.game_card(when, venue, side(r.away, r.away_rating, r.away_value),
                                side(r.home, r.home_rating, r.home_value), proj, mkt, r.score, edge, tag_html, move)
+        reasons = info['featured'].get(r.game_id)
+        if reasons:
+            hfa = 0.0 if r.neutral else HFA_POINTS
+            head = mu.headline(prof, MU_CATS, r.away, r.home, str) if r.home in prof and r.away in prof else None
+            d = {'game_id': r.game_id, 'away': r.away, 'home': r.home, 'neutral': r.neutral, 'reasons': reasons,
+                 'away_rank': info['ranks'].get(r.away), 'home_rank': info['ranks'].get(r.home), 'when': when,
+                 'ours': r.margin, 'market': mkt_margin, 'opened': info['opened'].get(str(r.game_id)),
+                 'confidence': ex.confidence_level(info['by_source'].get(r.home, {}), info['by_source'].get(r.away, {}), hfa),
+                 'mismatch': head[0] if head else None,
+                 'signals': {t: (sig(v), v) for t, v in ((r.away, r.away_value), (r.home, r.home_value))
+                             if v is not None and v == v},
+                 'injuries': {t: fx.injuries(info['wire'], t) for t in (r.away, r.home)},
+                 'wind': (info['weather'].get(str(r.game_id)) or {}).get('wind'), 'tags': [l for l, _ in labels]}
+            grid = (mu.panel(r.away, r.home, str, prof, MU_CATS, MU_STYLES, info['mu_games'], head=False)
+                    if head is not None or (r.home in prof and r.away in prof) else '')
+            features.append(fx.card(d, card, grid, fx.notes(d)))
+        return card
 
     panes = []
     for wi, (wk, wsched, last) in enumerate(info['weeks']):
@@ -622,6 +663,8 @@ def generate_html(p4, vals, sched, week, season_type, info):
         panes.append((f'Week {wk}', 'this week' if wi == 0 else 'next week',
                       note + (f'<div class="games">{cards}</div>' if cards else '<p class="hint">No games found for this week.</p>')))
     ex.write_spots('cfb', spots)
+    featured_html = fx.tab(''.join(features), ('Featured games', 'Top 25 clashes and upset watch this week'),
+                           'No ranked-vs-ranked or upset-watch games left this week.')
     sched_html = (
         f'<div class="sechead"><h2>Games</h2><span class="hint">Projected lines include {HFA_POINTS:g} points '
         f'of home field (none at neutral sites)</span></div>'
@@ -665,7 +708,7 @@ def generate_html(p4, vals, sched, week, season_type, info):
     page = theme.render_page(
         title='AlphaPoint CFB Dashboard', league='CFB', headline='CFB Power & Value',
         meta_items=[('Season', YEAR), ('Week', week), ('Updated', datetime.now().strftime('%b %d, %I:%M %p'))],
-        tabs=[('power', 'Power Ratings', power_html), ('value', 'Value Metrics', value_html),
+        tabs=[('power', 'Power Ratings', power_html), ('featured', 'Featured', featured_html), ('value', 'Value Metrics', value_html),
               ('sched', 'Games', sched_html), ('markets', 'Markets', markets_html),
               ('injuries', 'Injury Wire', injury_html)],
         footer='AlphaPoint Sports · Data: Sagarin, SP+ (via collegefootballdata.com) · Logos: ESPN · '
@@ -788,6 +831,8 @@ def main():
                  ex.wire_freshness(wire_data)]
     units = fetch_unit_stats()
     print(f'  Matchups: unit stats for {len(units)} teams.')
+    ranks = fetch_ap_ranks()
+    print(f'  AP Top 25: {len(ranks)} teams.')
     venues = fetch_venues()
     both = pd.concat([sched, next_sched], ignore_index=True) if not next_sched.empty else sched
     roofs = {str(r.game_id): venues.get(r.venue_id) for r in both.itertuples()}
@@ -802,7 +847,9 @@ def main():
             'wire': wire_data, 'market_rows': market_rows, 'history': hist, 'freshness': freshness, 'results': results,
             'weeks': [(week, sched, last_results(results[0], week, season_type))]
                      + ([(week + 1, next_sched, next_last)] if not next_sched.empty else []),
-            'weather': weather, 'roofs': roofs,
+            'weather': weather, 'roofs': roofs, 'ranks': ranks,
+            'featured': {r.game_id: fx.college_reasons(r.away, r.home, ranks, -r.market if r.market == r.market else np.nan)
+                         for r in sched.itertuples() if not r.completed},
             'by_source': {r.team: {'Sagarin': r.sagarin, 'SP+': r.sp} for r in power.itertuples()},
             'mu_prof': mu.profiles(units, MU_CATS, MU_STYLES) if not units.empty else {},
             'mu_games': cover_log(*results),

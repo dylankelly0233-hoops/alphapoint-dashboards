@@ -42,6 +42,7 @@ import cbb_ratings as cbr
 import cbb_value_metrics as vm
 import dashboard_theme as theme
 import extras as ex
+import featured as fx
 import injury_wire as wire
 import markets as mk
 import matchups as mu
@@ -301,6 +302,21 @@ def _when(g):
     return g['kick'].strftime('%a %m/%d · ') + g['kick'].strftime('%I:%M %p').lstrip('0') + ' ET'
 
 
+def fetch_ap_ranks():
+    """{team: AP rank} from the latest AP Top 25 this season (collegebasketballdata.com), cached CACHE_HOURS."""
+    path = f'cbb_ap_{SEASON}.csv'
+    if not os.path.exists(path) or datetime.now().timestamp() - os.path.getmtime(path) > CACHE_HOURS * 3600:
+        rows = [r for r in vm.cbbd_get('/rankings', {'season': SEASON}) if r.get('pollType') == 'AP Top 25']
+        if rows:
+            latest = max(r['week'] for r in rows)
+            pd.DataFrame([{'team': r['team'], 'rank': int(r['ranking'])} for r in rows if r['week'] == latest
+                          and r.get('ranking')]).to_csv(path, index=False)
+    if not os.path.exists(path):
+        return {}
+    df = pd.read_csv(path)
+    return dict(zip(df['team'], df['rank']))
+
+
 def build_markets(days, rating, names):
     """Kalshi win probability + spread liquidity per game, plus line history. Returns (rows, unmatched Kalshi names)."""
     lookup = {_norm(n): n for n in names}
@@ -447,7 +463,7 @@ def generate_html(power, metrics, days, info):
                 f'(at least {vm.SPOT_MIN:g} / {vm.STRONG_MIN:g} wins, or {vm.SPOT_RATE:.0%} / {vm.STRONG_RATE:.0%} of games).'))
 
     # --- Games tab ---
-    sections, spots, panels = '', [], {}
+    sections, spots, panels, features = '', [], {}, []
     focus_set = set(focus['team'])
     by_src = power.set_index('team')[list(s['stats'])].to_dict('index')      # each source's rescaled rating
     for day, games in days:
@@ -473,16 +489,36 @@ def generate_html(power, metrics, days, info):
                     g['away'], g['home'], str, mprof, mu.BASKETBALL_CATS, mu.BASKETBALL_STYLES, info['mu_games'], _when(g),
                     ex.line_text(g['home'], g['away'], pm) if not pd.isna(pm) else '',
                     mu.pace_line(info['mu_units'], g['away'], g['home'], str))
-            cards += theme.game_card(when, 'Neutral site' if g['neutral'] else '',
-                                     side(g['away'], a_r, g['away_espn']), side(g['home'], h_r, g['home_espn']),
-                                     proj, mkt, g['score'], theme.edge_text(pm, g['market'], g['home'], g['away']),
-                                     move=move)
+            card = theme.game_card(when, 'Neutral site' if g['neutral'] else '',
+                                   side(g['away'], a_r, g['away_espn']), side(g['home'], h_r, g['home_espn']),
+                                   proj, mkt, g['score'], theme.edge_text(pm, g['market'], g['home'], g['away']),
+                                   move=move)
+            cards += card
+            reasons = info['featured'].get(g['game_id'])
+            if reasons:
+                has_mu = g['home'] in mprof and g['away'] in mprof
+                head = mu.headline(mprof, mu.BASKETBALL_CATS, g['away'], g['home'], str) if has_mu else None
+                d = {'game_id': g['game_id'], 'away': g['away'], 'home': g['home'], 'neutral': g['neutral'],
+                     'reasons': reasons, 'away_rank': info['ranks'].get(g['away']), 'home_rank': info['ranks'].get(g['home']),
+                     'when': _when(g), 'ours': margin, 'market': g['market'], 'opened': info['opened'].get(g['game_id']),
+                     'confidence': ex.confidence_level(by_src.get(g['home'], {}), by_src.get(g['away'], {}),
+                                                       0.0 if g['neutral'] else HFA_POINTS),
+                     'mismatch': head[0] if head else None,
+                     'signals': {t: (_signal(comp.get(t), games_played.get(t, 0)), comp[t]) for t in (g['away'], g['home'])
+                                 if comp.get(t) is not None},
+                     'injuries': {t: fx.injuries(info['wire'], t) for t in (g['away'], g['home'])}}
+                grid = (mu.panel(g['away'], g['home'], str, mprof, mu.BASKETBALL_CATS, mu.BASKETBALL_STYLES,
+                                 info['mu_games'], extra=mu.pace_line(info['mu_units'], g['away'], g['home'], str),
+                                 head=False) if has_mu else '')
+                features.append(fx.card(d, card, grid, fx.notes(d)))
             spots.append(ex.spot('CBB', 'cbb.html#games', g['kick'], g['away'], g['home'], margin, g['market'], [],
                                  [(t, _signal(comp.get(t), games_played.get(t, 0))) for t in (g['away'], g['home'])]))
         sections += (f'<div class="sechead"><h2>{day.strftime("%A, %b %d").replace(" 0", " ")}</h2>'
                      f'<span class="hint">{len(games)} game{"" if len(games) == 1 else "s"}</span></div>'
                      f'<div class="games">{cards}</div>')
     ex.write_spots('cbb', spots)
+    featured_html = fx.tab(''.join(features), ('Featured games', 'Top 25 clashes and upset watch, next three game days'),
+                           'No ranked-vs-ranked or upset-watch games in the next three game days.')
     games_html = (
         (sections or '<p class="hint">No P4 or Big East games in the next three weeks.</p>')
         + theme.method_note(
@@ -523,7 +559,8 @@ def generate_html(power, metrics, days, info):
     page = theme.render_page(
         title='AlphaPoint CBB Dashboard', league='CBB', headline='CBB Power & Value',
         meta_items=[('Season', f'{SEASON - 1}-{str(SEASON)[2:]}'), ('Updated', datetime.now().strftime('%b %d, %I:%M %p'))],
-        tabs=[('power', 'Power Ratings', power_html), ('value', 'Value Metrics', value_html), ('games', 'Games', games_html),
+        tabs=[('power', 'Power Ratings', power_html), ('featured', 'Featured', featured_html), ('value', 'Value Metrics', value_html),
+              ('games', 'Games', games_html),
               ('markets', 'Markets', markets_html), ('injuries', 'Injury Wire', injury_html)],
         footer='AlphaPoint Sports · Data: TeamRankings, Bart Torvik (preseason), collegebasketballdata.com, ESPN, '
                'Kalshi · Logos: ESPN · Not financial or gambling advice',
@@ -595,13 +632,17 @@ def main():
     else:
         freshness.append(('AlphaPoint model', 'starts once games are played', True))
     units = mu.basketball_units(box, set(teams['team'])) if not box.empty else pd.DataFrame()
+    ranks = fetch_ap_ranks()
+    print(f'  AP Top 25: {len(ranks)} teams.')
     print(f'  Matchups: unit stats for {len(units)} teams.')
     freshness += [('Box scores', *ex.fetched(vm._cache('box2'))), ('Lines', 'ESPN, live each refresh', True),
                   ex.wire_freshness(wire_data)]
 
     generate_html(power, metrics, days, {'scale': scale, 'history': hist, 'freshness': freshness, 'wire': wire_data,
                                          'market_rows': market_rows, 'results': (box, spreads),
-                                         'mu_units': units, 'mu_games': mu.cover_log_box(box, sp),
+                                         'mu_units': units, 'mu_games': mu.cover_log_box(box, sp), 'ranks': ranks,
+                                         'featured': {g['game_id']: fx.college_reasons(g['away'], g['home'], ranks, g['market'])
+                                                      for _, gs in days for g in gs if not g['score']},
                                          'mu_prof': mu.profiles(units, mu.BASKETBALL_CATS, mu.BASKETBALL_STYLES)
                                          if not units.empty else {},
                                          'opened': {str(r['game_id']): r.get('opened') for r in market_rows}})

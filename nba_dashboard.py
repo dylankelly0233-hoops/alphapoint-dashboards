@@ -32,6 +32,7 @@ import pandas as pd
 import cbb_ratings as cbr
 import dashboard_theme as theme
 import extras as ex
+import featured as fx
 import injury_wire as wire
 import markets as mk
 import matchups as mu
@@ -329,7 +330,7 @@ def generate_html(power, metrics, days, info):
                 f'{vm.SPOT_MIN:g} / {vm.STRONG_MIN:g} wins, or {vm.SPOT_RATE:.0%} / {vm.STRONG_RATE:.0%} of games).'))
 
     # --- Games tab ---
-    sections, spots, panels = '', [], {}
+    sections, spots, panels, features = '', [], {}, []
     by_src = power.set_index('abbr')[list(s['stats'])].to_dict('index')      # each source's rescaled rating
     for day, games in days:
         cards = ''
@@ -355,15 +356,38 @@ def generate_html(power, metrics, days, info):
                     g['away'], g['home'], nm, mprof, mu.BASKETBALL_CATS, mu.BASKETBALL_STYLES, info['mu_games'], _when(g),
                     ex.line_text(nm(g['home']), nm(g['away']), pm) if not pd.isna(pm) else '',
                     mu.pace_line(info['mu_units'], g['away'], g['home'], nm))
-            cards += theme.game_card(when, 'Neutral site' if g['neutral'] else '', side(g['away'], a_r), side(g['home'], h_r),
-                                     proj, mkt, g['score'],
-                                     theme.edge_text(pm, g['market'], short[g['home']], short[g['away']]), move=move)
+            card = theme.game_card(when, 'Neutral site' if g['neutral'] else '', side(g['away'], a_r), side(g['home'], h_r),
+                                   proj, mkt, g['score'],
+                                   theme.edge_text(pm, g['market'], short[g['home']], short[g['away']]), move=move)
+            cards += card
+            reasons = info['featured'].get(g['game_id'])
+            if reasons:
+                nm = lambda t: short.get(t, t)
+                has_mu = g['home'] in mprof and g['away'] in mprof
+                head = mu.headline(mprof, mu.BASKETBALL_CATS, g['away'], g['home'], nm) if has_mu else None
+                d = {'game_id': g['game_id'], 'away': nm(g['away']), 'home': nm(g['home']), 'neutral': g['neutral'],
+                     'reasons': reasons, 'when': _when(g), 'plural': True,
+                     'lead': (f"Our Game of the Day: the {full.get(g['away'])} (#{int(power.set_index('abbr').at[g['away'], 'rank'])} "
+                              f"in our power ratings) visit the {full.get(g['home'])} "
+                              f"(#{int(power.set_index('abbr').at[g['home'], 'rank'])})."),
+                     'ours': margin, 'market': g['market'], 'opened': info['opened'].get(g['game_id']),
+                     'confidence': ex.confidence_level(by_src.get(g['home'], {}), by_src.get(g['away'], {}),
+                                                       0.0 if g['neutral'] else HFA_POINTS),
+                     'mismatch': head[0] if head else None,
+                     'signals': {nm(t): (_signal(comp.get(t), gp.get(t, 0)), comp[t]) for t in (g['away'], g['home'])
+                                 if comp.get(t) is not None},
+                     'injuries': {nm(t): fx.injuries(info['wire'], t) for t in (g['away'], g['home'])}}
+                grid = (mu.panel(g['away'], g['home'], nm, mprof, mu.BASKETBALL_CATS, mu.BASKETBALL_STYLES, info['mu_games'],
+                                 extra=mu.pace_line(info['mu_units'], g['away'], g['home'], nm), head=False) if has_mu else '')
+                features.append(fx.card(d, card, grid, fx.notes(d)))
             spots.append(ex.spot('NBA', 'nba.html#games', g['kick'], short[g['away']], short[g['home']], margin, g['market'],
                                  [], [(short[t], _signal(comp.get(t), gp.get(t, 0))) for t in (g['away'], g['home'])]))
         sections += (f'<div class="sechead"><h2>{day.strftime("%A, %b %d").replace(" 0", " ")}</h2>'
                      f'<span class="hint">{len(games)} game{"" if len(games) == 1 else "s"} · projected lines include '
                      f'{HFA_POINTS:g} points of home court</span></div><div class="games">{cards}</div>')
     ex.write_spots('nba', spots)
+    featured_html = fx.tab(''.join(features), ('Game of the Day', 'The best matchup on the board by our power ratings'),
+                           'No games left to play in the next two days.')
     games_html = (
         (sections or '<p class="hint">No NBA games in the next ten days.</p>')
         + theme.method_note(
@@ -406,7 +430,8 @@ def generate_html(power, metrics, days, info):
     page = theme.render_page(
         title='AlphaPoint NBA Dashboard', league='NBA', headline='NBA Power & Value',
         meta_items=[('Season', f'{SEASON - 1}-{str(SEASON)[2:]}'), ('Updated', datetime.now().strftime('%b %d, %I:%M %p'))],
-        tabs=[('power', 'Power Ratings', power_html), ('value', 'Value Metrics', value_html), ('games', 'Games', games_html),
+        tabs=[('power', 'Power Ratings', power_html), ('featured', 'Game of the Day', featured_html),
+              ('value', 'Value Metrics', value_html), ('games', 'Games', games_html),
               ('markets', 'Markets', markets_html), ('injuries', 'Injury Wire', injury_html)],
         footer='AlphaPoint Sports · Data: Sagarin, TeamRankings, ESPN, Kalshi · Logos: ESPN · Not financial or gambling advice',
         extra=ex.team_modal(teams) + mu.templates(panels))
@@ -482,6 +507,7 @@ def main():
         'history': hist, 'freshness': freshness, 'wire': wire_data, 'market_rows': market_rows,
         'records': vm.records(box), 'results': (box, spreads),
         'mu_units': units, 'mu_games': mu.cover_log_box(box, spreads),
+        'featured': fx.game_of_the_day(days, rating, dict(zip(power['abbr'], power['rank'])), HFA_POINTS),
         'mu_prof': mu.profiles(units, mu.BASKETBALL_CATS, mu.BASKETBALL_STYLES) if not units.empty else {},
         'opened': {str(r['game_id']): r.get('opened') for r in market_rows}})
 

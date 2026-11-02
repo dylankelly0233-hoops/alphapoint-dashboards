@@ -252,6 +252,10 @@ INFO = [
                   'posted market spread, and the Edge — how far our number is from the market and which side we like. '
                   'NFL and college football have a This week / Next week switch, so you can look ahead once next '
                   'week\'s lines post; games still to play are listed first.'),
+        ('Featured', 'The marquee games, each with a written preview: ranked-vs-ranked and upset-watch games in college '
+                     '(a top-10 team favored by 7 or less, or an underdog), NFL primetime games, and an NBA Game of the Day '
+                     '(the best matchup by our ratings). Previews are written automatically from the numbers on the page: '
+                     'where our ratings lean and why, the case against, and what to check. A lean is research, not a pick.'),
         ('Line movement', 'Each game card shows where the spread opened (or was first seen) and where it is now, and whether '
                           'the market has moved toward our number or away from it.'),
         ('Confidence', 'Each game card rates how much to trust our projected line, based only on whether the rating '

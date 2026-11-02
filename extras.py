@@ -160,6 +160,16 @@ CONFIDENCE = {'High': ('high', 'the rating sources agree on this line'),
               'Low': ('low', 'the rating sources disagree on this line')}
 
 
+def confidence_level(home_vals, away_vals, hfa):
+    """'High' / 'Medium' / 'Low' from how far apart the sources' own lines are; None with fewer than two sources."""
+    lines = [home_vals[s] - away_vals[s] + hfa for s in home_vals
+             if s in away_vals and not _nan(home_vals[s]) and not _nan(away_vals[s])]
+    if len(lines) < 2:
+        return None
+    gap = max(lines) - min(lines)
+    return 'High' if gap <= AGREE_PTS else 'Medium' if gap <= SPLIT_PTS else 'Low'
+
+
 def rating_confidence(home_vals, away_vals, hfa):
     """
     How much to trust our projected line, judged only by how closely the rating sources agree: each source's
@@ -167,12 +177,9 @@ def rating_confidence(home_vals, away_vals, hfa):
     High / Medium / Low. Says nothing about injuries, news or weather.
     home_vals / away_vals: {source label: rescaled rating}. Needs at least two sources rating both teams.
     """
-    lines = [home_vals[s] - away_vals[s] + hfa for s in home_vals
-             if s in away_vals and not _nan(home_vals[s]) and not _nan(away_vals[s])]
-    if len(lines) < 2:
+    level = confidence_level(home_vals, away_vals, hfa)
+    if not level:
         return ''
-    gap = max(lines) - min(lines)
-    level = 'High' if gap <= AGREE_PTS else 'Medium' if gap <= SPLIT_PTS else 'Low'
     cls, why = CONFIDENCE[level]
     return f'<div class="lmove">{theme.k("Confidence")}<span class="conf {cls}">{level}</span> {why}</div>'
 

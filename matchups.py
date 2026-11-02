@@ -270,7 +270,7 @@ def cover_log_box(box, spreads):
 # ==========================================
 # HTML
 # ==========================================
-def panel(away, home, name, prof, cats, styles, games_by_team, when='', our_line='', extra=''):
+def panel(away, home, name, prof, cats, styles, games_by_team, when='', our_line='', extra='', head=True):
     """
     The full matchup panel for one game (rendered into a hidden <template>). name(team) → display name.
     extra: optional line under the scoreboard (basketball's pace line).
@@ -330,7 +330,9 @@ def panel(away, home, name, prof, cats, styles, games_by_team, when='', our_line
               'similar teams to say anything.</p>')
 
     sub = ' · '.join(x for x in (when, f'our line {our_line}' if our_line else '') if x)
-    return (f'<div class="mu-head"><h2>{theme.esc(a)} @ {theme.esc(h)} · Matchup</h2><span class="sub">{theme.esc(sub)}</span></div>'
+    top = (f'<div class="mu-head"><h2>{theme.esc(a)} @ {theme.esc(h)} · Matchup</h2><span class="sub">{theme.esc(sub)}</span></div>'
+           if head else '<h3 class="fx-mu-title">Matchup</h3>')
+    return (top +
             f'<p class="mu-score">{score}</p>{extra}'
             f'<div class="mu-grid">{cells}</div>'
             f"<p class=\"mu-note\">Each cell shows the offense's rank vs the defense's rank, out of {n} teams (#1 = best "
