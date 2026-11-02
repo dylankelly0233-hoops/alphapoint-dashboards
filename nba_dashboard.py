@@ -113,10 +113,12 @@ def fetch_teamrankings(by_location):
 
 
 def build_power(tm, sources, weights):
-    """Center each source on the league average, rescale to the average SD, weighted blend."""
+    """Center each source on the league average, rescale to the full-weight sources' average SD, weighted blend."""
     df = tm[['abbr', 'name', 'short', 'espn_id', 'color', 'logo']].copy()
     stats = {s: (np.mean(list(v.values())), np.std(list(v.values()))) for s, v in sources.items() if len(v) >= 20}
-    target_sd = np.mean([sd for _, sd in stats.values()]) if stats else 1.0
+    # Only full-weight sources set the common scale, so a source still ramping up can't stretch or squeeze it
+    sds = [sd for s, (_, sd) in stats.items() if weights.get(s, 1.0) >= 1.0] or [sd for _, sd in stats.values()]
+    target_sd = np.mean(sds) if sds else 1.0
     for src, (mean, sd) in stats.items():
         df[src] = df['abbr'].map(lambda t: (sources[src][t] - mean) * target_sd / sd if t in sources[src] else np.nan)
     cols = list(stats)

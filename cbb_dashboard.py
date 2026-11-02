@@ -4,7 +4,7 @@ AlphaPoint Sports — CBB Power & Value Dashboard (Power 4 + Big East)
 Dylan Kelly
 
 Same design as the football dashboards:
-  1. Power Ratings  — composite of TeamRankings + Warren Nolan, 0 = average Division I team
+  1. Power Ratings  — composite of TeamRankings + our model (+ Torvik preseason early), 0 = average D1 team
   2. Value Metrics  — wins over expectation from cbb_value_metrics.py
   3. Games          — the next three game days with a P4 / Big East team: projected line
                       (with home court), market spread, edge, line movement, trade signals
@@ -21,7 +21,6 @@ Rating math (sources fetched by cbb_ratings.py; see load_sources)
 
 Data
   TeamRankings predictive ratings (once its page switches to this season)
-  Warren Nolan Elo
   Torvik       cbb_torvik_{season}.csv, a saved preseason file (Torvik blocks GitHub's servers);
                used only until TeamRankings is current
   Schedule     ESPN scoreboard (D1), with posted spreads when available
@@ -63,11 +62,11 @@ GAME_DAYS       = 3        # how many upcoming game days to show
 # Our own tempo-aware adjusted-efficiency model (cbb_model.py). Its weight ramps up as teams play:
 # full weight once teams average MODEL_FULL_GAMES D1 games.
 MODEL_LABEL     = 'AlphaPoint model'
+MODEL_MIN_GAMES = 3       # the model joins the blend once teams average this many D1 games
 MODEL_FULL_GAMES = 8
-# Blend weights. Warren Nolan is an Elo rating built for win probability, not margins, so it counts half.
-SOURCE_WEIGHTS  = {'TeamRankings': 1.0, MODEL_LABEL: 1.0, 'Torvik preseason': 1.0, 'Warren Nolan': 0.5}
-# Sources already in points per game. Others (Warren Nolan's Elo) are only centered and rescaled,
-# so the common SD has to come from these — averaging in Elo's SD (~120) would blow up the scale.
+# Blend weights (Torvik preseason fades out as our model ramps in; see load_sources)
+SOURCE_WEIGHTS  = {'TeamRankings': 1.0, MODEL_LABEL: 1.0, 'Torvik preseason': 1.0}
+# Sources in points per game; the common scale comes from the full-weight ones among these
 POINT_SOURCES   = {'TeamRankings', 'Torvik preseason', MODEL_LABEL}
 FALLBACK_SD     = 9.5      # typical D1 SD in points, used if no points-based source loads
 LOGO_PX         = 48       # smaller logos: this page carries ~150 teams (displayed at 24–30px)
@@ -128,34 +127,40 @@ def fetch_torvik():
 def load_sources(teams, model=None):
     """
     The rating sources for this build, as {label: {CBBD team: rating}}, unmatched names, and blend weights.
-    In season: TeamRankings predictive + our model + Warren Nolan (half weight). Before TeamRankings switches
-    to this season (it keeps last season's final ratings until then), Torvik's saved preseason file fills in.
-    Our model's weight ramps with games played (MODEL_FULL_GAMES).
+    TeamRankings predictive anchors the blend all season. Our model joins once teams average MODEL_MIN_GAMES
+    and ramps to full weight by MODEL_FULL_GAMES; Torvik's saved preseason ratings are the early second opinion
+    and hand off to our model as it ramps in (their weight is 1 − the model's ramp).
+    Warren Nolan is no longer used: its early-season Elo lines ran 10–18 points off the market in lopsided games.
     """
     canon = set(teams['team'])
     raw = {}
     tr, tr_current = cbr.fetch_teamrankings(SEASON)
     if tr_current and len(tr) >= 300:
         raw['TeamRankings'] = (tr, cbr.TEAMRANKINGS_ALIASES)
-    wn = cbr.fetch_warrennolan(SEASON)
-    if len(wn) >= 300:
-        raw['Warren Nolan'] = (wn, cbr.WARRENNOLAN_ALIASES)
-    if len(raw) < 2:
-        tv = fetch_torvik()          # the saved preseason file in the repo; Torvik blocks GitHub's servers
-        if not tv.empty:
-            raw['Torvik preseason'] = (dict(zip(tv['team'], tv['pts'])), TORVIK_ALIASES)
+    tv = fetch_torvik()              # the saved preseason file in the repo; Torvik blocks GitHub's servers
+    if not tv.empty:
+        raw['Torvik preseason'] = (dict(zip(tv['team'], tv['pts'])), TORVIK_ALIASES)
     sources, unmatched = {}, {}
     for label, (ratings, aliases) in raw.items():
         mp = match_names(ratings, aliases, canon)
         unmatched[label] = sorted(n for n, t in mp.items() if not t)
         sources[label] = {mp[n]: r for n, r in ratings.items() if mp[n]}
     weights = {s: SOURCE_WEIGHTS.get(s, 1.0) for s in sources}
+    ramp = 0.0
     if model:
         avg_games = float(np.mean(list(model['n_games'].values())))
-        ramp = min(1.0, avg_games / MODEL_FULL_GAMES)
+        # Sits out until teams average MODEL_MIN_GAMES (after one or two games it's mostly shrinkage), then ramps up
+        ramp = min(1.0, max(0.0, (avg_games - MODEL_MIN_GAMES + 1) / (MODEL_FULL_GAMES - MODEL_MIN_GAMES + 1)))
         if ramp > 0 and len(model['O']) >= 300:
             sources[MODEL_LABEL] = cm.team_ratings(model)
             weights[MODEL_LABEL] = SOURCE_WEIGHTS[MODEL_LABEL] * ramp
+        else:
+            ramp = 0.0
+    if 'Torvik preseason' in weights:
+        weights['Torvik preseason'] *= 1 - ramp
+        if weights['Torvik preseason'] <= 0:
+            del weights['Torvik preseason'], sources['Torvik preseason']
+            unmatched.pop('Torvik preseason', None)
     print(f"  Sources: {', '.join(f'{k} ({len(v)}, weight {weights[k]:.2f})' for k, v in sources.items())}"
           + ('' if tr_current else '  [TeamRankings still on last season]'))
     return sources, {k: v for k, v in unmatched.items() if v}, weights
@@ -191,7 +196,10 @@ def build_power(teams, sources, unmatched, weights=None):
     weights = weights or {s: 1.0 for s in sources}
     df = teams[['team', 'espn_id', 'color', 'conference']].copy()
     stats = {s: (np.mean(list(v.values())), np.std(list(v.values()))) for s, v in sources.items() if v}
-    point_sds = [sd for s, (_, sd) in stats.items() if s in POINT_SOURCES]
+    # The common scale comes from full-weight points sources only: a source still ramping up (our model early
+    # in the season) is heavily shrunk, and averaging its tiny SD in would squeeze every rating and line.
+    point_sds = [sd for s, (_, sd) in stats.items() if s in POINT_SOURCES and weights.get(s, 1.0) >= 1.0]
+    point_sds = point_sds or [sd for s, (_, sd) in stats.items() if s in POINT_SOURCES]
     target_sd = np.mean(point_sds) if point_sds else FALLBACK_SD
     for src, (mean, sd) in stats.items():
         df[src] = df['team'].map(lambda t: (sources[src][t] - mean) * target_sd / sd if t in sources[src] else np.nan)
@@ -388,12 +396,12 @@ def generate_html(power, metrics, days, info):
         + theme.method_note(
             f'<b>Rating</b> is points above or below an average Division I team (0.0); the gap between two teams is the '
             f'projected margin at a neutral site. This build blends <b>{theme.esc(blend_w)}</b>. The sources: '
-            f'TeamRankings\' predictive rating; the <b>AlphaPoint model</b>, our own opponent-adjusted offense, defense '
-            f'and tempo from every D1 box score, whose weight grows as teams play (full at {MODEL_FULL_GAMES} games); and '
-            f'Warren Nolan\'s Elo at half weight, since Elo is built for win probability rather than margins. Torvik\'s '
-            f'saved preseason ratings fill in only if fewer than two outside sources are available. Each source is '
-            f'centered on its D1 average and rescaled to the spread of the points-based sources (SD {s["target_sd"]:.2f} '
-            f'points). <b>Projected lines</b> average each source\'s own line, and our model\'s line uses the possessions '
+            f'TeamRankings\' predictive rating, which anchors the blend all season; the <b>AlphaPoint model</b>, our own '
+            f'opponent-adjusted offense, defense and tempo from every D1 box score, which joins once teams average '
+            f'{MODEL_MIN_GAMES} games and reaches full weight at {MODEL_FULL_GAMES}; and Torvik\'s saved preseason '
+            f'ratings, the early-season second opinion, which fade out as our model ramps in. Each source is centered '
+            f'on its D1 average and rescaled to the spread of the full-weight points sources (SD {s["target_sd"]:.2f} '
+            f'points), so a source that is still ramping up can\'t squeeze the scale. <b>Projected lines</b> average each source\'s own line, and our model\'s line uses the possessions '
             f'expected in that specific game (both teams\' tempos), not one league-wide average: an efficiency edge is '
             f'worth fewer points between two slow teams than between two fast ones. In a walk-forward backtest of the '
             f'2025-26 season our model\'s lines came within about half a point of the closing line\'s accuracy '
@@ -517,7 +525,7 @@ def generate_html(power, metrics, days, info):
         meta_items=[('Season', f'{SEASON - 1}-{str(SEASON)[2:]}'), ('Updated', datetime.now().strftime('%b %d, %I:%M %p'))],
         tabs=[('power', 'Power Ratings', power_html), ('value', 'Value Metrics', value_html), ('games', 'Games', games_html),
               ('markets', 'Markets', markets_html), ('injuries', 'Injury Wire', injury_html)],
-        footer='AlphaPoint Sports · Data: TeamRankings, Warren Nolan, Bart Torvik (preseason), collegebasketballdata.com, ESPN, '
+        footer='AlphaPoint Sports · Data: TeamRankings, Bart Torvik (preseason), collegebasketballdata.com, ESPN, '
                'Kalshi · Logos: ESPN · Not financial or gambling advice',
         extra=ex.team_modal(teams) + mu.templates(panels))
     theme.write_outputs(page, HTML_OUTPUT, SHARE_OUTPUT, 'CBB_NO_BROWSER')
@@ -578,9 +586,9 @@ def main():
     spreads = {gid: (h, s) for gid, h, s in zip(sp['game_id'], sp['home_team'], sp['spread'])}
     tr_detail = (ex.fetched(f'cbb_teamrankings_{SEASON}.html') if 'TeamRankings' in sources
                  else ('waiting for this season', True))
-    freshness = [('TeamRankings', *tr_detail), ('Warren Nolan', *ex.fetched(f'cbb_warrennolan_{SEASON}.html'))]
+    freshness = [('TeamRankings', *tr_detail)]
     if 'Torvik preseason' in sources:
-        freshness.append(('Torvik', 'saved preseason file', True))
+        freshness.append(('Torvik', f"preseason file, weight {weights['Torvik preseason']:.0%}", True))
     if model:
         games = float(np.mean(list(model['n_games'].values())))
         freshness.append(('AlphaPoint model', f'{games:.1f} games per team, weight {weights.get(MODEL_LABEL, 0):.0%}', True))

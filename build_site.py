@@ -241,7 +241,7 @@ INFO = [
     ('Every dashboard', [
         ('Power Ratings', 'One composite rating per team: points above or below an average team (0.0). The gap between two '
                           'teams is the projected margin on a neutral field. Built by blending public computer ratings '
-                          '(Sagarin + SP+ for CFB, nfelo + Sagarin for NFL, TeamRankings + Warren Nolan for CBB, Sagarin + TeamRankings + '
+                          '(Sagarin + SP+ for CFB, nfelo + Sagarin for NFL, TeamRankings + our own model for CBB, Sagarin + TeamRankings + '
                           'our own adjusted net rating for NBA) after '
                           'putting them on the same scale.'),
         ('Value Metrics', 'Wins over expectation (W − xW): how many more or fewer games a team has won than its underlying '

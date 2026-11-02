@@ -1,6 +1,6 @@
 # CBB daily refresh + email digest: runbook for scheduled Claude runs
 
-The website (https://dylankelly0233-hoops.github.io/alphapoint-dashboards/) is built automatically by GitHub Actions every hour, ratings included (TeamRankings and Warren Nolan, fetched by `cbb_ratings.py`). This run checks the CBB and NBA builds, curates both Injury Wires, pushes them, and emails Dylan the daily digest. Don't edit code.
+The website (https://dylankelly0233-hoops.github.io/alphapoint-dashboards/) is built automatically by GitHub Actions every hour, ratings included (TeamRankings and our own model, fetched by `cbb_ratings.py`). This run checks the CBB and NBA builds, curates both Injury Wires, pushes them, and emails Dylan the daily digest. Don't edit code.
 
 - **DIR**: `C:\Users\dylan\PyCharmMiscProject\alphapoint-dashboards`
 
