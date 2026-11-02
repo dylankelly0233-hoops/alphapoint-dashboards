@@ -1,8 +1,16 @@
 {
  "sport": "cbb",
- "week": 20261031,
- "generated": "2026-10-31T18:23:56-04:00",
+ "week": 20261102,
+ "generated": "2026-11-02T11:12:38-05:00",
  "movers": [
+  {
+   "team": "Illinois",
+   "tag": "KEY",
+   "text": "Forward David Mirkovic had his appendix removed and will miss the season opener vs. Fairleigh Dickinson; Brad Underwood issued a statement 11/2. No return date given.",
+   "source": "Alton Telegraph",
+   "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOT0ZvLW92djF0MUpNd0pKczJfVXhWUGtkNVZuMUZuWUREdFQ2WmZNeVd1X2Fuc2o5SnhBZUM5ODNzZmFwOUJvQ05Sc1p4VGNlOUE3R2ZuSHpHMklNdVoyRExNbHBTaUNqUGN6YnV1dlAzdjRUMF9QcGZPUnlxSUpveWl1V1k2cFd2ajMzbmVZcFA2Z01QMzNDY2JIWUpUQnpvTU96OGZR?oc=5",
+   "date": "2026-11-01"
+  },
   {
    "team": "Tennessee",
    "tag": "KEY",
@@ -20,23 +28,41 @@
    "date": "2026-10-27"
   },
   {
+   "team": "Kentucky",
+   "tag": "KEY",
+   "text": "Kam Williams is nearing a return from injury but is unlikely to play vs. Manhattan, per A Sea of Blue (10/30). Mark Pope called his return 'another huge boost.'",
+   "source": "A Sea Of Blue",
+   "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNWGp2OVdSemJieDVpNmFweDN1bGl2VllUTl9ta0FCUXExczhqWHUwdkFfRnFzWkI1dUxLTmx1VWFIRmZpWW5EeWJnZVVZS1FkU1pMaVlOcEFVc0ZnRE5QUkJvQUl2RmQ1LUloS0lZaDNVSHI3SEU2SURGUGthendveExrSzg5SWpOSlJjcV9ESDZnOFROSWpEcFFNWEJJc3dN?oc=5",
+   "date": "2026-10-30"
+  },
+  {
    "team": "Boston College",
    "tag": "KEY",
    "text": "Guard Jacob Furphy suffered an MCL sprain and is expected to miss 2-6 weeks.",
    "source": "247Sports",
    "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxOVEdORG9VcVJUUDVyM25BT1FaOTNvRTlCVWw2TTJtM1YwSlJ4Z2w2dVJrUkNpTW5PNjFLX1V0WXNyYUw5cWtzaktDdzFxZ0gxMmpNc24xNGdkdWkza0QwOUszd3BpTGdrNUYzS084Y0FNY2N5eUhFNlV4X3BSQWRfV3FGS0FZR0NOeUJPRHBnZGpXdy11VUYxWHNnanBudDF0cVU3UHpzZmZPaXJQWFZWWkRfTEd6YnJHbHJld0w3Tzk1N2ZDOEc5UzJFXzJ4V2NqX0RTQ0ctTjA2eEk?oc=5",
    "date": "2026-10-27"
-  },
-  {
-   "team": "North Carolina",
-   "tag": "KEY",
-   "text": "Guard Matt Able sat out the exhibition vs. Charlotte with an undisclosed injury; UNC has not given a timeline.",
-   "source": "The Fayetteville Observer",
-   "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOU29nUFBCcFZSXzhWdE9zdWxfWnBrM3ppSmFnbnRDdmpXNFYxZkYzaFVvUk5CMHFGemJYOW5MWmhUbDZpUzNXVk9WT3g5WDFBZDhOQ1ZUbU0ycEtHa2hYRUkyOXdJMHMtS1VGT2ZQcnhMcU14dGdkRWZPQ3ZCVU9pMk5rYmFqUlVlN1hQbHNWVWlzZmduMkZad3ZJYXR3YTRTdURIdHR4MVpCMDRNU01DMU9KVS1uNE85aEVMSlBSOGllb2s?oc=5",
-   "date": "2026-10-28"
   }
  ],
  "teams": {
+  "Illinois": [
+   {
+    "team": "Illinois",
+    "tag": "KEY",
+    "text": "Forward David Mirkovic had his appendix removed and will miss the season opener vs. Fairleigh Dickinson; Brad Underwood issued a statement 11/2. No return date given.",
+    "source": "Alton Telegraph",
+    "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOT0ZvLW92djF0MUpNd0pKczJfVXhWUGtkNVZuMUZuWUREdFQ2WmZNeVd1X2Fuc2o5SnhBZUM5ODNzZmFwOUJvQ05Sc1p4VGNlOUE3R2ZuSHpHMklNdVoyRExNbHBTaUNqUGN6YnV1dlAzdjRUMF9QcGZPUnlxSUpveWl1V1k2cFd2ajMzbmVZcFA2Z01QMzNDY2JIWUpUQnpvTU96OGZR?oc=5",
+    "date": "2026-11-01"
+   },
+   {
+    "team": "Illinois",
+    "tag": "CLUSTER",
+    "text": "Andrej Stojakovic and Zvonimir Ivisic were ruled out and Williams listed questionable for the final exhibition vs. UIC. No status announced for the opener vs. Fairleigh Dickinson.",
+    "source": "The Champaign Room",
+    "url": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxPWFBtUGZZYnNsa2swME5GcWN6SzFCZDB3VFNndmIxdHUzd3lVR29ELTlSRWlMTTNiZHNKUU85QW9FYXo4TlhFSHRwcmh1dmNiVkFpU21KOERTTUpuSk1HcDJ2UjFaMzFzVHcxOHpWQWRNMDNMNVhjbVktbFR5SDRveHBXTF8yUnVJT1FQYnE3UE9GcWYyNG1OZjNPMWpjZHJiWnoxRHVuWGRFSWtSa3QxR2U1MUFmel95Xy1UNlNJU1NFVi1PNDJnQW5FNmM0ZjFPU1dyS0ZDTjJrZjJOOTY5NmdBbGFFamg1c3V1ZTB3?oc=5",
+    "date": "2026-10-27"
+   }
+  ],
   "Tennessee": [
    {
     "team": "Tennessee",
@@ -47,14 +73,14 @@
     "date": "2026-10-29"
    }
   ],
-  "Illinois": [
+  "Kentucky": [
    {
-    "team": "Illinois",
-    "tag": "CLUSTER",
-    "text": "Andrej Stojakovic and Zvonimir Ivisic were ruled out and Williams listed questionable for the final exhibition vs. UIC. No status announced for the opener vs. Fairleigh Dickinson.",
-    "source": "The Champaign Room",
-    "url": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxPWFBtUGZZYnNsa2swME5GcWN6SzFCZDB3VFNndmIxdHUzd3lVR29ELTlSRWlMTTNiZHNKUU85QW9FYXo4TlhFSHRwcmh1dmNiVkFpU21KOERTTUpuSk1HcDJ2UjFaMzFzVHcxOHpWQWRNMDNMNVhjbVktbFR5SDRveHBXTF8yUnVJT1FQYnE3UE9GcWYyNG1OZjNPMWpjZHJiWnoxRHVuWGRFSWtSa3QxR2U1MUFmel95Xy1UNlNJU1NFVi1PNDJnQW5FNmM0ZjFPU1dyS0ZDTjJrZjJOOTY5NmdBbGFFamg1c3V1ZTB3?oc=5",
-    "date": "2026-10-27"
+    "team": "Kentucky",
+    "tag": "KEY",
+    "text": "Kam Williams is nearing a return from injury but is unlikely to play vs. Manhattan, per A Sea of Blue (10/30). Mark Pope called his return 'another huge boost.'",
+    "source": "A Sea Of Blue",
+    "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNWGp2OVdSemJieDVpNmFweDN1bGl2VllUTl9ta0FCUXExczhqWHUwdkFfRnFzWkI1dUxLTmx1VWFIRmZpWW5EeWJnZVVZS1FkU1pMaVlOcEFVc0ZnRE5QUkJvQUl2RmQ1LUloS0lZaDNVSHI3SEU2SURGUGthendveExrSzg5SWpOSlJjcV9ESDZnOFROSWpEcFFNWEJJc3dN?oc=5",
+    "date": "2026-10-30"
    }
   ],
   "Boston College": [
