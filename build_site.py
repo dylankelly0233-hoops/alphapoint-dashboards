@@ -19,10 +19,13 @@ import subprocess
 import sys
 from datetime import datetime
 
+import requests
+
 import dashboard_theme as theme
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 SITE = os.path.join(HERE, 'site')
+LIVE_SITE = 'https://dylankelly0233-hoops.github.io/alphapoint-dashboards/'   # fallback source for a page that fails to build
 DASHBOARDS = [
     # (page, script, local output, short name, full name, coverage)
     ('cfb.html', 'cfb_p4_dashboard.py', 'cfb_p4_dashboard.html', 'CFB', 'College Football', 'Power 4 + Notre Dame'),
@@ -333,6 +336,23 @@ def landing(results):
             f'</head>\n<body>\n{page}\n</body>\n</html>')
 
 
+def keep_live_copy(page):
+    """
+    A dashboard failed and this build has no copy of its page (GitHub starts each build with an empty site/):
+    re-publish the version that's live now, so the site shows the last good page instead of a 404.
+    """
+    try:
+        r = requests.get(LIVE_SITE + page, timeout=30)
+        if r.ok and 'AlphaPoint' in r.text:
+            with open(os.path.join(SITE, page), 'w', encoding='utf-8') as f:
+                f.write(r.text)
+            print(f'  Kept the live copy of {page}.')
+            return
+        print(f'  ! No live copy of {page} to keep (HTTP {r.status_code}).')
+    except Exception as e:
+        print(f'  ! Could not fetch the live copy of {page}: {e}')
+
+
 def main():
     os.makedirs(SITE, exist_ok=True)
     results = {}
@@ -344,6 +364,8 @@ def main():
         results[page] = ok and os.path.exists(src) and os.path.getmtime(src) > before
         if results[page]:
             shutil.copyfile(src, os.path.join(SITE, page))
+        elif not os.path.exists(os.path.join(SITE, page)):
+            keep_live_copy(page)
     with open(os.path.join(SITE, 'index.html'), 'w', encoding='utf-8') as f:
         f.write(landing(results))
     print('\nSite built:', {p: 'ok' if ok else 'FAILED' for p, ok in results.items()})

@@ -249,7 +249,10 @@ def compute_metrics(box, spreads, teams):
             'Opp3P_Luck': round(((g['o_fg3m'].sum() / max(g['o_fg3a'].sum(), 1)) - lg3) * 100, 1),
             'Composite': round(float(np.mean(diffs)), 2),
         })
-    out = pd.DataFrame(rows).sort_values('Composite').reset_index(drop=True)
+    out = pd.DataFrame(rows)
+    if out.empty:            # early season: games played, but no team has MIN_GAMES yet
+        return out
+    out = out.sort_values('Composite').reset_index(drop=True)
     out.attrs.update({'lg3': lg3, 'lgft': lgft, 'shoot_k': k, 'shoot_hfa': h, 'games': len(box) // 2})
     return out
 
