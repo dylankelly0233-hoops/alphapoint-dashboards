@@ -1,251 +1,155 @@
 {
- "sport": "nfl",
- "week": 8,
- "generated": "2026-11-02T10:12:21-05:00",
- "movers": [
-  {
-   "team": "BAL",
-   "tag": "QB",
-   "text": "QB Lamar Jackson (right thumb) to have surgery and go on IR, per coach Jesse Minter; could be season-ending. Tyler Huntley (turf toe) questionable; rookie Joe Fagnano (knee) finished Sunday.",
-   "source": "ESPN",
-   "url": "https://www.espn.com/nfl/injuries",
-   "date": "2026-11-01"
-  },
-  {
-   "team": "IND",
-   "tag": "QB",
-   "text": "Coach Shane Steichen said he'll evaluate whether Daniel Jones remains the starting QB after 42-7 loss at JAX. Anthony Richardson played the final three drives.",
-   "source": "ESPN",
-   "url": "https://www.espn.com/nfl/injuries",
-   "date": "2026-11-01"
-  },
-  {
-   "team": "ARI",
-   "tag": "QB",
-   "text": "QB Jacoby Brissett (10/23, 118 yds, INT) pulled late in 3rd qtr at Dallas; Gardner Minshew led four straight TD drives in OT win. No starter named yet for Week 9.",
-   "source": "ESPN",
-   "url": "https://www.espn.com/nfl/injuries",
-   "date": "2026-11-01"
-  },
-  {
-   "team": "DET",
-   "tag": "KEY",
-   "text": "LB Jack Campbell (neck) placed on a backboard and carted off vs. Minnesota; kept overnight in hospital for evaluation. Listed doubtful.",
-   "source": "ESPN",
-   "url": "https://www.espn.com/nfl/injuries",
-   "date": "2026-11-02"
-  },
-  {
-   "team": "SEA",
-   "tag": "KEY",
-   "text": "LT Charles Cross (ankle) ruled out for Monday vs. Chicago after missing practice all week. G Anthony Bradford (knee) questionable.",
-   "source": "ESPN",
-   "url": "https://www.espn.com/nfl/injuries",
-   "date": "2026-11-01"
+  "sport": "nfl",
+  "week": 9,
+  "generated": "2026-11-03T18:04:10-05:00",
+  "movers": [
+    {
+      "team": "BAL",
+      "tag": "QB",
+      "text": "Lamar Jackson (thumb) needs surgery, headed to IR; could be season-ending. Tyler Huntley (toe) doubtful, possible IR. Rookie Joe Fagnano to start Thursday vs JAX.",
+      "source": "Baltimore Ravens",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQa0RtVUNYUzBhSUp6ZHJrMHpBQ3ZGTmZjd1hHSzFLeVNSVzI3cGNaNDQ2RWxmRGtCNDVWU21iaDgxVmM0N1RRRHE0bUh3NVpVdXdxRTNHSkVleWRZRDRHVlQ4OWF1ak9NZ0R3RVp4dVJkWXp0VGtqU0RENUlndDUzR25TWjNnN042Ump5bTVPaHRXbkVFd1R2ZnFiSTg4eGkyWEhQMGVPZk9NV2pVYWg3enJn?oc=5",
+      "date": "2026-11-03"
+    },
+    {
+      "team": "ARI",
+      "tag": "QB",
+      "text": "Gardner Minshew named starter for Sunday at SEA after relieving Jacoby Brissett in Week 8 comeback. Brissett drops to QB3; Carson Beck is QB2.",
+      "source": "ESPN",
+      "url": "https://www.espn.com/nfl/injuries",
+      "date": "2026-11-02"
+    },
+    {
+      "team": "MIN",
+      "tag": "QB",
+      "text": "Kyler Murray (hamstring) questionable; full evaluation pending, O'Connell non-committal for MNF vs BUF. Carson Wentz next in line. First practice report Thursday.",
+      "source": "Vikings.com",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNSFJQUmJqbEJKRXRkU214UnRNc1RUcU5FUkw0QnhFTENBLW1USzY1MzFtYXliUy14X1N3RUtoTHUzYTFXOGt3X282cjIycDNBZ2RDQnBnSmpmSUwtLVRyY0xSS0RNX2dDRldQUENrQjJRRmxhMHo5T1plV0paa085WldaTjRHbXE1UnZmdXFPSmNZQQ?oc=5",
+      "date": "2026-11-02"
+    },
+    {
+      "team": "LA",
+      "tag": "QB",
+      "text": "Matthew Stafford (arm/elbow) questionable after leaving Week 8 win with his right arm iced. McVay deferring to Stafford; first injury report Wednesday.",
+      "source": "ESPN",
+      "url": "https://www.espn.com/nfl/injuries",
+      "date": "2026-11-03"
+    },
+    {
+      "team": "DET",
+      "tag": "KEY",
+      "text": "LB Jack Campbell (neck) doubtful after being hospitalized following Week 8; team says preliminary indications are positive, no timeline given.",
+      "source": "ClickOnDetroit | WDIV Local 4",
+      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQSzF5Vnl3amxIeFFKczRaWkprYW9WTTNraDZMQXF6OUR5X0tKT1ZtRWo3andBQ0ZYeHVhTUVGWnE2UEJicUR1YnJ2NUdJdjZnb0hrcVhiYXFLUGJOSXVxWDFHMHlsWFZCS0hxM2s5UkVubmhGYXV5aGwtcFplMnZUbWdRN214dm9mRlVSemxYNm1lLXpHM1hNUWo5N0VyT3dua1pnS1ZxU3lQREhVRUtqUnl3ZVhmeEd0a0t2WDZwYTVXVjgybFRzbnQ1WHNlUQ?oc=5",
+      "date": "2026-11-03"
+    }
+  ],
+  "teams": {
+    "BAL": [
+      {
+        "team": "BAL",
+        "tag": "QB",
+        "text": "Lamar Jackson (thumb) needs surgery, headed to IR; could be season-ending. Tyler Huntley (toe) doubtful, possible IR. Rookie Joe Fagnano to start Thursday vs JAX.",
+        "source": "Baltimore Ravens",
+        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQa0RtVUNYUzBhSUp6ZHJrMHpBQ3ZGTmZjd1hHSzFLeVNSVzI3cGNaNDQ2RWxmRGtCNDVWU21iaDgxVmM0N1RRRHE0bUh3NVpVdXdxRTNHSkVleWRZRDRHVlQ4OWF1ak9NZ0R3RVp4dVJkWXp0VGtqU0RENUlndDUzR25TWjNnN042Ump5bTVPaHRXbkVFd1R2ZnFiSTg4eGkyWEhQMGVPZk9NV2pVYWg3enJn?oc=5",
+        "date": "2026-11-03"
+      }
+    ],
+    "ARI": [
+      {
+        "team": "ARI",
+        "tag": "QB",
+        "text": "Gardner Minshew named starter for Sunday at SEA after relieving Jacoby Brissett in Week 8 comeback. Brissett drops to QB3; Carson Beck is QB2.",
+        "source": "ESPN",
+        "url": "https://www.espn.com/nfl/injuries",
+        "date": "2026-11-02"
+      },
+      {
+        "team": "ARI",
+        "tag": "KEY",
+        "text": "RB Jeremiyah Love placed on IR with a high ankle sprain; expected out 4-5 weeks.",
+        "source": "ESPN",
+        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQVGZkM3J0R2tIREt3MEpreWtLbV9yTE5oaG5QX2c2MGtxQWJRd2t5ZWVyNzJLemtKWU5HeDEtc1dUcmVCSEZZVlg4Y0o2UEk3cFBWSmNOWmdORmhqSWVOcm1BVTV2VzNrMDVOdWNYajgtNklpUV9JSUxzRFY1WXlfcEpTNG5wanpka0t5SWxyS0o3eHAydVJSUg?oc=5",
+        "date": "2026-11-03"
+      }
+    ],
+    "MIN": [
+      {
+        "team": "MIN",
+        "tag": "QB",
+        "text": "Kyler Murray (hamstring) questionable; full evaluation pending, O'Connell non-committal for MNF vs BUF. Carson Wentz next in line. First practice report Thursday.",
+        "source": "Vikings.com",
+        "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNSFJQUmJqbEJKRXRkU214UnRNc1RUcU5FUkw0QnhFTENBLW1USzY1MzFtYXliUy14X1N3RUtoTHUzYTFXOGt3X282cjIycDNBZ2RDQnBnSmpmSUwtLVRyY0xSS0RNX2dDRldQUENrQjJRRmxhMHo5T1plV0paa085WldaTjRHbXE1UnZmdXFPSmNZQQ?oc=5",
+        "date": "2026-11-02"
+      }
+    ],
+    "LA": [
+      {
+        "team": "LA",
+        "tag": "QB",
+        "text": "Matthew Stafford (arm/elbow) questionable after leaving Week 8 win with his right arm iced. McVay deferring to Stafford; first injury report Wednesday.",
+        "source": "ESPN",
+        "url": "https://www.espn.com/nfl/injuries",
+        "date": "2026-11-03"
+      },
+      {
+        "team": "LA",
+        "tag": "RETURNING",
+        "text": "DE Myles Garrett (knee, IR) expected to practice this week per McVay, opening his 21-day return window; availability vs WAS not yet set.",
+        "source": "Rams",
+        "url": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxNOWdIYlpoajhDTGhGdHhNSzd3VVd0dzE2c2VXVjhhbGIwX2NsX2Fpc0lRcDR6RmlERkxrcFlXM2FEQ1hhN3ZzVk5SZEYzLUR2R1FFZWZQQ04xV0Q2NWJxUDdjend2c0NTal9uZmc3X19tZnM2c09JMXF6V1RzaXRxTEtDcW5hcDhEX3dqN0pJRnkzdUFyNjYxZ3hKdlpYUDRXZTFzM3JILW9PMHV4Tl9ldWVZR2RlWW1sSWV4QUs5NzNPWUlCRlJ6STBwMThiZXRkdzdlSUs2cU1HY0hkd3dUcERiWUNzY3pZUXdacA?oc=5",
+        "date": "2026-11-03"
+      }
+    ],
+    "DET": [
+      {
+        "team": "DET",
+        "tag": "KEY",
+        "text": "LB Jack Campbell (neck) doubtful after being hospitalized following Week 8; team says preliminary indications are positive, no timeline given.",
+        "source": "ClickOnDetroit | WDIV Local 4",
+        "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQSzF5Vnl3amxIeFFKczRaWkprYW9WTTNraDZMQXF6OUR5X0tKT1ZtRWo3andBQ0ZYeHVhTUVGWnE2UEJicUR1YnJ2NUdJdjZnb0hrcVhiYXFLUGJOSXVxWDFHMHlsWFZCS0hxM2s5UkVubmhGYXV5aGwtcFplMnZUbWdRN214dm9mRlVSemxYNm1lLXpHM1hNUWo5N0VyT3dua1pnS1ZxU3lQREhVRUtqUnl3ZVhmeEd0a0t2WDZwYTVXVjgybFRzbnQ1WHNlUQ?oc=5",
+        "date": "2026-11-03"
+      }
+    ],
+    "SF": [
+      {
+        "team": "SF",
+        "tag": "RETURNING",
+        "text": "DE Nick Bosa (knee), out the last five games, has \"a chance\" to return Nov. 8 vs LV per Shanahan; did not practice Tuesday.",
+        "source": "49ers Webzone",
+        "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNR3JicUQydW4wbUlrbkFoeWRNcnBaNlFBYWhESndmUFpOa1hDdGxPZ1pnMjNyLUFlNkVoTDlSQWNKUF81SHhKdFAtTGd4OElua0djWHZuSFNFOE13ZzVoY040WlotNExFUkpwNzNXTjdzRG5SblFzdzNHNk1aV3g5aXJQY3hpdGRzT2VYUw?oc=5",
+        "date": "2026-11-03"
+      }
+    ],
+    "PHI": [
+      {
+        "team": "PHI",
+        "tag": "CLUSTER",
+        "text": "WRs DeVonta Smith (hamstring) and Dontayvion Wicks (ankle) both questionable after missing Week 8.",
+        "source": "ESPN",
+        "url": "https://www.espn.com/nfl/injuries",
+        "date": "2026-11-03"
+      }
+    ],
+    "GB": [
+      {
+        "team": "GB",
+        "tag": "CLUSTER",
+        "text": "OL: G Sean Rhyan (ankle) and OT Travis Glover (knee) both questionable after missing Week 8.",
+        "source": "ESPN",
+        "url": "https://www.espn.com/nfl/injuries",
+        "date": "2026-11-03"
+      }
+    ],
+    "WAS": [
+      {
+        "team": "WAS",
+        "tag": "CLUSTER",
+        "text": "DTs Daron Payne (foot) and Javon Kinlaw (knee) placed on injured reserve; both starters on the interior line.",
+        "source": "Washington Times",
+        "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQclhVcWowV29CaU9DZF9RLVlfMUkyRUl5akRyUHpISXh5NDZBYUxNS044U1R4b3pHR0w1Q1lWZ084YzJNYzdDaFdxZnpjNUg3QWZreVNlV3VjNU1ScXBHaE14T0tabnF5YkNqUl91MGJDTlVmaklnMWM1OHZsd09acUVndmR3UmlxMF9RSlFmcHkyWmZEdGF5dmhXTFJzaUg0M0hfUFJR?oc=5",
+        "date": "2026-11-03"
+      }
+    ]
   }
- ],
- "teams": {
-  "BAL": [
-   {
-    "team": "BAL",
-    "tag": "QB",
-    "text": "QB Lamar Jackson (right thumb) to have surgery and go on IR, per coach Jesse Minter; could be season-ending. Tyler Huntley (turf toe) questionable; rookie Joe Fagnano (knee) finished Sunday.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-01"
-   },
-   {
-    "team": "BAL",
-    "tag": "CLUSTER",
-    "text": "OL: G Olaivavega Ioane (knee, MCL) and OT Emery Jones Jr. both inactive in Week 8 loss to Buffalo. S Jaylinn Hawkins (knee) also out.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-01"
-   }
-  ],
-  "IND": [
-   {
-    "team": "IND",
-    "tag": "QB",
-    "text": "Coach Shane Steichen said he'll evaluate whether Daniel Jones remains the starting QB after 42-7 loss at JAX. Anthony Richardson played the final three drives.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-01"
-   }
-  ],
-  "ARI": [
-   {
-    "team": "ARI",
-    "tag": "QB",
-    "text": "QB Jacoby Brissett (10/23, 118 yds, INT) pulled late in 3rd qtr at Dallas; Gardner Minshew led four straight TD drives in OT win. No starter named yet for Week 9.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-01"
-   },
-   {
-    "team": "ARI",
-    "tag": "KEY",
-    "text": "WR Michael Wilson questionable after saying he suffered two broken ribs in Sunday's win at Dallas. G Jon Gaines II (ankle) inactive again.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-01"
-   }
-  ],
-  "DET": [
-   {
-    "team": "DET",
-    "tag": "KEY",
-    "text": "LB Jack Campbell (neck) placed on a backboard and carted off vs. Minnesota; kept overnight in hospital for evaluation. Listed doubtful.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-02"
-   }
-  ],
-  "SEA": [
-   {
-    "team": "SEA",
-    "tag": "KEY",
-    "text": "LT Charles Cross (ankle) ruled out for Monday vs. Chicago after missing practice all week. G Anthony Bradford (knee) questionable.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-01"
-   }
-  ],
-  "MIN": [
-   {
-    "team": "MIN",
-    "tag": "QB",
-    "text": "QB Kyler Murray listed questionable (hamstring) after playing all of Sunday's 19-15 loss at Detroit; status to be monitored this week.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-01"
-   }
-  ],
-  "LA": [
-   {
-    "team": "LA",
-    "tag": "CLUSTER",
-    "text": "Secondary: CB Jaylen Watson (shoulder) ruled out and CB Trent McDuffie (back) questionable to return vs. Chargers; Josh Wallace, Emmanuel Forbes took on more snaps.",
-    "source": "Yahoo Sports",
-    "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQMU5HM0VJYTdSemdVX3VQMDR0TTBKdzU3ZHc2bGNFWGVtVjJyUXk0QVpHSWZLdW94dGdjNFZCYVJncm9ySDBvXzVxU1pNLWFLQ0hXNElQVkVmb204U0IxbjJoc1I0YUw2Vkd1WFl6aWdGOFlvbHcwX1FpUWdhODdweVllM0ZhUQ?oc=5",
-    "date": "2026-11-02"
-   },
-   {
-    "team": "LA",
-    "tag": "RETURNING",
-    "text": "Edge Myles Garrett (knee, IR) expected to return to practice in Week 9, per Ian Rapoport; hasn't played since aggravating the knee in the opener.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-01"
-   }
-  ],
-  "GB": [
-   {
-    "team": "GB",
-    "tag": "CLUSTER",
-    "text": "OL: OT Travis Glover (knee) and G Sean Rhyan (ankle) both inactive Thursday vs. Carolina. LB Zaire Franklin (shin) also out.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-10-29"
-   },
-   {
-    "team": "GB",
-    "tag": "RETURNING",
-    "text": "Edge Micah Parsons reportedly closing in on a November return.",
-    "source": "Yahoo Sports",
-    "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNNmxWaE5EakcxSk5tM1B1Y1h5UGZEUDZacFRkS1M0NlgzR0dvNFlPUlhRU1YyUm1vRUI0RVVaNVpPb050ZU9idnN3SmFVTmoyXzljM1Zvd29oMEUzVU9GTlB4OVoyU0RVbTZLSGpWZ1lSMGxpTmQ3LXcxY1haZ2JQQjNCdkk5X1g4YU1sRDZXUW50S1lS?oc=5",
-    "date": "2026-11-02"
-   }
-  ],
-  "CAR": [
-   {
-    "team": "CAR",
-    "tag": "CLUSTER",
-    "text": "OL: G Damien Lewis (knee) out and OT Taylor Moton (lower leg) on IR. Defense: CB Akayleb Evans (IR), CB Will Lee (hamstring) hurt, edge Jaelan Phillips (hamstring) out.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-10-30"
-   }
-  ],
-  "PHI": [
-   {
-    "team": "PHI",
-    "tag": "CLUSTER",
-    "text": "WRs DeVonta Smith (hamstring) and Dontayvion Wicks (ankle) inactive for a 2nd straight week. LB Jihaad Campbell (hamstring) and C Jake Majors also out.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-01"
-   }
-  ],
-  "WAS": [
-   {
-    "team": "WAS",
-    "tag": "CLUSTER",
-    "text": "DL: DTs Daron Payne (foot) and Javon Kinlaw (knee) both inactive vs. Eagles. WR Terry McLaurin (torn patellar tendon) had surgery, on IR.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-01"
-   }
-  ],
-  "KC": [
-   {
-    "team": "KC",
-    "tag": "CLUSTER",
-    "text": "CB: Mansoor Delane (shoulder) downgraded to out vs. Denver; L'Jarius Sneed (knee) placed on IR Saturday.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-10-31"
-   }
-  ],
-  "DEN": [
-   {
-    "team": "DEN",
-    "tag": "CLUSTER",
-    "text": "Safeties: Talanoa Hufanga (ankle) inactive and Brandon Jones (hamstring) left Sunday's win vs. KC; CB Kris Abrams-Draine (ankle) also exited.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-01"
-   }
-  ],
-  "CIN": [
-   {
-    "team": "CIN",
-    "tag": "KEY",
-    "text": "CB DJ Turner II (ankle) ruled out in 4th qtr of OT win vs. Tennessee; DJ Ivey stepped in. S Kyle Dugger (quad) inactive.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-01"
-   }
-  ],
-  "TEN": [
-   {
-    "team": "TEN",
-    "tag": "CLUSTER",
-    "text": "OL: G Peter Skoronski (hamstring) and OT JC Latham (finger) both left Sunday's OT loss at Cincinnati, questionable to return. WR Carnell Tate (shoulder) inactive.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-01"
-   }
-  ],
-  "TB": [
-   {
-    "team": "TB",
-    "tag": "KEY",
-    "text": "WR Emeka Egbuka (foot) inactive for a 2nd straight game vs. Atlanta.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-01"
-   }
-  ],
-  "JAX": [
-   {
-    "team": "JAX",
-    "tag": "KEY",
-    "text": "RT Anton Harrison (torn ACL) on IR. G Ezra Cleveland (ankle) questionable; DE Travon Walker (ribs) left Sunday's win vs. Indianapolis.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-01"
-   }
-  ]
- }
 }
