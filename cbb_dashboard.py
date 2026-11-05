@@ -463,7 +463,7 @@ def generate_html(power, metrics, days, info):
                 f'(at least {vm.SPOT_MIN:g} / {vm.STRONG_MIN:g} wins, or {vm.SPOT_RATE:.0%} / {vm.STRONG_RATE:.0%} of games).'))
 
     # --- Games tab ---
-    sections, spots, panels, features = '', [], {}, []
+    sections, spots, panels, features, plog = '', [], {}, [], []
     focus_set = set(focus['team'])
     by_src = power.set_index('team')[list(s['stats'])].to_dict('index')      # each source's rescaled rating
     for day, games in days:
@@ -512,6 +512,14 @@ def generate_html(power, metrics, days, info):
                                  info['mu_games'], extra=mu.pace_line(info['mu_units'], g['away'], g['home'], str),
                                  head=False) if has_mu else '')
                 features.append(fx.card(d, card, grid, fx.notes(d)))
+            hfa_g = 0.0 if g['neutral'] else HFA_POINTS
+            plog.append({'game_id': g['game_id'], 'kickoff': g['kick'], 'home': g['home'], 'away': g['away'],
+                         'neutral': g['neutral'], 'ours': margin, 'market': g['market'],
+                         'opened': info['opened'].get(g['game_id']),
+                         'confidence': ex.confidence_level(by_src.get(g['home'], {}), by_src.get(g['away'], {}), hfa_g, big),
+                         'flags': (['news'] if ex.news_move(info['opened'].get(g['game_id']), g['market']) else [])
+                                  + (['lopsided'] if big else []),
+                         'sources': ex.source_lines(by_src.get(g['home'], {}), by_src.get(g['away'], {}), hfa_g)})
             spots.append(ex.spot('CBB', 'cbb.html#games', g['kick'], g['away'], g['home'], margin, g['market'], [],
                                  [(t, _signal(comp.get(t), games_played.get(t, 0))) for t in (g['away'], g['home'])],
                                  info['opened'].get(g['game_id']), big))
@@ -519,6 +527,7 @@ def generate_html(power, metrics, days, info):
                      f'<span class="hint">{len(games)} game{"" if len(games) == 1 else "s"}</span></div>'
                      f'<div class="games">{cards}</div>')
     ex.write_spots('cbb', spots)
+    ex.log_projections('cbb', plog)
     featured_html = fx.tab(''.join(features), ('Featured games', 'Top 25 clashes and upset watch, next three game days'),
                            'No ranked-vs-ranked or upset-watch games in the next three game days.')
     games_html = (
@@ -621,6 +630,7 @@ def main():
     print(f"  Injury Wire: {sum(len(v) for v in wire_data['items'].values())} items ({wire_data['mode']}).")
 
     hist = ex.snapshot_ratings('cbb', rating)
+    ex.snapshot_sources('cbb', power, 'team', list(scale['stats']))
     sp = vm.fetch_spreads()
     spreads = {gid: (h, s) for gid, h, s in zip(sp['game_id'], sp['home_team'], sp['spread'])}
     tr_detail = (ex.fetched(f'cbb_teamrankings_{SEASON}.html') if 'TeamRankings' in sources

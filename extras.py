@@ -49,6 +49,72 @@ def snapshot_ratings(sport, ratings):
     return hist
 
 
+def snapshot_sources(sport, df, key, cols):
+    """
+    Calibration log: each rating source's (rescaled) rating for every team today, in source_history_{sport}.csv
+    (replacing any earlier snapshot today). df: the power table; key: team column; cols: source columns.
+    """
+    path = f'source_history_{sport}.csv'
+    today = datetime.now().strftime('%Y-%m-%d')
+    new = df[[key] + [c for c in cols if c in df]].melt(id_vars=key, var_name='source', value_name='rating').dropna()
+    new = new.rename(columns={key: 'team'}).assign(date=today)[['date', 'team', 'source', 'rating']]
+    new['rating'] = new['rating'].round(2)
+    old = (pd.read_csv(path, dtype={'team': str, 'date': str}) if os.path.exists(path)
+           else pd.DataFrame(columns=['date', 'team', 'source', 'rating']))
+    pd.concat([old[old['date'] != today], new], ignore_index=True).to_csv(path, index=False)
+
+
+PROJ_COLS = ['game_id', 'kickoff', 'home', 'away', 'neutral', 'first_logged', 'last_logged', 'ours_first', 'ours_last',
+             'market_first', 'market_last', 'opened', 'confidence', 'flags', 'sources_last']
+PROJ_TEXT = ['kickoff', 'home', 'away', 'first_logged', 'last_logged', 'confidence', 'flags', 'sources_last']
+
+
+def source_lines(home_vals, away_vals, hfa):
+    """{source: that source's own projected home margin} for the calibration log."""
+    return {s: round(home_vals[s] - away_vals[s] + hfa, 2) for s in home_vals
+            if s in away_vals and not _nan(home_vals[s]) and not _nan(away_vals[s])}
+
+
+def log_projections(sport, rows):
+    """
+    Calibration log (internal, never shown as a picks record): our pregame line for every upcoming game in
+    projections_{sport}.csv — first and last values before kickoff for our line and the market, the opener,
+    confidence, guard flags, and each source's own line. Results and closing lines are joined later.
+    rows: dict(game_id, kickoff, home, away, neutral, ours, market, opened, confidence, flags, sources) — home margins.
+    """
+    path = f'projections_{sport}.csv'
+    df = pd.read_csv(path, dtype={'game_id': str}) if os.path.exists(path) else pd.DataFrame(columns=PROJ_COLS)
+    df = df.reindex(columns=PROJ_COLS)
+    df[PROJ_TEXT] = df[PROJ_TEXT].astype(object)
+    now = pd.Timestamp.now(tz='UTC')
+    stamp = now.isoformat(timespec='minutes')
+    idx = {g: i for i, g in enumerate(df['game_id'].astype(str))}
+    r2 = lambda v: None if _nan(v) else round(float(v), 2)
+    new = []
+    for r in rows:
+        if r.get('kickoff') is None or pd.isna(r['kickoff']):
+            continue
+        k = pd.Timestamp(r['kickoff'])
+        k = (k.tz_localize('America/New_York') if k.tzinfo is None else k).tz_convert('UTC')
+        if k <= now:
+            continue                                   # only pregame values are logged
+        last = {'kickoff': k.isoformat(), 'last_logged': stamp, 'ours_last': r2(r.get('ours')),
+                'market_last': r2(r.get('market')), 'opened': r2(r.get('opened')), 'confidence': r.get('confidence') or '',
+                'flags': ','.join(r.get('flags') or []), 'sources_last': json.dumps(r.get('sources') or {})}
+        gid = str(r['game_id'])
+        if gid in idx:
+            for c, v in last.items():
+                df.at[idx[gid], c] = v
+            if _nan(df.at[idx[gid], 'market_first']) and last['market_last'] is not None:
+                df.at[idx[gid], 'market_first'] = last['market_last']     # first line we saw for a game logged before posting
+        else:
+            new.append({'game_id': gid, 'home': r['home'], 'away': r['away'], 'neutral': int(bool(r.get('neutral'))),
+                        'first_logged': stamp, 'ours_first': last['ours_last'], 'market_first': last['market_last'], **last})
+    if new:
+        df = pd.concat([df, pd.DataFrame(new)], ignore_index=True)
+    df.to_csv(path, index=False)
+
+
 def movers(hist, teams, n=5):
     """
     Biggest rating changes among `teams`: today vs. the snapshot about MOVER_LOOKBACK_DAYS ago (or the

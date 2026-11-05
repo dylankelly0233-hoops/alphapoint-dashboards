@@ -600,7 +600,7 @@ def generate_html(p4, vals, sched, week, season_type, info):
             f'<b>SELL</b> above +{spot:.1f} (solid above +{strong:.1f}).'))
 
     # --- Games tab: this week and next week, behind a switch ---
-    spots, panels, features = [], {}, []
+    spots, panels, features, plog = [], {}, [], []
     p4_set = set(p4['team'])
     sig = lambda v: 'BUY' if v is not None and v == v and v < -spot else 'SELL' if v is not None and v == v and v > spot else ''
 
@@ -631,6 +631,14 @@ def generate_html(p4, vals, sched, week, season_type, info):
             move += mu.card_row(r.game_id, mu.headline(prof, MU_CATS, r.away, r.home, str))
             panels[r.game_id] = mu.panel(r.away, r.home, str, prof, MU_CATS, MU_STYLES, info['mu_games'], when,
                                          ex.line_text(r.home, r.away, pm) if not pd.isna(pm) else '')
+        hfa_g = 0.0 if r.neutral else HFA_POINTS
+        h_src, a_src = info['by_source'].get(r.home, {}), info['by_source'].get(r.away, {})
+        plog.append({'game_id': r.game_id, 'kickoff': r.kick, 'home': r.home, 'away': r.away, 'neutral': r.neutral,
+                     'ours': r.margin, 'market': mkt_margin, 'opened': info['opened'].get(str(r.game_id)),
+                     'confidence': ex.confidence_level(h_src, a_src, hfa_g, big),
+                     'flags': (['news'] if ex.news_move(info['opened'].get(str(r.game_id)), mkt_margin) else [])
+                              + (['lopsided'] if big else []),
+                     'sources': ex.source_lines(h_src, a_src, hfa_g)})
         spots.append(ex.spot('CFB', 'cfb.html#sched', r.kick, r.away, r.home, r.margin, mkt_margin, labels,
                              [(r.away, sig(r.away_value)), (r.home, sig(r.home_value))],
                              info['opened'].get(str(r.game_id)), big))
@@ -666,6 +674,7 @@ def generate_html(p4, vals, sched, week, season_type, info):
         panes.append((f'Week {wk}', 'this week' if wi == 0 else 'next week',
                       note + (f'<div class="games">{cards}</div>' if cards else '<p class="hint">No games found for this week.</p>')))
     ex.write_spots('cfb', spots)
+    ex.log_projections('cfb', plog)
     featured_html = fx.tab(''.join(features), ('Featured games', 'Top 25 clashes and upset watch this week'),
                            'No ranked-vs-ranked or upset-watch games left this week.')
     sched_html = (
@@ -827,6 +836,7 @@ def main():
     print(f'  Kalshi prices for {len(market_rows) - len(no_kalshi)} of {len(market_rows)} games.')
 
     hist = ex.snapshot_ratings('cfb', dict(zip(power['team'], power['composite'])))
+    ex.snapshot_sources('cfb', power, 'team', list(SOURCE_WEIGHTS))
     results = load_results()
     freshness = [('Sagarin', f'through {sag_asof}' if sag_asof else 'not available', ex.fetched(SAGARIN_CACHE)[1]),
                  ('SP+', *ex.fetched(f'p4_sp_{YEAR}.csv')), ('Scores', *ex.fetched(vm.GAMES_CACHE)),

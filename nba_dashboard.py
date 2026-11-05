@@ -330,7 +330,7 @@ def generate_html(power, metrics, days, info):
                 f'{vm.SPOT_MIN:g} / {vm.STRONG_MIN:g} wins, or {vm.SPOT_RATE:.0%} / {vm.STRONG_RATE:.0%} of games).'))
 
     # --- Games tab ---
-    sections, spots, panels, features = '', [], {}, []
+    sections, spots, panels, features, plog = '', [], {}, [], []
     by_src = power.set_index('abbr')[list(s['stats'])].to_dict('index')      # each source's rescaled rating
     for day, games in days:
         cards = ''
@@ -380,6 +380,13 @@ def generate_html(power, metrics, days, info):
                 grid = (mu.panel(g['away'], g['home'], nm, mprof, mu.BASKETBALL_CATS, mu.BASKETBALL_STYLES, info['mu_games'],
                                  extra=mu.pace_line(info['mu_units'], g['away'], g['home'], nm), head=False) if has_mu else '')
                 features.append(fx.card(d, card, grid, fx.notes(d)))
+            hfa_g = 0.0 if g['neutral'] else HFA_POINTS
+            plog.append({'game_id': g['game_id'], 'kickoff': g['kick'], 'home': g['home'], 'away': g['away'],
+                         'neutral': g['neutral'], 'ours': margin, 'market': g['market'],
+                         'opened': info['opened'].get(g['game_id']),
+                         'confidence': ex.confidence_level(by_src.get(g['home'], {}), by_src.get(g['away'], {}), hfa_g),
+                         'flags': ['news'] if ex.news_move(info['opened'].get(g['game_id']), g['market']) else [],
+                         'sources': ex.source_lines(by_src.get(g['home'], {}), by_src.get(g['away'], {}), hfa_g)})
             spots.append(ex.spot('NBA', 'nba.html#games', g['kick'], short[g['away']], short[g['home']], margin, g['market'],
                                  [], [(short[t], _signal(comp.get(t), gp.get(t, 0))) for t in (g['away'], g['home'])],
                                  info['opened'].get(g['game_id'])))
@@ -387,6 +394,7 @@ def generate_html(power, metrics, days, info):
                      f'<span class="hint">{len(games)} game{"" if len(games) == 1 else "s"} · projected lines include '
                      f'{HFA_POINTS:g} points of home court</span></div><div class="games">{cards}</div>')
     ex.write_spots('nba', spots)
+    ex.log_projections('nba', plog)
     featured_html = fx.tab(''.join(features), ('Game of the Day', 'The best matchup on the board by our power ratings'),
                            'No games left to play in the next two days.')
     games_html = (
@@ -498,6 +506,7 @@ def main():
     print(f"  Injury Wire: {sum(len(v) for v in wire_data['items'].values())} items ({wire_data['mode']}).")
 
     hist = ex.snapshot_ratings('nba', rating)
+    ex.snapshot_sources('nba', power, 'abbr', list(scale['stats']))
     units = mu.basketball_units(box) if not box.empty else pd.DataFrame()
     print(f'  Matchups: unit stats for {len(units)} teams.')
     freshness = [('Sagarin', f'through {sag_asof}' if sag_asof else 'not available', ex.fetched(SAGARIN_CACHE)[1]),
