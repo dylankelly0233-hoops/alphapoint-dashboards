@@ -1,31 +1,31 @@
 {
   "sport": "cbb",
-  "week": 20261103,
-  "generated": "2026-11-03T17:59:06-05:00",
+  "week": 20261105,
+  "generated": "2026-11-05T17:53:01-05:00",
   "movers": [
     {
       "team": "Illinois",
       "tag": "KEY",
-      "text": "Senior G Jake Davis exited the season opener vs. FDU with an injury; early reports say it 'doesn't sound great.' No official status or timeline yet.",
+      "text": "Senior G Jake Davis will undergo shoulder surgery after exiting the opener vs. FDU and is out; no return timeline announced.",
       "source": "Sports Illustrated",
-      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPVUNDYTJIUFA1WThwMGo2LVhvVVNTdTd2SWlPSm4wMXViTDZtM2s1clRYWW5kVWlZT1lrakhQUU15QlVVYzRQNWZaVldCMTNtTlphLWlyS1JPN055QnBJWVpIUnVjOVR0eU5fOVpIcERRLWx2dkE1SWVzMlVhdnc1dXF3Q1Y1QnJrR2Vidy11Z1E1MTN1UW55SmM4VTFDVkpXMVFWSWEwMi01T3Aw?oc=5",
-      "date": "2026-11-03"
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOQk9jczZBQy02WkpyMDFZMzBfcXpPT2h4anhkYVZnOWZyb2h3XzZodllTenNOM1pHZGVpU196NG9tS2RqVmo5RlRWQmxNQ1hkbV9OUXhROEQyaUZfZm53UXYtS2ZXZzNyVThoTnAtYTF3eG4wQ1JhZGkyWkNBUUtfd0ZqU0d3ckZBUFVQUlhvUHdZdVppREJrT0xfUEZGdVJBVElGcEN4ZDN4NkdEVjhrOFBUcw?oc=5",
+      "date": "2026-11-04"
+    },
+    {
+      "team": "Louisville",
+      "tag": "KEY",
+      "text": "G De'Shayne Montgomery is out 4-6 weeks with a foot injury.",
+      "source": "Yahoo Sports",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQU0hvQzhnSnlFWEJrWkJucVpJMWVpXzVKS1NQNUlNWUR5WVFfRE9ubFkydk8tODJxX3JDazR3WDBLQ0x4N1NsNVREY2V0bUM2Z2hzaGxXcTdaNElEWDhCX1FFcVphNDE5c2hHbHlUTlQ0cXl4WU5xSmdJZHprS1M0R1lQUHlpbUlSeGtzSGlBWDEzQkRQVTh1Yg?oc=5",
+      "date": "2026-11-02"
     },
     {
       "team": "Indiana",
       "tag": "KEY",
-      "text": "Freshman G Prince-Alexander Moody suffered a knee injury and will miss an 'extended period of time,' per the program. No exact timeline given.",
-      "source": "The Herald-Times",
-      "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQaHZyV3d6bGVtczdBUEZkRU9CTEhsMjQxUmxDY0RvZTZfYXFGMkRZZV95dkR0d1ItYUVSVFZvNlNDMUxZNFNKMXFpZGxMQ2JBc2pSZEJENFlHMk1WZF9vS2t2NC02RkFaY0tUTW5HanpqT2hWVlhjRXY1bldxV1NKWmppMVZSVzdJMDB4QmdJU1dUaTdFOGVXSWtPdTJWODhITFBTOG5XbzV1VEZDbTBmUVFRUUFCcHN0d3FRUGtNQ2I2OVkxR2g2SXpKcm9MVmNDa2hr?oc=5",
+      "text": "Freshman G Prince-Alexander Moody will miss an 'extended period of time' with a knee injury, per the program. No exact timeline given.",
+      "source": "Yahoo Sports",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPbUdyWjlsTXhhaElfSkU0YjBPaHJZRWNpcmhjOFN0c2ozVFBRSHBKTVhMQ2szYUg3enJRMHBKOUwtVDV5c2lyeHUxWlAtM1FEUWNwbkJKVm5HVTUxSkpxWVBiSEdMYzJWMjE4ckNYQWhyWnRaQWV6OEZMR2xYdkFNYXljMGxOQTJKRTR0VTg4TEllQQ?oc=5",
       "date": "2026-11-03"
-    },
-    {
-      "team": "Kentucky",
-      "tag": "KEY",
-      "text": "G Kam Williams is nearing a return from his foot injury but is unlikely to play in the opener vs. Manhattan.",
-      "source": "A Sea Of Blue",
-      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNWGp2OVdSemJieDVpNmFweDN1bGl2VllUTl9ta0FCUXExczhqWHUwdkFfRnFzWkI1dUxLTmx1VWFIRmZpWW5EeWJnZVVZS1FkU1pMaVlOcEFVc0ZnRE5QUkJvQUl2RmQ1LUloS0lZaDNVSHI3SEU2SURGUGthendveExrSzg5SWpOSlJjcV9ESDZnOFROSWpEcFFNWEJJc3dN?oc=5",
-      "date": "2026-10-30"
     }
   ],
   "teams": {
@@ -33,39 +33,29 @@
       {
         "team": "Illinois",
         "tag": "KEY",
-        "text": "Senior G Jake Davis exited the season opener vs. FDU with an injury; early reports say it 'doesn't sound great.' No official status or timeline yet.",
+        "text": "Senior G Jake Davis will undergo shoulder surgery after exiting the opener vs. FDU and is out; no return timeline announced.",
         "source": "Sports Illustrated",
-        "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPVUNDYTJIUFA1WThwMGo2LVhvVVNTdTd2SWlPSm4wMXViTDZtM2s1clRYWW5kVWlZT1lrakhQUU15QlVVYzRQNWZaVldCMTNtTlphLWlyS1JPN055QnBJWVpIUnVjOVR0eU5fOVpIcERRLWx2dkE1SWVzMlVhdnc1dXF3Q1Y1QnJrR2Vidy11Z1E1MTN1UW55SmM4VTFDVkpXMVFWSWEwMi01T3Aw?oc=5",
-        "date": "2026-11-03"
+        "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOQk9jczZBQy02WkpyMDFZMzBfcXpPT2h4anhkYVZnOWZyb2h3XzZodllTenNOM1pHZGVpU196NG9tS2RqVmo5RlRWQmxNQ1hkbV9OUXhROEQyaUZfZm53UXYtS2ZXZzNyVThoTnAtYTF3eG4wQ1JhZGkyWkNBUUtfd0ZqU0d3ckZBUFVQUlhvUHdZdVppREJrT0xfUEZGdVJBVElGcEN4ZDN4NkdEVjhrOFBUcw?oc=5",
+        "date": "2026-11-04"
+      }
+    ],
+    "Louisville": [
+      {
+        "team": "Louisville",
+        "tag": "KEY",
+        "text": "G De'Shayne Montgomery is out 4-6 weeks with a foot injury.",
+        "source": "Yahoo Sports",
+        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQU0hvQzhnSnlFWEJrWkJucVpJMWVpXzVKS1NQNUlNWUR5WVFfRE9ubFkydk8tODJxX3JDazR3WDBLQ0x4N1NsNVREY2V0bUM2Z2hzaGxXcTdaNElEWDhCX1FFcVphNDE5c2hHbHlUTlQ0cXl4WU5xSmdJZHprS1M0R1lQUHlpbUlSeGtzSGlBWDEzQkRQVTh1Yg?oc=5",
+        "date": "2026-11-02"
       }
     ],
     "Indiana": [
       {
         "team": "Indiana",
         "tag": "KEY",
-        "text": "Freshman G Prince-Alexander Moody suffered a knee injury and will miss an 'extended period of time,' per the program. No exact timeline given.",
-        "source": "The Herald-Times",
-        "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQaHZyV3d6bGVtczdBUEZkRU9CTEhsMjQxUmxDY0RvZTZfYXFGMkRZZV95dkR0d1ItYUVSVFZvNlNDMUxZNFNKMXFpZGxMQ2JBc2pSZEJENFlHMk1WZF9vS2t2NC02RkFaY0tUTW5HanpqT2hWVlhjRXY1bldxV1NKWmppMVZSVzdJMDB4QmdJU1dUaTdFOGVXSWtPdTJWODhITFBTOG5XbzV1VEZDbTBmUVFRUUFCcHN0d3FRUGtNQ2I2OVkxR2g2SXpKcm9MVmNDa2hr?oc=5",
-        "date": "2026-11-03"
-      }
-    ],
-    "Kentucky": [
-      {
-        "team": "Kentucky",
-        "tag": "KEY",
-        "text": "G Kam Williams is nearing a return from his foot injury but is unlikely to play in the opener vs. Manhattan.",
-        "source": "A Sea Of Blue",
-        "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNWGp2OVdSemJieDVpNmFweDN1bGl2VllUTl9ta0FCUXExczhqWHUwdkFfRnFzWkI1dUxLTmx1VWFIRmZpWW5EeWJnZVVZS1FkU1pMaVlOcEFVc0ZnRE5QUkJvQUl2RmQ1LUloS0lZaDNVSHI3SEU2SURGUGthendveExrSzg5SWpOSlJjcV9ESDZnOFROSWpEcFFNWEJJc3dN?oc=5",
-        "date": "2026-10-30"
-      }
-    ],
-    "Vanderbilt": [
-      {
-        "team": "Vanderbilt",
-        "tag": "RETURNING",
-        "text": "T.O. Barrett is returning to the lineup after missing time.",
-        "source": "Sports Illustrated",
-        "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxOMjkzaTdyc3RrVEgzZWhHVHpPVTVfWkk2TUw1dExlUWotYVg2T0tIWDhmaWlmSXZhUEFJU3RxNWQ0TVlqejhReVpkRE92dHNWUUdsd2xGS3V2U1B0bUc4dXFMOGgtZ3pJaFhqY3MtU3pQc0V1YkZVWlFUSTd6bmJkbnZrY3FSS19LUF9BVVlQNUxoNlBNWDhKTVJOa3h2aTNLTHZZOVcwU1lMZkRXTG90N3B3ME1yS1hKaGFSRl9GdXVFTVpjRFp2dWk4bEVEcWc3ZC1WaQ?oc=5",
+        "text": "Freshman G Prince-Alexander Moody will miss an 'extended period of time' with a knee injury, per the program. No exact timeline given.",
+        "source": "Yahoo Sports",
+        "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPbUdyWjlsTXhhaElfSkU0YjBPaHJZRWNpcmhjOFN0c2ozVFBRSHBKTVhMQ2szYUg3enJRMHBKOUwtVDV5c2lyeHUxWlAtM1FEUWNwbkJKVm5HVTUxSkpxWVBiSEdMYzJWMjE4ckNYQWhyWnRaQWV6OEZMR2xYdkFNYXljMGxOQTJKRTR0VTg4TEllQQ?oc=5",
         "date": "2026-11-03"
       }
     ]
