@@ -620,8 +620,9 @@ def generate_html(p4, vals, sched, week, season_type, info):
         edge = theme.edge_text(pm, mkt_margin, r.home, r.away)
         tag_html, labels = blowout_tags(r, last)
         move = ex.line_move(info['opened'].get(str(r.game_id)), mkt_margin, pm, r.home, r.away)
+        big = ex.lopsided(mkt_margin, r.margin)
         move += ex.rating_confidence(info['by_source'].get(r.home, {}), info['by_source'].get(r.away, {}),
-                                     0.0 if r.neutral else HFA_POINTS)
+                                     0.0 if r.neutral else HFA_POINTS, big)
         stadium = info['roofs'].get(str(r.game_id))
         if stadium and not r.completed:
             move += wx.weather_row(info['weather'].get(str(r.game_id)), stadium[2])
@@ -631,7 +632,8 @@ def generate_html(p4, vals, sched, week, season_type, info):
             panels[r.game_id] = mu.panel(r.away, r.home, str, prof, MU_CATS, MU_STYLES, info['mu_games'], when,
                                          ex.line_text(r.home, r.away, pm) if not pd.isna(pm) else '')
         spots.append(ex.spot('CFB', 'cfb.html#sched', r.kick, r.away, r.home, r.margin, mkt_margin, labels,
-                             [(r.away, sig(r.away_value)), (r.home, sig(r.home_value))]))
+                             [(r.away, sig(r.away_value)), (r.home, sig(r.home_value))],
+                             info['opened'].get(str(r.game_id)), big))
         card = theme.game_card(when, venue, side(r.away, r.away_rating, r.away_value),
                                side(r.home, r.home_rating, r.home_value), proj, mkt, r.score, edge, tag_html, move)
         reasons = info['featured'].get(r.game_id)
@@ -641,7 +643,8 @@ def generate_html(p4, vals, sched, week, season_type, info):
             d = {'game_id': r.game_id, 'away': r.away, 'home': r.home, 'neutral': r.neutral, 'reasons': reasons,
                  'away_rank': info['ranks'].get(r.away), 'home_rank': info['ranks'].get(r.home), 'when': when,
                  'ours': r.margin, 'market': mkt_margin, 'opened': info['opened'].get(str(r.game_id)),
-                 'confidence': ex.confidence_level(info['by_source'].get(r.home, {}), info['by_source'].get(r.away, {}), hfa),
+                 'confidence': ex.confidence_level(info['by_source'].get(r.home, {}), info['by_source'].get(r.away, {}), hfa, big),
+                 'lopsided': big,
                  'mismatch': head[0] if head else None,
                  'signals': {t: (sig(v), v) for t, v in ((r.away, r.away_value), (r.home, r.home_value))
                              if v is not None and v == v},

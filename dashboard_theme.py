@@ -511,6 +511,8 @@ td.pos { color: var(--pos); font-weight: 600; } td.neg { color: var(--neg); font
 .lmove { padding: 8px 14px 10px; font-size: 13px; color: var(--muted); border-top: 1px solid var(--line); }
 .lmove .k { font: 700 11px/1 var(--display); letter-spacing: 1px; text-transform: uppercase; margin-right: 8px; }
 .lmove b { color: var(--ink); }
+.newsflag { display: block; margin-top: 4px; padding: 5px 8px; border-radius: 6px; background: var(--neg-bg); color: var(--neg);
+            font-weight: 600; font-size: 12.5px; }
 .conf { display: inline-block; margin-right: 6px; padding: 2px 8px; border-radius: 999px; font: 700 12px/1.3 var(--display);
         letter-spacing: .8px; text-transform: uppercase; color: var(--chip-ink); }
 .conf.high { background: var(--pos); } .conf.med { background: var(--t3); } .conf.low { background: var(--neg); } .lmove .pos { color: var(--pos); font-weight: 600; } .lmove .neg { color: var(--neg); font-weight: 600; }

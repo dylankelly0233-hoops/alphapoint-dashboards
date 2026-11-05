@@ -381,7 +381,8 @@ def generate_html(power, metrics, days, info):
                                  extra=mu.pace_line(info['mu_units'], g['away'], g['home'], nm), head=False) if has_mu else '')
                 features.append(fx.card(d, card, grid, fx.notes(d)))
             spots.append(ex.spot('NBA', 'nba.html#games', g['kick'], short[g['away']], short[g['home']], margin, g['market'],
-                                 [], [(short[t], _signal(comp.get(t), gp.get(t, 0))) for t in (g['away'], g['home'])]))
+                                 [], [(short[t], _signal(comp.get(t), gp.get(t, 0))) for t in (g['away'], g['home'])],
+                                 info['opened'].get(g['game_id'])))
         sections += (f'<div class="sechead"><h2>{day.strftime("%A, %b %d").replace(" 0", " ")}</h2>'
                      f'<span class="hint">{len(games)} game{"" if len(games) == 1 else "s"} · projected lines include '
                      f'{HFA_POINTS:g} points of home court</span></div><div class="games">{cards}</div>')

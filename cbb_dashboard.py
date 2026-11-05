@@ -480,8 +480,9 @@ def generate_html(power, metrics, days, info):
                                        'color': meta.get(t, (None, ''))[1]}
             when = g['kick'].strftime('%I:%M %p').lstrip('0') + ' ET'
             move = ex.line_move(info['opened'].get(g['game_id']), g['market'], pm, g['home'], g['away'], 'First seen')
+            big = ex.lopsided(g['market'], margin)
             move += ex.rating_confidence(by_src.get(g['home'], {}), by_src.get(g['away'], {}),
-                                         0.0 if g['neutral'] else HFA_POINTS)
+                                         0.0 if g['neutral'] else HFA_POINTS, big)
             mprof = info['mu_prof']
             if g['home'] in mprof and g['away'] in mprof:
                 move += mu.card_row(g['game_id'], mu.headline(mprof, mu.BASKETBALL_CATS, g['away'], g['home'], str))
@@ -502,8 +503,8 @@ def generate_html(power, metrics, days, info):
                      'reasons': reasons, 'away_rank': info['ranks'].get(g['away']), 'home_rank': info['ranks'].get(g['home']),
                      'when': _when(g), 'ours': margin, 'market': g['market'], 'opened': info['opened'].get(g['game_id']),
                      'confidence': ex.confidence_level(by_src.get(g['home'], {}), by_src.get(g['away'], {}),
-                                                       0.0 if g['neutral'] else HFA_POINTS),
-                     'mismatch': head[0] if head else None,
+                                                       0.0 if g['neutral'] else HFA_POINTS, big),
+                     'lopsided': big, 'mismatch': head[0] if head else None,
                      'signals': {t: (_signal(comp.get(t), games_played.get(t, 0)), comp[t]) for t in (g['away'], g['home'])
                                  if comp.get(t) is not None},
                      'injuries': {t: fx.injuries(info['wire'], t) for t in (g['away'], g['home'])}}
@@ -512,7 +513,8 @@ def generate_html(power, metrics, days, info):
                                  head=False) if has_mu else '')
                 features.append(fx.card(d, card, grid, fx.notes(d)))
             spots.append(ex.spot('CBB', 'cbb.html#games', g['kick'], g['away'], g['home'], margin, g['market'], [],
-                                 [(t, _signal(comp.get(t), games_played.get(t, 0))) for t in (g['away'], g['home'])]))
+                                 [(t, _signal(comp.get(t), games_played.get(t, 0))) for t in (g['away'], g['home'])],
+                                 info['opened'].get(g['game_id']), big))
         sections += (f'<div class="sechead"><h2>{day.strftime("%A, %b %d").replace(" 0", " ")}</h2>'
                      f'<span class="hint">{len(games)} game{"" if len(games) == 1 else "s"}</span></div>'
                      f'<div class="games">{cards}</div>')

@@ -201,6 +201,8 @@ def best_spots():
         s['side'] = sides.pop()
         if any(label.startswith('Teaser') for label, _ in s['tags']):
             teasers.append(s)           # every leg that fits the teaser research shows, whatever our line says
+        elif s.get('flags'):
+            continue                    # a big line move (likely news) or a lopsided college game: our number isn't trusted
         elif _lean(s, s['side']) >= -SPOTS_TOLERANCE:
             keep.append(s)
     keep = teasers + sorted(keep, key=lambda s: (len(_backing(s)), _lean(s, s['side'])), reverse=True)[:SPOTS_MAX]
@@ -258,6 +260,10 @@ INFO = [
                      'where our ratings lean and why, the case against, and what to check. A lean is research, not a pick.'),
         ('Line movement', 'Each game card shows where the spread opened (or was first seen) and where it is now, and whether '
                           'the market has moved toward our number or away from it.'),
+        ('Guards', 'Two checks from our accuracy audit. If a line moves 2.5+ points from where it opened, the card warns '
+                   'that it is likely news (an injury or lineup change) the ratings don\'t know yet. In college games '
+                   'priced at 20+ points, confidence is Low because the market has beaten power ratings in mismatches. '
+                   'Flagged games stay out of Best spots, and Featured previews hold off on a lean.'),
         ('Confidence', 'Each game card rates how much to trust our projected line, based only on whether the rating '
                        'sources behind it agree: High (within 2 points of each other), Medium (2 to 4), Low (more than 4). '
                        'It does not account for injuries, news or weather.'),

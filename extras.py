@@ -135,10 +135,29 @@ def line_text(home, away, margin):
     return 'PICK' if m < 0.25 else f'{home if margin >= 0 else away} −{theme.spread_num(m)}'
 
 
+# Guards (from the Nov 5 accuracy audit). Lines that moved 2+ points after we first saw them were where our misses
+# concentrated (news the ratings can't see: injuries, QB changes), and in college mismatches of 20+ points the
+# market has beaten linear ratings. Flagged games keep their cards but stay out of Best spots and Featured leans.
+NEWS_MOVE = 2.5      # points of line movement since the open / first sighting that usually means news
+LOPSIDED  = 20       # college lines this big (or bigger) are flagged as lopsided
+
+
+def news_move(opened, current):
+    """True when the line has moved NEWS_MOVE+ points since it opened (or was first seen)."""
+    return not _nan(opened) and not _nan(current) and abs(current - opened) >= NEWS_MOVE
+
+
+def lopsided(market, ours=None):
+    """True for a college game priced (or, with no line yet, projected) at LOPSIDED+ points."""
+    ref = market if not _nan(market) else ours
+    return not _nan(ref) and abs(ref) >= LOPSIDED
+
+
 def line_move(opened, current, ours, home, away, label='Opened'):
     """
     One line for a game card: where the posted line opened (or was first seen) and where it is now,
     and whether the move went toward our projected line. All values are home margins.
+    A move of NEWS_MOVE+ points adds a warning: it usually means news the ratings don't know yet.
     """
     if _nan(opened) or _nan(current):
         return ''
@@ -150,7 +169,9 @@ def line_move(opened, current, ours, home, away, label='Opened'):
         toward = abs(ours - current) < abs(ours - opened)
         verdict = (f' · <span class="{"pos" if toward else "neg"}">'
                    f'{"toward" if toward else "away from"} our number</span>')
-    return f'<div class="lmove">{theme.k("Line")}{label} {was} → now <b>{now}</b>{verdict}</div>'
+    news = (f'<span class="newsflag">Big move: likely news (injury or lineup). Check the Injury Wire before trusting '
+            f'the edge.</span>' if news_move(opened, current) else '')
+    return f'<div class="lmove">{theme.k("Line")}{label} {was} → now <b>{now}</b>{verdict}{news}</div>'
 
 
 AGREE_PTS = 2.0      # sources within this many points of each other → High confidence
@@ -160,8 +181,13 @@ CONFIDENCE = {'High': ('high', 'the rating sources agree on this line'),
               'Low': ('low', 'the rating sources disagree on this line')}
 
 
-def confidence_level(home_vals, away_vals, hfa):
-    """'High' / 'Medium' / 'Low' from how far apart the sources' own lines are; None with fewer than two sources."""
+def confidence_level(home_vals, away_vals, hfa, lopsided_game=False):
+    """
+    'High' / 'Medium' / 'Low' from how far apart the sources' own lines are; None with fewer than two sources.
+    A lopsided college game is always 'Low': the market has beaten ratings in those.
+    """
+    if lopsided_game:
+        return 'Low'
     lines = [home_vals[s] - away_vals[s] + hfa for s in home_vals
              if s in away_vals and not _nan(home_vals[s]) and not _nan(away_vals[s])]
     if len(lines) < 2:
@@ -170,17 +196,20 @@ def confidence_level(home_vals, away_vals, hfa):
     return 'High' if gap <= AGREE_PTS else 'Medium' if gap <= SPLIT_PTS else 'Low'
 
 
-def rating_confidence(home_vals, away_vals, hfa):
+def rating_confidence(home_vals, away_vals, hfa, lopsided_game=False):
     """
     How much to trust our projected line, judged only by how closely the rating sources agree: each source's
     own line (same scale and home field as the blend) is compared, and the spread between them sets
     High / Medium / Low. Says nothing about injuries, news or weather.
     home_vals / away_vals: {source label: rescaled rating}. Needs at least two sources rating both teams.
     """
-    level = confidence_level(home_vals, away_vals, hfa)
+    level = confidence_level(home_vals, away_vals, hfa, lopsided_game)
     if not level:
         return ''
     cls, why = CONFIDENCE[level]
+    if lopsided_game:
+        why = (f'lopsided game ({LOPSIDED}+ points): in mismatches like this the market has been more accurate than '
+               f'power ratings')
     return f'<div class="lmove">{theme.k("Confidence")}<span class="conf {cls}">{level}</span> {why}</div>'
 
 
@@ -235,10 +264,11 @@ def team_modal(data):
 # ==========================================
 # BEST SPOTS (home page feed)
 # ==========================================
-def spot(sport, page, kick, away, home, ours, market, tags=(), signals=()):
+def spot(sport, page, kick, away, home, ours, market, tags=(), signals=(), opened=None, lopsided_game=False):
     """
     One upcoming game for the home page. ours / market = home margins; tags = [(label, team the tag favors)];
-    signals = [(team, 'BUY'|'SELL')]. Returns None for games already started or without a kickoff time.
+    signals = [(team, 'BUY'|'SELL')]. opened / lopsided_game set the guard flags ('news', 'lopsided').
+    Returns None for games already started or without a kickoff time.
     """
     if kick is None or (isinstance(kick, float) and kick != kick) or pd.isna(kick):
         return None
@@ -252,7 +282,8 @@ def spot(sport, page, kick, away, home, ours, market, tags=(), signals=()):
             'market': line_text(home, away, market) if not _nan(market) else '—',
             'edge': None if edge is None else round(abs(edge), 1),
             'edge_side': None if edge is None or abs(edge) < theme.EDGE_MIN else (home if edge > 0 else away),
-            'tags': [list(t) for t in tags], 'signals': [list(s) for s in signals if s[1]]}
+            'tags': [list(t) for t in tags], 'signals': [list(s) for s in signals if s[1]],
+            'flags': (['news'] if news_move(opened, market) else []) + (['lopsided'] if lopsided_game else [])}
 
 
 def write_spots(sport, spots):

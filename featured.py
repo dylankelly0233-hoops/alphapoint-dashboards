@@ -15,6 +15,7 @@ It says where our numbers lean and why, the case against, and what to check — 
 import hashlib
 
 import dashboard_theme as theme
+from extras import news_move
 
 LEAN_MIN = 1.5        # points of edge before the preview states a lean
 WIND_NOTE = 15        # mph
@@ -126,8 +127,17 @@ def preview(d):
     if checks:
         paras.append(' '.join(checks[:4]))
 
-    # 4. Bottom line (a lean, never a pick)
-    if edge is not None and abs(edge) >= LEAN_MIN:
+    # 4. Bottom line (a lean, never a pick). The guards come first: a big line move usually means news our ratings
+    # don't know yet, and in lopsided college games the market has been more accurate than ratings.
+    news = news_move(d.get('opened'), mkt) if has_mkt else False
+    if news:
+        moved = theme.spread_num(theme.round_half(abs(mkt - d['opened'])))
+        bottom = (f'<b>Hold.</b> The line has moved {moved} points since it opened, which usually means news (an injury or '
+                  f'lineup change) that our ratings don\'t know about yet. Check the Injury Wire before trusting any edge.')
+    elif d.get('lopsided'):
+        bottom = ('<b>No lean.</b> In lopsided games like this the market has been more accurate than power ratings, so '
+                  'our number is context, not a reason to bet.')
+    elif edge is not None and abs(edge) >= LEAN_MIN:
         side_home = edge > 0
         side = h if side_home else a
         now = side_line(side, mkt, side_home)
