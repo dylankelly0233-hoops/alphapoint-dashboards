@@ -1,136 +1,188 @@
 {
   "sport": "nba",
-  "week": 20261103,
-  "generated": "2026-11-03T18:05:00-05:00",
+  "week": 20261105,
+  "generated": "2026-11-05T17:54:32-05:00",
   "movers": [
     {
-      "team": "OKC",
+      "team": "CLE",
       "tag": "CLUSTER",
-      "text": "Two starters out long-term: Chet Holmgren (30 mpg) out at least 8-10 weeks with a small patellar tendon tear; Jalen Williams (32 mpg) out after fibula/ankle surgery Oct. 28.",
+      "text": "Jaylon Tyson (21 mpg, ankle) out Fri vs PHI; Peyton Watson (28 mpg, hamstring) and Jarrett Allen (25 mpg, knee) questionable. Per 11/5 evening report.",
       "source": "ESPN",
       "url": "https://www.espn.com/nba/injuries",
-      "date": "2026-10-31"
-    },
-    {
-      "team": "BOS",
-      "tag": "KEY",
-      "text": "Jayson Tatum (35 mpg) listed questionable (rest) for Wednesday vs. Milwaukee, per the Celtics' report Tuesday.",
-      "source": "ESPN",
-      "url": "https://www.espn.com/nba/injuries",
-      "date": "2026-11-03"
+      "date": "2026-11-05"
     },
     {
       "team": "MIN",
       "tag": "KEY",
-      "text": "Anthony Edwards (34 mpg) out after an arthroscopic procedure on his right knee Oct. 29. No return timeline announced in the report.",
+      "text": "Anthony Edwards (34 mpg) out after arthroscopic right knee procedure Oct. 29; no return date given. Terrence Shannon Jr. (22 mpg, hip) also out Wed.",
       "source": "ESPN",
       "url": "https://www.espn.com/nba/injuries",
-      "date": "2026-10-29"
-    },
-    {
-      "team": "ORL",
-      "tag": "CLUSTER",
-      "text": "Paolo Banchero (34 mpg) out 4-6 weeks with a high-ankle sprain (Oct. 24); Jalen Suggs (33 mpg) out with a knee bone bruise, re-evaluation about two weeks from Oct. 26.",
-      "source": "ESPN",
-      "url": "https://www.espn.com/nba/injuries",
-      "date": "2026-10-26"
+      "date": "2026-11-05"
     },
     {
       "team": "ATL",
       "tag": "KEY",
-      "text": "Jalen Johnson (33 mpg) questionable for Wednesday at Washington with an ankle injury after missing the last game.",
+      "text": "Jalen Johnson (33 mpg) questionable Fri vs WSH after missing last game; Jock Landale (15 mpg, hip) ruled out. Per 11/5 evening report.",
       "source": "ESPN",
       "url": "https://www.espn.com/nba/injuries",
-      "date": "2026-11-03"
+      "date": "2026-11-05"
+    },
+    {
+      "team": "CHA",
+      "tag": "CLUSTER",
+      "text": "Dennis Schroder (30 mpg, thigh) and Moussa Diabate (29 mpg, quad) both questionable Fri vs BOS. Per 11/5 evening report.",
+      "source": "ESPN",
+      "url": "https://www.espn.com/nba/injuries",
+      "date": "2026-11-05"
+    },
+    {
+      "team": "NY",
+      "tag": "KEY",
+      "text": "Josh Hart (32 mpg) missed Wednesday vs CHI with right ankle soreness; status for next game not yet updated.",
+      "source": "ESPN",
+      "url": "https://www.espn.com/nba/injuries",
+      "date": "2026-11-05"
     }
   ],
   "teams": {
-    "OKC": [
+    "CLE": [
       {
-        "team": "OKC",
+        "team": "CLE",
         "tag": "CLUSTER",
-        "text": "Two starters out long-term: Chet Holmgren (30 mpg) out at least 8-10 weeks with a small patellar tendon tear; Jalen Williams (32 mpg) out after fibula/ankle surgery Oct. 28.",
+        "text": "Jaylon Tyson (21 mpg, ankle) out Fri vs PHI; Peyton Watson (28 mpg, hamstring) and Jarrett Allen (25 mpg, knee) questionable. Per 11/5 evening report.",
         "source": "ESPN",
         "url": "https://www.espn.com/nba/injuries",
-        "date": "2026-10-31"
-      }
-    ],
-    "BOS": [
-      {
-        "team": "BOS",
-        "tag": "KEY",
-        "text": "Jayson Tatum (35 mpg) listed questionable (rest) for Wednesday vs. Milwaukee, per the Celtics' report Tuesday.",
-        "source": "ESPN",
-        "url": "https://www.espn.com/nba/injuries",
-        "date": "2026-11-03"
-      },
-      {
-        "team": "BOS",
-        "tag": "KEY",
-        "text": "Payton Pritchard (28 mpg) questionable for Wednesday vs. Milwaukee with a right shoulder contusion.",
-        "source": "ESPN",
-        "url": "https://www.espn.com/nba/injuries",
-        "date": "2026-11-03"
+        "date": "2026-11-05"
       }
     ],
     "MIN": [
       {
         "team": "MIN",
         "tag": "KEY",
-        "text": "Anthony Edwards (34 mpg) out after an arthroscopic procedure on his right knee Oct. 29. No return timeline announced in the report.",
+        "text": "Anthony Edwards (34 mpg) out after arthroscopic right knee procedure Oct. 29; no return date given. Terrence Shannon Jr. (22 mpg, hip) also out Wed.",
         "source": "ESPN",
         "url": "https://www.espn.com/nba/injuries",
-        "date": "2026-10-29"
-      }
-    ],
-    "ORL": [
-      {
-        "team": "ORL",
-        "tag": "CLUSTER",
-        "text": "Paolo Banchero (34 mpg) out 4-6 weeks with a high-ankle sprain (Oct. 24); Jalen Suggs (33 mpg) out with a knee bone bruise, re-evaluation about two weeks from Oct. 26.",
-        "source": "ESPN",
-        "url": "https://www.espn.com/nba/injuries",
-        "date": "2026-10-26"
+        "date": "2026-11-05"
       }
     ],
     "ATL": [
       {
         "team": "ATL",
         "tag": "KEY",
-        "text": "Jalen Johnson (33 mpg) questionable for Wednesday at Washington with an ankle injury after missing the last game.",
+        "text": "Jalen Johnson (33 mpg) questionable Fri vs WSH after missing last game; Jock Landale (15 mpg, hip) ruled out. Per 11/5 evening report.",
         "source": "ESPN",
         "url": "https://www.espn.com/nba/injuries",
-        "date": "2026-11-03"
+        "date": "2026-11-05"
+      }
+    ],
+    "CHA": [
+      {
+        "team": "CHA",
+        "tag": "CLUSTER",
+        "text": "Dennis Schroder (30 mpg, thigh) and Moussa Diabate (29 mpg, quad) both questionable Fri vs BOS. Per 11/5 evening report.",
+        "source": "ESPN",
+        "url": "https://www.espn.com/nba/injuries",
+        "date": "2026-11-05"
       }
     ],
     "NY": [
       {
         "team": "NY",
         "tag": "KEY",
-        "text": "Josh Hart (32 mpg) questionable for Wednesday vs. Chicago with right ankle soreness.",
+        "text": "Josh Hart (32 mpg) missed Wednesday vs CHI with right ankle soreness; status for next game not yet updated.",
         "source": "ESPN",
         "url": "https://www.espn.com/nba/injuries",
-        "date": "2026-11-03"
+        "date": "2026-11-05"
       }
     ],
-    "CLE": [
+    "BOS": [
       {
-        "team": "CLE",
-        "tag": "CLUSTER",
-        "text": "Peyton Watson (28 mpg, hamstring) and Jaylon Tyson (21 mpg, ankle sprain) both out for Wednesday at Oklahoma City.",
+        "team": "BOS",
+        "tag": "KEY",
+        "text": "Payton Pritchard (27 mpg, eye) questionable Fri vs CHA.",
         "source": "ESPN",
         "url": "https://www.espn.com/nba/injuries",
-        "date": "2026-11-03"
+        "date": "2026-11-05"
       }
     ],
     "IND": [
       {
         "team": "IND",
-        "tag": "KEY",
-        "text": "Tyrese Haliburton (33 mpg) out at least two weeks with a hamstring injury (reported Oct. 28).",
+        "tag": "CLUSTER",
+        "text": "Tyrese Haliburton (33 mpg, hamstring) out at least two weeks from Oct. 28; Kelly Oubre Jr. (23 mpg, calf) ruled out Wed vs MEM.",
         "source": "ESPN",
         "url": "https://www.espn.com/nba/injuries",
-        "date": "2026-10-28"
+        "date": "2026-11-05"
+      }
+    ],
+    "ORL": [
+      {
+        "team": "ORL",
+        "tag": "CLUSTER",
+        "text": "Paolo Banchero (34 mpg) out 4-6 weeks from Oct. 24 (high-ankle sprain); Jalen Suggs (33 mpg, knee bone bruise) due for re-evaluation around Nov. 9.",
+        "source": "ESPN",
+        "url": "https://www.espn.com/nba/injuries",
+        "date": "2026-10-26"
+      }
+    ],
+    "OKC": [
+      {
+        "team": "OKC",
+        "tag": "CLUSTER",
+        "text": "Chet Holmgren out at least 8-10 weeks (patellar tendon); Jalen Williams out after fibula/ankle surgery; Cason Wallace out after shoulder surgery; Jaylin Williams (back) out Wed.",
+        "source": "ESPN",
+        "url": "https://www.espn.com/nba/injuries",
+        "date": "2026-11-05"
+      }
+    ],
+    "TOR": [
+      {
+        "team": "TOR",
+        "tag": "KEY",
+        "text": "Kawhi Leonard (left knee swelling) completed treatment and will be re-evaluated in one week, per Nov. 4 report.",
+        "source": "ESPN",
+        "url": "https://www.espn.com/nba/injuries",
+        "date": "2026-11-04"
+      }
+    ],
+    "UTAH": [
+      {
+        "team": "UTAH",
+        "tag": "KEY",
+        "text": "Jaren Jackson Jr. (26 mpg) out 6-8 weeks with a torn right MCL, diagnosed Oct. 27.",
+        "source": "ESPN",
+        "url": "https://www.espn.com/nba/injuries",
+        "date": "2026-10-27"
+      }
+    ],
+    "POR": [
+      {
+        "team": "POR",
+        "tag": "KEY",
+        "text": "Ja Morant (26 mpg) out about four weeks with a Grade 2 left hamstring strain, announced Oct. 30.",
+        "source": "ESPN",
+        "url": "https://www.espn.com/nba/injuries",
+        "date": "2026-10-30"
+      }
+    ],
+    "SAC": [
+      {
+        "team": "SAC",
+        "tag": "RETURNING",
+        "text": "Keegan Murray (27 mpg, ankle) was set for re-evaluation 10-14 days from Oct. 26, putting a return window around now.",
+        "source": "ESPN",
+        "url": "https://www.espn.com/nba/injuries",
+        "date": "2026-10-26"
+      }
+    ],
+    "DEN": [
+      {
+        "team": "DEN",
+        "tag": "KEY",
+        "text": "DeMar DeRozan (25 mpg) ruled out Wed vs TOR with lower-back spasms.",
+        "source": "ESPN",
+        "url": "https://www.espn.com/nba/injuries",
+        "date": "2026-11-05"
       }
     ]
   }
