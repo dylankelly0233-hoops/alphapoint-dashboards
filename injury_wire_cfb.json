@@ -1,339 +1,387 @@
 {
- "sport": "cfb",
- "week": 10,
- "generated": "2026-11-05T17:55:39-05:00",
- "movers": [
-  {
-   "team": "Ohio State",
-   "tag": "QB",
-   "text": "QB Julian Sayin (right arm) remains sidelined; Ryan Day gave a new timeline update Nov. 5. Freshman Luke Fahey has been starting in his place.",
-   "source": "USA Today",
-   "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxONU0tbVR0eU9IeHJycWsySDhTbTYzUUZ6NFpIeHF5c2lQYjQxRVVOMm5HVERwT2k1bHlnRnVQaTNwaUE3Ql9LSFROOU5IV05QZVhpXzNUc1hIeFJWSmx3Zk9HNTNMVk40T2M3VEZ5Ml9HTGNReDNKdDZwbjdpQkNqUmFQandCSmJVSGNVZ3RuZ3FxNFBoWGJaWFpoLWFyWG10UWpOYkNYemEwVGM2UWpYc3dXQ1o2Nk5kaHBNQmczNlBydlhrM3pYNjAwVTBLRG1OU2k5eVIyb2xDTVRhR3c?oc=5",
-   "date": "2026-11-05"
-  },
-  {
-   "team": "Miami",
-   "tag": "KEY",
-   "text": "Star WR Malachi Toney (ankle) is reported to need surgery and is expected to miss the Notre Dame game.",
-   "source": "Reuters",
-   "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPaE1zY0lORlR4UDE2cTZJWlJMN1h2V0NtVG1iV19QSklPcXJEckZ3c3QzOTFuRkx3UGtmOW1hYlRhMWZZSGVxTmxfTkh5WDJ2aXpoQXlHSk51Q2l5cGw5eEJXWlI1OE9GM25TUlE5b3dwbldwNXRmVkNidndGbzNoSG9QMXZOMkFPcTM1S1RicjVuNTdFMXdJQ3RJZ2JZT2xqVTl5WTNHYVlZTHprSWdpQw?oc=5",
-   "date": "2026-11-05"
-  },
-  {
-   "team": "Kansas State",
-   "tag": "QB",
-   "text": "QB Avery Johnson (shoulder) is out vs. Oklahoma State and possibly for the season; K-State will start its fourth different QB in four weeks.",
-   "source": "ESPN",
-   "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPejQycFk3NVpQODJBWVNNaktKSU4tZm1NOC1NSnQxcmpTdzBmejA4REFrU3hkejVwczBCZEJTM1FHMDBJWUg2cFVRYkdPREJfMU5wYWh6ZUdpSW9uSnBySHFWQ3Z4aVlSOUd3ejRiZXgtOG42N01Bd0xRVVB3R0dzdDVpUG1HRG5zMnBzMXVjUzNfS0ZwbTRWWkZDVm9XUkFBSHB0UTkySTNwQQ?oc=5",
-   "date": "2026-11-02"
-  },
-  {
-   "team": "Texas",
-   "tag": "CLUSTER",
-   "text": "Five Texas starters are questionable on the initial report vs. Missouri, including star edge Colin Simmons and WR Cam Coleman.",
-   "source": "Austin American-Statesman",
-   "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPYkVZN3dMd0I3MHdnOE1BS2RwTDRtY25PRHdrN0pQSlFPb1pfcHlVZ21HUE1rYktxSkVPZXlYdUxKSW9MN19NbkhyYnYzSVQtMmdkbTU0dlJRMlZLZ2UybHRaWHp4ZjdRSHRNTnpnclNWVklhd2ZnTXVZVUFPTE04TnNHbm1nM01KUGhUckFacW9scDdqSC1uMzNXeU1qODBPa2xzREZ2a1ZNN1E0cmRnMQ?oc=5",
-   "date": "2026-11-05"
-  },
-  {
-   "team": "Ole Miss",
-   "tag": "KEY",
-   "text": "Star RB Kewan Lacy (shoulder) is likely out vs. Georgia, per Pete Golding; he also missed the Auburn game.",
-   "source": "The Clarion-Ledger",
-   "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQd1lyNTk5SXJ5WTNzNTEtN0hwR2plQU9Ka0pXT2kxZndCT3E2QkRZOWVuNHhveFRFUkU1d2FLSWJBNkxmbXBUTTd2WXprbTJ5Ml93eHo3Yy1NZ203aURIR1FNUDRVUFpaTEo5X2dBbHEyRkhtWW1IQ3h6R2V3Mi1rVHdtMC1WT1lhZzBBbUtHVXV2ZGl0dS1kREZZWEpZQThkTGhqaGJMdEg2bVlOajR5M2xOZGJ2SVZqY0c2RWVCQVo2ajlY?oc=5",
-   "date": "2026-11-02"
+  "sport": "cfb",
+  "week": 10,
+  "generated": "2026-11-06T11:05:02-05:00",
+  "movers": [
+    {
+      "team": "Ohio State",
+      "tag": "QB",
+      "text": "QB Julian Sayin (right arm) remains out indefinitely on the injury report vs. Oregon; freshman Luke Fahey has been starting in his place.",
+      "source": "Cleveland.com",
+      "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPcUFzYWNLUl9vc1R1NC1Wc0tzQ1hjM1oySWhGLVA4MEZTdE5xWmF1UGh3R0lEWUJvSW1icGZjNTRoOHM4YmhyVGlyM0FqZ3c2MWk0N2I1Q3lLN1cwMmpoNXBLc0tIX3dIWFp3UHl2Z1lzMElrX0EydEhVSFMwdFRwczNrRnBJLUk4QkFHS1ZoSjhwSVZyX1NqUy1KOWNnUy1mMnUwc0VQaXBSaDl2UGlKY2dvbzFma25sanRjekU4UHJmTTdjVEJpS1FMMWxud2pTeXRN?oc=5",
+      "date": "2026-11-05"
+    },
+    {
+      "team": "Miami",
+      "tag": "KEY",
+      "text": "Star WR Malachi Toney (ankle) is reported to need surgery and is expected to miss the Notre Dame game.",
+      "source": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPaE1zY0lORlR4UDE2cTZJWlJMN1h2V0NtVG1iV19QSklPcXJEckZ3c3QzOTFuRkx3UGtmOW1hYlRhMWZZSGVxTmxfTkh5WDJ2aXpoQXlHSk51Q2l5cGw5eEJXWlI1OE9GM25TUlE5b3dwbldwNXRmVkNidndGbzNoSG9QMXZOMkFPcTM1S1RicjVuNTdFMXdJQ3RJZ2JZT2xqVTl5WTNHYVlZTHprSWdpQw?oc=5",
+      "date": "2026-11-05"
+    },
+    {
+      "team": "Kansas State",
+      "tag": "QB",
+      "text": "QB Avery Johnson (shoulder) is out, possibly for the season. Blake Barnett makes his first start vs. Oklahoma State, K-State's fourth different starting QB in four weeks.",
+      "source": "Yahoo Sports",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9vQWl3Nl9uYVJWTEw5bFRpOTFidnVLNkdhMjFDZ3JxbHdhTFFqLU5XQ2xlaXd0SFJRN01ydFpWYWtkbmZrUnhKOFBfSzUzMzdtR0xQclJ0cXVlUlBydWVFR1U0T0VLNFc0WHl1TzgzNmQ3WjNrQTlGN0J0VUNMLUk?oc=5",
+      "date": "2026-11-06"
+    },
+    {
+      "team": "Texas",
+      "tag": "CLUSTER",
+      "text": "Five Texas starters are questionable on the initial report vs. Missouri, including star edge Colin Simmons and WR Cam Coleman.",
+      "source": "Austin American-Statesman",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPYkVZN3dMd0I3MHdnOE1BS2RwTDRtY25PRHdrN0pQSlFPb1pfcHlVZ21HUE1rYktxSkVPZXlYdUxKSW9MN19NbkhyYnYzSVQtMmdkbTU0dlJRMlZLZ2UybHRaWHp4ZjdRSHRNTnpnclNWVklhd2ZnTXVZVUFPTE04TnNHbm1nM01KUGhUckFacW9scDdqSC1uMzNXeU1qODBPa2xzREZ2a1ZNN1E0cmRnMQ?oc=5",
+      "date": "2026-11-05"
+    },
+    {
+      "team": "Ole Miss",
+      "tag": "KEY",
+      "text": "Star RB Kewan Lacy (shoulder) is likely out vs. Georgia, per Pete Golding; he also missed the Auburn game.",
+      "source": "The Clarion-Ledger",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQd1lyNTk5SXJ5WTNzNTEtN0hwR2plQU9Ka0pXT2kxZndCT3E2QkRZOWVuNHhveFRFUkU1d2FLSWJBNkxmbXBUTTd2WXprbTJ5Ml93eHo3Yy1NZ203aURIR1FNUDRVUFpaTEo5X2dBbHEyRkhtWW1IQ3h6R2V3Mi1rVHdtMC1WT1lhZzBBbUtHVXV2ZGl0dS1kREZZWEpZQThkTGhqaGJMdEg2bVlOajR5M2xOZGJ2SVZqY0c2RWVCQVo2ajlY?oc=5",
+      "date": "2026-11-02"
+    }
+  ],
+  "teams": {
+    "Ohio State": [
+      {
+        "team": "Ohio State",
+        "tag": "QB",
+        "text": "QB Julian Sayin (right arm) remains out indefinitely on the injury report vs. Oregon; freshman Luke Fahey has been starting in his place.",
+        "source": "Cleveland.com",
+        "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPcUFzYWNLUl9vc1R1NC1Wc0tzQ1hjM1oySWhGLVA4MEZTdE5xWmF1UGh3R0lEWUJvSW1icGZjNTRoOHM4YmhyVGlyM0FqZ3c2MWk0N2I1Q3lLN1cwMmpoNXBLc0tIX3dIWFp3UHl2Z1lzMElrX0EydEhVSFMwdFRwczNrRnBJLUk4QkFHS1ZoSjhwSVZyX1NqUy1KOWNnUy1mMnUwc0VQaXBSaDl2UGlKY2dvbzFma25sanRjekU4UHJmTTdjVEJpS1FMMWxud2pTeXRN?oc=5",
+        "date": "2026-11-05"
+      }
+    ],
+    "Miami": [
+      {
+        "team": "Miami",
+        "tag": "KEY",
+        "text": "Star WR Malachi Toney (ankle) is reported to need surgery and is expected to miss the Notre Dame game.",
+        "source": "Reuters",
+        "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPaE1zY0lORlR4UDE2cTZJWlJMN1h2V0NtVG1iV19QSklPcXJEckZ3c3QzOTFuRkx3UGtmOW1hYlRhMWZZSGVxTmxfTkh5WDJ2aXpoQXlHSk51Q2l5cGw5eEJXWlI1OE9GM25TUlE5b3dwbldwNXRmVkNidndGbzNoSG9QMXZOMkFPcTM1S1RicjVuNTdFMXdJQ3RJZ2JZT2xqVTl5WTNHYVlZTHprSWdpQw?oc=5",
+        "date": "2026-11-05"
+      }
+    ],
+    "Kansas State": [
+      {
+        "team": "Kansas State",
+        "tag": "QB",
+        "text": "QB Avery Johnson (shoulder) is out, possibly for the season. Blake Barnett makes his first start vs. Oklahoma State, K-State's fourth different starting QB in four weeks.",
+        "source": "Yahoo Sports",
+        "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9vQWl3Nl9uYVJWTEw5bFRpOTFidnVLNkdhMjFDZ3JxbHdhTFFqLU5XQ2xlaXd0SFJRN01ydFpWYWtkbmZrUnhKOFBfSzUzMzdtR0xQclJ0cXVlUlBydWVFR1U0T0VLNFc0WHl1TzgzNmQ3WjNrQTlGN0J0VUNMLUk?oc=5",
+        "date": "2026-11-06"
+      }
+    ],
+    "Texas": [
+      {
+        "team": "Texas",
+        "tag": "CLUSTER",
+        "text": "Five Texas starters are questionable on the initial report vs. Missouri, including star edge Colin Simmons and WR Cam Coleman.",
+        "source": "Austin American-Statesman",
+        "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPYkVZN3dMd0I3MHdnOE1BS2RwTDRtY25PRHdrN0pQSlFPb1pfcHlVZ21HUE1rYktxSkVPZXlYdUxKSW9MN19NbkhyYnYzSVQtMmdkbTU0dlJRMlZLZ2UybHRaWHp4ZjdRSHRNTnpnclNWVklhd2ZnTXVZVUFPTE04TnNHbm1nM01KUGhUckFacW9scDdqSC1uMzNXeU1qODBPa2xzREZ2a1ZNN1E0cmRnMQ?oc=5",
+        "date": "2026-11-05"
+      },
+      {
+        "team": "Texas",
+        "tag": "KEY",
+        "text": "RB Hollywood Smothers is done for the season with a torn MCL, per an ESPN source.",
+        "source": "ESPN",
+        "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQeU4zU0V3SFlLSF8tMTVabnZaQ2NWc1FwVDBPaGZHRWhVWVF1eF9sUlNrR3NaUS1UUVNlaE8xUlBaeDd3M2dUYVpvNDNDajZGSmIyUnl1YUVKcEpCbm5xVHZpVnJVcnptZlJCR19HTEs5SVZuRmpaQXlfZUdUa2dpWUdQdDhYd09NZEU2OTdFSmktS1hsbUJVVE5memhQZEdVRUV6bVVB?oc=5",
+        "date": "2026-11-06"
+      }
+    ],
+    "Ole Miss": [
+      {
+        "team": "Ole Miss",
+        "tag": "KEY",
+        "text": "Star RB Kewan Lacy (shoulder) is likely out vs. Georgia, per Pete Golding; he also missed the Auburn game.",
+        "source": "The Clarion-Ledger",
+        "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQd1lyNTk5SXJ5WTNzNTEtN0hwR2plQU9Ka0pXT2kxZndCT3E2QkRZOWVuNHhveFRFUkU1d2FLSWJBNkxmbXBUTTd2WXprbTJ5Ml93eHo3Yy1NZ203aURIR1FNUDRVUFpaTEo5X2dBbHEyRkhtWW1IQ3h6R2V3Mi1rVHdtMC1WT1lhZzBBbUtHVXV2ZGl0dS1kREZZWEpZQThkTGhqaGJMdEg2bVlOajR5M2xOZGJ2SVZqY0c2RWVCQVo2ajlY?oc=5",
+        "date": "2026-11-02"
+      }
+    ],
+    "Florida State": [
+      {
+        "team": "Florida State",
+        "tag": "KEY",
+        "text": "Top WR Duce Robinson tore his ACL and is out for the season.",
+        "source": "ESPN",
+        "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQT0dZSl94ajJyZEdrQ0Q3SW5oeDlCMFdveDJ4MGRMVElVSi1VcnBYREhRSnBiOEhjdmtnZ0djU2dqOVBYdDhnaDV6a1FVYzFRTVItSW80TVFLZk9uM2tuajdUNWtBVEJSYTJFSmlsZm9fQ0p0ckJ5U24wMjNVZ0EtZlUyXzNkOGJXT19wRWtYNzI3MDlscGpXcTN6TjBjOFZpMTZV?oc=5",
+        "date": "2026-11-03"
+      }
+    ],
+    "Mississippi State": [
+      {
+        "team": "Mississippi State",
+        "tag": "QB",
+        "text": "AJ Swann (starting for season-ending Kamario Taylor) left the Texas game with his right arm in a sling; status vs. Vanderbilt uncertain. LT Miles McVay also exited.",
+        "source": "WLOX",
+        "url": "https://www.wlox.com/2026/11/01/mississippi-state-loses-fourth-straight-aj-swann-exits-31-3-loss-texas/",
+        "date": "2026-11-01"
+      }
+    ],
+    "Kansas": [
+      {
+        "team": "Kansas",
+        "tag": "QB",
+        "text": "Kansas listed three QBs as questionable on its first injury report for UCF; starter Isaiah Marshall's status remains uncertain.",
+        "source": "Yahoo Sports",
+        "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQbXo1ZnVIODRoWkdVZjdPeS11QTY0SXMzLXQ1SzgxcWlJUE5DcXVhTlVwSnlOa0FqUnk1R1owTmczWVNGSnFfTDhsMnpaN3VMVHNFQV8xY0lMV2xBa0FDTW9VaWxXNHBhMDNtZkdxck5FWUdaSzJWWHN0bWxvRzAxdjJ6Z0l2Zw?oc=5",
+        "date": "2026-11-05"
+      }
+    ],
+    "UCF": [
+      {
+        "team": "UCF",
+        "tag": "QB",
+        "text": "QB Keyone Jenkins (ankle) is undetermined for Kansas; Alonza Barnett III is returning from injury. UCF also faces a depleted secondary on the trip.",
+        "source": "Roundtable",
+        "url": "https://roundtable.io/sports/ncaa/ucf/news/ucf-coach-scott-frost-shares-update-on-qb-keyone-jenkins",
+        "date": "2026-11-01"
+      }
+    ],
+    "UCLA": [
+      {
+        "team": "UCLA",
+        "tag": "QB",
+        "text": "QB Nico Iamaleava suffered a season-ending knee injury; says he plans to return to UCLA in 2027. A backup will start vs. Minnesota.",
+        "source": "ABC7 Los Angeles",
+        "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQWkoxWVFIa096cm9nZm1GNEtjY1VIVmE4QW5hWndrRERpbXZ3OFFRVmNSWHV1bnlZYUU5clRTSl9VSS1paE80YnhWcHRCSy1FSU5CMXZoTzlYb3psdUFwT0FobXk4MWtaUzhzWFZkb19nYXBMUE84bGVseXdDdk5vSkpJaFJUX0E1a0E?oc=5",
+        "date": "2026-10-29"
+      }
+    ],
+    "Wake Forest": [
+      {
+        "team": "Wake Forest",
+        "tag": "QB",
+        "text": "QB Gio Lopez is day-to-day entering the Merrimack game.",
+        "source": "CBS Sports",
+        "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOcDRXQ1VTNEg3eHdlWnRuVzR3RmIxMzN0Q0RDNHpYTUE2T0ZZQ3Bra2hHU3Nmc2taeFZiZ2RiTVY0b0NjTWN1bG1lYmJpMHZ0U0tnNVJaWktrTFhFczd1c3hCM1V5QXRiSEtzYUpackxNSzdDVkZOQ3VkVlhIem9GY1Etbk1YNkNDd19XQkY1dFpnWlFfU2RkRDl4LUMtUzY0OXlxUjVLcnhSQWFBZi1VWg?oc=5",
+        "date": "2026-11-04"
+      }
+    ],
+    "Syracuse": [
+      {
+        "team": "Syracuse",
+        "tag": "QB",
+        "text": "Multiple Syracuse QBs are listed on the injury report for Clemson.",
+        "source": "Greenville Online",
+        "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPcmQwWEJQdDY3cHNMdmxMc05YWkZNR3FLVVVMVEdpM0FDR3p2X1NieGRKbEFKTVR1Ry15MUlwSU1oRElULUprTDRLOUNKcnpPTEs1STdXYjVZaEVXeE8tRGgtNXNoRVBPcmRPVDk3OWVmOURIUXVKanRmSXE4YjJycDRJd1RENzg4eWFtUGFoVUhZa01QNE1zR0F3a0swanE3VndZLTVsMWk3dzhXWFJFcEhLclk0TjFzNVhGR1VGMXR4VG14VWpCLVYwNmFPMEZZaGJN?oc=5",
+        "date": "2026-11-05"
+      }
+    ],
+    "LSU": [
+      {
+        "team": "LSU",
+        "tag": "KEY",
+        "text": "Star LB Whit Weeks has a chance to play vs. Alabama but is considered doubtful.",
+        "source": "TigerRag.com |",
+        "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOaXI0cEdERzg1elMwVUhkWUJDOW0zYTlqemJoaFNtTHpReE1EWXR1RUFzaDRyVlhpZktVS2ZzeXlROElFajR5S1p1eE5BS0VTQWxHRHBqVWlLT2xlWmVnSEZzTFJ0akxNU003aXhMSU9CcTRjQ3Z5Z2pjZC1XNmI2eE91S0JOdUszeV9IYXNiWE1aNi1NMnRRWGljMDN4TThKS3lHSmt1cDJMYmFKLUZoOVd3djNjTDM0andNZg?oc=5",
+        "date": "2026-11-05"
+      }
+    ],
+    "Alabama": [
+      {
+        "team": "Alabama",
+        "tag": "CLUSTER",
+        "text": "Five Alabama starters are listed questionable on the initial availability report for LSU.",
+        "source": "Roll Tide Wire",
+        "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxQY0F3TmVwbjkxbnNpSGM1eDlfSlB1cE1tLUN0QzFUbUNJRmNoaV9xQ0NVQXhtT3FTcENVRE0xSGkyc2dsdHVKRmxvcVk1dkZEZzAwMVZYcUlzbVJJTGVLbWVLOGRRYVFydy1jcnd3ei1ZTE5ZQXU4aDE4T1VZTkVEUXBtbE4zeTVRX3dtdURNenBVUXFvMG1yemNZRmdRUmhySkdxaXZXSkc5ak5EcnBHcHV2ZWlwVlpxNnVfRjBlYkJ2bnNzMm9odlJQeWxLcnNNMXh1WFZZUVF2TlZJeklyWkZzM3E?oc=5",
+        "date": "2026-11-05"
+      }
+    ],
+    "Clemson": [
+      {
+        "team": "Clemson",
+        "tag": "CLUSTER",
+        "text": "Three Clemson starters are officially out vs. Syracuse, including multiple offensive starters.",
+        "source": "Clemson Wire",
+        "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxPZXNOWHhfZnZpNDV3bFhpTlVvVmxXLWxHWXE0MWg5ZzZHelNMR0VfOThrSjNydXFjUjdRLVFZSENaQWJ5YWxIbElBdjFMNU9BNDRROEp2Q2FqYlN3VGpLNzFvZlRIbEVBZmtudkZTZzctLWh5MS1FVnctTS1ZOGduVXJwZzU4bExwb0xDWFJ3ckNnRGRvMFRiLXNFVDZmNUxsWnYwaGd0dzFzaG9TbmFXZXhBdmpXN3hPb2NVWUVySmphMnRoX21fLXluTHhUTkFNRXU5RERTcWtxOTJVQlBPUkx5NA?oc=5",
+        "date": "2026-11-05"
+      }
+    ],
+    "BYU": [
+      {
+        "team": "BYU",
+        "tag": "RETURNING",
+        "text": "Star RB LJ Martin returned to practice this week; his availability vs. Utah has not been confirmed.",
+        "source": "KSL Sports",
+        "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNMFRrSlNVSERGcTJ4bmtTNzlHZnJ0X3QwazloZWMzNmNhcWxqMUI0RzByMUxEVUxMdXJyOEVjZGVNeGNXMWNmX3M3YXoyenI1N2RON2pNYVZkUnlwU09HU2MtcDhxVmx4TjNtc28xMllsS0hDQ2Z4cWU5ZVF2ZjR2bURzLUdNVDg?oc=5",
+        "date": "2026-11-04"
+      }
+    ],
+    "Utah": [
+      {
+        "team": "Utah",
+        "tag": "KEY",
+        "text": "A starting offensive tackle is out for the season with a lower-leg injury.",
+        "source": "The Salt Lake Tribune",
+        "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPWWIwWEtsZV85ZHY3S3I0SUt0OTJudkpmTkVFSnhqOXNEdUhzNzN1VUs4RFhTcFZBZGRFRV85cG4wRnFlYmszdTdvcGlZVnk0c2h4MnBpVGF0RzdjeDUzZjJacHlxbnhfUkpXdm9IUnhZbXZwQUxnOVFpZUllcEN4U2dVTXdtVzBtQXI4?oc=5",
+        "date": "2026-11-02"
+      }
+    ],
+    "Oklahoma State": [
+      {
+        "team": "Oklahoma State",
+        "tag": "CLUSTER",
+        "text": "Two defensive starters, LB Tate Romney and DL Jaleel Johnson, are listed doubtful for Kansas State.",
+        "source": "Pistols Firing",
+        "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPdUhld1JSUlpUamkzUDJvZllpUEY3b3N0NTlkTUJFYjNZcE5MVlEtM2pXUFZOWl9EWkJlVzdBUVB3YTRZSWJxRlZycEhmRnFWX1Y3R19uYnJ4YW1Lcy1LODM5NXRmMVMzYUJOVF9kb3JubFNNSUN5TmdwNkpKVkNJTVVSdDFUc3R2cjBnSkluOV9IYjdFbFpuMnRsX0lCNWtvQUFsYVl5Z3JIbUltdncyTGJPSQ?oc=5",
+        "date": "2026-11-05"
+      }
+    ],
+    "Penn State": [
+      {
+        "team": "Penn State",
+        "tag": "CLUSTER",
+        "text": "Starting WRs Koby Howard (questionable) and Chase Sowell missed Purdue; both remain in question for Washington.",
+        "source": "On3",
+        "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQWTl3OUZwREppdnZmTWQ3NkxZYk0zbGJDVW9TZVVpVnYtNU5FZHJ5eUJGM0N4bDFkMWFVZkRnc0VISmctSWZNZWl6TnR0ekN6RVowTU5ibjd0UjRIQjBTZnlPaFp4NHBxMkJLTTJCZHBTTVN2d3hsQk5fSDBEUjN4bUdYdzFNbzdKNEZJVU5TSU5kYzJndzk2bUlmZkExX0hTTzQyQ29PSzcyYUQzU2xFajVDc0dJSWd4bzlscHpqSDAzTWRyOTM2QjdheEVuZnd1c2dLblJn?oc=5",
+        "date": "2026-11-04"
+      }
+    ],
+    "Rutgers": [
+      {
+        "team": "Rutgers",
+        "tag": "KEY",
+        "text": "Star WR KJ Duff is unlikely to play vs. Wisconsin.",
+        "source": "Sports Illustrated",
+        "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNbW5ZdUVfNF9DdjdMZlB3VjZTa0FTbTBXZnM1ZkZCTDFNMzBIcHh1T2dXSHlfNTQwOXU5VHpUdEVIVVVoa0FVWFZoMG5hMHBRdFpGcjYwUUhtU0w1cUQwQ1JnMzBiWXNpS0ZKSmI4bGhlU1VjODU4TVZhUlVraTdRRGM3ODNfNEdVejhLcFJNWmdUNmRBd25zcTY0cVJnYnNsSTNTSnZVV1VvWTJkQm9ocDZWeFl4SEVwN1FvSlVnV1VDSktzZ2tiZFVjN1BzdjdH?oc=5",
+        "date": "2026-11-05"
+      }
+    ],
+    "Wisconsin": [
+      {
+        "team": "Wisconsin",
+        "tag": "CLUSTER",
+        "text": "Wisconsin's latest report has multiple offensive linemen in question, and a key starter is not expected to play vs. Rutgers.",
+        "source": "Yahoo Sports",
+        "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQRFdFNnVMTWdrd0lsRFk3c1AtS0FhN1djNy1LSkN2b3JzVVZ0dHg4Q3BKQUhEQ2VGbTRXTllBd2FXcW1MMjNXY2RzZ1NWVnVhUktnTklDdWppYktVUmE5elFxdkFTZGVuOENmLTJMVEN3N2Mwdk5yRHJfc0w5M1Q4eXZqYUN1ZVVLMHZJOEZLVQ?oc=5",
+        "date": "2026-11-05"
+      }
+    ],
+    "Iowa": [
+      {
+        "team": "Iowa",
+        "tag": "CLUSTER",
+        "text": "Multiple offensive linemen and defensive backs are on Iowa's Wednesday injury report ahead of Northwestern.",
+        "source": "247Sports",
+        "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxNc2tVdTVjSlEwR3VwTXNIMkJuejZBa1JrLUFQTm9uV1kybTFRTkNFTTFZOWtBMjhDN2J5c1hVQWxBd2MwelVhaTAwelQ2NHlxS004T2RJTV9YQS10eGE1V0hWSWV5V3RhZFZMbGJsbmluMndvTkNfNEt4eTNqOXFOMklRem9CejZzTVNfQlVRSzh6aFZhdm9KYjByVndWNW1SZXU2cWVFNzZUakJUck5kUWVaaW9pMmIzWkhsMmExMXRIdWE4NjVfS0JRa0JnTGxWZ05TUVk5dkNuYWRQckVrQnc1LUpSZHFh?oc=5",
+        "date": "2026-11-05"
+      }
+    ],
+    "Texas Tech": [
+      {
+        "team": "Texas Tech",
+        "tag": "CLUSTER",
+        "text": "Three receivers are listed on Texas Tech's initial injury report for West Virginia.",
+        "source": "Lubbock Avalanche-Journal",
+        "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxORS14UG1Hc3JHUzVfYk1XN1hPUVhQRzl2SWNzQmhHU1V2X2szZ19Cb0Q2UndWN2pnZEh2X04tMklscnQ5Z0ROb09QNEZERVNuekxJeEJrbXppZENXZzR4MDVaaHYyUHZPVUFPTDh3NzMzRW5GNnNORWZDMWJSMmw1cjlYOTROSzYwOEZkVU5WUnAwZklRYlNZa1ViVnlQRWkxQmw5c1ZKY2VJbkRUbGtjc1FrQXpfX0RJTXJlY2ZRc2NVWnBxNHQ3MDNIQlE4SlRfVmozY3dEU2pobkd5RURQWC12R0hvQ0JYOVZObjJTbG5RUkxmUUxXUg?oc=5",
+        "date": "2026-11-05"
+      }
+    ],
+    "Oregon": [
+      {
+        "team": "Oregon",
+        "tag": "KEY",
+        "text": "RB Jordon Davison's injury reshapes Oregon's RB depth; Oregon's report vs. Ohio State is lengthy, with three offensive injuries in focus.",
+        "source": "Sports Illustrated",
+        "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQbnRzOVlhRy1hWUY3aFgyUk03TzZuLWpaTmtaa1k0alBobUdJVGdVa2dTTlhzY1hvNUJ0M2VEdTEyUVgyQmtpbDBwcHRaTElnR1ZoYlM1VjE4cTZ5d05kRnVhYVZPX0VxM29INF9mY1psVFR1c0JiUU1nZndGR05Ib3cyMXlXWGdodmFQUjBrQ2JEM1JRdElid1Ficzhkby1jWTdGUE1zOVNXRGM3UURJUVlWcFM4Wlk?oc=5",
+        "date": "2026-11-04"
+      }
+    ],
+    "Notre Dame": [
+      {
+        "team": "Notre Dame",
+        "tag": "CLUSTER",
+        "text": "Defense dealing with several key injuries entering Miami, including LB Drayk Bowen ('significant' injury in Week 9).",
+        "source": "A to Z Sports",
+        "url": "https://news.google.com/rss/articles/CBMiqwJBVV95cUxObk9STTFoTFQxX0NFekxORWRLejlvUVFrR1lkRkt0RTFyNFdrdVlLSzJDWUF5Vy0yS2wwYUNjQ0QtREQwVzhTTmF6ZkxDX0FJMi1pZXNnWGh2dHVWVHRmeElVaDJfbGYyU1p6UkY3WUgzaEpSY2Z1eHFQUkJxMTQ2VFpvTGpuQ2JyU1N1SXlrWEZKWlU5Qm91NlpaLTBLVl9xaWZaY01EeFZJNnBzMFdwSHMwOUQtYkR1empLUkpiODN3Vm1MdkdHRG1Xd0ozcC16MDZyZ2UyQjFTMFh2LU9fUUlNNFNtNWtrMll4MXlOTTBKZUc4c3QwX2dZRXg4dmtrOEVwelZxNWVSR0hYZmI5S2xhNVdEUEcxNnhhUW5lMU5NYlNmRFpaUEE1OA?oc=5",
+        "date": "2026-11-03"
+      }
+    ],
+    "South Carolina": [
+      {
+        "team": "South Carolina",
+        "tag": "KEY",
+        "text": "Top RB Matt Fuller needs surgery and is likely done for the season, per Shane Beamer.",
+        "source": "Greenville Online",
+        "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQWVRUc2tEZW9teXpHMWduVVoyZDJnN19oTTdWejB2Mk5BT2NHNjA0bUtZWWxjUDZzeXJnUmJocG96Z3puZDdZUWRGMlJ2RjBBRXNrbkwwQkVCTkV6djI3STZzdUk4N2s1ZnZ0SWJjdDlzdlhlcnppS1M2UFpLdG0xQ0F3NEpqaS1ZVUFnQTBOTEVsdG1MQWN5RmNKQ1pES1BTdzhRbzJ2RDlWN3ZUTC1qUklMZ2x1ZktoLTNSVnpIWUt3NFo3SU9vbTBQVQ?oc=5",
+        "date": "2026-11-01"
+      }
+    ],
+    "Louisville": [
+      {
+        "team": "Louisville",
+        "tag": "KEY",
+        "text": "WR Lawayne McCoy will miss 'an extended period,' per Jeff Brohm.",
+        "source": "WHAS11",
+        "url": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxOcjIyeHM2Y0JmalNuanhVVU1wc3kwYlBVLTBvRkR4UjZnWG9lSWE5bmNZSG1tbkFPZF9pQm0zY01SLVVIUUVHdFJaSzYtVW1sbTBGUWFjbkZ5SEYwUElaemVCeVNOeGxfTHJBSXEyNUZkT0pZbHVVa1psVzZNMXBvQzROSjR5WFBVZTNPS0pkYnZMYjZKQjhGQndfQXI0Qi1IWkpaUE8xLUZKNzhveEd0M3NMdFI5c1d5dWlPNnhkUDBzZW5sLW81dXYzaGdvQ0x3OFJYS05IMk9BRjdtTjNTWEJuSWJXbjcxR19UdjN2VnptZ2NlTGc?oc=5",
+        "date": "2026-10-31"
+      }
+    ],
+    "Florida": [
+      {
+        "team": "Florida",
+        "tag": "KEY",
+        "text": "WR Vernell Brown III headlines Florida's pre-Week 10 availability designations; the Gators are also in a QB battle.",
+        "source": "The Independent Florida Alligator",
+        "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBCZUQzQUhuSjlMcHJGUmF5cC15M2twNDFNR0dZQUVVNWdTR2N3alNSUGFXRFBzTTA1a0ZES1ppazhEX1VUWTVlT215YzJsdEpWN2EyN0JpSUZDODhpS2c2Q01GUWYzUWlsdXh3ZVFIQWtQNGllQnJOZmhPYVY?oc=5",
+        "date": "2026-11-05"
+      }
+    ],
+    "Houston": [
+      {
+        "team": "Houston",
+        "tag": "RETURNING",
+        "text": "Houston gets key players back from injury after its off week, per Willie Fritz.",
+        "source": "Houston Chronicle",
+        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOdGFKTnpkZWkyMU5YZ1pTeWZwZ0J0NHZzeWhHOXFHTGJ1Ym82enI3SE5lZUVQMmt1MTRxQk9XcGpBdXJNY2V1NGF0QkpyMUFjMkxKUXplc082WHRJY2RTeTRCMVloMkw1dmFzUHpjMWpaYUlLQnN0STVlOWhDZ19XVDdBZm5jMHd3TThQMHd2V0NwVEZjT1FFVzJxZG95Wjl0Y0FmbUFpRzNWU2VUV2pCeFd3?oc=5",
+        "date": "2026-11-03"
+      }
+    ],
+    "Northwestern": [
+      {
+        "team": "Northwestern",
+        "tag": "QB",
+        "text": "QB Aidan Chiles remains listed on Northwestern's injury report ahead of Iowa.",
+        "source": "Yahoo Sports",
+        "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQM1BiNTkwd2FKYS15amxYTGtkakdzeTdlV1IzYUVBWXA2bXdGYmU0UHZjR01FaUJDc2UtZFB3MlZrQ1VFelFkemJSdVpLanE3c0JhTWFEZG45Tlk4azhGcGFnVTRocWFPM3pxOXVwNi0wTXlhWFJ1SDRuT1JLb3I2UV9tcUJabms3RDdV?oc=5",
+        "date": "2026-11-06"
+      }
+    ],
+    "Michigan": [
+      {
+        "team": "Michigan",
+        "tag": "RETURNING",
+        "text": "Four Michigan starters were upgraded on the injury report for Michigan State, including Dom Nichols and John Henry Daley.",
+        "source": "MLive.com",
+        "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxON2lRTTdZWkpDVXdwWkE3OFdZTHJ1YTlsUm9LWDF0aVlFQ2RJVHFCNkRwYXdBalI4dzIzNnd3V2tsLWNyTVR1eWpLQ1VHRlVNWUVOSHpBeGdUMi1yNm44dUstQVJ2b2Nfbk9vUmRDWUIya25HUzdPMDdPYzMtUklOYUdTaXBMX1U0aVJ5YlZzbkljcVdMOGNMdEpvckpRazJsMng2WkdBZGh3OGc0YlJWU0xBWWQ4ZE9kUXpoZnpNY1c3UdIB1gFBVV95cUxNQUpra0wzcTRuYjBnbHJwcVBJNGlPUG9MQ1VySkJLaHI0YUdrNnBjRXdGZWpQamZYOEpvMUZtcTJRbjBsSmxZX3d5Y2RDdnhTZkw4SWtCOW1JRkUxUFdyelFCelhfRzhLVndZeW9lMGRRd2dQWHNKT3lZLUtOd0RBYmxvVk5yeC16MXcwUTFRa2R5RXJmUmIxRXRLbVRLOWdMVXQyQkpVTkc2UW1tdTljUGx6WGlsZGZRZFJCYXpNX2xuWFhvLWxubVpaaV9WQWNQdGx5V1FB?oc=5",
+        "date": "2026-11-06"
+      }
+    ],
+    "West Virginia": [
+      {
+        "team": "West Virginia",
+        "tag": "RETURNING",
+        "text": "WR Armoni Weaver-Bomar is set to return vs. Texas Tech; multiple Mountaineers were cleared to play.",
+        "source": "Sports Illustrated",
+        "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNME9WSlcyYW5IaVRmblFXYUFjRGZYUy1OY1pBbE1NdDM2dzdGVjItR0Zha2xyaGtDeGJ0cHlDV1JXQTRTTm9NS2d1OGxTTTFXQWRsMWhpQzRyLTRQYVY3T2hHN2pMaE9CRVZ2Z0p5V2Fkc1VaYlYxZ1hXbzgxS0ZHNlpfREZFamlPeDNrX21qNHJpMGlGeGY3dUVxQWpUMFF6Rmx0NnY3NTdPMVpOc2M0Q2FHaDJlMTQzVmhSaTc1RkpPZjByYWdkWU9reFRGUzg?oc=5",
+        "date": "2026-11-06"
+      }
+    ],
+    "Virginia Tech": [
+      {
+        "team": "Virginia Tech",
+        "tag": "CLUSTER",
+        "text": "Nine Hokies are ruled out vs. SMU, including CB Thomas Williams; Emmett Laws is questionable.",
+        "source": "247Sports",
+        "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPbEJJSUxkVUx1Q29xLXVEclZRaDF4YkFWUDlNZDlLcHpOV1c4ZTg4amVlNzladFBFajlKdlVxWU1QS0RpRDJyLXNfQlZUaEw0QUJ2YmdEMmxyVTEzMGhfa1ktaFF1VS0zR0RvWF9xTWVYNGdmSEJuQUJ1TVI4aDY3ZUp3U0plbXJHRXUwdmFJenAxUkVvRE9PYkZFWGNoZDZiaXpaSjZuVVAyNE1DNngteTdaUFlfSmM2MFVma0xtMEl5T2w3ZjIxTlVzcmdyQQ?oc=5",
+        "date": "2026-11-06"
+      }
+    ]
   }
- ],
- "teams": {
-  "Ohio State": [
-   {
-    "team": "Ohio State",
-    "tag": "QB",
-    "text": "QB Julian Sayin (right arm) remains sidelined; Ryan Day gave a new timeline update Nov. 5. Freshman Luke Fahey has been starting in his place.",
-    "source": "USA Today",
-    "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxONU0tbVR0eU9IeHJycWsySDhTbTYzUUZ6NFpIeHF5c2lQYjQxRVVOMm5HVERwT2k1bHlnRnVQaTNwaUE3Ql9LSFROOU5IV05QZVhpXzNUc1hIeFJWSmx3Zk9HNTNMVk40T2M3VEZ5Ml9HTGNReDNKdDZwbjdpQkNqUmFQandCSmJVSGNVZ3RuZ3FxNFBoWGJaWFpoLWFyWG10UWpOYkNYemEwVGM2UWpYc3dXQ1o2Nk5kaHBNQmczNlBydlhrM3pYNjAwVTBLRG1OU2k5eVIyb2xDTVRhR3c?oc=5",
-    "date": "2026-11-05"
-   }
-  ],
-  "Miami": [
-   {
-    "team": "Miami",
-    "tag": "KEY",
-    "text": "Star WR Malachi Toney (ankle) is reported to need surgery and is expected to miss the Notre Dame game.",
-    "source": "Reuters",
-    "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPaE1zY0lORlR4UDE2cTZJWlJMN1h2V0NtVG1iV19QSklPcXJEckZ3c3QzOTFuRkx3UGtmOW1hYlRhMWZZSGVxTmxfTkh5WDJ2aXpoQXlHSk51Q2l5cGw5eEJXWlI1OE9GM25TUlE5b3dwbldwNXRmVkNidndGbzNoSG9QMXZOMkFPcTM1S1RicjVuNTdFMXdJQ3RJZ2JZT2xqVTl5WTNHYVlZTHprSWdpQw?oc=5",
-    "date": "2026-11-05"
-   }
-  ],
-  "Kansas State": [
-   {
-    "team": "Kansas State",
-    "tag": "QB",
-    "text": "QB Avery Johnson (shoulder) is out vs. Oklahoma State and possibly for the season; K-State will start its fourth different QB in four weeks.",
-    "source": "ESPN",
-    "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPejQycFk3NVpQODJBWVNNaktKSU4tZm1NOC1NSnQxcmpTdzBmejA4REFrU3hkejVwczBCZEJTM1FHMDBJWUg2cFVRYkdPREJfMU5wYWh6ZUdpSW9uSnBySHFWQ3Z4aVlSOUd3ejRiZXgtOG42N01Bd0xRVVB3R0dzdDVpUG1HRG5zMnBzMXVjUzNfS0ZwbTRWWkZDVm9XUkFBSHB0UTkySTNwQQ?oc=5",
-    "date": "2026-11-02"
-   }
-  ],
-  "Texas": [
-   {
-    "team": "Texas",
-    "tag": "CLUSTER",
-    "text": "Five Texas starters are questionable on the initial report vs. Missouri, including star edge Colin Simmons and WR Cam Coleman.",
-    "source": "Austin American-Statesman",
-    "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPYkVZN3dMd0I3MHdnOE1BS2RwTDRtY25PRHdrN0pQSlFPb1pfcHlVZ21HUE1rYktxSkVPZXlYdUxKSW9MN19NbkhyYnYzSVQtMmdkbTU0dlJRMlZLZ2UybHRaWHp4ZjdRSHRNTnpnclNWVklhd2ZnTXVZVUFPTE04TnNHbm1nM01KUGhUckFacW9scDdqSC1uMzNXeU1qODBPa2xzREZ2a1ZNN1E0cmRnMQ?oc=5",
-    "date": "2026-11-05"
-   }
-  ],
-  "Ole Miss": [
-   {
-    "team": "Ole Miss",
-    "tag": "KEY",
-    "text": "Star RB Kewan Lacy (shoulder) is likely out vs. Georgia, per Pete Golding; he also missed the Auburn game.",
-    "source": "The Clarion-Ledger",
-    "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQd1lyNTk5SXJ5WTNzNTEtN0hwR2plQU9Ka0pXT2kxZndCT3E2QkRZOWVuNHhveFRFUkU1d2FLSWJBNkxmbXBUTTd2WXprbTJ5Ml93eHo3Yy1NZ203aURIR1FNUDRVUFpaTEo5X2dBbHEyRkhtWW1IQ3h6R2V3Mi1rVHdtMC1WT1lhZzBBbUtHVXV2ZGl0dS1kREZZWEpZQThkTGhqaGJMdEg2bVlOajR5M2xOZGJ2SVZqY0c2RWVCQVo2ajlY?oc=5",
-    "date": "2026-11-02"
-   }
-  ],
-  "Florida State": [
-   {
-    "team": "Florida State",
-    "tag": "KEY",
-    "text": "Top WR Duce Robinson tore his ACL and is out for the season.",
-    "source": "ESPN",
-    "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQT0dZSl94ajJyZEdrQ0Q3SW5oeDlCMFdveDJ4MGRMVElVSi1VcnBYREhRSnBiOEhjdmtnZ0djU2dqOVBYdDhnaDV6a1FVYzFRTVItSW80TVFLZk9uM2tuajdUNWtBVEJSYTJFSmlsZm9fQ0p0ckJ5U24wMjNVZ0EtZlUyXzNkOGJXT19wRWtYNzI3MDlscGpXcTN6TjBjOFZpMTZV?oc=5",
-    "date": "2026-11-03"
-   }
-  ],
-  "Mississippi State": [
-   {
-    "team": "Mississippi State",
-    "tag": "QB",
-    "text": "AJ Swann (starting for season-ending Kamario Taylor) left the Texas game with his right arm in a sling; status vs. Vanderbilt uncertain. LT Miles McVay also exited.",
-    "source": "WLOX",
-    "url": "https://www.wlox.com/2026/11/01/mississippi-state-loses-fourth-straight-aj-swann-exits-31-3-loss-texas/",
-    "date": "2026-11-01"
-   }
-  ],
-  "Kansas": [
-   {
-    "team": "Kansas",
-    "tag": "QB",
-    "text": "Kansas listed three QBs as questionable on its first injury report for UCF; starter Isaiah Marshall's status remains uncertain.",
-    "source": "Yahoo Sports",
-    "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQbXo1ZnVIODRoWkdVZjdPeS11QTY0SXMzLXQ1SzgxcWlJUE5DcXVhTlVwSnlOa0FqUnk1R1owTmczWVNGSnFfTDhsMnpaN3VMVHNFQV8xY0lMV2xBa0FDTW9VaWxXNHBhMDNtZkdxck5FWUdaSzJWWHN0bWxvRzAxdjJ6Z0l2Zw?oc=5",
-    "date": "2026-11-05"
-   }
-  ],
-  "UCF": [
-   {
-    "team": "UCF",
-    "tag": "QB",
-    "text": "Starting QB still undecided for Kansas after Keyone Jenkins' injury; UCF also faces a depleted secondary on the trip.",
-    "source": "Orlando Sentinel",
-    "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQUzFCY1NPM0dGam1FVHBueml5aEE3MnJ3TERrYlU5UmlsVVRqTmVlMlItUWJnaHNXLTdRdFRqQXJNcFB2YThhOS1DOTd6RXVxMURCLWw0TE1iWGJybFdibGlDMER6dlQ4MERfY1BYZ2lPdmpxUkJ3N0I4OXoyRVlaaHY5V1gtU2I4YXp1VmtTQmdQMDhkV25UeFpfM1hBTDltSWlqMXk0WUhBZGg4aGV1OVpDUFlzcEItU0VPeFBn?oc=5",
-    "date": "2026-11-02"
-   }
-  ],
-  "UCLA": [
-   {
-    "team": "UCLA",
-    "tag": "QB",
-    "text": "QB Nico Iamaleava suffered a season-ending knee injury; says he plans to return to UCLA in 2027. A backup will start vs. Minnesota.",
-    "source": "ABC7 Los Angeles",
-    "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQWkoxWVFIa096cm9nZm1GNEtjY1VIVmE4QW5hWndrRERpbXZ3OFFRVmNSWHV1bnlZYUU5clRTSl9VSS1paE80YnhWcHRCSy1FSU5CMXZoTzlYb3psdUFwT0FobXk4MWtaUzhzWFZkb19nYXBMUE84bGVseXdDdk5vSkpJaFJUX0E1a0E?oc=5",
-    "date": "2026-10-29"
-   }
-  ],
-  "Wake Forest": [
-   {
-    "team": "Wake Forest",
-    "tag": "QB",
-    "text": "QB Gio Lopez is day-to-day entering the Merrimack game.",
-    "source": "CBS Sports",
-    "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOcDRXQ1VTNEg3eHdlWnRuVzR3RmIxMzN0Q0RDNHpYTUE2T0ZZQ3Bra2hHU3Nmc2taeFZiZ2RiTVY0b0NjTWN1bG1lYmJpMHZ0U0tnNVJaWktrTFhFczd1c3hCM1V5QXRiSEtzYUpackxNSzdDVkZOQ3VkVlhIem9GY1Etbk1YNkNDd19XQkY1dFpnWlFfU2RkRDl4LUMtUzY0OXlxUjVLcnhSQWFBZi1VWg?oc=5",
-    "date": "2026-11-04"
-   }
-  ],
-  "Syracuse": [
-   {
-    "team": "Syracuse",
-    "tag": "QB",
-    "text": "Multiple Syracuse QBs are listed on the injury report for Clemson.",
-    "source": "Greenville Online",
-    "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPcmQwWEJQdDY3cHNMdmxMc05YWkZNR3FLVVVMVEdpM0FDR3p2X1NieGRKbEFKTVR1Ry15MUlwSU1oRElULUprTDRLOUNKcnpPTEs1STdXYjVZaEVXeE8tRGgtNXNoRVBPcmRPVDk3OWVmOURIUXVKanRmSXE4YjJycDRJd1RENzg4eWFtUGFoVUhZa01QNE1zR0F3a0swanE3VndZLTVsMWk3dzhXWFJFcEhLclk0TjFzNVhGR1VGMXR4VG14VWpCLVYwNmFPMEZZaGJN?oc=5",
-    "date": "2026-11-05"
-   }
-  ],
-  "LSU": [
-   {
-    "team": "LSU",
-    "tag": "KEY",
-    "text": "Star LB Whit Weeks has a chance to play vs. Alabama but is considered doubtful.",
-    "source": "TigerRag.com |",
-    "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOaXI0cEdERzg1elMwVUhkWUJDOW0zYTlqemJoaFNtTHpReE1EWXR1RUFzaDRyVlhpZktVS2ZzeXlROElFajR5S1p1eE5BS0VTQWxHRHBqVWlLT2xlWmVnSEZzTFJ0akxNU003aXhMSU9CcTRjQ3Z5Z2pjZC1XNmI2eE91S0JOdUszeV9IYXNiWE1aNi1NMnRRWGljMDN4TThKS3lHSmt1cDJMYmFKLUZoOVd3djNjTDM0andNZg?oc=5",
-    "date": "2026-11-05"
-   }
-  ],
-  "Alabama": [
-   {
-    "team": "Alabama",
-    "tag": "CLUSTER",
-    "text": "Five Alabama starters are listed questionable on the initial availability report for LSU.",
-    "source": "Roll Tide Wire",
-    "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxQY0F3TmVwbjkxbnNpSGM1eDlfSlB1cE1tLUN0QzFUbUNJRmNoaV9xQ0NVQXhtT3FTcENVRE0xSGkyc2dsdHVKRmxvcVk1dkZEZzAwMVZYcUlzbVJJTGVLbWVLOGRRYVFydy1jcnd3ei1ZTE5ZQXU4aDE4T1VZTkVEUXBtbE4zeTVRX3dtdURNenBVUXFvMG1yemNZRmdRUmhySkdxaXZXSkc5ak5EcnBHcHV2ZWlwVlpxNnVfRjBlYkJ2bnNzMm9odlJQeWxLcnNNMXh1WFZZUVF2TlZJeklyWkZzM3E?oc=5",
-    "date": "2026-11-05"
-   }
-  ],
-  "Clemson": [
-   {
-    "team": "Clemson",
-    "tag": "CLUSTER",
-    "text": "Three Clemson starters are officially out vs. Syracuse, including multiple offensive starters.",
-    "source": "Clemson Wire",
-    "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxPZXNOWHhfZnZpNDV3bFhpTlVvVmxXLWxHWXE0MWg5ZzZHelNMR0VfOThrSjNydXFjUjdRLVFZSENaQWJ5YWxIbElBdjFMNU9BNDRROEp2Q2FqYlN3VGpLNzFvZlRIbEVBZmtudkZTZzctLWh5MS1FVnctTS1ZOGduVXJwZzU4bExwb0xDWFJ3ckNnRGRvMFRiLXNFVDZmNUxsWnYwaGd0dzFzaG9TbmFXZXhBdmpXN3hPb2NVWUVySmphMnRoX21fLXluTHhUTkFNRXU5RERTcWtxOTJVQlBPUkx5NA?oc=5",
-    "date": "2026-11-05"
-   }
-  ],
-  "BYU": [
-   {
-    "team": "BYU",
-    "tag": "RETURNING",
-    "text": "Star RB LJ Martin returned to practice this week; his availability vs. Utah has not been confirmed.",
-    "source": "KSL Sports",
-    "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNMFRrSlNVSERGcTJ4bmtTNzlHZnJ0X3QwazloZWMzNmNhcWxqMUI0RzByMUxEVUxMdXJyOEVjZGVNeGNXMWNmX3M3YXoyenI1N2RON2pNYVZkUnlwU09HU2MtcDhxVmx4TjNtc28xMllsS0hDQ2Z4cWU5ZVF2ZjR2bURzLUdNVDg?oc=5",
-    "date": "2026-11-04"
-   }
-  ],
-  "Utah": [
-   {
-    "team": "Utah",
-    "tag": "KEY",
-    "text": "A starting offensive tackle is out for the season with a lower-leg injury.",
-    "source": "The Salt Lake Tribune",
-    "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPWWIwWEtsZV85ZHY3S3I0SUt0OTJudkpmTkVFSnhqOXNEdUhzNzN1VUs4RFhTcFZBZGRFRV85cG4wRnFlYmszdTdvcGlZVnk0c2h4MnBpVGF0RzdjeDUzZjJacHlxbnhfUkpXdm9IUnhZbXZwQUxnOVFpZUllcEN4U2dVTXdtVzBtQXI4?oc=5",
-    "date": "2026-11-02"
-   }
-  ],
-  "Oklahoma State": [
-   {
-    "team": "Oklahoma State",
-    "tag": "CLUSTER",
-    "text": "Two defensive starters, LB Tate Romney and DL Jaleel Johnson, are listed doubtful for Kansas State.",
-    "source": "Pistols Firing",
-    "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPdUhld1JSUlpUamkzUDJvZllpUEY3b3N0NTlkTUJFYjNZcE5MVlEtM2pXUFZOWl9EWkJlVzdBUVB3YTRZSWJxRlZycEhmRnFWX1Y3R19uYnJ4YW1Lcy1LODM5NXRmMVMzYUJOVF9kb3JubFNNSUN5TmdwNkpKVkNJTVVSdDFUc3R2cjBnSkluOV9IYjdFbFpuMnRsX0lCNWtvQUFsYVl5Z3JIbUltdncyTGJPSQ?oc=5",
-    "date": "2026-11-05"
-   }
-  ],
-  "Penn State": [
-   {
-    "team": "Penn State",
-    "tag": "CLUSTER",
-    "text": "Starting WRs Koby Howard (questionable) and Chase Sowell missed Purdue; both remain in question for Washington.",
-    "source": "On3",
-    "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQWTl3OUZwREppdnZmTWQ3NkxZYk0zbGJDVW9TZVVpVnYtNU5FZHJ5eUJGM0N4bDFkMWFVZkRnc0VISmctSWZNZWl6TnR0ekN6RVowTU5ibjd0UjRIQjBTZnlPaFp4NHBxMkJLTTJCZHBTTVN2d3hsQk5fSDBEUjN4bUdYdzFNbzdKNEZJVU5TSU5kYzJndzk2bUlmZkExX0hTTzQyQ29PSzcyYUQzU2xFajVDc0dJSWd4bzlscHpqSDAzTWRyOTM2QjdheEVuZnd1c2dLblJn?oc=5",
-    "date": "2026-11-04"
-   }
-  ],
-  "Rutgers": [
-   {
-    "team": "Rutgers",
-    "tag": "KEY",
-    "text": "Star WR KJ Duff is unlikely to play vs. Wisconsin.",
-    "source": "Sports Illustrated",
-    "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNbW5ZdUVfNF9DdjdMZlB3VjZTa0FTbTBXZnM1ZkZCTDFNMzBIcHh1T2dXSHlfNTQwOXU5VHpUdEVIVVVoa0FVWFZoMG5hMHBRdFpGcjYwUUhtU0w1cUQwQ1JnMzBiWXNpS0ZKSmI4bGhlU1VjODU4TVZhUlVraTdRRGM3ODNfNEdVejhLcFJNWmdUNmRBd25zcTY0cVJnYnNsSTNTSnZVV1VvWTJkQm9ocDZWeFl4SEVwN1FvSlVnV1VDSktzZ2tiZFVjN1BzdjdH?oc=5",
-    "date": "2026-11-05"
-   }
-  ],
-  "Wisconsin": [
-   {
-    "team": "Wisconsin",
-    "tag": "CLUSTER",
-    "text": "Wisconsin's latest report has multiple offensive linemen in question, and a key starter is not expected to play vs. Rutgers.",
-    "source": "Yahoo Sports",
-    "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQRFdFNnVMTWdrd0lsRFk3c1AtS0FhN1djNy1LSkN2b3JzVVZ0dHg4Q3BKQUhEQ2VGbTRXTllBd2FXcW1MMjNXY2RzZ1NWVnVhUktnTklDdWppYktVUmE5elFxdkFTZGVuOENmLTJMVEN3N2Mwdk5yRHJfc0w5M1Q4eXZqYUN1ZVVLMHZJOEZLVQ?oc=5",
-    "date": "2026-11-05"
-   }
-  ],
-  "Iowa": [
-   {
-    "team": "Iowa",
-    "tag": "CLUSTER",
-    "text": "Multiple offensive linemen and defensive backs are on Iowa's Wednesday injury report ahead of Northwestern.",
-    "source": "247Sports",
-    "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxNc2tVdTVjSlEwR3VwTXNIMkJuejZBa1JrLUFQTm9uV1kybTFRTkNFTTFZOWtBMjhDN2J5c1hVQWxBd2MwelVhaTAwelQ2NHlxS004T2RJTV9YQS10eGE1V0hWSWV5V3RhZFZMbGJsbmluMndvTkNfNEt4eTNqOXFOMklRem9CejZzTVNfQlVRSzh6aFZhdm9KYjByVndWNW1SZXU2cWVFNzZUakJUck5kUWVaaW9pMmIzWkhsMmExMXRIdWE4NjVfS0JRa0JnTGxWZ05TUVk5dkNuYWRQckVrQnc1LUpSZHFh?oc=5",
-    "date": "2026-11-05"
-   }
-  ],
-  "Texas Tech": [
-   {
-    "team": "Texas Tech",
-    "tag": "CLUSTER",
-    "text": "Three receivers are listed on Texas Tech's initial injury report for West Virginia.",
-    "source": "Lubbock Avalanche-Journal",
-    "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxORS14UG1Hc3JHUzVfYk1XN1hPUVhQRzl2SWNzQmhHU1V2X2szZ19Cb0Q2UndWN2pnZEh2X04tMklscnQ5Z0ROb09QNEZERVNuekxJeEJrbXppZENXZzR4MDVaaHYyUHZPVUFPTDh3NzMzRW5GNnNORWZDMWJSMmw1cjlYOTROSzYwOEZkVU5WUnAwZklRYlNZa1ViVnlQRWkxQmw5c1ZKY2VJbkRUbGtjc1FrQXpfX0RJTXJlY2ZRc2NVWnBxNHQ3MDNIQlE4SlRfVmozY3dEU2pobkd5RURQWC12R0hvQ0JYOVZObjJTbG5RUkxmUUxXUg?oc=5",
-    "date": "2026-11-05"
-   }
-  ],
-  "Oregon": [
-   {
-    "team": "Oregon",
-    "tag": "KEY",
-    "text": "RB Jordon Davison's injury reshapes Oregon's RB depth; Oregon's report vs. Ohio State is lengthy, with three offensive injuries in focus.",
-    "source": "Sports Illustrated",
-    "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQbnRzOVlhRy1hWUY3aFgyUk03TzZuLWpaTmtaa1k0alBobUdJVGdVa2dTTlhzY1hvNUJ0M2VEdTEyUVgyQmtpbDBwcHRaTElnR1ZoYlM1VjE4cTZ5d05kRnVhYVZPX0VxM29INF9mY1psVFR1c0JiUU1nZndGR05Ib3cyMXlXWGdodmFQUjBrQ2JEM1JRdElid1Ficzhkby1jWTdGUE1zOVNXRGM3UURJUVlWcFM4Wlk?oc=5",
-    "date": "2026-11-04"
-   }
-  ],
-  "Notre Dame": [
-   {
-    "team": "Notre Dame",
-    "tag": "CLUSTER",
-    "text": "Defense dealing with several key injuries entering Miami, including LB Drayk Bowen ('significant' injury in Week 9).",
-    "source": "A to Z Sports",
-    "url": "https://news.google.com/rss/articles/CBMiqwJBVV95cUxObk9STTFoTFQxX0NFekxORWRLejlvUVFrR1lkRkt0RTFyNFdrdVlLSzJDWUF5Vy0yS2wwYUNjQ0QtREQwVzhTTmF6ZkxDX0FJMi1pZXNnWGh2dHVWVHRmeElVaDJfbGYyU1p6UkY3WUgzaEpSY2Z1eHFQUkJxMTQ2VFpvTGpuQ2JyU1N1SXlrWEZKWlU5Qm91NlpaLTBLVl9xaWZaY01EeFZJNnBzMFdwSHMwOUQtYkR1empLUkpiODN3Vm1MdkdHRG1Xd0ozcC16MDZyZ2UyQjFTMFh2LU9fUUlNNFNtNWtrMll4MXlOTTBKZUc4c3QwX2dZRXg4dmtrOEVwelZxNWVSR0hYZmI5S2xhNVdEUEcxNnhhUW5lMU5NYlNmRFpaUEE1OA?oc=5",
-    "date": "2026-11-03"
-   }
-  ],
-  "South Carolina": [
-   {
-    "team": "South Carolina",
-    "tag": "KEY",
-    "text": "Top RB Matt Fuller needs surgery and is likely done for the season, per Shane Beamer.",
-    "source": "Greenville Online",
-    "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQWVRUc2tEZW9teXpHMWduVVoyZDJnN19oTTdWejB2Mk5BT2NHNjA0bUtZWWxjUDZzeXJnUmJocG96Z3puZDdZUWRGMlJ2RjBBRXNrbkwwQkVCTkV6djI3STZzdUk4N2s1ZnZ0SWJjdDlzdlhlcnppS1M2UFpLdG0xQ0F3NEpqaS1ZVUFnQTBOTEVsdG1MQWN5RmNKQ1pES1BTdzhRbzJ2RDlWN3ZUTC1qUklMZ2x1ZktoLTNSVnpIWUt3NFo3SU9vbTBQVQ?oc=5",
-    "date": "2026-11-01"
-   }
-  ],
-  "Louisville": [
-   {
-    "team": "Louisville",
-    "tag": "KEY",
-    "text": "WR Lawayne McCoy will miss 'an extended period,' per Jeff Brohm.",
-    "source": "WHAS11",
-    "url": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxOcjIyeHM2Y0JmalNuanhVVU1wc3kwYlBVLTBvRkR4UjZnWG9lSWE5bmNZSG1tbkFPZF9pQm0zY01SLVVIUUVHdFJaSzYtVW1sbTBGUWFjbkZ5SEYwUElaemVCeVNOeGxfTHJBSXEyNUZkT0pZbHVVa1psVzZNMXBvQzROSjR5WFBVZTNPS0pkYnZMYjZKQjhGQndfQXI0Qi1IWkpaUE8xLUZKNzhveEd0M3NMdFI5c1d5dWlPNnhkUDBzZW5sLW81dXYzaGdvQ0x3OFJYS05IMk9BRjdtTjNTWEJuSWJXbjcxR19UdjN2VnptZ2NlTGc?oc=5",
-    "date": "2026-10-31"
-   }
-  ],
-  "Florida": [
-   {
-    "team": "Florida",
-    "tag": "KEY",
-    "text": "WR Vernell Brown III headlines Florida's pre-Week 10 availability designations; the Gators are also in a QB battle.",
-    "source": "The Independent Florida Alligator",
-    "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBCZUQzQUhuSjlMcHJGUmF5cC15M2twNDFNR0dZQUVVNWdTR2N3alNSUGFXRFBzTTA1a0ZES1ppazhEX1VUWTVlT215YzJsdEpWN2EyN0JpSUZDODhpS2c2Q01GUWYzUWlsdXh3ZVFIQWtQNGllQnJOZmhPYVY?oc=5",
-    "date": "2026-11-05"
-   }
-  ],
-  "Houston": [
-   {
-    "team": "Houston",
-    "tag": "RETURNING",
-    "text": "Houston gets key players back from injury after its off week, per Willie Fritz.",
-    "source": "Houston Chronicle",
-    "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOdGFKTnpkZWkyMU5YZ1pTeWZwZ0J0NHZzeWhHOXFHTGJ1Ym82enI3SE5lZUVQMmt1MTRxQk9XcGpBdXJNY2V1NGF0QkpyMUFjMkxKUXplc082WHRJY2RTeTRCMVloMkw1dmFzUHpjMWpaYUlLQnN0STVlOWhDZ19XVDdBZm5jMHd3TThQMHd2V0NwVEZjT1FFVzJxZG95Wjl0Y0FmbUFpRzNWU2VUV2pCeFd3?oc=5",
-    "date": "2026-11-03"
-   }
-  ]
- }
 }
