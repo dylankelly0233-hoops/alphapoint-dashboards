@@ -89,36 +89,36 @@ date,team,source,rating
 2026-11-05,TOR,Net rating,0.91
 2026-11-05,UTAH,Net rating,-3.99
 2026-11-05,WSH,Net rating,-2.82
-2026-11-06,ATL,Sagarin,1.36
-2026-11-06,BOS,Sagarin,2.56
+2026-11-06,ATL,Sagarin,1.25
+2026-11-06,BOS,Sagarin,2.49
 2026-11-06,BKN,Sagarin,-6.23
-2026-11-06,CHA,Sagarin,-5.04
+2026-11-06,CHA,Sagarin,-5.1
 2026-11-06,CHI,Sagarin,-8.47
-2026-11-06,CLE,Sagarin,2.16
-2026-11-06,DAL,Sagarin,-0.1
-2026-11-06,DEN,Sagarin,2.66
-2026-11-06,DET,Sagarin,4.82
-2026-11-06,GS,Sagarin,1.76
-2026-11-06,HOU,Sagarin,6.33
-2026-11-06,IND,Sagarin,-1.94
+2026-11-06,CLE,Sagarin,2.14
+2026-11-06,DAL,Sagarin,-0.14
+2026-11-06,DEN,Sagarin,2.79
+2026-11-06,DET,Sagarin,4.71
+2026-11-06,GS,Sagarin,2.6
+2026-11-06,HOU,Sagarin,6.28
+2026-11-06,IND,Sagarin,-2.01
 2026-11-06,LAC,Sagarin,-4.63
-2026-11-06,LAL,Sagarin,3.73
-2026-11-06,MEM,Sagarin,0.35
-2026-11-06,MIA,Sagarin,-0.74
-2026-11-06,MIL,Sagarin,-7.92
-2026-11-06,MIN,Sagarin,6.04
-2026-11-06,NO,Sagarin,-2.04
-2026-11-06,NY,Sagarin,2.73
-2026-11-06,OKC,Sagarin,5.36
-2026-11-06,ORL,Sagarin,-2.07
-2026-11-06,PHI,Sagarin,3.93
-2026-11-06,PHX,Sagarin,-2.5
-2026-11-06,POR,Sagarin,3.79
-2026-11-06,SAC,Sagarin,-7.59
-2026-11-06,SA,Sagarin,7.38
-2026-11-06,TOR,Sagarin,1.68
-2026-11-06,UTAH,Sagarin,-4.33
-2026-11-06,WSH,Sagarin,-3.05
+2026-11-06,LAL,Sagarin,3.78
+2026-11-06,MEM,Sagarin,0.42
+2026-11-06,MIA,Sagarin,-1.45
+2026-11-06,MIL,Sagarin,-7.89
+2026-11-06,MIN,Sagarin,5.98
+2026-11-06,NO,Sagarin,-2.01
+2026-11-06,NY,Sagarin,2.68
+2026-11-06,OKC,Sagarin,5.35
+2026-11-06,ORL,Sagarin,-2.71
+2026-11-06,PHI,Sagarin,3.9
+2026-11-06,PHX,Sagarin,-1.66
+2026-11-06,POR,Sagarin,3.92
+2026-11-06,SAC,Sagarin,-7.46
+2026-11-06,SA,Sagarin,7.32
+2026-11-06,TOR,Sagarin,1.58
+2026-11-06,UTAH,Sagarin,-4.29
+2026-11-06,WSH,Sagarin,-3.11
 2026-11-06,ATL,TeamRankings,1.73
 2026-11-06,BOS,TeamRankings,3.28
 2026-11-06,BKN,TeamRankings,-5.7
@@ -129,7 +129,7 @@ date,team,source,rating
 2026-11-06,DEN,TeamRankings,2.02
 2026-11-06,DET,TeamRankings,4.92
 2026-11-06,GS,TeamRankings,0.96
-2026-11-06,HOU,TeamRankings,6.07
+2026-11-06,HOU,TeamRankings,6.08
 2026-11-06,IND,TeamRankings,-1.26
 2026-11-06,LAC,TeamRankings,-5.02
 2026-11-06,LAL,TeamRankings,2.99
@@ -139,12 +139,12 @@ date,team,source,rating
 2026-11-06,MIN,TeamRankings,5.98
 2026-11-06,NO,TeamRankings,-2.9
 2026-11-06,NY,TeamRankings,3.57
-2026-11-06,OKC,TeamRankings,6.07
+2026-11-06,OKC,TeamRankings,6.08
 2026-11-06,ORL,TeamRankings,-1.93
 2026-11-06,PHI,TeamRankings,4.15
 2026-11-06,PHX,TeamRankings,-2.22
 2026-11-06,POR,TeamRankings,3.28
-2026-11-06,SAC,TeamRankings,-9.36
+2026-11-06,SAC,TeamRankings,-9.37
 2026-11-06,SA,TeamRankings,6.85
 2026-11-06,TOR,TeamRankings,2.41
 2026-11-06,UTAH,TeamRankings,-4.25
@@ -152,9 +152,9 @@ date,team,source,rating
 2026-11-06,ATL,Net rating,1.54
 2026-11-06,BOS,Net rating,1.02
 2026-11-06,BKN,Net rating,-4.4
-2026-11-06,CHA,Net rating,-7.54
+2026-11-06,CHA,Net rating,-7.55
 2026-11-06,CHI,Net rating,-9.75
-2026-11-06,CLE,Net rating,1.2
+2026-11-06,CLE,Net rating,1.21
 2026-11-06,DAL,Net rating,1.23
 2026-11-06,DEN,Net rating,1.49
 2026-11-06,DET,Net rating,4.33
@@ -170,7 +170,7 @@ date,team,source,rating
 2026-11-06,NO,Net rating,0.73
 2026-11-06,NY,Net rating,1.34
 2026-11-06,OKC,Net rating,1.44
-2026-11-06,ORL,Net rating,-5.07
+2026-11-06,ORL,Net rating,-5.08
 2026-11-06,PHI,Net rating,2.27
 2026-11-06,PHX,Net rating,-2.39
 2026-11-06,POR,Net rating,6.23
