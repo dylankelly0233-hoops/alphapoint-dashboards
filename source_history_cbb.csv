@@ -1459,3 +1459,733 @@ date,team,source,rating
 2026-11-06,La Salle,Torvik preseason,0.66
 2026-11-06,West Florida,Torvik preseason,-17.51
 2026-11-06,New Haven,Torvik preseason,-11.78
+2026-11-07,Siena,TeamRankings,-6.44
+2026-11-07,Florida,TeamRankings,23.13
+2026-11-07,Iowa,TeamRankings,13.37
+2026-11-07,Louisiana,TeamRankings,-4.69
+2026-11-07,Purdue,TeamRankings,14.66
+2026-11-07,Bradley,TeamRankings,-2.2
+2026-11-07,Iowa State,TeamRankings,16.87
+2026-11-07,Nevada,TeamRankings,9.41
+2026-11-07,UC Irvine,TeamRankings,2.96
+2026-11-07,UC Santa Barbara,TeamRankings,3.97
+2026-11-07,Colorado State,TeamRankings,6.37
+2026-11-07,UCLA,TeamRankings,17.24
+2026-11-07,Saint Mary's,TeamRankings,9.77
+2026-11-07,California,TeamRankings,4.61
+2026-11-07,San Diego,TeamRankings,-0.82
+2026-11-07,Oregon State,TeamRankings,7.75
+2026-11-07,Green Bay,TeamRankings,-2.3
+2026-11-07,Long Beach State,TeamRankings,-4.78
+2026-11-07,Hawai'i,TeamRankings,1.57
+2026-11-07,Pacific,TeamRankings,1.21
+2026-11-07,LSU,TeamRankings,13.37
+2026-11-07,Cal State Northridge,TeamRankings,-3.03
+2026-11-07,Purdue Fort Wayne,TeamRankings,-5.52
+2026-11-07,Washington,TeamRankings,7.1
+2026-11-07,San Francisco,TeamRankings,-0.08
+2026-11-07,Cal Poly,TeamRankings,-1.47
+2026-11-07,Stanford,TeamRankings,6.37
+2026-11-07,Arizona State,TeamRankings,8.21
+2026-11-07,Denver,TeamRankings,-3.77
+2026-11-07,Wisconsin,TeamRankings,12.54
+2026-11-07,Fresno State,TeamRankings,-4.42
+2026-11-07,NC State,TeamRankings,11.06
+2026-11-07,Pepperdine,TeamRankings,-0.18
+2026-11-07,Arizona,TeamRankings,18.34
+2026-11-07,Northeastern,TeamRankings,-5.98
+2026-11-07,Memphis,TeamRankings,8.39
+2026-11-07,Georgetown,TeamRankings,9.41
+2026-11-07,Seton Hall,TeamRankings,7.56
+2026-11-07,UIC,TeamRankings,4.43
+2026-11-07,Lamar,TeamRankings,-3.86
+2026-11-07,Middle Tennessee,TeamRankings,-0.73
+2026-11-07,Pennsylvania,TeamRankings,1.02
+2026-11-07,Princeton,TeamRankings,-0.64
+2026-11-07,Radford,TeamRankings,-5.43
+2026-11-07,Rice,TeamRankings,-4.88
+2026-11-07,Drexel,TeamRankings,-5.8
+2026-11-07,Campbell,TeamRankings,-5.61
+2026-11-07,Quinnipiac,TeamRankings,-5.34
+2026-11-07,Central Arkansas,TeamRankings,-0.08
+2026-11-07,American University,TeamRankings,-3.22
+2026-11-07,Clemson,TeamRankings,11.89
+2026-11-07,Cornell,TeamRankings,-2.94
+2026-11-07,Duke,TeamRankings,25.35
+2026-11-07,Eastern Kentucky,TeamRankings,-6.07
+2026-11-07,Sacred Heart,TeamRankings,-8.1
+2026-11-07,Southeast Missouri State,TeamRankings,-5.15
+2026-11-07,USC,TeamRankings,14.38
+2026-11-07,SIU Edwardsville,TeamRankings,-5.8
+2026-11-07,Northern Kentucky,TeamRankings,-2.3
+2026-11-07,Winthrop,TeamRankings,-4.78
+2026-11-07,Yale,TeamRankings,0.56
+2026-11-07,Binghamton,TeamRankings,-11.42
+2026-11-07,Alabama,TeamRankings,17.24
+2026-11-07,New Orleans,TeamRankings,-7.36
+2026-11-07,Virginia,TeamRankings,18.07
+2026-11-07,Grambling,TeamRankings,-9.76
+2026-11-07,Idaho State,TeamRankings,-10.96
+2026-11-07,Illinois State,TeamRankings,3.32
+2026-11-07,Loyola Chicago,TeamRankings,1.48
+2026-11-07,Marist,TeamRankings,-6.35
+2026-11-07,Marshall,TeamRankings,-2.57
+2026-11-07,New Hampshire,TeamRankings,-8.65
+2026-11-07,New Mexico State,TeamRankings,-0.82
+2026-11-07,North Texas,TeamRankings,4.8
+2026-11-07,Northwestern State,TeamRankings,-8.28
+2026-11-07,Old Dominion,TeamRankings,-2.57
+2026-11-07,Penn State,TeamRankings,6.09
+2026-11-07,Rider,TeamRankings,-15.38
+2026-11-07,Jackson State,TeamRankings,-7.92
+2026-11-07,Saint Louis,TeamRankings,10.79
+2026-11-07,Northern Iowa,TeamRankings,1.02
+2026-11-07,North Dakota,TeamRankings,-10.96
+2026-11-07,Chicago State,TeamRankings,-11.05
+2026-11-07,Florida State,TeamRankings,10.97
+2026-11-07,Auburn,TeamRankings,15.95
+2026-11-07,Charleston,TeamRankings,1.94
+2026-11-07,UConn,TeamRankings,21.01
+2026-11-07,Delaware State,TeamRankings,-13.54
+2026-11-07,Duquesne,TeamRankings,1.11
+2026-11-07,Eastern Washington,TeamRankings,-0.36
+2026-11-07,Southern Utah,TeamRankings,-3.49
+2026-11-07,SMU,TeamRankings,9.59
+2026-11-07,South Carolina,TeamRankings,6.64
+2026-11-07,Saint Peter's,TeamRankings,-9.3
+2026-11-07,Syracuse,TeamRankings,9.31
+2026-11-07,Seattle U,TeamRankings,3.05
+2026-11-07,Missouri State,TeamRankings,-6.07
+2026-11-07,Villanova,TeamRankings,13.28
+2026-11-07,VMI,TeamRankings,-11.05
+2026-11-07,Western Kentucky,TeamRankings,2.96
+2026-11-07,Western Michigan,TeamRankings,-1.47
+2026-11-07,Xavier,TeamRankings,14.01
+2026-11-07,Mercer,TeamRankings,-4.88
+2026-11-07,UAlbany,TeamRankings,-10.13
+2026-11-07,Oregon,TeamRankings,11.25
+2026-11-07,Howard,TeamRankings,-0.82
+2026-11-07,Gonzaga,TeamRankings,17.79
+2026-11-07,Louisiana Tech,TeamRankings,-3.68
+2026-11-07,Milwaukee,TeamRankings,-5.8
+2026-11-07,Massachusetts,TeamRankings,0.56
+2026-11-07,Miami,TeamRankings,17.15
+2026-11-07,Michigan,TeamRankings,15.3
+2026-11-07,Michigan State,TeamRankings,19.45
+2026-11-07,Mississippi Valley State,TeamRankings,-17.77
+2026-11-07,Norfolk State,TeamRankings,-9.39
+2026-11-07,Northwestern,TeamRankings,6.46
+2026-11-07,Oklahoma,TeamRankings,14.1
+2026-11-07,Oklahoma State,TeamRankings,10.79
+2026-11-07,Oral Roberts,TeamRankings,-7.64
+2026-11-07,Jacksonville,TeamRankings,-4.23
+2026-11-07,Montana,TeamRankings,-2.39
+2026-11-07,Boston University,TeamRankings,-7.82
+2026-11-07,Iona,TeamRankings,-2.94
+2026-11-07,Columbia,TeamRankings,-3.49
+2026-11-07,Cal State Fullerton,TeamRankings,-3.77
+2026-11-07,Dartmouth,TeamRankings,-6.07
+2026-11-07,Detroit Mercy,TeamRankings,-6.53
+2026-11-07,Fordham,TeamRankings,2.77
+2026-11-07,Rutgers,TeamRankings,8.21
+2026-11-07,Southern Miss,TeamRankings,-4.69
+2026-11-07,Texas State,TeamRankings,3.51
+2026-11-07,Holy Cross,TeamRankings,-14.09
+2026-11-07,Ohio State,TeamRankings,14.29
+2026-11-07,Santa Clara,TeamRankings,7.47
+2026-11-07,Temple,TeamRankings,1.48
+2026-11-07,Houston Christian,TeamRankings,-4.42
+2026-11-07,Air Force,TeamRankings,-7.73
+2026-11-07,Kennesaw State,TeamRankings,1.02
+2026-11-07,Gardner-Webb,TeamRankings,-13.17
+2026-11-07,Hampton,TeamRankings,-4.42
+2026-11-07,St. John's,TeamRankings,16.59
+2026-11-07,Kent State,TeamRankings,1.11
+2026-11-07,Morgan State,TeamRankings,-11.05
+2026-11-07,Murray State,TeamRankings,7.01
+2026-11-07,Northern Arizona,TeamRankings,-7.92
+2026-11-07,New Mexico,TeamRankings,11.62
+2026-11-07,Pittsburgh,TeamRankings,7.93
+2026-11-07,Prairie View A&M,TeamRankings,-9.67
+2026-11-07,Boise State,TeamRankings,8.94
+2026-11-07,Louisville,TeamRankings,16.96
+2026-11-07,Butler,TeamRankings,7.1
+2026-11-07,Arkansas State,TeamRankings,-1.84
+2026-11-07,Brown,TeamRankings,-4.97
+2026-11-07,Canisius,TeamRankings,-12.62
+2026-11-07,Lipscomb,TeamRankings,-3.22
+2026-11-07,Dayton,TeamRankings,9.41
+2026-11-07,SE Louisiana,TeamRankings,-6.72
+2026-11-07,South Florida,TeamRankings,6.73
+2026-11-07,St. Bonaventure,TeamRankings,-1.74
+2026-11-07,Tennessee,TeamRankings,17.15
+2026-11-07,Presbyterian,TeamRankings,-4.51
+2026-11-07,Texas Tech,TeamRankings,17.51
+2026-11-07,Tulane,TeamRankings,-2.3
+2026-11-07,Tulsa,TeamRankings,5.08
+2026-11-07,VCU,TeamRankings,10.51
+2026-11-07,Washington State,TeamRankings,-1.19
+2026-11-07,Wyoming,TeamRankings,3.51
+2026-11-07,Youngstown State,TeamRankings,-4.23
+2026-11-07,Hofstra,TeamRankings,-0.27
+2026-11-07,UL Monroe,TeamRankings,-10.31
+2026-11-07,Manhattan,TeamRankings,-11.05
+2026-11-07,Maryland Eastern Shore,TeamRankings,-13.17
+2026-11-07,Montana State,TeamRankings,0.93
+2026-11-07,North Carolina A&T,TeamRankings,-7.92
+2026-11-07,Nicholls,TeamRankings,-5.98
+2026-11-07,South Carolina Upstate,TeamRankings,-11.23
+2026-11-07,Missouri,TeamRankings,15.76
+2026-11-07,Alcorn State,TeamRankings,-12.71
+2026-11-07,Bethune-Cookman,TeamRankings,-3.13
+2026-11-07,Drake,TeamRankings,1.94
+2026-11-07,Fairleigh Dickinson,TeamRankings,-13.54
+2026-11-07,South Carolina State,TeamRankings,-11.88
+2026-11-07,Sacramento State,TeamRankings,-2.66
+2026-11-07,Stephen F. Austin,TeamRankings,1.76
+2026-11-07,Stetson,TeamRankings,-6.17
+2026-11-07,North Carolina Central,TeamRankings,-11.88
+2026-11-07,UC Riverside,TeamRankings,-2.48
+2026-11-07,UNLV,TeamRankings,5.44
+2026-11-07,Vanderbilt,TeamRankings,17.7
+2026-11-07,Wagner,TeamRankings,-11.42
+2026-11-07,Wichita State,TeamRankings,7.19
+2026-11-07,Central Michigan,TeamRankings,-6.35
+2026-11-07,Georgia,TeamRankings,13.0
+2026-11-07,Georgia Southern,TeamRankings,-7.73
+2026-11-07,Northern Illinois,TeamRankings,-5.98
+2026-11-07,Utah Valley,TeamRankings,1.02
+2026-11-07,Indiana,TeamRankings,14.2
+2026-11-07,Loyola Maryland,TeamRankings,-11.42
+2026-11-07,Minnesota,TeamRankings,9.77
+2026-11-07,Mississippi State,TeamRankings,9.59
+2026-11-07,Belmont,TeamRankings,1.48
+2026-11-07,Florida Gulf Coast,TeamRankings,-4.88
+2026-11-07,Arkansas-Pine Bluff,TeamRankings,-15.84
+2026-11-07,Buffalo,TeamRankings,-5.24
+2026-11-07,BYU,TeamRankings,16.04
+2026-11-07,Eastern Michigan,TeamRankings,-2.3
+2026-11-07,Florida Atlantic,TeamRankings,2.77
+2026-11-07,San Diego State,TeamRankings,8.48
+2026-11-07,Cal State Bakersfield,TeamRankings,-6.63
+2026-11-07,Tennessee State,TeamRankings,-2.66
+2026-11-07,Texas A&M,TeamRankings,14.2
+2026-11-07,UTSA,TeamRankings,-6.07
+2026-11-07,Toledo,TeamRankings,-0.73
+2026-11-07,UTEP,TeamRankings,-2.57
+2026-11-07,Vermont,TeamRankings,-1.19
+2026-11-07,Virginia Tech,TeamRankings,12.81
+2026-11-07,Wake Forest,TeamRankings,5.44
+2026-11-07,North Florida,TeamRankings,-8.28
+2026-11-07,George Washington,TeamRankings,6.64
+2026-11-07,Houston,TeamRankings,20.37
+2026-11-07,Illinois,TeamRankings,23.96
+2026-11-07,Utah State,TeamRankings,11.71
+2026-11-07,Jacksonville State,TeamRankings,-2.57
+2026-11-07,Kansas State,TeamRankings,3.88
+2026-11-07,Lafayette,TeamRankings,-10.77
+2026-11-07,Maryland,TeamRankings,12.91
+2026-11-07,Miami (OH),TeamRankings,4.52
+2026-11-07,Ohio,TeamRankings,-0.27
+2026-11-07,Portland,TeamRankings,-2.02
+2026-11-07,App State,TeamRankings,-2.85
+2026-11-07,Eastern Illinois,TeamRankings,-13.26
+2026-11-07,Long Island University,TeamRankings,-4.69
+2026-11-07,Lehigh,TeamRankings,-5.61
+2026-11-07,Arkansas,TeamRankings,16.32
+2026-11-07,Cleveland State,TeamRankings,-9.57
+2026-11-07,Central Connecticut,TeamRankings,-12.06
+2026-11-07,Chattanooga,TeamRankings,-4.14
+2026-11-07,Saint Joseph's,TeamRankings,2.03
+2026-11-07,Tennessee Tech,TeamRankings,-3.22
+2026-11-07,UT Rio Grande Valley,TeamRankings,-5.98
+2026-11-07,The Citadel,TeamRankings,-10.77
+2026-11-07,UAB,TeamRankings,0.56
+2026-11-07,UNC Wilmington,TeamRankings,3.6
+2026-11-07,Valparaiso,TeamRankings,0.56
+2026-11-07,Monmouth,TeamRankings,-1.84
+2026-11-07,Coppin State,TeamRankings,-14.55
+2026-11-07,Texas Southern,TeamRankings,-10.31
+2026-11-07,Furman,TeamRankings,1.39
+2026-11-07,George Mason,TeamRankings,5.54
+2026-11-07,Northern Colorado,TeamRankings,-2.11
+2026-11-07,Indiana State,TeamRankings,-3.86
+2026-11-07,Kansas,TeamRankings,20.28
+2026-11-07,Loyola Marymount,TeamRankings,0.56
+2026-11-07,Morehead State,TeamRankings,-10.13
+2026-11-07,Mount St. Mary's,TeamRankings,-9.57
+2026-11-07,Navy,TeamRankings,-10.4
+2026-11-07,Niagara,TeamRankings,-11.05
+2026-11-07,Oakland,TeamRankings,-3.22
+2026-11-07,Rhode Island,TeamRankings,2.13
+2026-11-07,Little Rock,TeamRankings,-2.76
+2026-11-07,Bryant,TeamRankings,-9.3
+2026-11-07,Army,TeamRankings,-9.57
+2026-11-07,Charleston Southern,TeamRankings,-9.67
+2026-11-07,Colgate,TeamRankings,-3.13
+2026-11-07,South Alabama,TeamRankings,-5.34
+2026-11-07,TCU,TeamRankings,12.72
+2026-11-07,Utah,TeamRankings,4.89
+2026-11-07,Weber State,TeamRankings,-9.02
+2026-11-07,West Virginia,TeamRankings,12.45
+2026-11-07,William & Mary,TeamRankings,-4.51
+2026-11-07,East Carolina,TeamRankings,-2.11
+2026-11-07,Akron,TeamRankings,5.17
+2026-11-07,Alabama State,TeamRankings,-8.56
+2026-11-07,Florida A&M,TeamRankings,-12.62
+2026-11-07,Georgia Tech,TeamRankings,3.51
+2026-11-07,Colorado,TeamRankings,7.19
+2026-11-07,Bucknell,TeamRankings,-11.23
+2026-11-07,Harvard,TeamRankings,0.65
+2026-11-07,Southern,TeamRankings,-7.27
+2026-11-07,Texas A&M-Corpus Christi,TeamRankings,-3.4
+2026-11-07,UC Davis,TeamRankings,-3.95
+2026-11-07,Florida International,TeamRankings,-1.84
+2026-11-07,Bowling Green,TeamRankings,-1.93
+2026-11-07,Stony Brook,TeamRankings,-3.77
+2026-11-07,Evansville,TeamRankings,-7.64
+2026-11-07,UNC Asheville,TeamRankings,-8.01
+2026-11-07,UT Arlington,TeamRankings,-4.23
+2026-11-07,Boston College,TeamRankings,4.71
+2026-11-07,Providence,TeamRankings,14.01
+2026-11-07,Wright State,TeamRankings,1.94
+2026-11-07,Davidson,TeamRankings,3.32
+2026-11-07,Cincinnati,TeamRankings,15.03
+2026-11-07,North Carolina,TeamRankings,12.35
+2026-11-07,Charlotte,TeamRankings,3.14
+2026-11-07,Western Carolina,TeamRankings,-0.45
+2026-11-07,Kentucky,TeamRankings,15.95
+2026-11-07,Notre Dame,TeamRankings,8.94
+2026-11-07,Ball State,TeamRankings,-5.34
+2026-11-07,UNC Greensboro,TeamRankings,-6.26
+2026-11-07,Kansas City,TeamRankings,-6.17
+2026-11-07,Incarnate Word,TeamRankings,-11.51
+2026-11-07,Grand Canyon,TeamRankings,12.17
+2026-11-07,Creighton,TeamRankings,13.74
+2026-11-07,Delaware,TeamRankings,-5.15
+2026-11-07,Southern Illinois,TeamRankings,-1.93
+2026-11-07,Samford,TeamRankings,-3.22
+2026-11-07,San José State,TeamRankings,0.28
+2026-11-07,Western Illinois,TeamRankings,-15.2
+2026-11-07,Coastal Carolina,TeamRankings,-6.63
+2026-11-07,UCF,TeamRankings,8.85
+2026-11-07,UMass Lowell,TeamRankings,-5.34
+2026-11-07,Richmond,TeamRankings,2.77
+2026-11-07,Troy,TeamRankings,-1.84
+2026-11-07,Abilene Christian,TeamRankings,-6.9
+2026-11-07,California Baptist,TeamRankings,-5.98
+2026-11-07,Nebraska,TeamRankings,16.68
+2026-11-07,Sam Houston,TeamRankings,-1.74
+2026-11-07,Towson,TeamRankings,-2.11
+2026-11-07,Maine,TeamRankings,-9.67
+2026-11-07,East Tennessee State,TeamRankings,-1.65
+2026-11-07,IU Indianapolis,TeamRankings,-8.19
+2026-11-07,Omaha,TeamRankings,-7.92
+2026-11-07,Ole Miss,TeamRankings,12.35
+2026-11-07,NJIT,TeamRankings,-12.06
+2026-11-07,Wofford,TeamRankings,-6.72
+2026-11-07,DePaul,TeamRankings,8.76
+2026-11-07,South Dakota,TeamRankings,-7.18
+2026-11-07,North Dakota State,TeamRankings,-3.59
+2026-11-07,Robert Morris,TeamRankings,-2.76
+2026-11-07,Elon,TeamRankings,-3.03
+2026-11-07,Marquette,TeamRankings,15.86
+2026-11-07,North Alabama,TeamRankings,-8.65
+2026-11-07,McNeese,TeamRankings,5.9
+2026-11-07,UMBC,TeamRankings,-8.47
+2026-11-07,Portland State,TeamRankings,-2.02
+2026-11-07,Merrimack,TeamRankings,-4.42
+2026-11-07,Lindenwood,TeamRankings,-8.38
+2026-11-07,UC San Diego,TeamRankings,3.51
+2026-11-07,Bellarmine,TeamRankings,-9.21
+2026-11-07,Tarleton State,TeamRankings,-2.2
+2026-11-07,Utah Tech,TeamRankings,-6.17
+2026-11-07,James Madison,TeamRankings,-0.18
+2026-11-07,High Point,TeamRankings,9.13
+2026-11-07,Liberty,TeamRankings,0.1
+2026-11-07,UT Martin,TeamRankings,-7.92
+2026-11-07,St. Thomas-Minnesota,TeamRankings,0.38
+2026-11-07,Idaho,TeamRankings,-4.14
+2026-11-07,Texas,TeamRankings,19.54
+2026-11-07,East Texas A&M,TeamRankings,-7.27
+2026-11-07,Southern Indiana,TeamRankings,-9.21
+2026-11-07,Stonehill,TeamRankings,-12.15
+2026-11-07,Queens University,TeamRankings,-0.82
+2026-11-07,Georgia State,TeamRankings,-3.77
+2026-11-07,Fairfield,TeamRankings,-5.34
+2026-11-07,Alabama A&M,TeamRankings,-9.02
+2026-11-07,Austin Peay,TeamRankings,-2.39
+2026-11-07,Baylor,TeamRankings,14.75
+2026-11-07,Le Moyne,TeamRankings,-10.5
+2026-11-07,Longwood,TeamRankings,-2.94
+2026-11-07,West Georgia,TeamRankings,-9.39
+2026-11-07,Mercyhurst,TeamRankings,-8.75
+2026-11-07,South Dakota State,TeamRankings,-3.22
+2026-11-07,La Salle,TeamRankings,-2.3
+2026-11-07,West Florida,TeamRankings,-11.42
+2026-11-07,New Haven,TeamRankings,-10.86
+2026-11-07,Siena,Torvik preseason,-4.64
+2026-11-07,Florida,Torvik preseason,20.06
+2026-11-07,Iowa,Torvik preseason,12.04
+2026-11-07,Louisiana,Torvik preseason,-3.74
+2026-11-07,Purdue,Torvik preseason,14.58
+2026-11-07,Bradley,Torvik preseason,-1.74
+2026-11-07,Iowa State,Torvik preseason,17.66
+2026-11-07,Nevada,Torvik preseason,7.08
+2026-11-07,UC Irvine,Torvik preseason,4.17
+2026-11-07,UC Santa Barbara,Torvik preseason,5.48
+2026-11-07,Colorado State,Torvik preseason,7.46
+2026-11-07,UCLA,Torvik preseason,15.24
+2026-11-07,Saint Mary's,Torvik preseason,9.53
+2026-11-07,California,Torvik preseason,6.77
+2026-11-07,San Diego,Torvik preseason,1.56
+2026-11-07,Oregon State,Torvik preseason,6.3
+2026-11-07,Green Bay,Torvik preseason,-1.49
+2026-11-07,Long Beach State,Torvik preseason,-6.31
+2026-11-07,Hawai'i,Torvik preseason,2.01
+2026-11-07,Pacific,Torvik preseason,2.15
+2026-11-07,LSU,Torvik preseason,12.01
+2026-11-07,Cal State Northridge,Torvik preseason,-2.93
+2026-11-07,Purdue Fort Wayne,Torvik preseason,-6.97
+2026-11-07,Washington,Torvik preseason,8.18
+2026-11-07,San Francisco,Torvik preseason,-1.48
+2026-11-07,Cal Poly,Torvik preseason,-0.99
+2026-11-07,Stanford,Torvik preseason,7.25
+2026-11-07,Arizona State,Torvik preseason,9.69
+2026-11-07,Denver,Torvik preseason,-6.06
+2026-11-07,Wisconsin,Torvik preseason,12.14
+2026-11-07,Fresno State,Torvik preseason,-1.28
+2026-11-07,NC State,Torvik preseason,14.44
+2026-11-07,Pepperdine,Torvik preseason,1.11
+2026-11-07,Arizona,Torvik preseason,20.05
+2026-11-07,Northeastern,Torvik preseason,-5.06
+2026-11-07,Memphis,Torvik preseason,4.35
+2026-11-07,Georgetown,Torvik preseason,10.28
+2026-11-07,Seton Hall,Torvik preseason,8.96
+2026-11-07,UIC,Torvik preseason,5.8
+2026-11-07,Lamar,Torvik preseason,-3.23
+2026-11-07,Middle Tennessee,Torvik preseason,0.88
+2026-11-07,Pennsylvania,Torvik preseason,3.24
+2026-11-07,Princeton,Torvik preseason,-0.22
+2026-11-07,Radford,Torvik preseason,-7.01
+2026-11-07,Rice,Torvik preseason,-4.73
+2026-11-07,Drexel,Torvik preseason,-5.58
+2026-11-07,Campbell,Torvik preseason,-3.85
+2026-11-07,Quinnipiac,Torvik preseason,-4.64
+2026-11-07,Central Arkansas,Torvik preseason,-1.33
+2026-11-07,American University,Torvik preseason,-2.05
+2026-11-07,Clemson,Torvik preseason,13.01
+2026-11-07,Cornell,Torvik preseason,-4.3
+2026-11-07,Duke,Torvik preseason,21.88
+2026-11-07,Eastern Kentucky,Torvik preseason,-8.02
+2026-11-07,Sacred Heart,Torvik preseason,-8.8
+2026-11-07,Southeast Missouri State,Torvik preseason,-5.01
+2026-11-07,USC,Torvik preseason,13.23
+2026-11-07,SIU Edwardsville,Torvik preseason,-5.63
+2026-11-07,Northern Kentucky,Torvik preseason,-3.93
+2026-11-07,Winthrop,Torvik preseason,-4.29
+2026-11-07,Yale,Torvik preseason,-2.49
+2026-11-07,Binghamton,Torvik preseason,-11.71
+2026-11-07,Alabama,Torvik preseason,15.96
+2026-11-07,New Orleans,Torvik preseason,-3.33
+2026-11-07,Virginia,Torvik preseason,19.84
+2026-11-07,Grambling,Torvik preseason,-11.31
+2026-11-07,Idaho State,Torvik preseason,-10.02
+2026-11-07,Illinois State,Torvik preseason,4.62
+2026-11-07,Loyola Chicago,Torvik preseason,-0.85
+2026-11-07,Marist,Torvik preseason,-3.24
+2026-11-07,Marshall,Torvik preseason,-7.25
+2026-11-07,New Hampshire,Torvik preseason,-8.56
+2026-11-07,New Mexico State,Torvik preseason,-0.08
+2026-11-07,North Texas,Torvik preseason,3.03
+2026-11-07,Northwestern State,Torvik preseason,-7.31
+2026-11-07,Old Dominion,Torvik preseason,-2.97
+2026-11-07,Penn State,Torvik preseason,6.33
+2026-11-07,Rider,Torvik preseason,-16.99
+2026-11-07,Jackson State,Torvik preseason,-6.57
+2026-11-07,Saint Louis,Torvik preseason,9.51
+2026-11-07,Northern Iowa,Torvik preseason,3.16
+2026-11-07,North Dakota,Torvik preseason,-10.03
+2026-11-07,Chicago State,Torvik preseason,-12.56
+2026-11-07,Florida State,Torvik preseason,10.43
+2026-11-07,Auburn,Torvik preseason,13.55
+2026-11-07,Charleston,Torvik preseason,0.26
+2026-11-07,UConn,Torvik preseason,16.87
+2026-11-07,Delaware State,Torvik preseason,-12.2
+2026-11-07,Duquesne,Torvik preseason,2.53
+2026-11-07,Eastern Washington,Torvik preseason,-2.0
+2026-11-07,Southern Utah,Torvik preseason,-4.74
+2026-11-07,SMU,Torvik preseason,11.79
+2026-11-07,South Carolina,Torvik preseason,6.27
+2026-11-07,Saint Peter's,Torvik preseason,-7.05
+2026-11-07,Syracuse,Torvik preseason,8.34
+2026-11-07,Seattle U,Torvik preseason,2.16
+2026-11-07,Missouri State,Torvik preseason,-4.83
+2026-11-07,Villanova,Torvik preseason,14.53
+2026-11-07,VMI,Torvik preseason,-11.73
+2026-11-07,Western Kentucky,Torvik preseason,3.64
+2026-11-07,Western Michigan,Torvik preseason,-0.68
+2026-11-07,Xavier,Torvik preseason,11.94
+2026-11-07,Mercer,Torvik preseason,-4.18
+2026-11-07,UAlbany,Torvik preseason,-8.58
+2026-11-07,Oregon,Torvik preseason,13.12
+2026-11-07,Howard,Torvik preseason,0.33
+2026-11-07,Gonzaga,Torvik preseason,19.04
+2026-11-07,Louisiana Tech,Torvik preseason,-6.54
+2026-11-07,Milwaukee,Torvik preseason,-5.04
+2026-11-07,Massachusetts,Torvik preseason,-2.1
+2026-11-07,Miami,Torvik preseason,17.49
+2026-11-07,Michigan,Torvik preseason,17.13
+2026-11-07,Michigan State,Torvik preseason,17.96
+2026-11-07,Mississippi Valley State,Torvik preseason,-18.13
+2026-11-07,Norfolk State,Torvik preseason,-11.07
+2026-11-07,Northwestern,Torvik preseason,8.22
+2026-11-07,Oklahoma,Torvik preseason,14.96
+2026-11-07,Oklahoma State,Torvik preseason,11.84
+2026-11-07,Oral Roberts,Torvik preseason,-5.05
+2026-11-07,Jacksonville,Torvik preseason,-4.11
+2026-11-07,Montana,Torvik preseason,-3.18
+2026-11-07,Boston University,Torvik preseason,-8.33
+2026-11-07,Iona,Torvik preseason,-4.48
+2026-11-07,Columbia,Torvik preseason,-2.41
+2026-11-07,Cal State Fullerton,Torvik preseason,-4.66
+2026-11-07,Dartmouth,Torvik preseason,-9.05
+2026-11-07,Detroit Mercy,Torvik preseason,-4.89
+2026-11-07,Fordham,Torvik preseason,2.32
+2026-11-07,Rutgers,Torvik preseason,8.2
+2026-11-07,Southern Miss,Torvik preseason,-3.66
+2026-11-07,Texas State,Torvik preseason,2.82
+2026-11-07,Holy Cross,Torvik preseason,-11.72
+2026-11-07,Ohio State,Torvik preseason,16.07
+2026-11-07,Santa Clara,Torvik preseason,6.88
+2026-11-07,Temple,Torvik preseason,2.41
+2026-11-07,Houston Christian,Torvik preseason,-6.42
+2026-11-07,Air Force,Torvik preseason,-6.58
+2026-11-07,Kennesaw State,Torvik preseason,0.72
+2026-11-07,Gardner-Webb,Torvik preseason,-13.34
+2026-11-07,Hampton,Torvik preseason,-2.0
+2026-11-07,St. John's,Torvik preseason,16.34
+2026-11-07,Kent State,Torvik preseason,1.0
+2026-11-07,Morgan State,Torvik preseason,-12.2
+2026-11-07,Murray State,Torvik preseason,4.68
+2026-11-07,Northern Arizona,Torvik preseason,-10.09
+2026-11-07,New Mexico,Torvik preseason,9.55
+2026-11-07,Pittsburgh,Torvik preseason,7.17
+2026-11-07,Prairie View A&M,Torvik preseason,-6.52
+2026-11-07,Boise State,Torvik preseason,7.05
+2026-11-07,Louisville,Torvik preseason,18.24
+2026-11-07,Butler,Torvik preseason,6.97
+2026-11-07,Arkansas State,Torvik preseason,-2.36
+2026-11-07,Brown,Torvik preseason,-4.31
+2026-11-07,Canisius,Torvik preseason,-10.85
+2026-11-07,Lipscomb,Torvik preseason,-4.22
+2026-11-07,Dayton,Torvik preseason,8.62
+2026-11-07,SE Louisiana,Torvik preseason,-5.67
+2026-11-07,South Florida,Torvik preseason,6.85
+2026-11-07,St. Bonaventure,Torvik preseason,2.78
+2026-11-07,Tennessee,Torvik preseason,16.91
+2026-11-07,Presbyterian,Torvik preseason,-4.39
+2026-11-07,Texas Tech,Torvik preseason,17.02
+2026-11-07,Tulane,Torvik preseason,-0.58
+2026-11-07,Tulsa,Torvik preseason,6.51
+2026-11-07,VCU,Torvik preseason,11.35
+2026-11-07,Washington State,Torvik preseason,-0.81
+2026-11-07,Wyoming,Torvik preseason,3.19
+2026-11-07,Youngstown State,Torvik preseason,-7.13
+2026-11-07,Hofstra,Torvik preseason,0.19
+2026-11-07,UL Monroe,Torvik preseason,-11.49
+2026-11-07,Manhattan,Torvik preseason,-12.83
+2026-11-07,Maryland Eastern Shore,Torvik preseason,-18.03
+2026-11-07,Montana State,Torvik preseason,2.1
+2026-11-07,North Carolina A&T,Torvik preseason,-6.42
+2026-11-07,Nicholls,Torvik preseason,-7.52
+2026-11-07,South Carolina Upstate,Torvik preseason,-11.82
+2026-11-07,Missouri,Torvik preseason,14.71
+2026-11-07,Alcorn State,Torvik preseason,-13.33
+2026-11-07,Bethune-Cookman,Torvik preseason,-1.45
+2026-11-07,Drake,Torvik preseason,0.76
+2026-11-07,Fairleigh Dickinson,Torvik preseason,-12.12
+2026-11-07,South Carolina State,Torvik preseason,-11.38
+2026-11-07,Sacramento State,Torvik preseason,-0.16
+2026-11-07,Stephen F. Austin,Torvik preseason,2.7
+2026-11-07,Stetson,Torvik preseason,-6.11
+2026-11-07,North Carolina Central,Torvik preseason,-13.39
+2026-11-07,UC Riverside,Torvik preseason,-6.19
+2026-11-07,UNLV,Torvik preseason,6.32
+2026-11-07,Vanderbilt,Torvik preseason,15.15
+2026-11-07,Wagner,Torvik preseason,-11.95
+2026-11-07,Wichita State,Torvik preseason,9.18
+2026-11-07,Central Michigan,Torvik preseason,-4.12
+2026-11-07,Georgia,Torvik preseason,13.65
+2026-11-07,Georgia Southern,Torvik preseason,-11.7
+2026-11-07,Northern Illinois,Torvik preseason,-5.07
+2026-11-07,Utah Valley,Torvik preseason,2.73
+2026-11-07,Indiana,Torvik preseason,15.12
+2026-11-07,Loyola Maryland,Torvik preseason,-12.16
+2026-11-07,Minnesota,Torvik preseason,7.73
+2026-11-07,Mississippi State,Torvik preseason,10.16
+2026-11-07,Belmont,Torvik preseason,3.46
+2026-11-07,Florida Gulf Coast,Torvik preseason,-6.3
+2026-11-07,Arkansas-Pine Bluff,Torvik preseason,-15.72
+2026-11-07,Buffalo,Torvik preseason,-2.07
+2026-11-07,BYU,Torvik preseason,15.4
+2026-11-07,Eastern Michigan,Torvik preseason,-0.61
+2026-11-07,Florida Atlantic,Torvik preseason,2.98
+2026-11-07,San Diego State,Torvik preseason,11.09
+2026-11-07,Cal State Bakersfield,Torvik preseason,-10.57
+2026-11-07,Tennessee State,Torvik preseason,-1.25
+2026-11-07,Texas A&M,Torvik preseason,14.03
+2026-11-07,UTSA,Torvik preseason,-4.5
+2026-11-07,Toledo,Torvik preseason,0.34
+2026-11-07,UTEP,Torvik preseason,-0.57
+2026-11-07,Vermont,Torvik preseason,-1.75
+2026-11-07,Virginia Tech,Torvik preseason,12.72
+2026-11-07,Wake Forest,Torvik preseason,7.81
+2026-11-07,North Florida,Torvik preseason,-10.71
+2026-11-07,George Washington,Torvik preseason,8.04
+2026-11-07,Houston,Torvik preseason,19.13
+2026-11-07,Illinois,Torvik preseason,19.47
+2026-11-07,Utah State,Torvik preseason,10.57
+2026-11-07,Jacksonville State,Torvik preseason,-3.89
+2026-11-07,Kansas State,Torvik preseason,7.57
+2026-11-07,Lafayette,Torvik preseason,-11.33
+2026-11-07,Maryland,Torvik preseason,13.3
+2026-11-07,Miami (OH),Torvik preseason,6.56
+2026-11-07,Ohio,Torvik preseason,-3.02
+2026-11-07,Portland,Torvik preseason,-0.8
+2026-11-07,App State,Torvik preseason,-6.09
+2026-11-07,Eastern Illinois,Torvik preseason,-11.7
+2026-11-07,Long Island University,Torvik preseason,-5.08
+2026-11-07,Lehigh,Torvik preseason,-5.9
+2026-11-07,Arkansas,Torvik preseason,15.25
+2026-11-07,Cleveland State,Torvik preseason,-7.26
+2026-11-07,Central Connecticut,Torvik preseason,-11.35
+2026-11-07,Chattanooga,Torvik preseason,-7.16
+2026-11-07,Saint Joseph's,Torvik preseason,2.28
+2026-11-07,Tennessee Tech,Torvik preseason,-4.28
+2026-11-07,UT Rio Grande Valley,Torvik preseason,-4.91
+2026-11-07,The Citadel,Torvik preseason,-12.69
+2026-11-07,UAB,Torvik preseason,2.5
+2026-11-07,UNC Wilmington,Torvik preseason,4.43
+2026-11-07,Valparaiso,Torvik preseason,0.73
+2026-11-07,Monmouth,Torvik preseason,-2.01
+2026-11-07,Coppin State,Torvik preseason,-14.29
+2026-11-07,Texas Southern,Torvik preseason,-11.7
+2026-11-07,Furman,Torvik preseason,0.78
+2026-11-07,George Mason,Torvik preseason,6.75
+2026-11-07,Northern Colorado,Torvik preseason,-2.64
+2026-11-07,Indiana State,Torvik preseason,-4.71
+2026-11-07,Kansas,Torvik preseason,20.01
+2026-11-07,Loyola Marymount,Torvik preseason,2.41
+2026-11-07,Morehead State,Torvik preseason,-9.97
+2026-11-07,Mount St. Mary's,Torvik preseason,-8.39
+2026-11-07,Navy,Torvik preseason,-8.73
+2026-11-07,Niagara,Torvik preseason,-9.85
+2026-11-07,Oakland,Torvik preseason,-4.0
+2026-11-07,Rhode Island,Torvik preseason,1.03
+2026-11-07,Little Rock,Torvik preseason,-5.66
+2026-11-07,Bryant,Torvik preseason,-10.85
+2026-11-07,Army,Torvik preseason,-14.29
+2026-11-07,Charleston Southern,Torvik preseason,-10.94
+2026-11-07,Colgate,Torvik preseason,-3.56
+2026-11-07,South Alabama,Torvik preseason,-6.19
+2026-11-07,TCU,Torvik preseason,11.62
+2026-11-07,Utah,Torvik preseason,5.37
+2026-11-07,Weber State,Torvik preseason,-8.62
+2026-11-07,West Virginia,Torvik preseason,11.98
+2026-11-07,William & Mary,Torvik preseason,-2.48
+2026-11-07,East Carolina,Torvik preseason,-1.41
+2026-11-07,Akron,Torvik preseason,6.03
+2026-11-07,Alabama State,Torvik preseason,-5.67
+2026-11-07,Florida A&M,Torvik preseason,-8.26
+2026-11-07,Georgia Tech,Torvik preseason,4.05
+2026-11-07,Colorado,Torvik preseason,7.14
+2026-11-07,Bucknell,Torvik preseason,-12.84
+2026-11-07,Harvard,Torvik preseason,2.73
+2026-11-07,Southern,Torvik preseason,-8.13
+2026-11-07,Texas A&M-Corpus Christi,Torvik preseason,-2.75
+2026-11-07,UC Davis,Torvik preseason,-2.16
+2026-11-07,Florida International,Torvik preseason,-0.42
+2026-11-07,Bowling Green,Torvik preseason,-0.88
+2026-11-07,Stony Brook,Torvik preseason,-3.82
+2026-11-07,Evansville,Torvik preseason,-6.91
+2026-11-07,UNC Asheville,Torvik preseason,-6.74
+2026-11-07,UT Arlington,Torvik preseason,-3.81
+2026-11-07,Boston College,Torvik preseason,4.55
+2026-11-07,Providence,Torvik preseason,11.7
+2026-11-07,Wright State,Torvik preseason,-0.03
+2026-11-07,Davidson,Torvik preseason,3.41
+2026-11-07,Cincinnati,Torvik preseason,12.91
+2026-11-07,North Carolina,Torvik preseason,12.14
+2026-11-07,Charlotte,Torvik preseason,6.1
+2026-11-07,Western Carolina,Torvik preseason,-1.15
+2026-11-07,Kentucky,Torvik preseason,14.82
+2026-11-07,Notre Dame,Torvik preseason,7.5
+2026-11-07,Ball State,Torvik preseason,-6.86
+2026-11-07,UNC Greensboro,Torvik preseason,-10.78
+2026-11-07,Kansas City,Torvik preseason,-8.76
+2026-11-07,Incarnate Word,Torvik preseason,-9.57
+2026-11-07,Grand Canyon,Torvik preseason,12.47
+2026-11-07,Creighton,Torvik preseason,12.74
+2026-11-07,Delaware,Torvik preseason,-6.0
+2026-11-07,Southern Illinois,Torvik preseason,-2.29
+2026-11-07,Samford,Torvik preseason,-4.38
+2026-11-07,San José State,Torvik preseason,-2.03
+2026-11-07,Western Illinois,Torvik preseason,-14.75
+2026-11-07,Coastal Carolina,Torvik preseason,-4.05
+2026-11-07,UCF,Torvik preseason,11.95
+2026-11-07,UMass Lowell,Torvik preseason,-10.23
+2026-11-07,Richmond,Torvik preseason,3.75
+2026-11-07,Troy,Torvik preseason,1.06
+2026-11-07,Abilene Christian,Torvik preseason,-6.22
+2026-11-07,California Baptist,Torvik preseason,-1.59
+2026-11-07,Nebraska,Torvik preseason,16.65
+2026-11-07,Sam Houston,Torvik preseason,-1.42
+2026-11-07,Towson,Torvik preseason,-1.56
+2026-11-07,Maine,Torvik preseason,-10.78
+2026-11-07,East Tennessee State,Torvik preseason,-1.11
+2026-11-07,IU Indianapolis,Torvik preseason,-7.58
+2026-11-07,Omaha,Torvik preseason,-8.43
+2026-11-07,Ole Miss,Torvik preseason,10.17
+2026-11-07,NJIT,Torvik preseason,-9.23
+2026-11-07,Wofford,Torvik preseason,-6.63
+2026-11-07,DePaul,Torvik preseason,9.68
+2026-11-07,South Dakota,Torvik preseason,-7.3
+2026-11-07,North Dakota State,Torvik preseason,0.38
+2026-11-07,Robert Morris,Torvik preseason,-1.37
+2026-11-07,Elon,Torvik preseason,-4.6
+2026-11-07,Marquette,Torvik preseason,14.1
+2026-11-07,North Alabama,Torvik preseason,-9.08
+2026-11-07,McNeese,Torvik preseason,7.74
+2026-11-07,UMBC,Torvik preseason,-6.34
+2026-11-07,Portland State,Torvik preseason,-3.26
+2026-11-07,Merrimack,Torvik preseason,-0.03
+2026-11-07,Lindenwood,Torvik preseason,-6.99
+2026-11-07,UC San Diego,Torvik preseason,3.3
+2026-11-07,Bellarmine,Torvik preseason,-9.27
+2026-11-07,Tarleton State,Torvik preseason,0.86
+2026-11-07,Utah Tech,Torvik preseason,-9.19
+2026-11-07,James Madison,Torvik preseason,0.29
+2026-11-07,High Point,Torvik preseason,9.6
+2026-11-07,Liberty,Torvik preseason,1.05
+2026-11-07,UT Martin,Torvik preseason,-11.19
+2026-11-07,St. Thomas-Minnesota,Torvik preseason,0.78
+2026-11-07,Idaho,Torvik preseason,-3.42
+2026-11-07,Texas,Torvik preseason,16.18
+2026-11-07,East Texas A&M,Torvik preseason,-11.88
+2026-11-07,Southern Indiana,Torvik preseason,-10.4
+2026-11-07,Stonehill,Torvik preseason,-12.24
+2026-11-07,Queens University,Torvik preseason,-1.94
+2026-11-07,Georgia State,Torvik preseason,-3.57
+2026-11-07,Fairfield,Torvik preseason,-4.37
+2026-11-07,Alabama A&M,Torvik preseason,-7.56
+2026-11-07,Austin Peay,Torvik preseason,-1.4
+2026-11-07,Baylor,Torvik preseason,12.5
+2026-11-07,Le Moyne,Torvik preseason,-10.5
+2026-11-07,Longwood,Torvik preseason,-3.98
+2026-11-07,West Georgia,Torvik preseason,-8.59
+2026-11-07,Mercyhurst,Torvik preseason,-7.09
+2026-11-07,South Dakota State,Torvik preseason,-6.06
+2026-11-07,La Salle,Torvik preseason,0.66
+2026-11-07,West Florida,Torvik preseason,-17.51
+2026-11-07,New Haven,Torvik preseason,-11.78
