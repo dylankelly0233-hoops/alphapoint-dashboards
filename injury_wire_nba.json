@@ -1,47 +1,47 @@
 {
   "sport": "nba",
-  "week": 20261106,
-  "generated": "2026-11-06T11:16:10-05:00",
+  "week": 20261107,
+  "generated": "2026-11-07T18:44:13-05:00",
   "movers": [
     {
       "team": "WSH",
       "tag": "KEY",
-      "text": "Anthony Davis (33 mpg) questionable Fri vs ATL with a right ankle sprain, per The Athletic. Per 11/5 evening report.",
+      "text": "Anthony Davis (ankle, 33 mpg) won't play Saturday vs. OKC (ESPN report, Nov. 7).",
       "source": "ESPN",
       "url": "https://www.espn.com/nba/injuries",
-      "date": "2026-11-05"
-    },
-    {
-      "team": "TOR",
-      "tag": "KEY",
-      "text": "Scottie Barnes (33 mpg, groin) questionable Fri vs MIL. Kawhi Leonard (26 mpg, knee) out, to be re-evaluated in about a week. Per 11/6 report.",
-      "source": "ESPN",
-      "url": "https://www.espn.com/nba/injuries",
-      "date": "2026-11-06"
-    },
-    {
-      "team": "ATL",
-      "tag": "KEY",
-      "text": "Jalen Johnson (33 mpg) questionable Fri vs WSH after missing last game; Jock Landale (15 mpg, hip) ruled out. Per 11/5 evening report.",
-      "source": "ESPN",
-      "url": "https://www.espn.com/nba/injuries",
-      "date": "2026-11-05"
+      "date": "2026-11-07"
     },
     {
       "team": "CLE",
       "tag": "CLUSTER",
-      "text": "Jaylon Tyson (21 mpg, ankle) out Fri vs PHI; Peyton Watson (28 mpg, hamstring) and Jarrett Allen (25 mpg, knee) questionable. Per 11/5 evening report.",
+      "text": "Jarrett Allen (knee, 25 mpg), Sam Merrill (elbow, 23 mpg) and Jaylon Tyson (ankle, 21 mpg) all out Saturday vs. NY.",
       "source": "ESPN",
       "url": "https://www.espn.com/nba/injuries",
-      "date": "2026-11-05"
+      "date": "2026-11-07"
     },
     {
-      "team": "CHA",
-      "tag": "CLUSTER",
-      "text": "Dennis Schroder (30 mpg, thigh) and Moussa Diabate (29 mpg, quad) both questionable Fri vs BOS. Per 11/5 evening report.",
+      "team": "ORL",
+      "tag": "KEY",
+      "text": "Desmond Bane (illness, 34.5 mpg) ruled out Saturday vs. GS; Banchero (ankle) and Suggs (knee) also remain out.",
       "source": "ESPN",
       "url": "https://www.espn.com/nba/injuries",
-      "date": "2026-11-05"
+      "date": "2026-11-07"
+    },
+    {
+      "team": "LAL",
+      "tag": "KEY",
+      "text": "Luka Doncic (back, 36 mpg) questionable for Sunday vs. DET (as of Nov. 7 report).",
+      "source": "ESPN",
+      "url": "https://www.espn.com/nba/injuries",
+      "date": "2026-11-07"
+    },
+    {
+      "team": "NY",
+      "tag": "KEY",
+      "text": "Josh Hart (right ankle soreness, 32 mpg) out Saturday vs. CLE.",
+      "source": "ESPN",
+      "url": "https://www.espn.com/nba/injuries",
+      "date": "2026-11-06"
     }
   ],
   "teams": {
@@ -49,90 +49,90 @@
       {
         "team": "WSH",
         "tag": "KEY",
-        "text": "Anthony Davis (33 mpg) questionable Fri vs ATL with a right ankle sprain, per The Athletic. Per 11/5 evening report.",
+        "text": "Anthony Davis (ankle, 33 mpg) won't play Saturday vs. OKC (ESPN report, Nov. 7).",
         "source": "ESPN",
         "url": "https://www.espn.com/nba/injuries",
-        "date": "2026-11-05"
-      }
-    ],
-    "TOR": [
-      {
-        "team": "TOR",
-        "tag": "KEY",
-        "text": "Scottie Barnes (33 mpg, groin) questionable Fri vs MIL. Kawhi Leonard (26 mpg, knee) out, to be re-evaluated in about a week. Per 11/6 report.",
-        "source": "ESPN",
-        "url": "https://www.espn.com/nba/injuries",
-        "date": "2026-11-06"
-      }
-    ],
-    "ATL": [
-      {
-        "team": "ATL",
-        "tag": "KEY",
-        "text": "Jalen Johnson (33 mpg) questionable Fri vs WSH after missing last game; Jock Landale (15 mpg, hip) ruled out. Per 11/5 evening report.",
-        "source": "ESPN",
-        "url": "https://www.espn.com/nba/injuries",
-        "date": "2026-11-05"
+        "date": "2026-11-07"
       }
     ],
     "CLE": [
       {
         "team": "CLE",
         "tag": "CLUSTER",
-        "text": "Jaylon Tyson (21 mpg, ankle) out Fri vs PHI; Peyton Watson (28 mpg, hamstring) and Jarrett Allen (25 mpg, knee) questionable. Per 11/5 evening report.",
+        "text": "Jarrett Allen (knee, 25 mpg), Sam Merrill (elbow, 23 mpg) and Jaylon Tyson (ankle, 21 mpg) all out Saturday vs. NY.",
         "source": "ESPN",
         "url": "https://www.espn.com/nba/injuries",
-        "date": "2026-11-05"
+        "date": "2026-11-07"
       }
     ],
-    "CHA": [
+    "ORL": [
       {
-        "team": "CHA",
-        "tag": "CLUSTER",
-        "text": "Dennis Schroder (30 mpg, thigh) and Moussa Diabate (29 mpg, quad) both questionable Fri vs BOS. Per 11/5 evening report.",
+        "team": "ORL",
+        "tag": "KEY",
+        "text": "Desmond Bane (illness, 34.5 mpg) ruled out Saturday vs. GS; Banchero (ankle) and Suggs (knee) also remain out.",
         "source": "ESPN",
         "url": "https://www.espn.com/nba/injuries",
-        "date": "2026-11-05"
+        "date": "2026-11-07"
+      }
+    ],
+    "LAL": [
+      {
+        "team": "LAL",
+        "tag": "KEY",
+        "text": "Luka Doncic (back, 36 mpg) questionable for Sunday vs. DET (as of Nov. 7 report).",
+        "source": "ESPN",
+        "url": "https://www.espn.com/nba/injuries",
+        "date": "2026-11-07"
       }
     ],
     "NY": [
       {
         "team": "NY",
         "tag": "KEY",
-        "text": "Josh Hart (32 mpg) missed Wednesday vs CHI with right ankle soreness; status for next game not yet updated.",
+        "text": "Josh Hart (right ankle soreness, 32 mpg) out Saturday vs. CLE.",
         "source": "ESPN",
         "url": "https://www.espn.com/nba/injuries",
-        "date": "2026-11-05"
+        "date": "2026-11-06"
       }
     ],
-    "MIN": [
+    "UTAH": [
       {
-        "team": "MIN",
+        "team": "UTAH",
         "tag": "KEY",
-        "text": "Anthony Edwards (34 mpg) out after arthroscopic right knee procedure Oct. 29; no return date given. Terrence Shannon Jr. (22 mpg, hip) questionable Fri vs NO.",
+        "text": "Lauri Markkanen (right wrist sprain, 31 mpg) questionable for Sunday vs. MIN.",
         "source": "ESPN",
         "url": "https://www.espn.com/nba/injuries",
-        "date": "2026-11-05"
+        "date": "2026-11-07"
       }
     ],
-    "NO": [
+    "GS": [
       {
-        "team": "NO",
-        "tag": "RETURNING",
-        "text": "Trey Murphy III (33 mpg, knee) probable Fri vs MIN after missing last game; Yves Missi (20 mpg, knee) out. Per 11/5 evening report.",
+        "team": "GS",
+        "tag": "KEY",
+        "text": "Draymond Green (elbow, 27 mpg) and Gui Santos (knee, 20 mpg) questionable Saturday vs. ORL.",
         "source": "ESPN",
         "url": "https://www.espn.com/nba/injuries",
-        "date": "2026-11-05"
+        "date": "2026-11-06"
       }
     ],
-    "DAL": [
+    "TOR": [
       {
-        "team": "DAL",
-        "tag": "RETURNING",
-        "text": "Max Christie (24 mpg, hip) probable Fri vs UTAH after missing last game. Per 11/5 evening report.",
+        "team": "TOR",
+        "tag": "CLUSTER",
+        "text": "Scottie Barnes (adductor) and Immanuel Quickley (hamstring) sat Friday at MIL; Kawhi Leonard (knee) re-evaluated in a week.",
         "source": "ESPN",
         "url": "https://www.espn.com/nba/injuries",
-        "date": "2026-11-05"
+        "date": "2026-11-07"
+      }
+    ],
+    "CHA": [
+      {
+        "team": "CHA",
+        "tag": "CLUSTER",
+        "text": "Schroder (thigh) and Diabate (quad) missed Friday vs. BOS; Brandon Miller (groin) re-evaluated over the weekend.",
+        "source": "ESPN",
+        "url": "https://www.espn.com/nba/injuries",
+        "date": "2026-11-07"
       }
     ]
   }
