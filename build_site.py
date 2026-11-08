@@ -63,10 +63,14 @@ LANDING_CSS = """
 .spots-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 16px; margin-bottom: 6px; }
 .spots-head h2 { margin: 0; font: 700 20px/1.1 var(--display); text-transform: uppercase; letter-spacing: .6px; }
 .spotlist { list-style: none; margin: 0; padding: 0; }
-.spotlist a { display: grid; grid-template-columns: 112px 44px minmax(0, 1fr) auto; align-items: center; gap: 4px 12px;
+.spotlist a { display: grid; grid-template-columns: 84px 44px minmax(0, 1fr) auto; align-items: center; gap: 4px 12px;
               padding: 10px 6px; border-top: 1px solid var(--line); color: var(--ink); text-decoration: none; border-radius: 6px; }
 .spotlist li:first-child a { border-top: 0; }
 .spotlist a:hover, .spotlist a:focus-visible { background: var(--surface-2); outline: none; }
+.spotday { margin: 14px 0 2px; padding: 6px 6px 4px; font: 700 15px/1.2 var(--display); text-transform: uppercase;
+           letter-spacing: .6px; border-bottom: 2px solid var(--line); }
+.spotday span { font: 500 12px/1 var(--body, inherit); text-transform: none; letter-spacing: 0; color: var(--muted); margin-left: 6px; }
+.spotnone { margin: 10px 6px 0; }
 .sday { font: 600 13px/1.2 var(--display); letter-spacing: .5px; text-transform: uppercase; color: var(--muted); }
 .ssport { font: 700 11px/1 var(--display); letter-spacing: 1px; text-align: center; padding: 4px 0; border-radius: 4px;
           background: var(--mast-2); color: var(--mast-ink); }
@@ -226,7 +230,7 @@ def best_spots():
         s['dt'] = datetime.fromisoformat(s['kick'])
         s['sort'] = s['dt'] + timedelta(hours=23, minutes=59) if s.get('tbd') else s['dt']   # time TBD: end of its day
         sides = {team for _, team in _backing(s)}
-        if s['sort'] <= now or len(sides) != 1 or s['edge'] is None:      # needs a posted line and our projection
+        if s['sort'] <= now or s['dt'] > now + timedelta(days=7) or len(sides) != 1 or s['edge'] is None:   # next 7 days, priced, projected
             continue
         s['side'] = sides.pop()
         if any(label.startswith('Teaser') for label, _ in s['tags']):
@@ -240,11 +244,10 @@ def best_spots():
         return ('<section class="card spots"><div class="spots-head"><h2>Best spots</h2></div>'
                 '<p class="hint">No games this week where our line and a tag or trade signal agree yet.</p></section>')
     today = now.date()
-    rows = ''
+    groups = {}                      # date → rows, so each day gets its own heading
     for s in sorted(keep, key=lambda s: s['sort']):
         d = s['dt'].date()
-        day = 'Today' if d == today else 'Tomorrow' if (d - today).days == 1 else s['dt'].strftime('%a %m/%d')
-        when = f"{day} · {'Time TBD' if s.get('tbd') else s['dt'].strftime('%I:%M %p').lstrip('0')}"
+        when = 'Time TBD' if s.get('tbd') else s['dt'].strftime('%I:%M %p').lstrip('0') + ' ET'
         lean = _lean(s, s['side'])
         pct = s.get('unit') == 'pct'            # NHL: edges in win-probability points
         fmt = (lambda x: f'{x:.1f}%') if pct else theme.spread_num
@@ -258,18 +261,26 @@ def best_spots():
                        f'{theme.esc(t)}</span>' for t, _ in s['tags'])
         if not any(t.startswith('Teaser') for t, _ in s['tags']):     # teaser rows ignore trade signals
             tags += ''.join(f'<span class="pill {sig.lower()}">{theme.esc(team)} {sig}</span>' for team, sig in s['signals'])
-        rows += (f'<li><a href="{theme.esc(s["page"])}"><span class="sday">{theme.esc(when)}</span>'
+        groups.setdefault(d, '')
+        groups[d] += (f'<li><a href="{theme.esc(s["page"])}"><span class="sday">{theme.esc(when)}</span>'
                  f'{league_mark(s["sport"])}'
                  f'<span class="smain"><span class="smatch">{theme.esc(s["away"])} @ {theme.esc(s["home"])}</span>'
                  f'<span class="sline">Ours {theme.esc(s["ours"])} · Market {theme.esc(s["market"])}</span>'
                  f'{f"<span class=stags>{tags}</span>" if tags else ""}</span>'
                  f'<span class="sedge">{edge}</span></a></li>')
-    title = "Today's best spots" if any(s['dt'].date() == today for s in keep) else 'Best spots this week'
-    return (f'<section class="card spots"><div class="spots-head"><h2>{title}</h2>'
+    def label(d):
+        nice = d.strftime('%a %b %d').replace(' 0', ' ')
+        return f'Today · {nice}' if d == today else f'Tomorrow · {nice}' if (d - today).days == 1 else nice
+    days = ''.join(f'<h3 class="spotday">{theme.esc(label(d))} <span>{rows.count("<li>")} '
+                   f'spot{"" if rows.count("<li>") == 1 else "s"}</span></h3><ol class="spotlist">{rows}</ol>'
+                   for d, rows in groups.items())
+    if today not in groups:
+        days = '<p class="hint spotnone">No spots today.</p>' + days
+    return (f'<section class="card spots"><div class="spots-head"><h2>Best spots</h2>'
             f'<span class="hint">Tags and trade signals back one side, and our line agrees or is within '
             f'{SPOTS_TOLERANCE:g} points ({SPOTS_TOLERANCE_PCT:g} win-probability points in the NHL and EPL), plus every teaser '
             f'leg · next 7 days</span></div>'
-            f'<ol class="spotlist">{rows}</ol></section>')
+            f'{days}</section>')
 
 # Info tab: what each dashboard tab shows (dashboard → [(tab, description)])
 INFO = [
