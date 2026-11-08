@@ -17,7 +17,7 @@ import html
 import os
 import re
 import time
-from datetime import date
+from datetime import date, datetime
 
 import requests
 
@@ -71,13 +71,13 @@ WARRENNOLAN_ALIASES = {
 }
 
 
-def _page(url, cache):
+def _page(url, cache, headers=None):
     """Fetch a page, caching it to disk; falls back to the cached copy if the site is down."""
     if os.path.exists(cache) and (time.time() - os.path.getmtime(cache)) / 3600 < CACHE_HOURS:
         with open(cache, encoding='utf-8') as f:
             return f.read()
     try:
-        r = requests.get(url, timeout=30)
+        r = requests.get(url, headers=headers, timeout=30)
         r.raise_for_status()
         with open(cache, 'w', encoding='utf-8') as f:
             f.write(r.text)
@@ -117,6 +117,122 @@ def fetch_teamrankings(season):
     days_in = (date.today() - date(season - 1, 11, 1)).days
     plausible = 3 + max(days_in, 0) / 2.5      # a team plays at most ~one game every 2–3 days
     return ratings, bool(ratings) and most_games <= plausible
+
+
+HASLAMETRICS_URL = 'https://haslametrics.com/ratings.xml'      # the current season's ratings (the page reads this file)
+# Haslametrics spelling → CBBD name (anything not listed matches after normalizing)
+# Haslametrics turns away anonymous scripts but serves clients that say who they are (robots.txt allows all).
+# This is an honest label for our automated fetch, at most once every CACHE_HOURS.
+HASLAMETRICS_HEADERS = {'User-Agent': 'AlphaPoint-Sports/1.0 (automated ratings fetch, at most every 6 hours; '
+                                      '+https://dylankelly0233-hoops.github.io/alphapoint-dashboards/)'}
+HASLAMETRICS_ALIASES = {
+    'AR-Pine Bluff': 'Arkansas-Pine Bluff',
+    'Abil. Christian': 'Abilene Christian',
+    'Albany': 'UAlbany',
+    'American': 'American University',
+    'Appalachian St.': 'App State',
+    'Boston U': 'Boston University',
+    'CSU Bakersfield': 'Cal State Bakersfield',
+    'CSU Fullerton': 'Cal State Fullerton',
+    'CSU Northridge': 'Cal State Northridge',
+    'Cal Baptist': 'California Baptist',
+    'Cent. Arkansas': 'Central Arkansas',
+    'Cent. Conn. St.': 'Central Connecticut',
+    'Cent. Michigan': 'Central Michigan',
+    'Charleston So.': 'Charleston Southern',
+    'Coast. Carolina': 'Coastal Carolina',
+    'E. Illinois': 'Eastern Illinois',
+    'E. Kentucky': 'Eastern Kentucky',
+    'E. Michigan': 'Eastern Michigan',
+    'E. Washington': 'Eastern Washington',
+    'ECU': 'East Carolina',
+    'ETSU': 'East Tennessee State',
+    'FAU': 'Florida Atlantic',
+    'FGCU': 'Florida Gulf Coast',
+    'FIU': 'Florida International',
+    'Fair. Dickinson': 'Fairleigh Dickinson',
+    'Fort Wayne': 'Purdue Fort Wayne',
+    'G. Washington': 'George Washington',
+    'GA Southern': 'Georgia Southern',
+    'Grambling State': 'Grambling',
+    'JMU': 'James Madison',
+    'LA Tech': 'Louisiana Tech',
+    'Long Island': 'Long Island University',
+    'Loyola (MD)': 'Loyola Maryland',
+    'MTSU': 'Middle Tennessee',
+    'Miss. Valley St.': 'Mississippi Valley State',
+    "Mt. St. Mary's": "Mount St. Mary's",
+    'N. Arizona': 'Northern Arizona',
+    'N. Colorado': 'Northern Colorado',
+    'N. Illinois': 'Northern Illinois',
+    'N. Kentucky': 'Northern Kentucky',
+    'NC A&T': 'North Carolina A&T',
+    'NC Central': 'North Carolina Central',
+    'PV A&M': 'Prairie View A&M',
+    'Penn': 'Pennsylvania',
+    'Queens': 'Queens University',
+    'S. Carolina St.': 'South Carolina State',
+    'S. Illinois': 'Southern Illinois',
+    'S. Indiana': 'Southern Indiana',
+    'SE Missouri St.': 'Southeast Missouri State',
+    'SIUE': 'SIU Edwardsville',
+    "Saint Joe's": "Saint Joseph's",
+    'Seattle': 'Seattle U',
+    'St. Thomas': 'St. Thomas-Minnesota',
+    'Tarleton': 'Tarleton State',
+    'Tenn. Tech': 'Tennessee Tech',
+    'Texas A&M-CC': 'Texas A&M-Corpus Christi',
+    'UCSB': 'UC Santa Barbara',
+    'UMES': 'Maryland Eastern Shore',
+    'UMass': 'Massachusetts',
+    'UNCG': 'UNC Greensboro',
+    'UNH': 'New Hampshire',
+    'URI': 'Rhode Island',
+    'USC Upstate': 'South Carolina Upstate',
+    'USF': 'South Florida',
+    'UTRGV': 'UT Rio Grande Valley',
+    'W. Carolina': 'Western Carolina',
+    'W. Illinois': 'Western Illinois',
+    'W. Kentucky': 'Western Kentucky',
+    'W. Michigan': 'Western Michigan',
+}      # Haslametrics spelling → CBBD name (anything not listed matches after normalizing)
+
+
+def fetch_haslametrics(season):
+    """
+    Haslametrics efficiency ratings → ({team: points per game vs. average}, {team: games played}, through-date).
+    Net efficiency (offense − defense, points per 100 possessions) is converted to points per game at each
+    team's average tempo. The file is only used if its "through" date falls in this season.
+    """
+    import xml.etree.ElementTree as ET
+    cache = f'cbb_haslametrics_{season}.xml'
+    text = _page(HASLAMETRICS_URL, cache, HASLAMETRICS_HEADERS)
+    if not text:
+        return {}, {}, ''
+    try:
+        root = ET.fromstring(text)
+    except ET.ParseError as e:
+        print(f'  ! Haslametrics file unreadable: {e}')
+        return {}, {}, ''
+    dt = root.find('.//dt')
+    through = dt.get('md', '') if dt is not None else ''
+    try:
+        through_date = datetime.strptime(through, '%B %d, %Y').date()
+    except ValueError:
+        through_date = None
+    if through_date is None or not (date(season - 1, 10, 15) <= through_date <= date(season, 4, 30)):
+        print(f'  ! Haslametrics file is not this season (games through {through or "?"})')
+        return {}, {}, through
+    ratings, games = {}, {}
+    for m in root.iter('mr'):
+        try:
+            oe, de = float(m.get('oe')), float(m.get('de'))
+            pace = (float(m.get('ou')) + float(m.get('du'))) / 2
+            ratings[m.get('t')] = (oe - de) * pace / 100
+            games[m.get('t')] = int(m.get('w') or 0) + int(m.get('l') or 0)
+        except (TypeError, ValueError):
+            continue
+    return ratings, games, through
 
 
 def fetch_evanmiya():

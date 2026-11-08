@@ -37,13 +37,14 @@ MIN_SHARE = 0.15
 LOPSIDED_MARKET = 15
 # The dashboards' weight settings, keyed by the label each source has in the log.
 # 'share': weights are shares that sum to 1 (football). 'mult': multipliers around 1.0 that the
-# dashboard's own ramps scale (basketball). CBB tunes TeamRankings vs our model only; Torvik's
+# dashboard's own ramps scale (basketball). CBB tunes TeamRankings, our model and Haslametrics; Torvik's
 # preseason ratings fade out on their own schedule as our model ramps in.
 WEIGHTS = {
     'cfb': {'kind': 'share', 'keys': {'Sagarin': 'sagarin', 'SP+': 'sp'}, 'default': {'sagarin': 0.5, 'sp': 0.5}},
     'nfl': {'kind': 'share', 'keys': {'nfelo': 'nfelo', 'Sagarin': 'sagarin'}, 'default': {'nfelo': 0.65, 'sagarin': 0.35}},
-    'cbb': {'kind': 'mult', 'keys': {'TeamRankings': 'TeamRankings', 'AlphaPoint model': 'AlphaPoint model'},
-            'default': {'TeamRankings': 1.0, 'AlphaPoint model': 1.0}},
+    'cbb': {'kind': 'mult', 'keys': {'TeamRankings': 'TeamRankings', 'AlphaPoint model': 'AlphaPoint model',
+                                     'Haslametrics': 'Haslametrics'},
+            'default': {'TeamRankings': 1.0, 'AlphaPoint model': 1.0, 'Haslametrics': 1.0}},
     'nba': {'kind': 'mult', 'keys': {'Sagarin': 'Sagarin', 'TeamRankings': 'TeamRankings', 'Net rating': 'Net rating'},
             'default': {'Sagarin': 1.0, 'TeamRankings': 1.0, 'Net rating': 1.0}},
 }

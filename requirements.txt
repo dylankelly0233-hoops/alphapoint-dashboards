@@ -3,3 +3,4 @@ numpy>=1.24
 scipy>=1.10
 requests>=2.31
 pyarrow>=14
+brotli>=1.1
