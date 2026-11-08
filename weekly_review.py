@@ -3,8 +3,8 @@ Weekly accuracy review (internal; never published on the site).
 
 Scores every finished game in projections_{sport}.csv against the final result and writes a
 plain-text report to last_review.md: the past 7 days and everything since logging began.
-It only reports. Settings (source weights, home field, edge shrink) change only after a
-person reviews enough games; the report says when a sport has enough to look at.
+With --calibrate (the Sunday scheduled run), it also re-tunes each sport's home edge and source
+weights through calibrate.py, with the safeguards described there, and lists every change.
 
 Results come from the same places the dashboards use:
   CFB  CFBD /games (key from cfbd_api_key.txt or CFBD_API_KEY)
@@ -13,10 +13,12 @@ Results come from the same places the dashboards use:
   NBA  ESPN NBA scoreboard
 Fetched scores are cached in results_{sport}.csv (git-ignored) so each game is looked up once.
 
-Run: python weekly_review.py
+Run: python weekly_review.py              (report only)
+     python weekly_review.py --calibrate  (report, then tune settings; once a week)
 """
 import json
 import os
+import sys
 from datetime import datetime, timedelta, timezone
 
 import numpy as np
@@ -27,7 +29,7 @@ SPORTS = ['cfb', 'nfl', 'cbb', 'nba']
 NAMES = {'cfb': 'CFB', 'nfl': 'NFL', 'cbb': 'CBB', 'nba': 'NBA'}
 HFA = {'cfb': 2.5, 'nfl': 1.7, 'cbb': 3.0, 'nba': 2.4}
 # Finished games needed before a calibration change is worth considering
-ENOUGH = {'cfb': 150, 'nfl': 60, 'cbb': 400, 'nba': 200}
+from calibrate import MIN_GAMES as ENOUGH
 ESPN = {'cbb': 'basketball/mens-college-basketball', 'nba': 'basketball/nba'}
 ESPN_HOSTS = ['https://site.api.espn.com', 'https://site.web.api.espn.com']
 REPORT = 'last_review.md'
@@ -160,7 +162,7 @@ def summarize(d, sport):
     return lines
 
 
-def review(sport, now):
+def review(sport, now, scored):
     path = f'projections_{sport}.csv'
     if not os.path.exists(path):
         return [f'{NAMES[sport]}: no log yet.']
@@ -173,21 +175,26 @@ def review(sport, now):
     log['result'] = log['game_id'].map(res)
     d = log.dropna(subset=['result', 'ours_last', 'market_last']).copy()
     d['gap'] = d['ours_last'] - d['market_last']
+    scored[sport] = d
     week = d[d['kickoff'] >= now - timedelta(days=7)]
     since = d['kickoff'].min()
     out = [f'{NAMES[sport]}', ' Past 7 days:'] + summarize(week, sport)
     out += [f' Since logging began ({since:%b %d}):' if len(d) else ' Since logging began:']
     out += summarize(d, sport)
     left = ENOUGH[sport] - len(d)
-    out.append(f'  Calibration: {"enough games to review weights, home edge and edge shrink" if left <= 0 else f"{left} more finished games before a calibration review is worthwhile"}.')
+    out.append(f'  Calibration: {"enough games for automatic tuning" if left <= 0 else f"{left} more finished games before automatic tuning starts"}.')
     return out
 
 
 def main():
     now = datetime.now(timezone.utc)
     body = [f'Date: {now.astimezone(ET):%Y-%m-%d %H:%M} ET', 'Status: ok', '']
+    scored = {}
     for sport in SPORTS:
-        body += review(sport, now) + ['']
+        body += review(sport, now, scored) + ['']
+    if '--calibrate' in sys.argv:
+        import calibrate
+        body += ['Model changes this week'] + ['  ' + l for l in calibrate.run(scored, now)] + ['']
     text = '\n'.join(body).rstrip() + '\n'
     with open(REPORT, 'w', encoding='utf-8') as f:
         f.write(text)

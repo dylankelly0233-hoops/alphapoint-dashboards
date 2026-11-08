@@ -10,7 +10,7 @@ on:
     - cron: '17 0-4,12-23 * * *'   # UTC; = :17 past every hour, 8 AM–midnight ET
   push:
     branches: [main]
-    paths: ['*.py', 'injury_wire_*.json', 'cbb_torvik_*.csv', '.github/workflows/build.yml']
+    paths: ['*.py', 'injury_wire_*.json', 'cbb_torvik_*.csv', 'calibration.json', '.github/workflows/build.yml']
   workflow_dispatch:
 
 permissions:

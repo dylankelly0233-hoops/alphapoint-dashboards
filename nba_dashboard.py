@@ -52,6 +52,8 @@ TR_URL          = 'https://www.teamrankings.com/nba/ranking/predictive-by-other'
 TR_CACHE        = f'nba_teamrankings_{SEASON}.html'
 
 HFA_POINTS      = 2.4      # home-court edge for an average team; NBA home court has settled around 2–2.5 points
+SOURCE_WEIGHTS  = {'Sagarin': 1.0, 'TeamRankings': 1.0, 'Net rating': 1.0}   # multipliers; Net rating also ramps in
+HFA_POINTS, SOURCE_WEIGHTS = ex.calibrated('nba', HFA_POINTS, SOURCE_WEIGHTS)   # weekly tuning (calibrate.py)
 NET_FULL_GAMES  = 15       # our net rating reaches full weight (equal to the others) at this many games per team
 GAME_DAYS       = 3
 LOOKAHEAD_DAYS  = 10
@@ -118,7 +120,7 @@ def build_power(tm, sources, weights):
     df = tm[['abbr', 'name', 'short', 'espn_id', 'color', 'logo']].copy()
     stats = {s: (np.mean(list(v.values())), np.std(list(v.values()))) for s, v in sources.items() if len(v) >= 20}
     # Only full-weight sources set the common scale, so a source still ramping up can't stretch or squeeze it
-    sds = [sd for s, (_, sd) in stats.items() if weights.get(s, 1.0) >= 1.0] or [sd for _, sd in stats.values()]
+    sds = [sd for s, (_, sd) in stats.items() if weights.get(s, 1.0) >= SOURCE_WEIGHTS.get(s, 1.0)] or [sd for _, sd in stats.values()]
     target_sd = np.mean(sds) if sds else 1.0
     for src, (mean, sd) in stats.items():
         df[src] = df['abbr'].map(lambda t: (sources[src][t] - mean) * target_sd / sd if t in sources[src] else np.nan)
@@ -386,7 +388,7 @@ def generate_html(power, metrics, days, info):
                          'opened': info['opened'].get(g['game_id']),
                          'confidence': ex.confidence_level(by_src.get(g['home'], {}), by_src.get(g['away'], {}), hfa_g),
                          'flags': ['news'] if ex.news_move(info['opened'].get(g['game_id']), g['market']) else [],
-                         'sources': ex.source_lines(by_src.get(g['home'], {}), by_src.get(g['away'], {}), hfa_g)})
+                         'sources': ex.source_lines(by_src.get(g['home'], {}), by_src.get(g['away'], {}), hfa_g), 'hfa': hfa_g})
             spots.append(ex.spot('NBA', 'nba.html#games', g['kick'], short[g['away']], short[g['home']], margin, g['market'],
                                  [], [(short[t], _signal(comp.get(t), gp.get(t, 0))) for t in (g['away'], g['home'])],
                                  info['opened'].get(g['game_id'])))
@@ -470,7 +472,8 @@ def main():
     trk, tr_un = fetch_teamrankings(by_location)
     net, games_played, pace = vm.net_ratings(box, list(tm['abbr']))
     avg_games = float(np.mean(list(games_played.values()))) if games_played else 0.0
-    weights = {'Sagarin': 1.0, 'TeamRankings': 1.0, 'Net rating': min(1.0, avg_games / NET_FULL_GAMES)}
+    weights = {'Sagarin': SOURCE_WEIGHTS['Sagarin'], 'TeamRankings': SOURCE_WEIGHTS['TeamRankings'],
+               'Net rating': SOURCE_WEIGHTS['Net rating'] * min(1.0, avg_games / NET_FULL_GAMES)}
     sources = {'Sagarin': sag, 'TeamRankings': trk, 'Net rating': net}
     print(f'  Sagarin {len(sag)} (through {sag_asof}) | TeamRankings {len(trk)} | net rating {len(net)} '
           f'(avg {avg_games:.1f} games, weight {weights["Net rating"]:.2f})')

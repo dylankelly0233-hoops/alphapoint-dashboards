@@ -69,6 +69,7 @@ MODEL_FULL_GAMES = 8
 SOURCE_WEIGHTS  = {'TeamRankings': 1.0, MODEL_LABEL: 1.0, 'Torvik preseason': 1.0}
 # Sources in points per game; the common scale comes from the full-weight ones among these
 POINT_SOURCES   = {'TeamRankings', 'Torvik preseason', MODEL_LABEL}
+HFA_POINTS, SOURCE_WEIGHTS = ex.calibrated('cbb', HFA_POINTS, SOURCE_WEIGHTS)   # weekly tuning (calibrate.py)
 FALLBACK_SD     = 9.5      # typical D1 SD in points, used if no points-based source loads
 LOGO_PX         = 48       # smaller logos: this page carries ~150 teams (displayed at 24–30px)
 LOOKAHEAD_DAYS  = 21
@@ -199,7 +200,7 @@ def build_power(teams, sources, unmatched, weights=None):
     stats = {s: (np.mean(list(v.values())), np.std(list(v.values()))) for s, v in sources.items() if v}
     # The common scale comes from full-weight points sources only: a source still ramping up (our model early
     # in the season) is heavily shrunk, and averaging its tiny SD in would squeeze every rating and line.
-    point_sds = [sd for s, (_, sd) in stats.items() if s in POINT_SOURCES and weights.get(s, 1.0) >= 1.0]
+    point_sds = [sd for s, (_, sd) in stats.items() if s in POINT_SOURCES and weights.get(s, 1.0) >= SOURCE_WEIGHTS.get(s, 1.0)]
     point_sds = point_sds or [sd for s, (_, sd) in stats.items() if s in POINT_SOURCES]
     target_sd = np.mean(point_sds) if point_sds else FALLBACK_SD
     for src, (mean, sd) in stats.items():
@@ -519,7 +520,7 @@ def generate_html(power, metrics, days, info):
                          'confidence': ex.confidence_level(by_src.get(g['home'], {}), by_src.get(g['away'], {}), hfa_g, big),
                          'flags': (['news'] if ex.news_move(info['opened'].get(g['game_id']), g['market']) else [])
                                   + (['lopsided'] if big else []),
-                         'sources': ex.source_lines(by_src.get(g['home'], {}), by_src.get(g['away'], {}), hfa_g)})
+                         'sources': ex.source_lines(by_src.get(g['home'], {}), by_src.get(g['away'], {}), hfa_g), 'hfa': hfa_g})
             spots.append(ex.spot('CBB', 'cbb.html#games', g['kick'], g['away'], g['home'], margin, g['market'], [],
                                  [(t, _signal(comp.get(t), games_played.get(t, 0))) for t in (g['away'], g['home'])],
                                  info['opened'].get(g['game_id']), big))

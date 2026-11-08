@@ -64,8 +64,22 @@ def snapshot_sources(sport, df, key, cols):
     pd.concat([old[old['date'] != today], new], ignore_index=True).to_csv(path, index=False)
 
 
+def calibrated(sport, hfa, weights):
+    """
+    (home edge, source weights) as tuned by the weekly calibration (calibrate.py, calibration.json),
+    falling back to the dashboard's own defaults. Sources the calibration doesn't tune keep their default.
+    """
+    try:
+        with open('calibration.json', encoding='utf-8') as f:
+            c = json.load(f).get(sport, {})
+    except (OSError, ValueError):
+        c = {}
+    tuned = c.get('weights', {})
+    return float(c.get('hfa', hfa)), {s: float(tuned.get(s, w)) for s, w in weights.items()}
+
+
 PROJ_COLS = ['game_id', 'kickoff', 'home', 'away', 'neutral', 'first_logged', 'last_logged', 'ours_first', 'ours_last',
-             'market_first', 'market_last', 'opened', 'confidence', 'flags', 'sources_last']
+             'market_first', 'market_last', 'opened', 'confidence', 'flags', 'sources_last', 'hfa']
 PROJ_TEXT = ['kickoff', 'home', 'away', 'first_logged', 'last_logged', 'confidence', 'flags', 'sources_last']
 
 
@@ -100,7 +114,7 @@ def log_projections(sport, rows):
             continue                                   # only pregame values are logged
         last = {'kickoff': k.isoformat(), 'last_logged': stamp, 'ours_last': r2(r.get('ours')),
                 'market_last': r2(r.get('market')), 'opened': r2(r.get('opened')), 'confidence': r.get('confidence') or '',
-                'flags': ','.join(r.get('flags') or []), 'sources_last': json.dumps(r.get('sources') or {})}
+                'flags': ','.join(r.get('flags') or []), 'sources_last': json.dumps(r.get('sources') or {}), 'hfa': r2(r.get('hfa'))}
         gid = str(r['game_id'])
         if gid in idx:
             for c, v in last.items():

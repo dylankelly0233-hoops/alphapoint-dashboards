@@ -71,6 +71,7 @@ SOURCE_WEIGHTS  = {'sagarin': 0.50, 'sp': 0.50}
 # CFB home field has shrunk from the old ~3+ points; markets price an average team at about
 # 2.5 now (Sagarin's 3.65 includes FCS mismatches and older seasons).
 HFA_POINTS      = 2.5
+HFA_POINTS, SOURCE_WEIGHTS = ex.calibrated('cfb', HFA_POINTS, SOURCE_WEIGHTS)   # weekly tuning (calibrate.py)
 
 # Bounce-back tags, from Dylan's CFB backtest (2016–25): an AWAY team coming off a loss by 28+ points
 # covered 55.4% of 739 games (+5.6% ROI). Only away teams are tagged.
@@ -638,7 +639,7 @@ def generate_html(p4, vals, sched, week, season_type, info):
                      'confidence': ex.confidence_level(h_src, a_src, hfa_g, big),
                      'flags': (['news'] if ex.news_move(info['opened'].get(str(r.game_id)), mkt_margin) else [])
                               + (['lopsided'] if big else []),
-                     'sources': ex.source_lines(h_src, a_src, hfa_g)})
+                     'sources': ex.source_lines(h_src, a_src, hfa_g), 'hfa': hfa_g})
         spots.append(ex.spot('CFB', 'cfb.html#sched', r.kick, r.away, r.home, r.margin, mkt_margin, labels,
                              [(r.away, sig(r.away_value)), (r.home, sig(r.home_value))],
                              info['opened'].get(str(r.game_id)), big))

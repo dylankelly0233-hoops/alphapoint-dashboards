@@ -65,6 +65,7 @@ SOURCE_WEIGHTS  = {'nfelo': 0.65, 'sagarin': 0.35}
 # NFL home field has fallen from the old 3 points to roughly 1.5–2 since 2020; markets
 # and nfelo's own HFA model sit near the middle of that range.
 HFA_POINTS      = 1.7
+HFA_POINTS, SOURCE_WEIGHTS = ex.calibrated('nfl', HFA_POINTS, SOURCE_WEIGHTS)   # weekly tuning (calibrate.py)
 
 # nfelo abbreviation → nflverse abbreviation (anything not listed is used as-is)
 NFELO_ALIASES   = {'LAR': 'LA', 'WSH': 'WAS', 'JAC': 'JAX', 'OAK': 'LV', 'SD': 'LAC', 'STL': 'LA'}
@@ -471,7 +472,7 @@ def generate_html(power, vals, sched, week, info):
                      'ours': r.margin, 'market': r.market, 'opened': info['opened'].get(str(r.game_id)),
                      'confidence': ex.confidence_level(by_src.get(r.home, {}), by_src.get(r.away, {}), hfa_g),
                      'flags': ['news'] if ex.news_move(info['opened'].get(str(r.game_id)), r.market) else [],
-                     'sources': ex.source_lines(by_src.get(r.home, {}), by_src.get(r.away, {}), hfa_g)})
+                     'sources': ex.source_lines(by_src.get(r.home, {}), by_src.get(r.away, {}), hfa_g), 'hfa': hfa_g})
         spots.append(ex.spot('NFL', 'nfl.html#sched', r.kick, nick(away), nick(home), r.margin, r.market,
                              [tag_label] if tag_label else [],
                              [(nick(away), sig(r.away_value)), (nick(home), sig(r.home_value))],
