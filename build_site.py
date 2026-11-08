@@ -32,10 +32,11 @@ DASHBOARDS = [
     ('nfl.html', 'nfl_dashboard.py', 'nfl_dashboard.html', 'NFL', 'Pro Football', 'All 32 teams'),
     ('cbb.html', 'cbb_dashboard.py', 'cbb_dashboard.html', 'CBB', 'College Basketball', 'Power 4 + Big East'),
     ('nba.html', 'nba_dashboard.py', 'nba_dashboard.html', 'NBA', 'Pro Basketball', 'All 30 teams'),
+    ('nhl.html', 'nhl_dashboard.py', 'nhl_dashboard.html', 'NHL', 'Pro Hockey', 'All 32 teams'),
 ]
 
 LANDING_CSS = """
-.tiles { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin: 0 0 18px; }
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin: 0 0 18px; }
 .tile { display: flex; flex-direction: column; gap: 4px; padding: 14px 16px 12px; text-decoration: none; color: var(--ink);
         border-top: 4px solid var(--accent); transition: transform .15s ease, box-shadow .15s ease; }
 .tile:hover, .tile:focus-visible { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(10, 20, 40, .12); outline: none; }
@@ -44,7 +45,8 @@ LANDING_CSS = """
 .tile .cov { color: var(--muted); font-size: 13px; }
 .tile .go { margin-top: 6px; font: 700 12px/1 var(--display); letter-spacing: 1.2px; text-transform: uppercase; color: var(--accent); }
 .tile .warn { color: var(--neg); font-size: 12px; }
-@media (max-width: 560px) { .tiles { gap: 8px; grid-template-columns: repeat(2, minmax(0, 1fr)); } .tile { padding: 11px 10px 10px; } .tile .name { font-size: 12.5px; }
+@media (max-width: 560px) { .tiles { gap: 8px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+                            .tile:last-child:nth-child(odd) { grid-column: span 2; } .tile { padding: 11px 10px 10px; } .tile .name { font-size: 12.5px; }
                             .tile .cov { display: none; } }
 .updated { margin-top: 16px; }
 .info { display: grid; gap: 16px; }
@@ -158,6 +160,8 @@ def guide():
 
 SPOTS_MAX      = 12
 SPOTS_TOLERANCE = 1.5   # a tagged side still shows when our line leans the other way by up to this many points
+SPOTS_TOLERANCE_PCT = 3.0   # NHL: our win probability may lean the other way by up to 3 points
+EDGE_STRONG_PCT     = 5.0   # NHL: a 5-point win-probability edge is highlighted
 
 
 def _backing(s):
@@ -183,8 +187,9 @@ def _lean(s, team):
 # League logos for the Best spots rows (ESPN's CDN, embedded like team logos). College football and
 # basketball share the NCAA logo, so a small ball badge tells them apart.
 LEAGUE_LOGOS = {'NFL': ('/i/teamlogos/leagues/500/nfl.png', ''), 'NBA': ('/i/teamlogos/leagues/500/nba.png', ''),
+                'NHL': ('/i/teamlogos/leagues/500/nhl.png', ''),
                 'CFB': ('/i/espn/misc_logos/500/ncaa.png', '🏈'), 'CBB': ('/i/espn/misc_logos/500/ncaa.png', '🏀')}
-LEAGUE_NAMES = {'NFL': 'NFL', 'NBA': 'NBA', 'CFB': 'College football', 'CBB': 'College basketball'}
+LEAGUE_NAMES = {'NFL': 'NFL', 'NBA': 'NBA', 'NHL': 'NHL', 'CFB': 'College football', 'CBB': 'College basketball'}
 
 
 def league_mark(sport):
@@ -207,7 +212,7 @@ def best_spots():
     which always shows. Listed in kickoff order.
     """
     spots = []
-    for sport in ('cfb', 'nfl', 'cbb', 'nba'):
+    for sport in ('cfb', 'nfl', 'cbb', 'nba', 'nhl'):
         try:
             with open(os.path.join(HERE, f'spots_{sport}.json'), encoding='utf-8') as f:
                 spots += json.load(f)
@@ -226,7 +231,7 @@ def best_spots():
             teasers.append(s)           # every leg that fits the teaser research shows, whatever our line says
         elif s.get('flags'):
             continue                    # a big line move (likely news) or a lopsided college game: our number isn't trusted
-        elif _lean(s, s['side']) >= -SPOTS_TOLERANCE:
+        elif _lean(s, s['side']) >= -(SPOTS_TOLERANCE_PCT if s.get('unit') == 'pct' else SPOTS_TOLERANCE):
             keep.append(s)
     keep = teasers + sorted(keep, key=lambda s: (len(_backing(s)), _lean(s, s['side'])), reverse=True)[:SPOTS_MAX]
     if not keep:
@@ -239,12 +244,14 @@ def best_spots():
         day = 'Today' if d == today else 'Tomorrow' if (d - today).days == 1 else s['dt'].strftime('%a %m/%d')
         when = f"{day} · {'Time TBD' if s.get('tbd') else s['dt'].strftime('%I:%M %p').lstrip('0')}"
         lean = _lean(s, s['side'])
+        pct = s.get('unit') == 'pct'            # NHL: edges in win-probability points
+        fmt = (lambda x: f'{x:.1f}%') if pct else theme.spread_num
         if lean > 0:
-            cls = 'edge strong' if lean >= theme.EDGE_STRONG else 'edge'
-            edge = f'<span class="{cls}">{theme.esc(s["side"])} {theme.spread_num(lean)}</span>'
+            cls = 'edge strong' if lean >= (EDGE_STRONG_PCT if pct else theme.EDGE_STRONG) else 'edge'
+            edge = f'<span class="{cls}">{theme.esc(s["side"])} {"+" if pct else ""}{fmt(lean)}</span>'
         else:      # our line is neutral or leans slightly the other way; the tags carry this spot
             edge = (f'<span class="edge none">{theme.esc(s["side"])}</span>'
-                    f'<span class="sline">{"no edge" if lean == 0 else f"our line −{theme.spread_num(-lean)}"}</span>')
+                    f'<span class="sline">{"no edge" if lean == 0 else f"our line −{fmt(-lean)}"}</span>')
         tags = ''.join(f'<span class="gtag {"bounce" if t.startswith("Bounce") else "teaser max" if "★" in t else "teaser"}">'
                        f'{theme.esc(t)}</span>' for t, _ in s['tags'])
         if not any(t.startswith('Teaser') for t, _ in s['tags']):     # teaser rows ignore trade signals
@@ -258,7 +265,8 @@ def best_spots():
     title = "Today's best spots" if any(s['dt'].date() == today for s in keep) else 'Best spots this week'
     return (f'<section class="card spots"><div class="spots-head"><h2>{title}</h2>'
             f'<span class="hint">Tags and trade signals back one side, and our line agrees or is within '
-            f'{SPOTS_TOLERANCE:g} points, plus every teaser leg · next 7 days</span></div>'
+            f'{SPOTS_TOLERANCE:g} points ({SPOTS_TOLERANCE_PCT:g} win-probability points in the NHL), plus every teaser '
+            f'leg · next 7 days</span></div>'
             f'<ol class="spotlist">{rows}</ol></section>')
 
 # Info tab: what each dashboard tab shows (dashboard → [(tab, description)])
@@ -267,7 +275,7 @@ INFO = [
         ('Power Ratings', 'One composite rating per team: points above or below an average team (0.0). The gap between two '
                           'teams is the projected margin on a neutral field. Built by blending public computer ratings '
                           '(Sagarin + SP+ for CFB, nfelo + Sagarin for NFL, TeamRankings + our own model for CBB, Sagarin + TeamRankings + '
-                          'our own adjusted net rating for NBA) after '
+                          'our own adjusted net rating for NBA, Sagarin + our expected-goals model for NHL, in goals) after '
                           'putting them on the same scale.'),
         ('Value Metrics', 'Wins over expectation (W − xW): how many more or fewer games a team has won than its underlying '
                           'play supports. Below zero means the record is worse than the play (a buy candidate); above zero '
@@ -276,9 +284,11 @@ INFO = [
         ('Games', 'This week\'s games with our projected spread (home field included, rounded to the half point), the '
                   'posted market spread, and the Edge — how far our number is from the market and which side we like. '
                   'NFL and college football have a This week / Next week switch, so you can look ahead once next '
-                  'week\'s lines post; games still to play are listed first.'),
+                  'week\'s lines post; games still to play are listed first. Hockey is bet on moneylines, so NHL cards show our '
+                  'win probability and fair moneyline (probable starting goalies included) against the no-vig market '
+                  'price, the edge in win-probability points, and how far the line moves if a backup goalie starts.'),
         ('Featured', 'The marquee games, each with a written preview: ranked-vs-ranked and upset-watch games in college '
-                     '(a top-10 team favored by 7 or less, or an underdog), NFL primetime games, and an NBA Game of the Day '
+                     '(a top-10 team favored by 7 or less, or an underdog), NFL primetime games, and an NBA and NHL Game of the Day '
                      '(the best matchup by our ratings). Previews are written automatically from the numbers on the page: '
                      'where our ratings lean and why, the case against, and what to check. A lean is research, not a pick.'),
         ('Line movement', 'Each game card shows where the spread opened (or was first seen) and where it is now, and whether '
@@ -326,6 +336,9 @@ INFO = [
                 'expected), and the Vegas spread; close-game record and opponent 3-point shooting are shown as luck flags.'),
         ('NBA', 'Same three measures as CBB (Pythagorean exponent 14, close games = 5 points or fewer or overtime), from '
                 'ESPN box scores.'),
+        ('NHL', 'In standings points: points vs. what expected-goal differential (MoneyPuck) and actual goal differential '
+                'support, PDO (shooting % + save %), one-goal and overtime/shootout records, and every goalie\'s goals '
+                'saved above expected.'),
     ]),
     ('How the site updates', [
         ('Every hour', 'From 8 AM to midnight ET the site rebuilds automatically: lines, Kalshi markets, scores, ratings, '
@@ -340,7 +353,7 @@ INFO = [
 
 
 def run(script):
-    env = {**os.environ, 'CFB_NO_BROWSER': '1', 'NFL_NO_BROWSER': '1', 'CBB_NO_BROWSER': '1', 'NBA_NO_BROWSER': '1', 'PYTHONIOENCODING': 'utf-8'}
+    env = {**os.environ, 'CFB_NO_BROWSER': '1', 'NFL_NO_BROWSER': '1', 'CBB_NO_BROWSER': '1', 'NBA_NO_BROWSER': '1', 'NHL_NO_BROWSER': '1', 'PYTHONIOENCODING': 'utf-8'}
     print(f'\n=== {script} ===', flush=True)
     r = subprocess.run([sys.executable, script], cwd=HERE, env=env)
     return r.returncode == 0
@@ -361,7 +374,7 @@ def landing(results):
         for title, rows in INFO) + '</div>'
     page = theme.render_page(title='AlphaPoint Sports', league='Home', headline='Sharper research, every game',
                              subtitle='Power ratings, value metrics and market data for the NFL, college football, '
-                                      'college basketball and the NBA. Research, not picks.',
+                                      'college basketball, the NBA and the NHL. Research, not picks.',
                              meta_items=[('Updated', updated)],
                              tabs=[('home', 'Dashboards', home), ('guide', 'How to use', guide()), ('info', 'Info', info)],
                              footer='AlphaPoint Sports · Not financial or gambling advice')

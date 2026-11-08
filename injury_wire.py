@@ -366,6 +366,66 @@ def nba_candidates(day_key, games, team_names, players):
     return out
 
 
+ESPN_NHL_INJURIES = 'https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/injuries'
+ESPN_NHL_PAGE     = 'https://www.espn.com/nhl/injuries'
+NHL_KEY_TOI       = 18.0   # skaters averaging this many minutes a night are KEY on their own
+NHL_ROTATION_TOI  = 14.0   # two or more regulars at this ice time out at once is a CLUSTER
+NHL_OUT           = {'Out', 'Injured Reserve', 'Doubtful', 'Suspension', 'Day-To-Day'}
+
+
+def nhl_candidates(day_key, games, team_names, toi, goalie_starts):
+    """
+    games: [(away, home)] ESPN abbreviations. toi: {(abbr, normalized name): minutes per game} for skaters.
+    goalie_starts: {(abbr, normalized name): share of the team's starts}. A goalie who has made 40%+ of
+    his team's starts is KEY; other goalies are left to the starting-goalie row on the game cards.
+    """
+    abbr_by_name = {v: k for k, v in team_names.items()}
+    playing = {t for g in games for t in g}
+    try:
+        feed = requests.get(ESPN_NHL_INJURIES, timeout=30).json().get('injuries', [])
+    except Exception as e:
+        print(f'  ! ESPN NHL injury feed unavailable: {e}')
+        feed = []
+    now = _now()
+    out = {'sport': 'nhl', 'week': day_key, 'collected': now.isoformat(timespec='minutes'), 'games': games, 'teams': {}}
+    by_team = {abbr_by_name.get(t.get('displayName')): t.get('injuries', []) for t in feed}
+    for abbr in sorted(playing):
+        rows = []
+        for i in by_team.get(abbr, []):
+            a = i.get('athlete', {})
+            name = a.get('displayName', '')
+            try:
+                updated = datetime.fromisoformat(i.get('date', '').replace('Z', '+00:00'))
+            except ValueError:
+                updated = None
+            key = (abbr, _norm(name))
+            pos = (a.get('position') or {}).get('abbreviation', '')
+            rows.append({'name': name, 'pos': pos, 'status': i.get('status', ''), 'note': _clip(i.get('shortComment'), 220),
+                         'days_old': (now - updated).days if updated else 99,
+                         'date': updated.strftime('%Y-%m-%d') if updated else '',
+                         'toi': round(toi.get(key, 0.0), 1), 'start_share': round(goalie_starts.get(key, 0.0), 2)})
+        items, used = [], set()
+        for r in rows:            # KEY: a starting goalie, or a top skater by ice time
+            if r['status'] not in NHL_OUT:
+                continue
+            if r['pos'] == 'G' and r['start_share'] >= 0.4:
+                used.add(r['name'])
+                items.append(_item(abbr, 'KEY', f"G {r['name']} ({r['start_share']:.0%} of starts) {r['status'].lower()} — "
+                                   f"{r['note']}", r, url=ESPN_NHL_PAGE))
+            elif r['toi'] >= NHL_KEY_TOI:
+                used.add(r['name'])
+                items.append(_item(abbr, 'KEY', f"{r['pos']} {r['name']} ({r['toi']:.0f} min/game) {r['status'].lower()} — "
+                                   f"{r['note']}", r, url=ESPN_NHL_PAGE))
+        hits = [r for r in rows if r['name'] not in used and r['status'] in NHL_OUT and r['toi'] >= NHL_ROTATION_TOI]
+        if len(hits) >= 2:
+            who = ', '.join(f"{r['name']} ({r['toi']:.0f} min)" for r in sorted(hits, key=lambda r: -r['toi']))
+            items.append(_item(abbr, 'CLUSTER', f'{len(hits)} regulars out: {who}', min(hits, key=lambda r: r['days_old']),
+                               url=ESPN_NHL_PAGE))
+        raw = [r for r in rows if r['toi'] >= 12 or r['pos'] == 'G']
+        out['teams'][abbr] = {'name': team_names.get(abbr, abbr), 'items': items[:3], 'regulars_on_report': raw, 'headlines': []}
+    return out
+
+
 def news_candidates(sport, week, games, mascots, sport_word, only=None):
     """Injury headlines per team for the games shown. only = restrict the searches to these teams."""
     playing = sorted({t for g in games for t in g if only is None or t in only})

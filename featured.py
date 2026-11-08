@@ -160,7 +160,7 @@ def card(d, game_card_html, panel_html='', side_notes=''):
     return (f'<article class="card fx"><div class="fx-top">{reasons}</div>'
             f'<div class="fx-body"><div class="fx-text"><h3>{theme.esc(_named(d["away"], d.get("away_rank")))} @ '
             f'{theme.esc(_named(d["home"], d.get("home_rank")))}</h3><p class="fx-when">{theme.esc(d.get("when", ""))}</p>'
-            f'{preview(d)}</div><div class="fx-side">{game_card_html}{side_notes}</div></div>{grid}</article>')
+            f'{d.get("preview_html") or preview(d)}</div><div class="fx-side">{game_card_html}{side_notes}</div></div>{grid}</article>')
 
 
 def notes(d):
@@ -168,8 +168,9 @@ def notes(d):
     rows = ''
     for team in (d['away'], d['home']):
         sig, wins = (d.get('signals') or {}).get(team, ('', None))
-        sig_txt = (f'{sig} ({"+" if wins > 0 else "−"}{abs(wins):.1f} wins vs expected)' if sig and wins is not None else
-                   (f'No trade signal ({"+" if wins > 0 else "−"}{abs(wins):.1f} wins vs expected)' if wins is not None
+        unit = d.get('value_unit', 'wins')        # NHL: standings points
+        sig_txt = (f'{sig} ({"+" if wins > 0 else "−"}{abs(wins):.1f} {unit} vs expected)' if sig and wins is not None else
+                   (f'No trade signal ({"+" if wins > 0 else "−"}{abs(wins):.1f} {unit} vs expected)' if wins is not None
                     else 'Value metrics start after a few games'))
         inj = (d.get('injuries') or {}).get(team) or []
         inj_txt = '; '.join(inj[:2]) if inj else 'No impactful injury news'

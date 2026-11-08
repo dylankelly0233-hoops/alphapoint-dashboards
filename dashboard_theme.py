@@ -146,13 +146,13 @@ def team_cell(name, logo, sub='', key=None):
             f'<div class="tname"><b>{team_name(name, key)}</b>{sub_html}</div></div>')
 
 
-def rating_chip(v, sd):
+def rating_chip(v, sd, fmt='{:+.1f}'):
     """Rating in a colored chip: five tiers by how many SDs above/below average."""
     if _isnan(v):
         return '<span class="chip">—</span>'
     z = v / sd if sd else 0
     tier = 't5' if z >= 1.2 else 't4' if z >= 0.4 else 't3' if z > -0.4 else 't2' if z > -1.2 else 't1'
-    return f'<span class="chip {tier}">{v:+.1f}</span>'
+    return f'<span class="chip {tier}">{fmt.format(v)}</span>'
 
 
 def signal_pill(c, spot, strong):
@@ -242,7 +242,7 @@ def game_card(when, venue, away, home, projected, market, final='', edge='', tag
         stripe = f' style="--team:{t["color"]}"' if t.get('color') else ''
         return (f'<div class="side"{stripe}><span class="ha">{label}</span>{logo_img(t["name"], t["logo"])}'
                 f'<span class="gname">{team_name(t["name"], t.get("key"))}{t.get("signal", "")}</span>'
-                f'{rating_chip(t["rating"], t["sd"])}</div>')
+                f'{rating_chip(t["rating"], t["sd"], t.get("fmt", "{:+.1f}"))}</div>')
     final_html = f'<div><span class="k">Final</span><b>{esc(final)}</b></div>' if final else ''
     tags_html = f'<div class="gtags">{tags}</div>' if tags else ''
     return (f'<article class="card game"><header><span>{esc(when)}</span><span>{esc(venue)}</span></header>'

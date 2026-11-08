@@ -27,11 +27,13 @@ import pandas as pd
 
 CAL_FILE = 'calibration.json'
 CAL_LOG = 'calibration_log.csv'
-MIN_GAMES = {'cfb': 150, 'nfl': 60, 'cbb': 400, 'nba': 200}
-PRIOR_GAMES = {'cfb': 600, 'nfl': 270, 'cbb': 1500, 'nba': 600}
-DEFAULT_HFA = {'cfb': 2.5, 'nfl': 1.7, 'cbb': 3.0, 'nba': 2.4}
-HFA_BOUNDS = {'cfb': (1.0, 4.0), 'nfl': (0.0, 3.0), 'cbb': (1.5, 4.5), 'nba': (1.0, 4.0)}
+MIN_GAMES = {'cfb': 150, 'nfl': 60, 'cbb': 400, 'nba': 200, 'nhl': 250}
+PRIOR_GAMES = {'cfb': 600, 'nfl': 270, 'cbb': 1500, 'nba': 600, 'nhl': 1000}
+DEFAULT_HFA = {'cfb': 2.5, 'nfl': 1.7, 'cbb': 3.0, 'nba': 2.4, 'nhl': 0.28}
+HFA_BOUNDS = {'cfb': (1.0, 4.0), 'nfl': (0.0, 3.0), 'cbb': (1.5, 4.5), 'nba': (1.0, 4.0), 'nhl': (0.1, 0.5)}
 HFA_STEP = 0.25
+HFA_STEP_BY = {'nhl': 0.04}         # NHL home ice is in goals: much smaller steps
+HFA_DECIMALS = {'nhl': 2}
 WEIGHT_STEP = 0.05
 MIN_SHARE = 0.15
 LOPSIDED_MARKET = 15
@@ -47,6 +49,8 @@ WEIGHTS = {
             'default': {'TeamRankings': 1.0, 'AlphaPoint model': 1.0, 'Haslametrics': 1.0}},
     'nba': {'kind': 'mult', 'keys': {'Sagarin': 'Sagarin', 'TeamRankings': 'TeamRankings', 'Net rating': 'Net rating'},
             'default': {'Sagarin': 1.0, 'TeamRankings': 1.0, 'Net rating': 1.0}},
+    'nhl': {'kind': 'mult', 'keys': {'Sagarin': 'Sagarin', 'xG model': 'xG model'},
+            'default': {'Sagarin': 1.0, 'xG model': 1.0}},
 }
 
 
@@ -91,9 +95,10 @@ def tune_hfa(sport, d, hfa_now):
     est = float((home['result'] - home['ours_last'] + logged_hfa).mean())   # result − rating gap
     k = len(home) / (len(home) + PRIOR_GAMES[sport])
     target = k * est + (1 - k) * DEFAULT_HFA[sport]          # anchored to the long-run default, not last week
-    step = float(np.clip(target - hfa_now, -HFA_STEP, HFA_STEP))
+    cap = HFA_STEP_BY.get(sport, HFA_STEP)
+    step = float(np.clip(target - hfa_now, -cap, cap))
     lo, hi = HFA_BOUNDS[sport]
-    new = round(float(np.clip(hfa_now + step, lo, hi)), 1)
+    new = round(float(np.clip(hfa_now + step, lo, hi)), HFA_DECIMALS.get(sport, 1))
     return new, f'estimate {est:.1f} from {len(home)} home games'
 
 

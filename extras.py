@@ -261,10 +261,11 @@ CONFIDENCE = {'High': ('high', 'the rating sources agree on this line'),
               'Low': ('low', 'the rating sources disagree on this line')}
 
 
-def confidence_level(home_vals, away_vals, hfa, lopsided_game=False):
+def confidence_level(home_vals, away_vals, hfa, lopsided_game=False, scale=1.0):
     """
     'High' / 'Medium' / 'Low' from how far apart the sources' own lines are; None with fewer than two sources.
     A lopsided college game is always 'Low': the market has beaten ratings in those.
+    scale converts the point thresholds to another unit (NHL goals: 0.1).
     """
     if lopsided_game:
         return 'Low'
@@ -273,17 +274,17 @@ def confidence_level(home_vals, away_vals, hfa, lopsided_game=False):
     if len(lines) < 2:
         return None
     gap = max(lines) - min(lines)
-    return 'High' if gap <= AGREE_PTS else 'Medium' if gap <= SPLIT_PTS else 'Low'
+    return 'High' if gap <= AGREE_PTS * scale else 'Medium' if gap <= SPLIT_PTS * scale else 'Low'
 
 
-def rating_confidence(home_vals, away_vals, hfa, lopsided_game=False):
+def rating_confidence(home_vals, away_vals, hfa, lopsided_game=False, scale=1.0):
     """
     How much to trust our projected line, judged only by how closely the rating sources agree: each source's
     own line (same scale and home field as the blend) is compared, and the spread between them sets
     High / Medium / Low. Says nothing about injuries, news or weather.
     home_vals / away_vals: {source label: rescaled rating}. Needs at least two sources rating both teams.
     """
-    level = confidence_level(home_vals, away_vals, hfa, lopsided_game)
+    level = confidence_level(home_vals, away_vals, hfa, lopsided_game, scale)
     if not level:
         return ''
     cls, why = CONFIDENCE[level]

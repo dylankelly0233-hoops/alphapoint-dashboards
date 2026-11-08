@@ -25,12 +25,13 @@ import numpy as np
 import pandas as pd
 import requests
 
-SPORTS = ['cfb', 'nfl', 'cbb', 'nba']
-NAMES = {'cfb': 'CFB', 'nfl': 'NFL', 'cbb': 'CBB', 'nba': 'NBA'}
-HFA = {'cfb': 2.5, 'nfl': 1.7, 'cbb': 3.0, 'nba': 2.4}
+SPORTS = ['cfb', 'nfl', 'cbb', 'nba', 'nhl']
+NAMES = {'cfb': 'CFB', 'nfl': 'NFL', 'cbb': 'CBB', 'nba': 'NBA', 'nhl': 'NHL'}
+HFA = {'cfb': 2.5, 'nfl': 1.7, 'cbb': 3.0, 'nba': 2.4, 'nhl': 0.28}
+UNIT = {'nhl': ('goals', 0.1)}       # NHL lines are goal margins: gap buckets scale down
 # Finished games needed before a calibration change is worth considering
 from calibrate import MIN_GAMES as ENOUGH
-ESPN = {'cbb': 'basketball/mens-college-basketball', 'nba': 'basketball/nba'}
+ESPN = {'cbb': 'basketball/mens-college-basketball', 'nba': 'basketball/nba', 'nhl': 'hockey/nhl'}
 ESPN_HOSTS = ['https://site.api.espn.com', 'https://site.web.api.espn.com']
 REPORT = 'last_review.md'
 ET = timezone(timedelta(hours=-5))
@@ -124,11 +125,13 @@ def summarize(d, sport):
     mae_o, mae_c = (d['result'] - d['ours_last']).abs().mean(), (d['result'] - d['market_last']).abs().mean()
     lines.append(f'  Games: {len(d)}. Average miss: ours {mae_o:.1f}, closing line {mae_c:.1f}.')
     parts = []
-    for lo, hi, label in [(0, 1.5, 'under 1.5'), (1.5, 3, '1.5-3'), (3, 99, '3+')]:
+    unit, k = UNIT.get(sport, ('pts', 1.0))
+    for lo, hi, label in [(0, 1.5 * k, f'under {1.5 * k:g}'), (1.5 * k, 3 * k, f'{1.5 * k:g}-{3 * k:g}'),
+                          (3 * k, 99, f'{3 * k:g}+')]:
         s = d[(d['gap'].abs() >= lo) & (d['gap'].abs() < hi)]
         rate, n = _cover_rate(s)
         if n:
-            parts.append(f'{label} pts {rate:.0%} of {n}')
+            parts.append(f'{label} {unit} {rate:.0%} of {n}')
     if parts:
         lines.append('  Our side vs the close, by how far we disagreed: ' + '; '.join(parts) + '.')
     home = d[d['neutral'] == 0]

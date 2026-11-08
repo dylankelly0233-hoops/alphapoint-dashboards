@@ -38,3 +38,5 @@ __pycache__/
 results_*.csv
 last_review.md
 cbb_haslametrics_*.xml
+nhl_*.csv
+nhl_*.html
