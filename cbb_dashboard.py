@@ -38,6 +38,7 @@ import pandas as pd
 import requests
 
 import cbb_model as cm
+import cbb_players as cp
 import cbb_ratings as cbr
 import cbb_value_metrics as vm
 import dashboard_theme as theme
@@ -242,6 +243,18 @@ def _market(comp, home_abbr):
         return np.nan
     pts = abs(float(m.group(2)))
     return pts if m.group(1).upper() == (home_abbr or '').upper() else -pts
+
+
+def injury_row(wire_data, g, margin):
+    """Game-card line: our projection adjusted for players reported out or doubtful (cbb_players)."""
+    ha, hn = cp.team_adjustment(wire_data['items'], g['home'])
+    aa, an = cp.team_adjustment(wire_data['items'], g['away'])
+    if not (ha or aa) or pd.isna(margin):
+        return ''
+    who = '; '.join(f"{t} without {', '.join(n)} (≈{a:g} pts)" for t, a, n in ((g['away'], aa, an), (g['home'], ha, hn)) if a)
+    adj = margin - ha + aa
+    return (f'<div class="lmove">{theme.k("Injury adj.")}{theme.esc(who)} · our line '
+            f'{theme.esc(ex.line_text(g["home"], g["away"], margin))} → <b>{theme.esc(ex.line_text(g["home"], g["away"], adj))}</b></div>')
 
 
 def upcoming_games(by_espn, focus):
@@ -484,6 +497,7 @@ def generate_html(power, metrics, days, info):
             big = ex.lopsided(g['market'], margin)
             move += ex.rating_confidence(by_src.get(g['home'], {}), by_src.get(g['away'], {}),
                                          0.0 if g['neutral'] else HFA_POINTS, big)
+            move += injury_row(info['wire'], g, margin)
             mprof = info['mu_prof']
             if g['home'] in mprof and g['away'] in mprof:
                 move += mu.card_row(g['game_id'], mu.headline(mprof, mu.BASKETBALL_CATS, g['away'], g['home'], str))
@@ -555,7 +569,9 @@ def generate_html(power, metrics, days, info):
     injury_html = theme.injury_tab(
         wire_games, info['wire'], lambda t: (t, logo(t)),
         'College basketball has no official injury reports, so items come from recent news coverage of each Power 4 '
-        'and Big East team.')
+        'and Big East team, plus every team they play in the next two days. Where a report names a player, we show an '
+        'estimate of what he is worth to his team per game (from his production this season and last), and game cards '
+        'show our line adjusted for players reported out or doubtful.')
 
     # --- Team pages ---
     trend = ex.series(hist)
@@ -625,9 +641,21 @@ def main():
 
     day_key = int(datetime.now().strftime('%Y%m%d'))
     mascots = dict(zip(teams['team'], teams['mascot'].fillna(''))) if 'mascot' in teams else {}
-    cands = wire.cbb_candidates(day_key, [(g['away'], g['home']) for _, gs in days for g in gs], mascots, focus_set)
+    soon = {t for _, gs in days[:2] for g in gs for t in (g['away'], g['home'])}      # every team playing in 2 days
+    cands = wire.cbb_candidates(day_key, [(g['away'], g['home']) for _, gs in days for g in gs], mascots, focus_set | soon)
+    try:
+        pvals = cp.player_values()
+    except Exception as e:
+        print(f'  ! player values unavailable: {e}')
+        pvals = pd.DataFrame(columns=['team', 'name', 'key', 'value', 'mpg', 'games', 'team_games'])
+    for team, d in cands['teams'].items():
+        d['roster'] = cp.roster(pvals, team)          # names, minutes and value, for the curation step
     wire.write_candidates('cbb', cands)
     wire_data = wire.load_wire('cbb', day_key, cands)
+    cp.annotate(wire_data['items'], pvals)
+    for m in wire_data['movers']:
+        cp.annotate({m.get('team'): [m]}, pvals)
+    print(f"  Player values: {len(pvals)} players; {sum(1 for its in wire_data['items'].values() for i in its if i.get('impact'))} wire items with an impact estimate.")
     print(f"  Injury Wire: {sum(len(v) for v in wire_data['items'].values())} items ({wire_data['mode']}).")
 
     hist = ex.snapshot_ratings('cbb', rating)

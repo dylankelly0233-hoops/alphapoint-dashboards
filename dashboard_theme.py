@@ -76,6 +76,8 @@ TIPS = {
     'Rating': 'Points above or below an average team. The gap between two teams is the projected margin on a neutral field.',
     'Projected': 'Our line: the rating gap plus home field, rounded to the half point.',
     'Market': 'The posted spread right now.',
+    'Impact': 'Our estimate of how many points per game the team is worse without this player: his points over a replacement-level player (PORPAG), blended with last season early on. An estimate, not an exact number.',
+    'Injury adj.': 'Our projected line after taking out the players reported out or doubtful, each at his estimated impact, scaled down for games he has already missed once the season is a few weeks old (by then the ratings reflect those games). Questionable players are not counted.',
     'Edge': 'How far our line is from the market, shown as the side our number likes. It is a reason to look closer, not a bet.',
     'Line': 'Where the spread opened (or was first seen) and where it is now. A move toward our number means the market is coming around to it; a move away means it disagrees.',
     'Confidence': 'How much to trust our projected line, based only on whether the rating sources behind it agree: High = they land within 2 points of each other, Medium = 2 to 4 apart, Low = more than 4. It does not account for injuries, news or weather.',
@@ -260,7 +262,18 @@ def wire_item(it, team_name, logo):
     meta = ' · '.join(x for x in (link, date) if x)
     return (f'<li class="wi"><span class="wtag {cls}">{esc(label)}</span>'
             f'<div class="wtext"><div class="wteam">{logo_img(team_name, logo, "sm")}<b>{esc(team_name)}</b></div>'
-            f'<p>{esc(it.get("text", ""))}</p><span class="wsrc">{meta}</span></div></li>')
+            f'<p>{esc(it.get("text", ""))}</p>{impact_text(it)}<span class="wsrc">{meta}</span></div></li>')
+
+
+def impact_text(it):
+    """CBB: estimated value of the player named in an Injury Wire item (cbb_players.annotate)."""
+    imp = it.get('impact')
+    if not imp:
+        return ''
+    played = (' · from last season (no games yet this season)' if imp.get('last_season') else
+              f" · played {imp['games']} of {imp['team_games']} games" if imp['team_games'] and imp['games'] < imp['team_games'] else '')
+    return (f'<span class="wimp">{k("Impact")}≈{imp["value"]:g} pts per game to his team · '
+            f'{imp["mpg"]:g} min/game{played}</span>')
 
 
 def injury_tab(games, wire, team_info, note):
@@ -475,6 +488,7 @@ td.pos { color: var(--pos); font-weight: 600; } td.neg { color: var(--neg); font
 .wteam { display: flex; align-items: center; gap: 6px; font-size: 13px; }
 .wtext p { margin: 3px 0 2px; font-size: 14px; line-height: 1.4; overflow-wrap: anywhere; }
 .wsrc { font-size: 12px; color: var(--muted); }
+.wimp { display: block; font-size: 12px; margin: 2px 0 4px; }
 .wsrc a { color: var(--accent); text-decoration: none; } .wsrc a:hover { text-decoration: underline; }
 .wquiet { margin: 14px 2px 0; line-height: 1.6; }
 
