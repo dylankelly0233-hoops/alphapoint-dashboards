@@ -12,6 +12,8 @@ scored against final results and the closing line, with sample sizes and error b
   Signals, tags,   how often the side each research flag backs beats the closing line (value BUY/SELL signals,
   matchups         alone and when our line agrees; situational tags; the biggest matchup edge)
   Guards           games flagged for a big line move or a lopsided price
+  Opening line     our first-logged line vs. the opener: accuracy, and how often the result landed on our side of
+                   the opening line (and on the BUY / SELL side)
   Golf             our pre-tournament probabilities vs. Kalshi's (Brier score)
 Signals, tags and matchups are logged from 2026-11-08 on, so those rows fill in over time.
 
@@ -162,6 +164,17 @@ def sport_report(sport, d, since=None):
             add('Bounce-back tag', lambda r: tag_side(r, prefix))
     add('Biggest matchup edge', lambda r: ('home' if r.ctx.get('mu_side') == r.home else 'away') if r.ctx.get('mu_side') else None)
     rep['flags'] = flags
+    # Versus the opening line: our first-logged number (what you'd have seen around the open) vs. the opener
+    o = d.dropna(subset=['opened', 'ours_first']).copy()
+    if len(o) >= 5:
+        o['vs_close'] = o['result'] - o['opened']          # reuse the side helper against the opener instead
+        e_first, e_open = (o['result'] - o['ours_first']).abs(), (o['result'] - o['opened']).abs()
+        dd = e_first - e_open
+        o['gap'] = o['ours_first'] - o['opened']
+        mine = _side_beats_close(o[o['gap'].abs() >= 1.0 * k], lambda r: 'home' if r.gap > 0 else 'away')
+        sigs = _side_beats_close(o, sig_side)
+        rep['opener'] = {'n': int(len(o)), 'mae_ours': e_first.mean(), 'mae_open': e_open.mean(), 'diff': dd.mean(),
+                         'diff_se': dd.std(ddof=1) / math.sqrt(len(o)), 'our_side': _rate(mine), 'signals': _rate(sigs)}
     g = d[d['flags'].fillna('').astype(str).str.len() > 0]
     rep['guards'] = {'n': int(len(g)), 'mae_ours': g['e_ours'].abs().mean() if len(g) else None,
                      'mae_mkt': g['e_mkt'].abs().mean() if len(g) else None}

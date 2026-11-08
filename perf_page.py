@@ -29,6 +29,14 @@ DEFS = [
                                'with, one of the best signs a number is useful.'),
     ('Beat the closing line', 'How often the final margin landed on a given side of the closing spread (the last line before '
                               'kickoff). 50% is what a coin flip gets; 52.4% is what it takes to profit at standard −110 odds.'),
+    ('Opening line', 'The first line we saw for a game: the published opener where the source has one (college football, NHL '
+                     'and Premier League), otherwise the line when our log first picked the game up, usually within hours of '
+                     'it posting.'),
+    ('Versus the opening line', 'The same checks against the opener instead of the closing line, using our projection as it '
+                                'stood when we first logged the game (what you would have seen if you bet early). "Our side '
+                                'beat the opener" counts games where we disagreed with the opener by 1+ point (0.1 goals). '
+                                "Beating the opener is easier than beating the close, since the line hasn't absorbed late news "
+                                'yet, so read it as "useful for betting early", not as proof of an edge.'),
     ('BUY / SELL games', 'Games involving a team our value metrics tag BUY (it\'s been unlucky: its record is worse than its play) '
                          'or SELL (lucky). The "backed side" is the BUY team, or the opponent of a SELL team. We check how often '
                          'that side beat the closing line, overall, when our projected line pointed the same way, and when it '
@@ -100,6 +108,22 @@ def buy_sell(rows):
                                                ('…when our line agreed', ''), ('…when our line disagreed', '')], body)
 
 
+def opener(rows):
+    body = ''
+    for s in rows:
+        o = s.get('opener')
+        if not o:
+            body += (f'<tr><td class="l">{theme.esc(s["sport"])}</td>'
+                     f'<td class="muted" colspan="4">Not enough finished games with an opening line yet</td></tr>')
+            continue
+        v = _verdict(o, s['unit']).replace('Market closer', 'Opener closer')
+        body += (f'<tr><td class="l">{theme.esc(s["sport"])}</td><td>{o["mae_ours"]:.1f} <span class="ci">vs</span> '
+                 f'{o["mae_open"]:.1f} <span class="ci">n={o["n"]}</span></td><td>{v}</td>'
+                 f'<td>{_pct(o.get("our_side"))}</td><td>{_pct(o.get("signals"))}</td></tr>')
+    return theme.table('perf-open', [('Sport', 'l'), ('Avg miss: ours vs. opener', ''), ('Ours vs. opener', ''),
+                                     ('Our side beat the opener', ''), ('BUY / SELL side beat the opener', '')], body)
+
+
 def detail(s):
     if not s.get('accuracy'):
         return ''
@@ -130,6 +154,8 @@ def tab(perf):
         + '<div class="sechead"><h2>At a glance</h2></div>' + glance(sports)
         + '<div class="sechead"><h2>BUY / SELL tagged games</h2><span class="hint">Did the side our value metrics backed beat '
           'the closing line?</span></div>' + buy_sell(sports)
+        + '<div class="sechead"><h2>Versus the opening line</h2><span class="hint">For betting early: our number when the '
+          'line opened, against the opener</span></div>' + opener(sports)
         + '<div class="sechead"><h2>More detail by sport</h2><span class="hint">Tap a sport</span></div>'
         + ''.join(detail(s) for s in sports)
         + f'<div class="sechead"><h2>Golf</h2></div><ul class="hint">{golf}</ul>'
