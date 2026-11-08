@@ -66,6 +66,9 @@ LANDING_CSS = """
 .sday { font: 600 13px/1.2 var(--display); letter-spacing: .5px; text-transform: uppercase; color: var(--muted); }
 .ssport { font: 700 11px/1 var(--display); letter-spacing: 1px; text-align: center; padding: 4px 0; border-radius: 4px;
           background: var(--mast-2); color: var(--mast-ink); }
+.slogo { position: relative; justify-self: center; display: inline-flex; }
+.slogo .logo { width: 34px; height: 34px; background-size: contain; background-repeat: no-repeat; background-position: center; }
+.sball { position: absolute; right: -6px; bottom: -4px; font-size: 13px; line-height: 1; }
 .smain { min-width: 0; }
 .smatch { display: block; font-weight: 600; }
 .sline { display: block; font-size: 13px; color: var(--muted); }
@@ -177,6 +180,25 @@ def _lean(s, team):
     return s['edge'] if s['edge_side'] == team else -s['edge']
 
 
+# League logos for the Best spots rows (ESPN's CDN, embedded like team logos). College football and
+# basketball share the NCAA logo, so a small ball badge tells them apart.
+LEAGUE_LOGOS = {'NFL': ('/i/teamlogos/leagues/500/nfl.png', ''), 'NBA': ('/i/teamlogos/leagues/500/nba.png', ''),
+                'CFB': ('/i/espn/misc_logos/500/ncaa.png', '🏈'), 'CBB': ('/i/espn/misc_logos/500/ncaa.png', '🏀')}
+LEAGUE_NAMES = {'NFL': 'NFL', 'NBA': 'NBA', 'CFB': 'College football', 'CBB': 'College basketball'}
+
+
+def league_mark(sport):
+    """The league logo for a Best spots row, falling back to the text label if the logo can't be fetched."""
+    path, badge = LEAGUE_LOGOS.get(sport, (None, ''))
+    cls = theme.logo_uri('league_' + ('ncaa' if badge else sport.lower()), path, 96) if path else None
+    name = LEAGUE_NAMES.get(sport, sport)
+    if not cls:
+        return f'<span class="ssport">{theme.esc(sport)}</span>'
+    b = f'<span class="sball" aria-hidden="true">{badge}</span>' if badge else ''
+    return (f'<span class="slogo" title="{theme.esc(name)}" role="img" aria-label="{theme.esc(name)}">'
+            f'<span class="logo md img {cls}"></span>{b}</span>')
+
+
 def best_spots():
     """
     Upcoming games (from each dashboard's spots_{sport}.json) whose situational tags and trade signals all
@@ -227,7 +249,7 @@ def best_spots():
         if not any(t.startswith('Teaser') for t, _ in s['tags']):     # teaser rows ignore trade signals
             tags += ''.join(f'<span class="pill {sig.lower()}">{theme.esc(team)} {sig}</span>' for team, sig in s['signals'])
         rows += (f'<li><a href="{theme.esc(s["page"])}"><span class="sday">{theme.esc(when)}</span>'
-                 f'<span class="ssport">{theme.esc(s["sport"])}</span>'
+                 f'{league_mark(s["sport"])}'
                  f'<span class="smain"><span class="smatch">{theme.esc(s["away"])} @ {theme.esc(s["home"])}</span>'
                  f'<span class="sline">Ours {theme.esc(s["ours"])} · Market {theme.esc(s["market"])}</span>'
                  f'{f"<span class=stags>{tags}</span>" if tags else ""}</span>'
