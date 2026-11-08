@@ -71,6 +71,9 @@ jobs:
             cbb_haslametrics_*.xml
             golf_*.json
             golf_pretourney.csv
+            mlb_*.csv
+            mlb_*.json
+            mlb_*.html
             logos
           key: data-${{ github.run_id }}
           restore-keys: data-

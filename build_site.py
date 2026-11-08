@@ -34,6 +34,7 @@ DASHBOARDS = [
     ('nba.html', 'nba_dashboard.py', 'nba_dashboard.html', 'NBA', 'Pro Basketball', 'All 30 teams'),
     ('nhl.html', 'nhl_dashboard.py', 'nhl_dashboard.html', 'NHL', 'Pro Hockey', 'All 32 teams'),
     ('epl.html', 'epl_dashboard.py', 'epl_dashboard.html', 'EPL', 'Premier League', 'All 20 clubs'),
+    ('mlb.html', 'mlb_dashboard.py', 'mlb_dashboard.html', 'MLB', 'Pro Baseball', 'All 30 teams'),
     ('golf.html', 'golf_dashboard.py', 'golf_dashboard.html', 'GOLF', 'Golf', 'PGA Tour & majors'),
 ]
 
@@ -368,6 +369,10 @@ INFO = [
                 'saved above expected.'),
         ('EPL', 'In league points: points vs. expected points from every match\'s expected goals (xPts), expected-goal '
                 'difference, finishing (goals − xG) and goalkeeping (xG against − goals conceded).'),
+        ('MLB', 'Wins vs. what run differential (Pythagorean) and BaseRuns support, one-run and extra-inning records, '
+                'hitting luck (Statcast wOBA vs. expected wOBA, in runs) and bullpen luck (ERA vs. FIP). The Pitchers '
+                "tab compares every starter's ERA with FIP, xFIP and Statcast expected ERA. Offseason: last season's "
+                'final numbers; game projections start before Opening Day.'),
     ]),
     ('How the site updates', [
         ('Every hour', 'From 8 AM to midnight ET the site rebuilds automatically: lines, Kalshi markets, scores, ratings, '
@@ -382,7 +387,7 @@ INFO = [
 
 
 def run(script):
-    env = {**os.environ, 'CFB_NO_BROWSER': '1', 'NFL_NO_BROWSER': '1', 'CBB_NO_BROWSER': '1', 'NBA_NO_BROWSER': '1', 'NHL_NO_BROWSER': '1', 'EPL_NO_BROWSER': '1', 'GOLF_NO_BROWSER': '1', 'PYTHONIOENCODING': 'utf-8'}
+    env = {**os.environ, 'CFB_NO_BROWSER': '1', 'NFL_NO_BROWSER': '1', 'CBB_NO_BROWSER': '1', 'NBA_NO_BROWSER': '1', 'NHL_NO_BROWSER': '1', 'EPL_NO_BROWSER': '1', 'GOLF_NO_BROWSER': '1', 'MLB_NO_BROWSER': '1', 'PYTHONIOENCODING': 'utf-8'}
     print(f'\n=== {script} ===', flush=True)
     r = subprocess.run([sys.executable, script], cwd=HERE, env=env)
     return r.returncode == 0
@@ -403,7 +408,7 @@ def landing(results):
         for title, rows in INFO) + '</div>'
     page = theme.render_page(title='AlphaPoint Sports', league='Home', headline='Sharper research, every game',
                              subtitle='Power ratings, value metrics and market data for the NFL, college football, '
-                                      'college basketball, the NBA, the NHL, the Premier League and PGA Tour golf. Research, not picks.',
+                                      'college basketball, the NBA, the NHL, MLB, the Premier League and PGA Tour golf. Research, not picks.',
                              meta_items=[('Updated', updated)],
                              tabs=[('home', 'Dashboards', home), ('guide', 'How to use', guide()), ('info', 'Info', info)],
                              footer='AlphaPoint Sports · Not financial or gambling advice')
