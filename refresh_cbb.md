@@ -40,6 +40,10 @@ Then run `git checkout -- line_history_epl.csv ratings_history_epl.csv projectio
 If there are no Premier League matches in the next three days (an international break), skip the curation. Otherwise follow `DIR\refresh_injury_curation.md` with sport = `epl`, writing `DIR\injury_wire_epl.json`. Then `git add injury_wire_epl.json`, commit with the message "EPL Injury Wire" (same author flags as above), `git pull --rebase`, and `git push`.
 Add an EPL line to `last_refresh_cbb.md`: the number of EPL Injury Wire items and the top 1–2 movers.
 
+## 2f. Model health check
+From DIR: `$env:PYTHONIOENCODING = "utf-8"; python model_performance.py > "$env:TEMP\model_health.log" 2>&1; Get-Content "$env:TEMP\model_health.log"`
+It scores yesterday's games and the last 7 and 30 days in every sport against the closing line, and prints any warnings (results drifting away from our lines, our lines unusually far from the market, a rating source that stopped updating). Then run `git checkout -- performance.json` if it exists (GitHub's builds own it). If it fails, note the error and continue.
+
 ## 3. Check the site build
 To check the latest automatic site build, run:
 `& "C:\Program Files\GitHub CLI\gh.exe" run list --repo dylankelly0233-hoops/alphapoint-dashboards --limit 3`
@@ -60,6 +64,8 @@ Build the body from `DIR\last_refresh_cfb.md`, `DIR\last_refresh_nfl.md` and `DI
    - NBA: https://dylankelly0233-hoops.github.io/alphapoint-dashboards/nba.html
    - NHL: https://dylankelly0233-hoops.github.io/alphapoint-dashboards/nhl.html
    - EPL: https://dylankelly0233-hoops.github.io/alphapoint-dashboards/epl.html
+
+Then add a **Model health** section built from the step 2f output: one line per sport with games (yesterday, 7 days, 30 days: our average miss vs. the closing line's), then each warning on its own line starting with "Watch:", or "No warnings." Keep the numbers as printed; don't call games wins or losses.
 
 Then add one line on the website build, from the run list above: `Site build: OK (last run <time>)` or `Site build: FAILED — see github.com/dylankelly0233-hoops/alphapoint-dashboards/actions`.
 

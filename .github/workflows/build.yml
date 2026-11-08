@@ -74,6 +74,7 @@ jobs:
             mlb_*.csv
             mlb_*.json
             mlb_*.html
+            results_*.csv
             logos
           key: data-${{ github.run_id }}
           restore-keys: data-

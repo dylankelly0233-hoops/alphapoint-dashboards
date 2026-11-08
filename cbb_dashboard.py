@@ -71,6 +71,7 @@ SOURCE_WEIGHTS  = {'TeamRankings': 1.0, MODEL_LABEL: 1.0, 'Haslametrics': 1.0, '
 # Sources in points per game; the common scale comes from the full-weight ones among these
 POINT_SOURCES   = {'TeamRankings', 'Torvik preseason', MODEL_LABEL, 'Haslametrics'}
 HFA_POINTS, SOURCE_WEIGHTS = ex.calibrated('cbb', HFA_POINTS, SOURCE_WEIGHTS)   # weekly tuning (calibrate.py)
+SCALE = ex.calibrated_value('cbb', 'scale', 1.0)      # weekly-tuned rating stretch
 FALLBACK_SD     = 9.5      # typical D1 SD in points, used if no points-based source loads
 LOGO_PX         = 48       # smaller logos: this page carries ~150 teams (displayed at 24–30px)
 LOOKAHEAD_DAYS  = 21
@@ -196,12 +197,12 @@ def project_line(home, away, neutral, src_cols, weights, model, scale):
             m, _ = cm.project(model, home, away, neutral=True)
             factor = scale['target_sd'] / scale['stats'][src][1] if src in scale['stats'] else 1.0
             if m == m:
-                lines.append(m * factor + hfa)
+                lines.append(SCALE * m * factor + hfa)
                 ws.append(w)
             continue
         h, a = src_cols[src].get(home), src_cols[src].get(away)
         if h is not None and a is not None and h == h and a == a:
-            lines.append(h - a + hfa)
+            lines.append(SCALE * (h - a) + hfa)
             ws.append(w)
     return float(np.average(lines, weights=ws)) if lines else np.nan
 
@@ -361,7 +362,7 @@ def build_markets(days, rating, names):
                 if spread:
                     spread.update(fav=fav, dog=dog)
             k = mk.kalshi_view(kg, g['home'], g['away'])
-            ours = g.get('proj', rating.get(g['home'], np.nan) - rating.get(g['away'], np.nan) + (0.0 if g['neutral'] else HFA_POINTS))
+            ours = g.get('proj', SCALE * (rating.get(g['home'], np.nan) - rating.get(g['away'], np.nan)) + (0.0 if g['neutral'] else HFA_POINTS))
             rows.append({'game_id': g['game_id'], 'when': _when(g), 'home': g['home'], 'away': g['away'],
                          'ours': ours, 'posted': posted, 'kalshi': k, 'spread': spread})
             if not g['score']:
@@ -501,7 +502,7 @@ def generate_html(power, metrics, days, info):
         cards = ''
         for g in games:
             h_r, a_r = rating.get(g['home'], np.nan), rating.get(g['away'], np.nan)
-            margin = g.get('proj', h_r - a_r + (0.0 if g['neutral'] else HFA_POINTS))   # blended per-source line
+            margin = g.get('proj', SCALE * (h_r - a_r) + (0.0 if g['neutral'] else HFA_POINTS))   # blended per-source line
             pm = theme.round_half(margin)
             proj = '—' if pd.isna(pm) else _line_text(g['home'] if pm >= 0 else g['away'], abs(pm))
             mkt = '—' if pd.isna(g['market']) else _line_text(g['home'] if g['market'] >= 0 else g['away'], abs(g['market']))
@@ -551,7 +552,11 @@ def generate_html(power, metrics, days, info):
                          'confidence': ex.confidence_level(by_src.get(g['home'], {}), by_src.get(g['away'], {}), hfa_g, big),
                          'flags': (['news'] if ex.news_move(info['opened'].get(g['game_id']), g['market']) else [])
                                   + (['lopsided'] if big else []),
-                         'sources': ex.source_lines(all_src.get(g['home'], {}), all_src.get(g['away'], {}), hfa_g), 'hfa': hfa_g})
+                         'sources': ex.source_lines(all_src.get(g['home'], {}), all_src.get(g['away'], {}), hfa_g), 'hfa': hfa_g,
+                         'context': {'signals': {t: s for t in (g['away'], g['home'])
+                                                 if (s := _signal(comp.get(t), games_played.get(t, 0)))},
+                                     'mu_side': mu.headline_side(mprof, mu.BASKETBALL_CATS, g['away'], g['home'])
+                                     if g['home'] in mprof and g['away'] in mprof else None}})
             spots.append(ex.spot('CBB', 'cbb.html#games', g['kick'], g['away'], g['home'], margin, g['market'], [],
                                  [(t, _signal(comp.get(t), games_played.get(t, 0))) for t in (g['away'], g['home'])],
                                  info['opened'].get(g['game_id']), big))

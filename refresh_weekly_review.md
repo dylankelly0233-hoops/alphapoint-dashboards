@@ -1,6 +1,6 @@
 # Weekly accuracy review: runbook for scheduled Claude runs
 
-Every Sunday morning, score last week's games against our logged lines, let the model re-tune each sport's home edge and source weights, and email Dylan the results and every change. This is internal research on how accurate the ratings are. It is not a picks record, and the email must not read like one. Don't edit code. Dylan approved the automatic weekly tuning on 2026-11-08; the only settings that change are the ones `calibrate.py` writes, within its safeguards. Never edit `calibration.json` by hand.
+Every Sunday morning, score last week's games against our logged lines, let the model re-tune each sport's home edge, source weights and rating stretch (plus the NHL overtime and EPL draw adjustments), and email Dylan the results and every change. This is internal research on how accurate the ratings are. It is not a picks record, and the email must not read like one. Don't edit code. Dylan approved the automatic weekly tuning on 2026-11-08; the only settings that change are the ones `calibrate.py` writes, within its safeguards. Never edit `calibration.json` by hand.
 
 - **DIR**: `C:\Users\dylan\PyCharmMiscProject\alphapoint-dashboards`
 

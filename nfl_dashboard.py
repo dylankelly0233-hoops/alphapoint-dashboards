@@ -66,6 +66,7 @@ SOURCE_WEIGHTS  = {'nfelo': 0.65, 'sagarin': 0.35}
 # and nfelo's own HFA model sit near the middle of that range.
 HFA_POINTS      = 1.7
 HFA_POINTS, SOURCE_WEIGHTS = ex.calibrated('nfl', HFA_POINTS, SOURCE_WEIGHTS)   # weekly tuning (calibrate.py)
+SCALE = ex.calibrated_value('nfl', 'scale', 1.0)      # weekly-tuned rating stretch
 
 # nfelo abbreviation → nflverse abbreviation (anything not listed is used as-is)
 NFELO_ALIASES   = {'LAR': 'LA', 'WSH': 'WAS', 'JAC': 'JAX', 'OAK': 'LV', 'SD': 'LAC', 'STL': 'LA'}
@@ -280,7 +281,7 @@ def build_schedule(full, week, power, metrics):
             'game_id': g.game_id, 'kick': kick, 'home': g.home_team, 'away': g.away_team,
             'neutral': bool(getattr(g, 'neutral', 0)),
             'home_rating': h_r, 'away_rating': a_r,
-            'margin': h_r - a_r + (0.0 if getattr(g, 'neutral', 0) else HFA_POINTS),   # home − away, incl. HFA
+            'margin': SCALE * (h_r - a_r) + (0.0 if getattr(g, 'neutral', 0) else HFA_POINTS),   # home − away, incl. HFA
             'market': g.spread_line,                                       # positive = home favored
             'total': getattr(g, 'total_line', np.nan), 'div': getattr(g, 'div_game', 0) == 1,
             'home_value': comp.get(g.home_team), 'away_value': comp.get(g.away_team),
@@ -472,7 +473,10 @@ def generate_html(power, vals, sched, week, info):
                      'ours': r.margin, 'market': r.market, 'opened': info['opened'].get(str(r.game_id)),
                      'confidence': ex.confidence_level(by_src.get(r.home, {}), by_src.get(r.away, {}), hfa_g),
                      'flags': ['news'] if ex.news_move(info['opened'].get(str(r.game_id)), r.market) else [],
-                     'sources': ex.source_lines(by_src.get(r.home, {}), by_src.get(r.away, {}), hfa_g), 'hfa': hfa_g})
+                     'sources': ex.source_lines(by_src.get(r.home, {}), by_src.get(r.away, {}), hfa_g), 'hfa': hfa_g,
+                     'context': {'signals': {t: s for t, s in ((r.away, sig(r.away_value)), (r.home, sig(r.home_value))) if s},
+                                 'tags': [[tag_label[0], r.away if tag_label[1] == nick(away) else r.home]] if tag_label else [],
+                                 'mu_side': mu.headline_side(prof, MU_CATS, r.away, r.home) if r.home in prof and r.away in prof else None}})
         spots.append(ex.spot('NFL', 'nfl.html#sched', r.kick, nick(away), nick(home), r.margin, r.market,
                              [tag_label] if tag_label else [],
                              [(nick(away), sig(r.away_value)), (nick(home), sig(r.home_value))],

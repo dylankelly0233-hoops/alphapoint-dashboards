@@ -72,6 +72,7 @@ SOURCE_WEIGHTS  = {'sagarin': 0.50, 'sp': 0.50}
 # 2.5 now (Sagarin's 3.65 includes FCS mismatches and older seasons).
 HFA_POINTS      = 2.5
 HFA_POINTS, SOURCE_WEIGHTS = ex.calibrated('cfb', HFA_POINTS, SOURCE_WEIGHTS)   # weekly tuning (calibrate.py)
+SCALE = ex.calibrated_value('cfb', 'scale', 1.0)      # weekly-tuned rating stretch
 
 # Bounce-back tags, from Dylan's CFB backtest (2016–25): an AWAY team coming off a loss by 28+ points
 # covered 55.4% of 739 games (+5.6% ROI). Only away teams are tagged.
@@ -335,7 +336,7 @@ def build_schedule(week, season_type, p4_names, power, fcs, metrics):
         h_r, _ = rating_for(home, power, fcs)
         a_r, _ = rating_for(away, power, fcs)
         hfa = 0.0 if g.get('neutralSite') else HFA_POINTS
-        margin = h_r - a_r + hfa if not (np.isnan(h_r) or np.isnan(a_r)) else np.nan  # home − away, incl. HFA
+        margin = SCALE * (h_r - a_r) + hfa if not (np.isnan(h_r) or np.isnan(a_r)) else np.nan  # home − away, incl. HFA
 
         kick = pd.Timestamp(g['startDate']).tz_convert('America/New_York') if g.get('startDate') else None
         mkt = lines.get(g.get('id'))
@@ -641,7 +642,10 @@ def generate_html(p4, vals, sched, week, season_type, info):
                      'confidence': ex.confidence_level(h_src, a_src, hfa_g, big),
                      'flags': (['news'] if ex.news_move(info['opened'].get(str(r.game_id)), mkt_margin) else [])
                               + (['lopsided'] if big else []),
-                     'sources': ex.source_lines(h_src, a_src, hfa_g), 'hfa': hfa_g})
+                     'sources': ex.source_lines(h_src, a_src, hfa_g), 'hfa': hfa_g,
+                     'context': {'signals': {t: s for t, s in ((r.away, sig(r.away_value)), (r.home, sig(r.home_value))) if s},
+                                 'tags': [list(x) for x in labels],
+                                 'mu_side': mu.headline_side(prof, MU_CATS, r.away, r.home) if r.home in prof and r.away in prof else None}})
         spots.append(ex.spot('CFB', 'cfb.html#sched', r.kick, r.away, r.home, r.margin, mkt_margin, labels,
                              [(r.away, sig(r.away_value)), (r.home, sig(r.home_value))],
                              info['opened'].get(str(r.game_id)), big, tbd=bool(getattr(r, 'tbd', False))))

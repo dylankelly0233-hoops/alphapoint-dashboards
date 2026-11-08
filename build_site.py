@@ -22,6 +22,7 @@ from datetime import datetime, timedelta
 import requests
 
 import dashboard_theme as theme
+import perf_page
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 SITE = os.path.join(HERE, 'site')
@@ -410,9 +411,10 @@ def landing(results):
                              subtitle='Power ratings, value metrics and market data for the NFL, college football, '
                                       'college basketball, the NBA, the NHL, MLB, the Premier League and PGA Tour golf. Research, not picks.',
                              meta_items=[('Updated', updated)],
-                             tabs=[('home', 'Dashboards', home), ('guide', 'How to use', guide()), ('info', 'Info', info)],
+                             tabs=[('home', 'Dashboards', home), ('performance', 'Model performance', perf_tab()),
+                                   ('guide', 'How to use', guide()), ('info', 'Info', info)],
                              footer='AlphaPoint Sports · Not financial or gambling advice')
-    page = page.replace('</style>', LANDING_CSS + '</style>', 1)
+    page = page.replace('</style>', LANDING_CSS + perf_page.PERF_CSS + '</style>', 1)
     return ('<!DOCTYPE html>\n<html lang="en">\n<head>\n<meta charset="utf-8">\n'
             '<meta name="viewport" content="width=device-width, initial-scale=1">\n'
             f'</head>\n<body>\n{page}\n</body>\n</html>')
@@ -435,6 +437,15 @@ def keep_live_copy(page):
         print(f'  ! Could not fetch the live copy of {page}: {e}')
 
 
+def perf_tab():
+    """The Model performance tab from performance.json (refreshed by main() each build)."""
+    try:
+        with open(os.path.join(HERE, 'performance.json'), encoding='utf-8') as f:
+            return perf_page.tab(json.load(f))
+    except (OSError, ValueError):
+        return perf_page.tab(None)
+
+
 def main():
     os.makedirs(SITE, exist_ok=True)
     results = {}
@@ -448,6 +459,11 @@ def main():
             shutil.copyfile(src, os.path.join(SITE, page))
         elif not os.path.exists(os.path.join(SITE, page)):
             keep_live_copy(page)
+    try:
+        import model_performance
+        model_performance.build()
+    except Exception as e:
+        print(f'  ! model performance: {e}')
     with open(os.path.join(SITE, 'index.html'), 'w', encoding='utf-8') as f:
         f.write(landing(results))
     print('\nSite built:', {p: 'ok' if ok else 'FAILED' for p, ok in results.items()})

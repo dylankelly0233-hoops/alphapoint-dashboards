@@ -54,6 +54,7 @@ TR_CACHE        = f'nba_teamrankings_{SEASON}.html'
 HFA_POINTS      = 2.4      # home-court edge for an average team; NBA home court has settled around 2–2.5 points
 SOURCE_WEIGHTS  = {'Sagarin': 1.0, 'TeamRankings': 1.0, 'Net rating': 1.0}   # multipliers; Net rating also ramps in
 HFA_POINTS, SOURCE_WEIGHTS = ex.calibrated('nba', HFA_POINTS, SOURCE_WEIGHTS)   # weekly tuning (calibrate.py)
+SCALE = ex.calibrated_value('nba', 'scale', 1.0)      # weekly-tuned rating stretch
 NET_FULL_GAMES  = 15       # our net rating reaches full weight (equal to the others) at this many games per team
 GAME_DAYS       = 3
 LOOKAHEAD_DAYS  = 10
@@ -186,7 +187,7 @@ def build_markets(days, rating, kalshi_key):
                 if spread:
                     spread.update(fav=fav, dog=dog)
             k = mk.kalshi_view(kg, g['home'], g['away'])
-            ours = rating.get(g['home'], np.nan) - rating.get(g['away'], np.nan) + (0.0 if g['neutral'] else HFA_POINTS)
+            ours = SCALE * (rating.get(g['home'], np.nan) - rating.get(g['away'], np.nan)) + (0.0 if g['neutral'] else HFA_POINTS)
             rows.append({'game_id': g['game_id'], 'when': _when(g), 'home': g['home'], 'away': g['away'], 'ours': ours,
                          'posted': posted, 'kalshi': k, 'spread': spread})
             if not g['score']:
@@ -338,7 +339,7 @@ def generate_html(power, metrics, days, info):
         cards = ''
         for g in games:
             h_r, a_r = rating.get(g['home'], np.nan), rating.get(g['away'], np.nan)
-            margin = h_r - a_r + (0.0 if g['neutral'] else HFA_POINTS)
+            margin = SCALE * (h_r - a_r) + (0.0 if g['neutral'] else HFA_POINTS)
             pm = theme.round_half(margin)
             proj = '—' if pd.isna(pm) else _line_text(short[g['home']] if pm >= 0 else short[g['away']], abs(pm))
             mkt = '—' if pd.isna(g['market']) else _line_text(short[g['home']] if g['market'] >= 0 else short[g['away']],
@@ -388,7 +389,10 @@ def generate_html(power, metrics, days, info):
                          'opened': info['opened'].get(g['game_id']),
                          'confidence': ex.confidence_level(by_src.get(g['home'], {}), by_src.get(g['away'], {}), hfa_g),
                          'flags': ['news'] if ex.news_move(info['opened'].get(g['game_id']), g['market']) else [],
-                         'sources': ex.source_lines(by_src.get(g['home'], {}), by_src.get(g['away'], {}), hfa_g), 'hfa': hfa_g})
+                         'sources': ex.source_lines(by_src.get(g['home'], {}), by_src.get(g['away'], {}), hfa_g), 'hfa': hfa_g,
+                         'context': {'signals': {t: s for t in (g['away'], g['home']) if (s := _signal(comp.get(t), gp.get(t, 0)))},
+                                     'mu_side': mu.headline_side(mprof, mu.BASKETBALL_CATS, g['away'], g['home'])
+                                     if g['home'] in mprof and g['away'] in mprof else None}})
             spots.append(ex.spot('NBA', 'nba.html#games', g['kick'], short[g['away']], short[g['home']], margin, g['market'],
                                  [], [(short[t], _signal(comp.get(t), gp.get(t, 0))) for t in (g['away'], g['home'])],
                                  info['opened'].get(g['game_id'])))

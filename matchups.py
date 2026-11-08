@@ -142,6 +142,18 @@ def headline(prof, cats, away, home, name):
     return f'{name(def_t)} {c.def_noun} (#{drank}) vs {name(off_t)} {c.off_noun} (#{orank})', s
 
 
+def headline_side(prof, cats, away, home):
+    """The team the game's biggest mismatch favors (for the performance log), or None."""
+    best = None
+    for off_t, def_t in ((away, home), (home, away)):
+        for c, op, dw, s, orank, drank in mismatches(prof, cats, off_t, def_t):
+            if best is None or abs(s) > abs(best[2]):
+                best = (off_t, def_t, s)
+    if not best or abs(best[2]) < EDGE:
+        return None
+    return best[0] if best[2] > 0 else best[1]
+
+
 def style_trends(team, games, prof, styles, opponent):
     """
     How `team` has done against opponents in the same style bucket as `opponent`.

@@ -1,5 +1,7 @@
 """
-Weekly self-calibration of each sport's home edge and source weights (run from weekly_review.py).
+Weekly self-calibration (run from weekly_review.py): each sport's home edge, source weights and rating stretch
+(are our rating gaps too wide or narrow vs. how games finish), plus the NHL overtime adjustment and the EPL draw
+adjustment (league-level, from this season's results).
 
 Inputs: projections_{sport}.csv (our logged pregame lines and each source's own line) joined to final
 results. Output: calibration.json, read by every dashboard through extras.calibrated(), and one row
@@ -143,6 +145,87 @@ def tune_weights(sport, d, w_now):
     return _to_setting(sport, new), f'best fit {", ".join(f"{key} {best[key]:.0%}" for key in keys)} from {len(arr)} games'
 
 
+SCALE_BOUNDS = (0.8, 1.25)
+SCALE_STEP = 0.03
+TIE_PRIOR = (0.225, 600)       # NHL: long-run share of games reaching overtime, worth this many games
+DRAW_PRIOR = (0.25, 380)       # EPL: long-run draw rate, worth one season
+
+
+def tune_scale(sport, d, scale_now):
+    """
+    Rating stretch: are our rating gaps too wide or too narrow? Least-squares slope of (result − home edge) on
+    (our line − home edge), checked on the most recent 40% before it's trusted, shrunk toward 1.0.
+    """
+    hfa = (d['hfa'] if 'hfa' in d else pd.Series(np.nan, index=d.index)).fillna(DEFAULT_HFA[sport])
+    gap, y = (d['ours_last'] - hfa).to_numpy(), (d['result'] - hfa).to_numpy()
+    if len(d) < MIN_GAMES[sport] or np.sum(gap ** 2) == 0:
+        return scale_now, None
+    cut = int(len(d) * 0.6)
+    order = np.argsort(d['kickoff'].to_numpy())
+    gap, y = gap[order], y[order]
+    s_fit = np.sum(gap[:cut] * y[:cut]) / np.sum(gap[:cut] ** 2)
+    if np.mean((y[cut:] - s_fit * gap[cut:]) ** 2) >= np.mean((y[cut:] - gap[cut:]) ** 2):
+        return scale_now, 'a different stretch did not beat the current one on the most recent games'
+    rel = np.sum(gap * y) / np.sum(gap ** 2)             # relative to the stretch the logged lines already used
+    k = len(d) / (len(d) + PRIOR_GAMES[sport])
+    target = k * scale_now * rel + (1 - k) * 1.0
+    new = round(float(np.clip(scale_now + np.clip(target - scale_now, -SCALE_STEP, SCALE_STEP), *SCALE_BOUNDS)), 3)
+    return new, f'results move {rel:.2f}x our rating gaps over {len(d)} games'
+
+
+def tune_nhl_ties(boost_now):
+    """NHL tie adjustment: match the model's regulation-tie rate to this season's overtime share (shrunk)."""
+    import nhl_model
+    res = nhl_model.results()
+    if len(res) < 150:
+        return boost_now, None
+    ot = float((res['end'] != 'REG').mean())
+    n = len(res)
+    target_rate = (ot * n + TIE_PRIOR[0] * TIE_PRIOR[1]) / (n + TIE_PRIOR[1])
+    # The model's untouched tie rate, averaged over this season's actual matchups (mismatches tie less often)
+    rates, lg = nhl_model.team_rates(nhl_model.moneypuck('teams'))
+    r = rates.set_index('abbr')
+    k = lg['goals'] / lg['xg']
+    raws = []
+    for g in res.itertuples():
+        if g.home in r.index and g.away in r.index:
+            lh = (r.at[g.home, 'xgf'] + r.at[g.away, 'xga'] - lg['xg']) * k
+            la = (r.at[g.away, 'xgf'] + r.at[g.home, 'xga'] - lg['xg']) * k
+            raws.append(sum(nhl_model._pois(i, max(lh, .05)) * nhl_model._pois(i, max(la, .05)) for i in range(13)))
+    raw = float(np.mean(raws)) if raws else 0.164
+    target = target_rate / raw
+    new = round(float(np.clip(boost_now + np.clip(target - boost_now, -0.05, 0.05), 1.1, 1.6)), 3)
+    return new, f'{ot:.1%} of {n} games reached overtime'
+
+
+def tune_epl_draws(rho_now):
+    """EPL low-score draw adjustment: match the model's average draw chance to this season's draw rate (shrunk)."""
+    import epl_model
+    mt = epl_model.season_matches()
+    if len(mt) < 80:
+        return rho_now, None
+    dr = float((mt['hg'] == mt['ag']).mean())
+    n = len(mt)
+    target_rate = (dr * n + DRAW_PRIOR[0] * DRAW_PRIOR[1]) / (n + DRAW_PRIOR[1])
+    # Average the model's draw chance over this season's actual matchups (mismatches draw less often)
+    st, info = epl_model.fit_ratings(mt)
+    stt = st.set_index('abbr')
+    lams = [(np.exp(info['base'] + info['home'] + stt.at[g.home, 'attack'] - stt.at[g.away, 'defense']),
+             np.exp(info['base'] + stt.at[g.away, 'attack'] - stt.at[g.home, 'defense']))
+            for g in mt.itertuples() if g.home in stt.index and g.away in stt.index]
+    avg_draw = lambda rho: float(np.mean([epl_model.score_matrix(lh, la, rho=rho).trace() for lh, la in lams]))
+    lo, hi = -0.25, 0.10
+    for _ in range(20):              # more negative rho → more draws
+        mid = (lo + hi) / 2
+        if avg_draw(mid) < target_rate:
+            hi = mid
+        else:
+            lo = mid
+    target = (lo + hi) / 2
+    new = round(float(np.clip(rho_now + np.clip(target - rho_now, -0.02, 0.02), -0.2, 0.05)), 3)
+    return new, f'{dr:.1%} of {n} matches drawn'
+
+
 def run(scored, now=None):
     """
     scored: {sport: DataFrame of finished logged games with a 'result' column}.
@@ -172,12 +255,38 @@ def run(scored, now=None):
             if abs(w_new[k] - w_now.get(k, 0)) >= 0.01:
                 changes.append(f'{k} weight {w_now[k]:g} -> {w_new[k]:g}')
                 log.append([now.date().isoformat(), sport, f'weight:{k}', w_now[k], w_new[k], len(d), w_why])
-        cal[sport] = {'hfa': hfa_new, 'weights': w_new, 'updated': now.isoformat(timespec='minutes'), 'games': len(d)}
+        scale_now = float(cal.get(sport, {}).get('scale', 1.0))
+        scale_new, scale_why = tune_scale(sport, d, scale_now)
+        if scale_new != scale_now:
+            changes.append(f'rating stretch {scale_now:g} -> {scale_new:g} ({scale_why})')
+            log.append([now.date().isoformat(), sport, 'scale', scale_now, scale_new, len(d), scale_why])
+        cal[sport] = {**cal.get(sport, {}), 'hfa': hfa_new, 'weights': w_new, 'scale': scale_new,
+                      'updated': now.isoformat(timespec='minutes'), 'games': len(d)}
         if changes:
             out.append(f'{name}: ' + '; '.join(changes) + (f'. Weights: {w_why}.' if any('weight' in c for c in changes) else '.'))
         else:
             out.append(f'{name}: no change. Home edge stays {hfa_now:g} ({hfa_why or "not enough home games"}); '
                        f'weights stay ({w_why}).')
+    # League-level knobs that don't need the logs: NHL overtime rate, EPL draw rate (weekly, same safeguards)
+    for sport, key, default, fn, label in (('nhl', 'tie_boost', 1.35, tune_nhl_ties, 'overtime adjustment'),
+                                           ('epl', 'dc_rho', -0.08, tune_epl_draws, 'draw adjustment')):
+        last = cal.get(sport, {}).get(f'{key}_updated')
+        if last and now - datetime.fromisoformat(last) < timedelta(days=6):
+            continue
+        try:
+            now_v = float(cal.get(sport, {}).get(key, default))
+            new_v, why = fn(now_v)
+        except Exception as e:
+            out.append(f'{sport.upper()}: {label} not tuned ({e}).')
+            continue
+        cal.setdefault(sport, {})[f'{key}_updated'] = now.isoformat(timespec='minutes')
+        if why and new_v != now_v:
+            cal[sport][key] = new_v
+            out.append(f'{sport.upper()}: {label} {now_v:g} -> {new_v:g} ({why}).')
+            log.append([now.date().isoformat(), sport, key, now_v, new_v, '', why])
+        elif why:
+            cal[sport][key] = now_v
+            out.append(f'{sport.upper()}: {label} stays {now_v:g} ({why}).')
     with open(CAL_FILE, 'w', encoding='utf-8') as f:
         json.dump(cal, f, indent=2)
     if log:

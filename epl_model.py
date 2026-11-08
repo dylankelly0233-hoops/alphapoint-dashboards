@@ -278,7 +278,8 @@ def _pois(k, lam):
     return math.exp(-lam) * lam ** k / math.factorial(k)
 
 
-def score_matrix(lh, la, rho=DC_RHO):
+def score_matrix(lh, la, rho=None):
+    rho = DC_RHO if rho is None else rho          # read at call time, so the weekly-tuned value applies
     lh, la = max(lh, 0.05), max(la, 0.05)
     m = np.outer([_pois(i, lh) for i in range(MAX_GOALS + 1)], [_pois(j, la) for j in range(MAX_GOALS + 1)])
     m[0, 0] *= 1 - lh * la * rho

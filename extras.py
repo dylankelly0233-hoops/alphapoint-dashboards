@@ -78,9 +78,18 @@ def calibrated(sport, hfa, weights):
     return float(c.get('hfa', hfa)), {s: float(tuned.get(s, w)) for s, w in weights.items()}
 
 
+def calibrated_value(sport, key, default):
+    """One tuned setting from calibration.json (e.g. 'scale', 'tie_boost', 'dc_rho'), or the default."""
+    try:
+        with open('calibration.json', encoding='utf-8') as f:
+            return float(json.load(f).get(sport, {}).get(key, default))
+    except (OSError, ValueError, TypeError):
+        return default
+
+
 PROJ_COLS = ['game_id', 'kickoff', 'home', 'away', 'neutral', 'first_logged', 'last_logged', 'ours_first', 'ours_last',
-             'market_first', 'market_last', 'opened', 'confidence', 'flags', 'sources_last', 'hfa']
-PROJ_TEXT = ['kickoff', 'home', 'away', 'first_logged', 'last_logged', 'confidence', 'flags', 'sources_last']
+             'market_first', 'market_last', 'opened', 'confidence', 'flags', 'sources_last', 'hfa', 'context']
+PROJ_TEXT = ['kickoff', 'home', 'away', 'first_logged', 'last_logged', 'confidence', 'flags', 'sources_last', 'context']
 
 
 def source_lines(home_vals, away_vals, hfa):
@@ -95,6 +104,8 @@ def log_projections(sport, rows):
     projections_{sport}.csv — first and last values before kickoff for our line and the market, the opener,
     confidence, guard flags, and each source's own line. Results and closing lines are joined later.
     rows: dict(game_id, kickoff, home, away, neutral, ours, market, opened, confidence, flags, sources) — home margins.
+    context (optional, for the Model performance tab): {signals: {team: BUY/SELL}, tags: [[label, team]],
+    mu_side: team the biggest matchup edge favors, total, probs: [home, (draw,) away]}.
     """
     path = f'projections_{sport}.csv'
     df = pd.read_csv(path, dtype={'game_id': str}) if os.path.exists(path) else pd.DataFrame(columns=PROJ_COLS)
@@ -114,7 +125,8 @@ def log_projections(sport, rows):
             continue                                   # only pregame values are logged
         last = {'kickoff': k.isoformat(), 'last_logged': stamp, 'ours_last': r2(r.get('ours')),
                 'market_last': r2(r.get('market')), 'opened': r2(r.get('opened')), 'confidence': r.get('confidence') or '',
-                'flags': ','.join(r.get('flags') or []), 'sources_last': json.dumps(r.get('sources') or {}), 'hfa': r2(r.get('hfa'))}
+                'flags': ','.join(r.get('flags') or []), 'sources_last': json.dumps(r.get('sources') or {}), 'hfa': r2(r.get('hfa')),
+                'context': json.dumps(r.get('context') or {})}
         gid = str(r['game_id'])
         if gid in idx:
             for c, v in last.items():

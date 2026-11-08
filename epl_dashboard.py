@@ -40,6 +40,8 @@ SHARE_OUTPUT    = 'epl_dashboard_share.html'
 HFA_GOALS       = 0.30     # home advantage in goals for an average side (the fit puts it near 0.25-0.3)
 SOURCE_WEIGHTS  = {'xG model': 1.0, 'ClubElo': 1.0}
 HFA_GOALS, SOURCE_WEIGHTS = ex.calibrated('epl', HFA_GOALS, SOURCE_WEIGHTS)   # weekly tuning (calibrate.py)
+SCALE = ex.calibrated_value('epl', 'scale', 1.0)      # weekly-tuned rating stretch
+m.DC_RHO = ex.calibrated_value('epl', 'dc_rho', m.DC_RHO)   # weekly-tuned draw adjustment
 CONF_SCALE      = 0.1      # confidence: sources within 0.2 goals = High, 0.4+ apart = Low
 NEWS_PCT        = 6.0      # a 6+ point move in a side's win probability usually means team news
 EDGE_MIN_PCT    = 2.0
@@ -145,7 +147,7 @@ def project(g, rating, strength, info):
         total = float(lh + la)
     else:
         total = 2 * info['avg_goals'] + 0.25
-    margin = rating.get(g['home'], np.nan) - rating.get(g['away'], np.nan) + hfa
+    margin = SCALE * (rating.get(g['home'], np.nan) - rating.get(g['away'], np.nan)) + hfa
     probs = m.probs_from_margin(margin, total) if margin == margin else None
     ou = None
     if probs and g['total']:
@@ -369,7 +371,11 @@ def generate_html(power, metrics, days, info):
                              'neutral': g['neutral'], 'ours': g['margin'], 'market': g['mkt_margin'], 'opened': g['open_margin'],
                              'confidence': ex.confidence_level(by_src.get(g['home'], {}), by_src.get(g['away'], {}), hfa_g,
                                                                scale=CONF_SCALE),
-                             'flags': ['news'] if news else [], 'sources': src_lines, 'hfa': hfa_g})
+                             'flags': ['news'] if news else [], 'sources': src_lines, 'hfa': hfa_g,
+                             'context': {'signals': {t: signal(t) for t in (g['home'], g['away']) if signal(t)},
+                                         'total': round(g['total_ours'], 2), 'mkt_total': g['total'],
+                                         'probs': [round(x, 4) for x in g['probs']],
+                                         'mkt_probs': [round(x, 4) for x in g['mkt']] if g['mkt'] else None}})
                 if g['mkt']:
                     eh, ea = 100 * (g['probs'][0] - g['mkt'][0]), 100 * (g['probs'][2] - g['mkt'][2])
                     team, e = (g['home'], eh) if eh >= ea else (g['away'], ea)

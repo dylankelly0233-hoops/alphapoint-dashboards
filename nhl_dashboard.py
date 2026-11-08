@@ -50,6 +50,8 @@ SAGARIN_CACHE   = f'nhl_sagarin_{SEASON}.html'
 HFA_GOALS       = 0.28     # home ice: an average home team wins about 54.5% (overtime included)
 SOURCE_WEIGHTS  = {'Sagarin': 1.0, 'xG model': 1.0}
 HFA_GOALS, SOURCE_WEIGHTS = ex.calibrated('nhl', HFA_GOALS, SOURCE_WEIGHTS)   # weekly tuning (calibrate.py)
+SCALE = ex.calibrated_value('nhl', 'scale', 1.0)      # weekly-tuned rating stretch
+m.TIE_BOOST = ex.calibrated_value('nhl', 'tie_boost', m.TIE_BOOST)   # weekly-tuned overtime adjustment
 CONF_SCALE      = 0.1      # confidence thresholds: sources within 0.2 goals = High, 0.4+ apart = Low
 NEWS_PCT        = 6.0      # a moneyline move of 6+ win-probability points usually means news (often the goalie)
 EDGE_MIN_PCT    = 1.5
@@ -183,7 +185,7 @@ def project(g, rating, rates, lg, goalies, baseline):
         gl[ha] = {'name': name, 'status': status, 'value': val, 'adj': val - base,
                   'backup': (backup['name'], float(backup['value'])) if backup is not None else None}
     adj = gl['home']['adj'] - gl['away']['adj']
-    margin = rating.get(g['home'], np.nan) - rating.get(g['away'], np.nan) + hfa + adj
+    margin = SCALE * (rating.get(g['home'], np.nan) - rating.get(g['away'], np.nan) + adj) + hfa
     if g['home'] in r.index and g['away'] in r.index:
         lh = (r.at[g['home'], 'xgf'] + r.at[g['away'], 'xga'] - lg['xg']) * k - gl['away']['value']
         la = (r.at[g['away'], 'xgf'] + r.at[g['home'], 'xga'] - lg['xg']) * k - gl['home']['value']
@@ -487,7 +489,11 @@ def generate_html(power, metrics, days, info):
                              'opened': g['open_margin'],
                              'confidence': ex.confidence_level(by_src.get(g['home'], {}), by_src.get(g['away'], {}), hfa_g,
                                                                scale=CONF_SCALE),
-                             'flags': ['news'] if news else [], 'sources': src_lines, 'hfa': hfa_g})
+                             'flags': ['news'] if news else [], 'sources': src_lines, 'hfa': hfa_g,
+                             'context': {'signals': {t: signal(t) for t in (g['away'], g['home']) if signal(t)},
+                                         'total': round(g['total_ours'], 2), 'mkt_total': g['total'],
+                                         'probs': [round(p, 4), round(1 - p, 4)],
+                                         'mkt_probs': [round(g['p_mkt'], 4), round(1 - g['p_mkt'], 4)] if g['p_mkt'] else None}})
                 if g['p_mkt'] and p == p:
                     sig_pairs = [(short(t), signal(t)) for t in (g['away'], g['home']) if signal(t)]
                     lean = 100 * (p - g['p_mkt'])
