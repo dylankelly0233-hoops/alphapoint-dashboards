@@ -1,109 +1,29 @@
 {
   "sport": "cbb",
-  "week": 20261107,
-  "generated": "2026-11-07T18:41:55-05:00",
+  "week": 20261108,
+  "generated": "2026-11-08T12:42:00-05:00",
   "movers": [
-    {
-      "team": "Louisville",
-      "tag": "KEY",
-      "text": "G De'Shayne Montgomery out 4-6 weeks with a foot injury (announced Nov. 2).",
-      "source": "On3",
-      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQa2xoS1I1VW1xMkQzMmlLRkUtZDBGU1lQb0lzQmQ0ZUNsTFBrR3F1SzhGUWJ4MWRmeHptbXRrdHhZdklTWGM1WFhyMWdpRl9Qc1RqMmxRTVBBMDZFUzkyeUNNcGp1V0lhMW1sSjFRRDdzdjNrYVVQamdxUFJrSTcyeU9YRllKNGtqT0pXdm5pdTMtQ1pyRjQ2NENqWlhjRFpBeExLSkgyd3FORy15bDllWUlXQUFTTUcxeG8zRlBGTnlodmNXbGhMS21R?oc=5",
-      "date": "2026-11-02"
-    },
-    {
-      "team": "Indiana",
-      "tag": "KEY",
-      "text": "Freshman G Prince-Alexander Moody to miss an 'extended period of time' with a knee injury suffered Nov. 3.",
-      "source": "The Herald-Times",
-      "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQaHZyV3d6bGVtczdBUEZkRU9CTEhsMjQxUmxDY0RvZTZfYXFGMkRZZV95dkR0d1ItYUVSVFZvNlNDMUxZNFNKMXFpZGxMQ2JBc2pSZEJENFlHMk1WZF9vS2t2NC02RkFaY0tUTW5HanpqT2hWVlhjRXY1bldxV1NKWmppMVZSVzdJMDB4QmdJU1dUaTdFOGVXSWtPdTJWODhITFBTOG5XbzV1VEZDbTBmUVFRUUFCcHN0d3FRUGtNQ2I2OVkxR2g2SXpKcm9MVmNDa2hr?oc=5",
-      "date": "2026-11-03"
-    },
-    {
-      "team": "Alabama",
-      "tag": "KEY",
-      "text": "Freshman F Jaxon Richardson out vs. Arkansas State (reported Nov. 7).",
-      "source": "The Tuscaloosa News",
-      "url": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxPeHUwaHVsMkt6eVgxM2ltQkRkdFVLbjdOUVAtZFl6Q2NxT09tS1BIRjNPVTh4Mm9DNDVzdVJYeG12MWZGcE9CWFNmWlF5YXo4dHZadWVMcTF3YUdMcHNrbXJEeGdpZGRGVEtyMkxzdE5DT3JDZmt4c05VOG85czRoUC11bThWcGVoRjN0Z0tTbUZDVEowRFlWTFdXZUZMaDdEV2k2d3gtRV91Z19ObFhHZDVBRkEzX2k1ZnJRdjJzd1JROERkQ240R0pVRUxPTkVueDJyWDlMc3VWX1NQMFh6c3BPODdxUXZ1QnpiRnBqRQ?oc=5",
-      "date": "2026-11-07"
-    },
-    {
-      "team": "St. John's",
-      "tag": "RETURNING",
-      "text": "F Adou Thiero set to be available for his season debut.",
-      "source": "Yahoo Sports",
-      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPcUtuTGtQVHV1UGlmTW1UQkxEYWU1RWJGUzJDTHhuRUtVLUVXc2k4NzRGU3R3YU1qeVVWbnZHMTFiRU9yWTdMNEZFTWRjbnNmMERWdVMtTzdtcnB3REkxalp1UTVBN3d2VTNPR3duU1ZpeWM0cGtoSlF6QXQ0VWM3cWFPM0w3Vl83?oc=5",
-      "date": "2026-11-06"
-    },
-    {
-      "team": "Minnesota",
-      "tag": "KEY",
-      "text": "G Kai Shinholster out with a calf injury (reported Nov. 7).",
-      "source": "247Sports",
-      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQYW5VQnFtM2hlR19PdEJDTHhFdWdUdWgyMU9qT2JJR2xoM2xpNlFJYV9SZzlGeEZaMVRIaU1EQ3hSWVdNNG9fblZfMHhuYVRSeVBLNWZsekRHTng1RlRSX1dJT1JEY05oWm1OSWJIREdaRWVmVnFBT3VtUFY0ZXdWeUJqaWQxN1RVd2c3QnZ0MFNhZGlJU2RpQ1NVZ3VRSzhJeEprWVRqUFlqYmI3alE?oc=5",
-      "date": "2026-11-07"
-    }
+    {"team": "Illinois", "tag": "KEY", "text": "Senior G Jake Davis out indefinitely after surgery on a separated left shoulder; hurt in the opener, no return timeline given.", "source": "Roundtable", "url": "https://roundtable.io/sports/ncaa/illinois/news/illinois-senior-jake-davis-undergoes-shoulder-surgery", "date": "2026-11-04"},
+    {"team": "Indiana", "tag": "KEY", "text": "Freshman G Prince-Alexander Moody to miss an 'extended period of time' with a knee injury suffered Nov. 3.", "source": "The Herald-Times", "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQaHZyV3d6bGVtczdBUEZkRU9CTEhsMjQxUmxDY0RvZTZfYXFGMkRZZV95dkR0d1ItYUVSVFZvNlNDMUxZNFNKMXFpZGxMQ2JBc2pSZEJENFlHMk1WZF9vS2t2NC02RkFaY0tUTW5HanpqT2hWVlhjRXY1bldxV1NKWmppMVZSVzdJMDB4QmdJU1dUaTdFOGVXSWtPdTJWODhITFBTOG5XbzV1VEZDbTBmUVFRUUFCcHN0d3FRUGtNQ2I2OVkxR2g2SXpKcm9MVmNDa2hr?oc=5", "date": "2026-11-03"},
+    {"team": "Minnesota", "tag": "KEY", "text": "G Kai Shinholster out with a calf injury (reported Nov. 7).", "source": "247Sports", "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQYW5VQnFtM2hlR19PdEJDTHhFdWdUdWgyMU9qT2JJR2xoM2xpNlFJYV9SZzlGeEZaMVRIaU1EQ3hSWVdNNG9fblZfMHhuYVRSeVBLNWZsekRHTng1RlRSX1dJT1JEY05oWm1OSWJIREdaRWVmVnFBT3VtUFY0ZXdWeUJqaWQxN1RVd2c3QnZ0MFNhZGlJU2RpQ1NVZ3VRSzhJeEprWVRqUFlqYmI3alE?oc=5", "date": "2026-11-07"},
+    {"team": "St. John's", "tag": "RETURNING", "text": "F Adou Thiero set to be available for his season debut.", "source": "Yahoo Sports", "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPcUtuTGtQVHV1UGlmTW1UQkxEYWU1RWJGUzJDTHhuRUtVLUVXc2k4NzRGU3R3YU1qeVVWbnZHMTFiRU9yWTdMNEZFTWRjbnNmMERWdVMtTzdtcnB3REkxalp1UTVBN3d2VTNPR3duU1ZpeWM0cGtoSlF6QXQ0VWM3cWFPM0w3Vl83?oc=5", "date": "2026-11-06"},
+    {"team": "Missouri", "tag": "KEY", "text": "Freshman F Aidan Chronister ruled out about 4 weeks; Missouri had 4 players ruled out before its opener.", "source": "Columbia Daily Tribune", "url": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxNdUZqTWwwZDRGY1NpQnB2MkZKcWV0ZUxjNlNCSkhHeTFRZ3FtQkhjWkxRSkgtc2FvTDdFbVNBTHU1bGkxeWg0Y193Y2JKNkZuSVhmNF9waWM5YjhrNDN4TFU4X01XUURoZllMNXp2SFM3Szg2Zm5sS0tHV2ZXdHBMUTZiZDRRVTlwVWpxckVXV2lIYnVrRW9qV2E5Wlk2X3ZJclRhcU1ILVE0cXBHUDI5V20zc2E0R0xqWlczQUhhLUtMdnVBeU1ETkZ5UmJSNkdhNU4zQkxxTlA4cHlWVC1sMVZvYzNwMTFicGhVb1hZQQ?oc=5", "date": "2026-11-03"}
   ],
   "teams": {
-    "Louisville": [
-      {
-        "team": "Louisville",
-        "tag": "KEY",
-        "text": "G De'Shayne Montgomery out 4-6 weeks with a foot injury (announced Nov. 2).",
-        "source": "On3",
-        "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQa2xoS1I1VW1xMkQzMmlLRkUtZDBGU1lQb0lzQmQ0ZUNsTFBrR3F1SzhGUWJ4MWRmeHptbXRrdHhZdklTWGM1WFhyMWdpRl9Qc1RqMmxRTVBBMDZFUzkyeUNNcGp1V0lhMW1sSjFRRDdzdjNrYVVQamdxUFJrSTcyeU9YRllKNGtqT0pXdm5pdTMtQ1pyRjQ2NENqWlhjRFpBeExLSkgyd3FORy15bDllWUlXQUFTTUcxeG8zRlBGTnlodmNXbGhMS21R?oc=5",
-        "date": "2026-11-02"
-      }
+    "Illinois": [
+      {"team": "Illinois", "tag": "KEY", "text": "Senior G Jake Davis out indefinitely after surgery on a separated left shoulder; hurt in the opener, no return timeline given.", "source": "Roundtable", "url": "https://roundtable.io/sports/ncaa/illinois/news/illinois-senior-jake-davis-undergoes-shoulder-surgery", "date": "2026-11-04"}
     ],
     "Indiana": [
-      {
-        "team": "Indiana",
-        "tag": "KEY",
-        "text": "Freshman G Prince-Alexander Moody to miss an 'extended period of time' with a knee injury suffered Nov. 3.",
-        "source": "The Herald-Times",
-        "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQaHZyV3d6bGVtczdBUEZkRU9CTEhsMjQxUmxDY0RvZTZfYXFGMkRZZV95dkR0d1ItYUVSVFZvNlNDMUxZNFNKMXFpZGxMQ2JBc2pSZEJENFlHMk1WZF9vS2t2NC02RkFaY0tUTW5HanpqT2hWVlhjRXY1bldxV1NKWmppMVZSVzdJMDB4QmdJU1dUaTdFOGVXSWtPdTJWODhITFBTOG5XbzV1VEZDbTBmUVFRUUFCcHN0d3FRUGtNQ2I2OVkxR2g2SXpKcm9MVmNDa2hr?oc=5",
-        "date": "2026-11-03"
-      }
-    ],
-    "Alabama": [
-      {
-        "team": "Alabama",
-        "tag": "KEY",
-        "text": "Freshman F Jaxon Richardson out vs. Arkansas State (reported Nov. 7).",
-        "source": "The Tuscaloosa News",
-        "url": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxPeHUwaHVsMkt6eVgxM2ltQkRkdFVLbjdOUVAtZFl6Q2NxT09tS1BIRjNPVTh4Mm9DNDVzdVJYeG12MWZGcE9CWFNmWlF5YXo4dHZadWVMcTF3YUdMcHNrbXJEeGdpZGRGVEtyMkxzdE5DT3JDZmt4c05VOG85czRoUC11bThWcGVoRjN0Z0tTbUZDVEowRFlWTFdXZUZMaDdEV2k2d3gtRV91Z19ObFhHZDVBRkEzX2k1ZnJRdjJzd1JROERkQ240R0pVRUxPTkVueDJyWDlMc3VWX1NQMFh6c3BPODdxUXZ1QnpiRnBqRQ?oc=5",
-        "date": "2026-11-07"
-      }
-    ],
-    "St. John's": [
-      {
-        "team": "St. John's",
-        "tag": "RETURNING",
-        "text": "F Adou Thiero set to be available for his season debut.",
-        "source": "Yahoo Sports",
-        "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPcUtuTGtQVHV1UGlmTW1UQkxEYWU1RWJGUzJDTHhuRUtVLUVXc2k4NzRGU3R3YU1qeVVWbnZHMTFiRU9yWTdMNEZFTWRjbnNmMERWdVMtTzdtcnB3REkxalp1UTVBN3d2VTNPR3duU1ZpeWM0cGtoSlF6QXQ0VWM3cWFPM0w3Vl83?oc=5",
-        "date": "2026-11-06"
-      }
+      {"team": "Indiana", "tag": "KEY", "text": "Freshman G Prince-Alexander Moody to miss an 'extended period of time' with a knee injury suffered Nov. 3.", "source": "The Herald-Times", "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQaHZyV3d6bGVtczdBUEZkRU9CTEhsMjQxUmxDY0RvZTZfYXFGMkRZZV95dkR0d1ItYUVSVFZvNlNDMUxZNFNKMXFpZGxMQ2JBc2pSZEJENFlHMk1WZF9vS2t2NC02RkFaY0tUTW5HanpqT2hWVlhjRXY1bldxV1NKWmppMVZSVzdJMDB4QmdJU1dUaTdFOGVXSWtPdTJWODhITFBTOG5XbzV1VEZDbTBmUVFRUUFCcHN0d3FRUGtNQ2I2OVkxR2g2SXpKcm9MVmNDa2hr?oc=5", "date": "2026-11-03"}
     ],
     "Minnesota": [
-      {
-        "team": "Minnesota",
-        "tag": "KEY",
-        "text": "G Kai Shinholster out with a calf injury (reported Nov. 7).",
-        "source": "247Sports",
-        "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQYW5VQnFtM2hlR19PdEJDTHhFdWdUdWgyMU9qT2JJR2xoM2xpNlFJYV9SZzlGeEZaMVRIaU1EQ3hSWVdNNG9fblZfMHhuYVRSeVBLNWZsekRHTng1RlRSX1dJT1JEY05oWm1OSWJIREdaRWVmVnFBT3VtUFY0ZXdWeUJqaWQxN1RVd2c3QnZ0MFNhZGlJU2RpQ1NVZ3VRSzhJeEprWVRqUFlqYmI3alE?oc=5",
-        "date": "2026-11-07"
-      }
+      {"team": "Minnesota", "tag": "KEY", "text": "G Kai Shinholster out with a calf injury (reported Nov. 7).", "source": "247Sports", "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQYW5VQnFtM2hlR19PdEJDTHhFdWdUdWgyMU9qT2JJR2xoM2xpNlFJYV9SZzlGeEZaMVRIaU1EQ3hSWVdNNG9fblZfMHhuYVRSeVBLNWZsekRHTng1RlRSX1dJT1JEY05oWm1OSWJIREdaRWVmVnFBT3VtUFY0ZXdWeUJqaWQxN1RVd2c3QnZ0MFNhZGlJU2RpQ1NVZ3VRSzhJeEprWVRqUFlqYmI3alE?oc=5", "date": "2026-11-07"}
+    ],
+    "St. John's": [
+      {"team": "St. John's", "tag": "RETURNING", "text": "F Adou Thiero set to be available for his season debut.", "source": "Yahoo Sports", "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPcUtuTGtQVHV1UGlmTW1UQkxEYWU1RWJGUzJDTHhuRUtVLUVXc2k4NzRGU3R3YU1qeVVWbnZHMTFiRU9yWTdMNEZFTWRjbnNmMERWdVMtTzdtcnB3REkxalp1UTVBN3d2VTNPR3duU1ZpeWM0cGtoSlF6QXQ0VWM3cWFPM0w3Vl83?oc=5", "date": "2026-11-06"}
     ],
     "Missouri": [
-      {
-        "team": "Missouri",
-        "tag": "KEY",
-        "text": "Freshman F Aidan Chronister ruled out about 4 weeks; Missouri had 4 players ruled out before its opener.",
-        "source": "Columbia Daily Tribune",
-        "url": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxNdUZqTWwwZDRGY1NpQnB2MkZKcWV0ZUxjNlNCSkhHeTFRZ3FtQkhjWkxRSkgtc2FvTDdFbVNBTHU1bGkxeWg0Y193Y2JKNkZuSVhmNF9waWM5YjhrNDN4TFU4X01XUURoZllMNXp2SFM3Szg2Zm5sS0tHV2ZXdHBMUTZiZDRRVTlwVWpxckVXV2lIYnVrRW9qV2E5Wlk2X3ZJclRhcU1ILVE0cXBHUDI5V20zc2E0R0xqWlczQUhhLUtMdnVBeU1ETkZ5UmJSNkdhNU4zQkxxTlA4cHlWVC1sMVZvYzNwMTFicGhVb1hZQQ?oc=5",
-        "date": "2026-11-03"
-      }
+      {"team": "Missouri", "tag": "KEY", "text": "Freshman F Aidan Chronister ruled out about 4 weeks; Missouri had 4 players ruled out before its opener.", "source": "Columbia Daily Tribune", "url": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxNdUZqTWwwZDRGY1NpQnB2MkZKcWV0ZUxjNlNCSkhHeTFRZ3FtQkhjWkxRSkgtc2FvTDdFbVNBTHU1bGkxeWg0Y193Y2JKNkZuSVhmNF9waWM5YjhrNDN4TFU4X01XUURoZllMNXp2SFM3Szg2Zm5sS0tHV2ZXdHBMUTZiZDRRVTlwVWpxckVXV2lIYnVrRW9qV2E5Wlk2X3ZJclRhcU1ILVE0cXBHUDI5V20zc2E0R0xqWlczQUhhLUtMdnVBeU1ETkZ5UmJSNkdhNU4zQkxxTlA4cHlWVC1sMVZvYzNwMTFicGhVb1hZQQ?oc=5", "date": "2026-11-03"}
     ]
   }
 }
