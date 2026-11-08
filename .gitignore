@@ -35,3 +35,5 @@ last_refresh_*.md
 
 __pycache__/
 .idea/
+results_*.csv
+last_review.md
