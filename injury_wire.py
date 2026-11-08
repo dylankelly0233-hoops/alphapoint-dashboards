@@ -426,6 +426,22 @@ def nhl_candidates(day_key, games, team_names, toi, goalie_starts):
     return out
 
 
+def epl_candidates(day_key, games, team_names):
+    """
+    Premier League: no usable injury feed, so the same headline scan as college sports, searched by club name
+    ("Arsenal" Premier League injury) and keyed by ESPN abbreviation. day_key (YYYYMMDD) plays the role of the week.
+    """
+    playing = sorted({t for g in games for t in g})
+    out = {'sport': 'epl', 'week': day_key, 'collected': _now().isoformat(timespec='minutes'), 'games': games, 'teams': {}}
+    for abbr in playing:
+        name = team_names.get(abbr, abbr)
+        news = google_news(f'"{name}" Premier League injury', cache_file='news_cache_epl.json')
+        items = [{'team': abbr, 'tag': 'NEWS', 'text': n['title'], 'source': n['source'], 'url': n['url'], 'date': n['date']}
+                 for n in news[:2]]
+        out['teams'][abbr] = {'name': name, 'items': items, 'headlines': news}
+    return out
+
+
 def news_candidates(sport, week, games, mascots, sport_word, only=None):
     """Injury headlines per team for the games shown. only = restrict the searches to these teams."""
     playing = sorted({t for g in games for t in g if only is None or t in only})

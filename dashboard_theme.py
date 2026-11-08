@@ -235,7 +235,7 @@ def edge_text(proj_margin, market_margin, home, away):
     return f'<span class="{cls}">{esc(home if e > 0 else away)} {spread_num(abs(e))}</span>'
 
 
-def game_card(when, venue, away, home, projected, market, final='', edge='', tags='', move=''):
+def game_card(when, venue, away, home, projected, market, final='', edge='', tags='', move='', labels=('A', 'H')):
     """
     away / home: dict(name, logo, rating, sd, signal, color, key). key makes the name open the team page.
     projected / market / edge: already-formatted strings. tags: situational tag pills (extras.tag);
@@ -249,7 +249,7 @@ def game_card(when, venue, away, home, projected, market, final='', edge='', tag
     final_html = f'<div><span class="k">Final</span><b>{esc(final)}</b></div>' if final else ''
     tags_html = f'<div class="gtags">{tags}</div>' if tags else ''
     return (f'<article class="card game"><header><span>{esc(when)}</span><span>{esc(venue)}</span></header>'
-            f'{tags_html}{side(away, "A")}{side(home, "H")}'
+            f'{tags_html}{side(away, labels[0])}{side(home, labels[1])}'
             f'<footer><div>{k("Projected")}<b>{projected}</b></div>'
             f'<div>{k("Market")}<span>{market}</span></div>'
             f'<div>{k("Edge")}{edge or "—"}</div>{final_html}</footer>{move}</article>')

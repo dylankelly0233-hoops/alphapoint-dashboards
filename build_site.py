@@ -33,6 +33,7 @@ DASHBOARDS = [
     ('cbb.html', 'cbb_dashboard.py', 'cbb_dashboard.html', 'CBB', 'College Basketball', 'Power 4 + Big East'),
     ('nba.html', 'nba_dashboard.py', 'nba_dashboard.html', 'NBA', 'Pro Basketball', 'All 30 teams'),
     ('nhl.html', 'nhl_dashboard.py', 'nhl_dashboard.html', 'NHL', 'Pro Hockey', 'All 32 teams'),
+    ('epl.html', 'epl_dashboard.py', 'epl_dashboard.html', 'EPL', 'Premier League', 'All 20 clubs'),
 ]
 
 LANDING_CSS = """
@@ -187,9 +188,9 @@ def _lean(s, team):
 # League logos for the Best spots rows (ESPN's CDN, embedded like team logos). College football and
 # basketball share the NCAA logo, so a small ball badge tells them apart.
 LEAGUE_LOGOS = {'NFL': ('/i/teamlogos/leagues/500/nfl.png', ''), 'NBA': ('/i/teamlogos/leagues/500/nba.png', ''),
-                'NHL': ('/i/teamlogos/leagues/500/nhl.png', ''),
+                'NHL': ('/i/teamlogos/leagues/500/nhl.png', ''), 'EPL': ('/i/leaguelogos/soccer/500/23.png', ''),
                 'CFB': ('/i/espn/misc_logos/500/ncaa.png', '🏈'), 'CBB': ('/i/espn/misc_logos/500/ncaa.png', '🏀')}
-LEAGUE_NAMES = {'NFL': 'NFL', 'NBA': 'NBA', 'NHL': 'NHL', 'CFB': 'College football', 'CBB': 'College basketball'}
+LEAGUE_NAMES = {'NFL': 'NFL', 'NBA': 'NBA', 'NHL': 'NHL', 'EPL': 'Premier League', 'CFB': 'College football', 'CBB': 'College basketball'}
 
 
 def league_mark(sport):
@@ -212,7 +213,7 @@ def best_spots():
     which always shows. Listed in kickoff order.
     """
     spots = []
-    for sport in ('cfb', 'nfl', 'cbb', 'nba', 'nhl'):
+    for sport in ('cfb', 'nfl', 'cbb', 'nba', 'nhl', 'epl'):
         try:
             with open(os.path.join(HERE, f'spots_{sport}.json'), encoding='utf-8') as f:
                 spots += json.load(f)
@@ -265,7 +266,7 @@ def best_spots():
     title = "Today's best spots" if any(s['dt'].date() == today for s in keep) else 'Best spots this week'
     return (f'<section class="card spots"><div class="spots-head"><h2>{title}</h2>'
             f'<span class="hint">Tags and trade signals back one side, and our line agrees or is within '
-            f'{SPOTS_TOLERANCE:g} points ({SPOTS_TOLERANCE_PCT:g} win-probability points in the NHL), plus every teaser '
+            f'{SPOTS_TOLERANCE:g} points ({SPOTS_TOLERANCE_PCT:g} win-probability points in the NHL and EPL), plus every teaser '
             f'leg · next 7 days</span></div>'
             f'<ol class="spotlist">{rows}</ol></section>')
 
@@ -275,7 +276,7 @@ INFO = [
         ('Power Ratings', 'One composite rating per team: points above or below an average team (0.0). The gap between two '
                           'teams is the projected margin on a neutral field. Built by blending public computer ratings '
                           '(Sagarin + SP+ for CFB, nfelo + Sagarin for NFL, TeamRankings + our own model for CBB, Sagarin + TeamRankings + '
-                          'our own adjusted net rating for NBA, Sagarin + our expected-goals model for NHL, in goals) after '
+                          'our own adjusted net rating for NBA, Sagarin + our expected-goals model for NHL and our expected-goals model for EPL, in goals) after '
                           'putting them on the same scale.'),
         ('Value Metrics', 'Wins over expectation (W − xW): how many more or fewer games a team has won than its underlying '
                           'play supports. Below zero means the record is worse than the play (a buy candidate); above zero '
@@ -286,9 +287,11 @@ INFO = [
                   'NFL and college football have a This week / Next week switch, so you can look ahead once next '
                   'week\'s lines post; games still to play are listed first. Hockey is bet on moneylines, so NHL cards show our '
                   'win probability and fair moneyline (probable starting goalies included) against the no-vig market '
-                  'price, the edge in win-probability points, and how far the line moves if a backup goalie starts.'),
+                  'price, the edge in win-probability points, and how far the line moves if a backup goalie starts. Premier '
+                  'League cards list the home team first and show home / draw / away probabilities against the no-vig '
+                  'three-way price; the edge can be on the draw.'),
         ('Featured', 'The marquee games, each with a written preview: ranked-vs-ranked and upset-watch games in college '
-                     '(a top-10 team favored by 7 or less, or an underdog), NFL primetime games, and an NBA and NHL Game of the Day '
+                     '(a top-10 team favored by 7 or less, or an underdog), NFL primetime games, and an NBA, NHL and EPL Game of the Day '
                      '(the best matchup by our ratings). Previews are written automatically from the numbers on the page: '
                      'where our ratings lean and why, the case against, and what to check. A lean is research, not a pick.'),
         ('Line movement', 'Each game card shows where the spread opened (or was first seen) and where it is now, and whether '
@@ -339,6 +342,8 @@ INFO = [
         ('NHL', 'In standings points: points vs. what expected-goal differential (MoneyPuck) and actual goal differential '
                 'support, PDO (shooting % + save %), one-goal and overtime/shootout records, and every goalie\'s goals '
                 'saved above expected.'),
+        ('EPL', 'In league points: points vs. expected points from every match\'s expected goals (xPts), expected-goal '
+                'difference, finishing (goals − xG) and goalkeeping (xG against − goals conceded).'),
     ]),
     ('How the site updates', [
         ('Every hour', 'From 8 AM to midnight ET the site rebuilds automatically: lines, Kalshi markets, scores, ratings, '
@@ -353,7 +358,7 @@ INFO = [
 
 
 def run(script):
-    env = {**os.environ, 'CFB_NO_BROWSER': '1', 'NFL_NO_BROWSER': '1', 'CBB_NO_BROWSER': '1', 'NBA_NO_BROWSER': '1', 'NHL_NO_BROWSER': '1', 'PYTHONIOENCODING': 'utf-8'}
+    env = {**os.environ, 'CFB_NO_BROWSER': '1', 'NFL_NO_BROWSER': '1', 'CBB_NO_BROWSER': '1', 'NBA_NO_BROWSER': '1', 'NHL_NO_BROWSER': '1', 'EPL_NO_BROWSER': '1', 'PYTHONIOENCODING': 'utf-8'}
     print(f'\n=== {script} ===', flush=True)
     r = subprocess.run([sys.executable, script], cwd=HERE, env=env)
     return r.returncode == 0
@@ -374,7 +379,7 @@ def landing(results):
         for title, rows in INFO) + '</div>'
     page = theme.render_page(title='AlphaPoint Sports', league='Home', headline='Sharper research, every game',
                              subtitle='Power ratings, value metrics and market data for the NFL, college football, '
-                                      'college basketball, the NBA and the NHL. Research, not picks.',
+                                      'college basketball, the NBA, the NHL and the Premier League. Research, not picks.',
                              meta_items=[('Updated', updated)],
                              tabs=[('home', 'Dashboards', home), ('guide', 'How to use', guide()), ('info', 'Info', info)],
                              footer='AlphaPoint Sports · Not financial or gambling advice')

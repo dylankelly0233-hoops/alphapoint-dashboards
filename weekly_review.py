@@ -25,13 +25,13 @@ import numpy as np
 import pandas as pd
 import requests
 
-SPORTS = ['cfb', 'nfl', 'cbb', 'nba', 'nhl']
-NAMES = {'cfb': 'CFB', 'nfl': 'NFL', 'cbb': 'CBB', 'nba': 'NBA', 'nhl': 'NHL'}
-HFA = {'cfb': 2.5, 'nfl': 1.7, 'cbb': 3.0, 'nba': 2.4, 'nhl': 0.28}
-UNIT = {'nhl': ('goals', 0.1)}       # NHL lines are goal margins: gap buckets scale down
+SPORTS = ['cfb', 'nfl', 'cbb', 'nba', 'nhl', 'epl']
+NAMES = {'cfb': 'CFB', 'nfl': 'NFL', 'cbb': 'CBB', 'nba': 'NBA', 'nhl': 'NHL', 'epl': 'EPL'}
+HFA = {'cfb': 2.5, 'nfl': 1.7, 'cbb': 3.0, 'nba': 2.4, 'nhl': 0.28, 'epl': 0.30}
+UNIT = {'nhl': ('goals', 0.1), 'epl': ('goals', 0.1)}       # NHL lines are goal margins: gap buckets scale down
 # Finished games needed before a calibration change is worth considering
 from calibrate import MIN_GAMES as ENOUGH
-ESPN = {'cbb': 'basketball/mens-college-basketball', 'nba': 'basketball/nba', 'nhl': 'hockey/nhl'}
+ESPN = {'cbb': 'basketball/mens-college-basketball', 'nba': 'basketball/nba', 'nhl': 'hockey/nhl', 'epl': 'soccer/eng.1'}
 ESPN_HOSTS = ['https://site.api.espn.com', 'https://site.web.api.espn.com']
 REPORT = 'last_review.md'
 ET = timezone(timedelta(hours=-5))
