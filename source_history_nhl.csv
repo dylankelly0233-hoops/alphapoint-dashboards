@@ -1,0 +1,65 @@
+date,team,source,rating
+2026-11-08,ANA,Sagarin,-0.04
+2026-11-08,BOS,Sagarin,0.41
+2026-11-08,BUF,Sagarin,-0.02
+2026-11-08,CGY,Sagarin,-0.66
+2026-11-08,CAR,Sagarin,0.89
+2026-11-08,CHI,Sagarin,-1.01
+2026-11-08,COL,Sagarin,0.5
+2026-11-08,CBJ,Sagarin,-0.15
+2026-11-08,DAL,Sagarin,0.28
+2026-11-08,DET,Sagarin,-0.37
+2026-11-08,EDM,Sagarin,0.58
+2026-11-08,FLA,Sagarin,0.25
+2026-11-08,LA,Sagarin,-0.17
+2026-11-08,MIN,Sagarin,0.6
+2026-11-08,MTL,Sagarin,0.31
+2026-11-08,NSH,Sagarin,-0.04
+2026-11-08,NJ,Sagarin,0.38
+2026-11-08,NYI,Sagarin,-0.14
+2026-11-08,NYR,Sagarin,-0.01
+2026-11-08,OTT,Sagarin,0.14
+2026-11-08,PHI,Sagarin,-0.43
+2026-11-08,PIT,Sagarin,-0.2
+2026-11-08,SJ,Sagarin,-0.44
+2026-11-08,SEA,Sagarin,-0.26
+2026-11-08,STL,Sagarin,-0.2
+2026-11-08,TB,Sagarin,0.48
+2026-11-08,TOR,Sagarin,0.08
+2026-11-08,UTAH,Sagarin,0.09
+2026-11-08,VAN,Sagarin,-1.02
+2026-11-08,VGK,Sagarin,0.34
+2026-11-08,WSH,Sagarin,0.28
+2026-11-08,WPG,Sagarin,-0.47
+2026-11-08,ANA,xG model,-0.26
+2026-11-08,BOS,xG model,0.31
+2026-11-08,BUF,xG model,-0.03
+2026-11-08,CGY,xG model,-0.37
+2026-11-08,CAR,xG model,0.9
+2026-11-08,CHI,xG model,-0.68
+2026-11-08,COL,xG model,0.43
+2026-11-08,CBJ,xG model,-0.33
+2026-11-08,DAL,xG model,0.31
+2026-11-08,DET,xG model,0.04
+2026-11-08,EDM,xG model,0.11
+2026-11-08,FLA,xG model,0.17
+2026-11-08,LA,xG model,0.01
+2026-11-08,MIN,xG model,0.82
+2026-11-08,MTL,xG model,0.19
+2026-11-08,NSH,xG model,0.05
+2026-11-08,NJ,xG model,0.54
+2026-11-08,NYI,xG model,-0.1
+2026-11-08,NYR,xG model,0.26
+2026-11-08,OTT,xG model,0.06
+2026-11-08,PHI,xG model,-0.52
+2026-11-08,PIT,xG model,-0.25
+2026-11-08,SJ,xG model,-0.62
+2026-11-08,SEA,xG model,-0.36
+2026-11-08,STL,xG model,-0.11
+2026-11-08,TB,xG model,0.63
+2026-11-08,TOR,xG model,-0.3
+2026-11-08,UTAH,xG model,0.33
+2026-11-08,VAN,xG model,-1.24
+2026-11-08,VGK,xG model,0.18
+2026-11-08,WSH,xG model,0.07
+2026-11-08,WPG,xG model,-0.23
