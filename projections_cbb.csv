@@ -1,126 +1,126 @@
-game_id,kickoff,home,away,neutral,first_logged,last_logged,ours_first,ours_last,market_first,market_last,opened,confidence,flags,sources_last
-401909726,2026-11-05T23:00:00+00:00,Vanderbilt,Wake Forest,0,2026-11-05T12:48+00:00,2026-11-05T22:59+00:00,12.1,12.1,17.5,18.5,17.5,Medium,,"{""TeamRankings"": 13.89, ""Torvik preseason"": 10.32}"
-401917177,2026-11-05T23:00:00+00:00,Penn State,Chattanooga,0,2026-11-05T12:48+00:00,2026-11-05T22:59+00:00,15.73,15.73,12.5,12.5,15.5,High,news,"{""TeamRankings"": 15.0, ""Torvik preseason"": 16.47}"
-401916287,2026-11-05T23:00:00+00:00,Indiana,Bellarmine,0,2026-11-05T12:48+00:00,2026-11-05T22:59+00:00,27.35,27.35,27.5,30.5,26.5,Low,"news,lopsided","{""TeamRankings"": 27.36, ""Torvik preseason"": 27.34}"
-401919804,2026-11-05T23:30:00+00:00,Seton Hall,Long Island University,0,2026-11-05T12:48+00:00,2026-11-05T22:59+00:00,17.16,17.16,17.5,17.5,18.5,High,,"{""TeamRankings"": 17.3, ""Torvik preseason"": 17.01}"
-401921747,2026-11-06T00:00:00+00:00,Cincinnati,Green Bay,0,2026-11-05T12:48+00:00,2026-11-05T22:59+00:00,19.28,19.28,24.5,24.5,24.5,Low,lopsided,"{""TeamRankings"": 21.18, ""Torvik preseason"": 17.38}"
-401920377,2026-11-06T00:00:00+00:00,Virginia Tech,Mercer,0,2026-11-05T12:48+00:00,2026-11-05T22:59+00:00,19.78,19.78,21.5,20.5,21.5,Low,lopsided,"{""TeamRankings"": 19.7, ""Torvik preseason"": 19.87}"
-401919823,2026-11-06T00:00:00+00:00,Notre Dame,Mercyhurst,0,2026-11-05T12:48+00:00,2026-11-05T22:59+00:00,18.82,18.82,19.5,21.5,20.5,Low,lopsided,"{""TeamRankings"": 20.07, ""Torvik preseason"": 17.56}"
-401909717,2026-11-06T00:00:00+00:00,Syracuse,Central Connecticut,0,2026-11-05T12:48+00:00,2026-11-05T22:59+00:00,21.69,21.69,20.5,23.5,22.5,Low,lopsided,"{""TeamRankings"": 20.72, ""Torvik preseason"": 22.66}"
-401909706,2026-11-06T00:00:00+00:00,Pittsburgh,Buffalo,0,2026-11-05T12:48+00:00,2026-11-05T22:59+00:00,14.12,14.12,18.5,17.5,18.5,Medium,,"{""TeamRankings"": 16.01, ""Torvik preseason"": 12.22}"
-401906792,2026-11-06T00:30:00+00:00,Mississippi State,Northwestern State,0,2026-11-05T12:48+00:00,2026-11-05T22:59+00:00,19.38,19.38,21.5,21.5,21.5,Low,lopsided,"{""TeamRankings"": 18.32, ""Torvik preseason"": 20.44}"
-401906770,2026-11-06T01:00:00+00:00,Florida,Jacksonville,0,2026-11-05T12:48+00:00,2026-11-05T22:59+00:00,28.91,28.91,33.5,36.5,34.5,Low,lopsided,"{""TeamRankings"": 30.68, ""Torvik preseason"": 27.13}"
-401909563,2026-11-06T01:00:00+00:00,Duke,Coastal Carolina,0,2026-11-05T12:48+00:00,2026-11-05T22:59+00:00,30.15,30.15,40.5,40.5,40.5,Low,lopsided,"{""TeamRankings"": 31.42, ""Torvik preseason"": 28.88}"
-401925754,2026-11-06T01:00:00+00:00,Michigan State,Toledo,0,2026-11-05T12:48+00:00,2026-11-05T22:59+00:00,21.48,21.48,27.5,26.5,26.5,Low,lopsided,"{""TeamRankings"": 22.38, ""Torvik preseason"": 20.59}"
-401906864,2026-11-06T01:00:00+00:00,Texas,Gardner-Webb,0,2026-11-05T12:48+00:00,2026-11-05T22:59+00:00,33.33,33.33,38.5,41.5,39.5,Low,lopsided,"{""TeamRankings"": 34.19, ""Torvik preseason"": 32.47}"
-401918968,2026-11-06T01:00:00+00:00,SMU,VMI,0,2026-11-05T12:48+00:00,2026-11-05T22:59+00:00,25.08,25.08,24.5,24.5,24.5,Low,lopsided,"{""TeamRankings"": 23.67, ""Torvik preseason"": 26.48}"
-401909491,2026-11-06T01:00:00+00:00,Creighton,Le Moyne,0,2026-11-05T12:48+00:00,2026-11-05T22:59+00:00,26.82,26.82,26.5,29.5,26.5,Low,"news,lopsided","{""TeamRankings"": 27.45, ""Torvik preseason"": 26.19}"
-401913526,2026-11-06T01:30:00+00:00,Illinois,Pennsylvania,0,2026-11-05T12:48+00:00,2026-11-06T01:02+00:00,21.53,21.53,30.5,30.5,29.5,Low,lopsided,"{""TeamRankings"": 23.86, ""Torvik preseason"": 19.21}"
-401909501,2026-11-06T01:30:00+00:00,DePaul,South Florida,0,2026-11-05T12:48+00:00,2026-11-06T01:02+00:00,5.8,5.8,6.5,6.5,6.5,High,,"{""TeamRankings"": 5.77, ""Torvik preseason"": 5.83}"
-401921133,2026-11-06T02:00:00+00:00,Texas Tech,Bethune-Cookman,0,2026-11-05T12:48+00:00,2026-11-06T01:02+00:00,23.06,23.06,26.5,29.5,26.5,Low,"news,lopsided","{""TeamRankings"": 24.69, ""Torvik preseason"": 21.43}"
-401921698,2026-11-06T02:00:00+00:00,Utah,Towson,0,2026-11-05T12:48+00:00,2026-11-06T01:02+00:00,10.01,10.01,9.5,8.5,10.5,High,,"{""TeamRankings"": 10.11, ""Torvik preseason"": 9.92}"
-401909739,2026-11-06T03:30:00+00:00,Arizona,Cal Poly,0,2026-11-05T12:48+00:00,2026-11-06T01:02+00:00,23.83,23.83,30.5,30.5,30.5,Low,lopsided,"{""TeamRankings"": 23.67, ""Torvik preseason"": 24.0}"
-401909552,2026-11-06T21:00:00+00:00,Boston College,Massachusetts,1,2026-11-05T12:48+00:00,2026-11-06T19:26+00:00,5.39,5.4,5.5,5.5,5.5,Medium,,"{""TeamRankings"": 4.15, ""Torvik preseason"": 6.65}"
-401920423,2026-11-06T22:00:00+00:00,Virginia,Northeastern,0,2026-11-05T12:48+00:00,2026-11-06T19:26+00:00,27.47,27.47,33.5,34.5,33.5,Low,lopsided,"{""TeamRankings"": 27.05, ""Torvik preseason"": 27.9}"
-401909751,2026-11-06T22:00:00+00:00,Baylor,Arkansas-Pine Bluff,0,2026-11-05T12:48+00:00,2026-11-06T19:26+00:00,32.45,32.4,36.5,37.5,36.5,Low,lopsided,"{""TeamRankings"": 33.59, ""Torvik preseason"": 31.22}"
-401920717,2026-11-06T23:00:00+00:00,Oregon,Eastern Washington,0,2026-11-05T12:48+00:00,2026-11-06T19:26+00:00,16.36,16.36,15.5,16.5,15.5,Medium,,"{""TeamRankings"": 14.61, ""Torvik preseason"": 18.12}"
-401926131,2026-11-06T23:30:00+00:00,Purdue,Valparaiso,0,2026-11-05T12:48+00:00,2026-11-06T19:26+00:00,16.97,16.97,19.5,19.5,19.5,High,,"{""TeamRankings"": 17.1, ""Torvik preseason"": 16.84}"
-401916314,2026-11-06T23:30:00+00:00,Ohio State,Youngstown State,0,2026-11-05T12:48+00:00,2026-11-06T19:26+00:00,23.86,23.86,25.5,25.5,25.5,Low,lopsided,"{""TeamRankings"": 21.52, ""Torvik preseason"": 26.21}"
-401921802,2026-11-07T00:00:00+00:00,Kentucky,James Madison,0,2026-11-05T12:48+00:00,2026-11-06T19:26+00:00,18.37,18.33,25.5,24.5,25.5,Low,lopsided,"{""TeamRankings"": 19.12, ""Torvik preseason"": 17.53}"
-401926135,2026-11-07T00:00:00+00:00,Rutgers,New Haven,0,2026-11-05T12:48+00:00,2026-11-06T19:26+00:00,22.57,22.53,24.5,24.5,24.5,Low,lopsided,"{""TeamRankings"": 22.07, ""Torvik preseason"": 22.98}"
-401921767,2026-11-07T00:00:00+00:00,West Virginia,Stetson,0,2026-11-05T12:48+00:00,2026-11-06T19:26+00:00,21.35,21.35,24.5,27.5,24.5,Low,"news,lopsided","{""TeamRankings"": 21.61, ""Torvik preseason"": 21.09}"
-401921754,2026-11-07T00:00:00+00:00,UCF,Yale,0,2026-11-05T12:48+00:00,2026-11-06T19:26+00:00,14.41,14.37,9.5,9.5,9.5,Low,,"{""TeamRankings"": 11.29, ""Torvik preseason"": 17.44}"
-401921285,2026-11-07T00:00:00+00:00,Villanova,Holy Cross,0,2026-11-05T12:48+00:00,2026-11-06T19:26+00:00,29.81,29.81,31.5,34.5,31.5,Low,"news,lopsided","{""TeamRankings"": 30.36, ""Torvik preseason"": 29.25}"
-401920305,2026-11-07T00:00:00+00:00,Georgia Tech,Georgia Southern,0,2026-11-05T12:48+00:00,2026-11-06T19:26+00:00,16.49,16.49,16.5,18.5,16.5,Low,,"{""TeamRankings"": 14.24, ""Torvik preseason"": 18.75}"
-401918956,2026-11-07T00:00:00+00:00,NC State,East Tennessee State,0,2026-11-05T12:48+00:00,2026-11-06T19:26+00:00,17.13,17.13,16.5,17.5,16.5,Medium,,"{""TeamRankings"": 15.71, ""Torvik preseason"": 18.55}"
-401913100,2026-11-07T00:00:00+00:00,North Carolina,Wofford,0,2026-11-05T12:48+00:00,2026-11-06T19:26+00:00,21.92,21.92,22.5,21.5,22.5,Low,lopsided,"{""TeamRankings"": 22.07, ""Torvik preseason"": 21.77}"
-401912208,2026-11-07T00:00:00+00:00,Clemson,American University,0,2026-11-05T12:48+00:00,2026-11-06T19:26+00:00,18.08,18.08,18.5,15.5,18.5,High,news,"{""TeamRankings"": 18.11, ""Torvik preseason"": 18.05}"
-401911249,2026-11-07T00:00:00+00:00,Missouri,Saint Louis,1,2026-11-05T12:48+00:00,2026-11-06T19:26+00:00,5.09,5.09,2.5,1.5,2.5,High,,"{""TeamRankings"": 4.98, ""Torvik preseason"": 5.2}"
-401909695,2026-11-07T00:00:00+00:00,Florida State,Troy,0,2026-11-05T12:48+00:00,2026-11-06T19:26+00:00,14.18,14.09,20.5,23.5,20.5,Low,"news,lopsided","{""TeamRankings"": 15.81, ""Torvik preseason"": 12.37}"
-401909542,2026-11-07T00:00:00+00:00,Xavier,Eastern Michigan,0,2026-11-05T12:48+00:00,2026-11-06T19:26+00:00,17.34,17.43,20.5,23.5,20.5,Low,"news,lopsided","{""TeamRankings"": 19.31, ""Torvik preseason"": 15.55}"
-401906780,2026-11-07T00:00:00+00:00,Georgia,Presbyterian,0,2026-11-05T12:48+00:00,2026-11-06T19:26+00:00,20.77,20.77,21.5,24.5,21.5,Low,"news,lopsided","{""TeamRankings"": 20.51, ""Torvik preseason"": 21.04}"
-401906758,2026-11-07T00:30:00+00:00,Alabama,Arkansas State,0,2026-11-05T12:48+00:00,2026-11-07T00:10+00:00,21.7,21.7,25.5,25.5,25.5,Low,lopsided,"{""TeamRankings"": 22.07, ""Torvik preseason"": 21.32}"
-401920894,2026-11-07T00:30:00+00:00,Wisconsin,Delaware,0,2026-11-05T12:48+00:00,2026-11-07T00:10+00:00,20.91,20.91,24.5,25.5,24.5,Low,lopsided,"{""TeamRankings"": 20.69, ""Torvik preseason"": 21.13}"
-401920685,2026-11-07T01:00:00+00:00,Michigan,UConn,1,2026-11-05T12:48+00:00,2026-11-07T00:10+00:00,-2.78,-2.72,-5.5,-7.5,-5.5,Low,,"{""TeamRankings"": -5.71, ""Torvik preseason"": 0.26}"
-401909772,2026-11-07T01:00:00+00:00,Iowa State,Southern Miss,0,2026-11-05T12:48+00:00,2026-11-07T00:10+00:00,24.44,24.44,30.5,30.5,30.5,Low,lopsided,"{""TeamRankings"": 24.56, ""Torvik preseason"": 24.32}"
-401921809,2026-11-07T01:00:00+00:00,LSU,Texas Southern,0,2026-11-05T12:48+00:00,2026-11-07T00:10+00:00,26.69,26.69,30.5,35.5,30.5,Low,"news,lopsided","{""TeamRankings"": 26.68, ""Torvik preseason"": 26.71}"
-401920807,2026-11-07T01:00:00+00:00,Texas A&M,Northern Kentucky,0,2026-11-05T12:48+00:00,2026-11-07T00:10+00:00,20.22,20.23,24.5,27.5,24.5,Low,"news,lopsided","{""TeamRankings"": 19.49, ""Torvik preseason"": 20.96}"
-401920733,2026-11-07T01:00:00+00:00,Northwestern,Stony Brook,0,2026-11-05T12:48+00:00,2026-11-07T00:10+00:00,14.04,14.13,14.5,11.5,14.5,High,news,"{""TeamRankings"": 13.23, ""Torvik preseason"": 15.04}"
-401919048,2026-11-07T01:00:00+00:00,TCU,Southern,0,2026-11-05T12:48+00:00,2026-11-07T00:10+00:00,22.78,22.87,23.5,26.5,23.5,Low,"news,lopsided","{""TeamRankings"": 22.99, ""Torvik preseason"": 22.75}"
-401916304,2026-11-07T01:00:00+00:00,Minnesota,St. Thomas-Minnesota,0,2026-11-05T12:48+00:00,2026-11-07T00:10+00:00,11.17,11.17,15.5,14.5,15.5,Medium,,"{""TeamRankings"": 12.4, ""Torvik preseason"": 9.94}"
-401909523,2026-11-07T01:00:00+00:00,Marquette,Detroit Mercy,0,2026-11-05T12:48+00:00,2026-11-07T00:10+00:00,23.69,23.69,30.5,32.5,30.5,Low,lopsided,"{""TeamRankings"": 25.39, ""Torvik preseason"": 21.99}"
-401906802,2026-11-07T01:00:00+00:00,Oklahoma,Mississippi Valley State,0,2026-11-05T12:48+00:00,2026-11-07T00:10+00:00,35.53,35.49,38.5,40.5,38.5,Low,lopsided,"{""TeamRankings"": 34.88, ""Torvik preseason"": 36.09}"
-401920726,2026-11-07T01:30:00+00:00,Iowa,Eastern Illinois,0,2026-11-05T12:48+00:00,2026-11-07T00:10+00:00,28.14,28.19,35.5,34.5,35.5,Low,lopsided,"{""TeamRankings"": 29.63, ""Torvik preseason"": 26.74}"
-401917914,2026-11-07T01:30:00+00:00,Ole Miss,Central Arkansas,0,2026-11-05T12:48+00:00,2026-11-07T00:10+00:00,14.97,14.97,19.5,17.5,19.5,High,,"{""TeamRankings"": 15.44, ""Torvik preseason"": 14.49}"
-401921719,2026-11-07T02:00:00+00:00,Miami,Wagner,0,2026-11-05T12:48+00:00,2026-11-07T00:10+00:00,32.05,32.0,31.5,38.5,31.5,Low,"news,lopsided","{""TeamRankings"": 31.56, ""Torvik preseason"": 32.45}"
-401909785,2026-11-07T02:00:00+00:00,Kansas,Middle Tennessee,0,2026-11-05T12:48+00:00,2026-11-07T00:10+00:00,23.07,23.07,27.5,28.5,27.5,Low,lopsided,"{""TeamRankings"": 24.01, ""Torvik preseason"": 22.13}"
-401921739,2026-11-07T02:00:00+00:00,BYU,Omaha,0,2026-11-05T12:48+00:00,2026-11-07T00:10+00:00,26.89,26.9,29.5,33.5,29.5,Low,"news,lopsided","{""TeamRankings"": 26.96, ""Torvik preseason"": 26.84}"
-401921732,2026-11-07T02:00:00+00:00,Arizona State,Northern Colorado,0,2026-11-05T12:48+00:00,2026-11-07T00:10+00:00,14.33,14.33,15.5,19.5,15.5,Medium,news,"{""TeamRankings"": 13.32, ""Torvik preseason"": 15.34}"
-401919040,2026-11-07T02:00:00+00:00,Oklahoma State,Queens University,0,2026-11-05T12:48+00:00,2026-11-07T00:10+00:00,15.78,15.7,19.5,17.5,19.5,Medium,,"{""TeamRankings"": 14.61, ""Torvik preseason"": 16.78}"
-401909797,2026-11-07T02:00:00+00:00,Kansas State,Cal State Northridge,0,2026-11-05T12:48+00:00,2026-11-07T00:10+00:00,11.7,11.71,10.5,10.5,10.5,Medium,,"{""TeamRankings"": 9.91, ""Torvik preseason"": 13.5}"
-401921727,2026-11-07T03:00:00+00:00,Stanford,Oakland,0,2026-11-05T12:48+00:00,2026-11-07T00:10+00:00,13.41,13.42,14.5,13.5,14.5,High,,"{""TeamRankings"": 12.58, ""Torvik preseason"": 14.25}"
-401922219,2026-11-07T03:30:00+00:00,UCLA,North Florida,0,2026-11-05T12:48+00:00,2026-11-07T00:10+00:00,28.78,28.74,31.5,33.5,31.5,Low,lopsided,"{""TeamRankings"": 28.52, ""Torvik preseason"": 28.95}"
-401918948,2026-11-07T17:00:00+00:00,Louisville,Morehead State,0,2026-11-05T12:48+00:00,2026-11-07T05:59+00:00,31.11,30.65,36.5,37.5,36.5,Low,lopsided,"{""TeamRankings"": 30.09, ""Torvik preseason"": 31.21}"
-401909760,2026-11-07T20:30:00+00:00,Colorado,San Diego State,1,2026-11-05T12:48+00:00,2026-11-07T17:49+00:00,-2.62,-2.62,-2.5,-3.5,-2.5,Medium,,"{""TeamRankings"": -1.29, ""Torvik preseason"": -3.96}"
-401909532,2026-11-08T00:00:00+00:00,Nebraska,Providence,1,2026-11-05T12:48+00:00,2026-11-07T23:50+00:00,3.85,3.82,3.5,2.5,3.5,Medium,,"{""TeamRankings"": 2.66, ""Torvik preseason"": 4.97}"
-401909513,2026-11-08T00:30:00+00:00,Georgetown,Maryland,0,2026-11-05T12:48+00:00,2026-11-07T23:50+00:00,-0.26,-0.26,-2.5,-3.5,-2.5,High,,"{""TeamRankings"": -0.49, ""Torvik preseason"": -0.03}"
-401924646,2026-11-08T17:00:00+00:00,St. John's,Iona,0,2026-11-06T07:58+00:00,2026-11-08T14:55+00:00,23.18,23.14,27.5,28.5,28.5,Low,lopsided,"{""TeamRankings"": 22.36, ""Torvik preseason"": 23.93}"
-401920424,2026-11-08T18:00:00+00:00,Virginia,Arkansas,1,2026-11-06T07:58+00:00,2026-11-08T14:55+00:00,3.17,3.13,2.5,3.5,2.5,Medium,,"{""TeamRankings"": 1.65, ""Torvik preseason"": 4.61}"
-401921820,2026-11-08T18:00:00+00:00,South Carolina,Southeast Missouri State,0,2026-11-06T07:58+00:00,2026-11-08T14:55+00:00,14.54,14.54,17.5,17.5,17.5,High,,"{""TeamRankings"": 14.75, ""Torvik preseason"": 14.34}"
-401902277,2026-11-08T19:00:00+00:00,Boise State,Butler,0,2026-11-06T07:58+00:00,2026-11-08T14:55+00:00,3.96,3.91,2.5,2.5,1.5,High,,"{""TeamRankings"": 4.74, ""Torvik preseason"": 3.08}"
-401909707,2026-11-09T01:00:00+00:00,Penn State,Pittsburgh,1,2026-11-06T07:58+00:00,2026-11-08T14:55+00:00,-1.34,-1.47,-2.5,-2.5,-2.5,High,,"{""TeamRankings"": -2.11, ""Torvik preseason"": -0.84}"
-401918053,2026-11-09T01:30:00+00:00,California,Houston,1,2026-11-06T07:58+00:00,2026-11-08T14:55+00:00,-14.06,-14.06,-17.5,-19.5,-18.5,Medium,,"{""TeamRankings"": -15.69, ""Torvik preseason"": -12.43}"
-401919029,2026-11-09T04:00:00+00:00,Wichita State,USC,1,2026-11-06T07:58+00:00,2026-11-08T14:55+00:00,-5.62,-5.66,-5.5,-6.5,-6.5,Medium,,"{""TeamRankings"": -7.25, ""Torvik preseason"": -4.07}"
-401916315,2026-11-09T23:00:00+00:00,Ohio State,Marshall,0,2026-11-07T05:59+00:00,2026-11-08T14:55+00:00,23.09,23.44,,,,Low,lopsided,"{""TeamRankings"": 20.43, ""Torvik preseason"": 26.44}"
-401909718,2026-11-09T23:30:00+00:00,Indiana,Syracuse,1,2026-11-07T05:59+00:00,2026-11-08T14:55+00:00,5.83,5.84,,,,High,,"{""TeamRankings"": 4.86, ""Torvik preseason"": 6.81}"
-401920686,2026-11-10T00:00:00+00:00,UConn,Wagner,0,2026-11-07T05:59+00:00,2026-11-08T14:55+00:00,33.63,33.35,,,,Low,lopsided,"{""TeamRankings"": 34.75, ""Torvik preseason"": 31.96}"
-401906865,2026-11-10T00:00:00+00:00,Texas,Grambling,0,2026-11-07T05:59+00:00,2026-11-08T14:55+00:00,31.39,31.31,,,,Low,lopsided,"{""TeamRankings"": 32.0, ""Torvik preseason"": 30.62}"
-401906849,2026-11-10T00:00:00+00:00,Tennessee,Radford,0,2026-11-07T05:59+00:00,2026-11-08T14:55+00:00,26.25,26.21,,,,Low,lopsided,"{""TeamRankings"": 25.39, ""Torvik preseason"": 27.04}"
-401921720,2026-11-10T00:00:00+00:00,Miami,North Florida,0,2026-11-07T05:59+00:00,2026-11-08T14:55+00:00,29.82,30.25,,,,Low,lopsided,"{""TeamRankings"": 29.15, ""Torvik preseason"": 31.34}"
-401925681,2026-11-10T00:00:00+00:00,Notre Dame,Eastern Illinois,0,2026-11-07T05:59+00:00,2026-11-08T14:55+00:00,23.7,24.21,,,,Low,lopsided,"{""TeamRankings"": 26.12, ""Torvik preseason"": 22.3}"
-401918074,2026-11-10T00:00:00+00:00,Clemson,North Dakota,0,2026-11-07T05:59+00:00,2026-11-08T14:55+00:00,25.94,24.95,,,,Low,lopsided,"{""TeamRankings"": 23.74, ""Torvik preseason"": 26.15}"
-401916305,2026-11-10T00:00:00+00:00,Cincinnati,Minnesota,0,2026-11-07T05:59+00:00,2026-11-08T14:55+00:00,8.22,8.17,,,,High,,"{""TeamRankings"": 8.14, ""Torvik preseason"": 8.21}"
-401906781,2026-11-10T00:00:00+00:00,Georgia,Florida Gulf Coast,0,2026-11-07T05:59+00:00,2026-11-08T14:55+00:00,21.91,21.92,,,,Low,lopsided,"{""TeamRankings"": 20.8, ""Torvik preseason"": 23.04}"
-401906759,2026-11-10T00:30:00+00:00,Alabama,Oakland,0,2026-11-07T05:59+00:00,2026-11-08T14:55+00:00,23.21,23.54,,,,Low,lopsided,"{""TeamRankings"": 24.01, ""Torvik preseason"": 23.06}"
-401906793,2026-11-10T00:30:00+00:00,Mississippi State,Jackson State,0,2026-11-07T05:59+00:00,2026-11-08T14:55+00:00,20.12,20.12,,,,Low,lopsided,"{""TeamRankings"": 20.43, ""Torvik preseason"": 19.81}"
-401921815,2026-11-10T01:00:00+00:00,Missouri,SIU Edwardsville,0,2026-11-07T05:59+00:00,2026-11-08T14:55+00:00,23.95,23.36,,,,Low,lopsided,"{""TeamRankings"": 23.28, ""Torvik preseason"": 23.44}"
-401921810,2026-11-10T01:00:00+00:00,LSU,Louisiana Tech,0,2026-11-07T05:59+00:00,2026-11-08T14:55+00:00,20.8,21.22,,,,Low,lopsided,"{""TeamRankings"": 20.8, ""Torvik preseason"": 21.64}"
-401920734,2026-11-10T01:00:00+00:00,Northwestern,Boston University,0,2026-11-07T05:59+00:00,2026-11-08T14:55+00:00,18.41,17.97,,,,Medium,,"{""TeamRankings"": 16.3, ""Torvik preseason"": 19.63}"
-401917978,2026-11-10T01:00:00+00:00,Texas A&M,UL Monroe,0,2026-11-07T05:59+00:00,2026-11-08T14:55+00:00,28.01,28.48,,,,Low,lopsided,"{""TeamRankings"": 28.33, ""Torvik preseason"": 28.64}"
-401906803,2026-11-10T01:00:00+00:00,Oklahoma,North Alabama,0,2026-11-07T05:59+00:00,2026-11-08T14:55+00:00,26.4,26.14,,,,Low,lopsided,"{""TeamRankings"": 25.11, ""Torvik preseason"": 27.16}"
-401926132,2026-11-10T01:30:00+00:00,Purdue,Illinois State,0,2026-11-07T05:59+00:00,2026-11-08T14:55+00:00,13.64,12.77,,,,High,,"{""TeamRankings"": 12.54, ""Torvik preseason"": 13.0}"
-401920799,2026-11-10T02:00:00+00:00,Auburn,App State,0,2026-11-07T05:59+00:00,2026-11-08T14:55+00:00,22.22,22.23,,,,Low,lopsided,"{""TeamRankings"": 21.72, ""Torvik preseason"": 22.74}"
-401909502,2026-11-10T02:00:00+00:00,DePaul,Alabama A&M,0,2026-11-07T05:59+00:00,2026-11-08T14:55+00:00,20.51,19.97,,,,High,,"{""TeamRankings"": 19.61, ""Torvik preseason"": 20.33}"
-401920887,2026-11-10T02:30:00+00:00,Charlotte,Seton Hall,1,2026-11-07T05:59+00:00,2026-11-08T14:55+00:00,-3.64,-3.59,,,,High,,"{""TeamRankings"": -4.31, ""Torvik preseason"": -2.87}"
-401925737,2026-11-10T03:00:00+00:00,Washington,Mississippi Valley State,0,2026-11-07T05:59+00:00,2026-11-08T14:55+00:00,28.59,27.96,,,,Low,lopsided,"{""TeamRankings"": 26.49, ""Torvik preseason"": 29.44}"
-401921095,2026-11-10T03:00:00+00:00,Stanford,Rice,0,2026-11-07T05:59+00:00,2026-11-08T14:55+00:00,14.61,14.71,,,,High,,"{""TeamRankings"": 14.38, ""Torvik preseason"": 15.04}"
-401906771,2026-11-10T23:00:00+00:00,Florida State,Florida,0,2026-11-08T09:02+00:00,2026-11-08T14:55+00:00,-7.67,-7.67,,,,High,,"{""TeamRankings"": -8.65, ""Torvik preseason"": -6.68}"
-401920866,2026-11-10T23:30:00+00:00,Rutgers,NJIT,0,2026-11-08T09:02+00:00,2026-11-08T14:55+00:00,21.99,21.99,,,,Low,lopsided,"{""TeamRankings"": 23.46, ""Torvik preseason"": 20.51}"
-401909514,2026-11-10T23:30:00+00:00,Georgetown,Delaware State,0,2026-11-08T09:02+00:00,2026-11-08T14:55+00:00,26.18,26.18,,,,Low,lopsided,"{""TeamRankings"": 26.77, ""Torvik preseason"": 25.59}"
-401909564,2026-11-11T00:00:00+00:00,Duke,Michigan State,1,2026-11-08T09:02+00:00,2026-11-08T14:55+00:00,4.9,4.9,6.5,6.5,6.5,High,,"{""TeamRankings"": 5.87, ""Torvik preseason"": 3.94}"
-401921774,2026-11-11T00:00:00+00:00,Villanova,La Salle,0,2026-11-08T09:02+00:00,2026-11-08T14:55+00:00,17.59,17.59,,,,High,,"{""TeamRankings"": 18.23, ""Torvik preseason"": 16.94}"
-401921755,2026-11-11T00:00:00+00:00,UCF,South Alabama,0,2026-11-08T09:02+00:00,2026-11-08T14:55+00:00,19.18,19.18,,,,Low,,"{""TeamRankings"": 17.13, ""Torvik preseason"": 21.22}"
-401920378,2026-11-11T00:00:00+00:00,Iowa,Virginia Tech,1,2026-11-08T09:02+00:00,2026-11-08T14:55+00:00,0.25,0.25,,,,High,,"{""TeamRankings"": 1.19, ""Torvik preseason"": -0.68}"
-401920306,2026-11-11T00:00:00+00:00,Georgia Tech,Eastern Kentucky,0,2026-11-08T09:02+00:00,2026-11-08T14:55+00:00,13.65,13.65,,,,Medium,,"{""TeamRankings"": 12.18, ""Torvik preseason"": 15.13}"
-401918957,2026-11-11T00:00:00+00:00,NC State,Presbyterian,0,2026-11-08T09:02+00:00,2026-11-08T14:55+00:00,19.84,19.84,,,,Low,,"{""TeamRankings"": 17.77, ""Torvik preseason"": 21.91}"
-401913101,2026-11-11T00:00:00+00:00,North Carolina,Wyoming,0,2026-11-08T09:02+00:00,2026-11-08T14:55+00:00,11.99,11.99,,,,High,,"{""TeamRankings"": 11.99, ""Torvik preseason"": 11.99}"
-401909727,2026-11-11T00:00:00+00:00,Wake Forest,Charleston Southern,0,2026-11-08T09:02+00:00,2026-11-08T14:55+00:00,19.95,19.95,,,,Medium,,"{""TeamRankings"": 18.05, ""Torvik preseason"": 21.85}"
-401909553,2026-11-11T00:00:00+00:00,Boston College,Maryland Eastern Shore,0,2026-11-08T09:02+00:00,2026-11-08T14:55+00:00,23.75,23.75,,,,Low,lopsided,"{""TeamRankings"": 21.81, ""Torvik preseason"": 25.69}"
-401909543,2026-11-11T00:00:00+00:00,Xavier,Detroit Mercy,0,2026-11-08T09:02+00:00,2026-11-08T14:55+00:00,22.84,22.84,,,,Low,lopsided,"{""TeamRankings"": 25.76, ""Torvik preseason"": 19.92}"
-401909533,2026-11-11T00:00:00+00:00,Providence,Bryant,0,2026-11-08T09:02+00:00,2026-11-08T14:55+00:00,25.71,25.71,,,,Low,lopsided,"{""TeamRankings"": 25.76, ""Torvik preseason"": 25.66}"
-401918987,2026-11-11T00:15:00+00:00,Vanderbilt,Memphis,0,2026-11-08T09:02+00:00,2026-11-08T14:55+00:00,13.06,13.06,,,,High,,"{""TeamRankings"": 12.27, ""Torvik preseason"": 13.85}"
-401913527,2026-11-11T01:00:00+00:00,Texas Tech,Illinois,0,2026-11-08T09:02+00:00,2026-11-08T14:55+00:00,-1.44,-1.44,,,,Medium,,"{""TeamRankings"": -3.42, ""Torvik preseason"": 0.54}"
-401909773,2026-11-11T01:00:00+00:00,Iowa State,Southern,0,2026-11-08T09:02+00:00,2026-11-08T14:55+00:00,28.8,28.8,,,,Low,lopsided,"{""TeamRankings"": 28.69, ""Torvik preseason"": 28.92}"
-401918969,2026-11-11T01:00:00+00:00,SMU,Prairie View A&M,0,2026-11-08T09:02+00:00,2026-11-08T14:55+00:00,21.65,21.65,,,,Low,lopsided,"{""TeamRankings"": 21.9, ""Torvik preseason"": 21.4}"
-401909752,2026-11-11T01:00:00+00:00,Baylor,Yale,0,2026-11-08T09:02+00:00,2026-11-08T14:55+00:00,18.15,18.15,,,,High,,"{""TeamRankings"": 18.23, ""Torvik preseason"": 18.06}"
-401920895,2026-11-11T01:30:00+00:00,Wisconsin,Fairfield,0,2026-11-08T09:02+00:00,2026-11-08T14:55+00:00,19.73,19.73,,,,High,,"{""TeamRankings"": 19.88, ""Torvik preseason"": 19.58}"
-401920817,2026-11-11T01:30:00+00:00,Ole Miss,SE Louisiana,0,2026-11-08T09:02+00:00,2026-11-08T14:55+00:00,20.55,20.55,,,,Low,lopsided,"{""TeamRankings"": 22.18, ""Torvik preseason"": 18.92}"
-401909740,2026-11-11T02:00:00+00:00,Arizona,Northern Arizona,0,2026-11-08T09:02+00:00,2026-11-08T14:55+00:00,31.45,31.45,,,,Low,lopsided,"{""TeamRankings"": 29.61, ""Torvik preseason"": 33.28}"
-401920425,2026-11-11T02:00:00+00:00,Virginia,Bucknell,0,2026-11-08T09:02+00:00,2026-11-08T14:55+00:00,34.52,34.52,,,,Low,lopsided,"{""TeamRankings"": 33.19, ""Torvik preseason"": 35.85}"
-401921740,2026-11-11T02:00:00+00:00,BYU,Queens University,0,2026-11-08T09:02+00:00,2026-11-08T14:55+00:00,21.35,21.35,,,,Low,lopsided,"{""TeamRankings"": 22.27, ""Torvik preseason"": 20.42}"
-401921733,2026-11-11T02:00:00+00:00,Arizona State,Hofstra,0,2026-11-08T09:02+00:00,2026-11-08T14:55+00:00,12.45,12.45,,,,High,,"{""TeamRankings"": 12.36, ""Torvik preseason"": 12.55}"
-401921699,2026-11-11T02:00:00+00:00,Utah,Weber State,0,2026-11-08T09:02+00:00,2026-11-08T14:55+00:00,16.91,16.91,,,,High,,"{""TeamRankings"": 16.76, ""Torvik preseason"": 17.06}"
-401917979,2026-11-11T02:00:00+00:00,TCU,UL Monroe,0,2026-11-08T09:02+00:00,2026-11-08T14:55+00:00,26.86,26.86,,,,Low,lopsided,"{""TeamRankings"": 27.5, ""Torvik preseason"": 26.22}"
-401909761,2026-11-11T02:00:00+00:00,Colorado,San Diego,0,2026-11-08T09:02+00:00,2026-11-08T14:55+00:00,9.43,9.43,,,,High,,"{""TeamRankings"": 10.25, ""Torvik preseason"": 8.61}"
-401909492,2026-11-11T02:00:00+00:00,Kansas State,Creighton,0,2026-11-08T09:02+00:00,2026-11-08T14:55+00:00,-4.27,-4.27,,,,Low,,"{""TeamRankings"": -6.36, ""Torvik preseason"": -2.19}"
-401909786,2026-11-11T02:30:00+00:00,Kentucky,Kansas,1,2026-11-08T09:02+00:00,2026-11-08T14:55+00:00,-5.73,-5.73,-5.5,-5.5,-5.5,High,,"{""TeamRankings"": -6.24, ""Torvik preseason"": -5.22}"
+game_id,kickoff,home,away,neutral,first_logged,last_logged,ours_first,ours_last,market_first,market_last,opened,confidence,flags,sources_last,hfa
+401909726,2026-11-05T23:00:00+00:00,Vanderbilt,Wake Forest,0,2026-11-05T12:48+00:00,2026-11-05T22:59+00:00,12.1,12.1,17.5,18.5,17.5,Medium,,"{""TeamRankings"": 13.89, ""Torvik preseason"": 10.32}",
+401917177,2026-11-05T23:00:00+00:00,Penn State,Chattanooga,0,2026-11-05T12:48+00:00,2026-11-05T22:59+00:00,15.73,15.73,12.5,12.5,15.5,High,news,"{""TeamRankings"": 15.0, ""Torvik preseason"": 16.47}",
+401916287,2026-11-05T23:00:00+00:00,Indiana,Bellarmine,0,2026-11-05T12:48+00:00,2026-11-05T22:59+00:00,27.35,27.35,27.5,30.5,26.5,Low,"news,lopsided","{""TeamRankings"": 27.36, ""Torvik preseason"": 27.34}",
+401919804,2026-11-05T23:30:00+00:00,Seton Hall,Long Island University,0,2026-11-05T12:48+00:00,2026-11-05T22:59+00:00,17.16,17.16,17.5,17.5,18.5,High,,"{""TeamRankings"": 17.3, ""Torvik preseason"": 17.01}",
+401921747,2026-11-06T00:00:00+00:00,Cincinnati,Green Bay,0,2026-11-05T12:48+00:00,2026-11-05T22:59+00:00,19.28,19.28,24.5,24.5,24.5,Low,lopsided,"{""TeamRankings"": 21.18, ""Torvik preseason"": 17.38}",
+401920377,2026-11-06T00:00:00+00:00,Virginia Tech,Mercer,0,2026-11-05T12:48+00:00,2026-11-05T22:59+00:00,19.78,19.78,21.5,20.5,21.5,Low,lopsided,"{""TeamRankings"": 19.7, ""Torvik preseason"": 19.87}",
+401919823,2026-11-06T00:00:00+00:00,Notre Dame,Mercyhurst,0,2026-11-05T12:48+00:00,2026-11-05T22:59+00:00,18.82,18.82,19.5,21.5,20.5,Low,lopsided,"{""TeamRankings"": 20.07, ""Torvik preseason"": 17.56}",
+401909717,2026-11-06T00:00:00+00:00,Syracuse,Central Connecticut,0,2026-11-05T12:48+00:00,2026-11-05T22:59+00:00,21.69,21.69,20.5,23.5,22.5,Low,lopsided,"{""TeamRankings"": 20.72, ""Torvik preseason"": 22.66}",
+401909706,2026-11-06T00:00:00+00:00,Pittsburgh,Buffalo,0,2026-11-05T12:48+00:00,2026-11-05T22:59+00:00,14.12,14.12,18.5,17.5,18.5,Medium,,"{""TeamRankings"": 16.01, ""Torvik preseason"": 12.22}",
+401906792,2026-11-06T00:30:00+00:00,Mississippi State,Northwestern State,0,2026-11-05T12:48+00:00,2026-11-05T22:59+00:00,19.38,19.38,21.5,21.5,21.5,Low,lopsided,"{""TeamRankings"": 18.32, ""Torvik preseason"": 20.44}",
+401906770,2026-11-06T01:00:00+00:00,Florida,Jacksonville,0,2026-11-05T12:48+00:00,2026-11-05T22:59+00:00,28.91,28.91,33.5,36.5,34.5,Low,lopsided,"{""TeamRankings"": 30.68, ""Torvik preseason"": 27.13}",
+401909563,2026-11-06T01:00:00+00:00,Duke,Coastal Carolina,0,2026-11-05T12:48+00:00,2026-11-05T22:59+00:00,30.15,30.15,40.5,40.5,40.5,Low,lopsided,"{""TeamRankings"": 31.42, ""Torvik preseason"": 28.88}",
+401925754,2026-11-06T01:00:00+00:00,Michigan State,Toledo,0,2026-11-05T12:48+00:00,2026-11-05T22:59+00:00,21.48,21.48,27.5,26.5,26.5,Low,lopsided,"{""TeamRankings"": 22.38, ""Torvik preseason"": 20.59}",
+401906864,2026-11-06T01:00:00+00:00,Texas,Gardner-Webb,0,2026-11-05T12:48+00:00,2026-11-05T22:59+00:00,33.33,33.33,38.5,41.5,39.5,Low,lopsided,"{""TeamRankings"": 34.19, ""Torvik preseason"": 32.47}",
+401918968,2026-11-06T01:00:00+00:00,SMU,VMI,0,2026-11-05T12:48+00:00,2026-11-05T22:59+00:00,25.08,25.08,24.5,24.5,24.5,Low,lopsided,"{""TeamRankings"": 23.67, ""Torvik preseason"": 26.48}",
+401909491,2026-11-06T01:00:00+00:00,Creighton,Le Moyne,0,2026-11-05T12:48+00:00,2026-11-05T22:59+00:00,26.82,26.82,26.5,29.5,26.5,Low,"news,lopsided","{""TeamRankings"": 27.45, ""Torvik preseason"": 26.19}",
+401913526,2026-11-06T01:30:00+00:00,Illinois,Pennsylvania,0,2026-11-05T12:48+00:00,2026-11-06T01:02+00:00,21.53,21.53,30.5,30.5,29.5,Low,lopsided,"{""TeamRankings"": 23.86, ""Torvik preseason"": 19.21}",
+401909501,2026-11-06T01:30:00+00:00,DePaul,South Florida,0,2026-11-05T12:48+00:00,2026-11-06T01:02+00:00,5.8,5.8,6.5,6.5,6.5,High,,"{""TeamRankings"": 5.77, ""Torvik preseason"": 5.83}",
+401921133,2026-11-06T02:00:00+00:00,Texas Tech,Bethune-Cookman,0,2026-11-05T12:48+00:00,2026-11-06T01:02+00:00,23.06,23.06,26.5,29.5,26.5,Low,"news,lopsided","{""TeamRankings"": 24.69, ""Torvik preseason"": 21.43}",
+401921698,2026-11-06T02:00:00+00:00,Utah,Towson,0,2026-11-05T12:48+00:00,2026-11-06T01:02+00:00,10.01,10.01,9.5,8.5,10.5,High,,"{""TeamRankings"": 10.11, ""Torvik preseason"": 9.92}",
+401909739,2026-11-06T03:30:00+00:00,Arizona,Cal Poly,0,2026-11-05T12:48+00:00,2026-11-06T01:02+00:00,23.83,23.83,30.5,30.5,30.5,Low,lopsided,"{""TeamRankings"": 23.67, ""Torvik preseason"": 24.0}",
+401909552,2026-11-06T21:00:00+00:00,Boston College,Massachusetts,1,2026-11-05T12:48+00:00,2026-11-06T19:26+00:00,5.39,5.4,5.5,5.5,5.5,Medium,,"{""TeamRankings"": 4.15, ""Torvik preseason"": 6.65}",
+401920423,2026-11-06T22:00:00+00:00,Virginia,Northeastern,0,2026-11-05T12:48+00:00,2026-11-06T19:26+00:00,27.47,27.47,33.5,34.5,33.5,Low,lopsided,"{""TeamRankings"": 27.05, ""Torvik preseason"": 27.9}",
+401909751,2026-11-06T22:00:00+00:00,Baylor,Arkansas-Pine Bluff,0,2026-11-05T12:48+00:00,2026-11-06T19:26+00:00,32.45,32.4,36.5,37.5,36.5,Low,lopsided,"{""TeamRankings"": 33.59, ""Torvik preseason"": 31.22}",
+401920717,2026-11-06T23:00:00+00:00,Oregon,Eastern Washington,0,2026-11-05T12:48+00:00,2026-11-06T19:26+00:00,16.36,16.36,15.5,16.5,15.5,Medium,,"{""TeamRankings"": 14.61, ""Torvik preseason"": 18.12}",
+401926131,2026-11-06T23:30:00+00:00,Purdue,Valparaiso,0,2026-11-05T12:48+00:00,2026-11-06T19:26+00:00,16.97,16.97,19.5,19.5,19.5,High,,"{""TeamRankings"": 17.1, ""Torvik preseason"": 16.84}",
+401916314,2026-11-06T23:30:00+00:00,Ohio State,Youngstown State,0,2026-11-05T12:48+00:00,2026-11-06T19:26+00:00,23.86,23.86,25.5,25.5,25.5,Low,lopsided,"{""TeamRankings"": 21.52, ""Torvik preseason"": 26.21}",
+401921802,2026-11-07T00:00:00+00:00,Kentucky,James Madison,0,2026-11-05T12:48+00:00,2026-11-06T19:26+00:00,18.37,18.33,25.5,24.5,25.5,Low,lopsided,"{""TeamRankings"": 19.12, ""Torvik preseason"": 17.53}",
+401926135,2026-11-07T00:00:00+00:00,Rutgers,New Haven,0,2026-11-05T12:48+00:00,2026-11-06T19:26+00:00,22.57,22.53,24.5,24.5,24.5,Low,lopsided,"{""TeamRankings"": 22.07, ""Torvik preseason"": 22.98}",
+401921767,2026-11-07T00:00:00+00:00,West Virginia,Stetson,0,2026-11-05T12:48+00:00,2026-11-06T19:26+00:00,21.35,21.35,24.5,27.5,24.5,Low,"news,lopsided","{""TeamRankings"": 21.61, ""Torvik preseason"": 21.09}",
+401921754,2026-11-07T00:00:00+00:00,UCF,Yale,0,2026-11-05T12:48+00:00,2026-11-06T19:26+00:00,14.41,14.37,9.5,9.5,9.5,Low,,"{""TeamRankings"": 11.29, ""Torvik preseason"": 17.44}",
+401921285,2026-11-07T00:00:00+00:00,Villanova,Holy Cross,0,2026-11-05T12:48+00:00,2026-11-06T19:26+00:00,29.81,29.81,31.5,34.5,31.5,Low,"news,lopsided","{""TeamRankings"": 30.36, ""Torvik preseason"": 29.25}",
+401920305,2026-11-07T00:00:00+00:00,Georgia Tech,Georgia Southern,0,2026-11-05T12:48+00:00,2026-11-06T19:26+00:00,16.49,16.49,16.5,18.5,16.5,Low,,"{""TeamRankings"": 14.24, ""Torvik preseason"": 18.75}",
+401918956,2026-11-07T00:00:00+00:00,NC State,East Tennessee State,0,2026-11-05T12:48+00:00,2026-11-06T19:26+00:00,17.13,17.13,16.5,17.5,16.5,Medium,,"{""TeamRankings"": 15.71, ""Torvik preseason"": 18.55}",
+401913100,2026-11-07T00:00:00+00:00,North Carolina,Wofford,0,2026-11-05T12:48+00:00,2026-11-06T19:26+00:00,21.92,21.92,22.5,21.5,22.5,Low,lopsided,"{""TeamRankings"": 22.07, ""Torvik preseason"": 21.77}",
+401912208,2026-11-07T00:00:00+00:00,Clemson,American University,0,2026-11-05T12:48+00:00,2026-11-06T19:26+00:00,18.08,18.08,18.5,15.5,18.5,High,news,"{""TeamRankings"": 18.11, ""Torvik preseason"": 18.05}",
+401911249,2026-11-07T00:00:00+00:00,Missouri,Saint Louis,1,2026-11-05T12:48+00:00,2026-11-06T19:26+00:00,5.09,5.09,2.5,1.5,2.5,High,,"{""TeamRankings"": 4.98, ""Torvik preseason"": 5.2}",
+401909695,2026-11-07T00:00:00+00:00,Florida State,Troy,0,2026-11-05T12:48+00:00,2026-11-06T19:26+00:00,14.18,14.09,20.5,23.5,20.5,Low,"news,lopsided","{""TeamRankings"": 15.81, ""Torvik preseason"": 12.37}",
+401909542,2026-11-07T00:00:00+00:00,Xavier,Eastern Michigan,0,2026-11-05T12:48+00:00,2026-11-06T19:26+00:00,17.34,17.43,20.5,23.5,20.5,Low,"news,lopsided","{""TeamRankings"": 19.31, ""Torvik preseason"": 15.55}",
+401906780,2026-11-07T00:00:00+00:00,Georgia,Presbyterian,0,2026-11-05T12:48+00:00,2026-11-06T19:26+00:00,20.77,20.77,21.5,24.5,21.5,Low,"news,lopsided","{""TeamRankings"": 20.51, ""Torvik preseason"": 21.04}",
+401906758,2026-11-07T00:30:00+00:00,Alabama,Arkansas State,0,2026-11-05T12:48+00:00,2026-11-07T00:10+00:00,21.7,21.7,25.5,25.5,25.5,Low,lopsided,"{""TeamRankings"": 22.07, ""Torvik preseason"": 21.32}",
+401920894,2026-11-07T00:30:00+00:00,Wisconsin,Delaware,0,2026-11-05T12:48+00:00,2026-11-07T00:10+00:00,20.91,20.91,24.5,25.5,24.5,Low,lopsided,"{""TeamRankings"": 20.69, ""Torvik preseason"": 21.13}",
+401920685,2026-11-07T01:00:00+00:00,Michigan,UConn,1,2026-11-05T12:48+00:00,2026-11-07T00:10+00:00,-2.78,-2.72,-5.5,-7.5,-5.5,Low,,"{""TeamRankings"": -5.71, ""Torvik preseason"": 0.26}",
+401909772,2026-11-07T01:00:00+00:00,Iowa State,Southern Miss,0,2026-11-05T12:48+00:00,2026-11-07T00:10+00:00,24.44,24.44,30.5,30.5,30.5,Low,lopsided,"{""TeamRankings"": 24.56, ""Torvik preseason"": 24.32}",
+401921809,2026-11-07T01:00:00+00:00,LSU,Texas Southern,0,2026-11-05T12:48+00:00,2026-11-07T00:10+00:00,26.69,26.69,30.5,35.5,30.5,Low,"news,lopsided","{""TeamRankings"": 26.68, ""Torvik preseason"": 26.71}",
+401920807,2026-11-07T01:00:00+00:00,Texas A&M,Northern Kentucky,0,2026-11-05T12:48+00:00,2026-11-07T00:10+00:00,20.22,20.23,24.5,27.5,24.5,Low,"news,lopsided","{""TeamRankings"": 19.49, ""Torvik preseason"": 20.96}",
+401920733,2026-11-07T01:00:00+00:00,Northwestern,Stony Brook,0,2026-11-05T12:48+00:00,2026-11-07T00:10+00:00,14.04,14.13,14.5,11.5,14.5,High,news,"{""TeamRankings"": 13.23, ""Torvik preseason"": 15.04}",
+401919048,2026-11-07T01:00:00+00:00,TCU,Southern,0,2026-11-05T12:48+00:00,2026-11-07T00:10+00:00,22.78,22.87,23.5,26.5,23.5,Low,"news,lopsided","{""TeamRankings"": 22.99, ""Torvik preseason"": 22.75}",
+401916304,2026-11-07T01:00:00+00:00,Minnesota,St. Thomas-Minnesota,0,2026-11-05T12:48+00:00,2026-11-07T00:10+00:00,11.17,11.17,15.5,14.5,15.5,Medium,,"{""TeamRankings"": 12.4, ""Torvik preseason"": 9.94}",
+401909523,2026-11-07T01:00:00+00:00,Marquette,Detroit Mercy,0,2026-11-05T12:48+00:00,2026-11-07T00:10+00:00,23.69,23.69,30.5,32.5,30.5,Low,lopsided,"{""TeamRankings"": 25.39, ""Torvik preseason"": 21.99}",
+401906802,2026-11-07T01:00:00+00:00,Oklahoma,Mississippi Valley State,0,2026-11-05T12:48+00:00,2026-11-07T00:10+00:00,35.53,35.49,38.5,40.5,38.5,Low,lopsided,"{""TeamRankings"": 34.88, ""Torvik preseason"": 36.09}",
+401920726,2026-11-07T01:30:00+00:00,Iowa,Eastern Illinois,0,2026-11-05T12:48+00:00,2026-11-07T00:10+00:00,28.14,28.19,35.5,34.5,35.5,Low,lopsided,"{""TeamRankings"": 29.63, ""Torvik preseason"": 26.74}",
+401917914,2026-11-07T01:30:00+00:00,Ole Miss,Central Arkansas,0,2026-11-05T12:48+00:00,2026-11-07T00:10+00:00,14.97,14.97,19.5,17.5,19.5,High,,"{""TeamRankings"": 15.44, ""Torvik preseason"": 14.49}",
+401921719,2026-11-07T02:00:00+00:00,Miami,Wagner,0,2026-11-05T12:48+00:00,2026-11-07T00:10+00:00,32.05,32.0,31.5,38.5,31.5,Low,"news,lopsided","{""TeamRankings"": 31.56, ""Torvik preseason"": 32.45}",
+401909785,2026-11-07T02:00:00+00:00,Kansas,Middle Tennessee,0,2026-11-05T12:48+00:00,2026-11-07T00:10+00:00,23.07,23.07,27.5,28.5,27.5,Low,lopsided,"{""TeamRankings"": 24.01, ""Torvik preseason"": 22.13}",
+401921739,2026-11-07T02:00:00+00:00,BYU,Omaha,0,2026-11-05T12:48+00:00,2026-11-07T00:10+00:00,26.89,26.9,29.5,33.5,29.5,Low,"news,lopsided","{""TeamRankings"": 26.96, ""Torvik preseason"": 26.84}",
+401921732,2026-11-07T02:00:00+00:00,Arizona State,Northern Colorado,0,2026-11-05T12:48+00:00,2026-11-07T00:10+00:00,14.33,14.33,15.5,19.5,15.5,Medium,news,"{""TeamRankings"": 13.32, ""Torvik preseason"": 15.34}",
+401919040,2026-11-07T02:00:00+00:00,Oklahoma State,Queens University,0,2026-11-05T12:48+00:00,2026-11-07T00:10+00:00,15.78,15.7,19.5,17.5,19.5,Medium,,"{""TeamRankings"": 14.61, ""Torvik preseason"": 16.78}",
+401909797,2026-11-07T02:00:00+00:00,Kansas State,Cal State Northridge,0,2026-11-05T12:48+00:00,2026-11-07T00:10+00:00,11.7,11.71,10.5,10.5,10.5,Medium,,"{""TeamRankings"": 9.91, ""Torvik preseason"": 13.5}",
+401921727,2026-11-07T03:00:00+00:00,Stanford,Oakland,0,2026-11-05T12:48+00:00,2026-11-07T00:10+00:00,13.41,13.42,14.5,13.5,14.5,High,,"{""TeamRankings"": 12.58, ""Torvik preseason"": 14.25}",
+401922219,2026-11-07T03:30:00+00:00,UCLA,North Florida,0,2026-11-05T12:48+00:00,2026-11-07T00:10+00:00,28.78,28.74,31.5,33.5,31.5,Low,lopsided,"{""TeamRankings"": 28.52, ""Torvik preseason"": 28.95}",
+401918948,2026-11-07T17:00:00+00:00,Louisville,Morehead State,0,2026-11-05T12:48+00:00,2026-11-07T05:59+00:00,31.11,30.65,36.5,37.5,36.5,Low,lopsided,"{""TeamRankings"": 30.09, ""Torvik preseason"": 31.21}",
+401909760,2026-11-07T20:30:00+00:00,Colorado,San Diego State,1,2026-11-05T12:48+00:00,2026-11-07T17:49+00:00,-2.62,-2.62,-2.5,-3.5,-2.5,Medium,,"{""TeamRankings"": -1.29, ""Torvik preseason"": -3.96}",
+401909532,2026-11-08T00:00:00+00:00,Nebraska,Providence,1,2026-11-05T12:48+00:00,2026-11-07T23:50+00:00,3.85,3.82,3.5,2.5,3.5,Medium,,"{""TeamRankings"": 2.66, ""Torvik preseason"": 4.97}",
+401909513,2026-11-08T00:30:00+00:00,Georgetown,Maryland,0,2026-11-05T12:48+00:00,2026-11-07T23:50+00:00,-0.26,-0.26,-2.5,-3.5,-2.5,High,,"{""TeamRankings"": -0.49, ""Torvik preseason"": -0.03}",
+401924646,2026-11-08T17:00:00+00:00,St. John's,Iona,0,2026-11-06T07:58+00:00,2026-11-08T15:09+00:00,23.18,23.14,27.5,28.5,28.5,Low,lopsided,"{""TeamRankings"": 22.36, ""Torvik preseason"": 23.93}",3.0
+401920424,2026-11-08T18:00:00+00:00,Virginia,Arkansas,1,2026-11-06T07:58+00:00,2026-11-08T15:09+00:00,3.17,3.13,2.5,3.5,2.5,Medium,,"{""TeamRankings"": 1.65, ""Torvik preseason"": 4.61}",0.0
+401921820,2026-11-08T18:00:00+00:00,South Carolina,Southeast Missouri State,0,2026-11-06T07:58+00:00,2026-11-08T15:09+00:00,14.54,14.54,17.5,17.5,17.5,High,,"{""TeamRankings"": 14.75, ""Torvik preseason"": 14.34}",3.0
+401902277,2026-11-08T19:00:00+00:00,Boise State,Butler,0,2026-11-06T07:58+00:00,2026-11-08T15:09+00:00,3.96,3.91,2.5,2.5,1.5,High,,"{""TeamRankings"": 4.74, ""Torvik preseason"": 3.08}",3.0
+401909707,2026-11-09T01:00:00+00:00,Penn State,Pittsburgh,1,2026-11-06T07:58+00:00,2026-11-08T15:09+00:00,-1.34,-1.47,-2.5,-2.5,-2.5,High,,"{""TeamRankings"": -2.11, ""Torvik preseason"": -0.84}",0.0
+401918053,2026-11-09T01:30:00+00:00,California,Houston,1,2026-11-06T07:58+00:00,2026-11-08T15:09+00:00,-14.06,-14.06,-17.5,-19.5,-18.5,Medium,,"{""TeamRankings"": -15.69, ""Torvik preseason"": -12.43}",0.0
+401919029,2026-11-09T04:00:00+00:00,Wichita State,USC,1,2026-11-06T07:58+00:00,2026-11-08T15:09+00:00,-5.62,-5.66,-5.5,-6.5,-6.5,Medium,,"{""TeamRankings"": -7.25, ""Torvik preseason"": -4.07}",0.0
+401916315,2026-11-09T23:00:00+00:00,Ohio State,Marshall,0,2026-11-07T05:59+00:00,2026-11-08T15:09+00:00,23.09,23.44,,,,Low,lopsided,"{""TeamRankings"": 20.43, ""Torvik preseason"": 26.44}",3.0
+401909718,2026-11-09T23:30:00+00:00,Indiana,Syracuse,1,2026-11-07T05:59+00:00,2026-11-08T15:09+00:00,5.83,5.84,,,,High,,"{""TeamRankings"": 4.86, ""Torvik preseason"": 6.81}",0.0
+401920686,2026-11-10T00:00:00+00:00,UConn,Wagner,0,2026-11-07T05:59+00:00,2026-11-08T15:09+00:00,33.63,33.35,,,,Low,lopsided,"{""TeamRankings"": 34.75, ""Torvik preseason"": 31.96}",3.0
+401906865,2026-11-10T00:00:00+00:00,Texas,Grambling,0,2026-11-07T05:59+00:00,2026-11-08T15:09+00:00,31.39,31.31,,,,Low,lopsided,"{""TeamRankings"": 32.0, ""Torvik preseason"": 30.62}",3.0
+401906849,2026-11-10T00:00:00+00:00,Tennessee,Radford,0,2026-11-07T05:59+00:00,2026-11-08T15:09+00:00,26.25,26.21,,,,Low,lopsided,"{""TeamRankings"": 25.39, ""Torvik preseason"": 27.04}",3.0
+401921720,2026-11-10T00:00:00+00:00,Miami,North Florida,0,2026-11-07T05:59+00:00,2026-11-08T15:09+00:00,29.82,30.25,,,,Low,lopsided,"{""TeamRankings"": 29.15, ""Torvik preseason"": 31.34}",3.0
+401925681,2026-11-10T00:00:00+00:00,Notre Dame,Eastern Illinois,0,2026-11-07T05:59+00:00,2026-11-08T15:09+00:00,23.7,24.21,,,,Low,lopsided,"{""TeamRankings"": 26.12, ""Torvik preseason"": 22.3}",3.0
+401918074,2026-11-10T00:00:00+00:00,Clemson,North Dakota,0,2026-11-07T05:59+00:00,2026-11-08T15:09+00:00,25.94,24.95,,,,Low,lopsided,"{""TeamRankings"": 23.74, ""Torvik preseason"": 26.15}",3.0
+401916305,2026-11-10T00:00:00+00:00,Cincinnati,Minnesota,0,2026-11-07T05:59+00:00,2026-11-08T15:09+00:00,8.22,8.17,,,,High,,"{""TeamRankings"": 8.14, ""Torvik preseason"": 8.21}",3.0
+401906781,2026-11-10T00:00:00+00:00,Georgia,Florida Gulf Coast,0,2026-11-07T05:59+00:00,2026-11-08T15:09+00:00,21.91,21.92,,,,Low,lopsided,"{""TeamRankings"": 20.8, ""Torvik preseason"": 23.04}",3.0
+401906759,2026-11-10T00:30:00+00:00,Alabama,Oakland,0,2026-11-07T05:59+00:00,2026-11-08T15:09+00:00,23.21,23.54,,,,Low,lopsided,"{""TeamRankings"": 24.01, ""Torvik preseason"": 23.06}",3.0
+401906793,2026-11-10T00:30:00+00:00,Mississippi State,Jackson State,0,2026-11-07T05:59+00:00,2026-11-08T15:09+00:00,20.12,20.12,,,,Low,lopsided,"{""TeamRankings"": 20.43, ""Torvik preseason"": 19.81}",3.0
+401921815,2026-11-10T01:00:00+00:00,Missouri,SIU Edwardsville,0,2026-11-07T05:59+00:00,2026-11-08T15:09+00:00,23.95,23.36,,,,Low,lopsided,"{""TeamRankings"": 23.28, ""Torvik preseason"": 23.44}",3.0
+401921810,2026-11-10T01:00:00+00:00,LSU,Louisiana Tech,0,2026-11-07T05:59+00:00,2026-11-08T15:09+00:00,20.8,21.22,,,,Low,lopsided,"{""TeamRankings"": 20.8, ""Torvik preseason"": 21.64}",3.0
+401920734,2026-11-10T01:00:00+00:00,Northwestern,Boston University,0,2026-11-07T05:59+00:00,2026-11-08T15:09+00:00,18.41,17.97,,,,Medium,,"{""TeamRankings"": 16.3, ""Torvik preseason"": 19.63}",3.0
+401917978,2026-11-10T01:00:00+00:00,Texas A&M,UL Monroe,0,2026-11-07T05:59+00:00,2026-11-08T15:09+00:00,28.01,28.48,,,,Low,lopsided,"{""TeamRankings"": 28.33, ""Torvik preseason"": 28.64}",3.0
+401906803,2026-11-10T01:00:00+00:00,Oklahoma,North Alabama,0,2026-11-07T05:59+00:00,2026-11-08T15:09+00:00,26.4,26.14,,,,Low,lopsided,"{""TeamRankings"": 25.11, ""Torvik preseason"": 27.16}",3.0
+401926132,2026-11-10T01:30:00+00:00,Purdue,Illinois State,0,2026-11-07T05:59+00:00,2026-11-08T15:09+00:00,13.64,12.77,,,,High,,"{""TeamRankings"": 12.54, ""Torvik preseason"": 13.0}",3.0
+401920799,2026-11-10T02:00:00+00:00,Auburn,App State,0,2026-11-07T05:59+00:00,2026-11-08T15:09+00:00,22.22,22.23,,,,Low,lopsided,"{""TeamRankings"": 21.72, ""Torvik preseason"": 22.74}",3.0
+401909502,2026-11-10T02:00:00+00:00,DePaul,Alabama A&M,0,2026-11-07T05:59+00:00,2026-11-08T15:09+00:00,20.51,19.97,,,,High,,"{""TeamRankings"": 19.61, ""Torvik preseason"": 20.33}",3.0
+401920887,2026-11-10T02:30:00+00:00,Charlotte,Seton Hall,1,2026-11-07T05:59+00:00,2026-11-08T15:09+00:00,-3.64,-3.59,,,,High,,"{""TeamRankings"": -4.31, ""Torvik preseason"": -2.87}",0.0
+401925737,2026-11-10T03:00:00+00:00,Washington,Mississippi Valley State,0,2026-11-07T05:59+00:00,2026-11-08T15:09+00:00,28.59,27.96,,,,Low,lopsided,"{""TeamRankings"": 26.49, ""Torvik preseason"": 29.44}",3.0
+401921095,2026-11-10T03:00:00+00:00,Stanford,Rice,0,2026-11-07T05:59+00:00,2026-11-08T15:09+00:00,14.61,14.71,,,,High,,"{""TeamRankings"": 14.38, ""Torvik preseason"": 15.04}",3.0
+401906771,2026-11-10T23:00:00+00:00,Florida State,Florida,0,2026-11-08T09:02+00:00,2026-11-08T15:09+00:00,-7.67,-7.67,,,,High,,"{""TeamRankings"": -8.65, ""Torvik preseason"": -6.68}",3.0
+401920866,2026-11-10T23:30:00+00:00,Rutgers,NJIT,0,2026-11-08T09:02+00:00,2026-11-08T15:09+00:00,21.99,21.99,,,,Low,lopsided,"{""TeamRankings"": 23.46, ""Torvik preseason"": 20.51}",3.0
+401909514,2026-11-10T23:30:00+00:00,Georgetown,Delaware State,0,2026-11-08T09:02+00:00,2026-11-08T15:09+00:00,26.18,26.18,,,,Low,lopsided,"{""TeamRankings"": 26.77, ""Torvik preseason"": 25.59}",3.0
+401909564,2026-11-11T00:00:00+00:00,Duke,Michigan State,1,2026-11-08T09:02+00:00,2026-11-08T15:09+00:00,4.9,4.9,6.5,6.5,6.5,High,,"{""TeamRankings"": 5.87, ""Torvik preseason"": 3.94}",0.0
+401921774,2026-11-11T00:00:00+00:00,Villanova,La Salle,0,2026-11-08T09:02+00:00,2026-11-08T15:09+00:00,17.59,17.59,,,,High,,"{""TeamRankings"": 18.23, ""Torvik preseason"": 16.94}",3.0
+401921755,2026-11-11T00:00:00+00:00,UCF,South Alabama,0,2026-11-08T09:02+00:00,2026-11-08T15:09+00:00,19.18,19.18,,,,Low,,"{""TeamRankings"": 17.13, ""Torvik preseason"": 21.22}",3.0
+401920378,2026-11-11T00:00:00+00:00,Iowa,Virginia Tech,1,2026-11-08T09:02+00:00,2026-11-08T15:09+00:00,0.25,0.25,,,,High,,"{""TeamRankings"": 1.19, ""Torvik preseason"": -0.68}",0.0
+401920306,2026-11-11T00:00:00+00:00,Georgia Tech,Eastern Kentucky,0,2026-11-08T09:02+00:00,2026-11-08T15:09+00:00,13.65,13.65,,,,Medium,,"{""TeamRankings"": 12.18, ""Torvik preseason"": 15.13}",3.0
+401918957,2026-11-11T00:00:00+00:00,NC State,Presbyterian,0,2026-11-08T09:02+00:00,2026-11-08T15:09+00:00,19.84,19.84,,,,Low,,"{""TeamRankings"": 17.77, ""Torvik preseason"": 21.91}",3.0
+401913101,2026-11-11T00:00:00+00:00,North Carolina,Wyoming,0,2026-11-08T09:02+00:00,2026-11-08T15:09+00:00,11.99,11.99,,,,High,,"{""TeamRankings"": 11.99, ""Torvik preseason"": 11.99}",3.0
+401909727,2026-11-11T00:00:00+00:00,Wake Forest,Charleston Southern,0,2026-11-08T09:02+00:00,2026-11-08T15:09+00:00,19.95,19.95,,,,Medium,,"{""TeamRankings"": 18.05, ""Torvik preseason"": 21.85}",3.0
+401909553,2026-11-11T00:00:00+00:00,Boston College,Maryland Eastern Shore,0,2026-11-08T09:02+00:00,2026-11-08T15:09+00:00,23.75,23.75,,,,Low,lopsided,"{""TeamRankings"": 21.81, ""Torvik preseason"": 25.69}",3.0
+401909543,2026-11-11T00:00:00+00:00,Xavier,Detroit Mercy,0,2026-11-08T09:02+00:00,2026-11-08T15:09+00:00,22.84,22.84,,,,Low,lopsided,"{""TeamRankings"": 25.76, ""Torvik preseason"": 19.92}",3.0
+401909533,2026-11-11T00:00:00+00:00,Providence,Bryant,0,2026-11-08T09:02+00:00,2026-11-08T15:09+00:00,25.71,25.71,,,,Low,lopsided,"{""TeamRankings"": 25.76, ""Torvik preseason"": 25.66}",3.0
+401918987,2026-11-11T00:15:00+00:00,Vanderbilt,Memphis,0,2026-11-08T09:02+00:00,2026-11-08T15:09+00:00,13.06,13.06,,,,High,,"{""TeamRankings"": 12.27, ""Torvik preseason"": 13.85}",3.0
+401913527,2026-11-11T01:00:00+00:00,Texas Tech,Illinois,0,2026-11-08T09:02+00:00,2026-11-08T15:09+00:00,-1.44,-1.44,,,,Medium,,"{""TeamRankings"": -3.42, ""Torvik preseason"": 0.54}",3.0
+401909773,2026-11-11T01:00:00+00:00,Iowa State,Southern,0,2026-11-08T09:02+00:00,2026-11-08T15:09+00:00,28.8,28.8,,,,Low,lopsided,"{""TeamRankings"": 28.69, ""Torvik preseason"": 28.92}",3.0
+401918969,2026-11-11T01:00:00+00:00,SMU,Prairie View A&M,0,2026-11-08T09:02+00:00,2026-11-08T15:09+00:00,21.65,21.65,,,,Low,lopsided,"{""TeamRankings"": 21.9, ""Torvik preseason"": 21.4}",3.0
+401909752,2026-11-11T01:00:00+00:00,Baylor,Yale,0,2026-11-08T09:02+00:00,2026-11-08T15:09+00:00,18.15,18.15,,,,High,,"{""TeamRankings"": 18.23, ""Torvik preseason"": 18.06}",3.0
+401920895,2026-11-11T01:30:00+00:00,Wisconsin,Fairfield,0,2026-11-08T09:02+00:00,2026-11-08T15:09+00:00,19.73,19.73,,,,High,,"{""TeamRankings"": 19.88, ""Torvik preseason"": 19.58}",3.0
+401920817,2026-11-11T01:30:00+00:00,Ole Miss,SE Louisiana,0,2026-11-08T09:02+00:00,2026-11-08T15:09+00:00,20.55,20.55,,,,Low,lopsided,"{""TeamRankings"": 22.18, ""Torvik preseason"": 18.92}",3.0
+401909740,2026-11-11T02:00:00+00:00,Arizona,Northern Arizona,0,2026-11-08T09:02+00:00,2026-11-08T15:09+00:00,31.45,31.45,,,,Low,lopsided,"{""TeamRankings"": 29.61, ""Torvik preseason"": 33.28}",3.0
+401920425,2026-11-11T02:00:00+00:00,Virginia,Bucknell,0,2026-11-08T09:02+00:00,2026-11-08T15:09+00:00,34.52,34.52,,,,Low,lopsided,"{""TeamRankings"": 33.19, ""Torvik preseason"": 35.85}",3.0
+401921740,2026-11-11T02:00:00+00:00,BYU,Queens University,0,2026-11-08T09:02+00:00,2026-11-08T15:09+00:00,21.35,21.35,,,,Low,lopsided,"{""TeamRankings"": 22.27, ""Torvik preseason"": 20.42}",3.0
+401921733,2026-11-11T02:00:00+00:00,Arizona State,Hofstra,0,2026-11-08T09:02+00:00,2026-11-08T15:09+00:00,12.45,12.45,,,,High,,"{""TeamRankings"": 12.36, ""Torvik preseason"": 12.55}",3.0
+401921699,2026-11-11T02:00:00+00:00,Utah,Weber State,0,2026-11-08T09:02+00:00,2026-11-08T15:09+00:00,16.91,16.91,,,,High,,"{""TeamRankings"": 16.76, ""Torvik preseason"": 17.06}",3.0
+401917979,2026-11-11T02:00:00+00:00,TCU,UL Monroe,0,2026-11-08T09:02+00:00,2026-11-08T15:09+00:00,26.86,26.86,,,,Low,lopsided,"{""TeamRankings"": 27.5, ""Torvik preseason"": 26.22}",3.0
+401909761,2026-11-11T02:00:00+00:00,Colorado,San Diego,0,2026-11-08T09:02+00:00,2026-11-08T15:09+00:00,9.43,9.43,,,,High,,"{""TeamRankings"": 10.25, ""Torvik preseason"": 8.61}",3.0
+401909492,2026-11-11T02:00:00+00:00,Kansas State,Creighton,0,2026-11-08T09:02+00:00,2026-11-08T15:09+00:00,-4.27,-4.27,,,,Low,,"{""TeamRankings"": -6.36, ""Torvik preseason"": -2.19}",3.0
+401909786,2026-11-11T02:30:00+00:00,Kentucky,Kansas,1,2026-11-08T09:02+00:00,2026-11-08T15:09+00:00,-5.73,-5.73,-5.5,-5.5,-5.5,High,,"{""TeamRankings"": -6.24, ""Torvik preseason"": -5.22}",0.0
