@@ -34,6 +34,7 @@ DASHBOARDS = [
     ('nba.html', 'nba_dashboard.py', 'nba_dashboard.html', 'NBA', 'Pro Basketball', 'All 30 teams'),
     ('nhl.html', 'nhl_dashboard.py', 'nhl_dashboard.html', 'NHL', 'Pro Hockey', 'All 32 teams'),
     ('epl.html', 'epl_dashboard.py', 'epl_dashboard.html', 'EPL', 'Premier League', 'All 20 clubs'),
+    ('golf.html', 'golf_dashboard.py', 'golf_dashboard.html', 'GOLF', 'Golf', 'PGA Tour & majors'),
 ]
 
 LANDING_CSS = """
@@ -319,6 +320,18 @@ INFO = [
         ('Injury Wire', 'Only injury news that can move a line: starting QB changes, clusters of starters out in one unit, key '
                         'starters, and players returning. Curated once a day.'),
     ]),
+    ('Golf', [
+        ('This Week', 'The current or next PGA Tour event: every player\'s chance to win, finish top 5 / 10 / 20 and make '
+                      'the cut from 20,000 simulated tournaments with the real field and cut rule (live once play '
+                      'starts), with fair odds and Kalshi\'s price for the same outcomes. Green = our number is well '
+                      'above Kalshi\'s.'),
+        ('Skill', 'Strokes per round better than an average PGA Tour player, from every round on the PGA Tour, DP World '
+                  'Tour and LIV, adjusted for field strength, with recent rounds counting more. Scores only: no '
+                  'driving / approach / putting split.'),
+        ('Value metrics', 'Finishes vs. skill (top 10s against what our pre-tournament numbers expected), form spikes '
+                          '(last eight weeks vs. long-run skill; they mostly fade), and volatility (boom-or-bust '
+                          'players suit outright and top-5 bets more than top-20s and cuts).'),
+    ]),
     ('Research spots', [
         ('Best spots', 'The home page lists upcoming games where every situational tag (bounce-back, teaser leg) and trade '
                        'signal (a BUY team, or the opponent of a SELL team) backs the same side, and our projected line '
@@ -358,7 +371,7 @@ INFO = [
 
 
 def run(script):
-    env = {**os.environ, 'CFB_NO_BROWSER': '1', 'NFL_NO_BROWSER': '1', 'CBB_NO_BROWSER': '1', 'NBA_NO_BROWSER': '1', 'NHL_NO_BROWSER': '1', 'EPL_NO_BROWSER': '1', 'PYTHONIOENCODING': 'utf-8'}
+    env = {**os.environ, 'CFB_NO_BROWSER': '1', 'NFL_NO_BROWSER': '1', 'CBB_NO_BROWSER': '1', 'NBA_NO_BROWSER': '1', 'NHL_NO_BROWSER': '1', 'EPL_NO_BROWSER': '1', 'GOLF_NO_BROWSER': '1', 'PYTHONIOENCODING': 'utf-8'}
     print(f'\n=== {script} ===', flush=True)
     r = subprocess.run([sys.executable, script], cwd=HERE, env=env)
     return r.returncode == 0
@@ -379,7 +392,7 @@ def landing(results):
         for title, rows in INFO) + '</div>'
     page = theme.render_page(title='AlphaPoint Sports', league='Home', headline='Sharper research, every game',
                              subtitle='Power ratings, value metrics and market data for the NFL, college football, '
-                                      'college basketball, the NBA, the NHL and the Premier League. Research, not picks.',
+                                      'college basketball, the NBA, the NHL, the Premier League and PGA Tour golf. Research, not picks.',
                              meta_items=[('Updated', updated)],
                              tabs=[('home', 'Dashboards', home), ('guide', 'How to use', guide()), ('info', 'Info', info)],
                              footer='AlphaPoint Sports · Not financial or gambling advice')

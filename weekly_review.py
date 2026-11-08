@@ -189,12 +189,48 @@ def review(sport, now, scored):
     return out
 
 
+def golf_review():
+    """Golf: our pre-tournament numbers vs. Kalshi's for finished events in golf_log_{season}.csv (Brier score,
+    lower is better; Kalshi prices include their margin, so they run a little high)."""
+    import glob
+    import golf_backtest as gb
+    import golf_model as gm
+    logs = [pd.read_csv(p, dtype={'event_id': str, 'player_id': str}) for p in glob.glob('golf_log_*.csv')]
+    if not logs:
+        return ['GOLF', '  No logged events yet.']
+    log = pd.concat(logs, ignore_index=True)
+    finals = {}
+    for season in (gm.SEASON - 1, gm.SEASON, gm.SEASON + 1):
+        for ev in gm.season_events('pga', season):
+            if ev['status']['type']['name'] == 'STATUS_FINAL':
+                finals[str(ev['id'])] = gb.actual(ev)
+    log = log[log['event_id'].isin(finals)]
+    if log.empty:
+        return ['GOLF', '  No finished logged events yet.']
+    pos = [finals[e].get(p, (999, False))[0] for e, p in zip(log['event_id'], log['player_id'])]
+    log = log.assign(pos=pos)
+    out = ['GOLF', f'  Finished events logged: {log["event_id"].nunique()} ({", ".join(log["event"].unique()[:4])})']
+    for m, n in (('win', 1), ('top10', 10), ('top20', 20)):
+        both = log.dropna(subset=[f'k_{m}'])
+        y = (both['pos'] <= n).astype(float)
+        if len(both):
+            ours = ((both[m] - y) ** 2).mean()
+            kal = ((both[f'k_{m}'] - y) ** 2).mean()
+            out.append(f'  {m}: Brier ours {ours:.4f} vs Kalshi {kal:.4f} over {len(both)} players '
+                       f'({"ours better" if ours < kal else "Kalshi better"})')
+    return out
+
+
 def main():
     now = datetime.now(timezone.utc)
     body = [f'Date: {now.astimezone(ET):%Y-%m-%d %H:%M} ET', 'Status: ok', '']
     scored = {}
     for sport in SPORTS:
         body += review(sport, now, scored) + ['']
+    try:
+        body += golf_review() + ['']
+    except Exception as e:
+        body += [f'GOLF: review failed ({e})', '']
     if '--calibrate' in sys.argv:
         import calibrate
         body += ['Model changes this week'] + ['  ' + l for l in calibrate.run(scored, now)] + ['']

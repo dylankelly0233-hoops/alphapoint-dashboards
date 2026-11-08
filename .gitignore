@@ -41,3 +41,5 @@ cbb_haslametrics_*.xml
 nhl_*.csv
 nhl_*.html
 epl_*.csv
+golf_*.json
+golf_pretourney.csv

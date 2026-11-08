@@ -65,6 +65,12 @@ jobs:
             cbb_warrennolan_*.html
             cbb_evanmiya.html
             news_cache_*.json
+            nhl_*.csv
+            nhl_*.html
+            epl_*.csv
+            cbb_haslametrics_*.xml
+            golf_*.json
+            golf_pretourney.csv
             logos
           key: data-${{ github.run_id }}
           restore-keys: data-
@@ -79,7 +85,7 @@ jobs:
         run: |
           git config user.name "alphapoint-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add line_history_*.csv ratings_history_*.csv projections_*.csv source_history_*.csv
+          git add line_history_*.csv ratings_history_*.csv projections_*.csv source_history_*.csv golf_log_*.csv
           git diff --cached --quiet || (git commit -m "Update line and rating history [skip ci]" && (git pull --rebase || (git rebase --abort; false)) && git push)
 
       - uses: actions/configure-pages@v5
