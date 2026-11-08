@@ -340,7 +340,7 @@ def build_schedule(week, season_type, p4_names, power, fcs, metrics):
         kick = pd.Timestamp(g['startDate']).tz_convert('America/New_York') if g.get('startDate') else None
         mkt = lines.get(g.get('id'))
         rows.append({
-            'game_id': g.get('id'), 'kick': kick, 'home': home, 'away': away, 'neutral': bool(g.get('neutralSite')),
+            'game_id': g.get('id'), 'kick': kick, 'tbd': bool(g.get('startTimeTBD')), 'home': home, 'away': away, 'neutral': bool(g.get('neutralSite')),
             'venue_id': g.get('venueId'),
             'home_rating': h_r, 'away_rating': a_r, 'margin': margin,
             'market': mkt[0] if mkt else np.nan, 'market_book': mkt[1] if mkt else '',
@@ -351,7 +351,9 @@ def build_schedule(week, season_type, p4_names, power, fcs, metrics):
         })
     df = pd.DataFrame(rows)
     if not df.empty:
-        df = df.sort_values('kick', na_position='last').reset_index(drop=True)
+        # Games with only a date (time TBD, stored as midnight) sort after that day's timed games
+        df['kick_order'] = df['kick'] + pd.to_timedelta(np.where(df['tbd'], 23 * 60 + 59, 0), unit='m')
+        df = df.sort_values('kick_order', na_position='last').reset_index(drop=True)
     return df
 
 
@@ -607,7 +609,7 @@ def generate_html(p4, vals, sched, week, season_type, info):
 
     def game_html(r, last):
         """One game card (and its best-spots entry and matchup panel). last: each team's previous result."""
-        when = theme.kick_text(r.kick if r.kick is not None and not pd.isna(r.kick) else None)
+        when = theme.kick_text(r.kick if r.kick is not None and not pd.isna(r.kick) else None, getattr(r, 'tbd', False))
         venue = 'Neutral site' if r.neutral else ''
         pm = theme.round_half(r.margin)   # projected home margin, rounded to a half point like a posted spread
         proj = '—' if pd.isna(pm) else _line_text(r.home if pm >= 0 else r.away, abs(pm))
@@ -642,7 +644,7 @@ def generate_html(p4, vals, sched, week, season_type, info):
                      'sources': ex.source_lines(h_src, a_src, hfa_g), 'hfa': hfa_g})
         spots.append(ex.spot('CFB', 'cfb.html#sched', r.kick, r.away, r.home, r.margin, mkt_margin, labels,
                              [(r.away, sig(r.away_value)), (r.home, sig(r.home_value))],
-                             info['opened'].get(str(r.game_id)), big))
+                             info['opened'].get(str(r.game_id)), big, tbd=bool(getattr(r, 'tbd', False))))
         card = theme.game_card(when, venue, side(r.away, r.away_rating, r.away_value),
                                side(r.home, r.home_rating, r.home_value), proj, mkt, r.score, edge, tag_html, move)
         reasons = info['featured'].get(r.game_id)
@@ -667,7 +669,7 @@ def generate_html(p4, vals, sched, week, season_type, info):
     panes = []
     for wi, (wk, wsched, last) in enumerate(info['weeks']):
         # Games still to play first, finished games after
-        order = wsched.sort_values(['completed', 'kick'], kind='stable') if not wsched.empty else wsched
+        order = wsched.sort_values(['completed', 'kick_order' if 'kick_order' in wsched else 'kick'], kind='stable') if not wsched.empty else wsched
         cards = ''.join(game_html(r, last) for r in order.itertuples())
         note = ('' if wi == 0 else
                 '<p class="hint wknote">Next week: lines are early and ratings will move after this week\'s games. '
@@ -694,7 +696,7 @@ def generate_html(p4, vals, sched, week, season_type, info):
 
     # --- Injury Wire tab ---
     games = [{'away': r.away, 'home': r.home,
-              'when': theme.kick_text(r.kick if r.kick is not None and not pd.isna(r.kick) else None)}
+              'when': theme.kick_text(r.kick if r.kick is not None and not pd.isna(r.kick) else None, getattr(r, 'tbd', False))}
              for r in sched.itertuples()]
     injury_html = theme.injury_tab(
         games, info['wire'], lambda t: (t, _logo(t, meta)),
@@ -757,7 +759,7 @@ def build_markets(sched, meta):
             spread = mk.kalshi_spread(g['event'], 'KXNCAAFSPREAD', kalshi_key, fav, abs(posted))
             if spread:
                 spread.update(fav=fav, dog=dog)
-        rows.append({'game_id': r.game_id, 'when': theme.kick_text(r.kick if r.kick is not None and not pd.isna(r.kick) else None),
+        rows.append({'game_id': r.game_id, 'when': theme.kick_text(r.kick if r.kick is not None and not pd.isna(r.kick) else None, getattr(r, 'tbd', False)),
                      'home': r.home, 'away': r.away, 'ours': r.margin, 'posted': posted, 'kalshi': k, 'spread': spread,
                      'cfbd_open': -r.market_open if r.market_open is not None and r.market_open == r.market_open else None})
         if not r.completed:

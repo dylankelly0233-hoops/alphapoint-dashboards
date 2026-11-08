@@ -112,10 +112,12 @@ def fmt(v, spec='{:+.1f}'):
     return '—' if _isnan(v) else spec.format(v)
 
 
-def kick_text(dt):
-    """'Sat 10/31 · 3:30 PM ET' (no leading zero on the hour)."""
+def kick_text(dt, tbd=False):
+    """'Sat 10/31 · 3:30 PM ET' (no leading zero on the hour); 'Sat 11/14 · Time TBD' when only the date is set."""
     if dt is None or dt != dt:
         return 'TBD'
+    if tbd:
+        return dt.strftime('%a %m/%d · ') + 'Time TBD'
     return dt.strftime('%a %m/%d · ') + dt.strftime('%I:%M %p').lstrip('0') + ' ET'
 
 

@@ -17,7 +17,7 @@ import os
 import shutil
 import subprocess
 import sys
-from datetime import datetime
+from datetime import datetime, timedelta
 
 import requests
 
@@ -217,8 +217,9 @@ def best_spots():
     keep, teasers = [], []
     for s in spots:
         s['dt'] = datetime.fromisoformat(s['kick'])
+        s['sort'] = s['dt'] + timedelta(hours=23, minutes=59) if s.get('tbd') else s['dt']   # time TBD: end of its day
         sides = {team for _, team in _backing(s)}
-        if s['dt'] <= now or len(sides) != 1 or s['edge'] is None:      # needs a posted line and our projection
+        if s['sort'] <= now or len(sides) != 1 or s['edge'] is None:      # needs a posted line and our projection
             continue
         s['side'] = sides.pop()
         if any(label.startswith('Teaser') for label, _ in s['tags']):
@@ -233,10 +234,10 @@ def best_spots():
                 '<p class="hint">No games this week where our line and a tag or trade signal agree yet.</p></section>')
     today = now.date()
     rows = ''
-    for s in sorted(keep, key=lambda s: s['dt']):
+    for s in sorted(keep, key=lambda s: s['sort']):
         d = s['dt'].date()
         day = 'Today' if d == today else 'Tomorrow' if (d - today).days == 1 else s['dt'].strftime('%a %m/%d')
-        when = f"{day} · {s['dt'].strftime('%I:%M %p').lstrip('0')}"
+        when = f"{day} · {'Time TBD' if s.get('tbd') else s['dt'].strftime('%I:%M %p').lstrip('0')}"
         lean = _lean(s, s['side'])
         if lean > 0:
             cls = 'edge strong' if lean >= theme.EDGE_STRONG else 'edge'
