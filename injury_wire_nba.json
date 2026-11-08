@@ -1,139 +1,35 @@
 {
   "sport": "nba",
-  "week": 20261107,
-  "generated": "2026-11-07T18:44:13-05:00",
+  "week": 20261108,
+  "generated": "2026-11-08T12:50:00-05:00",
   "movers": [
-    {
-      "team": "WSH",
-      "tag": "KEY",
-      "text": "Anthony Davis (ankle, 33 mpg) won't play Saturday vs. OKC (ESPN report, Nov. 7).",
-      "source": "ESPN",
-      "url": "https://www.espn.com/nba/injuries",
-      "date": "2026-11-07"
-    },
-    {
-      "team": "CLE",
-      "tag": "CLUSTER",
-      "text": "Jarrett Allen (knee, 25 mpg), Sam Merrill (elbow, 23 mpg) and Jaylon Tyson (ankle, 21 mpg) all out Saturday vs. NY.",
-      "source": "ESPN",
-      "url": "https://www.espn.com/nba/injuries",
-      "date": "2026-11-07"
-    },
-    {
-      "team": "ORL",
-      "tag": "KEY",
-      "text": "Desmond Bane (illness, 34.5 mpg) ruled out Saturday vs. GS; Banchero (ankle) and Suggs (knee) also remain out.",
-      "source": "ESPN",
-      "url": "https://www.espn.com/nba/injuries",
-      "date": "2026-11-07"
-    },
-    {
-      "team": "LAL",
-      "tag": "KEY",
-      "text": "Luka Doncic (back, 36 mpg) questionable for Sunday vs. DET (as of Nov. 7 report).",
-      "source": "ESPN",
-      "url": "https://www.espn.com/nba/injuries",
-      "date": "2026-11-07"
-    },
-    {
-      "team": "NY",
-      "tag": "KEY",
-      "text": "Josh Hart (right ankle soreness, 32 mpg) out Saturday vs. CLE.",
-      "source": "ESPN",
-      "url": "https://www.espn.com/nba/injuries",
-      "date": "2026-11-06"
-    }
+    {"team": "LAL", "tag": "KEY", "text": "Luka Doncic (back, 36 mpg) questionable for Sunday vs. DET (ESPN report as of 12:42 PM ET Nov. 8).", "source": "ESPN", "url": "https://www.espn.com/nba/injuries", "date": "2026-11-08"},
+    {"team": "UTAH", "tag": "CLUSTER", "text": "Keyonte George (illness, 32 mpg) downgraded to questionable and Lauri Markkanen (right wrist sprain, 31 mpg) questionable for Sunday vs. MIN.", "source": "ESPN", "url": "https://www.espn.com/nba/injuries", "date": "2026-11-08"},
+    {"team": "TOR", "tag": "KEY", "text": "Scottie Barnes (adductor) and Immanuel Quickley (hamstring) limited in Sunday practice; both to be listed questionable Monday vs. MEM.", "source": "ESPN", "url": "https://www.espn.com/nba/injuries", "date": "2026-11-08"},
+    {"team": "BKN", "tag": "CLUSTER", "text": "Mikel Brown Jr. (25 mpg) won't play Sunday vs. DAL; Egor Demin (21.8 mpg) also listed out.", "source": "ESPN", "url": "https://www.espn.com/nba/injuries", "date": "2026-11-08"},
+    {"team": "CHI", "tag": "KEY", "text": "Norman Powell (shoulder, 29 mpg) questionable for Sunday vs. PHI.", "source": "ESPN", "url": "https://www.espn.com/nba/injuries", "date": "2026-11-08"}
   ],
   "teams": {
-    "WSH": [
-      {
-        "team": "WSH",
-        "tag": "KEY",
-        "text": "Anthony Davis (ankle, 33 mpg) won't play Saturday vs. OKC (ESPN report, Nov. 7).",
-        "source": "ESPN",
-        "url": "https://www.espn.com/nba/injuries",
-        "date": "2026-11-07"
-      }
-    ],
-    "CLE": [
-      {
-        "team": "CLE",
-        "tag": "CLUSTER",
-        "text": "Jarrett Allen (knee, 25 mpg), Sam Merrill (elbow, 23 mpg) and Jaylon Tyson (ankle, 21 mpg) all out Saturday vs. NY.",
-        "source": "ESPN",
-        "url": "https://www.espn.com/nba/injuries",
-        "date": "2026-11-07"
-      }
-    ],
-    "ORL": [
-      {
-        "team": "ORL",
-        "tag": "KEY",
-        "text": "Desmond Bane (illness, 34.5 mpg) ruled out Saturday vs. GS; Banchero (ankle) and Suggs (knee) also remain out.",
-        "source": "ESPN",
-        "url": "https://www.espn.com/nba/injuries",
-        "date": "2026-11-07"
-      }
-    ],
     "LAL": [
-      {
-        "team": "LAL",
-        "tag": "KEY",
-        "text": "Luka Doncic (back, 36 mpg) questionable for Sunday vs. DET (as of Nov. 7 report).",
-        "source": "ESPN",
-        "url": "https://www.espn.com/nba/injuries",
-        "date": "2026-11-07"
-      }
-    ],
-    "NY": [
-      {
-        "team": "NY",
-        "tag": "KEY",
-        "text": "Josh Hart (right ankle soreness, 32 mpg) out Saturday vs. CLE.",
-        "source": "ESPN",
-        "url": "https://www.espn.com/nba/injuries",
-        "date": "2026-11-06"
-      }
+      {"team": "LAL", "tag": "KEY", "text": "Luka Doncic (back, 36 mpg) questionable for Sunday vs. DET (ESPN report as of 12:42 PM ET Nov. 8).", "source": "ESPN", "url": "https://www.espn.com/nba/injuries", "date": "2026-11-08"}
     ],
     "UTAH": [
-      {
-        "team": "UTAH",
-        "tag": "KEY",
-        "text": "Lauri Markkanen (right wrist sprain, 31 mpg) questionable for Sunday vs. MIN.",
-        "source": "ESPN",
-        "url": "https://www.espn.com/nba/injuries",
-        "date": "2026-11-07"
-      }
-    ],
-    "GS": [
-      {
-        "team": "GS",
-        "tag": "KEY",
-        "text": "Draymond Green (elbow, 27 mpg) and Gui Santos (knee, 20 mpg) questionable Saturday vs. ORL.",
-        "source": "ESPN",
-        "url": "https://www.espn.com/nba/injuries",
-        "date": "2026-11-06"
-      }
+      {"team": "UTAH", "tag": "CLUSTER", "text": "Keyonte George (illness, 32 mpg) downgraded to questionable and Lauri Markkanen (right wrist sprain, 31 mpg) questionable for Sunday vs. MIN.", "source": "ESPN", "url": "https://www.espn.com/nba/injuries", "date": "2026-11-08"}
     ],
     "TOR": [
-      {
-        "team": "TOR",
-        "tag": "CLUSTER",
-        "text": "Scottie Barnes (adductor) and Immanuel Quickley (hamstring) sat Friday at MIL; Kawhi Leonard (knee) re-evaluated in a week.",
-        "source": "ESPN",
-        "url": "https://www.espn.com/nba/injuries",
-        "date": "2026-11-07"
-      }
+      {"team": "TOR", "tag": "KEY", "text": "Scottie Barnes (adductor) and Immanuel Quickley (hamstring) limited in Sunday practice; both to be listed questionable Monday vs. MEM.", "source": "ESPN", "url": "https://www.espn.com/nba/injuries", "date": "2026-11-08"}
+    ],
+    "BKN": [
+      {"team": "BKN", "tag": "CLUSTER", "text": "Mikel Brown Jr. (25 mpg) won't play Sunday vs. DAL; Egor Demin (21.8 mpg) also listed out.", "source": "ESPN", "url": "https://www.espn.com/nba/injuries", "date": "2026-11-08"}
+    ],
+    "CHI": [
+      {"team": "CHI", "tag": "KEY", "text": "Norman Powell (shoulder, 29 mpg) questionable for Sunday vs. PHI.", "source": "ESPN", "url": "https://www.espn.com/nba/injuries", "date": "2026-11-08"}
+    ],
+    "SAC": [
+      {"team": "SAC", "tag": "KEY", "text": "Keegan Murray (ankle, 27 mpg) questionable for Sunday vs. MIA after missing the last game.", "source": "ESPN", "url": "https://www.espn.com/nba/injuries", "date": "2026-11-08"}
     ],
     "CHA": [
-      {
-        "team": "CHA",
-        "tag": "CLUSTER",
-        "text": "Schroder (thigh) and Diabate (quad) missed Friday vs. BOS; Brandon Miller (groin) re-evaluated over the weekend.",
-        "source": "ESPN",
-        "url": "https://www.espn.com/nba/injuries",
-        "date": "2026-11-07"
-      }
+      {"team": "CHA", "tag": "CLUSTER", "text": "Dennis Schroder (thigh, 30 mpg) and Moussa Diabate (quad, 29 mpg) both out Friday vs. BOS; Brandon Miller (groin) to be re-evaluated, update expected Monday.", "source": "ESPN", "url": "https://www.espn.com/nba/injuries", "date": "2026-11-07"}
     ]
   }
 }
