@@ -441,7 +441,13 @@ def perf_tab():
     """The Model performance tab from performance.json (refreshed by main() each build)."""
     try:
         with open(os.path.join(HERE, 'performance.json'), encoding='utf-8') as f:
-            return perf_page.tab(json.load(f))
+            perf = json.load(f)
+        try:
+            with open(os.path.join(HERE, 'backtests.json'), encoding='utf-8') as f:
+                bt = json.load(f)
+        except (OSError, ValueError):
+            bt = None
+        return perf_page.tab(perf, bt)
     except (OSError, ValueError):
         return perf_page.tab(None)
 

@@ -164,6 +164,25 @@ def sport_report(sport, d, since=None):
             add('Bounce-back tag', lambda r: tag_side(r, prefix))
     add('Biggest matchup edge', lambda r: ('home' if r.ctx.get('mu_side') == r.home else 'away') if r.ctx.get('mu_side') else None)
     rep['flags'] = flags
+    # Each rating source on its own: its line for the game (same scale and home edge as the blend) vs. the result
+    src_rows = {}
+    for r in d.itertuples():
+        try:
+            lines = json.loads(r.sources_last) if isinstance(r.sources_last, str) else {}
+        except ValueError:
+            lines = {}
+        for name, line in lines.items():
+            if line is not None and line == line:
+                src_rows.setdefault(name, []).append((abs(r.result - line), abs(r.e_mkt), abs(r.e_ours)))
+    rep['sources'] = []
+    for name, xs in sorted(src_rows.items()):
+        arr = np.array(xs)
+        if len(arr) < 5:
+            continue
+        dd = arr[:, 0] - arr[:, 1]
+        rep['sources'].append({'name': name, 'n': int(len(arr)), 'mae': float(arr[:, 0].mean()), 'mae_mkt': float(arr[:, 1].mean()),
+                               'mae_blend': float(arr[:, 2].mean()), 'diff': float(dd.mean()),
+                               'diff_se': float(dd.std(ddof=1) / math.sqrt(len(arr)))})
     # Versus the opening line: our first-logged number (what you'd have seen around the open) vs. the opener
     o = d.dropna(subset=['opened', 'ours_first']).copy()
     if len(o) >= 5:

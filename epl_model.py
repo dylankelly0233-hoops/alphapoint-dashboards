@@ -147,7 +147,9 @@ def football_data(season, div='E0'):
         'hg': raw['FTHG'].astype(float), 'ag': raw['FTAG'].astype(float),
         'hxg': pick('HxG'), 'axg': pick('AxG'),
         'oh': pick('AvgCH', 'PSCH', 'B365CH', 'BbAvH'), 'od': pick('AvgCD', 'PSCD', 'B365CD', 'BbAvD'),
-        'oa': pick('AvgCA', 'PSCA', 'B365CA', 'BbAvA')})
+        'oa': pick('AvgCA', 'PSCA', 'B365CA', 'BbAvA'),
+        # earlier pre-match prices (collected days before kickoff): our stand-in for the opening line
+        'eh': pick('AvgH', 'B365H', 'BbAvH'), 'ed': pick('AvgD', 'B365D', 'BbAvD'), 'ea': pick('AvgA', 'B365A', 'BbAvA')})
     return df.dropna(subset=['date']).sort_values('date').reset_index(drop=True)
 
 
