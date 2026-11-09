@@ -244,7 +244,11 @@ def nba_games():
     def spread(p):
         """(closing, opening) home margin from the game page's point spread."""
         ps = ((p.get('pointSpread') or {}).get('home') or {})
-        num = lambda x: -float(str(x).replace('+', '')) if x not in (None, '', 'EVEN') else None
+        def num(x):
+            try:
+                return -float(str(x).replace('+', ''))
+            except (TypeError, ValueError):         # 'OFF' (off the board), 'EVEN', blank
+                return 0.0 if str(x).upper() in ('EVEN', 'PK', 'PICK') else None
         close = num((ps.get('close') or {}).get('line')) if ps else (-float(p['spread']) if p.get('spread') is not None else None)
         return close, num((ps.get('open') or {}).get('line'))
     out = []
