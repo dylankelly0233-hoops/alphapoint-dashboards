@@ -47,6 +47,7 @@ _today         = datetime.now()
 SEASON         = _today.year if _today.month >= 9 else _today.year - 1   # NFL season in progress (Sep–Feb)
 MIN_GAMES      = 4
 CACHE_HOURS    = 12
+SCHED_HOURS    = 1        # the schedule carries the market lines (this week's and next), so refresh it hourly
 HTML_OUTPUT    = 'nfl_value_metrics.html'
 NFL_SPREAD_STD = 13.45   # historical std dev of NFL score differentials (for spread → win prob)
 
@@ -134,7 +135,7 @@ def _isnan(v):
 # ==========================================
 def load_full_schedule():
     """Every game this season (played and upcoming) with spreads and a neutral-site flag."""
-    if not cache_stale(SCHED_CACHE):
+    if not cache_stale(SCHED_CACHE, SCHED_HOURS):
         return pd.read_csv(SCHED_CACHE)
 
     print('  Fetching schedules...')
