@@ -294,47 +294,74 @@ def generate_html(ev, state, sim, source, kal, players, pre, freshness, hist):
             f'pulled toward average. <b>Volatility</b>: the player\'s round-to-round spread in strokes (typical '
             f'{g.TOUR_SD:g}). Built from scores alone: no driving / approach / putting split.'))
 
-    # --- Value Metrics ---
-    def small_table(tid, head, rows_html, note):
-        return theme.table(tid, head, rows_html) + theme.method_note(note)
-    fin = ''
+    # --- Value Metrics: six summary cards up top, then one combined player table ---
+    reg = players[players['rounds_yr'] >= MIN_ROUNDS].copy()
     if len(pre):
-        agg = pre.groupby(['player_id', 'player']).agg(events=('event_id', 'nunique'), top10=('top10', 'sum'),
-                                                       x_top10=('p_top10', 'sum'), wins=('win', 'sum'), x_wins=('p_win', 'sum')).reset_index()
-        agg = agg[agg['events'] >= 8]
-        agg['diff'] = agg['top10'] - agg['x_top10']
-        for r in agg.sort_values('diff').itertuples():
-            fin += (f'<tr><td class="l">{theme.esc(r.player)}</td><td class="muted">{r.events}</td><td>{r.top10}</td>'
-                    f'{theme.num_td(r.x_top10, "{:.1f}", "muted")}{theme.diff_td(r.diff, 1.0, "{:+.1f}")}'
-                    f'<td>{r.wins}</td>{theme.num_td(r.x_wins, "{:.2f}", "muted")}</tr>')
-    form = players[(players['rounds_yr'] >= MIN_ROUNDS) & players['form'].notna()].copy()
-    spikes = pd.concat([form.sort_values('form', ascending=False).head(15), form.sort_values('form').head(15)])
-    sp = ''.join(f'<tr><td class="l">{theme.esc(r.player)}</td>{theme.diff_td(r.form, 0.5, "{:+.2f}")}'
-                 f'<td class="muted">{int(r.form_rounds)}</td><td data-v="{r.skill}">{r.skill:+.2f}</td></tr>' for r in spikes.itertuples())
-    vol = players[players['rounds_yr'] >= MIN_ROUNDS * 2]
-    vt = pd.concat([vol.sort_values('sd', ascending=False).head(12), vol.sort_values('sd').head(12)])
-    vr = ''.join(f'<tr><td class="l">{theme.esc(r.player)}</td><td class="num" data-v="{r.sd}">{r.sd:.2f}</td>'
-                 f'<td data-v="{r.skill}">{r.skill:+.2f}</td><td class="muted">{r.rounds_yr}</td></tr>' for r in vt.itertuples())
+        agg = pre.groupby('player_id').agg(events=('event_id', 'nunique'), top10=('top10', 'sum'), x_top10=('p_top10', 'sum'),
+                                           wins=('win', 'sum'), x_wins=('p_win', 'sum')).reset_index()
+        agg = agg[agg['events'] >= 6]
+        agg['fin_diff'] = agg['top10'] - agg['x_top10']
+        reg = reg.merge(agg, on='player_id', how='left')
+    else:
+        reg = reg.assign(events=np.nan, top10=np.nan, x_top10=np.nan, wins=np.nan, x_wins=np.nan, fin_diff=np.nan)
+
+    def chip(v, spec, good_when_negative=True):
+        cls = '' if v != v else ('pos' if (v < 0) == good_when_negative else 'neg')
+        return f'<b class="num {cls}">{spec.format(v)}</b>'
+
+    def card(title, df, col, spec, sub, note, good_neg=True, n=5):
+        items = [(r.player, False, chip(getattr(r, col), spec, good_neg), sub(r)) for r in df.head(n).itertuples()]
+        return theme.summary_card(title, items, note)
+    fin = reg.dropna(subset=['fin_diff'])
+    frm = reg.dropna(subset=['form'])
+    vol = reg[reg['rounds_yr'] >= MIN_ROUNDS * 2]
+    fin_sub = lambda r: f'{int(r.top10)} top 10s vs {r.x_top10:.1f} expected · {int(r.events)} events'
+    cards = (
+        '<div class="grid3">'
+        + card('Due for better finishes', fin.sort_values('fin_diff'), 'fin_diff', '{:+.1f}', fin_sub,
+               'Fewer top 10s than his play supported: tends to bounce back.')
+        + card('Hot form, likely to cool', frm.sort_values('form', ascending=False), 'form', '{:+.2f}',
+               lambda r: f'last 8 weeks vs. his skill {r.skill:+.2f}', 'Strokes per round above his long-run level.', False)
+        + card('Most boom-or-bust', vol.sort_values('sd', ascending=False), 'sd', '{:.2f}',
+               lambda r: f'skill {r.skill:+.2f}', 'Round-to-round spread in strokes: better for outrights / top 5.', False)
+        + '</div><div class="grid3">'
+        + card('Finishing above their play', fin.sort_values('fin_diff', ascending=False), 'fin_diff', '{:+.1f}', fin_sub,
+               'More top 10s than his play supported: tends to fade.')
+        + card('Cold form, likely to rebound', frm.sort_values('form'), 'form', '{:+.2f}',
+               lambda r: f'last 8 weeks vs. his skill {r.skill:+.2f}', 'Strokes per round below his long-run level.')
+        + card('Most consistent', vol.sort_values('sd'), 'sd', '{:.2f}',
+               lambda r: f'skill {r.skill:+.2f}', 'Tightest round-to-round spread: better for top 20 / making the cut.', True)
+        + '</div>')
+    rows = ''
+    for r in reg.sort_values('skill', ascending=False).head(200).itertuples():
+        t10 = '' if r.top10 != r.top10 else f'{int(r.top10)} <span class="muted">/ {r.x_top10:.1f}</span>'
+        wins = '' if r.wins != r.wins else f'{int(r.wins)} <span class="muted">/ {r.x_wins:.2f}</span>'
+        form = '' if r.form != r.form else f'{r.form:+.2f}'
+        rows += (f'<tr><td class="l">{theme.esc(r.player)}</td>'
+                 f'<td data-v="{r.skill}">{theme.rating_chip(r.skill, sd_all, "{:+.2f}")}</td>'
+                 f'<td data-v="{"" if r.top10 != r.top10 else r.top10}">{t10}</td>{theme.diff_td(r.fin_diff, 1.0, "{:+.1f}")}'
+                 f'<td data-v="{"" if r.wins != r.wins else r.wins}">{wins}</td>'
+                 f'{theme.diff_td(r.form, 0.5, "{:+.2f}") if form else "<td></td>"}'
+                 f'<td class="num muted" data-v="{r.sd}">{r.sd:.2f}</td><td class="muted">{r.rounds_yr}</td></tr>')
     value_html = (
-        '<div class="sechead"><h2>Finishes vs. skill</h2><span class="hint">Last 12 months of PGA Tour events · '
-        'negative = finishing worse than his play supports (buy side)</span></div>'
-        + (small_table('fin-table', [('Player', 'l'), ('Events', ''), ('Top 10s', ''), ('Expected', ''), ('Top 10s − expected', ''),
-                                     ('Wins', ''), ('Expected wins', '')], fin,
-                       'Expected top 10s and wins add up our pre-tournament probabilities for every event he played '
-                       '(each one computed only from rounds before that event). Running well above expectation tends to fade; '
-                       'well below tends to bounce back. Players with 8+ events.') if fin else
-           '<p class="hint">Building the event history; this table fills in after the next refresh.</p>')
-        + '<div class="sechead"><h2>Form spikes</h2><span class="hint">Last eight weeks vs. his long-run skill</span></div>'
-        + small_table('form-table', [('Player', 'l'), ('Form', ''), ('Rounds', ''), ('Skill', '')], sp,
-                      f'Form = his average strokes gained over the last {g.FORM_DAYS} days minus his skill, in strokes per round '
-                      f'({g.FORM_MIN_ROUNDS}+ rounds). Hot streaks mostly fade and cold ones mostly recover, which is why the skill '
-                      'rating only partly follows them. Without putting data this is our stand-in for "putting luck": a big '
-                      'spike is often the putter.')
-        + '<div class="sechead"><h2>Volatility</h2><span class="hint">Most and least boom-or-bust regulars</span></div>'
-        + small_table('vol-table', [('Player', 'l'), ('Round SD', ''), ('Skill', ''), ('Rounds (1 yr)', '')], vr,
-                      f'Round-to-round spread in strokes (tour typical {g.TOUR_SD:g}). For the same skill, a volatile player '
-                      'wins more often but misses more cuts: he is relatively better value in outright and top-5 markets and '
-                      'worse in top-20 and make-cut markets. The simulation uses each player\'s own volatility.'))
+        '<div class="sechead"><h2>Value metrics</h2><span class="hint">Who is finishing better or worse than his play, '
+        'who is running hot or cold, and who is boom-or-bust</span></div>'
+        + cards
+        + '<div class="sechead"><h2>Every regular, one row each</h2><span class="hint">Click a column to sort · '
+          f'{MIN_ROUNDS}+ rounds in the last year</span></div>'
+        + theme.table('gval-table', [('Player', 'l'), ('Skill', ''), ('Top 10s / expected', ''), ('Top 10s − expected', ''),
+                                     ('Wins / expected', ''), ('Form', ''), ('Volatility', ''), ('Rounds (1 yr)', '')], rows)
+        + theme.method_note(
+            '<b>Top 10s − expected</b> (finishes vs. skill): for every PGA Tour event in the last year we computed his '
+            'pre-tournament chance of a top 10 using only rounds played before that event, then added them up. Negative '
+            '(green) means fewer top 10s than his play supported, which tends to bounce back; positive (red) tends to fade. '
+            'Players with 6+ events. '
+            f'<b>Form</b>: his strokes gained over the last {g.FORM_DAYS} days minus his long-run skill ({g.FORM_MIN_ROUNDS}+ '
+            'rounds). Hot and cold streaks mostly revert, which is why the skill rating only partly follows them; without '
+            'putting data this is our stand-in for putting luck. '
+            f'<b>Volatility</b>: his round-to-round spread in strokes (tour typical {g.TOUR_SD:g}). For the same skill, a '
+            'volatile player wins more often but misses more cuts, so he is relatively better value in outright and top-5 '
+            'markets and worse in top-20 and make-cut markets.'))
 
     page = theme.render_page(
         title='AlphaPoint Golf Dashboard', league='Golf', headline='Golf: PGA Tour & Majors',
