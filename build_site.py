@@ -166,7 +166,6 @@ def guide():
             f'<div class="example"><span class="label">Example game (made-up numbers)</span>{card}'
             f'<section class="card read">{read}</section></div></div>')
 
-SPOTS_MAX      = 12
 SPOTS_TOLERANCE = 1.5   # a tagged side still shows when our line leans the other way by up to this many points
 SPOTS_TOLERANCE_PCT = 3.0   # NHL: our win probability may lean the other way by up to 3 points
 EDGE_STRONG_PCT     = 5.0   # NHL: a 5-point win-probability edge is highlighted
@@ -216,7 +215,7 @@ def best_spots():
     """
     Upcoming games (from each dashboard's spots_{sport}.json) whose situational tags and trade signals all
     back the same team, and where our projected line agrees or leans the other way by no more than
-    SPOTS_TOLERANCE points (strongest agreement first, up to SPOTS_MAX), plus every NFL teaser leg,
+    SPOTS_TOLERANCE points (no limit on how many), plus every NFL teaser leg,
     which always shows. Listed in kickoff order.
     """
     spots = []
@@ -241,7 +240,7 @@ def best_spots():
             continue                    # a big line move (likely news) or a lopsided college game: our number isn't trusted
         elif _lean(s, s['side']) >= -(SPOTS_TOLERANCE_PCT if s.get('unit') == 'pct' else SPOTS_TOLERANCE):
             keep.append(s)
-    keep = teasers + sorted(keep, key=lambda s: (len(_backing(s)), _lean(s, s['side'])), reverse=True)[:SPOTS_MAX]
+    keep = teasers + keep               # every qualifying game shows; each day lists them by start time
     if not keep:
         return ('<section class="card spots"><div class="spots-head"><h2>Best spots</h2></div>'
                 '<p class="hint">No games this week where our line and a tag or trade signal agree yet.</p></section>')
