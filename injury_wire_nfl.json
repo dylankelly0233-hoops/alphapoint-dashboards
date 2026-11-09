@@ -1,317 +1,317 @@
 {
- "sport": "nfl",
- "week": 9,
- "generated": "2026-11-08T10:15:00-05:00",
- "movers": [
-  {
-   "team": "MIN",
-   "tag": "QB",
-   "text": "Kyler Murray (hamstring) ruled out Saturday for MNF vs BUF. Carson Wentz starts with Max Brosmer as backup. WR Jauan Jennings (calf) also out.",
-   "source": "ESPN",
-   "url": "https://www.espn.com/nfl/injuries",
-   "date": "2026-11-08"
-  },
-  {
-   "team": "SEA",
-   "tag": "QB",
-   "text": "Sam Darnold (quadriceps) out vs ARI and may also miss Week 10 at LV. Drew Lock (elbow) has no designation and starts; Jalen Milroe the backup.",
-   "source": "ESPN",
-   "url": "https://www.espn.com/nfl/injuries",
-   "date": "2026-11-08"
-  },
-  {
-   "team": "CLE",
-   "tag": "QB",
-   "text": "Deshaun Watson (concussion), officially questionable, is expected to be inactive at NO per NFL Network. Shedeur Sanders starts; Dillon Gabriel the backup.",
-   "source": "ESPN",
-   "url": "https://www.espn.com/nfl/injuries",
-   "date": "2026-11-08"
-  },
-  {
-   "team": "PHI",
-   "tag": "QB",
-   "text": "Joe Milton makes his first Eagles start vs NYG; Tanner McKee (ribs), questionable, expected to serve as backup. Jalen Hurts out for season.",
-   "source": "ESPN",
-   "url": "https://www.espn.com/nfl/injuries",
-   "date": "2026-11-08"
-  },
-  {
-   "team": "LA",
-   "tag": "RETURNING",
-   "text": "DE Myles Garrett (knee) activated from IR Saturday, no designation at WAS.",
-   "source": "ESPN",
-   "url": "https://www.espn.com/nfl/injuries",
-   "date": "2026-11-08"
+  "sport": "nfl",
+  "week": 9,
+  "generated": "2026-11-09T17:01:45-05:00",
+  "movers": [
+    {
+      "team": "KC",
+      "tag": "QB",
+      "text": "Mahomes (right elbow) day-to-day after Week 9 vs NYJ; MRI showed strain/sprain, no major damage. Reid: news 'more positive than negative.' WR Worthy (hamstring) also day-to-day.",
+      "source": "ESPN",
+      "url": "https://www.espn.com/nfl/story/_/id/50434564/chiefs-qb-patrick-mahomes-day-day-elbow-injury",
+      "date": "2026-11-09"
+    },
+    {
+      "team": "LAC",
+      "tag": "QB",
+      "text": "Herbert (left middle finger, non-throwing hand) has possible fracture per Harbaugh; more tests Monday. DJ Uiagalelei would start vs BAL if Herbert can't go.",
+      "source": "NBC Sports",
+      "url": "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/justin-herbert-has-a-possible-fracture-in-his-left-middle-finger",
+      "date": "2026-11-09"
+    },
+    {
+      "team": "BAL",
+      "tag": "QB",
+      "text": "Jackson (thumb) and Huntley (toe) on IR. Jacoby Brissett, acquired from ARI, expected to start Week 10 vs LAC. Fagnano started Week 9: 10/18, 60 yds, 2 INT.",
+      "source": "Bleacher Report",
+      "url": "https://bleacherreport.com/articles/25529788-ravens-plans-timeline-jacoby-brissett-revealed-latest-nfl-rumors-after-cardinals-trade",
+      "date": "2026-11-08"
+    },
+    {
+      "team": "SEA",
+      "tag": "QB",
+      "text": "Darnold (quad) ruled out for Week 10 vs LV; Drew Lock (oblique) to start again. Macdonald said Lock's tests were 'good'; practice reps likely managed.",
+      "source": "Yahoo Sports",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOeXF4Wm01WnZDem1GN0ZpUTJUaTBHR3ZpM1EwQkVfRmRNbnpCZ0lVQnM0Z1pPQmNfOWJpeVhDVkJwOG1oeUtZZzBidEc1U3Rxd0FUYUtSQ2R5VUlPSW5mMEtZeUYyc1R4c3pGNXlTM2UtTldoWEdGLTcwV0IzNEFqOG1oQzE?oc=5",
+      "date": "2026-11-09"
+    },
+    {
+      "team": "LA",
+      "tag": "KEY",
+      "text": "WR Puka Nacua (knee) hurt on final snap vs WAS; MRI Monday, Rams don't believe ACL is torn. WR Davante Adams (hamstring) already on IR.",
+      "source": "ESPN",
+      "url": "https://www.espn.com/nfl/story/_/id/50425853/sources-rams-puka-nacua-undergo-tests-knee",
+      "date": "2026-11-09"
+    }
+  ],
+  "teams": {
+    "KC": [
+      {
+        "team": "KC",
+        "tag": "QB",
+        "text": "Mahomes (right elbow) day-to-day after Week 9 vs NYJ; MRI showed strain/sprain, no major damage. Reid: news 'more positive than negative.' WR Worthy (hamstring) also day-to-day.",
+        "source": "ESPN",
+        "url": "https://www.espn.com/nfl/story/_/id/50434564/chiefs-qb-patrick-mahomes-day-day-elbow-injury",
+        "date": "2026-11-09"
+      }
+    ],
+    "LAC": [
+      {
+        "team": "LAC",
+        "tag": "QB",
+        "text": "Herbert (left middle finger, non-throwing hand) has possible fracture per Harbaugh; more tests Monday. DJ Uiagalelei would start vs BAL if Herbert can't go.",
+        "source": "NBC Sports",
+        "url": "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/justin-herbert-has-a-possible-fracture-in-his-left-middle-finger",
+        "date": "2026-11-09"
+      }
+    ],
+    "BAL": [
+      {
+        "team": "BAL",
+        "tag": "QB",
+        "text": "Jackson (thumb) and Huntley (toe) on IR. Jacoby Brissett, acquired from ARI, expected to start Week 10 vs LAC. Fagnano started Week 9: 10/18, 60 yds, 2 INT.",
+        "source": "Bleacher Report",
+        "url": "https://bleacherreport.com/articles/25529788-ravens-plans-timeline-jacoby-brissett-revealed-latest-nfl-rumors-after-cardinals-trade",
+        "date": "2026-11-08"
+      },
+      {
+        "team": "BAL",
+        "tag": "CLUSTER",
+        "text": "Secondary: CB Nate Wiggins (illness) and S Jaylinn Hawkins (knee) out; S Kyle Hamilton (hip) left Week 9 and is questionable.",
+        "source": "ESPN",
+        "url": "https://www.espn.com/nfl/injuries",
+        "date": "2026-11-09"
+      }
+    ],
+    "SEA": [
+      {
+        "team": "SEA",
+        "tag": "QB",
+        "text": "Darnold (quad) ruled out for Week 10 vs LV; Drew Lock (oblique) to start again. Macdonald said Lock's tests were 'good'; practice reps likely managed.",
+        "source": "Yahoo Sports",
+        "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOeXF4Wm01WnZDem1GN0ZpUTJUaTBHR3ZpM1EwQkVfRmRNbnpCZ0lVQnM0Z1pPQmNfOWJpeVhDVkJwOG1oeUtZZzBidEc1U3Rxd0FUYUtSQ2R5VUlPSW5mMEtZeUYyc1R4c3pGNXlTM2UtTldoWEdGLTcwV0IzNEFqOG1oQzE?oc=5",
+        "date": "2026-11-09"
+      },
+      {
+        "team": "SEA",
+        "tag": "CLUSTER",
+        "text": "O-line: LT Charles Cross (ankle) and G Quenton Nelson (knee) out. DT Leonard Williams (shoulder) also out.",
+        "source": "ESPN",
+        "url": "https://www.espn.com/nfl/injuries",
+        "date": "2026-11-09"
+      }
+    ],
+    "LA": [
+      {
+        "team": "LA",
+        "tag": "KEY",
+        "text": "WR Puka Nacua (knee) hurt on final snap vs WAS; MRI Monday, Rams don't believe ACL is torn. WR Davante Adams (hamstring) already on IR.",
+        "source": "ESPN",
+        "url": "https://www.espn.com/nfl/story/_/id/50425853/sources-rams-puka-nacua-undergo-tests-knee",
+        "date": "2026-11-09"
+      },
+      {
+        "team": "LA",
+        "tag": "CLUSTER",
+        "text": "Secondary: CB Trent McDuffie (back) out; CB Jaylen Watson (shoulder) on IR, season over. G Steve Avila (hamstring) left Week 9.",
+        "source": "ESPN",
+        "url": "https://www.espn.com/nfl/injuries",
+        "date": "2026-11-09"
+      }
+    ],
+    "CLE": [
+      {
+        "team": "CLE",
+        "tag": "QB",
+        "text": "Watson cleared concussion protocol Saturday but sat Week 9. ESPN's Fowler reports he's expected to start vs HOU; Monken hasn't named a starter. Sanders: 297 yds, 2 TD in Week 9.",
+        "source": "NBC Sports",
+        "url": "https://www.nbcsports.com/fantasy/football/player-news/2026-11-09/fowler-watson-expected-to-start-vs-texans",
+        "date": "2026-11-09"
+      }
+    ],
+    "MIN": [
+      {
+        "team": "MIN",
+        "tag": "QB",
+        "text": "Kyler Murray (hamstring) out for Monday night vs BUF; Carson Wentz starts. WR Jauan Jennings (calf) also ruled out.",
+        "source": "Minnesota Vikings",
+        "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9wSXB5MUpWeUNWUlY2bkMxV3JiTzAxZk9MSXlQblNoX1VQbjdNNG00WHRlejNIVEZoTW9UZUJ4R05VRzRNYVBUZWg0Zl9GTEMybXk5N3laQW9JLWFUaDU0VTZ3SnFlaGdBTGNjYWpmNVZvcVdWVTlSZmx0Yw?oc=5",
+        "date": "2026-11-07"
+      }
+    ],
+    "ARI": [
+      {
+        "team": "ARI",
+        "tag": "QB",
+        "text": "Gardner Minshew, starter since the Brissett trade, listed questionable (elbow) after Week 9 loss at SEA.",
+        "source": "ESPN",
+        "url": "https://www.espn.com/nfl/injuries",
+        "date": "2026-11-09"
+      },
+      {
+        "team": "ARI",
+        "tag": "KEY",
+        "text": "WR Michael Wilson (neck) ruled out for the season. He led ARI in receiving yards in Week 9.",
+        "source": "Burn City Sports",
+        "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNRmNxY2h0aFRlMkNpVTlodFY2WU8tdlhFSnBmX3h0Q3k2Y18wMUVMS2ItdVZfTEpwdkZfNjlXOWJpUGxoOVBsdlNjMnZGc2NNdnRLMER3MkpNWjQ5VFAwYjBlV2hROW9GZHI5VXRjNXVWNmVtTDc4dzMxSmlqc0p5Rg?oc=5",
+        "date": "2026-11-09"
+      }
+    ],
+    "PHI": [
+      {
+        "team": "PHI",
+        "tag": "QB",
+        "text": "Hurts out for season (blood clots). Joe Milton started Week 9 over Tanner McKee: 18/34, 169 yds in 19-11 loss to NYG.",
+        "source": "NBC Sports Philadelphia",
+        "url": "https://www.nbcsportsphiladelphia.com/nfl/philadelphia-eagles/eagles-start-joe-milton-vs-new-york-giants-tanner-mckee-week-9-nfl-season/764325/",
+        "date": "2026-11-04"
+      },
+      {
+        "team": "PHI",
+        "tag": "CLUSTER",
+        "text": "Receivers: WR DeVonta Smith (hamstring) and WR Dontayvion Wicks (ankle) out. LB Jihaad Campbell (hamstring) out; LB Zack Baun (back) left Week 9.",
+        "source": "ESPN",
+        "url": "https://www.espn.com/nfl/injuries",
+        "date": "2026-11-09"
+      }
+    ],
+    "NYG": [
+      {
+        "team": "NYG",
+        "tag": "QB",
+        "text": "J.J. McCarthy (hip pointer) left Week 9 in the 3rd quarter; Harbaugh says he is expected to play Thursday vs WAS.",
+        "source": "Bleacher Report",
+        "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPQnRENFVOaVpKOTRaVzR3VmpvNFF2TXNfUmZpNnlKaTAxNU9IWmxJR2VjZ2ttOUJVT2RIWnJJMHM4RlJSeTJOeUl2ZEk5djdDSzd6SzM0TlJaRVBvMVF4NXNqam9Bc3RidkZnLWZxWDc3NV92NTlqMmV2UklrbVlLd1Zrd3B6NlBucEpBbWxPbHpBT0l5VUNVVC15VlZxR3hzOVlQYmlHMXJ2MF9iN09PWlE5NA?oc=5",
+        "date": "2026-11-09"
+      }
+    ],
+    "MIA": [
+      {
+        "team": "MIA",
+        "tag": "QB",
+        "text": "Malik Willis (groin) listed questionable and playing through the injury; 13/25, 128 yds, 1 INT in Week 9.",
+        "source": "Yahoo Sports",
+        "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQaTlWVkhzUDBqYVo2V3pwRXJjeVdUQnRuSFE1Q2xsTVJWRGhjekd5UFVmZEgzV21zLXBGZzNmMFAxTW5DMDRoMUZlNURaU3VRQjdQMXF1WGF1VkZHenJvVjQ5RDM5S2Y4TzdJZF9BWER2OEhPQ2pHcDZkOFRubExfNk1ScVczLTRo?oc=5",
+        "date": "2026-11-09"
+      }
+    ],
+    "DEN": [
+      {
+        "team": "DEN",
+        "tag": "CLUSTER",
+        "text": "Secondary: S Brandon Jones (hamstring), S Talanoa Hufanga (ankle), CB Kris Abrams-Draine (ankle) out; CB Riley Moss in concussion protocol.",
+        "source": "Broncos Wire",
+        "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNX09yMVNPSmp2eTdQZTZzTENneHNMZWU4QXY3bEhDa2NVQ3djTnlmSzVXd3plblV5TU5nLVBqMHNBc3VyaUpEVFVHRU0yUkVuSXpONlZyTG1qMzlwSm5Wb0lhX09TWEZJbG9TYWl1eEVvTllWZXFpYlh6NXBWdm05UmkxbVZES2hfTERmTFYtLWtIY0tYcGNzVGNMNmdSSVJUNERfdE9qaTJjdS1fczBOcWt0dGxFRnN2NmNQS1lKNDY4UXIwLXFCMEF1QTdvcFVkT2czbA?oc=5",
+        "date": "2026-11-09"
+      }
+    ],
+    "IND": [
+      {
+        "team": "IND",
+        "tag": "CLUSTER",
+        "text": "Secondary: CB Justin Walley (knee) and S A.J. Haulcy (ankle) out; LB Akeem Davis-Gaither (knee) out. OT Jalen Travis (knee) left Week 9.",
+        "source": "ESPN",
+        "url": "https://www.espn.com/nfl/injuries",
+        "date": "2026-11-09"
+      }
+    ],
+    "CAR": [
+      {
+        "team": "CAR",
+        "tag": "CLUSTER",
+        "text": "Front seven: LB Jaelan Phillips (hamstring) and LB Bobby Okereke (foot) out. CB Will Lee III and G Damien Lewis also out.",
+        "source": "ESPN",
+        "url": "https://www.espn.com/nfl/injuries",
+        "date": "2026-11-09"
+      }
+    ],
+    "GB": [
+      {
+        "team": "GB",
+        "tag": "CLUSTER",
+        "text": "O-line: G Sean Rhyan (ankle) and OT Travis Glover (knee) out. LB Zaire Franklin (shin) also out.",
+        "source": "ESPN",
+        "url": "https://www.espn.com/nfl/injuries",
+        "date": "2026-11-09"
+      }
+    ],
+    "NE": [
+      {
+        "team": "NE",
+        "tag": "KEY",
+        "text": "WR A.J. Brown (knee) out; C Ben Brown (knee) doubtful.",
+        "source": "ESPN",
+        "url": "https://www.espn.com/nfl/injuries",
+        "date": "2026-11-09"
+      },
+      {
+        "team": "NE",
+        "tag": "KEY",
+        "text": "RB Rhamondre Stevenson (knee) awaiting MRI per Vrabel; TreVeyon Henderson (illness) also out. OT Will Campbell (knee) left Week 9.",
+        "source": "Yahoo Sports",
+        "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQNUk5aXJPMGloa2RkNnVoUWN0YmxvdEh6T2tSQzNCLURzWUx5YXNNNDJQRVFuaXFtY3pCWXgtWUpMMkY1eDItZVA4X1dSZ0FHNFpOVHh5OEdlNnI0RzdBdll1WF9HVmwwc0loMlVQaGx6eXgwOXFuNldPaEpxSUNxTkhNRzl5ZmhXYlNSNkw0UDZiQQ?oc=5",
+        "date": "2026-11-09"
+      }
+    ],
+    "DAL": [
+      {
+        "team": "DAL",
+        "tag": "KEY",
+        "text": "WR George Pickens (hamstring) out; missed Week 9 vs IND. TE Jake Ferguson and CB P.J. Locke also left Week 9 hurt.",
+        "source": "Athlon Sports",
+        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOZU5LWC01U3lzeWhkVS1IWmxlOGRfMjBXbUxZVXlNNnFCQ2Q4Skg3clRzU2tCSFpBeDRFUENMRlF5MUZscjJfNG5xdnFYZEtiVjNUZW1xYUtONzloSWI1bzNhLW5mSG5GdS1ZRGJLU1d4cHV6V2Vxd0luLUZvVW1vZGpENmlNd2hrV0pYU29kT3dVYU1vNERKdktkSW5CbnlFRUd2Vy1CN2xXUGlTajBUSW1B?oc=5",
+        "date": "2026-11-09"
+      }
+    ],
+    "DET": [
+      {
+        "team": "DET",
+        "tag": "KEY",
+        "text": "LB Jack Campbell (neck) on IR. CB D.J. Reed (hip) and C Cade Mays (ankle) out.",
+        "source": "Yahoo Sports",
+        "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxONjBOeWhXWDFQUEVqZndSS0s5ZGE1RHRXRm9vTERnTFBXQTRQTllGN0J3Y25zSl9mVE9nTm80eFQxQ015Q0pUSVdwbGxZWjdQSENGTWEwZmJ5NEVTTG5LWEtOc2owdUMtS1JNZFI2T3FmeXdic0pjN005SDVqdVlybEhkLUt3X0FkN3djTQ?oc=5",
+        "date": "2026-11-09"
+      }
+    ],
+    "NYJ": [
+      {
+        "team": "NYJ",
+        "tag": "KEY",
+        "text": "WR Garrett Wilson (concussion) out.",
+        "source": "ESPN",
+        "url": "https://www.espn.com/nfl/injuries",
+        "date": "2026-11-09"
+      }
+    ],
+    "CHI": [
+      {
+        "team": "CHI",
+        "tag": "KEY",
+        "text": "WR Luther Burden III, CHI's leading receiver, has a concussion per Ben Johnson after Week 9. CB Malik Muhammad (toe) out.",
+        "source": "Sports Illustrated",
+        "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOQ2diQldXMWVHQ2VTV3gzd1hnc1hCRnduMno1Z0pfSk5uZWQyeVpLVUE0cllWZ1FRbTRtUThwamRFTW9XMzdsc1lsaC13dU0xNGZCZXRSM2M1WG54eWd4MTh0SV9BQWUybkhYLXl1V1p4MVYzYjU4U2tuSkhveEt2S3pzQ19HS3lBYmJsa2k0TzFLTnlXV2QwbWZKQUI4UjVLaTZrZjR0SURqZ2JTY05OWFdiSDg?oc=5",
+        "date": "2026-11-09"
+      }
+    ],
+    "WAS": [
+      {
+        "team": "WAS",
+        "tag": "CLUSTER",
+        "text": "D-line: DT Daron Payne (foot) and DT Javon Kinlaw (knee) had season-ending surgery, both on IR.",
+        "source": "ESPN",
+        "url": "https://www.espn.com/nfl/injuries",
+        "date": "2026-11-09"
+      }
+    ],
+    "NO": [
+      {
+        "team": "NO",
+        "tag": "KEY",
+        "text": "C Erik McCoy (biceps) doubtful.",
+        "source": "ESPN",
+        "url": "https://www.espn.com/nfl/injuries",
+        "date": "2026-11-09"
+      }
+    ]
   }
- ],
- "teams": {
-  "MIN": [
-   {
-    "team": "MIN",
-    "tag": "QB",
-    "text": "Kyler Murray (hamstring) ruled out Saturday for MNF vs BUF. Carson Wentz starts with Max Brosmer as backup. WR Jauan Jennings (calf) also out.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-08"
-   }
-  ],
-  "SEA": [
-   {
-    "team": "SEA",
-    "tag": "QB",
-    "text": "Sam Darnold (quadriceps) out vs ARI and may also miss Week 10 at LV. Drew Lock (elbow) has no designation and starts; Jalen Milroe the backup.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-08"
-   },
-   {
-    "team": "SEA",
-    "tag": "CLUSTER",
-    "text": "OL: LT Charles Cross (ankle) and G Quenton Nelson (knee) ruled out vs ARI. DT Leonard Williams (shoulder) also out.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-07"
-   }
-  ],
-  "CLE": [
-   {
-    "team": "CLE",
-    "tag": "QB",
-    "text": "Deshaun Watson (concussion), officially questionable, is expected to be inactive at NO per NFL Network. Shedeur Sanders starts; Dillon Gabriel the backup.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-08"
-   }
-  ],
-  "PHI": [
-   {
-    "team": "PHI",
-    "tag": "QB",
-    "text": "Joe Milton makes his first Eagles start vs NYG; Tanner McKee (ribs), questionable, expected to serve as backup. Jalen Hurts out for season.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-08"
-   },
-   {
-    "team": "PHI",
-    "tag": "CLUSTER",
-    "text": "WRs DeVonta Smith (hamstring) and Dontayvion Wicks (ankle) ruled out; Darius Cooper and Makai Lemon start. LB Jihaad Campbell (hamstring) out.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-07"
-   }
-  ],
-  "ARI": [
-   {
-    "team": "ARI",
-    "tag": "QB",
-    "text": "Gardner Minshew starts at SEA after Jacoby Brissett was traded to BAL; Carson Beck is QB2. G Jon Gaines II (ankle) out; G Isaiah Adams activated from IR, questionable.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-08"
-   }
-  ],
-  "BAL": [
-   {
-    "team": "BAL",
-    "tag": "QB",
-    "text": "Lamar Jackson (thumb) on IR and set for surgery; told teammates he plans to return this season. Tyler Huntley (toe) on IR; Ravens acquired Jacoby Brissett from ARI.",
-    "source": "ESPN",
-    "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxObzdmbTY5bTNJNnpBT04yTnRKaGVINGxzNVlHSGt5bllnaGpmYnJ2ZDNvUVI2Ny1xWXk1b3I1Z1U5ei1CLW1DQzEwb3R6NEVOcnJlX0dCU1VFZnM2TGE1azV1OTByVWU2YTJnNVRCLU56VVhmVjVTbnhjODc1VUxYaGV3bHRQTGJtLXdHempxN2JPNVVPdFk0clpR?oc=5",
-    "date": "2026-11-08"
-   }
-  ],
-  "LA": [
-   {
-    "team": "LA",
-    "tag": "RETURNING",
-    "text": "DE Myles Garrett (knee) activated from IR Saturday, no designation at WAS.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-08"
-   },
-   {
-    "team": "LA",
-    "tag": "CLUSTER",
-    "text": "Secondary: CB Jaylen Watson (shoulder) placed on IR Saturday; CB Trent McDuffie (back) questionable at WAS.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-08"
-   }
-  ],
-  "GB": [
-   {
-    "team": "GB",
-    "tag": "CLUSTER",
-    "text": "OL: T Travis Glover (knee) and G Sean Rhyan (ankle) ruled out at NE. LB Zaire Franklin (shin) out; CB Keisean Nixon (groin) questionable.",
-    "source": "packers.com",
-    "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPNmRCMEtUNEVERmthSVk4MVl6YWNqNl8wajFQZU51Q0JmSFl4ZHgtcVdvbVhiRnhnaGlNSHJXSHItcUtRS0g5UkR6WDIyRkUzRWxia2RSbUgxTWxpRGs5RlVUWVNwTW83YXMtbTBJOVRmVExZdllvX0ZjNUZydlVqV0ZrbG83eGZBemw2Z1VvSTFpaGs1Vm81S1l0Z1RPd2ZTY1lObUtQLVJuSHM?oc=5",
-    "date": "2026-11-07"
-   }
-  ],
-  "DET": [
-   {
-    "team": "DET",
-    "tag": "KEY",
-    "text": "LB Jack Campbell (neck) moved to IR. CB D.J. Reed (hip) and C Cade Mays (ankle) out at MIA. WR Amon-Ra St. Brown (ribs), questionable, slated to play.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-08"
-   }
-  ],
-  "BUF": [
-   {
-    "team": "BUF",
-    "tag": "CLUSTER",
-    "text": "OL: LT Dion Dawkins (ribs, DNP all week) and OT Alec Anderson (ankle) questionable for MNF at MIN. RT Spencer Brown has no designation.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-08"
-   }
-  ],
-  "NE": [
-   {
-    "team": "NE",
-    "tag": "KEY",
-    "text": "WR A.J. Brown (knee/ankle) out vs GB. RB TreVeyon Henderson (illness) out; Rhamondre Stevenson leads. TE Hunter Henry (foot) and RT Morgan Moses questionable.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-07"
-   },
-   {
-    "team": "NE",
-    "tag": "RETURNING",
-    "text": "WR Mack Hollins (calf) activated from IR Saturday, questionable vs GB.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-07"
-   }
-  ],
-  "NYJ": [
-   {
-    "team": "NYJ",
-    "tag": "KEY",
-    "text": "WR Garrett Wilson (concussion) out at KC; Adonai Mitchell and Omar Cooper the top WRs.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-07"
-   },
-   {
-    "team": "NYJ",
-    "tag": "RETURNING",
-    "text": "RB Breece Hall back from a five-game absence; carries to be split with Braelon Allen.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-07"
-   }
-  ],
-  "CAR": [
-   {
-    "team": "CAR",
-    "tag": "CLUSTER",
-    "text": "LBs Jaelan Phillips (hamstring) and Bobby Okereke (foot), CB Will Lee III (hamstring) and G Damien Lewis (knee) ruled out vs DEN. CB Akayleb Evans on IR.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-07"
-   }
-  ],
-  "DEN": [
-   {
-    "team": "DEN",
-    "tag": "CLUSTER",
-    "text": "Secondary: CB Kris Abrams-Draine (ankle) and S Brandon Jones (hamstring) ruled out at CAR; S Talanoa Hufanga (ankle) a game-time decision.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-08"
-   }
-  ],
-  "IND": [
-   {
-    "team": "IND",
-    "tag": "CLUSTER",
-    "text": "Defense: S A.J. Haulcy (ankle), CB Justin Walley (knee) and LB Akeem Davis-Gaither out vs DAL. OT Jalen Travis questionable.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-08"
-   }
-  ],
-  "KC": [
-   {
-    "team": "KC",
-    "tag": "CLUSTER",
-    "text": "Secondary: CB Mansoor Delane (shoulder) out vs NYJ, CB L'Jarius Sneed (knee) on IR.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-07"
-   }
-  ],
-  "WAS": [
-   {
-    "team": "WAS",
-    "tag": "CLUSTER",
-    "text": "DL: Daron Payne (foot) and Javon Kinlaw (MCL) had season-ending surgery. WRs Treylon Burks and Dyami Brown ruled out vs LA; Terry McLaurin (knee) on IR.",
-    "source": "Washington Commanders",
-    "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOM1BJYkJocFFmOTZaTmd1eERqcWVXVEpoalFvN3U1RWZBb01odjh3VEYtWFpQLWRrYzFFRU5SUGNzUVZONVZWWDFkMUlWVl8yODk1dU93NGc2ZmctVV8wMnpUWUdQZmVEc2VvQkVEejM0d2xsemstT0VZSk1uaFRxckdhS1BXSXBUTW5ITE1n?oc=5",
-    "date": "2026-11-07"
-   }
-  ],
-  "SF": [
-   {
-    "team": "SF",
-    "tag": "CLUSTER",
-    "text": "Receivers: 49ers ruled out three wide receivers vs LV on Friday's injury report.",
-    "source": "San Francisco 49ers",
-    "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNVFRLb3FWUGVCUW11SnEyRnVFR2xwc1lkaDRMNTVzQUtBRFpuS3RpR29VTl9JcE5uVWRxdk81cVg3eUtqOVJ1UWxTRWpmbFJfdnBvWUhjWWlIY2NvVDZpX2RSQjQ5cy11emtoVk5rOHJzNUt0WVVmRXQ1S25VZDdYSUxnbVJ4aGZYMW9Eb0NGZThpUDFvbnUxV0VPZ1JxQzlGYmhwdUlfNk9razRnUW5XRUtOU0Fwallnc09KMG4zeE9WSXZP?oc=5",
-    "date": "2026-11-07"
-   },
-   {
-    "team": "SF",
-    "tag": "RETURNING",
-    "text": "DE Nick Bosa (knee) returned to full practice and has no designation vs LV. RB Christian McCaffrey expected to handle a full workload.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-08"
-   }
-  ],
-  "NYG": [
-   {
-    "team": "NYG",
-    "tag": "KEY",
-    "text": "RB Cam Skattebo (hamstring) listed doubtful at PHI after missing practice; Devin Singletary would lead the backfield.",
-    "source": "Giants.com",
-    "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPNDNONjQ2bEFjM0NiRjNOaHJlVnZYcXkydVJESVNsaV9zMmlGbXVqSnVsbHhyb1BmLWVrZHBodzFmdjRMSEFHeDlBS0ZUVlBJLUN5RURrTHVZbUtwVU5mU1ZyQnRHcW1rOVpjZUdkWVFmdW9QcGdMNXJWUG05ekFjS25rblFNbnpqem5hSTdDblhaZDVLSlE?oc=5",
-    "date": "2026-11-06"
-   }
-  ],
-  "DAL": [
-   {
-    "team": "DAL",
-    "tag": "KEY",
-    "text": "WR George Pickens (hamstring) questionable at IND after limited practices. S Caleb Downs (concussion) has no designation.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-07"
-   }
-  ],
-  "TB": [
-   {
-    "team": "TB",
-    "tag": "RETURNING",
-    "text": "WR Emeka Egbuka (foot), questionable at CHI after missing two games, is slated to return. LT Tristan Wirfs (toe) has no designation.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-08"
-   }
-  ],
-  "NO": [
-   {
-    "team": "NO",
-    "tag": "RETURNING",
-    "text": "LT Kelvin Banks Jr. (ankle), out since Week 2, activated from IR Saturday; questionable vs CLE.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-08"
-   }
-  ]
- }
 }
