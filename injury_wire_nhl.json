@@ -1,0 +1,139 @@
+{
+ "sport": "nhl",
+ "week": 20261109,
+ "generated": "2026-11-09T17:07:03-05:00",
+ "movers": [
+  {
+   "team": "DET",
+   "tag": "KEY",
+   "text": "G John Gibson (52% of starts) day-to-day; C Dylan Larkin (21.7 TOI) remains on injured reserve.",
+   "source": "ESPN",
+   "url": "https://www.espn.com/nhl/injuries",
+   "date": "2026-11-08"
+  },
+  {
+   "team": "VAN",
+   "tag": "CLUSTER",
+   "text": "C Filip Chytil (shoulder, 19.9 TOI) and D Tom Willander (lower body, 20.4 TOI) both out Monday vs PHI.",
+   "source": "ESPN",
+   "url": "https://www.espn.com/nhl/injuries",
+   "date": "2026-11-09"
+  },
+  {
+   "team": "TOR",
+   "tag": "CLUSTER",
+   "text": "D Morgan Rielly, C Jack Roslovic and C Colton Sissons listed day-to-day; RW Kirill Marchenko on injured reserve.",
+   "source": "ESPN",
+   "url": "https://www.espn.com/nhl/injuries",
+   "date": "2026-11-09"
+  },
+  {
+   "team": "WPG",
+   "tag": "CLUSTER",
+   "text": "D Josh Morrissey (wrist, 20.1 TOI) missed Sunday vs TB; D Elias Salomonsson (18.3 TOI) on injured reserve.",
+   "source": "ESPN",
+   "url": "https://www.espn.com/nhl/injuries",
+   "date": "2026-11-08"
+  },
+  {
+   "team": "CGY",
+   "tag": "KEY",
+   "text": "D Kevin Bahl (21.9 TOI) to have surgery for a ruptured Achilles; out for the 2026-27 season.",
+   "source": "ESPN",
+   "url": "https://www.espn.com/nhl/injuries",
+   "date": "2026-11-08"
+  }
+ ],
+ "teams": {
+  "DET": [
+   {
+    "team": "DET",
+    "tag": "KEY",
+    "text": "G John Gibson (52% of starts) day-to-day; C Dylan Larkin (21.7 TOI) remains on injured reserve.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nhl/injuries",
+    "date": "2026-11-08"
+   }
+  ],
+  "VAN": [
+   {
+    "team": "VAN",
+    "tag": "CLUSTER",
+    "text": "C Filip Chytil (shoulder, 19.9 TOI) and D Tom Willander (lower body, 20.4 TOI) both out Monday vs PHI.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nhl/injuries",
+    "date": "2026-11-09"
+   }
+  ],
+  "TOR": [
+   {
+    "team": "TOR",
+    "tag": "CLUSTER",
+    "text": "D Morgan Rielly, C Jack Roslovic and C Colton Sissons listed day-to-day; RW Kirill Marchenko on injured reserve.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nhl/injuries",
+    "date": "2026-11-09"
+   }
+  ],
+  "WPG": [
+   {
+    "team": "WPG",
+    "tag": "CLUSTER",
+    "text": "D Josh Morrissey (wrist, 20.1 TOI) missed Sunday vs TB; D Elias Salomonsson (18.3 TOI) on injured reserve.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nhl/injuries",
+    "date": "2026-11-08"
+   }
+  ],
+  "CGY": [
+   {
+    "team": "CGY",
+    "tag": "KEY",
+    "text": "D Kevin Bahl (21.9 TOI) to have surgery for a ruptured Achilles; out for the 2026-27 season.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nhl/injuries",
+    "date": "2026-11-08"
+   }
+  ],
+  "MTL": [
+   {
+    "team": "MTL",
+    "tag": "CLUSTER",
+    "text": "D Mike Matheson (23.8 TOI) out about two weeks; C Jake Evans hurt his hand at Monday practice; RW Josh Anderson day-to-day.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nhl/injuries",
+    "date": "2026-11-09"
+   }
+  ],
+  "NYR": [
+   {
+    "team": "NYR",
+    "tag": "CLUSTER",
+    "text": "D Sean Durzi (19.9 TOI) on injured reserve; D Alberts Smits (upper body) week-to-week.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nhl/injuries",
+    "date": "2026-11-09"
+   }
+  ],
+  "LA": [
+   {
+    "team": "LA",
+    "tag": "KEY",
+    "text": "D Erik Gustafsson (20.0 TOI) day-to-day with an undisclosed injury, per coach Peter Laviolette Monday.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nhl/injuries",
+    "date": "2026-11-09"
+   }
+  ],
+  "TB": [
+   {
+    "team": "TB",
+    "tag": "KEY",
+    "text": "C Brayden Point (18.7 TOI) listed day-to-day.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nhl/injuries",
+    "date": "2026-11-09"
+   }
+  ]
+ }
+}
