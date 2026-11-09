@@ -1,85 +1,75 @@
 {
   "sport": "cfb",
-  "week": 10,
-  "generated": "2026-11-08T09:13:44-05:00",
+  "week": 11,
+  "generated": "2026-11-09T17:04:15-05:00",
   "movers": [
     {
-      "team": "Ohio State",
+      "team": "Indiana",
       "tag": "QB",
-      "text": "QB Julian Sayin (right arm) remains out indefinitely with no return timeline; freshman Luke Fahey has been starting in his place.",
-      "source": "Yahoo Sports",
-      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNdTRRTVhMYlphSS1zSXlSZWJtNTBReGpPR2NyMDlEMUUtWHJYYS1fUFF1a1hBcV9Ec01xOVl0Zm5aX0FFSlhLUG1FZWpuQVVqbHFQT0k0WHlMa2RFQmRYSktvZFpIaEdpOE1pSmxDUWJRcE1fQ3hGR1ZWLU9wbXpEejNUdTBKUVE?oc=5",
-      "date": "2026-11-07"
+      "text": "QB Josh Hoover (throwing arm) status for USC is undecided; Curt Cignetti declined to name a starter. Backup Grant Wilson played the second half vs. Minnesota.",
+      "source": "ESPN",
+      "url": "https://www.espn.com/college-football/story/_/id/50434100/hoosier-qb-cignetti-not-ready-name-starter-vs-usc",
+      "date": "2026-11-09"
     },
     {
-      "team": "Kansas State",
-      "tag": "QB",
-      "text": "QB Avery Johnson (shoulder) is out, possibly for the season. Blake Barnett made his first start vs. Oklahoma State, K-State's fourth starting QB in four weeks.",
-      "source": "Heavy.com",
-      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQaEx3UWxQWDREdG56SE1SYkttQndzYUVOeXE5U2ZmemNuV0lzTEhKa1ZfVzI2QURXcWltUUpjZF8xbGJJcS1sUEJKTzNjSHlGckIxeWllNU5OdTlFdF9mY1RrYkFYdDFFdzlEVzFxaDhuMHNZQUhtdDNKdV9BNkZpLWRaVHI1dnI0ZE1WaUlTQmZ6cDdMSTBweGxLa1lRLVFkTGJtLW5aaTNiVXJH?oc=5",
-      "date": "2026-11-07"
-    },
-    {
-      "team": "Wake Forest",
-      "tag": "QB",
-      "text": "QB Gio Lopez (lower right leg) sat out vs. Merrimack; backup Steele Pizzella started the 77-0 win. Lopez's status for next week has not been announced.",
-      "source": "Beloit Daily News",
-      "url": "https://news.google.com/rss/articles/CBMiigJBVV95cUxPMHNsQkk3WERBcjgwVEZJTjFqUEtDWVZ1cGdPLWtxdlltaHpteEd5YWZHOEUwSTR4QlpZUEhMNEhpT0dUZVBCT1pLa250MHRJeVVrd2thMnNkeS1WSHZHZDNPaV8tNDVzRTh6bDlaWG9TaDktREdONTVyWUEwbHNCVTY1cGFHMW5FUG1kYk96NFRWVGFoYVBtUFVuVWljWk5ZUjdjUElvYWxXY2hTWllDbzI3bmRVVzVsNWVMdy01M1pMbmdtdFhoZHpYUV95TEV0OGJrb19DWXBCYjdxTkMteGZIMmhHT2d5blNhNF9WTzVzd2dyRHYzamsybFRxbDdmN2V6RlllODFIdw?oc=5",
-      "date": "2026-11-08"
+      "team": "Ole Miss",
+      "tag": "KEY",
+      "text": "Star RB Kewan Lacy and OL Patrick Kutas have been ruled out for the Oklahoma game.",
+      "source": "HottyToddy.com",
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOVG1wUEdTNERoc1VfN1hqTWcyd2lJSWlpelJwUmhQZTlZUWVocHYtdlZOY0J4SGNqU2VxXzhNNi1YSWVsQ3hLeXdMZk1nNjlVNDM4ZE5YVGk5TERCTlhiLURFSFlNWU1DS1pOVExVSU5aVkJMOVY2eEhQV2dtWUxRSi1aR2pwZVoxTG9sNi1n?oc=5",
+      "date": "2026-11-09"
     },
     {
       "team": "Wisconsin",
       "tag": "QB",
-      "text": "Freshman Ryan Hopkins was set to start at QB vs. Rutgers after an injury to starter Colton Joseph.",
+      "text": "Freshman Ryan Hopkins started vs. Rutgers after an undisclosed injury to starter Colton Joseph; Joseph's status for Maryland has not been announced.",
       "source": "Yahoo Sports",
       "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOQkVkVmJwOVdUNzdiQWt5NkJsV09DRWFvTF9SeTlTSkFtX1RrVGJRakQ3OUxMcFJXMGpBTU04aWF0MVMzNTRZSmNiM18wTVVBZEUtTkpzLXl3YjZqREc1YzNnSF93LWpyX2ZhcWRQaXlLVUFfbldYZ2pDcHpiUmU1WXlpS2NYVU1W?oc=5",
       "date": "2026-11-07"
     },
     {
-      "team": "Miami",
-      "tag": "KEY",
-      "text": "Star WR Malachi Toney (ankle, surgery) missed Notre Dame and is expected to be out for weeks.",
-      "source": "Yahoo Sports",
-      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQTjVxYlNfSml2WkZvQk14dWUtVUZzR2t0TzdWcWxMWVQ2RGRLZmgzemRDSlVMQnFjdVMyNHZ1SXRxZG5KbGlmX2xGQ1BxRTIxejFiVGsxMEVER1EwaDVZeG5Gc01KcDV1UHlRU1ZIdTlGOEdfcjZMVHRUWHAwR0N0bElMVUlfUnhW?oc=5",
-      "date": "2026-11-08"
+      "team": "Northwestern",
+      "tag": "QB",
+      "text": "QB Aidan Chiles (upper body) missed the Iowa game; Nicco Marchiol started. His return timeline is uncertain, per ESPN's Pete Thamel.",
+      "source": "FOX 32 Chicago",
+      "url": "https://www.fox32chicago.com/sports/northwestern-football-qb-aidan-chiles-vs-no-19-iowa",
+      "date": "2026-11-07"
+    },
+    {
+      "team": "Kansas State",
+      "tag": "QB",
+      "text": "Collin Klein expects to play two QBs vs. TCU. Avery Johnson (shoulder) remains out; Klein called a return this season an 'outside chance.'",
+      "source": "Wichita Eagle",
+      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOdVNLNk1MMnA0S0syN2J5QUZ1S1o2cW5YRmtVSEcwa0JHUmZXSEZ6Nl9zeUh5LVNtZlM3ejY3WVpqTmNsNS1xWWRPSzhyTW5PZnJSNUJWM3k3b1Rkc2NSaDdvWlBmTHN1SWtuQklhU0tTd2g1LU9Da2Y3NnJVVTh3S3VzTTdkQdIBhgFBVV95cUxPcWtDWDBJTGFkXy1nSlUyVU5yUTlNaU8zcWhTb3FSREFKNk9LYzZPLVZNa0Y0U0I3U2F1X1FoX3FCUXdEMlRwaVI1LTZjaWJVZndRTExBOC1uYXdVWlpjaU12bTUzZW1SMTlkNlNuQ0hBNkJpRFFuQjkyYkRuN0hjOC1TQWhkUQ?oc=5",
+      "date": "2026-11-09"
     }
   ],
   "teams": {
-    "Ohio State": [
+    "Indiana": [
       {
-        "team": "Ohio State",
+        "team": "Indiana",
         "tag": "QB",
-        "text": "QB Julian Sayin (right arm) remains out indefinitely with no return timeline; freshman Luke Fahey has been starting in his place.",
-        "source": "Yahoo Sports",
-        "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNdTRRTVhMYlphSS1zSXlSZWJtNTBReGpPR2NyMDlEMUUtWHJYYS1fUFF1a1hBcV9Ec01xOVl0Zm5aX0FFSlhLUG1FZWpuQVVqbHFQT0k0WHlMa2RFQmRYSktvZFpIaEdpOE1pSmxDUWJRcE1fQ3hGR1ZWLU9wbXpEejNUdTBKUVE?oc=5",
-        "date": "2026-11-07"
+        "text": "QB Josh Hoover (throwing arm) status for USC is undecided; Curt Cignetti declined to name a starter. Backup Grant Wilson played the second half vs. Minnesota.",
+        "source": "ESPN",
+        "url": "https://www.espn.com/college-football/story/_/id/50434100/hoosier-qb-cignetti-not-ready-name-starter-vs-usc",
+        "date": "2026-11-09"
       }
     ],
-    "Kansas State": [
+    "Ole Miss": [
       {
-        "team": "Kansas State",
-        "tag": "QB",
-        "text": "QB Avery Johnson (shoulder) is out, possibly for the season. Blake Barnett made his first start vs. Oklahoma State, K-State's fourth starting QB in four weeks.",
-        "source": "Heavy.com",
-        "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQaEx3UWxQWDREdG56SE1SYkttQndzYUVOeXE5U2ZmemNuV0lzTEhKa1ZfVzI2QURXcWltUUpjZF8xbGJJcS1sUEJKTzNjSHlGckIxeWllNU5OdTlFdF9mY1RrYkFYdDFFdzlEVzFxaDhuMHNZQUhtdDNKdV9BNkZpLWRaVHI1dnI0ZE1WaUlTQmZ6cDdMSTBweGxLa1lRLVFkTGJtLW5aaTNiVXJH?oc=5",
-        "date": "2026-11-07"
-      }
-    ],
-    "Wake Forest": [
-      {
-        "team": "Wake Forest",
-        "tag": "QB",
-        "text": "QB Gio Lopez (lower right leg) sat out vs. Merrimack; backup Steele Pizzella started the 77-0 win. Lopez's status for next week has not been announced.",
-        "source": "Beloit Daily News",
-        "url": "https://news.google.com/rss/articles/CBMiigJBVV95cUxPMHNsQkk3WERBcjgwVEZJTjFqUEtDWVZ1cGdPLWtxdlltaHpteEd5YWZHOEUwSTR4QlpZUEhMNEhpT0dUZVBCT1pLa250MHRJeVVrd2thMnNkeS1WSHZHZDNPaV8tNDVzRTh6bDlaWG9TaDktREdONTVyWUEwbHNCVTY1cGFHMW5FUG1kYk96NFRWVGFoYVBtUFVuVWljWk5ZUjdjUElvYWxXY2hTWllDbzI3bmRVVzVsNWVMdy01M1pMbmdtdFhoZHpYUV95TEV0OGJrb19DWXBCYjdxTkMteGZIMmhHT2d5blNhNF9WTzVzd2dyRHYzamsybFRxbDdmN2V6RlllODFIdw?oc=5",
-        "date": "2026-11-08"
+        "team": "Ole Miss",
+        "tag": "KEY",
+        "text": "Star RB Kewan Lacy and OL Patrick Kutas have been ruled out for the Oklahoma game.",
+        "source": "HottyToddy.com",
+        "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOVG1wUEdTNERoc1VfN1hqTWcyd2lJSWlpelJwUmhQZTlZUWVocHYtdlZOY0J4SGNqU2VxXzhNNi1YSWVsQ3hLeXdMZk1nNjlVNDM4ZE5YVGk5TERCTlhiLURFSFlNWU1DS1pOVExVSU5aVkJMOVY2eEhQV2dtWUxRSi1aR2pwZVoxTG9sNi1n?oc=5",
+        "date": "2026-11-09"
       }
     ],
     "Wisconsin": [
       {
         "team": "Wisconsin",
         "tag": "QB",
-        "text": "Freshman Ryan Hopkins was set to start at QB vs. Rutgers after an injury to starter Colton Joseph.",
+        "text": "Freshman Ryan Hopkins started vs. Rutgers after an undisclosed injury to starter Colton Joseph; Joseph's status for Maryland has not been announced.",
         "source": "Yahoo Sports",
         "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOQkVkVmJwOVdUNzdiQWt5NkJsV09DRWFvTF9SeTlTSkFtX1RrVGJRakQ3OUxMcFJXMGpBTU04aWF0MVMzNTRZSmNiM18wTVVBZEUtTkpzLXl3YjZqREc1YzNnSF93LWpyX2ZhcWRQaXlLVUFfbldYZ2pDcHpiUmU1WXlpS2NYVU1W?oc=5",
         "date": "2026-11-07"
@@ -93,210 +83,104 @@
         "date": "2026-11-08"
       }
     ],
-    "Miami": [
+    "Northwestern": [
       {
-        "team": "Miami",
-        "tag": "KEY",
-        "text": "Star WR Malachi Toney (ankle, surgery) missed Notre Dame and is expected to be out for weeks.",
-        "source": "Yahoo Sports",
-        "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQTjVxYlNfSml2WkZvQk14dWUtVUZzR2t0TzdWcWxMWVQ2RGRLZmgzemRDSlVMQnFjdVMyNHZ1SXRxZG5KbGlmX2xGQ1BxRTIxejFiVGsxMEVER1EwaDVZeG5Gc01KcDV1UHlRU1ZIdTlGOEdfcjZMVHRUWHAwR0N0bElMVUlfUnhW?oc=5",
-        "date": "2026-11-08"
+        "team": "Northwestern",
+        "tag": "QB",
+        "text": "QB Aidan Chiles (upper body) missed the Iowa game; Nicco Marchiol started. His return timeline is uncertain, per ESPN's Pete Thamel.",
+        "source": "FOX 32 Chicago",
+        "url": "https://www.fox32chicago.com/sports/northwestern-football-qb-aidan-chiles-vs-no-19-iowa",
+        "date": "2026-11-07"
+      }
+    ],
+    "Kansas State": [
+      {
+        "team": "Kansas State",
+        "tag": "QB",
+        "text": "Collin Klein expects to play two QBs vs. TCU. Avery Johnson (shoulder) remains out; Klein called a return this season an 'outside chance.'",
+        "source": "Wichita Eagle",
+        "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOdVNLNk1MMnA0S0syN2J5QUZ1S1o2cW5YRmtVSEcwa0JHUmZXSEZ6Nl9zeUh5LVNtZlM3ejY3WVpqTmNsNS1xWWRPSzhyTW5PZnJSNUJWM3k3b1Rkc2NSaDdvWlBmTHN1SWtuQklhU0tTd2g1LU9Da2Y3NnJVVTh3S3VzTTdkQdIBhgFBVV95cUxPcWtDWDBJTGFkXy1nSlUyVU5yUTlNaU8zcWhTb3FSREFKNk9LYzZPLVZNa0Y0U0I3U2F1X1FoX3FCUXdEMlRwaVI1LTZjaWJVZndRTExBOC1uYXdVWlpjaU12bTUzZW1SMTlkNlNuQ0hBNkJpRFFuQjkyYkRuN0hjOC1TQWhkUQ?oc=5",
+        "date": "2026-11-09"
+      }
+    ],
+    "Ohio State": [
+      {
+        "team": "Ohio State",
+        "tag": "QB",
+        "text": "QB Julian Sayin (right arm) is not expected back in the regular season based on Ryan Day's Nov. 5 update; freshman Luke Fahey has been starting.",
+        "source": "Bleacher Report",
+        "url": "https://bleacherreport.com/articles/25529602-julian-sayin-injury-update-ohio-state-hc-ryan-day-provides-latest-return-timeline-star-qb",
+        "date": "2026-11-05"
+      }
+    ],
+    "Wake Forest": [
+      {
+        "team": "Wake Forest",
+        "tag": "QB",
+        "text": "QB Gio Lopez (lower right leg) sat out vs. Merrimack; Jake Dickert called him day-to-day. His status for SMU has not been announced.",
+        "source": "Greensboro News and Record",
+        "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPNFdBZVRaMUJ0ZkxhSjdOa21Mb3ZBQ1JqOVpFM2FfYVpyeGZ6TVkwNWQwdHF5cV8tT3k2OWdvMTdsLXhUQS1wejZ1dTdKa1NKSXd5OFR2MWpIOHdwZnJLckdmTEgySW5KeGJuRTdhTXdGaldyQ2hEMFhRZXQ0QXZGWUYzcFVCS19KcExXd1RhZHdMdFlEOF8wSnFsaFJ1bUVfakE?oc=5",
+        "date": "2026-11-06"
       }
     ],
     "South Carolina": [
       {
         "team": "South Carolina",
         "tag": "QB",
-        "text": "QB LaNorris Sellers hurt his ankle in the first half vs. Texas A&M; X-rays were negative and he returned to finish the win.",
-        "source": "The State",
-        "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQTnA0dGxNeHBBZE5FeFFCc2JPbFJlMmVDZXdmYXR6M0NuTnA1TFZfZXV0Y0RGMkhxNWZhUHc5SVpCbjB4bGJCSzJkd2tUcFpKazlZR3VBTVRmRGpJaktnUFR6cVRiTjF3RGpJRXFRYllCS3JlYkswUllTdUxQXzVUbDdLOHBveU9ZNnY5bjNERjlha0dGV3BQWG9kVmtvdU5UdTBtdWtB0gGmAUFVX3lxTE5iZVpyQnlscGJYcnNJYllkVTFWOTFvUXY5NHpOSHlqX0lKR3I2ZUxDRXNkRGJMWE5XYUEzdVFmczhyd290SkJ6ckhtaC0tQXcwWjhqYU9jeWp4VlZJSV9MWEZmdW9hWGdZM2E1OXJ4bXJOQXBoM3FwSWx3THJWdnJVaTd4S0MyVnZFVXpqMTl5TXNTeExoTzAzMDFSUTc1a0ZYOGZrVEE?oc=5",
-        "date": "2026-11-07"
-      },
-      {
-        "team": "South Carolina",
-        "tag": "KEY",
-        "text": "Top RB Matt Fuller needs surgery and is likely done for the season, per Shane Beamer.",
-        "source": "Greenville Online",
-        "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQWVRUc2tEZW9teXpHMWduVVoyZDJnN19oTTdWejB2Mk5BT2NHNjA0bUtZWWxjUDZzeXJnUmJocG96Z3puZDdZUWRGMlJ2RjBBRXNrbkwwQkVCTkV6djI3STZzdUk4N2s1ZnZ0SWJjdDlzdlhlcnppS1M2UFpLdG0xQ0F3NEpqaS1ZVUFnQTBOTEVsdG1MQWN5RmNKQ1pES1BTdzhRbzJ2RDlWN3ZUTC1qUklMZ2x1ZktoLTNSVnpIWUt3NFo3SU9vbTBQVQ?oc=5",
-        "date": "2026-11-01"
-      }
-    ],
-    "Texas A&M": [
-      {
-        "team": "Texas A&M",
-        "tag": "KEY",
-        "text": "Star WR Mario Craver went down with an injury vs. South Carolina; his status has not been announced.",
-        "source": "Gig Em Gazette",
-        "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNV2lWbVFuaUR3a1V4bFdINnhFblBTS29CNWpEQkpBUDVHQ3NiMndzVWhreDZkb3pWZlozYi1Lb1dXbHBaRThpV0o0S1BHYXF0QTZ0U2FobDE4RnkyR041M0JkcEJ3cTFEemVRT2tlQ2w2dGZMdDk5VVdJUXp1a0hIVlpiSjdiUlNzUS15TU4zRmY4RlJJT0ZzVmZnRW9ycHhUODRyLQ?oc=5",
-        "date": "2026-11-07"
-      }
-    ],
-    "Northwestern": [
-      {
-        "team": "Northwestern",
-        "tag": "QB",
-        "text": "QB Aidan Chiles (undisclosed) was listed questionable for Iowa; no return timeline has been given.",
+        "text": "QB LaNorris Sellers (ankle) received a positive injury update after limping through the Texas A&M win.",
         "source": "Yahoo Sports",
-        "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOOVVwUHJkVXRUX0NKalZLOWE3NWVad29LYzZ6U2J3NFNXRmlremhsUlctdHE0Uk5yVW5ETFFqY05NMm53T3JVN1RBeC1PRlRLejhWTkM3emNLWkZnUHFlWnp0VGlfWTNqNU5nT2gwdDdOZmNpQmUyN05tTzFuM3J0bGUwTnUxMk0?oc=5",
-        "date": "2026-11-07"
+        "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPZ1FnUTFRQU5jMy1xblRZbnFDOEdHZGNwdWMtOHhkSFFadnMyWm1YQnJTZVo1RzlIZ1dDMkt6Z01XTGJ6bEJrOTdYN2dXVjZXR1haN0UzVEpGOVpRbm9CVHJwbFJnT0JFZ3FtQ3VPQ3dUODQxVkR5T0RFMnU0V2VoM3czUUhiMkNIck50Mk80Skpnejg?oc=5",
+        "date": "2026-11-09"
       }
     ],
-    "Mississippi State": [
+    "Miami": [
       {
-        "team": "Mississippi State",
-        "tag": "QB",
-        "text": "Starter Kamario Taylor is out for the season and AJ Swann (right arm) was hurt vs. Texas; injuries have the QB room thin before Auburn visits.",
-        "source": "Yahoo Sports",
-        "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPQlgyU3d1RVhXNGxHLWhRVVBQRHFzLUdZTEU0dDFYblBTWFdreHVGOWVvZlQ3ejk5SG9NVV9KM3FqTVFack8tbnQxeF9wODZlR1RuU1BfM2lvbEZQekNlQ05TYkxUdGN6ZnVKTUViTWlFZFl6dXBvMGVqYjVTMUh6WFBoU200VVVpOFAyWXR1Y0Q?oc=5",
-        "date": "2026-11-07"
-      }
-    ],
-    "UCLA": [
-      {
-        "team": "UCLA",
-        "tag": "QB",
-        "text": "QB Nico Iamaleava suffered a season-ending knee injury; a backup is starting.",
-        "source": "Heavy.com",
-        "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPZDc0WFdfOVl3VmZYdHZYVEI3ckVMWm5yZFJTeHB5bm9JNkdKeVYwRGI0MWpiVXFKb2xXYjZaSFFiZVpwWDNmRGtENjMwVGNZci1WUi16bGFlNHZTX0lEaFE1MEo3Zkp0Rnp1TG1QbHB1cG9ya2tTel9LaUdaanpRNDVnMnBVYjh1SUZsM0prWVpqRGxYQlllUHh3dTFyd2poOE9YUVp1Z0cyUHFVSVQ4eGZpMTFKSkRGQnBuYTVWSUgxUQ?oc=5",
-        "date": "2026-11-07"
-      }
-    ],
-    "Florida State": [
-      {
-        "team": "Florida State",
+        "team": "Miami",
         "tag": "KEY",
-        "text": "Starting C Bradyn Welch-Joiner was carted off in the second quarter at Boston College.",
-        "source": "247Sports",
-        "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxObEFtalQydEN0bWdLNVJfeEJDelh3LU5Dc2JEMXl6VC1vSkVqYW5xOTBXdjRpd0gtcHRzejk0d1Q2QUlCR184TW1NVHZvaHAzZEJPa1pXbngzVTg3R1plNFhreDk4U0psOFlFYVFPS01Ba1Z5dlR1YzRZVHZGd0dQRzZYTGxsRU5OTTg3NGthbVNjam5YS3NDbHA5VE1VVUZtQm85dERVZDVPZw?oc=5",
-        "date": "2026-11-07"
-      },
-      {
-        "team": "Florida State",
-        "tag": "KEY",
-        "text": "Top WR Duce Robinson tore his ACL and is out for the season.",
-        "source": "ESPN",
-        "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQT0dZSl94ajJyZEdrQ0Q3SW5oeDlCMFdveDJ4MGRMVElVSi1VcnBYREhRSnBiOEhjdmtnZ0djU2dqOVBYdDhnaDV6a1FVYzFRTVItSW80TVFLZk9uM2tuajdUNWtBVEJSYTJFSmlsZm9fQ0p0ckJ5U24wMjNVZ0EtZlUyXzNkOGJXT19wRWtYNzI3MDlscGpXcTN6TjBjOFZpMTZV?oc=5",
-        "date": "2026-11-03"
-      }
-    ],
-    "Cincinnati": [
-      {
-        "team": "Cincinnati",
-        "tag": "KEY",
-        "text": "WR JV Gibson was taken to the hospital after a hard hit vs. Houston and has been released; RB Cole Tabb was also injured in the game.",
-        "source": "Houston Chronicle",
-        "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOMVNNUHB1WHhITEluSzB4eVNpQVVFaC1yb0pPeFhubngwX3o4b25DX0pjd2J1cmg0Rk1jMUNJQ2pXMnB6WmdERXlMVGR2RUY0Q252Q05IaDluRFI0N2p2Z2oxbkxQYVhKVEROVlBRbnU2OVMtVnMtTHZBd1pHZjNCeFM0Wk5GQUpIRWxEbE93T0ZseHFnZDVKalp0cTYyUGkxeWlVZHU3WFRwQmlKQmNydE0yNGIxUQ?oc=5",
-        "date": "2026-11-08"
-      }
-    ],
-    "Georgia": [
-      {
-        "team": "Georgia",
-        "tag": "KEY",
-        "text": "CB Ellis Robinson and WR Craig Dandridge both left the Ole Miss game; Kirby Smart addressed both exits afterward.",
-        "source": "DawgNation",
-        "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxQLVdMcUlkZFJqWXIzdlJLV0c0d0x0VTFYaTVtRUVKTFVvNm8wLW9hNjRFR2VteGtoOUxGbHNVUGdlMmpQNGtCUFdZRk85ZFd0ZUx4dWxKX1hrYVA4OVc3cDZSckJQUjNVZ3A0UjNDYUtzREtJR2NlaG5iQUJrbzc5VDFCQlM4TlpXaFljQ1N1elRtY3FXellxcGJYamYzXzdRZ1JHWlFsc0w3ZEV4S1lJRE02c08tbU1WNVJZbjAtYnV4dWRNYjBCUmtkN0FJQmoyeVZNaHk2TlB1LVFx?oc=5",
-        "date": "2026-11-08"
-      }
-    ],
-    "Texas": [
-      {
-        "team": "Texas",
-        "tag": "KEY",
-        "text": "RB Hollywood Smothers is done for the season with a torn MCL, per an ESPN source.",
-        "source": "ESPN",
-        "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQeU4zU0V3SFlLSF8tMTVabnZaQ2NWc1FwVDBPaGZHRWhVWVF1eF9sUlNrR3NaUS1UUVNlaE8xUlBaeDd3M2dUYVpvNDNDajZGSmIyUnl1YUVKcEpCbm5xVHZpVnJVcnptZlJCR19HTEs5SVZuRmpaQXlfZUdUa2dpWUdQdDhYd09NZEU2OTdFSmktS1hsbUJVVE5memhQZEdVRUV6bVVB?oc=5",
-        "date": "2026-11-06"
-      }
-    ],
-    "Texas Tech": [
-      {
-        "team": "Texas Tech",
-        "tag": "KEY",
-        "text": "RB Cameron Dickey aggravated his ankle injury.",
-        "source": "Lubbock Avalanche-Journal",
-        "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQbHgzX1BFejByc3BBRldYY2FTUFBzeFJxeGNRVzV2d09QQzFxOWVmNUJWNzNWeEp0Sm9vMmE1NlVYMTJ1V2Ryb3Rhb0xEcmFaRnhCdEh6MXVKaHZEOFF4Z1N5UzJsdGVUTXdxRUdKMVF2Wi1nbFlZX1d2eDVyeUsxTU9URDhvb3JQTHlmU0g0Ymdyb3NHNmExQ3dCaU1JVzM4S0szYVJ0RlRobjdDZDRkYlUxbUczXzdpc2UxRXlySWpSd0NfbERtLXZ5bXYwSmNk?oc=5",
-        "date": "2026-11-08"
+        "text": "Star WR Malachi Toney (ankle, surgery) remains out after missing the Notre Dame game.",
+        "source": "Miami Herald",
+        "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOR19lenlSNHp4Z3BmQklHR2N3YWlzTFZ3QjQ1dU1fVi1nQWt1LVppN0t3SVZjUTNLc0dSc1czeEl3LXRMUTZ5VS0ySnRfbmp3NGJlYWxzYV82d3N1THZpZFlGYmwzdS1MNGlzcHA2Q2ltME9vZGcxRmlLSzRIVDFmb1ZRRzdIVmJsQjJhX1BBdmlvZ9IBkgFBVV95cUxOZTRwWlVwdXlHQ183UjVGQ1FLS3FBaHJrNkpoWk4wZ1VwY2lkRjlrZGRjQUlheTB2N3pZeTRkRGUxZDExakdPbXFLMzNfdEl5VXpsVS0wWTNtVlVuMVhUelhPbnRUUHJrY3FNWkFKNlpfMDJpdzBZb0xUMkFRay05cWFJckdSa1JYeENocm9YbHJiZw?oc=5",
+        "date": "2026-11-09"
       }
     ],
     "Tennessee": [
       {
         "team": "Tennessee",
         "tag": "KEY",
-        "text": "TE DaSaahn Brame exited the Kentucky game with an injury; DL Tyree Weathersby also drew an injury update.",
-        "source": "Yahoo Sports",
-        "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNSTRRNTBQZjhmM0szNUhZZUJLa1JhQ0tyX1cwT1otbWNPQU04RnlDT1hmZFg1WUZZc2VnaGxFbjdBaGl5ZWVEaF9aaHY5SU9qZ3pnVlRkc1VrXzJHU1A5WFFmUzU0UzJ5ODlXX2VpcktoOVJJLXhOS2lVeEJ6NXp0NUZGTEpHMXpL?oc=5",
-        "date": "2026-11-08"
+        "text": "DE Tyree Weathersby is out for the season, the eighth player the Vols have lost for the year.",
+        "source": "Knoxville News Sentinel",
+        "url": "https://news.google.com/rss/articles/CBMiiAJBVV95cUxPTGM5M2ZUbE9TM09YS3hLQU9IWnI5ZkU0OFFCNm1TZjNEejJlLTNRU2dLbTBSbjFxQ1BfSTVpNjBfYnJaQUtBRG55OGtaVEhmWGN5Ykp3U1RBQnNHd3pmbEVCWXdBMWdrQjEwUnNYTVhVdk5wX0VKRDVSekZOV0x0S3hEckVjSlllWlV4a3lQTVBJYmFtVmtOdlIwNFhUV0l3YzRzMEdXYmpzd2dQTHhxR2ZDZndXWmtrankzUWxCblJESWZsQlp4bzR2bEpQOC1yZDNpVGhGYlpMdFc2Z1ZGN1lpNXI3TzZ2TlRfRDlxTzJwNUoyLVJpWjg1Qk5aal9oZTE3NjNMQkc?oc=5",
+        "date": "2026-11-09"
       }
     ],
-    "Iowa State": [
+    "Rutgers": [
       {
-        "team": "Iowa State",
+        "team": "Rutgers",
         "tag": "KEY",
-        "text": "WR Cody Jackson exited the Baylor game with an injury.",
+        "text": "Star WR (projected first-round pick) was out vs. Wisconsin; his status for Nebraska has not been announced.",
         "source": "Yahoo Sports",
-        "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPMlZvNnFYQUpWNzV0N0MwTDNFT0toVGZDYVd5enhPM3pfZ0h5UmZpODlSekU1VUF2Y0xkWGtLMVZtVGRDVHRRaVMzaDM1UUtTWmJWVC1WS2VBNGRONkRFMlNMVTFGanA0bDJZWkw1YnllMDlvZEFSYVVkbC1RMlJFLWpR?oc=5",
+        "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPbmhhMkJ1VTdlcy1zQ19nUkdPVjRsZDNRWUlXSktLcHlucm1LVnM1bUdUZVh5NFp3QlQ0TC1qd0ZxM3YwX2h4TjNYUmw5QVdYV1RnaGdQcEJ1eVRoT3NaRU9EdXdaZHZXaHBhYkZrM2RVanh2QnNCM0JEVnpVRGtfX21wcjU?oc=5",
         "date": "2026-11-07"
       }
     ],
-    "Arizona": [
+    "Texas Tech": [
       {
-        "team": "Arizona",
-        "tag": "KEY",
-        "text": "S Cam Chapa is expected to miss the rest of the regular season with a hamstring injury.",
-        "source": "Arizona Daily Star",
-        "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQZUJ2WHN3aW9zMHpxXzBOTzA5RTlUVHBZS3RjSVYycUxCcmM0dGdkd2EyUFRnMnJReHNJWWpyQXpuNHVDd1BTb1N2cEhudk01VXJrYUNraDlCSzFQZkpvLS1VVFdpZFBVeUtFdEEzdzA2cDNNRExkTms2UmRiWEVva002WmIxblBzdERrbUdMM1B2WjNvN2lnUlFqM2Y1TTljRWc?oc=5",
-        "date": "2026-11-07"
-      }
-    ],
-    "Oregon": [
-      {
-        "team": "Oregon",
-        "tag": "KEY",
-        "text": "Edge Teitum Tuioti exited the Ohio State game with an injury.",
-        "source": "The Register-Guard",
-        "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxNOEstWVIxSTNnM0xsT0o3S1pFcTNZanRWUFBwSnhQUVVPYjJsajEzVHFJSlg1U3VCTTEwMS1qazJyODhudTFBdnNFUk9nLXh0SWZJRkozZFdpUnB2MEQ3VmtKc2ZkM3BXUUx1NFJBSWJSdDRwbHJrZ1JpNnhTbjRYblJSOVhNTVZGZjZuNU1Kc2hlbzh6ZW9MWTZQTHQ1TVNVUTlQQ1dqSmlDZlpPODZaSnRmYlc5bUtrZ2N4VjNKSWJQbzlIdy1QN3IxczFtelozYmFV?oc=5",
-        "date": "2026-11-08"
-      }
-    ],
-    "Auburn": [
-      {
-        "team": "Auburn",
-        "tag": "KEY",
-        "text": "LB De'Marcus Riddick exited the Arkansas game with an injury.",
-        "source": "Yahoo Sports",
-        "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOLWY5WFNNV01rOTdOWjRPb2Zha0pUa3pzQ1F4V196R1ZJLWduelRHeDBTeENyVS1DWnA3ZXBJaE1XYmNiZkZxcjJnRmdDYkw5eWVYYmFSR3lBLWtRS2tlVlpodjBmeVFJa1dUa2QxeEd5eDlnRlBzOHh1c0lQb2Fsa3B2M1RXNHhpSkFaYQ?oc=5",
-        "date": "2026-11-07"
+        "team": "Texas Tech",
+        "tag": "CLUSTER",
+        "text": "Receiver injuries piling up: two WRs were out vs. West Virginia and WR Coy Eakin will miss time with a broken hand.",
+        "source": "Lubbock Avalanche-Journal",
+        "url": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxQanBJU25ranBicUlLVTREaDF5Yk9LQ3FVT2tJVEVHTzlCdXZRWkc4WWI3ZlpyS2pPcERTelp4RVVhaGJWTnlVWWw1aEFiR2dZNVBJYWUwZ1NLNVUzazZxRXhVNW1qSmcyT0plRTNpUWhod1NRNFF1aVJWRHZOUWNibkhaZ0hSZFU1U0g5NnhzVVFZd2puUnpsUndESmhNRzY2WWk1YzlMTkFTakN4R0dBSjA1MVlhSW1nSEl0aS1IYzdtM3QyUGZaM2NNTGZEdlZnNzA4cjVVSF9JVllTZGhZeHIybjRfMUVXZ3RCdw?oc=5",
+        "date": "2026-11-09"
       }
     ],
     "Notre Dame": [
       {
         "team": "Notre Dame",
         "tag": "CLUSTER",
-        "text": "Defense dealing with several key injuries, including LB Drayk Bowen ('significant' injury in Week 9).",
-        "source": "A to Z Sports",
-        "url": "https://news.google.com/rss/articles/CBMiqwJBVV95cUxObk9STTFoTFQxX0NFekxORWRLejlvUVFrR1lkRkt0RTFyNFdrdVlLSzJDWUF5Vy0yS2wwYUNjQ0QtREQwVzhTTmF6ZkxDX0FJMi1pZXNnWGh2dHVWVHRmeElVaDJfbGYyU1p6UkY3WUgzaEpSY2Z1eHFQUkJxMTQ2VFpvTGpuQ2JyU1N1SXlrWEZKWlU5Qm91NlpaLTBLVl9xaWZaY01EeFZJNnBzMFdwSHMwOUQtYkR1empLUkpiODN3Vm1MdkdHRG1Xd0ozcC16MDZyZ2UyQjFTMFh2LU9fUUlNNFNtNWtrMll4MXlOTTBKZUc4c3QwX2dZRXg4dmtrOEVwelZxNWVSR0hYZmI5S2xhNVdEUEcxNnhhUW5lMU5NYlNmRFpaUEE1OA?oc=5",
-        "date": "2026-11-03"
-      }
-    ],
-    "Utah": [
-      {
-        "team": "Utah",
-        "tag": "KEY",
-        "text": "A starting offensive tackle is out for the season with a lower-leg injury.",
-        "source": "The Salt Lake Tribune",
-        "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPWWIwWEtsZV85ZHY3S3I0SUt0OTJudkpmTkVFSnhqOXNEdUhzNzN1VUs4RFhTcFZBZGRFRV85cG4wRnFlYmszdTdvcGlZVnk0c2h4MnBpVGF0RzdjeDUzZjJacHlxbnhfUkpXdm9IUnhZbXZwQUxnOVFpZUllcEN4U2dVTXdtVzBtQXI4?oc=5",
-        "date": "2026-11-02"
-      }
-    ],
-    "Louisville": [
-      {
-        "team": "Louisville",
-        "tag": "KEY",
-        "text": "WR Lawayne McCoy will miss 'an extended period,' per Jeff Brohm.",
-        "source": "WHAS11",
-        "url": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxOcjIyeHM2Y0JmalNuanhVVU1wc3kwYlBVLTBvRkR4UjZnWG9lSWE5bmNZSG1tbkFPZF9pQm0zY01SLVVIUUVHdFJaSzYtVW1sbTBGUWFjbkZ5SEYwUElaemVCeVNOeGxfTHJBSXEyNUZkT0pZbHVVa1psVzZNMXBvQzROSjR5WFBVZTNPS0pkYnZMYjZKQjhGQndfQXI0Qi1IWkpaUE8xLUZKNzhveEd0M3NMdFI5c1d5dWlPNnhkUDBzZW5sLW81dXYzaGdvQ0x3OFJYS05IMk9BRjdtTjNTWEJuSWJXbjcxR19UdjN2VnptZ2NlTGc?oc=5",
-        "date": "2026-10-31"
+        "text": "Irish are again without multiple defensive starters on the injury report for Boston College.",
+        "source": "On3",
+        "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNUGh6bEc1eDE5Qmw2eGJYMFlUSjdwMFZfSXlHNWNmbGoycEpRRmhqcGtKLWRiT2FzbElYb21TT0d6NWx3bVNVNzhRbkE2MmZBdjdBWm1YQ2ZkYkZqVC1zclZzdERVQ2ExTFpQajdKUVdORHFDWG9JNWFkQ28yNS1EOVRianpybHRQMnVvLVg4Z19waGNmQzhreE1QQXlsWGxOT2FhQktYY1VvUnc2cjM3eWFRQmhVdXVtTXhXOXNn?oc=5",
+        "date": "2026-11-09"
       }
     ]
   }
