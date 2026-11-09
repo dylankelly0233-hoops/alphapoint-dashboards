@@ -1,85 +1,75 @@
 {
-  "sport": "cbb",
-  "week": 20261108,
-  "generated": "2026-11-08T16:19:41-05:00",
-  "movers": [
-    {
-      "team": "Illinois",
-      "tag": "KEY",
-      "text": "Senior G Jake Davis out indefinitely after surgery on a separated left shoulder; hurt in the opener, no return timeline given.",
-      "source": "Roundtable",
-      "url": "https://roundtable.io/sports/ncaa/illinois/news/illinois-senior-jake-davis-undergoes-shoulder-surgery",
-      "date": "2026-11-04"
-    },
-    {
-      "team": "Indiana",
-      "tag": "KEY",
-      "text": "Freshman G Prince-Alexander Moody to miss an 'extended period of time' with a knee injury suffered Nov. 3.",
-      "source": "The Herald-Times",
-      "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQaHZyV3d6bGVtczdBUEZkRU9CTEhsMjQxUmxDY0RvZTZfYXFGMkRZZV95dkR0d1ItYUVSVFZvNlNDMUxZNFNKMXFpZGxMQ2JBc2pSZEJENFlHMk1WZF9vS2t2NC02RkFaY0tUTW5HanpqT2hWVlhjRXY1bldxV1NKWmppMVZSVzdJMDB4QmdJU1dUaTdFOGVXSWtPdTJWODhITFBTOG5XbzV1VEZDbTBmUVFRUUFCcHN0d3FRUGtNQ2I2OVkxR2g2SXpKcm9MVmNDa2hr?oc=5",
-      "date": "2026-11-03"
-    },
-    {
-      "team": "Minnesota",
-      "tag": "KEY",
-      "player": "Kai Shinholster",
-      "status": "out",
-      "text": "G Kai Shinholster out with a calf injury; Gophers to play without him for up to a month (reported Nov. 7).",
-      "source": "Pioneer Press",
-      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNMU1YbnVaclFnQy0xWXcxQmYxMTRjUWpKWHZqbmt1d2YyZWxfdGFsQVdKS0xudHBwd25vNG5ONmpSUFFTV3dBRHR5bkdqendJaFdxRGFTOGthdmVsd1dSNHZrU3pnXzl0Tjg5S3Y5R2FPLTNkVE5POHNKRDAzVUNINk5SUUFPbzNtUzZYTEU3YUEzRVlfOFdGdnpTUFFFdE51MFFZajB1TQ?oc=5",
-      "date": "2026-11-07"
-    },
-    {
-      "team": "Missouri",
-      "tag": "KEY",
-      "text": "Freshman F Aidan Chronister ruled out about 4 weeks; Missouri had 4 players ruled out before its opener.",
-      "source": "Columbia Daily Tribune",
-      "url": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxNdUZqTWwwZDRGY1NpQnB2MkZKcWV0ZUxjNlNCSkhHeTFRZ3FtQkhjWkxRSkgtc2FvTDdFbVNBTHU1bGkxeWg0Y193Y2JKNkZuSVhmNF9waWM5YjhrNDN4TFU4X01XUURoZllMNXp2SFM3Szg2Zm5sS0tHV2ZXdHBMUTZiZDRRVTlwVWpxckVXV2lIYnVrRW9qV2E5Wlk2X3ZJclRhcU1ILVE0cXBHUDI5V20zc2E0R0xqWlczQUhhLUtMdnVBeU1ETkZ5UmJSNkdhNU4zQkxxTlA4cHlWVC1sMVZvYzNwMTFicGhVb1hZQQ?oc=5",
-      "date": "2026-11-03"
-    }
-  ],
-  "teams": {
-    "Illinois": [
-      {
-        "team": "Illinois",
-        "tag": "KEY",
-        "text": "Senior G Jake Davis out indefinitely after surgery on a separated left shoulder; hurt in the opener, no return timeline given.",
-        "source": "Roundtable",
-        "url": "https://roundtable.io/sports/ncaa/illinois/news/illinois-senior-jake-davis-undergoes-shoulder-surgery",
-        "date": "2026-11-04"
-      }
-    ],
-    "Indiana": [
-      {
-        "team": "Indiana",
-        "tag": "KEY",
-        "text": "Freshman G Prince-Alexander Moody to miss an 'extended period of time' with a knee injury suffered Nov. 3.",
-        "source": "The Herald-Times",
-        "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQaHZyV3d6bGVtczdBUEZkRU9CTEhsMjQxUmxDY0RvZTZfYXFGMkRZZV95dkR0d1ItYUVSVFZvNlNDMUxZNFNKMXFpZGxMQ2JBc2pSZEJENFlHMk1WZF9vS2t2NC02RkFaY0tUTW5HanpqT2hWVlhjRXY1bldxV1NKWmppMVZSVzdJMDB4QmdJU1dUaTdFOGVXSWtPdTJWODhITFBTOG5XbzV1VEZDbTBmUVFRUUFCcHN0d3FRUGtNQ2I2OVkxR2g2SXpKcm9MVmNDa2hr?oc=5",
-        "date": "2026-11-03"
-      }
-    ],
-    "Minnesota": [
-      {
-        "team": "Minnesota",
-        "tag": "KEY",
-        "player": "Kai Shinholster",
-        "status": "out",
-        "text": "G Kai Shinholster out with a calf injury; Gophers to play without him for up to a month (reported Nov. 7).",
-        "source": "Pioneer Press",
-        "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNMU1YbnVaclFnQy0xWXcxQmYxMTRjUWpKWHZqbmt1d2YyZWxfdGFsQVdKS0xudHBwd25vNG5ONmpSUFFTV3dBRHR5bkdqendJaFdxRGFTOGthdmVsd1dSNHZrU3pnXzl0Tjg5S3Y5R2FPLTNkVE5POHNKRDAzVUNINk5SUUFPbzNtUzZYTEU3YUEzRVlfOFdGdnpTUFFFdE51MFFZajB1TQ?oc=5",
-        "date": "2026-11-07"
-      }
-    ],
-    "Missouri": [
-      {
-        "team": "Missouri",
-        "tag": "KEY",
-        "text": "Freshman F Aidan Chronister ruled out about 4 weeks; Missouri had 4 players ruled out before its opener.",
-        "source": "Columbia Daily Tribune",
-        "url": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxNdUZqTWwwZDRGY1NpQnB2MkZKcWV0ZUxjNlNCSkhHeTFRZ3FtQkhjWkxRSkgtc2FvTDdFbVNBTHU1bGkxeWg0Y193Y2JKNkZuSVhmNF9waWM5YjhrNDN4TFU4X01XUURoZllMNXp2SFM3Szg2Zm5sS0tHV2ZXdHBMUTZiZDRRVTlwVWpxckVXV2lIYnVrRW9qV2E5Wlk2X3ZJclRhcU1ILVE0cXBHUDI5V20zc2E0R0xqWlczQUhhLUtMdnVBeU1ETkZ5UmJSNkdhNU4zQkxxTlA4cHlWVC1sMVZvYzNwMTFicGhVb1hZQQ?oc=5",
-        "date": "2026-11-03"
-      }
-    ]
+ "sport": "cbb",
+ "week": 20261109,
+ "generated": "2026-11-09T17:02:51-05:00",
+ "movers": [
+  {
+   "team": "Kansas",
+   "tag": "KEY",
+   "player": "Melvin Council Jr.",
+   "status": "out",
+   "text": "G Melvin Council Jr. broke his foot in practice; expected out until Big 12 play begins.",
+   "source": "CBS Sports",
+   "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOakstdTNnWlJxZVdUck8wX2pJVzFkTkR2R0NIZ19jMTBXVnJiel9HeEItc20tejlnelJUS3dVU2xURnRwV0hKWmZFUUcyU29UR0xxQlRDb3ZLNWxNS041cHoycDdXSS10M1ZjN0pxUzR1dk1OU2UtV29raFlObHVwc1BNb2dKdw?oc=5",
+   "date": "2026-11-09"
+  },
+  {
+   "team": "Oregon",
+   "tag": "KEY",
+   "player": "Tyrone Riley IV",
+   "status": "out",
+   "text": "G Tyrone Riley IV (33 mpg) out for weeks with a hand injury suffered after the season opener.",
+   "source": "Ducks Wire",
+   "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxNQy1zcmtjUDZJb2laM1N2Zl9WVU8zZDlLbG0yWjFqNXZJelpfV2VwUVptWkJ2UU54bXpXd2lPMkJkX1J5SWJDUWlfUEFhY2staWdWOE5FV3V1SEVrUzFrS21McXRTU1oyQ0RFbHlYMTlhZG44OUdtSmtZanN2TGVnSkFJTDB3X0VSZmVzUWlzc0NTRWJxR2hvM2pCTUF1YlFhVGwyQjRFemJ0cF9qa1dTR0F2UkJsYlg2T1FpLWVtdS04cGttYlJ3UVZscExHZ0x4SVg5WTNaNVV3enpreFd0S09OMXg0Zw?oc=5",
+   "date": "2026-11-06"
+  },
+  {
+   "team": "Minnesota",
+   "tag": "KEY",
+   "player": "Kai Shinholster",
+   "status": "out",
+   "text": "Kai Shinholster out with a calf injury; Gophers expect to play without him for up to a month.",
+   "source": "Pioneer Press",
+   "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNMU1YbnVaclFnQy0xWXcxQmYxMTRjUWpKWHZqbmt1d2YyZWxfdGFsQVdKS0xudHBwd25vNG5ONmpSUFFTV3dBRHR5bkdqendJaFdxRGFTOGthdmVsd1dSNHZrU3pnXzl0Tjg5S3Y5R2FPLTNkVE5POHNKRDAzVUNINk5SUUFPbzNtUzZYTEU3YUEzRVlfOFdGdnpTUFFFdE51MFFZajB1TQ?oc=5",
+   "date": "2026-11-07"
   }
+ ],
+ "teams": {
+  "Kansas": [
+   {
+    "team": "Kansas",
+    "tag": "KEY",
+    "player": "Melvin Council Jr.",
+    "status": "out",
+    "text": "G Melvin Council Jr. broke his foot in practice; expected out until Big 12 play begins.",
+    "source": "CBS Sports",
+    "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOakstdTNnWlJxZVdUck8wX2pJVzFkTkR2R0NIZ19jMTBXVnJiel9HeEItc20tejlnelJUS3dVU2xURnRwV0hKWmZFUUcyU29UR0xxQlRDb3ZLNWxNS041cHoycDdXSS10M1ZjN0pxUzR1dk1OU2UtV29raFlObHVwc1BNb2dKdw?oc=5",
+    "date": "2026-11-09"
+   }
+  ],
+  "Oregon": [
+   {
+    "team": "Oregon",
+    "tag": "KEY",
+    "player": "Tyrone Riley IV",
+    "status": "out",
+    "text": "G Tyrone Riley IV (33 mpg) out for weeks with a hand injury suffered after the season opener.",
+    "source": "Ducks Wire",
+    "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxNQy1zcmtjUDZJb2laM1N2Zl9WVU8zZDlLbG0yWjFqNXZJelpfV2VwUVptWkJ2UU54bXpXd2lPMkJkX1J5SWJDUWlfUEFhY2staWdWOE5FV3V1SEVrUzFrS21McXRTU1oyQ0RFbHlYMTlhZG44OUdtSmtZanN2TGVnSkFJTDB3X0VSZmVzUWlzc0NTRWJxR2hvM2pCTUF1YlFhVGwyQjRFemJ0cF9qa1dTR0F2UkJsYlg2T1FpLWVtdS04cGttYlJ3UVZscExHZ0x4SVg5WTNaNVV3enpreFd0S09OMXg0Zw?oc=5",
+    "date": "2026-11-06"
+   }
+  ],
+  "Minnesota": [
+   {
+    "team": "Minnesota",
+    "tag": "KEY",
+    "player": "Kai Shinholster",
+    "status": "out",
+    "text": "Kai Shinholster out with a calf injury; Gophers expect to play without him for up to a month.",
+    "source": "Pioneer Press",
+    "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNMU1YbnVaclFnQy0xWXcxQmYxMTRjUWpKWHZqbmt1d2YyZWxfdGFsQVdKS0xudHBwd25vNG5ONmpSUFFTV3dBRHR5bkdqendJaFdxRGFTOGthdmVsd1dSNHZrU3pnXzl0Tjg5S3Y5R2FPLTNkVE5POHNKRDAzVUNINk5SUUFPbzNtUzZYTEU3YUEzRVlfOFdGdnpTUFFFdE51MFFZajB1TQ?oc=5",
+    "date": "2026-11-07"
+   }
+  ]
+ }
 }
