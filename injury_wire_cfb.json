@@ -1,67 +1,125 @@
 {
   "sport": "cfb",
   "week": 11,
-  "generated": "2026-11-09T17:04:15-05:00",
+  "generated": "2026-11-10T18:13:30-05:00",
   "movers": [
+    {
+      "team": "Alabama",
+      "tag": "QB",
+      "text": "QB Keelon Russell (ankle, hurt vs. LSU) is day-to-day for Vanderbilt. Kalen DeBoer said the staff has full confidence in Austin Mack if needed.",
+      "source": "Yahoo Sports",
+      "url": "https://sports.yahoo.com/articles/keelon-russell-day-day-heading-180036273.html",
+      "date": "2026-11-10"
+    },
+    {
+      "team": "Ohio State",
+      "tag": "QB",
+      "text": "Ryan Day said Luke Fahey stays the starting QB vs. Northwestern; Tavien St. Clair is 'one snap away.' Julian Sayin (right arm) remains out.",
+      "source": "ESPN",
+      "url": "https://www.espn.com/college-football/story/_/id/50444070/ohio-state-stick-fahey-qb-vs-northwestern",
+      "date": "2026-11-10"
+    },
     {
       "team": "Indiana",
       "tag": "QB",
-      "text": "QB Josh Hoover (throwing arm) status for USC is undecided; Curt Cignetti declined to name a starter. Backup Grant Wilson played the second half vs. Minnesota.",
+      "text": "QB Josh Hoover (throwing arm) status for USC is still undecided; Curt Cignetti has not committed to a starter. Backup Grant Wilson played the second half vs. Minnesota.",
+      "source": "New York Post",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPMVVGVm8xX0JzeUtxN0x0ZGl4NjdUb1F5Y1pDcm1QWm8tVVkzQTdOQ3I4Qm5nNWdfNHY5YkpjdnpfWUg0TjNPZ29jRGNFTHdPdWx2R2VIcmJ0TUNIVExWTlhCYTJhQ0tIWktKNmotSWJKS3ZxTHRZODJwbTR1WDZnVjhEbjJYdW0weEtiTUlYbVVidGpvOGRSVUY4eFBVdHZYOEk4SUNTcXJaazVZWkRHU2xLMkxzdEhQeHc?oc=5",
+      "date": "2026-11-10"
+    },
+    {
+      "team": "Oregon",
+      "tag": "KEY",
+      "text": "EDGE Teitum Tuioti is out for the season with a knee injury, Dan Lanning said ahead of Michigan.",
       "source": "ESPN",
-      "url": "https://www.espn.com/college-football/story/_/id/50434100/hoosier-qb-cignetti-not-ready-name-starter-vs-usc",
-      "date": "2026-11-09"
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPbTV0T3JEUjF2MU9KY1d0M3Axd1d0VlhVWFF4d3l3aXBXeTZhZ2ZzMkJZSlBUVEN5RVp6bklCOUpQcmtDMlU4R0NfUHl0OER4dmFzTWlxQ2piYkw4Um5MbXNFb0xtMU9kcHhWTFZlMTN4dlQ4RmRyRWJ6ZHRSbnRod3poNm9WY1pESG1YR1FZcXI4NmUxWE9Xb1JDdDY1Zw?oc=5",
+      "date": "2026-11-10"
     },
     {
       "team": "Ole Miss",
       "tag": "KEY",
-      "text": "Star RB Kewan Lacy and OL Patrick Kutas have been ruled out for the Oklahoma game.",
-      "source": "HottyToddy.com",
-      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOVG1wUEdTNERoc1VfN1hqTWcyd2lJSWlpelJwUmhQZTlZUWVocHYtdlZOY0J4SGNqU2VxXzhNNi1YSWVsQ3hLeXdMZk1nNjlVNDM4ZE5YVGk5TERCTlhiLURFSFlNWU1DS1pOVExVSU5aVkJMOVY2eEhQV2dtWUxRSi1aR2pwZVoxTG9sNi1n?oc=5",
-      "date": "2026-11-09"
-    },
-    {
-      "team": "Wisconsin",
-      "tag": "QB",
-      "text": "Freshman Ryan Hopkins started vs. Rutgers after an undisclosed injury to starter Colton Joseph; Joseph's status for Maryland has not been announced.",
-      "source": "Yahoo Sports",
-      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOQkVkVmJwOVdUNzdiQWt5NkJsV09DRWFvTF9SeTlTSkFtX1RrVGJRakQ3OUxMcFJXMGpBTU04aWF0MVMzNTRZSmNiM18wTVVBZEUtTkpzLXl3YjZqREc1YzNnSF93LWpyX2ZhcWRQaXlLVUFfbldYZ2pDcHpiUmU1WXlpS2NYVU1W?oc=5",
-      "date": "2026-11-07"
-    },
-    {
-      "team": "Northwestern",
-      "tag": "QB",
-      "text": "QB Aidan Chiles (upper body) missed the Iowa game; Nicco Marchiol started. His return timeline is uncertain, per ESPN's Pete Thamel.",
-      "source": "FOX 32 Chicago",
-      "url": "https://www.fox32chicago.com/sports/northwestern-football-qb-aidan-chiles-vs-no-19-iowa",
-      "date": "2026-11-07"
-    },
-    {
-      "team": "Kansas State",
-      "tag": "QB",
-      "text": "Collin Klein expects to play two QBs vs. TCU. Avery Johnson (shoulder) remains out; Klein called a return this season an 'outside chance.'",
-      "source": "Wichita Eagle",
-      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOdVNLNk1MMnA0S0syN2J5QUZ1S1o2cW5YRmtVSEcwa0JHUmZXSEZ6Nl9zeUh5LVNtZlM3ejY3WVpqTmNsNS1xWWRPSzhyTW5PZnJSNUJWM3k3b1Rkc2NSaDdvWlBmTHN1SWtuQklhU0tTd2g1LU9Da2Y3NnJVVTh3S3VzTTdkQdIBhgFBVV95cUxPcWtDWDBJTGFkXy1nSlUyVU5yUTlNaU8zcWhTb3FSREFKNk9LYzZPLVZNa0Y0U0I3U2F1X1FoX3FCUXdEMlRwaVI1LTZjaWJVZndRTExBOC1uYXdVWlpjaU12bTUzZW1SMTlkNlNuQ0hBNkJpRFFuQjkyYkRuN0hjOC1TQWhkUQ?oc=5",
-      "date": "2026-11-09"
+      "text": "Star RB Kewan Lacy and OL Patrick Kutas are listed out for the Oklahoma game.",
+      "source": "Sooners Wire",
+      "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxNSTcyMWZUMFJkeVZyZHpKeHZ4T2RRLU95aGxPWGRpZXc3X0pCaEYwNjZwQzdrd1dxRHVIVUhvQTY4Q1d0RkttdkdvV3VxQ2RIYXV0RWhWR3kzZWE4MTNYd05xNXpWV2ZBUnJjdjY0UDlqVy11WEs0SUZuME1vR3VCVF9zemc5aGt6VGlnV0gzcjUyT2VDRWZseElVMzNVOXUtUll3MzZJNDQ1cmZIODBlM25oOXJMZlhIQ0hLak9ERC1fNlZSQkhnTGxrVEE5OW0zaWY1cG95am92Nk9FVk1yU0xoc25iTG1i?oc=5",
+      "date": "2026-11-10"
     }
   ],
   "teams": {
+    "Alabama": [
+      {
+        "team": "Alabama",
+        "tag": "QB",
+        "text": "QB Keelon Russell (ankle, hurt vs. LSU) is day-to-day for Vanderbilt. Kalen DeBoer said the staff has full confidence in Austin Mack if needed.",
+        "source": "Yahoo Sports",
+        "url": "https://sports.yahoo.com/articles/keelon-russell-day-day-heading-180036273.html",
+        "date": "2026-11-10"
+      },
+      {
+        "team": "Alabama",
+        "tag": "KEY",
+        "text": "TE Josh Ford is out for the season.",
+        "source": "The Tuscaloosa News",
+        "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNMjhCR0toaUwtSkhUcTF3NVJJSXYwLTh2YlBoZmJSTDhBQlpvTndFd1U5WG5hM05RSjdmRFMzcl9hbWhRdGQ0LVhIaExsZVlnaUwyLTdfT3EycnQwdFlwdXRmTXQxcXBhQVZnZXdZS2JLdVllMzA1WUVZYXZVR09mMm02TXVYbmVVVFlwZHlDNlU0clVpdDRaby0yZFZ0QkdfOFlFbzYzd2NFSmNuTlFCUG1vMkRIa2doM3I0WmxqazdlZ0YtaGpMZU1zOElIdWotYTdZOGJB?oc=5",
+        "date": "2026-11-10"
+      }
+    ],
+    "Ohio State": [
+      {
+        "team": "Ohio State",
+        "tag": "QB",
+        "text": "Ryan Day said Luke Fahey stays the starting QB vs. Northwestern; Tavien St. Clair is 'one snap away.' Julian Sayin (right arm) remains out.",
+        "source": "ESPN",
+        "url": "https://www.espn.com/college-football/story/_/id/50444070/ohio-state-stick-fahey-qb-vs-northwestern",
+        "date": "2026-11-10"
+      }
+    ],
     "Indiana": [
       {
         "team": "Indiana",
         "tag": "QB",
-        "text": "QB Josh Hoover (throwing arm) status for USC is undecided; Curt Cignetti declined to name a starter. Backup Grant Wilson played the second half vs. Minnesota.",
+        "text": "QB Josh Hoover (throwing arm) status for USC is still undecided; Curt Cignetti has not committed to a starter. Backup Grant Wilson played the second half vs. Minnesota.",
+        "source": "New York Post",
+        "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPMVVGVm8xX0JzeUtxN0x0ZGl4NjdUb1F5Y1pDcm1QWm8tVVkzQTdOQ3I4Qm5nNWdfNHY5YkpjdnpfWUg0TjNPZ29jRGNFTHdPdWx2R2VIcmJ0TUNIVExWTlhCYTJhQ0tIWktKNmotSWJKS3ZxTHRZODJwbTR1WDZnVjhEbjJYdW0weEtiTUlYbVVidGpvOGRSVUY4eFBVdHZYOEk4SUNTcXJaazVZWkRHU2xLMkxzdEhQeHc?oc=5",
+        "date": "2026-11-10"
+      }
+    ],
+    "Oregon": [
+      {
+        "team": "Oregon",
+        "tag": "KEY",
+        "text": "EDGE Teitum Tuioti is out for the season with a knee injury, Dan Lanning said ahead of Michigan.",
         "source": "ESPN",
-        "url": "https://www.espn.com/college-football/story/_/id/50434100/hoosier-qb-cignetti-not-ready-name-starter-vs-usc",
-        "date": "2026-11-09"
+        "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPbTV0T3JEUjF2MU9KY1d0M3Axd1d0VlhVWFF4d3l3aXBXeTZhZ2ZzMkJZSlBUVEN5RVp6bklCOUpQcmtDMlU4R0NfUHl0OER4dmFzTWlxQ2piYkw4Um5MbXNFb0xtMU9kcHhWTFZlMTN4dlQ4RmRyRWJ6ZHRSbnRod3poNm9WY1pESG1YR1FZcXI4NmUxWE9Xb1JDdDY1Zw?oc=5",
+        "date": "2026-11-10"
       }
     ],
     "Ole Miss": [
       {
         "team": "Ole Miss",
         "tag": "KEY",
-        "text": "Star RB Kewan Lacy and OL Patrick Kutas have been ruled out for the Oklahoma game.",
-        "source": "HottyToddy.com",
-        "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOVG1wUEdTNERoc1VfN1hqTWcyd2lJSWlpelJwUmhQZTlZUWVocHYtdlZOY0J4SGNqU2VxXzhNNi1YSWVsQ3hLeXdMZk1nNjlVNDM4ZE5YVGk5TERCTlhiLURFSFlNWU1DS1pOVExVSU5aVkJMOVY2eEhQV2dtWUxRSi1aR2pwZVoxTG9sNi1n?oc=5",
+        "text": "Star RB Kewan Lacy and OL Patrick Kutas are listed out for the Oklahoma game.",
+        "source": "Sooners Wire",
+        "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxNSTcyMWZUMFJkeVZyZHpKeHZ4T2RRLU95aGxPWGRpZXc3X0pCaEYwNjZwQzdrd1dxRHVIVUhvQTY4Q1d0RkttdkdvV3VxQ2RIYXV0RWhWR3kzZWE4MTNYd05xNXpWV2ZBUnJjdjY0UDlqVy11WEs0SUZuME1vR3VCVF9zemc5aGt6VGlnV0gzcjUyT2VDRWZseElVMzNVOXUtUll3MzZJNDQ1cmZIODBlM25oOXJMZlhIQ0hLak9ERC1fNlZSQkhnTGxrVEE5OW0zaWY1cG95am92Nk9FVk1yU0xoc25iTG1i?oc=5",
+        "date": "2026-11-10"
+      }
+    ],
+    "South Carolina": [
+      {
+        "team": "South Carolina",
+        "tag": "QB",
+        "text": "QB LaNorris Sellers (ankle) limped through the Texas A&M win; Shane Beamer did not give an injury update for Arkansas.",
+        "source": "Yahoo Sports",
+        "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNXzl6RUNmRHVZR2pQQ3FiQVdaU3VUZy1ZQWpQRERzOGl5VXZZZzhfcWdYalNRd0xIV2tuZTdLdURsTDZzUTZEckVUSDB6TVNHc3hsWTU1ZW9rbXhDajhJTmhBdXJyNkxCcU1fa1NTVTVGYkNaeE45ZGhvczFIUlpOYzRhUFlZSlk?oc=5",
+        "date": "2026-11-10"
+      }
+    ],
+    "Wake Forest": [
+      {
+        "team": "Wake Forest",
+        "tag": "QB",
+        "text": "QB Gio Lopez (lower body) was held out vs. Merrimack as a precaution; reports say the injury is not long-term and he is expected to be available vs. SMU.",
+        "source": "On3",
+        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOUTRtN1N5bmE2VnhTTFJaNDNBd1VVdDdxNjNjTDF1TnY2TFJMZzN6MVlVOHBfN0lONXNPZWs5M0RrOFdIbUhxdFZmNkFaVkM4VnQ5akNYWXpYWW80anVxLU1mQkxZTnl1UHQ3c3NlMkxldVFoR21IUGJrbXVVYTdMeUJLdWdIei0zOFJTclY2MVpERTlsVWZyTHZPcw?oc=5",
         "date": "2026-11-09"
       }
     ],
@@ -100,36 +158,6 @@
         "text": "Collin Klein expects to play two QBs vs. TCU. Avery Johnson (shoulder) remains out; Klein called a return this season an 'outside chance.'",
         "source": "Wichita Eagle",
         "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOdVNLNk1MMnA0S0syN2J5QUZ1S1o2cW5YRmtVSEcwa0JHUmZXSEZ6Nl9zeUh5LVNtZlM3ejY3WVpqTmNsNS1xWWRPSzhyTW5PZnJSNUJWM3k3b1Rkc2NSaDdvWlBmTHN1SWtuQklhU0tTd2g1LU9Da2Y3NnJVVTh3S3VzTTdkQdIBhgFBVV95cUxPcWtDWDBJTGFkXy1nSlUyVU5yUTlNaU8zcWhTb3FSREFKNk9LYzZPLVZNa0Y0U0I3U2F1X1FoX3FCUXdEMlRwaVI1LTZjaWJVZndRTExBOC1uYXdVWlpjaU12bTUzZW1SMTlkNlNuQ0hBNkJpRFFuQjkyYkRuN0hjOC1TQWhkUQ?oc=5",
-        "date": "2026-11-09"
-      }
-    ],
-    "Ohio State": [
-      {
-        "team": "Ohio State",
-        "tag": "QB",
-        "text": "QB Julian Sayin (right arm) is not expected back in the regular season based on Ryan Day's Nov. 5 update; freshman Luke Fahey has been starting.",
-        "source": "Bleacher Report",
-        "url": "https://bleacherreport.com/articles/25529602-julian-sayin-injury-update-ohio-state-hc-ryan-day-provides-latest-return-timeline-star-qb",
-        "date": "2026-11-05"
-      }
-    ],
-    "Wake Forest": [
-      {
-        "team": "Wake Forest",
-        "tag": "QB",
-        "text": "QB Gio Lopez (lower right leg) sat out vs. Merrimack; Jake Dickert called him day-to-day. His status for SMU has not been announced.",
-        "source": "Greensboro News and Record",
-        "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPNFdBZVRaMUJ0ZkxhSjdOa21Mb3ZBQ1JqOVpFM2FfYVpyeGZ6TVkwNWQwdHF5cV8tT3k2OWdvMTdsLXhUQS1wejZ1dTdKa1NKSXd5OFR2MWpIOHdwZnJLckdmTEgySW5KeGJuRTdhTXdGaldyQ2hEMFhRZXQ0QXZGWUYzcFVCS19KcExXd1RhZHdMdFlEOF8wSnFsaFJ1bUVfakE?oc=5",
-        "date": "2026-11-06"
-      }
-    ],
-    "South Carolina": [
-      {
-        "team": "South Carolina",
-        "tag": "QB",
-        "text": "QB LaNorris Sellers (ankle) received a positive injury update after limping through the Texas A&M win.",
-        "source": "Yahoo Sports",
-        "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPZ1FnUTFRQU5jMy1xblRZbnFDOEdHZGNwdWMtOHhkSFFadnMyWm1YQnJTZVo1RzlIZ1dDMkt6Z01XTGJ6bEJrOTdYN2dXVjZXR1haN0UzVEpGOVpRbm9CVHJwbFJnT0JFZ3FtQ3VPQ3dUODQxVkR5T0RFMnU0V2VoM3czUUhiMkNIck50Mk80Skpnejg?oc=5",
         "date": "2026-11-09"
       }
     ],
