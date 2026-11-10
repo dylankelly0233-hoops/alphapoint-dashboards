@@ -1,75 +1,75 @@
 {
- "sport": "cbb",
- "week": 20261110,
- "generated": "2026-11-10T18:10:11-05:00",
- "movers": [
-  {
-   "team": "Kansas",
-   "tag": "KEY",
-   "player": "Melvin Council Jr.",
-   "status": "out",
-   "text": "G Melvin Council Jr. broke his foot in practice; expected out until Big 12 play begins.",
-   "source": "CBS Sports",
-   "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOakstdTNnWlJxZVdUck8wX2pJVzFkTkR2R0NIZ19jMTBXVnJiel9HeEItc20tejlnelJUS3dVU2xURnRwV0hKWmZFUUcyU29UR0xxQlRDb3ZLNWxNS041cHoycDdXSS10M1ZjN0pxUzR1dk1OU2UtV29raFlObHVwc1BNb2dKdw?oc=5",
-   "date": "2026-11-09"
-  },
-  {
-   "team": "Oregon",
-   "tag": "KEY",
-   "player": "Tyrone Riley IV",
-   "status": "out",
-   "text": "G Tyrone Riley IV (33 mpg) out for weeks with a hand injury suffered after the season opener.",
-   "source": "Ducks Wire",
-   "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxNQy1zcmtjUDZJb2laM1N2Zl9WVU8zZDlLbG0yWjFqNXZJelpfV2VwUVptWkJ2UU54bXpXd2lPMkJkX1J5SWJDUWlfUEFhY2staWdWOE5FV3V1SEVrUzFrS21McXRTU1oyQ0RFbHlYMTlhZG44OUdtSmtZanN2TGVnSkFJTDB3X0VSZmVzUWlzc0NTRWJxR2hvM2pCTUF1YlFhVGwyQjRFemJ0cF9qa1dTR0F2UkJsYlg2T1FpLWVtdS04cGttYlJ3UVZscExHZ0x4SVg5WTNaNVV3enpreFd0S09OMXg0Zw?oc=5",
-   "date": "2026-11-06"
-  },
-  {
-   "team": "Minnesota",
-   "tag": "KEY",
-   "player": "Kai Shinholster",
-   "status": "out",
-   "text": "Kai Shinholster out with a calf injury; Gophers expect to play without him for up to a month.",
-   "source": "Pioneer Press",
-   "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNMU1YbnVaclFnQy0xWXcxQmYxMTRjUWpKWHZqbmt1d2YyZWxfdGFsQVdKS0xudHBwd25vNG5ONmpSUFFTV3dBRHR5bkdqendJaFdxRGFTOGthdmVsd1dSNHZrU3pnXzl0Tjg5S3Y5R2FPLTNkVE5POHNKRDAzVUNINk5SUUFPbzNtUzZYTEU3YUEzRVlfOFdGdnpTUFFFdE51MFFZajB1TQ?oc=5",
-   "date": "2026-11-07"
+  "sport": "cbb",
+  "week": 20261110,
+  "generated": "2026-11-10T18:21:31-05:00",
+  "movers": [
+    {
+      "team": "Kansas",
+      "tag": "KEY",
+      "player": "Melvin Council Jr.",
+      "status": "out",
+      "text": "G Melvin Council Jr. broke his foot in practice; expected out until Big 12 play begins.",
+      "source": "CBS Sports",
+      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOakstdTNnWlJxZVdUck8wX2pJVzFkTkR2R0NIZ19jMTBXVnJiel9HeEItc20tejlnelJUS3dVU2xURnRwV0hKWmZFUUcyU29UR0xxQlRDb3ZLNWxNS041cHoycDdXSS10M1ZjN0pxUzR1dk1OU2UtV29raFlObHVwc1BNb2dKdw?oc=5",
+      "date": "2026-11-09"
+    },
+    {
+      "team": "Oregon",
+      "tag": "KEY",
+      "player": "Tyrone Riley IV",
+      "status": "out",
+      "text": "G Tyrone Riley IV (33 mpg) out for weeks with a hand injury suffered after the season opener.",
+      "source": "Ducks Wire",
+      "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxNQy1zcmtjUDZJb2laM1N2Zl9WVU8zZDlLbG0yWjFqNXZJelpfV2VwUVptWkJ2UU54bXpXd2lPMkJkX1J5SWJDUWlfUEFhY2staWdWOE5FV3V1SEVrUzFrS21McXRTU1oyQ0RFbHlYMTlhZG44OUdtSmtZanN2TGVnSkFJTDB3X0VSZmVzUWlzc0NTRWJxR2hvM2pCTUF1YlFhVGwyQjRFemJ0cF9qa1dTR0F2UkJsYlg2T1FpLWVtdS04cGttYlJ3UVZscExHZ0x4SVg5WTNaNVV3enpreFd0S09OMXg0Zw?oc=5",
+      "date": "2026-11-06"
+    },
+    {
+      "team": "Minnesota",
+      "tag": "KEY",
+      "player": "Kai Shinholster",
+      "status": "out",
+      "text": "Kai Shinholster out with a calf injury; Gophers expect to play without him for up to a month.",
+      "source": "Pioneer Press",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNMU1YbnVaclFnQy0xWXcxQmYxMTRjUWpKWHZqbmt1d2YyZWxfdGFsQVdKS0xudHBwd25vNG5ONmpSUFFTV3dBRHR5bkdqendJaFdxRGFTOGthdmVsd1dSNHZrU3pnXzl0Tjg5S3Y5R2FPLTNkVE5POHNKRDAzVUNINk5SUUFPbzNtUzZYTEU3YUEzRVlfOFdGdnpTUFFFdE51MFFZajB1TQ?oc=5",
+      "date": "2026-11-07"
+    }
+  ],
+  "teams": {
+    "Kansas": [
+      {
+        "team": "Kansas",
+        "tag": "KEY",
+        "player": "Melvin Council Jr.",
+        "status": "out",
+        "text": "G Melvin Council Jr. broke his foot in practice; expected out until Big 12 play begins.",
+        "source": "CBS Sports",
+        "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOakstdTNnWlJxZVdUck8wX2pJVzFkTkR2R0NIZ19jMTBXVnJiel9HeEItc20tejlnelJUS3dVU2xURnRwV0hKWmZFUUcyU29UR0xxQlRDb3ZLNWxNS041cHoycDdXSS10M1ZjN0pxUzR1dk1OU2UtV29raFlObHVwc1BNb2dKdw?oc=5",
+        "date": "2026-11-09"
+      }
+    ],
+    "Oregon": [
+      {
+        "team": "Oregon",
+        "tag": "KEY",
+        "player": "Tyrone Riley IV",
+        "status": "out",
+        "text": "G Tyrone Riley IV (33 mpg) out for weeks with a hand injury suffered after the season opener.",
+        "source": "Ducks Wire",
+        "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxNQy1zcmtjUDZJb2laM1N2Zl9WVU8zZDlLbG0yWjFqNXZJelpfV2VwUVptWkJ2UU54bXpXd2lPMkJkX1J5SWJDUWlfUEFhY2staWdWOE5FV3V1SEVrUzFrS21McXRTU1oyQ0RFbHlYMTlhZG44OUdtSmtZanN2TGVnSkFJTDB3X0VSZmVzUWlzc0NTRWJxR2hvM2pCTUF1YlFhVGwyQjRFemJ0cF9qa1dTR0F2UkJsYlg2T1FpLWVtdS04cGttYlJ3UVZscExHZ0x4SVg5WTNaNVV3enpreFd0S09OMXg0Zw?oc=5",
+        "date": "2026-11-06"
+      }
+    ],
+    "Minnesota": [
+      {
+        "team": "Minnesota",
+        "tag": "KEY",
+        "player": "Kai Shinholster",
+        "status": "out",
+        "text": "Kai Shinholster out with a calf injury; Gophers expect to play without him for up to a month.",
+        "source": "Pioneer Press",
+        "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNMU1YbnVaclFnQy0xWXcxQmYxMTRjUWpKWHZqbmt1d2YyZWxfdGFsQVdKS0xudHBwd25vNG5ONmpSUFFTV3dBRHR5bkdqendJaFdxRGFTOGthdmVsd1dSNHZrU3pnXzl0Tjg5S3Y5R2FPLTNkVE5POHNKRDAzVUNINk5SUUFPbzNtUzZYTEU3YUEzRVlfOFdGdnpTUFFFdE51MFFZajB1TQ?oc=5",
+        "date": "2026-11-07"
+      }
+    ]
   }
- ],
- "teams": {
-  "Kansas": [
-   {
-    "team": "Kansas",
-    "tag": "KEY",
-    "player": "Melvin Council Jr.",
-    "status": "out",
-    "text": "G Melvin Council Jr. broke his foot in practice; expected out until Big 12 play begins.",
-    "source": "CBS Sports",
-    "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOakstdTNnWlJxZVdUck8wX2pJVzFkTkR2R0NIZ19jMTBXVnJiel9HeEItc20tejlnelJUS3dVU2xURnRwV0hKWmZFUUcyU29UR0xxQlRDb3ZLNWxNS041cHoycDdXSS10M1ZjN0pxUzR1dk1OU2UtV29raFlObHVwc1BNb2dKdw?oc=5",
-    "date": "2026-11-09"
-   }
-  ],
-  "Oregon": [
-   {
-    "team": "Oregon",
-    "tag": "KEY",
-    "player": "Tyrone Riley IV",
-    "status": "out",
-    "text": "G Tyrone Riley IV (33 mpg) out for weeks with a hand injury suffered after the season opener.",
-    "source": "Ducks Wire",
-    "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxNQy1zcmtjUDZJb2laM1N2Zl9WVU8zZDlLbG0yWjFqNXZJelpfV2VwUVptWkJ2UU54bXpXd2lPMkJkX1J5SWJDUWlfUEFhY2staWdWOE5FV3V1SEVrUzFrS21McXRTU1oyQ0RFbHlYMTlhZG44OUdtSmtZanN2TGVnSkFJTDB3X0VSZmVzUWlzc0NTRWJxR2hvM2pCTUF1YlFhVGwyQjRFemJ0cF9qa1dTR0F2UkJsYlg2T1FpLWVtdS04cGttYlJ3UVZscExHZ0x4SVg5WTNaNVV3enpreFd0S09OMXg0Zw?oc=5",
-    "date": "2026-11-06"
-   }
-  ],
-  "Minnesota": [
-   {
-    "team": "Minnesota",
-    "tag": "KEY",
-    "player": "Kai Shinholster",
-    "status": "out",
-    "text": "Kai Shinholster out with a calf injury; Gophers expect to play without him for up to a month.",
-    "source": "Pioneer Press",
-    "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNMU1YbnVaclFnQy0xWXcxQmYxMTRjUWpKWHZqbmt1d2YyZWxfdGFsQVdKS0xudHBwd25vNG5ONmpSUFFTV3dBRHR5bkdqendJaFdxRGFTOGthdmVsd1dSNHZrU3pnXzl0Tjg5S3Y5R2FPLTNkVE5POHNKRDAzVUNINk5SUUFPbzNtUzZYTEU3YUEzRVlfOFdGdnpTUFFFdE51MFFZajB1TQ?oc=5",
-    "date": "2026-11-07"
-   }
-  ]
- }
 }
