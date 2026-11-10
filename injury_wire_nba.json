@@ -1,148 +1,168 @@
 {
  "sport": "nba",
- "week": 20261109,
- "generated": "2026-11-09T17:05:34-05:00",
+ "week": 20261110,
+ "generated": "2026-11-10T18:13:26-05:00",
  "movers": [
   {
-   "team": "CHA",
+   "team": "UTAH",
    "tag": "CLUSTER",
-   "text": "Brandon Miller (groin) out vs CLE; Dennis Schroder out, hamstring strain, re-eval in 2 weeks; Moussa Diabate (quad) doubtful. Report as of 11/9.",
+   "text": "Lauri Markkanen (wrist sprain) and Keyonte George (ankle) both ruled out for Tuesday vs MIA; Jaren Jackson Jr. (MCL) out 6-8 weeks. Report as of 6 PM ET 11/10.",
    "source": "ESPN",
    "url": "https://www.espn.com/nba/injuries",
-   "date": "2026-11-09"
+   "date": "2026-11-10"
   },
   {
-   "team": "NO",
-   "tag": "CLUSTER",
-   "text": "Zion Williamson (rest) and Trey Murphy III (knees) both ruled out for Monday vs GS. Report as of 11/9.",
-   "source": "ESPN",
-   "url": "https://www.espn.com/nba/injuries",
-   "date": "2026-11-09"
-  },
-  {
-   "team": "LAL",
+   "team": "NY",
    "tag": "KEY",
-   "text": "Austin Reaves (36 mpg) questionable vs ATL with illness; Quentin Grimes (finger) out. Report as of 11/9.",
+   "text": "Josh Hart (32 mpg) won't play Tuesday vs MIL with an illness. Report as of 6 PM ET 11/10.",
    "source": "ESPN",
    "url": "https://www.espn.com/nba/injuries",
-   "date": "2026-11-09"
+   "date": "2026-11-10"
+  },
+  {
+   "team": "ORL",
+   "tag": "CLUSTER",
+   "text": "Jalen Suggs (knee) out Tuesday at SAC; Tristan da Silva (calf strain) questionable; Paolo Banchero (high-ankle sprain) out 4-6 weeks. Report as of 6 PM ET 11/10.",
+   "source": "ESPN",
+   "url": "https://www.espn.com/nba/injuries",
+   "date": "2026-11-10"
   },
   {
    "team": "TOR",
-   "tag": "KEY",
-   "text": "Scottie Barnes (adductor) and Immanuel Quickley (hamstring) limited Sunday, listed questionable vs MEM; Kawhi Leonard (knee) out, re-eval in 1 week.",
+   "tag": "CLUSTER",
+   "text": "Scottie Barnes (groin) out Wednesday vs BOS; Immanuel Quickley (hamstring) and Collin Murray-Boyles (illness) questionable; Kawhi Leonard (knee) still reconditioning.",
    "source": "ESPN",
    "url": "https://www.espn.com/nba/injuries",
-   "date": "2026-11-08"
+   "date": "2026-11-10"
   },
   {
-   "team": "UTAH",
+   "team": "MIL",
    "tag": "KEY",
-   "text": "Lauri Markkanen (wrist) missed Sunday; Keyonte George left Sunday's game with a right ankle injury. Status for Monday vs MIA not yet posted.",
+   "text": "Tyler Herro (31 mpg, contusion) listed questionable for Tuesday at NY. Report as of 6 PM ET 11/10.",
    "source": "ESPN",
    "url": "https://www.espn.com/nba/injuries",
-   "date": "2026-11-09"
+   "date": "2026-11-10"
   }
  ],
  "teams": {
-  "CHA": [
-   {
-    "team": "CHA",
-    "tag": "CLUSTER",
-    "text": "Brandon Miller (groin) out vs CLE; Dennis Schroder out, hamstring strain, re-eval in 2 weeks; Moussa Diabate (quad) doubtful. Report as of 11/9.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nba/injuries",
-    "date": "2026-11-09"
-   }
-  ],
-  "NO": [
-   {
-    "team": "NO",
-    "tag": "CLUSTER",
-    "text": "Zion Williamson (rest) and Trey Murphy III (knees) both ruled out for Monday vs GS. Report as of 11/9.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nba/injuries",
-    "date": "2026-11-09"
-   }
-  ],
-  "LAL": [
-   {
-    "team": "LAL",
-    "tag": "KEY",
-    "text": "Austin Reaves (36 mpg) questionable vs ATL with illness; Quentin Grimes (finger) out. Report as of 11/9.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nba/injuries",
-    "date": "2026-11-09"
-   }
-  ],
-  "TOR": [
-   {
-    "team": "TOR",
-    "tag": "KEY",
-    "text": "Scottie Barnes (adductor) and Immanuel Quickley (hamstring) limited Sunday, listed questionable vs MEM; Kawhi Leonard (knee) out, re-eval in 1 week.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nba/injuries",
-    "date": "2026-11-08"
-   }
-  ],
   "UTAH": [
    {
     "team": "UTAH",
-    "tag": "KEY",
-    "text": "Lauri Markkanen (wrist) missed Sunday; Keyonte George left Sunday's game with a right ankle injury. Status for Monday vs MIA not yet posted.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nba/injuries",
-    "date": "2026-11-09"
-   }
-  ],
-  "CLE": [
-   {
-    "team": "CLE",
     "tag": "CLUSTER",
-    "text": "Sam Merrill (elbow) and Jaylon Tyson (ankle) out vs CHA; Jarrett Allen (knee) questionable.",
+    "text": "Lauri Markkanen (wrist sprain) and Keyonte George (ankle) both ruled out for Tuesday vs MIA; Jaren Jackson Jr. (MCL) out 6-8 weeks. Report as of 6 PM ET 11/10.",
     "source": "ESPN",
     "url": "https://www.espn.com/nba/injuries",
-    "date": "2026-11-08"
-   }
-  ],
-  "SA": [
-   {
-    "team": "SA",
-    "tag": "KEY",
-    "text": "Devin Vassell (groin, 30 mpg) out for Monday vs PHX.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nba/injuries",
-    "date": "2026-11-09"
-   }
-  ],
-  "WSH": [
-   {
-    "team": "WSH",
-    "tag": "KEY",
-    "text": "Anthony Davis (ankle) and Bilal Coulibaly (hand) questionable for Monday at DET.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nba/injuries",
-    "date": "2026-11-09"
-   }
-  ],
-  "SAC": [
-   {
-    "team": "SAC",
-    "tag": "KEY",
-    "text": "Domantas Sabonis (knee, 36 mpg) missed Sunday vs MIA; status for Monday at ORL not yet posted.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nba/injuries",
-    "date": "2026-11-09"
+    "date": "2026-11-10"
    }
   ],
   "NY": [
    {
     "team": "NY",
     "tag": "KEY",
-    "text": "Josh Hart (right ankle soreness) missed Saturday vs CLE; day-to-day ahead of Monday at MIL.",
+    "text": "Josh Hart (32 mpg) won't play Tuesday vs MIL with an illness. Report as of 6 PM ET 11/10.",
     "source": "ESPN",
     "url": "https://www.espn.com/nba/injuries",
-    "date": "2026-11-08"
+    "date": "2026-11-10"
+   }
+  ],
+  "ORL": [
+   {
+    "team": "ORL",
+    "tag": "CLUSTER",
+    "text": "Jalen Suggs (knee) out Tuesday at SAC; Tristan da Silva (calf strain) questionable; Paolo Banchero (high-ankle sprain) out 4-6 weeks. Report as of 6 PM ET 11/10.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nba/injuries",
+    "date": "2026-11-10"
+   }
+  ],
+  "TOR": [
+   {
+    "team": "TOR",
+    "tag": "CLUSTER",
+    "text": "Scottie Barnes (groin) out Wednesday vs BOS; Immanuel Quickley (hamstring) and Collin Murray-Boyles (illness) questionable; Kawhi Leonard (knee) still reconditioning.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nba/injuries",
+    "date": "2026-11-10"
+   }
+  ],
+  "MIL": [
+   {
+    "team": "MIL",
+    "tag": "KEY",
+    "text": "Tyler Herro (31 mpg, contusion) listed questionable for Tuesday at NY. Report as of 6 PM ET 11/10.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nba/injuries",
+    "date": "2026-11-10"
+   }
+  ],
+  "CLE": [
+   {
+    "team": "CLE",
+    "tag": "CLUSTER",
+    "text": "Sam Merrill (elbow) out Wednesday vs NY; Jaylon Tyson (ankle) questionable.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nba/injuries",
+    "date": "2026-11-10"
+   }
+  ],
+  "CHA": [
+   {
+    "team": "CHA",
+    "tag": "CLUSTER",
+    "text": "Brandon Miller (groin) and Moussa Diabate (quad) missed Monday vs CLE; Dennis Schroder (hamstring) re-evaluated in two weeks.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nba/injuries",
+    "date": "2026-11-10"
+   }
+  ],
+  "SA": [
+   {
+    "team": "SA",
+    "tag": "KEY",
+    "text": "Devin Vassell (30 mpg, groin) listed questionable for Wednesday vs CHI after missing last game.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nba/injuries",
+    "date": "2026-11-10"
+   }
+  ],
+  "CHI": [
+   {
+    "team": "CHI",
+    "tag": "KEY",
+    "text": "Norman Powell (29 mpg, shoulder) listed questionable for Wednesday vs SA after missing last game.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nba/injuries",
+    "date": "2026-11-10"
+   }
+  ],
+  "LAL": [
+   {
+    "team": "LAL",
+    "tag": "KEY",
+    "text": "Quentin Grimes (26 mpg, finger) listed questionable for Wednesday at MIL after missing last game.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nba/injuries",
+    "date": "2026-11-10"
+   }
+  ],
+  "NO": [
+   {
+    "team": "NO",
+    "tag": "RETURNING",
+    "text": "Trey Murphy III (knee, 33 mpg) probable for Wednesday vs BKN after missing Monday.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nba/injuries",
+    "date": "2026-11-10"
+   }
+  ],
+  "BKN": [
+   {
+    "team": "BKN",
+    "tag": "RETURNING",
+    "text": "Egor Demin (leg, 22 mpg) probable for Wednesday at NO after missing last game.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nba/injuries",
+    "date": "2026-11-10"
    }
   ]
  }
