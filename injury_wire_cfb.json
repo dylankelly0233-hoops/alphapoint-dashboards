@@ -1,7 +1,7 @@
 {
   "sport": "cfb",
   "week": 11,
-  "generated": "2026-11-10T18:13:30-05:00",
+  "generated": "2026-11-11T18:29:16-05:00",
   "movers": [
     {
       "team": "Alabama",
@@ -107,9 +107,9 @@
       {
         "team": "South Carolina",
         "tag": "QB",
-        "text": "QB LaNorris Sellers (ankle) limped through the Texas A&M win; Shane Beamer did not give an injury update for Arkansas.",
+        "text": "QB LaNorris Sellers (ankle) limped through the Texas A&M win; Shane Beamer gave a positive update but no formal injury status for Arkansas.",
         "source": "Yahoo Sports",
-        "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNXzl6RUNmRHVZR2pQQ3FiQVdaU3VUZy1ZQWpQRERzOGl5VXZZZzhfcWdYalNRd0xIV2tuZTdLdURsTDZzUTZEckVUSDB6TVNHc3hsWTU1ZW9rbXhDajhJTmhBdXJyNkxCcU1fa1NTVTVGYkNaeE45ZGhvczFIUlpOYzRhUFlZSlk?oc=5",
+        "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPOFg2SWRoVXJJQ3FjNXVqdUFqcWlla21KcldWdlZvS3hab1c5bmdRUW45QTFseUVTSkxQNXV2ci1Oc1RaU2I1WENzcmp3YXo4Mjd4MlpNRW5tM2w0UnBWWDNYck40b1FvUWdQcHdyTlpra1Y4WEptbjBueFVBLUVuaHBMTmM1R3hqNTk3dUkyLVNfdw?oc=5",
         "date": "2026-11-10"
       }
     ],
@@ -117,10 +117,10 @@
       {
         "team": "Wake Forest",
         "tag": "QB",
-        "text": "QB Gio Lopez (lower body) was held out vs. Merrimack as a precaution; reports say the injury is not long-term and he is expected to be available vs. SMU.",
+        "text": "QB Gio Lopez (lower body), held out vs. Merrimack, has looked 'phenomenal' this week, per Jake Dickert, ahead of SMU.",
         "source": "On3",
-        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOUTRtN1N5bmE2VnhTTFJaNDNBd1VVdDdxNjNjTDF1TnY2TFJMZzN6MVlVOHBfN0lONXNPZWs5M0RrOFdIbUhxdFZmNkFaVkM4VnQ5akNYWXpYWW80anVxLU1mQkxZTnl1UHQ3c3NlMkxldVFoR21IUGJrbXVVYTdMeUJLdWdIei0zOFJTclY2MVpERTlsVWZyTHZPcw?oc=5",
-        "date": "2026-11-09"
+        "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPaGdLUTJKa0d5QkdJQzY3QmZjeElQZU81MXdBdjdwdzBfVFZTdXVQWnRpeGFsRmtWdWlfajk1Qnd6Z0JGaVM2VjRGM2l3VHM3OGJnblNSVmlYcGhkMzJLLV9FTUJ5ZXhSZFhZVTBHT2tMdms5Z0lKRmtEN1ZENjJIRDlsM1ktemtDUTFsS0c3a2lCR3IxSkNqdzhHY1BsOE9vRGhYZ0tCb25SUGNkRHpJaHlWTW9oR0FJZXRZTUhhTTlGaEwxR3dCbWlXai0?oc=5",
+        "date": "2026-11-11"
       }
     ],
     "Wisconsin": [
@@ -185,10 +185,10 @@
       {
         "team": "Rutgers",
         "tag": "KEY",
-        "text": "Star WR (projected first-round pick) was out vs. Wisconsin; his status for Nebraska has not been announced.",
-        "source": "Yahoo Sports",
-        "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPbmhhMkJ1VTdlcy1zQ19nUkdPVjRsZDNRWUlXSktLcHlucm1LVnM1bUdUZVh5NFp3QlQ0TC1qd0ZxM3YwX2h4TjNYUmw5QVdYV1RnaGdQcEJ1eVRoT3NaRU9EdXdaZHZXaHBhYkZrM2RVanh2QnNCM0JEVnpVRGtfX21wcjU?oc=5",
-        "date": "2026-11-07"
+        "text": "Star WR KJ Duff (projected first-round pick) has been ruled out for the rest of the season after missing the Wisconsin game.",
+        "source": "On3",
+        "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPZkFIWXdtSnNSOVB4NW9vT21uaGdSZjlSa3g4SWZVck5qM1gzUy1MUXNFWWJzWFdyWVMyb0tLVDN1OFBkRXBxSVBLSTZ3ZjdUNURrQU94aDZPcFJULVd1TFFIX0loMXh3a01WcVliSzhETGRpcEgxVmp6aG5Kb2g5S2p4MlJ4LUI1LWpuSVdLS050SHIzUEo5TXRfZnV0VmdYdFMtZWpfQzYxX2s?oc=5",
+        "date": "2026-11-10"
       }
     ],
     "Texas Tech": [
@@ -209,6 +209,16 @@
         "source": "On3",
         "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNUGh6bEc1eDE5Qmw2eGJYMFlUSjdwMFZfSXlHNWNmbGoycEpRRmhqcGtKLWRiT2FzbElYb21TT0d6NWx3bVNVNzhRbkE2MmZBdjdBWm1YQ2ZkYkZqVC1zclZzdERVQ2ExTFpQajdKUVdORHFDWG9JNWFkQ28yNS1EOVRianpybHRQMnVvLVg4Z19waGNmQzhreE1QQXlsWGxOT2FhQktYY1VvUnc2cjM3eWFRQmhVdXVtTXhXOXNn?oc=5",
         "date": "2026-11-09"
+      }
+    ],
+    "Florida State": [
+      {
+        "team": "Florida State",
+        "tag": "CLUSTER",
+        "text": "19 players already ruled out at Pittsburgh, including a third RB. Starting C Bradyn Welch-Joiner was carted off at Boston College.",
+        "source": "Sports Illustrated",
+        "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNUG9vd09jb1dkT1AwZG9tY2Q4TW8wdVRBaElqVVEtYjJWSWt5S1NTemxBVy1FUjE0MzdFMVV0VDBUVlpNakhpYklTeG5SUV80Z2loZ0szMkRDdktKT1pOUEdNYkdNV0RROGdDd3hQai1yamhSSEk3VDRVcDRveTRrdVlSYzg0eHpBQlJidlJ4MnB0aVhfbkFNTkQ4YWhUV29vY08xWkFVdEpMb3liaVp3REZuaDNMZHNSbDk2MjRYVkZrV0RJTHBzb0o3Zm01YTA?oc=5",
+        "date": "2026-11-11"
       }
     ]
   }
