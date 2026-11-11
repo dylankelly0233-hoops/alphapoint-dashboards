@@ -1,74 +1,96 @@
 {
   "sport": "cbb",
-  "week": 20261110,
-  "generated": "2026-11-10T18:21:31-05:00",
+  "week": 20261111,
+  "generated": "2026-11-11T18:25:45-05:00",
   "movers": [
     {
-      "team": "Kansas",
+      "team": "Florida",
       "tag": "KEY",
-      "player": "Melvin Council Jr.",
-      "status": "out",
-      "text": "G Melvin Council Jr. broke his foot in practice; expected out until Big 12 play begins.",
-      "source": "CBS Sports",
-      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOakstdTNnWlJxZVdUck8wX2pJVzFkTkR2R0NIZ19jMTBXVnJiel9HeEItc20tejlnelJUS3dVU2xURnRwV0hKWmZFUUcyU29UR0xxQlRDb3ZLNWxNS041cHoycDdXSS10M1ZjN0pxUzR1dk1OU2UtV29raFlObHVwc1BNb2dKdw?oc=5",
-      "date": "2026-11-09"
+      "player": "Boogie Fland",
+      "status": "questionable",
+      "text": "G Boogie Fland (29.7 mpg) left the FSU game holding his shoulder and went to the locker room; no status given yet for Merrimack.",
+      "source": "On3",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNc0lIa1hKVWlDNmdKcEg0andnNnFwN1JBaV8tZWVvc0RXSWcyNHJ6OVJ5NkQ2MmVWMkl1NkFfZlhockNDNGRxbmtXeFc5S2phTFZrQTVyUzZYY2hKS2JndmJidEdac0l2NERtYmJ4RnBJbWI5Z0t2eU8xdWNsbXVfREJ2WHRNTHRUTWJHb3ZPeElDZGhwRXE2UVNQMlhZWEd4b3Q3eWNyb2hGNUl4LU4w?oc=5",
+      "date": "2026-11-11"
     },
     {
-      "team": "Oregon",
+      "team": "UConn",
       "tag": "KEY",
-      "player": "Tyrone Riley IV",
-      "status": "out",
-      "text": "G Tyrone Riley IV (33 mpg) out for weeks with a hand injury suffered after the season opener.",
-      "source": "Ducks Wire",
-      "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxNQy1zcmtjUDZJb2laM1N2Zl9WVU8zZDlLbG0yWjFqNXZJelpfV2VwUVptWkJ2UU54bXpXd2lPMkJkX1J5SWJDUWlfUEFhY2staWdWOE5FV3V1SEVrUzFrS21McXRTU1oyQ0RFbHlYMTlhZG44OUdtSmtZanN2TGVnSkFJTDB3X0VSZmVzUWlzc0NTRWJxR2hvM2pCTUF1YlFhVGwyQjRFemJ0cF9qa1dTR0F2UkJsYlg2T1FpLWVtdS04cGttYlJ3UVZscExHZ0x4SVg5WTNaNVV3enpreFd0S09OMXg0Zw?oc=5",
-      "date": "2026-11-06"
+      "player": "Nik Khamenia",
+      "status": "questionable",
+      "text": "F Nik Khamenia was ruled out in the first half vs Wagner; UConn is awaiting test results ahead of Ohio State.",
+      "source": "Norwich Bulletin",
+      "url": "https://news.google.com/rss/articles/CBMikwJBVV95cUxPMWwtSzNkZTVuaFFvZk9MSVc2aTlwRkZmQjByZFVDZlFNRkZWWE1LZnY4SmkycXBidEM2UjY0TE0yYVdNdVFwUkxJa1VrZ2ttTnljSHpsSkhIRm5Bdmx4RlJwV0wyM0wtd3ZvVy0xZmZfUzZTSFdGTk9xeEttZGVsZXNoaXZMTHFyOV9oNGNUb2J6aUlhOFRtOWRNa1hrYU1fZEYxQkZ1TUwxc3FvY2FBREhpTnhCTEdkOEFwcFNGRmtHcjlCeUI0dUxTdWFCYnlmTkRKMGVPMVpWdENyWXpNcGNNMV9Mdm8tU254ZTBjVVlDZmljTTNtV0hNWlhwaVBjaUlvOHZJOUhrdHZyVERVZ2R3Yw?oc=5",
+      "date": "2026-11-10"
     },
     {
-      "team": "Minnesota",
+      "team": "Texas A&M",
       "tag": "KEY",
-      "player": "Kai Shinholster",
-      "status": "out",
-      "text": "Kai Shinholster out with a calf injury; Gophers expect to play without him for up to a month.",
-      "source": "Pioneer Press",
-      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNMU1YbnVaclFnQy0xWXcxQmYxMTRjUWpKWHZqbmt1d2YyZWxfdGFsQVdKS0xudHBwd25vNG5ONmpSUFFTV3dBRHR5bkdqendJaFdxRGFTOGthdmVsd1dSNHZrU3pnXzl0Tjg5S3Y5R2FPLTNkVE5POHNKRDAzVUNINk5SUUFPbzNtUzZYTEU3YUEzRVlfOFdGdnpTUFFFdE51MFFZajB1TQ?oc=5",
-      "date": "2026-11-07"
+      "player": "Cade Phillips",
+      "status": "questionable",
+      "text": "F Cade Phillips was injured in the win over ULM; reports say a freshman could see a bigger role. No timeline given.",
+      "source": "Aggies Wire",
+      "url": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxNZXFpOTBIU1NtS3V2eWNNVThLb2NJRVAtNkF4bFJsa1YxSmk0YkltR0wwdFZ3UXpRYy1TRXktTWFzdjZRUWRrNlFfMDlOVVpYQVVhLVdtaVM2bVdoTWV3Q0U5cnRuM045S2FvZHBseHZSLUhDS3NxMkNaYWZNSlp0ZThfUmx3UW1YbmZPWEItdTM1V3ltZk9WaDRPZjB4RkRHQ25JVXNPYXdwMjdab21YNVhHd2w1cXYtNHdNQ19MRDB4LTJMT1JpelRXOFVBbGZubVNhekt0dC0xeGxDN2lhX3hnVHJvRVFuV3A3cw?oc=5",
+      "date": "2026-11-11"
+    },
+    {
+      "team": "Alabama",
+      "tag": "KEY",
+      "player": "Jamarion Davis-Fleming",
+      "status": "questionable",
+      "text": "F Jamarion Davis-Fleming (18 mpg) was ruled out vs Oakland; no update yet for Seton Hall.",
+      "source": "The Tuscaloosa News",
+      "url": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxNajBGMGUxYmtxbnMySTY4bF9KZTlHQ0E5Q2wxUUtqZmdYa3RKZ3NYdzRwTEMxR0s0azFlOTFnUzFVVWt3NVNXMURWb0ZEb25zaWh3eHV4STN6V0ViYjZJaFZnUFIzb0RMdlRHempDV3pkQ3lYdXc5T21TWGVhTklja1JLdnhHdndHY21BY0E4QzVHbGZjczFKRVQ5VDNXc3c1RHI4dlhGRWl1R3B3OFVjRUItQUF1YVBZb0trMEtUWmF2dHF5bWtFekVPRW5zWjE4R1JTZTVjN0d3WWhZeWZrZ3lHY1FGV1VmZ0FuQw?oc=5",
+      "date": "2026-11-10"
     }
   ],
   "teams": {
-    "Kansas": [
+    "Florida": [
       {
-        "team": "Kansas",
+        "team": "Florida",
         "tag": "KEY",
-        "player": "Melvin Council Jr.",
-        "status": "out",
-        "text": "G Melvin Council Jr. broke his foot in practice; expected out until Big 12 play begins.",
-        "source": "CBS Sports",
-        "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOakstdTNnWlJxZVdUck8wX2pJVzFkTkR2R0NIZ19jMTBXVnJiel9HeEItc20tejlnelJUS3dVU2xURnRwV0hKWmZFUUcyU29UR0xxQlRDb3ZLNWxNS041cHoycDdXSS10M1ZjN0pxUzR1dk1OU2UtV29raFlObHVwc1BNb2dKdw?oc=5",
-        "date": "2026-11-09"
+        "player": "Boogie Fland",
+        "status": "questionable",
+        "text": "G Boogie Fland (29.7 mpg) left the FSU game holding his shoulder and went to the locker room; no status given yet for Merrimack.",
+        "source": "On3",
+        "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNc0lIa1hKVWlDNmdKcEg0andnNnFwN1JBaV8tZWVvc0RXSWcyNHJ6OVJ5NkQ2MmVWMkl1NkFfZlhockNDNGRxbmtXeFc5S2phTFZrQTVyUzZYY2hKS2JndmJidEdac0l2NERtYmJ4RnBJbWI5Z0t2eU8xdWNsbXVfREJ2WHRNTHRUTWJHb3ZPeElDZGhwRXE2UVNQMlhZWEd4b3Q3eWNyb2hGNUl4LU4w?oc=5",
+        "date": "2026-11-11"
       }
     ],
-    "Oregon": [
+    "UConn": [
       {
-        "team": "Oregon",
+        "team": "UConn",
         "tag": "KEY",
-        "player": "Tyrone Riley IV",
-        "status": "out",
-        "text": "G Tyrone Riley IV (33 mpg) out for weeks with a hand injury suffered after the season opener.",
-        "source": "Ducks Wire",
-        "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxNQy1zcmtjUDZJb2laM1N2Zl9WVU8zZDlLbG0yWjFqNXZJelpfV2VwUVptWkJ2UU54bXpXd2lPMkJkX1J5SWJDUWlfUEFhY2staWdWOE5FV3V1SEVrUzFrS21McXRTU1oyQ0RFbHlYMTlhZG44OUdtSmtZanN2TGVnSkFJTDB3X0VSZmVzUWlzc0NTRWJxR2hvM2pCTUF1YlFhVGwyQjRFemJ0cF9qa1dTR0F2UkJsYlg2T1FpLWVtdS04cGttYlJ3UVZscExHZ0x4SVg5WTNaNVV3enpreFd0S09OMXg0Zw?oc=5",
-        "date": "2026-11-06"
+        "player": "Nik Khamenia",
+        "status": "questionable",
+        "text": "F Nik Khamenia was ruled out in the first half vs Wagner; UConn is awaiting test results ahead of Ohio State.",
+        "source": "Norwich Bulletin",
+        "url": "https://news.google.com/rss/articles/CBMikwJBVV95cUxPMWwtSzNkZTVuaFFvZk9MSVc2aTlwRkZmQjByZFVDZlFNRkZWWE1LZnY4SmkycXBidEM2UjY0TE0yYVdNdVFwUkxJa1VrZ2ttTnljSHpsSkhIRm5Bdmx4RlJwV0wyM0wtd3ZvVy0xZmZfUzZTSFdGTk9xeEttZGVsZXNoaXZMTHFyOV9oNGNUb2J6aUlhOFRtOWRNa1hrYU1fZEYxQkZ1TUwxc3FvY2FBREhpTnhCTEdkOEFwcFNGRmtHcjlCeUI0dUxTdWFCYnlmTkRKMGVPMVpWdENyWXpNcGNNMV9Mdm8tU254ZTBjVVlDZmljTTNtV0hNWlhwaVBjaUlvOHZJOUhrdHZyVERVZ2R3Yw?oc=5",
+        "date": "2026-11-10"
       }
     ],
-    "Minnesota": [
+    "Texas A&M": [
       {
-        "team": "Minnesota",
+        "team": "Texas A&M",
         "tag": "KEY",
-        "player": "Kai Shinholster",
-        "status": "out",
-        "text": "Kai Shinholster out with a calf injury; Gophers expect to play without him for up to a month.",
-        "source": "Pioneer Press",
-        "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNMU1YbnVaclFnQy0xWXcxQmYxMTRjUWpKWHZqbmt1d2YyZWxfdGFsQVdKS0xudHBwd25vNG5ONmpSUFFTV3dBRHR5bkdqendJaFdxRGFTOGthdmVsd1dSNHZrU3pnXzl0Tjg5S3Y5R2FPLTNkVE5POHNKRDAzVUNINk5SUUFPbzNtUzZYTEU3YUEzRVlfOFdGdnpTUFFFdE51MFFZajB1TQ?oc=5",
-        "date": "2026-11-07"
+        "player": "Cade Phillips",
+        "status": "questionable",
+        "text": "F Cade Phillips was injured in the win over ULM; reports say a freshman could see a bigger role. No timeline given.",
+        "source": "Aggies Wire",
+        "url": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxNZXFpOTBIU1NtS3V2eWNNVThLb2NJRVAtNkF4bFJsa1YxSmk0YkltR0wwdFZ3UXpRYy1TRXktTWFzdjZRUWRrNlFfMDlOVVpYQVVhLVdtaVM2bVdoTWV3Q0U5cnRuM045S2FvZHBseHZSLUhDS3NxMkNaYWZNSlp0ZThfUmx3UW1YbmZPWEItdTM1V3ltZk9WaDRPZjB4RkRHQ25JVXNPYXdwMjdab21YNVhHd2w1cXYtNHdNQ19MRDB4LTJMT1JpelRXOFVBbGZubVNhekt0dC0xeGxDN2lhX3hnVHJvRVFuV3A3cw?oc=5",
+        "date": "2026-11-11"
+      }
+    ],
+    "Alabama": [
+      {
+        "team": "Alabama",
+        "tag": "KEY",
+        "player": "Jamarion Davis-Fleming",
+        "status": "questionable",
+        "text": "F Jamarion Davis-Fleming (18 mpg) was ruled out vs Oakland; no update yet for Seton Hall.",
+        "source": "The Tuscaloosa News",
+        "url": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxNajBGMGUxYmtxbnMySTY4bF9KZTlHQ0E5Q2wxUUtqZmdYa3RKZ3NYdzRwTEMxR0s0azFlOTFnUzFVVWt3NVNXMURWb0ZEb25zaWh3eHV4STN6V0ViYjZJaFZnUFIzb0RMdlRHempDV3pkQ3lYdXc5T21TWGVhTklja1JLdnhHdndHY21BY0E4QzVHbGZjczFKRVQ5VDNXc3c1RHI4dlhGRWl1R3B3OFVjRUItQUF1YVBZb0trMEtUWmF2dHF5bWtFekVPRW5zWjE4R1JTZTVjN0d3WWhZeWZrZ3lHY1FGV1VmZ0FuQw?oc=5",
+        "date": "2026-11-10"
       }
     ]
   }
