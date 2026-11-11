@@ -1,7 +1,7 @@
 {
   "sport": "cbb",
   "week": 20261111,
-  "generated": "2026-11-11T18:25:45-05:00",
+  "generated": "2026-11-11T18:40:00-05:00",
   "movers": [
     {
       "team": "Florida",
@@ -91,6 +91,18 @@
         "source": "The Tuscaloosa News",
         "url": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxNajBGMGUxYmtxbnMySTY4bF9KZTlHQ0E5Q2wxUUtqZmdYa3RKZ3NYdzRwTEMxR0s0azFlOTFnUzFVVWt3NVNXMURWb0ZEb25zaWh3eHV4STN6V0ViYjZJaFZnUFIzb0RMdlRHempDV3pkQ3lYdXc5T21TWGVhTklja1JLdnhHdndHY21BY0E4QzVHbGZjczFKRVQ5VDNXc3c1RHI4dlhGRWl1R3B3OFVjRUItQUF1YVBZb0trMEtUWmF2dHF5bWtFekVPRW5zWjE4R1JTZTVjN0d3WWhZeWZrZ3lHY1FGV1VmZ0FuQw?oc=5",
         "date": "2026-11-10"
+      }
+    ],
+    "Notre Dame": [
+      {
+        "team": "Notre Dame",
+        "tag": "KEY",
+        "player": "Tommy Ahneman",
+        "status": "out",
+        "text": "C Tommy Ahneman (11.7 mpg) is out indefinitely with an arm injury.",
+        "source": "On3",
+        "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQWEs5WHlQTm9DZHFJb3hwZks3TGpNTnJVYkZfU04yQWUzZWFNY1k0eG1CZ2daU0EzUThuZVBKOTd1U0xaNEdIMDZDU0I5YUZZdlU4Xy1FVjZuRzVIS1o3U1lJVVBUR3JMWW1LY0ZmVUVsaDZWaDBJQmwyc1Y1US1ZU25uVFNzSFdtbVF2dlNHRzZheWJxakF5NzN2OTR3VWpoSVFGOTRMTjlpZUVfMnJ0RnBrdklaS01mNGQtVHBtaEp6bWg5MmY1Rw?oc=5",
+        "date": "2026-11-11"
       }
     ]
   }
