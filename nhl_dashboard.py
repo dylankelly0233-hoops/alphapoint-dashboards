@@ -535,13 +535,14 @@ def generate_html(power, metrics, days, info):
             chg = (f'{100 * k["chg24"]:+.0f}' if k and k.get('chg24') is not None else '—')
             vol = f'${k["volume"]:,.0f}' if k else '—'
             mrows += (f'<tr><td class="l">{theme.esc(_when(g))}</td>'
-                      f'<td class="l">{theme.esc(short(g["away"]))} @ {theme.esc(short(g["home"]))}</td>'
+                      f'<td class="l">{theme.esc(short(g["away"]))} @ {theme.esc(short(g["home"]))}'
+                      f'<span class="mwhen">{theme.esc(_when(g))}</span></td>'
                       f'<td>{_pct(g["p"])}</td><td>{_pct(g["p_mkt"])}</td><td>{_pct(k["p_home"]) if k else "—"}</td>'
                       f'<td class="muted">{chg}</td><td class="muted">{vol}</td></tr>')
     markets_html = (
         '<div class="sechead"><h2>Markets</h2><span class="hint">Home team win probability: ours, the sportsbook '
         '(no-vig) and Kalshi</span></div>'
-        + (theme.table('mk-table', [('When', 'l'), ('Game', 'l'), ('Ours', ''), ('Sportsbook', ''), ('Kalshi', ''),
+        + (theme.table('mk-table', [('When', 'l opt'), ('Game', 'l'), ('Ours', ''), ('Sportsbook', ''), ('Kalshi', ''),
                                     ('Kalshi 24h (pts)', 'opt'), ('Kalshi volume', 'opt')], mrows) if mrows
            else '<p class="hint">No priced games yet.</p>')
         + theme.method_note('All columns are the <b>home</b> team\'s chance to win, overtime included. Kalshi is the middle '

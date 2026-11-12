@@ -412,17 +412,19 @@ def generate_html(power, metrics, days, info):
             k = info['kalshi'].get(frozenset((g['home'], g['away'])))
             if g['score'] or not (k or g['mkt']):
                 continue
-            kh = f'{_pct(k[g["home"]])} / {_pct(k["draw"])} / {_pct(k[g["away"]])}' if k else '—'
+            sl = '<span class="sl"> / </span>'
+            kh = sl.join([_pct(k[g["home"]]), _pct(k["draw"]), _pct(k[g["away"]])]) if k else '—'
             vol = f'${k["volume"]:,.0f}' if k else '—'
             mrows += (f'<tr><td class="l">{theme.esc(_when(g))}</td>'
-                      f'<td class="l">{theme.esc(short(g["home"]))} v {theme.esc(short(g["away"]))}</td>'
-                      f'<td>{" / ".join(_pct(p) for p in g["probs"]) if g["probs"] else "—"}</td>'
-                      f'<td>{" / ".join(_pct(p) for p in g["mkt"]) if g["mkt"] else "—"}</td><td>{kh}</td>'
+                      f'<td class="l">{theme.esc(short(g["home"]))} v {theme.esc(short(g["away"]))}'
+                      f'<span class="mwhen">{theme.esc(_when(g))}</span></td>'
+                      f'<td>{sl.join(_pct(p) for p in g["probs"]) if g["probs"] else "—"}</td>'
+                      f'<td>{sl.join(_pct(p) for p in g["mkt"]) if g["mkt"] else "—"}</td><td>{kh}</td>'
                       f'<td class="muted">{vol}</td></tr>')
     markets_html = (
         '<div class="sechead"><h2>Markets</h2><span class="hint">Home / draw / away probability: ours, the sportsbook '
         '(no-vig) and Kalshi</span></div>'
-        + (theme.table('mk-table', [('When', 'l'), ('Match', 'l'), ('Ours', ''), ('Sportsbook', ''), ('Kalshi', ''),
+        + (theme.table('mk-table', [('When', 'l opt'), ('Match', 'l'), ('Ours', ''), ('Sportsbook', ''), ('Kalshi', ''),
                                     ('Kalshi volume', 'opt')], mrows) if mrows else '<p class="hint">No priced matches yet.</p>')
         + theme.method_note('Each cell is home / draw / away. Kalshi prices are the middle of the best bid and ask in its '
                             'three match markets, scaled to add up to 100%.'))

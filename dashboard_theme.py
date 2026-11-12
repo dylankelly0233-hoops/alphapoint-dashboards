@@ -631,14 +631,17 @@ dialog.tmodal::backdrop { background: rgba(5, 10, 18, .6); }
   table.data th { white-space: normal; min-width: 44px; vertical-align: bottom; padding: 9px 7px; font-size: 11px; letter-spacing: .6px; }
   table.data td { padding: 8px 7px; }
   /* long names wrap to two lines so the numbers stay on screen */
-  table.data td.l { white-space: normal; min-width: 96px; max-width: 150px; }
+  table.data td.l { white-space: normal; min-width: 96px; max-width: 128px; }
+  table.data .mwhen { display: block; font-size: 11.5px; color: var(--muted); }
+  .sl { display: block; height: 0; overflow: hidden; }        /* home / draw / away stack on three lines */
+  table.data[id^="perf"] td { white-space: normal; min-width: 64px; }
   table.data td.l .team { gap: 7px; }
   /* bigger tap targets: the ? tips and team-name links */
   .tip { position: relative; } .tip::after { content: ''; position: absolute; inset: -10px; }
   .tlink { padding: 4px 0; }
   .gmore { padding: 9px 12px; }
 }
-.colbtn { display: none; }
+.colbtn, .mwhen { display: none; }
 @media (max-width: 560px) { .colbtn { display: inline-block; margin: 0 0 8px; font: 700 12px/1 var(--display); letter-spacing: 1px;
   text-transform: uppercase; color: var(--accent); background: none; border: 1px solid var(--line); border-radius: 6px; padding: 6px 10px; } }
 @media (max-width: 640px) {
@@ -753,7 +756,7 @@ function stickCols() {
   if (window.innerWidth > 560) return;
   document.querySelectorAll('table.data').forEach(t => {
     const hs = [...t.querySelectorAll('thead th')];
-    const idx = hs.findIndex(h => h.classList.contains('l'));
+    const idx = hs.findIndex(h => h.classList.contains('l') && h.offsetWidth);
     if (idx < 0 || idx > 1) return;
     const lefts = []; let x = 0;
     for (let i = 0; i <= idx; i++) { lefts.push(x); x += hs[i].getBoundingClientRect().width; }
