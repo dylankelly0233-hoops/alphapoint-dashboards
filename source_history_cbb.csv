@@ -8067,7 +8067,7 @@ date,team,source,rating
 2026-11-12,Georgetown,AlphaPoint model,2.27
 2026-11-12,Seton Hall,AlphaPoint model,2.01
 2026-11-12,UIC,AlphaPoint model,2.32
-2026-11-12,Lamar,AlphaPoint model,0.0
+2026-11-12,Lamar,AlphaPoint model,-0.0
 2026-11-12,Middle Tennessee,AlphaPoint model,-4.75
 2026-11-12,Pennsylvania,AlphaPoint model,-1.03
 2026-11-12,Princeton,AlphaPoint model,-3.27
@@ -8100,7 +8100,7 @@ date,team,source,rating
 2026-11-12,Marist,AlphaPoint model,-4.81
 2026-11-12,Marshall,AlphaPoint model,7.45
 2026-11-12,New Hampshire,AlphaPoint model,2.35
-2026-11-12,New Mexico State,AlphaPoint model,0.0
+2026-11-12,New Mexico State,AlphaPoint model,-0.0
 2026-11-12,North Texas,AlphaPoint model,-1.97
 2026-11-12,Northwestern State,AlphaPoint model,-6.98
 2026-11-12,Old Dominion,AlphaPoint model,7.9
@@ -8118,13 +8118,13 @@ date,team,source,rating
 2026-11-12,Delaware State,AlphaPoint model,1.28
 2026-11-12,Duquesne,AlphaPoint model,-8.81
 2026-11-12,Eastern Washington,AlphaPoint model,0.53
-2026-11-12,Southern Utah,AlphaPoint model,0.0
+2026-11-12,Southern Utah,AlphaPoint model,-0.0
 2026-11-12,SMU,AlphaPoint model,7.2
 2026-11-12,South Carolina,AlphaPoint model,10.31
 2026-11-12,Saint Peter's,AlphaPoint model,-17.87
 2026-11-12,Syracuse,AlphaPoint model,16.49
 2026-11-12,Seattle U,AlphaPoint model,-8.22
-2026-11-12,Missouri State,AlphaPoint model,0.0
+2026-11-12,Missouri State,AlphaPoint model,-0.0
 2026-11-12,Villanova,AlphaPoint model,6.32
 2026-11-12,VMI,AlphaPoint model,-2.44
 2026-11-12,Western Kentucky,AlphaPoint model,9.69
@@ -8170,7 +8170,7 @@ date,team,source,rating
 2026-11-12,Hampton,AlphaPoint model,-4.85
 2026-11-12,St. John's,AlphaPoint model,14.9
 2026-11-12,Kent State,AlphaPoint model,-5.34
-2026-11-12,Morgan State,AlphaPoint model,0.0
+2026-11-12,Morgan State,AlphaPoint model,-0.0
 2026-11-12,Murray State,AlphaPoint model,11.09
 2026-11-12,Northern Arizona,AlphaPoint model,-9.48
 2026-11-12,New Mexico,AlphaPoint model,11.62
@@ -8277,7 +8277,7 @@ date,team,source,rating
 2026-11-12,Texas Southern,AlphaPoint model,-2.96
 2026-11-12,Furman,AlphaPoint model,7.87
 2026-11-12,George Mason,AlphaPoint model,7.39
-2026-11-12,Northern Colorado,AlphaPoint model,0.0
+2026-11-12,Northern Colorado,AlphaPoint model,-0.0
 2026-11-12,Indiana State,AlphaPoint model,-10.99
 2026-11-12,Kansas,AlphaPoint model,14.39
 2026-11-12,Loyola Marymount,AlphaPoint model,-5.1
@@ -8332,8 +8332,8 @@ date,team,source,rating
 2026-11-12,Grand Canyon,AlphaPoint model,8.71
 2026-11-12,Creighton,AlphaPoint model,2.82
 2026-11-12,Delaware,AlphaPoint model,-13.31
-2026-11-12,Southern Illinois,AlphaPoint model,0.0
-2026-11-12,Samford,AlphaPoint model,0.0
+2026-11-12,Southern Illinois,AlphaPoint model,-0.0
+2026-11-12,Samford,AlphaPoint model,-0.0
 2026-11-12,San José State,AlphaPoint model,9.61
 2026-11-12,Western Illinois,AlphaPoint model,-3.55
 2026-11-12,Coastal Carolina,AlphaPoint model,-16.13
@@ -8349,7 +8349,7 @@ date,team,source,rating
 2026-11-12,Maine,AlphaPoint model,-3.96
 2026-11-12,East Tennessee State,AlphaPoint model,3.42
 2026-11-12,IU Indianapolis,AlphaPoint model,-3.23
-2026-11-12,Omaha,AlphaPoint model,0.0
+2026-11-12,Omaha,AlphaPoint model,-0.0
 2026-11-12,Ole Miss,AlphaPoint model,18.18
 2026-11-12,NJIT,AlphaPoint model,-25.29
 2026-11-12,Wofford,AlphaPoint model,-15.43
@@ -8367,14 +8367,14 @@ date,team,source,rating
 2026-11-12,Lindenwood,AlphaPoint model,-15.14
 2026-11-12,UC San Diego,AlphaPoint model,0.83
 2026-11-12,Bellarmine,AlphaPoint model,-10.94
-2026-11-12,Tarleton State,AlphaPoint model,0.0
+2026-11-12,Tarleton State,AlphaPoint model,-0.0
 2026-11-12,Utah Tech,AlphaPoint model,-11.43
 2026-11-12,James Madison,AlphaPoint model,1.52
 2026-11-12,High Point,AlphaPoint model,3.74
 2026-11-12,Liberty,AlphaPoint model,-8.45
 2026-11-12,UT Martin,AlphaPoint model,9.25
 2026-11-12,St. Thomas-Minnesota,AlphaPoint model,-3.36
-2026-11-12,Idaho,AlphaPoint model,0.0
+2026-11-12,Idaho,AlphaPoint model,-0.0
 2026-11-12,Texas,AlphaPoint model,27.81
 2026-11-12,East Texas A&M,AlphaPoint model,-4.31
 2026-11-12,Southern Indiana,AlphaPoint model,2.28
