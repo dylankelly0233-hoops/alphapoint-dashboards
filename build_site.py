@@ -375,9 +375,12 @@ INFO = [
                 'final numbers; game projections start before Opening Day.'),
     ]),
     ('How the site updates', [
-        ('Every hour', 'From 8 AM to midnight ET the site rebuilds automatically: lines, Kalshi markets, scores, ratings, '
-                          'and value metrics.'),
-        ('Once a day', 'The Injury Wire is curated each morning.'),
+        ('Several times a day', 'The site rebuilds automatically a few times a day (GitHub runs the build every few hours), '
+                                'refreshing lines, Kalshi markets, scores, ratings and value metrics. Check the Updated '
+                                'time at the top of each page, and the data strip on each Power tab, for how current '
+                                'every number is.'),
+        ('Once a day', 'The Injury Wire is curated once a day, and college basketball gets a second, later check before '
+                       'tip-off.'),
         ('Research, not picks', 'Everything here is a starting point for your own handicapping, not a list of bets to tail. '
                                 "Ratings, edges, signals and tags can't see everything that moves a game (late injury "
                                 'news, matchups, motivation, weather), so use them to decide where to dig deeper.'),
@@ -401,7 +404,7 @@ def landing(results):
                   f'<span class="cov">{theme.esc(coverage)}</span>{warn}<span class="go">Open →</span></a>')
     updated = datetime.now().strftime('%b %d, %I:%M %p').replace(' 0', ' ')
     home = (f'<div class="tiles">{tiles}</div>{best_spots()}'
-            f'<p class="hint updated">Updated {updated} ET · refreshes every hour, 8 AM to midnight</p>')
+            f'<p class="hint updated">Updated {updated} ET · rebuilds several times a day</p>')
     info = '<div class="info">' + ''.join(
         f'<section class="card"><h3>{theme.esc(title)}</h3><dl>'
         + ''.join(f'<dt>{theme.esc(k)}</dt><dd>{theme.esc(v)}</dd>' for k, v in rows) + '</dl></section>'

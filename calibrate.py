@@ -226,6 +226,79 @@ def tune_epl_draws(rho_now):
     return new, f'{dr:.1%} of {n} matches drawn'
 
 
+MARKET_MIN = {'cfb': 60, 'nfl': 30, 'cbb': 60, 'nba': 40, 'nhl': 40, 'epl': 30}
+MARKET_PRIOR = 50          # games' worth of pull toward the defaults
+MARKET_DAYS = 60           # use the last two months of logged lines
+MARKET_SCALE_BOUNDS = (0.8, 1.4)
+MARKET_SCALE_STEP = 0.15
+MARKET_HFA_STEP = {'nhl': 0.05, 'epl': 0.05}       # points sports: 0.5
+
+
+def tune_to_market(sport, cal, now):
+    """
+    Rating spread ('scale') and home edge fitted to the market's own lines: market line = home edge (non-neutral
+    games) + scale × our raw rating gap, by least squares over the last MARKET_DAYS of logged games (upcoming
+    ones included: only the market line is needed, not the result). The market line is a far less noisy target
+    than final scores, so this calibrates units within weeks; it doesn't copy game-level opinions, only two
+    numbers per sport. Pulled toward the defaults by MARKET_PRIOR games and capped per run.
+    Returns (scale, hfa, n, why) or None.
+    """
+    path = f'projections_{sport}.csv'
+    if not os.path.exists(path):
+        return None
+    p = pd.read_csv(path)
+    p['kickoff'] = pd.to_datetime(p['kickoff'], utc=True)
+    p = p[p['kickoff'] >= now - timedelta(days=MARKET_DAYS)].dropna(subset=['ours_last', 'market_last'])
+    if len(p) < MARKET_MIN[sport]:
+        return None
+    hfa_logged = (p['hfa'] if 'hfa' in p else pd.Series(np.nan, index=p.index)).fillna(DEFAULT_HFA[sport])
+    ctx_scale = []
+    for c in p.get('context', pd.Series([None] * len(p), index=p.index)):
+        try:
+            ctx_scale.append(float(json.loads(c).get('scale', 1.0)) if isinstance(c, str) and c.startswith('{') else 1.0)
+        except ValueError:
+            ctx_scale.append(1.0)
+    gap = (p['ours_last'] - hfa_logged) / np.array(ctx_scale)       # raw rating gap (goalie included for NHL)
+    home = (p['neutral'].fillna(0).astype(int) == 0).astype(float)
+    X = np.column_stack([home, gap])
+    (h_fit, s_fit), *_ = np.linalg.lstsq(X, p['market_last'].to_numpy(), rcond=None)
+    n = len(p)
+    k = n / (n + MARKET_PRIOR)
+    s_now = float(cal.get(sport, {}).get('scale', 1.0))
+    h_now = float(cal.get(sport, {}).get('hfa', DEFAULT_HFA[sport]))
+    s_target = k * s_fit + (1 - k) * 1.0
+    h_target = k * h_fit + (1 - k) * DEFAULT_HFA[sport]
+    s_new = float(np.clip(s_now + np.clip(s_target - s_now, -MARKET_SCALE_STEP, MARKET_SCALE_STEP), *MARKET_SCALE_BOUNDS))
+    cap = MARKET_HFA_STEP.get(sport, 0.5)
+    h_new = float(np.clip(h_now + np.clip(h_target - h_now, -cap, cap), *HFA_BOUNDS[sport]))
+    d = HFA_DECIMALS.get(sport, 1)
+    return round(s_new, 3), round(h_new, d), n, f'market lines imply spread {s_fit:.2f}x and home edge {h_fit:.2f} over {n} games'
+
+
+def run_market(cal, now, out, log, force=False):
+    """The weekly market calibration for every sport (guarded to once every 6 days unless forced)."""
+    for sport in ('nfl', 'cfb', 'cbb', 'nba', 'nhl', 'epl'):
+        last = cal.get(sport, {}).get('market_updated')
+        if last and not force and now - datetime.fromisoformat(last) < timedelta(days=6):
+            continue
+        res = tune_to_market(sport, cal, now)
+        if not res:
+            out.append(f'{sport.upper()}: spread / home edge unchanged (not enough logged lines yet).')
+            continue
+        s_new, h_new, n, why = res
+        s_now = float(cal.get(sport, {}).get('scale', 1.0))
+        h_now = float(cal.get(sport, {}).get('hfa', DEFAULT_HFA[sport]))
+        cal.setdefault(sport, {}).update(scale=s_new, hfa=h_new, market_updated=now.isoformat(timespec='minutes'))
+        changes = []
+        if s_new != s_now:
+            changes.append(f'rating spread {s_now:g} -> {s_new:g}')
+            log.append([now.date().isoformat(), sport, 'scale', s_now, s_new, n, why])
+        if h_new != h_now:
+            changes.append(f'home edge {h_now:g} -> {h_new:g}')
+            log.append([now.date().isoformat(), sport, 'hfa', h_now, h_new, n, why])
+        out.append(f'{sport.upper()}: ' + ('; '.join(changes) if changes else 'spread and home edge unchanged') + f' ({why}).')
+
+
 def run(scored, now=None):
     """
     scored: {sport: DataFrame of finished logged games with a 'result' column}.
@@ -245,28 +318,19 @@ def run(scored, now=None):
         if len(d) < MIN_GAMES[sport]:
             out.append(f'{name}: no change (home edge {hfa_now:g}); {len(d)} of {MIN_GAMES[sport]} games needed.')
             continue
-        hfa_new, hfa_why = tune_hfa(sport, d, hfa_now)
+        hfa_new, hfa_why = hfa_now, 'set from market lines'     # home edge and spread: see tune_to_market
         w_new, w_why = tune_weights(sport, d, w_now)
         changes = []
-        if hfa_new != hfa_now:
-            changes.append(f'home edge {hfa_now:g} -> {hfa_new:g} ({hfa_why})')
-            log.append([now.date().isoformat(), sport, 'hfa', hfa_now, hfa_new, len(d), hfa_why])
         for k in w_new:
             if abs(w_new[k] - w_now.get(k, 0)) >= 0.01:
                 changes.append(f'{k} weight {w_now[k]:g} -> {w_new[k]:g}')
                 log.append([now.date().isoformat(), sport, f'weight:{k}', w_now[k], w_new[k], len(d), w_why])
-        scale_now = float(cal.get(sport, {}).get('scale', 1.0))
-        scale_new, scale_why = tune_scale(sport, d, scale_now)
-        if scale_new != scale_now:
-            changes.append(f'rating stretch {scale_now:g} -> {scale_new:g} ({scale_why})')
-            log.append([now.date().isoformat(), sport, 'scale', scale_now, scale_new, len(d), scale_why])
-        cal[sport] = {**cal.get(sport, {}), 'hfa': hfa_new, 'weights': w_new, 'scale': scale_new,
-                      'updated': now.isoformat(timespec='minutes'), 'games': len(d)}
+        cal[sport] = {**cal.get(sport, {}), 'weights': w_new, 'updated': now.isoformat(timespec='minutes'), 'games': len(d)}
         if changes:
             out.append(f'{name}: ' + '; '.join(changes) + (f'. Weights: {w_why}.' if any('weight' in c for c in changes) else '.'))
         else:
-            out.append(f'{name}: no change. Home edge stays {hfa_now:g} ({hfa_why or "not enough home games"}); '
-                       f'weights stay ({w_why}).')
+            out.append(f'{name}: source weights stay ({w_why}).')
+    run_market(cal, now, out, log)
     # League-level knobs that don't need the logs: NHL overtime rate, EPL draw rate (weekly, same safeguards)
     for sport, key, default, fn, label in (('nhl', 'tie_boost', 1.35, tune_nhl_ties, 'overtime adjustment'),
                                            ('epl', 'dc_rho', -0.08, tune_epl_draws, 'draw adjustment')):
@@ -293,3 +357,17 @@ def run(scored, now=None):
         pd.DataFrame(log, columns=['date', 'sport', 'setting', 'old', 'new', 'games', 'why']).to_csv(
             CAL_LOG, mode='a', header=not os.path.exists(CAL_LOG), index=False)
     return out
+
+
+if __name__ == '__main__':
+    import sys
+    if '--market-now' in sys.argv:          # run only the market calibration, right away
+        now = datetime.now(timezone.utc)
+        cal, out, log = load(), [], []
+        run_market(cal, now, out, log, force=True)
+        with open(CAL_FILE, 'w', encoding='utf-8') as f:
+            json.dump(cal, f, indent=2)
+        if log:
+            pd.DataFrame(log, columns=['date', 'sport', 'setting', 'old', 'new', 'games', 'why']).to_csv(
+                CAL_LOG, mode='a', header=not os.path.exists(CAL_LOG), index=False)
+        print('\n'.join(out))

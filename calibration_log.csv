@@ -1,0 +1,9 @@
+date,sport,setting,old,new,games,why
+2026-11-12,nfl,scale,1.0,1.005,42,market lines imply spread 1.01x and home edge 1.51 over 42 games
+2026-11-12,nfl,hfa,1.7,1.6,42,market lines imply spread 1.01x and home edge 1.51 over 42 games
+2026-11-12,cfb,scale,1.0,0.941,75,market lines imply spread 0.90x and home edge 2.72 over 75 games
+2026-11-12,cfb,hfa,2.5,2.6,75,market lines imply spread 0.90x and home edge 2.72 over 75 games
+2026-11-12,cbb,scale,1.0,1.15,135,market lines imply spread 1.22x and home edge 2.60 over 135 games
+2026-11-12,cbb,hfa,3.0,2.7,135,market lines imply spread 1.22x and home edge 2.60 over 135 games
+2026-11-12,nba,scale,1.0,1.046,49,market lines imply spread 1.09x and home edge 1.21 over 49 games
+2026-11-12,nba,hfa,2.4,1.9,49,market lines imply spread 1.09x and home edge 1.21 over 49 games

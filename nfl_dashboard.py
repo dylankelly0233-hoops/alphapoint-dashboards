@@ -474,7 +474,7 @@ def generate_html(power, vals, sched, week, info):
                      'confidence': ex.confidence_level(by_src.get(r.home, {}), by_src.get(r.away, {}), hfa_g),
                      'flags': ['news'] if ex.news_move(info['opened'].get(str(r.game_id)), r.market) else [],
                      'sources': ex.source_lines(by_src.get(r.home, {}), by_src.get(r.away, {}), hfa_g), 'hfa': hfa_g,
-                     'context': {'signals': {t: s for t, s in ((r.away, sig(r.away_value)), (r.home, sig(r.home_value))) if s},
+                     'context': {'scale': SCALE, 'signals': {t: s for t, s in ((r.away, sig(r.away_value)), (r.home, sig(r.home_value))) if s},
                                  'tags': [[tag_label[0], r.away if tag_label[1] == nick(away) else r.home]] if tag_label else [],
                                  'mu_side': mu.headline_side(prof, MU_CATS, r.away, r.home) if r.home in prof and r.away in prof else None}})
         spots.append(ex.spot('NFL', 'nfl.html#sched', r.kick, nick(away), nick(home), r.margin, r.market,

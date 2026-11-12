@@ -372,7 +372,7 @@ def generate_html(power, metrics, days, info):
                              'confidence': ex.confidence_level(by_src.get(g['home'], {}), by_src.get(g['away'], {}), hfa_g,
                                                                scale=CONF_SCALE),
                              'flags': ['news'] if news else [], 'sources': src_lines, 'hfa': hfa_g,
-                             'context': {'signals': {t: signal(t) for t in (g['home'], g['away']) if signal(t)},
+                             'context': {'scale': SCALE, 'signals': {t: signal(t) for t in (g['home'], g['away']) if signal(t)},
                                          'total': round(g['total_ours'], 2), 'mkt_total': g['total'],
                                          'probs': [round(x, 4) for x in g['probs']],
                                          'mkt_probs': [round(x, 4) for x in g['mkt']] if g['mkt'] else None}})

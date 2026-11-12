@@ -553,7 +553,7 @@ def generate_html(power, metrics, days, info):
                          'flags': (['news'] if ex.news_move(info['opened'].get(g['game_id']), g['market']) else [])
                                   + (['lopsided'] if big else []),
                          'sources': ex.source_lines(all_src.get(g['home'], {}), all_src.get(g['away'], {}), hfa_g), 'hfa': hfa_g,
-                         'context': {'signals': {t: s for t in (g['away'], g['home'])
+                         'context': {'scale': SCALE, 'signals': {t: s for t in (g['away'], g['home'])
                                                  if (s := _signal(comp.get(t), games_played.get(t, 0)))},
                                      'mu_side': mu.headline_side(mprof, mu.BASKETBALL_CATS, g['away'], g['home'])
                                      if g['home'] in mprof and g['away'] in mprof else None}})

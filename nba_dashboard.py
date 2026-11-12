@@ -390,7 +390,7 @@ def generate_html(power, metrics, days, info):
                          'confidence': ex.confidence_level(by_src.get(g['home'], {}), by_src.get(g['away'], {}), hfa_g),
                          'flags': ['news'] if ex.news_move(info['opened'].get(g['game_id']), g['market']) else [],
                          'sources': ex.source_lines(by_src.get(g['home'], {}), by_src.get(g['away'], {}), hfa_g), 'hfa': hfa_g,
-                         'context': {'signals': {t: s for t in (g['away'], g['home']) if (s := _signal(comp.get(t), gp.get(t, 0)))},
+                         'context': {'scale': SCALE, 'signals': {t: s for t in (g['away'], g['home']) if (s := _signal(comp.get(t), gp.get(t, 0)))},
                                      'mu_side': mu.headline_side(mprof, mu.BASKETBALL_CATS, g['away'], g['home'])
                                      if g['home'] in mprof and g['away'] in mprof else None}})
             spots.append(ex.spot('NBA', 'nba.html#games', g['kick'], short[g['away']], short[g['home']], margin, g['market'],
