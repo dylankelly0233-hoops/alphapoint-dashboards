@@ -48,3 +48,5 @@ mlb_*.json
 mlb_*.html
 performance.json
 bt_*.csv
+
+nfl_odds_history.xlsx

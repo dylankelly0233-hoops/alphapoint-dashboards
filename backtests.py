@@ -143,12 +143,48 @@ def score(g, sport):
 # ==========================================
 # DATA PER SPORT
 # ==========================================
+NFL_ODDS_FILE = 'nfl_odds_history.xlsx'   # git-ignored; aussportsbetting.com/data/historical-nfl-results-and-odds-data/
+
+
+def nfl_openers(path=NFL_ODDS_FILE):
+    """
+    Opening spreads from Australia Sports Betting's free NFL history (downloaded by hand: the site blocks scripts).
+    Returns {(date, home_score, away_score): opening home margin}. Games are matched on date and final score, so team
+    names (Redskins / Football Team / Commanders, Oakland / Las Vegas) never need mapping; a neutral-site game listed
+    the other way round is matched with the scores swapped and the line flipped.
+    """
+    if not os.path.exists(path):
+        return {}
+    raw = pd.read_excel(path, header=None)
+    hdr = next(i for i in range(10) if 'Home Line Open' in raw.iloc[i].astype(str).tolist())
+    x = pd.read_excel(path, header=hdr)
+    x['Date'] = pd.to_datetime(x['Date'], errors='coerce')             # a few rows are notes, not games
+    for c in ('Home Line Open', 'Home Score', 'Away Score'):
+        x[c] = pd.to_numeric(x[c], errors='coerce')
+    x = x.dropna(subset=['Date', 'Home Line Open', 'Home Score', 'Away Score'])
+    out = {}
+    for d, hs, as_, line in zip(x['Date'].dt.date, x['Home Score'], x['Away Score'], x['Home Line Open']):
+        for k, v in (((d, int(hs), int(as_)), -float(line)), ((d, int(as_), int(hs)), float(line))):
+            out[k] = None if k in out and out[k] != v else v       # two games with the same date and score: skip both
+    return out
+
+
 def nfl_games(first=2019):
     df = pd.read_csv('https://github.com/nflverse/nfldata/raw/master/data/games.csv', low_memory=False)
     df = df[(df['season'] >= first) & df['home_score'].notna() & df['spread_line'].notna()]
+    op = nfl_openers()
+    days = pd.to_datetime(df['gameday']).dt.date
+    opened = []
+    for d, hs, as_ in zip(days, df['home_score'], df['away_score']):
+        v = None
+        for dd in (d, d - timedelta(days=1), d + timedelta(days=1)):   # the file's dates are Australian time for some games
+            v = op.get((dd, int(hs), int(as_)))
+            if v is not None:
+                break
+        opened.append(v)
     return pd.DataFrame({'date': df['gameday'], 'season': df['season'], 'home': df['home_team'], 'away': df['away_team'],
                          'result': df['home_score'] - df['away_score'], 'neutral': df['location'].eq('Neutral'),
-                         'close': df['spread_line']})
+                         'close': df['spread_line'], 'open': pd.to_numeric(pd.Series(opened, index=df.index))})
 
 
 def cfb_games(first=2021, last=None):
