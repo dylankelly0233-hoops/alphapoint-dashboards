@@ -392,7 +392,7 @@ def generate_html(power, metrics, days, info):
         f'{theme.summary_card("Sell candidates", flagged(1), "Record · points over what their play supports.")}</div>'
         f'<div class="sechead"><h2>Power ratings</h2>'
         f'{theme.filter_bar("power-div", "power-table", "Conference", group_opts, "Click a column to sort")}</div>'
-        + theme.table('power-table', [('#', ''), ('Team', 'l'), ('Record', ''), ('Rating', ''), ('Goaltending', ''),
+        + theme.table('power-table', [('#', ''), ('Team', 'l'), ('Record', ''), ('Rating', ''), ('Goaltending', 'opt'),
                                       ('Trade Signal', '')], rows)
         + theme.method_note(
             f'<b>Rating</b> is goals per game better (+) or worse (−) than an average NHL team with its usual goalies; '

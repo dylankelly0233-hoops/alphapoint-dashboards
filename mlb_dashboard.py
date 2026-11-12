@@ -122,7 +122,7 @@ def generate_html(power, tt, starters, info):
         f'{theme.summary_card("Sell candidates", flagged(1), "Record · wins over expectation.")}</div>'
         f'<div class="sechead"><h2>Power ratings</h2>'
         f'{theme.filter_bar("power-div", "power-table", "League", group_opts, "Click a column to sort")}</div>'
-        + theme.table('power-table', [('#', ''), ('Team', 'l'), ('W-L', ''), ('Rating', ''), ('Run diff / game', ''),
+        + theme.table('power-table', [('#', ''), ('Team', 'l'), ('W-L', ''), ('Rating', ''), ('Run diff / game', 'opt'),
                                       ('Trade Signal', '')], rows)
         + theme.method_note(
             f'<b>Rating</b> is runs per game better (+) or worse (−) than an average MLB team. Sources: TeamRankings\' '

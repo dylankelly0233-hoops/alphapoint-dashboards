@@ -628,10 +628,11 @@ dialog.tmodal::backdrop { background: rgba(5, 10, 18, .6); }
   table.data .opt { display: none; }
   .showall table.data .opt { display: table-cell; }
   /* headers wrap so long labels don't make every column wide */
-  table.data th { white-space: normal; min-width: 44px; vertical-align: bottom; padding: 9px 7px; font-size: 11px; letter-spacing: .6px; }
-  table.data td { padding: 8px 7px; }
+  table.data th { white-space: normal; min-width: 30px; vertical-align: bottom; padding: 9px 5px; font-size: 11px; letter-spacing: .6px; }
+  table.data td { padding: 8px 5px; }
+  table.data td.rank { width: 24px; }
   /* long names wrap to two lines so the numbers stay on screen */
-  table.data td.l { white-space: normal; min-width: 96px; max-width: 128px; }
+  table.data td.l { white-space: normal; min-width: 90px; max-width: 120px; }
   table.data .mwhen { display: block; font-size: 11.5px; color: var(--muted); }
   .sl { display: block; height: 0; overflow: hidden; }        /* home / draw / away stack on three lines */
   table.data[id^="perf"] td { white-space: normal; min-width: 64px; }
