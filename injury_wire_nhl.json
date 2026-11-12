@@ -1,47 +1,47 @@
 {
   "sport": "nhl",
-  "week": 20261111,
-  "generated": "2026-11-11T18:35:00-05:00",
+  "week": 20261112,
+  "generated": "2026-11-12T16:25:06-05:00",
   "movers": [
     {
       "team": "DAL",
       "tag": "KEY",
-      "text": "D Miro Heiskanen (upper body, 24.9 TOI) ruled out for Thursday vs WPG.",
-      "source": "ESPN",
-      "url": "https://www.espn.com/nhl/injuries",
-      "date": "2026-11-11"
-    },
-    {
-      "team": "CHI",
-      "tag": "CLUSTER",
-      "text": "D Bowen Byram (24.7 TOI) placed on IR Tuesday; RW Patrick Kane (18.0 TOI) placed on IR Sunday, both upper body.",
-      "source": "ESPN",
-      "url": "https://www.espn.com/nhl/injuries",
-      "date": "2026-11-11"
-    },
-    {
-      "team": "LA",
-      "tag": "CLUSTER",
-      "text": "D Drew Doughty (21.5 TOI) and D Erik Gustafsson (20.0 TOI) both listed day-to-day.",
-      "source": "ESPN",
-      "url": "https://www.espn.com/nhl/injuries",
-      "date": "2026-11-11"
-    },
-    {
-      "team": "OTT",
-      "tag": "KEY",
-      "text": "G Linus Ullmark (36% of starts) listed day-to-day.",
+      "text": "D Miro Heiskanen (24.9 TOI, upper body) ruled out for Thursday vs Winnipeg.",
       "source": "ESPN",
       "url": "https://www.espn.com/nhl/injuries",
       "date": "2026-11-11"
     },
     {
       "team": "TB",
-      "tag": "KEY",
-      "text": "C Brayden Point (18.7 TOI) placed on injured reserve.",
+      "tag": "CLUSTER",
+      "text": "C Brayden Point (18.7 TOI) on injured reserve since Nov 10; D Erik Cernak (18.2 TOI) listed out.",
       "source": "ESPN",
       "url": "https://www.espn.com/nhl/injuries",
-      "date": "2026-11-11"
+      "date": "2026-11-10"
+    },
+    {
+      "team": "NJ",
+      "tag": "CLUSTER",
+      "text": "D Brett Pesce (21.0 TOI, illness) and D Johnathan Kovacevic (14.7 TOI, undisclosed, imaging) out Thursday vs Washington.",
+      "source": "ESPN",
+      "url": "https://www.espn.com/nhl/injuries",
+      "date": "2026-11-12"
+    },
+    {
+      "team": "TOR",
+      "tag": "CLUSTER",
+      "text": "RW Kirill Marchenko (17.6 TOI), C Colton Sissons (14.6) and D Marshall Rifai (14.2) on injured reserve; D Morgan Rielly (18.8) day-to-day.",
+      "source": "ESPN",
+      "url": "https://www.espn.com/nhl/injuries",
+      "date": "2026-11-12"
+    },
+    {
+      "team": "NYI",
+      "tag": "CLUSTER",
+      "text": "C Jean-Gabriel Pageau (15.8 TOI, lower body) out Thursday vs LA; D Alexander Romanov (16.6 TOI) remains on injured reserve.",
+      "source": "ESPN",
+      "url": "https://www.espn.com/nhl/injuries",
+      "date": "2026-11-12"
     }
   ],
   "teams": {
@@ -49,37 +49,7 @@
       {
         "team": "DAL",
         "tag": "KEY",
-        "text": "D Miro Heiskanen (upper body, 24.9 TOI) ruled out for Thursday vs WPG.",
-        "source": "ESPN",
-        "url": "https://www.espn.com/nhl/injuries",
-        "date": "2026-11-11"
-      }
-    ],
-    "CHI": [
-      {
-        "team": "CHI",
-        "tag": "CLUSTER",
-        "text": "D Bowen Byram (24.7 TOI) placed on IR Tuesday; RW Patrick Kane (18.0 TOI) placed on IR Sunday, both upper body.",
-        "source": "ESPN",
-        "url": "https://www.espn.com/nhl/injuries",
-        "date": "2026-11-11"
-      }
-    ],
-    "LA": [
-      {
-        "team": "LA",
-        "tag": "CLUSTER",
-        "text": "D Drew Doughty (21.5 TOI) and D Erik Gustafsson (20.0 TOI) both listed day-to-day.",
-        "source": "ESPN",
-        "url": "https://www.espn.com/nhl/injuries",
-        "date": "2026-11-11"
-      }
-    ],
-    "OTT": [
-      {
-        "team": "OTT",
-        "tag": "KEY",
-        "text": "G Linus Ullmark (36% of starts) listed day-to-day.",
+        "text": "D Miro Heiskanen (24.9 TOI, upper body) ruled out for Thursday vs Winnipeg.",
         "source": "ESPN",
         "url": "https://www.espn.com/nhl/injuries",
         "date": "2026-11-11"
@@ -88,61 +58,91 @@
     "TB": [
       {
         "team": "TB",
-        "tag": "KEY",
-        "text": "C Brayden Point (18.7 TOI) placed on injured reserve.",
+        "tag": "CLUSTER",
+        "text": "C Brayden Point (18.7 TOI) on injured reserve since Nov 10; D Erik Cernak (18.2 TOI) listed out.",
         "source": "ESPN",
         "url": "https://www.espn.com/nhl/injuries",
-        "date": "2026-11-11"
+        "date": "2026-11-10"
       }
     ],
-    "CGY": [
+    "NJ": [
       {
-        "team": "CGY",
-        "tag": "KEY",
-        "text": "D Kevin Bahl (21.9 TOI) to have surgery for a ruptured Achilles; out for the 2026-27 season.",
+        "team": "NJ",
+        "tag": "CLUSTER",
+        "text": "D Brett Pesce (21.0 TOI, illness) and D Johnathan Kovacevic (14.7 TOI, undisclosed, imaging) out Thursday vs Washington.",
         "source": "ESPN",
         "url": "https://www.espn.com/nhl/injuries",
-        "date": "2026-11-11"
-      }
-    ],
-    "MTL": [
-      {
-        "team": "MTL",
-        "tag": "KEY",
-        "text": "D Mike Matheson (23.8 TOI) listed day-to-day.",
-        "source": "ESPN",
-        "url": "https://www.espn.com/nhl/injuries",
-        "date": "2026-11-11"
+        "date": "2026-11-12"
       }
     ],
     "TOR": [
       {
         "team": "TOR",
-        "tag": "KEY",
-        "text": "D Morgan Rielly (18.8 TOI) day-to-day; C Colton Sissons out.",
+        "tag": "CLUSTER",
+        "text": "RW Kirill Marchenko (17.6 TOI), C Colton Sissons (14.6) and D Marshall Rifai (14.2) on injured reserve; D Morgan Rielly (18.8) day-to-day.",
         "source": "ESPN",
         "url": "https://www.espn.com/nhl/injuries",
-        "date": "2026-11-11"
+        "date": "2026-11-12"
+      }
+    ],
+    "NYI": [
+      {
+        "team": "NYI",
+        "tag": "CLUSTER",
+        "text": "C Jean-Gabriel Pageau (15.8 TOI, lower body) out Thursday vs LA; D Alexander Romanov (16.6 TOI) remains on injured reserve.",
+        "source": "ESPN",
+        "url": "https://www.espn.com/nhl/injuries",
+        "date": "2026-11-12"
+      }
+    ],
+    "CHI": [
+      {
+        "team": "CHI",
+        "tag": "KEY",
+        "text": "D Bowen Byram (24.7 TOI, upper body) on injured reserve since Nov 3.",
+        "source": "ESPN",
+        "url": "https://www.espn.com/nhl/injuries",
+        "date": "2026-11-03"
+      }
+    ],
+    "LA": [
+      {
+        "team": "LA",
+        "tag": "KEY",
+        "text": "D Erik Gustafsson (20.0 TOI) listed out as of Nov 12.",
+        "source": "ESPN",
+        "url": "https://www.espn.com/nhl/injuries",
+        "date": "2026-11-12"
       }
     ],
     "VGK": [
       {
         "team": "VGK",
         "tag": "KEY",
-        "text": "D Noah Hanifin (20.4 TOI) listed out.",
+        "text": "D Noah Hanifin (20.4 TOI) listed out since Nov 10.",
         "source": "ESPN",
         "url": "https://www.espn.com/nhl/injuries",
-        "date": "2026-11-11"
+        "date": "2026-11-10"
       }
     ],
     "VAN": [
       {
         "team": "VAN",
-        "tag": "CLUSTER",
-        "text": "C Filip Chytil (shoulder, 19.9 TOI) on IR; D Tom Willander (20.4 TOI) day-to-day.",
+        "tag": "KEY",
+        "text": "C Filip Chytil (19.9 TOI, shoulder) on injured reserve; D Tom Willander (20.4 TOI) day-to-day.",
         "source": "ESPN",
         "url": "https://www.espn.com/nhl/injuries",
-        "date": "2026-11-11"
+        "date": "2026-11-09"
+      }
+    ],
+    "DET": [
+      {
+        "team": "DET",
+        "tag": "KEY",
+        "text": "C Dylan Larkin (21.7 TOI) on injured reserve since Oct 31.",
+        "source": "ESPN",
+        "url": "https://www.espn.com/nhl/injuries",
+        "date": "2026-10-31"
       }
     ]
   }
