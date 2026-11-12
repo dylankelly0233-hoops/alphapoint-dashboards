@@ -630,6 +630,9 @@ dialog.tmodal::backdrop { background: rgba(5, 10, 18, .6); }
   /* headers wrap so long labels don't make every column wide */
   table.data th { white-space: normal; min-width: 44px; vertical-align: bottom; padding: 9px 7px; font-size: 11px; letter-spacing: .6px; }
   table.data td { padding: 8px 7px; }
+  /* long names wrap to two lines so the numbers stay on screen */
+  table.data td.l { white-space: normal; min-width: 96px; max-width: 150px; }
+  table.data td.l .team { gap: 7px; }
   /* bigger tap targets: the ? tips and team-name links */
   .tip { position: relative; } .tip::after { content: ''; position: absolute; inset: -10px; }
   .tlink { padding: 4px 0; }
