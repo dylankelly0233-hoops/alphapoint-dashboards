@@ -87,6 +87,83 @@ def calibrated_value(sport, key, default):
         return default
 
 
+def _inj_text(e):
+    if e['kind'] == 'cluster':
+        parts = []
+        for p in e['players']:
+            m = p.get('missed')
+            parts.append(f"{p['name']}" + (f' ({m} gm)' if m else ' (new)' if m == 0 else ''))
+        return f"{len(e['players'])} {e['unit']} out: " + ', '.join(parts)
+    m, tg = e.get('missed'), e.get('team_games')
+    who = f"{e['name']}" + (f" ({e['pos']})" if e.get('pos') else '')
+    if e['kind'] == 'returning':
+        return f"{who} returning ({e['status'].lower()}) after missing {m} game{'s' if m != 1 else ''}"
+    status = e['status'].lower().replace('injured reserve', 'on IR')
+    if m is None:
+        return f"{who} {status}"
+    if e.get('season_total'):
+        return f"{who} {status}" + (f" · has missed {m} of {tg} games" if m else ' · has played every game')
+    return f"{who} {status}" + (f" · {m} straight game{'s' if m != 1 else ''} missed" if m else ' · newly out (played last game)')
+
+
+LIQ_RATIO = 3.0      # one side has 3x the other's resting money ...
+LIQ_MIN = 5000.0     # ... and at least this many dollars: flag it as lopsided
+
+
+def _money(x):
+    return f'${x / 1000:,.0f}K' if x >= 1000 else f'${x:,.0f}'
+
+
+def liquidity_row(sp, name=lambda t: t):
+    """
+    Game-card row: Kalshi spread-market money resting near the price on each side, at the number closest to the
+    posted spread. On Kalshi every resting order is a bet on one side that anyone can take from the other, so
+    money resting on the underdog is what's "available to bet the favorite", and vice versa. A big imbalance
+    (LIQ_RATIO x and LIQ_MIN+) often means a market maker is leaning toward the side with the big resting money.
+    sp: markets.kalshi_spread() result with fav / dog names added.
+    """
+    if not sp or sp.get('depth_fav') is None:
+        return ''
+    fav, dog, pts = name(sp['fav']), name(sp['dog']), theme.spread_num(sp['points'])
+    to_fav, to_dog = float(sp.get('depth_dog') or 0), float(sp.get('depth_fav') or 0)   # available to bet each side
+    hi, lo = max(to_fav, to_dog), min(to_fav, to_dog)
+    flag = ''
+    if hi >= LIQ_MIN and hi >= LIQ_RATIO * max(lo, 1):
+        lean = dog if to_fav > to_dog else fav          # the resting money is on this side
+        flag = (f' <span class="newsflag">Lopsided ({hi / max(lo, 1):.0f}:1): resting money is leaning {theme.esc(lean)}, '
+                f'often a market maker taking a position</span>')
+    thin = ' <span class="muted">(thin market)</span>' if sp.get('thin') else ''
+    return (f'<div class="lmove">{theme.k("Kalshi liquidity")}Available to bet {theme.esc(fav)} −{pts}: '
+            f'<b>{_money(to_fav)}</b> · {theme.esc(dog)} +{pts}: <b>{_money(to_dog)}</b>{thin}{flag}</div>')
+
+
+def injury_card_row(cards, away, home, name=lambda t: t):
+    """
+    Game-card injury row: key players out or questionable, cluster injuries, and players returning, with games
+    missed so a reader can judge whether the market has already priced it in. cards: {team: [card entries]}
+    (injury_wire.card_entries) or, for news-based sports, {team: [curated wire items]}.
+    """
+    lines = []
+    for t in (away, home):
+        for e in (cards or {}).get(t, []):
+            if 'kind' in e:
+                txt = _inj_text(e)
+                cls = 'ret' if e['kind'] == 'returning' else ''
+            elif e.get('tag') in ('QB', 'KEY', 'CLUSTER', 'RETURNING'):
+                txt = ' '.join(str(e.get('text', '')).split())
+                if e.get('impact') and e['impact'].get('team_games'):
+                    gp, tg = e['impact']['games'], e['impact']['team_games']
+                    txt = f"{e.get('player') or txt.split(' — ')[0]} {e.get('status', '').lower()} · has played {gp} of {tg} games"
+                txt = txt if len(txt) <= 110 else txt[:109].rsplit(' ', 1)[0] + '…'
+                cls = 'ret' if e.get('tag') == 'RETURNING' else ''
+            else:
+                continue
+            lines.append(f'<span class="inj {cls}"><b>{theme.esc(name(t))}:</b> {theme.esc(txt)}</span>')
+    if not lines:
+        return ''
+    return f'<div class="lmove injrow">{theme.k("Injuries")}<span class="injlist">{"".join(lines)}</span></div>'
+
+
 PROJ_COLS = ['game_id', 'kickoff', 'home', 'away', 'neutral', 'first_logged', 'last_logged', 'ours_first', 'ours_last',
              'market_first', 'market_last', 'opened', 'confidence', 'flags', 'sources_last', 'hfa', 'context']
 PROJ_TEXT = ['kickoff', 'home', 'away', 'first_logged', 'last_logged', 'confidence', 'flags', 'sources_last', 'context']

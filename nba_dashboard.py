@@ -351,6 +351,9 @@ def generate_html(power, metrics, days, info):
                                 'First seen')
             move += ex.rating_confidence(by_src.get(g['home'], {}), by_src.get(g['away'], {}),
                                          0.0 if g['neutral'] else HFA_POINTS)
+            if not g['score']:
+                move += ex.injury_card_row(info.get('inj_cards'), g['away'], g['home'], lambda t: short.get(t, t))
+                move += ex.liquidity_row(next((x.get('spread') for x in info['market_rows'] if str(x.get('game_id')) == str(g['game_id'])), None), lambda t: short.get(t, t))
             mprof = info['mu_prof']
             if g['home'] in mprof and g['away'] in mprof:
                 nm = lambda t: short.get(t, t)
@@ -521,7 +524,7 @@ def main():
                  ('Lines', 'ESPN, live each refresh', True), ex.wire_freshness(wire_data)]
     generate_html(power, metrics, days, {
         'scale': scale, 'weights': weights, 'sag_asof': sag_asof, 'unmatched': {'Sagarin': sag_un, 'TeamRankings': tr_un},
-        'history': hist, 'freshness': freshness, 'wire': wire_data, 'market_rows': market_rows,
+        'history': hist, 'freshness': freshness, 'wire': wire_data, 'inj_cards': {t: d.get('card', []) for t, d in cands.get('teams', {}).items()}, 'market_rows': market_rows,
         'records': vm.records(box), 'results': (box, spreads),
         'mu_units': units, 'mu_games': mu.cover_log_box(box, spreads),
         'featured': fx.game_of_the_day(days, rating, dict(zip(power['abbr'], power['rank'])), HFA_POINTS),

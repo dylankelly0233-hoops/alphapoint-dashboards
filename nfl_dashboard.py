@@ -462,6 +462,9 @@ def generate_html(power, vals, sched, week, info):
         move += ex.rating_confidence(by_src.get(r.home, {}), by_src.get(r.away, {}), 0.0 if r.neutral else HFA_POINTS)
         if not r.score and not r.neutral and r.home in wx.NFL_STADIUMS:
             move += wx.weather_row(info['weather'].get(str(r.game_id)), wx.NFL_STADIUMS[r.home][2])
+        if not r.score:
+            move += ex.injury_card_row(info.get('inj_cards'), r.away, r.home, lambda t: nick(vm.full_name(t)))
+            move += ex.liquidity_row(next((x.get('spread') for x in info['market_rows'] if str(x.get('game_id')) == str(r.game_id)), None))
         prof = info['mu_prof']
         if r.home in prof and r.away in prof:
             short = lambda ab: nick(vm.full_name(ab))
@@ -684,7 +687,7 @@ def main():
         cover.setdefault(g.home_team, []).append((g.away_team, g.result - g.spread_line))
         cover.setdefault(g.away_team, []).append((g.home_team, g.spread_line - g.result))
     info = {'scale': scale_info, 'nfelo_asof': nfelo_asof, 'sagarin_asof': sagarin_asof,
-            'wire': wire_data, 'market_rows': market_rows, 'history': hist, 'full': full, 'freshness': freshness,
+            'wire': wire_data, 'inj_cards': {t: d.get('card', []) for t, d in cands.get('teams', {}).items()}, 'market_rows': market_rows, 'history': hist, 'full': full, 'freshness': freshness,
             'featured': {r.game_id: [s] + ([f'Week {wk}'] if wk != week else [])
                          for wk, df in ((week, sched), (week + 1, next_sched)) if not df.empty
                          for r in df.itertuples() if not r.score and (s := fx.nfl_slot(r.kick, r.neutral))},

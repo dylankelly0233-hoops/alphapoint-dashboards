@@ -516,6 +516,10 @@ def generate_html(power, metrics, days, info):
             move += ex.rating_confidence(by_src.get(g['home'], {}), by_src.get(g['away'], {}),
                                          0.0 if g['neutral'] else HFA_POINTS, big)
             move += injury_row(info['wire'], g, margin)
+            if not g['score']:
+                move += ex.injury_card_row(info['wire'].get('items') if info['wire'].get('mode') == 'curated' else {},
+                                           g['away'], g['home'])
+                move += ex.liquidity_row(next((x.get('spread') for x in info['market_rows'] if str(x.get('game_id')) == str(g['game_id'])), None))
             mprof = info['mu_prof']
             if g['home'] in mprof and g['away'] in mprof:
                 move += mu.card_row(g['game_id'], mu.headline(mprof, mu.BASKETBALL_CATS, g['away'], g['home'], str))

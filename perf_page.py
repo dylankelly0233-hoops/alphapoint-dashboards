@@ -237,11 +237,12 @@ def tab(perf, bt=None):
     if not perf:
         return '<p class="hint">Model performance appears after the first logged games finish.</p>'
     sports = perf.get('sports', [])
-    intro = ('<p class="hint perf-intro">Our power ratings are directional: they come from how teams have played, so they '
+    intro = ('<details class="method perf-intro" open><summary>What this tab measures</summary><p class="hint">Our power ratings are directional: they come from how teams have played, so they '
              "can't see injuries, lineups or late news. The closing line can, which is why it will almost always be closer to "
              'the final score. So this tab asks what ratings can do: point the way the line is going to move from the open, '
              "and flag which side is undervalued early. It isn't a record of picks. Samples are still small, so read the n "
-             'and the ranges. Definitions are at the bottom. Updated ' + theme.esc(perf.get('updated', '')) + '.</p>')
+             'and the ranges. Definitions are at the bottom. Updated ' + theme.esc(perf.get('updated', '')) + '.</p></details>'
+             '<script>if (window.innerWidth <= 560) document.querySelectorAll(".perf-intro").forEach(d => d.open = false);</script>')
     golf = ''.join(f'<li>{theme.esc(l.strip())}</li>' for l in (perf.get('golf') or {}).get('lines', []))
     defs = ''.join(f'<dt>{theme.esc(k)}</dt><dd>{theme.esc(v)}</dd>' for k, v in DEFS)
     return (

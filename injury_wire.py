@@ -161,6 +161,7 @@ def _nfl_starters(snaps):
     s['key'] = s['player'].map(_norm)
     last3 = {t: set(sorted(g['week'].unique())[-3:]) for t, g in s.groupby('team')}
     last1 = {t: max(w) for t, w in last3.items()}
+    team_weeks = {t: sorted(g['week'].unique()) for t, g in s.groupby('team')}
     info = {}
     for (team, key), g in s.groupby(['team', 'key']):
         weeks = set(g['week'])
@@ -168,6 +169,8 @@ def _nfl_starters(snaps):
             'pct': float(g['pct'].mean()), 'games': int(g['week'].nunique()),
             'missed_recent': len(last3[team] - weeks),
             'missed_last': int(last1[team] not in weeks),   # sat out the team's most recent game
+            'missed': sum(1 for w in team_weeks[team] if w > max(weeks)),   # straight games missed since he last played
+            'team_games': len(team_weeks[team]),
             'pos': g['position'].iloc[-1],
         }
     qbs = {}
@@ -219,6 +222,7 @@ def nfl_candidates(season, week, games, team_names):
                 'date': updated.strftime('%Y-%m-%d') if updated else '',
                 'pct': round(st.get('pct', 0.0), 2), 'missed_recent': st.get('missed_recent', 0),
                 'missed_last': st.get('missed_last', 0),
+                'missed': st.get('missed'), 'team_games': st.get('team_games'),
                 'qb1': _norm(name) in qbs.get(abbr, set()),
             })
         teams[abbr] = rows
@@ -266,12 +270,46 @@ def nfl_candidates(season, week, games, team_names):
         # Raw notes for the curation step: every starter on the report, plus QBs
         raw = [r for r in rows if r['pct'] >= STARTER_PCT or r['pos'] == 'QB']
         news = google_news(f'"{team_names[abbr]}" injury', cache_file='news_cache_nfl.json') if items or raw else []
-        out['teams'][abbr] = {'name': team_names[abbr], 'items': items, 'starters_on_report': raw, 'headlines': news}
+        unit_of = lambda r: next((u for u, ps in UNITS.items() if r['pos'] in ps), None)
+        card = card_entries(rows, lambda r: r['qb1'] or r['pct'] >= KEY_PCT, lambda r: r['pct'] >= STARTER_PCT,
+                            OUTISH, {'Questionable'},
+                            lambda r: (r['status'] in ('Active', 'Questionable') and r['missed_last'] and (r.get('missed') or 0) >= 1
+                                       and r['days_old'] <= RETURN_DAYS and r['pct'] >= STARTER_PCT), unit_of)
+        out['teams'][abbr] = {'name': team_names[abbr], 'items': items, 'starters_on_report': raw, 'headlines': news,
+                              'card': card}
     return out
 
 
 def _nfl_snaps_info(season):
     return _nfl_starters(_nfl_snaps(season))
+
+
+def card_entries(rows, is_key, is_regular, out_statuses, maybe_statuses, is_returning, unit_of=None, limit=3):
+    """
+    The game card's injury row for one team, from the official report: key players out or questionable, a
+    cluster when 2+ regulars (in one unit, for football) are out, and players returning. Every entry carries
+    'missed' (games missed so far; for returning players, the games they missed) and 'team_games' when known.
+    """
+    def entry(kind, r):
+        return {'kind': kind, 'name': r['name'], 'pos': r.get('pos', ''), 'status': r.get('status', ''),
+                'missed': r.get('missed'), 'team_games': r.get('team_games')}
+    out, used = [], set()
+    for r in sorted((r for r in rows if is_key(r) and r['status'] in out_statuses | maybe_statuses),
+                    key=lambda r: (r['status'] not in out_statuses, -(r.get('missed') or 0))):
+        out.append(entry('out' if r['status'] in out_statuses else 'maybe', r))
+        used.add(r['name'])
+    groups = {}
+    for r in rows:
+        if r['name'] not in used and is_regular(r) and r['status'] in out_statuses:
+            groups.setdefault(unit_of(r) if unit_of else 'regulars', []).append(r)
+    for unit, hits in groups.items():
+        if unit and len(hits) >= 2:
+            used.update(r['name'] for r in hits)
+            out.append({'kind': 'cluster', 'unit': unit, 'players': [entry('out', r) for r in hits]})
+    for r in rows:
+        if r['name'] not in used and is_returning(r):
+            out.append(entry('returning', r))
+    return out[:limit]
 
 
 def _item(team, tag, text, row, source='ESPN', url=ESPN_NFL_PAGE):
@@ -310,12 +348,17 @@ def nba_candidates(day_key, games, team_names, players):
     """
     abbr_by_name = {v: k for k, v in team_names.items()}
     playing = {t for g in games for t in g}
-    mpg, in_last = {}, set()
+    mpg, in_last, missed, team_n = {}, set(), {}, {}
     if players is not None and not players.empty:
         p = players.assign(key=[(t, _norm(n)) for t, n in zip(players['team'], players['player'])])
         mpg = p.groupby('key')['minutes'].mean().to_dict()
         last = p.assign(gid=p['game_id'].astype(int)).groupby('team')['gid'].transform('max')
         in_last = set(p.loc[p['game_id'].astype(int) == last, 'key'])
+        p['gid'] = p['game_id'].astype(int)
+        team_games = {t: sorted(g['gid'].unique()) for t, g in p.groupby('team')}
+        team_n = {t: len(v) for t, v in team_games.items()}
+        played = p[p['minutes'] > 0].groupby('key')['gid'].max()
+        missed = {k: sum(1 for x in team_games.get(k[0], []) if x > g) for k, g in played.items()}   # straight games missed
     try:
         feed = requests.get(ESPN_NBA_INJURIES, timeout=30).json().get('injuries', [])
     except Exception as e:
@@ -339,7 +382,9 @@ def nba_candidates(day_key, games, team_names, players):
                          'status': i.get('status', ''), 'note': _clip(i.get('shortComment'), 220),
                          'days_old': (now - updated).days if updated else 99,
                          'date': updated.strftime('%Y-%m-%d') if updated else '',
-                         'mpg': round(mpg.get(key, 0.0), 1), 'missed_last': key in mpg and key not in in_last})
+                         'mpg': round(mpg.get(key, 0.0), 1), 'missed_last': key in mpg and key not in in_last,
+                         'missed': missed.get(key, team_n.get(abbr, 0) if key not in mpg else 0),
+                         'team_games': team_n.get(abbr)})
         items, used = [], set()
 
         # KEY: a star (by minutes) out, doubtful, questionable or day-to-day
@@ -362,7 +407,13 @@ def nba_candidates(day_key, games, team_names, players):
                                    r, url=ESPN_NBA_PAGE))
         # Raw notes for the curation step: rotation players, and anyone out who hasn't played yet this season
         raw = [r for r in rows if r['mpg'] >= 15 or (r['mpg'] == 0 and r['status'] in NBA_OUT)]
-        out['teams'][abbr] = {'name': team_names.get(abbr, abbr), 'items': items, 'rotation_on_report': raw, 'headlines': []}
+        card = card_entries(rows, lambda r: r['mpg'] >= NBA_STAR_MPG, lambda r: r['mpg'] >= NBA_ROTATION_MPG,
+                            {'Out', 'Doubtful', 'Suspension'}, {'Questionable', 'Day-To-Day'},
+                            lambda r: (r['status'] in ('Probable', 'Available') or (r['status'] in ('Day-To-Day', 'Questionable')
+                                       and r['missed_last'])) and (r.get('missed') or 0) >= 1 and r['mpg'] >= NBA_ROTATION_MPG
+                            and r['days_old'] <= RETURN_DAYS)
+        out['teams'][abbr] = {'name': team_names.get(abbr, abbr), 'items': items, 'rotation_on_report': raw, 'headlines': [],
+                              'card': card}
     return out
 
 
@@ -373,7 +424,7 @@ NHL_ROTATION_TOI  = 14.0   # two or more regulars at this ice time out at once i
 NHL_OUT           = {'Out', 'Injured Reserve', 'Doubtful', 'Suspension', 'Day-To-Day'}
 
 
-def nhl_candidates(day_key, games, team_names, toi, goalie_starts):
+def nhl_candidates(day_key, games, team_names, toi, goalie_starts, gp=None, team_gp=None):
     """
     games: [(away, home)] ESPN abbreviations. toi: {(abbr, normalized name): minutes per game} for skaters.
     goalie_starts: {(abbr, normalized name): share of the team's starts}. A goalie who has made 40%+ of
@@ -403,7 +454,9 @@ def nhl_candidates(day_key, games, team_names, toi, goalie_starts):
             rows.append({'name': name, 'pos': pos, 'status': i.get('status', ''), 'note': _clip(i.get('shortComment'), 220),
                          'days_old': (now - updated).days if updated else 99,
                          'date': updated.strftime('%Y-%m-%d') if updated else '',
-                         'toi': round(toi.get(key, 0.0), 1), 'start_share': round(goalie_starts.get(key, 0.0), 2)})
+                         'toi': round(toi.get(key, 0.0), 1), 'start_share': round(goalie_starts.get(key, 0.0), 2),
+                         'missed': (team_gp or {}).get(abbr, 0) - (gp or {}).get(key, 0) if gp and team_gp else None,
+                         'team_games': (team_gp or {}).get(abbr), 'season_total': True})
         items, used = [], set()
         for r in rows:            # KEY: a starting goalie, or a top skater by ice time
             if r['status'] not in NHL_OUT:
@@ -422,7 +475,14 @@ def nhl_candidates(day_key, games, team_names, toi, goalie_starts):
             items.append(_item(abbr, 'CLUSTER', f'{len(hits)} regulars out: {who}', min(hits, key=lambda r: r['days_old']),
                                url=ESPN_NHL_PAGE))
         raw = [r for r in rows if r['toi'] >= 12 or r['pos'] == 'G']
-        out['teams'][abbr] = {'name': team_names.get(abbr, abbr), 'items': items[:3], 'regulars_on_report': raw, 'headlines': []}
+        card = card_entries(rows, lambda r: r['toi'] >= NHL_KEY_TOI or (r['pos'] == 'G' and r['start_share'] >= 0.4),
+                            lambda r: r['toi'] >= NHL_ROTATION_TOI, {'Out', 'Injured Reserve', 'Suspension'},
+                            {'Day-To-Day', 'Doubtful'}, lambda r: False)
+        for e in card:                     # NHL: the count is games missed this season, not necessarily in a row
+            for x in (e.get('players') or [e]):
+                x['season_total'] = True
+        out['teams'][abbr] = {'name': team_names.get(abbr, abbr), 'items': items[:3], 'regulars_on_report': raw, 'headlines': [],
+                              'card': card}
     return out
 
 

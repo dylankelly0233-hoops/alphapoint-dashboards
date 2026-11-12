@@ -630,6 +630,10 @@ def generate_html(p4, vals, sched, week, season_type, info):
         stadium = info['roofs'].get(str(r.game_id))
         if stadium and not r.completed:
             move += wx.weather_row(info['weather'].get(str(r.game_id)), stadium[2])
+        if not r.completed and info['wire'].get('mode') == 'curated':
+            move += ex.injury_card_row(info['wire'].get('items'), r.away, r.home)
+        if not r.completed:
+            move += ex.liquidity_row(next((x.get('spread') for x in info['market_rows'] if str(x.get('game_id')) == str(r.game_id)), None))
         prof = info['mu_prof']
         if r.home in prof and r.away in prof:
             move += mu.card_row(r.game_id, mu.headline(prof, MU_CATS, r.away, r.home, str))

@@ -76,6 +76,8 @@ TIPS = {
     'Rating': 'Points above or below an average team. The gap between two teams is the projected margin on a neutral field.',
     'Projected': 'Our line: the rating gap plus home field, rounded to the half point.',
     'Market': 'The posted spread right now.',
+    'Kalshi liquidity': "Dollars resting in Kalshi's spread market near the current price, at the number closest to the posted spread. On Kalshi every resting order is a bet on one side that anyone can take from the other, so 'available to bet' a team is the money resting on its opponent. When one side has 3x the other (and $5K+), it's flagged: that often means a market maker is taking a position on the side with the big resting money.",
+    'Injuries': "Key players out or questionable, cluster injuries (two or more regulars out), and players returning, from the official injury report (NFL, NBA, NHL; refreshed every build) or the curated Injury Wire (college sports, Premier League). The games-missed count shows how long a player has been out: the longer, the more likely the market and the ratings have already absorbed it. NHL counts are games missed this season.",
     'Goalies': "NHL: each team's probable starting goalie (ESPN: expected or confirmed) and how many goals per game better (+) or worse (−) he is than the team's usual goaltending, by goals saved above expected. Already included in our win probability.",
     'Backup swing': "NHL: our win probability if the team's other goalie starts instead of the expected one.",
     'Total': 'NHL: our expected total goals for the game vs. the posted total.',
@@ -248,11 +250,27 @@ def game_card(when, venue, away, home, projected, market, final='', edge='', tag
                 f'{rating_chip(t["rating"], t["sd"], t.get("fmt", "{:+.1f}"))}</div>')
     final_html = f'<div><span class="k">Final</span><b>{esc(final)}</b></div>' if final else ''
     tags_html = f'<div class="gtags">{tags}</div>' if tags else ''
+    chips = []
+    m = re.search(r'class="conf (high|med|low)"', move or '')
+    if m:
+        chips.append(f'<span class="gchip c-{m.group(1)}">{ {"high": "High", "med": "Medium", "low": "Low"}[m.group(1)]} confidence</span>')
+    if 'Big move' in (move or ''):
+        chips.append('<span class="gchip warnc">Big line move</span>')
+    n_inj = (move or '').count('class="inj')
+    if n_inj:
+        chips.append(f'<span class="gchip">Injuries ({n_inj})</span>')
+    if 'Lopsided (' in (move or ''):
+        chips.append('<span class="gchip warnc">Lopsided liquidity</span>')
+    if 'BIG EDGE' in (move or '').upper() and 'Matchup' in (move or ''):
+        chips.append('<span class="gchip">Matchup edge</span>')
+    toggle = ('<div class="gchips">' + ''.join(chips)
+              + '<button type="button" class="gmore" onclick="this.closest(\'.card\').classList.toggle(\'open\')">'
+                'Details</button></div>') if move else ''
     return (f'<article class="card game"><header><span>{esc(when)}</span><span>{esc(venue)}</span></header>'
             f'{tags_html}{side(away, labels[0])}{side(home, labels[1])}'
             f'<footer><div>{k("Projected")}<b>{projected}</b></div>'
             f'<div>{k("Market")}<span>{market}</span></div>'
-            f'<div>{k("Edge")}{edge or "—"}</div>{final_html}</footer>{move}</article>')
+            f'<div>{k("Edge")}{edge or "—"}</div>{final_html}</footer>{toggle}{move}</article>')
 
 
 WIRE_TAGS  = {'QB': ('qb', 'QB'), 'CLUSTER': ('cluster', 'Cluster'), 'RETURNING': ('ret', 'Returning'),
@@ -528,6 +546,8 @@ td.pos { color: var(--pos); font-weight: 600; } td.neg { color: var(--neg); font
 .gtag.bounce { background: var(--pos); }
 .gtag.teaser { background: #6d4bd8; } .gtag.teaser.max { background: #4a2fb0; }
 .lmove { padding: 8px 14px 10px; font-size: 13px; color: var(--muted); border-top: 1px solid var(--line); }
+.injlist { display: block; margin-top: 2px; } .inj { display: block; color: var(--ink); line-height: 1.45; }
+.inj b { color: var(--muted); font-weight: 600; } .inj.ret { color: var(--pos, #1a7f37); }
 .lmove .k { font: 700 11px/1 var(--display); letter-spacing: 1px; text-transform: uppercase; margin-right: 8px; }
 .lmove b { color: var(--ink); }
 .newsflag { display: block; margin-top: 4px; padding: 5px 8px; border-radius: 6px; background: var(--neg-bg); color: var(--neg);
@@ -588,6 +608,29 @@ dialog.tmodal::backdrop { background: rgba(5, 10, 18, .6); }
 
 /* Phones: summary cards swipe sideways in one row and the data strip is one scrolling line,
    so the main table or game list starts near the top instead of below a stack of cards */
+.gchips { display: none; }
+@media (max-width: 560px) {
+  .card.game > .lmove { display: none; }
+  .card.game.open > .lmove { display: block; }
+  .gchips { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; padding: 8px 14px 10px; border-top: 1px solid var(--line); }
+  .gchip { font-size: 11.5px; padding: 3px 8px; border-radius: 999px; background: var(--surface-2); color: var(--muted); }
+  .gchip.c-high { color: var(--pos, #1a7f37); } .gchip.c-low { color: var(--neg, #c62828); } .gchip.warnc { color: var(--neg, #c62828); }
+  .gmore { margin-left: auto; font: 700 12px/1 var(--display); letter-spacing: 1px; text-transform: uppercase; color: var(--accent);
+           background: none; border: 1px solid var(--line); border-radius: 6px; padding: 6px 10px; }
+  .card.game.open .gmore { color: var(--muted); }
+  /* 3. the Games tab first in the tab bar, and a fade on the right edge so it's clear the bar scrolls */
+  nav.tabs button[data-page="games"], nav.tabs button[data-page="sched"], nav.tabs button[data-page="week"] { order: -1; }
+  nav.tabs { -webkit-mask-image: linear-gradient(90deg, #000 85%, transparent); mask-image: linear-gradient(90deg, #000 85%, transparent); }
+  /* 5. wide tables: the name column stays put while the numbers scroll */
+  table.data .stick { position: sticky; z-index: 1; background: var(--surface); }
+  table.data th.stick { background: var(--surface-2, var(--surface)); }
+  /* golf: secondary columns hidden on phones until "Show all columns" */
+  table.data .opt { display: none; }
+  .showall table.data .opt { display: table-cell; }
+}
+.colbtn { display: none; }
+@media (max-width: 560px) { .colbtn { display: inline-block; margin: 0 0 8px; font: 700 12px/1 var(--display); letter-spacing: 1px;
+  text-transform: uppercase; color: var(--accent); background: none; border: 1px solid var(--line); border-radius: 6px; padding: 6px 10px; } }
 @media (max-width: 640px) {
   .grid3 { display: flex; gap: 10px; overflow-x: auto; scroll-snap-type: x mandatory; margin: 0 -16px 14px; padding: 0 16px 6px;
            scrollbar-width: none; }
@@ -696,6 +739,19 @@ document.querySelectorAll('nav.tabs button').forEach(b => b.onclick = () => {
 });
 // Open the tab named in the link (#value, #info…), otherwise the first tab
 if (!showTab(location.hash.slice(1))) showTab(document.querySelector('nav.tabs button').dataset.page);
+function stickCols() {
+  if (window.innerWidth > 560) return;
+  document.querySelectorAll('table.data').forEach(t => {
+    const hs = [...t.querySelectorAll('thead th')];
+    const idx = hs.findIndex(h => h.classList.contains('l'));
+    if (idx < 0 || idx > 1) return;
+    const lefts = []; let x = 0;
+    for (let i = 0; i <= idx; i++) { lefts.push(x); x += hs[i].getBoundingClientRect().width; }
+    t.querySelectorAll('tr').forEach(r => { [...r.children].slice(0, idx + 1).forEach((c, i) => { c.classList.add('stick'); c.style.left = lefts[i] + 'px'; }); });
+  });
+}
+window.addEventListener('load', stickCols);
+document.querySelectorAll('nav.tabs button').forEach(b => b.addEventListener('click', () => setTimeout(stickCols, 50)));
 
 // Filter: value matches the row's group exactly, or as a prefix ("AFC" matches "AFC East")
 document.querySelectorAll('select.filter').forEach(sel => sel.onchange = () => {

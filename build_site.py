@@ -52,6 +52,13 @@ LANDING_CSS = """
 @media (max-width: 560px) { .tiles { gap: 8px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
                             .tile:last-child:nth-child(odd) { grid-column: span 2; } .tile { padding: 11px 10px 10px; } .tile .name { font-size: 12.5px; }
                             .tile .cov { display: none; } }
+@media (max-width: 560px) { .subtitle { display: none; } .tiles { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; }
+                            .tile { padding: 9px 6px 8px; align-items: center; text-align: center; }
+                            .tile .abbr { font-size: 20px; } .tile .name, .tile .go, .tile .cov { display: none; }
+                            .tile:last-child:nth-child(odd) { grid-column: auto; }
+                            .spots-head .hint { display: none; } .mk-l { display: none; } .mk-s { display: inline; }
+                            .smatch { font-size: 14.5px; } .spotlist .sline { font-size: 12px; } }
+.mk-s { display: none; }
 .updated { margin-top: 16px; }
 .info { display: grid; gap: 16px; }
 .info section { padding: 18px 20px 6px; }
@@ -266,7 +273,8 @@ def best_spots():
         groups[d] += (f'<li><a href="{theme.esc(s["page"])}"><span class="sday">{theme.esc(when)}</span>'
                  f'{league_mark(s["sport"])}'
                  f'<span class="smain"><span class="smatch">{theme.esc(s["away"])} @ {theme.esc(s["home"])}</span>'
-                 f'<span class="sline">Ours {theme.esc(s["ours"])} · Market {theme.esc(s["market"])}</span>'
+                 f'<span class="sline">Ours {theme.esc(s["ours"])} · <span class="mk-l">Market</span><span class="mk-s">Mkt</span> '
+                 f'{theme.esc(s["market"])}</span>'
                  f'{f"<span class=stags>{tags}</span>" if tags else ""}</span>'
                  f'<span class="sedge">{edge}</span></a></li>')
     def label(d):

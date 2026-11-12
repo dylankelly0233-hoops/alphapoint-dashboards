@@ -345,6 +345,8 @@ def generate_html(power, metrics, days, info):
             hfa_g = 0.0 if g['neutral'] else HFA_GOALS
             move = _rows(g, short) + ex.rating_confidence(by_src.get(g['home'], {}), by_src.get(g['away'], {}), hfa_g,
                                                           scale=CONF_SCALE)
+            if not g['score'] and info['wire'].get('mode') == 'curated':
+                move += ex.injury_card_row(info['wire'].get('items'), g['home'], g['away'], short)
             tags = ''
             if FATIGUE_TAG:
                 for t in (g['home'], g['away']):

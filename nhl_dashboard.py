@@ -465,7 +465,8 @@ def generate_html(power, metrics, days, info):
             edge, edge_team, edge_pct = _edge_html(g, short)
             hfa_g = 0.0 if g['neutral'] else HFA_GOALS
             move = (_move_row(g, short) + _goalie_row(g, short) + tot
-                    + ex.rating_confidence(by_src.get(g['home'], {}), by_src.get(g['away'], {}), hfa_g, scale=CONF_SCALE))
+                    + ex.rating_confidence(by_src.get(g['home'], {}), by_src.get(g['away'], {}), hfa_g, scale=CONF_SCALE)
+                    + (ex.injury_card_row(info.get('inj_cards'), g['away'], g['home'], short) if not g['score'] else ''))
             side = lambda t: {'name': full.get(t, t), 'logo': logo(t), 'rating': info['rating'].get(t, np.nan), 'sd': sd,
                               'key': t, 'signal': pill(t), 'color': color.get(t, ''), 'fmt': G2}
             card = theme.game_card(g['kick'].strftime('%I:%M %p').lstrip('0') + ' ET', 'Neutral site' if g['neutral'] else '',
@@ -631,8 +632,11 @@ def main():
     team_starts = goalies.groupby('abbr')['starts'].sum().to_dict()
     starts = {(r.abbr, wire._norm(r.name)): r.starts / max(team_starts.get(r.abbr, 1), 1) for r in goalies.itertuples()}
     day_key = int(datetime.now().strftime('%Y%m%d'))
+    gp = {(r.abbr, wire._norm(r.name)): int(r.games_played) for r in sk.itertuples()} if not sk.empty else {}
+    gp.update({(r.abbr, wire._norm(r.name)): int(r.starts) for r in goalies.itertuples()})
+    team_gp = {r.abbr: int(r.gp) for r in rates.itertuples()} if not rates.empty else {}
     cands = wire.nhl_candidates(day_key, [(g['away'], g['home']) for _, gs in days for g in gs],
-                                dict(zip(tm['abbr'], tm['name'])), toi, starts)
+                                dict(zip(tm['abbr'], tm['name'])), toi, starts, gp, team_gp)
     wire.write_candidates('nhl', cands)
     wire_data = wire.load_wire('nhl', day_key, cands)
     print(f"  Injury Wire: {sum(len(v) for v in wire_data['items'].values())} items ({wire_data['mode']}).")
@@ -656,6 +660,7 @@ def main():
                  ex.wire_freshness(wire_data)]
     generate_html(power, metrics, days, {
         'scale': scale, 'unmatched': sag_un, 'history': hist, 'freshness': freshness, 'wire': wire_data,
+        'inj_cards': {t: d.get('card', []) for t, d in cands.get('teams', {}).items()},
         'records': m.records(res), 'results': res, 'rating': rating, 'rank': dict(zip(power['abbr'], power['rank'])),
         'baseline': baseline, 'goalies': goalies, 'featured': featured})
 

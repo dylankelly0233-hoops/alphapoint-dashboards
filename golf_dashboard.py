@@ -237,14 +237,15 @@ def generate_html(ev, state, sim, source, kal, players, pre, freshness, hist):
             k = lambda m: kal.get(m, {}).get(g.norm(r.player))
             so_far = f'{int(sum(r.done))} ({len(r.done)} rd)' if r.done else ''
             form = '' if r.form != r.form else f'{r.form:+.2f}'
-            rows += (f'<tr><td class="rank">{i}</td><td class="l">{theme.esc(r.player)}'
+            opt = lambda html: html.replace('<td', '<td data-opt="1"', 1).replace('<td data-opt="1" class="', '<td class="opt ', 1).replace('<td data-opt="1"', '<td class="opt"', 1)
+            rows += (f'<tr><td class="rank opt">{i}</td><td class="l">{theme.esc(r.player)}'
                      f'{"" if r.known else " <span class=muted>(new)</span>"}</td>'
-                     f'<td data-v="{r.skill}">{theme.rating_chip(r.skill, sd_all, "{:+.2f}")}</td>'
-                     f'<td class="num muted" data-v="{r.form if r.form == r.form else ""}">{form}</td>'
-                     f'<td class="muted">{so_far}</td>'
-                     f'{_cell(r.win, k("win"), "win")}<td class="muted">{g.american(r.win)}</td>'
-                     f'{_cell(r.top5, k("top5"), "top5")}{_cell(r.top10, k("top10"), "top10")}{_cell(r.top20, k("top20"), "top20")}'
-                     f'<td>{_p(r.make_cut) if g.cut_size(ev["name"], len(sim)) else "no cut"}</td></tr>')
+                     f'{_cell(r.win, k("win"), "win")}{_cell(r.top10, k("top10"), "top10")}'
+                     + opt(f'<td data-v="{r.skill}">{theme.rating_chip(r.skill, sd_all, "{:+.2f}")}</td>')
+                     + opt(f'<td class="num muted" data-v="{r.form if r.form == r.form else ""}">{form}</td>')
+                     + opt(f'<td class="muted">{so_far}</td>') + opt(f'<td class="muted">{g.american(r.win)}</td>')
+                     + opt(_cell(r.top5, k("top5"), "top5")) + opt(_cell(r.top20, k("top20"), "top20"))
+                     + opt(f'<td>{_p(r.make_cut) if g.cut_size(ev["name"], len(sim)) else "no cut"}</td>') + '</tr>')
         when = pd.Timestamp(ev['date']).tz_convert('America/New_York').strftime('%a %b %d').replace(' 0', ' ')
         status = ('Live: probabilities update with each finished round (a round in progress counts once it ends)'
                   if state == 'live' else f'Starts {when}')
@@ -252,8 +253,12 @@ def generate_html(ev, state, sim, source, kal, players, pre, freshness, hist):
         week_html = (
             f'<div class="sechead"><h2>{theme.esc(ev["name"])}</h2><span class="hint">{theme.esc(status)} · '
             f'{len(sim)} players · {"cut: top " + str(cut) + " and ties" if cut else "no cut"} · field: {theme.esc(source)}</span></div>'
-            + theme.table('golf-table', [('#', ''), ('Player', 'l'), ('Skill', ''), ('Form', ''), ('So far', ''), ('Win', ''),
-                                         ('Fair odds', ''), ('Top 5', ''), ('Top 10', ''), ('Top 20', ''), ('Make cut', '')], rows)
+            + '<div class="golfweek"><button type="button" class="colbtn" '
+              'onclick="this.parentNode.classList.toggle(\'showall\');this.textContent=this.parentNode.classList.contains(\'showall\')'
+              '?\'Fewer columns\':\'Show all columns\'">Show all columns</button>'
+            + theme.table('golf-table', [('#', 'opt'), ('Player', 'l'), ('Win', ''), ('Top 10', ''), ('Skill', 'opt'), ('Form', 'opt'),
+                                         ('So far', 'opt'), ('Fair odds', 'opt'), ('Top 5', 'opt'), ('Top 20', 'opt'),
+                                         ('Make cut', 'opt')], rows) + '</div>'
             + theme.method_note(
                 f'Each player\'s chance from {g.N_SIMS:,} simulated tournaments with this field and cut rule. A round is '
                 f'his skill plus random round-to-round variation (his own volatility), in whole strokes so ties happen; '
