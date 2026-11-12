@@ -1,9 +1,9 @@
 # Rebuild the AlphaPoint dashboards and publish them to GitHub Pages.
-# Runs on a schedule, whenever Claude's daily run pushes a new Injury Wire file, and on demand
-# (Actions tab → "Build dashboards" → Run workflow, or an outside timer calling workflow_dispatch).
-# The cron below asks for hourly runs, but GitHub's free scheduler is best-effort: in practice it
-# runs about 3-4 times a day. A truly hourly refresh needs an outside timer (e.g. cron-job.org
-# calling the workflow_dispatch API with a token limited to Actions on this repository).
+# Runs every hour from 7 AM to 1 AM ET, started by an outside timer (a cron-job.org job, set up
+# 2026-11-11, that calls the workflow_dispatch API at :17 with a fine-grained token limited to Actions
+# on this repository; the token expires about Nov 2027 and needs renewing). Also runs whenever Claude's
+# daily run pushes a new Injury Wire file, and on demand (Actions tab → "Build dashboards" → Run
+# workflow). The cron below is a backup only: GitHub's free scheduler runs it about 3-4 times a day.
 name: Build dashboards
 
 on:
