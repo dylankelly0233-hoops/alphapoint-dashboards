@@ -52,13 +52,13 @@ LANDING_CSS = """
 @media (max-width: 560px) { .tiles { gap: 8px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
                             .tile:last-child:nth-child(odd) { grid-column: span 2; } .tile { padding: 11px 10px 10px; } .tile .name { font-size: 12.5px; }
                             .tile .cov { display: none; } }
+.mk-s { display: none; }
 @media (max-width: 560px) { .subtitle { display: none; } .tiles { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; }
                             .tile { padding: 9px 6px 8px; align-items: center; text-align: center; }
                             .tile .abbr { font-size: 20px; } .tile .name, .tile .go, .tile .cov { display: none; }
                             .tile:last-child:nth-child(odd) { grid-column: auto; }
                             .spots-head .hint { display: none; } .mk-l { display: none; } .mk-s { display: inline; }
                             .smatch { font-size: 14.5px; } .spotlist .sline { font-size: 12px; } }
-.mk-s { display: none; }
 .updated { margin-top: 16px; }
 .info { display: grid; gap: 16px; }
 .info section { padding: 18px 20px 6px; }
