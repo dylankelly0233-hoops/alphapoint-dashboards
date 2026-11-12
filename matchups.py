@@ -365,7 +365,8 @@ def card_row(game_id, text_score):
     else:
         summary = '<span class="hint">No big mismatches</span>'
     return (f'<div class="lmove mu-line">{theme.k("Matchup")}{summary}'
-            f'<button type="button" class="mubtn" data-matchup="{html.escape(str(game_id))}">Open</button></div>')
+            f'<button type="button" class="mubtn" data-matchup="{html.escape(str(game_id))}" '
+            f'aria-label="See the full matchup breakdown">Full matchup breakdown →</button></div>')
 
 
 def templates(panels):
