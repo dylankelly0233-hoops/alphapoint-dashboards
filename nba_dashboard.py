@@ -319,9 +319,9 @@ def generate_html(power, metrics, days, info):
         value_html = (
             f'<div class="sechead"><h2>Wins over expectation</h2>'
             f'{theme.filter_bar("value-div", "value-table", "Conference", group_opts, "Negative = unlucky (buy side)")}</div>'
-            + theme.table('value-table', [('Team', 'l'), ('G', ''), ('W-L', ''), ('Margin xW', ''), ('Margin W−xW', ''),
-                                          ('Shooting xW', ''), ('Shooting W−xW', ''), ('Vegas xW', ''), ('Vegas W−xW', ''),
-                                          ('Close W-L', ''), ('Opp 3P% vs avg', ''), ('Composite', ''), ('Trade Signal', '')], rows)
+            + theme.table('value-table', [('Team', 'l'), ('G', 'opt'), ('W-L', ''), ('Margin xW', 'opt'), ('Margin W−xW', ''),
+                                          ('Shooting xW', 'opt'), ('Shooting W−xW', 'opt'), ('Vegas xW', 'opt'), ('Vegas W−xW', 'opt'),
+                                          ('Close W-L', 'opt'), ('Opp 3P% vs avg', 'opt'), ('Composite', ''), ('Trade Signal', '')], rows)
             + theme.method_note(
                 f'<b>Margin</b>: Pythagorean expected wins from points scored and allowed (exponent {vm.PYTHAG_EXP:g}); '
                 f'winning more than the margin supports usually means close-game luck. <b>Shooting</b>: each game replayed '

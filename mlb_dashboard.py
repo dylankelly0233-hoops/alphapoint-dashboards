@@ -145,9 +145,9 @@ def generate_html(power, tt, starters, info):
     value_html = (
         f'<div class="sechead"><h2>Wins over expectation · {season_txt}</h2>'
         f'{theme.filter_bar("value-div", "value-table", "League", group_opts, "Negative = unlucky (buy side)")}</div>'
-        + theme.table('value-table', [('Team', 'l'), ('W-L', ''), ('Pyth W', ''), ('W − Pyth', ''), ('BaseRuns W', ''),
-                                      ('W − BaseRuns', ''), ('1-run', ''), ('Extra inn.', ''), ('Hitting luck (runs)', ''),
-                                      ('Bullpen luck', ''), ('Blown saves', ''), ('Composite', ''), ('Trade Signal', '')], rows)
+        + theme.table('value-table', [('Team', 'l'), ('W-L', ''), ('Pyth W', 'opt'), ('W − Pyth', ''), ('BaseRuns W', 'opt'),
+                                      ('W − BaseRuns', 'opt'), ('1-run', 'opt'), ('Extra inn.', 'opt'), ('Hitting luck (runs)', 'opt'),
+                                      ('Bullpen luck', 'opt'), ('Blown saves', 'opt'), ('Composite', ''), ('Trade Signal', '')], rows)
         + theme.method_note(
             f'<b>Pyth W</b>: the wins runs scored and allowed support (Pythagorean, exponent {m.PYTHAG_EXP:g}). '
             f'<b>BaseRuns W</b>: the same from BaseRuns, which also strips out how hits were bunched. Winning more than '
@@ -171,8 +171,8 @@ def generate_html(power, tt, starters, info):
     pitch_html = (
         f'<div class="sechead"><h2>Starting pitchers · {season_txt}</h2>'
         f'{theme.filter_bar("pitch-div", "pitch-table", "League", group_opts, "Positive = unlucky (ERA above his skill)")}</div>'
-        + theme.table('pitch-table', [('Pitcher', 'l'), ('Team', ''), ('GS', ''), ('IP', ''), ('ERA', ''), ('FIP', ''),
-                                      ('xFIP', ''), ('xERA', ''), ('Skill ERA', ''), ('ERA − skill', '')], rows)
+        + theme.table('pitch-table', [('Pitcher', 'l'), ('Team', 'opt'), ('GS', 'opt'), ('IP', 'opt'), ('ERA', ''), ('FIP', 'opt'),
+                                      ('xFIP', 'opt'), ('xERA', 'opt'), ('Skill ERA', ''), ('ERA − skill', '')], rows)
         + theme.method_note(
             '<b>FIP</b>: the ERA his strikeouts, walks, hit batters and home runs support. <b>xFIP</b>: the same with home '
             'runs replaced by a league-average share of his fly balls. <b>xERA</b>: Statcast\'s expected ERA from the '

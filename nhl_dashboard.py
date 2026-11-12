@@ -430,9 +430,9 @@ def generate_html(power, metrics, days, info):
         value_html = (
             f'<div class="sechead"><h2>Points over expectation</h2>'
             f'{theme.filter_bar("value-div", "value-table", "Conference", group_opts, "Negative = unlucky (buy side)")}</div>'
-            + theme.table('value-table', [('Team', 'l'), ('G', ''), ('W-L-OTL', ''), ('Pts', ''), ('xG Pts', ''),
-                                          ('Pts − xG Pts', ''), ('Goal Pts', ''), ('Pts − Goal Pts', ''), ('GD', ''),
-                                          ('xGD', ''), ('PDO', ''), ('1-goal', ''), ('OT/SO', ''), ('Composite', ''),
+            + theme.table('value-table', [('Team', 'l'), ('G', 'opt'), ('W-L-OTL', ''), ('Pts', 'opt'), ('xG Pts', 'opt'),
+                                          ('Pts − xG Pts', ''), ('Goal Pts', 'opt'), ('Pts − Goal Pts', 'opt'), ('GD', 'opt'),
+                                          ('xGD', 'opt'), ('PDO', 'opt'), ('1-goal', 'opt'), ('OT/SO', 'opt'), ('Composite', ''),
                                           ('Trade Signal', '')], rows)
             + theme.method_note(
                 f'All in standings points. <b>xG Pts</b>: the points a team\'s expected-goal differential supports '
@@ -542,7 +542,7 @@ def generate_html(power, metrics, days, info):
         '<div class="sechead"><h2>Markets</h2><span class="hint">Home team win probability: ours, the sportsbook '
         '(no-vig) and Kalshi</span></div>'
         + (theme.table('mk-table', [('When', 'l'), ('Game', 'l'), ('Ours', ''), ('Sportsbook', ''), ('Kalshi', ''),
-                                    ('Kalshi 24h (pts)', ''), ('Kalshi volume', '')], mrows) if mrows
+                                    ('Kalshi 24h (pts)', 'opt'), ('Kalshi volume', 'opt')], mrows) if mrows
            else '<p class="hint">No priced games yet.</p>')
         + theme.method_note('All columns are the <b>home</b> team\'s chance to win, overtime included. Kalshi is the middle '
                             'of the best bid and ask in its game-winner market; the 24h column is how far it has moved since '

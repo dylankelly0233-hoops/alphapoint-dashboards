@@ -106,7 +106,7 @@ def glance(rows):
         body += (f'<tr><td class="l">{theme.esc(s["sport"])}</td><td class="muted">{s["n"]}</td>'
                  f'<td>{a["mae_ours"]:.1f} <span class="ci">vs</span> {a["mae_mkt"]:.1f}</td>'
                  f'<td>{_verdict(a, s["unit"])}</td><td>{_pct(s.get("clv"))}</td></tr>')
-    return theme.table('perf-glance', [('Sport', 'l'), ('Games', ''), ('Avg miss: ours vs. market', ''),
+    return theme.table('perf-glance', [('Sport', 'l'), ('Games', 'opt'), ('Avg miss: ours vs. market', ''),
                                        ('Ours vs. market', ''), ('Market moved toward us', '')], body)
 
 
@@ -199,7 +199,7 @@ def backtests(bt):
         body += (f'<tr><td class="l">{theme.esc(SPORT_NAMES[key])}</td><td class="muted">{span}</td><td class="muted">{r["n"]:,}</td>'
                  f'<td>{r["mae_ours"]:.1f} <span class="ci">vs</span> {r["mae_mkt"]:.1f} {theme.esc(r["unit"])}</td>'
                  f'<td>{real_txt}</td><td>{_pct(big)}</td></tr>')
-    return theme.table('perf-bt', [('Sport', 'l'), ('Seasons', ''), ('Games', ''), ('Avg miss: ratings vs. close', ''),
+    return theme.table('perf-bt', [('Sport', 'l'), ('Seasons', 'opt'), ('Games', 'opt'), ('Avg miss: ratings vs. close', ''),
                                    ('How much of our disagreement was real', ''), ('Big disagreements: result on our side', '')], body)
 
 
@@ -214,7 +214,7 @@ def sources(rows):
                      f'<td>{x["mae_blend"]:.2f}</td><td>{x["mae_mkt"]:.2f}</td></tr>')
     if not body:
         return '<p class="hint">Source scores appear once logged games finish.</p>'
-    return theme.table('perf-src', [('Sport', 'l'), ('Rating source', 'l'), ('Games', ''), ('Avg miss: this source alone', ''),
+    return theme.table('perf-src', [('Sport', 'l'), ('Rating source', 'l'), ('Games', 'opt'), ('Avg miss: this source alone', ''),
                                     ('Our blend', ''), ('Closing line', '')], body)
 
 

@@ -290,7 +290,7 @@ def generate_html(ev, state, sim, source, kal, players, pre, freshness, hist):
         + f'<div class="sechead"><h2>Player ratings</h2><span class="hint">{MIN_ROUNDS}+ rounds in the last year · '
           f'click a column to sort</span></div>'
         + theme.table('rank-table', [('#', ''), ('Player', 'l'), ('Skill', ''), ('Form', ''), ('Volatility', ''),
-                                     ('Rounds (1 yr)', '')], rows)
+                                     ('Rounds (1 yr)', 'opt')], rows)
         + theme.method_note(
             f'<b>Skill</b>: strokes per round better (+) or worse than an average PGA Tour player, from every round on '
             f'the PGA Tour, DP World Tour and LIV over three seasons. Each round is compared with the field that day, '
@@ -354,8 +354,8 @@ def generate_html(ev, state, sim, source, kal, players, pre, freshness, hist):
         + cards
         + '<div class="sechead"><h2>Every regular, one row each</h2><span class="hint">Click a column to sort · '
           f'{MIN_ROUNDS}+ rounds in the last year</span></div>'
-        + theme.table('gval-table', [('Player', 'l'), ('Skill', ''), ('Top 10s / expected', ''), ('Top 10s − expected', ''),
-                                     ('Wins / expected', ''), ('Form', ''), ('Volatility', ''), ('Rounds (1 yr)', '')], rows)
+        + theme.table('gval-table', [('Player', 'l'), ('Skill', 'opt'), ('Top 10s / expected', 'opt'), ('Top 10s − expected', ''),
+                                     ('Wins / expected', 'opt'), ('Form', ''), ('Volatility', ''), ('Rounds (1 yr)', 'opt')], rows)
         + theme.method_note(
             '<b>Top 10s − expected</b> (finishes vs. skill): for every PGA Tour event in the last year we computed his '
             'pre-tournament chance of a top 10 using only rounds played before that event, then added them up. Negative '

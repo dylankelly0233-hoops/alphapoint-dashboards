@@ -434,7 +434,7 @@ def generate_html(power, metrics, days, info):
         f'{theme.summary_card("Sell candidates", flagged(1), early or "Record · wins over expectation (W − xW).")}</div>'
         f'<div class="sechead"><h2>Power ratings</h2>'
         f'{theme.filter_bar("power-conf", "power-table", "Conference", conf_opts, "Click a column to sort")}</div>'
-        + theme.table('power-table', [('#', ''), ('Team', 'l'), ('Record', ''), ('Rating', ''), ('D1 Rk', ''),
+        + theme.table('power-table', [('#', ''), ('Team', 'l'), ('Record', ''), ('Rating', ''), ('D1 Rk', 'opt'),
                                       ('Trade Signal', '')], rows)
         + theme.method_note(
             f'<b>Rating</b> is points above or below an average Division I team (0.0); the gap between two teams is the '
@@ -478,9 +478,9 @@ def generate_html(power, metrics, days, info):
         value_html = (
             f'<div class="sechead"><h2>Wins over expectation</h2>'
             f'{theme.filter_bar("value-conf", "value-table", "Conference", conf_opts, "Negative = unlucky (buy side)")}</div>'
-            + theme.table('value-table', [('Team', 'l'), ('G', ''), ('W-L', ''), ('Margin xW', ''), ('Margin W−xW', ''),
-                                          ('Shooting xW', ''), ('Shooting W−xW', ''), ('Vegas xW', ''), ('Vegas W−xW', ''),
-                                          ('Close W-L', ''), ('Opp 3P% vs avg', ''), ('Composite', ''), ('Trade Signal', '')], rows)
+            + theme.table('value-table', [('Team', 'l'), ('G', 'opt'), ('W-L', ''), ('Margin xW', 'opt'), ('Margin W−xW', ''),
+                                          ('Shooting xW', 'opt'), ('Shooting W−xW', 'opt'), ('Vegas xW', 'opt'), ('Vegas W−xW', 'opt'),
+                                          ('Close W-L', 'opt'), ('Opp 3P% vs avg', 'opt'), ('Composite', ''), ('Trade Signal', '')], rows)
             + theme.method_note(
                 f'D1-vs-D1 games only. <b>Margin</b>: Pythagorean expected wins from points scored and allowed (exponent '
                 f'{vm.PYTHAG_EXP:g}); winning more than the margin supports usually means close-game luck. <b>Shooting</b>: each '

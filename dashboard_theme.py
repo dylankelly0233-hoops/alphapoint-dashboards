@@ -627,6 +627,13 @@ dialog.tmodal::backdrop { background: rgba(5, 10, 18, .6); }
   /* golf: secondary columns hidden on phones until "Show all columns" */
   table.data .opt { display: none; }
   .showall table.data .opt { display: table-cell; }
+  /* headers wrap so long labels don't make every column wide */
+  table.data th { white-space: normal; min-width: 44px; vertical-align: bottom; padding: 9px 7px; font-size: 11px; letter-spacing: .6px; }
+  table.data td { padding: 8px 7px; }
+  /* bigger tap targets: the ? tips and team-name links */
+  .tip { position: relative; } .tip::after { content: ''; position: absolute; inset: -10px; }
+  .tlink { padding: 4px 0; }
+  .gmore { padding: 9px 12px; }
 }
 .colbtn { display: none; }
 @media (max-width: 560px) { .colbtn { display: inline-block; margin: 0 0 8px; font: 700 12px/1 var(--display); letter-spacing: 1px;
@@ -750,6 +757,26 @@ function stickCols() {
     t.querySelectorAll('tr').forEach(r => { [...r.children].slice(0, idx + 1).forEach((c, i) => { c.classList.add('stick'); c.style.left = lefts[i] + 'px'; }); });
   });
 }
+function phoneCols() {
+  document.querySelectorAll('table.data').forEach(t => {
+    const hs = [...t.querySelectorAll('thead th')];
+    const idx = hs.map((h, i) => h.classList.contains('opt') ? i : -1).filter(i => i >= 0);
+    if (!idx.length || t.dataset.optDone) return;
+    t.dataset.optDone = '1';
+    t.querySelectorAll('tbody tr').forEach(r => {
+      const cells = [...r.children];
+      if (cells.length !== hs.length) return;          // rows with a colspan note stay as they are
+      idx.forEach(i => cells[i].classList.add('opt'));
+    });
+    if (t.closest('.golfweek')) return;                // golf's This Week has its own button
+    const card = t.closest('.tablecard') || t.parentNode;
+    const b = document.createElement('button');
+    b.type = 'button'; b.className = 'colbtn'; b.textContent = 'Show all columns';
+    b.onclick = () => { card.classList.toggle('showall'); b.textContent = card.classList.contains('showall') ? 'Fewer columns' : 'Show all columns'; setTimeout(stickCols, 30); };
+    card.parentNode.insertBefore(b, card);
+  });
+}
+phoneCols();
 window.addEventListener('load', stickCols);
 document.querySelectorAll('nav.tabs button').forEach(b => b.addEventListener('click', () => setTimeout(stickCols, 50)));
 

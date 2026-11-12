@@ -569,7 +569,7 @@ def generate_html(p4, vals, sched, week, season_type, info):
         f'<div class="sechead"><h2>Power ratings</h2>'
         f'{theme.filter_bar("power-conf", "power-table", "Conference", conf_opts, "Click a column to sort")}</div>'
         + theme.table('power-table', [('#', ''), ('Team', 'l'), ('Record', ''), ('Rating', ''),
-                                      ('FBS Rk', ''), ('Trade Signal', '')], rows)
+                                      ('FBS Rk', 'opt'), ('Trade Signal', '')], rows)
         + theme.method_note(
             f'<b>Rating</b> is points above or below an average FBS team (0.0); the gap between two teams is the projected '
             f'margin at a neutral site. Sagarin blend: {blend} (through {theme.esc(info["sag_asof"] or "unknown")}). '
@@ -593,8 +593,8 @@ def generate_html(p4, vals, sched, week, season_type, info):
     value_html = (
         f'<div class="sechead"><h2>Wins over expectation</h2>'
         f'{theme.filter_bar("value-conf", "value-table", "Conference", conf_opts, "Negative = unlucky (buy side)")}</div>'
-        + theme.table('value-table', [('Team', 'l'), ('G', ''), ('W-L', ''), ('EPA xW', ''), ('EPA W−xW', ''),
-                                      ('SR xW', ''), ('SR W−xW', ''), ('Vegas xW', ''), ('Vegas W−xW', ''),
+        + theme.table('value-table', [('Team', 'l'), ('G', 'opt'), ('W-L', ''), ('EPA xW', 'opt'), ('EPA W−xW', ''),
+                                      ('SR xW', 'opt'), ('SR W−xW', 'opt'), ('Vegas xW', 'opt'), ('Vegas W−xW', 'opt'),
                                       ('Composite', ''), ('Trade Signal', '')], rows)
         + theme.method_note(
             f'<b>W − xW</b> = actual wins minus expected wins, FBS-vs-FBS games only. Expected wins come from each game\'s '

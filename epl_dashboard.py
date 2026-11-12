@@ -294,8 +294,8 @@ def generate_html(power, metrics, days, info):
         f'{theme.summary_card("Buy candidates", flagged(-1), "Record · points under expected points.")}'
         f'{theme.summary_card("Sell candidates", flagged(1), "Record · points over expected points.")}</div>'
         f'<div class="sechead"><h2>Power ratings</h2><span class="hint">Click a column to sort</span></div>'
-        + theme.table('power-table', [('#', ''), ('Team', 'l'), ('W-D-L', ''), ('Rating', ''), ('Attack', ''),
-                                      ('Defense', ''), ('Trade Signal', '')], rows)
+        + theme.table('power-table', [('#', ''), ('Team', 'l'), ('W-D-L', ''), ('Rating', ''), ('Attack', 'opt'),
+                                      ('Defense', 'opt'), ('Trade Signal', '')], rows)
         + theme.method_note(
             f'<b>Rating</b> is goals per match better (+) or worse (−) than an average Premier League side; the gap '
             f'between two teams plus {HFA_GOALS:g} goals of home advantage is the projected goal margin. <b>Attack</b> '
@@ -321,8 +321,8 @@ def generate_html(power, metrics, days, info):
                      f'{theme.diff_td(r.Composite, 1.0, "{:+.1f}")}<td>{pill(r.Team)}</td></tr>')
         value_html = (
             '<div class="sechead"><h2>Points over expectation</h2><span class="hint">Negative = unlucky (buy side)</span></div>'
-            + theme.table('value-table', [('Team', 'l'), ('G', ''), ('W-D-L', ''), ('Pts', ''), ('xPts', ''),
-                                          ('Pts − xPts', ''), ('GD', ''), ('xGD', ''), ('Finishing', ''), ('Keeping', ''),
+            + theme.table('value-table', [('Team', 'l'), ('G', 'opt'), ('W-D-L', ''), ('Pts', 'opt'), ('xPts', 'opt'),
+                                          ('Pts − xPts', ''), ('GD', 'opt'), ('xGD', 'opt'), ('Finishing', 'opt'), ('Keeping', 'opt'),
                                           ('Composite', ''), ('Trade Signal', '')], rows)
             + theme.method_note(
                 '<b>xPts</b>: every match replayed from both sides\' expected goals (football-data.co.uk), giving the '
@@ -423,7 +423,7 @@ def generate_html(power, metrics, days, info):
         '<div class="sechead"><h2>Markets</h2><span class="hint">Home / draw / away probability: ours, the sportsbook '
         '(no-vig) and Kalshi</span></div>'
         + (theme.table('mk-table', [('When', 'l'), ('Match', 'l'), ('Ours', ''), ('Sportsbook', ''), ('Kalshi', ''),
-                                    ('Kalshi volume', '')], mrows) if mrows else '<p class="hint">No priced matches yet.</p>')
+                                    ('Kalshi volume', 'opt')], mrows) if mrows else '<p class="hint">No priced matches yet.</p>')
         + theme.method_note('Each cell is home / draw / away. Kalshi prices are the middle of the best bid and ask in its '
                             'three match markets, scaled to add up to 100%.'))
 

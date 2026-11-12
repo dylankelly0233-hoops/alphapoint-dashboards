@@ -432,9 +432,9 @@ def generate_html(power, vals, sched, week, info):
     value_html = (
         f'<div class="sechead"><h2>Wins over expectation</h2>'
         f'{theme.filter_bar("value-div", "value-table", "Division", div_opts, "Negative = unlucky (buy side)")}</div>'
-        + theme.table('value-table', [('Team', 'l'), ('G', ''), ('Record', ''), ('EPA xW', ''), ('EPA W−xW', ''),
-                                      ('SR xW', ''), ('SR W−xW', ''), ('Vegas xW', ''), ('Vegas W−xW', ''),
-                                      ('TO Margin', ''), ('Composite', ''), ('Trade Signal', '')], rows)
+        + theme.table('value-table', [('Team', 'l'), ('G', 'opt'), ('Record', ''), ('EPA xW', 'opt'), ('EPA W−xW', ''),
+                                      ('SR xW', 'opt'), ('SR W−xW', 'opt'), ('Vegas xW', 'opt'), ('Vegas W−xW', 'opt'),
+                                      ('TO Margin', 'opt'), ('Composite', ''), ('Trade Signal', '')], rows)
         + theme.method_note(
             f'<b>W − xW</b> = actual wins minus expected wins. Expected wins come from each game\'s net EPA per play gap '
             f'and success-rate gap (calibrated win-probability curves with a home-field term, dropped at neutral sites) '
