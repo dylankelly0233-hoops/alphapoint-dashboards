@@ -256,7 +256,7 @@ def game_card(when, venue, away, home, projected, market, final='', edge='', tag
         chips.append(f'<span class="gchip c-{m.group(1)}">{ {"high": "High", "med": "Medium", "low": "Low"}[m.group(1)]} confidence</span>')
     if 'Big move' in (move or ''):
         chips.append('<span class="gchip warnc">Big line move</span>')
-    n_inj = (move or '').count('class="inj')
+    n_inj = len(re.findall(r'<span class="inj[ "]', move or ''))
     if n_inj:
         chips.append(f'<span class="gchip">Injuries ({n_inj})</span>')
     if 'Lopsided (' in (move or ''):
