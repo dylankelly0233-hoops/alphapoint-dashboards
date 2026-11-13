@@ -674,6 +674,7 @@ def main():
     except Exception as e:
         print(f'  ! player values unavailable: {e}')
         pvals = pd.DataFrame(columns=['team', 'name', 'key', 'value', 'mpg', 'games', 'team_games'])
+    wire.hoops_filter(cands, {t: cp.roster(pvals, t, n=15) for t in cands['teams']})   # drop football / women's news
     for team, d in cands['teams'].items():
         d['roster'] = cp.roster(pvals, team)          # names, minutes and value, for the curation step
     wire.write_candidates('cbb', cands)

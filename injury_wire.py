@@ -502,13 +502,78 @@ def epl_candidates(day_key, games, team_names):
     return out
 
 
+# Headlines about another sport (or the women's team) that a school-name search drags in
+OTHER_SPORT = {
+    'basketball': re.compile(
+        r"football|quarterback|\bQBs?\b|linebacker|receiver|running back|\bRBs?\b|\bWRs?\b|tight end|cornerback|"
+        r"offensive line|defensive (end|line|back|coordinator)|kicker|punter|touchdown|bowl game|\bCFP\b|gridiron|\bNFL\b|"
+        r"soccer|volleyball|baseball|softball|hockey|lacrosse|women[’']s|\bWBB\b|\blady |\bWeek \d+\b", re.I),
+    'football': re.compile(r"basketball|hoops|\bNBA\b|\bmpg\b|soccer|volleyball|baseball|softball|hockey|lacrosse|"
+                           r"women's", re.I),
+}
+# "Florida" must not match "Florida State", "Texas" not "Texas Tech", and so on
+LONGER_NAME = (r"(?!\s+(State|St\.|A&M|Tech|Atlantic|International|Gulf|Southern|Christian|Baptist|Wesleyan|Northern|"
+               r"Western|Eastern|Central|Southeastern|Northwestern|\(OH\)|\(FL\)|Rio Grande|Pacific|Mountain)|-Corpus)")
+
+# Names the press uses for a school besides its full name and mascot
+SHORT_NAMES = {'North Carolina': ['UNC'], 'Florida State': ['FSU'], 'Pittsburgh': ['Pitt'], 'NC State': ['N.C. State'],
+               'Connecticut': ['UConn'], 'Mississippi': ['Ole Miss'], 'Southern California': ['USC'], 'USC': ['Trojans'],
+               'Louisiana State': ['LSU'], 'Brigham Young': ['BYU'], 'Texas Christian': ['TCU'], 'Southern Methodist': ['SMU'],
+               'Central Florida': ['UCF'], 'Virginia Tech': ['Hokies'], "Saint John's": ["St. John's"],
+               "St. John's": ['Red Storm', 'Johnnies'], 'Miami': ['Miami (FL)'], 'Michigan State': ['Spartans']}
+
+
+def _about(title, team, mascot, sport_word):
+    """Keep a headline only if it names this team and isn't about another sport."""
+    if sport_word in OTHER_SPORT and OTHER_SPORT[sport_word].search(title):
+        return False
+    names = [team] + ([mascot] if mascot else []) + SHORT_NAMES.get(team, [])
+    return any(re.search(r'(?<![\w&])' + re.escape(n) + LONGER_NAME, title, re.I) for n in names)
+
+
+HOOPS_SIGNAL = re.compile(r"basketball|hoops|\bmen[’']s\b|\bMBB\b|\bguard\b|\bforward\b|\bcenter\b|\bmpg\b|"
+                          r"\bminutes\b|\bpoints per game\b|\bppg\b", re.I)
+
+
+COMMON_SURNAMES = set('''brown smith johnson williams jones davis miller wilson moore taylor anderson thomas jackson white harris
+martin thompson robinson clark lewis walker hall allen young king wright scott green baker adams hill mitchell carter turner
+phillips evans edwards collins stewart morris bell cooper reed bailey ward howard james wood brooks price bennett gray watson
+hughes washington butler simmons foster bryant russell griffin hayes myers ford graham jenkins perry long ross powell
+sanders'''.split())   # a surname this common needs the full player name to count
+
+
+def hoops_filter(cands, rosters):
+    """
+    College basketball: a school-name search also returns football news that never says "football" ("Initial
+    injury report ahead of hosting Duke"). Keep a headline only if it reads as basketball or names a player on
+    the team's roster. rosters: team -> list of {'name': ...}.
+    """
+    for team, d in cands['teams'].items():
+        names = set()
+        for p in rosters.get(team) or []:
+            full = str(p.get('name') or '').strip()
+            if full:
+                names.add(full)
+                last = full.split()[-1].rstrip('.')
+                if len(last) >= 4 and last.lower() not in COMMON_SURNAMES:
+                    names.add(last)
+        keep = [h for h in d.get('headlines') or []
+                if HOOPS_SIGNAL.search(h['title']) or any(re.search(r'\b' + re.escape(n) + r'\b', h['title'], re.I) for n in names)]
+        d['headlines'] = keep
+        d['items'] = [it for it in d.get('items') or [] if it.get('tag') != 'NEWS'] + [
+            {'team': team, 'tag': 'NEWS', 'text': n['title'], 'source': n['source'], 'url': n['url'], 'date': n['date']}
+            for n in keep[:2]]
+    return cands
+
+
 def news_candidates(sport, week, games, mascots, sport_word, only=None):
     """Injury headlines per team for the games shown. only = restrict the searches to these teams."""
     playing = sorted({t for g in games for t in g if only is None or t in only})
     out = {'sport': sport, 'week': week, 'collected': _now().isoformat(timespec='minutes'), 'games': games, 'teams': {}}
     for team in playing:
         query = f'"{team}" {mascots.get(team, "")} {sport_word} injury'.replace('  ', ' ')
-        news = google_news(query, cache_file=f'news_cache_{sport}.json')
+        news = [n for n in google_news(query, limit=8, cache_file=f'news_cache_{sport}.json')
+                if _about(n['title'], team, mascots.get(team, ''), sport_word)]
         items = [{'team': team, 'tag': 'NEWS', 'text': n['title'], 'source': n['source'], 'url': n['url'], 'date': n['date']}
                  for n in news[:2]]
         out['teams'][team] = {'name': team, 'items': items, 'headlines': news}
