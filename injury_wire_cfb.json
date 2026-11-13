@@ -1,30 +1,30 @@
 {
   "sport": "cfb",
   "week": 11,
-  "generated": "2026-11-12T16:24:17-05:00",
+  "generated": "2026-11-13T13:18:04-05:00",
   "movers": [
-    {
-      "team": "Alabama",
-      "tag": "QB",
-      "text": "QB Keelon Russell (ankle, hurt vs. LSU) is listed probable on the initial availability report for Vanderbilt. Austin Mack is the backup.",
-      "source": "Lyndy's Sports Annuals",
-      "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNUTZBTDhzRnA0X3JiWlF3QUFheTRpQTZtMHFzdklpak5odlB1UEdTVEY0NTRMS3VBUGhlR3g2Zks2R3FWN1Nsd2t5QW1rWTBGZ2dBaWtqNGpFb2pkdzJCOVpDUHMzVFhka01UeTZEck5RdG11NjZ1UXVDandfSXlIdFE3S3k3YklOenF5REc4d0VpbG5FdG44c25XMUtWb3ZZWTR6alBhU1QzTlpvM0h6d2NYclZGMFM1ejVGLUxiMHZodUZCeVBZOXljODRuZndI?oc=5",
-      "date": "2026-11-12"
-    },
-    {
-      "team": "Indiana",
-      "tag": "QB",
-      "text": "QB Josh Hoover (throwing arm) is not on the initial injury report for USC. Leading rusher RB Turbo Richard and DL Kellan Wyatt are listed out.",
-      "source": "ESPN",
-      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPbGdTRDZsVThIRHJsQzZpMk9lQV9RWGxQTEJONjJZN0NYQnN4b1ZtYXdyZGx6b01uYzN5TFEtZmZqN3A4dkpwTW5wR0NUV0xRY0FOejJLWWFTU0h6elQxOE55d1hYUmZPbG1FZzJqcmJ2Y296bnJQSl9kLVF3d3Z3aFZJX1U3bDAzSm1tSE9XUEplSmJqT29LSXVYWTByQ2gtRlBmYXE0Tk1lY1A3UzRNQW9EMnhJa1dGREIwcDVxQzJVMHc?oc=5",
-      "date": "2026-11-12"
-    },
     {
       "team": "South Carolina",
       "tag": "QB",
-      "text": "QB LaNorris Sellers (ankle, hurt vs. Texas A&M) is listed questionable on the SEC availability report for Arkansas.",
-      "source": "On3",
-      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNZVoyY0JVY0lvc2R3WTJMd0xYTURxdlZ2b2p1Z0RpWFhkUDJCNUtCTlBBaURDb0hVLTVmN3FDWXZLTHlrNFB6aFdiaXlCMGFqOWJGMXY0RVItVFhydUpwR0N3VVd2ZElfemI5ZHg5WGpxVTl0cWpHRmJwNGdUN3NpN2p1c3pDNkFiTGozdG5QSjBHTTFmQTdjQWNxTlExNVphc3hVblRvaU41ZVJZVzdTTk1paVZ2b1JRM2hESkNlWlJCUzFKUWk3YmVLNHZ1czQ?oc=5",
+      "text": "QB LaNorris Sellers (ankle, hurt vs. Texas A&M), listed questionable earlier in the week, got an upgrade on the Thursday availability report for Arkansas.",
+      "source": "Yahoo Sports",
+      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxONUNycW94Q1pPNUMzVE11SFd5NGZCOFUyWTlvX0hCdDdHR2pFc2paRE5iRjE4M1NENmQ0aWQ3ekZrdVdFOVZ1TkNpRndyMEFWT1ptaTJadkhsQktMZnpxUGc4aUpWNkoxSF9PZzJudTloN2tqU05aaVl5c21EUHU1QzRkXzVhUGhvT3lB?oc=5",
+      "date": "2026-11-13"
+    },
+    {
+      "team": "Iowa",
+      "tag": "QB",
+      "text": "QB Hank Brown is listed questionable heading into the Purdue game.",
+      "source": "The Gazette",
+      "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxNSzlnUmx6cGp3aUFYNGpsMmxlZ3pOdEpxQ2J6LXJ1NTVPcmNDMUEwNl9KdVZKbjZzWlI4eHJrVUFRT0tleXI4Nm0ybk5wVEV1Q0JHM3VLZVBPVlZYYnRNNGJ2U29sMFo4bWxiNlU4cU9fRVZjWWdFaC1WTGRBYWtCRDdKLVV3SFhLenJBMGF3bGl2NWk1S2lwS3oyblUyUEhtbVg0LTJGVXpPUnQ2c05uNk90Mnc0VDEteTYtS3BpYnBWNGQ1M0VxR0VYWVhSNHFHdmNGTmR3cVJHTkQwMm9GZw?oc=5",
+      "date": "2026-11-12"
+    },
+    {
+      "team": "Ohio State",
+      "tag": "QB",
+      "text": "Julian Sayin (right arm) is officially out for Northwestern; Luke Fahey stays the starter. Northwestern's Aidan Chiles is also out, so both starting QBs miss the game.",
+      "source": "Cleveland.com",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPTy15Qmpyd3lCR0Q4eVl0Rl9tT1czc2htVmIxcVlqTTAwY25ueGpKNjl0UmRUek5MLUw5YUFrZUFoTkhEcTZUVzNYQmhBbzZabHM1ZEdKaks1X3MtUWtWVmx6MGRaRWxrVmprRThzWWVRSkZlUjJsTWxsdDhmZnNQdWFjalp1Rjdma0owVGZNajI4LWx0ZmhURkVyalFFam1EaVJkaU45TGIwTkM2a0h4ZWZEWko3ZzFnU2loSGs5V0dMbUk?oc=5",
       "date": "2026-11-12"
     },
     {
@@ -33,15 +33,15 @@
       "text": "QB Aidan Chiles (upper body) is listed out for Ohio State after also missing the Iowa game; Nicco Marchiol started in his place.",
       "source": "Eleven Warriors",
       "url": "https://news.google.com/rss/articles/CBMihwJBVV95cUxQMUtTRkxOSzRsTkVMbnpqU1dsWTRQdnlEZFZyOC1Uc0xSZ3VZLTA0dlE4WU94S3c4Tmk3NkZqQnpRVVZhWFdzRXJwbjFlM081NnNsRExsOXVRN01yVVNoRWR4TnN3NTc1dWRqeHA3dlZNMVdVdzlfWnZvdU9Ia3hYN3BoM1hlcnpoQVlwZ0hvRWpNMlhaV3hKQVJaS3k4dmltejVtQUVtejZPLThPRDJFcUZRcUtoOXcyUTZBOUs2QXdQSXprYzQyeGt5TFpNMDBhNW9GdnJ1V0ZUaGF0dWRWcVdsN1AtMElvU0JMSlhrSWhkbXNfMTZscVFZV1VITlg1THlzdEJWMA?oc=5",
-      "date": "2026-11-12"
+      "date": "2026-11-13"
     },
     {
-      "team": "Washington",
+      "team": "Ole Miss",
       "tag": "QB",
-      "text": "QB Demond Williams Jr. is listed questionable on the Big Ten availability report for Michigan State.",
-      "source": "Yahoo Sports",
-      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPUmtIeWYtRkFya2wxTG5oalhjMm03NWNEcFRoR3pZc01rcFZUa0pldjRFUmNTSGtodmlrVTgyWTJKbGdxY0s3Ukliem1fcmRMOU5HbGNWdS1qWUZOM0ZaNGxOZWxOTkJTMkJ0MXRZc0pSTE5yR05mQVhJdWxRRV91b1RwajhXbTludjVLUTZzWWo?oc=5",
-      "date": "2026-11-12"
+      "text": "QB Trinidad Chambliss is no longer listed on the Thursday availability report for Oklahoma; WR Makhi Frazier is now questionable.",
+      "source": "The Rebel Walk",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPQTk5V0NRTE1pZWRpczhDMFBZUUpleXptSVhlTjBISTRHd1dOREZWeDdmWWhzZjAxbEZwSWh4SXcyNEtiallsaEZoNU94VXVyRDdCT2RNTjVvT2RIU252V21QbGR4TWZaVW50ODh4S3JxSVVzRjl5UEJJc284d0Iza2xLUQ?oc=5",
+      "date": "2026-11-13"
     }
   ],
   "teams": {
@@ -67,25 +67,25 @@
       {
         "team": "Ohio State",
         "tag": "QB",
-        "text": "Ryan Day said Luke Fahey stays the starting QB vs. Northwestern; Tavien St. Clair is 'one snap away.' Julian Sayin (right arm) remains out.",
-        "source": "ESPN",
-        "url": "https://www.espn.com/college-football/story/_/id/50444070/ohio-state-stick-fahey-qb-vs-northwestern",
-        "date": "2026-11-10"
+        "text": "Julian Sayin (right arm) is officially out for Northwestern; Luke Fahey stays the starter. Northwestern's Aidan Chiles is also out, so both starting QBs miss the game.",
+        "source": "Cleveland.com",
+        "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPTy15Qmpyd3lCR0Q4eVl0Rl9tT1czc2htVmIxcVlqTTAwY25ueGpKNjl0UmRUek5MLUw5YUFrZUFoTkhEcTZUVzNYQmhBbzZabHM1ZEdKaks1X3MtUWtWVmx6MGRaRWxrVmprRThzWWVRSkZlUjJsTWxsdDhmZnNQdWFjalp1Rjdma0owVGZNajI4LWx0ZmhURkVyalFFam1EaVJkaU45TGIwTkM2a0h4ZWZEWko3ZzFnU2loSGs5V0dMbUk?oc=5",
+        "date": "2026-11-12"
       },
       {
         "team": "Ohio State",
-        "tag": "CLUSTER",
-        "text": "Three Ohio State wide receivers are listed questionable on the initial injury report for Northwestern.",
+        "tag": "RETURNING",
+        "text": "WR Brandon Inniss is cleared to play on the Thursday injury report for Northwestern; OL Luke Montgomery is listed questionable.",
         "source": "Eleven Warriors",
         "url": "https://news.google.com/rss/articles/CBMihwJBVV95cUxQMUtTRkxOSzRsTkVMbnpqU1dsWTRQdnlEZFZyOC1Uc0xSZ3VZLTA0dlE4WU94S3c4Tmk3NkZqQnpRVVZhWFdzRXJwbjFlM081NnNsRExsOXVRN01yVVNoRWR4TnN3NTc1dWRqeHA3dlZNMVdVdzlfWnZvdU9Ia3hYN3BoM1hlcnpoQVlwZ0hvRWpNMlhaV3hKQVJaS3k4dmltejVtQUVtejZPLThPRDJFcUZRcUtoOXcyUTZBOUs2QXdQSXprYzQyeGt5TFpNMDBhNW9GdnJ1V0ZUaGF0dWRWcVdsN1AtMElvU0JMSlhrSWhkbXNfMTZscVFZV1VITlg1THlzdEJWMA?oc=5",
-        "date": "2026-11-12"
+        "date": "2026-11-13"
       }
     ],
     "Indiana": [
       {
         "team": "Indiana",
         "tag": "QB",
-        "text": "QB Josh Hoover (throwing arm) is not on the initial injury report for USC. Leading rusher RB Turbo Richard and DL Kellan Wyatt are listed out.",
+        "text": "QB Josh Hoover (throwing arm) is not on the injury report for USC. Leading rusher RB Turbo Richard, DL Kellan Wyatt and starting G Joe Brunner are out.",
         "source": "ESPN",
         "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPbGdTRDZsVThIRHJsQzZpMk9lQV9RWGxQTEJONjJZN0NYQnN4b1ZtYXdyZGx6b01uYzN5TFEtZmZqN3A4dkpwTW5wR0NUV0xRY0FOejJLWWFTU0h6elQxOE55d1hYUmZPbG1FZzJqcmJ2Y296bnJQSl9kLVF3d3Z3aFZJX1U3bDAzSm1tSE9XUEplSmJqT29LSXVYWTByQ2gtRlBmYXE0Tk1lY1A3UzRNQW9EMnhJa1dGREIwcDVxQzJVMHc?oc=5",
         "date": "2026-11-12"
@@ -104,21 +104,29 @@
     "Ole Miss": [
       {
         "team": "Ole Miss",
+        "tag": "QB",
+        "text": "QB Trinidad Chambliss is no longer listed on the Thursday availability report for Oklahoma; WR Makhi Frazier is now questionable.",
+        "source": "The Rebel Walk",
+        "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPQTk5V0NRTE1pZWRpczhDMFBZUUpleXptSVhlTjBISTRHd1dOREZWeDdmWWhzZjAxbEZwSWh4SXcyNEtiallsaEZoNU94VXVyRDdCT2RNTjVvT2RIU252V21QbGR4TWZaVW50ODh4S3JxSVVzRjl5UEJJc284d0Iza2xLUQ?oc=5",
+        "date": "2026-11-13"
+      },
+      {
+        "team": "Ole Miss",
         "tag": "KEY",
-        "text": "Star RB Kewan Lacy and OL Patrick Kutas are listed out for the Oklahoma game.",
-        "source": "Sooners Wire",
-        "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxNSTcyMWZUMFJkeVZyZHpKeHZ4T2RRLU95aGxPWGRpZXc3X0pCaEYwNjZwQzdrd1dxRHVIVUhvQTY4Q1d0RkttdkdvV3VxQ2RIYXV0RWhWR3kzZWE4MTNYd05xNXpWV2ZBUnJjdjY0UDlqVy11WEs0SUZuME1vR3VCVF9zemc5aGt6VGlnV0gzcjUyT2VDRWZseElVMzNVOXUtUll3MzZJNDQ1cmZIODBlM25oOXJMZlhIQ0hLak9ERC1fNlZSQkhnTGxrVEE5OW0zaWY1cG95am92Nk9FVk1yU0xoc25iTG1i?oc=5",
-        "date": "2026-11-10"
+        "text": "Star RB Kewan Lacy has been ruled out for the season; Ole Miss lists three key players out against Oklahoma.",
+        "source": "HottyToddy.com",
+        "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPWU9RODN5NGZIZU1ZMS13ZXRkSkdKbmRGTk54T1ZJemZqVDczUHhaTkFSLWJnY0s0RzVCa2xSS1VCeHp1ZGdJVlJNLTZKekZXSHlxOFN3YUtaQUI5WW44cjZSck15Y1pkM2tOcFRHUGNFcmlDbnU5bmU1M3dQRzVqUDQteXd6UW0wdERNN1g4cFlMQQ?oc=5",
+        "date": "2026-11-12"
       }
     ],
     "South Carolina": [
       {
         "team": "South Carolina",
         "tag": "QB",
-        "text": "QB LaNorris Sellers (ankle, hurt vs. Texas A&M) is listed questionable on the SEC availability report for Arkansas.",
-        "source": "On3",
-        "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNZVoyY0JVY0lvc2R3WTJMd0xYTURxdlZ2b2p1Z0RpWFhkUDJCNUtCTlBBaURDb0hVLTVmN3FDWXZLTHlrNFB6aFdiaXlCMGFqOWJGMXY0RVItVFhydUpwR0N3VVd2ZElfemI5ZHg5WGpxVTl0cWpHRmJwNGdUN3NpN2p1c3pDNkFiTGozdG5QSjBHTTFmQTdjQWNxTlExNVphc3hVblRvaU41ZVJZVzdTTk1paVZ2b1JRM2hESkNlWlJCUzFKUWk3YmVLNHZ1czQ?oc=5",
-        "date": "2026-11-12"
+        "text": "QB LaNorris Sellers (ankle, hurt vs. Texas A&M), listed questionable earlier in the week, got an upgrade on the Thursday availability report for Arkansas.",
+        "source": "Yahoo Sports",
+        "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxONUNycW94Q1pPNUMzVE11SFd5NGZCOFUyWTlvX0hCdDdHR2pFc2paRE5iRjE4M1NENmQ0aWQ3ekZrdVdFOVZ1TkNpRndyMEFWT1ptaTJadkhsQktMZnpxUGc4aUpWNkoxSF9PZzJudTloN2tqU05aaVl5c21EUHU1QzRkXzVhUGhvT3lB?oc=5",
+        "date": "2026-11-13"
       }
     ],
     "Wake Forest": [
@@ -156,7 +164,7 @@
         "text": "QB Aidan Chiles (upper body) is listed out for Ohio State after also missing the Iowa game; Nicco Marchiol started in his place.",
         "source": "Eleven Warriors",
         "url": "https://news.google.com/rss/articles/CBMihwJBVV95cUxQMUtTRkxOSzRsTkVMbnpqU1dsWTRQdnlEZFZyOC1Uc0xSZ3VZLTA0dlE4WU94S3c4Tmk3NkZqQnpRVVZhWFdzRXJwbjFlM081NnNsRExsOXVRN01yVVNoRWR4TnN3NTc1dWRqeHA3dlZNMVdVdzlfWnZvdU9Ia3hYN3BoM1hlcnpoQVlwZ0hvRWpNMlhaV3hKQVJaS3k4dmltejVtQUVtejZPLThPRDJFcUZRcUtoOXcyUTZBOUs2QXdQSXprYzQyeGt5TFpNMDBhNW9GdnJ1V0ZUaGF0dWRWcVdsN1AtMElvU0JMSlhrSWhkbXNfMTZscVFZV1VITlg1THlzdEJWMA?oc=5",
-        "date": "2026-11-12"
+        "date": "2026-11-13"
       }
     ],
     "Kansas State": [
@@ -273,10 +281,10 @@
       {
         "team": "LSU",
         "tag": "KEY",
-        "text": "LB Whit Weeks is listed questionable on the initial availability report for Texas.",
-        "source": "Yahoo Sports",
-        "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNUWRjYXZ6NVZxajlaMnJMeEFKQjdNdjFCcWE5bmRQSWxBT0ZjblZzRUZDSDNiRWhoTkJwZzhFT3pBQUFHc3VCR0N5QXNZVTJrZFBURDBvRzROR0I3ZlIzSzdPZjh5VkRrT1BkTGJZd3NjVUxpdzRkZkZpa2dieDlVQmZkQnE?oc=5",
-        "date": "2026-11-12"
+        "text": "LB Whit Weeks still faces uncertainty on the latest availability report for Texas.",
+        "source": "Sports Illustrated",
+        "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNeTVMS0VnNHZqdHA5VF9KVlVWQ1VOQVhLTE0tREVXdmluUTlYWTlsdTQwQTkwYmpnN01QZ21lNnBQRTlTTFpkUVk3MmRnNUhwZUROaUY1MzRoNE5wNTZ5cDBTdDRCcEtYRE9vS1R6V3dROU5jYTRHRVJvTWpQNm03SkRMc1F2ZFF6QjhxbVdoajRHQmVNSENMUS1rT25MMGJpQXJuMEFNLUJraFZX?oc=5",
+        "date": "2026-11-13"
       }
     ],
     "Florida": [
@@ -316,6 +324,56 @@
         "text": "RB Wayshawn Parker, hurt in the BYU game, is listed questionable for Arizona.",
         "source": "roundtable.io",
         "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPa0NaY29jMGljR24tSVZUVHVNdVVaX2E5TXB4S1VyWHFfR3h0VkludzhrVHptV01qOUVsRlRFZFFZRi12TWJrOHB1R2RzSEVzamJaQ3pqY3RUOC1taEF0WS1SMWc3MUdwY3BRc3JETWI5VVFLN093dUY5eDczeURHN05QVU96WkRxdVBFZDdRdTdiLW02ZzE1cjhFQWI5Q1lsbVh0N1FR?oc=5",
+        "date": "2026-11-12"
+      }
+    ],
+    "Iowa": [
+      {
+        "team": "Iowa",
+        "tag": "QB",
+        "text": "QB Hank Brown is listed questionable heading into the Purdue game.",
+        "source": "The Gazette",
+        "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxNSzlnUmx6cGp3aUFYNGpsMmxlZ3pOdEpxQ2J6LXJ1NTVPcmNDMUEwNl9KdVZKbjZzWlI4eHJrVUFRT0tleXI4Nm0ybk5wVEV1Q0JHM3VLZVBPVlZYYnRNNGJ2U29sMFo4bWxiNlU4cU9fRVZjWWdFaC1WTGRBYWtCRDdKLVV3SFhLenJBMGF3bGl2NWk1S2lwS3oyblUyUEhtbVg0LTJGVXpPUnQ2c05uNk90Mnc0VDEteTYtS3BpYnBWNGQ1M0VxR0VYWVhSNHFHdmNGTmR3cVJHTkQwMm9GZw?oc=5",
+        "date": "2026-11-12"
+      }
+    ],
+    "Georgia": [
+      {
+        "team": "Georgia",
+        "tag": "KEY",
+        "text": "C Drew Bobo's status is in question for the Missouri game.",
+        "source": "DawgNation",
+        "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNV2U3dHloNmFCSkowWWtRc094SXlwUE1wWVA1YTlqOVJlNGprV0FXc1VvanVUek85SXBxeDN4VlNEcGJGRjFlRy14eXFIZU1fR3NsREx6bjRTNVlTR1EyRDVLdk82bG5tSlp1bVdqVTFlbWMtaHA5bnVFbEZGcjlyZ3RqR08zM2laUzZSdTF2Z2pQWWtJU3NzTjIxaE5oSDFLd1pzQUlpSEFYblY2TkJmZThURHhUZWZ4Q3dzRlVadVpJX3JMTVJVVE8yWQ?oc=5",
+        "date": "2026-11-13"
+      }
+    ],
+    "Nebraska": [
+      {
+        "team": "Nebraska",
+        "tag": "KEY",
+        "text": "Two starting defenders, including DB Andrew Marshall, are listed out for the Rutgers game.",
+        "source": "247Sports",
+        "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNVjlrYUlIZnNMNUNPS1JfMm1Yczl3VEphWW0yMnM2RkMxUDRBYl8xUmI0NjlIV3k1T0pya0JXNF9CeGw2NlI4N0Jfb3JhTGtMYzVjYk5CSHBKdEhIVUQyc0gwLUJYYVMwSlgyY0dua0VoSHZrbjZGMGV3YTlEZ0g2LVptM1ozeWVJRTU2YVVyNTFRNm53RGk5TjR6NmhEcDVYOC02RFJtN3JHaXBibEhiTUlCUGxySDVRNGVEOUtyNWI0TkxPUHQ2eG0tY1IwSlBj?oc=5",
+        "date": "2026-11-11"
+      }
+    ],
+    "Kansas": [
+      {
+        "team": "Kansas",
+        "tag": "KEY",
+        "text": "Kansas has ruled out a key offensive starter vs. West Virginia, and OL injuries have it pulling from reserves to protect QB Isaiah Marshall.",
+        "source": "Sports Illustrated",
+        "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOMnBZRWdUcU9IRzFHMEVDUDNYaUI0ZEh1QmFuT05TMUljbW14UGJLNmptUDRxVkRhS0Z1dms5N0hlRFo3M1YwLVdzUDJjd0NoV05FSVFKMXZ2d0NXSlVPUWJnNW1Edngzb2hUNnFwb2g1RlN3UlpnUVJpWTNyeFlnY3IzSmk0OXlOaWxtRmlSbWFZUDlHWGJJRV9sRHRJOUM5TzlDSFlJUFN4WE5YZWhmX0s2emZ2X1ozcHNlNGNvMk0?oc=5",
+        "date": "2026-11-13"
+      }
+    ],
+    "NC State": [
+      {
+        "team": "NC State",
+        "tag": "CLUSTER",
+        "text": "Seven former starters are listed out for Syracuse, including Popo Aguirre and Ronnie Royal III; five more are on the report.",
+        "source": "PackInsider",
+        "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQd2ZiRGdOeURPOHM1bVM2NHFNRWRlN0ZGSjAtSlFPN0JyeEhYcmRMNnZQYjB1c0NqdVE4Z2FVbzRxWFZ6bzB2RHFObW42YXNrR3N4TXNRLWtpWENXb0F6dTdfQTJ6YXBTMlFKd2dTSmMyTlItNXhac0RsNFFyWFpaU2RVd19EOFBRQmRYbDhXRVpOOEV3YmVzN3BVbUNJc21jdHpISw?oc=5",
         "date": "2026-11-12"
       }
     ]
