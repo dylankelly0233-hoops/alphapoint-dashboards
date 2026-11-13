@@ -39,6 +39,7 @@ ESPN = 'https://site.api.espn.com/apis/site/v2/sports'
 PARAMS = {'nfl': (180, 3.0, 0.6), 'cfb': (150, 3.0, 0.6), 'cbb': (90, 4.0, 0.6), 'nba': (75, 5.0, 0.6),
           'nhl': (120, 10.0, 0.5), 'epl': (180, 5.0, 0.5)}
 UNIT = {'nhl': ('goals', 0.1), 'epl': ('goals', 0.1)}
+MIN_TEAM_GAMES = 8    # a team needs this many games in a season to be rated (see walk_forward)
 
 
 # ==========================================
@@ -50,6 +51,13 @@ def walk_forward(games, sport):
     Returns games with 'ours' (our pre-game home margin) for every game with enough history.
     """
     hl, ridge, carry = PARAMS[sport]
+    # Teams with only a handful of games a season (non-Division I visitors in college basketball, lower-division
+    # opponents in college football) almost always play on the road and lose big. With so few games their ratings
+    # stay near average, so the home-edge term soaks up those blowouts (it reached 13 points in CBB). Leave them out.
+    cnt = pd.concat([games[['season', 'home']].rename(columns={'home': 't'}),
+                     games[['season', 'away']].rename(columns={'away': 't'})]).value_counts()
+    ok = lambda col: [cnt.get((s, t), 0) >= MIN_TEAM_GAMES for s, t in zip(games['season'], games[col])]
+    games = games[np.array(ok('home')) & np.array(ok('away'))]
     g = games.sort_values('date').reset_index(drop=True)
     g['date'] = pd.to_datetime(g['date'])
     teams = sorted(set(g['home']) | set(g['away']))
