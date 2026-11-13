@@ -1,7 +1,7 @@
 {
  "sport": "cbb",
  "week": 20261113,
- "generated": "2026-11-13T13:20:00-05:00",
+ "generated": "2026-11-13T16:19:00-05:00",
  "movers": [
   {
    "team": "UConn",
@@ -12,6 +12,26 @@
    "date": "2026-11-12",
    "player": "Nik Khamenia",
    "status": "out"
+  },
+  {
+   "team": "Alabama",
+   "tag": "KEY",
+   "text": "F Jamarion Davis-Fleming (18.0 mpg, lower leg) missed Oakland and has not practiced this week; Nate Oats called him questionable vs Seton Hall.",
+   "source": "Yahoo Sports",
+   "url": "https://sports.yahoo.com/articles/nate-oats-gives-injury-jamarion-191500605.html",
+   "date": "2026-11-12",
+   "player": "Jamarion Davis-Fleming",
+   "status": "questionable"
+  },
+  {
+   "team": "Syracuse",
+   "tag": "KEY",
+   "text": "F Mark Morano (17.3 mpg) re-rolled his ankle vs Indiana and did not practice Wednesday; status for St. John's uncertain.",
+   "source": "Yahoo Sports",
+   "url": "https://sports.yahoo.com/articles/syracuse-mens-basketball-orange-working-203538164.html",
+   "date": "2026-11-12",
+   "player": "Mark Morano",
+   "status": "questionable"
   }
  ],
  "teams": {
@@ -25,6 +45,30 @@
     "date": "2026-11-12",
     "player": "Nik Khamenia",
     "status": "out"
+   }
+  ],
+  "Alabama": [
+   {
+    "team": "Alabama",
+    "tag": "KEY",
+    "text": "F Jamarion Davis-Fleming (18.0 mpg, lower leg) missed Oakland and has not practiced this week; Nate Oats called him questionable vs Seton Hall.",
+    "source": "Yahoo Sports",
+    "url": "https://sports.yahoo.com/articles/nate-oats-gives-injury-jamarion-191500605.html",
+    "date": "2026-11-12",
+    "player": "Jamarion Davis-Fleming",
+    "status": "questionable"
+   }
+  ],
+  "Syracuse": [
+   {
+    "team": "Syracuse",
+    "tag": "KEY",
+    "text": "F Mark Morano (17.3 mpg) re-rolled his ankle vs Indiana and did not practice Wednesday; status for St. John's uncertain.",
+    "source": "Yahoo Sports",
+    "url": "https://sports.yahoo.com/articles/syracuse-mens-basketball-orange-working-203538164.html",
+    "date": "2026-11-12",
+    "player": "Mark Morano",
+    "status": "questionable"
    }
   ]
  }
