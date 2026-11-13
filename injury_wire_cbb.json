@@ -1,131 +1,31 @@
 {
-  "sport": "cbb",
-  "week": 20261112,
-  "generated": "2026-11-12T16:28:13-05:00",
-  "movers": [
-    {
-      "team": "Florida",
-      "tag": "KEY",
-      "player": "Boogie Fland",
-      "status": "questionable",
-      "text": "G Boogie Fland (29.7 mpg) left the FSU game holding his shoulder and went to the locker room; no status update found before Merrimack.",
-      "source": "On3",
-      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNc0lIa1hKVWlDNmdKcEg0andnNnFwN1JBaV8tZWVvc0RXSWcyNHJ6OVJ5NkQ2MmVWMkl1NkFfZlhockNDNGRxbmtXeFc5S2phTFZrQTVyUzZYY2hKS2JndmJidEdac0l2NERtYmJ4RnBJbWI5Z0t2eU8xdWNsbXVfREJ2WHRNTHRUTWJHb3ZPeElDZGhwRXE2UVNQMlhZWEd4b3Q3eWNyb2hGNUl4LU4w?oc=5",
-      "date": "2026-11-11"
-    },
-    {
-      "team": "UConn",
-      "tag": "KEY",
-      "player": "Nik Khamenia",
-      "status": "questionable",
-      "text": "F Nik Khamenia left the Wagner game in the first half with a lower-body injury; UConn may be without him vs Ohio State.",
-      "source": "Lyndy's Sports Annuals",
-      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQbjdabk4tVDNfZmdwM01JR3gybUVjUWdHbnhHb25vRHdCTTNKMlJ5QkZySXJ4bHJwT0xzNl9EcTZ6QWw5dFZjYUg5OTRHUEFfR1ZwSHdlUDRmVVVnRzN0MGRZR0duZ3JySVZQZS1YWmhFYVBWRzZvdUZqNVBSUmV4TmhtZnFrS3dvVm9HdzlXU3F0bWg1eWZ2cmZlcDhHWGdfN2RERGhsWQ?oc=5",
-      "date": "2026-11-12"
-    },
-    {
-      "team": "Northwestern",
-      "tag": "KEY",
-      "player": "Jack Karasinski",
-      "status": "questionable",
-      "text": "F Jack Karasinski (28.0 mpg, team's top value): coach is 'optimistic' about his status ahead of DePaul.",
-      "source": "Yahoo Sports",
-      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPN3FLdzJtMlVnWU5DLV83RDBKRmxmc3RSX2NIS2lDdjNJQWcyWWxlc1VUenc5ZXg1N0xuMjB4WnVlU0tBcEpRWHIzZ3ZLNnI0djVrTGhCZFB6SnN6VFJfZzVuTkJvMHpXcXVpSGJweXhzREJKV2p6TmwxWlptMGRVd2dSTzROQ0l3RGctZElhOUt4Nk1U?oc=5",
-      "date": "2026-11-10"
-    },
-    {
-      "team": "Texas A&M",
-      "tag": "KEY",
-      "player": "Cade Phillips",
-      "status": "questionable",
-      "text": "F Cade Phillips sat the final 16 minutes vs ULM with ice on his right knee; no update found before Oklahoma State.",
-      "source": "KBTX News 3",
-      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQMTRnRnVtT21RSU9va1QyS1RFSWtfbGk3RlVqT3dtWjRNR1psdnJaYlJ5dnJHRnZkY3RBSzI0SDY5UjNNS0NrMDRVM2w4WEx5Uk1VYkhCN0lQaGQ2SWpjMlN0cTNrUzFqSnIzc0FZeFAzN0J6MUZzWnRyb2V0ZzVaaXFsU084ejlUcWtSenlnNTJXRUFwVi1Ya19TbTdMeFXSAbMBQVVfeXFMTWpMaTctVEptSWV2Y2ZsUU5VVmRFdU92OHZjaVBhT0FtcENxQ2NsNmREN20yT1FJckxJN1M5TDA3a3pWd29XZEJxWjVId3YyNVl3WGZtTWRtYXRvc25CdDZKQ0pQN2RiNHRINDFjQzR3aDNFRjVHNGlmclRtNWRiZW1tY1VGd09OZnhtTnUyd19zMS1WWmhpMVNma2VJbEhabUNZUnJlUVhyY0hCVVZTRlpkQk0?oc=5",
-      "date": "2026-11-10"
-    },
-    {
-      "team": "Alabama",
-      "tag": "KEY",
-      "player": "Jamarion Davis-Fleming",
-      "status": "questionable",
-      "text": "Jamarion Davis-Fleming missed the Oakland game; Nate Oats gave an injury update ahead of Seton Hall.",
-      "source": "The Tuscaloosa News",
-      "url": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxQMlkydG5XVWk1Nk5acTJjcEprV0xObFh0TlppVDJqRlJ5NjViVG9sTERTZ0JrNGJxT1pDcEZ1eTh2aXdyWEJER05ab2VIdGM3Y2t5N0phTlVNN1U5SGdYRW9YY0NESDVPdTdJbGFwdld4VXlZUHpaSTFvMWxHa05rUmFnRTVYQnhDSGRxWFdrc2JfTEY4dmVjRnFidGlyNUQ0ZktRUl9XVzlzMTBtWHdUbG9KYm5VYWE2eC1IT0dTOEkwazJuQmJkYnBRdThSZTVDei12S05NT1VGVV9hUHB5OUFNU01UQnhYekRJZG51MTA0NzRnazZV?oc=5",
-      "date": "2026-11-12"
-    }
-  ],
-  "teams": {
-    "Florida": [
-      {
-        "team": "Florida",
-        "tag": "KEY",
-        "player": "Boogie Fland",
-        "status": "questionable",
-        "text": "G Boogie Fland (29.7 mpg) left the FSU game holding his shoulder and went to the locker room; no status update found before Merrimack.",
-        "source": "On3",
-        "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNc0lIa1hKVWlDNmdKcEg0andnNnFwN1JBaV8tZWVvc0RXSWcyNHJ6OVJ5NkQ2MmVWMkl1NkFfZlhockNDNGRxbmtXeFc5S2phTFZrQTVyUzZYY2hKS2JndmJidEdac0l2NERtYmJ4RnBJbWI5Z0t2eU8xdWNsbXVfREJ2WHRNTHRUTWJHb3ZPeElDZGhwRXE2UVNQMlhZWEd4b3Q3eWNyb2hGNUl4LU4w?oc=5",
-        "date": "2026-11-11"
-      }
-    ],
-    "UConn": [
-      {
-        "team": "UConn",
-        "tag": "KEY",
-        "player": "Nik Khamenia",
-        "status": "questionable",
-        "text": "F Nik Khamenia left the Wagner game in the first half with a lower-body injury; UConn may be without him vs Ohio State.",
-        "source": "Lyndy's Sports Annuals",
-        "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQbjdabk4tVDNfZmdwM01JR3gybUVjUWdHbnhHb25vRHdCTTNKMlJ5QkZySXJ4bHJwT0xzNl9EcTZ6QWw5dFZjYUg5OTRHUEFfR1ZwSHdlUDRmVVVnRzN0MGRZR0duZ3JySVZQZS1YWmhFYVBWRzZvdUZqNVBSUmV4TmhtZnFrS3dvVm9HdzlXU3F0bWg1eWZ2cmZlcDhHWGdfN2RERGhsWQ?oc=5",
-        "date": "2026-11-12"
-      }
-    ],
-    "Northwestern": [
-      {
-        "team": "Northwestern",
-        "tag": "KEY",
-        "player": "Jack Karasinski",
-        "status": "questionable",
-        "text": "F Jack Karasinski (28.0 mpg, team's top value): coach is 'optimistic' about his status ahead of DePaul.",
-        "source": "Yahoo Sports",
-        "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPN3FLdzJtMlVnWU5DLV83RDBKRmxmc3RSX2NIS2lDdjNJQWcyWWxlc1VUenc5ZXg1N0xuMjB4WnVlU0tBcEpRWHIzZ3ZLNnI0djVrTGhCZFB6SnN6VFJfZzVuTkJvMHpXcXVpSGJweXhzREJKV2p6TmwxWlptMGRVd2dSTzROQ0l3RGctZElhOUt4Nk1U?oc=5",
-        "date": "2026-11-10"
-      }
-    ],
-    "Texas A&M": [
-      {
-        "team": "Texas A&M",
-        "tag": "KEY",
-        "player": "Cade Phillips",
-        "status": "questionable",
-        "text": "F Cade Phillips sat the final 16 minutes vs ULM with ice on his right knee; no update found before Oklahoma State.",
-        "source": "KBTX News 3",
-        "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQMTRnRnVtT21RSU9va1QyS1RFSWtfbGk3RlVqT3dtWjRNR1psdnJaYlJ5dnJHRnZkY3RBSzI0SDY5UjNNS0NrMDRVM2w4WEx5Uk1VYkhCN0lQaGQ2SWpjMlN0cTNrUzFqSnIzc0FZeFAzN0J6MUZzWnRyb2V0ZzVaaXFsU084ejlUcWtSenlnNTJXRUFwVi1Ya19TbTdMeFXSAbMBQVVfeXFMTWpMaTctVEptSWV2Y2ZsUU5VVmRFdU92OHZjaVBhT0FtcENxQ2NsNmREN20yT1FJckxJN1M5TDA3a3pWd29XZEJxWjVId3YyNVl3WGZtTWRtYXRvc25CdDZKQ0pQN2RiNHRINDFjQzR3aDNFRjVHNGlmclRtNWRiZW1tY1VGd09OZnhtTnUyd19zMS1WWmhpMVNma2VJbEhabUNZUnJlUVhyY0hCVVZTRlpkQk0?oc=5",
-        "date": "2026-11-10"
-      }
-    ],
-    "Alabama": [
-      {
-        "team": "Alabama",
-        "tag": "KEY",
-        "player": "Jamarion Davis-Fleming",
-        "status": "questionable",
-        "text": "Jamarion Davis-Fleming missed the Oakland game; Nate Oats gave an injury update ahead of Seton Hall.",
-        "source": "The Tuscaloosa News",
-        "url": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxQMlkydG5XVWk1Nk5acTJjcEprV0xObFh0TlppVDJqRlJ5NjViVG9sTERTZ0JrNGJxT1pDcEZ1eTh2aXdyWEJER05ab2VIdGM3Y2t5N0phTlVNN1U5SGdYRW9YY0NESDVPdTdJbGFwdld4VXlZUHpaSTFvMWxHa05rUmFnRTVYQnhDSGRxWFdrc2JfTEY4dmVjRnFidGlyNUQ0ZktRUl9XVzlzMTBtWHdUbG9KYm5VYWE2eC1IT0dTOEkwazJuQmJkYnBRdThSZTVDei12S05NT1VGVV9hUHB5OUFNU01UQnhYekRJZG51MTA0NzRnazZV?oc=5",
-        "date": "2026-11-12"
-      }
-    ],
-    "South Carolina": [
-      {
-        "team": "South Carolina",
-        "tag": "KEY",
-        "player": "Camden Heide",
-        "status": "questionable",
-        "text": "F Camden Heide (29.0 mpg): Lamont Paris gave an update on his injury status ahead of Gardner-Webb.",
-        "source": "247Sports",
-        "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOQ19RZHJCQVNJT1hsT1RDMFk4QWR3VFNjWTY0VUYwRzd3NGpncUE0YW1tdk1aVkRRTUlwRmdUWndYckduN0ZHY24weXRZNkNMNHEtaVNNVjVDYkpndUlHREpxMjdMMXpFYnotVzhUeThSOHJDZEVLZGVuM24zZmJUOXc4SFlrWjE1Y0FZX2FJWXFEelF1cWJLTHBtZEI1SjVXYXIwYk5xYWt6UE5ZSU1EdTNBWEs5NFRGazNrR05BVThENDExbDVoNHM5Q2s?oc=5",
-        "date": "2026-11-12"
-      }
-    ]
+ "sport": "cbb",
+ "week": 20261113,
+ "generated": "2026-11-13T13:20:00-05:00",
+ "movers": [
+  {
+   "team": "UConn",
+   "tag": "KEY",
+   "text": "F Nik Khamenia (18.7 mpg) will undergo left foot surgery and is sidelined at least 6-8 weeks.",
+   "source": "CBS Sports",
+   "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPZ2RhSkhMNW9Qa3hNWjJBbjJ0SXlTckR4MkstN3FtME9xSWpPenZ3ek9ETEVXc3JpNGtfbm9kWDN2Nll0UlJIVlhubkJadzQ3ZnNyU2pWNFRJQXprVEZaX2UycFNiRmNtc3RCR194QW5Lc3hTdEQwNU1qTG02Q09JSm5PQkNjY2N6MFFOUllDSHFUZGExaWtJ?oc=5",
+   "date": "2026-11-12",
+   "player": "Nik Khamenia",
+   "status": "out"
   }
+ ],
+ "teams": {
+  "UConn": [
+   {
+    "team": "UConn",
+    "tag": "KEY",
+    "text": "F Nik Khamenia (18.7 mpg) will undergo left foot surgery and is sidelined at least 6-8 weeks.",
+    "source": "CBS Sports",
+    "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPZ2RhSkhMNW9Qa3hNWjJBbjJ0SXlTckR4MkstN3FtME9xSWpPenZ3ek9ETEVXc3JpNGtfbm9kWDN2Nll0UlJIVlhubkJadzQ3ZnNyU2pWNFRJQXprVEZaX2UycFNiRmNtc3RCR194QW5Lc3hTdEQwNU1qTG02Q09JSm5PQkNjY2N6MFFOUllDSHFUZGExaWtJ?oc=5",
+    "date": "2026-11-12",
+    "player": "Nik Khamenia",
+    "status": "out"
+   }
+  ]
+ }
 }
