@@ -40,6 +40,7 @@ import pandas as pd
 import requests
 
 import cfb_value_metrics as vm
+import crowd
 import dashboard_theme as theme
 import extras as ex
 import featured as fx
@@ -73,6 +74,18 @@ SOURCE_WEIGHTS  = {'sagarin': 0.50, 'sp': 0.50}
 HFA_POINTS      = 2.5
 HFA_POINTS, SOURCE_WEIGHTS = ex.calibrated('cfb', HFA_POINTS, SOURCE_WEIGHTS)   # weekly tuning (calibrate.py)
 SCALE = ex.calibrated_value('cfb', 'scale', 1.0)      # weekly-tuned rating stretch
+CROWD_SLOPE = ex.calibrated_value('cfb', 'crowd_slope', crowd.SLOPE['cfb'])   # home edge per doubling of crowd
+_HOME_EDGE = None
+
+
+def home_edge():
+    """Crowd-scaled home edge (crowd.py), built once per run."""
+    global _HOME_EDGE
+    if _HOME_EDGE is None:
+        _HOME_EDGE = crowd.HomeEdge('cfb', CROWD_SLOPE)
+        print(f'  Home edge: {HFA_POINTS:g} for a typical crowd (~{_HOME_EDGE.typical or 0:,.0f}), '
+              f'{_HOME_EDGE.slope:g} points per doubling; {len(_HOME_EDGE.expected)} home teams with crowds.')
+    return _HOME_EDGE
 
 # Bounce-back tags, from Dylan's CFB backtest (2016–25): an AWAY team coming off a loss by 28+ points
 # covered 55.4% of 739 games (+5.6% ROI). Only away teams are tagged.
@@ -323,6 +336,23 @@ def fetch_week_lines(week, season_type):
     return out
 
 
+def _hfa(r):
+    """This game's home edge (crowd-scaled); flat for rows without one, none at neutral sites."""
+    v = getattr(r, 'hfa', None)
+    return (0.0 if r.neutral else HFA_POINTS) if v is None or v != v else float(v)
+
+
+def _crowd(r):
+    c = getattr(r, 'crowd', None)
+    if isinstance(c, str) and c.startswith('{'):          # a schedule read back from a cached CSV
+        import ast
+        try:
+            c = ast.literal_eval(c)
+        except (ValueError, SyntaxError):
+            c = None
+    return c if isinstance(c, dict) else None
+
+
 def build_schedule(week, season_type, p4_names, power, fcs, metrics):
     games = vm.cfbd_get('/games', params={'year': YEAR, 'week': week, 'seasonType': season_type})
     lines = fetch_week_lines(week, season_type)
@@ -335,14 +365,14 @@ def build_schedule(week, season_type, p4_names, power, fcs, metrics):
             continue
         h_r, _ = rating_for(home, power, fcs)
         a_r, _ = rating_for(away, power, fcs)
-        hfa = 0.0 if g.get('neutralSite') else HFA_POINTS
+        hfa, crowd_info = home_edge().for_game(home, HFA_POINTS, bool(g.get('neutralSite')))
         margin = SCALE * (h_r - a_r) + hfa if not (np.isnan(h_r) or np.isnan(a_r)) else np.nan  # home − away, incl. HFA
 
         kick = pd.Timestamp(g['startDate']).tz_convert('America/New_York') if g.get('startDate') else None
         mkt = lines.get(g.get('id'))
         rows.append({
             'game_id': g.get('id'), 'kick': kick, 'tbd': bool(g.get('startTimeTBD')), 'home': home, 'away': away, 'neutral': bool(g.get('neutralSite')),
-            'venue_id': g.get('venueId'),
+            'venue_id': g.get('venueId'), 'hfa': hfa, 'crowd': crowd_info,
             'home_rating': h_r, 'away_rating': a_r, 'margin': margin,
             'market': mkt[0] if mkt else np.nan, 'market_book': mkt[1] if mkt else '',
             'market_open': mkt[2] if mkt else None,
@@ -611,7 +641,7 @@ def generate_html(p4, vals, sched, week, season_type, info):
     def game_html(r, last):
         """One game card (and its best-spots entry and matchup panel). last: each team's previous result."""
         when = theme.kick_text(r.kick if r.kick is not None and not pd.isna(r.kick) else None, getattr(r, 'tbd', False))
-        venue = 'Neutral site' if r.neutral else ''
+        venue = 'Neutral site' if r.neutral else crowd.describe(_crowd(r), HFA_POINTS)
         pm = theme.round_half(r.margin)   # projected home margin, rounded to a half point like a posted spread
         proj = '—' if pd.isna(pm) else _line_text(r.home if pm >= 0 else r.away, abs(pm))
         mkt = (('—' if r.completed else 'Not posted yet') if pd.isna(r.market) else
@@ -626,7 +656,7 @@ def generate_html(p4, vals, sched, week, season_type, info):
         move = ex.line_move(info['opened'].get(str(r.game_id)), mkt_margin, pm, r.home, r.away)
         big = ex.lopsided(mkt_margin, r.margin)
         move += ex.rating_confidence(info['by_source'].get(r.home, {}), info['by_source'].get(r.away, {}),
-                                     0.0 if r.neutral else HFA_POINTS, big)
+                                     _hfa(r), big)
         stadium = info['roofs'].get(str(r.game_id))
         if stadium and not r.completed:
             move += wx.weather_row(info['weather'].get(str(r.game_id)), stadium[2])
@@ -639,7 +669,7 @@ def generate_html(p4, vals, sched, week, season_type, info):
             move += mu.card_row(r.game_id, mu.headline(prof, MU_CATS, r.away, r.home, str))
             panels[r.game_id] = mu.panel(r.away, r.home, str, prof, MU_CATS, MU_STYLES, info['mu_games'], when,
                                          ex.line_text(r.home, r.away, pm) if not pd.isna(pm) else '')
-        hfa_g = 0.0 if r.neutral else HFA_POINTS
+        hfa_g = _hfa(r)
         h_src, a_src = info['by_source'].get(r.home, {}), info['by_source'].get(r.away, {})
         plog.append({'game_id': r.game_id, 'kickoff': r.kick, 'home': r.home, 'away': r.away, 'neutral': r.neutral,
                      'ours': r.margin, 'market': mkt_margin, 'opened': info['opened'].get(str(r.game_id)),
@@ -647,7 +677,7 @@ def generate_html(p4, vals, sched, week, season_type, info):
                      'flags': (['news'] if ex.news_move(info['opened'].get(str(r.game_id)), mkt_margin) else [])
                               + (['lopsided'] if big else []),
                      'sources': ex.source_lines(h_src, a_src, hfa_g), 'hfa': hfa_g,
-                     'context': {'scale': SCALE, 'signals': {t: s for t, s in ((r.away, sig(r.away_value)), (r.home, sig(r.home_value))) if s},
+                     'context': {'scale': SCALE, 'crowd': _crowd(r), 'signals': {t: s for t, s in ((r.away, sig(r.away_value)), (r.home, sig(r.home_value))) if s},
                                  'tags': [list(x) for x in labels],
                                  'mu_side': mu.headline_side(prof, MU_CATS, r.away, r.home) if r.home in prof and r.away in prof else None}})
         spots.append(ex.spot('CFB', 'cfb.html#sched', r.kick, r.away, r.home, r.margin, mkt_margin, labels,
@@ -657,7 +687,7 @@ def generate_html(p4, vals, sched, week, season_type, info):
                                side(r.home, r.home_rating, r.home_value), proj, mkt, r.score, edge, tag_html, move)
         reasons = info['featured'].get(r.game_id)
         if reasons:
-            hfa = 0.0 if r.neutral else HFA_POINTS
+            hfa = _hfa(r)
             head = mu.headline(prof, MU_CATS, r.away, r.home, str) if r.home in prof and r.away in prof else None
             d = {'game_id': r.game_id, 'away': r.away, 'home': r.home, 'neutral': r.neutral, 'reasons': reasons,
                  'away_rank': info['ranks'].get(r.away), 'home_rank': info['ranks'].get(r.home), 'when': when,
@@ -689,12 +719,16 @@ def generate_html(p4, vals, sched, week, season_type, info):
     featured_html = fx.tab(''.join(features), ('Featured games', 'Top 25 clashes and upset watch this week'),
                            'No ranked-vs-ranked or upset-watch games left this week.')
     sched_html = (
-        f'<div class="sechead"><h2>Games</h2><span class="hint">Projected lines include {HFA_POINTS:g} points '
-        f'of home field (none at neutral sites)</span></div>'
+        f'<div class="sechead"><h2>Games</h2><span class="hint">Projected lines include home field, scaled by crowd size '
+        f'(none at neutral sites)</span></div>'
         + (theme.week_switch('cfb-weeks', panes) if len(panes) > 1 else panes[0][2])
         + theme.method_note(
             f'Every game with a P4 team or Notre Dame, this week and next (use the switch). <b>Projected</b> is the composite rating gap plus '
-            f'{HFA_POINTS:g} points for the home team (no home field at neutral sites). <b>Market</b> is the posted '
+            f'the home team\'s home-field edge (none at neutral sites). Home field is worth {HFA_POINTS:g} points with a typical '
+            f'crowd for these games and grows with the crowd: about {CROWD_SLOPE:.1f} points more (or less) every time the '
+            f'expected crowd doubles (or halves), capped at {crowd.CAP:g} either way. The expected crowd is the median of the '
+            f'home team\'s last {crowd.LAST_N} home crowds (reaching back to last season early on) and is shown at the top of '
+            f'each card. <b>Market</b> is the posted '
             f'spread, for comparison. <b>Edge</b> is how many points our projected line differs from the market, shown as '
             f'the side we like at the market number; gaps of {theme.EDGE_STRONG:g}+ points are highlighted and gaps under '
             f'{theme.EDGE_MIN:g} show as None. FCS opponents are rated with Sagarin only. Trade signals come from the value metrics. '

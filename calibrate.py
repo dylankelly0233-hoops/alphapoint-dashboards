@@ -275,6 +275,51 @@ def tune_to_market(sport, cal, now):
     return round(s_new, 3), round(h_new, d), n, f'market lines imply spread {s_fit:.2f}x and home edge {h_fit:.2f} over {n} games'
 
 
+CROWD_DEFAULT = {'cbb': 0.93, 'cfb': 1.35}   # crowd.SLOPE: points of home edge per doubling of crowd (backtest)
+CROWD_BOUNDS = (0.0, 2.5)
+CROWD_STEP = 0.2            # most the slope moves in one week
+CROWD_PRIOR = 150           # games' worth of pull toward the backtest value (a slope is noisier than a mean)
+
+
+def tune_crowd(sport, cal, now):
+    """
+    College sports: re-fit how much home edge grows per doubling of the crowd (crowd.py) to the market's lines.
+    Same logged games as tune_to_market. What's left of the market line after the rating gap and the flat home edge
+    is regressed on the logged crowd term, then added to the slope in use. Returns (new, n, why) or None.
+    """
+    path = f'projections_{sport}.csv'
+    if sport not in CROWD_DEFAULT or not os.path.exists(path):
+        return None
+    p = pd.read_csv(path)
+    p['kickoff'] = pd.to_datetime(p['kickoff'], utc=True)
+    p = p[p['kickoff'] >= now - timedelta(days=MARKET_DAYS)].dropna(subset=['ours_last', 'market_last'])
+    p = p[p['neutral'].fillna(0).astype(int) == 0]
+    rows = []
+    for _, r in p.iterrows():
+        try:
+            ctx = json.loads(r['context']) if isinstance(r.get('context'), str) else {}
+        except ValueError:
+            ctx = {}
+        c = ctx.get('crowd') or {}
+        if c.get('x') is None or r.get('hfa') != r.get('hfa'):
+            continue
+        rows.append((float(c['x']), float(c.get('adj', 0.0)), float(r['market_last']), float(r['ours_last'])))
+    if len(rows) < MARKET_MIN[sport]:
+        return None
+    x, adj, mkt, ours = map(np.array, zip(*rows))
+    # market − ours = what the market gives beyond our line; our line already carries slope_now × x (adj)
+    resid = (mkt - ours) - (mkt - ours).mean()
+    xc = x - x.mean()
+    extra = float((xc * resid).sum() / (xc ** 2).sum()) if (xc ** 2).sum() > 0 else 0.0
+    now_s = float(cal.get(sport, {}).get('crowd_slope', CROWD_DEFAULT[sport]))
+    fit = now_s + extra
+    n = len(rows)
+    k = n / (n + CROWD_PRIOR)
+    target = k * fit + (1 - k) * CROWD_DEFAULT[sport]
+    new = float(np.clip(now_s + np.clip(target - now_s, -CROWD_STEP, CROWD_STEP), *CROWD_BOUNDS))
+    return round(new, 2), n, f'market lines imply {fit:.2f} points per doubling of crowd over {n} home games'
+
+
 def run_market(cal, now, out, log, force=False):
     """The weekly market calibration for every sport (guarded to once every 6 days unless forced)."""
     for sport in ('nfl', 'cfb', 'cbb', 'nba', 'nhl', 'epl'):
@@ -297,6 +342,14 @@ def run_market(cal, now, out, log, force=False):
             changes.append(f'home edge {h_now:g} -> {h_new:g}')
             log.append([now.date().isoformat(), sport, 'hfa', h_now, h_new, n, why])
         out.append(f'{sport.upper()}: ' + ('; '.join(changes) if changes else 'spread and home edge unchanged') + f' ({why}).')
+        cr = tune_crowd(sport, cal, now)
+        if cr:
+            c_new, c_n, c_why = cr
+            c_now = float(cal.get(sport, {}).get('crowd_slope', CROWD_DEFAULT[sport]))
+            cal[sport]['crowd_slope'] = c_new
+            if c_new != c_now:
+                log.append([now.date().isoformat(), sport, 'crowd_slope', c_now, c_new, c_n, c_why])
+                out.append(f'{sport.upper()}: crowd effect {c_now:g} -> {c_new:g} points per doubling ({c_why}).')
 
 
 def run(scored, now=None):

@@ -41,6 +41,7 @@ import cbb_model as cm
 import cbb_players as cp
 import cbb_ratings as cbr
 import cbb_value_metrics as vm
+import crowd
 import dashboard_theme as theme
 import extras as ex
 import featured as fx
@@ -72,6 +73,7 @@ SOURCE_WEIGHTS  = {'TeamRankings': 1.0, MODEL_LABEL: 1.0, 'Haslametrics': 1.0, '
 POINT_SOURCES   = {'TeamRankings', 'Torvik preseason', MODEL_LABEL, 'Haslametrics'}
 HFA_POINTS, SOURCE_WEIGHTS = ex.calibrated('cbb', HFA_POINTS, SOURCE_WEIGHTS)   # weekly tuning (calibrate.py)
 SCALE = ex.calibrated_value('cbb', 'scale', 1.0)      # weekly-tuned rating stretch
+CROWD_SLOPE = ex.calibrated_value('cbb', 'crowd_slope', crowd.SLOPE['cbb'])   # home edge per doubling of crowd
 FALLBACK_SD     = 9.5      # typical D1 SD in points, used if no points-based source loads
 LOGO_PX         = 48       # smaller logos: this page carries ~150 teams (displayed at 24–30px)
 LOOKAHEAD_DAYS  = 21
@@ -182,13 +184,14 @@ def load_sources(teams, model=None):
     return sources, {k: v for k, v in unmatched.items() if v}, weights
 
 
-def project_line(home, away, neutral, src_cols, weights, model, scale):
+def project_line(home, away, neutral, src_cols, weights, model, scale, hfa=None):
     """
     Projected home margin: the weighted average of each source's own line. Rating sources give
     (home rating − away rating) + home court. Our model projects the game at THIS matchup's tempo
     (cbb_model.project), rescaled onto the blend's common SD like the other sources.
+    hfa: this game's home edge (crowd-scaled, see crowd.py); default the flat one.
     """
-    hfa = 0.0 if neutral else HFA_POINTS
+    hfa = (0.0 if neutral else HFA_POINTS) if hfa is None else hfa
     lines, ws = [], []
     for src, w in weights.items():
         if w <= 0 or src not in src_cols:
@@ -362,7 +365,7 @@ def build_markets(days, rating, names):
                 if spread:
                     spread.update(fav=fav, dog=dog)
             k = mk.kalshi_view(kg, g['home'], g['away'])
-            ours = g.get('proj', SCALE * (rating.get(g['home'], np.nan) - rating.get(g['away'], np.nan)) + (0.0 if g['neutral'] else HFA_POINTS))
+            ours = g.get('proj', SCALE * (rating.get(g['home'], np.nan) - rating.get(g['away'], np.nan)) + (g.get('hfa', 0.0 if g['neutral'] else HFA_POINTS)))
             rows.append({'game_id': g['game_id'], 'when': _when(g), 'home': g['home'], 'away': g['away'],
                          'ours': ours, 'posted': posted, 'kalshi': k, 'spread': spread})
             if not g['score']:
@@ -502,7 +505,7 @@ def generate_html(power, metrics, days, info):
         cards = ''
         for g in games:
             h_r, a_r = rating.get(g['home'], np.nan), rating.get(g['away'], np.nan)
-            margin = g.get('proj', SCALE * (h_r - a_r) + (0.0 if g['neutral'] else HFA_POINTS))   # blended per-source line
+            margin = g.get('proj', SCALE * (h_r - a_r) + (g.get('hfa', 0.0 if g['neutral'] else HFA_POINTS)))   # blended per-source line
             pm = theme.round_half(margin)
             proj = '—' if pd.isna(pm) else _line_text(g['home'] if pm >= 0 else g['away'], abs(pm))
             mkt = '—' if pd.isna(g['market']) else _line_text(g['home'] if g['market'] >= 0 else g['away'], abs(g['market']))
@@ -514,7 +517,7 @@ def generate_html(power, metrics, days, info):
             move = ex.line_move(info['opened'].get(g['game_id']), g['market'], pm, g['home'], g['away'], 'First seen')
             big = ex.lopsided(g['market'], margin)
             move += ex.rating_confidence(by_src.get(g['home'], {}), by_src.get(g['away'], {}),
-                                         0.0 if g['neutral'] else HFA_POINTS, big)
+                                         g.get('hfa', 0.0 if g['neutral'] else HFA_POINTS), big)
             move += injury_row(info['wire'], g, margin)
             if not g['score']:
                 move += ex.injury_card_row(info['wire'].get('items') if info['wire'].get('mode') == 'curated' else {},
@@ -527,7 +530,7 @@ def generate_html(power, metrics, days, info):
                     g['away'], g['home'], str, mprof, mu.BASKETBALL_CATS, mu.BASKETBALL_STYLES, info['mu_games'], _when(g),
                     ex.line_text(g['home'], g['away'], pm) if not pd.isna(pm) else '',
                     mu.pace_line(info['mu_units'], g['away'], g['home'], str))
-            card = theme.game_card(when, 'Neutral site' if g['neutral'] else '',
+            card = theme.game_card(when, 'Neutral site' if g['neutral'] else crowd.describe(g.get('crowd'), HFA_POINTS),
                                    side(g['away'], a_r, g['away_espn']), side(g['home'], h_r, g['home_espn']),
                                    proj, mkt, g['score'], theme.edge_text(pm, g['market'], g['home'], g['away']),
                                    move=move)
@@ -540,7 +543,7 @@ def generate_html(power, metrics, days, info):
                      'reasons': reasons, 'away_rank': info['ranks'].get(g['away']), 'home_rank': info['ranks'].get(g['home']),
                      'when': _when(g), 'ours': margin, 'market': g['market'], 'opened': info['opened'].get(g['game_id']),
                      'confidence': ex.confidence_level(by_src.get(g['home'], {}), by_src.get(g['away'], {}),
-                                                       0.0 if g['neutral'] else HFA_POINTS, big),
+                                                       g.get('hfa', 0.0 if g['neutral'] else HFA_POINTS), big),
                      'lopsided': big, 'mismatch': head[0] if head else None,
                      'signals': {t: (_signal(comp.get(t), games_played.get(t, 0)), comp[t]) for t in (g['away'], g['home'])
                                  if comp.get(t) is not None},
@@ -549,7 +552,7 @@ def generate_html(power, metrics, days, info):
                                  info['mu_games'], extra=mu.pace_line(info['mu_units'], g['away'], g['home'], str),
                                  head=False) if has_mu else '')
                 features.append(fx.card(d, card, grid, fx.notes(d)))
-            hfa_g = 0.0 if g['neutral'] else HFA_POINTS
+            hfa_g = g.get('hfa', 0.0 if g['neutral'] else HFA_POINTS)
             plog.append({'game_id': g['game_id'], 'kickoff': g['kick'], 'home': g['home'], 'away': g['away'],
                          'neutral': g['neutral'], 'ours': margin, 'market': g['market'],
                          'opened': info['opened'].get(g['game_id']),
@@ -557,7 +560,7 @@ def generate_html(power, metrics, days, info):
                          'flags': (['news'] if ex.news_move(info['opened'].get(g['game_id']), g['market']) else [])
                                   + (['lopsided'] if big else []),
                          'sources': ex.source_lines(all_src.get(g['home'], {}), all_src.get(g['away'], {}), hfa_g), 'hfa': hfa_g,
-                         'context': {'scale': SCALE, 'signals': {t: s for t in (g['away'], g['home'])
+                         'context': {'scale': SCALE, 'crowd': g.get('crowd'), 'signals': {t: s for t in (g['away'], g['home'])
                                                  if (s := _signal(comp.get(t), games_played.get(t, 0)))},
                                      'mu_side': mu.headline_side(mprof, mu.BASKETBALL_CATS, g['away'], g['home'])
                                      if g['home'] in mprof and g['away'] in mprof else None}})
@@ -575,7 +578,11 @@ def generate_html(power, metrics, days, info):
         (sections or '<p class="hint">No P4 or Big East games in the next three weeks.</p>')
         + theme.method_note(
             f'The next {GAME_DAYS} game days with a Power 4 or Big East team. <b>Projected</b> is the composite rating gap '
-            f'plus {HFA_POINTS:g} points for the home team (none at neutral sites), rounded to a half point. <b>Market</b> '
+            f'plus the home team\'s home-court edge, rounded to a half point. Home court is worth {HFA_POINTS:g} points '
+            f'with a typical crowd for these games and grows with the crowd: about {CROWD_SLOPE:.1f} points more (or less) '
+            f'every time the expected crowd doubles (or halves), capped at {crowd.CAP:g} either way. The expected crowd is the '
+            f'median of the home team\'s last {crowd.LAST_N} home crowds; it\'s shown at the top of each card. Neutral sites '
+            f'get none. <b>Market</b> '
             f'is ESPN\'s posted spread when one exists. <b>Edge</b> is how far our line is from the market, shown as the '
             f'side we like; gaps of {theme.EDGE_STRONG:g}+ points are highlighted. Opponents outside Division I have no rating. '
             f'<b>Line</b> shows the spread when we first saw the game and where it is now, and whether the market has moved '
@@ -652,9 +659,13 @@ def main():
     print(f'  {sum(len(g) for _, g in days)} games over {len(days)} days'
           + (f" ({', '.join(d.strftime('%b %d') for d, _ in days)})" if days else ''))
     src_cols = power.set_index('team')[list(scale['stats'])].to_dict('dict')
+    he = crowd.HomeEdge('cbb', CROWD_SLOPE)
+    print(f'  Home edge: {HFA_POINTS:g} for a typical crowd (~{he.typical or 0:,.0f}), {he.slope:g} points per doubling; '
+          f'{len(he.expected)} home teams with crowds.')
     for _, gs in days:
         for g in gs:
-            g['proj'] = project_line(g['home'], g['away'], g['neutral'], src_cols, weights, model, scale)
+            g['hfa'], g['crowd'] = he.for_game(g['home'], HFA_POINTS, g['neutral'])
+            g['proj'] = project_line(g['home'], g['away'], g['neutral'], src_cols, weights, model, scale, g['hfa'])
 
     print('[4/4] Markets, Injury Wire & dashboard...')
     rating = dict(zip(power['team'], power['composite']))
