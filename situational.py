@@ -166,3 +166,59 @@ def nba_rest(days, espn_get):
 def describe_rest(parts, name=str):
     """'LAL on a back-to-back (−1.9)'."""
     return ' · '.join(f'{name(t)} on a back-to-back (−{p:g})' for t, p in parts)
+
+
+# ==========================================
+# Live check (weekly review): are the adjustments in use still right on the games we've logged?
+# ==========================================
+SINCE = '2026-11-13'
+
+
+def _kind(sport, label, home, away):
+    if sport == 'nba':
+        return 'NBA home team on a back-to-back' if label == home else 'NBA visitor on a back-to-back'
+    if label == 'Senior night':
+        return 'CBB senior night'
+    if 'straight road game' in label:
+        return "CBB visitor's 3rd+ straight road game" if '3rd+' in label else "CBB visitor's 2nd straight road game"
+    if label.startswith('Altitude'):
+        return 'CBB altitude'
+    return label
+
+
+def live_check(scored):
+    """
+    Report lines for the weekly review. scored: {sport: finished logged games with result, ours_last, market_last,
+    context}. For each adjustment, compare how the home side did against our line (which already includes the
+    adjustment) in those games vs. all other home games: about 0 means it's priced right; + means the home side did
+    better than we gave it credit for. The closing line is checked the same way. Small samples: read with the ±.
+    """
+    rows = []
+    for sport, key in (('cbb', 'spots'), ('nba', 'rest')):
+        d = scored.get(sport)
+        if d is None or d.empty or 'context' not in d:
+            continue
+        d = d[(d['kickoff'] >= pd.Timestamp(SINCE, tz='UTC')) & (d['neutral'].astype(int) == 0)]
+        for r in d.itertuples():
+            try:
+                parts = (json.loads(r.context) or {}).get(key) or []
+            except (TypeError, ValueError):
+                parts = []
+            base = {'sport': sport, 'res': r.result - r.ours_last, 'mkt': r.market_last - r.ours_last}
+            if not parts:
+                rows.append({**base, 'kind': None})
+            for lab, pts in parts:
+                signed = -pts if sport == 'nba' and lab == r.home else pts      # NBA parts are points against the tired team
+                rows.append({**base, 'kind': _kind(sport, lab, r.home, r.away), 'pts': signed})
+    if not rows:
+        return ['  No finished games with an adjustment yet.']
+    df = pd.DataFrame(rows)
+    out = []
+    for kind, g in df.dropna(subset=['kind']).groupby('kind'):
+        other = df[(df['sport'] == g['sport'].iloc[0]) & df['kind'].isna()]
+        res = g['res'].mean() - other['res'].mean()
+        se = (g['res'].var(ddof=1) / len(g) + other['res'].var(ddof=1) / max(len(other), 1)) ** 0.5 if len(g) > 1 else float('nan')
+        mkt = g['mkt'].mean() - other['mkt'].mean()
+        out.append(f'  {kind}: {len(g)} games (our line moves the home side {g["pts"].mean():+.1f} on average). Home side vs our line, compared with '
+                   f'other home games: results {res:+.1f} ± {se:.1f}, closing line {mkt:+.1f} (about 0 = priced right).')
+    return out

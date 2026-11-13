@@ -52,3 +52,7 @@ bt_*.csv
 nfl_odds_history.xlsx
 crowd_*.csv
 bt_att_*.csv
+
+# monthly game-situation research (situational_research.py)
+research_cache/
+situational_research.md

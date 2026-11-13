@@ -231,6 +231,11 @@ def main():
         body += golf_review() + ['']
     except Exception as e:
         body += [f'GOLF: review failed ({e})', '']
+    try:
+        import situational
+        body += [f'Game situations in use (since {situational.SINCE})'] + situational.live_check(scored) + ['']
+    except Exception as e:
+        body += [f'Game situations: check failed ({e})', '']
     if '--calibrate' in sys.argv:
         import calibrate
         body += ['Model changes this week'] + ['  ' + l for l in calibrate.run(scored, now)] + ['']
