@@ -37,6 +37,7 @@ import injury_wire as wire
 import markets as mk
 import matchups as mu
 import nba_value_metrics as vm
+import situational as sit
 
 # ==========================================
 # 1. CONFIGURATION
@@ -187,7 +188,7 @@ def build_markets(days, rating, kalshi_key):
                 if spread:
                     spread.update(fav=fav, dog=dog)
             k = mk.kalshi_view(kg, g['home'], g['away'])
-            ours = SCALE * (rating.get(g['home'], np.nan) - rating.get(g['away'], np.nan)) + (0.0 if g['neutral'] else HFA_POINTS)
+            ours = SCALE * (rating.get(g['home'], np.nan) - rating.get(g['away'], np.nan)) + (g['hfa'])
             rows.append({'game_id': g['game_id'], 'when': _when(g), 'home': g['home'], 'away': g['away'], 'ours': ours,
                          'posted': posted, 'kalshi': k, 'spread': spread})
             if not g['score']:
@@ -339,7 +340,7 @@ def generate_html(power, metrics, days, info):
         cards = ''
         for g in games:
             h_r, a_r = rating.get(g['home'], np.nan), rating.get(g['away'], np.nan)
-            margin = SCALE * (h_r - a_r) + (0.0 if g['neutral'] else HFA_POINTS)
+            margin = SCALE * (h_r - a_r) + (g['hfa'])
             pm = theme.round_half(margin)
             proj = '—' if pd.isna(pm) else _line_text(short[g['home']] if pm >= 0 else short[g['away']], abs(pm))
             mkt = '—' if pd.isna(g['market']) else _line_text(short[g['home']] if g['market'] >= 0 else short[g['away']],
@@ -350,7 +351,7 @@ def generate_html(power, metrics, days, info):
             move = ex.line_move(info['opened'].get(g['game_id']), g['market'], pm, short[g['home']], short[g['away']],
                                 'First seen')
             move += ex.rating_confidence(by_src.get(g['home'], {}), by_src.get(g['away'], {}),
-                                         0.0 if g['neutral'] else HFA_POINTS)
+                                         g['hfa'])
             if not g['score']:
                 move += ex.injury_card_row(info.get('inj_cards'), g['away'], g['home'], lambda t: short.get(t, t))
                 move += ex.liquidity_row(next((x.get('spread') for x in info['market_rows'] if str(x.get('game_id')) == str(g['game_id'])), None), lambda t: short.get(t, t))
@@ -362,7 +363,9 @@ def generate_html(power, metrics, days, info):
                     g['away'], g['home'], nm, mprof, mu.BASKETBALL_CATS, mu.BASKETBALL_STYLES, info['mu_games'], _when(g),
                     ex.line_text(nm(g['home']), nm(g['away']), pm) if not pd.isna(pm) else '',
                     mu.pace_line(info['mu_units'], g['away'], g['home'], nm))
-            card = theme.game_card(when, 'Neutral site' if g['neutral'] else '', side(g['away'], a_r), side(g['home'], h_r),
+            venue = ' · '.join(x for x in ('Neutral site' if g['neutral'] else '',
+                                           sit.describe_rest(g['rest_parts'], lambda t: short.get(t, t))) if x)
+            card = theme.game_card(when, venue, side(g['away'], a_r), side(g['home'], h_r),
                                    proj, mkt, g['score'],
                                    theme.edge_text(pm, g['market'], short[g['home']], short[g['away']]), move=move)
             cards += card
@@ -378,7 +381,7 @@ def generate_html(power, metrics, days, info):
                               f"(#{int(power.set_index('abbr').at[g['home'], 'rank'])})."),
                      'ours': margin, 'market': g['market'], 'opened': info['opened'].get(g['game_id']),
                      'confidence': ex.confidence_level(by_src.get(g['home'], {}), by_src.get(g['away'], {}),
-                                                       0.0 if g['neutral'] else HFA_POINTS),
+                                                       g['hfa']),
                      'mismatch': head[0] if head else None,
                      'signals': {nm(t): (_signal(comp.get(t), gp.get(t, 0)), comp[t]) for t in (g['away'], g['home'])
                                  if comp.get(t) is not None},
@@ -386,14 +389,15 @@ def generate_html(power, metrics, days, info):
                 grid = (mu.panel(g['away'], g['home'], nm, mprof, mu.BASKETBALL_CATS, mu.BASKETBALL_STYLES, info['mu_games'],
                                  extra=mu.pace_line(info['mu_units'], g['away'], g['home'], nm), head=False) if has_mu else '')
                 features.append(fx.card(d, card, grid, fx.notes(d)))
-            hfa_g = 0.0 if g['neutral'] else HFA_POINTS
+            hfa_g = g['hfa']
             plog.append({'game_id': g['game_id'], 'kickoff': g['kick'], 'home': g['home'], 'away': g['away'],
                          'neutral': g['neutral'], 'ours': margin, 'market': g['market'],
                          'opened': info['opened'].get(g['game_id']),
                          'confidence': ex.confidence_level(by_src.get(g['home'], {}), by_src.get(g['away'], {}), hfa_g),
                          'flags': ['news'] if ex.news_move(info['opened'].get(g['game_id']), g['market']) else [],
-                         'sources': ex.source_lines(by_src.get(g['home'], {}), by_src.get(g['away'], {}), hfa_g), 'hfa': hfa_g,
-                         'context': {'scale': SCALE, 'signals': {t: s for t in (g['away'], g['home']) if (s := _signal(comp.get(t), gp.get(t, 0)))},
+                         'sources': ex.source_lines(by_src.get(g['home'], {}), by_src.get(g['away'], {}), hfa_g),
+                         'hfa': hfa_g - g['rest_adj'],          # logged home edge = home court only (calibrate.py)
+                         'context': {'scale': SCALE, 'rest': g['rest_parts'] or None, 'signals': {t: s for t in (g['away'], g['home']) if (s := _signal(comp.get(t), gp.get(t, 0)))},
                                      'mu_side': mu.headline_side(mprof, mu.BASKETBALL_CATS, g['away'], g['home'])
                                      if g['home'] in mprof and g['away'] in mprof else None}})
             spots.append(ex.spot('NBA', 'nba.html#games', g['kick'], short[g['away']], short[g['home']], margin, g['market'],
@@ -413,7 +417,10 @@ def generate_html(power, metrics, days, info):
             f'home team, rounded to a half point. <b>Market</b> is the posted spread from ESPN. <b>Edge</b> is how far our '
             f'line is from the market, shown as the side we like; gaps of {theme.EDGE_STRONG:g}+ points are highlighted. '
             f'<b>Line</b> shows the spread when we first saw the game and where it is now, and whether the market has moved '
-            f'toward our number or away from it. Rest and back-to-backs are not priced in.'))
+            f'toward our number or away from it. <b>Back-to-backs</b>: a team that played the day before gets '
+            f'{sit.NBA_B2B["home"]:g} points taken off at home and {sit.NBA_B2B["away"]:g} on the road, what the closing line has priced '
+            f'over the last five seasons (tired teams did slightly worse than that in results). Shown at the top of the card. '
+            f'Other rest, travel distance, time zones and altitude tested as no effect.'))
 
     # --- Markets tab ---
     market_rows = [r for r in info['market_rows'] if r['kalshi']]
@@ -501,6 +508,11 @@ def main():
             if g['market'] != g['market'] and g['game_id'] in close:     # ESPN drops odds once a game ends
                 g['market'] = close[g['game_id']]
     print(f'  {sum(len(g) for _, g in days)} games over {len(days)} days')
+    n_b2b = sit.nba_rest(days, vm.espn_get)
+    for _, gs in days:
+        for g in gs:
+            g['hfa'] = (0.0 if g['neutral'] else HFA_POINTS) + g['rest_adj']     # home court + back-to-backs
+    print(f'  Back-to-backs: {n_b2b} games with a team on the second night.')
     rating = dict(zip(power['abbr'], power['composite']))
     kalshi_key = lambda label: KALSHI_ALIASES.get(label) or by_location.get(label) or by_name.get(label)
     market_rows, unmatched_k = build_markets(days, rating, kalshi_key)

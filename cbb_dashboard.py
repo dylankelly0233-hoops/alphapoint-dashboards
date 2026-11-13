@@ -42,6 +42,7 @@ import cbb_players as cp
 import cbb_ratings as cbr
 import cbb_value_metrics as vm
 import crowd
+import situational as sit
 import dashboard_theme as theme
 import extras as ex
 import featured as fx
@@ -530,7 +531,9 @@ def generate_html(power, metrics, days, info):
                     g['away'], g['home'], str, mprof, mu.BASKETBALL_CATS, mu.BASKETBALL_STYLES, info['mu_games'], _when(g),
                     ex.line_text(g['home'], g['away'], pm) if not pd.isna(pm) else '',
                     mu.pace_line(info['mu_units'], g['away'], g['home'], str))
-            card = theme.game_card(when, 'Neutral site' if g['neutral'] else crowd.describe(g.get('crowd'), HFA_POINTS),
+            venue = 'Neutral site' if g['neutral'] else ' · '.join(
+                x for x in (crowd.describe(g.get('crowd'), HFA_POINTS), sit.describe(g.get('spot_parts') or [])) if x)
+            card = theme.game_card(when, venue,
                                    side(g['away'], a_r, g['away_espn']), side(g['home'], h_r, g['home_espn']),
                                    proj, mkt, g['score'], theme.edge_text(pm, g['market'], g['home'], g['away']),
                                    move=move)
@@ -559,8 +562,9 @@ def generate_html(power, metrics, days, info):
                          'confidence': ex.confidence_level(by_src.get(g['home'], {}), by_src.get(g['away'], {}), hfa_g, big),
                          'flags': (['news'] if ex.news_move(info['opened'].get(g['game_id']), g['market']) else [])
                                   + (['lopsided'] if big else []),
-                         'sources': ex.source_lines(all_src.get(g['home'], {}), all_src.get(g['away'], {}), hfa_g), 'hfa': hfa_g,
-                         'context': {'scale': SCALE, 'crowd': g.get('crowd'), 'signals': {t: s for t in (g['away'], g['home'])
+                         'sources': ex.source_lines(all_src.get(g['home'], {}), all_src.get(g['away'], {}), hfa_g),
+                         'hfa': hfa_g - g.get('spots', 0.0),      # logged home edge = base + crowd (calibrate.py); spots below
+                         'context': {'scale': SCALE, 'crowd': g.get('crowd'), 'spots': g.get('spot_parts') or None, 'signals': {t: s for t in (g['away'], g['home'])
                                                  if (s := _signal(comp.get(t), games_played.get(t, 0)))},
                                      'mu_side': mu.headline_side(mprof, mu.BASKETBALL_CATS, g['away'], g['home'])
                                      if g['home'] in mprof and g['away'] in mprof else None}})
@@ -582,7 +586,11 @@ def generate_html(power, metrics, days, info):
             f'with a typical crowd for these games and grows with the crowd: about {CROWD_SLOPE:.1f} points more (or less) '
             f'every time the expected crowd doubles (or halves), capped at {crowd.CAP:g} either way. The expected crowd is the '
             f'median of the home team\'s last {crowd.LAST_N} home crowds; it\'s shown at the top of each card. Neutral sites '
-            f'get none. <b>Market</b> '
+            f'get none. Three game situations add to the home side, at what the closing line has priced them over the last '
+            f'four seasons (our results agreed): <b>senior night</b> +{sit.SENIOR_NIGHT:g}; a visitor whose last game was also '
+            f'on the road +{sit.ROAD_TRIP[1]:g}, or +{sit.ROAD_TRIP[2]:g} two or more road games in; and <b>altitude</b>, '
+            f'+{sit.ALT_PER_1000FT:g} per 1,000 feet the home gym sits above the visitor' + "'" + f's campus, for climbs of 3,000+ feet. '
+            f'Students being away over the winter break, rest days and travel distance tested as no effect. <b>Market</b> '
             f'is ESPN\'s posted spread when one exists. <b>Edge</b> is how far our line is from the market, shown as the '
             f'side we like; gaps of {theme.EDGE_STRONG:g}+ points are highlighted. Opponents outside Division I have no rating. '
             f'<b>Line</b> shows the spread when we first saw the game and where it is now, and whether the market has moved '
@@ -662,10 +670,15 @@ def main():
     he = crowd.HomeEdge('cbb', CROWD_SLOPE)
     print(f'  Home edge: {HFA_POINTS:g} for a typical crowd (~{he.typical or 0:,.0f}), {he.slope:g} points per doubling; '
           f'{len(he.expected)} home teams with crowds.')
+    sit_eng = sit.CbbSpots(sit.cbb_log(), [g for _, gs in days for g in gs])
     for _, gs in days:
         for g in gs:
             g['hfa'], g['crowd'] = he.for_game(g['home'], HFA_POINTS, g['neutral'])
+            g['spots'], g['spot_parts'] = sit_eng.for_game(g)          # senior night, visitor's road trip, altitude
+            g['hfa'] += g['spots']
             g['proj'] = project_line(g['home'], g['away'], g['neutral'], src_cols, weights, model, scale, g['hfa'])
+    n_sp = sum(1 for _, gs in days for g in gs if g['spot_parts'])
+    print(f'  Game situations: {n_sp} games with a senior night, road trip or altitude adjustment.')
 
     print('[4/4] Markets, Injury Wire & dashboard...')
     rating = dict(zip(power['team'], power['composite']))
