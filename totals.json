@@ -1,0 +1,68 @@
+{
+ "sports": {
+  "nfl": {
+   "n": 3176,
+   "seasons": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025,
+    2026
+   ],
+   "mae_ours": 10.93,
+   "mae_close": 10.44,
+   "sigma": 13.22,
+   "n_open": 3148,
+   "share": 0.132,
+   "share_se": 0.071,
+   "moved_toward": 0.616,
+   "n_moved": 2128,
+   "mae_open": 10.67,
+   "share_close": -0.204
+  },
+  "cfb": {
+   "n": 7181,
+   "seasons": [
+    2022,
+    2023,
+    2024,
+    2025,
+    2026
+   ],
+   "mae_ours": 13.01,
+   "mae_close": 12.61,
+   "sigma": 15.84,
+   "n_open": 3540,
+   "share": 0.173,
+   "share_se": 0.063,
+   "moved_toward": 0.56,
+   "n_moved": 2177,
+   "mae_open": 12.78,
+   "share_close": 0.108
+  },
+  "cbb": {
+   "n": 5254,
+   "seasons": [
+    2026
+   ],
+   "mae_ours": 14.05,
+   "mae_close": 13.54,
+   "sigma": 17.53,
+   "n_open": 5189,
+   "share": 0.296,
+   "share_se": 0.057,
+   "moved_toward": 0.582,
+   "n_moved": 3523,
+   "mae_open": 13.75,
+   "share_close": 0.111
+  }
+ },
+ "updated": "2026-11-15"
+}

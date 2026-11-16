@@ -352,6 +352,39 @@ def run_market(cal, now, out, log, force=False):
                 out.append(f'{sport.upper()}: crowd effect {c_now:g} -> {c_new:g} points per doubling ({c_why}).')
 
 
+SHARE_STEP = 0.05          # most the value share moves in a week
+SHARE_BOUNDS = (0.0, 0.6)
+SHARE_PRIOR_INFLATE = 2.0  # the backtest's walk-forward model isn't the live blend: trust its estimate half as much
+
+
+def tune_value_share(sport, d, cal, now, out, log):
+    """
+    How much of our disagreement with the opening line shows up in results (valuation.py): slope of (result − opener)
+    on (our first line − opener) over our logged games, combined with the backtest's value by precision.
+    """
+    import valuation as val
+    t = val.tables().get(sport)
+    if not t:
+        return
+    d = d.dropna(subset=['ours_first', 'opened', 'result'])
+    gap, y = (d['ours_first'] - d['opened']).to_numpy(float), (d['result'] - d['opened']).to_numpy(float)
+    prior, prior_se = t['share_backtest'], t['share_se'] * SHARE_PRIOR_INFLATE
+    if len(d) >= 30 and (gap ** 2).sum() > 0:
+        b = float((gap * y).sum() / (gap ** 2).sum())
+        se = float(np.sqrt(((y - b * gap) ** 2).sum() / (len(d) - 1) / (gap ** 2).sum()))
+        wp, wl = 1 / prior_se ** 2, 1 / se ** 2
+        target = (prior * wp + b * wl) / (wp + wl)
+        why = f'our logged games show {b:+.2f} ± {se:.2f} over {len(d)} games; backtest {prior:+.2f}'
+    else:
+        target, why = prior, f'backtest value ({len(d)} logged games so far)'
+    now_v = float(cal.get(sport, {}).get('value_share', prior))
+    new = round(float(np.clip(now_v + np.clip(target - now_v, -SHARE_STEP, SHARE_STEP), *SHARE_BOUNDS)), 3)
+    cal.setdefault(sport, {})['value_share'] = new
+    if abs(new - now_v) >= 0.005:
+        log.append([now.date().isoformat(), sport, 'value_share', now_v, new, len(d), why])
+        out.append(f'{sport.upper()}: share of our gap counted as real {now_v:g} -> {new:g} ({why}).')
+
+
 def run(scored, now=None):
     """
     scored: {sport: DataFrame of finished logged games with a 'result' column}.
@@ -384,6 +417,12 @@ def run(scored, now=None):
         else:
             out.append(f'{name}: source weights stay ({w_why}).')
     run_market(cal, now, out, log)
+    for sport in ('nfl', 'cfb', 'cbb', 'nba'):
+        if sport in scored:
+            try:
+                tune_value_share(sport, scored[sport], cal, now, out, log)
+            except Exception as e:
+                out.append(f'{sport.upper()}: value share not tuned ({e}).')
     # League-level knobs that don't need the logs: NHL overtime rate, EPL draw rate (weekly, same safeguards)
     for sport, key, default, fn, label in (('nhl', 'tie_boost', 1.35, tune_nhl_ties, 'overtime adjustment'),
                                            ('epl', 'dc_rho', -0.08, tune_epl_draws, 'draw adjustment')):

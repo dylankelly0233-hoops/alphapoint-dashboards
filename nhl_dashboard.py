@@ -466,7 +466,9 @@ def generate_html(power, metrics, days, info):
                    + (f' · market {g["total"]:g}' if g['total'] else '') + '</div>')
             edge, edge_team, edge_pct = _edge_html(g, short)
             hfa_g = 0.0 if g['neutral'] else HFA_GOALS
-            move = (_move_row(g, short) + _goalie_row(g, short) + tot
+            why = ex.why_row([('Ratings', g['margin'] - hfa_g - SCALE * g['goalie_adj']), ('Goalies', SCALE * g['goalie_adj']),
+                              ('Home ice', hfa_g)], g['margin'], np.nan, g['home'], g['away'], short, unit=' goals', digits=2)
+            move = (_move_row(g, short) + _goalie_row(g, short) + tot + why
                     + ex.rating_confidence(by_src.get(g['home'], {}), by_src.get(g['away'], {}), hfa_g, scale=CONF_SCALE)
                     + (ex.injury_card_row(info.get('inj_cards'), g['away'], g['home'], short) if not g['score'] else ''))
             side = lambda t: {'name': full.get(t, t), 'logo': logo(t), 'rating': info['rating'].get(t, np.nan), 'sd': sd,

@@ -43,6 +43,8 @@ import cbb_ratings as cbr
 import cbb_value_metrics as vm
 import crowd
 import situational as sit
+import valuation as val
+import totals as tot
 import dashboard_theme as theme
 import extras as ex
 import featured as fx
@@ -262,6 +264,14 @@ def _market(comp, home_abbr):
     return pts if m.group(1).upper() == (home_abbr or '').upper() else -pts
 
 
+def _total(comp):
+    """Posted game total from ESPN's odds, or NaN."""
+    try:
+        return float(((comp.get('odds') or [{}])[0] or {}).get('overUnder'))
+    except (TypeError, ValueError):
+        return np.nan
+
+
 def injury_row(wire_data, g, margin):
     """Game-card line: our projection adjusted for players reported out or doubtful (cbb_players)."""
     ha, hn = cp.team_adjustment(wire_data['items'], g['home'])
@@ -296,6 +306,7 @@ def upcoming_games(by_espn, focus):
                 'kick': pd.Timestamp(ev['date']).tz_convert('America/New_York'),
                 'home': hn, 'away': an, 'home_espn': h.get('id'), 'away_espn': a.get('id'),
                 'neutral': bool(comp.get('neutralSite')), 'market': _market(comp, h.get('abbreviation')),
+                'total': _total(comp),
                 'score': f"{side['away'].get('score')}-{side['home'].get('score')}" if done else '',
             })
         if games:
@@ -520,6 +531,14 @@ def generate_html(power, metrics, days, info):
             move += ex.rating_confidence(by_src.get(g['home'], {}), by_src.get(g['away'], {}),
                                          g.get('hfa', 0.0 if g['neutral'] else HFA_POINTS), big)
             move += injury_row(info['wire'], g, margin)
+            if not big:
+                move += val.card_row('cbb', margin, g['market'], g['home'], g['away'], info['val_live'])
+            t_ours = info['total_fn'](g['home'], g['away'], g['neutral']) if info.get('total_fn') else np.nan
+            move += tot.card_row('cbb', t_ours, g.get('total', np.nan))
+            hfa_all = g.get('hfa', 0.0 if g['neutral'] else HFA_POINTS)
+            move += ex.why_row([('Ratings', margin - hfa_all), ('Home court', 0.0 if g['neutral'] else HFA_POINTS),
+                                ('Crowd', (g.get('crowd') or {}).get('adj'))] + list(g.get('spot_parts') or []),
+                               margin, g['market'], g['home'], g['away'])
             if not g['score']:
                 move += ex.injury_card_row(info['wire'].get('items') if info['wire'].get('mode') == 'curated' else {},
                                            g['away'], g['home'])
@@ -564,7 +583,9 @@ def generate_html(power, metrics, days, info):
                                   + (['lopsided'] if big else []),
                          'sources': ex.source_lines(all_src.get(g['home'], {}), all_src.get(g['away'], {}), hfa_g),
                          'hfa': hfa_g - g.get('spots', 0.0),      # logged home edge = base + crowd (calibrate.py); spots below
-                         'context': {'scale': SCALE, 'crowd': g.get('crowd'), 'spots': g.get('spot_parts') or None, 'signals': {t: s for t in (g['away'], g['home'])
+                         'context': {'scale': SCALE, 'crowd': g.get('crowd'),
+                                     'total': [None if t_ours != t_ours else round(t_ours, 1),
+                                               None if g.get('total') != g.get('total') else g.get('total')], 'spots': g.get('spot_parts') or None, 'signals': {t: s for t in (g['away'], g['home'])
                                                  if (s := _signal(comp.get(t), games_played.get(t, 0)))},
                                      'mu_side': mu.headline_side(mprof, mu.BASKETBALL_CATS, g['away'], g['home'])
                                      if g['home'] in mprof and g['away'] in mprof else None}})
@@ -733,7 +754,14 @@ def main():
     freshness += [('Box scores', *ex.fetched(vm._cache('box2'))), ('Lines', 'ESPN, live each refresh', True),
                   ex.wire_freshness(wire_data)]
 
-    generate_html(power, metrics, days, {'scale': scale, 'history': hist, 'freshness': freshness, 'wire': wire_data,
+    try:
+        hb = box[box['home'] >= 0].sort_values('home', ascending=False).drop_duplicates('game_id')
+        total_fn = tot.projector('cbb', pd.DataFrame({'date': hb['date'], 'home': hb['team'], 'away': hb['opponent'],
+                                                      'hp': hb['pts'], 'ap': hb['opp_pts'], 'neutral': hb['home'] == 0}))
+    except Exception as e:
+        print(f'  ! totals model failed: {e}')
+        total_fn = None
+    generate_html(power, metrics, days, {'total_fn': total_fn, 'val_live': val.live_records('cbb'), 'scale': scale, 'history': hist, 'freshness': freshness, 'wire': wire_data,
                                          'market_rows': market_rows, 'results': (box, spreads),
                                          'mu_units': units, 'mu_games': mu.cover_log_box(box, sp), 'ranks': ranks,
                                          'featured': {g['game_id']: fx.college_reasons(g['away'], g['home'], ranks, g['market'])

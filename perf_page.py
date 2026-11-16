@@ -122,7 +122,7 @@ def buy_sell(rows):
                  f'<td>{_pct(agree)}</td></tr>')
     note = ('' if any_rows else
             '<p class="hint">We started recording which games carry a BUY or SELL tag on Nov 8, 2026, so this fills in as those '
-            "games finish. Past games can't be scored honestly: today's value metrics already include their results.</p>")
+            "games finish. Past seasons, replayed week by week, are below.</p>")
     return note + theme.table('perf-signals', [('Sport', 'l'), ('Backed side beat the opener', ''),
                                                ('Backed side beat the close', ''), ('…close, when our line agreed', '')], body)
 
@@ -233,7 +233,8 @@ def detail(s):
             + theme.table('', [('Check', 'l'), ('Result', '')], rows + conf) + '</details>')
 
 
-def tab(perf, bt=None):
+def tab(perf, bt=None, extra=None):
+    extra = extra or {}
     if not perf:
         return '<p class="hint">Model performance appears after the first logged games finish.</p>'
     sports = perf.get('sports', [])
@@ -252,7 +253,9 @@ def tab(perf, bt=None):
         + '<div class="sechead"><h2>Direction, past seasons</h2><span class="hint">Thousands of past games, each rated only '
           'from games before it, against the opening line</span></div>' + direction_bt(bt)
         + '<div class="sechead"><h2>BUY / SELL tagged games</h2><span class="hint">Did the side our value metrics backed beat '
-          'the line?</span></div>' + buy_sell(sports)
+          'the line?</span></div>' + buy_sell(sports) + tags_past(extra.get('tags'))
+        + '<div class="sechead"><h2>What a gap is worth</h2><span class="hint">Past seasons, against the opening line</span></div>'
+        + worth(extra.get('valuation'), extra.get('totals'))
         + '<div class="sechead"><h2>Rating sources, scored one by one</h2><span class="hint">Live games since logging '
           'began</span></div>' + sources(sports)
         + '<div class="sechead"><h2>More detail by sport</h2><span class="hint">Tap a sport</span></div>'
@@ -263,3 +266,60 @@ def tab(perf, bt=None):
         + f'<div class="sechead"><h2>Golf</h2></div><ul class="hint">{golf}</ul>'
         + f'<section class="card"><h3>What each stat means</h3><dl class="defs">{defs}</dl></section>'
         + '</div>')
+
+
+SPORT_NAMES = {'nfl': 'NFL', 'cfb': 'CFB', 'cbb': 'CBB', 'nba': 'NBA', 'nhl': 'NHL', 'epl': 'EPL'}
+
+
+def tags_past(tb):
+    """BUY / SELL tags replayed over past seasons (tag_backtest.json): each week's tags from games before it only."""
+    sp = (tb or {}).get('sports') or {}
+    if not sp:
+        return ''
+    body = ''
+    for k, r in sp.items():
+        a = r.get('all') or {}
+        body += (f'<tr><td class="l">{theme.esc(SPORT_NAMES.get(k, k))}</td><td>{_pct(a.get("beat_open"))}</td>'
+                 f'<td>{_pct(a.get("beat_close"))}</td><td>{_pct((r.get("strong") or {}).get("beat_close"))}</td>'
+                 f'<td>{theme.esc(", ".join(r.get("seasons") or []))}</td></tr>')
+    return ('<p class="hint">Past seasons replayed week by week: each week\'s tags were computed only from games played '
+            'before it, then every game a tagged team played that week was scored. Around 50% means the tag told you nothing '
+            'the line didn\'t already know; read tags as context about a team\'s record, not as a side.</p>'
+            + theme.table('perf-tags-past', [('Sport', 'l'), ('Backed side beat the opener', ''),
+                                             ('Backed side beat the close', ''), ('Strong tags vs the close', ''),
+                                             ('Seasons', '')], body))
+
+
+def _ci(r):
+    """Add a 95% Wilson range to {n, rate}."""
+    import math
+    n, p, z = r['n'], r['rate'], 1.96
+    d = 1 + z * z / n
+    c = (p + z * z / (2 * n)) / d
+    h = z * math.sqrt(p * (1 - p) / n + z * z / (4 * n * n)) / d
+    return {**r, 'lo': c - h, 'hi': c + h}
+
+
+def worth(valn, tots):
+    """What a disagreement with the opener has been worth (valuation.json) and the totals model (totals.json)."""
+    rows = ''
+    for k, r in ((valn or {}).get('sports') or {}).items():
+        b = {x['lo']: x for x in r.get('buckets', [])}
+        cell = lambda lo: _pct(_ci(b[lo]['moved_toward'])) if lo in b and b[lo]['moved_toward']['n'] else '—'
+        rows += (f'<tr><td class="l">{theme.esc(SPORT_NAMES.get(k, k))} spreads</td>'
+                 f'<td>{100 * max(0, r["share_backtest"]):.0f}% <span class="ci">± {100 * r["share_se"]:.0f}</span></td>'
+                 f'<td>{cell(1)}</td><td>{cell(2)}</td><td>{cell(4)}</td></tr>')
+    for k, r in ((tots or {}).get('sports') or {}).items():
+        if 'share' not in r:
+            continue
+        rows += (f'<tr><td class="l">{theme.esc(SPORT_NAMES.get(k, k))} totals</td>'
+                 f'<td>{100 * max(0, r["share"]):.0f}% <span class="ci">± {100 * r["share_se"]:.0f}</span></td>'
+                 f'<td colspan="3">line moved toward our total {100 * r["moved_toward"]:.0f}% '
+                 f'<span class="ci">n={r["n_moved"]:,}</span> · avg miss ours {r["mae_ours"]:.1f}, close {r["mae_close"]:.1f}</td></tr>')
+    if not rows:
+        return ''
+    return ('<p class="hint">How much of a gap between our number and the opening line has shown up in final results (a share '
+            'of 15% means a 4-point gap was worth about 0.6 points), and how often the line moved toward our number, by gap '
+            'size. These set the Fair line and cover chances on the game cards; the share is re-tuned weekly from live games.</p>'
+            + theme.table('perf-worth', [('Market', 'l'), ('Share of gap that was real', ''), ('Moved toward us, 1–2 pt gaps', ''),
+                                         ('2–4 pt gaps', ''), ('4+ pt gaps', '')], rows, sortable=False))

@@ -41,6 +41,8 @@ import requests
 
 import cfb_value_metrics as vm
 import crowd
+import valuation as val
+import totals as tot
 import dashboard_theme as theme
 import extras as ex
 import featured as fx
@@ -332,7 +334,8 @@ def fetch_week_lines(week, season_type):
         hit = next((l for l in lines if l.get('spread') is not None), None)
         if hit:
             opened = hit.get('spreadOpen')
-            out[g['id']] = (float(hit['spread']), hit.get('provider', ''), float(opened) if opened is not None else None)
+            out[g['id']] = (float(hit['spread']), hit.get('provider', ''), float(opened) if opened is not None else None,
+                            float(hit['overUnder']) if hit.get('overUnder') is not None else np.nan)
     return out
 
 
@@ -375,7 +378,7 @@ def build_schedule(week, season_type, p4_names, power, fcs, metrics):
             'venue_id': g.get('venueId'), 'hfa': hfa, 'crowd': crowd_info,
             'home_rating': h_r, 'away_rating': a_r, 'margin': margin,
             'market': mkt[0] if mkt else np.nan, 'market_book': mkt[1] if mkt else '',
-            'market_open': mkt[2] if mkt else None,
+            'market_open': mkt[2] if mkt else None, 'total': mkt[3] if mkt else np.nan,
             'home_value': comp.get(home), 'away_value': comp.get(away),
             'completed': bool(g.get('completed')),
             'score': f"{g.get('awayPoints')}-{g.get('homePoints')}" if g.get('completed') else '',
@@ -664,6 +667,13 @@ def generate_html(p4, vals, sched, week, season_type, info):
             move += ex.injury_card_row(info['wire'].get('items'), r.away, r.home)
         if not r.completed:
             move += ex.liquidity_row(next((x.get('spread') for x in info['market_rows'] if str(x.get('game_id')) == str(r.game_id)), None))
+            if not big:
+                move += val.card_row('cfb', r.margin, mkt_margin, r.home, r.away, info['val_live'])
+        t_ours = info['total_fn'](r.home, r.away, r.neutral) if info.get('total_fn') else np.nan
+        t_mkt = getattr(r, 'total', np.nan)
+        move += tot.card_row('cfb', t_ours, t_mkt)
+        move += ex.why_row([('Ratings', r.margin - _hfa(r)), ('Home field', 0.0 if r.neutral else HFA_POINTS),
+                            ('Crowd', (_crowd(r) or {}).get('adj'))], r.margin, mkt_margin, r.home, r.away)
         prof = info['mu_prof']
         if r.home in prof and r.away in prof:
             move += mu.card_row(r.game_id, mu.headline(prof, MU_CATS, r.away, r.home, str))
@@ -677,7 +687,8 @@ def generate_html(p4, vals, sched, week, season_type, info):
                      'flags': (['news'] if ex.news_move(info['opened'].get(str(r.game_id)), mkt_margin) else [])
                               + (['lopsided'] if big else []),
                      'sources': ex.source_lines(h_src, a_src, hfa_g), 'hfa': hfa_g,
-                     'context': {'scale': SCALE, 'crowd': _crowd(r), 'signals': {t: s for t, s in ((r.away, sig(r.away_value)), (r.home, sig(r.home_value))) if s},
+                     'context': {'scale': SCALE, 'crowd': _crowd(r), 'total': [None if t_ours != t_ours else round(t_ours, 1),
+                                                                         None if t_mkt != t_mkt else t_mkt], 'signals': {t: s for t, s in ((r.away, sig(r.away_value)), (r.home, sig(r.home_value))) if s},
                                  'tags': [list(x) for x in labels],
                                  'mu_side': mu.headline_side(prof, MU_CATS, r.away, r.home) if r.home in prof and r.away in prof else None}})
         spots.append(ex.spot('CFB', 'cfb.html#sched', r.kick, r.away, r.home, r.margin, mkt_margin, labels,
@@ -901,7 +912,17 @@ def main():
     # Next week's bounce-back tags can only use a team's last game if it doesn't still have a game to play this week
     pending = set(sched.loc[~sched['completed'], 'home']) | set(sched.loc[~sched['completed'], 'away'])
     next_last = {t: v for t, v in last_results(results[0], week + 1, season_type).items() if t not in pending}
-    info = {'scale': scale_info, 'sag_asof': sag_asof, 'rating_sd': float(power['composite'].std()),   # FBS-wide spread, sets the rating chip colors
+    try:
+        gg = vm.fetch_games()
+        gg = gg[gg['season_type'] == 'regular'] if 'season_type' in gg else gg
+        start = pd.Timestamp(f'{YEAR}-08-24')
+        total_fn = tot.projector('cfb', pd.DataFrame({'date': [start + pd.Timedelta(days=7 * int(w)) for w in gg['week']],
+                                                      'home': gg['home_team'], 'away': gg['away_team'], 'hp': gg['home_pts'],
+                                                      'ap': gg['away_pts'], 'neutral': gg['neutral'].astype(bool)}))
+    except Exception as e:
+        print(f'  ! totals model failed: {e}')
+        total_fn = None
+    info = {'total_fn': total_fn, 'val_live': val.live_records('cfb'), 'scale': scale_info, 'sag_asof': sag_asof, 'rating_sd': float(power['composite'].std()),   # FBS-wide spread, sets the rating chip colors
             'wire': wire_data, 'market_rows': market_rows, 'history': hist, 'freshness': freshness, 'results': results,
             'weeks': [(week, sched, last_results(results[0], week, season_type))]
                      + ([(week + 1, next_sched, next_last)] if not next_sched.empty else []),

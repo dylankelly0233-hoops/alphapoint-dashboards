@@ -465,7 +465,14 @@ def perf_tab():
                 bt = json.load(f)
         except (OSError, ValueError):
             bt = None
-        return perf_page.tab(perf, bt)
+        extra = {}
+        for key, fn in (('tags', 'tag_backtest.json'), ('valuation', 'valuation.json'), ('totals', 'totals.json')):
+            try:
+                with open(os.path.join(HERE, fn), encoding='utf-8') as f:
+                    extra[key] = json.load(f)
+            except (OSError, ValueError):
+                pass
+        return perf_page.tab(perf, bt, extra)
     except (OSError, ValueError):
         return perf_page.tab(None)
 

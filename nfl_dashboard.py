@@ -37,6 +37,9 @@ import requests
 
 import dashboard_theme as theme
 import extras as ex
+import valuation as val
+import futures as fut
+import totals as tot
 import featured as fx
 import matchups as mu
 import weather as wx
@@ -465,6 +468,11 @@ def generate_html(power, vals, sched, week, info):
         if not r.score:
             move += ex.injury_card_row(info.get('inj_cards'), r.away, r.home, lambda t: nick(vm.full_name(t)))
             move += ex.liquidity_row(next((x.get('spread') for x in info['market_rows'] if str(x.get('game_id')) == str(r.game_id)), None))
+            move += val.card_row('nfl', r.margin, r.market, r.home, r.away, info['val_live'], lambda t: nick(vm.full_name(t)))
+        t_ours = info['total_fn'](r.home, r.away, r.neutral) if info.get('total_fn') else np.nan
+        move += tot.card_row('nfl', t_ours, r.total)
+        move += ex.why_row([('Ratings', r.margin - (0.0 if r.neutral else HFA_POINTS)), ('Home field', 0.0 if r.neutral else HFA_POINTS)],
+                           r.margin, r.market, r.home, r.away, lambda t: nick(vm.full_name(t)))
         prof = info['mu_prof']
         if r.home in prof and r.away in prof:
             short = lambda ab: nick(vm.full_name(ab))
@@ -477,7 +485,9 @@ def generate_html(power, vals, sched, week, info):
                      'confidence': ex.confidence_level(by_src.get(r.home, {}), by_src.get(r.away, {}), hfa_g),
                      'flags': ['news'] if ex.news_move(info['opened'].get(str(r.game_id)), r.market) else [],
                      'sources': ex.source_lines(by_src.get(r.home, {}), by_src.get(r.away, {}), hfa_g), 'hfa': hfa_g,
-                     'context': {'scale': SCALE, 'signals': {t: s for t, s in ((r.away, sig(r.away_value)), (r.home, sig(r.home_value))) if s},
+                     'context': {'scale': SCALE, 'total': [None if t_ours != t_ours else round(t_ours, 1),
+                                                           None if pd.isna(r.total) else r.total],
+                                 'signals': {t: s for t, s in ((r.away, sig(r.away_value)), (r.home, sig(r.home_value))) if s},
                                  'tags': [[tag_label[0], r.away if tag_label[1] == nick(away) else r.home]] if tag_label else [],
                                  'mu_side': mu.headline_side(prof, MU_CATS, r.away, r.home) if r.home in prof and r.away in prof else None}})
         spots.append(ex.spot('NFL', 'nfl.html#sched', r.kick, nick(away), nick(home), r.margin, r.market,
@@ -568,7 +578,7 @@ def generate_html(power, vals, sched, week, info):
         meta_items=[('Season', SEASON), ('Week', week), ('Updated', datetime.now().strftime('%b %d, %I:%M %p'))],
         tabs=[('power', 'Power Ratings', power_html), ('featured', 'Featured', featured_html), ('value', 'Value Metrics', value_html),
               ('sched', 'Games', sched_html), ('markets', 'Markets', markets_html),
-              ('injuries', 'Injury Wire', injury_html)],
+              ('futures', 'Futures', info['futures']), ('injuries', 'Injury Wire', injury_html)],
         footer='AlphaPoint Sports · Data: nfelo, Sagarin, nflverse · Logos: ESPN · Not financial or gambling advice',
         extra=ex.team_modal(teams) + mu.templates(panels))
     theme.write_outputs(page, HTML_OUTPUT, SHARE_OUTPUT, 'NFL_NO_BROWSER')
@@ -686,7 +696,26 @@ def main():
     for g in done.itertuples():               # cover margin: result beyond the closing spread (spread_line = home margin)
         cover.setdefault(g.home_team, []).append((g.away_team, g.result - g.spread_line))
         cover.setdefault(g.away_team, []).append((g.home_team, g.spread_line - g.result))
-    info = {'scale': scale_info, 'nfelo_asof': nfelo_asof, 'sagarin_asof': sagarin_asof,
+    print('  Futures (season simulations)...')
+    try:
+        reg = full[full['game_type'] == 'REG'].rename(columns={'home_team': 'home', 'away_team': 'away'})
+        groups = {t: (d.split()[0], d) for d, ts in DIVISIONS.items() for t in ts}
+        sim = fut.simulate('nfl', list(TEAM_DIVISION), dict(zip(power['abbr'], power['composite'])), SCALE, HFA_POINTS,
+                           reg[reg['result'].notna()], reg[reg['result'].isna()].assign(neutral=lambda d: d['neutral'].astype(bool)),
+                           groups)
+        futures_html = fut.tab_html('nfl', sim, fut.kalshi('nfl'), vm.full_name, rec)
+    except Exception as e:
+        print(f'  ! futures failed: {e}')
+        futures_html = '<p class="hint">Futures are unavailable right now.</p>'
+    try:
+        fin = full[full['result'].notna()]
+        total_fn = tot.projector('nfl', pd.DataFrame({'date': fin['gameday'], 'home': fin['home_team'], 'away': fin['away_team'],
+                                                      'hp': fin['home_score'], 'ap': fin['away_score'],
+                                                      'neutral': fin['neutral'].astype(bool)}))
+    except Exception as e:
+        print(f'  ! totals model failed: {e}')
+        total_fn = None
+    info = {'total_fn': total_fn, 'futures': futures_html, 'val_live': val.live_records('nfl'), 'scale': scale_info, 'nfelo_asof': nfelo_asof, 'sagarin_asof': sagarin_asof,
             'wire': wire_data, 'inj_cards': {t: d.get('card', []) for t, d in cands.get('teams', {}).items()}, 'market_rows': market_rows, 'history': hist, 'full': full, 'freshness': freshness,
             'featured': {r.game_id: [s] + ([f'Week {wk}'] if wk != week else [])
                          for wk, df in ((week, sched), (week + 1, next_sched)) if not df.empty

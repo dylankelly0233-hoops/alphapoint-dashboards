@@ -461,3 +461,23 @@ def spot(sport, page, kick, away, home, ours, market, tags=(), signals=(), opene
 def write_spots(sport, spots):
     with open(f'spots_{sport}.json', 'w', encoding='utf-8') as f:
         json.dump([s for s in spots if s], f, ensure_ascii=False, indent=1)
+
+
+def why_row(parts, ours, market, home, away, name=lambda t: t, unit='', digits=1):
+    """
+    'Why' line for a game card: how our line is built. parts: [(label, points to the home side)], the first being the
+    rating gap; they add up to `ours` (home margin). Each part is shown as points toward the team it helps.
+    """
+    if _nan(ours):
+        return ''
+    bits = []
+    for lab, v in parts:
+        if v is None or _nan(v) or abs(v) < 0.5 / 10 ** digits:
+            continue
+        team = name(home) if v > 0 else name(away)
+        bits.append(f'{theme.esc(lab)} <b>{theme.esc(team)} +{abs(v):.{digits}f}</b>')
+    if not bits:
+        return ''
+    total = f'= ours {theme.esc(line_text(name(home), name(away), ours))}' if not unit else         f'= ours {theme.esc(name(home) if ours >= 0 else name(away))} by {abs(ours):.{digits}f}{unit}'
+    mk = '' if _nan(market) else (f' vs market {theme.esc(line_text(name(home), name(away), market))}' if not unit else '')
+    return f'<div class="lmove">{theme.k("Why")}{" · ".join(bits)} {total}{mk}</div>'

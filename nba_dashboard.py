@@ -38,6 +38,8 @@ import markets as mk
 import matchups as mu
 import nba_value_metrics as vm
 import situational as sit
+import valuation as val
+import futures as fut
 
 # ==========================================
 # 1. CONFIGURATION
@@ -355,6 +357,10 @@ def generate_html(power, metrics, days, info):
             if not g['score']:
                 move += ex.injury_card_row(info.get('inj_cards'), g['away'], g['home'], lambda t: short.get(t, t))
                 move += ex.liquidity_row(next((x.get('spread') for x in info['market_rows'] if str(x.get('game_id')) == str(g['game_id'])), None), lambda t: short.get(t, t))
+                move += val.card_row('nba', margin, g['market'], g['home'], g['away'], info['val_live'], lambda t: short.get(t, t))
+            move += ex.why_row([('Ratings', margin - g['hfa']), ('Home court', 0.0 if g['neutral'] else HFA_POINTS)]
+                               + [(f'{short.get(t, t)} back-to-back', -p if t == g['home'] else p) for t, p in g['rest_parts']],
+                               margin, g['market'], g['home'], g['away'], lambda t: short.get(t, t))
             mprof = info['mu_prof']
             if g['home'] in mprof and g['away'] in mprof:
                 nm = lambda t: short.get(t, t)
@@ -457,7 +463,8 @@ def generate_html(power, metrics, days, info):
         meta_items=[('Season', f'{SEASON - 1}-{str(SEASON)[2:]}'), ('Updated', datetime.now().strftime('%b %d, %I:%M %p'))],
         tabs=[('power', 'Power Ratings', power_html), ('featured', 'Game of the Day', featured_html),
               ('value', 'Value Metrics', value_html), ('games', 'Games', games_html),
-              ('markets', 'Markets', markets_html), ('injuries', 'Injury Wire', injury_html)],
+              ('markets', 'Markets', markets_html), ('futures', 'Futures', info['futures']),
+              ('injuries', 'Injury Wire', injury_html)],
         footer='AlphaPoint Sports · Data: Sagarin, TeamRankings, ESPN, Kalshi · Logos: ESPN · Not financial or gambling advice',
         extra=ex.team_modal(teams) + mu.templates(panels))
     theme.write_outputs(page, HTML_OUTPUT, SHARE_OUTPUT, 'NBA_NO_BROWSER')
@@ -534,7 +541,19 @@ def main():
     freshness = [('Sagarin', f'through {sag_asof}' if sag_asof else 'not available', ex.fetched(SAGARIN_CACHE)[1]),
                  ('TeamRankings', *ex.fetched(TR_CACHE)), ('Box scores', *ex.fetched(vm._cache('box'))),
                  ('Lines', 'ESPN, live each refresh', True), ex.wire_freshness(wire_data)]
-    generate_html(power, metrics, days, {
+    print('  Futures (season simulations)...')
+    try:
+        fs = fut.nba_schedule(vm)
+        groups = {t: (CONFERENCE[d], d) for d, ts in DIVISIONS.items() for t in ts}
+        recs = vm.records(box)
+        sim = fut.simulate('nba', list(DIVISION_OF), dict(zip(power['abbr'], power['composite'])), SCALE, HFA_POINTS,
+                           fs[fs['result'].notna()], fs[fs['result'].isna()], groups)
+        futures_html = fut.tab_html('nba', sim, fut.kalshi('nba'), dict(zip(power['abbr'], power['name'])).get
+                                    if 'name' in power else str, {t: f'{v}' for t, v in recs.items()} if isinstance(recs, dict) else {})
+    except Exception as e:
+        print(f'  ! futures failed: {e}')
+        futures_html = '<p class="hint">Futures are unavailable right now.</p>'
+    generate_html(power, metrics, days, {'futures': futures_html, 'val_live': val.live_records('nba'),
         'scale': scale, 'weights': weights, 'sag_asof': sag_asof, 'unmatched': {'Sagarin': sag_un, 'TeamRankings': tr_un},
         'history': hist, 'freshness': freshness, 'wire': wire_data, 'inj_cards': {t: d.get('card', []) for t, d in cands.get('teams', {}).items()}, 'market_rows': market_rows,
         'records': vm.records(box), 'results': (box, spreads),
