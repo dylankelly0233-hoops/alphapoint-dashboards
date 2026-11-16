@@ -326,13 +326,15 @@ def best_spots():
             opener = s.get('open_spread') if x['kind'] == 'Spread' else (
                 f'{x["text"].split()[0]} {s["open_total"]:g}' if s.get('open_total') else None)
             pr = x['proof']
-            close = '' if pr.get('holds_to_close') else ' · edge usually gone by the close'
+            label = slice_label(s['sport'], x['kind'], pr['slice'])
+            tip = (f'Typically beats the opener: past {label} picks won {100 * pr["rate"]:.0f}% of {pr["n"]:,} against the '
+                   f'opening line' + (f', and the line moved our way by the close {100 * pr["clv"]:.0f}% of the time' if pr.get('clv') else '')
+                   + ('.' if pr.get('holds_to_close') else '. The edge is usually gone by the close.'))
             parts.append(f'{x["kind"]} <b>{theme.esc(x["text"])}</b> {100 * x["p"]:.1f}%'
                          + (f' (push {100 * x["push"]:.0f}%)' if x.get('push', 0) >= 0.03 else '')
                          + (f' · opened {theme.esc(opener)}' if opener else '')
-                         + f'<span class="sproof">Typically beats the opener: {theme.esc(slice_label(s["sport"], x["kind"], pr["slice"]))} '
-                           f'{100 * pr["rate"]:.0f}% of {pr["n"]:,} past picks'
-                         + (f', line moved our way {100 * pr["clv"]:.0f}%' if pr.get('clv') else '') + f'{close}</span>')
+                         + f'<span class="sproof" title="{theme.esc(tip)}">{theme.esc(label)}: {100 * pr["rate"]:.0f}% vs opener '
+                           f'({pr["n"]:,}){"" if pr.get("holds_to_close") else " · early edge"}</span>')
         ev = f'+{100 * best["ev"]:.1f}¢' if best['ev'] >= 0.0005 else '&lt;0.1¢'
         return _row(s, '<br>'.join(parts), f'<span class="edge">{ev}</span><span class="sline">per $1</span>')
 
@@ -358,7 +360,8 @@ def best_spots():
             '</span></div>'
             + section('Priced value', 'Lines that clear −110 at our fair number, only in spots where that rule beat the '
                       'opening line in both halves of past seasons: ' + proven_list() + '. Right: cents per $1 at −110. '
-                      'These are early-line edges: compare the opener shown with the line you can get.',
+                      'Each row shows that spot’s past record vs the opener; "early edge" = usually gone by the close, '
+                      'so compare the opener shown with the line you can get.',
                       priced, priced_row, 'Nothing in a proven spot clears −110 right now.')
             + section('NFL teaser legs', 'Underdogs of +1.5 to +3 with a total of 46 or lower or a division game: about 77% '
                       'of legs out of sample (2015–25).', teasers, teaser_row, 'No teaser legs this week.')
