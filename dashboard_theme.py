@@ -32,7 +32,10 @@ FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com">'
 # ==========================================
 # LOGOS
 # ==========================================
-_LOGO_CSS = {}   # css class → data URI; each logo is embedded once and reused everywhere it appears
+_LOGO_CSS = {}   # css class → data URI (or logos/ file link); each logo appears once and is reused everywhere
+LOGO_LINK = False  # True: the site page links logos/<file>.png (served beside it) instead of embedding them.
+                   # For pages with hundreds of teams (CBB, all D1): keeps the page light and phones fetch only
+                   # the logos on the tab in view. The shareable copy still embeds them (write_outputs).
 
 
 def logo_uri(key, espn_path, px=LOGO_PX):
@@ -60,6 +63,9 @@ def logo_uri(key, espn_path, px=LOGO_PX):
                 f.write(r.content)
         except Exception:
             return None
+    if LOGO_LINK:
+        _LOGO_CSS[cls] = f'{LOGO_DIR}/{safe}.png'
+        return cls
     with open(path, 'rb') as f:
         _LOGO_CSS[cls] = 'data:image/png;base64,' + base64.b64encode(f.read()).decode()
     return cls
@@ -1002,8 +1008,14 @@ def render_page(*, title, league, headline, meta_items, tabs, footer, extra='', 
 
 def write_outputs(page, html_path, share_path, no_browser_env):
     """Write the shareable fragment and a full local page; open the local page unless the env var is set."""
+    share = page
+    if LOGO_LINK:   # a shared copy can't load files from beside it: embed the linked logos there
+        def embed(m):
+            with open(m.group(1), 'rb') as f:
+                return 'url(data:image/png;base64,' + base64.b64encode(f.read()).decode() + ')'
+        share = re.sub(r'url\((' + LOGO_DIR + r'/[A-Za-z0-9_-]+\.png)\)', embed, page)
     with open(share_path, 'w', encoding='utf-8') as f:
-        f.write(page)
+        f.write(share)
     with open(html_path, 'w', encoding='utf-8') as f:
         f.write('<!DOCTYPE html>\n<html lang="en">\n<head>\n<meta charset="utf-8">\n'
                 '<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">\n'

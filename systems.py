@@ -48,21 +48,22 @@ def nfl(r, total_top10, name=str, wx=None, roof=None):
     near = r.kick is not None and not pd.isna(r.kick) and (
         pd.Timestamp(r.kick) - pd.Timestamp.now()).total_seconds() / 3600 <= WIND_HOURS
     if wx and roof == 'outdoor' and near and (wx.get('wind') or 0) >= 15 and not np.isnan(r.total):
-        checks.append(('nfl_wind_under', f'Under {r.total:g} (wind {wx["wind"]:.0f} mph)'))
+        checks.append(('nfl_wind_under', f'Under {r.total:g} (wind {wx["wind"]:.0f} mph)', 'under', r.total))
     if not np.isnan(r.total) and total_top10 is not None and r.total >= total_top10:
-        checks.append(('nfl_high_total_under', f'Under {r.total:g}'))
+        checks.append(('nfl_high_total_under', f'Under {r.total:g}', 'under', r.total))
     if r.div and not np.isnan(r.total):
-        checks.append(('nfl_div_under', f'Under {r.total:g}'))
+        checks.append(('nfl_div_under', f'Under {r.total:g}', 'under', r.total))
     hr, ar = getattr(r, 'hr', np.nan), getattr(r, 'ar', np.nan)
     if hr == hr and ar == ar:
         if hr >= 13 and ar <= 8:
-            checks.append(('nfl_bye_edge', _side(name(r.home), r.market)))
+            checks.append(('nfl_bye_edge', _side(name(r.home), r.market), 'home', r.market))
         elif ar >= 13 and hr <= 8:
-            checks.append(('nfl_bye_edge', _side(name(r.away), -r.market)))
-    for key, pick in checks:
+            checks.append(('nfl_bye_edge', _side(name(r.away), -r.market), 'away', r.market))
+    for key, pick, side, line in checks:
         res = _passed('nfl', key)
         if res:
             out.append({'key': key, 'label': res['label'].split(' (')[0], 'pick': pick, 'record': record_text(res),
+                        'side': side, 'line': float(line), 'kind': 'total' if side in ('over', 'under') else 'spread',
                         'tentative': bool(res.get('tentative'))})
     return out
 

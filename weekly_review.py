@@ -59,7 +59,8 @@ def _espn_scores(sport, days):
                 continue
             sides = {c.get('homeAway'): c for c in comp.get('competitors', [])}
             try:
-                out[str(ev['id'])] = float(sides['home']['score']) - float(sides['away']['score'])
+                h, a = float(sides['home']['score']), float(sides['away']['score'])
+                out[str(ev['id'])] = (h - a, h + a)
             except (KeyError, TypeError, ValueError):
                 pass
     return out
@@ -71,23 +72,28 @@ def _cfb_scores():
     for stype in ('regular', 'postseason'):
         for g in vm.cfbd_get('/games', params={'year': vm.YEAR, 'seasonType': stype}) or []:
             if g.get('completed') and g.get('homePoints') is not None and g.get('awayPoints') is not None:
-                out[str(g['id'])] = float(g['homePoints']) - float(g['awayPoints'])
+                out[str(g['id'])] = (float(g['homePoints']) - float(g['awayPoints']), float(g['homePoints']) + float(g['awayPoints']))
     return out
 
 
 def _nfl_scores():
     df = pd.read_csv('https://github.com/nflverse/nfldata/raw/master/data/games.csv', low_memory=False)
     df = df.dropna(subset=['home_score', 'away_score'])
-    return dict(zip(df['game_id'].astype(str), df['home_score'] - df['away_score']))
+    return {g: (h - a, h + a) for g, h, a in zip(df['game_id'].astype(str), df['home_score'], df['away_score'])}
 
 
 def results(sport, log):
-    """{game_id: home − away final margin} for logged games that have kicked off."""
+    """{game_id: home − away final margin} for logged games that have kicked off. The cache also keeps each game's
+    total points (for grading totals on Best spots); games cached before totals were kept are fetched again."""
     path = f'results_{sport}.csv'
-    cache = pd.read_csv(path, dtype={'game_id': str}) if os.path.exists(path) else pd.DataFrame(columns=['game_id', 'result'])
+    cache = pd.read_csv(path, dtype={'game_id': str}) if os.path.exists(path) else pd.DataFrame(columns=['game_id', 'result', 'total'])
+    if 'total' not in cache:
+        cache['total'] = np.nan
     known = dict(zip(cache['game_id'], cache['result']))
+    totals = {g: t for g, t in zip(cache['game_id'], cache['total']) if t == t}
     started = log[log['kickoff'] < datetime.now(timezone.utc) - timedelta(hours=4)]
-    need = started[~started['game_id'].isin(known)]
+    need = started[~started['game_id'].isin(totals) & (started['kickoff'] > datetime.now(timezone.utc) - timedelta(days=45))
+                   | ~started['game_id'].isin(known)]
     if len(need):
         if sport == 'cfb':
             fetched = _cfb_scores()
@@ -101,9 +107,20 @@ def results(sport, log):
             fetched = _espn_scores(sport, days)
         new = {g: fetched[g] for g in need['game_id'] if g in fetched}
         if new:
-            known.update(new)
-            pd.DataFrame({'game_id': list(known), 'result': list(known.values())}).to_csv(path, index=False)
+            known.update({g: v[0] for g, v in new.items()})
+            totals.update({g: v[1] for g, v in new.items()})
+            pd.DataFrame({'game_id': list(known), 'result': list(known.values()),
+                          'total': [totals.get(g, np.nan) for g in known]}).to_csv(path, index=False)
     return known
+
+
+def result_totals(sport):
+    """{game_id: total points} from the results cache."""
+    try:
+        c = pd.read_csv(f'results_{sport}.csv', dtype={'game_id': str})
+        return {g: t for g, t in zip(c['game_id'], c.get('total', pd.Series(dtype=float))) if t == t}
+    except (OSError, ValueError):
+        return {}
 
 
 # ---------------- scoring ----------------
@@ -233,6 +250,71 @@ def golf_review():
     return out
 
 
+def best_spots_record(scored):
+    """
+    Live record of Best spots (best_spots_log.csv, written by build_site.py the first time each pick is listed):
+    did the side win against the line it was listed at, and did the line move its way by the close? Grouped by why it
+    was listed (each proven spot / system / teaser legs / line-move watch) and, for Priced value, by strength tier.
+    Internal only: it checks that what we proved on past seasons is holding up; it is not a public record of picks.
+    """
+    try:
+        log = pd.read_csv('best_spots_log.csv', dtype={'gid': str})
+    except (OSError, ValueError):
+        return ['  No Best spots logged yet.']
+    rows = []
+    for r in log.itertuples():
+        d = scored.get(r.sport)
+        if d is None or d.empty:
+            continue
+        g = d[d['game_id'].astype(str) == str(r.gid)]
+        if g.empty:
+            continue
+        g = g.iloc[0]
+        line = float(r.line) if r.line == r.line else np.nan
+        won = clv = np.nan
+        if r.kind in ('spread', 'teaser') and line == line:
+            m = g['result'] - line
+            if r.kind == 'teaser':
+                m = m + 6 if r.side == 'home' else m - 6
+            if m != 0 and r.reason != 'watch':
+                won = float((m > 0) == (r.side == 'home'))
+            close = g['market_last']
+            if close == close and close != line:
+                clv = float((close > line) == (r.side == 'home'))
+        elif r.kind == 'total' and line == line:
+            tot = result_totals(r.sport).get(str(r.gid))
+            if tot is not None and tot != line:
+                won = float((tot > line) == (r.side == 'over'))
+            try:
+                ctot = (json.loads(g['context']) or {}).get('total', [None, None])[1]
+            except (TypeError, ValueError):
+                ctot = None
+            if ctot is not None and ctot != line:
+                clv = float((ctot > line) == (r.side == 'over'))
+        tier = ''
+        if r.reason == 'priced' and r.p == r.p and r.need == r.need:
+            mg = r.p - r.need
+            tier = 'badge (3+)' if mg >= 0.03 else 'green text (1.5-3)' if mg >= 0.015 else 'faded (<1.5)'
+        rows.append({'group': f'{r.sport.upper()} {r.reason}: {r.detail}', 'reason': r.reason, 'tier': tier, 'won': won, 'clv': clv})
+    if not rows:
+        return ['  No finished Best spots games yet.']
+    df = pd.DataFrame(rows)
+    out = []
+
+    def line_for(name, x):
+        w, c = x['won'].dropna(), x['clv'].dropna()
+        wtxt = f'won {w.mean():.0%} of {len(w)}' if len(w) else 'not graded (timing note)'
+        return f'  {name}: {wtxt}; line moved our way {c.mean():.0%} of {len(c)}' if len(c) else f'  {name}: {wtxt}'
+    out.append(line_for('All Best spots', df))
+    for gname, x in df.groupby('group'):
+        out.append(line_for(gname, x))
+    pv = df[df['reason'] == 'priced']
+    for t, x in pv.groupby('tier'):
+        out.append(line_for(f'Priced value, {t}', x))
+    out.append('  (Small samples for weeks: compare with the backtest records on the site, not with 50%.)')
+    return out
+
+
 def main():
     now = datetime.now(timezone.utc)
     body = [f'Date: {now.astimezone(ET):%Y-%m-%d %H:%M} ET', 'Status: ok', '']
@@ -243,6 +325,7 @@ def main():
         body += golf_review() + ['']
     except Exception as e:
         body += [f'GOLF: review failed ({e})', '']
+    body += ['Best spots, live record (internal)'] + best_spots_record(scored) + ['']
     try:
         import situational
         body += [f'Game situations in use (since {situational.SINCE})'] + situational.live_check(scored) + ['']

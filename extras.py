@@ -488,7 +488,8 @@ def spot(sport, page, kick, away, home, ours, market, tags=(), signals=(), opene
             'watch': None if not key or lopsided_game else _val().watch(key, ours, market),
             'open_spread': line_text(home, away, opened) if not _nan(opened) else None,
             'open_total': first_total(key, gid, total[1]) if key else None,
-            'systems': list(systems or [])}
+            'systems': list(systems or []), 'gid': None if gid is None else str(gid),
+            'market_num': None if _nan(market) else float(market)}
 
 
 def _val():

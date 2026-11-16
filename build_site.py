@@ -31,7 +31,7 @@ DASHBOARDS = [
     # (page, script, local output, short name, full name, coverage)
     ('cfb.html', 'cfb_p4_dashboard.py', 'cfb_p4_dashboard.html', 'CFB', 'College Football', 'All FBS teams'),
     ('nfl.html', 'nfl_dashboard.py', 'nfl_dashboard.html', 'NFL', 'Pro Football', 'All 32 teams'),
-    ('cbb.html', 'cbb_dashboard.py', 'cbb_dashboard.html', 'CBB', 'College Basketball', 'Power 4 + Big East'),
+    ('cbb.html', 'cbb_dashboard.py', 'cbb_dashboard.html', 'CBB', 'College Basketball', 'All Division I'),
     ('nba.html', 'nba_dashboard.py', 'nba_dashboard.html', 'NBA', 'Pro Basketball', 'All 30 teams'),
     ('nhl.html', 'nhl_dashboard.py', 'nhl_dashboard.html', 'NHL', 'Pro Hockey', 'All 32 teams'),
     ('epl.html', 'epl_dashboard.py', 'epl_dashboard.html', 'EPL', 'Premier League', 'All 20 clubs'),
@@ -296,6 +296,46 @@ def _row(s, detail, right):
             f'<span class="sline">{detail}</span>{_labels(s)}</span><span class="sedge">{right}</span></a></li>')
 
 
+SPOTS_LOG = 'best_spots_log.csv'     # every Best spots pick, first time listed (graded in the Sunday review)
+
+
+def log_spots(rows):
+    """Append each pick the first time it shows on Best spots: why, side, line at listing, win chance, proof."""
+    import pandas as pd
+    cols = ['listed', 'sport', 'gid', 'kick', 'reason', 'detail', 'kind', 'side', 'line', 'p', 'need']
+    path = os.path.join(HERE, SPOTS_LOG)
+    try:
+        old = pd.read_csv(path, dtype={'gid': str})
+    except (OSError, ValueError):
+        old = pd.DataFrame(columns=cols)
+    seen = set(zip(old['gid'].astype(str), old['reason'], old['detail']))
+    now = datetime.now().astimezone().isoformat(timespec='minutes')
+    new = []
+    for s in rows:
+        gid = s.get('gid') or s['page'].split('~g-')[-1] if '~g-' in s.get('page', '') else s.get('gid')
+        if not gid:
+            continue
+        base = {'listed': now, 'sport': s['sport'].lower(), 'gid': str(gid), 'kick': s['kick']}
+        for x in s.get('priced') or []:
+            need = (110 / 210) * (1 - x.get('push', 0))
+            new.append({**base, 'reason': 'priced', 'detail': x['proof']['slice'] + ' ' + x['kind'].lower(),
+                        'kind': x['kind'].lower(), 'side': x.get('side'), 'line': x.get('line'), 'p': x['p'], 'need': round(need, 4)})
+        for x in s.get('systems') or []:
+            new.append({**base, 'reason': 'system', 'detail': x['key'], 'kind': x.get('kind'), 'side': x.get('side'),
+                        'line': x.get('line'), 'p': None, 'need': None})
+        if s.get('teaser'):
+            team = s['teaser'][1]
+            side = 'home' if team == s['home'] else 'away'
+            new.append({**base, 'reason': 'teaser', 'detail': 'NFL teaser leg', 'kind': 'teaser', 'side': side,
+                        'line': s.get('market_num'), 'p': None, 'need': None})
+        if s.get('watch'):
+            new.append({**base, 'reason': 'watch', 'detail': s['watch']['label'] + ' pts', 'kind': 'spread',
+                        'side': s['watch']['toward'], 'line': s.get('market_num'), 'p': None, 'need': None})
+    new = [r for r in new if (r['gid'], r['reason'], r['detail']) not in seen]
+    if new:
+        pd.concat([old, pd.DataFrame(new, columns=cols)], ignore_index=True).to_csv(path, index=False)
+
+
 def best_spots():
     """
     The home page's Best spots, built only on what has held up in testing (2026-11-16):
@@ -377,6 +417,7 @@ def best_spots():
             right = f'<span class="edge none">Watch</span><span class="sline">{s["watch"]["gap"]:g} pts</span>'
         return _row(s, f'<span class="whys">{chips}</span>' + '<br>'.join(lines), right)
 
+    log_spots(rows)
     body = _day_sport_groups(rows, row_html) if rows else '<p class="hint spotnone">Nothing qualifies in the next 7 days.</p>'
     return ('<section class="card spots"><div class="spots-head"><h2>Best spots</h2>'
             '<span class="hint">Only edges that held up in testing · next 7 days · '
@@ -645,6 +686,8 @@ def main():
             shutil.copyfile(src, os.path.join(SITE, page))
         elif not os.path.exists(os.path.join(SITE, page)):
             keep_live_copy(page)
+    if os.path.isdir(os.path.join(HERE, 'logos')):   # logo files for pages that link them (CBB)
+        shutil.copytree(os.path.join(HERE, 'logos'), os.path.join(SITE, 'logos'), dirs_exist_ok=True)
     try:
         import model_performance
         model_performance.build()

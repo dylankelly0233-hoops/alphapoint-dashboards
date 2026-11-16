@@ -410,7 +410,9 @@ def proven_lines(sport, ours, market, home, away, t_ours=None, t_mkt=None, ctx=N
         else:
             text = f'{"Over" if a["over"] else "Under"} {m:g}'
         ac = r.get('at_close') or {}
+        side = ('home' if a['home_side'] else 'away') if kind == 'spread' else ('over' if a['over'] else 'under')
         out.append({'kind': 'Spread' if kind == 'spread' else 'Total', 'text': text, 'p': round(a['p'], 4),
+                    'side': side, 'line': float(m),                        # home margin (spreads) or total, as posted
                     'push': round(a.get('push', 0), 3), 'ev': round(a['ev'], 4),
                     'proof': {'slice': sname, 'rate': r['all']['rate'], 'n': r['all']['n'],
                               'clv': (r.get('clv') or {}).get('rate'),

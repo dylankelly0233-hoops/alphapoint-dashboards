@@ -78,7 +78,8 @@ HFA_POINTS, SOURCE_WEIGHTS = ex.calibrated('cbb', HFA_POINTS, SOURCE_WEIGHTS)   
 SCALE = ex.calibrated_value('cbb', 'scale', 1.0)      # weekly-tuned rating stretch
 CROWD_SLOPE = ex.calibrated_value('cbb', 'crowd_slope', crowd.SLOPE['cbb'])   # home edge per doubling of crowd
 FALLBACK_SD     = 9.5      # typical D1 SD in points, used if no points-based source loads
-LOGO_PX         = 48       # smaller logos: this page carries ~150 teams (displayed at 24–30px)
+LOGO_PX         = 48       # smaller logos (displayed at 24–30px)
+theme.LOGO_LINK = True     # all of D1 (~365 teams): link logo files instead of embedding them (2.7 MB → light)
 LOOKAHEAD_DAYS  = 21
 
 CONFERENCES     = {'SEC': 'SEC', 'B10': 'Big Ten', 'B12': 'Big 12', 'ACC': 'ACC', 'BE': 'Big East'}
@@ -232,7 +233,8 @@ def build_power(teams, sources, unmatched, weights=None):
     else:
         df['composite'] = np.nan
     df['rank'] = df['composite'].rank(ascending=False, method='min')
-    df['conference'] = df['conference'].where(df['conference'].isin(CONFERENCES.values()), '')
+    df['conference'] = df['conference'].fillna('')
+    df['p4'] = df['conference'].isin(CONFERENCES.values())          # Power 4 + Big East (filter group, news scan)
     return df, {'target_sd': target_sd, 'stats': stats, 'unmatched': unmatched}
 
 
@@ -401,14 +403,19 @@ def team_log(box, spreads, team):
 
 def generate_html(power, metrics, days, info):
     sd = float(power['composite'].std())
-    focus = power[power['conference'] != '']
+    focus = power                                          # every D1 team (Dylan, 2026-11-17)
+    p4set = set(power.loc[power['p4'], 'team'])
+    grp = lambda t, c: f'{"P4" if t in p4set else "MM"} {c or "Independent"}'
+    group_of = {t: grp(t, c) for t, c in zip(power['team'], power['conference'])}
     meta = {r.team: (r.espn_id, ('#' + r.color) if isinstance(r.color, str) and r.color and r.color.lower() not in ('ffffff', 'fff') else '')
             for r in power.itertuples()}
     rating = dict(zip(power['team'], power['composite']))
     comp = dict(zip(metrics['Team'], metrics['Composite'])) if not metrics.empty else {}
     games_played = dict(zip(metrics['Team'], metrics['G'])) if not metrics.empty else {}
     record = {r.Team: f'{r.W}-{r.L}' for r in metrics.itertuples()} if not metrics.empty else {}
-    conf_opts = [(v, v) for v in CONFERENCES.values()]
+    tiers = sorted({(grp(t, c).split(' ', 1)[0], c or 'Independent') for t, c in zip(power['team'], power['conference'])},
+                   key=lambda x: (x[0] != 'P4', x[1]))
+    conf_opts = [('P4', 'Power 4 + Big East'), ('MM', 'All other conferences')] + [(f'{t} {c}', c) for t, c in tiers]
     logo = lambda t: _logo(meta.get(t, (None, ''))[0])
     mild = 0.5
 
@@ -417,7 +424,7 @@ def generate_html(power, metrics, days, info):
     rows = ''
     for i, r in enumerate(ranked.itertuples(), 1):
         c = comp.get(r.team)
-        rows += (f'<tr data-group="{theme.esc(r.conference)}"><td class="rank">{i}</td>'
+        rows += (f'<tr data-group="{theme.esc(group_of.get(r.team, ""))}"><td class="rank">{i}</td>'
                  f'<td class="l">{theme.team_cell(r.team, logo(r.team), r.conference, r.team)}</td>'
                  f'<td class="muted">{record.get(r.team, "0-0")}</td>'
                  f'<td data-v="{r.composite}">{theme.rating_chip(r.composite, sd)}</td>'
@@ -481,7 +488,7 @@ def generate_html(power, metrics, days, info):
             conf_name = power.loc[power['team'] == r.Team, 'conference'].iloc[0]
             close = f'{r.Close_W}-{r.Close_L}'
             close_cls = 'num pos' if r.Close_L - r.Close_W >= 3 else 'num neg' if r.Close_W - r.Close_L >= 3 else 'num'
-            rows += (f'<tr data-group="{theme.esc(conf_name)}">'
+            rows += (f'<tr data-group="{theme.esc(group_of.get(r.Team, ""))}">'
                      f'<td class="l">{theme.team_cell(r.Team, logo(r.Team), conf_name, r.Team)}</td>'
                      f'<td class="muted">{r.G}</td><td>{r.W}-{r.L}</td>'
                      f'{theme.num_td(r.Pyth_xW, "{:.1f}", "muted")}{theme.diff_td(r.Pyth_Diff, mild)}'
@@ -554,7 +561,8 @@ def generate_html(power, metrics, days, info):
             card = theme.game_card(when, venue,
                                    side(g['away'], a_r, g['away_espn']), side(g['home'], h_r, g['home_espn']),
                                    proj, mkt, g['score'], theme.edge_text(pm, g['market'], g['home'], g['away']),
-                                   move=move, gid=g['game_id'])
+                                   move=move, gid=g['game_id'],
+                                   group=f'{group_of.get(g["home"], "MM Non-D1")}|{group_of.get(g["away"], "MM Non-D1")}')
             cards += card
             reasons = info['featured'].get(g['game_id'])
             if reasons:
@@ -591,7 +599,7 @@ def generate_html(power, metrics, days, info):
             spots.append(ex.spot('CBB', 'cbb.html#games', g['kick'], g['away'], g['home'], margin, g['market'], [],
                                  [(t, _signal(comp.get(t), games_played.get(t, 0))) for t in (g['away'], g['home'])],
                                  info['opened'].get(g['game_id']), big, key='cbb', total=(t_ours, g.get('total')),
-                                 gid=g['game_id'], ctx={'p4': True}))
+                                 gid=g['game_id'], ctx={'p4': g['home'] in p4set or g['away'] in p4set}))
         sections += (f'<div class="sechead"><h2>{day.strftime("%A, %b %d").replace(" 0", " ")}</h2>'
                      f'<span class="hint">{len(games)} game{"" if len(games) == 1 else "s"}</span></div>'
                      f'<div class="games">{cards}</div>')
@@ -600,9 +608,10 @@ def generate_html(power, metrics, days, info):
     featured_html = fx.tab(''.join(features), ('Featured games', 'Top 25 clashes and upset watch, next three game days'),
                            'No ranked-vs-ranked or upset-watch games in the next three game days.')
     games_html = (
-        (sections or '<p class="hint">No P4 or Big East games in the next three weeks.</p>')
+        theme.filter_bar('games-conf', 'cbb-games', 'Conference', conf_opts, 'Either team in it')
+        + '<div id="cbb-games">' + (sections or '<p class="hint">No Division I games in the next three weeks.</p>') + '</div>'
         + theme.method_note(
-            f'The next {GAME_DAYS} game days with a Power 4 or Big East team. <b>Projected</b> is the composite rating gap '
+            f'The next {GAME_DAYS} game days, every Division I game (filter by conference above). <b>Projected</b> is the composite rating gap '
             f'plus the home team\'s home-court edge, rounded to a half point. Home court is worth {HFA_POINTS:g} points '
             f'with a typical crowd for these games and grows with the crowd: about {CROWD_SLOPE:.1f} points more (or less) '
             f'every time the expected crowd doubles (or halves), capped at {crowd.CAP:g} either way. The expected crowd is the '
@@ -627,7 +636,7 @@ def generate_html(power, metrics, days, info):
 
     # --- Injury Wire tab ---
     wire_games = [{'away': g['away'], 'home': g['home'], 'when': _when(g)} for _, gs in days for g in gs
-                  if g['home'] in focus_set or g['away'] in focus_set]
+                  if g['home'] in p4set or g['away'] in p4set]       # news is scanned for Power 4 + Big East games
     injury_html = theme.injury_tab(
         wire_games, info['wire'], lambda t: (t, logo(t)),
         'College basketball has no official injury reports, so items come from recent news coverage of each Power 4 '
@@ -676,7 +685,7 @@ def main():
     scale['weights'] = weights
     for src, names in scale['unmatched'].items():
         print(f'  ! {src} names not matched: {", ".join(names)}')
-    print(f"  Power 4 + Big East teams: {(power['conference'] != '').sum()}")
+    print(f"  D1 teams: {len(power)} ({int(power['p4'].sum())} Power 4 + Big East)")
 
     print('[2/4] Value metrics...')
     metrics = vm.run()
@@ -684,7 +693,7 @@ def main():
 
     print('[3/4] Upcoming games (ESPN)...')
     by_espn = {str(e).split('.')[0]: t for t, e in zip(teams['team'], teams['espn_id']) if pd.notna(e)}
-    days = upcoming_games(by_espn, set(power.loc[power['conference'] != '', 'team']))
+    days = upcoming_games(by_espn, set(power['team']))
     print(f'  {sum(len(g) for _, g in days)} games over {len(days)} days'
           + (f" ({', '.join(d.strftime('%b %d') for d, _ in days)})" if days else ''))
     src_cols = power.set_index('team')[list(scale['stats'])].to_dict('dict')
@@ -705,15 +714,17 @@ def main():
     rating = dict(zip(power['team'], power['composite']))
     market_rows, unmatched_k = build_markets(days, rating, teams['team'])
     print(f"  Kalshi prices for {sum(1 for r in market_rows if r['kalshi'])} of {len(market_rows)} games.")
-    focus_set = set(power.loc[power['conference'] != '', 'team'])
+    focus_set = set(power.loc[power['p4'], 'team'])        # Power 4 + Big East: the injury news scan stays on these
     unmatched_k = [n for n in unmatched_k if n]
     if unmatched_k:
         print(f'  Kalshi names not matched (mostly small schools): {len(unmatched_k)}')
 
     day_key = int(datetime.now().strftime('%Y%m%d'))
     mascots = dict(zip(teams['team'], teams['mascot'].fillna(''))) if 'mascot' in teams else {}
-    soon = {t for _, gs in days[:2] for g in gs for t in (g['away'], g['home'])}      # every team playing in 2 days
-    cands = wire.cbb_candidates(day_key, [(g['away'], g['home']) for _, gs in days for g in gs], mascots, focus_set | soon)
+    soon = {t for _, gs in days[:2] for g in gs if g['home'] in focus_set or g['away'] in focus_set
+            for t in (g['away'], g['home'])}                  # opponents of Power 4 + Big East teams in the next 2 days
+    cands = wire.cbb_candidates(day_key, [(g['away'], g['home']) for _, gs in days for g in gs
+                                          if g['home'] in focus_set or g['away'] in focus_set], mascots, focus_set | soon)
     try:
         pvals = cp.player_values()
     except Exception as e:
