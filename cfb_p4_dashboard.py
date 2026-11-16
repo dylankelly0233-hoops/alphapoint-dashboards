@@ -565,14 +565,20 @@ def generate_html(p4, vals, sched, week, season_type, info):
     s = info['scale']
     wk_label = f'Week {week}' + ('' if season_type == 'regular' else f' ({season_type})')
     spot, strong, mild = vm.SPOTLIGHT_DIFF, vm.STRONG_DIFF, vm.MILD_DIFF
-    conf_opts = [(c, c) for c in P4_CONFERENCES] + [('Independent', 'Notre Dame')]
+    p4n = info.get('p4_names', set())
+    group = lambda t, c: f'{"P4" if t in p4n else "G5"} {c or "Independent"}'
+    tiers = sorted({(group(t, c).split(' ', 1)[0], c or 'Independent') for t, c in zip(p4['team'], p4['conference'])},
+                   key=lambda x: (x[0] != 'P4', x[1]))
+    conf_opts = [('P4', 'Power 4 + Notre Dame'), ('G5', 'Group of 5 + independents')] + [(f'{tr} {c}', c) for tr, c in tiers]
+    group_of = {t: group(t, c) for t, c in zip(p4['team'], p4['conference'])}
 
     # --- Power tab ---
     ranked = p4.sort_values('composite', ascending=False, na_position='last')
     rows = ''
     for i, r in enumerate(ranked.itertuples(), 1):
-        rows += (f'<tr data-group="{theme.esc(r.conference)}"><td class="rank">{i}</td>'
+        rows += (f'<tr data-group="{theme.esc(group_of.get(r.team, ""))}"><td class="rank">{i}</td>'
                  f'<td class="l">{theme.team_cell(r.team, _logo(r.team, meta), r.conference, r.team)}</td>'
+                 f'<td class="muted" data-v="{theme.esc(r.conference or "")}">{theme.esc(r.conference or "")}</td>'
                  f'<td class="muted">{r.record}</td>'
                  f'<td data-v="{r.composite}">{theme.rating_chip(r.composite, sd)}</td>'
                  f'<td class="muted" data-v="{r.fbs_rank}">{"" if pd.isna(r.fbs_rank) else int(r.fbs_rank)}</td>'
@@ -601,7 +607,7 @@ def generate_html(p4, vals, sched, week, season_type, info):
         f'{theme.summary_card("Sell candidates", sells, "FBS record · wins over expectation (W − xW).")}</div>'
         f'<div class="sechead"><h2>Power ratings</h2>'
         f'{theme.filter_bar("power-conf", "power-table", "Conference", conf_opts, "Click a column to sort")}</div>'
-        + theme.table('power-table', [('#', ''), ('Team', 'l'), ('Record', ''), ('Rating', ''),
+        + theme.table('power-table', [('#', ''), ('Team', 'l'), ('Conf', 'opt'), ('Record', ''), ('Rating', ''),
                                       ('FBS Rk', 'opt'), ('Trade Signal', '')], rows)
         + theme.method_note(
             f'<b>Rating</b> is points above or below an average FBS team (0.0); the gap between two teams is the projected '
@@ -615,8 +621,9 @@ def generate_html(p4, vals, sched, week, season_type, info):
     # --- Value tab ---
     rows = ''
     for r in vals.sort_values('Composite', na_position='last').itertuples():
-        rows += (f'<tr data-group="{theme.esc(r.conference)}">'
+        rows += (f'<tr data-group="{theme.esc(group_of.get(r.Team, ""))}">'
                  f'<td class="l">{theme.team_cell(r.Team, _logo(r.Team, meta), r.conference, r.Team)}</td>'
+                 f'<td class="muted" data-v="{theme.esc(r.conference or "")}">{theme.esc(r.conference or "")}</td>'
                  f'<td class="muted">{r.G}</td><td>{r.W}-{r.L}</td>'
                  f'{theme.num_td(r.EPA_xW, "{:.1f}", "muted")}{theme.diff_td(r.EPA_Diff, mild)}'
                  f'{theme.num_td(r.SR_xW, "{:.1f}", "muted")}{theme.diff_td(r.SR_Diff, mild)}'
@@ -626,7 +633,7 @@ def generate_html(p4, vals, sched, week, season_type, info):
     value_html = (
         f'<div class="sechead"><h2>Wins over expectation</h2>'
         f'{theme.filter_bar("value-conf", "value-table", "Conference", conf_opts, "Negative = unlucky (buy side)")}</div>'
-        + theme.table('value-table', [('Team', 'l'), ('G', 'opt'), ('W-L', ''), ('EPA xW', 'opt'), ('EPA W−xW', ''),
+        + theme.table('value-table', [('Team', 'l'), ('Conf', 'opt'), ('G', 'opt'), ('W-L', ''), ('EPA xW', 'opt'), ('EPA W−xW', ''),
                                       ('SR xW', 'opt'), ('SR W−xW', 'opt'), ('Vegas xW', 'opt'), ('Vegas W−xW', 'opt'),
                                       ('Composite', ''), ('Trade Signal', '')], rows)
         + theme.method_note(
@@ -695,10 +702,11 @@ def generate_html(p4, vals, sched, week, season_type, info):
                              info['opened'].get(str(r.game_id)), big, tbd=bool(getattr(r, 'tbd', False)),
                              key='cfb', total=(t_ours, t_mkt), gid=r.game_id,
                              # every game on this page has a Power 4 team (or Notre Dame): the Power 4 slice applies
-                             ctx={'conf': str(getattr(r, 'conf', '')).lower() in ('true', '1'), 'p4': True}))
+                             ctx={'conf': str(getattr(r, 'conf', '')).lower() in ('true', '1'),
+                                  'p4': r.home in p4n or r.away in p4n}))
         card = theme.game_card(when, venue, side(r.away, r.away_rating, r.away_value),
                                side(r.home, r.home_rating, r.home_value), proj, mkt, r.score, edge, tag_html, move,
-                               gid=r.game_id)
+                               gid=r.game_id, group=f'{group_of.get(r.home, "FCS")}|{group_of.get(r.away, "FCS")}')
         reasons = info['featured'].get(r.game_id)
         if reasons:
             hfa = _hfa(r)
@@ -735,9 +743,10 @@ def generate_html(p4, vals, sched, week, season_type, info):
     sched_html = (
         f'<div class="sechead"><h2>Games</h2><span class="hint">Projected lines include home field, scaled by crowd size '
         f'(none at neutral sites)</span></div>'
-        + (theme.week_switch('cfb-weeks', panes) if len(panes) > 1 else panes[0][2])
+        + theme.filter_bar('games-conf', 'cfb-games', 'Conference', conf_opts, 'Either team in it')
+        + '<div id="cfb-games">' + (theme.week_switch('cfb-weeks', panes) if len(panes) > 1 else panes[0][2]) + '</div>'
         + theme.method_note(
-            f'Every game with a P4 team or Notre Dame, this week and next (use the switch). <b>Projected</b> is the composite rating gap plus '
+            f'Every game with an FBS team, this week and next (use the switch; filter by conference above). <b>Projected</b> is the composite rating gap plus '
             f'the home team\'s home-field edge (none at neutral sites). Home field is worth {HFA_POINTS:g} points with a typical '
             f'crowd for these games and grows with the crowd: about {CROWD_SLOPE:.1f} points more (or less) every time the '
             f'expected crowd doubles (or halves), capped at {crowd.CAP:g} either way. The expected crowd is the median of the '
@@ -753,7 +762,7 @@ def generate_html(p4, vals, sched, week, season_type, info):
     # --- Injury Wire tab ---
     games = [{'away': r.away, 'home': r.home,
               'when': theme.kick_text(r.kick if r.kick is not None and not pd.isna(r.kick) else None, getattr(r, 'tbd', False))}
-             for r in sched.itertuples()]
+             for r in sched.itertuples() if r.home in p4n or r.away in p4n]     # news is scanned for Power 4 games only
     injury_html = theme.injury_tab(
         games, info['wire'], lambda t: (t, _logo(t, meta)),
         'College programs rarely publish structured injury reports, so CFB items come from recent news coverage '
@@ -844,7 +853,8 @@ def main():
         return
     p4_mask  = teams['conference'].isin(P4_CONFERENCES) | teams['team'].isin(P4_EXTRA_TEAMS)
     p4_names = set(teams.loc[p4_mask, 'team'])
-    print(f'  {len(p4_names)} P4 + Notre Dame teams.')
+    fbs_names = set(teams['team'])       # since 2026-11-16 the page covers every FBS team (Dylan); P4 is a filter
+    print(f'  {len(fbs_names)} FBS teams ({len(p4_names)} Power 4 + Notre Dame).')
 
     print('[2/5] Power ratings (Sagarin + SP+)...')
     sag, sag_asof = fetch_sagarin()
@@ -859,10 +869,10 @@ def main():
 
     print('[4/5] Week schedule...')
     week, season_type = (WEEK, 'regular') if WEEK else current_week()
-    sched = build_schedule(week, season_type, p4_names, power, fcs, metrics)
-    next_sched = build_schedule(week + 1, season_type, p4_names, power, fcs, metrics)
+    sched = build_schedule(week, season_type, fbs_names, power, fcs, metrics)
+    next_sched = build_schedule(week + 1, season_type, fbs_names, power, fcs, metrics)
     print(f'  Next week (Week {week + 1}): {len(next_sched)} games.')
-    print(f'  Week {week}: {len(sched)} games involving P4 / Notre Dame.')
+    print(f'  Week {week}: {len(sched)} games involving an FBS team.')
 
     print('[5/5] Building dashboard...')
     # Record from Sagarin (all games); value-metric W-L is FBS-only
@@ -872,19 +882,20 @@ def main():
         sag_rec = {names[n]: f'{w}-{l}' for n, w, l in zip(sag['name'], sag['W'], sag['L']) if names[n]}
     comp = dict(zip(metrics['Team'], metrics['Composite'])) if not metrics.empty else {}
 
-    p4 = power[power['team'].isin(p4_names)].copy()
+    p4 = power[power['team'].isin(fbs_names)].copy()
     p4['record'] = p4['team'].map(sag_rec).fillna('')
     p4['value'] = p4['team'].map(comp)
     p4['conference'] = np.where(p4['team'].isin(P4_EXTRA_TEAMS), 'Independent', p4['conference'])
 
-    vals = metrics[metrics['Team'].isin(p4_names)].copy() if not metrics.empty else pd.DataFrame(
+    vals = metrics[metrics['Team'].isin(fbs_names)].copy() if not metrics.empty else pd.DataFrame(
         columns=['Team', 'G', 'W', 'L', 'EPA_xW', 'EPA_Diff', 'SR_xW', 'SR_Diff', 'Veg_xW', 'Veg_Diff', 'Composite'])
     conf_map = dict(zip(p4['team'], p4['conference']))
     vals['conference'] = vals['Team'].map(conf_map).fillna('')
 
     print('  Injury Wire (news scan, ~1 min on first run)...')
     mascots = {t: m[2] for t, m in fetch_team_meta().items()}
-    cands = wire.cfb_candidates(week, list(zip(sched['away'], sched['home'])), mascots)
+    p4_games = [(a, h) for a, h in zip(sched['away'], sched['home']) if a in p4_names or h in p4_names]
+    cands = wire.cfb_candidates(week, p4_games, mascots)     # news scan stays on Power 4 games (time and API budget)
     wire.write_candidates('cfb', cands)
     wire_data = wire.load_wire('cfb', week, cands)
     print(f"  Injury Wire: {sum(len(v) for v in wire_data['items'].values())} items ({wire_data['mode']}).")
@@ -925,7 +936,7 @@ def main():
     except Exception as e:
         print(f'  ! totals model failed: {e}')
         total_fn = None
-    info = {'total_fn': total_fn, 'val_live': val.live_records('cfb'), 'scale': scale_info, 'sag_asof': sag_asof, 'rating_sd': float(power['composite'].std()),   # FBS-wide spread, sets the rating chip colors
+    info = {'p4_names': p4_names, 'total_fn': total_fn, 'val_live': val.live_records('cfb'), 'scale': scale_info, 'sag_asof': sag_asof, 'rating_sd': float(power['composite'].std()),   # FBS-wide spread, sets the rating chip colors
             'wire': wire_data, 'market_rows': market_rows, 'history': hist, 'freshness': freshness, 'results': results,
             'weeks': [(week, sched, last_results(results[0], week, season_type))]
                      + ([(week + 1, next_sched, next_last)] if not next_sched.empty else []),

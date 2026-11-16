@@ -29,7 +29,7 @@ SITE = os.path.join(HERE, 'site')
 LIVE_SITE = 'https://dylankelly0233-hoops.github.io/alphapoint-dashboards/'   # fallback source for a page that fails to build
 DASHBOARDS = [
     # (page, script, local output, short name, full name, coverage)
-    ('cfb.html', 'cfb_p4_dashboard.py', 'cfb_p4_dashboard.html', 'CFB', 'College Football', 'Power 4 + Notre Dame'),
+    ('cfb.html', 'cfb_p4_dashboard.py', 'cfb_p4_dashboard.html', 'CFB', 'College Football', 'All FBS teams'),
     ('nfl.html', 'nfl_dashboard.py', 'nfl_dashboard.html', 'NFL', 'Pro Football', 'All 32 teams'),
     ('cbb.html', 'cbb_dashboard.py', 'cbb_dashboard.html', 'CBB', 'College Basketball', 'Power 4 + Big East'),
     ('nba.html', 'nba_dashboard.py', 'nba_dashboard.html', 'NBA', 'Pro Basketball', 'All 30 teams'),

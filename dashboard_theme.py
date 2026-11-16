@@ -240,7 +240,8 @@ def edge_text(proj_margin, market_margin, home, away):
     return f'<span class="{cls}">{esc(home if e > 0 else away)} {spread_num(abs(e))}</span>'
 
 
-def game_card(when, venue, away, home, projected, market, final='', edge='', tags='', move='', labels=('A', 'H'), gid=None):
+def game_card(when, venue, away, home, projected, market, final='', edge='', tags='', move='', labels=('A', 'H'), gid=None,
+              group=None):
     """
     away / home: dict(name, logo, rating, sd, signal, color, key). key makes the name open the team page.
     projected / market / edge: already-formatted strings. tags: situational tag pills (extras.tag);
@@ -270,6 +271,7 @@ def game_card(when, venue, away, home, projected, market, final='', edge='', tag
               + '<button type="button" class="gmore" onclick="this.closest(\'.card\').classList.toggle(\'open\')">'
                 'Details</button></div>') if move else ''
     gattr = f' data-gid="{esc(str(gid))}"' if gid is not None else ''      # Best spots links open this card
+    gattr += f' data-group="{esc(group)}"' if group else ''                    # conference filter ('P4 SEC|G5 Sun Belt')
     return (f'<article class="card game"{gattr}><header><span>{esc(when)}</span><span>{esc(venue)}</span></header>'
             f'{tags_html}{side(away, labels[0])}{side(home, labels[1])}'
             f'<footer><div>{k("Projected")}<b>{projected}</b></div>'
@@ -817,12 +819,20 @@ phoneCols();
 window.addEventListener('load', stickCols);
 document.querySelectorAll('nav.tabs button').forEach(b => b.addEventListener('click', () => setTimeout(stickCols, 50)));
 
-// Filter: value matches the row's group exactly, or as a prefix ("AFC" matches "AFC East")
+// Filter: value matches a row's (or game card's) group exactly, or as a prefix ("AFC" matches "AFC East"); a card can
+// carry two groups ("P4 SEC|G5 Sun Belt") and shows if either matches. Day headings with no cards left are hidden.
 document.querySelectorAll('select.filter').forEach(sel => sel.onchange = () => {
-  const want = sel.value;
-  document.querySelectorAll('#' + sel.dataset.table + ' tbody tr').forEach(tr => {
-    const g = tr.dataset.group || '';
-    tr.hidden = !(!want || g === want || g.startsWith(want + ' '));
+  const want = sel.value, root = document.getElementById(sel.dataset.table);
+  if (!root) return;
+  root.querySelectorAll('tbody tr, .card.game[data-group]').forEach(el => {
+    const gs = (el.dataset.group || '').split('|');
+    el.hidden = !(!want || gs.some(g => g === want || g.startsWith(want + ' ')));
+  });
+  root.querySelectorAll('.games').forEach(box => {
+    const any = [...box.querySelectorAll('.card.game')].some(c => !c.hidden);
+    box.hidden = !any;
+    const head = box.previousElementSibling;
+    if (head && head.classList.contains('sechead')) head.hidden = !any;
   });
 });
 
