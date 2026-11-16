@@ -463,7 +463,8 @@ def generate_html(power, vals, sched, week, info):
         side = lambda ab, nm, v: {'name': nm, 'logo': _logo(ab, meta), 'rating': rating.get(ab), 'sd': sd, 'key': ab,
                                   'signal': theme.signal_pill(v, spot, strong), 'color': meta.get(ab, ('', ''))[1]}
         tag_html, tag_label = teaser_tag(r)
-        sysl = sy.nfl(r, info.get('total_top10'), lambda t: nick(vm.full_name(t)))      # proven betting systems
+        sysl = sy.nfl(r, info.get('total_top10'), lambda t: nick(vm.full_name(t)),      # proven betting systems
+                      wx=info['weather'].get(str(r.game_id)), roof=wx.NFL_STADIUMS.get(r.home, (0, 0, ''))[2])
         tag_html += sy.tag_html(sysl, theme.esc)
         move = ex.line_move(info['opened'].get(str(r.game_id)), r.market, pm, nick(home), nick(away), 'First seen')
         move += ex.rating_confidence(by_src.get(r.home, {}), by_src.get(r.away, {}), 0.0 if r.neutral else HFA_POINTS)

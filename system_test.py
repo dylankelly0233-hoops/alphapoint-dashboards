@@ -58,7 +58,8 @@ def nfl_games():
                       'home': df['home_team'], 'away': df['away_team'], 'hp': df['home_score'], 'ap': df['away_score'],
                       'neutral': df['location'].eq('Neutral'), 'close': df['spread_line'], 'open': opens,
                       'tclose': df['total_line'], 'div': df['div_game'].eq(1), 'weekday': df['weekday'],
-                      'kick': df['gametime'], 'hr': df['home_rest'], 'ar': df['away_rest'], 'post': df['game_type'] != 'REG'})
+                      'kick': df['gametime'], 'hr': df['home_rest'], 'ar': df['away_rest'], 'post': df['game_type'] != 'REG',
+                      'roof': df['roof'], 'wind': df['wind'], 'temp': df['temp']})
     g = g.merge(t.assign(date=pd.to_datetime(t['date'])), on=['date', 'home', 'away'], how='left')
     return g
 
@@ -266,6 +267,8 @@ SYSTEMS = {
          lambda g: _total(g['topen'].fillna(g['tclose']) >= g.groupby('season')['tclose'].transform(lambda x: x.quantile(0.9)), 'under')),
         ('nfl_both_under_over', 'total', 'Both teams\' last games went 7+ under the total (over)',
          lambda g: _total((g['h_prev_tot_vs'] <= -7) & (g['a_prev_tot_vs'] <= -7), 'over')),
+        ('nfl_wind_under', 'total', 'Outdoor game with 15+ mph wind (under), judged at the close: wind is only known well near game time',
+         lambda g: _total(g['roof'].isin(['outdoors', 'open']) & (g['wind'] >= 15), 'under')),
     ],
     # ---------------- college football ----------------
     'cfb': [
@@ -362,7 +365,10 @@ def run(sport):
                 continue
             cut = dates.quantile(0.6)
             res[at] = {'discovery': _rate(won[dates < cut]), 'holdout': _rate(won[dates >= cut]), 'all': _rate(won)}
-        o = res.get('open', {})
+        # weather systems are judged at the close (the forecast is only reliable near game time); the rest at the open
+        bench = 'close' if key.endswith('wind_under') else 'open'
+        res['bench'] = bench
+        o = res.get(bench, {})
         passed = bool(o.get('all', {}).get('n', 0) >= 100 and (o['all'].get('lo') or 0) > 0.5
                       and o['discovery']['n'] >= 50 and (o['discovery']['rate'] or 0) > BREAKEVEN
                       and o['holdout']['n'] >= 50 and (o['holdout']['rate'] or 0) > BREAKEVEN)

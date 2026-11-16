@@ -44,6 +44,7 @@
       "hi": 0.564
      }
     },
+    "bench": "open",
     "passed": false,
     "tentative": false,
     "holds_to_close": true
@@ -91,6 +92,7 @@
       "hi": 0.536
      }
     },
+    "bench": "open",
     "passed": false,
     "tentative": false,
     "holds_to_close": false
@@ -138,6 +140,7 @@
       "hi": 0.572
      }
     },
+    "bench": "open",
     "passed": false,
     "tentative": false,
     "holds_to_close": false
@@ -185,6 +188,7 @@
       "hi": 0.549
      }
     },
+    "bench": "open",
     "passed": true,
     "tentative": true,
     "holds_to_close": false
@@ -232,6 +236,7 @@
       "hi": 0.529
      }
     },
+    "bench": "open",
     "passed": false,
     "tentative": false,
     "holds_to_close": false
@@ -279,6 +284,7 @@
       "hi": 0.525
      }
     },
+    "bench": "open",
     "passed": false,
     "tentative": false,
     "holds_to_close": false
@@ -326,6 +332,7 @@
       "hi": 0.539
      }
     },
+    "bench": "open",
     "passed": true,
     "tentative": true,
     "holds_to_close": false
@@ -373,6 +380,7 @@
       "hi": 0.577
      }
     },
+    "bench": "open",
     "passed": true,
     "tentative": false,
     "holds_to_close": false
@@ -420,9 +428,58 @@
       "hi": 0.57
      }
     },
+    "bench": "open",
     "passed": false,
     "tentative": false,
     "holds_to_close": false
+   },
+   "nfl_wind_under": {
+    "label": "Outdoor game with 15+ mph wind (under), judged at the close: wind is only known well near game time",
+    "kind": "total",
+    "open": {
+     "discovery": {
+      "n": 150,
+      "rate": 0.567,
+      "lo": 0.487,
+      "hi": 0.643
+     },
+     "holdout": {
+      "n": 100,
+      "rate": 0.67,
+      "lo": 0.573,
+      "hi": 0.754
+     },
+     "all": {
+      "n": 250,
+      "rate": 0.608,
+      "lo": 0.546,
+      "hi": 0.666
+     }
+    },
+    "close": {
+     "discovery": {
+      "n": 274,
+      "rate": 0.558,
+      "lo": 0.499,
+      "hi": 0.616
+     },
+     "holdout": {
+      "n": 185,
+      "rate": 0.573,
+      "lo": 0.501,
+      "hi": 0.642
+     },
+     "all": {
+      "n": 459,
+      "rate": 0.564,
+      "lo": 0.519,
+      "hi": 0.609
+     }
+    },
+    "bench": "close",
+    "passed": true,
+    "tentative": false,
+    "holds_to_close": true
    }
   },
   "cfb": {
@@ -843,6 +900,42 @@
       "rate": 0.493,
       "lo": 0.451,
       "hi": 0.536
+     }
+    },
+    "passed": false,
+    "tentative": false,
+    "holds_to_close": false
+   },
+   "cfb_wind_under": {
+    "label": "Outdoor game with 15+ mph wind (under), judged at the close: wind is only known well near game time",
+    "kind": "total",
+    "bench": "close",
+    "close": {
+     "discovery": {
+      "n": 86,
+      "rate": 0.581,
+      "lo": 0.476,
+      "hi": 0.68
+     },
+     "holdout": {
+      "n": 36,
+      "rate": 0.444,
+      "lo": 0.295,
+      "hi": 0.604
+     },
+     "all": {
+      "n": 122,
+      "rate": 0.541,
+      "lo": 0.453,
+      "hi": 0.627
+     }
+    },
+    "open": {
+     "all": {
+      "n": 54,
+      "rate": 0.611,
+      "lo": 0.478,
+      "hi": 0.73
      }
     },
     "passed": false,

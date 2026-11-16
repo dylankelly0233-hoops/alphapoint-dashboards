@@ -28,16 +28,27 @@ def _passed(sport, key):
 
 
 def record_text(r):
-    a = r['open']['all']
-    return f'{100 * a["rate"]:.0f}% of {a["n"]:,} vs the opener' + (' (tentative)' if r.get('tentative') else '')
+    bench = r.get('bench', 'open')
+    a = r[bench]['all']
+    return (f'{100 * a["rate"]:.0f}% of {a["n"]:,} vs the {"opener" if bench == "open" else "closing line"}'
+            + (' (tentative)' if r.get('tentative') else ''))
 
 
-def nfl(r, total_top10, name=str):
-    """Systems that apply to one NFL game row (home, away, market, total, div, hr, ar). [{key, label, pick, record}]."""
+WIND_HOURS = 48     # the wind system was tested on game-time wind: only use a forecast this close to kickoff
+
+
+def nfl(r, total_top10, name=str, wx=None, roof=None):
+    """Systems that apply to one NFL game row (home, away, market, total, div, hr, ar). [{key, label, pick, record}].
+    wx: this game's forecast (weather.forecasts) and roof: 'outdoor' / 'retractable' / 'dome', for the wind system."""
     out = []
     if r.score:
         return out
     checks = []
+    import pandas as pd
+    near = r.kick is not None and not pd.isna(r.kick) and (
+        pd.Timestamp(r.kick) - pd.Timestamp.now()).total_seconds() / 3600 <= WIND_HOURS
+    if wx and roof == 'outdoor' and near and (wx.get('wind') or 0) >= 15 and not np.isnan(r.total):
+        checks.append(('nfl_wind_under', f'Under {r.total:g} (wind {wx["wind"]:.0f} mph)'))
     if not np.isnan(r.total) and total_top10 is not None and r.total >= total_top10:
         checks.append(('nfl_high_total_under', f'Under {r.total:g}'))
     if r.div and not np.isnan(r.total):
