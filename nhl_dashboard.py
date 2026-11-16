@@ -32,6 +32,8 @@ import pandas as pd
 import cbb_ratings as cbr
 import dashboard_theme as theme
 import extras as ex
+import valuation as val
+import totals as tt
 import featured as fx
 import injury_wire as wire
 import markets as mk
@@ -462,15 +464,15 @@ def generate_html(power, metrics, days, info):
             pm = g['p_mkt']
             mkt = (_side_text(short(g['home']) if pm >= 0.5 else short(g['away']), pm if pm >= 0.5 else 1 - pm)
                    if pm else '—')
-            # total: shown inside 'Our pricing' when ours sits half a goal or more from the market (half-goal steps)
-            t_half = round(g['total_ours'] * 2) / 2 if g['total_ours'] == g['total_ours'] else None
-            tot = (f'<span class="pline"><span class="tag">Total</span>{t_half:g} vs {g["total"]:g}</span>'
-                   if t_half is not None and g['total'] and abs(g['total_ours'] - g['total']) >= 0.5 and not g['score'] else '')
+            # total line in 'Our pricing' (totals.py goals model, fair total, only when notable)
+            tot = '' if g['score'] or not info.get('total_fn') else tt.card_row(
+                'nhl', info['total_fn'](g['home'], g['away'], g['neutral']), g['total'] or np.nan)
             edge, edge_team, edge_pct = _edge_html(g, short)
             hfa_g = 0.0 if g['neutral'] else HFA_GOALS
             why = ex.why_row([('Ratings', g['margin'] - hfa_g - SCALE * g['goalie_adj']), ('Goalies', SCALE * g['goalie_adj']),
                               ('Home ice', hfa_g)], g['margin'], np.nan, g['home'], g['away'], short, unit=' goals', digits=2,
-                             lead=tot)
+                             lead=('' if g['score'] else val.ml_line('nhl', g['p'], g['p_mkt'], g.get('home_ml'), g.get('away_ml'),
+                                                                      g['home'], g['away'], short)) + tot)
             move = (_move_row(g, short) + _goalie_row(g, short) + why
                     + ex.rating_confidence(by_src.get(g['home'], {}), by_src.get(g['away'], {}), hfa_g, scale=CONF_SCALE)
                     + (ex.injury_card_row(info.get('inj_cards'), g['away'], g['home'], short) if not g['score'] else ''))
@@ -666,7 +668,14 @@ def main():
     freshness = [('Sagarin', *ex.fetched(SAGARIN_CACHE)), ('MoneyPuck', *ex.fetched(f'nhl_mp_teams_{m.MP_SEASON}.csv')),
                  ('Results', *ex.fetched(f'nhl_results_{SEASON}.csv')), ('Lines & goalies', 'ESPN, live each refresh', True),
                  ex.wire_freshness(wire_data)]
-    generate_html(power, metrics, days, {
+    try:
+        rr = res.dropna(subset=['home_goals', 'away_goals'])
+        total_fn = tt.projector('nhl', pd.DataFrame({'date': rr['date'], 'home': rr['home'], 'away': rr['away'],
+                                                     'hp': rr['home_goals'], 'ap': rr['away_goals'], 'neutral': False}))
+    except Exception as e:
+        print(f'  ! totals model failed: {e}')
+        total_fn = None
+    generate_html(power, metrics, days, {'total_fn': total_fn,
         'scale': scale, 'unmatched': sag_un, 'history': hist, 'freshness': freshness, 'wire': wire_data,
         'inj_cards': {t: d.get('card', []) for t, d in cands.get('teams', {}).items()},
         'records': m.records(res), 'results': res, 'rating': rating, 'rank': dict(zip(power['abbr'], power['rank'])),

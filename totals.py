@@ -25,7 +25,7 @@ import pandas as pd
 OUT = 'totals.json'
 PRIOR = 'totals_prior.json'         # last completed season's final ratings: the live fit starts from them
 C = 'research_cache'
-PARAMS = {'nfl': (120, 4.0, 0.5), 'cfb': (120, 4.0, 0.5), 'cbb': (60, 6.0, 0.5)}    # half-life days, ridge, carry
+PARAMS = {'nfl': (120, 4.0, 0.5), 'cfb': (120, 4.0, 0.5), 'cbb': (60, 6.0, 0.5), 'nba': (45, 6.0, 0.5), 'nhl': (90, 25.0, 0.5)}    # half-life days, ridge, carry
 BREAKEVEN = 110 / 210
 
 
@@ -204,7 +204,23 @@ def cbb_hist(seasons=(2025, 2026, 2027)):
     return pd.concat(out, ignore_index=True)
 
 
+def pro_hist(sport):
+    """NBA / NHL: ESPN game pages (pro_totals_fetch.py → research_cache/{sport}_totals_{season}.csv)."""
+    out = []
+    for y in (2025, 2026, 2027):
+        p = f'{C}/{sport}_totals_{y}.csv'
+        if os.path.exists(p):
+            out.append(pd.read_csv(p, dtype={'game_id': str}).assign(season=y))
+    h = pd.concat(out, ignore_index=True).dropna(subset=['hp', 'ap'])
+    h[['home', 'away']] = h[['home', 'away']].replace('UTA', 'UTAH')
+    h['close'] = pd.to_numeric(h['close'], errors='coerce')
+    return h[['date', 'season', 'home', 'away', 'hp', 'ap', 'neutral', 'close', 'open']]
+
+
 def _current(sport):
+    if sport in ('nba', 'nhl'):
+        today = date.today()
+        return today.year + 1 if today.month >= 8 else today.year
     if sport == 'cbb':
         import cbb_value_metrics as vm
         return vm.SEASON
@@ -215,14 +231,93 @@ def _current(sport):
     return vm.SEASON
 
 
-HIST = {'nfl': nfl_hist, 'cfb': cfb_hist, 'cbb': cbb_hist}
+def nhl_prob(w):
+    """
+    NHL totals sit at 5.5 / 6.5 and the market moves the price, not the line, so a goals-based share flatters any
+    continuous model. Test in probability instead: our P(over) (Poisson around our total) vs the no-vig closing price.
+    """
+    from scipy.stats import poisson
+    raw = pd.concat([pd.read_csv(f'{C}/nhl_totals_{y}.csv', dtype={'game_id': str}) for y in (2025, 2026, 2027)
+                     if os.path.exists(f'{C}/nhl_totals_{y}.csv')]).replace({'UTA': 'UTAH'})
+    w = w.assign(date=w['date'].dt.strftime('%Y-%m-%d')).merge(
+        raw[['date', 'home', 'away', 'over_odds', 'under_odds']], on=['date', 'home', 'away'], how='left')
+    w = w.dropna(subset=['over_odds', 'under_odds'])
+    dec = lambda a: 1 + (a / 100 if a > 0 else 100 / -a)
+    pm = np.array([(1 / dec(o)) / (1 / dec(o) + 1 / dec(u)) for o, u in zip(w['over_odds'], w['under_odds'])])
+    po = np.array([1 - poisson.cdf(math.floor(c), mu) for c, mu in zip(w['close'], w['ours'])])
+    tot = (w['hp'] + w['ap']).to_numpy()
+    keep = tot != w['close'].to_numpy()
+    pm, po, ov = pm[keep], po[keep], (tot[keep] > w['close'].to_numpy()[keep]).astype(float)
+    gap, y = po - pm, ov - pm
+    b = float((gap * y).sum() / (gap ** 2).sum())
+    se = float(math.sqrt(((y - b * gap) ** 2).sum() / (len(y) - 1) / (gap ** 2).sum()))
+    br = lambda p: round(float(((p - ov) ** 2).mean()), 4)
+    return {'n': int(len(y)), 'unit': 'prob', 'share': round(b, 3), 'share_se': round(se, 3), 'vs': 'closing price',
+            'brier_ours': br(po), 'brier_close': br(pm), 'sigma': None, 'mae_ours': None, 'mae_close': None}
+
+
+def epl_build(seasons=(2023, 2024, 2025, 2026)):
+    """
+    Premier League over/under 2.5 goals, in probability: our P(over 2.5) from the walk-forward goals model (as in
+    epl_backtest.py) vs the no-vig market price days before kickoff ('opening') and at the close (football-data.co.uk).
+    share = how much of (ours − opening) showed up in results.
+    """
+    import epl_model as m
+    rows = []
+    for season in seasons:
+        df, prev = m.football_data(season), m.football_data(season - 1)
+        raw = pd.read_csv(f'epl_fd_E0_{m.season_code(season)}.csv', encoding='utf-8-sig', on_bad_lines='skip')
+        raw = raw.dropna(subset=['HomeTeam', 'AwayTeam', 'FTHG'])
+        if df.empty or prev.empty or 'AvgC>2.5' not in raw:
+            continue
+        nv = lambda o, u: (1 / o) / (1 / o + 1 / u) if o == o and u == u and o > 1 and u > 1 else np.nan
+        po = {(h, a): (nv(o, u), nv(oc, uc)) for h, a, o, u, oc, uc in
+              zip(raw['HomeTeam'], raw['AwayTeam'], raw['Avg>2.5'], raw['Avg<2.5'], raw['AvgC>2.5'], raw['AvgC<2.5'])}
+        df = df.assign(p_open=[po.get((h, a), (np.nan, np.nan))[0] for h, a in zip(df['home_fd'], df['away_fd'])],
+                       p_close=[po.get((h, a), (np.nan, np.nan))[1] for h, a in zip(df['home_fd'], df['away_fd'])])
+        pstr, _, _ = m._fit(prev, {}, prev['date'].max(), ridge_games=2.0, default=(0.0, 0.0))
+        prior = {t: (a * m.PRIOR_CARRY, d * m.PRIOR_CARRY) for t, (a, d) in pstr.items()}
+        for day in sorted(df['date'].unique())[12:]:
+            st, base, home = m._fit(df[df['date'] < day], prior, day)
+            for g in df[df['date'] == day].itertuples():
+                if g.home not in st or g.away not in st:
+                    continue
+                lh = np.exp(base + home + st[g.home][0] - st[g.away][1])
+                la = np.exp(base + st[g.away][0] - st[g.home][1])
+                mat = m.score_matrix(lh, la)
+                ours = float(sum(mat[i, j] for i in range(mat.shape[0]) for j in range(mat.shape[1]) if i + j > 2.5))
+                rows.append({'season': season, 'ours': ours, 'open': g.p_open, 'close': g.p_close,
+                             'over': float(g.hg + g.ag > 2.5)})
+    w = pd.DataFrame(rows).dropna()
+    gap, y = w['ours'] - w['open'], w['over'] - w['open']
+    b = float((gap * y).sum() / (gap ** 2).sum())
+    se = float(math.sqrt(((y - b * gap) ** 2).sum() / (len(w) - 1) / (gap ** 2).sum()))
+    mv = w['close'] - w['open']
+    sel = (gap.abs() >= 0.03) & (mv.abs() >= 0.01)
+    brier = lambda p: float(((p - w['over']) ** 2).mean())
+    return {'n': int(len(w)), 'seasons': sorted(int(x) for x in w['season'].unique()), 'unit': 'prob', 'line': 2.5,
+            'share': round(b, 3), 'share_se': round(se, 3), 'n_open': int(len(w)),
+            'moved_toward': round(float((np.sign(mv[sel]) == np.sign(gap[sel])).mean()), 3), 'n_moved': int(sel.sum()),
+            'brier_ours': round(brier(w['ours']), 4), 'brier_close': round(brier(w['close']), 4),
+            'brier_open': round(brier(w['open']), 4), 'mae_ours': None, 'mae_close': None}
+
+
+HIST = {'nfl': nfl_hist, 'cfb': cfb_hist, 'cbb': cbb_hist, 'nba': lambda: pro_hist('nba'), 'nhl': lambda: pro_hist('nhl')}
 
 
 def build(sports=('nfl', 'cfb', 'cbb')):
     out = json.load(open(OUT)) if os.path.exists(OUT) else {'sports': {}}
     for sp in sports:
+        if sp == 'epl':
+            out['sports']['epl'] = epl_build()
+            print(f"epl: {out['sports']['epl']}", flush=True)
+            continue
         h = HIST[sp]()
         w = walk_forward(h, sp).dropna(subset=['close'])
+        if sp == 'nhl':
+            out['sports']['nhl'] = nhl_prob(w)
+            print(f"nhl: {out['sports']['nhl']}", flush=True)
+            continue
         tot = w['hp'] + w['ap']
         e_o, e_c = (tot - w['ours']).abs(), (tot - w['close']).abs()
         r = {'n': int(len(w)), 'seasons': sorted(int(s) for s in w['season'].unique()),
@@ -270,7 +365,7 @@ def share(sport):
     return max(0.0, float(ex.calibrated_value(sport, 'total_share', t.get('share', 0.0))))
 
 
-NOTABLE = 3.0        # a total this far from the market is shown even when it doesn't clear −110
+NOTABLE = {'nhl': 0.5}      # a total this far from the market is shown even when it doesn't clear −110 (default 3 points)
 
 
 def half(x):
@@ -286,6 +381,8 @@ def card_row(sport, ours, market):
     t = table(sport)
     if ours is None or ours != ours or market is None or market != market or not t:
         return ''
+    if t.get('unit') == 'prob' or share(sport) < 0.01:      # no value shown in the backtest (NHL, EPL): nothing to price
+        return ''
     b = share(sport)
     fair = market + b * (ours - market)
     from math import erf, sqrt
@@ -297,16 +394,18 @@ def card_row(sport, ours, market):
     over = ours >= market
     p, q = (p_over, p_under) if over else (p_under, p_over)
     ev = p * (100 / 110) - q
-    if ev <= 0 and abs(ours - market) < NOTABLE:
+    if ev <= 0 and abs(ours - market) < NOTABLE.get(sport, 3.0):
         return ''
     cls = 'pos' if ev > 0 else ''
-    tip = f'Fair total {half(fair):g} · {ev * 100:+.1f}¢ per $1 at −110'
-    return (f'<span class="pline"><span class="tag">Total</span>{half(ours):g} vs {market:g} · '
-            f'{"Over" if over else "Under"} <span class="{cls}" title="{theme.esc(tip)}">{p:.1%}</span></span>')
+    side = 'Over' if over else 'Under'
+    tip = (f'Our model says {half(ours):g}. Only part of past gaps with the market showed up in results, so our fair '
+           f'total is {half(fair):g}. {side} {market:g} at −110: {ev * 100:+.1f}¢ per $1.')
+    return (f'<span class="pline" title="{theme.esc(tip)}"><span class="tag">Total</span>Fair {half(fair):g} · '
+            f'{side} {market:g} <span class="{cls}">{p:.1%}</span> · lean {side}</span>')
 
 
 if __name__ == '__main__':
-    build(sys.argv[1:] or ('nfl', 'cfb', 'cbb'))
+    build(sys.argv[1:] or ('nfl', 'cfb', 'cbb', 'nba', 'nhl', 'epl'))
 
 
 def projector(sport, games):

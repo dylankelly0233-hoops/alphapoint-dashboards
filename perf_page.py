@@ -312,6 +312,13 @@ def worth(valn, tots):
     for k, r in ((tots or {}).get('sports') or {}).items():
         if 'share' not in r:
             continue
+        if r.get('unit') == 'prob':           # NHL / EPL over-unders: tested in probability against the price
+            lab = 'over/under 2.5' if k == 'epl' else 'totals'
+            rows += (f'<tr><td class="l">{theme.esc(SPORT_NAMES.get(k, k))} {lab}</td>'
+                     f'<td>{100 * max(0, r["share"]):.0f}% <span class="ci">± {100 * r["share_se"]:.0f}</span></td>'
+                     f'<td colspan="3">our chances vs the market’s price: accuracy (Brier) ours {r["brier_ours"]:.3f}, '
+                     f'market {r["brier_close"]:.3f} <span class="ci">n={r["n"]:,}; lower is better</span> · not priced on cards</td></tr>')
+            continue
         rows += (f'<tr><td class="l">{theme.esc(SPORT_NAMES.get(k, k))} totals</td>'
                  f'<td>{100 * max(0, r["share"]):.0f}% <span class="ci">± {100 * r["share_se"]:.0f}</span></td>'
                  f'<td colspan="3">line moved toward our total {100 * r["moved_toward"]:.0f}% '

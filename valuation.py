@@ -242,3 +242,43 @@ if __name__ == '__main__':
         rebuild_keys([a for a in sys.argv[1:] if a != '--keys'] or SPORTS)
     else:
         build(sys.argv[1:] or SPORTS)
+
+
+# ==========================================
+# moneyline sports (NHL): fair win probability
+# ==========================================
+def ml_share(sport):
+    """Share of our gap vs the opener that showed up in results, from the walk-forward backtest (backtests.json)."""
+    try:
+        d = (json.load(open('backtests.json'))['sports'][sport].get('direction') or {})
+        return max(0.0, float(d.get('realism_open') or 0.0))
+    except (OSError, ValueError, KeyError):
+        return 0.0
+
+
+def ml_line(sport, p_ours, p_mkt, home_ml, away_ml, home, away, name=str):
+    """
+    Moneyline line for the 'Our pricing' block, only when a side's posted price is beaten at our fair probability
+    (market + share × (ours − market)). Empty otherwise — which, with the NHL's small share, is almost always.
+    """
+    import dashboard_theme as theme
+    b = ml_share(sport)
+    if b < 0.01 or any(v is None or v != v for v in (p_ours, p_mkt)):
+        return ''
+    fair = p_mkt + b * (p_ours - p_mkt)
+    best = None
+    for team, p, ml in ((home, fair, home_ml), (away, 1 - fair, away_ml)):
+        try:
+            ml = float(ml)
+        except (TypeError, ValueError):
+            continue
+        payout = ml / 100 if ml > 0 else 100 / -ml
+        ev = p * payout - (1 - p)
+        if ev > 0 and (best is None or ev > best[2]):
+            best = (team, p, ev, ml)
+    if not best:
+        return ''
+    team, p, ev, ml = best
+    tip = f'Fair win chance {p:.1%} ({b:.0%} of our gap with the market counted) · {ev * 100:+.1f}¢ per $1 at {ml:+.0f}'
+    return (f'<span class="pline"><span class="tag">Moneyline</span>{theme.esc(name(team))} {ml:+.0f} wins '
+            f'<span class="pos" title="{theme.esc(tip)}">{p:.1%}</span></span>')

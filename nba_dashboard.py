@@ -40,6 +40,7 @@ import nba_value_metrics as vm
 import situational as sit
 import valuation as val
 import futures as fut
+import totals as tot
 
 # ==========================================
 # 1. CONFIGURATION
@@ -360,8 +361,11 @@ def generate_html(power, metrics, days, info):
             move += ex.why_row([('Ratings', margin - g['hfa']), ('Home court', 0.0 if g['neutral'] else HFA_POINTS)]
                                + [(f'{short.get(t, t)} back-to-back', -p if t == g['home'] else p) for t, p in g['rest_parts']],
                                margin, g['market'], g['home'], g['away'], lambda t: short.get(t, t),
-                               lead='' if g['score'] else val.card_row('nba', margin, g['market'], g['home'], g['away'],
-                                                                       info['val_live'], lambda t: short.get(t, t)))
+                               lead='' if g['score'] else (
+                                   val.card_row('nba', margin, g['market'], g['home'], g['away'], info['val_live'],
+                                                lambda t: short.get(t, t))
+                                   + tot.card_row('nba', info['total_fn'](g['home'], g['away'], g['neutral'])
+                                                  if info.get('total_fn') else np.nan, g.get('total'))))
             mprof = info['mu_prof']
             if g['home'] in mprof and g['away'] in mprof:
                 nm = lambda t: short.get(t, t)
@@ -554,7 +558,14 @@ def main():
     except Exception as e:
         print(f'  ! futures failed: {e}')
         futures_html = '<p class="hint">Futures are unavailable right now.</p>'
-    generate_html(power, metrics, days, {'futures': futures_html, 'val_live': val.live_records('nba'),
+    try:
+        hb = box[box['home'].astype(float) > 0].drop_duplicates('game_id')
+        total_fn = tot.projector('nba', pd.DataFrame({'date': hb['date'], 'home': hb['team'], 'away': hb['opponent'],
+                                                      'hp': hb['pts'], 'ap': hb['opp_pts'], 'neutral': False}))
+    except Exception as e:
+        print(f'  ! totals model failed: {e}')
+        total_fn = None
+    generate_html(power, metrics, days, {'total_fn': total_fn, 'futures': futures_html, 'val_live': val.live_records('nba'),
         'scale': scale, 'weights': weights, 'sag_asof': sag_asof, 'unmatched': {'Sagarin': sag_un, 'TeamRankings': tr_un},
         'history': hist, 'freshness': freshness, 'wire': wire_data, 'inj_cards': {t: d.get('card', []) for t, d in cands.get('teams', {}).items()}, 'market_rows': market_rows,
         'records': vm.records(box), 'results': (box, spreads),

@@ -214,9 +214,9 @@ def _rows(g, short):
             mv = f'{theme.esc(short(g["home"]))} {_pct(g["open"][0])} → {_pct(g["mkt"][0])}{toward}'
         news = ' <span class="newsflag">Big move: often team news</span>' if abs(d) >= NEWS_PCT else ''
         out += f'<div class="lmove">{theme.k("Line")}{mv}{news}</div>'
-    tot = f'ours {g["total_ours"]:.2f} goals'
-    if g['total'] and g['p_over'] is not None:
-        tot += f' · market line {g["total"]:g} · our chance of over {_pct(g["p_over"])}'
+    # Expected goals only: in past seasons our over/under 2.5 chances added nothing to the market's (totals.json
+    # 'epl': none of the gap held up, and the close was more accurate), so no over/under percentage is shown.
+    tot = f'ours {g["total_ours"]:.1f} goals expected' + (f' · market line {g["total"]:g}' if g['total'] else '')
     out += f'<div class="lmove">{theme.k("Total")}{tot}</div>'
     return out
 
