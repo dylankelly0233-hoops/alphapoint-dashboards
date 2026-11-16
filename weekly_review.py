@@ -163,6 +163,13 @@ def summarize(d, sport):
         lines.append(f'  Guard-flagged games: {len(flagged)}, average miss ours '
                      f'{(flagged["result"] - flagged["ours_last"]).abs().mean():.1f} vs close '
                      f'{(flagged["result"] - flagged["market_last"]).abs().mean():.1f}.')
+    # favorite lean (Dylan asked to monitor, 2026-11-16): share of games where our line liked the favorite more than the
+    # market did. Around 50% is balanced; a long run well above that would suggest a bias toward favorites.
+    if sport not in ('nhl', 'epl'):
+        fm = d[(d['market_last'].abs() >= 1) & (d['ours_last'] != d['market_last'])]
+        if len(fm):
+            lean = ((fm['ours_last'] - fm['market_last']) * np.sign(fm['market_last']) > 0).mean()
+            lines.append(f'  Leaned toward the favorite vs the market: {lean:.0%} of {len(fm)} games (about 50% is balanced).')
     moved = d[(d['market_last'] - d['opened']).abs() >= 1.5].dropna(subset=['opened'])
     if len(moved):
         way = (np.sign(moved['result'] - moved['opened']) == np.sign(moved['market_last'] - moved['opened'])).mean()
