@@ -83,7 +83,10 @@ LANDING_CSS = """
 .spotsec { margin-top: 16px; } .spotsec:first-of-type { margin-top: 6px; }
 .spothead { margin: 0; font: 700 16px/1.2 var(--display); text-transform: uppercase; letter-spacing: .6px; }
 .spothint { margin: 2px 0 4px; font-size: 13px; }
-.sedge .edge.slight { opacity: .7; }
+/* Priced value: win chance shaded green by how far it clears what −110 needs */
+.sedge .pv { display: inline-block; font-weight: 700; font-size: 15px; color: var(--pos); padding: 2px 6px; border-radius: 6px; }
+.sedge .pv.strong { background: var(--pos); color: #fff; }
+.sedge .pv.slight { color: var(--pos); opacity: .6; font-weight: 600; }
 .spotsguide p, .spotsguide li, .spotsguide dd { max-width: 75ch; line-height: 1.5; }
 .spotsguide ul, .spotsguide ol { margin: 4px 0 12px; padding-left: 20px; }
 .spotsguide dl.plain { display: block; margin: 0 0 8px; } .spotsguide dl.plain dt { font-weight: 700; margin-top: 8px; }
@@ -345,7 +348,7 @@ def best_spots():
         # shaded by how far it clears; the cents-per-dollar value is in the hover text
         need = (110 / 210) * (1 - best.get('push', 0))
         margin = best['p'] - need
-        cls = 'edge strong' if margin >= 0.03 else 'edge' if margin >= 0.015 else 'edge slight'
+        cls = 'pv strong' if margin >= 0.03 else 'pv' if margin >= 0.015 else 'pv slight'
         tip = f'{best["kind"]} {best["text"]}: wins {100 * best["p"]:.1f}%, needs {100 * need:.1f}% at −110 · about {100 * best["ev"]:+.1f}¢ per $1'
         return _row(s, '<br>'.join(parts), f'<span class="{cls}" title="{theme.esc(tip)}">{100 * best["p"]:.1f}%</span>'
                                             f'<span class="sline">{100 * need:.1f}% needed</span>')
@@ -529,7 +532,8 @@ def spots_guide():
          'disagreement with the market turned out to be real, so that is all we count.</dd>'
          '<dt>Win chance vs. needed</dt><dd>The number on the right of a Priced value row: how often that side wins at '
          'the posted line by our fair number, next to what it takes to break even at standard −110 odds (52.4%, a bit less '
-         'when a push is possible). Darker green = clears it by more. Even the best rows are only a few points over.</dd></dl>'),
+         'when a push is possible). Solid green badge = clears it by 3+ points, green text = 1.5–3, faded = less. Even the '
+         'best rows are only a few points over.</dd></dl>'),
         ('Priced value',
          f'<p>A spread or total where our fair number beats the standard −110 price, <b>only</b> in places where that '
          f'exact rule has already beaten the opening line in past seasons, in both the earlier and later years on its own. '
