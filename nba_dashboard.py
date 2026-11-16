@@ -357,10 +357,11 @@ def generate_html(power, metrics, days, info):
             if not g['score']:
                 move += ex.injury_card_row(info.get('inj_cards'), g['away'], g['home'], lambda t: short.get(t, t))
                 move += ex.liquidity_row(next((x.get('spread') for x in info['market_rows'] if str(x.get('game_id')) == str(g['game_id'])), None), lambda t: short.get(t, t))
-                move += val.card_row('nba', margin, g['market'], g['home'], g['away'], info['val_live'], lambda t: short.get(t, t))
             move += ex.why_row([('Ratings', margin - g['hfa']), ('Home court', 0.0 if g['neutral'] else HFA_POINTS)]
                                + [(f'{short.get(t, t)} back-to-back', -p if t == g['home'] else p) for t, p in g['rest_parts']],
-                               margin, g['market'], g['home'], g['away'], lambda t: short.get(t, t))
+                               margin, g['market'], g['home'], g['away'], lambda t: short.get(t, t),
+                               lead='' if g['score'] else val.card_row('nba', margin, g['market'], g['home'], g['away'],
+                                                                       info['val_live'], lambda t: short.get(t, t)))
             mprof = info['mu_prof']
             if g['home'] in mprof and g['away'] in mprof:
                 nm = lambda t: short.get(t, t)

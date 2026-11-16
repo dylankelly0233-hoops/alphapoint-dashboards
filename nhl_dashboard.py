@@ -462,13 +462,16 @@ def generate_html(power, metrics, days, info):
             pm = g['p_mkt']
             mkt = (_side_text(short(g['home']) if pm >= 0.5 else short(g['away']), pm if pm >= 0.5 else 1 - pm)
                    if pm else '—')
-            tot = (f'<div class="lmove">{theme.k("Total")}ours {g["total_ours"]:.1f}'
-                   + (f' · market {g["total"]:g}' if g['total'] else '') + '</div>')
+            # total: shown inside 'Our pricing' when ours sits half a goal or more from the market (half-goal steps)
+            t_half = round(g['total_ours'] * 2) / 2 if g['total_ours'] == g['total_ours'] else None
+            tot = (f'<span class="pline"><span class="tag">Total</span>{t_half:g} vs {g["total"]:g}</span>'
+                   if t_half is not None and g['total'] and abs(g['total_ours'] - g['total']) >= 0.5 and not g['score'] else '')
             edge, edge_team, edge_pct = _edge_html(g, short)
             hfa_g = 0.0 if g['neutral'] else HFA_GOALS
             why = ex.why_row([('Ratings', g['margin'] - hfa_g - SCALE * g['goalie_adj']), ('Goalies', SCALE * g['goalie_adj']),
-                              ('Home ice', hfa_g)], g['margin'], np.nan, g['home'], g['away'], short, unit=' goals', digits=2)
-            move = (_move_row(g, short) + _goalie_row(g, short) + tot + why
+                              ('Home ice', hfa_g)], g['margin'], np.nan, g['home'], g['away'], short, unit=' goals', digits=2,
+                             lead=tot)
+            move = (_move_row(g, short) + _goalie_row(g, short) + why
                     + ex.rating_confidence(by_src.get(g['home'], {}), by_src.get(g['away'], {}), hfa_g, scale=CONF_SCALE)
                     + (ex.injury_card_row(info.get('inj_cards'), g['away'], g['home'], short) if not g['score'] else ''))
             side = lambda t: {'name': full.get(t, t), 'logo': logo(t), 'rating': info['rating'].get(t, np.nan), 'sd': sd,

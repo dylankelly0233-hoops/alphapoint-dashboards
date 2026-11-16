@@ -667,13 +667,12 @@ def generate_html(p4, vals, sched, week, season_type, info):
             move += ex.injury_card_row(info['wire'].get('items'), r.away, r.home)
         if not r.completed:
             move += ex.liquidity_row(next((x.get('spread') for x in info['market_rows'] if str(x.get('game_id')) == str(r.game_id)), None))
-            if not big:
-                move += val.card_row('cfb', r.margin, mkt_margin, r.home, r.away, info['val_live'])
+        pr = '' if big or r.completed else val.card_row('cfb', r.margin, mkt_margin, r.home, r.away, info['val_live'])
         t_ours = info['total_fn'](r.home, r.away, r.neutral) if info.get('total_fn') else np.nan
         t_mkt = getattr(r, 'total', np.nan)
-        move += tot.card_row('cfb', t_ours, t_mkt)
+        pr += '' if r.completed else tot.card_row('cfb', t_ours, t_mkt)
         move += ex.why_row([('Ratings', r.margin - _hfa(r)), ('Home field', 0.0 if r.neutral else HFA_POINTS),
-                            ('Crowd', (_crowd(r) or {}).get('adj'))], r.margin, mkt_margin, r.home, r.away)
+                            ('Crowd', (_crowd(r) or {}).get('adj'))], r.margin, mkt_margin, r.home, r.away, lead=pr)
         prof = info['mu_prof']
         if r.home in prof and r.away in prof:
             move += mu.card_row(r.game_id, mu.headline(prof, MU_CATS, r.away, r.home, str))

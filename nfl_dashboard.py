@@ -468,11 +468,11 @@ def generate_html(power, vals, sched, week, info):
         if not r.score:
             move += ex.injury_card_row(info.get('inj_cards'), r.away, r.home, lambda t: nick(vm.full_name(t)))
             move += ex.liquidity_row(next((x.get('spread') for x in info['market_rows'] if str(x.get('game_id')) == str(r.game_id)), None))
-            move += val.card_row('nfl', r.margin, r.market, r.home, r.away, info['val_live'], lambda t: nick(vm.full_name(t)))
+        pr = '' if r.score else val.card_row('nfl', r.margin, r.market, r.home, r.away, info['val_live'], lambda t: nick(vm.full_name(t)))
         t_ours = info['total_fn'](r.home, r.away, r.neutral) if info.get('total_fn') else np.nan
-        move += tot.card_row('nfl', t_ours, r.total)
+        pr += '' if r.score else tot.card_row('nfl', t_ours, r.total)
         move += ex.why_row([('Ratings', r.margin - (0.0 if r.neutral else HFA_POINTS)), ('Home field', 0.0 if r.neutral else HFA_POINTS)],
-                           r.margin, r.market, r.home, r.away, lambda t: nick(vm.full_name(t)))
+                           r.margin, r.market, r.home, r.away, lambda t: nick(vm.full_name(t)), lead=pr)
         prof = info['mu_prof']
         if r.home in prof and r.away in prof:
             short = lambda ab: nick(vm.full_name(ab))

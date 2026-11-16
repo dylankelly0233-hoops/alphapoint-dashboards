@@ -270,14 +270,22 @@ def share(sport):
     return max(0.0, float(ex.calibrated_value(sport, 'total_share', t.get('share', 0.0))))
 
 
+NOTABLE = 3.0        # a total this far from the market is shown even when it doesn't clear −110
+
+
+def half(x):
+    return round(x * 2) / 2
+
+
 def card_row(sport, ours, market):
-    """'Total' line for a game card: ours, the market's, fair total and the over/under chance at the posted number."""
+    """
+    Total line for the 'Our pricing' block, only when notable: it clears −110 at our fair total, or ours sits
+    NOTABLE+ points from the market. 'Total 42.5 vs 38.5 · Over 51.6%' (ours rounded to a half point like spreads).
+    """
     import dashboard_theme as theme
     t = table(sport)
-    if ours is None or ours != ours:
+    if ours is None or ours != ours or market is None or market != market or not t:
         return ''
-    if market is None or market != market or not t:
-        return f'<div class="lmove">{theme.k("Total")}ours {ours:.1f}</div>'
     b = share(sport)
     fair = market + b * (ours - market)
     from math import erf, sqrt
@@ -288,11 +296,13 @@ def card_row(sport, ours, market):
     p_under = cdf((market - (0.5 if whole else 0) - fair) / sd)
     over = ours >= market
     p, q = (p_over, p_under) if over else (p_under, p_over)
-    ev = (p * (100 / 110) - q) * 100
-    verdict = (f'<span class="pos">clears −110 by {ev:.1f}¢ per $1</span>' if ev > 0 else
-               '<span class="muted">short of the 52.4% −110 needs</span>')
-    return (f'<div class="lmove">{theme.k("Total")}ours <b>{ours:.1f}</b> · market {market:g} · fair {fair:.1f} · '
-            f'{"Over" if over else "Under"} {p:.1%} · {verdict}</div>')
+    ev = p * (100 / 110) - q
+    if ev <= 0 and abs(ours - market) < NOTABLE:
+        return ''
+    cls = 'pos' if ev > 0 else ''
+    tip = f'Fair total {half(fair):g} · {ev * 100:+.1f}¢ per $1 at −110'
+    return (f'<span class="pline"><span class="tag">Total</span>{half(ours):g} vs {market:g} · '
+            f'{"Over" if over else "Under"} <span class="{cls}" title="{theme.esc(tip)}">{p:.1%}</span></span>')
 
 
 if __name__ == '__main__':

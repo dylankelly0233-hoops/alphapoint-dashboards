@@ -531,14 +531,13 @@ def generate_html(power, metrics, days, info):
             move += ex.rating_confidence(by_src.get(g['home'], {}), by_src.get(g['away'], {}),
                                          g.get('hfa', 0.0 if g['neutral'] else HFA_POINTS), big)
             move += injury_row(info['wire'], g, margin)
-            if not big:
-                move += val.card_row('cbb', margin, g['market'], g['home'], g['away'], info['val_live'])
+            pr = '' if big or g['score'] else val.card_row('cbb', margin, g['market'], g['home'], g['away'], info['val_live'])
             t_ours = info['total_fn'](g['home'], g['away'], g['neutral']) if info.get('total_fn') else np.nan
-            move += tot.card_row('cbb', t_ours, g.get('total', np.nan))
+            pr += '' if g['score'] else tot.card_row('cbb', t_ours, g.get('total', np.nan))
             hfa_all = g.get('hfa', 0.0 if g['neutral'] else HFA_POINTS)
             move += ex.why_row([('Ratings', margin - hfa_all), ('Home court', 0.0 if g['neutral'] else HFA_POINTS),
                                 ('Crowd', (g.get('crowd') or {}).get('adj'))] + list(g.get('spot_parts') or []),
-                               margin, g['market'], g['home'], g['away'])
+                               margin, g['market'], g['home'], g['away'], lead=pr)
             if not g['score']:
                 move += ex.injury_card_row(info['wire'].get('items') if info['wire'].get('mode') == 'curated' else {},
                                            g['away'], g['home'])

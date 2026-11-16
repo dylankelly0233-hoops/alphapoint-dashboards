@@ -197,43 +197,29 @@ def live_records(sport):
 
 
 def card_row(sport, ours, market, home, away, live=None, name=str):
-    """'Value' line for a game card."""
+    """
+    Spread line for the 'Our pricing' block, only when the posted spread clears −110 at our fair line:
+    'Spread LAC +4.5 covers 53.1%' (the fair line, push chance and gap track record are in its hover text).
+    Empty otherwise, and in sports where our gaps haven't shown up in results.
+    """
     import dashboard_theme as theme
-    import extras as ex
     a = assess(sport, ours, market)
-    if not a or a['gap'] < 0.5:
+    if not a or a['gap'] < 0.5 or a['share'] < 0.01 or a['ev'] <= 0:
         return ''
     side = home if a['home_side'] else away
-    if a['share'] < 0.01:          # our gaps haven't shown up in results in this sport: say so instead of a number
-        rec = record(sport, a['gap'], live)
-        extra = (f'<span class="sline">Gaps of {rec["label"]} pts: line moved toward our number {rec["moved"]["rate"]:.0%} '
-                 f'(n {rec["moved"]["n"]:,})</span>') if rec and rec['moved']['n'] else ''
-        return (f'<div class="lmove">{theme.k("Value")}<span class="muted">In our backtest, gaps with the opening line '
-                f'in this sport have not shown up in results, so treat the market number as fair.</span>{extra}</div>')
     pts = theme.round_half(abs(market))
     num = theme.spread_num(pts) if pts >= 0.25 else ''
-    lays = (market > 0) == a['home_side']                     # our side is the favorite at the posted number
+    lays = (market > 0) == a['home_side']
     posted = f'{name(side)} {("−" if lays else "+") + num if num else "PK"}'
-    fair = ex.line_text(name(home), name(away), a['fair'])
-    ev = a['ev'] * 100
-    pct = f'{a["p"]:.1%}'
-    verdict = (f'<span class="pos">clears −110 by {ev:.1f}¢ per $1</span>' if ev > 0 else
-               f'<span class="muted">short of the 52.4% −110 needs</span>')
-    push = f' (push {a["push"]:.0%})' if a['push'] >= 0.01 else ''
+    import extras as ex
+    tip = f'Fair line {ex.line_text(name(home), name(away), a["fair"])}'
+    tip += f' · {a["ev"] * 100:+.1f}¢ per $1 at −110'
     rec = record(sport, a['gap'], live)
-    rtxt = ''
     if rec and rec['moved']['n']:
-        rtxt = (f' · Gaps of {rec["label"]} pts in our backtest: line moved toward our number {rec["moved"]["rate"]:.0%} '
-                f'(n {rec["moved"]["n"]:,})')
-        if rec['live']:
-            rtxt += f', live {rec["live"]["rate"]:.0%} (n {rec["live"]["n"]})'
-    tip = (f'Our number counts for {a["share"]:.0%} of the gap: that is how much of a gap with the opening line has '
-           f'shown up in results historically, so the fair line sits only that far from the market. Cover chance '
-           f'includes key numbers and pushes.')
-    return (f'<div class="lmove">{theme.k("Value")}<span title="{theme.esc(tip)}">Fair {theme.esc(fair)} · '
-            f'{pct} to cover {theme.esc(posted)}'
-            f'{push} · {verdict}</span>'
-            f'<span class="sline">{rtxt.lstrip(" ·")}</span></div>')
+        tip += f' · gaps of {rec["label"]} pts: line moved toward our number {rec["moved"]["rate"]:.0%} in our backtest'
+    push = f' · push {a["push"]:.0%}' if a['push'] >= 0.03 else ''      # a push refunds the stake: it can clear −110 under 52.4%
+    return (f'<span class="pline"><span class="tag">Spread</span>{theme.esc(posted)} covers '
+            f'<span class="pos" title="{theme.esc(tip)}">{a["p"]:.1%}</span>{push}</span>')
 
 
 def rebuild_keys(sports=SPORTS):

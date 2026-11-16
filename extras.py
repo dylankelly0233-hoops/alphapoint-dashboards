@@ -463,21 +463,21 @@ def write_spots(sport, spots):
         json.dump([s for s in spots if s], f, ensure_ascii=False, indent=1)
 
 
-def why_row(parts, ours, market, home, away, name=lambda t: t, unit='', digits=1):
+def why_row(parts, ours, market, home, away, name=lambda t: t, unit='', digits=1, lead=''):
     """
-    'Why' line for a game card: how our line is built. parts: [(label, points to the home side)], the first being the
-    rating gap; they add up to `ours` (home margin). Each part is shown as points toward the team it helps.
+    'Our pricing' block for a game card: any notable spread / total lines (lead, from valuation.card_row and
+    totals.card_row; empty unless they clear −110 or the total gap is big), then how our line is built: parts =
+    [(label, points to the home side)], the first being the rating gap; they add up to `ours` (home margin).
     """
     if _nan(ours):
-        return ''
+        return f'<div class="lmove pricing">{theme.k("Our pricing")}{lead}</div>' if lead else ''
     bits = []
     for lab, v in parts:
         if v is None or _nan(v) or abs(v) < 0.5 / 10 ** digits:
             continue
         team = name(home) if v > 0 else name(away)
         bits.append(f'{theme.esc(lab)} <b>{theme.esc(team)} +{abs(v):.{digits}f}</b>')
-    if not bits:
+    if not bits and not lead:
         return ''
-    total = f'= ours {theme.esc(line_text(name(home), name(away), ours))}' if not unit else         f'= ours {theme.esc(name(home) if ours >= 0 else name(away))} by {abs(ours):.{digits}f}{unit}'
-    mk = '' if _nan(market) else (f' vs market {theme.esc(line_text(name(home), name(away), market))}' if not unit else '')
-    return f'<div class="lmove">{theme.k("Why")}{" · ".join(bits)} {total}{mk}</div>'
+    built = f'<span class="pline">{" · ".join(bits)}</span>' if bits else ''
+    return f'<div class="lmove pricing">{theme.k("Our pricing")}{lead}{built}</div>'

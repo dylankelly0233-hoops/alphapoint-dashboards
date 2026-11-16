@@ -86,6 +86,7 @@ TIPS = {
     'Edge': 'How far our line is from the market, shown as the side our number likes. It is a reason to look closer, not a bet.',
     'Line': 'Where the spread opened (or was first seen) and where it is now. A move toward our number means the market is coming around to it; a move away means it disagrees.',
     'Value': 'What our disagreement with the market is worth. Fair = the market moved only part of the way toward our number: the share of past gaps vs the opening line that showed up in results (it is small, and re-tuned weekly). The cover chance at the posted line counts key numbers (NFL 3 and 7) and pushes; −110 needs 52.4% to break even. The second line is how often gaps this size saw the line move toward our number.',
+    'Our pricing': 'How our line is built, in points toward each team: the rating gap, then home edge and any crowd, game-situation, back-to-back or goalie adjustments. A Spread line appears only when the posted spread clears −110 at our fair line (the market moved part of the way toward our number, by how much of past gaps showed up in results, with key numbers and pushes counted). A Total line appears when our total clears −110 or sits 3+ points from the market. Hover the percentage for the fair number.',
     'Why': 'How our projected line is built, in points toward each team: the rating gap between the teams, then home edge and any game-situation or goalie adjustments. It adds up to our line, so you can see whether a gap with the market comes from the ratings or from an adjustment the market may already know about.',
     'Confidence': 'How much to trust our projected line, based only on whether the rating sources behind it agree: High = they land within 2 points of each other, Medium = 2 to 4 apart, Low = more than 4. It does not account for injuries, news or weather.',
     'Weather': 'Kickoff forecast for outdoor stadiums. Wind of 15+ mph and heavy rain cut into passing and scoring more than anything else the ratings miss.',
@@ -552,6 +553,8 @@ td.pos { color: var(--pos); font-weight: 600; } td.neg { color: var(--neg); font
 .inj b { color: var(--muted); font-weight: 600; } .inj.ret { color: var(--pos, #1a7f37); }
 .lmove .k { font: 700 11px/1 var(--display); letter-spacing: 1px; text-transform: uppercase; margin-right: 8px; }
 .lmove b { color: var(--ink); }
+.lmove.pricing .pline { display: block; margin-top: 2px; } .lmove.pricing .k + .pline { display: inline; margin-top: 0; }
+.lmove .pline .tag { font: 700 10.5px/1 var(--display); letter-spacing: .8px; text-transform: uppercase; color: var(--muted); margin-right: 6px; }
 .newsflag { display: block; margin-top: 4px; padding: 5px 8px; border-radius: 6px; background: var(--neg-bg); color: var(--neg);
             font-weight: 600; font-size: 12.5px; }
 .conf { display: inline-block; margin-right: 6px; padding: 2px 8px; border-radius: 999px; font: 700 12px/1.3 var(--display);
