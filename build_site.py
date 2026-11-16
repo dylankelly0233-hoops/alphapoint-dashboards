@@ -271,11 +271,10 @@ def _day_sport_groups(rows, row_html):
 
 
 def _labels(s):
-    """Tags and trade signals as small labels: context only, they don't put a game on the list."""
+    """Situational tags (teaser leg, bounce-back) as small labels. BUY/SELL signals are left off Best spots (Dylan,
+    2026-11-16): replayed over past seasons they were a coin flip against the line, so they'd contradict the page."""
     tags = ''.join(f'<span class="gtag {"bounce" if t.startswith("Bounce") else "teaser max" if "★" in t else "teaser"}">'
                    f'{theme.esc(t)}</span>' for t, _ in s['tags'])
-    if not any(t.startswith('Teaser') for t, _ in s['tags']):
-        tags += ''.join(f'<span class="pill {sig.lower()}">{theme.esc(team)} {sig}</span>' for team, sig in s['signals'])
     return f'<span class="stags">{tags}</span>' if tags else ''
 
 
@@ -437,8 +436,8 @@ INFO = [
                        'basketball: Priced value (lines that clear −110 at our fair number, only in markets where that rule '
                        'won more than −110 needs when replayed on past seasons; re-tested monthly), NFL teaser legs, and '
                        'a Line-move watch (games in a gap size whose line has moved toward our number most of the time). '
-                       'BUY/SELL signals and the bounce-back tag show as labels but no longer put a game on the list: '
-                       'replayed over past seasons, the signals were a coin flip against the line. The NHL and Premier League '
+                       'BUY/SELL signals are not shown here (replayed over past seasons they were a coin flip against the '
+                       'line); the bounce-back tag shows as a label only. The NHL and Premier League '
                        'return once something there shows a real edge.'),
         ('Bounce-back (CFB)', 'An away team coming off a loss by 28+ points. In a 2016–25 backtest these teams covered 55.4% '
                               'of 739 games.'),
