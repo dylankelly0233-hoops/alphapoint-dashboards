@@ -83,6 +83,10 @@ LANDING_CSS = """
 .spotsec { margin-top: 16px; } .spotsec:first-of-type { margin-top: 6px; }
 .spothead { margin: 0; font: 700 16px/1.2 var(--display); text-transform: uppercase; letter-spacing: .6px; }
 .spothint { margin: 2px 0 4px; font-size: 13px; }
+.spotsguide p, .spotsguide li, .spotsguide dd { max-width: 75ch; line-height: 1.5; }
+.spotsguide ul, .spotsguide ol { margin: 4px 0 12px; padding-left: 20px; }
+.spotsguide dl.plain { display: block; margin: 0 0 8px; } .spotsguide dl.plain dt { font-weight: 700; margin-top: 8px; }
+.spotsguide dl.plain dd { margin: 2px 0 0; }
 .sproof { display: block; font-size: 12px; color: var(--muted); margin-top: 2px; }
 .spotsport { margin: 10px 0 0; padding: 4px 6px 2px; font: 700 12px/1.2 var(--display); letter-spacing: 1px; text-transform: uppercase;
              color: var(--muted); }
@@ -362,21 +366,17 @@ def best_spots():
         return f'<div class="spotsec"><h3 class="spothead">{title}</h3><p class="hint spothint">{hint}</p>{body}</div>'
 
     return ('<section class="card spots"><div class="spots-head"><h2>Best spots</h2>'
-            '<span class="hint">Only what has held up in testing · next 7 days · NFL, college football, NBA, college basketball'
+            '<span class="hint">Only edges that held up in testing · next 7 days · '
+            '<a href="#spotsguide" onclick="showTab(\'spotsguide\'); window.scrollTo(0, 0)">How this works →</a>'
             '</span></div>'
-            + section('Priced value', 'Lines that clear −110 at our fair number, only in spots where that rule beat the '
-                      'opening line in both halves of past seasons: ' + proven_list() + '. Right: cents per $1 at −110. '
-                      'Each row shows that spot’s past record vs the opener; "early edge" = usually gone by the close, '
-                      'so compare the opener shown with the line you can get.',
-                      priced, priced_row, 'Nothing in a proven spot clears −110 right now.')
-            + section('NFL teaser legs', 'Underdogs of +1.5 to +3 with a total of 46 or lower or a division game: about 77% '
-                      'of legs out of sample (2015–25).', teasers, teaser_row, 'No teaser legs this week.')
-            + section('Proven systems', 'Simple situational rules that beat the opening line in both halves of past '
-                      'seasons (re-tested monthly; "tentative" = only just cleared the bar). They show whatever our line says.',
+            + section('Priced value', 'Our fair number beats −110 here, in a spot that has beaten the opening line before. '
+                      'Best early in the week.', priced, priced_row, 'Nothing in a proven spot clears −110 right now.')
+            + section('NFL teaser legs', 'Underdogs that fit our 6-point teaser rules. About 77% of legs won.',
+                      teasers, teaser_row, 'No teaser legs this week.')
+            + section('Proven systems', 'Simple situations that have beaten the line in past seasons.',
                       systems, system_row, 'No games fit a proven system this week.')
-            + section('Line-move watch', 'Our number is far enough from the market that, in past seasons, the line moved '
-                      'toward ours most of the time. A timing note, not a value claim.', watch, watch_row,
-                      'No games in a gap size with a strong line-move record.')
+            + section('Line-move watch', 'Our number is far from the market; lines like this usually moved our way. '
+                      'A timing note, not a value call.', watch, watch_row, 'Nothing to watch right now.')
             + '</section>')
 
 
@@ -495,6 +495,67 @@ def run(script):
     return r.returncode == 0
 
 
+def spots_guide():
+    """'Best spots explained': what each section means, in plain English, with today's proven list."""
+    try:
+        sy = json.load(open(os.path.join(HERE, 'system_test.json'), encoding='utf-8')).get('systems', {})
+    except (OSError, ValueError):
+        sy = {}
+    systems = [(SPORT_LABEL.get(sp, sp.upper()), r['label'].split(' (')[0].split(', judged')[0], r)
+               for sp, rs in sy.items() for r in rs.values() if r.get('passed')]
+    sys_items = ''.join(
+        f'<li><b>{theme.esc(sp)}:</b> {theme.esc(lab)}. {100 * r[r.get("bench", "open")]["all"]["rate"]:.0f}% of '
+        f'{r[r.get("bench", "open")]["all"]["n"]:,} past games against the '
+        f'{"opening" if r.get("bench", "open") == "open" else "closing"} line'
+        f'{" (tentative: only just passed)" if r.get("tentative") else ""}.</li>' for sp, lab, r in systems) or '<li>None right now.</li>'
+    cards = [
+        ('What this is',
+         '<p>Best spots lists upcoming games where our research has found something that <b>held up when we tested it on '
+         'past seasons</b>. It is research, not picks: it tells you where the numbers have historically pointed, not what '
+         'to bet. Everything here is re-tested every month; anything that stops holding up drops off on its own.</p>'),
+        ('Four words you will see',
+         '<dl class="plain"><dt>The opener</dt><dd>The first line posted for a game. Most of our edges show up against it '
+         'and fade as the line moves toward the final ("closing") number.</dd>'
+         '<dt>Early edge</dt><dd>The edge has usually been gone by kickoff. Compare the opener shown on the row with the '
+         'line you can get now: the closer they are, the more of the edge is left.</dd>'
+         '<dt>Fair number</dt><dd>Our line, moved most of the way back toward the market. In the past only part of a '
+         'disagreement with the market turned out to be real, so that is all we count.</dd>'
+         '<dt>Cents per $1</dt><dd>What a $1 bet at standard −110 odds was worth on average, at our fair number. '
+         '+3¢ means about 3 cents back per dollar over many bets, not a sure thing on any one.</dd></dl>'),
+        ('Priced value',
+         f'<p>A spread or total where our fair number beats the standard −110 price, <b>only</b> in places where that '
+         f'exact rule has already beaten the opening line in past seasons, in both the earlier and later years on its own. '
+         f'Right now that is: {theme.esc(proven_list())}.</p><p>Each row shows the opener and that spot\'s past record, '
+         f'for example "CFB conference spreads: 54% vs opener (1,198)".</p>'),
+        ('NFL teaser legs',
+         '<p>Six-point teasers on NFL underdogs of +1.5 to +3, in games with a total of 46 or lower or a division '
+         'matchup. Teasing them through 3 and 7 won about 77% of legs in years the rule was not built on (2015–25). '
+         'A two-team teaser at −120 needs each leg to win about 74%, so 77% is a real but modest edge.</p>'),
+        ('Proven systems',
+         f'<p>Simple, fixed situations ("unders when the wind is 15+ mph") written down before testing and checked on '
+         f'every past season we have. A system shows up here only if it beat the line in both the earlier and later years. '
+         f'They show whatever our own line says. Passing now:</p><ul>{sys_items}</ul>'),
+        ('Line-move watch',
+         '<p>Our number is far enough from the market that, in past seasons, the line moved toward ours most of the time '
+         '(NFL gaps of 2+ points, college basketball gaps of 2–4). It is about timing: if you like that side, earlier has '
+         'usually been better. It is not a claim that the side wins.</p>'),
+        ('What is not here, and why',
+         '<p><b>BUY / SELL tags</b> (teams winning more or less than their play) are on the team pages but not here: replayed '
+         'on past seasons they won about 50% against the line. <b>The NHL and Premier League</b> are off until something '
+         'there passes the same tests; two ideas are close and being re-tested monthly. <b>Games we flag</b> (a big line '
+         'move that usually means news, or a lopsided college mismatch) stay off Priced value.</p>'),
+        ('How to use it',
+         '<ol><li>Start early: most edges here are strongest against the opener.</li><li>Check the line you can get against '
+         'the opener on the row.</li><li>Tap the game for its card: injuries, weather and how our line is built.</li>'
+         '<li>Treat each row as a reason to look closer, not a bet. Even the best of these win 55–57% of the time.</li></ol>'),
+    ]
+    body = ''.join(f'<section class="card"><h3>{theme.esc(t)}</h3>{c}</section>' for t, c in cards)
+    return f'<div class="info spotsguide">{body}</div>'
+
+
+SPORT_LABEL = {'nfl': 'NFL', 'cfb': 'College football', 'cbb': 'College basketball', 'nba': 'NBA', 'nhl': 'NHL', 'epl': 'Premier League'}
+
+
 def landing(results):
     tiles = ''
     for page, _, _, abbr, name, coverage in DASHBOARDS:
@@ -512,7 +573,8 @@ def landing(results):
                              subtitle='Power ratings, value metrics and market data for the NFL, college football, '
                                       'college basketball, the NBA, the NHL, MLB, the Premier League and PGA Tour golf. Research, not picks.',
                              meta_items=[('Updated', updated)],
-                             tabs=[('home', 'Dashboards', home), ('performance', 'Model performance', perf_tab()),
+                             tabs=[('home', 'Dashboards', home), ('spotsguide', 'Best spots explained', spots_guide()),
+                                   ('performance', 'Model performance', perf_tab()),
                                    ('guide', 'How to use', guide()), ('info', 'Info', info)],
                              footer='AlphaPoint Sports · Not financial or gambling advice')
     page = page.replace('</style>', LANDING_CSS + perf_page.PERF_CSS + '</style>', 1)
