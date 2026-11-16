@@ -7,3 +7,7 @@ date,sport,setting,old,new,games,why
 2026-11-12,cbb,hfa,3.0,2.7,135,market lines imply spread 1.22x and home edge 2.60 over 135 games
 2026-11-12,nba,scale,1.0,1.046,49,market lines imply spread 1.09x and home edge 1.21 over 49 games
 2026-11-12,nba,hfa,2.4,1.9,49,market lines imply spread 1.09x and home edge 1.21 over 49 games
+2026-11-16,nhl,scale,1.0,0.998,51,market lines imply spread 1.00x and home edge 0.21 over 51 games
+2026-11-16,nhl,hfa,0.28,0.25,51,market lines imply spread 1.00x and home edge 0.21 over 51 games
+2026-11-16,nhl,tie_boost,1.35,1.4,,22.5% of 325 games reached overtime
+2026-11-16,epl,dc_rho,-0.08,-0.066,,27.0% of 100 matches drawn

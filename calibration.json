@@ -18,5 +18,16 @@
     "scale": 1.046,
     "hfa": 1.9,
     "market_updated": "2026-11-12T00:32+00:00"
+  },
+  "nhl": {
+    "scale": 0.998,
+    "hfa": 0.25,
+    "market_updated": "2026-11-16T00:47+00:00",
+    "tie_boost_updated": "2026-11-16T00:47+00:00",
+    "tie_boost": 1.4
+  },
+  "epl": {
+    "dc_rho_updated": "2026-11-16T00:47+00:00",
+    "dc_rho": -0.066
   }
 }
