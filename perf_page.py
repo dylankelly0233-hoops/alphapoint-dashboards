@@ -341,10 +341,13 @@ def systems_table(st):
         for key, r in systems.items():
             if 'open' not in r:
                 continue
-            o, c = (r['open'] or {}).get('all') or {}, (r.get('close') or {}).get('all') or {}
+            o, c = (r.get('open') or {}).get('all') or {}, (r.get('close') or {}).get('all') or {}
             ok = 'Passes' + (' (tentative)' if r.get('tentative') else '') if r.get('passed') else 'No'
+            # NHL / EPL systems are scored as money returned per bet at the market price (cover rates don't apply)
+            cell = (lambda x: (f'{100 * x["roi"]:+.1f}% return <span class="ci">n={x["n"]} · {100 * x["lo"]:+.0f} to '
+                               f'{100 * x["hi"]:+.0f}%</span>' if x.get('n') else '—')) if r.get('unit') == 'roi' else                    (lambda x: _pct(x) if x.get('n') else '—')
             rows += (f'<tr><td class="l">{theme.esc(SPORT_NAMES.get(sp, sp.upper()))}</td><td class="l">{theme.esc(r["label"])}</td>'
-                     f'<td>{_pct(o) if o.get("n") else "—"}</td><td>{_pct(c) if c.get("n") else "—"}</td>'
+                     f'<td>{cell(o)}</td><td>{cell(c)}</td>'
                      f'<td class="{"good" if r.get("passed") else "muted"}">{ok}</td></tr>')
     if not rows:
         return ''

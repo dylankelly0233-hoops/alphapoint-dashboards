@@ -30,7 +30,8 @@ STEPS = [('Game situations', ['situational_research.py']), ('Spread value tables
          ('NBA/NHL totals data', ['pro_totals_fetch.py', 'nba', 'nhl']), ('Totals backtests', ['totals.py']),
          ('BUY/SELL tag backtest', ['tag_backtest.py']), ('Rating backtests', ['backtests.py']),
          ('Priced value end-to-end test', ['priced_value_test.py']), ('Slice test (Best spots)', ['segment_test.py']),
-         ('Betting systems', ['system_test.py'])]
+         ('Betting systems', ['system_test.py']), ('NHL systems', ['nhl_system_test.py']),
+         ('CFB weather system', ['cfb_weather_test.py']), ('EPL systems', ['epl_system_test.py'])]
 OUTPUTS = ['valuation.json', 'totals.json', 'totals_prior.json', 'tag_backtest.json', 'backtests.json', 'priced_value_test.json',
            'segment_test.json', 'system_test.json']
 NAMES = {'nfl': 'NFL', 'cfb': 'CFB', 'cbb': 'CBB', 'nba': 'NBA', 'nhl': 'NHL', 'epl': 'EPL'}

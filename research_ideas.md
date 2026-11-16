@@ -17,6 +17,12 @@ situational_research.py, test it, and (if it clears the bar) wire it in. Tested 
 - MLB (phase 2, Feb 2027): probable starters, bullpen fatigue, park/weather; run lines and totals tested out of sample
   against ESPN pickcenter history from day one.
 
+- NBA player values from box scores (per-minute production) instead of plus/minus: the plus/minus version (Nov 2026)
+  didn't improve lines even with hindsight absences.
+- Watch list (promising, not yet proven; re-tested monthly): NHL backing the team facing a backup goalie (+8.6% at the
+  no-vig close, 405 games); EPL underdogs getting 1.5+ goals on the Asian handicap (+8.4% pre-match, 298 bets);
+  CFB high-total unders and conference home underdogs; CBB Power 4 totals.
+
 Done (see situational_research.md for the latest numbers):
 - Nov 2026: crowd size (CBB, CFB: in use); senior night, visitor road trips, altitude (CBB: in use); back-to-backs (NBA: in use;
   NHL: real, but left out because the goalie adjustment already covers much of it); students away, Thanksgiving, finals, rest days,

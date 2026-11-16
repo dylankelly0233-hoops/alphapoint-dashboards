@@ -385,7 +385,8 @@ def run(sport):
 
 
 def main(sports=None):
-    res = json.load(open(OUT)) if os.path.exists(OUT) and sports else {'systems': {}}
+    # update in place: NHL (nhl_system_test.py) and CFB wind (cfb_weather_test.py) write their own entries here
+    res = json.load(open(OUT)) if os.path.exists(OUT) else {'systems': {}}
     for sp in sports or LOAD:
         try:
             res['systems'][sp] = run(sp)
