@@ -1,12 +1,12 @@
 {
  "sport": "nba",
- "week": 20261115,
- "generated": "2026-11-15T19:54:53-05:00",
+ "week": 20261116,
+ "generated": "2026-11-16T11:11:43-05:00",
  "movers": [
   {
    "team": "CLE",
    "tag": "CLUSTER",
-   "text": "C Evan Mobley (32.1 mpg, toe) and G Sam Merrill (23.1, elbow) out Monday vs CHI; G Peyton Watson (28.0) and G Jaylon Tyson (23.9) questionable (7:50 PM ET).",
+   "text": "C Evan Mobley (32.1 mpg, toe) and G Sam Merrill (23.1, elbow) out Monday vs CHI; G Peyton Watson (28.0) and G Jaylon Tyson (23.9) questionable (report as of 11 AM ET).",
    "source": "ESPN",
    "url": "https://www.espn.com/nba/injuries",
    "date": "2026-11-15"
@@ -14,7 +14,15 @@
   {
    "team": "NO",
    "tag": "CLUSTER",
-   "text": "F Trey Murphy III (32.8 mpg, knees) and F Trendon Watford (ankle) out Monday vs GS; G Dejounte Murray (31.4, ankle) missed Friday and is listed out.",
+   "text": "F Trey Murphy III (32.8 mpg, knees), F Trendon Watford (17.8, ankle) and G Bennedict Mathurin (foot) out Monday vs GS; G Dejounte Murray (31.4, ankle) also listed out.",
+   "source": "ESPN",
+   "url": "https://www.espn.com/nba/injuries",
+   "date": "2026-11-15"
+  },
+  {
+   "team": "MEM",
+   "tag": "CLUSTER",
+   "text": "G Ty Jerome (30.6 mpg, hip) and F GG Jackson (15.0, foot) out Monday vs WSH; C Zach Edey (20.8, ankle) and C Isaiah Stewart (18.1, illness) questionable.",
    "source": "ESPN",
    "url": "https://www.espn.com/nba/injuries",
    "date": "2026-11-15"
@@ -22,15 +30,7 @@
   {
    "team": "GS",
    "tag": "KEY",
-   "text": "G Stephen Curry (26.5 mpg) has an oblique abdominal tear and will be re-evaluated in two weeks (Shams Charania, Nov 12).",
-   "source": "ESPN",
-   "url": "https://www.espn.com/nba/injuries",
-   "date": "2026-11-12"
-  },
-  {
-   "team": "MEM",
-   "tag": "KEY",
-   "text": "G Ty Jerome (30.6 mpg, hip) ruled out Monday vs WSH; GG Jackson (foot) also out (ESPN report, 7:50 PM ET Nov 15).",
+   "text": "G Stephen Curry (26.5 mpg) is out with an oblique tear, to be re-evaluated about two weeks from Nov 12; F Gui Santos (18.7) questionable Monday vs NO (ankle).",
    "source": "ESPN",
    "url": "https://www.espn.com/nba/injuries",
    "date": "2026-11-15"
@@ -38,10 +38,10 @@
   {
    "team": "CHI",
    "tag": "KEY",
-   "text": "F Caleb Wilson (30.7 mpg, hand) expected to miss four to six weeks (Shams Charania, Nov 12).",
+   "text": "F Caleb Wilson (30.7 mpg) out 4-6 weeks with a hand injury; F Jalen Smith (24.6, finger) questionable Monday at CLE.",
    "source": "ESPN",
    "url": "https://www.espn.com/nba/injuries",
-   "date": "2026-11-12"
+   "date": "2026-11-15"
   }
  ],
  "teams": {
@@ -49,7 +49,7 @@
    {
     "team": "CLE",
     "tag": "CLUSTER",
-    "text": "C Evan Mobley (32.1 mpg, toe) and G Sam Merrill (23.1, elbow) out Monday vs CHI; G Peyton Watson (28.0) and G Jaylon Tyson (23.9) questionable (7:50 PM ET).",
+    "text": "C Evan Mobley (32.1 mpg, toe) and G Sam Merrill (23.1, elbow) out Monday vs CHI; G Peyton Watson (28.0) and G Jaylon Tyson (23.9) questionable (report as of 11 AM ET).",
     "source": "ESPN",
     "url": "https://www.espn.com/nba/injuries",
     "date": "2026-11-15"
@@ -59,7 +59,17 @@
    {
     "team": "NO",
     "tag": "CLUSTER",
-    "text": "F Trey Murphy III (32.8 mpg, knees) and F Trendon Watford (ankle) out Monday vs GS; G Dejounte Murray (31.4, ankle) missed Friday and is listed out.",
+    "text": "F Trey Murphy III (32.8 mpg, knees), F Trendon Watford (17.8, ankle) and G Bennedict Mathurin (foot) out Monday vs GS; G Dejounte Murray (31.4, ankle) also listed out.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nba/injuries",
+    "date": "2026-11-15"
+   }
+  ],
+  "MEM": [
+   {
+    "team": "MEM",
+    "tag": "CLUSTER",
+    "text": "G Ty Jerome (30.6 mpg, hip) and F GG Jackson (15.0, foot) out Monday vs WSH; C Zach Edey (20.8, ankle) and C Isaiah Stewart (18.1, illness) questionable.",
     "source": "ESPN",
     "url": "https://www.espn.com/nba/injuries",
     "date": "2026-11-15"
@@ -69,25 +79,7 @@
    {
     "team": "GS",
     "tag": "KEY",
-    "text": "G Stephen Curry (26.5 mpg) has an oblique abdominal tear and will be re-evaluated in two weeks (Shams Charania, Nov 12).",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nba/injuries",
-    "date": "2026-11-12"
-   }
-  ],
-  "MEM": [
-   {
-    "team": "MEM",
-    "tag": "KEY",
-    "text": "G Ty Jerome (30.6 mpg, hip) ruled out Monday vs WSH; GG Jackson (foot) also out (ESPN report, 7:50 PM ET Nov 15).",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nba/injuries",
-    "date": "2026-11-15"
-   },
-   {
-    "team": "MEM",
-    "tag": "RETURNING",
-    "text": "C Zach Edey (20.8 mpg, ankle) missed the last game and is questionable Monday vs WSH; C Isaiah Stewart (illness) also questionable.",
+    "text": "G Stephen Curry (26.5 mpg) is out with an oblique tear, to be re-evaluated about two weeks from Nov 12; F Gui Santos (18.7) questionable Monday vs NO (ankle).",
     "source": "ESPN",
     "url": "https://www.espn.com/nba/injuries",
     "date": "2026-11-15"
@@ -97,95 +89,7 @@
    {
     "team": "CHI",
     "tag": "KEY",
-    "text": "F Caleb Wilson (30.7 mpg, hand) expected to miss four to six weeks (Shams Charania, Nov 12).",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nba/injuries",
-    "date": "2026-11-12"
-   },
-   {
-    "team": "CHI",
-    "tag": "RETURNING",
-    "text": "F Jalen Smith (24.6 mpg, finger) missed the last game and is questionable Monday vs CLE.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nba/injuries",
-    "date": "2026-11-15"
-   }
-  ],
-  "UTAH": [
-   {
-    "team": "UTAH",
-    "tag": "CLUSTER",
-    "text": "F Lauri Markkanen (hand fracture, out at least a month) and C Jaxson Hayes (24.0 mpg, knee) out; Hayes was ruled out Sunday vs SA.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nba/injuries",
-    "date": "2026-11-15"
-   }
-  ],
-  "CHA": [
-   {
-    "team": "CHA",
-    "tag": "KEY",
-    "text": "G Dennis Schroder (30.0 mpg) has a left hamstring strain; to be re-evaluated about two weeks from Nov 8.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nba/injuries",
-    "date": "2026-11-08"
-   }
-  ],
-  "IND": [
-   {
-    "team": "IND",
-    "tag": "CLUSTER",
-    "text": "G Tyrese Haliburton (33.0 mpg, hamstring) out at least 10 more days as of Nov 11; G Andrew Nembhard (33.4, hip) ruled out Sunday vs PHI.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nba/injuries",
-    "date": "2026-11-15"
-   }
-  ],
-  "PHI": [
-   {
-    "team": "PHI",
-    "tag": "KEY",
-    "text": "C Joel Embiid (31.5 mpg, right foot injury management) ruled out Sunday vs IND; status for Brooklyn not yet listed.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nba/injuries",
-    "date": "2026-11-15"
-   }
-  ],
-  "SAC": [
-   {
-    "team": "SAC",
-    "tag": "KEY",
-    "text": "F De'Andre Hunter (32.5 mpg, hip) questionable and F Precious Achiuwa (26.4, ankle) out Sunday vs OKC.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nba/injuries",
-    "date": "2026-11-16"
-   }
-  ],
-  "LAL": [
-   {
-    "team": "LAL",
-    "tag": "KEY",
-    "text": "G Austin Reaves (35.2 mpg, heel) ruled out Sunday vs PHX; status for Charlotte not yet listed.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nba/injuries",
-    "date": "2026-11-15"
-   }
-  ],
-  "HOU": [
-   {
-    "team": "HOU",
-    "tag": "CLUSTER",
-    "text": "G Fred VanVleet (30.5 mpg, knee management) ruled out Sunday vs WSH; G Marcus Smart (21.3) serving a three-game suspension (from Nov 12).",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nba/injuries",
-    "date": "2026-11-14"
-   }
-  ],
-  "SA": [
-   {
-    "team": "SA",
-    "tag": "KEY",
-    "text": "G De'Aaron Fox (28.6 mpg, hip) ruled out Sunday vs UTAH; status for Detroit not yet listed.",
+    "text": "F Caleb Wilson (30.7 mpg) out 4-6 weeks with a hand injury; F Jalen Smith (24.6, finger) questionable Monday at CLE.",
     "source": "ESPN",
     "url": "https://www.espn.com/nba/injuries",
     "date": "2026-11-15"
@@ -195,10 +99,50 @@
    {
     "team": "MIA",
     "tag": "KEY",
-    "text": "G Pelle Larsson (29.5 mpg, illness) missed the last game and is questionable Monday vs HOU.",
+    "text": "G Pelle Larsson (29.5 mpg) is questionable Monday vs HOU with an illness after missing the last game.",
     "source": "ESPN",
     "url": "https://www.espn.com/nba/injuries",
     "date": "2026-11-15"
+   }
+  ],
+  "HOU": [
+   {
+    "team": "HOU",
+    "tag": "KEY",
+    "text": "G Fred VanVleet (30.5 mpg) sat Sunday (right knee management); G Marcus Smart (21.3) serving a three-game suspension announced Nov 12.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nba/injuries",
+    "date": "2026-11-16"
+   }
+  ],
+  "PHI": [
+   {
+    "team": "PHI",
+    "tag": "KEY",
+    "text": "C Joel Embiid (31.5 mpg) sat Sunday vs IND (right foot management); no status yet for Monday at BKN.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nba/injuries",
+    "date": "2026-11-15"
+   }
+  ],
+  "WSH": [
+   {
+    "team": "WSH",
+    "tag": "KEY",
+    "text": "G Tre Johnson (23.6 mpg) missed Sunday vs HOU with a back injury; no status yet for Monday vs MEM.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nba/injuries",
+    "date": "2026-11-16"
+   }
+  ],
+  "UTAH": [
+   {
+    "team": "UTAH",
+    "tag": "KEY",
+    "text": "F Lauri Markkanen (30.9 mpg) out at least a month with a non-displaced right hand fracture (Nov 11).",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nba/injuries",
+    "date": "2026-11-11"
    }
   ]
  }
