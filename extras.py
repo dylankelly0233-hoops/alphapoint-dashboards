@@ -434,7 +434,8 @@ def team_modal(data):
 # ==========================================
 # BEST SPOTS (home page feed)
 # ==========================================
-def spot(sport, page, kick, away, home, ours, market, tags=(), signals=(), opened=None, lopsided_game=False, tbd=False):
+def spot(sport, page, kick, away, home, ours, market, tags=(), signals=(), opened=None, lopsided_game=False, tbd=False,
+         key=None, total=(None, None)):
     """
     One upcoming game for the home page. ours / market = home margins; tags = [(label, team the tag favors)];
     signals = [(team, 'BUY'|'SELL')]. opened / lopsided_game set the guard flags ('news', 'lopsided').
@@ -455,7 +456,15 @@ def spot(sport, page, kick, away, home, ours, market, tags=(), signals=(), opene
             'edge': None if edge is None else round(abs(edge), 1),
             'edge_side': None if edge is None or abs(edge) < theme.EDGE_MIN else (home if edge > 0 else away),
             'tags': [list(t) for t in tags], 'signals': [list(s) for s in signals if s[1]],
-            'flags': (['news'] if news_move(opened, market) else []) + (['lopsided'] if lopsided_game else [])}
+            'flags': (['news'] if news_move(opened, market) else []) + (['lopsided'] if lopsided_game else []),
+            # key = valuation's sport code: lines that clear −110 at our fair number, and the line-move watch
+            'priced': [] if not key or lopsided_game else _val().priced(key, ours, market, home, away, *total),
+            'watch': None if not key or lopsided_game else _val().watch(key, ours, market)}
+
+
+def _val():
+    import valuation
+    return valuation
 
 
 def write_spots(sport, spots):

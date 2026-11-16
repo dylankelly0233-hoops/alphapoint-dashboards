@@ -590,7 +590,7 @@ def generate_html(power, metrics, days, info):
                                      if g['home'] in mprof and g['away'] in mprof else None}})
             spots.append(ex.spot('CBB', 'cbb.html#games', g['kick'], g['away'], g['home'], margin, g['market'], [],
                                  [(t, _signal(comp.get(t), games_played.get(t, 0))) for t in (g['away'], g['home'])],
-                                 info['opened'].get(g['game_id']), big))
+                                 info['opened'].get(g['game_id']), big, key='cbb', total=(t_ours, g.get('total'))))
         sections += (f'<div class="sechead"><h2>{day.strftime("%A, %b %d").replace(" 0", " ")}</h2>'
                      f'<span class="hint">{len(games)} game{"" if len(games) == 1 else "s"}</span></div>'
                      f'<div class="games">{cards}</div>')

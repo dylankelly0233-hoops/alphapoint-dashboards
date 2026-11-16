@@ -372,6 +372,25 @@ def half(x):
     return round(x * 2) / 2
 
 
+def assess(sport, ours, market):
+    """Fair total, the side our number leans to, its chance at the posted total and EV at −110; None if not priced."""
+    t = table(sport)
+    if ours is None or ours != ours or market is None or market != market or not t:
+        return None
+    if t.get('unit') == 'prob' or share(sport) < 0.01:
+        return None
+    fair = market + share(sport) * (ours - market)
+    from math import erf, sqrt
+    cdf = lambda x: 0.5 * (1 + erf(x / sqrt(2)))
+    sd = t['sigma']
+    whole = abs(market - round(market)) < 1e-9
+    p_over = 1 - cdf((market + (0.5 if whole else 0) - fair) / sd)
+    p_under = cdf((market - (0.5 if whole else 0) - fair) / sd)
+    over = ours >= market
+    p, q = (p_over, p_under) if over else (p_under, p_over)
+    return {'fair': fair, 'over': over, 'p': p, 'ev': p * (100 / 110) - q}
+
+
 def card_row(sport, ours, market):
     """
     Total line for the 'Our pricing' block, only when notable: it clears −110 at our fair total, or ours sits

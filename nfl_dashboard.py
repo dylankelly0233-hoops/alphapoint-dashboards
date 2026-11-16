@@ -493,7 +493,7 @@ def generate_html(power, vals, sched, week, info):
         spots.append(ex.spot('NFL', 'nfl.html#sched', r.kick, nick(away), nick(home), r.margin, r.market,
                              [tag_label] if tag_label else [],
                              [(nick(away), sig(r.away_value)), (nick(home), sig(r.home_value))],
-                             info['opened'].get(str(r.game_id))))
+                             info['opened'].get(str(r.game_id)), key='nfl', total=(t_ours, r.total)))
         card = theme.game_card(theme.kick_text(r.kick), 'Neutral site' if r.neutral else '',
                                side(r.away, away, r.away_value), side(r.home, home, r.home_value),
                                proj, mkt, r.score,

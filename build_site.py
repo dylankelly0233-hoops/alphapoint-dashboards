@@ -80,6 +80,9 @@ LANDING_CSS = """
            letter-spacing: .6px; border-bottom: 2px solid var(--line); }
 .spotday span { font: 500 12px/1 var(--body, inherit); text-transform: none; letter-spacing: 0; color: var(--muted); margin-left: 6px; }
 .spotnone { margin: 10px 6px 0; }
+.spotsec { margin-top: 16px; } .spotsec:first-of-type { margin-top: 6px; }
+.spothead { margin: 0; font: 700 16px/1.2 var(--display); text-transform: uppercase; letter-spacing: .6px; }
+.spothint { margin: 2px 0 4px; font-size: 13px; }
 .spotsport { margin: 10px 0 0; padding: 4px 6px 2px; font: 700 12px/1.2 var(--display); letter-spacing: 1px; text-transform: uppercase;
              color: var(--muted); }
 .spotsport span { font-weight: 500; margin-left: 4px; }
@@ -176,31 +179,6 @@ def guide():
             f'<div class="example"><span class="label">Example game (made-up numbers)</span>{card}'
             f'<section class="card read">{read}</section></div></div>')
 
-SPOTS_TOLERANCE = 1.5   # a tagged side still shows when our line leans the other way by up to this many points
-SPOTS_TOLERANCE_PCT = 3.0   # NHL: our win probability may lean the other way by up to 3 points
-EDGE_STRONG_PCT     = 5.0   # NHL: a 5-point win-probability edge is highlighted
-
-
-def _backing(s):
-    """
-    [(label, team it favors)] for a spot's situational tags and trade signals (a SELL favors the opponent).
-    Teaser legs are judged on the tag alone: trade signals are about covering the spread, while a teased
-    dog only has to stay within 7–9 points.
-    """
-    other = {s['home']: s['away'], s['away']: s['home']}
-    tags = [(label, team) for label, team in s['tags']]
-    if any(label.startswith('Teaser') for label, _ in tags):
-        return tags
-    return tags + [(f'{team} {sig}', team if sig == 'BUY' else other.get(team)) for team, sig in s['signals']]
-
-
-def _lean(s, team):
-    """Our edge toward `team` in points: positive when our line likes that side, negative when it likes the other."""
-    if not s['edge_side'] or s['edge'] is None:
-        return 0.0
-    return s['edge'] if s['edge_side'] == team else -s['edge']
-
-
 # League logos for the Best spots rows (ESPN's CDN, embedded like team logos). College football and
 # basketball share the NCAA logo, so a small ball badge tells them apart.
 LEAGUE_LOGOS = {'NFL': ('/i/teamlogos/leagues/500/nfl.png', ''), 'NBA': ('/i/teamlogos/leagues/500/nba.png', ''),
@@ -221,84 +199,115 @@ def league_mark(sport):
             f'<span class="logo md img {cls}"></span>{b}</span>')
 
 
+BEST_SPORTS = ('nfl', 'cfb', 'cbb', 'nba')   # NHL and EPL return once something there shows a real edge (Dylan, 2026-11-16)
+
+
+def _day_sport_groups(rows, row_html):
+    """Rows grouped by day, then sport (NFL, CFB, NBA, CBB), each in start-time order."""
+    today = datetime.now().astimezone().date()
+    order = ['NFL', 'CFB', 'NBA', 'CBB']
+    groups = {}
+    for s in sorted(rows, key=lambda s: s['sort']):
+        groups.setdefault(s['dt'].date(), {}).setdefault(s['sport'], []).append(row_html(s))
+
+    def label(d):
+        nice = d.strftime('%a %b %d').replace(' 0', ' ')
+        return f'Today · {nice}' if d == today else f'Tomorrow · {nice}' if (d - today).days == 1 else nice
+    out = ''
+    for d, sports in groups.items():
+        n = sum(len(v) for v in sports.values())
+        out += f'<h3 class="spotday">{theme.esc(label(d))} <span>{n} spot{"" if n == 1 else "s"}</span></h3>'
+        for sp in sorted(sports, key=lambda x: order.index(x) if x in order else 99):
+            out += (f'<h4 class="spotsport">{theme.esc(sp)} <span>{len(sports[sp])}</span></h4>'
+                    f'<ol class="spotlist">{"".join(sports[sp])}</ol>')
+    return out
+
+
+def _labels(s):
+    """Tags and trade signals as small labels: context only, they don't put a game on the list."""
+    tags = ''.join(f'<span class="gtag {"bounce" if t.startswith("Bounce") else "teaser max" if "★" in t else "teaser"}">'
+                   f'{theme.esc(t)}</span>' for t, _ in s['tags'])
+    if not any(t.startswith('Teaser') for t, _ in s['tags']):
+        tags += ''.join(f'<span class="pill {sig.lower()}">{theme.esc(team)} {sig}</span>' for team, sig in s['signals'])
+    return f'<span class="stags">{tags}</span>' if tags else ''
+
+
+def _row(s, detail, right):
+    when = 'Time TBD' if s.get('tbd') else s['dt'].strftime('%I:%M %p').lstrip('0') + ' ET'
+    return (f'<li><a href="{theme.esc(s["page"])}"><span class="sday">{theme.esc(when)}</span>{league_mark(s["sport"])}'
+            f'<span class="smain"><span class="smatch">{theme.esc(s["away"])} @ {theme.esc(s["home"])}</span>'
+            f'<span class="sline">{detail}</span>{_labels(s)}</span><span class="sedge">{right}</span></a></li>')
+
+
 def best_spots():
     """
-    Upcoming games (from each dashboard's spots_{sport}.json) whose situational tags and trade signals all
-    back the same team, and where our projected line agrees or leans the other way by no more than
-    SPOTS_TOLERANCE points (no limit on how many), plus every NFL teaser leg,
-    which always shows. Listed in kickoff order.
+    The home page's Best spots, built only on what has held up in testing (2026-11-16):
+      Priced value    every spread or total that clears -110 at our fair number (valuation.py / totals.py)
+      Teaser legs     NFL underdogs that fit the teaser research (~77% of legs out of sample)
+      Line-move watch our number sits in a gap size whose line has moved toward us 58%+ of the time (backtest)
+    BUY/SELL signals and the bounce-back tag ride along as labels but don't put a game on the list (the tags were a coin
+    flip against the line). Next 7 days, no cap. Guard-flagged games (news moves, lopsided college lines) stay off.
     """
     spots = []
-    for sport in ('cfb', 'nfl', 'cbb', 'nba', 'nhl', 'epl'):
+    for sport in BEST_SPORTS:
         try:
             with open(os.path.join(HERE, f'spots_{sport}.json'), encoding='utf-8') as f:
                 spots += json.load(f)
         except (OSError, ValueError):
             continue
     now = datetime.now().astimezone()
-    keep, teasers = [], []
+    priced, teasers, watch = [], [], []
     for s in spots:
         s['dt'] = datetime.fromisoformat(s['kick'])
-        s['sort'] = s['dt'] + timedelta(hours=23, minutes=59) if s.get('tbd') else s['dt']   # time TBD: end of its day
-        sides = {team for _, team in _backing(s)}
-        if s['sort'] <= now or s['dt'] > now + timedelta(days=7) or len(sides) != 1 or s['edge'] is None:   # next 7 days, priced, projected
+        s['sort'] = s['dt'] + timedelta(hours=23, minutes=59) if s.get('tbd') else s['dt']
+        if s['sort'] <= now or s['dt'] > now + timedelta(days=7):
             continue
-        s['side'] = sides.pop()
         if any(label.startswith('Teaser') for label, _ in s['tags']):
-            teasers.append(s)           # every leg that fits the teaser research shows, whatever our line says
-        elif s.get('flags'):
-            continue                    # a big line move (likely news) or a lopsided college game: our number isn't trusted
-        elif _lean(s, s['side']) >= -(SPOTS_TOLERANCE_PCT if s.get('unit') == 'pct' else SPOTS_TOLERANCE):
-            keep.append(s)
-    keep = teasers + keep               # every qualifying game shows; each day lists them by start time
-    if not keep:
-        return ('<section class="card spots"><div class="spots-head"><h2>Best spots</h2></div>'
-                '<p class="hint">No games this week where our line and a tag or trade signal agree yet.</p></section>')
-    today = now.date()
-    groups = {}                      # date → rows, so each day gets its own heading
-    for s in sorted(keep, key=lambda s: s['sort']):
-        d = s['dt'].date()
-        when = 'Time TBD' if s.get('tbd') else s['dt'].strftime('%I:%M %p').lstrip('0') + ' ET'
-        lean = _lean(s, s['side'])
-        pct = s.get('unit') == 'pct'            # NHL: edges in win-probability points
-        fmt = (lambda x: f'{x:.1f}%') if pct else theme.spread_num
-        if lean > 0:
-            cls = 'edge strong' if lean >= (EDGE_STRONG_PCT if pct else theme.EDGE_STRONG) else 'edge'
-            edge = f'<span class="{cls}">{theme.esc(s["side"])} {"+" if pct else ""}{fmt(lean)}</span>'
-        else:      # our line is neutral or leans slightly the other way; the tags carry this spot
-            edge = (f'<span class="edge none">{theme.esc(s["side"])}</span>'
-                    f'<span class="sline">{"no edge" if lean == 0 else f"our line −{fmt(-lean)}"}</span>')
-        tags = ''.join(f'<span class="gtag {"bounce" if t.startswith("Bounce") else "teaser max" if "★" in t else "teaser"}">'
-                       f'{theme.esc(t)}</span>' for t, _ in s['tags'])
-        if not any(t.startswith('Teaser') for t, _ in s['tags']):     # teaser rows ignore trade signals
-            tags += ''.join(f'<span class="pill {sig.lower()}">{theme.esc(team)} {sig}</span>' for team, sig in s['signals'])
-        day = groups.setdefault(d, {})
-        day[s['sport']] = day.get(s['sport'], '') + (f'<li><a href="{theme.esc(s["page"])}"><span class="sday">{theme.esc(when)}</span>'
-                 f'{league_mark(s["sport"])}'
-                 f'<span class="smain"><span class="smatch">{theme.esc(s["away"])} @ {theme.esc(s["home"])}</span>'
-                 f'<span class="sline">Ours {theme.esc(s["ours"])} · <span class="mk-l">Market</span><span class="mk-s">Mkt</span> '
-                 f'{theme.esc(s["market"])}</span>'
-                 f'{f"<span class=stags>{tags}</span>" if tags else ""}</span>'
-                 f'<span class="sedge">{edge}</span></a></li>')
-    def label(d):
-        nice = d.strftime('%a %b %d').replace(' 0', ' ')
-        return f'Today · {nice}' if d == today else f'Tomorrow · {nice}' if (d - today).days == 1 else nice
-    order = ['NFL', 'CFB', 'NBA', 'CBB', 'NHL', 'EPL']
-    def by_sport(sports):          # within a day: one block per sport, each in start-time order
-        return ''.join(f'<h4 class="spotsport">{theme.esc(sp)} <span>{rows.count("<li>")}</span></h4>'
-                       f'<ol class="spotlist">{rows}</ol>'
-                       for sp, rows in sorted(sports.items(), key=lambda kv: order.index(kv[0]) if kv[0] in order else 99))
-    days = ''
-    for d, sports in groups.items():
-        n = sum(r.count('<li>') for r in sports.values())
-        days += f'<h3 class="spotday">{theme.esc(label(d))} <span>{n} spot{"" if n == 1 else "s"}</span></h3>{by_sport(sports)}'
-    if today not in groups:
-        days = '<p class="hint spotnone">No spots today.</p>' + days
-    return (f'<section class="card spots"><div class="spots-head"><h2>Best spots</h2>'
-            f'<span class="hint">Tags and trade signals back one side, and our line agrees or is within '
-            f'{SPOTS_TOLERANCE:g} points ({SPOTS_TOLERANCE_PCT:g} win-probability points in the NHL and EPL), plus every teaser '
-            f'leg · next 7 days</span></div>'
-            f'{days}</section>')
+            teasers.append(s)
+        if s.get('flags'):
+            continue
+        if s.get('priced'):
+            priced.append(s)
+        elif s.get('watch'):
+            watch.append(s)
+
+    def priced_row(s):
+        best = max(s['priced'], key=lambda x: x['ev'])
+        lines = ' · '.join(f'{x["kind"]} <b>{theme.esc(x["text"])}</b> {100 * x["p"]:.1f}%'
+                           + (f' (push {100 * x["push"]:.0f}%)' if x.get('push', 0) >= 0.03 else '') for x in s['priced'])
+        ev = f'+{100 * best["ev"]:.1f}¢' if best['ev'] >= 0.0005 else '&lt;0.1¢'
+        return _row(s, lines, f'<span class="edge">{ev}</span><span class="sline">per $1</span>')
+
+    def teaser_row(s):
+        side = next(team for label, team in s['tags'] if label.startswith('Teaser'))
+        return _row(s, f'Ours {theme.esc(s["ours"])} · <span class="mk-l">Market</span><span class="mk-s">Mkt</span> '
+                       f'{theme.esc(s["market"])}', f'<span class="edge none">{theme.esc(side)}</span><span class="sline">tease</span>')
+
+    def watch_row(s):
+        w = s['watch']
+        side = s['home'] if w['toward'] == 'home' else s['away']
+        return _row(s, f'Ours {theme.esc(s["ours"])} · <span class="mk-l">Market</span><span class="mk-s">Mkt</span> '
+                       f'{theme.esc(s["market"])} · gaps of {theme.esc(w["label"])} pts moved toward our number '
+                       f'{100 * w["rate"]:.0f}% (n {w["n"]:,})',
+                    f'<span class="edge none">{theme.esc(side)}</span><span class="sline">{w["gap"]:g} pts</span>')
+
+    def section(title, hint, rows, fn, empty):
+        body = _day_sport_groups(rows, fn) if rows else f'<p class="hint spotnone">{empty}</p>'
+        return f'<div class="spotsec"><h3 class="spothead">{title}</h3><p class="hint spothint">{hint}</p>{body}</div>'
+
+    return ('<section class="card spots"><div class="spots-head"><h2>Best spots</h2>'
+            '<span class="hint">Only what has held up in testing · next 7 days · NFL, college football, NBA, college basketball'
+            '</span></div>'
+            + section('Priced value', 'Spreads and totals that clear −110 at our fair number: the market moved only part of '
+                      'the way toward ours, by how much of past gaps showed up in results. Right: cents per $1 at −110.',
+                      priced, priced_row, 'Nothing clears −110 at our fair numbers right now.')
+            + section('NFL teaser legs', 'Underdogs of +1.5 to +3 with a total of 46 or lower or a division game: about 77% '
+                      'of legs out of sample (2015–25).', teasers, teaser_row, 'No teaser legs this week.')
+            + section('Line-move watch', 'Our number is far enough from the market that, in past seasons, the line moved '
+                      'toward ours most of the time. A timing note, not a value claim.', watch, watch_row,
+                      'No games in a gap size with a strong line-move record.')
+            + '</section>')
+
 
 # Info tab: what each dashboard tab shows (dashboard → [(tab, description)])
 INFO = [
@@ -362,11 +371,12 @@ INFO = [
                           'players suit outright and top-5 bets more than top-20s and cuts).'),
     ]),
     ('Research spots', [
-        ('Best spots', 'The home page lists upcoming games where every situational tag (bounce-back, teaser leg) and trade '
-                       'signal (a BUY team, or the opponent of a SELL team) backs the same side, and our projected line '
-                       'agrees with it or leans the other way by no more than 1.5 points. Every NFL teaser leg that fits '
-                       'the teaser research always shows, whatever our line or the trade signals say. The number on the '
-                       'right is our edge toward that side.'),
+        ('Best spots', 'The home page lists only what has held up in testing, for the NFL, college football, NBA and college '
+                       'basketball: Priced value (spreads and totals that clear −110 at our fair number), NFL teaser legs, and '
+                       'a Line-move watch (games in a gap size whose line has moved toward our number most of the time). '
+                       'BUY/SELL signals and the bounce-back tag show as labels but no longer put a game on the list: '
+                       'replayed over past seasons, the signals were a coin flip against the line. The NHL and Premier League '
+                       'return once something there shows a real edge.'),
         ('Bounce-back (CFB)', 'An away team coming off a loss by 28+ points. In a 2016–25 backtest these teams covered 55.4% '
                               'of 739 games.'),
         ('Teaser legs (NFL)', 'Underdogs of +1.5 to +3 in games with a total of 46 or lower or a division matchup, teased 6 '

@@ -282,3 +282,43 @@ def ml_line(sport, p_ours, p_mkt, home_ml, away_ml, home, away, name=str):
     tip = f'Fair win chance {p:.1%} ({b:.0%} of our gap with the market counted) · {ev * 100:+.1f}¢ per $1 at {ml:+.0f}'
     return (f'<span class="pline"><span class="tag">Moneyline</span>{theme.esc(name(team))} {ml:+.0f} wins '
             f'<span class="pos" title="{theme.esc(tip)}">{p:.1%}</span></span>')
+
+
+# ==========================================
+# Best spots: what a game carries onto the home page
+# ==========================================
+WATCH_RATE, WATCH_N = 0.58, 300     # a gap size whose line moved toward our number this often (with this many games)
+
+
+def priced(sport, ours, market, home, away, t_ours=None, t_mkt=None, name=str):
+    """[{kind, text, p, ev}] for every line that clears −110 at our fair number (spread, total)."""
+    import totals as tot
+    out = []
+    a = assess(sport, ours, market)
+    if a and a['gap'] >= 0.5 and a['share'] >= 0.01 and a['ev'] > 0:
+        side = home if a['home_side'] else away
+        import dashboard_theme as theme
+        pts = theme.round_half(abs(market))
+        lays = (market > 0) == a['home_side']
+        out.append({'kind': 'Spread', 'text': f'{name(side)} {("−" if lays else "+") + theme.spread_num(pts) if pts >= 0.25 else "PK"}',
+                    'p': round(a['p'], 4), 'push': round(a['push'], 3), 'ev': round(a['ev'], 4)})
+    t = tot.assess(sport, t_ours, t_mkt)
+    if t and t['ev'] > 0:
+        out.append({'kind': 'Total', 'text': f'{"Over" if t["over"] else "Under"} {t_mkt:g}', 'p': round(t['p'], 4),
+                    'ev': round(t['ev'], 4), 'fair': round(tot.half(t['fair']), 1)})
+    return out
+
+
+def watch(sport, ours, market):
+    """{'gap', 'rate', 'n'} when our number sits in a gap size whose line has moved toward us WATCH_RATE+ of the time."""
+    if any(v is None or v != v for v in (ours, market)):
+        return None
+    gap = abs(ours - market)
+    rec = record(sport, gap)
+    if not rec or not rec['moved']['n']:
+        return None
+    m = rec['moved']
+    if m['rate'] >= WATCH_RATE and m['n'] >= WATCH_N:
+        return {'gap': round(gap, 1), 'rate': m['rate'], 'n': m['n'], 'label': rec['label'],
+                'toward': 'home' if ours > market else 'away'}
+    return None
