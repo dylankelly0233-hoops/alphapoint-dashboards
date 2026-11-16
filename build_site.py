@@ -83,6 +83,9 @@ LANDING_CSS = """
 .spotsec { margin-top: 16px; } .spotsec:first-of-type { margin-top: 6px; }
 .spothead { margin: 0; font: 700 16px/1.2 var(--display); text-transform: uppercase; letter-spacing: .6px; }
 .spothint { margin: 2px 0 4px; font-size: 13px; }
+.whys { display: flex; flex-wrap: wrap; gap: 4px; margin: 2px 0 3px; }
+.why { font: 700 10px/1 var(--display); letter-spacing: .6px; text-transform: uppercase; padding: 3px 6px; border-radius: 4px;
+       background: var(--surface-2); color: var(--muted); border: 1px solid var(--line); }
 /* Priced value: win chance shaded green by how far it clears what −110 needs */
 .sedge .pv { display: inline-block; font-weight: 700; font-size: 15px; color: var(--pos); padding: 2px 6px; border-radius: 6px; }
 .sedge .pv.strong { background: var(--pos); color: #fff; }
@@ -310,27 +313,23 @@ def best_spots():
         except (OSError, ValueError):
             continue
     now = datetime.now().astimezone()
-    priced, teasers, watch, systems = [], [], [], []
+    # one list, by day then sport: each game shows every reason it qualifies (Dylan, 2026-11-16)
+    rows = []
     for s in spots:
         s['dt'] = datetime.fromisoformat(s['kick'])
         s['sort'] = s['dt'] + timedelta(hours=23, minutes=59) if s.get('tbd') else s['dt']
         if s['sort'] <= now or s['dt'] > now + timedelta(days=7):
             continue
-        if any(label.startswith('Teaser') for label, _ in s['tags']):
-            teasers.append(s)
-        if s.get('systems'):
-            systems.append(s)            # proven systems show whatever our line says (like teaser legs)
-        if s.get('flags'):
-            continue
-        s['priced'] = [x for x in s.get('priced') or [] if x.get('proof')]      # proven slices only (valuation.proven_lines)
-        if s['priced']:
-            priced.append(s)
-        elif s.get('watch'):
-            watch.append(s)
+        s['teaser'] = next(((label, team) for label, team in s['tags'] if label.startswith('Teaser')), None)
+        s['systems'] = s.get('systems') or []                       # proven systems show whatever our line says
+        flagged = bool(s.get('flags'))                              # big news move / lopsided: our number isn't trusted
+        s['priced'] = [] if flagged else [x for x in s.get('priced') or [] if x.get('proof')]
+        s['watch'] = None if flagged or s['priced'] else s.get('watch')
+        if s['priced'] or s['teaser'] or s['systems'] or s['watch']:
+            rows.append(s)
 
-    def priced_row(s):
-        best = max(s['priced'], key=lambda x: x['ev'])
-        parts = []
+    def row_html(s):
+        why, lines = [], []
         for x in s['priced']:
             opener = s.get('open_spread') if x['kind'] == 'Spread' else (
                 f'{x["text"].split()[0]} {s["open_total"]:g}' if s.get('open_total') else None)
@@ -339,55 +338,50 @@ def best_spots():
             tip = (f'Typically beats the opener: past {label} picks won {100 * pr["rate"]:.0f}% of {pr["n"]:,} against the '
                    f'opening line' + (f', and the line moved our way by the close {100 * pr["clv"]:.0f}% of the time' if pr.get('clv') else '')
                    + ('.' if pr.get('holds_to_close') else '. The edge is usually gone by the close.'))
-            parts.append(f'{x["kind"]} <b>{theme.esc(x["text"])}</b> {100 * x["p"]:.1f}%'
+            lines.append(f'{x["kind"]} <b>{theme.esc(x["text"])}</b> {100 * x["p"]:.1f}%'
                          + (f' (push {100 * x["push"]:.0f}%)' if x.get('push', 0) >= 0.03 else '')
                          + (f' · opened {theme.esc(opener)}' if opener else '')
                          + f'<span class="sproof" title="{theme.esc(tip)}">{theme.esc(label)}: {100 * pr["rate"]:.0f}% vs opener '
                            f'({pr["n"]:,}){"" if pr.get("holds_to_close") else " · early edge"}</span>')
-        # right column: the best line's chance against what −110 needs (a push refunds the stake, so it needs less),
-        # shaded by how far it clears; the cents-per-dollar value is in the hover text
-        need = (110 / 210) * (1 - best.get('push', 0))
-        margin = best['p'] - need
-        cls = 'pv strong' if margin >= 0.03 else 'pv' if margin >= 0.015 else 'pv slight'
-        tip = f'{best["kind"]} {best["text"]}: wins {100 * best["p"]:.1f}%, needs {100 * need:.1f}% at −110 · about {100 * best["ev"]:+.1f}¢ per $1'
-        return _row(s, '<br>'.join(parts), f'<span class="{cls}" title="{theme.esc(tip)}">{100 * best["p"]:.1f}%</span>'
-                                            f'<span class="sline">{100 * need:.1f}% needed</span>')
+        if s['priced']:
+            why.append('Priced value')
+        for x in s['systems']:
+            why.append('System')
+            lines.append(f'<b>{theme.esc(x["pick"])}</b> · {theme.esc(x["label"])}<span class="sproof">{theme.esc(x["record"])}</span>')
+        if s['teaser']:
+            why.append('Teaser leg')
+            lines.append(f'Teaser leg <b>{theme.esc(s["teaser"][0].replace("Teaser ", "").replace("★ ", ""))}</b>'
+                         f'<span class="sproof">NFL teaser rules: about 77% of legs won</span>')
+        if s['watch']:
+            w = s['watch']
+            side = s['home'] if w['toward'] == 'home' else s['away']
+            why.append('Line-move watch')
+            lines.append(f'Ours {theme.esc(s["ours"])} vs market {theme.esc(s["market"])}: watch <b>{theme.esc(side)}</b>'
+                         f'<span class="sproof">Gaps of {theme.esc(w["label"])} pts moved toward our number {100 * w["rate"]:.0f}% '
+                         f'(n {w["n"]:,}). Timing note, not a value call.</span>')
+        chips = ''.join(f'<span class="why">{theme.esc(w)}</span>' for w in dict.fromkeys(why))
+        if s['priced']:
+            best = max(s['priced'], key=lambda x: x['ev'])
+            need = (110 / 210) * (1 - best.get('push', 0))
+            margin = best['p'] - need
+            cls = 'pv strong' if margin >= 0.03 else 'pv' if margin >= 0.015 else 'pv slight'
+            tip = (f'{best["kind"]} {best["text"]}: wins {100 * best["p"]:.1f}%, needs {100 * need:.1f}% at −110 · '
+                   f'about {100 * best["ev"]:+.1f}¢ per $1')
+            right = (f'<span class="{cls}" title="{theme.esc(tip)}">{100 * best["p"]:.1f}%</span>'
+                     f'<span class="sline">{100 * need:.1f}% needed</span>')
+        elif s['systems']:
+            right = '<span class="edge none">System</span>'
+        elif s['teaser']:
+            right = f'<span class="edge none">{theme.esc(s["teaser"][1])}</span><span class="sline">tease</span>'
+        else:
+            right = f'<span class="edge none">Watch</span><span class="sline">{s["watch"]["gap"]:g} pts</span>'
+        return _row(s, f'<span class="whys">{chips}</span>' + '<br>'.join(lines), right)
 
-    def teaser_row(s):
-        side = next(team for label, team in s['tags'] if label.startswith('Teaser'))
-        return _row(s, f'Ours {theme.esc(s["ours"])} · <span class="mk-l">Market</span><span class="mk-s">Mkt</span> '
-                       f'{theme.esc(s["market"])}', f'<span class="edge none">{theme.esc(side)}</span><span class="sline">tease</span>')
-
-    def system_row(s):
-        lines = '<br>'.join(f'<b>{theme.esc(x["pick"])}</b> · {theme.esc(x["label"])}'
-                            f'<span class="sproof">{theme.esc(x["record"])}</span>' for x in s['systems'])
-        return _row(s, lines, '<span class="edge none">System</span>')
-
-    def watch_row(s):
-        w = s['watch']
-        side = s['home'] if w['toward'] == 'home' else s['away']
-        return _row(s, f'Ours {theme.esc(s["ours"])} · <span class="mk-l">Market</span><span class="mk-s">Mkt</span> '
-                       f'{theme.esc(s["market"])} · gaps of {theme.esc(w["label"])} pts moved toward our number '
-                       f'{100 * w["rate"]:.0f}% (n {w["n"]:,})',
-                    f'<span class="edge none">{theme.esc(side)}</span><span class="sline">{w["gap"]:g} pts</span>')
-
-    def section(title, hint, rows, fn, empty):
-        body = _day_sport_groups(rows, fn) if rows else f'<p class="hint spotnone">{empty}</p>'
-        return f'<div class="spotsec"><h3 class="spothead">{title}</h3><p class="hint spothint">{hint}</p>{body}</div>'
-
+    body = _day_sport_groups(rows, row_html) if rows else '<p class="hint spotnone">Nothing qualifies in the next 7 days.</p>'
     return ('<section class="card spots"><div class="spots-head"><h2>Best spots</h2>'
             '<span class="hint">Only edges that held up in testing · next 7 days · '
             '<a href="#spotsguide" onclick="showTab(\'spotsguide\'); window.scrollTo(0, 0)">How this works →</a>'
-            '</span></div>'
-            + section('Priced value', 'Our fair number beats −110 here, in a spot that has beaten the opening line before. '
-                      'Best early in the week.', priced, priced_row, 'Nothing in a proven spot clears −110 right now.')
-            + section('NFL teaser legs', 'Underdogs that fit our 6-point teaser rules. About 77% of legs won.',
-                      teasers, teaser_row, 'No teaser legs this week.')
-            + section('Proven systems', 'Simple situations that have beaten the line in past seasons.',
-                      systems, system_row, 'No games fit a proven system this week.')
-            + section('Line-move watch', 'Our number is far from the market; lines like this usually moved our way. '
-                      'A timing note, not a value call.', watch, watch_row, 'Nothing to watch right now.')
-            + '</section>')
+            '</span></div>' + body + '</section>')
 
 
 # Info tab: what each dashboard tab shows (dashboard → [(tab, description)])
@@ -522,7 +516,10 @@ def spots_guide():
         ('What this is',
          '<p>Best spots lists upcoming games where our research has found something that <b>held up when we tested it on '
          'past seasons</b>. It is research, not picks: it tells you where the numbers have historically pointed, not what '
-         'to bet. Everything here is re-tested every month; anything that stops holding up drops off on its own.</p>'),
+         'to bet. Everything here is re-tested every month; anything that stops holding up drops off on its own.</p>'
+         '<p>Games are listed by day (today first), then by sport. Each game has small tags saying why it is there: '
+         '<b>Priced value</b>, <b>System</b>, <b>Teaser leg</b> or <b>Line-move watch</b>, explained below. A game that '
+         'qualifies more than one way shows every reason.</p>'),
         ('Words you will see',
          '<dl class="plain"><dt>The opener</dt><dd>The first line posted for a game. Most of our edges show up against it '
          'and fade as the line moves toward the final ("closing") number.</dd>'
