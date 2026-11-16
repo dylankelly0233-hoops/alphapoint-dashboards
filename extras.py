@@ -434,8 +434,32 @@ def team_modal(data):
 # ==========================================
 # BEST SPOTS (home page feed)
 # ==========================================
+_FIRST_TOTAL = {}
+
+
+def first_total(key, gid, total):
+    """The first total we saw for a game (totals_first_{key}.json, committed by the build like line history)."""
+    if gid is None:
+        return None
+    if key not in _FIRST_TOTAL:
+        try:
+            _FIRST_TOTAL[key] = json.load(open(f'totals_first_{key}.json'))
+        except (OSError, ValueError):
+            _FIRST_TOTAL[key] = {}
+    d = _FIRST_TOTAL[key]
+    if str(gid) not in d and total is not None and total == total:
+        d[str(gid)] = float(total)
+    return d.get(str(gid))
+
+
+def save_first_totals(key):
+    if key in _FIRST_TOTAL:
+        with open(f'totals_first_{key}.json', 'w') as f:
+            json.dump(_FIRST_TOTAL[key], f)
+
+
 def spot(sport, page, kick, away, home, ours, market, tags=(), signals=(), opened=None, lopsided_game=False, tbd=False,
-         key=None, total=(None, None), gid=None):
+         key=None, total=(None, None), gid=None, ctx=None):
     """
     One upcoming game for the home page. ours / market = home margins; tags = [(label, team the tag favors)];
     signals = [(team, 'BUY'|'SELL')]. opened / lopsided_game set the guard flags ('news', 'lopsided').
@@ -457,9 +481,13 @@ def spot(sport, page, kick, away, home, ours, market, tags=(), signals=(), opene
             'edge_side': None if edge is None or abs(edge) < theme.EDGE_MIN else (home if edge > 0 else away),
             'tags': [list(t) for t in tags], 'signals': [list(s) for s in signals if s[1]],
             'flags': (['news'] if news_move(opened, market) else []) + (['lopsided'] if lopsided_game else []),
-            # key = valuation's sport code: lines that clear −110 at our fair number, and the line-move watch
-            'priced': [] if not key or lopsided_game else _val().priced(key, ours, market, home, away, *total),
-            'watch': None if not key or lopsided_game else _val().watch(key, ours, market)}
+            # key = valuation's sport code: lines that clear −110 at a fair number built from a PROVEN slice, and the
+            # line-move watch. ctx: phase / conference-game / Power 4 flags for slice membership.
+            'priced': [] if not key or lopsided_game else _val().proven_lines(
+                key, ours, market, home, away, *total, ctx={'phase': _val().phase(key, ts), **(ctx or {})}),
+            'watch': None if not key or lopsided_game else _val().watch(key, ours, market),
+            'open_spread': line_text(home, away, opened) if not _nan(opened) else None,
+            'open_total': first_total(key, gid, total[1]) if key else None}
 
 
 def _val():
@@ -470,6 +498,7 @@ def _val():
 def write_spots(sport, spots):
     with open(f'spots_{sport}.json', 'w', encoding='utf-8') as f:
         json.dump([s for s in spots if s], f, ensure_ascii=False, indent=1)
+    save_first_totals(sport.lower())
 
 
 def why_row(parts, ours, market, home, away, name=lambda t: t, unit='', digits=1, lead=''):

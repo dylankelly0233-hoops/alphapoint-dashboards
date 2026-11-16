@@ -29,8 +29,9 @@ DUE_DAYS = 25
 STEPS = [('Game situations', ['situational_research.py']), ('Spread value tables', ['valuation.py']),
          ('NBA/NHL totals data', ['pro_totals_fetch.py', 'nba', 'nhl']), ('Totals backtests', ['totals.py']),
          ('BUY/SELL tag backtest', ['tag_backtest.py']), ('Rating backtests', ['backtests.py']),
-         ('Priced value end-to-end test', ['priced_value_test.py'])]
-OUTPUTS = ['valuation.json', 'totals.json', 'totals_prior.json', 'tag_backtest.json', 'backtests.json', 'priced_value_test.json']
+         ('Priced value end-to-end test', ['priced_value_test.py']), ('Slice test (Best spots)', ['segment_test.py'])]
+OUTPUTS = ['valuation.json', 'totals.json', 'totals_prior.json', 'tag_backtest.json', 'backtests.json', 'priced_value_test.json',
+           'segment_test.json']
 NAMES = {'nfl': 'NFL', 'cfb': 'CFB', 'cbb': 'CBB', 'nba': 'NBA', 'nhl': 'NHL', 'epl': 'EPL'}
 
 
@@ -84,6 +85,16 @@ def compare(before):
         note = '' if ok == was or not o0 else (' ← now PROVEN: joins Best spots' if ok else ' ← no longer proven: leaves Best spots')
         lines.append(f'{name} (Best spots rule, out of sample at the open): {o.get("win_rate")} of {o.get("decided")} '
                      f'({o.get("lo")}–{o.get("hi")}), {"proven" if ok else "not proven"}{note}')
+    s0, s1 = before.get('segment_test.json', {}).get('markets', {}), _load('segment_test.json').get('markets', {})
+    for m, segs in s1.items():
+        for sl, r in segs.items():
+            was = ((s0.get(m) or {}).get(sl) or {}).get('passed')
+            if r.get('passed') or was:
+                a = r['all']
+                note = '' if bool(was) == bool(r.get('passed')) or was is None else (
+                    ' ← NEW: joins Best spots' if r.get('passed') else ' ← no longer passes: leaves Best spots')
+                lines.append(f'{m} / {sl} (Best spots slice): {a["rate"]} of {a["n"]} vs the opener '
+                             f'({a["lo"]}–{a["hi"]}), {"passes" if r.get("passed") else "fails"}{note}')
     return lines
 
 

@@ -132,12 +132,12 @@ def share(sport):
     return max(0.0, float(ex.calibrated_value(sport, 'value_share', t.get('share_backtest', 0.0))))
 
 
-def margin_dist(sport, mu):
+def margin_dist(sport, mu, sigma=None):
     """{margin: probability} around a fair line mu (home margin), key numbers included."""
     t = tables().get(sport)
     if not t:
         return None
-    sigma, keys = t['sigma'], t['keys']
+    sigma, keys = sigma or t['sigma'], t['keys']
     ks = np.arange(-int(abs(mu)) - 60, int(abs(mu)) + 61)
     from math import erf, sqrt
     cdf = np.vectorize(lambda x: 0.5 * (1 + erf(x / sqrt(2))))
@@ -146,22 +146,23 @@ def margin_dist(sport, mu):
     return ks, p / p.sum()
 
 
-def cover(sport, mu, line):
+def cover(sport, mu, line, sigma=None):
     """(P home covers, P push, P away covers) when the home side is laid at `line` (home margin)."""
-    d = margin_dist(sport, mu)
+    d = margin_dist(sport, mu, sigma)
     if d is None:
         return None
     ks, p = d
     return float(p[ks > line].sum()), float(p[ks == line].sum()), float(p[ks < line].sum())
 
 
-def assess(sport, ours, market):
-    """Fair line, the side our number leans to, its cover chance at the posted line, and expected value at −110."""
+def assess(sport, ours, market, b=None, sigma=None):
+    """Fair line, the side our number leans to, its cover chance at the posted line, and expected value at −110.
+    b / sigma override the sport-wide share and spread of results (a proven slice brings its own)."""
     if any(v is None or v != v for v in (ours, market)) or sport not in tables():
         return None
-    b = share(sport)
+    b = share(sport) if b is None else b
     fair = market + b * (ours - market)
-    ph, pp, pa = cover(sport, fair, market)
+    ph, pp, pa = cover(sport, fair, market, sigma)
     home = ours >= market
     p, q = (ph, pa) if home else (pa, ph)
     ev = p * (100 / 110) - q                       # per unit staked at −110 (a push returns the stake)
@@ -322,3 +323,96 @@ def watch(sport, ours, market):
         return {'gap': round(gap, 1), 'rate': m['rate'], 'n': m['n'], 'label': rec['label'],
                 'toward': 'home' if ours > market else 'away'}
     return None
+
+
+# ==========================================
+# Best spots: proven slices (segment_test.json) and proven markets (priced_value_test.json)
+# ==========================================
+_SEG = None
+
+
+def _segments():
+    global _SEG
+    if _SEG is None:
+        try:
+            _SEG = json.load(open('segment_test.json'))
+        except (OSError, ValueError):
+            _SEG = {}
+    return _SEG
+
+
+def phase(sport, when):
+    """'early' / 'mid' / 'late' in the season, on the same yardstick as the slice test (segment_test.season_window)."""
+    w = (_segments().get('season_window') or {}).get(sport)
+    if not w or when is None:
+        return None
+    import pandas as pd
+    d = pd.Timestamp(when)
+    off = (d.tz_localize(None) if d.tzinfo else d) - pd.Timestamp(d.year if d.month >= 8 else d.year - 1, 8, 1)
+    frac = (off.days - w['start']) / max(w['end'] - w['start'], 1)
+    return 'early' if frac < 0.2 else 'mid' if frac <= 0.67 else 'late'
+
+
+def _member(name, col, ctx):
+    """Is this live game in the slice? ctx: phase, conf (bool), p4 (bool), up/fav/home flags filled by the caller."""
+    if col == 'all':
+        return True
+    if col == 'phase':
+        return ctx.get('phase') == name
+    if col == 'conf':
+        return ctx.get('conf') is not None and (name == 'conference game') == bool(ctx['conf'])
+    if col == 'p4':
+        return ctx.get('p4') is not None and (name == 'Power 4 / Big East game') == bool(ctx['p4'])
+    return ctx.get(col) == name          # gapb, favdog, homeaway, size, ou, confname
+
+
+def proven_lines(sport, ours, market, home, away, t_ours=None, t_mkt=None, ctx=None, name=str):
+    """
+    Lines for Best spots that clear −110 at a fair number built from a PROVEN slice: one that beat the opening line in
+    both halves of past seasons (segment_test.json). Each line carries its proof: the slice, its record against the
+    opener, how often the line moved our way by the close, and whether the edge held to the close.
+    """
+    import dashboard_theme as theme
+    import totals as tot
+    ctx = dict(ctx or {})
+    out = []
+    for kind, o, m in (('spread', ours, market), ('total', t_ours, t_mkt)):
+        if any(v is None or v != v for v in (o, m)):
+            continue
+        segs = ((_segments().get('markets') or {}).get(f'{sport}_{kind}') or {})
+        gap = abs(o - m)
+        up = o >= m
+        c = dict(ctx)
+        if kind == 'spread':
+            c.update(gapb='gap <2' if gap < 2 else 'gap 2-4' if gap < 4 else 'gap 4+',
+                     favdog='favorite' if (up and m > 0) or (not up and m < 0) else 'underdog',
+                     homeaway='home side' if up else 'away side', size='line 7+' if abs(m) >= 7 else 'line under 7')
+        else:
+            c.update(gapb='gap <3' if gap < 3 else 'gap 3-6' if gap < 6 else 'gap 6+', ou='over' if up else 'under')
+        best = None
+        for sname, r in segs.items():
+            if not r.get('passed') or not _member(sname, r['col'], c):
+                continue
+            a = (assess(sport, o, m, b=r['share'], sigma=r['sigma']) if kind == 'spread'
+                 else tot.assess(sport, o, m, b=r['share'], sigma=r['sigma']))
+            if not a or a['ev'] <= 0 or (kind == 'spread' and a['gap'] < 0.5):
+                continue
+            if best is None or (r['all']['lo'] or 0) > (best[1]['all']['lo'] or 0):
+                best = (sname, r, a)
+        if not best:
+            continue
+        sname, r, a = best
+        if kind == 'spread':
+            side = home if a['home_side'] else away
+            pts = theme.round_half(abs(m))
+            lays = (m > 0) == a['home_side']
+            text = f'{name(side)} {("−" if lays else "+") + theme.spread_num(pts) if pts >= 0.25 else "PK"}'
+        else:
+            text = f'{"Over" if a["over"] else "Under"} {m:g}'
+        ac = r.get('at_close') or {}
+        out.append({'kind': 'Spread' if kind == 'spread' else 'Total', 'text': text, 'p': round(a['p'], 4),
+                    'push': round(a.get('push', 0), 3), 'ev': round(a['ev'], 4),
+                    'proof': {'slice': sname, 'rate': r['all']['rate'], 'n': r['all']['n'],
+                              'clv': (r.get('clv') or {}).get('rate'),
+                              'holds_to_close': bool(ac.get('n', 0) >= 100 and (ac.get('rate') or 0) > 110 / 210)}})
+    return out

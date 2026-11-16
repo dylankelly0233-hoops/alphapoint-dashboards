@@ -375,7 +375,7 @@ def build_schedule(week, season_type, p4_names, power, fcs, metrics):
         mkt = lines.get(g.get('id'))
         rows.append({
             'game_id': g.get('id'), 'kick': kick, 'tbd': bool(g.get('startTimeTBD')), 'home': home, 'away': away, 'neutral': bool(g.get('neutralSite')),
-            'venue_id': g.get('venueId'), 'hfa': hfa, 'crowd': crowd_info,
+            'venue_id': g.get('venueId'), 'hfa': hfa, 'crowd': crowd_info, 'conf': bool(g.get('conferenceGame')),
             'home_rating': h_r, 'away_rating': a_r, 'margin': margin,
             'market': mkt[0] if mkt else np.nan, 'market_book': mkt[1] if mkt else '',
             'market_open': mkt[2] if mkt else None, 'total': mkt[3] if mkt else np.nan,
@@ -693,7 +693,9 @@ def generate_html(p4, vals, sched, week, season_type, info):
         spots.append(ex.spot('CFB', 'cfb.html#sched', r.kick, r.away, r.home, r.margin, mkt_margin, labels,
                              [(r.away, sig(r.away_value)), (r.home, sig(r.home_value))],
                              info['opened'].get(str(r.game_id)), big, tbd=bool(getattr(r, 'tbd', False)),
-                             key='cfb', total=(t_ours, t_mkt), gid=r.game_id))
+                             key='cfb', total=(t_ours, t_mkt), gid=r.game_id,
+                             # every game on this page has a Power 4 team (or Notre Dame): the Power 4 slice applies
+                             ctx={'conf': str(getattr(r, 'conf', '')).lower() in ('true', '1'), 'p4': True}))
         card = theme.game_card(when, venue, side(r.away, r.away_rating, r.away_value),
                                side(r.home, r.home_rating, r.home_value), proj, mkt, r.score, edge, tag_html, move,
                                gid=r.game_id)

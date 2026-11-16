@@ -11,6 +11,12 @@ situational_research.py, test it, and (if it clears the bar) wire it in. Tested 
 - NBA: the second night of a back-to-back when a star is likely to sit (rest / load management), beyond the back-to-back itself.
 - CBB: new head coach in the first month of the season.
 
+- NHL (Dylan, 2026-11-16: wants predictive models): run the slice test on moneylines and totals (open, closing-line value,
+  at close); then strengthen xG, goalie quality / confirmed starters, and back-to-back fatigue on top of the goalie.
+- EPL: market-anchored goals model (xG, rotation, fixture congestion), Asian handicap and totals priced from it, slice test.
+- MLB (phase 2, Feb 2027): probable starters, bullpen fatigue, park/weather; run lines and totals tested out of sample
+  against ESPN pickcenter history from day one.
+
 Done (see situational_research.md for the latest numbers):
 - Nov 2026: crowd size (CBB, CFB: in use); senior night, visitor road trips, altitude (CBB: in use); back-to-backs (NBA: in use;
   NHL: real, but left out because the goalie adjustment already covers much of it); students away, Thanksgiving, finals, rest days,

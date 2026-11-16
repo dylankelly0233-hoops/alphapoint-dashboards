@@ -83,6 +83,7 @@ LANDING_CSS = """
 .spotsec { margin-top: 16px; } .spotsec:first-of-type { margin-top: 6px; }
 .spothead { margin: 0; font: 700 16px/1.2 var(--display); text-transform: uppercase; letter-spacing: .6px; }
 .spothint { margin: 2px 0 4px; font-size: 13px; }
+.sproof { display: block; font-size: 12px; color: var(--muted); margin-top: 2px; }
 .spotsport { margin: 10px 0 0; padding: 4px 6px 2px; font: 700 12px/1.2 var(--display); letter-spacing: 1px; text-transform: uppercase;
              color: var(--muted); }
 .spotsport span { font-weight: 500; margin-left: 4px; }
@@ -222,6 +223,29 @@ def proven_markets():
     return ok
 
 
+SLICE_NAMES = {'all': '', 'mid': 'mid-season games', 'early': 'early-season games', 'late': 'late-season games',
+               'conference game': 'conference games', 'non-conference': 'non-conference games',
+               'Power 4 / Big East game': 'Power 4 games'}
+
+
+def slice_label(sport, kind, sl):
+    """'CFB mid-season spreads'."""
+    mid = SLICE_NAMES.get(sl, sl)
+    return (f'{sport.upper()} {mid + " " if mid else ""}{"spreads" if kind in ("Spread", "spread") else "totals"}'
+            .replace('games spreads', 'spreads').replace('games totals', 'totals'))
+
+
+def proven_list():
+    """Every proven slice in segment_test.json, in words."""
+    try:
+        mk = json.load(open(os.path.join(HERE, 'segment_test.json'), encoding='utf-8'))['markets']
+    except (OSError, ValueError, KeyError):
+        return 'none yet'
+    names = [slice_label(m.split('_')[0], m.split('_')[1], sl) for m, segs in mk.items()
+             for sl, r in segs.items() if r.get('passed') and m.split('_')[0] in BEST_SPORTS]
+    return ', '.join(names) or 'none yet'
+
+
 BEST_SPORTS = ('nfl', 'cfb', 'cbb', 'nba')   # NHL and EPL return once something there shows a real edge (Dylan, 2026-11-16)
 
 
@@ -279,7 +303,6 @@ def best_spots():
         except (OSError, ValueError):
             continue
     now = datetime.now().astimezone()
-    proven = proven_markets()
     priced, teasers, watch = [], [], []
     for s in spots:
         s['dt'] = datetime.fromisoformat(s['kick'])
@@ -290,7 +313,7 @@ def best_spots():
             teasers.append(s)
         if s.get('flags'):
             continue
-        s['priced'] = [x for x in s.get('priced') or [] if (s['sport'].lower(), x['kind']) in proven]
+        s['priced'] = [x for x in s.get('priced') or [] if x.get('proof')]      # proven slices only (valuation.proven_lines)
         if s['priced']:
             priced.append(s)
         elif s.get('watch'):
@@ -298,10 +321,20 @@ def best_spots():
 
     def priced_row(s):
         best = max(s['priced'], key=lambda x: x['ev'])
-        lines = ' · '.join(f'{x["kind"]} <b>{theme.esc(x["text"])}</b> {100 * x["p"]:.1f}%'
-                           + (f' (push {100 * x["push"]:.0f}%)' if x.get('push', 0) >= 0.03 else '') for x in s['priced'])
+        parts = []
+        for x in s['priced']:
+            opener = s.get('open_spread') if x['kind'] == 'Spread' else (
+                f'{x["text"].split()[0]} {s["open_total"]:g}' if s.get('open_total') else None)
+            pr = x['proof']
+            close = '' if pr.get('holds_to_close') else ' · edge usually gone by the close'
+            parts.append(f'{x["kind"]} <b>{theme.esc(x["text"])}</b> {100 * x["p"]:.1f}%'
+                         + (f' (push {100 * x["push"]:.0f}%)' if x.get('push', 0) >= 0.03 else '')
+                         + (f' · opened {theme.esc(opener)}' if opener else '')
+                         + f'<span class="sproof">Typically beats the opener: {theme.esc(slice_label(s["sport"], x["kind"], pr["slice"]))} '
+                           f'{100 * pr["rate"]:.0f}% of {pr["n"]:,} past picks'
+                         + (f', line moved our way {100 * pr["clv"]:.0f}%' if pr.get('clv') else '') + f'{close}</span>')
         ev = f'+{100 * best["ev"]:.1f}¢' if best['ev'] >= 0.0005 else '&lt;0.1¢'
-        return _row(s, lines, f'<span class="edge">{ev}</span><span class="sline">per $1</span>')
+        return _row(s, '<br>'.join(parts), f'<span class="edge">{ev}</span><span class="sline">per $1</span>')
 
     def teaser_row(s):
         side = next(team for label, team in s['tags'] if label.startswith('Teaser'))
@@ -323,11 +356,10 @@ def best_spots():
     return ('<section class="card spots"><div class="spots-head"><h2>Best spots</h2>'
             '<span class="hint">Only what has held up in testing · next 7 days · NFL, college football, NBA, college basketball'
             '</span></div>'
-            + section('Priced value', 'Lines that clear −110 at our fair number, only in markets where this exact rule, '
-                      'replayed on past seasons out of sample, won more than −110 needs: '
-                      + (', '.join(f'{LEAGUE_NAMES.get(sp.upper(), sp.upper())} {k.lower()}s' for sp, k in sorted(proven))
-                         or 'none yet') + '. Right: cents per $1 at −110. Early lines only: by the close the edge was gone.',
-                      priced, priced_row, 'Nothing in a proven market clears −110 right now.')
+            + section('Priced value', 'Lines that clear −110 at our fair number, only in spots where that rule beat the '
+                      'opening line in both halves of past seasons: ' + proven_list() + '. Right: cents per $1 at −110. '
+                      'These are early-line edges: compare the opener shown with the line you can get.',
+                      priced, priced_row, 'Nothing in a proven spot clears −110 right now.')
             + section('NFL teaser legs', 'Underdogs of +1.5 to +3 with a total of 46 or lower or a division game: about 77% '
                       'of legs out of sample (2015–25).', teasers, teaser_row, 'No teaser legs this week.')
             + section('Line-move watch', 'Our number is far enough from the market that, in past seasons, the line moved '
