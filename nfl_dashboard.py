@@ -40,6 +40,7 @@ import extras as ex
 import valuation as val
 import futures as fut
 import totals as tot
+import systems as sy
 import featured as fx
 import matchups as mu
 import weather as wx
@@ -287,6 +288,7 @@ def build_schedule(full, week, power, metrics):
             'margin': SCALE * (h_r - a_r) + (0.0 if getattr(g, 'neutral', 0) else HFA_POINTS),   # home − away, incl. HFA
             'market': g.spread_line,                                       # positive = home favored
             'total': getattr(g, 'total_line', np.nan), 'div': getattr(g, 'div_game', 0) == 1,
+            'hr': getattr(g, 'home_rest', np.nan), 'ar': getattr(g, 'away_rest', np.nan),
             'home_value': comp.get(g.home_team), 'away_value': comp.get(g.away_team),
             'score': f'{int(g.away_score)}-{int(g.home_score)}' if done else '',
         })
@@ -461,6 +463,8 @@ def generate_html(power, vals, sched, week, info):
         side = lambda ab, nm, v: {'name': nm, 'logo': _logo(ab, meta), 'rating': rating.get(ab), 'sd': sd, 'key': ab,
                                   'signal': theme.signal_pill(v, spot, strong), 'color': meta.get(ab, ('', ''))[1]}
         tag_html, tag_label = teaser_tag(r)
+        sysl = sy.nfl(r, info.get('total_top10'), lambda t: nick(vm.full_name(t)))      # proven betting systems
+        tag_html += sy.tag_html(sysl, theme.esc)
         move = ex.line_move(info['opened'].get(str(r.game_id)), r.market, pm, nick(home), nick(away), 'First seen')
         move += ex.rating_confidence(by_src.get(r.home, {}), by_src.get(r.away, {}), 0.0 if r.neutral else HFA_POINTS)
         if not r.score and not r.neutral and r.home in wx.NFL_STADIUMS:
@@ -493,7 +497,8 @@ def generate_html(power, vals, sched, week, info):
         spots.append(ex.spot('NFL', 'nfl.html#sched', r.kick, nick(away), nick(home), r.margin, r.market,
                              [tag_label] if tag_label else [],
                              [(nick(away), sig(r.away_value)), (nick(home), sig(r.home_value))],
-                             info['opened'].get(str(r.game_id)), key='nfl', total=(t_ours, r.total), gid=r.game_id))
+                             info['opened'].get(str(r.game_id)), key='nfl', total=(t_ours, r.total), gid=r.game_id,
+                             systems=sysl))
         card = theme.game_card(theme.kick_text(r.kick), 'Neutral site' if r.neutral else '',
                                side(r.away, away, r.away_value), side(r.home, home, r.home_value),
                                proj, mkt, r.score,
@@ -715,7 +720,9 @@ def main():
     except Exception as e:
         print(f'  ! totals model failed: {e}')
         total_fn = None
-    info = {'total_fn': total_fn, 'futures': futures_html, 'val_live': val.live_records('nfl'), 'scale': scale_info, 'nfelo_asof': nfelo_asof, 'sagarin_asof': sagarin_asof,
+    reg_tot = full.loc[full['game_type'] == 'REG', 'total_line'].dropna()
+    info = {'total_top10': float(reg_tot.quantile(0.9)) if len(reg_tot) >= 50 else None,   # tested as the season's top 10%
+            'total_fn': total_fn, 'futures': futures_html, 'val_live': val.live_records('nfl'), 'scale': scale_info, 'nfelo_asof': nfelo_asof, 'sagarin_asof': sagarin_asof,
             'wire': wire_data, 'inj_cards': {t: d.get('card', []) for t, d in cands.get('teams', {}).items()}, 'market_rows': market_rows, 'history': hist, 'full': full, 'freshness': freshness,
             'featured': {r.game_id: [s] + ([f'Week {wk}'] if wk != week else [])
                          for wk, df in ((week, sched), (week + 1, next_sched)) if not df.empty

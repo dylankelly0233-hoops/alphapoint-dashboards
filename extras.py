@@ -459,7 +459,7 @@ def save_first_totals(key):
 
 
 def spot(sport, page, kick, away, home, ours, market, tags=(), signals=(), opened=None, lopsided_game=False, tbd=False,
-         key=None, total=(None, None), gid=None, ctx=None):
+         key=None, total=(None, None), gid=None, ctx=None, systems=()):
     """
     One upcoming game for the home page. ours / market = home margins; tags = [(label, team the tag favors)];
     signals = [(team, 'BUY'|'SELL')]. opened / lopsided_game set the guard flags ('news', 'lopsided').
@@ -487,7 +487,8 @@ def spot(sport, page, kick, away, home, ours, market, tags=(), signals=(), opene
                 key, ours, market, home, away, *total, ctx={'phase': _val().phase(key, ts), **(ctx or {})}),
             'watch': None if not key or lopsided_game else _val().watch(key, ours, market),
             'open_spread': line_text(home, away, opened) if not _nan(opened) else None,
-            'open_total': first_total(key, gid, total[1]) if key else None}
+            'open_total': first_total(key, gid, total[1]) if key else None,
+            'systems': list(systems or [])}
 
 
 def _val():

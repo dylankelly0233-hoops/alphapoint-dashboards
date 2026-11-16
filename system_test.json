@@ -1,0 +1,1470 @@
+{
+ "systems": {
+  "nfl": {
+   "nfl_bounce": {
+    "label": "Team off a 20+ point loss (back it)",
+    "kind": "spread",
+    "open": {
+     "discovery": {
+      "n": 557,
+      "rate": 0.526,
+      "lo": 0.485,
+      "hi": 0.567
+     },
+     "holdout": {
+      "n": 370,
+      "rate": 0.511,
+      "lo": 0.46,
+      "hi": 0.561
+     },
+     "all": {
+      "n": 927,
+      "rate": 0.52,
+      "lo": 0.488,
+      "hi": 0.552
+     }
+    },
+    "close": {
+     "discovery": {
+      "n": 580,
+      "rate": 0.538,
+      "lo": 0.497,
+      "hi": 0.578
+     },
+     "holdout": {
+      "n": 393,
+      "rate": 0.524,
+      "lo": 0.475,
+      "hi": 0.573
+     },
+     "all": {
+      "n": 973,
+      "rate": 0.532,
+      "lo": 0.501,
+      "hi": 0.564
+     }
+    },
+    "passed": false,
+    "tentative": false,
+    "holds_to_close": true
+   },
+   "nfl_div_home_dog": {
+    "label": "Division home underdog (back it)",
+    "kind": "spread",
+    "open": {
+     "discovery": {
+      "n": 387,
+      "rate": 0.491,
+      "lo": 0.441,
+      "hi": 0.541
+     },
+     "holdout": {
+      "n": 267,
+      "rate": 0.506,
+      "lo": 0.446,
+      "hi": 0.565
+     },
+     "all": {
+      "n": 654,
+      "rate": 0.497,
+      "lo": 0.459,
+      "hi": 0.535
+     }
+    },
+    "close": {
+     "discovery": {
+      "n": 407,
+      "rate": 0.486,
+      "lo": 0.438,
+      "hi": 0.535
+     },
+     "holdout": {
+      "n": 281,
+      "rate": 0.516,
+      "lo": 0.458,
+      "hi": 0.574
+     },
+     "all": {
+      "n": 688,
+      "rate": 0.499,
+      "lo": 0.461,
+      "hi": 0.536
+     }
+    },
+    "passed": false,
+    "tentative": false,
+    "holds_to_close": false
+   },
+   "nfl_thursday_road": {
+    "label": "Thursday road team on a short week (fade it)",
+    "kind": "spread",
+    "open": {
+     "discovery": {
+      "n": 160,
+      "rate": 0.531,
+      "lo": 0.454,
+      "hi": 0.607
+     },
+     "holdout": {
+      "n": 110,
+      "rate": 0.482,
+      "lo": 0.391,
+      "hi": 0.574
+     },
+     "all": {
+      "n": 270,
+      "rate": 0.511,
+      "lo": 0.452,
+      "hi": 0.57
+     }
+    },
+    "close": {
+     "discovery": {
+      "n": 164,
+      "rate": 0.53,
+      "lo": 0.454,
+      "hi": 0.605
+     },
+     "holdout": {
+      "n": 109,
+      "rate": 0.486,
+      "lo": 0.394,
+      "hi": 0.579
+     },
+     "all": {
+      "n": 273,
+      "rate": 0.513,
+      "lo": 0.454,
+      "hi": 0.572
+     }
+    },
+    "passed": false,
+    "tentative": false,
+    "holds_to_close": false
+   },
+   "nfl_bye_edge": {
+    "label": "Team off a bye vs a team that is not (back the rested team)",
+    "kind": "spread",
+    "open": {
+     "discovery": {
+      "n": 329,
+      "rate": 0.547,
+      "lo": 0.493,
+      "hi": 0.6
+     },
+     "holdout": {
+      "n": 227,
+      "rate": 0.537,
+      "lo": 0.472,
+      "hi": 0.601
+     },
+     "all": {
+      "n": 556,
+      "rate": 0.543,
+      "lo": 0.502,
+      "hi": 0.584
+     }
+    },
+    "close": {
+     "discovery": {
+      "n": 345,
+      "rate": 0.528,
+      "lo": 0.475,
+      "hi": 0.58
+     },
+     "holdout": {
+      "n": 237,
+      "rate": 0.481,
+      "lo": 0.418,
+      "hi": 0.544
+     },
+     "all": {
+      "n": 582,
+      "rate": 0.509,
+      "lo": 0.468,
+      "hi": 0.549
+     }
+    },
+    "passed": true,
+    "tentative": true,
+    "holds_to_close": false
+   },
+   "nfl_primetime_dog": {
+    "label": "Prime-time underdog, 7:30 pm ET or later (back it)",
+    "kind": "spread",
+    "open": {
+     "discovery": {
+      "n": 609,
+      "rate": 0.483,
+      "lo": 0.443,
+      "hi": 0.522
+     },
+     "holdout": {
+      "n": 414,
+      "rate": 0.495,
+      "lo": 0.447,
+      "hi": 0.543
+     },
+     "all": {
+      "n": 1023,
+      "rate": 0.488,
+      "lo": 0.457,
+      "hi": 0.518
+     }
+    },
+    "close": {
+     "discovery": {
+      "n": 625,
+      "rate": 0.483,
+      "lo": 0.444,
+      "hi": 0.522
+     },
+     "holdout": {
+      "n": 420,
+      "rate": 0.521,
+      "lo": 0.474,
+      "hi": 0.569
+     },
+     "all": {
+      "n": 1045,
+      "rate": 0.499,
+      "lo": 0.468,
+      "hi": 0.529
+     }
+    },
+    "passed": false,
+    "tentative": false,
+    "holds_to_close": false
+   },
+   "nfl_late_big_dog": {
+    "label": "Week 13+ underdog of 7 or more (back it)",
+    "kind": "spread",
+    "open": {
+     "discovery": {
+      "n": 310,
+      "rate": 0.481,
+      "lo": 0.426,
+      "hi": 0.536
+     },
+     "holdout": {
+      "n": 207,
+      "rate": 0.464,
+      "lo": 0.397,
+      "hi": 0.532
+     },
+     "all": {
+      "n": 517,
+      "rate": 0.474,
+      "lo": 0.431,
+      "hi": 0.517
+     }
+    },
+    "close": {
+     "discovery": {
+      "n": 321,
+      "rate": 0.483,
+      "lo": 0.429,
+      "hi": 0.537
+     },
+     "holdout": {
+      "n": 214,
+      "rate": 0.481,
+      "lo": 0.415,
+      "hi": 0.548
+     },
+     "all": {
+      "n": 535,
+      "rate": 0.482,
+      "lo": 0.44,
+      "hi": 0.525
+     }
+    },
+    "passed": false,
+    "tentative": false,
+    "holds_to_close": false
+   },
+   "nfl_div_under": {
+    "label": "Division game (under)",
+    "kind": "total",
+    "open": {
+     "discovery": {
+      "n": 713,
+      "rate": 0.53,
+      "lo": 0.493,
+      "hi": 0.567
+     },
+     "holdout": {
+      "n": 482,
+      "rate": 0.533,
+      "lo": 0.489,
+      "hi": 0.577
+     },
+     "all": {
+      "n": 1195,
+      "rate": 0.531,
+      "lo": 0.503,
+      "hi": 0.56
+     }
+    },
+    "close": {
+     "discovery": {
+      "n": 1173,
+      "rate": 0.528,
+      "lo": 0.499,
+      "hi": 0.556
+     },
+     "holdout": {
+      "n": 795,
+      "rate": 0.502,
+      "lo": 0.467,
+      "hi": 0.537
+     },
+     "all": {
+      "n": 1968,
+      "rate": 0.517,
+      "lo": 0.495,
+      "hi": 0.539
+     }
+    },
+    "passed": true,
+    "tentative": true,
+    "holds_to_close": false
+   },
+   "nfl_high_total_under": {
+    "label": "Total in the top 10% of the season (under)",
+    "kind": "total",
+    "open": {
+     "discovery": {
+      "n": 220,
+      "rate": 0.559,
+      "lo": 0.493,
+      "hi": 0.623
+     },
+     "holdout": {
+      "n": 150,
+      "rate": 0.58,
+      "lo": 0.5,
+      "hi": 0.656
+     },
+     "all": {
+      "n": 370,
+      "rate": 0.568,
+      "lo": 0.517,
+      "hi": 0.617
+     }
+    },
+    "close": {
+     "discovery": {
+      "n": 357,
+      "rate": 0.521,
+      "lo": 0.469,
+      "hi": 0.572
+     },
+     "holdout": {
+      "n": 240,
+      "rate": 0.562,
+      "lo": 0.499,
+      "hi": 0.624
+     },
+     "all": {
+      "n": 597,
+      "rate": 0.538,
+      "lo": 0.498,
+      "hi": 0.577
+     }
+    },
+    "passed": true,
+    "tentative": false,
+    "holds_to_close": false
+   },
+   "nfl_both_under_over": {
+    "label": "Both teams' last games went 7+ under the total (over)",
+    "kind": "total",
+    "open": {
+     "discovery": {
+      "n": 191,
+      "rate": 0.482,
+      "lo": 0.412,
+      "hi": 0.552
+     },
+     "holdout": {
+      "n": 130,
+      "rate": 0.5,
+      "lo": 0.415,
+      "hi": 0.585
+     },
+     "all": {
+      "n": 321,
+      "rate": 0.489,
+      "lo": 0.435,
+      "hi": 0.544
+     }
+    },
+    "close": {
+     "discovery": {
+      "n": 295,
+      "rate": 0.542,
+      "lo": 0.485,
+      "hi": 0.598
+     },
+     "holdout": {
+      "n": 201,
+      "rate": 0.502,
+      "lo": 0.434,
+      "hi": 0.571
+     },
+     "all": {
+      "n": 496,
+      "rate": 0.526,
+      "lo": 0.482,
+      "hi": 0.57
+     }
+    },
+    "passed": false,
+    "tentative": false,
+    "holds_to_close": false
+   }
+  },
+  "cfb": {
+   "cfb_bounce": {
+    "label": "Away team off a 28+ point loss (back it) \u2014 the existing bounce-back tag",
+    "kind": "spread",
+    "open": {
+     "discovery": {
+      "n": 271,
+      "rate": 0.513,
+      "lo": 0.454,
+      "hi": 0.572
+     },
+     "holdout": {
+      "n": 185,
+      "rate": 0.546,
+      "lo": 0.474,
+      "hi": 0.616
+     },
+     "all": {
+      "n": 456,
+      "rate": 0.526,
+      "lo": 0.48,
+      "hi": 0.572
+     }
+    },
+    "close": {
+     "discovery": {
+      "n": 489,
+      "rate": 0.534,
+      "lo": 0.489,
+      "hi": 0.578
+     },
+     "holdout": {
+      "n": 337,
+      "rate": 0.543,
+      "lo": 0.49,
+      "hi": 0.595
+     },
+     "all": {
+      "n": 826,
+      "rate": 0.538,
+      "lo": 0.503,
+      "hi": 0.571
+     }
+    },
+    "passed": false,
+    "tentative": false,
+    "holds_to_close": true
+   },
+   "cfb_bounce_any": {
+    "label": "Any team off a 28+ point loss (back it)",
+    "kind": "spread",
+    "open": {
+     "discovery": {
+      "n": 479,
+      "rate": 0.511,
+      "lo": 0.467,
+      "hi": 0.556
+     },
+     "holdout": {
+      "n": 333,
+      "rate": 0.532,
+      "lo": 0.478,
+      "hi": 0.584
+     },
+     "all": {
+      "n": 812,
+      "rate": 0.52,
+      "lo": 0.485,
+      "hi": 0.554
+     }
+    },
+    "close": {
+     "discovery": {
+      "n": 868,
+      "rate": 0.506,
+      "lo": 0.473,
+      "hi": 0.539
+     },
+     "holdout": {
+      "n": 605,
+      "rate": 0.529,
+      "lo": 0.489,
+      "hi": 0.568
+     },
+     "all": {
+      "n": 1473,
+      "rate": 0.515,
+      "lo": 0.49,
+      "hi": 0.541
+     }
+    },
+    "passed": false,
+    "tentative": false,
+    "holds_to_close": false
+   },
+   "cfb_fav_off_bye": {
+    "label": "Favorite off a bye vs a team that is not (back the favorite)",
+    "kind": "spread",
+    "open": {
+     "discovery": {
+      "n": 220,
+      "rate": 0.473,
+      "lo": 0.408,
+      "hi": 0.539
+     },
+     "holdout": {
+      "n": 152,
+      "rate": 0.553,
+      "lo": 0.473,
+      "hi": 0.629
+     },
+     "all": {
+      "n": 372,
+      "rate": 0.505,
+      "lo": 0.455,
+      "hi": 0.556
+     }
+    },
+    "close": {
+     "discovery": {
+      "n": 365,
+      "rate": 0.518,
+      "lo": 0.467,
+      "hi": 0.569
+     },
+     "holdout": {
+      "n": 254,
+      "rate": 0.504,
+      "lo": 0.443,
+      "hi": 0.565
+     },
+     "all": {
+      "n": 619,
+      "rate": 0.512,
+      "lo": 0.473,
+      "hi": 0.551
+     }
+    },
+    "passed": false,
+    "tentative": false,
+    "holds_to_close": false
+   },
+   "cfb_letdown": {
+    "label": "Team that just beat a ranked opponent (fade it)",
+    "kind": "spread",
+    "open": {
+     "discovery": {
+      "n": 233,
+      "rate": 0.532,
+      "lo": 0.468,
+      "hi": 0.595
+     },
+     "holdout": {
+      "n": 158,
+      "rate": 0.506,
+      "lo": 0.429,
+      "hi": 0.583
+     },
+     "all": {
+      "n": 391,
+      "rate": 0.522,
+      "lo": 0.472,
+      "hi": 0.571
+     }
+    },
+    "close": {
+     "discovery": {
+      "n": 288,
+      "rate": 0.531,
+      "lo": 0.474,
+      "hi": 0.588
+     },
+     "holdout": {
+      "n": 195,
+      "rate": 0.538,
+      "lo": 0.468,
+      "hi": 0.607
+     },
+     "all": {
+      "n": 483,
+      "rate": 0.534,
+      "lo": 0.49,
+      "hi": 0.578
+     }
+    },
+    "passed": false,
+    "tentative": false,
+    "holds_to_close": false
+   },
+   "cfb_lookahead": {
+    "label": "Team whose next game (within 9 days) is vs a ranked opponent (fade it)",
+    "kind": "spread",
+    "open": {
+     "discovery": {
+      "n": 474,
+      "rate": 0.485,
+      "lo": 0.441,
+      "hi": 0.53
+     },
+     "holdout": {
+      "n": 324,
+      "rate": 0.5,
+      "lo": 0.446,
+      "hi": 0.554
+     },
+     "all": {
+      "n": 798,
+      "rate": 0.491,
+      "lo": 0.457,
+      "hi": 0.526
+     }
+    },
+    "close": {
+     "discovery": {
+      "n": 594,
+      "rate": 0.475,
+      "lo": 0.435,
+      "hi": 0.515
+     },
+     "holdout": {
+      "n": 402,
+      "rate": 0.498,
+      "lo": 0.449,
+      "hi": 0.546
+     },
+     "all": {
+      "n": 996,
+      "rate": 0.484,
+      "lo": 0.453,
+      "hi": 0.515
+     }
+    },
+    "passed": false,
+    "tentative": false,
+    "holds_to_close": false
+   },
+   "cfb_conf_home_dog": {
+    "label": "Conference home underdog (back it)",
+    "kind": "spread",
+    "open": {
+     "discovery": {
+      "n": 698,
+      "rate": 0.54,
+      "lo": 0.503,
+      "hi": 0.577
+     },
+     "holdout": {
+      "n": 485,
+      "rate": 0.509,
+      "lo": 0.465,
+      "hi": 0.554
+     },
+     "all": {
+      "n": 1183,
+      "rate": 0.527,
+      "lo": 0.499,
+      "hi": 0.556
+     }
+    },
+    "close": {
+     "discovery": {
+      "n": 1227,
+      "rate": 0.522,
+      "lo": 0.494,
+      "hi": 0.549
+     },
+     "holdout": {
+      "n": 825,
+      "rate": 0.513,
+      "lo": 0.479,
+      "hi": 0.547
+     },
+     "all": {
+      "n": 2052,
+      "rate": 0.518,
+      "lo": 0.496,
+      "hi": 0.54
+     }
+    },
+    "passed": false,
+    "tentative": false,
+    "holds_to_close": false
+   },
+   "cfb_conf_under": {
+    "label": "Conference game (under)",
+    "kind": "total",
+    "open": {
+     "discovery": {
+      "n": 1301,
+      "rate": 0.521,
+      "lo": 0.494,
+      "hi": 0.548
+     },
+     "holdout": {
+      "n": 887,
+      "rate": 0.52,
+      "lo": 0.487,
+      "hi": 0.552
+     },
+     "all": {
+      "n": 2188,
+      "rate": 0.521,
+      "lo": 0.5,
+      "hi": 0.541
+     }
+    },
+    "close": {
+     "discovery": {
+      "n": 3081,
+      "rate": 0.507,
+      "lo": 0.49,
+      "hi": 0.525
+     },
+     "holdout": {
+      "n": 2076,
+      "rate": 0.509,
+      "lo": 0.487,
+      "hi": 0.53
+     },
+     "all": {
+      "n": 5157,
+      "rate": 0.508,
+      "lo": 0.494,
+      "hi": 0.521
+     }
+    },
+    "passed": false,
+    "tentative": false,
+    "holds_to_close": false
+   },
+   "cfb_high_total_under": {
+    "label": "Total in the top 10% of the season (under)",
+    "kind": "total",
+    "open": {
+     "discovery": {
+      "n": 229,
+      "rate": 0.585,
+      "lo": 0.52,
+      "hi": 0.647
+     },
+     "holdout": {
+      "n": 155,
+      "rate": 0.484,
+      "lo": 0.407,
+      "hi": 0.562
+     },
+     "all": {
+      "n": 384,
+      "rate": 0.544,
+      "lo": 0.494,
+      "hi": 0.593
+     }
+    },
+    "close": {
+     "discovery": {
+      "n": 471,
+      "rate": 0.582,
+      "lo": 0.537,
+      "hi": 0.625
+     },
+     "holdout": {
+      "n": 323,
+      "rate": 0.498,
+      "lo": 0.444,
+      "hi": 0.553
+     },
+     "all": {
+      "n": 794,
+      "rate": 0.548,
+      "lo": 0.513,
+      "hi": 0.582
+     }
+    },
+    "passed": false,
+    "tentative": false,
+    "holds_to_close": true
+   },
+   "cfb_both_under_over": {
+    "label": "Both teams' last games went 10+ under the total (over)",
+    "kind": "total",
+    "open": {
+     "discovery": {
+      "n": 165,
+      "rate": 0.533,
+      "lo": 0.457,
+      "hi": 0.608
+     },
+     "holdout": {
+      "n": 110,
+      "rate": 0.482,
+      "lo": 0.391,
+      "hi": 0.574
+     },
+     "all": {
+      "n": 275,
+      "rate": 0.513,
+      "lo": 0.454,
+      "hi": 0.571
+     }
+    },
+    "close": {
+     "discovery": {
+      "n": 315,
+      "rate": 0.508,
+      "lo": 0.453,
+      "hi": 0.563
+     },
+     "holdout": {
+      "n": 214,
+      "rate": 0.472,
+      "lo": 0.406,
+      "hi": 0.539
+     },
+     "all": {
+      "n": 529,
+      "rate": 0.493,
+      "lo": 0.451,
+      "hi": 0.536
+     }
+    },
+    "passed": false,
+    "tentative": false,
+    "holds_to_close": false
+   }
+  },
+  "cbb": {
+   "cbb_bounce": {
+    "label": "Team off a 20+ point loss (back it)",
+    "kind": "spread",
+    "open": {
+     "discovery": {
+      "n": 664,
+      "rate": 0.494,
+      "lo": 0.456,
+      "hi": 0.532
+     },
+     "holdout": {
+      "n": 443,
+      "rate": 0.508,
+      "lo": 0.461,
+      "hi": 0.554
+     },
+     "all": {
+      "n": 1107,
+      "rate": 0.5,
+      "lo": 0.47,
+      "hi": 0.529
+     }
+    },
+    "close": {
+     "discovery": {
+      "n": 2318,
+      "rate": 0.506,
+      "lo": 0.485,
+      "hi": 0.526
+     },
+     "holdout": {
+      "n": 1553,
+      "rate": 0.5,
+      "lo": 0.475,
+      "hi": 0.525
+     },
+     "all": {
+      "n": 3871,
+      "rate": 0.503,
+      "lo": 0.487,
+      "hi": 0.519
+     }
+    },
+    "passed": false,
+    "tentative": false,
+    "holds_to_close": false
+   },
+   "cbb_letdown": {
+    "label": "Team that just beat a ranked opponent (fade it)",
+    "kind": "spread",
+    "open": {
+     "discovery": {
+      "n": 165,
+      "rate": 0.467,
+      "lo": 0.392,
+      "hi": 0.543
+     },
+     "holdout": {
+      "n": 114,
+      "rate": 0.553,
+      "lo": 0.461,
+      "hi": 0.641
+     },
+     "all": {
+      "n": 279,
+      "rate": 0.502,
+      "lo": 0.443,
+      "hi": 0.56
+     }
+    },
+    "close": {
+     "discovery": {
+      "n": 585,
+      "rate": 0.497,
+      "lo": 0.457,
+      "hi": 0.538
+     },
+     "holdout": {
+      "n": 392,
+      "rate": 0.51,
+      "lo": 0.461,
+      "hi": 0.559
+     },
+     "all": {
+      "n": 977,
+      "rate": 0.503,
+      "lo": 0.471,
+      "hi": 0.534
+     }
+    },
+    "passed": false,
+    "tentative": false,
+    "holds_to_close": false
+   },
+   "cbb_conf_home_dog": {
+    "label": "Conference home underdog (back it)",
+    "kind": "spread",
+    "open": {
+     "discovery": {
+      "n": 855,
+      "rate": 0.506,
+      "lo": 0.473,
+      "hi": 0.54
+     },
+     "holdout": {
+      "n": 634,
+      "rate": 0.522,
+      "lo": 0.483,
+      "hi": 0.561
+     },
+     "all": {
+      "n": 1489,
+      "rate": 0.513,
+      "lo": 0.488,
+      "hi": 0.538
+     }
+    },
+    "close": {
+     "discovery": {
+      "n": 2910,
+      "rate": 0.496,
+      "lo": 0.478,
+      "hi": 0.514
+     },
+     "holdout": {
+      "n": 1954,
+      "rate": 0.508,
+      "lo": 0.486,
+      "hi": 0.53
+     },
+     "all": {
+      "n": 4864,
+      "rate": 0.501,
+      "lo": 0.487,
+      "hi": 0.515
+     }
+    },
+    "passed": false,
+    "tentative": false,
+    "holds_to_close": false
+   },
+   "cbb_late_conf_dog": {
+    "label": "February\u2013March conference underdog of 7+ (back it)",
+    "kind": "spread",
+    "open": {
+     "discovery": {
+      "n": 706,
+      "rate": 0.5,
+      "lo": 0.463,
+      "hi": 0.537
+     },
+     "holdout": {
+      "n": 493,
+      "rate": 0.54,
+      "lo": 0.495,
+      "hi": 0.583
+     },
+     "all": {
+      "n": 1199,
+      "rate": 0.516,
+      "lo": 0.488,
+      "hi": 0.544
+     }
+    },
+    "close": {
+     "discovery": {
+      "n": 1953,
+      "rate": 0.518,
+      "lo": 0.495,
+      "hi": 0.54
+     },
+     "holdout": {
+      "n": 1321,
+      "rate": 0.514,
+      "lo": 0.487,
+      "hi": 0.541
+     },
+     "all": {
+      "n": 3274,
+      "rate": 0.516,
+      "lo": 0.499,
+      "hi": 0.533
+     }
+    },
+    "passed": false,
+    "tentative": false,
+    "holds_to_close": false
+   },
+   "cbb_conf_under": {
+    "label": "Conference game (under)",
+    "kind": "total",
+    "open": {
+     "discovery": {
+      "n": 2826,
+      "rate": 0.498,
+      "lo": 0.479,
+      "hi": 0.516
+     },
+     "holdout": {
+      "n": 1936,
+      "rate": 0.51,
+      "lo": 0.488,
+      "hi": 0.533
+     },
+     "all": {
+      "n": 4762,
+      "rate": 0.503,
+      "lo": 0.489,
+      "hi": 0.517
+     }
+    },
+    "close": {
+     "discovery": {
+      "n": 3804,
+      "rate": 0.501,
+      "lo": 0.485,
+      "hi": 0.517
+     },
+     "holdout": {
+      "n": 2560,
+      "rate": 0.517,
+      "lo": 0.498,
+      "hi": 0.537
+     },
+     "all": {
+      "n": 6364,
+      "rate": 0.508,
+      "lo": 0.495,
+      "hi": 0.52
+     }
+    },
+    "passed": false,
+    "tentative": false,
+    "holds_to_close": false
+   },
+   "cbb_high_total_under": {
+    "label": "Total in the top 10% of the season (under)",
+    "kind": "total",
+    "open": {
+     "discovery": {
+      "n": 445,
+      "rate": 0.485,
+      "lo": 0.439,
+      "hi": 0.532
+     },
+     "holdout": {
+      "n": 322,
+      "rate": 0.556,
+      "lo": 0.501,
+      "hi": 0.609
+     },
+     "all": {
+      "n": 767,
+      "rate": 0.515,
+      "lo": 0.48,
+      "hi": 0.55
+     }
+    },
+    "close": {
+     "discovery": {
+      "n": 663,
+      "rate": 0.495,
+      "lo": 0.457,
+      "hi": 0.533
+     },
+     "holdout": {
+      "n": 450,
+      "rate": 0.518,
+      "lo": 0.472,
+      "hi": 0.564
+     },
+     "all": {
+      "n": 1113,
+      "rate": 0.504,
+      "lo": 0.475,
+      "hi": 0.533
+     }
+    },
+    "passed": false,
+    "tentative": false,
+    "holds_to_close": false
+   },
+   "cbb_both_under_over": {
+    "label": "Both teams' last games went 10+ under the total (over)",
+    "kind": "total",
+    "open": {
+     "discovery": {
+      "n": 277,
+      "rate": 0.469,
+      "lo": 0.411,
+      "hi": 0.528
+     },
+     "holdout": {
+      "n": 191,
+      "rate": 0.487,
+      "lo": 0.417,
+      "hi": 0.557
+     },
+     "all": {
+      "n": 468,
+      "rate": 0.476,
+      "lo": 0.432,
+      "hi": 0.522
+     }
+    },
+    "close": {
+     "discovery": {
+      "n": 406,
+      "rate": 0.5,
+      "lo": 0.452,
+      "hi": 0.548
+     },
+     "holdout": {
+      "n": 272,
+      "rate": 0.478,
+      "lo": 0.419,
+      "hi": 0.537
+     },
+     "all": {
+      "n": 678,
+      "rate": 0.491,
+      "lo": 0.454,
+      "hi": 0.529
+     }
+    },
+    "passed": false,
+    "tentative": false,
+    "holds_to_close": false
+   }
+  },
+  "nba": {
+   "nba_bounce": {
+    "label": "Team off a 20+ point loss (back it)",
+    "kind": "spread",
+    "open": {
+     "discovery": {
+      "n": 145,
+      "rate": 0.559,
+      "lo": 0.477,
+      "hi": 0.637
+     },
+     "holdout": {
+      "n": 99,
+      "rate": 0.525,
+      "lo": 0.428,
+      "hi": 0.621
+     },
+     "all": {
+      "n": 244,
+      "rate": 0.545,
+      "lo": 0.482,
+      "hi": 0.606
+     }
+    },
+    "close": {
+     "discovery": {
+      "n": 145,
+      "rate": 0.531,
+      "lo": 0.45,
+      "hi": 0.61
+     },
+     "holdout": {
+      "n": 99,
+      "rate": 0.535,
+      "lo": 0.438,
+      "hi": 0.63
+     },
+     "all": {
+      "n": 244,
+      "rate": 0.533,
+      "lo": 0.47,
+      "hi": 0.594
+     }
+    },
+    "passed": false,
+    "tentative": false,
+    "holds_to_close": false
+   },
+   "nba_home_dog_after_loss": {
+    "label": "Home underdog coming off a loss (back it)",
+    "kind": "spread",
+    "open": {
+     "discovery": {
+      "n": 176,
+      "rate": 0.517,
+      "lo": 0.444,
+      "hi": 0.59
+     },
+     "holdout": {
+      "n": 118,
+      "rate": 0.483,
+      "lo": 0.395,
+      "hi": 0.572
+     },
+     "all": {
+      "n": 294,
+      "rate": 0.503,
+      "lo": 0.447,
+      "hi": 0.56
+     }
+    },
+    "close": {
+     "discovery": {
+      "n": 176,
+      "rate": 0.534,
+      "lo": 0.46,
+      "hi": 0.606
+     },
+     "holdout": {
+      "n": 118,
+      "rate": 0.534,
+      "lo": 0.444,
+      "hi": 0.621
+     },
+     "all": {
+      "n": 294,
+      "rate": 0.534,
+      "lo": 0.477,
+      "hi": 0.59
+     }
+    },
+    "passed": false,
+    "tentative": false,
+    "holds_to_close": false
+   },
+   "nba_3in4": {
+    "label": "Team on its 3rd game in 4 nights vs a team that is not (fade it)",
+    "kind": "spread",
+    "open": {
+     "discovery": {
+      "n": 249,
+      "rate": 0.51,
+      "lo": 0.448,
+      "hi": 0.572
+     },
+     "holdout": {
+      "n": 168,
+      "rate": 0.5,
+      "lo": 0.425,
+      "hi": 0.575
+     },
+     "all": {
+      "n": 417,
+      "rate": 0.506,
+      "lo": 0.458,
+      "hi": 0.554
+     }
+    },
+    "close": {
+     "discovery": {
+      "n": 249,
+      "rate": 0.506,
+      "lo": 0.444,
+      "hi": 0.568
+     },
+     "holdout": {
+      "n": 168,
+      "rate": 0.494,
+      "lo": 0.419,
+      "hi": 0.569
+     },
+     "all": {
+      "n": 417,
+      "rate": 0.501,
+      "lo": 0.453,
+      "hi": 0.549
+     }
+    },
+    "passed": false,
+    "tentative": false,
+    "holds_to_close": false
+   },
+   "nba_both_b2b_under": {
+    "label": "Both teams on a back-to-back (under)",
+    "kind": "total",
+    "open": {
+     "discovery": {
+      "n": 44,
+      "rate": 0.545,
+      "lo": 0.401,
+      "hi": 0.683
+     },
+     "holdout": {
+      "n": 29,
+      "rate": 0.448,
+      "lo": 0.284,
+      "hi": 0.625
+     },
+     "all": {
+      "n": 73,
+      "rate": 0.507,
+      "lo": 0.395,
+      "hi": 0.618
+     }
+    },
+    "close": {
+     "discovery": {
+      "n": 44,
+      "rate": 0.523,
+      "lo": 0.379,
+      "hi": 0.662
+     },
+     "holdout": {
+      "n": 29,
+      "rate": 0.379,
+      "lo": 0.227,
+      "hi": 0.56
+     },
+     "all": {
+      "n": 73,
+      "rate": 0.466,
+      "lo": 0.356,
+      "hi": 0.579
+     }
+    },
+    "passed": false,
+    "tentative": false,
+    "holds_to_close": false
+   },
+   "nba_high_total_under": {
+    "label": "Total in the top 10% of the season (under)",
+    "kind": "total",
+    "open": {
+     "discovery": {
+      "n": 65,
+      "rate": 0.508,
+      "lo": 0.389,
+      "hi": 0.625
+     },
+     "holdout": {
+      "n": 44,
+      "rate": 0.5,
+      "lo": 0.358,
+      "hi": 0.642
+     },
+     "all": {
+      "n": 109,
+      "rate": 0.505,
+      "lo": 0.412,
+      "hi": 0.597
+     }
+    },
+    "close": {
+     "discovery": {
+      "n": 65,
+      "rate": 0.508,
+      "lo": 0.389,
+      "hi": 0.625
+     },
+     "holdout": {
+      "n": 44,
+      "rate": 0.5,
+      "lo": 0.358,
+      "hi": 0.642
+     },
+     "all": {
+      "n": 109,
+      "rate": 0.505,
+      "lo": 0.412,
+      "hi": 0.597
+     }
+    },
+    "passed": false,
+    "tentative": false,
+    "holds_to_close": false
+   },
+   "nba_both_under_over": {
+    "label": "Both teams' last games went 10+ under the total (over)",
+    "kind": "total",
+    "open": {
+     "discovery": {
+      "n": 56,
+      "rate": 0.375,
+      "lo": 0.26,
+      "hi": 0.506
+     },
+     "holdout": {
+      "n": 40,
+      "rate": 0.35,
+      "lo": 0.221,
+      "hi": 0.505
+     },
+     "all": {
+      "n": 96,
+      "rate": 0.365,
+      "lo": 0.275,
+      "hi": 0.464
+     }
+    },
+    "close": {
+     "discovery": {
+      "n": 56,
+      "rate": 0.375,
+      "lo": 0.26,
+      "hi": 0.506
+     },
+     "holdout": {
+      "n": 40,
+      "rate": 0.425,
+      "lo": 0.285,
+      "hi": 0.578
+     },
+     "all": {
+      "n": 96,
+      "rate": 0.396,
+      "lo": 0.304,
+      "hi": 0.496
+     }
+    },
+    "passed": false,
+    "tentative": false,
+    "holds_to_close": false
+   }
+  }
+ },
+ "updated": "2026-11-16"
+}

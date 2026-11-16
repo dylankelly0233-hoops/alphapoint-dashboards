@@ -29,9 +29,10 @@ DUE_DAYS = 25
 STEPS = [('Game situations', ['situational_research.py']), ('Spread value tables', ['valuation.py']),
          ('NBA/NHL totals data', ['pro_totals_fetch.py', 'nba', 'nhl']), ('Totals backtests', ['totals.py']),
          ('BUY/SELL tag backtest', ['tag_backtest.py']), ('Rating backtests', ['backtests.py']),
-         ('Priced value end-to-end test', ['priced_value_test.py']), ('Slice test (Best spots)', ['segment_test.py'])]
+         ('Priced value end-to-end test', ['priced_value_test.py']), ('Slice test (Best spots)', ['segment_test.py']),
+         ('Betting systems', ['system_test.py'])]
 OUTPUTS = ['valuation.json', 'totals.json', 'totals_prior.json', 'tag_backtest.json', 'backtests.json', 'priced_value_test.json',
-           'segment_test.json']
+           'segment_test.json', 'system_test.json']
 NAMES = {'nfl': 'NFL', 'cfb': 'CFB', 'cbb': 'CBB', 'nba': 'NBA', 'nhl': 'NHL', 'epl': 'EPL'}
 
 
@@ -95,6 +96,16 @@ def compare(before):
                     ' ← NEW: joins Best spots' if r.get('passed') else ' ← no longer passes: leaves Best spots')
                 lines.append(f'{m} / {sl} (Best spots slice): {a["rate"]} of {a["n"]} vs the opener '
                              f'({a["lo"]}–{a["hi"]}), {"passes" if r.get("passed") else "fails"}{note}')
+    y0, y1 = before.get('system_test.json', {}).get('systems', {}), _load('system_test.json').get('systems', {})
+    for sp, systems in y1.items():
+        for key, r in systems.items():
+            was = ((y0.get(sp) or {}).get(key) or {}).get('passed')
+            if r.get('passed') or was:
+                a = (r.get('open') or {}).get('all') or {}
+                note = '' if bool(was) == bool(r.get('passed')) or was is None else (
+                    ' ← NEW: now tagged and on Best spots' if r.get('passed') else ' ← no longer passes: tag removed')
+                lines.append(f'System {key}: {a.get("rate")} of {a.get("n")} vs the opener, '
+                             f'{"passes" if r.get("passed") else "fails"}{note}')
     return lines
 
 

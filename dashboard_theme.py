@@ -551,6 +551,7 @@ td.pos { color: var(--pos); font-weight: 600; } td.neg { color: var(--neg); font
         color: var(--chip-ink); background: var(--accent); cursor: help; }
 .gtag.bounce { background: var(--pos); }
 .gtag.teaser { background: #6d4bd8; } .gtag.teaser.max { background: #4a2fb0; }
+.gtag.system { background: #0f766e; }
 .lmove { padding: 8px 14px 10px; font-size: 13px; color: var(--muted); border-top: 1px solid var(--line); }
 .injlist { display: block; margin-top: 2px; } .inj { display: block; color: var(--ink); line-height: 1.45; }
 .inj b { color: var(--muted); font-weight: 600; } .inj.ret { color: var(--pos, #1a7f37); }

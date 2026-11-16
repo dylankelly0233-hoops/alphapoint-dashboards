@@ -302,7 +302,7 @@ def best_spots():
         except (OSError, ValueError):
             continue
     now = datetime.now().astimezone()
-    priced, teasers, watch = [], [], []
+    priced, teasers, watch, systems = [], [], [], []
     for s in spots:
         s['dt'] = datetime.fromisoformat(s['kick'])
         s['sort'] = s['dt'] + timedelta(hours=23, minutes=59) if s.get('tbd') else s['dt']
@@ -310,6 +310,8 @@ def best_spots():
             continue
         if any(label.startswith('Teaser') for label, _ in s['tags']):
             teasers.append(s)
+        if s.get('systems'):
+            systems.append(s)            # proven systems show whatever our line says (like teaser legs)
         if s.get('flags'):
             continue
         s['priced'] = [x for x in s.get('priced') or [] if x.get('proof')]      # proven slices only (valuation.proven_lines)
@@ -342,6 +344,11 @@ def best_spots():
         return _row(s, f'Ours {theme.esc(s["ours"])} · <span class="mk-l">Market</span><span class="mk-s">Mkt</span> '
                        f'{theme.esc(s["market"])}', f'<span class="edge none">{theme.esc(side)}</span><span class="sline">tease</span>')
 
+    def system_row(s):
+        lines = '<br>'.join(f'<b>{theme.esc(x["pick"])}</b> · {theme.esc(x["label"])}'
+                            f'<span class="sproof">{theme.esc(x["record"])}</span>' for x in s['systems'])
+        return _row(s, lines, '<span class="edge none">System</span>')
+
     def watch_row(s):
         w = s['watch']
         side = s['home'] if w['toward'] == 'home' else s['away']
@@ -364,6 +371,9 @@ def best_spots():
                       priced, priced_row, 'Nothing in a proven spot clears −110 right now.')
             + section('NFL teaser legs', 'Underdogs of +1.5 to +3 with a total of 46 or lower or a division game: about 77% '
                       'of legs out of sample (2015–25).', teasers, teaser_row, 'No teaser legs this week.')
+            + section('Proven systems', 'Simple situational rules that beat the opening line in both halves of past '
+                      'seasons (re-tested monthly; "tentative" = only just cleared the bar). They show whatever our line says.',
+                      systems, system_row, 'No games fit a proven system this week.')
             + section('Line-move watch', 'Our number is far enough from the market that, in past seasons, the line moved '
                       'toward ours most of the time. A timing note, not a value claim.', watch, watch_row,
                       'No games in a gap size with a strong line-move record.')
@@ -436,7 +446,8 @@ INFO = [
                        'basketball: Priced value (lines that clear −110 at our fair number, only in markets where that rule '
                        'won more than −110 needs when replayed on past seasons; re-tested monthly), NFL teaser legs, and '
                        'a Line-move watch (games in a gap size whose line has moved toward our number most of the time). '
-                       'BUY/SELL signals are not shown here (replayed over past seasons they were a coin flip against the '
+                       'Proven systems (simple situational rules that beat the opener in both halves of past seasons, from '
+                       'the monthly system test). BUY/SELL signals are not shown here (replayed over past seasons they were a coin flip against the '
                        'line); the bounce-back tag shows as a label only. The NHL and Premier League '
                        'return once something there shows a real edge.'),
         ('Bounce-back (CFB)', 'An away team coming off a loss by 28+ points. In a 2016–25 backtest these teams covered 55.4% '
@@ -538,7 +549,8 @@ def perf_tab():
         except (OSError, ValueError):
             bt = None
         extra = {}
-        for key, fn in (('tags', 'tag_backtest.json'), ('valuation', 'valuation.json'), ('totals', 'totals.json')):
+        for key, fn in (('tags', 'tag_backtest.json'), ('valuation', 'valuation.json'), ('totals', 'totals.json'),
+                        ('systems', 'system_test.json')):
             try:
                 with open(os.path.join(HERE, fn), encoding='utf-8') as f:
                     extra[key] = json.load(f)

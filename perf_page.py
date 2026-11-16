@@ -256,6 +256,8 @@ def tab(perf, bt=None, extra=None):
           'the line?</span></div>' + buy_sell(sports) + tags_past(extra.get('tags'))
         + '<div class="sechead"><h2>What a gap is worth</h2><span class="hint">Past seasons, against the opening line</span></div>'
         + worth(extra.get('valuation'), extra.get('totals'))
+        + '<div class="sechead"><h2>Betting systems tested</h2><span class="hint">Against the opening and closing lines, '
+          'every season we have</span></div>' + systems_table(extra.get('systems'))
         + '<div class="sechead"><h2>Rating sources, scored one by one</h2><span class="hint">Live games since logging '
           'began</span></div>' + sources(sports)
         + '<div class="sechead"><h2>More detail by sport</h2><span class="hint">Tap a sport</span></div>'
@@ -330,3 +332,25 @@ def worth(valn, tots):
             'size. These set the Fair line and cover chances on the game cards; the share is re-tuned weekly from live games.</p>'
             + theme.table('perf-worth', [('Market', 'l'), ('Share of gap that was real', ''), ('Moved toward us, 1–2 pt gaps', ''),
                                          ('2–4 pt gaps', ''), ('4+ pt gaps', '')], rows, sortable=False))
+
+
+def systems_table(st):
+    """Every betting system tested (system_test.json): its record vs the opener and the close, and whether it passed."""
+    rows = ''
+    for sp, systems in ((st or {}).get('systems') or {}).items():
+        for key, r in systems.items():
+            if 'open' not in r:
+                continue
+            o, c = (r['open'] or {}).get('all') or {}, (r.get('close') or {}).get('all') or {}
+            ok = 'Passes' + (' (tentative)' if r.get('tentative') else '') if r.get('passed') else 'No'
+            rows += (f'<tr><td class="l">{theme.esc(SPORT_NAMES.get(sp, sp.upper()))}</td><td class="l">{theme.esc(r["label"])}</td>'
+                     f'<td>{_pct(o) if o.get("n") else "—"}</td><td>{_pct(c) if c.get("n") else "—"}</td>'
+                     f'<td class="{"good" if r.get("passed") else "muted"}">{ok}</td></tr>')
+    if not rows:
+        return ''
+    return ('<p class="hint">Simple situational rules, written down before testing and scored over every past season we '
+            'have. A system passes only if it beats the opening line in both the earlier and later halves of the data on its '
+            'own and overall (95% range above 50%); passing systems are tagged on game cards and listed in Best spots. '
+            'With this many systems tested, expect one or two near-misses by luck, so narrow passes are marked tentative.</p>'
+            + theme.table('perf-systems', [('Sport', 'l'), ('System', 'l'), ('vs the opener', ''), ('vs the close', ''),
+                                           ('Result', '')], rows))
