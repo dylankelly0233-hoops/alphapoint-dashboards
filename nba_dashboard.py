@@ -378,7 +378,8 @@ def generate_html(power, metrics, days, info):
                                            sit.describe_rest(g['rest_parts'], lambda t: short.get(t, t))) if x)
             card = theme.game_card(when, venue, side(g['away'], a_r), side(g['home'], h_r),
                                    proj, mkt, g['score'],
-                                   theme.edge_text(pm, g['market'], short[g['home']], short[g['away']]), move=move)
+                                   theme.edge_text(pm, g['market'], short[g['home']], short[g['away']]), move=move,
+                                   gid=g['game_id'])
             cards += card
             reasons = info['featured'].get(g['game_id'])
             if reasons:
@@ -413,7 +414,7 @@ def generate_html(power, metrics, days, info):
                                      if g['home'] in mprof and g['away'] in mprof else None}})
             spots.append(ex.spot('NBA', 'nba.html#games', g['kick'], short[g['away']], short[g['home']], margin, g['market'],
                                  [], [(short[t], _signal(comp.get(t), gp.get(t, 0))) for t in (g['away'], g['home'])],
-                                 info['opened'].get(g['game_id']), key='nba',
+                                 info['opened'].get(g['game_id']), key='nba', gid=g['game_id'],
                                  total=(info['total_fn'](g['home'], g['away'], g['neutral']) if info.get('total_fn') else None,
                                         g.get('total'))))
         sections += (f'<div class="sechead"><h2>{day.strftime("%A, %b %d").replace(" 0", " ")}</h2>'

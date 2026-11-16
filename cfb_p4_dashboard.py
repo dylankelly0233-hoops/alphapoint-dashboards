@@ -693,9 +693,10 @@ def generate_html(p4, vals, sched, week, season_type, info):
         spots.append(ex.spot('CFB', 'cfb.html#sched', r.kick, r.away, r.home, r.margin, mkt_margin, labels,
                              [(r.away, sig(r.away_value)), (r.home, sig(r.home_value))],
                              info['opened'].get(str(r.game_id)), big, tbd=bool(getattr(r, 'tbd', False)),
-                             key='cfb', total=(t_ours, t_mkt)))
+                             key='cfb', total=(t_ours, t_mkt), gid=r.game_id))
         card = theme.game_card(when, venue, side(r.away, r.away_rating, r.away_value),
-                               side(r.home, r.home_rating, r.home_value), proj, mkt, r.score, edge, tag_html, move)
+                               side(r.home, r.home_rating, r.home_value), proj, mkt, r.score, edge, tag_html, move,
+                               gid=r.game_id)
         reasons = info['featured'].get(r.game_id)
         if reasons:
             hfa = _hfa(r)

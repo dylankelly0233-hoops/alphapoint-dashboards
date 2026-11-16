@@ -240,7 +240,7 @@ def edge_text(proj_margin, market_margin, home, away):
     return f'<span class="{cls}">{esc(home if e > 0 else away)} {spread_num(abs(e))}</span>'
 
 
-def game_card(when, venue, away, home, projected, market, final='', edge='', tags='', move='', labels=('A', 'H')):
+def game_card(when, venue, away, home, projected, market, final='', edge='', tags='', move='', labels=('A', 'H'), gid=None):
     """
     away / home: dict(name, logo, rating, sd, signal, color, key). key makes the name open the team page.
     projected / market / edge: already-formatted strings. tags: situational tag pills (extras.tag);
@@ -269,7 +269,8 @@ def game_card(when, venue, away, home, projected, market, final='', edge='', tag
     toggle = ('<div class="gchips">' + ''.join(chips)
               + '<button type="button" class="gmore" onclick="this.closest(\'.card\').classList.toggle(\'open\')">'
                 'Details</button></div>') if move else ''
-    return (f'<article class="card game"><header><span>{esc(when)}</span><span>{esc(venue)}</span></header>'
+    gattr = f' data-gid="{esc(str(gid))}"' if gid is not None else ''      # Best spots links open this card
+    return (f'<article class="card game"{gattr}><header><span>{esc(when)}</span><span>{esc(venue)}</span></header>'
             f'{tags_html}{side(away, labels[0])}{side(home, labels[1])}'
             f'<footer><div>{k("Projected")}<b>{projected}</b></div>'
             f'<div>{k("Market")}<span>{market}</span></div>'
@@ -553,6 +554,8 @@ td.pos { color: var(--pos); font-weight: 600; } td.neg { color: var(--neg); font
 .inj b { color: var(--muted); font-weight: 600; } .inj.ret { color: var(--pos, #1a7f37); }
 .lmove .k { font: 700 11px/1 var(--display); letter-spacing: 1px; text-transform: uppercase; margin-right: 8px; }
 .lmove b { color: var(--ink); }
+.card.game.flash { outline: 3px solid var(--accent); outline-offset: 2px; transition: outline-color .4s; }
+.card.game { scroll-margin-top: 64px; }
 .lmove.pricing .pline { display: block; margin-top: 2px; } .lmove.pricing .k + .pline { display: inline; margin-top: 0; }
 .lmove .pline .tag { font: 700 10.5px/1 var(--display); letter-spacing: .8px; text-transform: uppercase; color: var(--muted); margin-right: 6px; }
 .newsflag { display: block; margin-top: 4px; padding: 5px 8px; border-radius: 6px; background: var(--neg-bg); color: var(--neg);
@@ -756,8 +759,24 @@ document.querySelectorAll('nav.tabs button').forEach(b => b.onclick = () => {
   showTab(b.dataset.page);
   try { history.replaceState(null, '', '#' + b.dataset.page); } catch (e) {}
 });
-// Open the tab named in the link (#value, #info…), otherwise the first tab
-if (!showTab(location.hash.slice(1))) showTab(document.querySelector('nav.tabs button').dataset.page);
+// Open the tab named in the link (#value, #info…), otherwise the first tab. A link like #sched~g-401 (from Best
+// spots) also opens that game's card: switches to its week if needed, scrolls to it, expands it and highlights it.
+(function () {
+  const [tab, card] = location.hash.slice(1).split('~');
+  if (!showTab(tab)) showTab(document.querySelector('nav.tabs button').dataset.page);
+  if (!card || !card.startsWith('g-')) return;
+  const page = document.getElementById(tab);
+  const el = page && page.querySelector('.card.game[data-gid="' + CSS.escape(card.slice(2)) + '"]');
+  if (!el) return;
+  const pane = el.closest('.wkpane');
+  if (pane && !pane.classList.contains('on')) {
+    const b = document.querySelector('.wk[data-wkgroup="' + pane.dataset.wkgroup + '"][data-wk="' + pane.dataset.wk + '"]');
+    if (b) b.click();
+  }
+  el.classList.add('open', 'flash');
+  setTimeout(() => el.scrollIntoView({block: 'start', behavior: 'smooth'}), 60);
+  setTimeout(() => el.classList.remove('flash'), 2600);
+})();
 function stickCols() {
   if (window.innerWidth > 560) return;
   document.querySelectorAll('table.data').forEach(t => {

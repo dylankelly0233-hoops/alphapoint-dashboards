@@ -12,6 +12,7 @@ DUE_DAYS+ ago (so a missed Sunday is caught the next week), or with --force.
   4. totals.py                totals model backtests (NFL, CFB, CBB, NBA), NHL and EPL over/unders
   5. tag_backtest.py          BUY / SELL tags replayed against the line
   6. backtests.py             walk-forward rating backtests (Model performance tab)
+  7. priced_value_test.py     end-to-end test of the Best spots rule: decides which markets show in Priced value
 
 Outputs committed by the scheduled task: valuation.json, totals.json, totals_prior.json, tag_backtest.json, backtests.json.
 """
@@ -27,8 +28,9 @@ SUMMARY = 'research_summary.md'
 DUE_DAYS = 25
 STEPS = [('Game situations', ['situational_research.py']), ('Spread value tables', ['valuation.py']),
          ('NBA/NHL totals data', ['pro_totals_fetch.py', 'nba', 'nhl']), ('Totals backtests', ['totals.py']),
-         ('BUY/SELL tag backtest', ['tag_backtest.py']), ('Rating backtests', ['backtests.py'])]
-OUTPUTS = ['valuation.json', 'totals.json', 'totals_prior.json', 'tag_backtest.json', 'backtests.json']
+         ('BUY/SELL tag backtest', ['tag_backtest.py']), ('Rating backtests', ['backtests.py']),
+         ('Priced value end-to-end test', ['priced_value_test.py'])]
+OUTPUTS = ['valuation.json', 'totals.json', 'totals_prior.json', 'tag_backtest.json', 'backtests.json', 'priced_value_test.json']
 NAMES = {'nfl': 'NFL', 'cfb': 'CFB', 'cbb': 'CBB', 'nba': 'NBA', 'nhl': 'NHL', 'epl': 'EPL'}
 
 
@@ -74,6 +76,14 @@ def compare(before):
         d1, d0 = (r.get('direction') or {}), ((b0.get(sp) or {}).get('direction') or {})
         lines.append(_moved((d0.get('moved_toward') or {}).get('rate'), (d1.get('moved_toward') or {}).get('rate'), 0.03,
                             f'{NAMES.get(sp, sp)} ratings backtest, line moved toward our number'))
+    p0, p1 = before.get('priced_value_test.json', {}).get('results', {}), _load('priced_value_test.json').get('results', {})
+    for name, r in p1.items():
+        o, o0 = (r or {}).get('open') or {}, ((p0.get(name) or {}).get('open') or {})
+        ok = (o.get('decided') or 0) >= 100 and (o.get('win_rate') or 0) > 110 / 210 and (o.get('lo') or 0) > 0.5
+        was = (o0.get('decided') or 0) >= 100 and (o0.get('win_rate') or 0) > 110 / 210 and (o0.get('lo') or 0) > 0.5
+        note = '' if ok == was or not o0 else (' ← now PROVEN: joins Best spots' if ok else ' ← no longer proven: leaves Best spots')
+        lines.append(f'{name} (Best spots rule, out of sample at the open): {o.get("win_rate")} of {o.get("decided")} '
+                     f'({o.get("lo")}–{o.get("hi")}), {"proven" if ok else "not proven"}{note}')
     return lines
 
 

@@ -493,12 +493,12 @@ def generate_html(power, vals, sched, week, info):
         spots.append(ex.spot('NFL', 'nfl.html#sched', r.kick, nick(away), nick(home), r.margin, r.market,
                              [tag_label] if tag_label else [],
                              [(nick(away), sig(r.away_value)), (nick(home), sig(r.home_value))],
-                             info['opened'].get(str(r.game_id)), key='nfl', total=(t_ours, r.total)))
+                             info['opened'].get(str(r.game_id)), key='nfl', total=(t_ours, r.total), gid=r.game_id))
         card = theme.game_card(theme.kick_text(r.kick), 'Neutral site' if r.neutral else '',
                                side(r.away, away, r.away_value), side(r.home, home, r.home_value),
                                proj, mkt, r.score,
                                theme.edge_text(pm, r.market, nick(home), nick(away)),   # spread_line is already the home margin
-                               tag_html, move)
+                               tag_html, move, gid=r.game_id)
         reasons = info['featured'].get(r.game_id)
         if reasons:
             hfa = 0.0 if r.neutral else HFA_POINTS

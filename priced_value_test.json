@@ -1,0 +1,182 @@
+{
+ "updated": "2026-11-15",
+ "min_prior_games": 500,
+ "results": {
+  "nfl spreads": {
+   "open": {
+    "picked": 250,
+    "decided": 248,
+    "win_rate": 0.569,
+    "lo": 0.506,
+    "hi": 0.629,
+    "expected": 0.534,
+    "roi_at_110": 0.085,
+    "pushes": 2
+   },
+   "close": {
+    "picked": 185,
+    "decided": 181,
+    "win_rate": 0.508,
+    "lo": 0.436,
+    "hi": 0.58,
+    "expected": 0.528,
+    "roi_at_110": -0.03,
+    "pushes": 4
+   }
+  },
+  "cbb spreads": {
+   "open": {
+    "picked": 1416,
+    "decided": 1413,
+    "win_rate": 0.486,
+    "lo": 0.46,
+    "hi": 0.512,
+    "expected": 0.535,
+    "roi_at_110": -0.072,
+    "pushes": 3
+   },
+   "close": {
+    "picked": 1415,
+    "decided": 1408,
+    "win_rate": 0.484,
+    "lo": 0.458,
+    "hi": 0.51,
+    "expected": 0.535,
+    "roi_at_110": -0.077,
+    "pushes": 7
+   }
+  },
+  "nfl totals": {
+   "open": {
+    "picked": 33,
+    "decided": 33,
+    "win_rate": 0.606,
+    "lo": 0.437,
+    "hi": 0.753,
+    "expected": 0.53,
+    "roi_at_110": 0.157,
+    "pushes": 0
+   },
+   "close": {
+    "picked": 32,
+    "decided": 32,
+    "win_rate": 0.375,
+    "lo": 0.229,
+    "hi": 0.547,
+    "expected": 0.531,
+    "roi_at_110": -0.284,
+    "pushes": 0
+   }
+  },
+  "cfb totals": {
+   "open": {
+    "picked": 369,
+    "decided": 367,
+    "win_rate": 0.51,
+    "lo": 0.459,
+    "hi": 0.56,
+    "expected": 0.531,
+    "roi_at_110": -0.027,
+    "pushes": 2
+   },
+   "close": {
+    "picked": 425,
+    "decided": 424,
+    "win_rate": 0.479,
+    "lo": 0.432,
+    "hi": 0.526,
+    "expected": 0.531,
+    "roi_at_110": -0.086,
+    "pushes": 1
+   }
+  },
+  "cbb totals": {
+   "open": {
+    "picked": 680,
+    "decided": 680,
+    "win_rate": 0.521,
+    "lo": 0.483,
+    "hi": 0.558,
+    "expected": 0.535,
+    "roi_at_110": -0.006,
+    "pushes": 0
+   },
+   "close": {
+    "picked": 718,
+    "decided": 718,
+    "win_rate": 0.508,
+    "lo": 0.472,
+    "hi": 0.545,
+    "expected": 0.535,
+    "roi_at_110": -0.03,
+    "pushes": 0
+   }
+  },
+  "nba totals": {
+   "open": {
+    "picked": 107,
+    "decided": 107,
+    "win_rate": 0.533,
+    "lo": 0.439,
+    "hi": 0.624,
+    "expected": 0.537,
+    "roi_at_110": 0.017,
+    "pushes": 0
+   },
+   "close": {
+    "picked": 164,
+    "decided": 164,
+    "win_rate": 0.494,
+    "lo": 0.418,
+    "hi": 0.57,
+    "expected": 0.537,
+    "roi_at_110": -0.057,
+    "pushes": 0
+   }
+  },
+  "cbb_p4 spreads": {
+   "open": {
+    "picked": 217,
+    "decided": 216,
+    "win_rate": 0.477,
+    "lo": 0.411,
+    "hi": 0.543,
+    "expected": 0.532,
+    "roi_at_110": -0.09,
+    "pushes": 1
+   },
+   "close": {
+    "picked": 232,
+    "decided": 230,
+    "win_rate": 0.483,
+    "lo": 0.419,
+    "hi": 0.547,
+    "expected": 0.531,
+    "roi_at_110": -0.079,
+    "pushes": 2
+   }
+  },
+  "cbb_p4 totals": {
+   "open": {
+    "picked": 135,
+    "decided": 135,
+    "win_rate": 0.548,
+    "lo": 0.464,
+    "hi": 0.63,
+    "expected": 0.532,
+    "roi_at_110": 0.046,
+    "pushes": 0
+   },
+   "close": {
+    "picked": 142,
+    "decided": 142,
+    "win_rate": 0.521,
+    "lo": 0.439,
+    "hi": 0.602,
+    "expected": 0.532,
+    "roi_at_110": -0.005,
+    "pushes": 0
+   }
+  }
+ }
+}

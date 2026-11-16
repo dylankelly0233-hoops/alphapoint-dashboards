@@ -435,7 +435,7 @@ def team_modal(data):
 # BEST SPOTS (home page feed)
 # ==========================================
 def spot(sport, page, kick, away, home, ours, market, tags=(), signals=(), opened=None, lopsided_game=False, tbd=False,
-         key=None, total=(None, None)):
+         key=None, total=(None, None), gid=None):
     """
     One upcoming game for the home page. ours / market = home margins; tags = [(label, team the tag favors)];
     signals = [(team, 'BUY'|'SELL')]. opened / lopsided_game set the guard flags ('news', 'lopsided').
@@ -450,7 +450,7 @@ def spot(sport, page, kick, away, home, ours, market, tags=(), signals=(), opene
     if last < pd.Timestamp.now(tz='America/New_York') or ts > pd.Timestamp.now(tz='America/New_York') + pd.Timedelta(days=SPOT_DAYS):
         return None
     edge = None if _nan(ours) or _nan(market) else theme.round_half(ours) - market
-    return {'sport': sport, 'page': page, 'kick': ts.isoformat(), 'tbd': bool(tbd), 'away': away, 'home': home,
+    return {'sport': sport, 'page': page + (f'~g-{gid}' if gid is not None else ''), 'kick': ts.isoformat(), 'tbd': bool(tbd), 'away': away, 'home': home,
             'ours': line_text(home, away, theme.round_half(ours)) if not _nan(ours) else '—',
             'market': line_text(home, away, market) if not _nan(market) else '—',
             'edge': None if edge is None else round(abs(edge), 1),

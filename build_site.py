@@ -199,6 +199,29 @@ def league_mark(sport):
             f'<span class="logo md img {cls}"></span>{b}</span>')
 
 
+PROVEN_MIN_GAMES, BREAKEVEN = 100, 110 / 210
+
+
+def proven_markets():
+    """
+    {(sport, 'Spread'|'Total')} that passed the end-to-end test (priced_value_test.json, refreshed monthly): the rule's
+    picks, replayed out of sample at the opening line, won more than −110 needs over PROVEN_MIN_GAMES+ decided games,
+    with the whole 95% range above 50%. Only these show in Priced value.
+    """
+    try:
+        res = json.load(open(os.path.join(HERE, 'priced_value_test.json'), encoding='utf-8'))['results']
+    except (OSError, ValueError, KeyError):
+        return set()
+    ok = set()
+    for name, r in res.items():
+        o = (r or {}).get('open') or {}
+        if (o.get('decided') or 0) >= PROVEN_MIN_GAMES and (o.get('win_rate') or 0) > BREAKEVEN and (o.get('lo') or 0) > 0.5:
+            sport, kind = name.split()
+            # cbb_p4 = games with a Power 4 or Big East team: exactly the games the CBB page (and Best spots) shows
+            ok.add((sport.replace('_p4', ''), 'Spread' if kind == 'spreads' else 'Total'))
+    return ok
+
+
 BEST_SPORTS = ('nfl', 'cfb', 'cbb', 'nba')   # NHL and EPL return once something there shows a real edge (Dylan, 2026-11-16)
 
 
@@ -256,6 +279,7 @@ def best_spots():
         except (OSError, ValueError):
             continue
     now = datetime.now().astimezone()
+    proven = proven_markets()
     priced, teasers, watch = [], [], []
     for s in spots:
         s['dt'] = datetime.fromisoformat(s['kick'])
@@ -266,7 +290,8 @@ def best_spots():
             teasers.append(s)
         if s.get('flags'):
             continue
-        if s.get('priced'):
+        s['priced'] = [x for x in s.get('priced') or [] if (s['sport'].lower(), x['kind']) in proven]
+        if s['priced']:
             priced.append(s)
         elif s.get('watch'):
             watch.append(s)
@@ -298,9 +323,11 @@ def best_spots():
     return ('<section class="card spots"><div class="spots-head"><h2>Best spots</h2>'
             '<span class="hint">Only what has held up in testing · next 7 days · NFL, college football, NBA, college basketball'
             '</span></div>'
-            + section('Priced value', 'Spreads and totals that clear −110 at our fair number: the market moved only part of '
-                      'the way toward ours, by how much of past gaps showed up in results. Right: cents per $1 at −110.',
-                      priced, priced_row, 'Nothing clears −110 at our fair numbers right now.')
+            + section('Priced value', 'Lines that clear −110 at our fair number, only in markets where this exact rule, '
+                      'replayed on past seasons out of sample, won more than −110 needs: '
+                      + (', '.join(f'{LEAGUE_NAMES.get(sp.upper(), sp.upper())} {k.lower()}s' for sp, k in sorted(proven))
+                         or 'none yet') + '. Right: cents per $1 at −110. Early lines only: by the close the edge was gone.',
+                      priced, priced_row, 'Nothing in a proven market clears −110 right now.')
             + section('NFL teaser legs', 'Underdogs of +1.5 to +3 with a total of 46 or lower or a division game: about 77% '
                       'of legs out of sample (2015–25).', teasers, teaser_row, 'No teaser legs this week.')
             + section('Line-move watch', 'Our number is far enough from the market that, in past seasons, the line moved '
@@ -372,7 +399,8 @@ INFO = [
     ]),
     ('Research spots', [
         ('Best spots', 'The home page lists only what has held up in testing, for the NFL, college football, NBA and college '
-                       'basketball: Priced value (spreads and totals that clear −110 at our fair number), NFL teaser legs, and '
+                       'basketball: Priced value (lines that clear −110 at our fair number, only in markets where that rule '
+                       'won more than −110 needs when replayed on past seasons; re-tested monthly), NFL teaser legs, and '
                        'a Line-move watch (games in a gap size whose line has moved toward our number most of the time). '
                        'BUY/SELL signals and the bounce-back tag show as labels but no longer put a game on the list: '
                        'replayed over past seasons, the signals were a coin flip against the line. The NHL and Premier League '
