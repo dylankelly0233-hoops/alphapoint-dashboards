@@ -40,6 +40,7 @@ import nba_value_metrics as vm
 import situational as sit
 import valuation as val
 import futures as fut
+import nba_players as nbp
 import totals as tot
 
 # ==========================================
@@ -359,7 +360,8 @@ def generate_html(power, metrics, days, info):
                 move += ex.injury_card_row(info.get('inj_cards'), g['away'], g['home'], lambda t: short.get(t, t))
                 move += ex.liquidity_row(next((x.get('spread') for x in info['market_rows'] if str(x.get('game_id')) == str(g['game_id'])), None), lambda t: short.get(t, t))
             move += ex.why_row([('Ratings', margin - g['hfa']), ('Home court', 0.0 if g['neutral'] else HFA_POINTS)]
-                               + [(f'{short.get(t, t)} back-to-back', -p if t == g['home'] else p) for t, p in g['rest_parts']],
+                               + [(f'{short.get(t, t)} back-to-back', -p if t == g['home'] else p) for t, p in g['rest_parts']]
+                               + list(g.get('inj_parts') or []),
                                margin, g['market'], g['home'], g['away'], lambda t: short.get(t, t),
                                lead='' if g['score'] else (
                                    val.card_row('nba', margin, g['market'], g['home'], g['away'], info['val_live'],
@@ -408,8 +410,8 @@ def generate_html(power, metrics, days, info):
                          'confidence': ex.confidence_level(by_src.get(g['home'], {}), by_src.get(g['away'], {}), hfa_g),
                          'flags': ['news'] if ex.news_move(info['opened'].get(g['game_id']), g['market']) else [],
                          'sources': ex.source_lines(by_src.get(g['home'], {}), by_src.get(g['away'], {}), hfa_g),
-                         'hfa': hfa_g - g['rest_adj'],          # logged home edge = home court only (calibrate.py)
-                         'context': {'scale': SCALE, 'rest': g['rest_parts'] or None, 'signals': {t: s for t in (g['away'], g['home']) if (s := _signal(comp.get(t), gp.get(t, 0)))},
+                         'hfa': hfa_g - g['rest_adj'] - g.get('inj_adj', 0.0),   # logged home edge = home court only (calibrate.py)
+                         'context': {'scale': SCALE, 'rest': g['rest_parts'] or None, 'inj': g.get('inj_parts') or None, 'signals': {t: s for t in (g['away'], g['home']) if (s := _signal(comp.get(t), gp.get(t, 0)))},
                                      'mu_side': mu.headline_side(mprof, mu.BASKETBALL_CATS, g['away'], g['home'])
                                      if g['home'] in mprof and g['away'] in mprof else None}})
             spots.append(ex.spot('NBA', 'nba.html#games', g['kick'], short[g['away']], short[g['home']], margin, g['market'],
@@ -434,7 +436,10 @@ def generate_html(power, metrics, days, info):
             f'toward our number or away from it. <b>Back-to-backs</b>: a team that played the day before gets '
             f'{sit.NBA_B2B["home"]:g} points taken off at home and {sit.NBA_B2B["away"]:g} on the road, what the closing line has priced '
             f'over the last five seasons (tired teams did slightly worse than that in results). Shown at the top of the card. '
-            f'Other rest, travel distance, time zones and altitude tested as no effect.'))
+            f'Other rest, travel distance, time zones and altitude tested as no effect. <b>Late absences</b>: a rotation '
+            f'player (15+ minutes) listed out or doubtful who played the team’s last game moves our line by half his '
+            f'box-score value; in past seasons that made our line more accurate and closer to the close. Players out '
+            f'longer are already in the team rating.'))
 
     # --- Markets tab ---
     market_rows = [r for r in info['market_rows'] if r['kalshi']]
@@ -524,10 +529,12 @@ def main():
                 g['market'] = close[g['game_id']]
     print(f'  {sum(len(g) for _, g in days)} games over {len(days)} days')
     n_b2b = sit.nba_rest(days, vm.espn_get)
+    n_inj = nbp.adjust(days, vm, box, dict(zip(power['abbr'], power['name'])))     # late absences (nba_players.py)
     for _, gs in days:
         for g in gs:
-            g['hfa'] = (0.0 if g['neutral'] else HFA_POINTS) + g['rest_adj']     # home court + back-to-backs
-    print(f'  Back-to-backs: {n_b2b} games with a team on the second night.')
+            # home court + back-to-backs + fresh absences
+            g['hfa'] = (0.0 if g['neutral'] else HFA_POINTS) + g['rest_adj'] + g['inj_adj']
+    print(f'  Back-to-backs: {n_b2b} games with a team on the second night. Late absences priced: {n_inj}.')
     rating = dict(zip(power['abbr'], power['composite']))
     kalshi_key = lambda label: KALSHI_ALIASES.get(label) or by_location.get(label) or by_name.get(label)
     market_rows, unmatched_k = build_markets(days, rating, kalshi_key)

@@ -1,0 +1,148 @@
+{
+ "games": 1428,
+ "weights": {
+  "pts": 0.716,
+  "fgm": 1.024,
+  "fga": -1.218,
+  "tpm": -0.942,
+  "tpa": 0.809,
+  "ftm": -0.388,
+  "fta": 0.272,
+  "oreb": 0.088,
+  "dreb": 1.389,
+  "ast": -0.004,
+  "stl": 3.392,
+  "blk": 0.591,
+  "tov": -2.024,
+  "pf": -0.069,
+  "home": 1.694
+ },
+ "avg_abs_ongoing": 2.36,
+ "avg_abs_fresh": 1.5,
+ "ours": {
+  "mae": 11.474,
+  "gap_to_close": 3.134,
+  "share_vs_open": -0.113,
+  "moved_toward": 0.5,
+  "gap2_vs_open": {
+   "n": 642,
+   "rate": 0.483,
+   "ci": [
+    0.444,
+    0.522
+   ]
+  },
+  "gap3_vs_open": {
+   "n": 432,
+   "rate": 0.493,
+   "ci": [
+    0.446,
+    0.54
+   ]
+  }
+ },
+ "adj_ongoing": {
+  "mae": 11.559,
+  "gap_to_close": 3.378,
+  "share_vs_open": 0.024,
+  "moved_toward": 0.583,
+  "gap2_vs_open": {
+   "n": 701,
+   "rate": 0.499,
+   "ci": [
+    0.462,
+    0.536
+   ]
+  },
+  "gap3_vs_open": {
+   "n": 506,
+   "rate": 0.508,
+   "ci": [
+    0.464,
+    0.551
+   ]
+  }
+ },
+ "adj_all": {
+  "mae": 11.515,
+  "gap_to_close": 3.44,
+  "share_vs_open": 0.181,
+  "moved_toward": 0.631,
+  "gap2_vs_open": {
+   "n": 748,
+   "rate": 0.521,
+   "ci": [
+    0.486,
+    0.557
+   ]
+  },
+  "gap3_vs_open": {
+   "n": 552,
+   "rate": 0.52,
+   "ci": [
+    0.478,
+    0.561
+   ]
+  }
+ },
+ "adj_fresh": {
+  "mae": 11.436,
+  "gap_to_close": 3.222,
+  "share_vs_open": 0.118,
+  "moved_toward": 0.578,
+  "gap2_vs_open": {
+   "n": 691,
+   "rate": 0.524,
+   "ci": [
+    0.487,
+    0.561
+   ]
+  },
+  "gap3_vs_open": {
+   "n": 494,
+   "rate": 0.522,
+   "ci": [
+    0.478,
+    0.566
+   ]
+  }
+ },
+ "adj_fresh_half": {
+  "mae": 11.406,
+  "gap_to_close": 3.038,
+  "share_vs_open": 0.021,
+  "moved_toward": 0.552,
+  "gap2_vs_open": {
+   "n": 658,
+   "rate": 0.506,
+   "ci": [
+    0.468,
+    0.544
+   ]
+  },
+  "gap3_vs_open": {
+   "n": 457,
+   "rate": 0.503,
+   "ci": [
+    0.458,
+    0.549
+   ]
+  }
+ },
+ "big_fresh": {
+  "n": 323,
+  "mae_ours": 11.79,
+  "mae_adj": 11.55,
+  "mae_half": 11.5,
+  "gap_close_ours": 3.87,
+  "gap_close_adj": 4.21,
+  "gap_close_half": 3.58
+ },
+ "big_ongoing": {
+  "n": 475,
+  "mae_ours": 11.82,
+  "mae_adj": 11.98,
+  "gap_close_ours": 3.66,
+  "gap_close_adj": 4.18
+ }
+}
