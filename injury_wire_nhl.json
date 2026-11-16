@@ -1,28 +1,28 @@
 {
  "sport": "nhl",
- "week": 20261115,
- "generated": "2026-11-15T19:56:09-05:00",
+ "week": 20261116,
+ "generated": "2026-11-16T11:12:41-05:00",
  "movers": [
   {
-   "team": "DAL",
+   "team": "COL",
    "tag": "CLUSTER",
-   "text": "D Miro Heiskanen (24.9 min, upper body) listed doubtful vs FLA; D Lian Bichsel (15.5 min, lower body) placed on IR Saturday.",
+   "text": "C Nathan MacKinnon (20.2 TOI, lower body) out at least a month per Denver Post; D Cale Makar (22.4 TOI) also out, missed last 2 games.",
    "source": "ESPN",
    "url": "https://www.espn.com/nhl/injuries",
    "date": "2026-11-14"
   },
   {
-   "team": "MTL",
+   "team": "UTAH",
    "tag": "CLUSTER",
-   "text": "D Mike Matheson (23.5 min) out about 2-3 weeks and RW Josh Anderson out about 3-4 weeks (announced Sunday); LW Chris Kreider on IR.",
+   "text": "C Nick Schmaltz (17.1 TOI) out, no return timeline; D Nate Schmidt (19.1) week-to-week on IR; RW Dylan Guenther (17.2) and D John Marino (20.4) on IR; C Logan Cooley day-to-day.",
    "source": "ESPN",
    "url": "https://www.espn.com/nhl/injuries",
    "date": "2026-11-15"
   },
   {
-   "team": "NYI",
+   "team": "MTL",
    "tag": "CLUSTER",
-   "text": "C Bo Horvat (21.2 min) day-to-day; D Logan Stanley (20.7 min, lower body) left Saturday's game; C J-G Pageau day-to-day after missing two games.",
+   "text": "D Mike Matheson (23.5 TOI) out about 2-3 weeks and RW Josh Anderson out about 3-4 weeks (lower body), per Sunday reports.",
    "source": "ESPN",
    "url": "https://www.espn.com/nhl/injuries",
    "date": "2026-11-15"
@@ -30,46 +30,46 @@
   {
    "team": "TB",
    "tag": "CLUSTER",
-   "text": "C Brayden Point (18.7 min) on IR, missed the last three; C Anthony Cirelli and D Erik Cernak day-to-day.",
+   "text": "C Brayden Point (18.7 TOI) on IR; C Anthony Cirelli (17.0) and D Erik Cernak (18.2) day-to-day after missing recent games.",
    "source": "ESPN",
    "url": "https://www.espn.com/nhl/injuries",
    "date": "2026-11-15"
   },
   {
-   "team": "LA",
+   "team": "DAL",
    "tag": "KEY",
-   "text": "LW Artemi Panarin (21.4 min) day-to-day after missing the last game; D Erik Gustafsson (20.0 min) day-to-day after missing five.",
+   "text": "D Miro Heiskanen (24.9 TOI) day-to-day after missing 5 games; D Lian Bichsel (15.5) placed on IR Saturday.",
    "source": "ESPN",
    "url": "https://www.espn.com/nhl/injuries",
-   "date": "2026-11-15"
+   "date": "2026-11-16"
   }
  ],
  "teams": {
-  "DAL": [
+  "COL": [
    {
-    "team": "DAL",
+    "team": "COL",
     "tag": "CLUSTER",
-    "text": "D Miro Heiskanen (24.9 min, upper body) listed doubtful vs FLA; D Lian Bichsel (15.5 min, lower body) placed on IR Saturday.",
+    "text": "C Nathan MacKinnon (20.2 TOI, lower body) out at least a month per Denver Post; D Cale Makar (22.4 TOI) also out, missed last 2 games.",
     "source": "ESPN",
     "url": "https://www.espn.com/nhl/injuries",
     "date": "2026-11-14"
+   }
+  ],
+  "UTAH": [
+   {
+    "team": "UTAH",
+    "tag": "CLUSTER",
+    "text": "C Nick Schmaltz (17.1 TOI) out, no return timeline; D Nate Schmidt (19.1) week-to-week on IR; RW Dylan Guenther (17.2) and D John Marino (20.4) on IR; C Logan Cooley day-to-day.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nhl/injuries",
+    "date": "2026-11-15"
    }
   ],
   "MTL": [
    {
     "team": "MTL",
     "tag": "CLUSTER",
-    "text": "D Mike Matheson (23.5 min) out about 2-3 weeks and RW Josh Anderson out about 3-4 weeks (announced Sunday); LW Chris Kreider on IR.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nhl/injuries",
-    "date": "2026-11-15"
-   }
-  ],
-  "NYI": [
-   {
-    "team": "NYI",
-    "tag": "CLUSTER",
-    "text": "C Bo Horvat (21.2 min) day-to-day; D Logan Stanley (20.7 min, lower body) left Saturday's game; C J-G Pageau day-to-day after missing two games.",
+    "text": "D Mike Matheson (23.5 TOI) out about 2-3 weeks and RW Josh Anderson out about 3-4 weeks (lower body), per Sunday reports.",
     "source": "ESPN",
     "url": "https://www.espn.com/nhl/injuries",
     "date": "2026-11-15"
@@ -79,37 +79,47 @@
    {
     "team": "TB",
     "tag": "CLUSTER",
-    "text": "C Brayden Point (18.7 min) on IR, missed the last three; C Anthony Cirelli and D Erik Cernak day-to-day.",
+    "text": "C Brayden Point (18.7 TOI) on IR; C Anthony Cirelli (17.0) and D Erik Cernak (18.2) day-to-day after missing recent games.",
     "source": "ESPN",
     "url": "https://www.espn.com/nhl/injuries",
     "date": "2026-11-15"
+   }
+  ],
+  "DAL": [
+   {
+    "team": "DAL",
+    "tag": "KEY",
+    "text": "D Miro Heiskanen (24.9 TOI) day-to-day after missing 5 games; D Lian Bichsel (15.5) placed on IR Saturday.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nhl/injuries",
+    "date": "2026-11-16"
    }
   ],
   "LA": [
    {
     "team": "LA",
     "tag": "KEY",
-    "text": "LW Artemi Panarin (21.4 min) day-to-day after missing the last game; D Erik Gustafsson (20.0 min) day-to-day after missing five.",
+    "text": "LW Artemi Panarin (21.4 TOI) and D Erik Gustafsson (20.0) listed day-to-day.",
     "source": "ESPN",
     "url": "https://www.espn.com/nhl/injuries",
     "date": "2026-11-15"
-   }
-  ],
-  "WPG": [
-   {
-    "team": "WPG",
-    "tag": "CLUSTER",
-    "text": "D Dylan DeMelo (19.4 min, lower body) placed on IR Friday; D Elias Salomonsson (18.3 min) also on IR.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nhl/injuries",
-    "date": "2026-11-13"
    }
   ],
   "STL": [
    {
     "team": "STL",
     "tag": "KEY",
-    "text": "D Philip Broberg (24.6 min, lower body) and LW Jake Neighbours (upper body) day-to-day (Lou Korac, NHL.com, Sunday).",
+    "text": "D Philip Broberg (24.6 TOI, lower body) and LW Jake Neighbours (upper body) day-to-day per NHL.com Sunday.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nhl/injuries",
+    "date": "2026-11-15"
+   }
+  ],
+  "NYI": [
+   {
+    "team": "NYI",
+    "tag": "KEY",
+    "text": "C Bo Horvat (21.2 TOI) day-to-day; D Logan Stanley (20.7, lower body) left Saturday's game vs ANA and is day-to-day.",
     "source": "ESPN",
     "url": "https://www.espn.com/nhl/injuries",
     "date": "2026-11-15"
@@ -119,30 +129,20 @@
    {
     "team": "CGY",
     "tag": "KEY",
-    "text": "D Kevin Bahl (21.9 min) will have Achilles surgery and is out for the season (announced Nov 8).",
+    "text": "D Kevin Bahl (21.9 TOI) out for the season after Achilles surgery (announced Nov 8).",
     "source": "ESPN",
     "url": "https://www.espn.com/nhl/injuries",
     "date": "2026-11-08"
    }
   ],
-  "TOR": [
+  "NJ": [
    {
-    "team": "TOR",
+    "team": "NJ",
     "tag": "KEY",
-    "text": "D Morgan Rielly (18.8 min) day-to-day after missing four games; RW Kirill Marchenko (17.6 min) remains on IR.",
+    "text": "D Brett Pesce (21.0 TOI) day-to-day after missing 2 games; D Johnathan Kovacevic on IR (ankle).",
     "source": "ESPN",
     "url": "https://www.espn.com/nhl/injuries",
     "date": "2026-11-15"
-   }
-  ],
-  "VGK": [
-   {
-    "team": "VGK",
-    "tag": "KEY",
-    "text": "D Noah Hanifin (20.4 min) listed out; has missed the last two games.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nhl/injuries",
-    "date": "2026-11-10"
    }
   ]
  }
