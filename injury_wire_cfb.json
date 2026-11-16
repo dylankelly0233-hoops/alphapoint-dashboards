@@ -1,7 +1,7 @@
 {
   "sport": "cfb",
-  "week": 11,
-  "generated": "2026-11-15T19:50:25-05:00",
+  "week": 12,
+  "generated": "2026-11-16T09:08:49-05:00",
   "movers": [
     {
       "team": "Clemson",
@@ -30,10 +30,10 @@
     {
       "team": "Tennessee",
       "tag": "QB",
-      "text": "QB George MacIntyre (right knee) left the Texas A&M win in the 3rd quarter; Faizon Brandon finished. Reports say it does not appear serious; no official status for LSU.",
+      "text": "QB George MacIntyre (right knee) left the Texas A&M win in the 3rd quarter; Faizon Brandon finished. MacIntyre got a positive injury update Monday; no official status for LSU.",
       "source": "Yahoo Sports",
-      "url": "https://sports.yahoo.com/articles/george-macintyre-injury-tennessee-qb-222039656.html",
-      "date": "2026-11-15"
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOU3R3YU53LW5McTNSNGV2d2tJRnBjSzJvQ1p5a04ybFNwVXBiZl9abTFhdC1scHlMNEV3SjJudHgtVFRfYlNkZ0Qtb1RnY2p5T3hnOS0tdERkLUt2ak40dUJMNDhmMEZYbGROS040T1ZjRUdqc0NudUdJbEdfc0xsSUNmd2VwZGhWZ2RNZjFoczQyd3c?oc=5",
+      "date": "2026-11-16"
     },
     {
       "team": "Michigan State",
@@ -97,10 +97,10 @@
       {
         "team": "Tennessee",
         "tag": "QB",
-        "text": "QB George MacIntyre (right knee) left the Texas A&M win in the 3rd quarter; Faizon Brandon finished. Reports say it does not appear serious; no official status for LSU.",
+        "text": "QB George MacIntyre (right knee) left the Texas A&M win in the 3rd quarter; Faizon Brandon finished. MacIntyre got a positive injury update Monday; no official status for LSU.",
         "source": "Yahoo Sports",
-        "url": "https://sports.yahoo.com/articles/george-macintyre-injury-tennessee-qb-222039656.html",
-        "date": "2026-11-15"
+        "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOU3R3YU53LW5McTNSNGV2d2tJRnBjSzJvQ1p5a04ybFNwVXBiZl9abTFhdC1scHlMNEV3SjJudHgtVFRfYlNkZ0Qtb1RnY2p5T3hnOS0tdERkLUt2ak40dUJMNDhmMEZYbGROS040T1ZjRUdqc0NudUdJbEdfc0xsSUNmd2VwZGhWZ2RNZjFoczQyd3c?oc=5",
+        "date": "2026-11-16"
       },
       {
         "team": "Tennessee",
@@ -135,17 +135,17 @@
       {
         "team": "Oklahoma State",
         "tag": "QB",
-        "text": "QB Drew Mestemaker was hindered by an early shoulder injury in the loss to Texas Tech; the team will evaluate the shoulder.",
-        "source": "Sports Illustrated",
-        "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPdjJEaXNOZ0F3ZmkyRzJ1VXp6NFpTUkJKdjZEX2NsMS1vX2NHMDQ3Z2xySzdHSzdXMkRHTF9mNEU2RHp4a2k5Rl92WDMtQ203bUtxbXNmdUdTaUZFUk5KemdVZFpPbHMwTWlnSVZjMGdVU3BoU1dIdkUtcG5QUllSNTk5U1NYSVd6aFdHQzhiNmgwS3pVNTJtRkRkdXNuZ2p0aXc2TU9vUU4yWnRQMnYxWHBNQjlnbHdEZlRKWmRJUkIwcmUwWTR2cmhSSQ?oc=5",
-        "date": "2026-11-15"
+        "text": "QB Drew Mestemaker hurt his shoulder early in the loss to Texas Tech; the team is evaluating it. Mestemaker said he isn't blaming the injury for his slow day.",
+        "source": "Stillwater News Press",
+        "url": "https://news.google.com/rss/articles/CBMiiwJBVV95cUxObDdTX3dIaWxPMUM1czhTbWhoaTE2TldFTklpUklNekxWcXJqUnpWYi1IOGJrclpjeDdpZS1LSl91UGJlNGIzOWR1ZVByTzBzdlBBWXNKb3pzZG8yZlIta1R0YUZZNm5hOVdhUWRFUEhYTVBfdko0N1l4TGRpM0o4R3A2UmFQdjlSc3B6aWkxcDNCZzRjVDVKT0s0RW1Td1pLdzR2cFotbU9aYnoyN2xvYUZEdEMwUVdpcXpVRF9jYlpfOUxXRnZKS2NFWUN0c25hTWs0Y0o2ZzlxejB5QlE5M1ExaVVmcmVYMmZBdVRTNzRrZmRGVzFITGM5cEhTT3kxNm9JcTJKWHhtdms?oc=5",
+        "date": "2026-11-16"
       }
     ],
     "Baylor": [
       {
         "team": "Baylor",
         "tag": "QB",
-        "text": "QB Quinn Murphy was ruled out for the BYU game.",
+        "text": "QB Quinn Murphy was ruled out for the BYU game (Week 11); no status yet for Texas Tech.",
         "source": "Sports Illustrated",
         "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQWm01ZXJmMkNaVFJuREd6NTg1YlRBSlhmVS1xVUZUX29mRkRNMk9mM3NfRW11aC1rM0EtWW1RSUcwNDhSaDNuSEJ1VzFsMy1zY2FCcm4zR1lYc0NQSTRsdDhEc0xHTFd6akl1VUFpSXFUZFo4Z29MdlNUTVQycnR3cjhVcGJCRkxEeXlTVjA2Z1Bta1dHT3NPS2F5amtvX3V5RUZN?oc=5",
         "date": "2026-11-14"
@@ -175,10 +175,10 @@
       {
         "team": "Miami",
         "tag": "KEY",
-        "text": "WR Malachi Toney remains out; RB Mark Fletcher left the Duke game (lower body) and later got a positive injury update.",
-        "source": "Yahoo Sports",
-        "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQazR2dkdLMkhOTW1zdjZfVHNZSWJnMm41N0d3ODBNdVBEYTVSQ3lMLUFQenJxeFFwRmhIWWhlNzhOSGp1V0tnZU1kZk54NjIyRXBYMnQxRm1NTmRsUVl2VjNPcXdCR1pUc1JtMl8wM1AzM2tiWTI3Wkx6Z3I3cElCak9FUk9SdXl1cnc?oc=5",
-        "date": "2026-11-15"
+        "text": "WR Malachi Toney remains out but is reported ahead of schedule in his recovery. RB Mark Fletcher left the Duke game (lower body) and later got a positive update.",
+        "source": "On3",
+        "url": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxOTDJDQmItakVhZktRbUZJc2NYSmNUa04yTzluVzFxM3AzUTRIU1RyaE5NRW92NlQ2RU94VFJwVDFTV3FCNmVMaHdWSTE4ajJKMGJfa2dRYXNPZ2dlRlY2WGszZk14d21oR0ZVR3lvVjk0amFyZi1CZHVmVXd4d0Utb1lEeGFBOEFOY25rbEhpTUlUaklYVjBzU1lYalAzam9jVzlfYmI3LXpVNVpoa3c3N3Z5cUViSjV1NmxJOTVHTTNFRnluU1pRajVBSmx3aWw1aHJoVV9meElsU05Ua0ZMVmRXOWdNZTZITTdxN2xhbnhnUWVVdUlfeDFzbE4?oc=5",
+        "date": "2026-11-16"
       }
     ],
     "BYU": [
