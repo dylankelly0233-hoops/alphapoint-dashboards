@@ -768,14 +768,17 @@ document.querySelectorAll('nav.tabs button').forEach(b => b.onclick = () => {
   const page = document.getElementById(tab);
   const el = page && page.querySelector('.card.game[data-gid="' + CSS.escape(card.slice(2)) + '"]');
   if (!el) return;
-  const pane = el.closest('.wkpane');
-  if (pane && !pane.classList.contains('on')) {
-    const b = document.querySelector('.wk[data-wkgroup="' + pane.dataset.wkgroup + '"][data-wk="' + pane.dataset.wk + '"]');
-    if (b) b.click();
-  }
-  el.classList.add('open', 'flash');
-  setTimeout(() => el.scrollIntoView({block: 'start', behavior: 'smooth'}), 60);
-  setTimeout(() => el.classList.remove('flash'), 2600);
+  // after the rest of this script has run (the week switch's click handler is set up further down)
+  window.addEventListener('load', () => {
+    const pane = el.closest('.wkpane');
+    if (pane && !pane.classList.contains('on')) {
+      const b = document.querySelector('.wk[data-wkgroup="' + pane.dataset.wkgroup + '"][data-wk="' + pane.dataset.wk + '"]');
+      if (b) b.click();
+    }
+    el.classList.add('open', 'flash');
+    setTimeout(() => el.scrollIntoView({block: 'start', behavior: 'smooth'}), 80);
+    setTimeout(() => el.classList.remove('flash'), 2600);
+  });
 })();
 function stickCols() {
   if (window.innerWidth > 560) return;
