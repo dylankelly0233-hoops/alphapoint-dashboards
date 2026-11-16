@@ -83,6 +83,7 @@ LANDING_CSS = """
 .spotsec { margin-top: 16px; } .spotsec:first-of-type { margin-top: 6px; }
 .spothead { margin: 0; font: 700 16px/1.2 var(--display); text-transform: uppercase; letter-spacing: .6px; }
 .spothint { margin: 2px 0 4px; font-size: 13px; }
+.sedge .edge.slight { opacity: .7; }
 .spotsguide p, .spotsguide li, .spotsguide dd { max-width: 75ch; line-height: 1.5; }
 .spotsguide ul, .spotsguide ol { margin: 4px 0 12px; padding-left: 20px; }
 .spotsguide dl.plain { display: block; margin: 0 0 8px; } .spotsguide dl.plain dt { font-weight: 700; margin-top: 8px; }
@@ -340,8 +341,14 @@ def best_spots():
                          + (f' · opened {theme.esc(opener)}' if opener else '')
                          + f'<span class="sproof" title="{theme.esc(tip)}">{theme.esc(label)}: {100 * pr["rate"]:.0f}% vs opener '
                            f'({pr["n"]:,}){"" if pr.get("holds_to_close") else " · early edge"}</span>')
-        ev = f'+{100 * best["ev"]:.1f}¢' if best['ev'] >= 0.0005 else '&lt;0.1¢'
-        return _row(s, '<br>'.join(parts), f'<span class="edge">{ev}</span><span class="sline">per $1</span>')
+        # right column: the best line's chance against what −110 needs (a push refunds the stake, so it needs less),
+        # shaded by how far it clears; the cents-per-dollar value is in the hover text
+        need = (110 / 210) * (1 - best.get('push', 0))
+        margin = best['p'] - need
+        cls = 'edge strong' if margin >= 0.03 else 'edge' if margin >= 0.015 else 'edge slight'
+        tip = f'{best["kind"]} {best["text"]}: wins {100 * best["p"]:.1f}%, needs {100 * need:.1f}% at −110 · about {100 * best["ev"]:+.1f}¢ per $1'
+        return _row(s, '<br>'.join(parts), f'<span class="{cls}" title="{theme.esc(tip)}">{100 * best["p"]:.1f}%</span>'
+                                            f'<span class="sline">{100 * need:.1f}% needed</span>')
 
     def teaser_row(s):
         side = next(team for label, team in s['tags'] if label.startswith('Teaser'))
@@ -513,15 +520,16 @@ def spots_guide():
          '<p>Best spots lists upcoming games where our research has found something that <b>held up when we tested it on '
          'past seasons</b>. It is research, not picks: it tells you where the numbers have historically pointed, not what '
          'to bet. Everything here is re-tested every month; anything that stops holding up drops off on its own.</p>'),
-        ('Four words you will see',
+        ('Words you will see',
          '<dl class="plain"><dt>The opener</dt><dd>The first line posted for a game. Most of our edges show up against it '
          'and fade as the line moves toward the final ("closing") number.</dd>'
          '<dt>Early edge</dt><dd>The edge has usually been gone by kickoff. Compare the opener shown on the row with the '
          'line you can get now: the closer they are, the more of the edge is left.</dd>'
          '<dt>Fair number</dt><dd>Our line, moved most of the way back toward the market. In the past only part of a '
          'disagreement with the market turned out to be real, so that is all we count.</dd>'
-         '<dt>Cents per $1</dt><dd>What a $1 bet at standard −110 odds was worth on average, at our fair number. '
-         '+3¢ means about 3 cents back per dollar over many bets, not a sure thing on any one.</dd></dl>'),
+         '<dt>Win chance vs. needed</dt><dd>The number on the right of a Priced value row: how often that side wins at '
+         'the posted line by our fair number, next to what it takes to break even at standard −110 odds (52.4%, a bit less '
+         'when a push is possible). Darker green = clears it by more. Even the best rows are only a few points over.</dd></dl>'),
         ('Priced value',
          f'<p>A spread or total where our fair number beats the standard −110 price, <b>only</b> in places where that '
          f'exact rule has already beaten the opening line in past seasons, in both the earlier and later years on its own. '
