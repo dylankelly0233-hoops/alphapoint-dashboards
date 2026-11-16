@@ -1,8 +1,48 @@
 {
  "sport": "cbb",
- "week": 20261113,
- "generated": "2026-11-13T16:19:00-05:00",
+ "week": 20261115,
+ "generated": "2026-11-15T19:51:15-05:00",
  "movers": [
+  {
+   "team": "Boston College",
+   "tag": "KEY",
+   "text": "G Money Williams (37.0 mpg, top scorer) is out vs New Hampshire and considered game-to-game.",
+   "source": "Sports Illustrated",
+   "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOaXpBZkJpeGEwT3ZMNUVXd1RxcllYM0o2UWxNUURMWnVyV1pwMGd6MUZzSUhRSzV6QVNWTzlEVDk1NmdFbDNiekwtSF8xLXVmV1VFVzEwMmM2ZHpZMFVkZHd5NVFlMVRUMjIxd1U0M21OVWF5eEIxOTk0blc4dlNfUGJ6VDBIdnRpVDl3c3hpQ2VsU0FQc1hiTk14N185RW1GalJoNTBIZ3lkdkIwZ1lndjIxLTlNbmFndVJmSks2Z2Y1R0l6NTJBMkhoNFd2UUY2Snkw?oc=5",
+   "date": "2026-11-15",
+   "player": "Money Williams",
+   "status": "out"
+  },
+  {
+   "team": "Texas A&M",
+   "tag": "KEY",
+   "text": "F Cade Phillips (18.0 mpg, starter) hurt his right knee vs ULM on Nov 10 and is expected to miss several weeks.",
+   "source": "Aggies Wire",
+   "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxPdWNMX3pzbUd2ZEVERGtyaGxfeGhObDRleE1waHJKaTgxZmFqZEphZ3lNNHRwS0xyWEZnaHNCZGFDSGJiQjZEaDVQNU9vZkNWandSWkxCdk5IdTBERFhfckhHQ20xOFY0U2Y4dWdJZVBSYzRZSDJIdWVaSTM0UzF1RzNFZlhLRGRHaGk3S0JZdW13QnN0dkJjX0YzLWdlQW04bjRZcVNwMldRcEZOdFlQbVRGZVFtZTQ3MDRZSVZCV19udjVMQ294NHlHc01EdkhEbEVCRUU5VmVtNmpvd2RmMjVnYlhIQQ?oc=5",
+   "date": "2026-11-13",
+   "player": "Cade Phillips",
+   "status": "out"
+  },
+  {
+   "team": "Florida",
+   "tag": "KEY",
+   "text": "G Boogie Fland (29.7 mpg) sat out the Merrimack game; no status announced yet for Notre Dame.",
+   "source": "Gainesville Sun",
+   "url": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxOR2xMMkFsbzlzMXhpMkVaTE1nLVZVSDk0QXRTaVl4QnF5bjlXV0RLRG5rOU4zU2xzSnduVG1VZjV2bGd2b1R4UHR1dGVYaHhfRUdMQmh5SDNYRXJ4MWUxWDdjZlc4SE1LOENyVDlhbUpydG1UeWszcGlXTi1aM05uWFM0Sk96RHFzSnI0dDNPUmVVOU1UdHAxdERHUTRNcEZGazAzSU1lN0J5VU5WME5ldDhEcWFOajdIMXJxRnhJTUtyVGVyRzZOY3dkN3A2Y1duV1JWRVlocmRtaTB2QXUzbWFqTkRoaXk4dEY4UmpmakhRUFE?oc=5",
+   "date": "2026-11-14",
+   "player": "Boogie Fland",
+   "status": "questionable"
+  },
+  {
+   "team": "Michigan State",
+   "tag": "KEY",
+   "text": "G Jordan Scott (24.0 mpg) injured his right shoulder in the win over Northern Iowa; no status announced for Tennessee.",
+   "source": "ESPN",
+   "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxQS2pZUVd4bEtsaHFrbXJpNmtKYWpwSnZxdUMxTldWM3p4bGgxNHBxOS0wQlFzVTlTcWRtTlBXX1hJYUxNeENYcGcwNHYxVUpTOXM4VGZWZV9DSU90d3hjQV82RTlrM1lyLXFNZUItMk11azd5bmhzTWhUakZWZTROZGxWMERxVHRMZXg0MzF0OHJpSWRDekx3bmpCdDB4ZU1YLW1uWUZ2OEVrYk1YRmsteUZCY0FyLWdMNklqaE9FTjJ6dkpYVXUwdUV0aW5YRE05Z3ZEamdTVElEZ0lw?oc=5",
+   "date": "2026-11-14",
+   "player": "Jordan Scott",
+   "status": "questionable"
+  },
   {
    "team": "UConn",
    "tag": "KEY",
@@ -12,29 +52,57 @@
    "date": "2026-11-12",
    "player": "Nik Khamenia",
    "status": "out"
-  },
-  {
-   "team": "Alabama",
-   "tag": "KEY",
-   "text": "F Jamarion Davis-Fleming (18.0 mpg, lower leg) missed Oakland and has not practiced this week; Nate Oats called him questionable vs Seton Hall.",
-   "source": "Yahoo Sports",
-   "url": "https://sports.yahoo.com/articles/nate-oats-gives-injury-jamarion-191500605.html",
-   "date": "2026-11-12",
-   "player": "Jamarion Davis-Fleming",
-   "status": "questionable"
-  },
-  {
-   "team": "Syracuse",
-   "tag": "KEY",
-   "text": "F Mark Morano (17.3 mpg) re-rolled his ankle vs Indiana and did not practice Wednesday; status for St. John's uncertain.",
-   "source": "Yahoo Sports",
-   "url": "https://sports.yahoo.com/articles/syracuse-mens-basketball-orange-working-203538164.html",
-   "date": "2026-11-12",
-   "player": "Mark Morano",
-   "status": "questionable"
   }
  ],
  "teams": {
+  "Boston College": [
+   {
+    "team": "Boston College",
+    "tag": "KEY",
+    "text": "G Money Williams (37.0 mpg, top scorer) is out vs New Hampshire and considered game-to-game.",
+    "source": "Sports Illustrated",
+    "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOaXpBZkJpeGEwT3ZMNUVXd1RxcllYM0o2UWxNUURMWnVyV1pwMGd6MUZzSUhRSzV6QVNWTzlEVDk1NmdFbDNiekwtSF8xLXVmV1VFVzEwMmM2ZHpZMFVkZHd5NVFlMVRUMjIxd1U0M21OVWF5eEIxOTk0blc4dlNfUGJ6VDBIdnRpVDl3c3hpQ2VsU0FQc1hiTk14N185RW1GalJoNTBIZ3lkdkIwZ1lndjIxLTlNbmFndVJmSks2Z2Y1R0l6NTJBMkhoNFd2UUY2Snkw?oc=5",
+    "date": "2026-11-15",
+    "player": "Money Williams",
+    "status": "out"
+   }
+  ],
+  "Texas A&M": [
+   {
+    "team": "Texas A&M",
+    "tag": "KEY",
+    "text": "F Cade Phillips (18.0 mpg, starter) hurt his right knee vs ULM on Nov 10 and is expected to miss several weeks.",
+    "source": "Aggies Wire",
+    "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxPdWNMX3pzbUd2ZEVERGtyaGxfeGhObDRleE1waHJKaTgxZmFqZEphZ3lNNHRwS0xyWEZnaHNCZGFDSGJiQjZEaDVQNU9vZkNWandSWkxCdk5IdTBERFhfckhHQ20xOFY0U2Y4dWdJZVBSYzRZSDJIdWVaSTM0UzF1RzNFZlhLRGRHaGk3S0JZdW13QnN0dkJjX0YzLWdlQW04bjRZcVNwMldRcEZOdFlQbVRGZVFtZTQ3MDRZSVZCV19udjVMQ294NHlHc01EdkhEbEVCRUU5VmVtNmpvd2RmMjVnYlhIQQ?oc=5",
+    "date": "2026-11-13",
+    "player": "Cade Phillips",
+    "status": "out"
+   }
+  ],
+  "Florida": [
+   {
+    "team": "Florida",
+    "tag": "KEY",
+    "text": "G Boogie Fland (29.7 mpg) sat out the Merrimack game; no status announced yet for Notre Dame.",
+    "source": "Gainesville Sun",
+    "url": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxOR2xMMkFsbzlzMXhpMkVaTE1nLVZVSDk0QXRTaVl4QnF5bjlXV0RLRG5rOU4zU2xzSnduVG1VZjV2bGd2b1R4UHR1dGVYaHhfRUdMQmh5SDNYRXJ4MWUxWDdjZlc4SE1LOENyVDlhbUpydG1UeWszcGlXTi1aM05uWFM0Sk96RHFzSnI0dDNPUmVVOU1UdHAxdERHUTRNcEZGazAzSU1lN0J5VU5WME5ldDhEcWFOajdIMXJxRnhJTUtyVGVyRzZOY3dkN3A2Y1duV1JWRVlocmRtaTB2QXUzbWFqTkRoaXk4dEY4UmpmakhRUFE?oc=5",
+    "date": "2026-11-14",
+    "player": "Boogie Fland",
+    "status": "questionable"
+   }
+  ],
+  "Michigan State": [
+   {
+    "team": "Michigan State",
+    "tag": "KEY",
+    "text": "G Jordan Scott (24.0 mpg) injured his right shoulder in the win over Northern Iowa; no status announced for Tennessee.",
+    "source": "ESPN",
+    "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxQS2pZUVd4bEtsaHFrbXJpNmtKYWpwSnZxdUMxTldWM3p4bGgxNHBxOS0wQlFzVTlTcWRtTlBXX1hJYUxNeENYcGcwNHYxVUpTOXM4VGZWZV9DSU90d3hjQV82RTlrM1lyLXFNZUItMk11azd5bmhzTWhUakZWZTROZGxWMERxVHRMZXg0MzF0OHJpSWRDekx3bmpCdDB4ZU1YLW1uWUZ2OEVrYk1YRmsteUZCY0FyLWdMNklqaE9FTjJ6dkpYVXUwdUV0aW5YRE05Z3ZEamdTVElEZ0lw?oc=5",
+    "date": "2026-11-14",
+    "player": "Jordan Scott",
+    "status": "questionable"
+   }
+  ],
   "UConn": [
    {
     "team": "UConn",
@@ -47,28 +115,16 @@
     "status": "out"
    }
   ],
-  "Alabama": [
+  "Notre Dame": [
    {
-    "team": "Alabama",
+    "team": "Notre Dame",
     "tag": "KEY",
-    "text": "F Jamarion Davis-Fleming (18.0 mpg, lower leg) missed Oakland and has not practiced this week; Nate Oats called him questionable vs Seton Hall.",
-    "source": "Yahoo Sports",
-    "url": "https://sports.yahoo.com/articles/nate-oats-gives-injury-jamarion-191500605.html",
-    "date": "2026-11-12",
-    "player": "Jamarion Davis-Fleming",
-    "status": "questionable"
-   }
-  ],
-  "Syracuse": [
-   {
-    "team": "Syracuse",
-    "tag": "KEY",
-    "text": "F Mark Morano (17.3 mpg) re-rolled his ankle vs Indiana and did not practice Wednesday; status for St. John's uncertain.",
-    "source": "Yahoo Sports",
-    "url": "https://sports.yahoo.com/articles/syracuse-mens-basketball-orange-working-203538164.html",
-    "date": "2026-11-12",
-    "player": "Mark Morano",
-    "status": "questionable"
+    "text": "C Tommy Ahneman (11.7 mpg) is out indefinitely with an arm injury.",
+    "source": "On3",
+    "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQWEs5WHlQTm9DZHFJb3hwZks3TGpNTnJVYkZfU04yQWUzZWFNY1k0eG1CZ2daU0EzUThuZVBKOTd1U0xaNEdIMDZDU0I5YUZZdlU4Xy1FVjZuRzVIS1o3U1lJVVBUR3JMWW1LY0ZmVUVsaDZWaDBJQmwyc1Y1US1ZU25uVFNzSFdtbVF2dlNHRzZheWJxakF5NzN2OTR3VWpoSVFGOTRMTjlpZUVfMnJ0RnBrdklaS01mNGQtVHBtaEp6bWg5MmY1Rw?oc=5",
+    "date": "2026-11-11",
+    "player": "Tommy Ahneman",
+    "status": "out"
    }
   ]
  }
