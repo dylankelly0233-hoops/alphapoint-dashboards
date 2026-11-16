@@ -136,8 +136,13 @@ def summarize(d, sport):
         lines.append('  Our side vs the close, by how far we disagreed: ' + '; '.join(parts) + '.')
     home = d[d['neutral'] == 0]
     if len(home):
-        lines.append(f'  Home teams vs our line: {(home["result"] - home["ours_last"]).mean():+.1f} pts '
-                     f'(+ means home teams did better than we projected; our home edge is {HFA[sport]}).')
+        try:      # the home edge in use now (weekly-tuned), not the starting default
+            hfa_now = json.load(open('calibration.json'))[sport]['hfa']
+        except (OSError, ValueError, KeyError):
+            hfa_now = HFA[sport]
+        crowd_note = ', scaled by crowd size' if sport in ('cbb', 'cfb') else ''
+        lines.append(f'  Home teams vs our line: {(home["result"] - home["ours_last"]).mean():+.{2 if unit == "goals" else 1}f} {unit} '
+                     f'(+ means home teams did better than we projected; our base home edge is {hfa_now:g}{crowd_note}).')
     rows = []
     for r in d.itertuples():
         try:

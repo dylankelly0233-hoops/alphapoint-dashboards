@@ -149,7 +149,9 @@ def upcoming_games():
             done = ev['status']['type'].get('completed')
             games.append({
                 'game_id': str(ev['id']), 'kick': pd.Timestamp(ev['date']).tz_convert('America/New_York'),
-                'home': side['home']['team']['abbreviation'], 'away': side['away']['team']['abbreviation'],
+                # the scoreboard can use a newer code than the team list (Utah: UTA vs UTAH); everything is keyed by the list's
+                'home': m.TO_ESPN.get(side['home']['team']['abbreviation'], side['home']['team']['abbreviation']),
+                'away': m.TO_ESPN.get(side['away']['team']['abbreviation'], side['away']['team']['abbreviation']),
                 'neutral': bool(comp.get('neutralSite')),
                 'p_mkt': m.no_vig(hml, aml), 'p_open': m.no_vig(hml0, aml0), 'home_ml': hml, 'away_ml': aml,
                 'total': float(total) if total else None,
