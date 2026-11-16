@@ -1,16 +1,26 @@
 {
  "sport": "cbb",
- "week": 20261115,
- "generated": "2026-11-15T19:55:07-05:00",
+ "week": 20261116,
+ "generated": "2026-11-16T11:09:52-05:00",
  "movers": [
   {
    "team": "Boston College",
    "tag": "KEY",
-   "text": "G Money Williams (37.0 mpg, top scorer) is out vs New Hampshire and considered game-to-game.",
+   "text": "G Money Williams (37.0 mpg, top scorer) missed the New Hampshire game and is considered game-to-game; no status announced for Harvard.",
    "source": "Sports Illustrated",
    "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOaXpBZkJpeGEwT3ZMNUVXd1RxcllYM0o2UWxNUURMWnVyV1pwMGd6MUZzSUhRSzV6QVNWTzlEVDk1NmdFbDNiekwtSF8xLXVmV1VFVzEwMmM2ZHpZMFVkZHd5NVFlMVRUMjIxd1U0M21OVWF5eEIxOTk0blc4dlNfUGJ6VDBIdnRpVDl3c3hpQ2VsU0FQc1hiTk14N185RW1GalJoNTBIZ3lkdkIwZ1lndjIxLTlNbmFndVJmSks2Z2Y1R0l6NTJBMkhoNFd2UUY2Snkw?oc=5",
    "date": "2026-11-15",
    "player": "Money Williams",
+   "status": "questionable"
+  },
+  {
+   "team": "UConn",
+   "tag": "KEY",
+   "text": "F Nik Khamenia (18.7 mpg) is out after left foot surgery; to be rechecked in 6-8 weeks. Out vs Arizona.",
+   "source": "ESPN",
+   "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQQ3UwZDJtTVZ2UGVBV0FxOUE3Zk1kdzFwSFk1a1JmNnEzM19lTlJ3UTRwNFRKQmhWTHVUV3NHclV6dG9RNDFYWFJRWGtsekJQR3dmcW55QTY3SzBkUklsUzEzSl9ITnpKZGZnTGFIa3F3Vnl2Zl84WU8xSzNIRTl2YW1TcWtucDV0aEtNX2JkZTBSMW1XZmRjX09ZTE4?oc=5",
+   "date": "2026-11-12",
+   "player": "Nik Khamenia",
    "status": "out"
   },
   {
@@ -42,16 +52,6 @@
    "date": "2026-11-14",
    "player": "Jordan Scott",
    "status": "questionable"
-  },
-  {
-   "team": "UConn",
-   "tag": "KEY",
-   "text": "F Nik Khamenia (18.7 mpg) will undergo left foot surgery and is sidelined at least 6-8 weeks.",
-   "source": "CBS Sports",
-   "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPZ2RhSkhMNW9Qa3hNWjJBbjJ0SXlTckR4MkstN3FtME9xSWpPenZ3ek9ETEVXc3JpNGtfbm9kWDN2Nll0UlJIVlhubkJadzQ3ZnNyU2pWNFRJQXprVEZaX2UycFNiRmNtc3RCR194QW5Lc3hTdEQwNU1qTG02Q09JSm5PQkNjY2N6MFFOUllDSHFUZGExaWtJ?oc=5",
-   "date": "2026-11-12",
-   "player": "Nik Khamenia",
-   "status": "out"
   }
  ],
  "teams": {
@@ -59,11 +59,23 @@
    {
     "team": "Boston College",
     "tag": "KEY",
-    "text": "G Money Williams (37.0 mpg, top scorer) is out vs New Hampshire and considered game-to-game.",
+    "text": "G Money Williams (37.0 mpg, top scorer) missed the New Hampshire game and is considered game-to-game; no status announced for Harvard.",
     "source": "Sports Illustrated",
     "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOaXpBZkJpeGEwT3ZMNUVXd1RxcllYM0o2UWxNUURMWnVyV1pwMGd6MUZzSUhRSzV6QVNWTzlEVDk1NmdFbDNiekwtSF8xLXVmV1VFVzEwMmM2ZHpZMFVkZHd5NVFlMVRUMjIxd1U0M21OVWF5eEIxOTk0blc4dlNfUGJ6VDBIdnRpVDl3c3hpQ2VsU0FQc1hiTk14N185RW1GalJoNTBIZ3lkdkIwZ1lndjIxLTlNbmFndVJmSks2Z2Y1R0l6NTJBMkhoNFd2UUY2Snkw?oc=5",
     "date": "2026-11-15",
     "player": "Money Williams",
+    "status": "questionable"
+   }
+  ],
+  "UConn": [
+   {
+    "team": "UConn",
+    "tag": "KEY",
+    "text": "F Nik Khamenia (18.7 mpg) is out after left foot surgery; to be rechecked in 6-8 weeks. Out vs Arizona.",
+    "source": "ESPN",
+    "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQQ3UwZDJtTVZ2UGVBV0FxOUE3Zk1kdzFwSFk1a1JmNnEzM19lTlJ3UTRwNFRKQmhWTHVUV3NHclV6dG9RNDFYWFJRWGtsekJQR3dmcW55QTY3SzBkUklsUzEzSl9ITnpKZGZnTGFIa3F3Vnl2Zl84WU8xSzNIRTl2YW1TcWtucDV0aEtNX2JkZTBSMW1XZmRjX09ZTE4?oc=5",
+    "date": "2026-11-12",
+    "player": "Nik Khamenia",
     "status": "out"
    }
   ],
@@ -103,16 +115,16 @@
     "status": "questionable"
    }
   ],
-  "UConn": [
+  "Villanova": [
    {
-    "team": "UConn",
+    "team": "Villanova",
     "tag": "KEY",
-    "text": "F Nik Khamenia (18.7 mpg) will undergo left foot surgery and is sidelined at least 6-8 weeks.",
-    "source": "CBS Sports",
-    "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPZ2RhSkhMNW9Qa3hNWjJBbjJ0SXlTckR4MkstN3FtME9xSWpPenZ3ek9ETEVXc3JpNGtfbm9kWDN2Nll0UlJIVlhubkJadzQ3ZnNyU2pWNFRJQXprVEZaX2UycFNiRmNtc3RCR194QW5Lc3hTdEQwNU1qTG02Q09JSm5PQkNjY2N6MFFOUllDSHFUZGExaWtJ?oc=5",
-    "date": "2026-11-12",
-    "player": "Nik Khamenia",
-    "status": "out"
+    "text": "C Luigi Suigo (27.0 mpg, starter) was hurt in the Nov 15 win over Rider; no status announced for Pittsburgh.",
+    "source": "Philadelphia Sports Now",
+    "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPNXpsUWFMT0FGVTVKbXMzTXV2eDlDT0ZyMXBJcm9QQk04YUw2U2JmZ1BBaU93RVVtelpQbmlPUkZGUnc4cDB1WndPcF9YXzB2SjhuM1kzN25YTjhRNzdYTFVCc240eHdvRXc2cDlFcGxJM0g3TXp3UW5QY3FuU0paUjBFQ2dwSmVSWkxEbHg0Zw?oc=5",
+    "date": "2026-11-15",
+    "player": "Luigi Suigo",
+    "status": "questionable"
    }
   ],
   "Notre Dame": [
