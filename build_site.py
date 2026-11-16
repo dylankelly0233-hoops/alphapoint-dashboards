@@ -80,6 +80,9 @@ LANDING_CSS = """
            letter-spacing: .6px; border-bottom: 2px solid var(--line); }
 .spotday span { font: 500 12px/1 var(--body, inherit); text-transform: none; letter-spacing: 0; color: var(--muted); margin-left: 6px; }
 .spotnone { margin: 10px 6px 0; }
+.spotsport { margin: 10px 0 0; padding: 4px 6px 2px; font: 700 12px/1.2 var(--display); letter-spacing: 1px; text-transform: uppercase;
+             color: var(--muted); }
+.spotsport span { font-weight: 500; margin-left: 4px; }
 .sday { font: 600 13px/1.2 var(--display); letter-spacing: .5px; text-transform: uppercase; color: var(--muted); }
 .ssport { font: 700 11px/1 var(--display); letter-spacing: 1px; text-align: center; padding: 4px 0; border-radius: 4px;
           background: var(--mast-2); color: var(--mast-ink); }
@@ -269,8 +272,8 @@ def best_spots():
                        f'{theme.esc(t)}</span>' for t, _ in s['tags'])
         if not any(t.startswith('Teaser') for t, _ in s['tags']):     # teaser rows ignore trade signals
             tags += ''.join(f'<span class="pill {sig.lower()}">{theme.esc(team)} {sig}</span>' for team, sig in s['signals'])
-        groups.setdefault(d, '')
-        groups[d] += (f'<li><a href="{theme.esc(s["page"])}"><span class="sday">{theme.esc(when)}</span>'
+        day = groups.setdefault(d, {})
+        day[s['sport']] = day.get(s['sport'], '') + (f'<li><a href="{theme.esc(s["page"])}"><span class="sday">{theme.esc(when)}</span>'
                  f'{league_mark(s["sport"])}'
                  f'<span class="smain"><span class="smatch">{theme.esc(s["away"])} @ {theme.esc(s["home"])}</span>'
                  f'<span class="sline">Ours {theme.esc(s["ours"])} · <span class="mk-l">Market</span><span class="mk-s">Mkt</span> '
@@ -280,9 +283,15 @@ def best_spots():
     def label(d):
         nice = d.strftime('%a %b %d').replace(' 0', ' ')
         return f'Today · {nice}' if d == today else f'Tomorrow · {nice}' if (d - today).days == 1 else nice
-    days = ''.join(f'<h3 class="spotday">{theme.esc(label(d))} <span>{rows.count("<li>")} '
-                   f'spot{"" if rows.count("<li>") == 1 else "s"}</span></h3><ol class="spotlist">{rows}</ol>'
-                   for d, rows in groups.items())
+    order = ['NFL', 'CFB', 'NBA', 'CBB', 'NHL', 'EPL']
+    def by_sport(sports):          # within a day: one block per sport, each in start-time order
+        return ''.join(f'<h4 class="spotsport">{theme.esc(sp)} <span>{rows.count("<li>")}</span></h4>'
+                       f'<ol class="spotlist">{rows}</ol>'
+                       for sp, rows in sorted(sports.items(), key=lambda kv: order.index(kv[0]) if kv[0] in order else 99))
+    days = ''
+    for d, sports in groups.items():
+        n = sum(r.count('<li>') for r in sports.values())
+        days += f'<h3 class="spotday">{theme.esc(label(d))} <span>{n} spot{"" if n == 1 else "s"}</span></h3>{by_sport(sports)}'
     if today not in groups:
         days = '<p class="hint spotnone">No spots today.</p>' + days
     return (f'<section class="card spots"><div class="spots-head"><h2>Best spots</h2>'
