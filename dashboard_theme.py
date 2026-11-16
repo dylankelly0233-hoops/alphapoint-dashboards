@@ -776,8 +776,11 @@ document.querySelectorAll('nav.tabs button').forEach(b => b.onclick = () => {
       if (b) b.click();
     }
     el.classList.add('open', 'flash');
-    setTimeout(() => el.scrollIntoView({block: 'start', behavior: 'smooth'}), 80);
-    setTimeout(() => el.classList.remove('flash'), 2600);
+    try { history.scrollRestoration = 'manual'; } catch (e) {}
+    // twice: once quickly, then again after late layout (logos, phone column tweaks) has settled
+    setTimeout(() => el.scrollIntoView({block: 'start', behavior: 'smooth'}), 150);
+    setTimeout(() => { if (Math.abs(el.getBoundingClientRect().top) > 120) el.scrollIntoView({block: 'start'}); }, 900);
+    setTimeout(() => el.classList.remove('flash'), 3000);
   });
 })();
 function stickCols() {
