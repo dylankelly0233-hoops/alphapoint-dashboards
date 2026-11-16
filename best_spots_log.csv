@@ -1,0 +1,45 @@
+listed,sport,gid,kick,reason,detail,kind,side,line,p,need
+2026-11-16T13:42-05:00,nfl,2026_11_IND_HOU,2026-11-19T20:15:00-05:00,system,nfl_div_under,total,under,44.5,,
+2026-11-16T13:42-05:00,nfl,2026_11_MIA_BUF,2026-11-22T13:00:00-05:00,system,nfl_div_under,total,under,45.5,,
+2026-11-16T13:42-05:00,nfl,2026_11_BAL_CAR,2026-11-22T13:00:00-05:00,teaser,NFL teaser leg,teaser,away,2.5,,
+2026-11-16T13:42-05:00,nfl,2026_11_NO_CHI,2026-11-22T13:00:00-05:00,system,nfl_bye_edge,spread,home,10.5,,
+2026-11-16T13:42-05:00,nfl,2026_11_NO_CHI,2026-11-22T13:00:00-05:00,watch,2–4 pts,spread,away,10.5,,
+2026-11-16T13:42-05:00,nfl,2026_11_TEN_DAL,2026-11-22T13:00:00-05:00,system,nfl_high_total_under,total,under,54.5,,
+2026-11-16T13:42-05:00,nfl,2026_11_TB_DET,2026-11-22T13:00:00-05:00,system,nfl_bye_edge,spread,away,6.5,,
+2026-11-16T13:42-05:00,nfl,2026_11_NYJ_LAC,2026-11-22T16:05:00-05:00,teaser,NFL teaser leg,teaser,away,3.0,,
+2026-11-16T13:42-05:00,nfl,2026_11_LV_DEN,2026-11-22T16:25:00-05:00,system,nfl_div_under,total,under,40.5,,
+2026-11-16T13:42-05:00,nfl,2026_11_LV_DEN,2026-11-22T16:25:00-05:00,system,nfl_bye_edge,spread,home,10.0,,
+2026-11-16T13:42-05:00,nfl,2026_11_LV_DEN,2026-11-22T16:25:00-05:00,watch,2–4 pts,spread,away,10.0,,
+2026-11-16T13:42-05:00,nfl,2026_11_PIT_PHI,2026-11-22T16:25:00-05:00,system,nfl_bye_edge,spread,home,-4.5,,
+2026-11-16T13:42-05:00,nfl,2026_11_MIN_SF,2026-11-22T20:20:00-05:00,priced,all spread,spread,home,3.0,0.4883,0.4824
+2026-11-16T13:42-05:00,cfb,401866466,2026-11-17T19:00:00-05:00,priced,mid spread,spread,away,-9.5,0.5535,0.5238
+2026-11-16T13:42-05:00,cfb,401866467,2026-11-18T19:00:00-05:00,priced,mid spread,spread,home,3.0,0.5235,0.4882
+2026-11-16T13:42-05:00,cfb,401858530,2026-11-21T12:00:00-05:00,priced,mid spread,spread,away,-3.0,0.5078,0.4882
+2026-11-16T13:42-05:00,cfb,401858530,2026-11-21T12:00:00-05:00,priced,Power 4 / Big East game total,total,over,42.5,0.5348,0.5238
+2026-11-16T13:42-05:00,cfb,401862834,2026-11-21T12:00:00-05:00,priced,conference game spread,spread,away,-3.5,0.5259,0.5238
+2026-11-16T13:42-05:00,cfb,401858531,2026-11-21T12:00:00-05:00,priced,Power 4 / Big East game total,total,over,41.5,0.5466,0.5238
+2026-11-16T13:42-05:00,cfb,401856867,2026-11-21T12:00:00-05:00,priced,Power 4 / Big East game total,total,under,60.0,0.5415,0.5238
+2026-11-16T13:42-05:00,cfb,401856866,2026-11-21T12:00:00-05:00,priced,mid spread,spread,away,-5.5,0.5362,0.5238
+2026-11-16T13:42-05:00,cfb,401856748,2026-11-21T12:00:00-05:00,priced,Power 4 / Big East game total,total,over,47.0,0.5232,0.5238
+2026-11-16T13:42-05:00,cfb,401862835,2026-11-21T12:00:00-05:00,priced,mid spread,spread,away,-6.5,0.5496,0.5238
+2026-11-16T13:42-05:00,cfb,401858309,2026-11-21T12:00:00-05:00,priced,mid spread,spread,away,-2.5,0.5447,0.5238
+2026-11-16T13:42-05:00,cfb,401856868,2026-11-21T13:00:00-05:00,priced,Power 4 / Big East game total,total,under,70.5,0.5449,0.5238
+2026-11-16T13:42-05:00,cfb,401871080,2026-11-21T13:00:00-05:00,priced,conference game spread,spread,home,17.0,0.5008,0.4987
+2026-11-16T13:42-05:00,cfb,401862833,2026-11-21T14:30:00-05:00,priced,mid spread,spread,away,-1.0,0.522,0.517
+2026-11-16T13:42-05:00,cfb,401869929,2026-11-21T14:30:00-05:00,priced,mid spread,spread,home,13.5,0.5352,0.5238
+2026-11-16T13:42-05:00,cfb,401871077,2026-11-21T15:00:00-05:00,priced,mid spread,spread,away,-3.5,0.5269,0.5238
+2026-11-16T13:42-05:00,cfb,401861968,2026-11-21T15:30:00-05:00,priced,mid spread,spread,home,13.5,0.5273,0.5238
+2026-11-16T13:42-05:00,cfb,401858304,2026-11-21T15:30:00-05:00,priced,Power 4 / Big East game total,total,over,54.5,0.5245,0.5238
+2026-11-16T13:42-05:00,cfb,401869953,2026-11-21T16:00:00-05:00,priced,conference game spread,spread,away,-9.0,0.5236,0.5201
+2026-11-16T13:42-05:00,cfb,401869958,2026-11-21T16:00:00-05:00,priced,mid spread,spread,away,-1.0,0.5202,0.517
+2026-11-16T13:42-05:00,cfb,401860920,2026-11-21T18:00:00-05:00,priced,conference game spread,spread,home,10.0,0.4999,0.4992
+2026-11-16T13:42-05:00,cfb,401856865,2026-11-21T19:00:00-05:00,priced,Power 4 / Big East game total,total,over,52.5,0.5335,0.5238
+2026-11-16T13:42-05:00,cfb,401856753,2026-11-21T19:30:00-05:00,priced,Power 4 / Big East game total,total,over,50.5,0.5387,0.5238
+2026-11-16T13:42-05:00,cfb,401862836,2026-11-21T20:00:00-05:00,priced,mid spread,spread,away,-6.0,0.5253,0.5149
+2026-11-16T13:42-05:00,cfb,401856870,2026-11-21T22:15:00-05:00,priced,mid spread,spread,away,-3.0,0.4927,0.4882
+2026-11-16T13:42-05:00,cfb,401860919,2026-11-21T22:30:00-05:00,priced,mid spread,spread,home,9.5,0.525,0.5238
+2026-11-16T13:42-05:00,cbb,401917964,2026-11-16T20:00:00-05:00,watch,2–4 pts,spread,away,5.5,,
+2026-11-16T13:42-05:00,cbb,401917917,2026-11-16T20:00:00-05:00,watch,2–4 pts,spread,away,19.5,,
+2026-11-16T13:42-05:00,cbb,401906773,2026-11-17T16:30:00-05:00,watch,2–4 pts,spread,home,13.5,,
+2026-11-16T13:42-05:00,cbb,401916289,2026-11-17T19:30:00-05:00,watch,2–4 pts,spread,home,-2.5,,
+2026-11-16T13:42-05:00,cbb,401909787,2026-11-17T21:30:00-05:00,watch,2–4 pts,spread,home,16.5,,
