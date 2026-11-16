@@ -1,16 +1,36 @@
 {
  "sport": "cbb",
  "week": 20261116,
- "generated": "2026-11-16T11:09:52-05:00",
+ "generated": "2026-11-16T16:23:13-05:00",
  "movers": [
   {
    "team": "Boston College",
    "tag": "KEY",
-   "text": "G Money Williams (37.0 mpg, top scorer) missed the New Hampshire game and is considered game-to-game; no status announced for Harvard.",
+   "text": "G Money Williams (37.0 mpg, top scorer) missed New Hampshire and is considered game-to-game; reports say he has a real chance to return at Harvard (Wed).",
    "source": "Sports Illustrated",
    "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOaXpBZkJpeGEwT3ZMNUVXd1RxcllYM0o2UWxNUURMWnVyV1pwMGd6MUZzSUhRSzV6QVNWTzlEVDk1NmdFbDNiekwtSF8xLXVmV1VFVzEwMmM2ZHpZMFVkZHd5NVFlMVRUMjIxd1U0M21OVWF5eEIxOTk0blc4dlNfUGJ6VDBIdnRpVDl3c3hpQ2VsU0FQc1hiTk14N185RW1GalJoNTBIZ3lkdkIwZ1lndjIxLTlNbmFndVJmSks2Z2Y1R0l6NTJBMkhoNFd2UUY2Snkw?oc=5",
    "date": "2026-11-15",
    "player": "Money Williams",
+   "status": "questionable"
+  },
+  {
+   "team": "Michigan State",
+   "tag": "KEY",
+   "text": "G Jordan Scott (24.0 mpg) is questionable at Tennessee with a right shoulder stinger; Izzo said no structural damage, 60-70% chance he plays, no practice since Nov 13.",
+   "source": "On3",
+   "url": "https://www.on3.com/teams/michigan-state-spartans/news/michigan-state-hc-tom-izzo-says-jordan-scott-is-questionable-for-tennessee/",
+   "date": "2026-11-16",
+   "player": "Jordan Scott",
+   "status": "questionable"
+  },
+  {
+   "team": "Villanova",
+   "tag": "KEY",
+   "text": "C Luigi Suigo (27.0 mpg, starter) sat out the Rider win with right knee soreness; Willard said it wasn't about Pitt/Michigan. No official status for Pittsburgh.",
+   "source": "Philadelphia Inquirer",
+   "url": "https://www.inquirer.com/college-sports/villanova/basketball-rider-score-kwame-evans-devin-royal-injuries-20261115.html",
+   "date": "2026-11-15",
+   "player": "Luigi Suigo",
    "status": "questionable"
   },
   {
@@ -32,26 +52,6 @@
    "date": "2026-11-13",
    "player": "Cade Phillips",
    "status": "out"
-  },
-  {
-   "team": "Florida",
-   "tag": "KEY",
-   "text": "G Boogie Fland (29.7 mpg) sat out the Merrimack game; no status announced yet for Notre Dame.",
-   "source": "Gainesville Sun",
-   "url": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxOR2xMMkFsbzlzMXhpMkVaTE1nLVZVSDk0QXRTaVl4QnF5bjlXV0RLRG5rOU4zU2xzSnduVG1VZjV2bGd2b1R4UHR1dGVYaHhfRUdMQmh5SDNYRXJ4MWUxWDdjZlc4SE1LOENyVDlhbUpydG1UeWszcGlXTi1aM05uWFM0Sk96RHFzSnI0dDNPUmVVOU1UdHAxdERHUTRNcEZGazAzSU1lN0J5VU5WME5ldDhEcWFOajdIMXJxRnhJTUtyVGVyRzZOY3dkN3A2Y1duV1JWRVlocmRtaTB2QXUzbWFqTkRoaXk4dEY4UmpmakhRUFE?oc=5",
-   "date": "2026-11-14",
-   "player": "Boogie Fland",
-   "status": "questionable"
-  },
-  {
-   "team": "Michigan State",
-   "tag": "KEY",
-   "text": "G Jordan Scott (24.0 mpg) injured his right shoulder in the win over Northern Iowa; no status announced for Tennessee.",
-   "source": "ESPN",
-   "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxQS2pZUVd4bEtsaHFrbXJpNmtKYWpwSnZxdUMxTldWM3p4bGgxNHBxOS0wQlFzVTlTcWRtTlBXX1hJYUxNeENYcGcwNHYxVUpTOXM4VGZWZV9DSU90d3hjQV82RTlrM1lyLXFNZUItMk11azd5bmhzTWhUakZWZTROZGxWMERxVHRMZXg0MzF0OHJpSWRDekx3bmpCdDB4ZU1YLW1uWUZ2OEVrYk1YRmsteUZCY0FyLWdMNklqaE9FTjJ6dkpYVXUwdUV0aW5YRE05Z3ZEamdTVElEZ0lw?oc=5",
-   "date": "2026-11-14",
-   "player": "Jordan Scott",
-   "status": "questionable"
   }
  ],
  "teams": {
@@ -59,7 +59,7 @@
    {
     "team": "Boston College",
     "tag": "KEY",
-    "text": "G Money Williams (37.0 mpg, top scorer) missed the New Hampshire game and is considered game-to-game; no status announced for Harvard.",
+    "text": "G Money Williams (37.0 mpg, top scorer) missed New Hampshire and is considered game-to-game; reports say he has a real chance to return at Harvard (Wed).",
     "source": "Sports Illustrated",
     "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOaXpBZkJpeGEwT3ZMNUVXd1RxcllYM0o2UWxNUURMWnVyV1pwMGd6MUZzSUhRSzV6QVNWTzlEVDk1NmdFbDNiekwtSF8xLXVmV1VFVzEwMmM2ZHpZMFVkZHd5NVFlMVRUMjIxd1U0M21OVWF5eEIxOTk0blc4dlNfUGJ6VDBIdnRpVDl3c3hpQ2VsU0FQc1hiTk14N185RW1GalJoNTBIZ3lkdkIwZ1lndjIxLTlNbmFndVJmSks2Z2Y1R0l6NTJBMkhoNFd2UUY2Snkw?oc=5",
     "date": "2026-11-15",
@@ -94,23 +94,23 @@
   "Florida": [
    {
     "team": "Florida",
-    "tag": "KEY",
-    "text": "G Boogie Fland (29.7 mpg) sat out the Merrimack game; no status announced yet for Notre Dame.",
-    "source": "Gainesville Sun",
-    "url": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxOR2xMMkFsbzlzMXhpMkVaTE1nLVZVSDk0QXRTaVl4QnF5bjlXV0RLRG5rOU4zU2xzSnduVG1VZjV2bGd2b1R4UHR1dGVYaHhfRUdMQmh5SDNYRXJ4MWUxWDdjZlc4SE1LOENyVDlhbUpydG1UeWszcGlXTi1aM05uWFM0Sk96RHFzSnI0dDNPUmVVOU1UdHAxdERHUTRNcEZGazAzSU1lN0J5VU5WME5ldDhEcWFOajdIMXJxRnhJTUtyVGVyRzZOY3dkN3A2Y1duV1JWRVlocmRtaTB2QXUzbWFqTkRoaXk4dEY4UmpmakhRUFE?oc=5",
-    "date": "2026-11-14",
+    "tag": "RETURNING",
+    "text": "G Boogie Fland (29.7 mpg) missed Merrimack with a shoulder injury; Florida's preview says he is expected to play vs Notre Dame (Nov 17).",
+    "source": "Florida Gators",
+    "url": "https://floridagators.com/news/2026/11/16/mens-basketball-players-era-stuff-florida-vs-notre-dame-nov-17-2026",
+    "date": "2026-11-16",
     "player": "Boogie Fland",
-    "status": "questionable"
+    "status": "returning"
    }
   ],
   "Michigan State": [
    {
     "team": "Michigan State",
     "tag": "KEY",
-    "text": "G Jordan Scott (24.0 mpg) injured his right shoulder in the win over Northern Iowa; no status announced for Tennessee.",
-    "source": "ESPN",
-    "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxQS2pZUVd4bEtsaHFrbXJpNmtKYWpwSnZxdUMxTldWM3p4bGgxNHBxOS0wQlFzVTlTcWRtTlBXX1hJYUxNeENYcGcwNHYxVUpTOXM4VGZWZV9DSU90d3hjQV82RTlrM1lyLXFNZUItMk11azd5bmhzTWhUakZWZTROZGxWMERxVHRMZXg0MzF0OHJpSWRDekx3bmpCdDB4ZU1YLW1uWUZ2OEVrYk1YRmsteUZCY0FyLWdMNklqaE9FTjJ6dkpYVXUwdUV0aW5YRE05Z3ZEamdTVElEZ0lw?oc=5",
-    "date": "2026-11-14",
+    "text": "G Jordan Scott (24.0 mpg) is questionable at Tennessee with a right shoulder stinger; Izzo said no structural damage, 60-70% chance he plays, no practice since Nov 13.",
+    "source": "On3",
+    "url": "https://www.on3.com/teams/michigan-state-spartans/news/michigan-state-hc-tom-izzo-says-jordan-scott-is-questionable-for-tennessee/",
+    "date": "2026-11-16",
     "player": "Jordan Scott",
     "status": "questionable"
    }
@@ -119,11 +119,21 @@
    {
     "team": "Villanova",
     "tag": "KEY",
-    "text": "C Luigi Suigo (27.0 mpg, starter) was hurt in the Nov 15 win over Rider; no status announced for Pittsburgh.",
-    "source": "Philadelphia Sports Now",
-    "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPNXpsUWFMT0FGVTVKbXMzTXV2eDlDT0ZyMXBJcm9QQk04YUw2U2JmZ1BBaU93RVVtelpQbmlPUkZGUnc4cDB1WndPcF9YXzB2SjhuM1kzN25YTjhRNzdYTFVCc240eHdvRXc2cDlFcGxJM0g3TXp3UW5QY3FuU0paUjBFQ2dwSmVSWkxEbHg0Zw?oc=5",
+    "text": "C Luigi Suigo (27.0 mpg, starter) sat out the Rider win with right knee soreness; Willard said it wasn't about Pitt/Michigan. No official status for Pittsburgh.",
+    "source": "Philadelphia Inquirer",
+    "url": "https://www.inquirer.com/college-sports/villanova/basketball-rider-score-kwame-evans-devin-royal-injuries-20261115.html",
     "date": "2026-11-15",
     "player": "Luigi Suigo",
+    "status": "questionable"
+   },
+   {
+    "team": "Villanova",
+    "tag": "KEY",
+    "text": "G Darryl Simmons II (13.8 mpg) left the Rider game with a right ankle/leg injury; Willard had no update before Pittsburgh.",
+    "source": "Philadelphia Inquirer",
+    "url": "https://www.inquirer.com/college-sports/villanova/basketball-rider-score-kwame-evans-devin-royal-injuries-20261115.html",
+    "date": "2026-11-15",
+    "player": "Darryl Simmons II",
     "status": "questionable"
    }
   ],
