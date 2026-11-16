@@ -1,0 +1,67 @@
+{
+ "games": 1428,
+ "ours": {
+  "mae": 11.474,
+  "gap_to_close": 3.134,
+  "share_vs_open": -0.113,
+  "gap2_vs_open": {
+   "n": 642,
+   "rate": 0.483,
+   "ci": [
+    0.444,
+    0.522
+   ]
+  },
+  "gap3_vs_open": {
+   "n": 432,
+   "rate": 0.493,
+   "ci": [
+    0.446,
+    0.54
+   ]
+  }
+ },
+ "adj_ongoing": {
+  "mae": 11.488,
+  "gap_to_close": 3.137,
+  "share_vs_open": -0.077,
+  "gap2_vs_open": {
+   "n": 658,
+   "rate": 0.485,
+   "ci": [
+    0.447,
+    0.523
+   ]
+  },
+  "gap3_vs_open": {
+   "n": 440,
+   "rate": 0.507,
+   "ci": [
+    0.46,
+    0.553
+   ]
+  }
+ },
+ "adj_all": {
+  "mae": 11.492,
+  "gap_to_close": 3.13,
+  "share_vs_open": -0.038,
+  "gap2_vs_open": {
+   "n": 672,
+   "rate": 0.494,
+   "ci": [
+    0.456,
+    0.532
+   ]
+  },
+  "gap3_vs_open": {
+   "n": 450,
+   "rate": 0.511,
+   "ci": [
+    0.465,
+    0.557
+   ]
+  }
+ },
+ "games_with_2pt_ongoing_absence": 177
+}
