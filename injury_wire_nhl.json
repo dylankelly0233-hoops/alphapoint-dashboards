@@ -1,7 +1,7 @@
 {
  "sport": "nhl",
- "week": 20261116,
- "generated": "2026-11-16T11:12:41-05:00",
+ "week": 20261117,
+ "generated": "2026-11-17T20:03:53-05:00",
  "movers": [
   {
    "team": "COL",
@@ -12,12 +12,28 @@
    "date": "2026-11-14"
   },
   {
-   "team": "UTAH",
-   "tag": "CLUSTER",
-   "text": "C Nick Schmaltz (17.1 TOI) out, no return timeline; D Nate Schmidt (19.1) week-to-week on IR; RW Dylan Guenther (17.2) and D John Marino (20.4) on IR; C Logan Cooley day-to-day.",
+   "team": "CAR",
+   "tag": "KEY",
+   "text": "G Pyotr Kochetkov (62% of starts) did not practice Tuesday with an illness; listed day-to-day.",
    "source": "ESPN",
    "url": "https://www.espn.com/nhl/injuries",
-   "date": "2026-11-15"
+   "date": "2026-11-17"
+  },
+  {
+   "team": "TB",
+   "tag": "KEY",
+   "text": "LW Brandon Hagel (20.5 TOI, undisclosed) won't play Tuesday vs Washington, per the Lightning's official site.",
+   "source": "ESPN",
+   "url": "https://www.espn.com/nhl/injuries",
+   "date": "2026-11-17"
+  },
+  {
+   "team": "NYI",
+   "tag": "CLUSTER",
+   "text": "D Logan Stanley (20.7 TOI) and C Jean-Gabriel Pageau (15.8) listed out; D Alexander Romanov (16.6) on IR.",
+   "source": "ESPN",
+   "url": "https://www.espn.com/nhl/injuries",
+   "date": "2026-11-17"
   },
   {
    "team": "MTL",
@@ -26,22 +42,6 @@
    "source": "ESPN",
    "url": "https://www.espn.com/nhl/injuries",
    "date": "2026-11-15"
-  },
-  {
-   "team": "TB",
-   "tag": "CLUSTER",
-   "text": "C Brayden Point (18.7 TOI) on IR; C Anthony Cirelli (17.0) and D Erik Cernak (18.2) day-to-day after missing recent games.",
-   "source": "ESPN",
-   "url": "https://www.espn.com/nhl/injuries",
-   "date": "2026-11-15"
-  },
-  {
-   "team": "DAL",
-   "tag": "KEY",
-   "text": "D Miro Heiskanen (24.9 TOI) day-to-day after missing 5 games; D Lian Bichsel (15.5) placed on IR Saturday.",
-   "source": "ESPN",
-   "url": "https://www.espn.com/nhl/injuries",
-   "date": "2026-11-16"
   }
  ],
  "teams": {
@@ -55,14 +55,34 @@
     "date": "2026-11-14"
    }
   ],
-  "UTAH": [
+  "CAR": [
    {
-    "team": "UTAH",
-    "tag": "CLUSTER",
-    "text": "C Nick Schmaltz (17.1 TOI) out, no return timeline; D Nate Schmidt (19.1) week-to-week on IR; RW Dylan Guenther (17.2) and D John Marino (20.4) on IR; C Logan Cooley day-to-day.",
+    "team": "CAR",
+    "tag": "KEY",
+    "text": "G Pyotr Kochetkov (62% of starts) did not practice Tuesday with an illness; listed day-to-day.",
     "source": "ESPN",
     "url": "https://www.espn.com/nhl/injuries",
-    "date": "2026-11-15"
+    "date": "2026-11-17"
+   }
+  ],
+  "TB": [
+   {
+    "team": "TB",
+    "tag": "KEY",
+    "text": "LW Brandon Hagel (20.5 TOI, undisclosed) won't play Tuesday vs Washington, per the Lightning's official site.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nhl/injuries",
+    "date": "2026-11-17"
+   }
+  ],
+  "NYI": [
+   {
+    "team": "NYI",
+    "tag": "CLUSTER",
+    "text": "D Logan Stanley (20.7 TOI) and C Jean-Gabriel Pageau (15.8) listed out; D Alexander Romanov (16.6) on IR.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nhl/injuries",
+    "date": "2026-11-17"
    }
   ],
   "MTL": [
@@ -75,54 +95,74 @@
     "date": "2026-11-15"
    }
   ],
-  "TB": [
+  "UTAH": [
    {
-    "team": "TB",
+    "team": "UTAH",
     "tag": "CLUSTER",
-    "text": "C Brayden Point (18.7 TOI) on IR; C Anthony Cirelli (17.0) and D Erik Cernak (18.2) day-to-day after missing recent games.",
+    "text": "C Nick Schmaltz (17.1 TOI), D Nate Schmidt (19.1, week-to-week), RW Dylan Guenther (17.2) and D John Marino (20.4) all on IR.",
     "source": "ESPN",
     "url": "https://www.espn.com/nhl/injuries",
-    "date": "2026-11-15"
+    "date": "2026-11-17"
    }
   ],
-  "DAL": [
+  "CHI": [
    {
-    "team": "DAL",
+    "team": "CHI",
     "tag": "KEY",
-    "text": "D Miro Heiskanen (24.9 TOI) day-to-day after missing 5 games; D Lian Bichsel (15.5) placed on IR Saturday.",
+    "text": "D Bowen Byram (24.7 TOI, upper body) will miss the Blackhawks' next two games, per CHGO.",
     "source": "ESPN",
     "url": "https://www.espn.com/nhl/injuries",
-    "date": "2026-11-16"
+    "date": "2026-11-17"
+   }
+  ],
+  "EDM": [
+   {
+    "team": "EDM",
+    "tag": "KEY",
+    "text": "C Ryan Nugent-Hopkins (18.2 TOI, undisclosed) not expected to play Tuesday vs Florida.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nhl/injuries",
+    "date": "2026-11-17"
    }
   ],
   "LA": [
    {
     "team": "LA",
     "tag": "KEY",
-    "text": "LW Artemi Panarin (21.4 TOI) and D Erik Gustafsson (20.0) listed day-to-day.",
+    "text": "LW Artemi Panarin (21.4 TOI) listed out after missing the last game.",
     "source": "ESPN",
     "url": "https://www.espn.com/nhl/injuries",
-    "date": "2026-11-15"
+    "date": "2026-11-16"
    }
   ],
-  "STL": [
+  "DET": [
    {
-    "team": "STL",
-    "tag": "KEY",
-    "text": "D Philip Broberg (24.6 TOI, lower body) and LW Jake Neighbours (upper body) day-to-day per NHL.com Sunday.",
+    "team": "DET",
+    "tag": "RETURNING",
+    "text": "D Albert Johansson (15.7 TOI) expected back Wednesday or Saturday per MLive; D William Wallinder (16.8) day-to-day (upper body).",
     "source": "ESPN",
     "url": "https://www.espn.com/nhl/injuries",
-    "date": "2026-11-15"
+    "date": "2026-11-17"
    }
   ],
-  "NYI": [
+  "DAL": [
    {
-    "team": "NYI",
-    "tag": "KEY",
-    "text": "C Bo Horvat (21.2 TOI) day-to-day; D Logan Stanley (20.7, lower body) left Saturday's game vs ANA and is day-to-day.",
+    "team": "DAL",
+    "tag": "CLUSTER",
+    "text": "D Tyler Myers (16.3 TOI) listed out; D Lian Bichsel (15.5) on IR since Saturday.",
     "source": "ESPN",
     "url": "https://www.espn.com/nhl/injuries",
-    "date": "2026-11-15"
+    "date": "2026-11-17"
+   }
+  ],
+  "WPG": [
+   {
+    "team": "WPG",
+    "tag": "KEY",
+    "text": "D Dylan DeMelo (19.4 TOI, lower body) placed on IR Friday; D Elias Salomonsson (18.3) also on IR.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nhl/injuries",
+    "date": "2026-11-13"
    }
   ],
   "CGY": [
@@ -133,16 +173,6 @@
     "source": "ESPN",
     "url": "https://www.espn.com/nhl/injuries",
     "date": "2026-11-08"
-   }
-  ],
-  "NJ": [
-   {
-    "team": "NJ",
-    "tag": "KEY",
-    "text": "D Brett Pesce (21.0 TOI) day-to-day after missing 2 games; D Johnathan Kovacevic on IR (ankle).",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nhl/injuries",
-    "date": "2026-11-15"
    }
   ]
  }
