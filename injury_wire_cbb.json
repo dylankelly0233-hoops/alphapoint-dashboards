@@ -1,8 +1,28 @@
 {
  "sport": "cbb",
- "week": 20261116,
- "generated": "2026-11-16T16:23:13-05:00",
+ "week": 20261117,
+ "generated": "2026-11-17T20:00:10-05:00",
  "movers": [
+  {
+   "team": "Wisconsin",
+   "tag": "KEY",
+   "text": "G Braeden Carrington (28.0 mpg, starter) was taken to the hospital after an in-game injury vs Coastal Carolina (Nov 16); status unknown before Seton Hall.",
+   "source": "Yahoo Sports",
+   "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQanFQYS1OT19VcjltaWZzTDVzbnFSUGxmSWwxS0s3Ulg5NE0xVmhsNG04TmtZV2loX3RXcVpjRWtfQnRycHNaNEhnNWJYUXdUUTFwZ0g1cnVLalAxUDJ0NFhRcGhTVEd5X1JIcFB1WnpVMm4yMl9IejNEcm1ycE5wTTFQbUxMMnpvNlRqdHNsOE9NbjYtZVE?oc=5",
+   "date": "2026-11-16",
+   "player": "Braeden Carrington",
+   "status": "questionable"
+  },
+  {
+   "team": "Florida",
+   "tag": "KEY",
+   "text": "G Boogie Fland (29.7 mpg) left the Notre Dame game (Nov 17) with an apparent shoulder injury; he had missed Merrimack with a shoulder issue. No status yet for Houston.",
+   "source": "TSN",
+   "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPN19BelNYMUJWLXJtSGZUZTk2OENOZjNETnZPNnBwZDYydllOcU1uTXpLbU5VXzBzSzVfS1dnWHk2UVpJN3ROd0tmLXo2WWpTaU5rdHpDaTVBRjZoWjdNYUFFWTJjOS1nWTBueWU1ZHIwTUllckRzc01LVjJYa084R05nWVFkaGVJNEFwRHJqVGQ3Sy15NG5RZEREYkpaSWQ5WGlsWkN4WlFxakZUSXBxMC1vcw?oc=5",
+   "date": "2026-11-18",
+   "player": "Boogie Fland",
+   "status": "questionable"
+  },
   {
    "team": "Boston College",
    "tag": "KEY",
@@ -14,24 +34,14 @@
    "status": "questionable"
   },
   {
-   "team": "Michigan State",
+   "team": "Oklahoma",
    "tag": "KEY",
-   "text": "G Jordan Scott (24.0 mpg) is questionable at Tennessee with a right shoulder stinger; Izzo said no structural damage, 60-70% chance he plays, no practice since Nov 13.",
+   "text": "C Duke Brennan (19.2 mpg) will have surgery on his right ankle and is expected to miss an extended period.",
    "source": "On3",
-   "url": "https://www.on3.com/teams/michigan-state-spartans/news/michigan-state-hc-tom-izzo-says-jordan-scott-is-questionable-for-tennessee/",
+   "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQU0hZTkk2Rl9jRlpqNjMxdzJvYWRpUGs4X1RXbkpERFl6OGVSTjBTbFBxMC1Nem1KZHYtaU50THVicjlIb24za2ozU1BuZUo2QUpCOGlfaFFJVHNRTWdxYWE2dUZXOEx3RkQ5NFdpZ0ltTDBwYjQ1MkNKS1hsbGp1bE15aktZem9VYzFmLWRQd0w0VnhZTjFSdXZtNm5JNUR6eTNaX3JVVkxTMG15cUE?oc=5",
    "date": "2026-11-16",
-   "player": "Jordan Scott",
-   "status": "questionable"
-  },
-  {
-   "team": "Villanova",
-   "tag": "KEY",
-   "text": "C Luigi Suigo (27.0 mpg, starter) sat out the Rider win with right knee soreness; Willard said it wasn't about Pitt/Michigan. No official status for Pittsburgh.",
-   "source": "Philadelphia Inquirer",
-   "url": "https://www.inquirer.com/college-sports/villanova/basketball-rider-score-kwame-evans-devin-royal-injuries-20261115.html",
-   "date": "2026-11-15",
-   "player": "Luigi Suigo",
-   "status": "questionable"
+   "player": "Duke Brennan",
+   "status": "out"
   },
   {
    "team": "UConn",
@@ -42,19 +52,33 @@
    "date": "2026-11-12",
    "player": "Nik Khamenia",
    "status": "out"
-  },
-  {
-   "team": "Texas A&M",
-   "tag": "KEY",
-   "text": "F Cade Phillips (18.0 mpg, starter) hurt his right knee vs ULM on Nov 10 and is expected to miss several weeks.",
-   "source": "Aggies Wire",
-   "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxPdWNMX3pzbUd2ZEVERGtyaGxfeGhObDRleE1waHJKaTgxZmFqZEphZ3lNNHRwS0xyWEZnaHNCZGFDSGJiQjZEaDVQNU9vZkNWandSWkxCdk5IdTBERFhfckhHQ20xOFY0U2Y4dWdJZVBSYzRZSDJIdWVaSTM0UzF1RzNFZlhLRGRHaGk3S0JZdW13QnN0dkJjX0YzLWdlQW04bjRZcVNwMldRcEZOdFlQbVRGZVFtZTQ3MDRZSVZCV19udjVMQ294NHlHc01EdkhEbEVCRUU5VmVtNmpvd2RmMjVnYlhIQQ?oc=5",
-   "date": "2026-11-13",
-   "player": "Cade Phillips",
-   "status": "out"
   }
  ],
  "teams": {
+  "Wisconsin": [
+   {
+    "team": "Wisconsin",
+    "tag": "KEY",
+    "text": "G Braeden Carrington (28.0 mpg, starter) was taken to the hospital after an in-game injury vs Coastal Carolina (Nov 16); status unknown before Seton Hall.",
+    "source": "Yahoo Sports",
+    "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQanFQYS1OT19VcjltaWZzTDVzbnFSUGxmSWwxS0s3Ulg5NE0xVmhsNG04TmtZV2loX3RXcVpjRWtfQnRycHNaNEhnNWJYUXdUUTFwZ0g1cnVLalAxUDJ0NFhRcGhTVEd5X1JIcFB1WnpVMm4yMl9IejNEcm1ycE5wTTFQbUxMMnpvNlRqdHNsOE9NbjYtZVE?oc=5",
+    "date": "2026-11-16",
+    "player": "Braeden Carrington",
+    "status": "questionable"
+   }
+  ],
+  "Florida": [
+   {
+    "team": "Florida",
+    "tag": "KEY",
+    "text": "G Boogie Fland (29.7 mpg) left the Notre Dame game (Nov 17) with an apparent shoulder injury; he had missed Merrimack with a shoulder issue. No status yet for Houston.",
+    "source": "TSN",
+    "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPN19BelNYMUJWLXJtSGZUZTk2OENOZjNETnZPNnBwZDYydllOcU1uTXpLbU5VXzBzSzVfS1dnWHk2UVpJN3ROd0tmLXo2WWpTaU5rdHpDaTVBRjZoWjdNYUFFWTJjOS1nWTBueWU1ZHIwTUllckRzc01LVjJYa084R05nWVFkaGVJNEFwRHJqVGQ3Sy15NG5RZEREYkpaSWQ5WGlsWkN4WlFxakZUSXBxMC1vcw?oc=5",
+    "date": "2026-11-18",
+    "player": "Boogie Fland",
+    "status": "questionable"
+   }
+  ],
   "Boston College": [
    {
     "team": "Boston College",
@@ -65,6 +89,18 @@
     "date": "2026-11-15",
     "player": "Money Williams",
     "status": "questionable"
+   }
+  ],
+  "Oklahoma": [
+   {
+    "team": "Oklahoma",
+    "tag": "KEY",
+    "text": "C Duke Brennan (19.2 mpg) will have surgery on his right ankle and is expected to miss an extended period.",
+    "source": "On3",
+    "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQU0hZTkk2Rl9jRlpqNjMxdzJvYWRpUGs4X1RXbkpERFl6OGVSTjBTbFBxMC1Nem1KZHYtaU50THVicjlIb24za2ozU1BuZUo2QUpCOGlfaFFJVHNRTWdxYWE2dUZXOEx3RkQ5NFdpZ0ltTDBwYjQ1MkNKS1hsbGp1bE15aktZem9VYzFmLWRQd0w0VnhZTjFSdXZtNm5JNUR6eTNaX3JVVkxTMG15cUE?oc=5",
+    "date": "2026-11-16",
+    "player": "Duke Brennan",
+    "status": "out"
    }
   ],
   "UConn": [
@@ -89,18 +125,6 @@
     "date": "2026-11-13",
     "player": "Cade Phillips",
     "status": "out"
-   }
-  ],
-  "Florida": [
-   {
-    "team": "Florida",
-    "tag": "RETURNING",
-    "text": "G Boogie Fland (29.7 mpg) missed Merrimack with a shoulder injury; Florida's preview says he is expected to play vs Notre Dame (Nov 17).",
-    "source": "Florida Gators",
-    "url": "https://floridagators.com/news/2026/11/16/mens-basketball-players-era-stuff-florida-vs-notre-dame-nov-17-2026",
-    "date": "2026-11-16",
-    "player": "Boogie Fland",
-    "status": "returning"
    }
   ],
   "Michigan State": [
