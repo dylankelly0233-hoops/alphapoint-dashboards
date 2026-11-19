@@ -87,7 +87,7 @@ def cfb(week, season_type, v2_line, opened, market, home, away, completed):
     now = market if market == market else opened
     own = lambda m: m if side == 'home' else -m          # the backed team's own margin
     pick = f'{_side(team, own(now))} (opened {_side(team, own(opened)).split()[-1]})'
-    return [{'key': 'cfb_v2_open', 'label': res['label'], 'pick': pick, 'record': record_text(res) + ' · early edge',
+    return [{'key': 'cfb_v2_open', 'label': res['label'], 'pick': pick, 'record': record_text(res),
              'side': side, 'line': float(now), 'kind': 'spread', 'tentative': bool(res.get('tentative'))}]
 
 
@@ -108,7 +108,7 @@ def cbb(day, v2_line, opened, market, home, away, completed):
     now = market if market == market and market is not None else opened
     own = lambda m: m if side == 'home' else -m
     pick = f'{_side(team, own(now))} (opened {_side(team, own(opened)).split()[-1]})'
-    return [{'key': 'cbb_v2_open', 'label': res['label'], 'pick': pick, 'record': record_text(res) + ' · early edge',
+    return [{'key': 'cbb_v2_open', 'label': res['label'], 'pick': pick, 'record': record_text(res),
              'side': side, 'line': float(now), 'kind': 'spread', 'tentative': bool(res.get('tentative'))}]
 
 

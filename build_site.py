@@ -83,6 +83,13 @@ LANDING_CSS = """
 .spotsec { margin-top: 16px; } .spotsec:first-of-type { margin-top: 6px; }
 .spothead { margin: 0; font: 700 16px/1.2 var(--display); text-transform: uppercase; letter-spacing: .6px; }
 .spothint { margin: 2px 0 4px; font-size: 13px; }
+/* Best spots: every reason = when-to-bet badge + pick + what it is based on + its record */
+.sr { display: block; margin: 3px 0 5px; }
+.tm { display: inline-block; font: 700 10px/1 var(--display); letter-spacing: .6px; text-transform: uppercase; padding: 3px 6px;
+      border-radius: 4px; color: #fff; margin-right: 6px; vertical-align: 1px; }
+.tm.early { background: #b45309; } .tm.kick { background: #15803d; } .tm.late { background: #1d4ed8; }
+.tm.range { background: #6d4bd8; } .tm.timing { background: #64748b; }
+.syslist li { margin-bottom: 6px; } .spotsguide dl.plain dt .tm { margin: 0; }
 .whys { display: flex; flex-wrap: wrap; gap: 4px; margin: 2px 0 3px; }
 .why { font: 700 10px/1 var(--display); letter-spacing: .6px; text-transform: uppercase; padding: 3px 6px; border-radius: 4px;
        background: var(--surface-2); color: var(--muted); border: 1px solid var(--line); }
@@ -336,6 +343,51 @@ def log_spots(rows):
         pd.concat([old, pd.DataFrame(new, columns=cols)], ignore_index=True).to_csv(path, index=False)
 
 
+TIMING = {    # when-to-bet badge: (css class, label, plain-English meaning)
+    'early': ('early', 'Bet early', 'Measured against the opening line and mostly gone by kickoff. The closer the line you '
+                                    'can get is to the opener shown, the more of the edge is left.'),
+    'kick': ('kick', 'Good to kickoff', 'Held up against the closing line too, so the line right up to kickoff is fine.'),
+    'late': ('late', 'Bet late', 'Depends on game-day conditions (the wind forecast) and was judged at the closing line: '
+                                 'it means the most once the forecast is settled.'),
+    'range': ('range', 'While in range', 'The rule is about the line itself (+1.5 to +3): it counts whenever the line you '
+                                         'can get is in that range, and drops out if it moves past it.'),
+    'timing': ('timing', 'Timing only', 'Not a value call: in past seasons the line usually moved toward our number, so if '
+                                        'you like this side, earlier has been better.'),
+}
+SYSTEM_BASIS = {   # what each Best spots system is built on
+    'cfb_v2_open': 'AlphaPoint CFB model (v2)', 'cbb_v2_open': 'AlphaPoint CBB model (v2)',
+    'cbb_3p_fade': 'Stat: 3-point shooting (luck regresses)', 'nfl_wind_under': 'Situation: wind forecast',
+    'nfl_bye_edge': 'Situation: rest (bye week)', 'nfl_div_under': 'Situation: division game',
+    'nfl_high_total_under': 'Situation: very high total',
+}
+_SYS = None
+
+
+def system_timing(key):
+    """Bet early unless the system held up at the close (then good to kickoff); wind needs the game-day forecast."""
+    global _SYS
+    if _SYS is None:
+        try:
+            _SYS = {k: r for rs in json.load(open(os.path.join(HERE, 'system_test.json'), encoding='utf-8'))
+                    .get('systems', {}).values() for k, r in rs.items()}
+        except (OSError, ValueError):
+            _SYS = {}
+    if key == 'nfl_wind_under':
+        return 'late'
+    r = _SYS.get(key) or {}
+    return 'kick' if r.get('bench') == 'close' or r.get('holds_to_close') else 'early'
+
+
+def _badge(t):
+    cls, label, tip = TIMING[t]
+    return f'<span class="tm {cls}" title="{theme.esc(tip)}">{label}</span>'
+
+
+def _reason(timing, main, basis, record, tip=''):
+    return (f'<span class="sr">{_badge(timing)}{main}<span class="sproof"'
+            + (f' title="{theme.esc(tip)}"' if tip else '') + f'>Based on: {theme.esc(basis)} · {theme.esc(record)}</span></span>')
+
+
 def best_spots():
     """
     The home page's Best spots, built only on what has held up in testing (2026-11-16):
@@ -369,7 +421,7 @@ def best_spots():
             rows.append(s)
 
     def row_html(s):
-        why, lines = [], []
+        lines = []
         for x in s['priced']:
             opener = s.get('open_spread') if x['kind'] == 'Spread' else (
                 f'{x["text"].split()[0]} {s["open_total"]:g}' if s.get('open_total') else None)
@@ -378,28 +430,24 @@ def best_spots():
             tip = (f'Typically beats the opener: past {label} picks won {100 * pr["rate"]:.0f}% of {pr["n"]:,} against the '
                    f'opening line' + (f', and the line moved our way by the close {100 * pr["clv"]:.0f}% of the time' if pr.get('clv') else '')
                    + ('.' if pr.get('holds_to_close') else '. The edge is usually gone by the close.'))
-            lines.append(f'{x["kind"]} <b>{theme.esc(x["text"])}</b> {100 * x["p"]:.1f}%'
-                         + (f' (push {100 * x["push"]:.0f}%)' if x.get('push', 0) >= 0.03 else '')
-                         + (f' · opened {theme.esc(opener)}' if opener else '')
-                         + f'<span class="sproof" title="{theme.esc(tip)}">{theme.esc(label)}: {100 * pr["rate"]:.0f}% vs opener '
-                           f'({pr["n"]:,}){"" if pr.get("holds_to_close") else " · early edge"}</span>')
-        if s['priced']:
-            why.append('Priced value')
+            lines.append(_reason('kick' if pr.get('holds_to_close') else 'early',
+                                 f'{x["kind"]} <b>{theme.esc(x["text"])}</b> {100 * x["p"]:.1f}%'
+                                 + (f' (push {100 * x["push"]:.0f}%)' if x.get('push', 0) >= 0.03 else '')
+                                 + (f' · opened {theme.esc(opener)}' if opener else '') + ' · Priced value',
+                                 f'our ratings, priced ({label})', f'{100 * pr["rate"]:.0f}% of {pr["n"]:,} vs the opener', tip))
         for x in s['systems']:
-            why.append('System')
-            lines.append(f'<b>{theme.esc(x["pick"])}</b> · {theme.esc(x["label"])}<span class="sproof">{theme.esc(x["record"])}</span>')
+            lines.append(_reason(system_timing(x.get('key')), f'<b>{theme.esc(x["pick"])}</b> · {theme.esc(x["label"])}',
+                                 SYSTEM_BASIS.get(x.get('key'), 'Situation'), x['record']))
         if s['teaser']:
-            why.append('Teaser leg')
-            lines.append(f'Teaser leg <b>{theme.esc(s["teaser"][0].replace("Teaser ", "").replace("★ ", ""))}</b>'
-                         f'<span class="sproof">NFL teaser rules: about 77% of legs won</span>')
+            lines.append(_reason('range', f'Teaser leg <b>{theme.esc(s["teaser"][0].replace("Teaser ", "").replace("★ ", ""))}</b>',
+                                 "NFL teaser rules (Dylan's study, 2015-25)", 'about 77% of legs won'))
         if s['watch']:
             w = s['watch']
             side = s['home'] if w['toward'] == 'home' else s['away']
-            why.append('Line-move watch')
-            lines.append(f'Ours {theme.esc(s["ours"])} vs market {theme.esc(s["market"])}: watch <b>{theme.esc(side)}</b>'
-                         f'<span class="sproof">Gaps of {theme.esc(w["label"])} pts moved toward our number {100 * w["rate"]:.0f}% '
-                         f'(n {w["n"]:,}). Timing note, not a value call.</span>')
-        chips = ''.join(f'<span class="why">{theme.esc(w)}</span>' for w in dict.fromkeys(why))
+            lines.append(_reason('timing', f'Ours {theme.esc(s["ours"])} vs market {theme.esc(s["market"])}: watch '
+                                           f'<b>{theme.esc(side)}</b> · Line-move watch',
+                                 'our ratings vs the market', f'gaps of {w["label"]} pts moved toward our number '
+                                 f'{100 * w["rate"]:.0f}% of {w["n"]:,}'))
         if s['priced']:
             best = max(s['priced'], key=lambda x: x['ev'])
             need = (110 / 210) * (1 - best.get('push', 0))
@@ -415,7 +463,7 @@ def best_spots():
             right = f'<span class="edge none">{theme.esc(s["teaser"][1])}</span><span class="sline">tease</span>'
         else:
             right = f'<span class="edge none">Watch</span><span class="sline">{s["watch"]["gap"]:g} pts</span>'
-        return _row(s, f'<span class="whys">{chips}</span>' + '<br>'.join(lines), right)
+        return _row(s, ''.join(lines), right)
 
     log_spots(rows)
     body = _day_sport_groups(rows, row_html) if rows else '<p class="hint spotnone">Nothing qualifies in the next 7 days.</p>'
@@ -546,26 +594,35 @@ def spots_guide():
         sy = json.load(open(os.path.join(HERE, 'system_test.json'), encoding='utf-8')).get('systems', {})
     except (OSError, ValueError):
         sy = {}
-    systems = [(SPORT_LABEL.get(sp, sp.upper()), r['label'].split(' (')[0].split(', judged')[0], r)
-               for sp, rs in sy.items() for r in rs.values() if r.get('passed')]
+    systems = [(SPORT_LABEL.get(sp, sp.upper()), r['label'].split(' (')[0].split(', judged')[0], r, k)
+               for sp, rs in sy.items() for k, r in rs.items() if r.get('passed')]
     sys_items = ''.join(
-        f'<li><b>{theme.esc(sp)}:</b> {theme.esc(lab)}. {100 * r[r.get("bench", "open")]["all"]["rate"]:.0f}% of '
+        f'<li>{_badge(system_timing(k))}<b>{theme.esc(sp)}:</b> {theme.esc(lab)} '
+        f'<span class="hint">(based on: {theme.esc(SYSTEM_BASIS.get(k, "situation"))})</span>. '
+        f'{100 * r[r.get("bench", "open")]["all"]["rate"]:.0f}% of '
         f'{r[r.get("bench", "open")]["all"]["n"]:,} past games against the '
         f'{"opening" if r.get("bench", "open") == "open" else "closing"} line'
-        f'{" (tentative: only just passed)" if r.get("tentative") else ""}.</li>' for sp, lab, r in systems) or '<li>None right now.</li>'
+        f'{" (tentative: only just passed)" if r.get("tentative") else ""}.</li>' for sp, lab, r, k in systems) or '<li>None right now.</li>'
+    badges = ''.join(f'<dt>{_badge(t)}</dt><dd>{theme.esc(TIMING[t][2])}</dd>' for t in TIMING)
     cards = [
         ('What this is',
          '<p>Best spots lists upcoming games where our research has found something that <b>held up when we tested it on '
          'past seasons</b>. It is research, not picks: it tells you where the numbers have historically pointed, not what '
          'to bet. Everything here is re-tested every month; anything that stops holding up drops off on its own.</p>'
-         '<p>Games are listed by day (today first), then by sport. Each game has small tags saying why it is there: '
-         '<b>Priced value</b>, <b>System</b>, <b>Teaser leg</b> or <b>Line-move watch</b>, explained below. A game that '
-         'qualifies more than one way shows every reason.</p>'),
+         '<p>Games are listed by day (today first), then by sport. Every reason a game is listed reads the same way: '
+         'a colored <b>when-to-bet</b> badge, the side, the name of the rule (<b>Priced value</b>, a <b>system</b>, a '
+         '<b>teaser leg</b> or the <b>line-move watch</b>), then a grey line with <b>what it is based on</b> (one of our '
+         'models, a stat, a situation) and <b>its record against the line it was judged on</b>. A game that qualifies '
+         'more than one way shows every reason.</p>'),
+        ('When to bet',
+         '<p>Each edge was measured against a specific line, and that decides when it is worth anything. The badge says '
+         'which:</p><dl class="plain">' + badges + '</dl><p>Most of what we have is <b>Bet early</b>: the market finds '
+         'the same thing by kickoff. Only edges that also beat the closing line get <b>Good to kickoff</b>.</p>'),
         ('Words you will see',
          '<dl class="plain"><dt>The opener</dt><dd>The first line posted for a game. Most of our edges show up against it '
          'and fade as the line moves toward the final ("closing") number.</dd>'
-         '<dt>Early edge</dt><dd>The edge has usually been gone by kickoff. Compare the opener shown on the row with the '
-         'line you can get now: the closer they are, the more of the edge is left.</dd>'
+         '<dt>The close</dt><dd>The last line before kickoff, the sharpest number. Beating it is much harder than '
+         'beating the opener.</dd>'
          '<dt>Fair number</dt><dd>Our line, moved most of the way back toward the market. In the past only part of a '
          'disagreement with the market turned out to be real, so that is all we count.</dd>'
          '<dt>Win chance vs. needed</dt><dd>The number on the right of a Priced value row: how often that side wins at '
@@ -583,8 +640,9 @@ def spots_guide():
          'A two-team teaser at −120 needs each leg to win about 74%, so 77% is a real but modest edge.</p>'),
         ('Proven systems',
          f'<p>Simple, fixed situations ("unders when the wind is 15+ mph") written down before testing and checked on '
-         f'every past season we have. A system shows up here only if it beat the line in both the earlier and later years. '
-         f'They show whatever our own line says. Passing now:</p><ul>{sys_items}</ul>'),
+         f'every past season we have, or a rule built on one of our own models. A system shows up here only if it beat '
+         f'the line in both the earlier and later years. They show whatever our own line says. Passing now:</p>'
+         f'<ul class="syslist">{sys_items}</ul>'),
         ('Line-move watch',
          '<p>Our number is far enough from the market that, in past seasons, the line moved toward ours most of the time '
          '(NFL gaps of 2+ points, college basketball gaps of 2–4). It is about timing: if you like that side, earlier has '
@@ -595,8 +653,8 @@ def spots_guide():
          'there passes the same tests; two ideas are close and being re-tested monthly. <b>Games we flag</b> (a big line '
          'move that usually means news, or a lopsided college mismatch) stay off Priced value.</p>'),
         ('How to use it',
-         '<ol><li>Start early: most edges here are strongest against the opener.</li><li>Check the line you can get against '
-         'the opener on the row.</li><li>Tap the game for its card: injuries, weather and how our line is built.</li>'
+         '<ol><li>Read the badge first: <b>Bet early</b> rows are worth the most near the opener; <b>Good to kickoff</b> '
+         'rows can wait.</li><li>For early ones, check the line you can get against the opener on the row.</li><li>Tap the game for its card: injuries, weather and how our line is built.</li>'
          '<li>Treat each row as a reason to look closer, not a bet. Even the best of these win 55–57% of the time.</li></ol>'),
     ]
     body = ''.join(f'<section class="card"><h3>{theme.esc(t)}</h3>{c}</section>' for t, c in cards)

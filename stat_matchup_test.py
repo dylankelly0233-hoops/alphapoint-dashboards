@@ -188,7 +188,7 @@ def p3_entry():
         q = X[X[bench].notna() & (X.margin != X[bench])]
         w = np.where(q.home_side, q.margin > q[bench], q.margin < q[bench])
         first = halves[bench](q).values
-        f = lambda v: dict(zip(('n', 'rate', 'lo'), (int(_ci(v)[0]), round(_ci(v)[1], 4), round(_ci(v)[2], 4))))
+        f = lambda v: (lambda n, r, lo: {'n': int(n), 'rate': round(r, 4), 'lo': round(lo, 4), 'hi': round(2 * r - lo, 4)})(*_ci(v))
         out[bench] = {'discovery': f(w[first]), 'holdout': f(w[~first]), 'all': f(w)}
     c = out['close']
     passed = (c['discovery']['n'] >= 50 and c['holdout']['n'] >= 50 and c['discovery']['rate'] > 110 / 210
