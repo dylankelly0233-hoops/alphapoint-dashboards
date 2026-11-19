@@ -91,6 +91,27 @@ def cfb(week, season_type, v2_line, opened, market, home, away, completed):
              'side': side, 'line': float(now), 'kind': 'spread', 'tentative': bool(res.get('tentative'))}]
 
 
+def cbb(day, v2_line, opened, market, home, away, completed):
+    """
+    The AlphaPoint CBB model v2 vs the opener (cbb_model_v2.py, tested in cbb_model_v2_test.py): from Nov 15 (season
+    day 45), v2 5+ points from the opening (first seen) line -> back v2's side. Measured AT THE OPENER; the edge
+    mostly fades by tip-off (53% vs the close), so the pick is shown with the opener. Lines are home margins.
+    """
+    res = _passed('cbb', 'cbb_v2_open')
+    if (not res or completed or day < res.get('min_day', 45) or v2_line is None or opened is None or opened != opened):
+        return []
+    gap = v2_line - opened
+    if abs(gap) < res.get('gap', 5.0):
+        return []
+    side = 'home' if gap > 0 else 'away'
+    team = home if side == 'home' else away
+    now = market if market == market and market is not None else opened
+    own = lambda m: m if side == 'home' else -m
+    pick = f'{_side(team, own(now))} (opened {_side(team, own(opened)).split()[-1]})'
+    return [{'key': 'cbb_v2_open', 'label': res['label'], 'pick': pick, 'record': record_text(res) + ' · early edge',
+             'side': side, 'line': float(now), 'kind': 'spread', 'tentative': bool(res.get('tentative'))}]
+
+
 def _side(team, margin):
     """'Bills −3' / 'Bills +3' for a team whose own expected margin (positive = favored) is `margin`."""
     if margin != margin:

@@ -1323,6 +1323,57 @@
     "passed": false,
     "tentative": false,
     "holds_to_close": false
+   },
+   "cbb_v2_open": {
+    "label": "AlphaPoint CBB model 5+ pts from the opener",
+    "kind": "spread",
+    "open": {
+     "discovery": {
+      "n": 253,
+      "rate": 0.5731,
+      "lo": 0.5122,
+      "hi": 0.6341
+     },
+     "holdout": {
+      "n": 121,
+      "rate": 0.5372,
+      "lo": 0.4483,
+      "hi": 0.626
+     },
+     "all": {
+      "n": 374,
+      "rate": 0.5615,
+      "lo": 0.5112,
+      "hi": 0.6118
+     }
+    },
+    "close": {
+     "discovery": {
+      "n": 254,
+      "rate": 0.5512,
+      "lo": 0.49,
+      "hi": 0.6123
+     },
+     "holdout": {
+      "n": 121,
+      "rate": 0.4876,
+      "lo": 0.3985,
+      "hi": 0.5767
+     },
+     "all": {
+      "n": 375,
+      "rate": 0.5307,
+      "lo": 0.4802,
+      "hi": 0.5812
+     }
+    },
+    "bench": "open",
+    "passed": true,
+    "tentative": false,
+    "holds_to_close": false,
+    "min_day": 45,
+    "gap": 5.0,
+    "source": "cbb_model_v2_test.py"
    }
   },
   "nba": {

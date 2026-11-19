@@ -38,6 +38,8 @@ import pandas as pd
 import requests
 
 import cbb_model as cm
+import cbb_model_v2 as cm2
+import systems as sy
 import cbb_players as cp
 import cbb_ratings as cbr
 import cbb_value_metrics as vm
@@ -540,6 +542,10 @@ def generate_html(power, metrics, days, info):
             move += ex.rating_confidence(by_src.get(g['home'], {}), by_src.get(g['away'], {}),
                                          g.get('hfa', 0.0 if g['neutral'] else HFA_POINTS), big)
             move += injury_row(info['wire'], g, margin)
+            v2 = cm2.line(info.get('v2'), g['home'], g['away'], g['neutral'])
+            sysl = sy.cbb(cm2.season_day(g['kick'].date(), SEASON), v2, info['opened'].get(g['game_id']), g['market'],
+                          g['home'], g['away'], bool(g['score']))
+            move += sy.tag_html(sysl, theme.esc)
             pr = '' if big or g['score'] else val.card_row('cbb', margin, g['market'], g['home'], g['away'], info['val_live'])
             t_ours = info['total_fn'](g['home'], g['away'], g['neutral']) if info.get('total_fn') else np.nan
             pr += '' if g['score'] else tot.card_row('cbb', t_ours, g.get('total', np.nan))
@@ -590,7 +596,8 @@ def generate_html(power, metrics, days, info):
                          'confidence': ex.confidence_level(by_src.get(g['home'], {}), by_src.get(g['away'], {}), hfa_g, big),
                          'flags': (['news'] if ex.news_move(info['opened'].get(g['game_id']), g['market']) else [])
                                   + (['lopsided'] if big else []),
-                         'sources': ex.source_lines(all_src.get(g['home'], {}), all_src.get(g['away'], {}), hfa_g),
+                         'sources': {**ex.source_lines(all_src.get(g['home'], {}), all_src.get(g['away'], {}), hfa_g),
+                                     **({cm2.SHADOW_LABEL: v2} if v2 is not None else {})},   # logged, never blended
                          'hfa': hfa_g - g.get('spots', 0.0),      # logged home edge = base + crowd (calibrate.py); spots below
                          'context': {'scale': SCALE, 'crowd': g.get('crowd'),
                                      'total': [None if t_ours != t_ours else round(t_ours, 1),
@@ -601,7 +608,7 @@ def generate_html(power, metrics, days, info):
             spots.append(ex.spot('CBB', 'cbb.html#games', g['kick'], g['away'], g['home'], margin, g['market'], [],
                                  [(t, _signal(comp.get(t), games_played.get(t, 0))) for t in (g['away'], g['home'])],
                                  info['opened'].get(g['game_id']), big, key='cbb', total=(t_ours, g.get('total')),
-                                 gid=g['game_id'], ctx={'p4': g['home'] in p4set or g['away'] in p4set}))
+                                 gid=g['game_id'], ctx={'p4': g['home'] in p4set or g['away'] in p4set}, systems=sysl))
         sections += (f'<div class="sechead"><h2>{day.strftime("%A, %b %d").replace(" 0", " ")}</h2>'
                      f'<span class="hint">{len(games)} game{"" if len(games) == 1 else "s"}</span></div>'
                      f'<div class="games">{cards}</div>')
@@ -686,6 +693,9 @@ def main():
     prior = cm.load_prior(SEASON, pd.read_csv(prev) if os.path.exists(prev) else None,
                           set(teams['team']))
     model = cm.fit(box, set(teams['team']), prior=prior) if (prior or not box.empty) else None
+    model_v2 = cm2.model(box, set(teams['team']), SEASON)      # shadow + Best spots system only, not in the blend
+    print(f"  AlphaPoint CBB model v2: {model_v2['teams']} teams, season day {model_v2['day']}." if model_v2
+          else f'  ! AlphaPoint CBB model v2: no {cm2.PARAMS.format(season=SEASON)} or no data')
     sources, unmatched, weights = load_sources(teams, model)
     power, scale = build_power(teams, sources, unmatched, weights)
     scale['weights'] = weights
@@ -785,7 +795,8 @@ def main():
                                                       for _, gs in days for g in gs if not g['score']},
                                          'mu_prof': mu.profiles(units, mu.BASKETBALL_CATS, mu.BASKETBALL_STYLES)
                                          if not units.empty else {},
-                                         'opened': {str(r['game_id']): r.get('opened') for r in market_rows}})
+                                         'opened': {str(r['game_id']): r.get('opened') for r in market_rows},
+                                         'v2': model_v2})
 
 
 if __name__ == '__main__':
