@@ -1,7 +1,7 @@
 {
  "sport": "nfl",
  "week": 11,
- "generated": "2026-11-18T20:45:14-05:00",
+ "generated": "2026-11-19T10:15:00-05:00",
  "movers": [
   {
    "team": "TB",
@@ -223,6 +223,14 @@
     "source": "ESPN",
     "url": "https://www.espn.com/nfl/injuries",
     "date": "2026-11-18"
+   },
+   {
+    "team": "KC",
+    "tag": "KEY",
+    "text": "G Trey Smith (concussion) and OT Jaylon Moore (ankle) did not practice Wednesday, per the Chiefs' official site. LB Nick Bolton (shin) was limited.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nfl/injuries",
+    "date": "2026-11-19"
    }
   ],
   "LV": [
