@@ -17,7 +17,17 @@ A 10-point efficiency gap is worth ~6 points between two slow teams but ~7.5 bet
 converting with one fixed possession count mis-sizes every slow-vs-slow and fast-vs-fast line.
 
 Settings below were chosen by walk-forward backtest on the 2025-26 season (cbb_model_backtest.py).
+
+Last-season starting point (since 2026-11-18): each team's offense, defense and tempo start from last season's
+final ratings (cbb_prior_{season}.json, built from last season's box scores) and this season's games pull them
+away, each prior worth PRIOR_W games. Walk-forward on 2025-26 and 2026-27: November gap to the close
+7.4 -> 4.5 and 8.9 -> 4.9 points, November miss vs results 15.0 -> 13.3, December 12.6 -> 12.4, January on
+unchanged (11.3), so the model can join the blend from opening night. Not a betting edge: 3+ point
+disagreements with the close still win ~50%. Regressing the prior (60-90%) and capping blowouts tested worse.
 """
+
+import json
+import os
 
 from datetime import date
 
@@ -27,6 +37,8 @@ import pandas as pd
 HALF_LIFE = 120      # days
 RIDGE     = 1.0      # shrinkage, in games' worth of evidence
 MIN_POSS  = 50       # ignore box scores with implausible possession counts
+PRIOR_W   = 6.0      # last season's rating counts as this many games (walk-forward best of 3 / 6 / 10)
+PRIOR_PATH = 'cbb_prior_{season}.json'
 
 
 def _games(box, teams, asof=None):
@@ -38,15 +50,44 @@ def _games(box, teams, asof=None):
     return g
 
 
-def fit(box, teams, asof=None, half_life=HALF_LIFE, ridge=RIDGE):
+def build_prior(box, teams):
+    """Last season's final ratings (no recency weighting) as next season's starting point."""
+    m = fit(box, teams, half_life=1000)
+    if not m:
+        return None
+    pct = lambda d: float(np.percentile(list(d.values()), 15))     # teams new to D1 start near the bottom
+    return {'O': m['O'], 'D': m['D'], 'T': m['T'], 'mu': m['mu'], 'tau': m['tau'], 'h': m['h'],
+            'new_O': pct(m['O']), 'new_D': pct(m['D'])}
+
+
+def load_prior(season, prev_box=None, prev_teams=None):
+    """This season's starting point: the saved file, or built from last season's box scores (and saved)."""
+    path = PRIOR_PATH.format(season=season)
+    if os.path.exists(path):
+        with open(path) as f:
+            return json.load(f)
+    if prev_box is None or prev_box.empty:
+        return None
+    prior = build_prior(prev_box, prev_teams)
+    if prior:
+        with open(path, 'w') as f:
+            json.dump({k: ({t: round(v, 4) for t, v in x.items()} if isinstance(x, dict) else round(x, 4))
+                       for k, x in prior.items()}, f)
+    return prior
+
+
+def fit(box, teams, asof=None, half_life=HALF_LIFE, ridge=RIDGE, prior=None, prior_w=PRIOR_W):
     """
     Fit offense, defense and tempo for every team in `teams` from games before `asof` (default: all).
-    Returns dict(O, D, T: {team: value}, mu, tau, h, n_games: {team: games}).
+    prior: last season's ratings (load_prior); each team is pulled toward it with the weight of prior_w games.
+    Returns dict(O, D, T: {team: value}, mu, tau, h, n_games: {team: games}, prior: bool).
     """
     teams = sorted(set(teams))
     g = _games(box, set(teams), asof)
-    if g.empty:
+    if g.empty and not prior:
         return None
+    if prior is None:
+        prior_w = 0.0
     idx = {t: i for i, t in enumerate(teams)}
     n = len(teams)
     ref = pd.Timestamp(asof or date.today())
@@ -60,10 +101,16 @@ def fit(box, teams, asof=None, half_life=HALF_LIFE, ridge=RIDGE):
     X[np.arange(len(g)), n + oi] = -1             # defense of the opponent (higher D = better defense)
     X[:, 2 * n] = g['home'].values                # home court
     X[:, 2 * n + 1] = 1                           # league average
-    reg = np.full(2 * n + 2, ridge)
+    reg = np.full(2 * n + 2, ridge + prior_w)
     reg[2 * n:] = 1e-6
+    target = np.zeros(2 * n + 2)                  # reg * target = prior_w * last season (the ridge still pulls to 0)
+    if prior:
+        target[:n] = [prior['O'].get(t, prior['new_O']) for t in teams]
+        target[n:2 * n] = [prior['D'].get(t, prior['new_D']) for t in teams]
+        target[:2 * n] *= prior_w / (ridge + prior_w)
+        target[2 * n], target[2 * n + 1] = prior['h'], prior['mu']
     A = X * sw[:, None]
-    beta = np.linalg.solve(A.T @ A + np.diag(reg), A.T @ (g['eff'].values * sw))
+    beta = np.linalg.solve(A.T @ A + np.diag(reg), A.T @ (g['eff'].values * sw) + reg * target)
     O, D = beta[:n], beta[n:2 * n]
     O, D = O - O.mean(), D - D.mean()
 
@@ -75,15 +122,21 @@ def fit(box, teams, asof=None, half_life=HALF_LIFE, ridge=RIDGE):
     Xt[np.arange(len(one)), ti] += 1
     Xt[np.arange(len(one)), oi] += 1
     Xt[:, n] = 1
-    regt = np.full(n + 1, ridge)
+    regt = np.full(n + 1, ridge + prior_w)
     regt[n] = 1e-6
+    tt = np.zeros(n + 1)
+    if prior:
+        tt[:n] = [prior['T'].get(t, 0.0) * prior_w / (ridge + prior_w) for t in teams]
+        tt[n] = prior['tau']
     At = Xt * w1[:, None]
-    bt = np.linalg.solve(At.T @ At + np.diag(regt), At.T @ (one['poss'].values * w1))
+    bt = np.linalg.solve(At.T @ At + np.diag(regt), At.T @ (one['poss'].values * w1) + regt * tt)
     T = bt[:n] - bt[:n].mean()
     games = g.groupby('team').size().to_dict()
+    few = len(g) < 200                            # opening days: league home edge / pace from last season
     return {'O': dict(zip(teams, O)), 'D': dict(zip(teams, D)), 'T': dict(zip(teams, T)),
-            'mu': float(beta[2 * n + 1]), 'h': float(beta[2 * n]), 'tau': float(bt[n] + 2 * bt[:n].mean()),
-            'n_games': games}
+            'mu': float(beta[2 * n + 1]), 'h': prior['h'] if prior and few else float(beta[2 * n]),
+            'tau': prior['tau'] if prior and few else float(bt[n] + 2 * bt[:n].mean()),
+            'n_games': games, 'prior': bool(prior)}
 
 
 def project(model, home, away, neutral=False):

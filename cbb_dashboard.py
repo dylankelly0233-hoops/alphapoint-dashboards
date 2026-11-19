@@ -65,8 +65,9 @@ ESPN_SCOREBOARD = 'https://site.api.espn.com/apis/site/v2/sports/basketball/mens
 AVG_POSSESSIONS = 68.0     # D1 average possessions per game; converts Torvik's per-100 margin to points
 HFA_POINTS      = 3.0      # home-court edge for an average team (markets ~3)
 GAME_DAYS       = 3        # how many upcoming game days to show
-# Our own tempo-aware adjusted-efficiency model (cbb_model.py). Its weight ramps up as teams play:
-# full weight once teams average MODEL_FULL_GAMES D1 games.
+# Our own tempo-aware adjusted-efficiency model (cbb_model.py). With last season's ratings as its starting point
+# (cbb_prior_{season}.json) it counts at full weight from opening night (since 2026-11-18); without one, its weight
+# ramps up as teams play, full once teams average MODEL_FULL_GAMES D1 games. Torvik preseason fades on that ramp.
 MODEL_LABEL     = 'AlphaPoint model'
 MODEL_MIN_GAMES = 3       # the model joins the blend once teams average this many D1 games
 MODEL_FULL_GAMES = 8
@@ -137,9 +138,10 @@ def fetch_torvik():
 def load_sources(teams, model=None):
     """
     The rating sources for this build, as {label: {CBBD team: rating}}, unmatched names, and blend weights.
-    TeamRankings predictive anchors the blend all season. Our model joins once teams average MODEL_MIN_GAMES
-    and ramps to full weight by MODEL_FULL_GAMES; Torvik's saved preseason ratings are the early second opinion
-    and hand off to our model as it ramps in (their weight is 1 − the model's ramp).
+    TeamRankings predictive anchors the blend all season. Our model starts from last season's ratings and
+    counts at full weight from day one (without that starting point it joins once teams average MODEL_MIN_GAMES
+    and ramps to full weight by MODEL_FULL_GAMES); Torvik's saved preseason ratings are the early second opinion
+    and fade out on that games-played ramp (their weight is 1 − the ramp).
     Warren Nolan is no longer used: its early-season Elo lines ran 10–18 points off the market in lopsided games.
     """
     canon = set(teams['team'])
@@ -173,9 +175,9 @@ def load_sources(teams, model=None):
         avg_games = float(np.mean(list(model['n_games'].values())))
         # Sits out until teams average MODEL_MIN_GAMES (after one or two games it's mostly shrinkage), then ramps up
         ramp = min(1.0, max(0.0, (avg_games - MODEL_MIN_GAMES + 1) / (MODEL_FULL_GAMES - MODEL_MIN_GAMES + 1)))
-        if ramp > 0 and len(model['O']) >= 300:
+        if (ramp > 0 or model.get('prior')) and len(model['O']) >= 300:
             sources[MODEL_LABEL] = cm.team_ratings(model)
-            weights[MODEL_LABEL] = SOURCE_WEIGHTS[MODEL_LABEL] * ramp
+            weights[MODEL_LABEL] = SOURCE_WEIGHTS[MODEL_LABEL] * (1.0 if model.get('prior') else ramp)
         else:
             ramp = 0.0
     if 'Torvik preseason' in weights:
@@ -462,9 +464,9 @@ def generate_html(power, metrics, days, info):
             f'<b>Rating</b> is points above or below an average Division I team (0.0); the gap between two teams is the '
             f'projected margin at a neutral site. This build blends <b>{theme.esc(blend_w)}</b>. The sources: '
             f'TeamRankings\' predictive rating, which anchors the blend all season; the <b>AlphaPoint model</b>, our own '
-            f'opponent-adjusted offense, defense and tempo from every D1 box score, which joins once teams average '
-            f'{MODEL_MIN_GAMES} games and reaches full weight at {MODEL_FULL_GAMES}; and Torvik\'s saved preseason '
-            f'ratings, the early-season second opinion, which fade out as our model ramps in; and <b>Haslametrics</b> '
+            f'opponent-adjusted offense, defense and tempo from every D1 box score, starting from last season’s final '
+            f'ratings (each worth {cm.PRIOR_W:g} games) so it counts from opening night; Torvik\'s saved preseason '
+            f'ratings, the early-season second opinion, which fade out as teams reach {MODEL_FULL_GAMES} games; and <b>Haslametrics</b> '
             f"efficiency ratings (net points per 100 possessions at each team's tempo), built from this season's games, "
             f'which join and ramp up on the same schedule as our model. Each source is centered '
             f'on its D1 average and rescaled to the spread of the full-weight points sources (SD {s["target_sd"]:.2f} '
@@ -679,7 +681,11 @@ def main():
     print('\n[1/4] Teams, box scores & power ratings...')
     teams = vm.d1_teams()
     box = vm.fetch_box()
-    model = cm.fit(box, set(teams['team'])) if not box.empty else None
+    # last season's final ratings: committed cbb_prior_{season}.json, else built once from last season's cached box scores
+    prev = f'cbbv_box2_{SEASON - 1}.csv'
+    prior = cm.load_prior(SEASON, pd.read_csv(prev) if os.path.exists(prev) else None,
+                          set(teams['team']))
+    model = cm.fit(box, set(teams['team']), prior=prior) if (prior or not box.empty) else None
     sources, unmatched, weights = load_sources(teams, model)
     power, scale = build_power(teams, sources, unmatched, weights)
     scale['weights'] = weights
