@@ -50,6 +50,14 @@ CLOSE_MARGIN   = 5
 OWN_3P_SHRINK  = 300        # own 3P% shrinks toward league average with this many phantom attempts
 NET_HALF_LIFE  = 45         # days; recent games count more in the adjusted net rating
 NET_RIDGE      = 3.0        # shrinkage (in games) toward average for the adjusted net rating
+# Preseason start (since 2026-11-18): last season's final margin ratings x NET_PRIOR_REGRESS, worth NET_PRIOR_W games,
+# fading with a NET_PRIOR_FADE-day half-life from the season's first game. Walk-forward 2025-26 / 2026-27: first three
+# weeks 14.3 -> 13.7 and 15.8 -> 15.1 miss vs results, gap to the close 4.8 -> 2.9; later weeks unchanged (a fixed,
+# non-fading start hurt after week 8). Accuracy only, not a betting edge.
+NET_PRIOR_W       = 10.0
+NET_PRIOR_FADE    = 42
+NET_PRIOR_REGRESS = 0.9
+NET_PRIOR_PATH    = 'nba_prior_{season}.json'
 
 # Signal thresholds scale with games played (a 2-win gap means more in November than March)
 SPOT_RATE, STRONG_RATE = 0.05, 0.08
@@ -256,11 +264,46 @@ def _possessions(df, pre=''):
     return df[f'{pre}fga'] - df[f'{pre}oreb'] + df[f'{pre}tov'] + 0.44 * df[f'{pre}fta']
 
 
-def net_ratings(box, abbrs):
+def build_prior(season=None):
+    """Next season's start from last season's results (bt_nba_{season-1}.csv, from backtests.py), saved and returned."""
+    season = season or SEASON
+    path = NET_PRIOR_PATH.format(season=season)
+    src = f'bt_nba_{season - 1}.csv'
+    if not os.path.exists(src):
+        return None
+    d = pd.read_csv(src).dropna(subset=['result'])
+    teams = sorted(set(d['home']) | set(d['away']))
+    idx, n = {t: i for i, t in enumerate(teams)}, len(teams)
+    X = np.zeros((len(d), n + 1))
+    X[np.arange(len(d)), d['home'].map(idx).values] = 1
+    X[np.arange(len(d)), d['away'].map(idx).values] = -1
+    X[:, n] = np.where(d['neutral'].astype(bool), 0, 1)
+    reg = np.full(n + 1, NET_RIDGE); reg[n] = 0.01
+    b = np.linalg.solve(X.T @ X + np.diag(reg), X.T @ d['result'].values.astype(float))
+    r = b[:n] - b[:n].mean()
+    prior = {'season': season, 'from': src, 'regress': NET_PRIOR_REGRESS,
+             'ppg': {t: round(float(NET_PRIOR_REGRESS * r[i]), 3) for t, i in idx.items()}}    # points per game
+    with open(path, 'w') as f:
+        json.dump(prior, f)
+    return prior
+
+
+def load_prior(season=None):
+    path = NET_PRIOR_PATH.format(season=season or SEASON)
+    if os.path.exists(path):
+        with open(path) as f:
+            return json.load(f)
+    return build_prior(season)
+
+
+def net_ratings(box, abbrs, prior='auto'):
     """
     Opponent-adjusted net rating in points per game (at league-average pace), plus games played and pace.
-    Ridge regression: net per 100 = r_team − r_opp + hca·home, recency-weighted.
+    Ridge regression: net per 100 = r_team − r_opp + hca·home, recency-weighted, each team pulled toward last
+    season's rating (load_prior) with a weight that fades through the first weeks.
     """
+    if prior == 'auto':
+        prior = load_prior()
     if box.empty:
         return {}, {}, None
     g = box.copy()
@@ -280,9 +323,15 @@ def net_ratings(box, abbrs):
     w = 0.5 ** (age / NET_HALF_LIFE)
     W = np.sqrt(w)[:, None]
     A = X * W
-    reg = np.eye(n + 1) * NET_RIDGE
+    pace0 = float(g['poss'].mean())
+    days_in = (pd.Timestamp(date.today()) - pd.to_datetime(one['date']).min()).days
+    pw = NET_PRIOR_W * 0.5 ** (max(days_in, 0) / NET_PRIOR_FADE) if prior else 0.0
+    reg = np.eye(n + 1) * (NET_RIDGE + pw)
     reg[n, n] = 0.01                                          # barely shrink home court
-    beta = np.linalg.solve(A.T @ A + reg, A.T @ (one['net100'].values * W[:, 0]))
+    tgt = np.zeros(n + 1)
+    if prior:
+        tgt[:n] = [prior['ppg'].get(t, 0.0) * 100 / pace0 * pw / (NET_RIDGE + pw) for t in abbrs]
+    beta = np.linalg.solve(A.T @ A + reg, A.T @ (one['net100'].values * W[:, 0]) + np.diag(reg) * tgt)
     ratings = beta[:n] - beta[:n].mean()
     pace = float(g['poss'].mean())
     gp = g.groupby('team').size().to_dict()
@@ -375,6 +424,11 @@ def records(box):
 
 
 if __name__ == '__main__':
+    import sys
+    if '--prior' in sys.argv:        # monthly research: build this season's start file if it's missing
+        p = load_prior()
+        print(f"NBA prior {SEASON}: {'ready, ' + str(len(p['ppg'])) + ' teams' if p else 'not built (no last-season results file)'}")
+        sys.exit(0)
     tm = teams()
     box, players, spreads, sched = fetch_games()
     net, gp, pace = net_ratings(box, list(tm['abbr']))

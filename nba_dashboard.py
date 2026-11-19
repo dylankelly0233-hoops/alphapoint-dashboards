@@ -507,7 +507,8 @@ def main():
     net, games_played, pace = vm.net_ratings(box, list(tm['abbr']))
     avg_games = float(np.mean(list(games_played.values()))) if games_played else 0.0
     weights = {'Sagarin': SOURCE_WEIGHTS['Sagarin'], 'TeamRankings': SOURCE_WEIGHTS['TeamRankings'],
-               'Net rating': SOURCE_WEIGHTS['Net rating'] * min(1.0, avg_games / NET_FULL_GAMES)}
+               'Net rating': SOURCE_WEIGHTS['Net rating'] * (1.0 if vm.load_prior() else min(1.0, avg_games / NET_FULL_GAMES))}
+    # with last season as its starting point (nba_prior_{season}.json) the net rating counts in full from day one
     sources = {'Sagarin': sag, 'TeamRankings': trk, 'Net rating': net}
     print(f'  Sagarin {len(sag)} (through {sag_asof}) | TeamRankings {len(trk)} | net rating {len(net)} '
           f'(avg {avg_games:.1f} games, weight {weights["Net rating"]:.2f})')
