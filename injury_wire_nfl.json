@@ -1,47 +1,47 @@
 {
  "sport": "nfl",
  "week": 11,
- "generated": "2026-11-17T19:55:25-05:00",
+ "generated": "2026-11-18T20:45:14-05:00",
  "movers": [
   {
    "team": "TB",
    "tag": "QB",
-   "text": "QB Baker Mayfield (foot) trending toward sitting out Sunday at Detroit; Jalon Daniels likely to start, per NFL Network's Ian Rapoport.",
-   "source": "Sports Illustrated",
-   "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOdWdwU1AzSTVoel9iUXU4ZGlQU1hrcFA1c041eEs3a2VpZ29hOU02MVpOVkp0ZVFyY1U3Q21sbDRDZ2hrZG96VERkVmhMNlp5RlpSQ01Rb0RVU0dfaEd6cjRmX3dleGpheVJsYkVBdG9uWk0tdHp6SkUyNWhlOWNrZ3ZOcVpJb3pJUTAwdzF4SElZOWZTeUNTSGJYSlJlVkItaFB4R01VZEFOMzRsd3M3anFkQ2F5eHV4T0E?oc=5",
-   "date": "2026-11-17"
+   "text": "QB Baker Mayfield (foot) did not practice Wednesday; rookie Jalon Daniels took all first-team reps ahead of Sunday at Detroit, per Fox Sports' Greg Auman.",
+   "source": "ESPN",
+   "url": "https://www.espn.com/nfl/injuries",
+   "date": "2026-11-18"
+  },
+  {
+   "team": "IND",
+   "tag": "CLUSTER",
+   "text": "OTs Bernhard Raimann (concussion) and Jalen Travis (knee) ruled out for Thursday at Houston. CB Charvarius Ward (knee) also out; CB Sauce Gardner (calf) questionable.",
+   "source": "ESPN",
+   "url": "https://www.espn.com/nfl/injuries",
+   "date": "2026-11-18"
+  },
+  {
+   "team": "HOU",
+   "tag": "CLUSTER",
+   "text": "DE Danielle Hunter (hamstring) ruled out for Thursday vs. the Colts; LB Azeez Al-Shaair (groin) on IR. RB Woody Marks (concussion) also ruled out.",
+   "source": "ESPN",
+   "url": "https://www.espn.com/nfl/injuries",
+   "date": "2026-11-19"
   },
   {
    "team": "DET",
    "tag": "CLUSTER",
-   "text": "DE Aidan Hutchinson tore his right ACL in Munich and is out for the season. LB Jack Campbell (neck) remains on IR. Two front-seven starters out.",
-   "source": "Detroit Lions",
-   "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQYXFmTTBaTmZUMDFoTFQ0RGxjdTRESkdqT0pVY0JYRzJqU2hiQU9qc3lSVnNvZ1luUE9wWUl6YjRLajV6TzZSX0ZxQndMdTBKaXp5SXNvWFlMQ2lfRjA0NUZRdXlCUjV5MWE5aXN1Um81cm9uTl9qdGZQRVlmNG41enpBRzcya1UyQk5fMk5B?oc=5",
-   "date": "2026-11-17"
+   "text": "DE Aidan Hutchinson (torn ACL) placed on IR Wednesday, out for the season. C Cade Mays (ankle) not expected to play Sunday vs. Tampa Bay, per the Detroit Free Press.",
+   "source": "ESPN",
+   "url": "https://www.espn.com/nfl/injuries",
+   "date": "2026-11-18"
   },
   {
    "team": "NYJ",
    "tag": "QB",
-   "text": "QB Geno Smith (left ankle): Monday tests showed no major injury; status for Sunday vs. the Chargers to be decided during the week. Cade Klubnik played the 2nd half in Week 10.",
+   "text": "QB Geno Smith (ankle) was limited in Wednesday's walkthrough and said he intends to play Sunday vs. the Chargers, per ESPN's Rich Cimini. Cade Klubnik is the backup.",
    "source": "ESPN",
    "url": "https://www.espn.com/nfl/injuries",
-   "date": "2026-11-17"
-  },
-  {
-   "team": "NO",
-   "tag": "CLUSTER",
-   "text": "OL: OT Asim Richards (knee) out multiple weeks per Kellen Moore; OT Taliese Fuaga (knee) and C Erik McCoy (biceps) listed doubtful.",
-   "source": "ESPN",
-   "url": "https://www.espn.com/nfl/injuries",
-   "date": "2026-11-17"
-  },
-  {
-   "team": "DAL",
-   "tag": "KEY",
-   "text": "CB DaRon Bland suffered a high-ankle sprain vs. the 49ers and is sidelined going forward, per the team.",
-   "source": "Dallas Cowboys | Official Site of the Dallas Cowboys",
-   "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQdExFU3VycjAzZC1haDR2MFNMS2JGLTNfZm9Ld3NrSnl1QWVZVDJSczUxa1diaWoyZm5WUjUxUnBUZ0ZmM0dEU2xWeHpNWGxoNXpDWmdzaVVHZHRIU2U2X1BZYVhDOEVOTDViSXpXaFdnYm1ucy1vQ2RVUTJGbndReXdURnhCc255YXEzWQ?oc=5",
-   "date": "2026-11-16"
+   "date": "2026-11-18"
   }
  ],
  "teams": {
@@ -49,37 +49,65 @@
    {
     "team": "TB",
     "tag": "QB",
-    "text": "QB Baker Mayfield (foot) trending toward sitting out Sunday at Detroit; Jalon Daniels likely to start, per NFL Network's Ian Rapoport.",
-    "source": "Sports Illustrated",
-    "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOdWdwU1AzSTVoel9iUXU4ZGlQU1hrcFA1c041eEs3a2VpZ29hOU02MVpOVkp0ZVFyY1U3Q21sbDRDZ2hrZG96VERkVmhMNlp5RlpSQ01Rb0RVU0dfaEd6cjRmX3dleGpheVJsYkVBdG9uWk0tdHp6SkUyNWhlOWNrZ3ZOcVpJb3pJUTAwdzF4SElZOWZTeUNTSGJYSlJlVkItaFB4R01VZEFOMzRsd3M3anFkQ2F5eHV4T0E?oc=5",
-    "date": "2026-11-17"
+    "text": "QB Baker Mayfield (foot) did not practice Wednesday; rookie Jalon Daniels took all first-team reps ahead of Sunday at Detroit, per Fox Sports' Greg Auman.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nfl/injuries",
+    "date": "2026-11-18"
+   },
+   {
+    "team": "TB",
+    "tag": "KEY",
+    "text": "S Antoine Winfield Jr. (ankle) did not practice Wednesday, per Fox Sports' Greg Auman.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nfl/injuries",
+    "date": "2026-11-18"
+   }
+  ],
+  "IND": [
+   {
+    "team": "IND",
+    "tag": "CLUSTER",
+    "text": "OTs Bernhard Raimann (concussion) and Jalen Travis (knee) ruled out for Thursday at Houston. CB Charvarius Ward (knee) also out; CB Sauce Gardner (calf) questionable.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nfl/injuries",
+    "date": "2026-11-18"
+   }
+  ],
+  "HOU": [
+   {
+    "team": "HOU",
+    "tag": "CLUSTER",
+    "text": "DE Danielle Hunter (hamstring) ruled out for Thursday vs. the Colts; LB Azeez Al-Shaair (groin) on IR. RB Woody Marks (concussion) also ruled out.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nfl/injuries",
+    "date": "2026-11-19"
    }
   ],
   "DET": [
    {
     "team": "DET",
     "tag": "CLUSTER",
-    "text": "DE Aidan Hutchinson tore his right ACL in Munich and is out for the season. LB Jack Campbell (neck) remains on IR. Two front-seven starters out.",
-    "source": "Detroit Lions",
-    "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQYXFmTTBaTmZUMDFoTFQ0RGxjdTRESkdqT0pVY0JYRzJqU2hiQU9qc3lSVnNvZ1luUE9wWUl6YjRLajV6TzZSX0ZxQndMdTBKaXp5SXNvWFlMQ2lfRjA0NUZRdXlCUjV5MWE5aXN1Um81cm9uTl9qdGZQRVlmNG41enpBRzcya1UyQk5fMk5B?oc=5",
-    "date": "2026-11-17"
+    "text": "DE Aidan Hutchinson (torn ACL) placed on IR Wednesday, out for the season. C Cade Mays (ankle) not expected to play Sunday vs. Tampa Bay, per the Detroit Free Press.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nfl/injuries",
+    "date": "2026-11-18"
    }
   ],
   "NYJ": [
    {
     "team": "NYJ",
     "tag": "QB",
-    "text": "QB Geno Smith (left ankle): Monday tests showed no major injury; status for Sunday vs. the Chargers to be decided during the week. Cade Klubnik played the 2nd half in Week 10.",
+    "text": "QB Geno Smith (ankle) was limited in Wednesday's walkthrough and said he intends to play Sunday vs. the Chargers, per ESPN's Rich Cimini. Cade Klubnik is the backup.",
     "source": "ESPN",
     "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-17"
+    "date": "2026-11-18"
    }
   ],
   "NO": [
    {
     "team": "NO",
     "tag": "CLUSTER",
-    "text": "OL: OT Asim Richards (knee) out multiple weeks per Kellen Moore; OT Taliese Fuaga (knee) and C Erik McCoy (biceps) listed doubtful.",
+    "text": "OL: OT Asim Richards (knee) out multiple weeks per Kellen Moore; OT Taliese Fuaga (knee) and C Erik McCoy (biceps) listed doubtful vs. Chicago.",
     "source": "ESPN",
     "url": "https://www.espn.com/nfl/injuries",
     "date": "2026-11-17"
@@ -89,90 +117,72 @@
    {
     "team": "DAL",
     "tag": "KEY",
-    "text": "CB DaRon Bland suffered a high-ankle sprain vs. the 49ers and is sidelined going forward, per the team.",
-    "source": "Dallas Cowboys | Official Site of the Dallas Cowboys",
-    "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQdExFU3VycjAzZC1haDR2MFNMS2JGLTNfZm9Ld3NrSnl1QWVZVDJSczUxa1diaWoyZm5WUjUxUnBUZ0ZmM0dEU2xWeHpNWGxoNXpDWmdzaVVHZHRIU2U2X1BZYVhDOEVOTDViSXpXaFdnYm1ucy1vQ2RVUTJGbndReXdURnhCc255YXEzWQ?oc=5",
-    "date": "2026-11-16"
+    "text": "CB DaRon Bland and G Tyler Booker (both high-ankle sprains) listed out; among 7 Cowboys who did not practice Wednesday.",
+    "source": "Sports Illustrated",
+    "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNS2l4Tk9ITmRTbFlWOWdpMEYwOTZ6WlJDdkc4UFByQ1RJT2sta1FyaVd0RXVKYkpNVjRrWDlGcERpWVRtMjB4NmN1dzJ6aFB6bkRHNmZDYUtLQ01FR0ozb18tUHQxSkY0Zkc0RHgzRDNuYll2OGlLWEpxdWd2MV8zOURyY3VLV2RZcGtuOGtZTFNXV3A5SElwTEVSaXdxUkEyQkowaEJYXzVaRU15OFk4al81c1JyZThiWmlZ?oc=5",
+    "date": "2026-11-18"
    },
    {
     "team": "DAL",
-    "tag": "KEY",
-    "text": "G Tyler Booker suffered a high-ankle sprain in the 46-40 loss to the 49ers; Dallas made an O-line roster move to cover.",
-    "source": "Sports Illustrated",
-    "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPVTBpelllY3JDcDZIZW13MExiSDlUSXFNOG9XWjBOWVViZjRjQkRJOGs3Wm5zWnNraTVrbEhyNWpUT1hBYzF1ODc4djl5b1N2M21kZ3E1UmUweVAxR3dkNllSeDJTN21ZLW9pbzY5X0RVazY3RklpZE9QbUNKTkgyNzdNaUVwa2ozejRxM2ZGUTJHNkJKSGY3c2JtNVlqdmdDd0I5ZWI1U2I?oc=5",
-    "date": "2026-11-17"
-   }
-  ],
-  "HOU": [
-   {
-    "team": "HOU",
-    "tag": "KEY",
-    "text": "LB Azeez Al-Shaair (groin), the team's top tackler, placed on IR; out at least 4 weeks, starting with Thursday vs. the Colts.",
-    "source": "Houston Chronicle",
-    "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPdXFsaUdvR3Y4cWxDbU1GTXR3RUREVFRoZEthVFZRQXZYeWxKWkRVM2JQSHE1Y2QwV0dWanNROHk0aThNRHp4d2FlSzB4VnhMcDVUbFJiQzVLLTFyY1FoN3JNYXhDcEF6VmtoeFNsd3hDYVpCeE84ZEN6LVVfMHUxNGY3QVVidUdPVnBFVmEzNFlVMlZMWkp1N1V6cmo?oc=5",
-    "date": "2026-11-17"
-   },
-   {
-    "team": "HOU",
-    "tag": "KEY",
-    "text": "DE Danielle Hunter (hamstring) missed Week 10 and is listed questionable for Thursday vs. Indianapolis.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-17"
-   },
-   {
-    "team": "HOU",
-    "tag": "KEY",
-    "text": "RB Woody Marks (concussion) listed doubtful; did not practice Tuesday.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-17"
-   }
-  ],
-  "IND": [
-   {
-    "team": "IND",
-    "tag": "KEY",
-    "text": "CB Sauce Gardner (calf) DNP Monday, questionable for Thursday at Houston; CB Charvarius Ward (shin) called uncertain by Shane Steichen.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-17"
-   },
-   {
-    "team": "IND",
-    "tag": "CLUSTER",
-    "text": "OT: RT Jalen Travis (knee) listed doubtful; LT Bernhard Raimann entered concussion protocol in Week 10. Short week for Thursday's game.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-17"
+    "tag": "RETURNING",
+    "text": "S Jalen Thompson (hamstring), out 7 games, designated to return from IR Wednesday.",
+    "source": "Dallas News",
+    "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPbnN2VUgzWTNUdXV6eDNIZDV1Yy13QXc2SWF4N2NmM3lFT2xTMTRrN3Zaek95b3lzUkRUc2ZHLTJjd2kydjYxRXdBTUQxbEI5R3JsdWdKT01raUE4VnlWQ0I5d0dmZkdfRmpnbGktWDVFSTIzWld5cWppMldqbGlHbzNFOHAtN1JjbTNTRGFJakhCMlp0d1VXZTQ0WTVhdTc0ZW5JamxfWGtQODA?oc=5",
+    "date": "2026-11-18"
    }
   ],
   "MIN": [
    {
     "team": "MIN",
-    "tag": "KEY",
-    "text": "WR Jordan Addison needs thumb surgery and is headed to short-term IR; expected to miss a few weeks, per Kevin O'Connell.",
-    "source": "Minnesota Vikings",
-    "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNZ1lWLWNVWEo3dXhTSlVxNy1PRGM1dWpSV05RYUN1V1FJLW16SE5XRGtFbGNkNjBCQ3BZNTEyTy1oMXBlUjQwcmJVRW9INWw4dEl5dlZCaXExZ0VOVlNzVlBFc1NrUkVtRzBhaDRCdVZZSHhHWmp5RkdNZUVWaV9VVEdqZW8zX1hyYUVZSWctZmZDNTQ?oc=5",
-    "date": "2026-11-16"
+    "tag": "QB",
+    "text": "QB Kyler Murray (grade 2 hamstring) missed Wednesday's practice, per ESPN's Kevin Seifert. Kirk Cousins started the 30-10 Week 10 win at Green Bay.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nfl/injuries",
+    "date": "2026-11-18"
    },
    {
     "team": "MIN",
-    "tag": "QB",
-    "text": "QB Kyler Murray (hamstring) remains out; Kirk Cousins started and won 30-10 at Green Bay in Week 10.",
+    "tag": "KEY",
+    "text": "WR Jordan Addison had thumb surgery and is out; the Vikings will not place him on IR, per Kevin O'Connell.",
     "source": "ESPN",
     "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-17"
+    "date": "2026-11-18"
+   },
+   {
+    "team": "MIN",
+    "tag": "RETURNING",
+    "text": "TE T.J. Hockenson (wrist) limited and WR Jauan Jennings (calf) full in Wednesday's practice after missing time.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nfl/injuries",
+    "date": "2026-11-18"
+   }
+  ],
+  "PHI": [
+   {
+    "team": "PHI",
+    "tag": "QB",
+    "text": "Nick Sirianni named Joe Milton the starter vs. the Steelers for a second straight game; Tanner McKee, back from injury, stays the backup. Jalen Hurts is on IR.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nfl/injuries",
+    "date": "2026-11-18"
+   },
+   {
+    "team": "PHI",
+    "tag": "RETURNING",
+    "text": "WR DeVonta Smith (hamstring), out 3 games, practiced Wednesday per ESPN's Tim McManus; WR Dontayvion Wicks (ankle) was limited.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nfl/injuries",
+    "date": "2026-11-18"
    }
   ],
   "ARI": [
    {
     "team": "ARI",
     "tag": "QB",
-    "text": "QB Gardner Minshew (torn UCL, throwing elbow) on IR, season-ending surgery planned. Carson Beck started the Week 10 loss to the Rams.",
+    "text": "QB Gardner Minshew (elbow, IR) had UCL reconstruction surgery Monday. Carson Beck started the 34-6 Week 10 loss to the Rams.",
     "source": "ESPN",
     "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-17"
+    "date": "2026-11-18"
    }
   ],
   "MIA": [
@@ -182,51 +192,93 @@
     "text": "QB Malik Willis (groin/core) on IR; surgery still being evaluated. Kyle McCord started the Week 10 loss to the Colts.",
     "source": "ESPN",
     "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-17"
+    "date": "2026-11-16"
+   }
+  ],
+  "BAL": [
+   {
+    "team": "BAL",
+    "tag": "QB",
+    "text": "QB Lamar Jackson (thumb surgery, IR) could return Week 16 vs. Cleveland, per ESPN's Dan Graziano. Jacoby Brissett has started the last two games.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nfl/injuries",
+    "date": "2026-11-18"
+   }
+  ],
+  "BUF": [
+   {
+    "team": "BUF",
+    "tag": "KEY",
+    "text": "CB Christian Benford (groin) did not practice Wednesday; S Cole Bishop (shoulder) and S Amani Hooker (knee) were limited.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nfl/injuries",
+    "date": "2026-11-18"
+   }
+  ],
+  "KC": [
+   {
+    "team": "KC",
+    "tag": "KEY",
+    "text": "RB Kenneth Walker III (groin), who missed Week 10, did not practice Wednesday, per the Kansas City Star.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nfl/injuries",
+    "date": "2026-11-18"
+   }
+  ],
+  "LV": [
+   {
+    "team": "LV",
+    "tag": "KEY",
+    "text": "TE Brock Bowers (ankle) did not practice Wednesday; Klint Kubiak said he doesn't need to practice this week to play Sunday vs. Denver, per The Athletic.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nfl/injuries",
+    "date": "2026-11-18"
    }
   ],
   "PIT": [
    {
     "team": "PIT",
     "tag": "KEY",
-    "text": "G Mason McCormick (ankle) suffered a significant injury vs. the Bengals and is listed doubtful.",
-    "source": "The New York Times",
-    "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNTWNfNTFNWDV2UjlmMC1MYXcyOHhSQURpUER5dmlQd1ptM3hvRFlfWWQ1M0NxWmQ1ekk0WElzYmRxNU1uMFN5bVdaSm94T05UWXBEay0wVWFCTjhoS09sbTJKNVpzYzJtcmV6SUg0T2xINzF0UFhBcnRpeTZjQ1pva0pscVVrdlN5Q2wtREhKdmFJTXI3UGRBeXBZYw?oc=5",
-    "date": "2026-11-17"
+    "text": "G Mason McCormick (ankle) placed on IR after the Week 10 loss to the Bengals.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nfl/injuries",
+    "date": "2026-11-18"
    },
    {
     "team": "PIT",
     "tag": "RETURNING",
-    "text": "WR Michael Pittman Jr. (foot, IR), out since Week 4: Mike McCarthy is \"hopeful\" he returns this week.",
+    "text": "WR Michael Pittman Jr. (foot, IR), out 5 games, was limited in his return to practice Wednesday.",
     "source": "ESPN",
     "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-17"
+    "date": "2026-11-18"
    }
   ],
   "TEN": [
    {
     "team": "TEN",
     "tag": "KEY",
-    "text": "WR Wan'Dale Robinson (ankle) placed on IR Tuesday; WR Xavier Restrepo promoted to the 53-man roster.",
-    "source": "Tennessee Titans",
-    "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxNZTZoUUM4UW9jcTFSY3RDdkI3Rm1peFhaVjZXYmpQaHVoOFBxZ2NtSVljN0pvWEtEY2ZiLU85cjdOd0NtaVNsbFlENy11akIzSVpWX25xYXBVOVJlMVpnTXhlUGxpcEJEaWlnSWhMc3dBa3VpOWhfTWt4Skh2Nkl0MzNuSldBWXlJTTVTTEJSRnU0a0tuS0xvR29vbE1UWXNBV0hVU3Z3Q3o1X0pEbEd0aHZ6VGRWOEx3ODdQdDJnZGVVNEhndEJ3aEFNdE1fWGpzMDF2QmJ2S1I4T25PQnc?oc=5",
-    "date": "2026-11-17"
+    "text": "WR Wan'Dale Robinson (ankle) placed on IR and is out for the season, per Robert Saleh.",
+    "source": "ESPN",
+    "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPVmcxNUlmMkF6b2xfNVpubDdMeldjVTJJQTRCU0szM19pcS1Ma1B3UGJNQk9rYkgyZ0pIODY3b1N2dTJVOFNhVUVKbUpybVZLQnI2VE1YejRWTnRDMDF2dDAzTWM3YmlyN2FqYm5qZ2hMWno1OWwzRzdxN2RPWkRGLTl4blZaaFJ5bjNSRFR3bWtaVHdBbVE?oc=5",
+    "date": "2026-11-18"
    },
    {
     "team": "TEN",
     "tag": "RETURNING",
-    "text": "WR Carnell Tate (shoulder) missed 2 games; Robert Saleh is hopeful he returns in Week 11 vs. the Cowboys.",
+    "text": "WR Carnell Tate (shoulder), out 2 games, was limited in Wednesday's practice.",
     "source": "ESPN",
     "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-17"
-   },
+    "date": "2026-11-18"
+   }
+  ],
+  "DEN": [
    {
-    "team": "TEN",
-    "tag": "KEY",
-    "text": "G Peter Skoronski (hamstring) placed on IR Saturday.",
+    "team": "DEN",
+    "tag": "RETURNING",
+    "text": "S Talanoa Hufanga (ankle), out 4 games, was a full participant Wednesday, per the Broncos' official site.",
     "source": "ESPN",
     "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-17"
+    "date": "2026-11-18"
    }
   ]
  }
