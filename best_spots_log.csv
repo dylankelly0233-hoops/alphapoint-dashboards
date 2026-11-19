@@ -159,3 +159,8 @@ listed,sport,gid,kick,reason,detail,kind,side,line,p,need
 2026-11-19T12:19-05:00,cfb,401856869,2026-11-20T18:00:00-05:00,priced,mid spread,spread,home,1.0,0.5176,0.517
 2026-11-19T12:19-05:00,cfb,401869953,2026-11-21T16:00:00-05:00,priced,mid spread,spread,away,-9.5,0.5285,0.5238
 2026-11-19T12:19-05:00,cfb,401869938,2026-11-21T19:00:00-05:00,priced,mid spread,spread,away,14.5,0.5319,0.5238
+2026-11-19T13:22-05:00,nfl,2026_12_CHI_DET,2026-11-26T13:00:00-05:00,system,nfl_high_total_under,total,under,55.5,,
+2026-11-19T13:22-05:00,nfl,2026_12_CHI_DET,2026-11-26T13:00:00-05:00,system,nfl_div_under,total,under,55.5,,
+2026-11-19T13:22-05:00,nfl,2026_12_CHI_DET,2026-11-26T13:00:00-05:00,teaser,NFL teaser leg,teaser,home,-2.5,,
+2026-11-19T13:22-05:00,nfl,2026_12_CHI_DET,2026-11-26T13:00:00-05:00,watch,4+ pts,spread,home,-2.5,,
+2026-11-19T13:22-05:00,cbb,401920518,2026-11-19T23:00:00-05:00,watch,2–4 pts,spread,home,-3.5,,
