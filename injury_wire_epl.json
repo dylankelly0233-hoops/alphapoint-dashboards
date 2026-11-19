@@ -1,87 +1,77 @@
 {
   "sport": "epl",
-  "week": 20261118,
-  "generated": "2026-11-18T20:55:00-05:00",
+  "week": 20261119,
+  "generated": "2026-11-19T11:15:22-05:00",
   "movers": [
+    {
+      "team": "MAN",
+      "tag": "KEY",
+      "text": "Manager change: Mauricio Pochettino takes charge; his debut is the Liverpool match. Reports also list Shaw, Baleba and Rashford return-date updates.",
+      "source": "football360.com.au",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPVjBtMTJ5dXlTNFFIdjdTS3hnMmcteHlPelRYVDZVUXh3X2xwSGJzM20zUmRWVXVWUmVLa3RsX2ZhN0pYYnVlMDRkQmV6UHoxMXphdnN1anhSVTB1ZE93c3JJS1VPSWg1dTQzZnNIUXItM3RtaVdYc1Z4ME9VQ296TkxnYjh0NFlnekpienllZTQwVzVjYkN5YVA3R1VoVHl3YzgxUTR0WXlLVlJyUFdiUkd3?oc=5",
+      "date": "2026-11-17"
+    },
     {
       "team": "CHE",
       "tag": "KEY",
-      "text": "Forward Joao Pedro remains out injured ahead of Saturday's home match vs Leeds; return timeline reported Nov 18.",
-      "source": "Sports & Betting News - bet365",
-      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNVmhDN2VKdHNtbjF5N2IzTkV0V2lua0VqOXR2MHZoLW9wWUFfY0RkN3ZIZDNxWVBuNll4aVhaQ01DbXJjVjNZdWtTWnVoRGFpZHc3VGgwQjg1TG9ONmlkODZnNHFPckwzQWJJdzE5V3FCQWk1UHdsZXZHNXVQLW9mUUhWWHE1YngtOU9iTUxaX1czRmpoZWJV?oc=5",
-      "date": "2026-11-18"
-    },
-    {
-      "team": "TOT",
-      "tag": "KEY",
-      "text": "Forward Mathys Tel out after being injured in the loss to Leeds; Spurs' injury list described as a crisis ahead of Saturday vs Ipswich.",
+      "text": "Striker Joao Pedro faces an anxious injury wait before Leeds; Moises Caicedo was subbed off and gave a fitness update; reports say nine players set to miss.",
       "source": "Football London",
-      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOaF9sdHJwV25rODF3WkNJZFhFZFZzWUtkdkE1bGdVUjhvRDFMZ19FelE0a0hKLURuQTJhX2ljYjhVQTkxX3VUa0l5S3dIX2RvR3IzWFVkXzRYS2tvOHJXVzNDd0RjY2hwczVmeGhqdXJnS3JRcHkzYWdWYk1mT1dQYzRrTGhHVmhicUFpZ2dEVkZwS2dYQzVBWGZ5b9IBoAFBVV95cUxNWC1aVk0zaXlHaUxRd2ZlUmRmak1VMWZhZEhKMXNGd3REY19HUEo4SDl6dThSWU1FVFZiSGxpU2tqeFl2M3RfMW5tWklqdk1MdDBHa0dtQXVUc002d240Q0tVZkkxdEE4clJTN2ZyUkctMVBJMnh5RWh0cnpmZVJWTm1GcWd3Tk1pVVlJTm9iRWxNS250OVJCQ285c2NhUmtC?oc=5",
-      "date": "2026-11-18"
+      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNZEZlT3VFX1lKX2d6UXFYd1p2TEVBZ0ZVdmpzQVRKdWUzMVlXNFNRTlAzYTdqWTNsRHBCY3d1dlJySmxlZGUwMjhRdDR2UW5XSHF0ZTZ6bTdKaDRTcmNTYmk4Tlg5NFpOWUphZU93UWE0YlZ2SGZQaHg1NjRURjY1NVJoTDdyNmpkQ2c?oc=5",
+      "date": "2026-11-19"
     },
     {
-      "team": "ARS",
-      "tag": "KEY",
-      "text": "First-choice midfielder Martin Zubimendi had an injury scare on international duty; Arsenal awaiting a medical update before Newcastle.",
-      "source": "Yahoo Sports",
-      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxONHk4bWRYbmJ3NG1LNkdoZ0N4SGhld1BMRDJLaWhMVUctaERaTnlJV3MyQ2MzOERBMEJtbGhndnFHU1Qycl92dzhpNklFTWpnUV9YRUdnZi1hRkY0d2N3VTVvNnA2NmFWOTF2bDRLbENVRjRvWVdDMTJPLWtuZC1DSDF3SmVUQktXV3FTdmVyTDI?oc=5",
-      "date": "2026-11-16"
-    },
-    {
-      "team": "AVL",
-      "tag": "KEY",
-      "text": "Starting right-back Matty Cash reported as an injury blow ahead of Saturday's match vs Sunderland (Nov 18).",
-      "source": "Read Aston Villa",
-      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPVXUzVktJRVdyVFAtOC1TUVdwR3J2cktaUXFYNExFelEyT2FjZVBOTWtDdU5mSzgyNDRNRTVHeHFEcWpQTF9wWDZfdWZwR3BIZWNoQXF5SF82TWNEcTVaVTlIaWNSbDYzZzE2S3RibE1GbklSTUlENUFhaVhPQms3TXdXOGVKZw?oc=5",
+      "team": "BRE",
+      "tag": "CLUSTER",
+      "text": "Striker Igor Thiago reported out for Everton; captain/CB Nathan Collins had a knee scan after international duty and is a growing concern.",
+      "source": "Read Everton",
+      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPNVlJRjRVd192TFpOb0VxaG1udUxjUEhtVlU2eGtNMHRZY3VQbzlhSjY5eFFUSks3M052Z09kTy1PbjV1N3U1VDZxQTVoTkVNWHdRaFBveTBVSjY4ajlWMkJWVkpEUEl0TVVVQTcyMTk5bE5aVGpEakFoWHktekk0NnM3UE1yRXZhVGhOUlludVU?oc=5",
       "date": "2026-11-18"
     },
     {
       "team": "LIV",
       "tag": "RETURNING",
-      "text": "Midfielder Dominik Szoboszlai cleared of concern by Hungary's coach ahead of the Manchester United match (Nov 17).",
+      "text": "Midfielder Dominik Szoboszlai: Hungary boss gave a definitive update described as an injury boost ahead of Man United; Liverpool reported a double injury boost.",
       "source": "Goal.com",
       "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOcWRQSkMzRFdvbGZSM0hteXRRa2RyUkx6cXFKbGhLSmNHSW5FY3JLamE4UWxPRUNzTkkyc19HYWdGbkQ0N0RjX3BUQ2VwRTItWmJybUFKMmhPOURDWERzREtCYjJ0T0RYcGhyWHNId2FWY3BDeXZnMzlNNmNtWjdjNzQ4R0hodWdOVWptb0xjM3FqRGNpRFdCMXVDVzh5WHJZZ2dsSU5FR2I4TEYxXzgxODZneDVXbUFvOVNSMnJhZmtoVEsyZEg4eldR?oc=5",
       "date": "2026-11-17"
+    },
+    {
+      "team": "NFO",
+      "tag": "KEY",
+      "text": "Manager Oliver Glasner confirmed several absences for Bournemouth and an agreement with Switzerland over winger Dan Ndoye's injury.",
+      "source": "TribalFootball",
+      "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxNWGxndXVZSjNHVk9HR183aUV2eXBZYXFiSVhxYnpwNnJOcGtKSnVGZ284UlVNQnpNRi1Rcl81QjNJOXVWUk1LYTJ2dFE1STJwbzJpQUcwYTFsRV9PNHpGM1U2SEZWaW9vQ1FSY21EdG11N1pfdy1Bb2JQM1RZMHNKS1EzOW84cFNEd1JSeERSOXRYLWMtNk5HNDNnT1NJcU5tczZQbzlZOGkzbkVFdUlKemtpMDF4eWFKZndaUTN4YVpWZFF0THFyWFBubThkeERiSTViN1dtR1NRWVltb3BxY3dn?oc=5",
+      "date": "2026-11-19"
     }
   ],
   "teams": {
+    "MAN": [
+      {
+        "team": "MAN",
+        "tag": "KEY",
+        "text": "Manager change: Mauricio Pochettino takes charge; his debut is the Liverpool match. Reports also list Shaw, Baleba and Rashford return-date updates.",
+        "source": "football360.com.au",
+        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPVjBtMTJ5dXlTNFFIdjdTS3hnMmcteHlPelRYVDZVUXh3X2xwSGJzM20zUmRWVXVWUmVLa3RsX2ZhN0pYYnVlMDRkQmV6UHoxMXphdnN1anhSVTB1ZE93c3JJS1VPSWg1dTQzZnNIUXItM3RtaVdYc1Z4ME9VQ296TkxnYjh0NFlnekpienllZTQwVzVjYkN5YVA3R1VoVHl3YzgxUTR0WXlLVlJyUFdiUkd3?oc=5",
+        "date": "2026-11-17"
+      }
+    ],
     "CHE": [
       {
         "team": "CHE",
         "tag": "KEY",
-        "text": "Forward Joao Pedro remains out injured ahead of Saturday's home match vs Leeds; return timeline reported Nov 18.",
-        "source": "Sports & Betting News - bet365",
-        "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNVmhDN2VKdHNtbjF5N2IzTkV0V2lua0VqOXR2MHZoLW9wWUFfY0RkN3ZIZDNxWVBuNll4aVhaQ01DbXJjVjNZdWtTWnVoRGFpZHc3VGgwQjg1TG9ONmlkODZnNHFPckwzQWJJdzE5V3FCQWk1UHdsZXZHNXVQLW9mUUhWWHE1YngtOU9iTUxaX1czRmpoZWJV?oc=5",
-        "date": "2026-11-18"
-      }
-    ],
-    "TOT": [
-      {
-        "team": "TOT",
-        "tag": "KEY",
-        "text": "Forward Mathys Tel out after being injured in the loss to Leeds; Spurs' injury list described as a crisis ahead of Saturday vs Ipswich.",
+        "text": "Striker Joao Pedro faces an anxious injury wait before Leeds; Moises Caicedo was subbed off and gave a fitness update; reports say nine players set to miss.",
         "source": "Football London",
-        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOaF9sdHJwV25rODF3WkNJZFhFZFZzWUtkdkE1bGdVUjhvRDFMZ19FelE0a0hKLURuQTJhX2ljYjhVQTkxX3VUa0l5S3dIX2RvR3IzWFVkXzRYS2tvOHJXVzNDd0RjY2hwczVmeGhqdXJnS3JRcHkzYWdWYk1mT1dQYzRrTGhHVmhicUFpZ2dEVkZwS2dYQzVBWGZ5b9IBoAFBVV95cUxNWC1aVk0zaXlHaUxRd2ZlUmRmak1VMWZhZEhKMXNGd3REY19HUEo4SDl6dThSWU1FVFZiSGxpU2tqeFl2M3RfMW5tWklqdk1MdDBHa0dtQXVUc002d240Q0tVZkkxdEE4clJTN2ZyUkctMVBJMnh5RWh0cnpmZVJWTm1GcWd3Tk1pVVlJTm9iRWxNS250OVJCQ285c2NhUmtC?oc=5",
-        "date": "2026-11-18"
+        "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNZEZlT3VFX1lKX2d6UXFYd1p2TEVBZ0ZVdmpzQVRKdWUzMVlXNFNRTlAzYTdqWTNsRHBCY3d1dlJySmxlZGUwMjhRdDR2UW5XSHF0ZTZ6bTdKaDRTcmNTYmk4Tlg5NFpOWUphZU93UWE0YlZ2SGZQaHg1NjRURjY1NVJoTDdyNmpkQ2c?oc=5",
+        "date": "2026-11-19"
       }
     ],
-    "ARS": [
+    "BRE": [
       {
-        "team": "ARS",
-        "tag": "KEY",
-        "text": "First-choice midfielder Martin Zubimendi had an injury scare on international duty; Arsenal awaiting a medical update before Newcastle.",
-        "source": "Yahoo Sports",
-        "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxONHk4bWRYbmJ3NG1LNkdoZ0N4SGhld1BMRDJLaWhMVUctaERaTnlJV3MyQ2MzOERBMEJtbGhndnFHU1Qycl92dzhpNklFTWpnUV9YRUdnZi1hRkY0d2N3VTVvNnA2NmFWOTF2bDRLbENVRjRvWVdDMTJPLWtuZC1DSDF3SmVUQktXV3FTdmVyTDI?oc=5",
-        "date": "2026-11-16"
-      }
-    ],
-    "AVL": [
-      {
-        "team": "AVL",
-        "tag": "KEY",
-        "text": "Starting right-back Matty Cash reported as an injury blow ahead of Saturday's match vs Sunderland (Nov 18).",
-        "source": "Read Aston Villa",
-        "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPVXUzVktJRVdyVFAtOC1TUVdwR3J2cktaUXFYNExFelEyT2FjZVBOTWtDdU5mSzgyNDRNRTVHeHFEcWpQTF9wWDZfdWZwR3BIZWNoQXF5SF82TWNEcTVaVTlIaWNSbDYzZzE2S3RibE1GbklSTUlENUFhaVhPQms3TXdXOGVKZw?oc=5",
+        "team": "BRE",
+        "tag": "CLUSTER",
+        "text": "Striker Igor Thiago reported out for Everton; captain/CB Nathan Collins had a knee scan after international duty and is a growing concern.",
+        "source": "Read Everton",
+        "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPNVlJRjRVd192TFpOb0VxaG1udUxjUEhtVlU2eGtNMHRZY3VQbzlhSjY5eFFUSks3M052Z09kTy1PbjV1N3U1VDZxQTVoTkVNWHdRaFBveTBVSjY4ajlWMkJWVkpEUEl0TVVVQTcyMTk5bE5aVGpEakFoWHktekk0NnM3UE1yRXZhVGhOUlludVU?oc=5",
         "date": "2026-11-18"
       }
     ],
@@ -89,25 +79,57 @@
       {
         "team": "LIV",
         "tag": "RETURNING",
-        "text": "Midfielder Dominik Szoboszlai cleared of concern by Hungary's coach ahead of the Manchester United match (Nov 17).",
+        "text": "Midfielder Dominik Szoboszlai: Hungary boss gave a definitive update described as an injury boost ahead of Man United; Liverpool reported a double injury boost.",
         "source": "Goal.com",
         "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOcWRQSkMzRFdvbGZSM0hteXRRa2RyUkx6cXFKbGhLSmNHSW5FY3JLamE4UWxPRUNzTkkyc19HYWdGbkQ0N0RjX3BUQ2VwRTItWmJybUFKMmhPOURDWERzREtCYjJ0T0RYcGhyWHNId2FWY3BDeXZnMzlNNmNtWjdjNzQ4R0hodWdOVWptb0xjM3FqRGNpRFdCMXVDVzh5WHJZZ2dsSU5FR2I4TEYxXzgxODZneDVXbUFvOVNSMnJhZmtoVEsyZEg4eldR?oc=5",
         "date": "2026-11-17"
-      },
+      }
+    ],
+    "NFO": [
       {
-        "team": "LIV",
+        "team": "NFO",
         "tag": "KEY",
-        "text": "Liverpool's 17-goal striker remains out and is targeting a December return, per James Pearce (Nov 18).",
+        "text": "Manager Oliver Glasner confirmed several absences for Bournemouth and an agreement with Switzerland over winger Dan Ndoye's injury.",
+        "source": "TribalFootball",
+        "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxNWGxndXVZSjNHVk9HR183aUV2eXBZYXFiSVhxYnpwNnJOcGtKSnVGZ284UlVNQnpNRi1Rcl81QjNJOXVWUk1LYTJ2dFE1STJwbzJpQUcwYTFsRV9PNHpGM1U2SEZWaW9vQ1FSY21EdG11N1pfdy1Bb2JQM1RZMHNKS1EzOW84cFNEd1JSeERSOXRYLWMtNk5HNDNnT1NJcU5tczZQbzlZOGkzbkVFdUlKemtpMDF4eWFKZndaUTN4YVpWZFF0THFyWFBubThkeERiSTViN1dtR1NRWVltb3BxY3dn?oc=5",
+        "date": "2026-11-19"
+      }
+    ],
+    "SUN": [
+      {
+        "team": "SUN",
+        "tag": "KEY",
+        "text": "Two key Sunderland players set for spells out injured, per LiveScore; striker Brian Brobbey's return timeline in question.",
         "source": "LiveScore",
-        "url": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxOc19hMVRPSkdUOFAtWHVzd1NMMEtKdVY0SG9TVXM2NnI1WXVSNTJqeUctZk1WNWtwSWlCNmpMeG5kdDBvR1Mza2k0VmltNjJOVTBYMnJpb2V0TzczcU81dzBQOHhzWmRIcU9KRW5XX0REWTM5MjJSTFdHTG5hSjlIZHdoU3NrNFAxTFVBS1NrVGplUEN6NDNNZGQzLUhVZmRCdzEzM29EMXpDWFFMMkxjYnRMWkhVUkV3Qm50SnA2cVp3R1hGMEVqRHRMM25rcnZjbEtFbElTZFBMX3I2UklYaWUwX3FURjFLS3UtQmxqc0xCMHFWSXc0?oc=5",
+        "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPRkRPa0RFRnNaVVB4VDJEazZfTDBPeXlzUmJZVXdLZ0FLVVpyZW1VaHZ4cWlhaEJHWnZzMmZoTWhwZ1Y0OGYwaWhydzAzUG9lTlJISWdISWhCNGJvOGRMTS1wOWU5ZlpuWUF2U0ZsdU9zbnBPNUNmRW0yOHFfNnJ2a0dGZHBTMXJPZUh3NnV5VUNYanRfcWpkYnV5NDYxNXpfOFYzRkdDa2FVVUFOOW0xZHJjRFdSbUE?oc=5",
+        "date": "2026-11-19"
+      }
+    ],
+    "AVL": [
+      {
+        "team": "AVL",
+        "tag": "KEY",
+        "text": "Right back Matty Cash an injury blow ahead of Sunderland, per Read Aston Villa.",
+        "source": "Read Aston Villa",
+        "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPVXUzVktJRVdyVFAtOC1TUVdwR3J2cktaUXFYNExFelEyT2FjZVBOTWtDdU5mSzgyNDRNRTVHeHFEcWpQTF9wWDZfdWZwR3BIZWNoQXF5SF82TWNEcTVaVTlIaWNSbDYzZzE2S3RibE1GbklSTUlENUFhaVhPQms3TXdXOGVKZw?oc=5",
         "date": "2026-11-18"
+      }
+    ],
+    "TOT": [
+      {
+        "team": "TOT",
+        "tag": "RETURNING",
+        "text": "Six Tottenham players reported set to return for Ipswich; updates on Savio, Tel, Mudryk, Bergvall and Xavi return dates.",
+        "source": "Yahoo Sports",
+        "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOdEt1X2toZ2htZVhINmxVVHByc085RzFrTEdZZlFVbDluenFpQl9lMTRfek96Z2Uzb1VYNzJsNFBqSzI3MmViamc3VHI1MWpfMU1mVkh4MEkxTFRMWWNYRU0xT2tUYmhVSlVaSmY4QUJOdDFCMjN5RElHOUc4a3k4UXdDLUlPYUU?oc=5",
+        "date": "2026-11-19"
       }
     ],
     "CRY": [
       {
         "team": "CRY",
         "tag": "KEY",
-        "text": "Crystal Palace reported to be closing in on appointing Thomas Frank as manager (Nov 16); not yet confirmed.",
+        "text": "Manager change pending: Crystal Palace reported closing in on appointing Thomas Frank (11/16).",
         "source": "London Evening Standard",
         "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOdEJtU0dWMmtqd2tua2o0YkpaSUk3LWxEM2VBbkx6TTNwOS1CUVhUczFHN1VqbmVQQ2NfSjR6TEl5azVWY1Biams1WmgwcVNWMTVzV3FrWi11VEZjaHA3N29QVm14dVN4eDJuWVlHYkdwbXVSRU4zRm16aVhLem1icVRrQ3ZFYl9tM2JNRGlpQWRLNVQ2ZmZzNEd2dUJ1eXJBVndwR0RHc0FELUl5Rmtr?oc=5",
         "date": "2026-11-16"
