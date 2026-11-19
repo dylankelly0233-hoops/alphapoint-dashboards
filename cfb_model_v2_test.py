@@ -257,6 +257,34 @@ def ats(df, line_col, vs, thr):
     return (win[~push].mean() if (~push).sum() else np.nan), int((~push).sum())
 
 
+def _ci(win):
+    n = len(win)
+    r = float(np.mean(win)) if n else float('nan')
+    h = 1.96 * np.sqrt(r * (1 - r) / n) if n else float('nan')
+    return {'n': int(n), 'rate': round(r, 4), 'lo': round(r - h, 4), 'hi': round(r + h, 4)}
+
+
+def system_entry(P, thr=3.0, min_week=5):
+    """The live Best spots rule, scored exactly as it runs: regular season week 5+, |v2 - opener| >= 3, back v2's side."""
+    x = P[(P.week >= min_week) & P['open'].notna()].copy()
+    x = x[(x.v2 - x.open).abs() >= thr]
+    out = {}
+    for bench in ('open', 'close'):
+        c = x.dropna(subset=[bench])
+        hm = c.v2 > c.open
+        win = np.where(hm, c.margin > c[bench], c.margin < c[bench])
+        keep = (c.margin != c[bench]).values
+        w, yrs = win[keep], c.season.values[keep]
+        out[bench] = {'discovery': _ci(w[yrs <= 2022]), 'holdout': _ci(w[yrs >= 2023]), 'all': _ci(w)}
+    o = out['open']
+    passed = (o['discovery']['n'] >= 50 and o['holdout']['n'] >= 50 and o['discovery']['rate'] > 110 / 210
+              and o['holdout']['rate'] > 110 / 210 and o['all']['n'] >= 100 and o['all']['lo'] > 0.5)
+    return {'label': 'AlphaPoint CFB model 3+ pts from the opener (week 5+)', 'kind': 'spread', **out, 'bench': 'open',
+            'passed': bool(passed), 'tentative': bool(passed and o['all']['lo'] < 0.51),
+            'holds_to_close': bool(out['close']['all']['lo'] > 0.5), 'min_week': min_week, 'gap': thr,
+            'source': 'cfb_model_v2_test.py'}
+
+
 if __name__ == '__main__':
     WF = pd.concat([walk(y) for y in YEARS if y > YEARS[0]], ignore_index=True)
     WF.to_csv(f'{OUT}/cfbm_v2_walk.csv', index=False)
@@ -299,3 +327,9 @@ if __name__ == '__main__':
     tr = WF.dropna(subset=STATS)
     _, coefs = ridge_fit(tr[FEATS].values, tr.margin.values, 50.0)
     print('feature weights (points per 1 unit), all seasons:', {FEATS[i]: round(v, 3) for i, v in coefs.items()})
+    if '--write' in sys.argv:          # monthly research: refresh the Best spots system record (after system_test.py)
+        st = json.load(open('system_test.json')) if os.path.exists('system_test.json') else {'systems': {}}
+        st['systems'].setdefault('cfb', {})['cfb_v2_open'] = system_entry(P)
+        json.dump(st, open('system_test.json', 'w'), indent=1)
+        e = st['systems']['cfb']['cfb_v2_open']
+        print('cfb_v2_open:', 'PASSED' if e['passed'] else 'not passed', e['open']['all'])

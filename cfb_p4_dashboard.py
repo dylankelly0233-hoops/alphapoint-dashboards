@@ -41,6 +41,7 @@ import requests
 
 import cfb_value_metrics as vm
 import cfb_model as cfbm
+import systems as sy
 import crowd
 import valuation as val
 import totals as tot
@@ -219,15 +220,14 @@ def fetch_sp():
 # 4. COMPOSITE POWER RATING
 # ==========================================
 def shadow_model():
-    """Our own CFB rating (cfb_model.py), logged next to Sagarin and SP+ but given no weight. None on any failure."""
+    """Our own CFB rating, v2 multi-stat (cfb_model.py): logged next to Sagarin and SP+ with no weight in the blend,
+    and the basis of the Best spots system 'cfb_v2_open'. None on any failure."""
     try:
-        prev = lambda name: pd.read_csv(f'cfbv_{name}_{YEAR - 1}.csv') if os.path.exists(f'cfbv_{name}_{YEAR - 1}.csv') else None
-        pg = prev('games')
-        prior = cfbm.load_prior(YEAR, vm.cfbd_get, pg, prev('ppa'),
-                                None if pg is None else set(pg['home_team']) | set(pg['away_team']))
-        games, ppa, fbs = vm.fetch_games(), vm.fetch_ppa(), vm.fetch_fbs_teams()
-        model = cfbm.fit(games, ppa, fbs, YEAR, pd.Timestamp(datetime.now().date()), prior=prior)
-        print(f"  Shadow model: {len(model['M'])} teams{'' if prior else ' (no preseason start)'}, prior weight {model['pw']:.2f} games.")
+        model = cfbm.model(vm.cfbd_get, YEAR)
+        if model:
+            print(f"  AlphaPoint CFB model (v2): {len(model['M'])} teams, preseason weight {model['pw']:.2f} games.")
+        else:
+            print(f'  ! AlphaPoint CFB model: no cfb_v2_params_{YEAR}.json or no data yet')
         return model
     except Exception as e:
         print(f'  ! shadow model skipped: {e}')
@@ -680,6 +680,9 @@ def generate_html(p4, vals, sched, week, season_type, info):
         mkt_margin = -r.market if r.market == r.market else np.nan
         edge = theme.edge_text(pm, mkt_margin, r.home, r.away)
         tag_html, labels = blowout_tags(r, last)
+        v2 = cfbm.line(info.get('shadow'), r.home, r.away, r.neutral)
+        sysl = sy.cfb(int(getattr(r, 'week', week) or week), season_type, v2, info['opened'].get(str(r.game_id)), mkt_margin, r.home, r.away, r.completed)
+        tag_html += sy.tag_html(sysl, theme.esc)
         move = ex.line_move(info['opened'].get(str(r.game_id)), mkt_margin, pm, r.home, r.away)
         big = ex.lopsided(mkt_margin, r.margin)
         move += ex.rating_confidence(info['by_source'].get(r.home, {}), info['by_source'].get(r.away, {}),
@@ -710,8 +713,7 @@ def generate_html(p4, vals, sched, week, season_type, info):
                      'flags': (['news'] if ex.news_move(info['opened'].get(str(r.game_id)), mkt_margin) else [])
                               + (['lopsided'] if big else []),
                      'sources': {**ex.source_lines(h_src, a_src, hfa_g),
-                                 **({cfbm.SHADOW_LABEL: sh} if (sh := cfbm.line(info.get('shadow'), r.home, r.away, r.neutral))
-                                    is not None else {})},            # shadow: logged, never blended (cfb_model.py)
+                                 **({cfbm.SHADOW_LABEL: v2} if v2 is not None else {})},   # logged, never blended (cfb_model.py)
                      'hfa': hfa_g,
                      'context': {'scale': SCALE, 'crowd': _crowd(r), 'total': [None if t_ours != t_ours else round(t_ours, 1),
                                                                          None if t_mkt != t_mkt else t_mkt], 'signals': {t: s for t, s in ((r.away, sig(r.away_value)), (r.home, sig(r.home_value))) if s},
@@ -723,7 +725,7 @@ def generate_html(p4, vals, sched, week, season_type, info):
                              key='cfb', total=(t_ours, t_mkt), gid=r.game_id,
                              # every game on this page has a Power 4 team (or Notre Dame): the Power 4 slice applies
                              ctx={'conf': str(getattr(r, 'conf', '')).lower() in ('true', '1'),
-                                  'p4': r.home in p4n or r.away in p4n}))
+                                  'p4': r.home in p4n or r.away in p4n}, systems=sysl))
         card = theme.game_card(when, venue, side(r.away, r.away_rating, r.away_value),
                                side(r.home, r.home_rating, r.home_value), proj, mkt, r.score, edge, tag_html, move,
                                gid=r.game_id, group=f'{group_of.get(r.home, "FCS")}|{group_of.get(r.away, "FCS")}')

@@ -2,7 +2,12 @@
 Cached in git-ignored research_cache/. About 90 CFBD calls."""
 import json, os
 import cfb_value_metrics as vm
+import sys
 calls = 0
+if '--current' in sys.argv:        # monthly research: re-pull this season's files (about 25 calls)
+    for f in (f'research_cache/cfbm_{vm.YEAR}.json', f'research_cache/cfbm_adv_{vm.YEAR}.json', f'research_cache/cfbm_box_{vm.YEAR}.json'):
+        if os.path.exists(f):
+            os.remove(f)
 def get(ep, **p):
     global calls
     calls += 1

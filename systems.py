@@ -68,6 +68,29 @@ def nfl(r, total_top10, name=str, wx=None, roof=None):
     return out
 
 
+def cfb(week, season_type, v2_line, opened, market, home, away, completed):
+    """
+    The AlphaPoint CFB model vs the opener (cfb_model.py, tested in cfb_model_v2_test.py): regular season week 5+,
+    our v2 line 3+ points from the opening line -> back our side. The edge was measured AT THE OPENER and is mostly
+    priced by kickoff (about break-even vs the close), so the pick is shown with the opener next to it.
+    v2_line / opened / market: home margins.
+    """
+    res = _passed('cfb', 'cfb_v2_open')
+    if (not res or completed or season_type != 'regular' or week < res.get('min_week', 5) or v2_line is None
+            or opened is None or opened != opened):
+        return []
+    gap = v2_line - opened
+    if abs(gap) < res.get('gap', 3.0):
+        return []
+    side = 'home' if gap > 0 else 'away'
+    team = home if side == 'home' else away
+    now = market if market == market else opened
+    own = lambda m: m if side == 'home' else -m          # the backed team's own margin
+    pick = f'{_side(team, own(now))} (opened {_side(team, own(opened)).split()[-1]})'
+    return [{'key': 'cfb_v2_open', 'label': res['label'], 'pick': pick, 'record': record_text(res) + ' · early edge',
+             'side': side, 'line': float(now), 'kind': 'spread', 'tentative': bool(res.get('tentative'))}]
+
+
 def _side(team, margin):
     """'Bills −3' / 'Bills +3' for a team whose own expected margin (positive = favored) is `margin`."""
     if margin != margin:

@@ -1,152 +1,232 @@
 """
 cfb_model.py
-AlphaPoint Sports: our own CFB rating, run as a SHADOW source (since 2026-11-18)
+AlphaPoint Sports: our own CFB rating, v2 multi-stat (live since 2026-11-18)
 Dylan Kelly
 
-Logged on every CFB game (projections_cfb.csv sources_last, key SHADOW_LABEL) but NOT in the blend: the weekly
-tuning only reads Sagarin and SP+, and the confidence badges use their own list. Re-decide after the 2027 season
-whether it earns a weight (cfb_model_test.py has the method and the 2022-26 walk-forward).
+Research and walk-forward test: cfb_model_v2_test.py (2016-26). This module is the same math, run each build.
 
-Two parts, both FBS vs FBS, recent games weighted more (HALF_LIFE days), ridge shrinkage:
-  margin  home margin (capped at CAP) = r[home] - r[away] + h
-  EPA     offensive EPA per play (garbage time excluded) = mu + O[team] - D[opp] + h * side
-Our line = STACK_M x margin gap + STACK_E x net-EPA gap + STACK_H at a true home game (weights fit on 2022-25).
-Preseason start: last season's final ratings x (1 + returning production) + talent (PRIOR_COEFS, fit on
-2022-25 seasons), worth PRIOR_W games and fading with a PRIOR_FADE-day half-life. Teams new to FBS start low.
-Walk-forward 2024-26: miss vs results 16.2 (closing line 15.1); not a betting edge.
+Stage 1: for every stat below, opponent-adjusted offense O and defense D per FBS team (ridge, recent games weighted
+more, a home/away side term), each pulled toward a preseason start that fades as the season goes. Stats are per game
+from CFBD with garbage time excluded: EPA per play (overall, rush, pass, standard downs, passing downs), success
+rate, explosiveness, line yards, stuff rate, havoc ((TFL + PBU + INT + fumbles lost) / plays, from the box score),
+turnover margin, penalty yards, plus a capped scoring-margin rating.
+Stage 2: our home margin = ridge weights (trained on 2017-25 walk-forward games) x each stat's net gap + home.
+Frozen settings, weights and this season's preseason start: cfb_v2_params_{year}.json (built by the research script).
+
+Role: logged as a zero-weight shadow source next to Sagarin and SP+ (SHADOW_LABEL) and used by the Best spots
+system 'cfb_v2_open' (weeks 5+, our line 3+ points from the opener: 56.1% of 1,370 vs the opener 2021-26, ~52.6%
+vs the close, so the edge is at the opener). Not in the blend.
 """
 import json
 import os
+from datetime import datetime
 
 import numpy as np
 import pandas as pd
 
-HALF_LIFE  = 70
-RIDGE      = 3.0
-CAP        = 28
-PRIOR_W    = 8.0
-PRIOR_FADE = 35
-STACK_M, STACK_E, STACK_H = 1.46, 14.572, 3.127
-# per component (margin, offense, defense): last season's final, x returning-production z, talent z
-PRIOR_COEFS = {'M': (0.6224, 0.0635, 1.7595), 'O': (0.4741, 0.0792, 0.0229), 'D': (0.4822, 0.0739, 0.0181)}
 SHADOW_LABEL = 'AlphaPoint (shadow)'
-PRIOR_PATH = 'cfb_prior_{year}.json'
-SEASON_START = '{year}-08-24'                 # week 1; CFBD weeks become dates 7 days apart (as totals.py does)
+PARAMS = 'cfb_v2_params_{year}.json'
+STATS = ['ppa', 'sr', 'expl', 'line', 'stuff', 'rush', 'pass', 'sd', 'pd', 'havoc', 'to_margin', 'pen_net']
+SYMMETRIC = {'to_margin', 'pen_net'}
+CACHE_HOURS = 12
+MIN_WEEK = 5                     # the Best spots rule was tested from week 5 on
 
 
-def _solve(X, y, w, reg, tgt):
-    A = X * np.sqrt(w)[:, None]
-    return np.linalg.solve(A.T @ A + np.diag(reg), A.T @ (y * np.sqrt(w)) + reg * tgt)
+def _num(x):
+    try:
+        return float(x)
+    except (TypeError, ValueError):
+        return np.nan
 
 
-def _dated(games, year):
-    """CFBD games -> date per game from week (postseason after week 15)."""
-    g = games.copy()
-    wk = g['week'].astype(int) + np.where(g.get('season_type', 'regular') == 'postseason', 16, 0)
-    g['date'] = pd.Timestamp(SEASON_START.format(year=year)) + pd.to_timedelta(7 * (wk - 1), unit='D')
-    g['neutral'] = g['neutral'].astype(bool) if 'neutral' in g else False
+def _split2(s):
+    return _num(str(s).split('-')[1]) if isinstance(s, str) and '-' in s else np.nan
+
+
+# ---------- parsing (identical to cfb_model_v2_test.load) ----------
+def parse_adv(rows):
+    out = []
+    for r in rows:
+        o = r.get('offense') or {}
+        f = lambda k, sub=None: _num((o.get(sub) or {}).get(k)) if sub else _num(o.get(k))
+        out.append({'game_id': r['gameId'], 'team': r['team'], 'opponent': r['opponent'], 'plays': f('plays'),
+                    'ppa': f('ppa'), 'sr': f('successRate'), 'expl': f('explosiveness'), 'line': f('lineYards'),
+                    'stuff': f('stuffRate'), 'rush': f('ppa', 'rushingPlays'), 'pass': f('ppa', 'passingPlays'),
+                    'sd': f('ppa', 'standardDowns'), 'pd': f('ppa', 'passingDowns')})
+    return pd.DataFrame(out)
+
+
+def add_box(adv, box):
+    box = box.copy()
+    for c in ('tacklesForLoss', 'passesDeflected', 'interceptions', 'fumblesLost', 'turnovers', 'rushingAttempts'):
+        box[c] = box[c].map(_num) if c in box else np.nan
+    box['att'] = box['completionAttempts'].map(_split2) if 'completionAttempts' in box else np.nan
+    box['pen'] = box['totalPenaltiesYards'].map(_split2) if 'totalPenaltiesYards' in box else np.nan
+    opp = box[['game_id', 'team', 'tacklesForLoss', 'passesDeflected', 'interceptions', 'fumblesLost', 'turnovers', 'pen']]
+    opp = opp.rename(columns={c: f'{c}_o' for c in opp.columns if c != 'game_id'})
+    b2 = box[['game_id', 'team', 'rushingAttempts', 'att', 'interceptions', 'turnovers', 'fumblesLost', 'pen']].merge(opp, on='game_id')
+    b2 = b2[b2.team != b2.team_o]
+    b2['havoc'] = (b2['tacklesForLoss_o'] + b2['passesDeflected_o'] + b2['interceptions'] + b2['fumblesLost']) / (
+        b2['rushingAttempts'] + b2['att'])
+    b2['to_margin'] = b2['turnovers_o'] - b2['turnovers']
+    b2['pen_net'] = b2['pen_o'] - b2['pen']
+    adv = adv.merge(b2[['game_id', 'team', 'havoc', 'to_margin', 'pen_net']], on=['game_id', 'team'], how='left')
+    adv['havoc'] = -adv['havoc']
+    adv['stuff'] = -adv['stuff']
+    return adv.replace([np.inf, -np.inf], np.nan)
+
+
+def parse_games(rows):
+    g = pd.DataFrame(rows)
+    if g.empty:
+        return g
+    g = g[(g.homeClassification == 'fbs') & (g.awayClassification == 'fbs')].drop_duplicates('id').copy()
+    g['date'] = pd.to_datetime(g['startDate'].str[:10])
+    g['margin'] = g.homePoints - g.awayPoints
+    g['neutral'] = g.neutralSite.astype(bool)
     return g
 
 
-def _fill(prior, teams):
-    vals = np.array([prior.get(t, np.nan) for t in teams], dtype=float)
-    low = np.nanpercentile(vals, 10) if np.isfinite(vals).any() else 0.0
-    return np.nan_to_num(vals, nan=low)
-
-
-def fit(games, ppa, teams, year, asof, prior=None):
-    """
-    games: CFBD games (game_id, week, season_type, home_team, away_team, home_pts, away_pts, neutral);
-    ppa: game_id, team, opponent, off_epa. Returns {'M', 'O', 'D': {team: value}, 'pw': prior weight used}.
-    """
-    teams = sorted(teams)
+# ---------- stage 1 (identical to cfb_model_v2_test.fit_stat / fit_margin) ----------
+def fit_stat(g, adv, teams, asof, stat, prior, pw, s):
     idx, n = {t: i for i, t in enumerate(teams)}, len(teams)
-    g = _dated(games, year)
-    g = g[(g['date'] < asof) & g['home_team'].isin(idx) & g['away_team'].isin(idx)]
-    days = (asof - pd.Timestamp(SEASON_START.format(year=year))).days
-    pw = PRIOR_W * 0.5 ** (max(days, 0) / PRIOR_FADE) if prior else 0.0
-
-    # margin
-    X = np.zeros((len(g), n + 1))
-    X[np.arange(len(g)), g['home_team'].map(idx).values] = 1
-    X[np.arange(len(g)), g['away_team'].map(idx).values] = -1
-    X[:, n] = (~g['neutral']).astype(float).values
-    y = (g['home_pts'] - g['away_pts']).clip(-CAP, CAP).values.astype(float)
-    w = 0.5 ** ((asof - g['date']).dt.days.values / HALF_LIFE)
-    reg = np.full(n + 1, RIDGE + pw); reg[n] = 0.01
-    tgt = np.zeros(n + 1); tgt[n] = 2.5
-    if prior:
-        tgt[:n] = _fill(prior['M'], teams) * pw / (RIDGE + pw)
-    if len(g) == 0:
-        X, y, w = np.zeros((1, n + 1)), np.zeros(1), np.ones(1)
-    b = _solve(X, y, w, reg, tgt)
-    M = b[:n] - b[:n].mean()
-
-    # EPA per play
-    x = ppa[ppa['team'].isin(idx) & ppa['opponent'].isin(idx)].merge(
-        g[['game_id', 'date', 'home_team', 'neutral']], on='game_id', how='inner').dropna(subset=['off_epa'])
-    side = np.where(x['neutral'], 0, np.where(x['team'] == x['home_team'], 1, -1))
-    X = np.zeros((len(x), 2 * n + 2))
-    X[np.arange(len(x)), x['team'].map(idx).values] = 1
-    X[np.arange(len(x)), n + x['opponent'].map(idx).values] = -1
-    X[:, 2 * n], X[:, 2 * n + 1] = side, 1
-    w = 0.5 ** ((asof - x['date']).dt.days.values / HALF_LIFE)
-    reg = np.full(2 * n + 2, RIDGE + pw); reg[2 * n:] = 1e-4
-    tgt = np.zeros(2 * n + 2); tgt[2 * n + 1] = 0.05
-    if prior:
-        tgt[:n] = _fill(prior['O'], teams) * pw / (RIDGE + pw)
-        tgt[n:2 * n] = _fill(prior['D'], teams) * pw / (RIDGE + pw)
-    y = x['off_epa'].values.astype(float)
+    gi = g[g.date < asof][['id', 'date', 'homeTeam', 'neutral']]
+    x = adv[adv.team.isin(idx) & adv.opponent.isin(idx)].merge(gi, left_on='game_id', right_on='id').dropna(subset=[stat])
+    side = np.where(x['neutral'], 0, np.where(x.team == x.homeTeam, 1, -1))
+    sym = stat in SYMMETRIC
+    k = n if sym else 2 * n
+    X = np.zeros((len(x), k + 2))
+    X[np.arange(len(x)), x.team.map(idx).values] = 1
+    if not sym:
+        X[np.arange(len(x)), n + x.opponent.map(idx).values] = -1
+    else:
+        X[np.arange(len(x)), x.opponent.map(idx).values] -= 1
+    X[:, k], X[:, k + 1] = side, 1
+    w = 0.5 ** ((asof - x.date).dt.days.values / s['HL'])
+    reg = np.full(k + 2, s['RIDGE'] + pw); reg[k:] = 1e-4
+    tgt = np.zeros(k + 2)
+    if prior is not None and pw > 0:
+        tgt[:k] = prior[:k] * pw / (s['RIDGE'] + pw)
     if len(x) == 0:
-        X, y, w = np.zeros((1, 2 * n + 2)), np.zeros(1), np.ones(1)
-    b = _solve(X, y, w, reg, tgt)
-    O, D = b[:n] - b[:n].mean(), b[n:2 * n] - b[n:2 * n].mean()
-    return {'M': dict(zip(teams, M)), 'O': dict(zip(teams, O)), 'D': dict(zip(teams, D)), 'pw': pw}
+        return np.zeros(n), np.zeros(n)
+    A = X * np.sqrt(w)[:, None]
+    yv = x[stat].values.astype(float)
+    tgt[k + 1] = np.nanmean(yv)
+    b = np.linalg.solve(A.T @ A + np.diag(reg), A.T @ (yv * np.sqrt(w)) + reg * tgt)
+    O = b[:n] - b[:n].mean()
+    D = np.zeros(n) if sym else b[n:2 * n] - b[n:2 * n].mean()
+    return O, D
 
 
-def line(model, home, away, neutral):
-    """Our shadow home margin for one game (its own home field), or None if a team is unrated."""
-    if not model or home not in model['M'] or away not in model['M']:
-        return None
-    m = model['M'][home] - model['M'][away]
-    e = (model['O'][home] + model['D'][home]) - (model['O'][away] + model['D'][away])
-    return round(float(STACK_M * m + STACK_E * e + (0 if neutral else STACK_H)), 2)
+def fit_margin(g, teams, asof, prior, pw, s):
+    idx, n = {t: i for i, t in enumerate(teams)}, len(teams)
+    x = g[(g.date < asof) & g.homeTeam.isin(idx) & g.awayTeam.isin(idx)]
+    X = np.zeros((len(x), n + 1))
+    X[np.arange(len(x)), x.homeTeam.map(idx).values] = 1
+    X[np.arange(len(x)), x.awayTeam.map(idx).values] = -1
+    X[:, n] = (~x.neutral).astype(float).values
+    w = 0.5 ** ((asof - x.date).dt.days.values / s['HL'])
+    reg = np.full(n + 1, s['RIDGE'] + pw); reg[n] = 0.01
+    tgt = np.zeros(n + 1); tgt[n] = 2.5
+    if prior is not None and pw > 0:
+        tgt[:n] = prior[:n] * pw / (s['RIDGE'] + pw)
+    if len(x) == 0:
+        return np.zeros(n)
+    A = X * np.sqrt(w)[:, None]
+    b = np.linalg.solve(A.T @ A + np.diag(reg), A.T @ (x.margin.clip(-s['CAP'], s['CAP']).values * np.sqrt(w)) + reg * tgt)
+    return b[:n] - b[:n].mean()
 
 
-def build_prior(prev_games, prev_ppa, prev_teams, year, returning, talent):
-    """Next season's start from last season's final ratings (no recency weighting), returning production, talent."""
-    end = pd.Timestamp(SEASON_START.format(year=year)) + pd.Timedelta(days=200)
-    global HALF_LIFE
-    keep, HALF_LIFE = HALF_LIFE, 10000
-    try:
-        last = fit(prev_games, prev_ppa, prev_teams, year, end)
-    finally:
-        HALF_LIFE = keep
-    rv = np.array([v for v in returning.values() if v is not None]); tv = np.array(list(talent.values()))
-    out = {}
-    for comp in ('M', 'O', 'D'):
-        a, b, c = PRIOR_COEFS[comp]
-        out[comp] = {}
-        for t, v in last[comp].items():
-            rz = (returning[t] - rv.mean()) / rv.std() if returning.get(t) is not None and len(rv) else 0.0
-            tz = (talent[t] - tv.mean()) / tv.std() if t in talent and len(tv) else 0.0
-            out[comp][t] = round(float(a * v + b * v * rz + c * tz), 5)
+def _prior_vec(d, teams):
+    v = np.array([d.get(t, np.nan) for t in teams], dtype=float)
+    return np.nan_to_num(v, nan=np.nanpercentile(v, 10) if np.isfinite(v).any() else 0.0)
+
+
+def ratings(g, adv, params, asof):
+    """Stage 1 for every stat as of `asof`. Returns {'teams', 'M': {team}, stat: {team: O + D}, 'week_start'}."""
+    s, pr = params['settings'], params['prior']
+    teams = sorted(set(g.homeTeam) | set(g.awayTeam) | set(pr['margin']))
+    start = g.date.min() if len(g) else asof
+    pw = s['PRIOR_W'] * 0.5 ** (max((asof - start).days, 0) / s['PRIOR_FADE'])
+    out = {'M': dict(zip(teams, fit_margin(g, teams, asof, _prior_vec(pr['margin'], teams), pw, s))), 'pw': pw}
+    for st in STATS:
+        p = _prior_vec(pr[st]['O'], teams)
+        if st not in SYMMETRIC:
+            p = np.concatenate([p, _prior_vec(pr[st]['D'], teams)])
+        O, D = fit_stat(g, adv, teams, asof, st, p, pw, s)
+        out[st] = dict(zip(teams, O + D))
     return out
 
 
-def load_prior(year, get=None, prev_games=None, prev_ppa=None, prev_teams=None):
-    """The committed cfb_prior_{year}.json, or built once (2 CFBD calls via `get`) from last season's caches."""
-    path = PRIOR_PATH.format(year=year)
-    if os.path.exists(path):
-        with open(path) as f:
-            return json.load(f)
-    if get is None or prev_games is None or prev_games.empty or prev_ppa is None or prev_ppa.empty:
+def line(model, home, away, neutral):
+    """v2 home margin for one game, or None if a team isn't an FBS team we rate."""
+    if not model or home not in model['M'] or away not in model['M']:
         return None
-    returning = {r['team']: r.get('percentPPA') for r in get('/player/returning', params={'year': year}) or []}
-    talent = {r['team']: r['talent'] for r in get('/talent', params={'year': year}) or []}
-    if not returning or not talent:
+    p = model['params']['stage2']
+    feats = {'M': model['M'][home] - model['M'][away], 'home': 0 if neutral else 1}
+    for st in STATS:
+        feats[st] = model[st][home] - model[st][away]
+    x = np.array([feats[f] for f in model['params']['feats']])
+    return round(float(p['ymean'] + ((x - np.array(p['mu'])) / np.array(p['sd'])) @ np.array(p['b'])), 2)
+
+
+# ---------- live data (incremental, cached as cfbv_v2*_{year}.csv for the GitHub cache) ----------
+def _stale(path, hours=CACHE_HOURS):
+    return not os.path.exists(path) or (datetime.now().timestamp() - os.path.getmtime(path)) / 3600 > hours
+
+
+def fetch_live(get, year):
+    """games, advanced stats and box scores this season. get = cfb_value_metrics.cfbd_get."""
+    pg, pa, pb = f'cfbv_v2games_{year}.csv', f'cfbv_v2adv_{year}.csv', f'cfbv_v2box_{year}.csv'
+    if _stale(pg) or _stale(pa):
+        games, adv = [], []
+        for st in ('regular', 'postseason'):
+            for x in get('/games', params={'year': year, 'seasonType': st}) or []:
+                if x.get('completed') and x.get('homePoints') is not None:
+                    games.append({k: x.get(k) for k in ('id', 'startDate', 'week', 'neutralSite', 'homeTeam', 'awayTeam',
+                                                        'homePoints', 'awayPoints', 'homeClassification', 'awayClassification')}
+                                 | {'season_type': st})
+            adv += get('/stats/game/advanced', params={'year': year, 'seasonType': st, 'excludeGarbageTime': 'true'}) or []
+        if games:
+            pd.DataFrame(games).to_csv(pg, index=False)
+        if adv:
+            parse_adv(adv).to_csv(pa, index=False)
+    g = pd.read_csv(pg) if os.path.exists(pg) else pd.DataFrame()
+    have = pd.read_csv(pb) if os.path.exists(pb) else pd.DataFrame(columns=['game_id', 'week_key'])
+    if not g.empty and _stale(pb):
+        g['week_key'] = g['season_type'].str[0] + g['week'].astype(str)
+        done = set(have['week_key'].astype(str)) if len(have) else set()
+        recent = sorted(g['week_key'].unique(), key=lambda k: (k[0] != 'r', int(k[1:])))[-2:]   # re-pull the latest 2 weeks
+        need = [k for k in g['week_key'].unique() if k not in done or k in recent]
+        rows = []
+        for k in need:
+            st = 'regular' if k[0] == 'r' else 'postseason'
+            for x in get('/games/teams', params={'year': year, 'week': int(k[1:]), 'seasonType': st, 'classification': 'fbs'}) or []:
+                for t in x.get('teams') or []:
+                    row = {'game_id': x.get('id'), 'team': t.get('team'), 'week_key': k}
+                    for s_ in t.get('stats') or []:
+                        row[s_['category']] = s_.get('stat')
+                    rows.append(row)
+        if rows:
+            new = pd.DataFrame(rows)
+            have = pd.concat([have[~have['week_key'].isin(new['week_key'].unique())], new], ignore_index=True)
+            have.to_csv(pb, index=False)
+        else:
+            os.utime(pb) if os.path.exists(pb) else None
+    adv = pd.read_csv(pa) if os.path.exists(pa) else pd.DataFrame()
+    return g, adv, have
+
+
+def model(get, year, asof=None):
+    """Today's v2 ratings ({'M', stats..., 'params'}), or None if the season's params or data are missing."""
+    if not os.path.exists(PARAMS.format(year=year)):
         return None
-    prior = build_prior(prev_games, prev_ppa, prev_teams, year - 1, returning, talent)
-    with open(path, 'w') as f:
-        json.dump(prior, f)
-    return prior
+    params = json.load(open(PARAMS.format(year=year)))
+    graw, adv, box = fetch_live(get, year)
+    if graw.empty or adv.empty:
+        return None
+    g = parse_games(graw.to_dict('records'))
+    adv = add_box(adv, box) if len(box) else adv.assign(havoc=np.nan, to_margin=np.nan, pen_net=np.nan)
+    m = ratings(g, adv, params, pd.Timestamp(asof or datetime.now().date()))
+    m['params'] = params
+    return m

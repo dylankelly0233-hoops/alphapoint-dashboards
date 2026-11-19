@@ -941,6 +941,57 @@
     "passed": false,
     "tentative": false,
     "holds_to_close": false
+   },
+   "cfb_v2_open": {
+    "label": "AlphaPoint CFB model 3+ pts from the opener (week 5+)",
+    "kind": "spread",
+    "open": {
+     "discovery": {
+      "n": 366,
+      "rate": 0.5355,
+      "lo": 0.4844,
+      "hi": 0.5866
+     },
+     "holdout": {
+      "n": 1004,
+      "rate": 0.5697,
+      "lo": 0.5391,
+      "hi": 0.6003
+     },
+     "all": {
+      "n": 1370,
+      "rate": 0.5606,
+      "lo": 0.5343,
+      "hi": 0.5869
+     }
+    },
+    "close": {
+     "discovery": {
+      "n": 366,
+      "rate": 0.5164,
+      "lo": 0.4652,
+      "hi": 0.5676
+     },
+     "holdout": {
+      "n": 1003,
+      "rate": 0.5294,
+      "lo": 0.4985,
+      "hi": 0.5603
+     },
+     "all": {
+      "n": 1369,
+      "rate": 0.5259,
+      "lo": 0.4995,
+      "hi": 0.5524
+     }
+    },
+    "bench": "open",
+    "passed": true,
+    "tentative": false,
+    "holds_to_close": false,
+    "min_week": 5,
+    "gap": 3.0,
+    "source": "cfb_model_v2_test.py"
    }
   },
   "cbb": {
