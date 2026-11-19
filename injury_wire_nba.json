@@ -1,199 +1,199 @@
 {
- "sport": "nba",
- "week": 20261117,
- "generated": "2026-11-17T20:03:03-05:00",
- "movers": [
-  {
-   "team": "LAL",
-   "tag": "CLUSTER",
-   "text": "G Austin Reaves (35.2 mpg, heel) and C Walker Kessler (30.9, leg) out Tuesday vs CHA (report as of ~8 PM ET Nov 17).",
-   "source": "ESPN",
-   "url": "https://www.espn.com/nba/injuries",
-   "date": "2026-11-17"
-  },
-  {
-   "team": "PHI",
-   "tag": "KEY",
-   "text": "G Jaylen Brown (34.7 mpg) out Wednesday vs ORL with a left hamstring strain.",
-   "source": "ESPN",
-   "url": "https://www.espn.com/nba/injuries",
-   "date": "2026-11-17"
-  },
-  {
-   "team": "CLE",
-   "tag": "CLUSTER",
-   "text": "C Evan Mobley (toe sprain, re-eval in 7-10 days) out; G Jaylon Tyson (23.9 mpg) doubtful, G Sam Merrill (23.1) and G Peyton Watson (27.5) questionable Wed vs MEM.",
-   "source": "ESPN",
-   "url": "https://www.espn.com/nba/injuries",
-   "date": "2026-11-17"
-  },
-  {
-   "team": "NO",
-   "tag": "CLUSTER",
-   "text": "F Trey Murphy III (32.8 mpg, knee) ruled out Wednesday vs DET; G Dejounte Murray (31.4, ankle) also listed out.",
-   "source": "ESPN",
-   "url": "https://www.espn.com/nba/injuries",
-   "date": "2026-11-17"
-  },
-  {
-   "team": "MIN",
-   "tag": "KEY",
-   "text": "F Jonathan Kuminga (30.4 mpg, shoulder) out Tuesday vs POR; G Anthony Edwards (33.8) still out after right knee arthroscopy (Oct 29).",
-   "source": "ESPN",
-   "url": "https://www.espn.com/nba/injuries",
-   "date": "2026-11-17"
+  "sport": "nba",
+  "week": 20261118,
+  "generated": "2026-11-18T20:47:00-05:00",
+  "movers": [
+    {
+      "team": "DET",
+      "tag": "CLUSTER",
+      "text": "G Cade Cunningham (35.0 mpg, knee) out Wed vs NO; F Duncan Robinson (30.6, quad strain) to be re-evaluated in one week (report ~8:40 PM ET Nov 18).",
+      "source": "ESPN",
+      "url": "https://www.espn.com/nba/injuries",
+      "date": "2026-11-18"
+    },
+    {
+      "team": "PHI",
+      "tag": "CLUSTER",
+      "text": "G Tyrese Maxey (36.1 mpg, foot) and F Dean Wade (26.7, hamstring) out Wed at ORL; G Jaylen Brown (34.7, hamstring) re-evaluated this weekend.",
+      "source": "ESPN",
+      "url": "https://www.espn.com/nba/injuries",
+      "date": "2026-11-18"
+    },
+    {
+      "team": "TOR",
+      "tag": "CLUSTER",
+      "text": "F RJ Barrett (34.1 mpg, hamstring) and F Scottie Barnes (33.7, injury management) out Wed vs WSH; Kawhi Leonard (knee) out at least one more week.",
+      "source": "ESPN",
+      "url": "https://www.espn.com/nba/injuries",
+      "date": "2026-11-18"
+    },
+    {
+      "team": "SA",
+      "tag": "KEY",
+      "text": "G Dylan Harper (31.7 mpg, hip) won't play Thursday vs LAC, per the San Antonio Express-News.",
+      "source": "ESPN",
+      "url": "https://www.espn.com/nba/injuries",
+      "date": "2026-11-18"
+    },
+    {
+      "team": "HOU",
+      "tag": "KEY",
+      "text": "C Alperen Sengun (34.2 mpg, eye) did not return to Wednesday's game vs IND; listed day-to-day (report ~8:40 PM ET Nov 18).",
+      "source": "ESPN",
+      "url": "https://www.espn.com/nba/injuries",
+      "date": "2026-11-18"
+    }
+  ],
+  "teams": {
+    "DET": [
+      {
+        "team": "DET",
+        "tag": "CLUSTER",
+        "text": "G Cade Cunningham (35.0 mpg, knee) out Wed vs NO; F Duncan Robinson (30.6, quad strain) to be re-evaluated in one week (report ~8:40 PM ET Nov 18).",
+        "source": "ESPN",
+        "url": "https://www.espn.com/nba/injuries",
+        "date": "2026-11-18"
+      }
+    ],
+    "PHI": [
+      {
+        "team": "PHI",
+        "tag": "CLUSTER",
+        "text": "G Tyrese Maxey (36.1 mpg, foot) and F Dean Wade (26.7, hamstring) out Wed at ORL; G Jaylen Brown (34.7, hamstring) re-evaluated this weekend.",
+        "source": "ESPN",
+        "url": "https://www.espn.com/nba/injuries",
+        "date": "2026-11-18"
+      }
+    ],
+    "TOR": [
+      {
+        "team": "TOR",
+        "tag": "CLUSTER",
+        "text": "F RJ Barrett (34.1 mpg, hamstring) and F Scottie Barnes (33.7, injury management) out Wed vs WSH; Kawhi Leonard (knee) out at least one more week.",
+        "source": "ESPN",
+        "url": "https://www.espn.com/nba/injuries",
+        "date": "2026-11-18"
+      }
+    ],
+    "SA": [
+      {
+        "team": "SA",
+        "tag": "KEY",
+        "text": "G Dylan Harper (31.7 mpg, hip) won't play Thursday vs LAC, per the San Antonio Express-News.",
+        "source": "ESPN",
+        "url": "https://www.espn.com/nba/injuries",
+        "date": "2026-11-18"
+      }
+    ],
+    "HOU": [
+      {
+        "team": "HOU",
+        "tag": "KEY",
+        "text": "C Alperen Sengun (34.2 mpg, eye) did not return to Wednesday's game vs IND; listed day-to-day (report ~8:40 PM ET Nov 18).",
+        "source": "ESPN",
+        "url": "https://www.espn.com/nba/injuries",
+        "date": "2026-11-18"
+      }
+    ],
+    "POR": [
+      {
+        "team": "POR",
+        "tag": "KEY",
+        "text": "F Deni Avdija (32.5 mpg, foot) and F Toumani Camara (29.1, soreness) questionable Thursday vs MIL.",
+        "source": "ESPN",
+        "url": "https://www.espn.com/nba/injuries",
+        "date": "2026-11-18"
+      }
+    ],
+    "MIN": [
+      {
+        "team": "MIN",
+        "tag": "KEY",
+        "text": "F Jonathan Kuminga (30.4 mpg, shoulder) questionable Thursday vs NY.",
+        "source": "ESPN",
+        "url": "https://www.espn.com/nba/injuries",
+        "date": "2026-11-18"
+      }
+    ],
+    "CLE": [
+      {
+        "team": "CLE",
+        "tag": "CLUSTER",
+        "text": "C Evan Mobley (32.1 mpg, toe sprain) re-evaluated in 7-10 days (Nov 16); G Peyton Watson (27.5, back) and G Jaylon Tyson (23.9, ankle) out Wed vs MEM.",
+        "source": "ESPN",
+        "url": "https://www.espn.com/nba/injuries",
+        "date": "2026-11-18"
+      }
+    ],
+    "MEM": [
+      {
+        "team": "MEM",
+        "tag": "KEY",
+        "text": "G Ty Jerome (30.6 mpg, hip) ruled out Wed at CLE, his second straight missed game.",
+        "source": "ESPN",
+        "url": "https://www.espn.com/nba/injuries",
+        "date": "2026-11-17"
+      }
+    ],
+    "IND": [
+      {
+        "team": "IND",
+        "tag": "CLUSTER",
+        "text": "G Andrew Nembhard (33.4 mpg, hip) out Wed vs HOU; G Tyrese Haliburton (33.0, hamstring) still has no return timetable.",
+        "source": "ESPN",
+        "url": "https://www.espn.com/nba/injuries",
+        "date": "2026-11-18"
+      }
+    ],
+    "LAL": [
+      {
+        "team": "LAL",
+        "tag": "KEY",
+        "text": "G Austin Reaves (35.2 mpg, heel) out Wed vs UTAH, his third straight missed game.",
+        "source": "ESPN",
+        "url": "https://www.espn.com/nba/injuries",
+        "date": "2026-11-18"
+      }
+    ],
+    "NO": [
+      {
+        "team": "NO",
+        "tag": "CLUSTER",
+        "text": "F Trey Murphy III (32.8 mpg, knee) out Wed vs DET; G Dejounte Murray (31.4, ankle) also out.",
+        "source": "ESPN",
+        "url": "https://www.espn.com/nba/injuries",
+        "date": "2026-11-17"
+      }
+    ],
+    "ATL": [
+      {
+        "team": "ATL",
+        "tag": "CLUSTER",
+        "text": "G CJ McCollum (26.4 mpg, calf) to miss at least four weeks; G Kingston Flemings (21.5, back) out Wed at OKC.",
+        "source": "ESPN",
+        "url": "https://www.espn.com/nba/injuries",
+        "date": "2026-11-17"
+      }
+    ],
+    "GS": [
+      {
+        "team": "GS",
+        "tag": "KEY",
+        "text": "G Stephen Curry (oblique tear) out; re-evaluation due about two weeks from Nov 12.",
+        "source": "ESPN",
+        "url": "https://www.espn.com/nba/injuries",
+        "date": "2026-11-12"
+      }
+    ],
+    "UTAH": [
+      {
+        "team": "UTAH",
+        "tag": "KEY",
+        "text": "F Lauri Markkanen (30.9 mpg, hand fracture) out at least one month from Nov 11.",
+        "source": "ESPN",
+        "url": "https://www.espn.com/nba/injuries",
+        "date": "2026-11-11"
+      }
+    ]
   }
- ],
- "teams": {
-  "LAL": [
-   {
-    "team": "LAL",
-    "tag": "CLUSTER",
-    "text": "G Austin Reaves (35.2 mpg, heel) and C Walker Kessler (30.9, leg) out Tuesday vs CHA (report as of ~8 PM ET Nov 17).",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nba/injuries",
-    "date": "2026-11-17"
-   }
-  ],
-  "PHI": [
-   {
-    "team": "PHI",
-    "tag": "KEY",
-    "text": "G Jaylen Brown (34.7 mpg) out Wednesday vs ORL with a left hamstring strain.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nba/injuries",
-    "date": "2026-11-17"
-   }
-  ],
-  "CLE": [
-   {
-    "team": "CLE",
-    "tag": "CLUSTER",
-    "text": "C Evan Mobley (toe sprain, re-eval in 7-10 days) out; G Jaylon Tyson (23.9 mpg) doubtful, G Sam Merrill (23.1) and G Peyton Watson (27.5) questionable Wed vs MEM.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nba/injuries",
-    "date": "2026-11-17"
-   }
-  ],
-  "NO": [
-   {
-    "team": "NO",
-    "tag": "CLUSTER",
-    "text": "F Trey Murphy III (32.8 mpg, knee) ruled out Wednesday vs DET; G Dejounte Murray (31.4, ankle) also listed out.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nba/injuries",
-    "date": "2026-11-17"
-   }
-  ],
-  "MIN": [
-   {
-    "team": "MIN",
-    "tag": "KEY",
-    "text": "F Jonathan Kuminga (30.4 mpg, shoulder) out Tuesday vs POR; G Anthony Edwards (33.8) still out after right knee arthroscopy (Oct 29).",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nba/injuries",
-    "date": "2026-11-17"
-   }
-  ],
-  "POR": [
-   {
-    "team": "POR",
-    "tag": "KEY",
-    "text": "F Deni Avdija (32.5 mpg, foot) out Tuesday vs MIN.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nba/injuries",
-    "date": "2026-11-18"
-   }
-  ],
-  "ATL": [
-   {
-    "team": "ATL",
-    "tag": "CLUSTER",
-    "text": "G CJ McCollum (26.4 mpg, calf) to miss at least four weeks; G Kingston Flemings (21.5, back) out Wednesday vs OKC.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nba/injuries",
-    "date": "2026-11-17"
-   }
-  ],
-  "DET": [
-   {
-    "team": "DET",
-    "tag": "KEY",
-    "text": "F Duncan Robinson (30.6 mpg) out with a left quadriceps strain; to be re-evaluated in one week (Nov 17).",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nba/injuries",
-    "date": "2026-11-17"
-   }
-  ],
-  "HOU": [
-   {
-    "team": "HOU",
-    "tag": "KEY",
-    "text": "G Amen Thompson (33.3 mpg, knee) questionable Wednesday vs IND after missing the last game.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nba/injuries",
-    "date": "2026-11-17"
-   }
-  ],
-  "IND": [
-   {
-    "team": "IND",
-    "tag": "KEY",
-    "text": "G Andrew Nembhard (33.4 mpg, hip) questionable Wednesday vs HOU after missing the last game.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nba/injuries",
-    "date": "2026-11-17"
-   }
-  ],
-  "SAC": [
-   {
-    "team": "SAC",
-    "tag": "CLUSTER",
-    "text": "F De'Andre Hunter (32.5 mpg, hip) and F Precious Achiuwa (26.4, ankle) questionable Wednesday vs PHX after missing the last game.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nba/injuries",
-    "date": "2026-11-18"
-   }
-  ],
-  "MEM": [
-   {
-    "team": "MEM",
-    "tag": "KEY",
-    "text": "G Ty Jerome (30.6 mpg, hip) ruled out Wednesday at CLE, his third straight missed game.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nba/injuries",
-    "date": "2026-11-17"
-   }
-  ],
-  "CHI": [
-   {
-    "team": "CHI",
-    "tag": "KEY",
-    "text": "F Caleb Wilson (30.7 mpg) out 4-6 weeks with a hand injury (Nov 12); F Patrick Williams (22.7, finger) probable Wednesday vs BKN.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nba/injuries",
-    "date": "2026-11-17"
-   }
-  ],
-  "GS": [
-   {
-    "team": "GS",
-    "tag": "KEY",
-    "text": "G Stephen Curry (26.5 mpg) out with an oblique tear; to be re-evaluated about two weeks from Nov 12.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nba/injuries",
-    "date": "2026-11-12"
-   }
-  ],
-  "UTAH": [
-   {
-    "team": "UTAH",
-    "tag": "CLUSTER",
-    "text": "F Lauri Markkanen (hand fracture, 1+ month) and F Jaren Jackson Jr. (MCL) out; C Jaxson Hayes (24.0 mpg, knee) out Tuesday vs LAC.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nba/injuries",
-    "date": "2026-11-17"
-   }
-  ]
- }
 }
