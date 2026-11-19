@@ -315,6 +315,30 @@ def best_spots_record(scored):
     return out
 
 
+def tracking_record(scored):
+    """Leans we track but have NOT proven (never on Best spots): graded vs the first-seen line and the last line."""
+    d = scored.get('cfb')
+    if d is None or d.empty or 'context' not in d:
+        return ['  Nothing graded yet.']
+    rows = []
+    for g in d.itertuples():
+        try:
+            los = (json.loads(g.context) or {}).get('los')
+        except (TypeError, ValueError):
+            los = None
+        if not los or g.result != g.result:
+            continue
+        for bench, line in (('first seen', g.opened), ('last line', g.market_last)):
+            if line == line and line is not None and g.result != line:
+                rows.append({'bench': bench, 'won': float((g.result > line) == (los[0] == 'home'))})
+    if not rows:
+        return ['  CFB line of scrimmage (stuff-rate edge 10+ pts): no finished games yet.']
+    df = pd.DataFrame(rows)
+    return ['  CFB line of scrimmage (stuff-rate edge 10+ pts): ' + '; '.join(
+        f'vs the {b} {x.won.mean():.0%} of {len(x)}' for b, x in df.groupby('bench', sort=False))
+        + ' (backtest 55% of 703 vs the opener; unproven)']
+
+
 def main():
     now = datetime.now(timezone.utc)
     body = [f'Date: {now.astimezone(ET):%Y-%m-%d %H:%M} ET', 'Status: ok', '']
@@ -326,6 +350,7 @@ def main():
     except Exception as e:
         body += [f'GOLF: review failed ({e})', '']
     body += ['Best spots, live record (internal)'] + best_spots_record(scored) + ['']
+    body += ['Tracking (not proven, not on Best spots)'] + tracking_record(scored) + ['']
     try:
         import situational
         body += [f'Game situations in use (since {situational.SINCE})'] + situational.live_check(scored) + ['']

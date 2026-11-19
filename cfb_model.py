@@ -217,6 +217,23 @@ def fetch_live(get, year):
     return g, adv, have
 
 
+def los_net(year):
+    """{team: (net stuff rate, games)} for the line-of-scrimmage tracker (stat_matchup_test.py, CFB 'stuff net big'):
+    season-to-date average of the stuffed rate this team's defense forces minus the rate its own offense is stuffed,
+    FBS-vs-FBS games, garbage time excluded. Reads the v2 caches (fetch_live), so it costs no API calls."""
+    try:
+        g = pd.read_csv(f'cfbv_v2games_{year}.csv')
+        a = pd.read_csv(f'cfbv_v2adv_{year}.csv')
+        fbs = g[(g.homeClassification == 'fbs') & (g.awayClassification == 'fbs')]['id']
+        a = a[a.game_id.isin(fbs)]
+        own = a.groupby('team')['stuff'].agg(['mean', 'size'])
+        forced = a.groupby('opponent')['stuff'].mean()
+        return {t: (float(forced[t] - r['mean']), int(r['size'])) for t, r in own.iterrows() if t in forced.index}
+    except Exception as e:
+        print(f'  ! line-of-scrimmage tracker: {e}')
+        return {}
+
+
 def model(get, year, asof=None):
     """Today's v2 ratings ({'M', stats..., 'params'}), or None if the season's params or data are missing."""
     if not os.path.exists(PARAMS.format(year=year)):

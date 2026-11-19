@@ -169,7 +169,42 @@ def run(sport):
     return R
 
 
+P3_CUT = 0.07          # 7 pct points of net 3P% (the top-quarter gap in 2022-27, rounded)
+
+
+def p3_entry():
+    """The live Best spots rule 'cbb_3p_fade', scored exactly as it runs (systems.cbb_3p): both teams 5+ games, net 3P%
+    gap >= P3_CUT -> back the team with the worse net 3P%. Judged at the CLOSE (2022-24 vs 2025-27); opener reported."""
+    tg, G, stats, halves, mg = cbb_frames()
+    pg = pregame(tg, stats)
+    H = pg.add_prefix('h_').rename(columns={'h_season': 'season', 'h_team': 'home', 'h_date': 'date'})
+    A = pg.add_prefix('v_').rename(columns={'v_season': 'season', 'v_team': 'away', 'v_date': 'date'})
+    X = G.merge(H, on=['season', 'home', 'date']).merge(A, on=['season', 'away', 'date'])
+    X = X[(X.h_n >= mg) & (X.v_n >= mg)]
+    d = (X.h_p3 - X.h_a_p3) - (X.v_p3 - X.v_a_p3)
+    X = X[d.abs() >= P3_CUT].assign(home_side=d[d.abs() >= P3_CUT] < 0)
+    out = {}
+    for bench in ('close', 'open'):
+        q = X[X[bench].notna() & (X.margin != X[bench])]
+        w = np.where(q.home_side, q.margin > q[bench], q.margin < q[bench])
+        first = halves[bench](q).values
+        f = lambda v: dict(zip(('n', 'rate', 'lo'), (int(_ci(v)[0]), round(_ci(v)[1], 4), round(_ci(v)[2], 4))))
+        out[bench] = {'discovery': f(w[first]), 'holdout': f(w[~first]), 'all': f(w)}
+    c = out['close']
+    passed = (c['discovery']['n'] >= 50 and c['holdout']['n'] >= 50 and c['discovery']['rate'] > 110 / 210
+              and c['holdout']['rate'] > 110 / 210 and c['all']['n'] >= 100 and c['all']['lo'] > 0.5)
+    return {'label': 'Fade the hot 3-point team (net 3P% gap 7+ pts)', 'kind': 'spread', **out, 'bench': 'close',
+            'passed': bool(passed), 'tentative': bool(passed and c['all']['lo'] < 0.51), 'holds_to_close': bool(passed),
+            'gap': P3_CUT, 'min_games': mg, 'source': 'stat_matchup_test.py'}
+
+
 if __name__ == '__main__':
+    if '--write' in sys.argv:            # monthly research: refresh the Best spots record of the CBB 3-point fade
+        st = json.load(open('system_test.json')) if os.path.exists('system_test.json') else {'systems': {}}
+        st['systems'].setdefault('cbb', {})['cbb_3p_fade'] = e = p3_entry()
+        json.dump(st, open('system_test.json', 'w'), indent=1)
+        print('cbb_3p_fade:', 'PASSED' if e['passed'] else 'not passed', e['close']['all'], 'open', e['open']['all'])
+        sys.exit()
     for sp in (sys.argv[1:] or ['cbb', 'cfb']):
         run(sp)
         print()

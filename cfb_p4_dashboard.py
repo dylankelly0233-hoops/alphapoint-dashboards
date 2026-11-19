@@ -683,6 +683,8 @@ def generate_html(p4, vals, sched, week, season_type, info):
         v2 = cfbm.line(info.get('shadow'), r.home, r.away, r.neutral)
         sysl = sy.cfb(int(getattr(r, 'week', week) or week), season_type, v2, info['opened'].get(str(r.game_id)), mkt_margin, r.home, r.away, r.completed)
         tag_html += sy.tag_html(sysl, theme.esc)
+        los = sy.cfb_los(info.get('los') or {}, r.home, r.away, r.completed)     # tracking only, not on Best spots
+        tag_html += sy.los_tag_html(los, theme.esc)
         move = ex.line_move(info['opened'].get(str(r.game_id)), mkt_margin, pm, r.home, r.away)
         big = ex.lopsided(mkt_margin, r.margin)
         move += ex.rating_confidence(info['by_source'].get(r.home, {}), info['by_source'].get(r.away, {}),
@@ -717,7 +719,7 @@ def generate_html(p4, vals, sched, week, season_type, info):
                      'hfa': hfa_g,
                      'context': {'scale': SCALE, 'crowd': _crowd(r), 'total': [None if t_ours != t_ours else round(t_ours, 1),
                                                                          None if t_mkt != t_mkt else t_mkt], 'signals': {t: s for t, s in ((r.away, sig(r.away_value)), (r.home, sig(r.home_value))) if s},
-                                 'tags': [list(x) for x in labels],
+                                 'tags': [list(x) for x in labels], 'los': [los['side'], los['gap']] if los else None,
                                  'mu_side': mu.headline_side(prof, MU_CATS, r.away, r.home) if r.home in prof and r.away in prof else None}})
         spots.append(ex.spot('CFB', 'cfb.html#sched', r.kick, r.away, r.home, r.margin, mkt_margin, labels,
                              [(r.away, sig(r.away_value)), (r.home, sig(r.home_value))],
@@ -958,7 +960,7 @@ def main():
     except Exception as e:
         print(f'  ! totals model failed: {e}')
         total_fn = None
-    info = {'shadow': shadow_model(), 'p4_names': p4_names, 'total_fn': total_fn, 'val_live': val.live_records('cfb'), 'scale': scale_info, 'sag_asof': sag_asof, 'rating_sd': float(power['composite'].std()),   # FBS-wide spread, sets the rating chip colors
+    info = {'shadow': shadow_model(), 'los': cfbm.los_net(YEAR), 'p4_names': p4_names, 'total_fn': total_fn, 'val_live': val.live_records('cfb'), 'scale': scale_info, 'sag_asof': sag_asof, 'rating_sd': float(power['composite'].std()),   # FBS-wide spread, sets the rating chip colors
             'wire': wire_data, 'market_rows': market_rows, 'history': hist, 'freshness': freshness, 'results': results,
             'weeks': [(week, sched, last_results(results[0], week, season_type))]
                      + ([(week + 1, next_sched, next_last)] if not next_sched.empty else []),

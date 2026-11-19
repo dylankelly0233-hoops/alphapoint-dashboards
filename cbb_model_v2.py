@@ -169,6 +169,19 @@ def model(box, teams, season, today=None):
         return None
 
 
+def p3_net(box, teams):
+    """{team: (net 3P%, games)}: season-to-date average of own 3P% minus opponents' 3P% against it (raw, per game,
+    D1 games only) -- the stat behind the Best spots system 'cbb_3p_fade' (stat_matchup_test.py)."""
+    try:
+        b = derive(box, set(teams))
+        own = b.groupby('team')['p3'].agg(['mean', 'size'])
+        opp = b.groupby('opponent')['p3'].mean()
+        return {t: (float(r['mean'] - opp[t]), int(r['size'])) for t, r in own.iterrows() if t in opp.index}
+    except Exception as e:
+        print(f'  ! net 3P%: {e}')
+        return {}
+
+
 def line(mod, home, away, neutral):
     """v2's home margin, or None."""
     if not mod:

@@ -545,6 +545,7 @@ def generate_html(power, metrics, days, info):
             v2 = cm2.line(info.get('v2'), g['home'], g['away'], g['neutral'])
             sysl = sy.cbb(cm2.season_day(g['kick'].date(), SEASON), v2, info['opened'].get(g['game_id']), g['market'],
                           g['home'], g['away'], bool(g['score']))
+            sysl += sy.cbb_3p(info.get('p3') or {}, g['market'], g['home'], g['away'], bool(g['score']))
             move += sy.tag_html(sysl, theme.esc)
             pr = '' if big or g['score'] else val.card_row('cbb', margin, g['market'], g['home'], g['away'], info['val_live'])
             t_ours = info['total_fn'](g['home'], g['away'], g['neutral']) if info.get('total_fn') else np.nan
@@ -796,7 +797,7 @@ def main():
                                          'mu_prof': mu.profiles(units, mu.BASKETBALL_CATS, mu.BASKETBALL_STYLES)
                                          if not units.empty else {},
                                          'opened': {str(r['game_id']): r.get('opened') for r in market_rows},
-                                         'v2': model_v2})
+                                         'v2': model_v2, 'p3': cm2.p3_net(box, set(teams['team']))})
 
 
 if __name__ == '__main__':
