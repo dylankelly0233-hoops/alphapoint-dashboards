@@ -1,142 +1,96 @@
 {
   "sport": "cbb",
-  "week": 20261118,
-  "generated": "2026-11-18T20:52:28-05:00",
+  "week": 20261119,
+  "generated": "2026-11-19T11:11:07-05:00",
   "movers": [
     {
-      "team": "Boston College",
+      "team": "Kansas",
       "tag": "KEY",
-      "text": "Money Williams (37 mpg, team's top player) sat out vs. New Hampshire on 11/15 and is considered game-to-game.",
-      "source": "Sports Illustrated",
-      "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOaXpBZkJpeGEwT3ZMNUVXd1RxcllYM0o2UWxNUURMWnVyV1pwMGd6MUZzSUhRSzV6QVNWTzlEVDk1NmdFbDNiekwtSF8xLXVmV1VFVzEwMmM2ZHpZMFVkZHd5NVFlMVRUMjIxd1U0M21OVWF5eEIxOTk0blc4dlNfUGJ6VDBIdnRpVDl3c3hpQ2VsU0FQc1hiTk14N185RW1GalJoNTBIZ3lkdkIwZ1lndjIxLTlNbmFndVJmSks2Z2Y1R0l6NTJBMkhoNFd2UUY2Snkw?oc=5",
-      "date": "2026-11-15",
-      "player": "Money Williams",
-      "status": "questionable"
+      "player": "Tyran Stokes",
+      "status": "questionable",
+      "text": "Freshman Tyran Stokes (23 mpg) left the UNLV win 11/18 with a knee/leg injury; MRI showed no major injury, but his Players Era status remains uncertain per 11/19 reports.",
+      "source": "USA Today",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPWEVLVWVlODFFZ3JwZGVzS2NaVk5XTmRtV3k1U0xCZVNsOGE4TkIyNW5WbWF2bU9oX1R6cWE1WWt0N1lCa2FtSHJBN2FURXpSM29GdnZMeWs0N2s3VDdSS1VWbmRfZUFZWE5fNGUwY0NWMGdobHR0c1NLYmJ1bl9MZzRnX2ltdWc5cXotdVpOTDlZaGMta3JYVGlOYWJoTjRlV3AzY192bS1FRmxrT093ckkxbFhyXzhyRlUw?oc=5",
+      "date": "2026-11-19"
     },
     {
-      "team": "Wisconsin",
+      "team": "North Carolina",
       "tag": "KEY",
-      "text": "Braeden Carrington (28 mpg) was taken to the hospital after an in-game injury vs. Coastal Carolina on 11/16; availability for the Baha Mar Championship being updated.",
-      "source": "Sports Illustrated",
-      "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOc0RNa05JaTdPMDBld0R5SXhlV0U4clpXYWVWX1BwUUdQenNyMjNRa3hjeVFqLURNSEVMNHBmYW92OTdZTklTZlVSTl9UemhQYmx5WTBiWEtVNHYzVnZfRkxWNGhUcHFHcVZPZVI3SnhTWGFIWnVIeGQwTXdjZklfa3BCSVUzSUNuMndReThuVE1QTDd2UnNVdmZfazZCT1VEVVlJSEpqVHNVczRXckRXbHIwU3BodjJGRmdodXEwX0dLeVZZXzFYWXNtZTgtT2ExcUN3?oc=5",
-      "date": "2026-11-18",
-      "player": "Braeden Carrington",
-      "status": "questionable"
-    },
-    {
-      "team": "Oklahoma",
-      "tag": "KEY",
-      "text": "C Duke Brennan (19 mpg) sidelined with an ankle injury, per Oklahoma athletics (11/16).",
-      "source": "Soonersports.com",
-      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxONXEzcllHc3loVmFwMjg3WFh1NFU0U0kxR19WcjZYWDU5cTNzVHpvNlNNU1hnUVB4QmpGdDFiMF92SmtXZmZNQ09LazhZWkVyRzhFY2dTNlZ4dUk4a2x3NllCUjJOVGdOaG5wNVJIOVVmTnAxbW42M3ZDSWVCdmZsaUU0R1pKeS1zN2ZxTjFFaHlpWWtLQnJJRDgydw?oc=5",
-      "date": "2026-11-16",
-      "player": "Duke Brennan",
-      "status": "out"
+      "player": "Neo Avdalas",
+      "status": "out",
+      "text": "Starter Neo Avdalas (24 mpg) is sidelined with a wrist injury (reported 11/17); UNC is adjusting its starting lineup.",
+      "source": "On3",
+      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOMjZTOFFPMERiLXktUkJXNEw2TFVwd1hPRjVUbkRWeU5XTzFOTlkzNTRJbjJPQUpaWG04SjRUekVlLTlSMXhlSHZiX0hhWTVpbG43V1BRUUtvYlBlRkh1WUFKR1NzRkwydV8tN2VkeHNyeDFRWGh5RndSTndmWU1RYk9vd1pnU1Q1QXhzZDNWUGVMb2xC?oc=5",
+      "date": "2026-11-17"
     },
     {
       "team": "Florida",
       "tag": "KEY",
-      "text": "PG Boogie Fland aggravated a shoulder injury and left the Notre Dame game 11/17; he started vs. Houston 11/18 despite the injury.",
-      "source": "ESPN",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQSDYtQXBVMWFaeTcya1I5cGlER3lwSG9HMERVSU5FWkdBWWlrR0pvNXAtbWgwdVk4UzdHM05weTFPWW1tbnBTbXZMa3BhWUlyZDFJSEtFSlBVMzA2T1BsNnhFUm5mS05DWVZtTVJHZDA3QUZQTTBveXl0OWZhdTJmVzVRRkZla0tFbkJJU0p0ckRzMzB5N0doUk5KQS04S1p5ejROUDA5SGFnT3FvN0hzSURB?oc=5",
-      "date": "2026-11-18",
       "player": "Boogie Fland",
-      "status": "questionable"
+      "status": "questionable",
+      "text": "PG Boogie Fland (25 mpg) aggravated a shoulder injury and left the Notre Dame game 11/17; status was in question ahead of Houston.",
+      "source": "ESPN",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPQ0Y2TFBhdVNrRjBlbEJVS0ZjZVFIanNVMlV0Rk5XSFZ3YmpGMU1QVFMtWUZ5bmlCc3d3Qk5tMEV1R0RRQUQ1Y2hDUVNsMmJ0SFo5dDNlQ0VlR0s1U01ua1ppVXlKRUloa2VjZmttRDl3b0ZURjA0TldyV3I1Q1h3ODJpeHBOMXI4WUdNdEFQVm0zdHlkMGtqeTNkS2xfMVBYNzkxUm1IanhBZTdBbmVZOA?oc=5",
+      "date": "2026-11-18"
     },
     {
-      "team": "Kansas",
+      "team": "Wisconsin",
       "tag": "KEY",
-      "text": "Freshman Tyran Stokes left the UNLV win 11/18 early; MRI showed a bone bruise, no major injury. Status for the rest of the Players Era event unclear.",
-      "source": "FOX4KC.com",
-      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPZ25wTXJCc0NBOWgxRXF1WThFT0JtS3lNV0MxTjJLcF95T0NiX3ZxdnVwdXFZdDBSbVNLeG9kVEhoRmRVYXpUNl9GRlN5R2dUM3lIUUttbUpXWWZ1VFFVdkF2a0h1ckFGUHdiU2tISkZlbmhJaDFJV3BVTFRQY2kxVNIBhgFBVV95cUxNb0xQdnhNbmVDMmlEdnFjREwwSF9ucTFUNFU3NW54QnY4S3c5QlZTZHo0ekxQcFVWcVpCdW9BRnBydDA4VWZaY0pyV1FfbHFCY1BGek9lWnZuRTNuTEFBWlhzVHlRSTNaNGdJWmJWVjlwcVlCcDJ3Y2dWclhZU2JGTDZUdDNQdw?oc=5",
-      "date": "2026-11-18",
-      "player": "Tyran Stokes",
-      "status": "questionable"
+      "player": "Braeden Carrington",
+      "status": "questionable",
+      "text": "G Braeden Carrington (28 mpg) went to the hospital after an in-game injury vs. Coastal Carolina 11/16; Wisconsin updated his availability before the Baha Mar Championship (11/18).",
+      "source": "Sports Illustrated",
+      "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOc0RNa05JaTdPMDBld0R5SXhlV0U4clpXYWVWX1BwUUdQenNyMjNRa3hjeVFqLURNSEVMNHBmYW92OTdZTklTZlVSTl9UemhQYmx5WTBiWEtVNHYzVnZfRkxWNGhUcHFHcVZPZVI3SnhTWGFIWnVIeGQwTXdjZklfa3BCSVUzSUNuMndReThuVE1QTDd2UnNVdmZfazZCT1VEVVlJSEpqVHNVczRXckRXbHIwU3BodjJGRmdodXEwX0dLeVZZXzFYWXNtZTgtT2ExcUN3?oc=5",
+      "date": "2026-11-18"
     }
   ],
   "teams": {
-    "Boston College": [
-      {
-        "team": "Boston College",
-        "tag": "KEY",
-        "text": "Money Williams (37 mpg, team's top player) sat out vs. New Hampshire on 11/15 and is considered game-to-game.",
-        "source": "Sports Illustrated",
-        "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOaXpBZkJpeGEwT3ZMNUVXd1RxcllYM0o2UWxNUURMWnVyV1pwMGd6MUZzSUhRSzV6QVNWTzlEVDk1NmdFbDNiekwtSF8xLXVmV1VFVzEwMmM2ZHpZMFVkZHd5NVFlMVRUMjIxd1U0M21OVWF5eEIxOTk0blc4dlNfUGJ6VDBIdnRpVDl3c3hpQ2VsU0FQc1hiTk14N185RW1GalJoNTBIZ3lkdkIwZ1lndjIxLTlNbmFndVJmSks2Z2Y1R0l6NTJBMkhoNFd2UUY2Snkw?oc=5",
-        "date": "2026-11-15",
-        "player": "Money Williams",
-        "status": "questionable"
-      }
-    ],
-    "Wisconsin": [
-      {
-        "team": "Wisconsin",
-        "tag": "KEY",
-        "text": "Braeden Carrington (28 mpg) was taken to the hospital after an in-game injury vs. Coastal Carolina on 11/16; availability for the Baha Mar Championship being updated.",
-        "source": "Sports Illustrated",
-        "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOc0RNa05JaTdPMDBld0R5SXhlV0U4clpXYWVWX1BwUUdQenNyMjNRa3hjeVFqLURNSEVMNHBmYW92OTdZTklTZlVSTl9UemhQYmx5WTBiWEtVNHYzVnZfRkxWNGhUcHFHcVZPZVI3SnhTWGFIWnVIeGQwTXdjZklfa3BCSVUzSUNuMndReThuVE1QTDd2UnNVdmZfazZCT1VEVVlJSEpqVHNVczRXckRXbHIwU3BodjJGRmdodXEwX0dLeVZZXzFYWXNtZTgtT2ExcUN3?oc=5",
-        "date": "2026-11-18",
-        "player": "Braeden Carrington",
-        "status": "questionable"
-      }
-    ],
-    "Oklahoma": [
-      {
-        "team": "Oklahoma",
-        "tag": "KEY",
-        "text": "C Duke Brennan (19 mpg) sidelined with an ankle injury, per Oklahoma athletics (11/16).",
-        "source": "Soonersports.com",
-        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxONXEzcllHc3loVmFwMjg3WFh1NFU0U0kxR19WcjZYWDU5cTNzVHpvNlNNU1hnUVB4QmpGdDFiMF92SmtXZmZNQ09LazhZWkVyRzhFY2dTNlZ4dUk4a2x3NllCUjJOVGdOaG5wNVJIOVVmTnAxbW42M3ZDSWVCdmZsaUU0R1pKeS1zN2ZxTjFFaHlpWWtLQnJJRDgydw?oc=5",
-        "date": "2026-11-16",
-        "player": "Duke Brennan",
-        "status": "out"
-      }
-    ],
-    "Florida": [
-      {
-        "team": "Florida",
-        "tag": "KEY",
-        "text": "PG Boogie Fland aggravated a shoulder injury and left the Notre Dame game 11/17; he started vs. Houston 11/18 despite the injury.",
-        "source": "ESPN",
-        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQSDYtQXBVMWFaeTcya1I5cGlER3lwSG9HMERVSU5FWkdBWWlrR0pvNXAtbWgwdVk4UzdHM05weTFPWW1tbnBTbXZMa3BhWUlyZDFJSEtFSlBVMzA2T1BsNnhFUm5mS05DWVZtTVJHZDA3QUZQTTBveXl0OWZhdTJmVzVRRkZla0tFbkJJU0p0ckRzMzB5N0doUk5KQS04S1p5ejROUDA5SGFnT3FvN0hzSURB?oc=5",
-        "date": "2026-11-18",
-        "player": "Boogie Fland",
-        "status": "questionable"
-      }
-    ],
     "Kansas": [
       {
         "team": "Kansas",
         "tag": "KEY",
-        "text": "Freshman Tyran Stokes left the UNLV win 11/18 early; MRI showed a bone bruise, no major injury. Status for the rest of the Players Era event unclear.",
-        "source": "FOX4KC.com",
-        "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPZ25wTXJCc0NBOWgxRXF1WThFT0JtS3lNV0MxTjJLcF95T0NiX3ZxdnVwdXFZdDBSbVNLeG9kVEhoRmRVYXpUNl9GRlN5R2dUM3lIUUttbUpXWWZ1VFFVdkF2a0h1ckFGUHdiU2tISkZlbmhJaDFJV3BVTFRQY2kxVNIBhgFBVV95cUxNb0xQdnhNbmVDMmlEdnFjREwwSF9ucTFUNFU3NW54QnY4S3c5QlZTZHo0ekxQcFVWcVpCdW9BRnBydDA4VWZaY0pyV1FfbHFCY1BGek9lWnZuRTNuTEFBWlhzVHlRSTNaNGdJWmJWVjlwcVlCcDJ3Y2dWclhZU2JGTDZUdDNQdw?oc=5",
-        "date": "2026-11-18",
         "player": "Tyran Stokes",
-        "status": "questionable"
+        "status": "questionable",
+        "text": "Freshman Tyran Stokes (23 mpg) left the UNLV win 11/18 with a knee/leg injury; MRI showed no major injury, but his Players Era status remains uncertain per 11/19 reports.",
+        "source": "USA Today",
+        "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPWEVLVWVlODFFZ3JwZGVzS2NaVk5XTmRtV3k1U0xCZVNsOGE4TkIyNW5WbWF2bU9oX1R6cWE1WWt0N1lCa2FtSHJBN2FURXpSM29GdnZMeWs0N2s3VDdSS1VWbmRfZUFZWE5fNGUwY0NWMGdobHR0c1NLYmJ1bl9MZzRnX2ltdWc5cXotdVpOTDlZaGMta3JYVGlOYWJoTjRlV3AzY192bS1FRmxrT093ckkxbFhyXzhyRlUw?oc=5",
+        "date": "2026-11-19"
       }
     ],
     "North Carolina": [
       {
         "team": "North Carolina",
         "tag": "KEY",
-        "text": "Starter Neo Avdalas (24 mpg) sidelined with a wrist injury (11/17); UNC weighing who starts in his place.",
-        "source": "Tar Heels Wire",
-        "url": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxOMS1WUkhVQ3NFT213RHZ4MUpsNktaSFM1SzFQUnhiVXdMa09mYTExOUlhR0ptOWJQdHVPU24xWlRMUUd6VXBNZzJwSkFRczJuRjEtUzllX005OENvNTNPaDV4SFZCS2c5c2VIem9reDJKX05CN21kMmJ5ckZ5dGtjbXN0anI5dVFSUGxmbDVRLUlweWxmc1JieTFPWDFCbVRWajBQSlhjZHVlWFczemZjQ21OOEgxckIwQ0twazVhVS1waTZucExoUjVVZ0o3VEN6UjZhY3l4MnZobnh3b1Z2X0FEcUxPUjZWRzBiV0RR?oc=5",
-        "date": "2026-11-17",
         "player": "Neo Avdalas",
-        "status": "out"
+        "status": "out",
+        "text": "Starter Neo Avdalas (24 mpg) is sidelined with a wrist injury (reported 11/17); UNC is adjusting its starting lineup.",
+        "source": "On3",
+        "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOMjZTOFFPMERiLXktUkJXNEw2TFVwd1hPRjVUbkRWeU5XTzFOTlkzNTRJbjJPQUpaWG04SjRUekVlLTlSMXhlSHZiX0hhWTVpbG43V1BRUUtvYlBlRkh1WUFKR1NzRkwydV8tN2VkeHNyeDFRWGh5RndSTndmWU1RYk9vd1pnU1Q1QXhzZDNWUGVMb2xC?oc=5",
+        "date": "2026-11-17"
       }
     ],
-    "UConn": [
+    "Florida": [
       {
-        "team": "UConn",
+        "team": "Florida",
         "tag": "KEY",
-        "text": "Nik Khamenia (19 mpg) is out, per an 11/17 report.",
-        "source": "Yahoo Sports",
-        "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNc0lWMFg5Q1F6UndYSll0OGxOck9Ub05XbUFDaUw0aUtLUTh1QmUtMDN4ai1DUEZJVk1NdHdJY0I3ZlNlc0l4TS11SGRha0E3eC1IWjNXQmxNTEV2SVE0cUxHOEEyRFlnNF9hY2hEYWRuWVlHV1lHTFhQaUhKY3B3U1hkNGVqeWNtWEZz?oc=5",
-        "date": "2026-11-17",
-        "player": "Nik Khamenia",
-        "status": "out"
+        "player": "Boogie Fland",
+        "status": "questionable",
+        "text": "PG Boogie Fland (25 mpg) aggravated a shoulder injury and left the Notre Dame game 11/17; status was in question ahead of Houston.",
+        "source": "ESPN",
+        "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPQ0Y2TFBhdVNrRjBlbEJVS0ZjZVFIanNVMlV0Rk5XSFZ3YmpGMU1QVFMtWUZ5bmlCc3d3Qk5tMEV1R0RRQUQ1Y2hDUVNsMmJ0SFo5dDNlQ0VlR0s1U01ua1ppVXlKRUloa2VjZmttRDl3b0ZURjA0TldyV3I1Q1h3ODJpeHBOMXI4WUdNdEFQVm0zdHlkMGtqeTNkS2xfMVBYNzkxUm1IanhBZTdBbmVZOA?oc=5",
+        "date": "2026-11-18"
+      }
+    ],
+    "Wisconsin": [
+      {
+        "team": "Wisconsin",
+        "tag": "KEY",
+        "player": "Braeden Carrington",
+        "status": "questionable",
+        "text": "G Braeden Carrington (28 mpg) went to the hospital after an in-game injury vs. Coastal Carolina 11/16; Wisconsin updated his availability before the Baha Mar Championship (11/18).",
+        "source": "Sports Illustrated",
+        "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOc0RNa05JaTdPMDBld0R5SXhlV0U4clpXYWVWX1BwUUdQenNyMjNRa3hjeVFqLURNSEVMNHBmYW92OTdZTklTZlVSTl9UemhQYmx5WTBiWEtVNHYzVnZfRkxWNGhUcHFHcVZPZVI3SnhTWGFIWnVIeGQwTXdjZklfa3BCSVUzSUNuMndReThuVE1QTDd2UnNVdmZfazZCT1VEVVlJSEpqVHNVczRXckRXbHIwU3BodjJGRmdodXEwX0dLeVZZXzFYWXNtZTgtT2ExcUN3?oc=5",
+        "date": "2026-11-18"
       }
     ]
   }
