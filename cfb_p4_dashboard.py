@@ -40,6 +40,7 @@ import pandas as pd
 import requests
 
 import cfb_value_metrics as vm
+import cfb_model as cfbm
 import crowd
 import valuation as val
 import totals as tot
@@ -217,6 +218,22 @@ def fetch_sp():
 # ==========================================
 # 4. COMPOSITE POWER RATING
 # ==========================================
+def shadow_model():
+    """Our own CFB rating (cfb_model.py), logged next to Sagarin and SP+ but given no weight. None on any failure."""
+    try:
+        prev = lambda name: pd.read_csv(f'cfbv_{name}_{YEAR - 1}.csv') if os.path.exists(f'cfbv_{name}_{YEAR - 1}.csv') else None
+        pg = prev('games')
+        prior = cfbm.load_prior(YEAR, vm.cfbd_get, pg, prev('ppa'),
+                                None if pg is None else set(pg['home_team']) | set(pg['away_team']))
+        games, ppa, fbs = vm.fetch_games(), vm.fetch_ppa(), vm.fetch_fbs_teams()
+        model = cfbm.fit(games, ppa, fbs, YEAR, pd.Timestamp(datetime.now().date()), prior=prior)
+        print(f"  Shadow model: {len(model['M'])} teams{'' if prior else ' (no preseason start)'}, prior weight {model['pw']:.2f} games.")
+        return model
+    except Exception as e:
+        print(f'  ! shadow model skipped: {e}')
+        return None
+
+
 def build_power_ratings(teams, sag, sp):
     """
     Put both sources on one scale (FBS average = 0, common SD) and blend.
@@ -692,7 +709,10 @@ def generate_html(p4, vals, sched, week, season_type, info):
                      'confidence': ex.confidence_level(h_src, a_src, hfa_g, big),
                      'flags': (['news'] if ex.news_move(info['opened'].get(str(r.game_id)), mkt_margin) else [])
                               + (['lopsided'] if big else []),
-                     'sources': ex.source_lines(h_src, a_src, hfa_g), 'hfa': hfa_g,
+                     'sources': {**ex.source_lines(h_src, a_src, hfa_g),
+                                 **({cfbm.SHADOW_LABEL: sh} if (sh := cfbm.line(info.get('shadow'), r.home, r.away, r.neutral))
+                                    is not None else {})},            # shadow: logged, never blended (cfb_model.py)
+                     'hfa': hfa_g,
                      'context': {'scale': SCALE, 'crowd': _crowd(r), 'total': [None if t_ours != t_ours else round(t_ours, 1),
                                                                          None if t_mkt != t_mkt else t_mkt], 'signals': {t: s for t, s in ((r.away, sig(r.away_value)), (r.home, sig(r.home_value))) if s},
                                  'tags': [list(x) for x in labels],
@@ -936,7 +956,7 @@ def main():
     except Exception as e:
         print(f'  ! totals model failed: {e}')
         total_fn = None
-    info = {'p4_names': p4_names, 'total_fn': total_fn, 'val_live': val.live_records('cfb'), 'scale': scale_info, 'sag_asof': sag_asof, 'rating_sd': float(power['composite'].std()),   # FBS-wide spread, sets the rating chip colors
+    info = {'shadow': shadow_model(), 'p4_names': p4_names, 'total_fn': total_fn, 'val_live': val.live_records('cfb'), 'scale': scale_info, 'sag_asof': sag_asof, 'rating_sd': float(power['composite'].std()),   # FBS-wide spread, sets the rating chip colors
             'wire': wire_data, 'market_rows': market_rows, 'history': hist, 'freshness': freshness, 'results': results,
             'weeks': [(week, sched, last_results(results[0], week, season_type))]
                      + ([(week + 1, next_sched, next_last)] if not next_sched.empty else []),
