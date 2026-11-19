@@ -1,16 +1,26 @@
 {
   "sport": "cbb",
   "week": 20261119,
-  "generated": "2026-11-19T11:11:07-05:00",
+  "generated": "2026-11-19T16:23:23-05:00",
   "movers": [
+    {
+      "team": "Florida",
+      "tag": "KEY",
+      "player": "Boogie Fland",
+      "status": "out",
+      "text": "PG Boogie Fland (25 mpg) is ruled out vs. West Virginia with a right shoulder injury he re-aggravated vs. Notre Dame; he played through it vs. Houston (4 pts).",
+      "source": "On3",
+      "url": "https://www.on3.com/teams/florida-gators/news/florida-guard-boogie-fland-ruled-out-for-the-west-virginia-game/",
+      "date": "2026-11-19"
+    },
     {
       "team": "Kansas",
       "tag": "KEY",
       "player": "Tyran Stokes",
       "status": "questionable",
-      "text": "Freshman Tyran Stokes (23 mpg) left the UNLV win 11/18 with a knee/leg injury; MRI showed no major injury, but his Players Era status remains uncertain per 11/19 reports.",
-      "source": "USA Today",
-      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPWEVLVWVlODFFZ3JwZGVzS2NaVk5XTmRtV3k1U0xCZVNsOGE4TkIyNW5WbWF2bU9oX1R6cWE1WWt0N1lCa2FtSHJBN2FURXpSM29GdnZMeWs0N2s3VDdSS1VWbmRfZUFZWE5fNGUwY0NWMGdobHR0c1NLYmJ1bl9MZzRnX2ltdWc5cXotdVpOTDlZaGMta3JYVGlOYWJoTjRlV3AzY192bS1FRmxrT093ckkxbFhyXzhyRlUw?oc=5",
+      "text": "Freshman Tyran Stokes (23 mpg) has a right-leg bone bruise and missed West Virginia 11/18; Bill Self calls him day-to-day and a likely game-time decision vs. Houston.",
+      "source": "Yahoo Sports",
+      "url": "https://sports.yahoo.com/articles/kansas-tyran-stokes-still-uncertain-144630208.html",
       "date": "2026-11-19"
     },
     {
@@ -24,23 +34,23 @@
       "date": "2026-11-17"
     },
     {
-      "team": "Florida",
-      "tag": "KEY",
-      "player": "Boogie Fland",
-      "status": "questionable",
-      "text": "PG Boogie Fland (25 mpg) aggravated a shoulder injury and left the Notre Dame game 11/17; status was in question ahead of Houston.",
-      "source": "ESPN",
-      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPQ0Y2TFBhdVNrRjBlbEJVS0ZjZVFIanNVMlV0Rk5XSFZ3YmpGMU1QVFMtWUZ5bmlCc3d3Qk5tMEV1R0RRQUQ1Y2hDUVNsMmJ0SFo5dDNlQ0VlR0s1U01ua1ppVXlKRUloa2VjZmttRDl3b0ZURjA0TldyV3I1Q1h3ODJpeHBOMXI4WUdNdEFQVm0zdHlkMGtqeTNkS2xfMVBYNzkxUm1IanhBZTdBbmVZOA?oc=5",
-      "date": "2026-11-18"
-    },
-    {
       "team": "Wisconsin",
       "tag": "KEY",
       "player": "Braeden Carrington",
       "status": "questionable",
-      "text": "G Braeden Carrington (28 mpg) went to the hospital after an in-game injury vs. Coastal Carolina 11/16; Wisconsin updated his availability before the Baha Mar Championship (11/18).",
-      "source": "Sports Illustrated",
-      "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOc0RNa05JaTdPMDBld0R5SXhlV0U4clpXYWVWX1BwUUdQenNyMjNRa3hjeVFqLURNSEVMNHBmYW92OTdZTklTZlVSTl9UemhQYmx5WTBiWEtVNHYzVnZfRkxWNGhUcHFHcVZPZVI3SnhTWGFIWnVIeGQwTXdjZklfa3BCSVUzSUNuMndReThuVE1QTDd2UnNVdmZfazZCT1VEVVlJSEpqVHNVczRXckRXbHIwU3BodjJGRmdodXEwX0dLeVZZXzFYWXNtZTgtT2ExcUN3?oc=5",
+      "text": "G Braeden Carrington (28 mpg): imaging after a head collision 11/15 came back clear; Greg Gard said it looks like he'll play vs. Seton Hall. Jack Janicki starts if not.",
+      "source": "On3",
+      "url": "https://www.on3.com/sites/badger-blitz/news/braeden-carrington-injury-update-wisconsin-badgers-basketball-baha-mar-championship/",
+      "date": "2026-11-18"
+    },
+    {
+      "team": "Michigan State",
+      "tag": "KEY",
+      "player": "Coen Carr",
+      "status": "questionable",
+      "text": "F Coen Carr (22 mpg) has knee tendinitis per Tom Izzo; he may sit or play limited minutes vs. Detroit Mercy.",
+      "source": "Yahoo Sports",
+      "url": "https://sports.yahoo.com/articles/tom-izzo-provides-injury-coen-142231394.html",
       "date": "2026-11-18"
     }
   ],
@@ -51,9 +61,9 @@
         "tag": "KEY",
         "player": "Tyran Stokes",
         "status": "questionable",
-        "text": "Freshman Tyran Stokes (23 mpg) left the UNLV win 11/18 with a knee/leg injury; MRI showed no major injury, but his Players Era status remains uncertain per 11/19 reports.",
-        "source": "USA Today",
-        "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPWEVLVWVlODFFZ3JwZGVzS2NaVk5XTmRtV3k1U0xCZVNsOGE4TkIyNW5WbWF2bU9oX1R6cWE1WWt0N1lCa2FtSHJBN2FURXpSM29GdnZMeWs0N2s3VDdSS1VWbmRfZUFZWE5fNGUwY0NWMGdobHR0c1NLYmJ1bl9MZzRnX2ltdWc5cXotdVpOTDlZaGMta3JYVGlOYWJoTjRlV3AzY192bS1FRmxrT093ckkxbFhyXzhyRlUw?oc=5",
+        "text": "Freshman Tyran Stokes (23 mpg) has a right-leg bone bruise and missed West Virginia 11/18; Bill Self calls him day-to-day and a likely game-time decision vs. Houston.",
+        "source": "Yahoo Sports",
+        "url": "https://sports.yahoo.com/articles/kansas-tyran-stokes-still-uncertain-144630208.html",
         "date": "2026-11-19"
       }
     ],
@@ -74,11 +84,11 @@
         "team": "Florida",
         "tag": "KEY",
         "player": "Boogie Fland",
-        "status": "questionable",
-        "text": "PG Boogie Fland (25 mpg) aggravated a shoulder injury and left the Notre Dame game 11/17; status was in question ahead of Houston.",
-        "source": "ESPN",
-        "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPQ0Y2TFBhdVNrRjBlbEJVS0ZjZVFIanNVMlV0Rk5XSFZ3YmpGMU1QVFMtWUZ5bmlCc3d3Qk5tMEV1R0RRQUQ1Y2hDUVNsMmJ0SFo5dDNlQ0VlR0s1U01ua1ppVXlKRUloa2VjZmttRDl3b0ZURjA0TldyV3I1Q1h3ODJpeHBOMXI4WUdNdEFQVm0zdHlkMGtqeTNkS2xfMVBYNzkxUm1IanhBZTdBbmVZOA?oc=5",
-        "date": "2026-11-18"
+        "status": "out",
+        "text": "PG Boogie Fland (25 mpg) is ruled out vs. West Virginia with a right shoulder injury he re-aggravated vs. Notre Dame; he played through it vs. Houston (4 pts).",
+        "source": "On3",
+        "url": "https://www.on3.com/teams/florida-gators/news/florida-guard-boogie-fland-ruled-out-for-the-west-virginia-game/",
+        "date": "2026-11-19"
       }
     ],
     "Wisconsin": [
@@ -87,10 +97,34 @@
         "tag": "KEY",
         "player": "Braeden Carrington",
         "status": "questionable",
-        "text": "G Braeden Carrington (28 mpg) went to the hospital after an in-game injury vs. Coastal Carolina 11/16; Wisconsin updated his availability before the Baha Mar Championship (11/18).",
-        "source": "Sports Illustrated",
-        "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOc0RNa05JaTdPMDBld0R5SXhlV0U4clpXYWVWX1BwUUdQenNyMjNRa3hjeVFqLURNSEVMNHBmYW92OTdZTklTZlVSTl9UemhQYmx5WTBiWEtVNHYzVnZfRkxWNGhUcHFHcVZPZVI3SnhTWGFIWnVIeGQwTXdjZklfa3BCSVUzSUNuMndReThuVE1QTDd2UnNVdmZfazZCT1VEVVlJSEpqVHNVczRXckRXbHIwU3BodjJGRmdodXEwX0dLeVZZXzFYWXNtZTgtT2ExcUN3?oc=5",
+        "text": "G Braeden Carrington (28 mpg): imaging after a head collision 11/15 came back clear; Greg Gard said it looks like he'll play vs. Seton Hall. Jack Janicki starts if not.",
+        "source": "On3",
+        "url": "https://www.on3.com/sites/badger-blitz/news/braeden-carrington-injury-update-wisconsin-badgers-basketball-baha-mar-championship/",
         "date": "2026-11-18"
+      }
+    ],
+    "Michigan State": [
+      {
+        "team": "Michigan State",
+        "tag": "KEY",
+        "player": "Coen Carr",
+        "status": "questionable",
+        "text": "F Coen Carr (22 mpg) has knee tendinitis per Tom Izzo; he may sit or play limited minutes vs. Detroit Mercy.",
+        "source": "Yahoo Sports",
+        "url": "https://sports.yahoo.com/articles/tom-izzo-provides-injury-coen-142231394.html",
+        "date": "2026-11-18"
+      }
+    ],
+    "Texas A&M": [
+      {
+        "team": "Texas A&M",
+        "tag": "KEY",
+        "player": "Jordan Pope",
+        "status": "limited",
+        "text": "G Jordan Pope (23 mpg) has a minor Achilles strain; Bucky McMillan says it shouldn't keep him out at TCU but could limit his minutes.",
+        "source": "Yahoo Sports",
+        "url": "https://sports.yahoo.com/articles/bucky-mcmillan-reveals-texas-m-183715973.html",
+        "date": "2026-11-17"
       }
     ]
   }
