@@ -558,6 +558,10 @@ td.pos { color: var(--pos); font-weight: 600; } td.neg { color: var(--neg); font
 .gtag.bounce { background: var(--pos); }
 .gtag.teaser { background: #6d4bd8; } .gtag.teaser.max { background: #4a2fb0; }
 .gtag.system { background: #0f766e; } .gtag.watch { background: #64748b; }
+.gapwhy div { margin: 2px 0; font-size: 13.5px; line-height: 1.45; } .gapwhy a { color: var(--accent); }
+.gverdict { font: 700 11px/1 var(--display); letter-spacing: .6px; text-transform: uppercase; padding: 3px 6px;
+            border-radius: 4px; color: #fff; background: #64748b; }
+.gverdict.explained { background: #15803d; } .gverdict.partly { background: #b45309; } .gverdict.unexplained { background: #1d4ed8; }
 .lmove { padding: 8px 14px 10px; font-size: 13px; color: var(--muted); border-top: 1px solid var(--line); }
 .injlist { display: block; margin-top: 2px; } .inj { display: block; color: var(--ink); line-height: 1.45; }
 .inj b { color: var(--muted); font-weight: 600; } .inj.ret { color: var(--pos, #1a7f37); }

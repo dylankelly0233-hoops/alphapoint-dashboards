@@ -42,6 +42,7 @@ import requests
 import cfb_value_metrics as vm
 import cfb_model as cfbm
 import systems as sy
+import gap_research as gr
 import crowd
 import valuation as val
 import totals as tot
@@ -661,7 +662,7 @@ def generate_html(p4, vals, sched, week, season_type, info):
             f'<b>SELL</b> above +{spot:.1f} (solid above +{strong:.1f}).'))
 
     # --- Games tab: this week and next week, behind a switch ---
-    spots, panels, features, plog = [], {}, [], []
+    spots, panels, features, plog, gaps = [], {}, [], [], []
     p4_set = set(p4['team'])
     sig = lambda v: 'BUY' if v is not None and v == v and v < -spot else 'SELL' if v is not None and v == v and v > spot else ''
 
@@ -702,6 +703,7 @@ def generate_html(p4, vals, sched, week, season_type, info):
         pr += '' if r.completed else tot.card_row('cfb', t_ours, t_mkt)
         move += ex.why_row([('Ratings', r.margin - _hfa(r)), ('Home field', 0.0 if r.neutral else HFA_POINTS),
                             ('Crowd', (_crowd(r) or {}).get('adj'))], r.margin, mkt_margin, r.home, r.away, lead=pr)
+        move += gr.card_row('cfb', r.game_id, r.margin, mkt_margin, r.home, r.away, r.home, r.away, bool(r.completed))
         prof = info['mu_prof']
         if r.home in prof and r.away in prof:
             move += mu.card_row(r.game_id, mu.headline(prof, MU_CATS, r.away, r.home, str))
@@ -720,6 +722,7 @@ def generate_html(p4, vals, sched, week, season_type, info):
                      'context': {'scale': SCALE, 'crowd': _crowd(r), 'total': [None if t_ours != t_ours else round(t_ours, 1),
                                                                          None if t_mkt != t_mkt else t_mkt], 'signals': {t: s for t, s in ((r.away, sig(r.away_value)), (r.home, sig(r.home_value))) if s},
                                  'tags': [list(x) for x in labels], 'los': [los['side'], los['gap']] if los else None,
+                                 'gap_verdict': gr.verdict('cfb', r.game_id),
                                  'mu_side': mu.headline_side(prof, MU_CATS, r.away, r.home) if r.home in prof and r.away in prof else None}})
         spots.append(ex.spot('CFB', 'cfb.html#sched', r.kick, r.away, r.home, r.margin, mkt_margin, labels,
                              [(r.away, sig(r.away_value)), (r.home, sig(r.home_value))],
@@ -763,6 +766,12 @@ def generate_html(p4, vals, sched, week, season_type, info):
                       note + (f'<div class="games">{cards}</div>' if cards else '<p class="hint">No games found for this week.</p>')))
     ex.write_spots('cfb', spots)
     ex.log_projections('cfb', plog)
+    gr.write_candidates('cfb', [{'gid': str(p['game_id']), 'kick': p['kickoff'], 'home': p['home'], 'away': p['away'],
+                                 'home_name': p['home'], 'away_name': p['away'], 'ours': p['ours'], 'market': p['market'],
+                                 'opened': p.get('opened'), 'sources': p.get('sources'),
+                                 'weather': info['weather'].get(str(p['game_id']))}
+                                for p in plog if p['kickoff'] is not None and not pd.isna(p['kickoff'])
+                                and pd.Timestamp(p['kickoff']) > pd.Timestamp.now(tz=pd.Timestamp(p['kickoff']).tz)])
     featured_html = fx.tab(''.join(features), ('Featured games', 'Top 25 clashes and upset watch this week'),
                            'No ranked-vs-ranked or upset-watch games left this week.')
     sched_html = (

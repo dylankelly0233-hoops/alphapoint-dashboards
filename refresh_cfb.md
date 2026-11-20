@@ -15,17 +15,20 @@ This writes `injury_candidates_cfb.json`. If the script errors, report the error
 ## 3. Curate the Injury Wire
 Follow `DIR\refresh_injury_curation.md` with sport = `cfb`, writing `DIR\injury_wire_cfb.json`.
 
+## 3b. Research Assistant: why our line differs from the market
+Follow `DIR\refresh_gap_research.md` with sport = `cfb`, writing `DIR\gap_notes_cfb.json`. Its input `gap_candidates_cfb.json` was written in step 2; the Injury Wire you curated in step 3 (`injury_wire_cfb.json`) is newer, so read that too.
+
 ## 4. Push to GitHub
 From DIR, in order:
 1. `git checkout -- line_history_cfb.csv ratings_history_cfb.csv projections_cfb.csv source_history_cfb.csv`. GitHub's builds own these files; don't commit local copies.
-2. `git add injury_wire_cfb.json`
+2. `git add injury_wire_cfb.json gap_notes_cfb.json`
 3. `git -c user.name="Dylan Kelly" -c user.email="dylankelly0233@gmail.com" commit -m "CFB daily refresh"`. If it says there's nothing to commit, that's fine.
 4. `git pull --rebase`
 5. `git push`
 
 The push starts a GitHub build automatically.
 
-## 5. Report (5 lines or fewer)
+## 5. Report (6 lines or fewer)
 Include the week, the ratings "through" date the script printed, the number of Injury Wire items with the top 1–2 movers, whether the push succeeded, and any warnings (lines starting with `  ! `).
 
 Also save the report to `DIR\last_refresh_cfb.md`, replacing the file. Make the first line `Date: YYYY-MM-DD HH:MM` (local time) and the second line `Status: pushed` or `Status: failed — <reason>`. Then add the report lines, plus the current BUY and SELL teams. The 11 AM CBB run reads this file to build Dylan's daily email digest.

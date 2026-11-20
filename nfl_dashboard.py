@@ -41,6 +41,7 @@ import valuation as val
 import futures as fut
 import totals as tot
 import systems as sy
+import gap_research as gr
 import featured as fx
 import matchups as mu
 import weather as wx
@@ -452,7 +453,7 @@ def generate_html(power, vals, sched, week, info):
     rating = dict(zip(power['abbr'], power['composite']))
     by_src = {r.abbr: {'nfelo': r.nfelo, 'Sagarin': r.sagarin} for r in power.itertuples()}
     sig = lambda v: 'BUY' if v is not None and v == v and v < -spot else 'SELL' if v is not None and v == v and v > spot else ''
-    spots, panels, features, plog = [], {}, [], []
+    spots, panels, features, plog, gaps = [], {}, [], [], []
 
     def game_html(r):
         """One game card (and its best-spots entry and matchup panel)."""
@@ -478,6 +479,7 @@ def generate_html(power, vals, sched, week, info):
         pr += '' if r.score else tot.card_row('nfl', t_ours, r.total)
         move += ex.why_row([('Ratings', r.margin - (0.0 if r.neutral else HFA_POINTS)), ('Home field', 0.0 if r.neutral else HFA_POINTS)],
                            r.margin, r.market, r.home, r.away, lambda t: nick(vm.full_name(t)), lead=pr)
+        move += gr.card_row('nfl', r.game_id, r.margin, r.market, r.home, r.away, nick(home), nick(away), bool(r.score))
         prof = info['mu_prof']
         if r.home in prof and r.away in prof:
             short = lambda ab: nick(vm.full_name(ab))
@@ -494,7 +496,12 @@ def generate_html(power, vals, sched, week, info):
                                                            None if pd.isna(r.total) else r.total],
                                  'signals': {t: s for t, s in ((r.away, sig(r.away_value)), (r.home, sig(r.home_value))) if s},
                                  'tags': [[tag_label[0], r.away if tag_label[1] == nick(away) else r.home]] if tag_label else [],
-                                 'mu_side': mu.headline_side(prof, MU_CATS, r.away, r.home) if r.home in prof and r.away in prof else None}})
+                                 'mu_side': mu.headline_side(prof, MU_CATS, r.away, r.home) if r.home in prof and r.away in prof else None,
+                                 'gap_verdict': gr.verdict('nfl', r.game_id)}})
+        if not r.score:
+            gaps.append({'gid': str(r.game_id), 'kick': r.kick, 'home': r.home, 'away': r.away, 'home_name': home,
+                         'away_name': away, 'ours': r.margin, 'market': r.market, 'opened': info['opened'].get(str(r.game_id)),
+                         'sources': plog[-1]['sources'], 'weather': info['weather'].get(str(r.game_id))})
         spots.append(ex.spot('NFL', 'nfl.html#sched', r.kick, nick(away), nick(home), r.margin, r.market,
                              [tag_label] if tag_label else [],
                              [(nick(away), sig(r.away_value)), (nick(home), sig(r.home_value))],
@@ -537,6 +544,7 @@ def generate_html(power, vals, sched, week, info):
                       note + (f'<div class="games">{cards}</div>' if cards else '<p class="hint">No games found for this week.</p>')))
     ex.write_spots('nfl', spots)
     ex.log_projections('nfl', plog)
+    gr.write_candidates('nfl', gaps)          # Research Assistant: gaps for the daily Claude run (refresh_gap_research.md)
     featured_html = fx.tab(''.join(features), ('Featured games', 'Primetime games this week and next'),
                            'No primetime games left this week or next.')
     sched_html = (
