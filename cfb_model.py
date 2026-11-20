@@ -172,7 +172,8 @@ def line(model, home, away, neutral):
 
 # ---------- live data (incremental, cached as cfbv_v2*_{year}.csv for the GitHub cache) ----------
 def _stale(path, hours=CACHE_HOURS):
-    return not os.path.exists(path) or (datetime.now().timestamp() - os.path.getmtime(path)) / 3600 > hours
+    import freshness as fr          # also stale once a game has gone final since the last fetch
+    return fr.stale(path, hours, 'cfb')
 
 
 def fetch_live(get, year):

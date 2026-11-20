@@ -100,10 +100,8 @@ def cfbd_get(endpoint, params=None):
 
 
 def cache_stale(path):
-    if not os.path.exists(path):
-        return True
-    age_hours = (datetime.now().timestamp() - os.path.getmtime(path)) / 3600
-    return age_hours > CACHE_HOURS
+    import freshness as fr          # also stale once a game has gone final since the last fetch
+    return fr.stale(path, CACHE_HOURS, 'cfb')
 
 
 # ==========================================

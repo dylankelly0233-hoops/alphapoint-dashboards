@@ -30,6 +30,7 @@ Data
 import html
 import io
 import os
+import time
 import re
 from datetime import datetime, timedelta
 
@@ -309,6 +310,39 @@ def espn_dates(by_espn, back=6):
     return {k: sorted(v) for k, v in out.items()}
 
 
+def _box_missing(box, by_espn):
+    """{team: [Eastern dates]} of D1 games ESPN shows as final (yesterday and today) whose box score we don't have."""
+    import freshness as fr
+    have = set(zip(box['team'], box['date'].astype(str))) if not box.empty else set()
+    now = pd.Timestamp.now(tz='UTC')
+    out = {}
+    for start, h, a, _ in fr.finals('cbb', days=3):
+        if start + pd.Timedelta(hours=fr.FINAL_LAG) > now:
+            continue
+        for tid in (h, a):
+            t = by_espn.get(str(tid))
+            if t and (t, start.strftime('%Y-%m-%d')) not in have:
+                out.setdefault(t, []).append(start.tz_convert('America/New_York').date())
+    return out
+
+
+def box_complete(box, by_espn):
+    """
+    Make sure every finished game is in the box scores (Dylan, 2026-11-20). If ESPN shows a final we don't have,
+    re-pull the box scores now (at most every 30 minutes). Whatever is still missing after that (the source hasn't
+    posted it yet) is returned so the cards can hold stat-based strategies for those teams and say why.
+    """
+    miss = _box_missing(box, by_espn)
+    path = vm._cache('box2')
+    if miss and (not os.path.exists(path) or time.time() - os.path.getmtime(path) > 1800):
+        print(f'  Box scores missing for {len(miss)} teams that just played; re-pulling...')
+        box = vm.fetch_box(force=True)
+        miss = _box_missing(box, by_espn)
+    if miss:
+        print(f'  ! Box scores not posted yet: {", ".join(sorted(miss))}')
+    return box, miss
+
+
 def game_last(info, g):
     """
     Inputs for systems.cbb_track for this game: {team: (Eastern date of its previous game, turnovers forced per
@@ -581,11 +615,20 @@ def generate_html(power, metrics, days, info):
                                          g.get('hfa', 0.0 if g['neutral'] else HFA_POINTS), big)
             move += injury_row(info['wire'], g, margin)
             v2 = cm2.line(info.get('v2'), g['home'], g['away'], g['neutral'])
-            sysl = sy.cbb(cm2.season_day(g['kick'].date(), SEASON), v2, info['opened'].get(g['game_id']), g['market'],
-                          g['home'], g['away'], bool(g['score']))
-            sysl += sy.cbb_3p(info.get('p3') or {}, g['market'], g['home'], g['away'], bool(g['score']))
-            sysl += sy.cbb_track(game_last(info, g), g['kick'].date(), g['market'], g['home'], g['away'], bool(g['score']))
-            move += sy.tag_html(sysl, theme.esc, k=theme.k)
+            held = {t: d for t, d in (info.get('box_missing') or {}).items() if t in (g['home'], g['away'])}
+            if held:      # a team's latest game isn't in the stats yet: hold every stat-based strategy for this game
+                sysl = []
+                move += ('<div class="lmove strats">' + theme.k('Strategies') + '<span class="hint">On hold: '
+                         + theme.esc('; '.join(f"{t}'s {', '.join(x.strftime('%b %d').replace(' 0', ' ') for x in d)} game"
+                                               for t, d in held.items()))
+                         + ' is not in our stats yet, so stat-based strategies and our ratings are a game behind. '
+                           'This clears on the next hourly update after it posts.</span></div>')
+            else:
+                sysl = sy.cbb(cm2.season_day(g['kick'].date(), SEASON), v2, info['opened'].get(g['game_id']), g['market'],
+                              g['home'], g['away'], bool(g['score']))
+                sysl += sy.cbb_3p(info.get('p3') or {}, g['market'], g['home'], g['away'], bool(g['score']))
+                sysl += sy.cbb_track(game_last(info, g), g['kick'].date(), g['market'], g['home'], g['away'], bool(g['score']))
+                move += sy.tag_html(sysl, theme.esc, k=theme.k)
             pr = '' if big or g['score'] else val.card_row('cbb', margin, g['market'], g['home'], g['away'], info['val_live'])
             t_ours = info['total_fn'](g['home'], g['away'], g['neutral']) if info.get('total_fn') else np.nan
             pr += '' if g['score'] else tot.card_row('cbb', t_ours, g.get('total', np.nan))
@@ -729,6 +772,7 @@ def main():
     print('\n[1/4] Teams, box scores & power ratings...')
     teams = vm.d1_teams()
     box = vm.fetch_box()
+    box, missing = box_complete(box, {str(e).split('.')[0]: t for t, e in zip(teams['team'], teams['espn_id']) if pd.notna(e)})
     # last season's final ratings: committed cbb_prior_{season}.json, else built once from last season's cached box scores
     prev = f'cbbv_box2_{SEASON - 1}.csv'
     prior = cm.load_prior(SEASON, pd.read_csv(prev) if os.path.exists(prev) else None,
@@ -839,7 +883,7 @@ def main():
                                          'opened': {str(r['game_id']): r.get('opened') for r in market_rows},
                                          'v2': model_v2, 'p3': cm2.p3_net(box, set(teams['team'])),
                                          'last': cm2.last_games(box, set(teams['team'])),
-                                         'espn_dates': espn_dates(by_espn)})
+                                         'espn_dates': espn_dates(by_espn), 'box_missing': missing})
 
 
 if __name__ == '__main__':

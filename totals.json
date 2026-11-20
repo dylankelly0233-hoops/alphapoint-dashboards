@@ -1,7 +1,7 @@
 {
  "sports": {
   "nfl": {
-   "n": 3176,
+   "n": 3179,
    "seasons": [
     2015,
     2016,
@@ -18,17 +18,17 @@
    ],
    "mae_ours": 10.93,
    "mae_close": 10.44,
-   "sigma": 13.22,
+   "sigma": 13.21,
    "n_open": 3148,
    "share": 0.132,
    "share_se": 0.071,
    "moved_toward": 0.616,
    "n_moved": 2128,
    "mae_open": 10.67,
-   "share_close": -0.204
+   "share_close": -0.206
   },
   "cfb": {
-   "n": 7181,
+   "n": 7189,
    "seasons": [
     2022,
     2023,
@@ -39,29 +39,29 @@
    "mae_ours": 13.01,
    "mae_close": 12.61,
    "sigma": 15.84,
-   "n_open": 3540,
-   "share": 0.173,
+   "n_open": 3548,
+   "share": 0.174,
    "share_se": 0.063,
-   "moved_toward": 0.56,
-   "n_moved": 2177,
-   "mae_open": 12.78,
+   "moved_toward": 0.561,
+   "n_moved": 2180,
+   "mae_open": 12.79,
    "share_close": 0.108
   },
   "cbb": {
-   "n": 5254,
+   "n": 5751,
    "seasons": [
     2026
    ],
-   "mae_ours": 14.05,
-   "mae_close": 13.54,
-   "sigma": 17.53,
-   "n_open": 5189,
-   "share": 0.296,
-   "share_se": 0.057,
-   "moved_toward": 0.582,
-   "n_moved": 3523,
-   "mae_open": 13.75,
-   "share_close": 0.111
+   "mae_ours": 13.99,
+   "mae_close": 13.52,
+   "sigma": 17.56,
+   "n_open": 5675,
+   "share": 0.263,
+   "share_se": 0.058,
+   "moved_toward": 0.587,
+   "n_moved": 3789,
+   "mae_open": 13.73,
+   "share_close": 0.076
   },
   "epl": {
    "n": 1356,
@@ -85,34 +85,34 @@
    "mae_close": null
   },
   "nba": {
-   "n": 1166,
+   "n": 1204,
    "seasons": [
     2026,
     2027
    ],
-   "mae_ours": 14.93,
-   "mae_close": 14.56,
-   "sigma": 18.39,
-   "n_open": 1166,
-   "share": 0.303,
-   "share_se": 0.117,
-   "moved_toward": 0.607,
-   "n_moved": 822,
-   "mae_open": 14.86,
-   "share_close": 0.036
+   "mae_ours": 14.9,
+   "mae_close": 14.52,
+   "sigma": 18.33,
+   "n_open": 1204,
+   "share": 0.301,
+   "share_se": 0.116,
+   "moved_toward": 0.608,
+   "n_moved": 850,
+   "mae_open": 14.83,
+   "share_close": 0.024
   },
   "nhl": {
-   "n": 1198,
+   "n": 1247,
    "unit": "prob",
-   "share": -0.758,
-   "share_se": 0.292,
+   "share": -0.798,
+   "share_se": 0.287,
    "vs": "closing price",
    "brier_ours": 0.2549,
-   "brier_close": 0.2488,
+   "brier_close": 0.2487,
    "sigma": null,
    "mae_ours": null,
    "mae_close": null
   }
  },
- "updated": "2026-11-15"
+ "updated": "2026-11-20"
 }

@@ -221,8 +221,8 @@ def los_item(t, market):
 
 
 CBB_TRACK = {   # prior_game_systems.py (2026-11-19): met the strict bar at the opener, but within luck for 86 tests
-    'cbb_b2b_fade': ('Back-to-back team vs a rested opponent (fade)', '57% of 395 vs the opener; 52% of 1,432 vs the close'),
-    'cbb_tov_carry': ('Forced turnovers on 25%+ of possessions last game (back)', '54% of 930 vs the opener; 52% of 4,336 vs the close'),
+    'cbb_b2b_fade': ('Back-to-back team vs a rested opponent (fade)', '55% of 559 vs the opener; 52% of 1,710 vs the close'),
+    'cbb_tov_carry': ('Forced turnovers on 25%+ of possessions last game (back)', '54% of 1,090 vs the opener; 52% of 4,746 vs the close'),
 }
 
 

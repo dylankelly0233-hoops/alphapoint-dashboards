@@ -40,7 +40,7 @@ def _fetch_cbb(season, since=None):
         for g in vm.cbbd_get('/games', {'season': season, 'startDateRange': a, 'endDateRange': b}) or []:
             rows.append({'date': (g.get('startDate') or '')[:10], 'home': g.get('homeTeam'), 'away': g.get('awayTeam'),
                          'neutral': bool(g.get('neutralSite')), 'att': g.get('attendance')})
-    return pd.DataFrame(rows, columns=['date', 'home', 'away', 'neutral', 'att'])
+    return pd.DataFrame(rows, columns=['date', 'home', 'away', 'neutral', 'att']).drop_duplicates(['date', 'home', 'away'])
 
 
 def _fetch_cfb(season, since=None):
@@ -69,6 +69,10 @@ def history(sport):
     for season in (cur - 1, cur):
         path = _cache(sport, season)
         df = pd.read_csv(path) if os.path.exists(path) else None
+        if sport == 'cbb' and df is not None:
+            import cbb_value_metrics as cvm
+            if cvm.needs_full(path):          # written before the date-window fix: missing games, re-pull in full
+                df = None
         stale = df is None or (season == cur and time.time() - os.path.getmtime(path) > REFRESH_H * 3600)
         if stale:
             try:
@@ -80,6 +84,9 @@ def history(sport):
                 else:
                     df = fetch(season)
                 df.to_csv(path, index=False)
+                if sport == 'cbb':
+                    import cbb_value_metrics as cvm
+                    cvm.mark_full(path)
             except Exception as e:
                 print(f'  ! attendance fetch failed for {sport} {season}: {e}')
                 if df is None:

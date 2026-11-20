@@ -96,9 +96,8 @@ NFL_TEAMS = {
 # 2. UTILITIES
 # ==========================================
 def cache_stale(path, hours=CACHE_HOURS):
-    if not os.path.exists(path):
-        return True
-    return (datetime.now().timestamp() - os.path.getmtime(path)) / 3600 > hours
+    import freshness as fr          # also stale once a game has gone final since the last fetch
+    return fr.stale(path, hours, 'nfl')
 
 
 def calibrate_sigmoid(diffs, outcomes, neutral, max_k=50.0):

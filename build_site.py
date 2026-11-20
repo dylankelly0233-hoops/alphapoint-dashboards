@@ -809,14 +809,14 @@ STRATEGY_GUIDE = [   # (key, sports, what it does, why it can work) -- plain Eng
      'It is about timing: if you already like that side, earlier has usually been better. It does not say the side wins.'),
     ('cbb_b2b_fade', 'College basketball (tracking only)',
      'A team playing on back-to-back days, against an opponent with at least two days off. Backs the rested team.',
-     'Tired legs are real, but the market already knows about schedules: against the opener this won 57% of 395, '
+     'Tired legs are real, but the market already knows about schedules: against the opener this won 55% of 559, '
      'against the closing line only 52%. It was one of 86 prior-game ideas we tested, and one or two of those should look '
      'this good by luck alone, so it has to prove itself on new games.'),
     ('cbb_tov_carry', 'College basketball (tracking only)',
      'A team whose defense forced turnovers on a quarter or more of the other team\'s possessions in its last game. Backs '
      'that team (only when its opponent did not also do it).',
      'A defense that forces lots of turnovers may be better than its box-score ratings show, and the market may be '
-     'slow to give it credit, especially as an underdog. Steady every season (52% of 4,336 vs the close, 54% of 930 vs '
+     'slow to give it credit, especially as an underdog. Steady every season (52% of 4,746 vs the close, 54% of 1,090 vs '
      'the opener), but the edge is small and it was one of 86 ideas tested.'),
     ('nfl_off_sr', 'NFL (tracking only)',
      'Backs the team whose offense has the better success rate this season (how often a play gains enough: 40% of '
@@ -881,8 +881,8 @@ def strategy_record(key, sysr):
                       'so only bet it at −110 or better',
             'watch': 'the line moved toward our number 58%+ of the time in these gap sizes',
             'cfb_los': '55% of 703 against the opener in past seasons (not proven)',
-            'cbb_b2b_fade': '57% of 395 against the opener, 52% of 1,432 against the close (not proven)',
-            'cbb_tov_carry': '54% of 930 against the opener, 52% of 4,336 against the close (not proven)',
+            'cbb_b2b_fade': '55% of 559 against the opener, 52% of 1,710 against the close (not proven)',
+            'cbb_tov_carry': '54% of 1,090 against the opener, 52% of 4,746 against the close (not proven)',
             'nfl_off_sr': '53% of 4,030 against the opener, 52% of 4,227 against the close (not proven)',
             'nfl_def_fade': '54% of 1,061 against the close, 53% of 1,004 against the opener (not proven)'}.get(key, '')
 

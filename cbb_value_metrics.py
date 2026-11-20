@@ -66,7 +66,8 @@ def _cache(name):
 
 
 def _stale(path):
-    return not os.path.exists(path) or (datetime.now().timestamp() - os.path.getmtime(path)) / 3600 > CACHE_HOURS
+    import freshness as fr          # also stale once a game has gone final since the last fetch
+    return fr.stale(path, CACHE_HOURS, 'cbb')
 
 
 def cbbd_get(endpoint, params):
@@ -83,14 +84,37 @@ REFETCH_DAYS = 14   # on refresh, re-pull only the last two weeks; older games c
 
 
 def _windows(season, since=None):
-    """Weekly date windows across the season — the API caps each response at 3,000 rows."""
+    """
+    Weekly date windows across the season — the API caps each response at 3,000 rows.
+    The API's endDateRange stops at the START of that day (UTC), so each window asks through the next day: a window
+    ending on its own last day silently dropped most of that day's games (found 2026-11-20: Nov 19 returned 50 team
+    rows instead of 132, about one day in seven missing since the first fetch). Windows now overlap by a day; every
+    caller drops duplicates.
+    """
     start, end = date(season - 1, 10, 25), min(date(season, 4, 15), date.today() + timedelta(days=1))
     if since:
         start = max(start, since)
     while start <= end:
         stop = min(start + timedelta(days=6), end)
-        yield start.isoformat(), stop.isoformat()
+        yield start.isoformat(), (stop + timedelta(days=1)).isoformat()
         start = stop + timedelta(days=1)
+
+
+WINDOW_FIX = '2026-11-20'     # caches written before the date-window fix are missing games: re-pull them in full once
+
+
+def needs_full(path):
+    """True when this cache predates the window fix (its _ver.csv marker is missing or older), so it must be re-pulled."""
+    m = path.replace('.csv', '_ver.csv')
+    try:
+        return open(m).read().strip() != WINDOW_FIX
+    except OSError:
+        return True
+
+
+def mark_full(path):
+    with open(path.replace('.csv', '_ver.csv'), 'w') as f:
+        f.write(WINDOW_FIX)
 
 
 # ==========================================
@@ -122,16 +146,17 @@ def _box_stats(s):
             'paint': g('points').get('inPaint', 0), 'fastbreak': g('points').get('fastBreak', 0)}
 
 
-def fetch_box():
+def fetch_box(force=False):
     """
     One row per team per completed D1 game: points, possessions, and the box-score fields in BOX_STATS for
     both sides (opponent's prefixed o_). Feeds the value metrics, the adjusted-efficiency model and matchups.
     """
     path = _cache('box2')
-    if not _stale(path):
+    full = needs_full(path)
+    if not force and not full and not _stale(path):
         return pd.read_csv(path)
     since = date.today() - timedelta(days=REFETCH_DAYS)
-    old = pd.read_csv(path) if os.path.exists(path) else pd.DataFrame()
+    old = pd.read_csv(path) if os.path.exists(path) and not full else pd.DataFrame()
     keep = old[pd.to_datetime(old['date']).dt.date < since] if not old.empty else old
     rows = keep.to_dict('records')
     for a, b in _windows(SEASON, since if not keep.empty else None):
@@ -152,17 +177,19 @@ def fetch_box():
             + BOX_STATS + [f'o_{k}' for k in BOX_STATS])
     df = pd.DataFrame(rows, columns=cols).drop_duplicates(['game_id', 'team'])   # keeps a header even before opening night
     df.to_csv(path, index=False)
+    mark_full(path)
     return df
 
 
 def fetch_spreads():
     """Closing spread per game (home perspective, negative = home favored)."""
     path = _cache('spreads')
-    if not _stale(path):
+    full = needs_full(path)
+    if not full and not _stale(path):
         return pd.read_csv(path)
     rank = {b: i for i, b in enumerate(BOOK_PRIORITY)}
     since = date.today() - timedelta(days=REFETCH_DAYS)
-    old = pd.read_csv(path) if os.path.exists(path) else pd.DataFrame()
+    old = pd.read_csv(path) if os.path.exists(path) and not full else pd.DataFrame()
     recent_ids = set(fetch_box().query('date >= @since.isoformat()')['game_id']) if not old.empty else set()
     rows = old[~old['game_id'].isin(recent_ids)].to_dict('records') if not old.empty else []
     for a, b in _windows(SEASON, since if not old.empty else None):
@@ -173,6 +200,7 @@ def fetch_spreads():
                 rows.append({'game_id': g['gameId'], 'home_team': g['homeTeam'], 'spread': float(hit['spread'])})
     df = pd.DataFrame(rows, columns=['game_id', 'home_team', 'spread']).drop_duplicates('game_id')
     df.to_csv(path, index=False)
+    mark_full(path)
     return df
 
 

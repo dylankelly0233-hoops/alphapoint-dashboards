@@ -73,7 +73,8 @@ def _cache(name):
 
 
 def _stale(path, hours=CACHE_HOURS):
-    return not os.path.exists(path) or (time.time() - os.path.getmtime(path)) / 3600 > hours
+    import freshness as fr          # also stale once a game has gone final since the last fetch
+    return fr.stale(path, hours, 'nba')
 
 
 ESPN_HOSTS = ['https://site.api.espn.com', 'https://site.web.api.espn.com']   # same API on two hosts

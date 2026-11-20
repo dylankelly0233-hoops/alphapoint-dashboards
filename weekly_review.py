@@ -337,9 +337,9 @@ def best_spots_record(scored):
 
 TRACKED = {   # key -> (name, backtest) for the weekly 'Tracking' section
     'los': ('CFB Trench Warfare (stuff-rate edge 10+ pts)', '55% of 703 vs the opener'),
-    'cbb_v2_open': ('CBB Hoops Opener Snipe', '56% of 374 vs the opener, settings picked after the fact'),
-    'cbb_b2b_fade': ('CBB Tired Legs Fade', '57% of 395 vs the opener'),
-    'cbb_tov_carry': ('CBB Takeaway Carryover', '54% of 930 vs the opener'),
+    'cbb_v2_open': ('CBB Hoops Opener Snipe', '60% of 410 vs the opener, settings picked after the fact'),
+    'cbb_b2b_fade': ('CBB Tired Legs Fade', '55% of 559 vs the opener'),
+    'cbb_tov_carry': ('CBB Takeaway Carryover', '54% of 1,090 vs the opener'),
     'nfl_bye_edge': ('NFL Fresh Legs', '54% of 556 vs the opener, near miss'),
     'nfl_div_under': ('NFL Family Feud Under', '53% of 1,195 vs the opener, near miss'),
     'nfl_off_sr': ('NFL Moving the Chains (better offensive success rate)', '53% of 4,030 vs the opener'),

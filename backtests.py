@@ -238,6 +238,7 @@ def cbb_games(seasons=(2025, 2026, 2027)):
                 if ls:
                     lines[l.get('gameId') or l.get('id')] = (-float(ls[0]['spread']),
                                                              -float(ls[0]['spreadOpen']) if ls[0].get('spreadOpen') is not None else None)
+        games = list({g.get('id'): g for g in games}.values())        # windows overlap by a day
         df = pd.DataFrame([{'date': (g.get('startDate') or '')[:10], 'season': s, 'home': g.get('homeTeam'), 'away': g.get('awayTeam'),
                             'result': (g.get('homePoints') or 0) - (g.get('awayPoints') or 0), 'neutral': bool(g.get('neutralSite')),
                             'close': (lines.get(g.get('id')) or (None, None))[0], 'open': (lines.get(g.get('id')) or (None, None))[1]}
