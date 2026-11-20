@@ -1,6 +1,6 @@
 # Research Assistant: why does our line differ from the market? (runbook for scheduled Claude runs)
 
-Used by the daily NFL (10 AM) and CFB (9 AM) runs, after the Injury Wire step, with sport = `nfl` or `cfb`. Don't edit code.
+Used by every NFL run (daily 10 AM; Mon/Wed/Thu/Fri 5 PM; Sunday 11:45 AM) and CFB run (daily 9 AM; Thu/Fri/Sat 6 PM), after the Injury Wire step. Each run re-researches every game, since verdicts change when players are ruled out or cleared, with sport = `nfl` or `cfb`. Don't edit code.
 
 **Input:** `DIR\gap_candidates_{sport}.json`, written by the dashboard script you just ran. Each game in `games` has our line (`ours_text`, `ours`) and the market's (`market_text`, `market`), both as home margins (positive = home favored), the `gap` (ours − market), `we_like` (the side our line is higher on than the market), the opener, each rating source's own line (`sources`), weather, the curated Injury Wire items for both teams (`injury_wire`), and each team's recent `history` against the market: `higher` / `lower` = in how many of its last `n` games our line was 1+ point higher / lower on that team than the market, `avg` = the average gap, `swing` = how far today's gap moved from that team's previous game.
 
