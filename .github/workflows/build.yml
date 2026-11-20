@@ -99,5 +99,7 @@ jobs:
       - uses: actions/upload-pages-artifact@v3
         with:
           path: site
+      # GitHub sometimes can't see a just-uploaded artifact yet ("No artifacts named github-pages", 2026-11-20): wait a bit
+      - run: sleep 20
       - id: deploy
         uses: actions/deploy-pages@v4
