@@ -1,0 +1,41 @@
+{"sport": "nfl", "generated": "2026-11-20T08:30:00-05:00", "games": {
+ "2026_12_NE_LAC": {"verdict": "explained",
+  "summary": "Drake Maye's fractured ankle: the market has Tommy DeVito starting, and our ratings still rate New England with Maye.",
+  "reasons": [
+   {"text": "QB Drake Maye fractured his right ankle in the Week 10 loss in Munich and could miss the rest of the season; Tommy DeVito is expected to start.", "source": "theScore", "url": "https://www.thescore.com/nfl/news/3656720", "date": "2026-11-16"},
+   {"text": "New England comes off two straight blowout losses (Lions, Packers) and a bye; the game was moved to 4:05 PM ET Nov 29.", "source": "Boston.com", "url": "https://www.boston.com/sports/new-england-patriots/2026/11/17/patriots-chargers-game-flexed-out-of-sunday-night-football/", "date": "2026-11-17"}],
+  "returning": []},
+ "2026_11_ARI_KC": {"verdict": "partly",
+  "summary": "Arizona is down to rookie Carson Beck at QB; that covers some of the 2.5-point gap, not all of it.",
+  "reasons": [
+   {"text": "QB Gardner Minshew (elbow) is on IR after UCL surgery; rookie Carson Beck started the 34-6 loss to the Rams.", "source": "ESPN", "url": "https://www.espn.com/nfl/injuries", "date": "2026-11-18"},
+   {"text": "DraftKings has Kansas City -16.5 with a 40.5 total.", "source": "SI", "url": "https://www.si.com/betting/cardinals-vs-chiefs-prediction-odds-spread-injuries-trends-for-nfl-week-11-2026", "date": "2026-11-18"},
+   {"text": "Pushing the other way: Chiefs G Trey Smith (concussion), OT Jaylon Moore (ankle) and RB Kenneth Walker III (groin) missed Wednesday's practice.", "source": "ESPN", "url": "https://www.espn.com/nfl/injuries", "date": "2026-11-19"}],
+  "returning": []},
+ "2026_11_MIN_SF": {"verdict": "partly",
+  "summary": "Kyler Murray's hamstring likely keeps him out until Nov 29, so Minnesota starts Kirk Cousins; our ratings mix weeks with and without Murray.",
+  "reasons": [
+   {"text": "QB Kyler Murray (grade 2 hamstring) is targeting a return Nov 29 vs Atlanta, which would mean missing this game; Kirk Cousins started the 30-10 win at Green Bay.", "source": "The Fantasy Footballers", "url": "https://www.thefantasyfootballers.com/news/647733/kyler-murray-targeting-week-12-return/", "date": "2026-11-18"},
+   {"text": "WR Jordan Addison had thumb surgery and is out.", "source": "ESPN", "url": "https://www.espn.com/nfl/injuries", "date": "2026-11-18"}],
+  "returning": [{"team": "MIN", "player": "Jauan Jennings", "text": "WR Jauan Jennings (calf) practiced fully Wednesday after missing time.", "url": "https://www.espn.com/nfl/injuries"}]},
+ "2026_11_NO_CHI": {"verdict": "partly",
+  "summary": "New Orleans' offensive line is in pieces and Chicago is 7-2 off its bye; that explains part of the 3-point gap.",
+  "reasons": [
+   {"text": "Saints OT Asim Richards is out for weeks, and OT Taliese Fuaga and C Erik McCoy are doubtful: three offensive line starters.", "source": "ESPN", "url": "https://www.espn.com/nfl/injuries", "date": "2026-11-17"},
+   {"text": "Chicago (7-2) comes off its bye; Circa lists Bears -10.5, so books differ by a point.", "source": "WalterFootball", "url": "https://walterfootball.com/nflteamhub2026-week11-saints-at-bears.php", "date": "2026-11-18"},
+   {"text": "Reports differ on whether Caleb Williams, who has not played since Week 9 per Squawka, is back; check his status before betting.", "source": "SI", "url": "https://www.si.com/betting/saints-vs-bears-prediction-odds-spread-injuries-trends-for-nfl-week-11-2026", "date": "2026-11-18"}],
+  "returning": []},
+ "2026_12_CHI_DET": {"verdict": "partly",
+  "summary": "Aidan Hutchinson's season-ending ACL tear moved this line from Detroit -2.5 (spring) to Chicago -2.5; that's worth about 2 of our 4-point gap.",
+  "reasons": [
+   {"text": "DE Aidan Hutchinson (torn ACL) went on IR and is out for the season; C Cade Mays (ankle) is also hurt.", "source": "ESPN", "url": "https://www.espn.com/nfl/injuries", "date": "2026-11-18"},
+   {"text": "The early (May) line had Detroit -2.5, so the market has swung about 5 points since then.", "source": "FOX Sports", "url": "https://amp.foxsports.com/stories/nfl/2026-nfl-thanksgiving-odds-lines-spreads-what-know-all-4-games", "date": "2026-05-14"}],
+  "returning": []},
+ "2026_12_NYJ_MIA": {"verdict": "partly",
+  "summary": "Miami is on Kyle McCord with Malik Willis on IR; that explains part of the gap, but some books still have Miami favored.",
+  "reasons": [
+   {"text": "QB Malik Willis (groin/core) is on IR; Kyle McCord started the Week 10 loss.", "source": "ESPN", "url": "https://www.espn.com/nfl/injuries", "date": "2026-11-16"},
+   {"text": "Jets QB Geno Smith (ankle) was limited but says he will play.", "source": "ESPN", "url": "https://www.espn.com/nfl/injuries", "date": "2026-11-18"},
+   {"text": "Books disagree: StatSniper shows DraftKings at Miami -1.5, against the Jets -3 we use.", "source": "StatSniper", "url": "https://statsniper.com/leagues/nfl/game/2026/week-12/nyj-vs-mia/", "date": "2026-11-19"}],
+  "returning": []}
+}}
