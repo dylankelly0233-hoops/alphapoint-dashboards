@@ -370,6 +370,7 @@ def team_log(full, abbr):
 
 def generate_html(power, vals, sched, week, info):
     meta = fetch_team_meta()
+    top8 = set(power.loc[power['rank'] <= 8, 'abbr'])         # featured games: both teams in our top quarter
     sd = float(power['composite'].std())
     s = info['scale']
     wk_label = f'Week {week}'
@@ -525,7 +526,10 @@ def generate_html(power, vals, sched, week, info):
                              [tag_label] if tag_label else [],
                              [(nick(away), sig(r.away_value)), (nick(home), sig(r.home_value))],
                              info['opened'].get(str(r.game_id)), key='nfl', total=(t_ours, r.total), gid=r.game_id,
-                             systems=sysl))
+                             systems=sysl,
+                             feat={'key': 'nfl', 'home_key': r.home, 'away_key': r.away, 'held': bool(held),
+                                   'marquee': ('Top-8 matchup' if r.home in top8 and r.away in top8 else None),
+                                   'tv': fx.nfl_slot(r.kick, r.neutral)}))
         card = theme.game_card(theme.kick_text(r.kick), 'Neutral site' if r.neutral else '',
                                side(r.away, away, r.away_value), side(r.home, home, r.home_value),
                                proj, mkt, r.score,

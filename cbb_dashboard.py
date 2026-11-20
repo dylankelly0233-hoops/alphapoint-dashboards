@@ -385,6 +385,7 @@ def upcoming_games(by_espn, focus):
                 'kick': pd.Timestamp(ev['date']).tz_convert('America/New_York'),
                 'home': hn, 'away': an, 'home_espn': h.get('id'), 'away_espn': a.get('id'),
                 'neutral': bool(comp.get('neutralSite')), 'market': _market(comp, h.get('abbreviation')),
+                'tv': ex.national_tv(comp),
                 'total': _total(comp),
                 'score': f"{side['away'].get('score')}-{side['home'].get('score')}" if done else '',
             })
@@ -695,7 +696,10 @@ def generate_html(power, metrics, days, info):
             spots.append(ex.spot('CBB', 'cbb.html#games', g['kick'], g['away'], g['home'], margin, g['market'], [],
                                  [(t, _signal(comp.get(t), games_played.get(t, 0))) for t in (g['away'], g['home'])],
                                  info['opened'].get(g['game_id']), big, key='cbb', total=(t_ours, g.get('total')),
-                                 gid=g['game_id'], ctx={'p4': g['home'] in p4set or g['away'] in p4set}, systems=sysl))
+                                 gid=g['game_id'], ctx={'p4': g['home'] in p4set or g['away'] in p4set}, systems=sysl,
+                                 feat={'key': 'cbb', 'home_key': g['home'], 'away_key': g['away'], 'held': bool(held),
+                                       'marquee': next(iter(info['featured'].get(g['game_id']) or []), None),
+                                       'tv': g.get('tv') or None}))
         sections += (f'<div class="sechead"><h2>{day.strftime("%A, %b %d").replace(" 0", " ")}</h2>'
                      f'<span class="hint">{len(games)} game{"" if len(games) == 1 else "s"}</span></div>'
                      f'<div class="games">{cards}</div>')

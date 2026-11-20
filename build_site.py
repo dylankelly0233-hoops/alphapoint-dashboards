@@ -43,6 +43,26 @@ DASHBOARDS = [
 ]
 
 LANDING_CSS = """
+.feat { padding: 16px 18px; margin: 0 0 16px; }
+.feathead h2 { margin: 0 0 4px; } .feathead .hint { display: block; margin-bottom: 6px; }
+.featday { font: 700 12px/1 var(--display); letter-spacing: 1px; text-transform: uppercase; color: var(--muted); margin: 14px 0 8px; }
+.featgrid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.featcard { display: flex; flex-direction: column; gap: 6px; padding: 12px 14px; text-decoration: none; color: var(--ink);
+            border-top: 3px solid var(--accent); }
+.featcard:hover, .featcard:focus-visible { box-shadow: 0 8px 20px rgba(10, 20, 40, .12); outline: none; }
+.fmeta { font-size: 12px; color: var(--muted); } .fsport { font: 700 11px/1 var(--display); letter-spacing: .8px;
+         background: var(--ink); color: var(--bg, #fff); border-radius: 3px; padding: 3px 5px; margin-right: 6px; }
+.fmatch { font: 700 17px/1.2 var(--display); } .fmatch span { color: var(--muted); font-weight: 500; }
+.flines { font-size: 13px; color: var(--muted); } .flines b { color: var(--ink); }
+.fwhy { display: flex; flex-wrap: wrap; gap: 5px; }
+.fchip { font-size: 11.5px; padding: 3px 7px; border-radius: 10px; background: rgba(100, 116, 139, .14); }
+.fchip.marquee { background: rgba(37, 99, 235, .14); } .fchip.proven { background: rgba(15, 118, 110, .16); }
+.fchip.story { background: rgba(180, 83, 9, .14); } .fchip.tv { background: rgba(124, 58, 237, .13); }
+.fgo { font-size: 12.5px; color: var(--accent); font-weight: 600; margin-top: auto; }
+details.allspots { margin: 0 0 16px; } details.allspots > summary { cursor: pointer; font-weight: 700; color: var(--accent);
+                   padding: 8px 2px; list-style: none; } details.allspots > summary::-webkit-details-marker { display: none; }
+@media (max-width: 760px) { .featgrid { grid-template-columns: 1fr; } }
+
 .tiles { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin: 0 0 18px; }
 .tile { display: flex; flex-direction: column; gap: 4px; padding: 14px 16px 12px; text-decoration: none; color: var(--ink);
         border-top: 4px solid var(--accent); transition: transform .15s ease, box-shadow .15s ease; }
@@ -489,6 +509,111 @@ def strict_proof(pr, key=None, check_criteria=True):
     if not (n >= sy.STRICT_N and n and r - 1.96 * (r * (1 - r) / n) ** 0.5 >= sy.STRICT_LO):
         return False
     return not check_criteria or (key is not None and sy.criteria_ok(key))
+
+
+FEAT_POINTS = {'marquee': 2, 'competitive': 1, 'tv': 1, 'story': 1, 'proven': 1}
+FEAT_MIN, FEAT_PER_DAY, FEAT_PER_SPORT = 2, 3, 2
+CLOSE_LINE = {'nfl': 3.0, 'cfb': 3.0, 'nba': 4.0, 'cbb': 4.0}
+
+
+def _proven_names(s):
+    """Names of the proven strategies on this game (the same strict filter Best spots uses)."""
+    names = []
+    if any(label.startswith('Teaser') for label, _ in s.get('tags') or []) and sy.criteria_ok('teaser'):
+        names.append(sy.NAMES['teaser'])
+    names += [sy.NAMES.get(x.get('key'), 'System') for x in s.get('systems') or [] if not x.get('tracking')]
+    if not s.get('flags'):
+        for x in s.get('priced') or []:
+            if x.get('proof') and strict_proof(x['proof'], f"{s['sport'].lower()}_{x['kind'].lower()}|{x['proof']['slice']}"):
+                names.append(sy.NAMES['priced'])
+    return list(dict.fromkeys(names))
+
+
+def featured_games():
+    """
+    The home page's 2-3 featured games per day (Dylan, 2026-11-20: easier to take in than a long list; 'mostly
+    interesting games', strategies are one ingredient). Each upcoming game scores:
+      marquee matchup (ranked vs ranked, a top-10 team in a close game, or both teams in our top quarter)  2
+      competitive (market spread 3 or less in football, 4 or less in basketball)                             1
+      prime time / national TV                                                                               1
+      a storyline: a Research Assistant rating-watch item on either team, or an unexplained gap             1
+      a proven strategy applies (once)                                                                       1
+      tracking strategies: tiebreaker only
+    It needs FEAT_MIN points; up to FEAT_PER_DAY per day and FEAT_PER_SPORT per sport, ties to the bigger gap from the
+    market, then the earlier start. Lopsided games and games on hold (data not in yet) are skipped.
+    """
+    import gap_research as gr
+    spots = []
+    for sport in BEST_SPORTS:
+        try:
+            with open(os.path.join(HERE, f'spots_{sport}.json'), encoding='utf-8') as f:
+                spots += json.load(f)
+        except (OSError, ValueError):
+            continue
+    now = datetime.now().astimezone()
+    today = now.date()
+    cands = []
+    for s in spots:
+        f = s.get('feat') or {}
+        dt = datetime.fromisoformat(s['kick'])
+        if dt <= now or s.get('tbd') or (dt.date() - today).days > 1 or 'lopsided' in (s.get('flags') or []) \
+                or f.get('held') or s.get('market_num') is None:
+            continue
+        key = f.get('key') or s['sport'].lower()
+        chips, score = [], 0.0
+        if f.get('marquee'):
+            score += FEAT_POINTS['marquee']; chips.append(('marquee', f['marquee']))
+        if abs(s['market_num']) <= CLOSE_LINE.get(key, 3.0):
+            score += FEAT_POINTS['competitive']; chips.append(('close', f'Close game: {s["market"]}'))
+        if f.get('tv'):
+            score += FEAT_POINTS['tv']; chips.append(('tv', f['tv']))
+        notes = gr.notes(key)
+        story = []
+        for tk, tn in ((f.get('away_key'), s['away']), (f.get('home_key'), s['home'])):
+            w = ((notes.get('teams') or {}).get(tk) or {}).get('watch') or []
+            if w:
+                story.append((tn, w[0]))
+        if story or gr.verdict(key, s.get('gid')) == 'unexplained':
+            score += FEAT_POINTS['story']
+            for tn, it in story:
+                chips.append(('story', f'News: {tn}', it.get('text', '')))
+            if gr.verdict(key, s.get('gid')) == 'unexplained':
+                chips.append(('story', 'Unexplained gap with the market'))
+        proven = _proven_names(s)
+        if proven:
+            score += FEAT_POINTS['proven']
+            chips += [('proven', n) for n in proven]
+        tracking = [x for x in s.get('systems') or [] if x.get('tracking')]
+        if score < FEAT_MIN:
+            continue
+        cands.append((score + 0.01 * min(len(tracking), 5), s.get('edge') or 0, dt, s, chips))
+    days = {}
+    for c in sorted(cands, key=lambda c: (-c[0], -c[1], c[2])):
+        d = c[2].date()
+        picked = days.setdefault(d, [])
+        if len(picked) < FEAT_PER_DAY and sum(1 for x in picked if x[3]['sport'] == c[3]['sport']) < FEAT_PER_SPORT:
+            picked.append(c)
+    if not days:
+        return ('<section class="card feat"><h2>Featured games</h2><p class="hint">Nothing stands out in the next two '
+                'days. Every game is in its sport\'s tab.</p></section>')
+    html = ''
+    for d in sorted(days):
+        nice = d.strftime('%a %b %d').replace(' 0', ' ')
+        html += f'<h3 class="featday">{"Today" if d == today else "Tomorrow"} · {theme.esc(nice)}</h3><div class="featgrid">'
+        for score, edge, dt, s, chips in sorted(days[d], key=lambda c: c[2]):
+            t = dt.astimezone().strftime('%I:%M %p').lstrip('0')
+            chip = lambda c: (f'<span class="fchip {c[0]}"' + (f' title="{theme.esc(c[2])}"' if len(c) > 2 else '')
+                              + f'>{theme.esc(c[1])}</span>')
+            html += (f'<a class="card featcard" href="{theme.esc(s["page"])}">'
+                     f'<span class="fmeta"><span class="fsport">{theme.esc(s["sport"])}</span>{theme.esc(t)} ET</span>'
+                     f'<span class="fmatch">{theme.esc(s["away"])} <span>@</span> {theme.esc(s["home"])}</span>'
+                     f'<span class="flines">Ours <b>{theme.esc(s["ours"])}</b> · Market <b>{theme.esc(s["market"])}</b></span>'
+                     f'<span class="fwhy">{"".join(chip(c) for c in chips)}</span>'
+                     f'<span class="fgo">Open game →</span></a>')
+        html += '</div>'
+    return ('<section class="card feat"><div class="feathead"><h2>Featured games</h2><span class="hint">The most '
+            'interesting games of the day: big matchups, close lines, prime time, news worth knowing. Research, not '
+            'picks; tap a game for its full card.</span></div>' + html + '</section>')
 
 
 def best_spots():
@@ -1001,7 +1126,10 @@ def landing(results):
         tiles += (f'<a class="card tile" href="{page}"><span class="abbr">{abbr}</span><span class="name">{theme.esc(name)}</span>'
                   f'<span class="cov">{theme.esc(coverage)}</span>{warn}<span class="go">Open →</span></a>')
     updated = datetime.now().strftime('%b %d, %I:%M %p').replace(' 0', ' ')
-    home = (f'<div class="tiles">{tiles}</div>{best_spots()}'
+    spots_html = best_spots()
+    n_proven = spots_html.count('<li data-sport')
+    home = (f'<div class="tiles">{tiles}</div>{featured_games()}'
+            f'<details class="allspots"><summary>All games with a proven strategy ({n_proven}) →</summary>{spots_html}</details>'
             f'<p class="hint updated">Updated {updated} ET · rebuilds every hour, 7 AM to 1 AM</p>')
     info = '<div class="info">' + ''.join(
         f'<section class="card"><h3>{theme.esc(title)}</h3><dl>'

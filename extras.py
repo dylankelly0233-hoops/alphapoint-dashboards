@@ -467,7 +467,7 @@ def save_first_totals(key):
 
 
 def spot(sport, page, kick, away, home, ours, market, tags=(), signals=(), opened=None, lopsided_game=False, tbd=False,
-         key=None, total=(None, None), gid=None, ctx=None, systems=(), open_src=None):
+         key=None, total=(None, None), gid=None, ctx=None, systems=(), open_src=None, feat=None):
     """
     One upcoming game for the home page. open_src: where `opened` came from ('cfbd' = the data provider's real opening
     line; None = the first line our hourly log saw). ours / market = home margins; tags = [(label, team the tag favors)];
@@ -499,7 +499,23 @@ def spot(sport, page, kick, away, home, ours, market, tags=(), signals=(), opene
             'open_num': None if _nan(opened) else float(opened), 'open_src': open_src or 'first seen',
             'open_total': first_total(key, gid, total[1]) if key else None,
             'systems': list(systems or []), 'gid': None if gid is None else str(gid),
-            'market_num': None if _nan(market) else float(market)}
+            'market_num': None if _nan(market) else float(market),
+            # featured-game signals (build_site.featured_games): {'key': sport, 'home_key', 'away_key', 'marquee',
+            # 'tv', 'held'}: teams keyed as in the Research Assistant notes
+            'feat': feat or {}}
+
+
+NATIONAL_TV = ('ESPN', 'ESPN2', 'ABC', 'CBS', 'FOX', 'FS1', 'NBC', 'TNT', 'TBS', 'truTV', 'NBA TV', 'Peacock', 'Prime Video',
+               'Amazon', 'NFL Network', 'ESPN+', 'Big Ten Network', 'BTN', 'SEC Network', 'ACC Network', 'CBSSN', 'NBCSN')
+
+
+def national_tv(comp):
+    """The national broadcast names ESPN lists for a game (featured-game signal), or ''."""
+    names = []
+    for b in comp.get('broadcasts') or []:
+        if (b.get('market') or 'national') == 'national':
+            names += [n for n in b.get('names') or [] if n]
+    return ', '.join(dict.fromkeys(names))
 
 
 def _val():

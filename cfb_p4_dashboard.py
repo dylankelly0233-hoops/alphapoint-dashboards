@@ -743,6 +743,10 @@ def generate_html(p4, vals, sched, week, season_type, info):
                              # every game on this page has a Power 4 team (or Notre Dame): the Power 4 slice applies
                              ctx={'conf': str(getattr(r, 'conf', '')).lower() in ('true', '1'),
                                   'p4': r.home in p4n or r.away in p4n}, systems=sysl,
+                             feat={'key': 'cfb', 'home_key': r.home, 'away_key': r.away, 'held': bool(held),
+                                   'marquee': next(iter(info['featured'].get(r.game_id) or []), None),
+                                   'tv': ('Prime time' if pd.Timestamp(r.kick).hour >= 19 or pd.Timestamp(r.kick).weekday() < 5 else None)
+                                         if r.kick is not None and not pd.isna(r.kick) and not getattr(r, 'tbd', False) else None},
                              open_src='cfbd' if str(r.game_id) in info.get('open_cfbd', ()) else None))
         card = theme.game_card(when, venue, side(r.away, r.away_rating, r.away_value),
                                side(r.home, r.home_rating, r.home_value), proj, mkt, r.score, edge, tag_html, move,

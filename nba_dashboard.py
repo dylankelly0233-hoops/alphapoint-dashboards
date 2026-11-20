@@ -165,7 +165,7 @@ def upcoming_games():
             games.append({
                 'game_id': str(ev['id']), 'kick': pd.Timestamp(ev['date']).tz_convert('America/New_York'),
                 'home': side['home']['team']['abbreviation'], 'away': side['away']['team']['abbreviation'],
-                'neutral': bool(comp.get('neutralSite')),
+                'neutral': bool(comp.get('neutralSite')), 'tv': ex.national_tv(comp),
                 'market': -float(spread) if spread is not None else np.nan,          # ESPN spread is home-perspective
                 'total': odds.get('overUnder'),
                 'score': f"{side['away'].get('score')}-{side['home'].get('score')}" if done else '',
@@ -243,6 +243,7 @@ def _signal(c, games):
 
 
 def generate_html(power, metrics, days, info):
+    top8 = set(power.loc[power['rank'] <= 8, 'abbr'])         # featured games: both teams in our top quarter
     tm_logo = dict(zip(power['abbr'], power['logo']))
     logo = lambda t: _logo(t, tm_logo)
     short = dict(zip(power['abbr'], power['short']))
@@ -421,7 +422,10 @@ def generate_html(power, metrics, days, info):
                                  [], [(short[t], _signal(comp.get(t), gp.get(t, 0))) for t in (g['away'], g['home'])],
                                  info['opened'].get(g['game_id']), key='nba', gid=g['game_id'],
                                  total=(info['total_fn'](g['home'], g['away'], g['neutral']) if info.get('total_fn') else None,
-                                        g.get('total'))))
+                                        g.get('total')),
+                                 feat={'key': 'nba', 'home_key': g['home'], 'away_key': g['away'], 'held': False,
+                                       'marquee': 'Top-8 matchup' if g['home'] in top8 and g['away'] in top8 else None,
+                                       'tv': g.get('tv') or None}))
         sections += (f'<div class="sechead"><h2>{day.strftime("%A, %b %d").replace(" 0", " ")}</h2>'
                      f'<span class="hint">{len(games)} game{"" if len(games) == 1 else "s"} · projected lines include '
                      f'{HFA_POINTS:g} points of home court</span></div><div class="games">{cards}</div>')
