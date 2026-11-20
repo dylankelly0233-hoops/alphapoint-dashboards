@@ -1,6 +1,6 @@
 {
  "sport": "nfl",
- "generated": "2026-11-19T23:00:00-05:00",
+ "generated": "2026-11-20T10:15:00-05:00",
  "games": {
   "2026_12_NE_LAC": {
    "verdict": "explained",
@@ -19,17 +19,21 @@
      "date": "2026-11-17"
     }
    ],
-   "returning": []
+   "returning": [],
+   "swings": {
+    "LAC": "QB Drake Maye fractured his ankle in Munich and Tommy DeVito is expected to start for New England, so the market moved to the Chargers; our ratings didn't (theScore, Nov 17).",
+    "NE": "Drake Maye's fractured ankle (Week 10) put Tommy DeVito at QB; the market marked New England down, our ratings still carry Maye (theScore, Nov 17)."
+   }
   },
   "2026_11_ARI_KC": {
    "verdict": "partly",
-   "summary": "Arizona is down to rookie Carson Beck at QB; that covers some of the 2.5-point gap, not all of it.",
+   "summary": "Arizona is on rookie Carson Beck, now with a back issue; that explains part of the 2.5-point gap, while Kansas City's own injuries push the other way.",
    "reasons": [
     {
-     "text": "QB Gardner Minshew (elbow) is on IR after UCL surgery; rookie Carson Beck started the 34-6 loss to the Rams.",
+     "text": "QB Gardner Minshew (elbow) had season-ending UCL surgery; Carson Beck (back) was limited Thursday and is questionable.",
      "source": "ESPN",
      "url": "https://www.espn.com/nfl/injuries",
-     "date": "2026-11-18"
+     "date": "2026-11-19"
     },
     {
      "text": "DraftKings has Kansas City -16.5 with a 40.5 total.",
@@ -38,7 +42,7 @@
      "date": "2026-11-18"
     },
     {
-     "text": "Pushing the other way: Chiefs G Trey Smith (concussion), OT Jaylon Moore (ankle) and RB Kenneth Walker III (groin) missed Wednesday's practice.",
+     "text": "Pushing the other way: Chiefs RB Kenneth Walker III (groin) missed Thursday; G Trey Smith (concussion) and OT Jaylon Moore (ankle) missed Wednesday.",
      "source": "ESPN",
      "url": "https://www.espn.com/nfl/injuries",
      "date": "2026-11-19"
@@ -83,10 +87,10 @@
    "summary": "New Orleans' offensive line is in pieces and Chicago is 7-2 off its bye; that explains part of the 3-point gap.",
    "reasons": [
     {
-     "text": "Saints OT Asim Richards is out for weeks, and OT Taliese Fuaga and C Erik McCoy are doubtful: three offensive line starters.",
+     "text": "Saints OT Asim Richards is out for weeks; OT Taliese Fuaga and C Erik McCoy missed Thursday and are doubtful: three offensive line starters.",
      "source": "ESPN",
      "url": "https://www.espn.com/nfl/injuries",
-     "date": "2026-11-17"
+     "date": "2026-11-20"
     },
     {
      "text": "Chicago (7-2) comes off its bye; Circa lists Bears -10.5, so books differ by a point.",
@@ -95,13 +99,14 @@
      "date": "2026-11-18"
     },
     {
-     "text": "Reports differ on whether Caleb Williams, who has not played since Week 9 per Squawka, is back; check his status before betting.",
-     "source": "SI",
-     "url": "https://www.si.com/betting/saints-vs-bears-prediction-odds-spread-injuries-trends-for-nfl-week-11-2026",
-     "date": "2026-11-18"
+     "text": "Caleb Williams played the Week 9 win over Tampa Bay before the bye and is not on the injury report, so yesterday's doubt about him is resolved.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nfl/injuries",
+     "date": "2026-11-19"
     }
    ],
-   "returning": []
+   "returning": [],
+   "swings": {}
   },
   "2026_12_CHI_DET": {
    "verdict": "partly",
@@ -125,6 +130,34 @@
     "DET": "DE Aidan Hutchinson tore his ACL and is out for the season; the market marked Detroit down, our ratings haven't caught up (ESPN, Nov 18)."
    }
   },
+  "2026_12_NYG_IND": {
+   "verdict": "partly",
+   "summary": "Indianapolis just lost 26-3 at Houston with both starting tackles and both top corners out; the market has moved on that, our ratings mostly haven't.",
+   "reasons": [
+    {
+     "text": "The Colts lost 26-3 at Houston Thursday; Daniel Jones threw for 144 yards, his fifth straight weak game.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nfl/injuries",
+     "date": "2026-11-19"
+    },
+    {
+     "text": "Indianapolis played without OTs Bernhard Raimann and Jalen Travis and CBs Sauce Gardner and Charvarius Ward.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nfl/injuries",
+     "date": "2026-11-19"
+    },
+    {
+     "text": "The line opened Giants -4.5 and is now -5.5.",
+     "source": "AlphaPoint line history",
+     "url": "https://dylankelly0233-hoops.github.io/alphapoint-dashboards/",
+     "date": "2026-11-20"
+    }
+   ],
+   "returning": [],
+   "swings": {
+    "NYG": "Nothing Giants-specific found; the move follows Indianapolis' 26-3 loss at Houston Thursday, which our ratings haven't absorbed (ESPN, Nov 19)."
+   }
+  },
   "2026_12_NYJ_MIA": {
    "verdict": "partly",
    "summary": "Miami is on Kyle McCord with Malik Willis on IR; that explains part of the gap, but some books still have Miami favored.",
@@ -136,10 +169,10 @@
      "date": "2026-11-16"
     },
     {
-     "text": "Jets QB Geno Smith (ankle) was limited but says he will play.",
+     "text": "Jets QB Geno Smith (ankle) was limited again Thursday and is questionable for this week; he says he will play.",
      "source": "ESPN",
      "url": "https://www.espn.com/nfl/injuries",
-     "date": "2026-11-18"
+     "date": "2026-11-19"
     },
     {
      "text": "Books disagree: StatSniper shows DraftKings at Miami -1.5, against the Jets -3 we use.",
