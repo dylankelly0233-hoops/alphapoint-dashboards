@@ -50,6 +50,10 @@ LANDING_CSS = """
 .ftext p { margin: 6px 0 0; font-size: 14px; line-height: 1.5; } .ftext .fx-bottom { border-left: 3px solid var(--accent);
            padding-left: 10px; } .flinks { display: flex; gap: 16px; font-size: 13px; font-weight: 600; margin-top: 4px; }
 .flinks a { color: var(--accent); text-decoration: none; } h3.fmatch { margin: 0; }
+.fnums { display: flex; gap: 8px; flex-wrap: wrap; } .fnums span { background: rgba(100, 116, 139, .1); border-radius: 6px;
+         padding: 5px 9px; font-weight: 700; font-size: 13.5px; } .fnums em { display: block; font: 700 9.5px/1.2 var(--display);
+         letter-spacing: .8px; text-transform: uppercase; color: var(--muted); font-style: normal; }
+.fknow { margin: 4px 0 0; padding-left: 18px; font-size: 13px; line-height: 1.45; color: var(--ink); } .fknow li { margin: 3px 0; }
 .featcard { display: flex; flex-direction: column; gap: 6px; padding: 12px 14px; text-decoration: none; color: var(--ink);
             border-top: 3px solid var(--accent); }
 .featcard:hover, .featcard:focus-visible { box-shadow: 0 8px 20px rgba(10, 20, 40, .12); outline: none; }
@@ -620,11 +624,31 @@ def featured_games():
             paras = re.findall(r'<p>.*?</p>', pv['html'], re.S)
             bottom = re.findall(r'<p class="fx-bottom">.*?</p>', pv['html'], re.S)
             base = s['page'].split('#')[0]
+            # numbers strip: our line, the market, where it opened
+            nums = (f'<div class="fnums"><span><em>Ours</em>{theme.esc(s["ours"])}</span>'
+                    f'<span><em>Market</em>{theme.esc(s["market"])}</span>'
+                    + (f'<span><em>Opened</em>{theme.esc(s["open_spread"])}</span>' if s.get('open_spread') else '')
+                    + '</div>')
+            # worth knowing: Research Assistant news (one item per team, at most two) and proven strategies with the pick
+            f = s.get('feat') or {}
+            key = f.get('key') or s['sport'].lower()
+            know = []
+            for tk, tn in ((f.get('away_key'), s['away']), (f.get('home_key'), s['home'])):
+                w = ((gr.notes(key).get('teams') or {}).get(tk) or {}).get('watch') or []
+                if w and len(know) < 2:
+                    know.append(f'<b>{theme.esc(tn)}:</b> {theme.esc(w[0].get("text", ""))}')
+            gn = (gr.notes(key).get('games') or {}).get(str(s.get('gid'))) or {}
+            if gn.get('summary') and len(know) < 2:
+                know.append(f'<b>Why the market differs:</b> {theme.esc(gn["summary"])}')
+            for x in s.get('systems') or []:
+                if not x.get('tracking'):
+                    know.append(f'<b>{theme.esc(sy.NAMES.get(x.get("key"), "Strategy"))}:</b> {theme.esc(x.get("pick", ""))}')
+            know_html = ('<ul class="fknow">' + ''.join(f'<li>{k}</li>' for k in know) + '</ul>') if know else ''
             html += (f'<article class="card featcard">'
                      f'<span class="fmeta"><span class="fsport">{theme.esc(s["sport"])}</span>{theme.esc(t)} ET</span>'
                      f'<h3 class="fmatch">{theme.esc(pv.get("title") or s["away"] + " @ " + s["home"])}</h3>'
-                     f'<span class="fwhy">{"".join(chip(c) for c in chips)}</span>'
-                     f'<div class="ftext">{"".join(paras[:1])}{"".join(bottom[:1])}</div>'
+                     f'<span class="fwhy">{"".join(chip(c) for c in chips)}</span>{nums}'
+                     f'<div class="ftext">{"".join(paras[:2])}{"".join(bottom[:1])}</div>{know_html}'
                      f'<span class="flinks"><a href="{theme.esc(base)}#featured">Full preview →</a>'
                      f'<a href="{theme.esc(s["page"])}">Game card →</a></span></article>')
         html += '</div>'
