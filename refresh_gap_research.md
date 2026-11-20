@@ -1,44 +1,58 @@
-# Research Assistant: why does our line differ from the market? (runbook for scheduled Claude runs)
+# Research Assistant (runbook for scheduled Claude runs)
 
-Used by every NFL run (daily 10 AM; Mon/Wed/Thu/Fri 5 PM; Sunday 11:45 AM) and CFB run (daily 9 AM; Thu/Fri/Sat 6 PM), after the Injury Wire step. Each run re-researches every game, since verdicts change when players are ruled out or cleared, with sport = `nfl` or `cfb`. Don't edit code.
+Two jobs, both shown on every game card under **Research Assistant** with the time you researched:
+1. **Rating watch** for every team on the slate: news from this week **or earlier weeks** that could make our rating of a team too high or too low right now, even when our line agrees with the market.
+2. **Why the market differs**, for every game where our line is far from the market (`gap_flag` true).
 
-**Input:** `DIR\gap_candidates_{sport}.json`, written by the dashboard script you just ran. Each game in `games` has our line (`ours_text`, `ours`) and the market's (`market_text`, `market`), both as home margins (positive = home favored), the `gap` (ours − market), `we_like` (the side our line is higher on than the market), the opener, each rating source's own line (`sources`), weather, the curated Injury Wire items for both teams (`injury_wire`), and each team's recent `history` against the market: `higher` / `lower` = in how many of its last `n` games our line was 1+ point higher / lower on that team than the market, `avg` = the average gap, `swing` = how far today's gap moved from that team's previous game.
+Used by every NFL run (daily 10 AM; Mon/Wed/Thu/Fri 5 PM; Sunday 11:45 AM), every CFB run (daily 9 AM; Thu/Fri/Sat 6 PM), and the basketball runs (11 AM and 4 PM daily: NBA and CBB), after the Injury Wire step, with sport = `nfl`, `cfb`, `nba` or `cbb`. Each run starts from the previous notes and re-checks them, because statuses change. Don't edit code.
 
-**Output:** `DIR\gap_notes_{sport}.json`, replacing the file:
+**Input:** `DIR\gap_candidates_{sport}.json`, written by the dashboard script you just ran.
+- `watch_teams`: the teams to cover in the Rating watch.
+- `games`: each game has our line (`ours_text`, `ours`) and the market's (`market_text`, `market`), both as home margins (positive = home favored), the `gap` (ours − market), `gap_flag` (true = far enough from the market to research why), `we_like`, the opener, each rating source's line (`sources`), weather, the curated Injury Wire items for both teams (`injury_wire`), and each team's recent `history` against the market: `higher` / `lower` = in how many of its last `n` games our line was 1+ point higher / lower on that team than the market, `avg` = the average gap, `swing` = how far today's gap moved from that team's previous game.
+- The previous `DIR\gap_notes_{sport}.json` (if any): keep what is still true, update what changed, drop what no longer matters.
+
+**Output:** `DIR\gap_notes_{sport}.json`, replacing the file. `generated` is the current time with the Eastern offset (the card shows it as "Researched Fri 10:15 AM ET"):
 
 ```json
-{"sport": "nfl", "generated": "2026-11-20T10:15:00-05:00", "games": {
-  "<gid>": {"verdict": "explained", "summary": "One sentence: why the market is where it is.",
-            "reasons": [{"text": "QB Patrick Mahomes (ankle) ruled out Wednesday; backup starts.", "source": "ESPN",
-                         "url": "https://...", "date": "2026-11-19"}],
-            "returning": [{"team": "...", "player": "...", "text": "...", "url": "..."}],
-            "swings": {"<team key, as in home / away>": "One sentence: what changed since its last game, with the source."}}}}
+{"sport": "nfl", "generated": "2026-11-20T10:15:00-05:00",
+ "teams": {
+   "<team key, as in home / away>": {"watch": [
+      {"direction": "too_low", "since": "2026-11-02",
+       "text": "QB Caleb Williams missed Weeks 7-9 (Bears went 0-3) and returned in Week 10; our ratings still carry those three games.",
+       "source": "ESPN", "url": "https://...", "date": "2026-11-12"}]}},
+ "games": {
+   "<gid>": {"verdict": "explained", "summary": "One sentence: why the market is where it is.",
+             "reasons": [{"text": "...", "source": "ESPN", "url": "https://...", "date": "2026-11-19"}],
+             "returning": [{"team": "...", "player": "...", "text": "...", "url": "..."}],
+             "swings": {"<team key>": "One sentence: what changed since its last game, with the source."}}}}
 ```
 
-## What to check for every game (both teams)
-1. **Who is out**, starting with the quarterback, then other key starters (left tackle, edge rusher, top receiver, top corner), and clusters (three offensive linemen). Our ratings (Sagarin, SP+, our own models) do **not** adjust for injuries. nfelo (NFL) adjusts for the starting QB only.
-2. **Who is coming back.** A starter returning after missing games is easy to miss: our ratings were built while he was out, so they underrate the team. Check this especially when a team's `swing` is 4+ points or its `history` shows we've been lower on it lately. List returns in `returning`.
-3. **Coaching or front-office changes**: a firing, interim coach, coordinator change or suspension in the last few weeks.
-4. **Schedule spots**: a short week, long travel last week (cross-country or overseas), a bye on either side, three road games in a row.
-5. **Weather** from the `weather` field (wind 15+ mph, heavy rain or snow), and whether the game is outdoors.
-6. **Motivation and context**: rivalry, a playoff or bowl spot on the line, a team already eliminated, a lookahead game.
-7. **Line movement**: if the market moved from the opener toward or away from us, say what likely moved it.
+## 1. Rating watch (every team in `watch_teams`)
+Our ratings (Sagarin, SP+, TeamRankings, nfelo, our own models) are built from **past results**. They go wrong when the team that played those games is not the team taking the field now. For each team, look back over this week and the previous 4-6 weeks (whole season for long absences) and list anything that makes the past results a poor guide to the team today:
+- **A key player missed games and is back** (ratings built through his absence: `too_low`). Say how many games he missed and when he returned.
+- **A key player is newly out or limited** for this game or recently (`too_high`). QB first, then other key starters, clusters (several linemen, several guards).
+- **Played well or badly with a player who is now gone** (trade, season-ending injury, suspension).
+- **Coaching or system change**: a firing, interim coach, coordinator change, a new starting QB (`unclear` unless the direction is obvious).
+- **Results that flatter or hurt the rating**: a run of games against backups, garbage-time blowouts, a stretch played without its starting goalie / point guard / QB.
+- For basketball: a star resting on back-to-backs, minutes restrictions, a rotation change.
 
-Use web search and fetch (ESPN, team sites, beat writers, CBS / Rotowire injury pages, Action Network or Covers for line moves). Use only what you actually find. Every reason needs a source link and date. Don't invent players, injuries or reports; if a page is unclear, leave it out.
+Each item: `direction` = `too_low` (our rating likely understates the team now), `too_high` (overstates it), or `unclear`; `since` = when it started; one sentence of plain text naming the player or event, the games affected and the dates; and a source link and date. At most 3 items per team, the ones that move a rating most. Leave a team out entirely if nothing meaningful turned up. Don't repeat routine questionable tags with no effect.
 
-## The verdict
-Rough sizes for judging how much a reason explains (point-spread terms; use judgment):
-- NFL starting QB: 4–7 points for a top QB, 2–4 for an average one. CFB starting QB: 3–7 points (more when the backup is a walk-on or third-stringer).
-- Other single starters: about 0.5–1.5 points each. Several starters in one unit (offensive line, secondary): 2–3 points.
-- Interim coach or recent firing: 0–2 points. Long travel or a short week: about 0.5–1.5 points. Strong wind: mostly a totals factor, small for spreads.
+Rough sizes (point spread) for judging what is meaningful: NFL starting QB 4-7 pts for a top QB, 2-4 for an average one; CFB starting QB 3-7; an NBA star 3-6; a CBB leading scorer 2-4; other single starters 0.5-1.5; several starters in one unit 2-3; interim coach 0-2.
 
-Then pick one:
+## 2. Why the market differs (every game with `gap_flag` true)
+Check for both teams: who is out; **who is coming back** (especially when a team's `swing` is 4+ or its `history` shows we've been lower on it lately; list returns in `returning`); coaching changes; schedule spots (short week, long travel, a bye, three road games in a row, back-to-backs); weather (`weather`: wind 15+ mph, heavy rain or snow, outdoors); motivation (rivalry, playoff or bowl spot, eliminated team, lookahead); line movement from the opener and what likely moved it.
+
+Then pick a verdict:
 - **explained**: what you found plausibly covers most of the gap (about two thirds or more), and it pushes the market's way.
 - **partly**: it covers some of the gap, or it's real but small.
-- **unexplained**: nothing found that justifies the market's number. This is a valid, useful answer; don't stretch to find a reason.
+- **unexplained**: nothing found that justifies the market's number. A valid, useful answer; don't stretch.
 
-**Swings (required).** For every team whose `history.swing` is 4+ points either way, our gap on that team moved that much since its previous game (e.g. last game we were 3 pts higher on it than the market, now 4 pts lower = a 7-pt swing). Find out why and write one sentence in `swings` under that team's key: usually a player returning or going out (our ratings don't see it, the market does), sometimes a big result that moved the market, a coaching change, or a line move. Name the player or event and the date, e.g. "QB Kyler Murray (hamstring) is out; the market dropped Minnesota about 4 pts, our ratings didn't." If you find nothing, write "Nothing found: the market moved on Minnesota without a clear reason." The game card shows this right under the swing.
+**Swings (required).** For every team whose `history.swing` is 4+ points either way, write one sentence in `swings` under that team's key saying what changed since its previous game (a player returning or going out, a big result that moved the market, a coaching change, a line move), with the player or event and the date. If you find nothing: "Nothing found: the market moved on <team> without a clear reason."
 
-Write `summary` as one plain sentence a bettor can read in five seconds, e.g. "Market has Mahomes out; our ratings don't know." or "Nothing in the news; the market just rates Houston higher than we do." If a team's `history` shows we've been higher or lower on it for 4+ straight games, mention whether you found a reason (an injury our ratings never caught, a coaching change) or not.
+Write `summary` as one plain sentence a bettor can read in five seconds. If a team's `history` shows we've been higher or lower on it for 4+ straight games, say whether you found a reason or not.
 
-Keep each reason to one sentence (under about 200 characters) and at most 3 reasons per game. Research every game in the file; if there are more than 25, do the 25 with the biggest |gap| first and note how many were skipped. Then add `gap_notes_{sport}.json` to the commit in the runbook's push step, and add one line to the report: `Research Assistant: N games (E explained, P partly, U unexplained)`.
+## Rules
+Use web search and fetch (ESPN, team sites, beat writers, CBS / Rotowire injury pages, Action Network or Covers for line moves). Use only what you actually find; every item needs a source link and date. Don't invent players, injuries or reports; if a page is unclear, leave it out. Keep each sentence under about 200 characters, at most 3 reasons per game. If there are more than 25 flagged games, do the 25 with the biggest |gap| first and note how many were skipped; if there are more than 40 watch teams, cover the teams in flagged games first.
+
+Then add `gap_notes_{sport}.json` to the commit in the runbook's push step, and add one line to the report: `Research Assistant: W teams with rating-watch items; N gap games (E explained, P partly, U unexplained)`.

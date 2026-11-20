@@ -32,6 +32,7 @@ import pandas as pd
 import cbb_ratings as cbr
 import dashboard_theme as theme
 import extras as ex
+import gap_research as gr
 import featured as fx
 import injury_wire as wire
 import markets as mk
@@ -357,7 +358,7 @@ def generate_html(power, metrics, days, info):
             move += ex.rating_confidence(by_src.get(g['home'], {}), by_src.get(g['away'], {}),
                                          g['hfa'])
             if not g['score']:
-                move += ex.injury_card_row(info.get('inj_cards'), g['away'], g['home'], lambda t: short.get(t, t))
+                move += ex.injury_card_row(info.get('inj_cards'), g['away'], g['home'], lambda t: short.get(t, t), sport='nba')
                 move += ex.liquidity_row(next((x.get('spread') for x in info['market_rows'] if str(x.get('game_id')) == str(g['game_id'])), None), lambda t: short.get(t, t))
             move += ex.why_row([('Ratings', margin - g['hfa']), ('Home court', 0.0 if g['neutral'] else HFA_POINTS)]
                                + [(f'{short.get(t, t)} back-to-back', -p if t == g['home'] else p) for t, p in g['rest_parts']]
@@ -368,6 +369,8 @@ def generate_html(power, metrics, days, info):
                                                 lambda t: short.get(t, t))
                                    + tot.card_row('nba', info['total_fn'](g['home'], g['away'], g['neutral'])
                                                   if info.get('total_fn') else np.nan, g.get('total'))))
+            move += gr.card_row('nba', g['game_id'], margin, g['market'], g['home'], g['away'],
+                                short.get(g['home'], g['home']), short.get(g['away'], g['away']), bool(g['score']))
             mprof = info['mu_prof']
             if g['home'] in mprof and g['away'] in mprof:
                 nm = lambda t: short.get(t, t)
@@ -411,7 +414,7 @@ def generate_html(power, metrics, days, info):
                          'flags': ['news'] if ex.news_move(info['opened'].get(g['game_id']), g['market']) else [],
                          'sources': ex.source_lines(by_src.get(g['home'], {}), by_src.get(g['away'], {}), hfa_g),
                          'hfa': hfa_g - g['rest_adj'] - g.get('inj_adj', 0.0),   # logged home edge = home court only (calibrate.py)
-                         'context': {'scale': SCALE, 'rest': g['rest_parts'] or None, 'inj': g.get('inj_parts') or None, 'signals': {t: s for t in (g['away'], g['home']) if (s := _signal(comp.get(t), gp.get(t, 0)))},
+                         'context': {'scale': SCALE, 'gap_verdict': gr.verdict('nba', g['game_id']), 'rest': g['rest_parts'] or None, 'inj': g.get('inj_parts') or None, 'signals': {t: s for t in (g['away'], g['home']) if (s := _signal(comp.get(t), gp.get(t, 0)))},
                                      'mu_side': mu.headline_side(mprof, mu.BASKETBALL_CATS, g['away'], g['home'])
                                      if g['home'] in mprof and g['away'] in mprof else None}})
             spots.append(ex.spot('NBA', 'nba.html#games', g['kick'], short[g['away']], short[g['home']], margin, g['market'],
@@ -424,6 +427,11 @@ def generate_html(power, metrics, days, info):
                      f'{HFA_POINTS:g} points of home court</span></div><div class="games">{cards}</div>')
     ex.write_spots('nba', spots)
     ex.log_projections('nba', plog)
+    now = pd.Timestamp.now(tz='America/New_York')
+    gr.write_candidates('nba', [{'gid': str(p['game_id']), 'kick': p['kickoff'], 'home': p['home'], 'away': p['away'],
+                                 'home_name': short.get(p['home'], p['home']), 'away_name': short.get(p['away'], p['away']),
+                                 'ours': p['ours'], 'market': p['market'], 'opened': p.get('opened'), 'sources': p.get('sources')}
+                                for p in plog if pd.Timestamp(p['kickoff']) > now])   # Research Assistant (refresh_gap_research.md)
     featured_html = fx.tab(''.join(features), ('Game of the Day', 'The best matchup on the board by our power ratings'),
                            'No games left to play in the next two days.')
     games_html = (

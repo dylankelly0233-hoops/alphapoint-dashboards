@@ -90,6 +90,7 @@ TIPS = {
     'Impact': 'Our estimate of how many points per game the team is worse without this player: his points over a replacement-level player (PORPAG), blended with last season early on. An estimate, not an exact number.',
     'Injury adj.': 'Our projected line after taking out the players reported out or doubtful, each at his estimated impact, scaled down for games he has already missed once the season is a few weeks old (by then the ratings reflect those games). Questionable players are not counted.',
     'Edge': 'How far our line is from the market, shown as the side our number likes. It is a reason to look closer, not a bet.',
+    'Research Assistant': 'Claude researches the news for every game: anything this week or in recent weeks that could make our rating of a team too high or too low right now (a player who missed games while the rating was built and is back, a new absence, a QB or coaching change), and, when our line is far from the market, why the market is where it is. Each item cites its source. It never changes our line.',
     'Strategies': 'Every strategy that applies to this game, grouped by what it says to bet. Each line names the strategy and why it applies. Green = proven (it can appear on Best spots); grey "tracking" = being watched, not proven, never a Best spots pick. See the Strategies tab for how each one works.',
     'Line': 'Where the spread opened (or was first seen) and where it is now. A move toward our number means the market is coming around to it; a move away means it disagrees.',
     'Value': 'What our disagreement with the market is worth. Fair = the market moved only part of the way toward our number: the share of past gaps vs the opening line that showed up in results (it is small, and re-tuned weekly). The cover chance at the posted line counts key numbers (NFL 3 and 7) and pushes; −110 needs 52.4% to break even. The second line is how often gaps this size saw the line move toward our number.',
@@ -574,11 +575,14 @@ td.pos { color: var(--pos); font-weight: 600; } td.neg { color: var(--neg); font
 .strats .sbet.close, .strats .sbet.teaser { color: #0f766e; }
 .strats .sitem { margin-top: 5px; }
 .gapwhy div { margin: 2px 0; font-size: 13.5px; line-height: 1.45; } .gapwhy a { color: var(--accent); }
+.gapwhy .gsub { font: 700 10.5px/1 var(--display); letter-spacing: .8px; text-transform: uppercase; color: var(--ink);
+                display: inline-block; margin-top: 6px; }
 .gverdict { font: 700 11px/1 var(--display); letter-spacing: .6px; text-transform: uppercase; padding: 3px 6px;
             border-radius: 4px; color: #fff; background: #64748b; }
 .gverdict.explained { background: #15803d; } .gverdict.partly { background: #b45309; } .gverdict.unexplained { background: #1d4ed8; }
 .lmove { padding: 8px 14px 10px; font-size: 13px; color: var(--muted); border-top: 1px solid var(--line); }
 .injlist { display: block; margin-top: 2px; } .inj { display: block; color: var(--ink); line-height: 1.45; }
+.injasof { display: block; margin-top: 3px; font-size: 11.5px; }
 .inj b { color: var(--muted); font-weight: 600; } .inj.ret { color: var(--pos, #1a7f37); }
 .lmove .k { font: 700 11px/1 var(--display); letter-spacing: 1px; text-transform: uppercase; margin-right: 8px; }
 .lmove b { color: var(--ink); }

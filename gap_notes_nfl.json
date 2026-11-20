@@ -183,5 +183,91 @@
    ],
    "returning": []
   }
+ },
+ "teams": {
+  "NE": {
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-08",
+     "text": "QB Drake Maye fractured his right ankle in Week 10 and may miss the season; Tommy DeVito starts, but our ratings were built with Maye.",
+     "source": "theScore",
+     "url": "https://www.thescore.com/nfl/news/3656720",
+     "date": "2026-11-16"
+    }
+   ]
+  },
+  "MIN": {
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-15",
+     "text": "QB Kyler Murray (grade 2 hamstring) is targeting a Nov 29 return, so Kirk Cousins starts; WR Jordan Addison is out after thumb surgery.",
+     "source": "The Fantasy Footballers",
+     "url": "https://www.thefantasyfootballers.com/news/647733/kyler-murray-targeting-week-12-return/",
+     "date": "2026-11-18"
+    }
+   ]
+  },
+  "DET": {
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-16",
+     "text": "DE Aidan Hutchinson tore his ACL and is out for the season; the ratings still include his games.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nfl/injuries",
+     "date": "2026-11-18"
+    }
+   ]
+  },
+  "ARI": {
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-15",
+     "text": "QB Gardner Minshew (elbow) is on IR after UCL surgery; rookie Carson Beck starts.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nfl/injuries",
+     "date": "2026-11-18"
+    }
+   ]
+  },
+  "MIA": {
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-09",
+     "text": "QB Malik Willis (groin/core) is on IR; Kyle McCord starts.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nfl/injuries",
+     "date": "2026-11-16"
+    }
+   ]
+  },
+  "NO": {
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-17",
+     "text": "Three offensive line starters out or doubtful: OT Asim Richards (weeks), OT Taliese Fuaga and C Erik McCoy.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nfl/injuries",
+     "date": "2026-11-17"
+    }
+   ]
+  },
+  "CHI": {
+   "watch": [
+    {
+     "direction": "unclear",
+     "since": "2026-11-01",
+     "text": "Reports differ on whether QB Caleb Williams, out since Week 9 per Squawka, is back; check his status before betting.",
+     "source": "SI",
+     "url": "https://www.si.com/betting/saints-vs-bears-prediction-odds-spread-injuries-trends-for-nfl-week-11-2026",
+     "date": "2026-11-18"
+    }
+   ]
+  }
  }
 }

@@ -137,7 +137,7 @@ def liquidity_row(sp, name=lambda t: t):
             f'<b>{_money(to_fav)}</b> · {theme.esc(dog)} +{pts}: <b>{_money(to_dog)}</b>{thin}{flag}</div>')
 
 
-def injury_card_row(cards, away, home, name=lambda t: t):
+def injury_card_row(cards, away, home, name=lambda t: t, sport=None):
     """
     Game-card injury row: key players out or questionable, cluster injuries, and players returning, with games
     missed so a reader can judge whether the market has already priced it in. cards: {team: [card entries]}
@@ -161,7 +161,15 @@ def injury_card_row(cards, away, home, name=lambda t: t):
             lines.append(f'<span class="inj {cls}"><b>{theme.esc(name(t))}:</b> {theme.esc(txt)}</span>')
     if not lines:
         return ''
-    return f'<div class="lmove injrow">{theme.k("Injuries")}<span class="injlist">{"".join(lines)}</span></div>'
+    asof = ''
+    if sport:        # when the curated wire was last checked (Dylan, 2026-11-20: say when everything was updated)
+        try:
+            import gap_research as gr
+            gen = json.load(open(f'injury_wire_{sport}.json', encoding='utf-8')).get('generated')
+            asof = f'<span class="hint injasof">Checked {theme.esc(gr.when_text(gen))}</span>' if gen else ''
+        except (OSError, ValueError):
+            pass
+    return f'<div class="lmove injrow">{theme.k("Injuries")}<span class="injlist">{"".join(lines)}</span>{asof}</div>'
 
 
 PROJ_COLS = ['game_id', 'kickoff', 'home', 'away', 'neutral', 'first_logged', 'last_logged', 'ours_first', 'ours_last',

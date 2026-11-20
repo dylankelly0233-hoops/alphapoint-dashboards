@@ -490,7 +490,7 @@ def generate_html(power, vals, sched, week, info):
         if not r.score and not r.neutral and r.home in wx.NFL_STADIUMS:
             move += wx.weather_row(info['weather'].get(str(r.game_id)), wx.NFL_STADIUMS[r.home][2])
         if not r.score:
-            move += ex.injury_card_row(info.get('inj_cards'), r.away, r.home, lambda t: nick(vm.full_name(t)))
+            move += ex.injury_card_row(info.get('inj_cards'), r.away, r.home, lambda t: nick(vm.full_name(t)), sport='nfl')
             move += ex.liquidity_row(next((x.get('spread') for x in info['market_rows'] if str(x.get('game_id')) == str(r.game_id)), None))
         pr = '' if r.score else val.card_row('nfl', r.margin, r.market, r.home, r.away, info['val_live'], lambda t: nick(vm.full_name(t)))
         t_ours = info['total_fn'](r.home, r.away, r.neutral) if info.get('total_fn') else np.nan

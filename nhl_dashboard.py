@@ -475,7 +475,7 @@ def generate_html(power, metrics, days, info):
                                                                       g['home'], g['away'], short)) + tot)
             move = (_move_row(g, short) + _goalie_row(g, short) + why
                     + ex.rating_confidence(by_src.get(g['home'], {}), by_src.get(g['away'], {}), hfa_g, scale=CONF_SCALE)
-                    + (ex.injury_card_row(info.get('inj_cards'), g['away'], g['home'], short) if not g['score'] else ''))
+                    + (ex.injury_card_row(info.get('inj_cards'), g['away'], g['home'], short, sport='nhl') if not g['score'] else ''))
             side = lambda t: {'name': full.get(t, t), 'logo': logo(t), 'rating': info['rating'].get(t, np.nan), 'sd': sd,
                               'key': t, 'signal': pill(t), 'color': color.get(t, ''), 'fmt': G2}
             card = theme.game_card(g['kick'].strftime('%I:%M %p').lstrip('0') + ' ET', 'Neutral site' if g['neutral'] else '',

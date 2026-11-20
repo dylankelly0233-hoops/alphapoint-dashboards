@@ -14,8 +14,9 @@ Then run `git checkout -- line_history_cbb.csv ratings_history_cbb.csv projectio
 Save a short report to `DIR\last_refresh_cbb.md` in the same format as the football reports: line 1 `Date: YYYY-MM-DD HH:MM`, line 2 `Status: ok` or `Status: failed — <reason>`, then 1–3 lines: the "Sources:" line and any warnings.
 
 ## 2b. Curate the CBB Injury Wire
-Step 2 wrote `injury_candidates_cbb.json`. Follow `DIR\refresh_injury_curation.md` with sport = `cbb`, writing `DIR\injury_wire_cbb.json`. Then from DIR:
-1. `git add injury_wire_cbb.json`
+Step 2 wrote `injury_candidates_cbb.json`. Follow `DIR\refresh_injury_curation.md` with sport = `cbb`, writing `DIR\injury_wire_cbb.json`.
+Then the Research Assistant: follow `DIR\refresh_gap_research.md` with sport = `cbb` (input `gap_candidates_cbb.json`, written in step 2), writing `DIR\gap_notes_cbb.json`. Then from DIR:
+1. `git add injury_wire_cbb.json gap_notes_cbb.json`
 2. `git -c user.name="Dylan Kelly" -c user.email="dylankelly0233@gmail.com" commit -m "CBB Injury Wire"`. If it says there's nothing to commit, that's fine.
 3. `git pull --rebase`
 4. `git push`
@@ -25,7 +26,7 @@ Add the number of Injury Wire items to the report in `last_refresh_cbb.md`.
 ## 2c. NBA build and Injury Wire
 From DIR: `$env:PYTHONIOENCODING = "utf-8"; $env:NBA_NO_BROWSER = "1"; python nba_dashboard.py > "$env:TEMP\nba_build.log" 2>&1; Get-Content "$env:TEMP\nba_build.log" | Select-String "Sagarin|Injury Wire|  ! |Traceback"`
 Then run `git checkout -- line_history_nba.csv ratings_history_nba.csv projections_nba.csv source_history_nba.csv` if those files exist; GitHub's builds own them.
-Follow `DIR\refresh_injury_curation.md` with sport = `nba`, writing `DIR\injury_wire_nba.json`. Then `git add injury_wire_nba.json`, commit with the message "NBA Injury Wire" (same author flags as above), `git pull --rebase`, and `git push`.
+Follow `DIR\refresh_injury_curation.md` with sport = `nba`, writing `DIR\injury_wire_nba.json`. Then the Research Assistant: follow `DIR\refresh_gap_research.md` with sport = `nba`, writing `DIR\gap_notes_nba.json`. Then `git add injury_wire_nba.json gap_notes_nba.json`, commit with the message "NBA Injury Wire" (same author flags as above), `git pull --rebase`, and `git push`.
 Add an NBA line to `last_refresh_cbb.md`: the number of NBA Injury Wire items and the top 1–2 movers.
 
 ## 2d. NHL build and Injury Wire

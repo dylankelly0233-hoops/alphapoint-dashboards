@@ -23,7 +23,8 @@ import pandas as pd
 
 import dashboard_theme as theme
 
-GAP_MIN = {'nfl': 2.0, 'cfb': 3.0}
+GAP_MIN = {'nfl': 2.0, 'cfb': 3.0, 'nba': 3.0, 'cbb': 4.0}
+WATCH_ALL = {'nfl', 'cfb', 'nba', 'cbb'}   # Rating watch for every team on the slate (CBB: games with a Power 4 / Big East team)
 HIST_N = 6            # each team's last N logged games for the 'consistently higher / lower' read
 SWING = 4.0           # our gap on a team moved this much since its previous game -> worth checking who is in or out
 
@@ -88,21 +89,25 @@ def write_candidates(sport, games, wire_path=None):
     out = []
     for g in games:
         o, m = g.get('ours'), g.get('market')
-        if o is None or m is None or o != o or m != m or abs(o - m) < GAP_MIN[sport]:
+        if o is None or m is None or o != o or m != m:
             continue
         gap = o - m
+        flag = abs(gap) >= GAP_MIN[sport]
+        if not flag and sport not in WATCH_ALL:
+            continue
         rec = {k: g.get(k) for k in ('gid', 'home', 'away', 'home_name', 'away_name', 'weather')}
         rec.update({'kick': pd.Timestamp(g['kick']).isoformat(), 'ours': round(o, 1), 'market': m,
-                    'opened': g.get('opened'), 'gap': round(gap, 1),
+                    'opened': g.get('opened'), 'gap': round(gap, 1), 'gap_flag': bool(flag),
                     'we_like': g['home_name'] if gap > 0 else g['away_name'],
                     'ours_text': _line(g, o), 'market_text': _line(g, m),
                     'sources': {k: round(v, 1) for k, v in (g.get('sources') or {}).items() if v == v},
                     'injury_wire': {t: [i.get('text') for i in wire.get(t, [])] for t in (g['home'], g['away'])},
                     'history': {g['home_name']: history(sport, g['home'], gap), g['away_name']: history(sport, g['away'], -gap)}})
         out.append(rec)
+    teams = sorted({t for r in out if r['gap_flag'] or sport in WATCH_ALL for t in (r['home'], r['away'])})
     with open(f'gap_candidates_{sport}.json', 'w', encoding='utf-8') as f:
         json.dump({'sport': sport, 'generated': datetime.now(timezone.utc).isoformat(timespec='seconds'),
-                   'gap_min': GAP_MIN[sport], 'games': out}, f, ensure_ascii=False, indent=1, default=str)
+                   'gap_min': GAP_MIN[sport], 'watch_teams': teams, 'games': out}, f, ensure_ascii=False, indent=1, default=str)
     return out
 
 
@@ -138,14 +143,57 @@ def _vs(gap, name):
 VERDICT_TEXT = {'explained': 'Explained', 'partly': 'Partly explained', 'unexplained': 'Unexplained'}
 
 
+def when_text(iso):
+    """'Fri 10:15 AM ET (2h ago)' from an ISO time, for 'last updated' labels."""
+    try:
+        t = pd.Timestamp(iso)
+        t = t.tz_localize('UTC') if t.tzinfo is None else t
+        et = t.tz_convert('America/New_York')
+        age = (pd.Timestamp.now(tz='UTC') - t).total_seconds() / 3600
+        ago = 'just now' if age < 1 else f'{age:.0f}h ago' if age < 48 else f'{age / 24:.0f} days ago'
+        return f'{et.strftime("%a %b %d %I:%M %p").replace(" 0", " ")} ET ({ago})'
+    except (ValueError, TypeError):
+        return str(iso or '')[:10]
+
+
+DIR_TEXT = {'too_low': 'our rating may be too LOW', 'too_high': 'our rating may be too HIGH',
+            'unclear': 'could move our rating either way'}
+
+
+def watch_bits(sport, team, name):
+    """Rating watch lines for one team (notes 'teams'): news this week or recent weeks our ratings may not reflect."""
+    w = ((notes(sport).get('teams') or {}).get(team) or (notes(sport).get('teams') or {}).get(name) or {})
+    out = []
+    for it in w.get('watch') or []:
+        src = (f' <a href="{theme.esc(it["url"])}" target="_blank" rel="noopener">{theme.esc(it.get("source") or "source")}</a>'
+               if it.get('url') else '')
+        d = DIR_TEXT.get(it.get('direction'), '')
+        out.append(f'· <b>{theme.esc(name)}</b>{" — " + theme.esc(d) if d else ""}: {theme.esc(it.get("text", ""))}{src}')
+    return out
+
+
 def card_row(sport, gid, ours, market, home, away, home_name, away_name, completed=False):
-    """The 'Why the market differs' block on a game card ('' when the gap is small or the game is over)."""
-    if completed or ours is None or market is None or ours != ours or market != market or abs(ours - market) < GAP_MIN[sport]:
+    """
+    The Research Assistant block on a game card (Dylan, 2026-11-20: 'double and triple down'): on EVERY upcoming game
+    that has something to say, (1) Rating watch: news this week or in recent weeks that could make our rating of either
+    team too high or too low now (an absence the ratings were built through, a return, a QB or coaching change), even
+    when we agree with the market; (2) when our line is GAP_MIN+ from the market, why the market differs; (3) our
+    history on each team and big week-to-week swings. Always says when it was researched. Notes never change our line.
+    """
+    if completed or ours is None or market is None or ours != ours or market != market:
         return ''
     gap = ours - market
-    n = (notes(sport).get('games') or {}).get(str(gid))
+    big = abs(gap) >= GAP_MIN[sport]
+    n_any = (notes(sport).get('games') or {}).get(str(gid))
+    n = n_any if big else None
+    watch = watch_bits(sport, away, away_name) + watch_bits(sport, home, home_name)
     bits = []
-    if n:
+    if watch:
+        bits.append('<span class="gsub">Rating watch</span>')
+        bits += watch
+    if big:
+        bits.append('<span class="gsub">Why the market differs</span>')
+    if big and n:
         v = n.get('verdict')
         bits.append(f'<span class="gverdict {theme.esc(v or "")}">{theme.esc(VERDICT_TEXT.get(v, v or ""))}</span> '
                     f'{theme.esc(n.get("summary", ""))}')
@@ -153,22 +201,25 @@ def card_row(sport, gid, ours, market, home, away, home_name, away_name, complet
             src = (f' <a href="{theme.esc(r["url"])}" target="_blank" rel="noopener">{theme.esc(r.get("source") or "source")}</a>'
                    if r.get('url') else '')
             bits.append(f'· {theme.esc(r.get("text", ""))}{src}')
-        when = (notes(sport).get('generated') or '')[:10]
-        bits.append(f'<span class="hint">Researched {theme.esc(when)}. Research only: our line is not changed.</span>')
-    else:
-        bits.append('<span class="hint">Not researched yet: the Research Assistant checks gaps like this each morning.</span>')
+    elif big:
+        bits.append('<span class="hint">Not researched yet: the Research Assistant checks gaps like this on its next run.</span>')
     for team, name, g in ((home, home_name, gap), (away, away_name, -gap)):
         h = history(sport, team, g)
         t = history_text(h, name)
         if t:
             bits.append(f'· {theme.esc(t)} Could be a team the market prices differently.')
         if h and abs(h.get('swing') or 0) >= SWING:
-            why = ((n or {}).get('swings') or {}).get(team) or ((n or {}).get('swings') or {}).get(name)
+            why = ((n_any or {}).get('swings') or {}).get(team) or ((n_any or {}).get('swings') or {}).get(name)
             bits.append(f'· <b>Swing on {theme.esc(name)}:</b> last game we were {theme.esc(_vs(h["last"], name))}; this game '
                         f'we are {theme.esc(_vs(g, name))}, a {abs(h["swing"]):g}-pt swing. '
                         + (f'<b>Why:</b> {theme.esc(why)}' if why else
                            'Not researched yet; usually a player returning or going out that our ratings do not see yet.'))
-    return (f'<div class="lmove gapwhy">{theme.k("Why the market differs")}'
+    if not bits:
+        return ''
+    gen = notes(sport).get('generated')
+    bits.append(f'<span class="hint">{"Researched " + theme.esc(when_text(gen)) if gen else "Not researched yet"}. '
+                f'Research only: our line is not changed.</span>')
+    return (f'<div class="lmove gapwhy">{theme.k("Research Assistant")}'
             + ''.join(f'<div>{b}</div>' for b in bits) + '</div>')
 
 

@@ -23,5 +23,8 @@ Then from DIR:
 2. `git -c user.name="Dylan Kelly" -c user.email="dylankelly0233@gmail.com" commit -m "CBB Injury Wire (late check)"`. If it says there's nothing to commit, that's fine.
 3. `git pull --rebase`, then `git push`.
 
+## 3b. Research Assistant (CBB and NBA, afternoon update)
+Follow `DIR\refresh_gap_research.md` with sport = `cbb` (input `gap_candidates_cbb.json`, written in step 2), writing `DIR\gap_notes_cbb.json`. Then rebuild the NBA candidates (`$env:NBA_NO_BROWSER = "1"; python nba_dashboard.py > "$env:TEMP\nba_late.log" 2>&1`, then `git checkout -- line_history_nba.csv ratings_history_nba.csv projections_nba.csv source_history_nba.csv`) and follow the same runbook with sport = `nba`, writing `DIR\gap_notes_nba.json`. Start each from the morning's notes and focus on what changed today (late scratches, new returns, line moves). Then `git add gap_notes_cbb.json gap_notes_nba.json`, commit with the message "Research Assistant (late check)" (same author flags as above), `git pull --rebase`, and `git push`.
+
 ## 4. Report
-Finish with 1–3 lines: how many items are on the wire, what changed since the morning, and whether the push worked.
+Finish with 1–3 lines: how many items are on the wire, what changed since the morning, the Research Assistant line from its runbook, and whether the push worked.

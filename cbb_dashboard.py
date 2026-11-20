@@ -50,6 +50,7 @@ import valuation as val
 import totals as tot
 import dashboard_theme as theme
 import extras as ex
+import gap_research as gr
 import featured as fx
 import injury_wire as wire
 import markets as mk
@@ -635,9 +636,12 @@ def generate_html(power, metrics, days, info):
             move += ex.why_row([('Ratings', margin - hfa_all), ('Home court', 0.0 if g['neutral'] else HFA_POINTS),
                                 ('Crowd', (g.get('crowd') or {}).get('adj'))] + list(g.get('spot_parts') or []),
                                margin, g['market'], g['home'], g['away'], lead=pr)
+            if not big:
+                move += gr.card_row('cbb', g['game_id'], margin, g['market'], g['home'], g['away'], g['home'], g['away'],
+                                    bool(g['score']))
             if not g['score']:
                 move += ex.injury_card_row(info['wire'].get('items') if info['wire'].get('mode') == 'curated' else {},
-                                           g['away'], g['home'])
+                                           g['away'], g['home'], sport='cbb')
                 move += ex.liquidity_row(next((x.get('spread') for x in info['market_rows'] if str(x.get('game_id')) == str(g['game_id'])), None))
             mprof = info['mu_prof']
             if g['home'] in mprof and g['away'] in mprof:
@@ -681,7 +685,7 @@ def generate_html(power, metrics, days, info):
                          'sources': {**ex.source_lines(all_src.get(g['home'], {}), all_src.get(g['away'], {}), hfa_g),
                                      **({cm2.SHADOW_LABEL: v2} if v2 is not None else {})},   # logged, never blended
                          'hfa': hfa_g - g.get('spots', 0.0),      # logged home edge = base + crowd (calibrate.py); spots below
-                         'context': {'scale': SCALE, 'crowd': g.get('crowd'),
+                         'context': {'scale': SCALE, 'crowd': g.get('crowd'), 'gap_verdict': gr.verdict('cbb', g['game_id']),
                                      'track': [[x['key'], x['side']] for x in sysl if x.get('tracking')] or None,
                                      'total': [None if t_ours != t_ours else round(t_ours, 1),
                                                None if g.get('total') != g.get('total') else g.get('total')], 'spots': g.get('spot_parts') or None, 'signals': {t: s for t in (g['away'], g['home'])
@@ -697,6 +701,12 @@ def generate_html(power, metrics, days, info):
                      f'<div class="games">{cards}</div>')
     ex.write_spots('cbb', spots)
     ex.log_projections('cbb', plog)
+    now = pd.Timestamp.now(tz='America/New_York')
+    gr.write_candidates('cbb', [{'gid': str(p['game_id']), 'kick': p['kickoff'], 'home': p['home'], 'away': p['away'],
+                                 'home_name': p['home'], 'away_name': p['away'], 'ours': p['ours'], 'market': p['market'],
+                                 'opened': p.get('opened'), 'sources': p.get('sources')}
+                                for p in plog if pd.Timestamp(p['kickoff']) > now and 'lopsided' not in p['flags']
+                                and (p['home'] in p4set or p['away'] in p4set)])   # Research Assistant: P4 / Big East gaps
     featured_html = fx.tab(''.join(features), ('Featured games', 'Top 25 clashes and upset watch, next three game days'),
                            'No ranked-vs-ranked or upset-watch games in the next three game days.')
     games_html = (

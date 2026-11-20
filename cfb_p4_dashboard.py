@@ -706,7 +706,7 @@ def generate_html(p4, vals, sched, week, season_type, info):
         if stadium and not r.completed:
             move += wx.weather_row(info['weather'].get(str(r.game_id)), stadium[2])
         if not r.completed and info['wire'].get('mode') == 'curated':
-            move += ex.injury_card_row(info['wire'].get('items'), r.away, r.home)
+            move += ex.injury_card_row(info['wire'].get('items'), r.away, r.home, sport='cfb')
         if not r.completed:
             move += ex.liquidity_row(next((x.get('spread') for x in info['market_rows'] if str(x.get('game_id')) == str(r.game_id)), None))
         pr = '' if big or r.completed else val.card_row('cfb', r.margin, mkt_margin, r.home, r.away, info['val_live'])
