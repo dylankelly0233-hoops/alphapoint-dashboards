@@ -45,6 +45,9 @@ Add an EPL line to `last_refresh_cbb.md`: the number of EPL Injury Wire items an
 From DIR: `$env:PYTHONIOENCODING = "utf-8"; python model_performance.py > "$env:TEMP\model_health.log" 2>&1; Get-Content "$env:TEMP\model_health.log"`
 It scores yesterday's games and the last 7 and 30 days in every sport against the closing line, and prints any warnings (results drifting away from our lines, our lines unusually far from the market, a rating source that stopped updating). Then run `git checkout -- performance.json` if it exists (GitHub's builds own it). If it fails, note the error and continue.
 
+## 2g. Research Assistant health
+From DIR: `$env:PYTHONIOENCODING = "utf-8"; python gap_health.py`. It prints one line per sport (how old the notes are, gap games researched, teams with Rating watch items, swings explained) and any "Watch:" lines. Keep the output for the email.
+
 ## 3. Check the site build
 To check the latest automatic site build, run:
 `& "C:\Program Files\GitHub CLI\gh.exe" run list --repo dylankelly0233-hoops/alphapoint-dashboards --limit 3`
@@ -67,6 +70,8 @@ Build the body from `DIR\last_refresh_cfb.md`, `DIR\last_refresh_nfl.md` and `DI
    - EPL: https://dylankelly0233-hoops.github.io/alphapoint-dashboards/epl.html
 
 Then add a **Model health** section built from the step 2f output: one line per sport with games (yesterday, 7 days, 30 days: our average miss vs. the closing line's), then each warning on its own line starting with "Watch:", or "No warnings." Keep the numbers as printed; don't call games wins or losses.
+
+Then add a **Research Assistant** section: the step 2g lines as printed, including any "Watch:" lines (Dylan cares a lot about this feature; never drop the section).
 
 Then add one line on the website build, from the run list above: `Site build: OK (last run <time>)` or `Site build: FAILED — see github.com/dylankelly0233-hoops/alphapoint-dashboards/actions`.
 
