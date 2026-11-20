@@ -322,14 +322,16 @@ TRACKED = {   # key -> (name, backtest) for the weekly 'Tracking' section
     'cbb_tov_carry': ('CBB Takeaway Carryover', '54% of 930 vs the opener'),
     'nfl_bye_edge': ('NFL Fresh Legs', '54% of 556 vs the opener, near miss'),
     'nfl_div_under': ('NFL Family Feud Under', '53% of 1,195 vs the opener, near miss'),
+    'nfl_off_sr': ('NFL Moving the Chains (better offensive success rate)', '53% of 4,030 vs the opener'),
+    'nfl_def_fade': ('NFL Defense Discount (fade the much better defense)', '54% of 1,061 vs the close'),
 }
 
 
 def tracking_record(scored):
     """Leans we track but have NOT proven (never on Best spots): graded vs the first-seen line and the last line.
-    CFB logs context 'los' = [side, gap]; CBB logs context 'track' = [[key, side], ...] (spreads only)."""
+    CFB logs context 'los' = [side, gap]; CBB and NFL log context 'track' = [[key, side], ...] (spreads only)."""
     rows = []
-    for sport in ('cfb', 'cbb'):
+    for sport in ('cfb', 'cbb', 'nfl'):
         d = scored.get(sport)
         if d is None or d.empty or 'context' not in d:
             continue

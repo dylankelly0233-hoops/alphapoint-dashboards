@@ -209,6 +209,39 @@ def cbb_track(last, day, market, home, away, completed):
     return out
 
 
+NFL_TRACK = {   # nfl_systems_research.py (2026-11-20): offense beats defense; both just short of the strict bar
+    'nfl_off_sr': ('Better offense by success rate (back)', '53% of 4,030 vs the opener; 52% of 4,227 vs the close'),
+    'nfl_def_fade': ('Much better defense by success rate (fade)', '54% of 1,061 vs the close; 53% of 1,004 vs the opener'),
+}
+NFL_DEF_GAP = 0.059     # top quarter of season-to-date defensive success-rate gaps, 2006-26 (weeks 4+)
+
+
+def nfl_track(prof, market, home, away, completed, name=str, postseason=False):
+    """
+    TRACKING ONLY (never on Best spots): the two NFL success-rate leans, exactly as tested in nfl_systems_research.py.
+    prof = {team: (games, offensive success rate, success rate allowed)} (nfl_model_fetch.sr_profile); both teams need
+    3+ games (so week 4+).
+      Moving the Chains  back the team with the better season-to-date offensive success rate (every such game)
+      Defense Discount   when one defense allows a success rate 5.9+ pts lower, back the OTHER team
+    """
+    h, a = prof.get(home), prof.get(away)
+    if completed or postseason or not h or not a or h[0] < 3 or a[0] < 3 or market is None or market != market:
+        return []
+    picks = []
+    if h[1] != a[1]:
+        picks.append(('nfl_off_sr', 'home' if h[1] > a[1] else 'away'))
+    if h[2] == h[2] and a[2] == a[2] and abs(h[2] - a[2]) >= NFL_DEF_GAP:
+        picks.append(('nfl_def_fade', 'home' if h[2] > a[2] else 'away'))      # the team with the WORSE defense
+    out = []
+    for key, side in picks:
+        team = home if side == 'home' else away
+        label, record = NFL_TRACK[key]
+        out.append({'key': key, 'label': label, 'pick': _side(name(team), market if side == 'home' else -market),
+                    'record': record, 'side': side, 'line': float(market), 'kind': 'spread', 'tentative': True,
+                    'tracking': True})
+    return out
+
+
 def _side(team, margin):
     """'Bills −3' / 'Bills +3' for a team whose own expected margin (positive = favored) is `margin`."""
     if margin != margin:
@@ -222,7 +255,7 @@ NAMES = {   # the name each strategy goes by everywhere on the site (Dylan, 2026
     'nfl_bye_edge': 'Fresh Legs', 'nfl_div_under': 'Family Feud Under', 'nfl_high_total_under': 'Sky-High Under',
     'nfl_wind_under': 'Wind Tunnel Under', 'priced': 'Fair Line Value', 'teaser': 'Key Number Tease',
     'watch': 'Early Bird Watch', 'cfb_los': 'Trench Warfare', 'cbb_b2b_fade': 'Tired Legs Fade',
-    'cbb_tov_carry': 'Takeaway Carryover',
+    'cbb_tov_carry': 'Takeaway Carryover', 'nfl_off_sr': 'Moving the Chains', 'nfl_def_fade': 'Defense Discount',
 }
 
 

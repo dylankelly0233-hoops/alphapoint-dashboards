@@ -42,6 +42,7 @@ import futures as fut
 import totals as tot
 import systems as sy
 import gap_research as gr
+import nfl_model_fetch as nmf
 import featured as fx
 import matchups as mu
 import weather as wx
@@ -466,6 +467,8 @@ def generate_html(power, vals, sched, week, info):
         tag_html, tag_label = teaser_tag(r)
         sysl = sy.nfl(r, info.get('total_top10'), lambda t: nick(vm.full_name(t)),      # proven betting systems
                       wx=info['weather'].get(str(r.game_id)), roof=wx.NFL_STADIUMS.get(r.home, (0, 0, ''))[2])
+        sysl += sy.nfl_track(info.get('sr') or {}, r.market, r.home, r.away, bool(r.score), lambda t: nick(vm.full_name(t)),
+                             postseason=str(getattr(r, 'game_type', 'REG')) not in ('REG', 'nan'))   # tracking only
         tag_html += sy.tag_html(sysl, theme.esc)
         move = ex.line_move(info['opened'].get(str(r.game_id)), r.market, pm, nick(home), nick(away), 'First seen')
         move += ex.rating_confidence(by_src.get(r.home, {}), by_src.get(r.away, {}), 0.0 if r.neutral else HFA_POINTS)
@@ -497,7 +500,8 @@ def generate_html(power, vals, sched, week, info):
                                  'signals': {t: s for t, s in ((r.away, sig(r.away_value)), (r.home, sig(r.home_value))) if s},
                                  'tags': [[tag_label[0], r.away if tag_label[1] == nick(away) else r.home]] if tag_label else [],
                                  'mu_side': mu.headline_side(prof, MU_CATS, r.away, r.home) if r.home in prof and r.away in prof else None,
-                                 'gap_verdict': gr.verdict('nfl', r.game_id)}})
+                                 'gap_verdict': gr.verdict('nfl', r.game_id),
+                                 'track': [[x['key'], x['side']] for x in sysl if x.get('tracking') and x['kind'] == 'spread'] or None}})
         if not r.score:
             gaps.append({'gid': str(r.game_id), 'kick': r.kick, 'home': r.home, 'away': r.away, 'home_name': home,
                          'away_name': away, 'ours': r.margin, 'market': r.market, 'opened': info['opened'].get(str(r.game_id)),
@@ -738,7 +742,8 @@ def main():
                          for r in df.itertuples() if not r.score and (s := fx.nfl_slot(r.kick, r.neutral))},
             'weather': weather, 'weeks': [(week, sched)] + ([(week + 1, next_sched)] if not next_sched.empty else []),
             'opened': {**next_opened, **{str(r['game_id']): r.get('opened') for r in market_rows}},
-            'mu_prof': mu.profiles(units, MU_CATS, MU_STYLES) if not units.empty else {}, 'mu_games': cover}
+            'mu_prof': mu.profiles(units, MU_CATS, MU_STYLES) if not units.empty else {}, 'mu_games': cover,
+            'sr': nmf.sr_profile(vm.SEASON)}
     generate_html(power, vals, sched, week, info)
 
 

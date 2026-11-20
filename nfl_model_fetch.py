@@ -49,6 +49,23 @@ def season_stats(season):
     return out.drop(columns='home_team')
 
 
+def sr_profile(season):
+    """
+    Live input for the NFL tracking leans (systems.nfl_track): {team: (regular-season games played, average offensive
+    success rate, average success rate its defense allowed)}, from this season's play-by-play, computed exactly as in
+    nfl_systems_research.py (per-game rates on non-garbage plays, averaged over games).
+    """
+    try:
+        s = season_stats(season)
+        s = s[s.season_type == 'REG']
+        off = s.groupby('team').sr.agg(['size', 'mean'])
+        dfn = s.groupby('opp').sr.mean()
+        return {t: (int(off.at[t, 'size']), float(off.at[t, 'mean']), float(dfn.get(t, float('nan')))) for t in off.index}
+    except Exception as e:
+        print(f'  ! success-rate profile: {e}')
+        return {}
+
+
 if __name__ == '__main__':
     path = f'{OUT}/nflm_team_games.csv'
     old = pd.read_csv(path) if os.path.exists(path) else pd.DataFrame(columns=['season'])

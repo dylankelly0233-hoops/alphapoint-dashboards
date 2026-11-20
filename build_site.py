@@ -812,6 +812,19 @@ STRATEGY_GUIDE = [   # (key, sports, what it does, why it can work) -- plain Eng
      'A defense that forces lots of turnovers may be better than its box-score ratings show, and the market may be '
      'slow to give it credit, especially as an underdog. Steady every season (52% of 4,336 vs the close, 54% of 930 vs '
      'the opener), but the edge is small and it was one of 86 ideas tested.'),
+    ('nfl_off_sr', 'NFL (tracking only)',
+     'Backs the team whose offense has the better success rate this season (how often a play gains enough: 40% of '
+     'the yards needed on first down, 60% on second, all of it on third or fourth), from week 4 on. It tags most games.',
+     'Offense carries over from week to week much more than defense, and the opening line seems slow to give it full '
+     'credit: 53% of 4,030 against the opener since 2006, a stronger result than luck explains for the 148 ideas we '
+     'tested. But 2006-15 came in at 52.1%, just under the 52.4% needed to win at -110, and against the close it is '
+     '52%, so it has to prove itself on new games.'),
+    ('nfl_def_fade', 'NFL (tracking only)',
+     'When one team\'s defense allows a much lower success rate (5.9+ points, the biggest quarter of gaps), it backs '
+     'the OTHER team, the one with the worse defense.',
+     'The other side of the same story: the market seems to pay too much for a great defense, because defense '
+     'swings more from week to week. It won 54% of 1,061 against the closing line and held up in both halves, but '
+     'among 148 ideas tested that is within luck.'),
     ('cfb_los', 'College football (tracking only)',
      'Compares how often each team\'s defense stuffs runs at or behind the line with how often its own offense gets '
      'stuffed. When one team is 10+ points better, the game card shows a grey tag. It is not on Best spots.',
@@ -836,7 +849,9 @@ def strategy_record(key, sysr):
             'watch': 'the line moved toward our number 58%+ of the time in these gap sizes',
             'cfb_los': '55% of 703 against the opener in past seasons (not proven)',
             'cbb_b2b_fade': '57% of 395 against the opener, 52% of 1,432 against the close (not proven)',
-            'cbb_tov_carry': '54% of 930 against the opener, 52% of 4,336 against the close (not proven)'}.get(key, '')
+            'cbb_tov_carry': '54% of 930 against the opener, 52% of 4,336 against the close (not proven)',
+            'nfl_off_sr': '53% of 4,030 against the opener, 52% of 4,227 against the close (not proven)',
+            'nfl_def_fade': '54% of 1,061 against the close, 53% of 1,004 against the opener (not proven)'}.get(key, '')
 
 
 def spots_guide():
@@ -847,12 +862,12 @@ def spots_guide():
     except (OSError, ValueError):
         sysr = {}
     timing = {'priced': 'early', 'teaser': 'range', 'watch': 'timing', 'cfb_los': None, 'cbb_b2b_fade': None,
-              'cbb_tov_carry': None}
+              'cbb_tov_carry': None, 'nfl_off_sr': None, 'nfl_def_fade': None}
     def status(key):
         """(on Best spots?, why not) under the strict bar."""
         if key == 'watch':
             return False, 'It is a timing note, not a bet: these sides won only 51–52% against the opener.'
-        if key in ('cfb_los', 'cbb_b2b_fade', 'cbb_tov_carry'):
+        if key in ('cfb_los', 'cbb_b2b_fade', 'cbb_tov_carry', 'nfl_off_sr', 'nfl_def_fade'):
             return False, 'Its record is within luck for how many ideas we tested.'
         if key == 'priced':
             return proven_list() != 'none yet', ''
