@@ -89,7 +89,35 @@ LANDING_CSS = """
       border-radius: 4px; color: #fff; margin-right: 6px; vertical-align: 1px; }
 .tm.early { background: #b45309; } .tm.kick { background: #15803d; } .tm.late { background: #1d4ed8; }
 .tm.range { background: #6d4bd8; } .tm.timing { background: #64748b; }
-.syslist li { margin-bottom: 6px; } .spotsguide dl.plain dt .tm { margin: 0; }
+.syslist li { margin-bottom: 6px; }
+.sfilters { display: flex; flex-wrap: wrap; gap: 6px; margin: 6px 0 4px; }
+.schip { border: 1px solid var(--line); background: transparent; color: var(--ink); border-radius: 999px; padding: 6px 11px;
+         font: 600 12.5px/1 var(--body); cursor: pointer; }
+.schip[aria-pressed="true"] { background: var(--ink); color: var(--surface); border-color: var(--ink); }
+.schip:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.sgroup { margin-top: 8px; } .sgroup[hidden], .spotlist li[hidden] { display: none; }
+.sgroup > summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: baseline; }
+.sgroup > summary::-webkit-details-marker, .spot > summary::-webkit-details-marker { display: none; }
+.sgroup > summary::after { content: '▾'; color: var(--muted); font-size: 13px; margin-left: 8px; }
+.sgroup:not([open]) > summary::after { content: '▸'; }
+.sgroup > summary > span { margin-left: auto; }
+.swatch { margin-top: 18px; } .swatch > summary { color: var(--muted); }
+.spot > summary { list-style: none; cursor: pointer; display: grid; grid-template-columns: 84px 44px minmax(0, 1fr) auto;
+                  align-items: center; gap: 2px 12px; padding: 9px 6px; border-top: 1px solid var(--line); border-radius: 6px; }
+.spotlist li:first-child .spot > summary { border-top: 0; }
+.spot > summary:hover, .spot > summary:focus-visible { background: var(--surface-2); outline: none; }
+.spot[open] > summary { background: var(--surface-2); }
+.spot .sedge { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
+.spot .sedge .tm { margin: 0; }
+.sdetail { padding: 6px 8px 10px 140px; background: var(--surface-2); border-radius: 0 0 6px 6px; font-size: 13.5px; }
+.spotlist .sopen { display: block; padding: 0; border: 0; margin-top: 6px; font-weight: 600; color: var(--accent); text-decoration: none; }
+.spotlist .sopen:hover { background: none; text-decoration: underline; }
+.stime { display: none; }
+@media (max-width: 560px) { .spot > summary { grid-template-columns: 36px minmax(0, 1fr) auto; gap: 2px 10px; }
+                            .spot .sday { display: none; } .stime { display: inline; } .sdetail { padding-left: 8px; }
+                            .spot .slogo .logo { width: 28px; height: 28px; }
+                            .sfilters { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin-right: -18px; padding-right: 18px; }
+                            .schip { flex: none; } } .spotsguide dl.plain dt .tm { margin: 0; }
 .whys { display: flex; flex-wrap: wrap; gap: 4px; margin: 2px 0 3px; }
 .why { font: 700 10px/1 var(--display); letter-spacing: .6px; text-transform: uppercase; padding: 3px 6px; border-radius: 4px;
        background: var(--surface-2); color: var(--muted); border: 1px solid var(--line); }
@@ -360,6 +388,12 @@ SYSTEM_BASIS = {   # what each Best spots system is built on
     'nfl_bye_edge': 'Situation: rest (bye week)', 'nfl_div_under': 'Situation: division game',
     'nfl_high_total_under': 'Situation: very high total',
 }
+STRATEGY_SHORT = {   # one or two words per strategy: filter chips and the one-line rows
+    'priced': 'Priced value', 'teaser': 'Teaser leg', 'watch': 'Line-move watch',
+    'cfb_v2_open': 'CFB model', 'cbb_v2_open': 'CBB model', 'cbb_3p_fade': '3-point fade',
+    'nfl_wind_under': 'Wind under', 'nfl_bye_edge': 'Off a bye', 'nfl_div_under': 'Division under',
+    'nfl_high_total_under': 'High-total under',
+}
 _SYS = None
 
 
@@ -420,8 +454,9 @@ def best_spots():
         if s['priced'] or s['teaser'] or s['systems'] or s['watch']:
             rows.append(s)
 
-    def row_html(s):
-        lines = []
+    def reasons(s):
+        """Every reason this game is listed: (strategy key, timing, short pick, detail html)."""
+        out = []
         for x in s['priced']:
             opener = s.get('open_spread') if x['kind'] == 'Spread' else (
                 f'{x["text"].split()[0]} {s["open_total"]:g}' if s.get('open_total') else None)
@@ -430,24 +465,38 @@ def best_spots():
             tip = (f'Typically beats the opener: past {label} picks won {100 * pr["rate"]:.0f}% of {pr["n"]:,} against the '
                    f'opening line' + (f', and the line moved our way by the close {100 * pr["clv"]:.0f}% of the time' if pr.get('clv') else '')
                    + ('.' if pr.get('holds_to_close') else '. The edge is usually gone by the close.'))
-            lines.append(_reason('kick' if pr.get('holds_to_close') else 'early',
-                                 f'{x["kind"]} <b>{theme.esc(x["text"])}</b> {100 * x["p"]:.1f}%'
-                                 + (f' (push {100 * x["push"]:.0f}%)' if x.get('push', 0) >= 0.03 else '')
-                                 + (f' · opened {theme.esc(opener)}' if opener else '') + ' · Priced value',
-                                 f'our ratings, priced ({label})', f'{100 * pr["rate"]:.0f}% of {pr["n"]:,} vs the opener', tip))
+            t = 'kick' if pr.get('holds_to_close') else 'early'
+            out.append(('priced', t, x['text'], _reason(
+                t, f'{x["kind"]} <b>{theme.esc(x["text"])}</b> {100 * x["p"]:.1f}%'
+                   + (f' (push {100 * x["push"]:.0f}%)' if x.get('push', 0) >= 0.03 else '')
+                   + (f' · opened {theme.esc(opener)}' if opener else '') + ' · Priced value',
+                f'our ratings, priced ({label})', f'{100 * pr["rate"]:.0f}% of {pr["n"]:,} vs the opener', tip)))
         for x in s['systems']:
-            lines.append(_reason(system_timing(x.get('key')), f'<b>{theme.esc(x["pick"])}</b> · {theme.esc(x["label"])}',
-                                 SYSTEM_BASIS.get(x.get('key'), 'Situation'), x['record']))
+            k = x.get('key') or 'system'
+            t = system_timing(k)
+            out.append((k, t, x['pick'], _reason(t, f'<b>{theme.esc(x["pick"])}</b> · {theme.esc(x["label"])}',
+                                                 SYSTEM_BASIS.get(k, 'Situation'), x['record'])))
         if s['teaser']:
-            lines.append(_reason('range', f'Teaser leg <b>{theme.esc(s["teaser"][0].replace("Teaser ", "").replace("★ ", ""))}</b>',
-                                 "NFL teaser rules (Dylan's study, 2015-25)", 'about 77% of legs won'))
+            leg = s['teaser'][0].replace('Teaser ', '').replace('★ ', '')
+            out.append(('teaser', 'range', f'{s["teaser"][1]} teaser leg',
+                        _reason('range', f'Teaser leg <b>{theme.esc(leg)}</b>',
+                                "NFL teaser rules (Dylan's study, 2015-25)", 'about 77% of legs won')))
         if s['watch']:
             w = s['watch']
             side = s['home'] if w['toward'] == 'home' else s['away']
-            lines.append(_reason('timing', f'Ours {theme.esc(s["ours"])} vs market {theme.esc(s["market"])}: watch '
-                                           f'<b>{theme.esc(side)}</b> · Line-move watch',
-                                 'our ratings vs the market', f'gaps of {w["label"]} pts moved toward our number '
-                                 f'{100 * w["rate"]:.0f}% of {w["n"]:,}'))
+            out.append(('watch', 'timing', f'Watch {side}', _reason(
+                'timing', f'Ours {theme.esc(s["ours"])} vs market {theme.esc(s["market"])}: watch '
+                          f'<b>{theme.esc(side)}</b> · Line-move watch',
+                'our ratings vs the market', f'gaps of {w["label"]} pts moved toward our number '
+                f'{100 * w["rate"]:.0f}% of {w["n"]:,}')))
+        return out
+
+    def row_html(s, rs):
+        """One line per game (pick, matchup, strategy, when-to-bet badge); tap for the reasons and the game card."""
+        when = 'Time TBD' if s.get('tbd') else s['dt'].strftime('%I:%M %p').lstrip('0') + ' ET'
+        keys = list(dict.fromkeys(k for k, *_ in rs))
+        src = ' · '.join(STRATEGY_SHORT.get(k, 'System') for k in keys)
+        right = ''
         if s['priced']:
             best = max(s['priced'], key=lambda x: x['ev'])
             need = (110 / 210) * (1 - best.get('push', 0))
@@ -455,22 +504,68 @@ def best_spots():
             cls = 'pv strong' if margin >= 0.03 else 'pv' if margin >= 0.015 else 'pv slight'
             tip = (f'{best["kind"]} {best["text"]}: wins {100 * best["p"]:.1f}%, needs {100 * need:.1f}% at −110 · '
                    f'about {100 * best["ev"]:+.1f}¢ per $1')
-            right = (f'<span class="{cls}" title="{theme.esc(tip)}">{100 * best["p"]:.1f}%</span>'
-                     f'<span class="sline">{100 * need:.1f}% needed</span>')
-        elif s['systems']:
-            right = '<span class="edge none">System</span>'
-        elif s['teaser']:
-            right = f'<span class="edge none">{theme.esc(s["teaser"][1])}</span><span class="sline">tease</span>'
-        else:
-            right = f'<span class="edge none">Watch</span><span class="sline">{s["watch"]["gap"]:g} pts</span>'
-        return _row(s, ''.join(lines), right)
+            right = f'<span class="{cls}" title="{theme.esc(tip)}">{100 * best["p"]:.1f}%</span>'
+        more = f' · {len(rs)} reasons' if len(rs) > 1 else ''
+        return (f'<li data-sport="{theme.esc(s["sport"])}" data-strat="{" ".join(keys)}"><details class="spot"><summary>'
+                f'<span class="sday">{theme.esc(when)}</span>{league_mark(s["sport"])}'
+                f'<span class="smain"><span class="smatch">{theme.esc(rs[0][2])}</span>'
+                f'<span class="sline"><span class="stime">{theme.esc(when)} · </span>{theme.esc(s["away"])} @ '
+                f'{theme.esc(s["home"])} · {theme.esc(src)}{more}</span></span>'
+                f'<span class="sedge">{_badge(rs[0][1])}{right}</span></summary>'
+                f'<div class="sdetail">{"".join(r[3] for r in rs)}{_labels(s)}'
+                f'<a class="sopen" href="{theme.esc(s["page"])}">Open game card →</a></div></details></li>')
 
     log_spots(rows)
-    body = _day_sport_groups(rows, row_html) if rows else '<p class="hint spotnone">Nothing qualifies in the next 7 days.</p>'
+    today = datetime.now().astimezone().date()
+    main, watch_only = [], []
+    for s in sorted(rows, key=lambda s: s['sort']):
+        rs = reasons(s)
+        rs.sort(key=lambda r: r[0] == 'watch')                       # a real edge leads; the timing note goes last
+        (watch_only if all(r[0] == 'watch' for r in rs) else main).append((s, rs))
+
+    def label(d):
+        nice = d.strftime('%a %b %d').replace(' 0', ' ')
+        return f'Today · {nice}' if d == today else f'Tomorrow · {nice}' if (d - today).days == 1 else nice
+    days = {}
+    for s, rs in main:
+        days.setdefault(s['dt'].date(), []).append(row_html(s, rs))
+    body = ''.join(
+        f'<details class="sgroup"{" open" if (d - today).days <= 1 else ""}><summary class="spotday">{theme.esc(label(d))}'
+        f' <span><span class="scount">{len(v)}</span></span></summary><ol class="spotlist">{"".join(v)}</ol></details>'
+        for d, v in days.items())
+    if watch_only:
+        body += (f'<details class="sgroup swatch"><summary class="spotday">Line-move watch <span>timing notes, not bets · '
+                 f'<span class="scount">{len(watch_only)}</span></span></summary><ol class="spotlist">'
+                 + ''.join(row_html(s, rs) for s, rs in watch_only) + '</ol></details>')
+    # filter chips: sport and strategy, built from what is listed now (counts include the watch section)
+    allr = main + watch_only
+    sports = {}
+    strats = {}
+    for s, rs in allr:
+        sports[s['sport']] = sports.get(s['sport'], 0) + 1
+        for k in dict.fromkeys(r[0] for r in rs):
+            strats[k] = strats.get(k, 0) + 1
+    chip = lambda k, v, txt, on=False: (f'<button type="button" class="schip" data-k="{k}" data-v="{theme.esc(v)}" '
+                                        f'aria-pressed="{"true" if on else "false"}">{theme.esc(txt)}</button>')
+    order = ['NFL', 'CFB', 'NBA', 'CBB']
+    filters = ('<div class="sfilters" role="group" aria-label="Filter by sport">' + chip('sport', 'all', 'All sports', True)
+               + ''.join(chip('sport', sp, f'{sp} {n}') for sp, n in sorted(sports.items(), key=lambda x: order.index(x[0]) if x[0] in order else 9))
+               + '</div><div class="sfilters" role="group" aria-label="Filter by strategy">' + chip('strat', 'all', 'All strategies', True)
+               + ''.join(chip('strat', k, f'{STRATEGY_SHORT.get(k, "System")} {n}')
+                         for k, n in sorted(strats.items(), key=lambda x: (x[0] == 'watch', -x[1]))) + '</div>') if allr else ''
+    script = r"""<script>(function(){var root=document.querySelector('.spots');if(!root)return;var f={sport:'all',strat:'all'};
+function apply(){var any=false;root.querySelectorAll('li[data-sport]').forEach(function(li){var ok=(f.sport==='all'||li.dataset.sport===f.sport)&&(f.strat==='all'||li.dataset.strat.split(' ').indexOf(f.strat)>=0);li.hidden=!ok;if(ok)any=true;});
+var filtered=f.sport!=='all'||f.strat!=='all';root.querySelectorAll('details.sgroup').forEach(function(g){var n=g.querySelectorAll('li[data-sport]:not([hidden])').length;g.hidden=!n;g.querySelector('.scount').textContent=n;if(filtered&&n)g.open=true;});
+var none=root.querySelector('.sfnone');if(none)none.hidden=any;}
+root.querySelectorAll('.schip').forEach(function(c){c.addEventListener('click',function(){var k=c.dataset.k;f[k]=c.dataset.v;root.querySelectorAll('.schip[data-k="'+k+'"]').forEach(function(x){x.setAttribute('aria-pressed',x.dataset.v===f[k]?'true':'false');});apply();});});})();</script>"""
+    if not allr:
+        body = '<p class="hint spotnone">Nothing qualifies in the next 7 days.</p>'
     return ('<section class="card spots"><div class="spots-head"><h2>Best spots</h2>'
-            '<span class="hint">Only edges that held up in testing · next 7 days · '
+            '<span class="hint">Only edges that held up in testing · next 7 days · tap a game for why · '
             '<a href="#spotsguide" onclick="showTab(\'spotsguide\'); window.scrollTo(0, 0)">How this works →</a>'
-            '</span></div>' + body + '</section>')
+            '</span></div>' + filters + body
+            + ('<p class="hint spotnone sfnone" hidden>Nothing matches these filters.</p>' + script if allr else '')
+            + '</section>')
 
 
 # Info tab: what each dashboard tab shows (dashboard → [(tab, description)])
