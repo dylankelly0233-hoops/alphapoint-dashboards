@@ -1,6 +1,276 @@
 {
  "sport": "cfb",
- "generated": "2026-11-20T09:12:47-05:00",
+ "generated": "2026-11-20T18:12:27-05:00",
+ "teams": {
+  "Clemson": {
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-14",
+     "text": "Clemson lost QB Tait Reynolds for the season and backup Christopher Vizzina was hurt vs Georgia Tech; a third-string QB starts vs Duke. Ratings were built with Reynolds.",
+     "source": "Sports Illustrated",
+     "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPTnh1eDJIeDg4MG5Nb0RHRnlGa0JUNmlheVIzQUNscGFYNTE3UElJbmxJR0dwM2VnRmlrSnBGSHdXRF83R0huLWI1dE9QUFhQTWdMcVh0STRhOTlKMlRlS0lUN0dtREJQdktnS3JCN1R4OWF5Y21RY0dQMTJnNksyT0Z5bmxwQ3ZpYkN1bXpXTlE3Z1I2OHhNczZMaVd0dFZyZzJrMTVULWN0UXg5aXhqTU5xZEZBTjhVa1hIcnRqdC1fc2FsZ0E?oc=5",
+     "date": "2026-11-17"
+    }
+   ]
+  },
+  "Michigan State": {
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-14",
+     "text": "QB Alessio Milivojevic is out vs Oregon after leaving the Washington loss and backup Cam Fancher is also hurt; the ratings were built with the starter.",
+     "source": "The Detroit News",
+     "url": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxNWDBoU2owU0JQZkZtV2xTSkV0REJHQ1RndDlqZHZzc09tRGk3cjBjajVobWVVc1pjV2pqbHJyWDY4eFJGeDljM1NvVWR3WDZQZXBoSU1Yb1VuemlLNmFoOW1HbURRNVZhVWpJcUZyWF9tX1Z5ZHc5UVhqUWIwdE9FUEMxR01SS2hWUUJKa0FXSXJGdmFyLWhIVGFFc3lLaUlxRmNPZU9PVjBjN05QTmc5WVJpY1QwaHdWMFBlVEp5eXpoeU9lZGUtY0t2S1UyZEFFQjdmOWl5RnlIVjE0REV5QjJfOVVMQkxTcG9ZZw?oc=5",
+     "date": "2026-11-18"
+    }
+   ]
+  },
+  "South Carolina": {
+   "watch": [
+    {
+     "direction": "unclear",
+     "since": "2026-11-14",
+     "text": "QB LaNorris Sellers (ankle) missed the 34-6 Arkansas loss with Cutter Woods starting; his status for Georgia was still undecided this week.",
+     "source": "Greenville Online",
+     "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPblIzZW5qZHlMV0owa0ZtOWFhcFIxQ0hMOWVQdUdCcUpqT2Zwc0JYTmxYMkdXc2x3MkNWQTFWRGMxTzdPR3dRal9JVFFLWVB4SzRxNTBUdGQxcVFiMTdPRTh1dUdfblNDZXZyZW4wMFYzUEh5VVdGSkFCTVJJUDIzejMtVlNUTkpONUlOOXg0ZTBiT0NzNGc5SU5tX1hiQXlNejlBTXdEZm45VlZZUzZLN2pTdGlCUGxPSVZMNGJPVWYtMzZoenhseDUxenA4ci1HbjczTkJvNXA?oc=5",
+     "date": "2026-11-17"
+    },
+    {
+     "direction": "too_high",
+     "since": "2026-11-14",
+     "text": "WRs Nyck Harbor and Mazeo Bennett Jr. were both hurt (one missed, one left the Arkansas game); availability unknown for Georgia.",
+     "source": "247Sports",
+     "url": "https://247sports.com/college/south-carolina/article/south-carolina-football-injury-report-lanorris-sellers-nyck-harbor-isaiah-augustave-292820861/",
+     "date": "2026-11-15"
+    }
+   ]
+  },
+  "North Carolina": {
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-14",
+     "text": "QB Billy Edwards Jr. left the Louisville loss (upper body) and is uncertain for Virginia; freshman Travis Burgess would start.",
+     "source": "Keeping It Heel",
+     "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNejZ4b0ZFMWVGdEFMVVdDQzBxcG1rZ21hN0tLZk5YVkh3eGRDdW00MGtjNHBDSWtxcm1lUk00M2ZTSUVWSUUweThYRk03bjhEY2h1V2ZOQlo0X0E3VXQ3emNEVFBLdjV3eHFobTI3blVxb2pWdnlYVEhSWXBHaHNzNzhDdjBVNkZqNS1qWUIwZzVpM2I2Z0hhZVZfRmFjZV9tcDJvTXlqMkdjR05XRDM3dVlmMzBqYUkxS1phd2xicTB1aDg?oc=5",
+     "date": "2026-11-19"
+    }
+   ]
+  },
+  "Northwestern": {
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-01",
+     "text": "QB Aidan Chiles (upper body) is out vs Minnesota, his third straight missed game; our ratings still lean on games he started.",
+     "source": "Yahoo Sports",
+     "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOSkt4cXJkNFJyZ1NpdGZrNU93RmtjY1dTekZQZjdqMDVKb0dOWUI2TnJybFQzM1haeFg1U2dWZlRzdlI3VkdvbENYTDY3Y2JtMlNvN1UyWkRoa1JQdWpLY19uM2swdHc3M19tVUNQcDh6Z1NkUG5xV1NKT2M2WHEzSE9RV0pZMDE3bGR3?oc=5",
+     "date": "2026-11-19"
+    }
+   ]
+  },
+  "Ohio State": {
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-10-17",
+     "text": "QB Julian Sayin has been out since the Oct. 17 Indiana game with freshman Luke Fahey starting; much of Ohio State's rating comes from Sayin's starts.",
+     "source": "Yahoo Sports",
+     "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPRXhiSHVqaDliWHdMLTFiZmVtdmZ6NnJoZ3dxaTU1QjlYdDhqbTJVbjRzU1hQeU9BN1BkLW1MYUJEXzVvRE5kazJaNXJPaXltUWlzVTY3Vmpqbno5ajNqek1HUTEwaW9tcGpOU1oteUJPVko4VTNudVZFdzUtR1BlZERFSXpyT2tXb0Nn?oc=5",
+     "date": "2026-11-19"
+    },
+    {
+     "direction": "too_low",
+     "since": "2026-11-20",
+     "text": "Starting LG Luke Montgomery and Brock Boyd are cleared to return vs Nebraska per the Big Ten availability report.",
+     "source": "Eleven Warriors",
+     "url": "https://news.google.com/rss/articles/CBMijAJBVV95cUxQbHlYWHh4UlAyVGo0NXBIM05aVWRwVXEwd2c3QWY2aXU1dlplaTNUREVGRVRJckE4RzZLTWVEWjAydWZNR0FVRUM3TkxZRS1TMWdSME1GZXVpMW0xc1NHQmRSTTBVR19tSzRWZFV1dUpObWpvYzQxV05tdkZzUGpKbnQ5bjZ6UEVzc3NTVXZsYk11UU5EX0gzMm1TeGJ4cTVaSncxMkU5MmVET0ctd0JzajZuWFpIWkNvRHNSSGVXTVA3aVBFS1VnRHVSNEZQdkIxdmFLMkVwUmdZcjFxOVNwaTUxYnZXLWhzNk9YTEVRUWJ2UWR0SUVIenh2SGFHemFtcm8yRDRaYVZ6eThV?oc=5",
+     "date": "2026-11-20"
+    }
+   ]
+  },
+  "Illinois": {
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-17",
+     "text": "QB Katin Houser is not likely to play vs Iowa after broken-nose surgery; Michael Clayton II starts. The line moved from Iowa -6.5 to -9.5.",
+     "source": "Field Level Media",
+     "url": "https://fieldlevelmedia.com/latest-stories?storyId=268624",
+     "date": "2026-11-17"
+    }
+   ]
+  },
+  "Mississippi State": {
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-14",
+     "text": "QB AJ Swann was hurt again at Auburn and is out vs Tennessee Tech; Mississippi State is down to its third-string QB.",
+     "source": "The Clarion-Ledger",
+     "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxQVWxNVlhTQ1Zsbk5KOW03UTRtelJxeFRjbm9Sa3pEU0FkZVdjczMwazg0MFVlMHdEVU1SaGpHS2VqUW9vTGtjV3NzOC1FVE9sYUNrWllnTjR0NjAteDlpTGp4SU5fS1pGQk51V3VfRU1Oejd0cFVXQjNJM3g0N3lmRU1hMXliSmhDTVZra0FYcTBuSTRiUWluQ3RIOGt3ejNCYmgtRHRMdzNqQ2VUaWZaUjA2Mi1VUlNJQ2x5SlZlV09KZXViRUp2NzlKY3piT0ZmNmNDTy1GQ0ZxRmFnU3EzeUN5ZDlKSHBQaXc?oc=5",
+     "date": "2026-11-19"
+    }
+   ]
+  },
+  "Kansas State": {
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-10-01",
+     "text": "QB Avery Johnson has been out since October (neck/shoulder); Dillon Duff is likely to start vs Arizona after starting the TCU loss.",
+     "source": "The Topeka Capital-Journal",
+     "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxOWFNQNnkyeEg4Y2xoWG92Z3BESWkyd3dzRDlfa0ZGUTREdDRXbFVhMXUwbWFKbkZtRVNqTmxtNGtfYlJuekNEWFgzWG16TmNmMWFCcl9CRG5yX1owTjlhNzVtd203WHZYek9GMm9OMVM5UjFjNHp3Nk01eDZfcVJiQXZMaWs1UF9xeUVESzdlSlpkaEpkUDlqN0FLVVhPMnJuX1pqNmFBY1pPRDZhcDlkMXV2RW9ESHJLSkhnTlctY2pnYUJPWHVIRVBUa1g4QVQxT1JFRGZ2RmgwQVRJMExz?oc=5",
+     "date": "2026-11-16"
+    }
+   ]
+  },
+  "Rutgers": {
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-14",
+     "text": "Three Rutgers QBs are on the injury report for Penn State; Greg Schiano called the QB situation grim.",
+     "source": "247Sports",
+     "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxOWF9mc2JqLUJUaVJEYzdVWlhfTFpSLUp0b0pONHZUM2N4aHQ4RnRaTXhkY25rTjZkLU9uRGp3WVdPUWRsZlZ3QWd6VW1KNGtCQkhlS1pOaDlxQVlDZ3ZpbzVpOGJzbWZaZGtHWkF1RVE2N2RIdlN0MGI5NHJMaDNWbzJEZVM3ZXVJc3BOdHhYd0FUN3ZJZmJPRU9qemdYdXQzYXVtTENXMmVxbjFIMXNXbjV2dWRGV2w1MHd0ckUtbmJiUnM5RE5LZnpZWGl2SXdTZFdlVGNkZ2FEQQ?oc=5",
+     "date": "2026-11-19"
+    }
+   ]
+  },
+  "Tennessee": {
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-14",
+     "text": "WR Mike Matthews (knee) and OL Nic Moore are out for the season, the 11th Vol lost this year; QB George MacIntyre is expected to play vs LSU.",
+     "source": "Knoxville News Sentinel",
+     "url": "https://news.google.com/rss/articles/CBMihAJBVV95cUxPRWR0TDBWRGozWFBIbm9FYUZWbWVQdkc4VThHdWRnRE5OWF9NSVEtb0xuN0JZOUszMjdQX0hHMmR4Wno2VEs1RV9zUnRsTEtJRlZfNUE0SjhjNjlBTXFaM3BjWXlSRkp0RWVJVTVwN2FhelVXWUV4LWk3VVVYQTNodWN1WUplUnVpWGk3cnBqc2ZGSm8yRXpiNHRWdFJ2SFdEU1FpWVZsS2tLVTdnclRuTkQ0bGtOTDlnQmN2cU4wZGN1M2VKUXdKVmM0S3hrWDZPX0Y0ckhLYWNmSEVuWVhiVEpMa25pZ2dxMG9VMHBYSjNleE5WY0g3MkY2ajVVb1Y0RWpzTw?oc=5",
+     "date": "2026-11-19"
+    }
+   ]
+  },
+  "Florida State": {
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-14",
+     "text": "Edge Rylan Kennedy is reported out for the season and FSU has 23 players ruled out vs NC State; RB Amari Thomas is also out for the year.",
+     "source": "Yahoo Sports",
+     "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOMGZYWGhidnFFeWZMQS1UcGZKYTlRc0VvZXJCdmtmNXRSUmZZOGpKWXVveW50Q3FwMHFpa2M0d1Q4TzhyX284bFgta2h0QS1YRzlfTEtmVEo5MG42NFNLLXJaTEdObkRPaGd6RG83UmVXZlQyVll4c3ZHNXR5STFIMnlrSUw?oc=5",
+     "date": "2026-11-20"
+    }
+   ]
+  },
+  "Wisconsin": {
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-14",
+     "text": "Freshman QB Ryan Hopkins is questionable for Purdue after being hurt vs Maryland; Colton Joseph started earlier in the season.",
+     "source": "On3",
+     "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNYTdWa3BSQk9mWl9mR2hkWUZVRFVxR0RHRUpNY1hkeUhEOHpzOVhQcGNya3hKNDNsbURjcHlRb0hTVC15ZXItYU1jV0pRUHJVY240RjZJR2Zvczl1bWpWOS1Hbkg4TTBVYnprQk8wTnlrVDRsdmdBel9kWVZzX2Q2ZE02WUNaaHFyVGVsd1ZYa2FHRU1JREc1RWd3anFCdEN2ZW1EMHR6OUJYWkZXSGlpenhTRXNZVVdIV2c?oc=5",
+     "date": "2026-11-19"
+    }
+   ]
+  },
+  "Texas": {
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-16",
+     "text": "DT Hero Kanu is out for the season after surgery for a torn biceps.",
+     "source": "Burnt Orange Nation",
+     "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQXzQweFF5SEZmZDc1VkZKcTJMdlNTSEtSaTdTXzlFX28xWGFPaUh3U2tLdzBDR21pT2dvZXVmX2dlak9jUmpxVk5faHBTUGdVQkRURy1FZ3pSMU5Zb3M4Q1lEMy1YZlBGUi1mRmcxSkRMUXFmWlF1UmRKYmZMZGc5UzFhSVRWa2ZYckRjOXJpVDRtc194bjRJLTFXMVJkQXdxOTVKd1NDT3A?oc=5",
+     "date": "2026-11-16"
+    }
+   ]
+  },
+  "Michigan": {
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-19",
+     "text": "Michigan ruled out 3 offensive linemen for UCLA and WR JJ Buchanan is likely out for the season.",
+     "source": "Yahoo Sports",
+     "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNNmg1NGE4M0ZWS2ZqajBBaVh5N2E2S1BnYUxZc2dBdDNMWjJneUNpbzYycXJjZml0R2hnWGQ1Ri1mVUhMQjJtcy1yYUZ6M3J2ZEVtaGNyZ3R6THIxT3VCUlo2TnNURkhodTQ3Vy13RW9NM3BnZkZCV3cyV3Vzal8taC1CU05vNGtkeUJv?oc=5",
+     "date": "2026-11-19"
+    }
+   ]
+  },
+  "Oklahoma State": {
+   "watch": [
+    {
+     "direction": "unclear",
+     "since": "2026-11-14",
+     "text": "QB Drew Mestemaker is questionable vs Arizona State with a shoulder stinger from the Texas Tech game; earlier updates trended positive.",
+     "source": "Yahoo Sports",
+     "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNQV9qMF96MjNRWE16ckI4RDgySW9wUmZTZFk5a2pNQm05Qmx5N0UzNXRXZTlidG9lLVFIZTh2YU05SUwxT0Vfc0FXS3F2YUZ1YzlpelVkdmRsb2VaZWJsc3ZDaEo2b2hIM2NnUmc1MDRaRnlqN0NOanhUSUZteFl4REJaOWE2RHhlM2c?oc=5",
+     "date": "2026-11-19"
+    }
+   ]
+  },
+  "West Virginia": {
+   "watch": [
+    {
+     "direction": "unclear",
+     "since": "2026-11-14",
+     "text": "QB Michael Hawkins Jr. (bone bruise) is questionable vs Houston with an encouraging update; Scotty Fox Jr. starts if he can't go.",
+     "source": "Yahoo Sports",
+     "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNb3VlOGpLYXhINmVERUMzenNBWEtfSU1fbG5Qb0Vxb0hRQVhJdElZT1NhMVZXRkxOdVBHMmdqLWNpaEtlc3VHVllmWjVBcWIzZlZYZ2ppelBuSkgwc1ZQckotX0ktZUpabTJiOWhMVW55U0JQVWE4QnRBTm1DLVBGTHZ5RjZ2US11UUN6N2E1UQ?oc=5",
+     "date": "2026-11-20"
+    }
+   ]
+  },
+  "LSU": {
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-20",
+     "text": "LB Whit Weeks is out vs Tennessee and top WRs Jackson Harris and Winston Watkins Jr. are questionable.",
+     "source": "And The Valley Shook",
+     "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQWDVVNGlCWFduYlUxSkZMVFJGLWtIOVBRa2NTaGxNUmZXbVhjQjhMYXBKZjFaX19HYXlhcDhqUXMxR1pOYVJZMDQxcktMNDhoLUtubDFvNUhZUVprVjU0UU1fbnhxN1FCbnNRWGJ3NXlqR1F1ekVVTkNLY0ItRFpobEZtU29Zd0ZXYkxOTFhzOV9lUm1fV29CaDNJczA3V1BzZjVXUy1YVFkxZzNkNDI3Mi1fT3JZM0JZ?oc=5",
+     "date": "2026-11-20"
+    }
+   ]
+  },
+  "Maryland": {
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-14",
+     "text": "QB Malik Washington (knee) did not start vs Wisconsin; transfer Cardell Williams started. Maryland plays at USC.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/college-football/story/_/id/50480722/source-maryland-qb-malik-washington-start-vs-wisconsin",
+     "date": "2026-11-14"
+    }
+   ]
+  },
+  "Nebraska": {
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-19",
+     "text": "Three Nebraska defensive starters, including Jahsear Whittington, are out vs Ohio State.",
+     "source": "Eleven Warriors",
+     "url": "https://news.google.com/rss/articles/CBMijAJBVV95cUxQbHlYWHh4UlAyVGo0NXBIM05aVWRwVXEwd2c3QWY2aXU1dlplaTNUREVGRVRJckE4RzZLTWVEWjAydWZNR0FVRUM3TkxZRS1TMWdSME1GZXVpMW0xc1NHQmRSTTBVR19tSzRWZFV1dUpObWpvYzQxV05tdkZzUGpKbnQ5bjZ6UEVzc3NTVXZsYk11UU5EX0gzMm1TeGJ4cTVaSncxMkU5MmVET0ctd0JzajZuWFpIWkNvRHNSSGVXTVA3aVBFS1VnRHVSNEZQdkIxdmFLMkVwUmdZcjFxOVNwaTUxYnZXLWhzNk9YTEVRUWJ2UWR0SUVIenh2SGFHemFtcm8yRDRaYVZ6eThV?oc=5",
+     "date": "2026-11-19"
+    }
+   ]
+  },
+  "Notre Dame": {
+   "watch": [
+    {
+     "direction": "too_low",
+     "since": "2026-11-20",
+     "text": "Defensive starter Francis Brewu is off the injury report and returns for SMU.",
+     "source": "Slap the Sign",
+     "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOVHJFdjdSZF9KVHBpYXBGYVpHOUw2azM3dHZfclI2bEdBYkNpb21vZHBCMmV3ZGlJUWhJS0RnX3pFM2xCWDZ3TkRtQnN2YS1RSFJ2dllyM0xsczREOW9FQXpabUYtc184cjc3WlMzOGw2WnMxQmlnaTIzV0Q3NDZNcEltVVpfQWttdXNvd1RaSGZsRlBTUDFXVXpMRDUwNHRaYVJyNGxIdFI4YzlIWmFfNlJB?oc=5",
+     "date": "2026-11-20"
+    }
+   ]
+  }
+ },
  "games": {
   "401858303": {
    "verdict": "explained",
@@ -45,7 +315,10 @@
      "date": "2026-11-19"
     }
    ],
-   "returning": []
+   "returning": [],
+   "swings": {
+    "Minnesota": "Northwestern QB Aidan Chiles is out a third straight game (Nov 19); the market has Northwestern only -2.5, closer to Minnesota than our line."
+   }
   },
   "401858537": {
    "verdict": "partly",
@@ -64,11 +337,15 @@
      "date": "2026-11-17"
     }
    ],
-   "returning": []
+   "returning": [],
+   "swings": {
+    "Illinois": "QB Katin Houser is not likely to play vs Iowa after broken-nose surgery (Nov 17); the market marked Illinois down, our ratings haven't yet.",
+    "Northwestern": "QB Aidan Chiles has missed three straight games (Nov 19); the market rates Northwestern without him, our ratings still carry his starts."
+   }
   },
   "401858527": {
-   "verdict": "partly",
-   "summary": "Illinois QB Katin Houser is unlikely to play, but backup Clayton has started before, so it covers only part of the gap.",
+   "verdict": "explained",
+   "summary": "Illinois QB Katin Houser is not likely to play and the market moved from Iowa -6.5 to -9.5 on it; that covers most of our 5-point gap.",
    "reasons": [
     {
      "text": "QB Katin Houser is not likely to play vs Iowa after surgery on a broken nose, Bret Bielema said Tuesday; Michael Clayton II has started in his absence.",
@@ -80,6 +357,12 @@
      "text": "Star WR Tony Diaz (left the Purdue game hurt) has 'a chance' to play at Illinois, per Kirk Ferentz; Xavier Styles is likely out.",
      "source": "247Sports",
      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNVlIwYmxOd3VlYzJhVmw4OEI2OUN5OVczRkNhVUhkWnp2R3ctREVXTUdxY1pLT2QtZVFLQjB5d0EtenRMNjZnb0xaNEFYd2NxWWJYa09yZHR4XzZjRmItejF3d0RySXowZEZPNy1RTDhQZ2F1eDFsNjdDTjBYMnlZR1l5QkVZaVJyb1h1WUk2UGhkZ1E4WkhpYzdpdkVVd3dIa1NNRk40eTg?oc=5",
+     "date": "2026-11-17"
+    },
+    {
+     "text": "The spread opened Iowa -6.5 and has moved to -9.5 this week, after Bret Bielema said Houser is unlikely to play.",
+     "source": "Field Level Media",
+     "url": "https://fieldlevelmedia.com/latest-stories?storyId=268624",
      "date": "2026-11-17"
     }
    ],
@@ -96,7 +379,10 @@
      "date": "2026-11-19"
     }
    ],
-   "returning": []
+   "returning": [],
+   "swings": {
+    "Mississippi State": "QB AJ Swann is out (Clarion-Ledger, Nov 19) and a third-string QB starts; our line fell far more than the market's, which moved only from -35.5 to -33.5."
+   }
   },
   "401856747": {
    "verdict": "unexplained",
@@ -108,13 +394,19 @@
    "verdict": "unexplained",
    "summary": "FCS opponent; our ratings and the market disagree on how big the gap is, and no injury news explains it.",
    "reasons": [],
-   "returning": []
+   "returning": [],
+   "swings": {
+    "Ole Miss": "Nothing found: the market moved on Ole Miss without a clear reason; FCS opponent with no rating sources to compare."
+   }
   },
   "401856746": {
    "verdict": "unexplained",
    "summary": "FCS opponent; our ratings and the market disagree on how big the gap is, and no injury news explains it.",
    "reasons": [],
-   "returning": []
+   "returning": [],
+   "swings": {
+    "Alabama": "Nothing confirmed: QB Keelon Russell's ankle status for Chattanooga is unclear (Tide 100.9, Nov 19); FCS games have no rating sources to compare."
+   }
   },
   "401864543": {
    "verdict": "unexplained",
@@ -164,11 +456,15 @@
      "date": "2026-11-19"
     }
    ],
-   "returning": []
+   "returning": [],
+   "swings": {
+    "Tennessee": "Nothing found: the market moved on Tennessee without a clear reason beyond its 11 season-ending injuries (OL Nic Moore the latest, Nov 19).",
+    "Vanderbilt": "Nothing found: the market moved on Vanderbilt without a clear reason; QB Jared Curtis came off the injury report for Florida (Nov 19)."
+   }
   },
   "401858313": {
    "verdict": "partly",
-   "summary": "UNC QB Billy Edwards Jr. is uncertain after leaving the Louisville loss; that covers part of an 11.6-point gap.",
+   "summary": "UNC QB Billy Edwards Jr. is uncertain after leaving the Louisville loss; that covers part of an 11.6-point gap. No new update found Friday evening.",
    "reasons": [
     {
      "text": "QB Billy Edwards Jr. (upper body, left the Louisville loss in the 3rd quarter) remains uncertain on UNC's initial injury report for Virginia. Freshman Travis Burgess finished last game.",
@@ -183,7 +479,11 @@
      "date": "2026-11-20"
     }
    ],
-   "returning": []
+   "returning": [],
+   "swings": {
+    "NC State": "NC State has WRs Keenan Jackson, Will Wilson and Chase Bond out vs FSU (Nov 20), but nothing found that fully explains the move.",
+    "North Carolina": "QB Billy Edwards Jr. left the Louisville loss (upper body, Nov 14) and is uncertain; the market prices his absence, our ratings don't."
+   }
   },
   "401858540": {
    "verdict": "partly",
@@ -208,7 +508,11 @@
    "verdict": "unexplained",
    "summary": "Nothing in the news; the market just rates Arizona State much closer to Arizona than we do.",
    "reasons": [],
-   "returning": []
+   "returning": [],
+   "swings": {
+    "Arizona State": "Nothing found: the market moved on Arizona State without a clear reason.",
+    "Arizona": "Nothing found: the market moved on Arizona without a clear reason."
+   }
   },
   "401856764": {
    "verdict": "partly",
@@ -250,7 +554,7 @@
   },
   "401858543": {
    "verdict": "unexplained",
-   "summary": "Nothing in the news; the market rates USC higher than we do.",
+   "summary": "Nothing found in the news; the market rates USC higher than we do. Our stored opener (USC -10.5) is far from today's UCLA -2.5, and we couldn't confirm why.",
    "reasons": [],
    "returning": []
   },
@@ -299,9 +603,14 @@
   },
   "401869958": {
    "verdict": "unexplained",
-   "summary": "No injury or coaching news found in our scan for either team; the market simply disagrees with our ratings.",
+   "summary": "Nothing in the news for either team, but the line moved 4 points from Georgia State -1 to Marshall -3; we found no reason for the move.",
    "reasons": [],
    "returning": []
+  },
+  "401858307": {
+   "swings": {
+    "SMU": "SMU shifted defensive starters after its loss to Wake Forest and injuries (On3, Nov 20); Notre Dame also gets Francis Brewu back."
+   }
   }
  }
 }

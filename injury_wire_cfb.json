@@ -1,7 +1,7 @@
 {
  "sport": "cfb",
  "week": 12,
- "generated": "2026-11-20T09:12:24-05:00",
+ "generated": "2026-11-20T18:09:52-05:00",
  "movers": [
   {
    "team": "Clemson",
@@ -267,9 +267,9 @@
    {
     "team": "TCU",
     "tag": "QB",
-    "text": "TCU discussed a QB switch due to injury ahead of No. 2 Utah; the initial injury report raised major questions.",
-    "source": "Yahoo Sports",
-    "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNNnhmVlFRZnF5c0pPX2pPUnRkbGhKTW44TnhxZlBkS2NwajNXaEhCdjFzaGU1ektTeHJWYXE4cGlwU0t0YTVZLWhMMVV2T08zaU1keUJTMTF5ZFFsMlp5ejNnbWFJdThqcjN6R1BiUVc1dnBpTWFPNGU0YkhUd1RWTTJ5QXg?oc=5",
+    "text": "TCU's starting QB is listed probable for the Utah game, per the Fort Worth Star-Telegram, after injury questions on the initial report earlier in the week.",
+    "source": "Fort Worth Star-Telegram",
+    "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNU3pKd3FrUF8tSFJUeXJRMGNLYkVqZ28teEVEM09OTF9HVlMzQTcxN1plOHlHM3l1bFlhbkt0dUJqdGU0QUNlV2lyT2FIVENMaGlLcjRiUkJ0Y25VRVh2MUxpellwUng0MHJ4cGNrUkowMG9RWFNvc0c2LTl6NXRpLUpNNU5zU0pnOXg2VGV1U0taVVhBalhDQ1ZvTW9BckZRQUHSAaIBQVVfeXFMT2Y2X3pVWGgtZEtEU2toVlY2czg4azVONTdDMjUtSW52VWtmNWViV1k3bGRndElqaGZRdHVEOE45eFhuMmpGaGdLQVlTRmFtT2g5X19uN3R5UF9ERElaMkhmUUN2M1ktQlhtdGFHMkpKTi1rdGJRc0g1Rm5NdG9na1N3Mmc3dDZoZVZzWVlzSXRKU25KOE1vaWJxbVktQ1l5Z1NB?oc=5",
     "date": "2026-11-19"
    }
   ],
@@ -403,6 +403,14 @@
     "source": "247Sports",
     "url": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxONk1mcHoyWjdkb2xsM21peFlfWm90djVKdnY3bFZndnVlOVdxWnMydThiVkhSV2w1NTRaYzB4S2hJaGRKTzEwbEZvVG1mZnAzWjNPUUpWekEybTBKakltUFdlTlZSWEsyMTVwazNYanBCRjA5SGl4UnAtRlpKeVhxRFNVMGFEaGdfNWdWQThSNFVndHFQU2xQeU5kQ09kU2trMk1VekUzNjhvcTU1QnRPVFByWHV6Q2NvN241cjM2WTQyWFpnUm80cGVBTkhhUWNValdPc3I2QS1qeEtRZWVUWXltaHlWQ0xyYS1mQXkyOA?oc=5",
     "date": "2026-11-20"
+   },
+   {
+    "team": "Indiana",
+    "tag": "RETURNING",
+    "text": "Indiana RB Khobie Martin is back for the Washington game, a boost to the Hoosiers' run game.",
+    "source": "Yahoo Sports",
+    "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOTEt4SHl5bjhKNEdzaUNrNXRPVVdsWGF2Vng0eVBOTmNWYklBOFh5RUFqWDFNR2xTSkhVemdLTlBpeGhPN1lvT2dLRzE2VGNoM2RUbC1Dem52OXdFZDB4amFOVFBKYkozLVVUR0ZydldvOFRRMkFSOHVROTdiSFF1d2szR1N0Q0VkTnE4?oc=5",
+    "date": "2026-11-20"
    }
   ],
   "Texas A&M": [
@@ -419,10 +427,10 @@
    {
     "team": "Notre Dame",
     "tag": "RETURNING",
-    "text": "A defensive starter is off Notre Dame's injury report and will be back vs SMU.",
-    "source": "On3",
-    "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQdFVzZUVOTnRfb3Ftb25wWGJaVkdzMEVJY3JaMl9NcnZsVzItdkE2U2JRQk1GdlpkMmthM1VxcF9GV0hwQnYtbUVpV3ZtSDhRbGxjREpnUXRHS25xeGVMQldsOV8wYXE2R012Ym8xZ2s5dFVsNWZfVUVaZ0ZkNHdvRWNOUU00YmRUR25NdUIzNWdQS3RtSXFlUmRwT2g4LW9EUlNjUEdpNTZ2MzQ2bzRSd3NON3NGM1F6?oc=5",
-    "date": "2026-11-19"
+    "text": "Notre Dame defensive starter Francis Brewu is off the injury report and returns for the SMU game.",
+    "source": "Slap the Sign",
+    "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOVHJFdjdSZF9KVHBpYXBGYVpHOUw2azM3dHZfclI2bEdBYkNpb21vZHBCMmV3ZGlJUWhJS0RnX3pFM2xCWDZ3TkRtQnN2YS1RSFJ2dllyM0xsczREOW9FQXpabUYtc184cjc3WlMzOGw2WnMxQmlnaTIzV0Q3NDZNcEltVVpfQWttdXNvd1RaSGZsRlBTUDFXVXpMRDUwNHRaYVJyNGxIdFI4YzlIWmFfNlJB?oc=5",
+    "date": "2026-11-20"
    }
   ],
   "USC": [
@@ -439,10 +447,10 @@
    {
     "team": "Miami",
     "tag": "KEY",
-    "text": "WR Malachi Toney remains out but is reported ahead of schedule in his recovery. RB Mark Fletcher left the Duke game (lower body) and later got a positive update.",
-    "source": "On3",
-    "url": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxOTDJDQmItakVhZktRbUZJc2NYSmNUa04yTzluVzFxM3AzUTRIU1RyaE5NRW92NlQ2RU94VFJwVDFTV3FCNmVMaHdWSTE4ajJKMGJfa2dRYXNPZ2dlRlY2WGszZk14d21oR0ZVR3lvVjk0amFyZi1CZHVmVXd4d0Utb1lEeGFBOEFOY25rbEhpTUlUaklYVjBzU1lYalAzam9jVzlfYmI3LXpVNVpoa3c3N3Z5cUViSjV1NmxJOTVHTTNFRnluU1pRajVBSmx3aWw1aHJoVV9meElsU05Ua0ZMVmRXOWdNZTZITTdxN2xhbnhnUWVVdUlfeDFzbE4?oc=5",
-    "date": "2026-11-16"
+    "text": "Miami WR Malachi Toney (ankle) remains out; Mario Cristobal says he is 'really close' with an ACC title game return in view. RB Mark Fletcher got a positive update after leaving Duke.",
+    "source": "The New York Times",
+    "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNWHFmYnREdHdEVnY1YkozZGRNdVVyWS1HUjFCOTVhSVpud0VXRkJ4QVBKakszSFBENVV3MzUwbmxmRS0zdjVDam42aU9MdVhmcHZLSmcwME5DU3FWWDV2Q092TTc0N2tXcGdvOVkzRUxzU0duY3hSMnotdjJBVHB1MS1yVVBmLUxhMzBTQWVpUUQyNlFGZFdmaVJLMVc?oc=5",
+    "date": "2026-11-20"
    }
   ],
   "Penn State": [
