@@ -685,15 +685,20 @@ def generate_html(p4, vals, sched, week, season_type, info):
         sysl = sy.cfb(int(getattr(r, 'week', week) or week), season_type, v2, info['opened'].get(str(r.game_id)), mkt_margin, r.home, r.away, r.completed)
         los = sy.cfb_los(info.get('los') or {}, r.home, r.away, r.completed)     # tracking only, not on Best spots
         extra = sy.los_item(los, mkt_margin)
+        held = {t: d for t, d in (info.get('held') or {}).items() if t in (r.home, r.away)} if not r.completed else {}
+        if held:                                     # a team's latest game isn't in the stats yet: no strategies
+            sysl, extra, labels = [], [], []
         if labels:                                   # the old bounce-back label: not proven against the line
             bm, bopp = last.get(r.away, (0, ''))
             extra.append({'action': 'Back', 'what': sy._side(r.away, -mkt_margin) if mkt_margin == mkt_margin else r.away,
-                          'name': 'Bounce-Back', 'why': f'{r.away} lost by {-bm} to {bopp} last time out', 'tracking': True,
+                          'name': 'Bounce-Back', 'bench': 'close', 'side': 'away', 'why': f'{r.away} lost by {-bm} to {bopp} last time out', 'tracking': True,
                           'title': f'Away teams off a {BLOWOUT_MARGIN}+ point loss covered 55.4% (739 games, 2016-25), '
                                    f'not strong enough to count as proven'})
         tag_html = ''
         move = ex.line_move(info['opened'].get(str(r.game_id)), mkt_margin, pm, r.home, r.away)
-        move += sy.tag_html(sysl, theme.esc, extra, k=theme.k)
+        move += sy.hold_row(held, theme.esc, theme.k) if held else sy.tag_html(sysl, theme.esc, extra, k=theme.k, ctx={
+            'opened': info['opened'].get(str(r.game_id)), 'market': mkt_margin,
+            'open_total': ex.first_total('cfb', r.game_id, getattr(r, 'total', None)), 'total': getattr(r, 'total', None)})
         big = ex.lopsided(mkt_margin, r.margin)
         move += ex.rating_confidence(info['by_source'].get(r.home, {}), info['by_source'].get(r.away, {}),
                                      _hfa(r), big)
@@ -977,7 +982,7 @@ def main():
     except Exception as e:
         print(f'  ! totals model failed: {e}')
         total_fn = None
-    info = {'shadow': shadow_model(), 'los': cfbm.los_net(YEAR), 'p4_names': p4_names, 'total_fn': total_fn, 'val_live': val.live_records('cfb'), 'scale': scale_info, 'sag_asof': sag_asof, 'rating_sd': float(power['composite'].std()),   # FBS-wide spread, sets the rating chip colors
+    info = {'shadow': shadow_model(), 'los': cfbm.los_net(YEAR), 'held': cfbm.missing(YEAR, vm.fetch_games()), 'p4_names': p4_names, 'total_fn': total_fn, 'val_live': val.live_records('cfb'), 'scale': scale_info, 'sag_asof': sag_asof, 'rating_sd': float(power['composite'].std()),   # FBS-wide spread, sets the rating chip colors
             'wire': wire_data, 'market_rows': market_rows, 'history': hist, 'freshness': freshness, 'results': results,
             'weeks': [(week, sched, last_results(results[0], week, season_type))]
                      + ([(week + 1, next_sched, next_last)] if not next_sched.empty else []),

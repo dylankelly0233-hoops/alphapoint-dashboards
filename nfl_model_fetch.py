@@ -49,6 +49,31 @@ def season_stats(season):
     return out.drop(columns='home_team')
 
 
+_SEASON = {}
+
+
+def _season(season):
+    if season not in _SEASON:
+        _SEASON[season] = season_stats(season)
+    return _SEASON[season]
+
+
+def missing(full, season):
+    """{team: ['Week N']} for finished games (schedule has a result) that the play-by-play doesn't have yet."""
+    try:
+        have = set(_season(season)['game_id'])
+        f = full[full['game_id'].astype(str).str.startswith(f'{season}_') & full['result'].notna()]
+        out = {}
+        for r in f.itertuples():
+            if r.game_id not in have:
+                for t in (r.home_team, r.away_team):
+                    out.setdefault(t, []).append(f'Week {r.week}')
+        return out
+    except Exception as e:
+        print(f'  ! data check: {e}')
+        return {}
+
+
 def sr_profile(season):
     """
     Live input for the NFL tracking leans (systems.nfl_track): {team: (regular-season games played, average offensive
@@ -56,7 +81,7 @@ def sr_profile(season):
     nfl_systems_research.py (per-game rates on non-garbage plays, averaged over games).
     """
     try:
-        s = season_stats(season)
+        s = _season(season)
         s = s[s.season_type == 'REG']
         off = s.groupby('team').sr.agg(['size', 'mean'])
         dfn = s.groupby('opp').sr.mean()

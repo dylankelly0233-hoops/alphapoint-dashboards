@@ -618,17 +618,16 @@ def generate_html(power, metrics, days, info):
             held = {t: d for t, d in (info.get('box_missing') or {}).items() if t in (g['home'], g['away'])}
             if held:      # a team's latest game isn't in the stats yet: hold every stat-based strategy for this game
                 sysl = []
-                move += ('<div class="lmove strats">' + theme.k('Strategies') + '<span class="hint">On hold: '
-                         + theme.esc('; '.join(f"{t}'s {', '.join(x.strftime('%b %d').replace(' 0', ' ') for x in d)} game"
-                                               for t, d in held.items()))
-                         + ' is not in our stats yet, so stat-based strategies and our ratings are a game behind. '
-                           'This clears on the next hourly update after it posts.</span></div>')
+                move += sy.hold_row({t: [x.strftime('%b %d').replace(' 0', ' ') for x in d] for t, d in held.items()},
+                                    theme.esc, theme.k)
             else:
                 sysl = sy.cbb(cm2.season_day(g['kick'].date(), SEASON), v2, info['opened'].get(g['game_id']), g['market'],
                               g['home'], g['away'], bool(g['score']))
                 sysl += sy.cbb_3p(info.get('p3') or {}, g['market'], g['home'], g['away'], bool(g['score']))
                 sysl += sy.cbb_track(game_last(info, g), g['kick'].date(), g['market'], g['home'], g['away'], bool(g['score']))
-                move += sy.tag_html(sysl, theme.esc, k=theme.k)
+                move += sy.tag_html(sysl, theme.esc, k=theme.k, ctx={
+                    'opened': info['opened'].get(g['game_id']), 'market': g['market'],
+                    'open_total': ex.first_total('cbb', g['game_id'], g.get('total')), 'total': g.get('total')})
             pr = '' if big or g['score'] else val.card_row('cbb', margin, g['market'], g['home'], g['away'], info['val_live'])
             t_ours = info['total_fn'](g['home'], g['away'], g['neutral']) if info.get('total_fn') else np.nan
             pr += '' if g['score'] else tot.card_row('cbb', t_ours, g.get('total', np.nan))

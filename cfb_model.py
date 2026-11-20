@@ -218,6 +218,26 @@ def fetch_live(get, year):
     return g, adv, have
 
 
+def missing(year, completed):
+    """
+    {team: [labels]} for FBS-vs-FBS games that are final (completed: DataFrame from cfb_value_metrics.fetch_games, with
+    game_id / week / home_team / away_team) but not yet in all three model caches (games, advanced stats, box scores).
+    """
+    try:
+        ids = lambda p, c: set(pd.read_csv(p)[c].astype(str)) if os.path.exists(p) else set()
+        have = (ids(f'cfbv_v2games_{year}.csv', 'id') & ids(f'cfbv_v2adv_{year}.csv', 'game_id')
+                & ids(f'cfbv_v2box_{year}.csv', 'game_id'))
+        out = {}
+        for r in completed.itertuples():
+            if str(r.game_id) not in have:
+                for t in (r.home_team, r.away_team):
+                    out.setdefault(t, []).append(f'week {r.week}')
+        return out
+    except Exception as e:
+        print(f'  ! data check: {e}')
+        return {}
+
+
 def los_net(year):
     """{team: (net stuff rate, games)} for the line-of-scrimmage tracker (stat_matchup_test.py, CFB 'stuff net big'):
     season-to-date average of the stuffed rate this team's defense forces minus the rate its own offense is stuffed,

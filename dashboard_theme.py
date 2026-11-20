@@ -569,7 +569,10 @@ td.pos { color: var(--pos); font-weight: 600; } td.neg { color: var(--neg); font
 .strats .sname { font-weight: 700; color: #0f766e; } .strats .sitem.trk .sname { color: var(--muted); }
 .strats .strk { font: 700 9.5px/1 var(--display); letter-spacing: .6px; text-transform: uppercase; color: var(--muted);
                 border: 1px solid var(--line); border-radius: 3px; padding: 2px 4px; margin-left: 5px; vertical-align: 1px; }
-.strats .swhy { color: var(--muted); }
+.strats .swhy { color: var(--muted); display: block; }
+.strats .sbet { display: block; font-weight: 600; color: var(--ink); }
+.strats .sbet.close, .strats .sbet.teaser { color: #0f766e; }
+.strats .sitem { margin-top: 5px; }
 .gapwhy div { margin: 2px 0; font-size: 13.5px; line-height: 1.45; } .gapwhy a { color: var(--accent); }
 .gverdict { font: 700 11px/1 var(--display); letter-spacing: .6px; text-transform: uppercase; padding: 3px 6px;
             border-radius: 4px; color: #fff; background: #64748b; }

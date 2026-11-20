@@ -215,6 +215,7 @@ def los_item(t, market):
         return []
     own = market if t['side'] == 'home' else -market
     return [{'action': 'Back', 'what': _side(t['team'], own) if market == market else t['team'], 'name': NAMES['cfb_los'],
+             'bench': 'open', 'side': t['side'],
              'why': f"{t['team']} are {t['gap']:g} pts better at the line of scrimmage (stuff rate)", 'tracking': True,
              'title': 'Tracking, not proven: the team with the much better line-of-scrimmage (stuff rate) numbers covered '
                       '55% of 703 vs the opener in past seasons, but that is within luck for the number of patterns tested'}]
@@ -309,8 +310,72 @@ NAMES = {   # the name each strategy goes by everywhere on the site (Dylan, 2026
 }
 
 
+def hold_row(held, esc, k=None, name=str):
+    """
+    Dylan, 2026-11-20: 'any sort of tagging should stay off of games until fully confirmed'. When a team's latest
+    finished game is not in the data a strategy reads yet, the card shows this instead of any strategy (and the game
+    stays off Best spots). held = {team: [labels of the missing games]}.
+    """
+    if not held:
+        return ''
+    what = '; '.join(f"{name(t)}'s {', '.join(str(x) for x in d)} game" for t, d in held.items())
+    label = k('Strategies') if k else '<span class="k">Strategies</span>'
+    return (f'<div class="lmove strats">{label}<span class="hint">On hold: {esc(what)} is not in our stats yet, so '
+            f'no strategy is shown for this game until it is. This clears on the next hourly update after it posts.</span></div>')
+
+
+BENCH_DEFAULT = {'cbb_3p_fade': 'close', 'nfl_wind_under': 'close', 'teaser': 'teaser'}
+
+
+def bench(key):
+    """Which line a strategy was graded against: 'open', 'close' or 'teaser' (system_test.json 'bench' when tested there)."""
+    for rs in results().values():
+        if key in rs and rs[key].get('bench'):
+            return rs[key]['bench']
+    return BENCH_DEFAULT.get(key, 'open')
+
+
+def bet_text(it, ctx):
+    """
+    The exact number to bet, in words (Dylan, 2026-11-20: 'abundantly clear what number we are saying to bet').
+      opener-graded: 'Bet the opener: Oakland +25.5 · now +22.5, 3 pts already gone'
+      close-graded:  'Graded vs the closing line: Murray State +3.5 now is fine up to kickoff'
+      teaser legs:   'Graded at the close: tease it while the line is +1.5 to +3'
+    ctx: {'opened': opening home margin, 'market': current home margin, 'open_total', 'total'}.
+    """
+    b, side, what = it.get('bench', 'open'), it.get('side'), it['what']
+    pts = lambda v: f'{v:g} pt{"" if v == 1 else "s"}'
+    if b == 'teaser':
+        return 'Graded at the closing line: tease it while the underdog is +1.5 to +3'
+    if b == 'close':
+        return f'Graded vs the closing line: {what} now is fine up to kickoff'
+    ctx = ctx or {}
+    if side in ('home', 'away'):
+        o, now = ctx.get('opened'), ctx.get('market')
+        if o is None or o != o:
+            return 'Graded vs the opener (no opener on record for this game; treat the current line with caution)'
+        team = what.rsplit(' ', 1)[0]
+        own = (lambda m: m) if side == 'home' else (lambda m: -m)
+        o_txt = _side(team, own(o))
+        if now is None or now != now:
+            return f'Bet the opener: {o_txt}'
+        gone = round(((now - o) if side == 'home' else (o - now)) * 2) / 2
+        move = ('same as the opener' if gone == 0 else f'{pts(gone)} already gone' if gone > 0
+                else f'{pts(-gone)} better than the opener')
+        return f'Bet the opener: {o_txt} · now {_side(team, own(now)).split()[-1]}, {move}'
+    if side in ('over', 'under'):
+        o, now = ctx.get('open_total'), ctx.get('total')
+        if o is None or o != o:
+            return 'Graded vs the opening total (no opener on record for this game)'
+        gone = round(((o - now) if side == 'under' else (now - o)) * 2) / 2 if now == now and now is not None else 0
+        move = ('same as the opener' if gone == 0 else f'{pts(gone)} already gone' if gone > 0
+                else f'{pts(-gone)} better than the opener')
+        return f'Bet the opening total: {side.title()} {o:g} · now {now:g}, {move}'
+    return ''
+
+
 def items(systems):
-    """Strategy dicts -> row items: {action, what, name, why, tracking, title} (see strategy_row)."""
+    """Strategy dicts -> row items: {action, what, name, why, tracking, title, bench, side} (see strategy_row)."""
     import re
     out = []
     for s in systems:
@@ -318,13 +383,13 @@ def items(systems):
         what, paren = m.group(1), m.group(2)
         out.append({'action': 'Bet' if s.get('kind') == 'total' else 'Back', 'what': what,
                     'name': NAMES.get(s.get('key'), 'System'), 'why': s.get('why') or paren or '',
-                    'tracking': bool(s.get('tracking')),
+                    'tracking': bool(s.get('tracking')), 'bench': bench(s.get('key')), 'side': s.get('side'),
                     'title': s['label'] + ': ' + s['record'] + (' (tracking: not proven enough for Best spots)'
                                                                 if s.get('tracking') else '')})
     return out
 
 
-def strategy_row(its, esc, k=None):
+def strategy_row(its, esc, k=None, ctx=None):
     """
     One 'Strategies' row on a game card (Dylan, 2026-11-20: make it abundantly clear who each one backs, less
     crowded). Strategies are grouped by what they say to do: 'BACK Murray State +3.5' once, then each strategy on its
@@ -343,15 +408,18 @@ def strategy_row(its, esc, k=None):
         html += (f'<div class="sgrp{" trk" if allt else ""}"><div class="sact"><span class="sverb">{esc(action)}</span>'
                  f'<b>{esc(what)}</b></div>')
         for i in xs:
+            bt = bet_text(i, ctx)
             html += (f'<div class="sitem{" trk" if i["tracking"] else ""}" title="{esc(i["title"])}">'
                      f'<span class="sname">{esc(i["name"])}</span>'
                      + ('<span class="strk">tracking</span>' if i['tracking'] else '')
-                     + (f' <span class="swhy">{esc(i["why"])}</span>' if i['why'] else '') + '</div>')
+                     + (f'<span class="sbet {i.get("bench", "open")}">{esc(bt)}</span>' if bt else '')
+                     + (f'<span class="swhy">{esc(i["why"])}</span>' if i['why'] else '') + '</div>')
         html += '</div>'
     label = k('Strategies') if k else f'<span class="k">Strategies</span>'
     return f'<div class="lmove strats">{label}{html}</div>'
 
 
-def tag_html(systems, esc, extra=(), k=None):
-    """The Strategies row for these systems plus any extra items (teaser legs, CFB tracking leans)."""
-    return strategy_row(items(systems) + list(extra), esc, k)
+def tag_html(systems, esc, extra=(), k=None, ctx=None):
+    """The Strategies row for these systems plus any extra items (teaser legs, CFB tracking leans).
+    ctx = {'opened', 'market', 'open_total', 'total'} so each line can say exactly which number to bet."""
+    return strategy_row(items(systems) + list(extra), esc, k, ctx)

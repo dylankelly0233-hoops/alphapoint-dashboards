@@ -465,22 +465,27 @@ def generate_html(power, vals, sched, week, info):
         side = lambda ab, nm, v: {'name': nm, 'logo': _logo(ab, meta), 'rating': rating.get(ab), 'sd': sd, 'key': ab,
                                   'signal': theme.signal_pill(v, spot, strong), 'color': meta.get(ab, ('', ''))[1]}
         tag_html, tag_label = teaser_tag(r)
-        sysl = sy.nfl(r, info.get('total_top10'), lambda t: nick(vm.full_name(t)),      # proven betting systems
+        held = {nick(vm.full_name(t)): d for t, d in (info.get('held') or {}).items() if t in (r.home, r.away)} if not r.score else {}
+        if held:                                     # a team's latest game isn't in the play-by-play yet: no strategies
+            tag_label = ''
+        sysl = [] if held else sy.nfl(r, info.get('total_top10'), lambda t: nick(vm.full_name(t)),      # proven betting systems
                       wx=info['weather'].get(str(r.game_id)), roof=wx.NFL_STADIUMS.get(r.home, (0, 0, ''))[2])
-        sysl += sy.nfl_track(info.get('sr') or {}, r.market, r.home, r.away, bool(r.score), lambda t: nick(vm.full_name(t)),
+        sysl += [] if held else sy.nfl_track(info.get('sr') or {}, r.market, r.home, r.away, bool(r.score), lambda t: nick(vm.full_name(t)),
                              postseason=str(getattr(r, 'game_type', 'REG')) not in ('REG', 'nan'))   # tracking only
         extra = []
         if tag_label:
             star = '★' in tag_label[0]
             extra.append({'action': 'Tease', 'what': tag_label[0].replace('Teaser ', '').replace('★ ', ''),
-                          'name': sy.NAMES['teaser'] + (' ★' if star else ''),
+                          'name': sy.NAMES['teaser'] + (' ★' if star else ''), 'bench': 'teaser',
                           'why': ('+1.5 / +2.5 underdog with a low total' if star else
                                   f'underdog +1.5 to +3, {"total " + format(r.total, "g") if not pd.isna(r.total) and r.total <= TEASER_TOTAL_MAX else "division game"}')
                                  + ' · two-team teaser at −110 or better', 'tracking': False,
                           'title': 'Six-point two-team teaser leg; about 77% of legs won out of sample. Needs −110 pricing.'})
         tag_html = ''
         move = ex.line_move(info['opened'].get(str(r.game_id)), r.market, pm, nick(home), nick(away), 'First seen')
-        move += sy.tag_html(sysl, theme.esc, extra, k=theme.k)
+        move += sy.hold_row(held, theme.esc, theme.k) if held else sy.tag_html(sysl, theme.esc, extra, k=theme.k, ctx={
+            'opened': info['opened'].get(str(r.game_id)), 'market': r.market,
+            'open_total': ex.first_total('nfl', r.game_id, r.total), 'total': r.total})
         move += ex.rating_confidence(by_src.get(r.home, {}), by_src.get(r.away, {}), 0.0 if r.neutral else HFA_POINTS)
         if not r.score and not r.neutral and r.home in wx.NFL_STADIUMS:
             move += wx.weather_row(info['weather'].get(str(r.game_id)), wx.NFL_STADIUMS[r.home][2])
@@ -753,7 +758,7 @@ def main():
             'weather': weather, 'weeks': [(week, sched)] + ([(week + 1, next_sched)] if not next_sched.empty else []),
             'opened': {**next_opened, **{str(r['game_id']): r.get('opened') for r in market_rows}},
             'mu_prof': mu.profiles(units, MU_CATS, MU_STYLES) if not units.empty else {}, 'mu_games': cover,
-            'sr': nmf.sr_profile(vm.SEASON)}
+            'sr': nmf.sr_profile(vm.SEASON), 'held': nmf.missing(full, vm.SEASON)}
     generate_html(power, vals, sched, week, info)
 
 
