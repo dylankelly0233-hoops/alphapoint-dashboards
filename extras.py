@@ -459,9 +459,10 @@ def save_first_totals(key):
 
 
 def spot(sport, page, kick, away, home, ours, market, tags=(), signals=(), opened=None, lopsided_game=False, tbd=False,
-         key=None, total=(None, None), gid=None, ctx=None, systems=()):
+         key=None, total=(None, None), gid=None, ctx=None, systems=(), open_src=None):
     """
-    One upcoming game for the home page. ours / market = home margins; tags = [(label, team the tag favors)];
+    One upcoming game for the home page. open_src: where `opened` came from ('cfbd' = the data provider's real opening
+    line; None = the first line our hourly log saw). ours / market = home margins; tags = [(label, team the tag favors)];
     signals = [(team, 'BUY'|'SELL')]. opened / lopsided_game set the guard flags ('news', 'lopsided').
     tbd = only the date is set (kick is midnight ET); the game counts as upcoming through the end of that day.
     Returns None for games already started or without a kickoff time.
@@ -487,6 +488,7 @@ def spot(sport, page, kick, away, home, ours, market, tags=(), signals=(), opene
                 key, ours, market, home, away, *total, ctx={'phase': _val().phase(key, ts), **(ctx or {})}),
             'watch': None if not key or lopsided_game else _val().watch(key, ours, market),
             'open_spread': line_text(home, away, opened) if not _nan(opened) else None,
+            'open_num': None if _nan(opened) else float(opened), 'open_src': open_src or 'first seen',
             'open_total': first_total(key, gid, total[1]) if key else None,
             'systems': list(systems or []), 'gid': None if gid is None else str(gid),
             'market_num': None if _nan(market) else float(market)}

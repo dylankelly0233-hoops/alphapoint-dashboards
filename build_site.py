@@ -13,12 +13,14 @@ GitHub Actions runs this on a schedule (.github/workflows/build.yml); it also wo
 """
 
 import json
+import re
 import os
 import shutil
 import subprocess
 import sys
 from datetime import datetime, timedelta
 
+import pandas as pd
 import requests
 
 import dashboard_theme as theme
@@ -120,6 +122,8 @@ LANDING_CSS = """
 .spotlist .sopen { display: block; padding: 0; border: 0; margin-top: 6px; font-weight: 600; color: var(--accent); text-decoration: none; }
 .spotlist .sopen:hover { background: none; text-decoration: underline; }
 .stime { display: none; }
+.sopenline { display: block; font-size: 12.5px; margin-top: 2px; } .sopenline .gone { color: #b45309; font-weight: 600; }
+.sopenline .better { color: var(--pos); font-weight: 600; }
 @media (max-width: 560px) { .spot > summary { grid-template-columns: 36px minmax(0, 1fr) auto; gap: 2px 10px; }
                             .spot .sday { display: none; } .stime { display: inline; } .sdetail { padding-left: 8px; }
                             .spot .slogo .logo { width: 28px; height: 28px; }
@@ -419,6 +423,61 @@ def _badge(t):
     return f'<span class="tm {cls}" title="{theme.esc(tip)}">{label}</span>'
 
 
+OPEN_SOURCE = {'cfbd': 'the real opening line (CollegeFootballData)'}
+
+
+def first_seen_times():
+    """{gid: when our hourly log first saw a spread} from line_history_{sport}.csv, for 'first seen' openers."""
+    out = {}
+    for sp in BEST_SPORTS:
+        try:
+            h = pd.read_csv(os.path.join(HERE, f'line_history_{sp}.csv'), dtype={'game_id': str}).dropna(subset=['market'])
+        except (OSError, ValueError):
+            continue
+        for gid, ts in h.sort_values('ts').groupby('game_id')['ts'].first().items():
+            out[gid] = ts
+    return out
+
+
+def opener_html(s, kind, side, now, seen):
+    """
+    'Opener Duke −12 → now −13.5 · 1.5 pts already gone' for a Bet-early pick, plus where the opener came from.
+    side: home / away / over / under; now: the current line (home margin for spreads, the total for totals).
+    Returns (short line for the one-line row, sentence for the details), or ('', '') when no opener is known.
+    """
+    if now is None or now != now:
+        return '', ''
+    if kind.lower() == 'spread':
+        o = s.get('open_num')
+        if o is None:
+            return '', ''
+        team = s['home'] if side == 'home' else s['away']
+        own = (lambda m: m) if side == 'home' else (lambda m: -m)
+        o_txt, n_txt = sy._side(team, own(o)), sy._side(team, own(now)).split()[-1]
+        gone = (now - o) if side == 'home' else (o - now)          # + = the line moved toward this side (worse price)
+        src = s.get('open_src')
+        when = seen.get(str(s.get('gid')))
+        where = OPEN_SOURCE.get(src) or ('the first line our hourly check saw'
+                                         + (f', {pd.Timestamp(when).tz_convert("America/New_York").strftime("%a %b %d %I:%M %p").replace(" 0", " ")} ET'
+                                            if when else ''))
+    else:
+        o = s.get('open_total')
+        if o is None:
+            return '', ''
+        o_txt, n_txt = f'{side.title()} {o:g}', f'{now:g}'
+        gone = (o - now) if side == 'under' else (now - o)
+        where = 'the first total our hourly check saw'
+    gone = round(gone * 2) / 2
+    pts = lambda v: f'{v:g} pt{"" if v == 1 else "s"}'
+    move = ('same as the opener' if gone == 0 else f'{pts(gone)} already gone' if gone > 0
+            else f'{pts(-gone)} better than the opener')
+    cls = 'gone' if gone > 0 else 'better' if gone < 0 else ''
+    short = f'<span class="sopenline">Opener {theme.esc(o_txt)} → now {theme.esc(n_txt)} · <span class="{cls}">{move}</span></span>'
+    long_ = (f'<span class="sproof">Opener: <b>{theme.esc(o_txt)}</b>, {theme.esc(where)}. Now {theme.esc(n_txt)}: '
+             f'{move}. This edge was measured against the opener, so the closer you can get to it, the more is left.</span>')
+    return short, long_
+
+
 def _reason(timing, main, basis, record, tip=''):
     return (f'<span class="sr">{_badge(timing)}{main}<span class="sproof"'
             + (f' title="{theme.esc(tip)}"' if tip else '') + f'>Based on: {theme.esc(basis)} · {theme.esc(record)}</span></span>')
@@ -456,8 +515,10 @@ def best_spots():
         if s['priced'] or s['teaser'] or s['systems'] or s['watch']:
             rows.append(s)
 
+    seen = first_seen_times()
+
     def reasons(s):
-        """Every reason this game is listed: (strategy key, timing, short pick, detail html)."""
+        """Every reason this game is listed: (strategy key, timing, short pick, detail html, opener line)."""
         out = []
         for x in s['priced']:
             opener = s.get('open_spread') if x['kind'] == 'Spread' else (
@@ -468,21 +529,24 @@ def best_spots():
                    f'opening line' + (f', and the line moved our way by the close {100 * pr["clv"]:.0f}% of the time' if pr.get('clv') else '')
                    + ('.' if pr.get('holds_to_close') else '. The edge is usually gone by the close.'))
             t = 'kick' if pr.get('holds_to_close') else 'early'
+            op = opener_html(s, x['kind'], x.get('side'), x.get('line'), seen) if t == 'early' else ('', '')
             out.append(('priced', t, x['text'], _reason(
                 t, f'{x["kind"]} <b>{theme.esc(x["text"])}</b> {100 * x["p"]:.1f}%'
                    + (f' (push {100 * x["push"]:.0f}%)' if x.get('push', 0) >= 0.03 else '')
                    + (f' · opened {theme.esc(opener)}' if opener else '') + f' · {sy.NAMES["priced"]}',
-                f'our ratings, priced ({label})', f'{100 * pr["rate"]:.0f}% of {pr["n"]:,} vs the opener', tip)))
+                f'our ratings, priced ({label})', f'{100 * pr["rate"]:.0f}% of {pr["n"]:,} vs the opener', tip) + op[1], op[0]))
         for x in s['systems']:
             k = x.get('key') or 'system'
             t = system_timing(k)
-            out.append((k, t, x['pick'], _reason(t, f'<b>{theme.esc(x["pick"])}</b> · {theme.esc(sy.NAMES.get(k, x["label"]))}',
-                                                 SYSTEM_BASIS.get(k, 'Situation'), x['record'])))
+            pick = re.sub(r' \(opened [^)]*\)', '', x['pick'])
+            op = opener_html(s, x.get('kind', 'spread'), x.get('side'), x.get('line'), seen) if t == 'early' else ('', '')
+            out.append((k, t, pick, _reason(t, f'<b>{theme.esc(pick)}</b> · {theme.esc(sy.NAMES.get(k, x["label"]))}',
+                                            SYSTEM_BASIS.get(k, 'Situation'), x['record']) + op[1], op[0]))
         if s['teaser']:
             leg = s['teaser'][0].replace('Teaser ', '').replace('★ ', '')
             out.append(('teaser', 'range', f'{s["teaser"][1]} teaser leg',
                         _reason('range', f'<b>{theme.esc(leg)}</b> · {sy.NAMES["teaser"]}',
-                                "NFL teaser rules (Dylan's study, 2015-25)", 'about 77% of legs won')))
+                                "NFL teaser rules (Dylan's study, 2015-25)", 'about 77% of legs won'), ''))
         if s['watch']:
             w = s['watch']
             side = s['home'] if w['toward'] == 'home' else s['away']
@@ -490,7 +554,7 @@ def best_spots():
                 'timing', f'Ours {theme.esc(s["ours"])} vs market {theme.esc(s["market"])}: watch '
                           f'<b>{theme.esc(side)}</b> · {sy.NAMES["watch"]}',
                 'our ratings vs the market', f'gaps of {w["label"]} pts moved toward our number '
-                f'{100 * w["rate"]:.0f}% of {w["n"]:,}')))
+                f'{100 * w["rate"]:.0f}% of {w["n"]:,}'), ''))
         return out
 
     def row_html(s, rs):
@@ -512,7 +576,7 @@ def best_spots():
                 f'<span class="sday">{theme.esc(when)}</span>{league_mark(s["sport"])}'
                 f'<span class="smain"><span class="smatch">{theme.esc(rs[0][2])}</span>'
                 f'<span class="sline"><span class="stime">{theme.esc(when)} · </span>{theme.esc(s["away"])} @ '
-                f'{theme.esc(s["home"])} · {theme.esc(src)}{more}</span></span>'
+                f'{theme.esc(s["home"])} · {theme.esc(src)}{more}</span>{rs[0][4]}</span>'
                 f'<span class="sedge">{_badge(rs[0][1])}{right}</span></summary>'
                 f'<div class="sdetail">{"".join(r[3] for r in rs)}{_labels(s)}'
                 f'<a class="sopen" href="{theme.esc(s["page"])}">Open game card →</a>'
@@ -791,7 +855,12 @@ def spots_guide():
     outro = [
         ('Words you will see',
          '<dl class="plain"><dt>The opener</dt><dd>The first line posted for a game. Most of our edges show up against it '
-         'and fade as the line moves toward the final ("closing") number.</dd>'
+         'and fade as the line moves toward the final ("closing") number. Every <b>Bet early</b> row shows the opener, the '
+         'line now, and how many points have already gone (amber) or how much better the line is now (green). Where the '
+         'opener comes from: <b>college football</b> uses the real opening line from CollegeFootballData, the same line '
+         'our tests used. <b>College basketball and the NFL</b> use the first line our hourly check saw, with the time; '
+         'in college basketball that has matched the real opener exactly 64% of the time and within a point 91% of the '
+         'time, usually about 2½ days before tip. Totals use the first total we saw.</dd>'
          '<dt>The close</dt><dd>The last line before kickoff, the sharpest number. Beating it is much harder than '
          'beating the opener.</dd>'
          '<dt>Win chance vs. needed</dt><dd>The number on the right of a ' + sy.NAMES['priced'] + ' row: how often that '

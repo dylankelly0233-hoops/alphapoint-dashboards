@@ -727,7 +727,8 @@ def generate_html(p4, vals, sched, week, season_type, info):
                              key='cfb', total=(t_ours, t_mkt), gid=r.game_id,
                              # every game on this page has a Power 4 team (or Notre Dame): the Power 4 slice applies
                              ctx={'conf': str(getattr(r, 'conf', '')).lower() in ('true', '1'),
-                                  'p4': r.home in p4n or r.away in p4n}, systems=sysl))
+                                  'p4': r.home in p4n or r.away in p4n}, systems=sysl,
+                             open_src='cfbd' if str(r.game_id) in info.get('open_cfbd', ()) else None))
         card = theme.game_card(when, venue, side(r.away, r.away_rating, r.away_value),
                                side(r.home, r.home_rating, r.home_value), proj, mkt, r.score, edge, tag_html, move,
                                gid=r.game_id, group=f'{group_of.get(r.home, "FCS")}|{group_of.get(r.away, "FCS")}')
@@ -972,7 +973,9 @@ def main():
             'mu_games': cover_log(*results),
             'opened': {**{str(r.game_id): -r.market_open for r in next_sched.itertuples()
                           if r.market_open is not None and r.market_open == r.market_open},   # CFBD's opening line
-                       **{str(r['game_id']): r.get('opened') for r in market_rows}}}
+                       **{str(r['game_id']): r.get('opened') for r in market_rows}},
+            'open_cfbd': {str(r.game_id) for r in next_sched.itertuples() if r.market_open is not None and r.market_open == r.market_open}
+                         | {str(r['game_id']) for r in market_rows if r.get('cfbd_open') is not None}}
     generate_html(p4, vals, sched, week, season_type, info)
 
 
