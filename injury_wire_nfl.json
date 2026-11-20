@@ -1,76 +1,86 @@
 {
  "sport": "nfl",
  "week": 11,
- "generated": "2026-11-20T10:12:00-05:00",
+ "generated": "2026-11-20T17:25:00-05:00",
  "movers": [
   {
-   "team": "TB",
+   "team": "ARI",
    "tag": "QB",
-   "text": "QB Baker Mayfield (foot/right thumb) was limited Thursday after missing Wednesday; status for Sunday at Detroit TBD. Rookie Jalon Daniels took first-team reps Wednesday.",
-   "source": "ESPN",
-   "url": "https://www.espn.com/nfl/injuries",
-   "date": "2026-11-19"
-  },
-  {
-   "team": "MIN",
-   "tag": "QB",
-   "text": "QB Kyler Murray (grade 2 hamstring) is out; the Vikings target a Nov. 29 return. Kirk Cousins starts at San Francisco.",
-   "source": "ESPN",
-   "url": "https://www.espn.com/nfl/injuries",
-   "date": "2026-11-18"
-  },
-  {
-   "team": "NYJ",
-   "tag": "QB",
-   "text": "QB Geno Smith (ankle) was limited again Thursday and is questionable; he says he plans to play at the Chargers. Rookie Cade Klubnik would start if he can't.",
-   "source": "ESPN",
-   "url": "https://www.espn.com/nfl/injuries",
-   "date": "2026-11-19"
-  },
-  {
-   "team": "NO",
-   "tag": "CLUSTER",
-   "text": "OL: OT Asim Richards (knee) out multiple weeks; OT Taliese Fuaga (knee) and C Erik McCoy (biceps) did not practice Thursday and are doubtful at Chicago.",
+   "text": "QB Carson Beck (back spasms) did not practice Friday and is questionable at Kansas City; Josh Johnson is expected to start. Gardner Minshew is on IR after UCL surgery.",
    "source": "ESPN",
    "url": "https://www.espn.com/nfl/injuries",
    "date": "2026-11-20"
   },
   {
-   "team": "BAL",
-   "tag": "KEY",
-   "text": "CB Marlon Humphrey will not play Sunday vs. Carolina (coach's decision) after podcast comments about Baltimore, per Jesse Minter. DT Nnamdi Madubuike (hamstring) DNP Thursday.",
+   "team": "TB",
+   "tag": "QB",
+   "text": "QB Baker Mayfield (foot/thumb) was limited Thursday and Friday and is questionable at Detroit; Todd Bowles said he \"looked good\" and is trending toward starting. Jalon Daniels is next up.",
    "source": "ESPN",
    "url": "https://www.espn.com/nfl/injuries",
-   "date": "2026-11-19"
+   "date": "2026-11-20"
+  },
+  {
+   "team": "NO",
+   "tag": "CLUSTER",
+   "text": "OL: OT Taliese Fuaga (knee) and C Erik McCoy (biceps) are out at Chicago; OT Asim Richards (knee) is out multiple weeks. Three line starters missing.",
+   "source": "ESPN",
+   "url": "https://www.espn.com/nfl/injuries",
+   "date": "2026-11-20"
+  },
+  {
+   "team": "KC",
+   "tag": "CLUSTER",
+   "text": "OL: G Trey Smith (concussion) and OT Jaylon Moore (ankle) are out vs. Arizona. RB Kenneth Walker III (groin) is also out, targeting the Thursday game at Buffalo.",
+   "source": "ESPN",
+   "url": "https://www.espn.com/nfl/injuries",
+   "date": "2026-11-20"
+  },
+  {
+   "team": "MIN",
+   "tag": "QB",
+   "text": "QB Kyler Murray (hamstring) is ruled out; Kirk Cousins starts at San Francisco.",
+   "source": "ESPN",
+   "url": "https://www.espn.com/nfl/injuries",
+   "date": "2026-11-20"
   }
  ],
  "teams": {
+  "ARI": [
+   {
+    "team": "ARI",
+    "tag": "QB",
+    "text": "QB Carson Beck (back spasms) did not practice Friday and is questionable at Kansas City; Josh Johnson is expected to start. Gardner Minshew is on IR after UCL surgery.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nfl/injuries",
+    "date": "2026-11-20"
+   }
+  ],
   "TB": [
    {
     "team": "TB",
     "tag": "QB",
-    "text": "QB Baker Mayfield (foot/right thumb) was limited Thursday after missing Wednesday; status for Sunday at Detroit TBD. Rookie Jalon Daniels took first-team reps Wednesday.",
+    "text": "QB Baker Mayfield (foot/thumb) was limited Thursday and Friday and is questionable at Detroit; Todd Bowles said he \"looked good\" and is trending toward starting. Jalon Daniels is next up.",
     "source": "ESPN",
     "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-19"
+    "date": "2026-11-20"
    },
    {
     "team": "TB",
     "tag": "KEY",
-    "text": "S Antoine Winfield Jr. (ankle) did not practice Wednesday and is questionable.",
+    "text": "S Antoine Winfield Jr. (ankle) is out for Sunday at Detroit.",
     "source": "ESPN",
     "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-18"
+    "date": "2026-11-20"
    }
   ],
   "MIN": [
    {
     "team": "MIN",
     "tag": "QB",
-    "text": "QB Kyler Murray (grade 2 hamstring) is out; the Vikings target a Nov. 29 return. Kirk Cousins starts at San Francisco.",
+    "text": "QB Kyler Murray (hamstring) is ruled out; Kirk Cousins starts at San Francisco.",
     "source": "ESPN",
     "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-18"
+    "date": "2026-11-20"
    },
    {
     "team": "MIN",
@@ -83,65 +93,37 @@
    {
     "team": "MIN",
     "tag": "RETURNING",
-    "text": "TE T.J. Hockenson (wrist) limited Thursday and WR Jauan Jennings (calf) full Wednesday after missing time.",
+    "text": "TE T.J. Hockenson (wrist) has no injury designation and LB Blake Cashman (concussion) practiced fully; both are back for San Francisco.",
     "source": "ESPN",
     "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-19"
-   }
-  ],
-  "NYJ": [
-   {
-    "team": "NYJ",
-    "tag": "QB",
-    "text": "QB Geno Smith (ankle) was limited again Thursday and is questionable; he says he plans to play at the Chargers. Rookie Cade Klubnik would start if he can't.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-19"
-   }
-  ],
-  "ARI": [
-   {
-    "team": "ARI",
-    "tag": "QB",
-    "text": "QB Gardner Minshew (elbow, IR) had season-ending UCL surgery. Starter Carson Beck (back) was limited Thursday and is questionable for Sunday at Kansas City.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-19"
+    "date": "2026-11-20"
    }
   ],
   "NO": [
    {
     "team": "NO",
     "tag": "CLUSTER",
-    "text": "OL: OT Asim Richards (knee) out multiple weeks; OT Taliese Fuaga (knee) and C Erik McCoy (biceps) did not practice Thursday and are doubtful at Chicago.",
+    "text": "OL: OT Taliese Fuaga (knee) and C Erik McCoy (biceps) are out at Chicago; OT Asim Richards (knee) is out multiple weeks. Three line starters missing.",
     "source": "ESPN",
     "url": "https://www.espn.com/nfl/injuries",
     "date": "2026-11-20"
    }
   ],
-  "DET": [
+  "KC": [
    {
-    "team": "DET",
+    "team": "KC",
     "tag": "CLUSTER",
-    "text": "DE Aidan Hutchinson (torn ACL) on IR, out for the season. C Cade Mays (ankle) not expected to play Sunday vs. Tampa Bay, per the Detroit Free Press. CB D.J. Reed (hip) limited.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-19"
-   }
-  ],
-  "DAL": [
-   {
-    "team": "DAL",
-    "tag": "CLUSTER",
-    "text": "CB DaRon Bland and G Tyler Booker (both high-ankle sprains) are out vs. Tennessee; S Jalen Thompson (hamstring) remains on IR.",
+    "text": "OL: G Trey Smith (concussion) and OT Jaylon Moore (ankle) are out vs. Arizona. RB Kenneth Walker III (groin) is also out, targeting the Thursday game at Buffalo.",
     "source": "ESPN",
     "url": "https://www.espn.com/nfl/injuries",
     "date": "2026-11-20"
-   },
+   }
+  ],
+  "NYJ": [
    {
-    "team": "DAL",
-    "tag": "RETURNING",
-    "text": "S Jalen Thompson (hamstring), out 7 games, practiced fully Thursday after being designated to return from IR.",
+    "team": "NYJ",
+    "tag": "QB",
+    "text": "QB Geno Smith (ankle) has no injury designation and is set to start at the Chargers after scans came back clean.",
     "source": "ESPN",
     "url": "https://www.espn.com/nfl/injuries",
     "date": "2026-11-20"
@@ -151,7 +133,7 @@
    {
     "team": "BAL",
     "tag": "QB",
-    "text": "QB Lamar Jackson (thumb surgery, IR) could return Week 16, per ESPN's Dan Graziano. Jacoby Brissett starts vs. Carolina.",
+    "text": "QB Lamar Jackson (thumb surgery, IR) could return Week 16, per ESPN's Dan Graziano. Jacoby Brissett starts at Carolina.",
     "source": "ESPN",
     "url": "https://www.espn.com/nfl/injuries",
     "date": "2026-11-18"
@@ -159,27 +141,93 @@
    {
     "team": "BAL",
     "tag": "KEY",
-    "text": "CB Marlon Humphrey will not play Sunday vs. Carolina (coach's decision) after podcast comments about Baltimore, per Jesse Minter. DT Nnamdi Madubuike (hamstring) DNP Thursday.",
+    "text": "CB Marlon Humphrey is deactivated for Sunday at Carolina (coach's decision); DT Nnamdi Madubuike (hamstring) and S Jaylinn Hawkins (knee) are out.",
     "source": "ESPN",
     "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-19"
+    "date": "2026-11-20"
+   }
+  ],
+  "DET": [
+   {
+    "team": "DET",
+    "tag": "CLUSTER",
+    "text": "DE Aidan Hutchinson (torn ACL) is out for the season; C Cade Mays (ankle) is out vs. Tampa Bay. CB D.J. Reed (hip), out the last two games, is questionable.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nfl/injuries",
+    "date": "2026-11-20"
+   }
+  ],
+  "DAL": [
+   {
+    "team": "DAL",
+    "tag": "CLUSTER",
+    "text": "CB DaRon Bland and G Tyler Booker (both high-ankle sprains) are out vs. Tennessee.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nfl/injuries",
+    "date": "2026-11-20"
+   },
+   {
+    "team": "DAL",
+    "tag": "RETURNING",
+    "text": "S Jalen Thompson (hamstring), out since Week 3, practiced fully Thursday in his window to return from IR.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nfl/injuries",
+    "date": "2026-11-20"
+   }
+  ],
+  "BUF": [
+   {
+    "team": "BUF",
+    "tag": "KEY",
+    "text": "CB Christian Benford (groin) and LB Dorian Williams (calf) are out vs. Miami; TE Dalton Kincaid (thumb) is doubtful.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nfl/injuries",
+    "date": "2026-11-20"
+   }
+  ],
+  "CHI": [
+   {
+    "team": "CHI",
+    "tag": "KEY",
+    "text": "CB Kyler Gordon (shoulder) is out vs. New Orleans, per the Bears' final injury report.",
+    "source": "Yahoo Sports",
+    "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPSDBYcGNXTHdpeEloTmwtR1lYWmktTG1scjFCQ1NDdzN5U1BGRHRoMF9WMWpxWFluYXpKNE1CSGRZajVybjVJUGtFMlpMX25YeVh5Z0VkQTZOV0R3WVlCWGNUNDN0cFQ3UnZZVl9kS29SYlhGblhab3BiLVFud09aa2xYZmE?oc=5",
+    "date": "2026-11-20"
+   }
+  ],
+  "SF": [
+   {
+    "team": "SF",
+    "tag": "RETURNING",
+    "text": "WR Mike Evans is questionable vs. Minnesota; the 49ers say he is \"going in the right direction.\"",
+    "source": "Niners Nation",
+    "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQN0Z2UkJKSHhyVmNmRzZnckhPdTgyY2pHQUJ1N19QWExlSHNzNExXM2NMWVNvNmNpOV9KLTlKS2xYUnNsc01hY0dJRnY5UGNURW5oOTB2SUlvSzJreUVIN3ZFNkN2YVRtTXdiVkNOUThsNkItREg0VTlETm5MUGZKVVlmQmpLWU9FdlE3OGxmRXhBZ24zaVVGY2ptS1RSUFl4OFlDMzQ3aDY2UTBSR3BScXVLYmFWLS1wZ1N6RFBLdUl2MVRwUjRv?oc=5",
+    "date": "2026-11-20"
    }
   ],
   "MIA": [
    {
     "team": "MIA",
     "tag": "QB",
-    "text": "QB Malik Willis (groin/core) on IR; surgery still being evaluated. Kyle McCord remains the starter.",
+    "text": "QB Malik Willis (groin/core) is on IR; Kyle McCord remains the starter.",
     "source": "ESPN",
     "url": "https://www.espn.com/nfl/injuries",
     "date": "2026-11-16"
+   },
+   {
+    "team": "MIA",
+    "tag": "KEY",
+    "text": "S Dante Trader Jr. (shoulder/groin) is doubtful at Buffalo; C Aaron Brewer (concussion) is questionable.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nfl/injuries",
+    "date": "2026-11-20"
    }
   ],
   "PHI": [
    {
     "team": "PHI",
     "tag": "QB",
-    "text": "Nick Sirianni named Joe Milton the starter vs. the Steelers for a second straight game; Tanner McKee is the backup. Jalen Hurts is on IR.",
+    "text": "Joe Milton starts vs. the Steelers for a second straight game; Tanner McKee is the backup. Jalen Hurts is on IR.",
     "source": "ESPN",
     "url": "https://www.espn.com/nfl/injuries",
     "date": "2026-11-18"
@@ -187,37 +235,17 @@
    {
     "team": "PHI",
     "tag": "RETURNING",
-    "text": "WR DeVonta Smith (hamstring), out 3 games, practiced fully Thursday. LB Zack Baun (back) did not practice Wednesday.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-19"
-   }
-  ],
-  "BUF": [
-   {
-    "team": "BUF",
-    "tag": "KEY",
-    "text": "CB Christian Benford (groin) did not practice Thursday; S Amani Hooker (knee) limited. Both questionable at Miami.",
+    "text": "WR DeVonta Smith (hamstring), out five of six games, practiced fully Thursday. LB Zack Baun (back) is out.",
     "source": "ESPN",
     "url": "https://www.espn.com/nfl/injuries",
     "date": "2026-11-20"
-   }
-  ],
-  "KC": [
-   {
-    "team": "KC",
-    "tag": "KEY",
-    "text": "RB Kenneth Walker III (groin) did not practice Thursday. G Trey Smith (concussion) and OT Jaylon Moore (ankle) missed Wednesday's practice, per the Chiefs' official site.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-19"
    }
   ],
   "CIN": [
    {
     "team": "CIN",
     "tag": "KEY",
-    "text": "G Dalton Risner (knees) did not practice Thursday; G Dylan Fairchild (oblique) is also questionable for Monday at Washington.",
+    "text": "G Dalton Risner (knees) did not practice Thursday and G Dylan Fairchild (oblique) is questionable for Monday at Washington. QB Joe Burrow (illness) practiced fully.",
     "source": "ESPN",
     "url": "https://www.espn.com/nfl/injuries",
     "date": "2026-11-20"
@@ -227,27 +255,27 @@
    {
     "team": "JAX",
     "tag": "KEY",
-    "text": "C Robert Hainsey (knee) is out for Sunday vs. the Giants, per Liam Coen. DE Travon Walker (ribs) and WR Jakobi Meyers (ankle) limited.",
+    "text": "C Robert Hainsey (knee) is out for Sunday at the Giants, per Liam Coen.",
     "source": "ESPN",
     "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-19"
+    "date": "2026-11-18"
    }
   ],
   "LV": [
    {
     "team": "LV",
     "tag": "KEY",
-    "text": "TE Brock Bowers (ankle/quad) was limited Thursday after sitting out Wednesday; Klint Kubiak said he doesn't need to practice to play Sunday vs. Denver.",
+    "text": "TE Brock Bowers (ankle) is questionable at Denver; he said Friday his availability is still up in the air.",
     "source": "ESPN",
     "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-19"
+    "date": "2026-11-20"
    }
   ],
   "PIT": [
    {
     "team": "PIT",
     "tag": "KEY",
-    "text": "G Mason McCormick (dislocated ankle) placed on IR Wednesday.",
+    "text": "G Mason McCormick (dislocated ankle) was placed on IR Wednesday.",
     "source": "ESPN",
     "url": "https://www.espn.com/nfl/injuries",
     "date": "2026-11-18"
@@ -255,17 +283,17 @@
    {
     "team": "PIT",
     "tag": "RETURNING",
-    "text": "WR Michael Pittman Jr. (foot, IR), out 5 games, practiced again Thursday after being designated to return.",
+    "text": "WR Michael Pittman Jr. (foot, IR), out 5 games, practiced fully Thursday and is questionable at Philadelphia.",
     "source": "ESPN",
     "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-19"
+    "date": "2026-11-20"
    }
   ],
   "TEN": [
    {
     "team": "TEN",
     "tag": "KEY",
-    "text": "WR Wan'Dale Robinson (ankle) placed on IR and is out for the season, per Robert Saleh.",
+    "text": "WR Wan'Dale Robinson (ankle) is on IR and out for the season, per Robert Saleh.",
     "source": "ESPN",
     "url": "https://www.espn.com/nfl/injuries",
     "date": "2026-11-18"
@@ -273,17 +301,17 @@
    {
     "team": "TEN",
     "tag": "RETURNING",
-    "text": "WR Carnell Tate (shoulder), out 2 games, was limited again Thursday and is questionable vs. Dallas.",
+    "text": "WR Carnell Tate (shoulder), out 2 games, practiced fully Friday and is questionable at Dallas.",
     "source": "ESPN",
     "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-19"
+    "date": "2026-11-20"
    }
   ],
   "DEN": [
    {
     "team": "DEN",
     "tag": "RETURNING",
-    "text": "S Talanoa Hufanga (ankle), out since Week 5, practiced fully; CB Kris Abrams-Draine (ankle) full Thursday. S Brandon Jones (hamstring) limited.",
+    "text": "S Talanoa Hufanga (ankle), out since Week 5, has no game status and is set to return; CB Kris Abrams-Draine practiced fully. S Brandon Jones is questionable.",
     "source": "ESPN",
     "url": "https://www.espn.com/nfl/injuries",
     "date": "2026-11-20"

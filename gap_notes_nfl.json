@@ -1,6 +1,6 @@
 {
  "sport": "nfl",
- "generated": "2026-11-20T10:15:00-05:00",
+ "generated": "2026-11-20T17:30:00-05:00",
  "games": {
   "2026_12_NE_LAC": {
    "verdict": "explained",
@@ -27,67 +27,43 @@
   },
   "2026_11_ARI_KC": {
    "verdict": "partly",
-   "summary": "Arizona is on rookie Carson Beck, now with a back issue; that explains part of the 2.5-point gap, while Kansas City's own injuries push the other way.",
+   "summary": "Arizona is down to its third QB (Josh Johnson expected to start); that covers part of the 2.5-point gap, while Kansas City's line and RB injuries push back.",
    "reasons": [
     {
-     "text": "QB Gardner Minshew (elbow) had season-ending UCL surgery; Carson Beck (back) was limited Thursday and is questionable.",
+     "text": "QB Gardner Minshew (elbow) is on IR after UCL surgery; Carson Beck (back spasms) did not practice Friday and Josh Johnson is expected to start.",
      "source": "ESPN",
      "url": "https://www.espn.com/nfl/injuries",
-     "date": "2026-11-19"
+     "date": "2026-11-20"
     },
     {
-     "text": "DraftKings has Kansas City -16.5 with a 40.5 total.",
-     "source": "SI",
-     "url": "https://www.si.com/betting/cardinals-vs-chiefs-prediction-odds-spread-injuries-trends-for-nfl-week-11-2026",
-     "date": "2026-11-18"
+     "text": "The line opened Kansas City -13.5 and is now -16.5, moving 3 points with the Arizona QB news.",
+     "source": "AlphaPoint line history",
+     "url": "https://dylankelly0233-hoops.github.io/alphapoint-dashboards/",
+     "date": "2026-11-20"
     },
     {
-     "text": "Pushing the other way: Chiefs RB Kenneth Walker III (groin) missed Thursday; G Trey Smith (concussion) and OT Jaylon Moore (ankle) missed Wednesday.",
+     "text": "Pushing the other way: Chiefs G Trey Smith, OT Jaylon Moore and RB Kenneth Walker III are all ruled out.",
      "source": "ESPN",
      "url": "https://www.espn.com/nfl/injuries",
-     "date": "2026-11-19"
+     "date": "2026-11-20"
     }
    ],
    "returning": [],
    "swings": {
-    "KC": "Arizona lost QB Gardner Minshew to IR and starts rookie Carson Beck, so the market pushed Kansas City to -16.5, further than our ratings (ESPN / SI, Nov 18)."
+    "KC": "Arizona lost Gardner Minshew and likely Carson Beck (Josh Johnson expected to start), so the market pushed Kansas City from -13.5 to -16.5; our ratings don't see QB changes (ESPN, Nov 20)."
    }
   },
   "2026_11_MIN_SF": {
-   "verdict": "partly",
-   "summary": "Kyler Murray's hamstring likely keeps him out until Nov 29, so Minnesota starts Kirk Cousins; our ratings mix weeks with and without Murray.",
-   "reasons": [
-    {
-     "text": "QB Kyler Murray (grade 2 hamstring) is targeting a return Nov 29 vs Atlanta, which would mean missing this game; Kirk Cousins started the 30-10 win at Green Bay.",
-     "source": "The Fantasy Footballers",
-     "url": "https://www.thefantasyfootballers.com/news/647733/kyler-murray-targeting-week-12-return/",
-     "date": "2026-11-18"
-    },
-    {
-     "text": "WR Jordan Addison had thumb surgery and is out.",
-     "source": "ESPN",
-     "url": "https://www.espn.com/nfl/injuries",
-     "date": "2026-11-18"
-    }
-   ],
-   "returning": [
-    {
-     "team": "MIN",
-     "player": "Jauan Jennings",
-     "text": "WR Jauan Jennings (calf) practiced fully Wednesday after missing time.",
-     "url": "https://www.espn.com/nfl/injuries"
-    }
-   ],
    "swings": {
-    "MIN": "QB Kyler Murray (grade 2 hamstring) is expected to miss this game and Kirk Cousins starts; the market dropped Minnesota, our ratings didn't (Fantasy Footballers, Nov 18)."
+    "MIN": "QB Kyler Murray (hamstring) is ruled out and Kirk Cousins starts; the market dropped Minnesota, our ratings didn't (ESPN, Nov 20)."
    }
   },
   "2026_11_NO_CHI": {
    "verdict": "partly",
-   "summary": "New Orleans' offensive line is in pieces and Chicago is 7-2 off its bye; that explains part of the 3-point gap.",
+   "summary": "New Orleans is missing three offensive line starters, which explains part of the 3-point gap; Chicago losing CB Kyler Gordon pushes slightly the other way.",
    "reasons": [
     {
-     "text": "Saints OT Asim Richards is out for weeks; OT Taliese Fuaga and C Erik McCoy missed Thursday and are doubtful: three offensive line starters.",
+     "text": "Saints OT Taliese Fuaga (knee) and C Erik McCoy (biceps) are ruled out; OT Asim Richards (knee) is out for weeks: three line starters.",
      "source": "ESPN",
      "url": "https://www.espn.com/nfl/injuries",
      "date": "2026-11-20"
@@ -99,10 +75,10 @@
      "date": "2026-11-18"
     },
     {
-     "text": "Caleb Williams played the Week 9 win over Tampa Bay before the bye and is not on the injury report, so yesterday's doubt about him is resolved.",
-     "source": "ESPN",
-     "url": "https://www.espn.com/nfl/injuries",
-     "date": "2026-11-19"
+     "text": "Pushing the other way: Bears CB Kyler Gordon (shoulder) is out.",
+     "source": "Yahoo Sports",
+     "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPSDBYcGNXTHdpeEloTmwtR1lYWmktTG1scjFCQ1NDdzN5U1BGRHRoMF9WMWpxWFluYXpKNE1CSGRZajVybjVJUGtFMlpMX25YeVh5Z0VkQTZOV0R3WVlCWGNUNDN0cFQ3UnZZVl9kS29SYlhGblhab3BiLVFud09aa2xYZmE?oc=5",
+     "date": "2026-11-20"
     }
    ],
    "returning": [],
@@ -113,10 +89,10 @@
    "summary": "Aidan Hutchinson's season-ending ACL tear moved this line from Detroit -2.5 (spring) to Chicago -2.5; that's worth about 2 of our 4-point gap.",
    "reasons": [
     {
-     "text": "DE Aidan Hutchinson (torn ACL) went on IR and is out for the season; C Cade Mays (ankle) is also hurt.",
+     "text": "DE Aidan Hutchinson (torn ACL) is on IR and out for the season; C Cade Mays (ankle) is out this week vs. Tampa Bay.",
      "source": "ESPN",
      "url": "https://www.espn.com/nfl/injuries",
-     "date": "2026-11-18"
+     "date": "2026-11-20"
     },
     {
      "text": "The early (May) line had Detroit -2.5, so the market has swung about 5 points since then.",
@@ -131,23 +107,23 @@
    }
   },
   "2026_12_NYG_IND": {
-   "verdict": "partly",
-   "summary": "Indianapolis just lost 26-3 at Houston with both starting tackles and both top corners out; the market has moved on that, our ratings mostly haven't.",
+   "verdict": "explained",
+   "summary": "The Colts cut QB Daniel Jones after a 26-3 loss at Houston and turn to Anthony Richardson, with both tackles and both top corners hurt; our ratings see none of it.",
    "reasons": [
     {
-     "text": "The Colts lost 26-3 at Houston Thursday; Daniel Jones threw for 144 yards, his fifth straight weak game.",
+     "text": "Indianapolis released starting QB Daniel Jones Friday; Shane Steichen named Anthony Richardson the starter, with Riley Leonard as backup.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nfl/injuries",
+     "date": "2026-11-20"
+    },
+    {
+     "text": "In Thursday's 26-3 loss at Houston the Colts played without OTs Bernhard Raimann and Jalen Travis and CBs Sauce Gardner and Charvarius Ward.",
      "source": "ESPN",
      "url": "https://www.espn.com/nfl/injuries",
      "date": "2026-11-19"
     },
     {
-     "text": "Indianapolis played without OTs Bernhard Raimann and Jalen Travis and CBs Sauce Gardner and Charvarius Ward.",
-     "source": "ESPN",
-     "url": "https://www.espn.com/nfl/injuries",
-     "date": "2026-11-19"
-    },
-    {
-     "text": "The line opened Giants -4.5 and is now -5.5.",
+     "text": "The line opened Giants -4.5 and is now -6.5, after the Jones release.",
      "source": "AlphaPoint line history",
      "url": "https://dylankelly0233-hoops.github.io/alphapoint-dashboards/",
      "date": "2026-11-20"
@@ -155,12 +131,12 @@
    ],
    "returning": [],
    "swings": {
-    "NYG": "Nothing Giants-specific found; the move follows Indianapolis' 26-3 loss at Houston Thursday, which our ratings haven't absorbed (ESPN, Nov 19)."
+    "NYG": "Nothing Giants-specific (clean injury report); the market moved on Indianapolis' 26-3 loss and the Daniel Jones release (ESPN, Nov 20)."
    }
   },
   "2026_12_NYJ_MIA": {
    "verdict": "partly",
-   "summary": "Miami is on Kyle McCord with Malik Willis on IR; that explains part of the gap, but some books still have Miami favored.",
+   "summary": "Miami is on Kyle McCord with Malik Willis on IR, and Geno Smith is cleared for the Jets; that explains part of the gap, but some books still have Miami favored.",
    "reasons": [
     {
      "text": "QB Malik Willis (groin/core) is on IR; Kyle McCord started the Week 10 loss.",
@@ -169,10 +145,10 @@
      "date": "2026-11-16"
     },
     {
-     "text": "Jets QB Geno Smith (ankle) was limited again Thursday and is questionable for this week; he says he will play.",
+     "text": "Jets QB Geno Smith (ankle) has no injury designation this week after clean scans.",
      "source": "ESPN",
      "url": "https://www.espn.com/nfl/injuries",
-     "date": "2026-11-19"
+     "date": "2026-11-20"
     },
     {
      "text": "Books disagree: StatSniper shows DraftKings at Miami -1.5, against the Jets -3 we use.",
@@ -182,6 +158,11 @@
     }
    ],
    "returning": []
+  },
+  "2026_12_PHI_DAL": {
+   "swings": {
+    "DAL": "Dallas lost 46-40 to the 49ers in Week 10 and lost CB DaRon Bland and G Tyler Booker to high-ankle sprains for multiple weeks; our ratings were higher on Dallas before that (ESPN, Nov 16)."
+   }
   }
  },
  "teams": {
@@ -202,10 +183,10 @@
     {
      "direction": "too_high",
      "since": "2026-11-15",
-     "text": "QB Kyler Murray (grade 2 hamstring) is targeting a Nov 29 return, so Kirk Cousins starts; WR Jordan Addison is out after thumb surgery.",
-     "source": "The Fantasy Footballers",
-     "url": "https://www.thefantasyfootballers.com/news/647733/kyler-murray-targeting-week-12-return/",
-     "date": "2026-11-18"
+     "text": "QB Kyler Murray (hamstring) is ruled out again, so Kirk Cousins starts; WR Jordan Addison is out after thumb surgery.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nfl/injuries",
+     "date": "2026-11-20"
     }
    ]
   },
@@ -214,10 +195,10 @@
     {
      "direction": "too_high",
      "since": "2026-11-16",
-     "text": "DE Aidan Hutchinson tore his ACL and is out for the season; the ratings still include his games.",
+     "text": "DE Aidan Hutchinson tore his ACL and is out for the season; the ratings still include his games. C Cade Mays is also out this week.",
      "source": "ESPN",
      "url": "https://www.espn.com/nfl/injuries",
-     "date": "2026-11-18"
+     "date": "2026-11-20"
     }
    ]
   },
@@ -226,10 +207,10 @@
     {
      "direction": "too_high",
      "since": "2026-11-15",
-     "text": "QB Gardner Minshew (elbow) is on IR after UCL surgery; rookie Carson Beck starts.",
+     "text": "QB Gardner Minshew (elbow) is on IR after UCL surgery and starter Carson Beck (back) missed Friday; Josh Johnson is expected to start at Kansas City.",
      "source": "ESPN",
      "url": "https://www.espn.com/nfl/injuries",
-     "date": "2026-11-18"
+     "date": "2026-11-20"
     }
    ]
   },
@@ -250,22 +231,102 @@
     {
      "direction": "too_high",
      "since": "2026-11-17",
-     "text": "Three offensive line starters out or doubtful: OT Asim Richards (weeks), OT Taliese Fuaga and C Erik McCoy.",
+     "text": "Three offensive line starters out: OT Asim Richards (weeks), OT Taliese Fuaga and C Erik McCoy.",
      "source": "ESPN",
      "url": "https://www.espn.com/nfl/injuries",
-     "date": "2026-11-17"
+     "date": "2026-11-20"
     }
    ]
   },
-  "CHI": {
+  "IND": {
    "watch": [
     {
      "direction": "unclear",
+     "since": "2026-11-20",
+     "text": "The Colts released QB Daniel Jones after the 26-3 loss at Houston; Anthony Richardson starts. Both starting tackles and both top corners missed that game.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nfl/injuries",
+     "date": "2026-11-20"
+    }
+   ]
+  },
+  "TB": {
+   "watch": [
+    {
+     "direction": "unclear",
+     "since": "2026-11-18",
+     "text": "QB Baker Mayfield (foot/thumb) is questionable at Detroit after limited practices; Todd Bowles says he is trending toward starting, rookie Jalon Daniels if not.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nfl/injuries",
+     "date": "2026-11-20"
+    }
+   ]
+  },
+  "BAL": {
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-06",
+     "text": "QB Lamar Jackson (thumb surgery) is on IR with a Week 16 target; Jacoby Brissett starts. CB Marlon Humphrey is deactivated this week.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nfl/injuries",
+     "date": "2026-11-20"
+    }
+   ]
+  },
+  "PHI": {
+   "watch": [
+    {
+     "direction": "too_high",
      "since": "2026-11-01",
-     "text": "Reports differ on whether QB Caleb Williams, out since Week 9 per Squawka, is back; check his status before betting.",
-     "source": "SI",
-     "url": "https://www.si.com/betting/saints-vs-bears-prediction-odds-spread-injuries-trends-for-nfl-week-11-2026",
+     "text": "Jalen Hurts is on IR for the season; Joe Milton makes his second start. Philadelphia has lost seven straight.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nfl/injuries",
      "date": "2026-11-18"
+    },
+    {
+     "direction": "too_low",
+     "since": "2026-11-19",
+     "text": "WR DeVonta Smith (hamstring), out five of the last six games, practiced fully and is set to return.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nfl/injuries",
+     "date": "2026-11-19"
+    }
+   ]
+  },
+  "KC": {
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-20",
+     "text": "G Trey Smith, OT Jaylon Moore and RB Kenneth Walker III are all out vs. Arizona.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nfl/injuries",
+     "date": "2026-11-20"
+    }
+   ]
+  },
+  "DAL": {
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-16",
+     "text": "CB DaRon Bland and G Tyler Booker (high-ankle sprains) are expected to miss multiple weeks.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nfl/injuries",
+     "date": "2026-11-16"
+    }
+   ]
+  },
+  "LV": {
+   "watch": [
+    {
+     "direction": "unclear",
+     "since": "2026-11-15",
+     "text": "Rookie Fernando Mendoza took over at QB after Kirk Cousins was traded to Minnesota; most of the ratings were built with Cousins.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nfl/injuries",
+     "date": "2026-11-16"
     }
    ]
   }
