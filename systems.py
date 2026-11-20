@@ -97,21 +97,25 @@ def nfl(r, total_top10, name=str, wx=None, roof=None):
     near = r.kick is not None and not pd.isna(r.kick) and (
         pd.Timestamp(r.kick) - pd.Timestamp.now()).total_seconds() / 3600 <= WIND_HOURS
     if wx and roof == 'outdoor' and near and (wx.get('wind') or 0) >= 15 and not np.isnan(r.total):
-        checks.append(('nfl_wind_under', f'Under {r.total:g} (wind {wx["wind"]:.0f} mph)', 'under', r.total))
+        checks.append(('nfl_wind_under', f'Under {r.total:g} (wind {wx["wind"]:.0f} mph)', 'under', r.total,
+                       f'{wx["wind"]:.0f} mph wind forecast at an outdoor stadium'))
     if not np.isnan(r.total) and total_top10 is not None and r.total >= total_top10:
-        checks.append(('nfl_high_total_under', f'Under {r.total:g}', 'under', r.total))
+        checks.append(('nfl_high_total_under', f'Under {r.total:g}', 'under', r.total,
+                       f'a {r.total:g} total is in the top 10% of the season'))
     if r.div and not np.isnan(r.total):
-        checks.append(('nfl_div_under', f'Under {r.total:g}', 'under', r.total))
+        checks.append(('nfl_div_under', f'Under {r.total:g}', 'under', r.total, 'division game'))
     hr, ar = getattr(r, 'hr', np.nan), getattr(r, 'ar', np.nan)
     if hr == hr and ar == ar:
         if hr >= 13 and ar <= 8:
-            checks.append(('nfl_bye_edge', _side(name(r.home), r.market), 'home', r.market))
+            checks.append(('nfl_bye_edge', _side(name(r.home), r.market), 'home', r.market,
+                           f'{name(r.home)} are off a bye; {name(r.away)} are not'))
         elif ar >= 13 and hr <= 8:
-            checks.append(('nfl_bye_edge', _side(name(r.away), -r.market), 'away', r.market))
-    for key, pick, side, line in checks:
+            checks.append(('nfl_bye_edge', _side(name(r.away), -r.market), 'away', r.market,
+                           f'{name(r.away)} are off a bye; {name(r.home)} are not'))
+    for key, pick, side, line, why in checks:
         res = _passed('nfl', key)
         if res:
-            out.append({'key': key, 'label': res['label'].split(' (')[0], 'pick': pick, 'record': record_text(res),
+            out.append({'key': key, 'label': res['label'].split(' (')[0], 'pick': pick, 'record': record_text(res), 'why': why,
                         'side': side, 'line': float(line), 'kind': 'total' if side in ('over', 'under') else 'spread',
                         'tentative': bool(res.get('tentative')), 'tracking': not strict(res, key)})
     return out
@@ -137,6 +141,7 @@ def cfb(week, season_type, v2_line, opened, market, home, away, completed):
     own = lambda m: m if side == 'home' else -m          # the backed team's own margin
     pick = f'{_side(team, own(now))} (opened {_side(team, own(opened)).split()[-1]})'
     return [{'key': 'cfb_v2_open', 'label': res['label'], 'pick': pick, 'record': record_text(res),
+             'why': f'our CFB model is {abs(gap):.1f} pts off the opener ({_side(team, own(opened))}); the edge is at the opener',
              'side': side, 'line': float(now), 'kind': 'spread', 'tentative': bool(res.get('tentative')),
              'tracking': not strict(res, 'cfb_v2_open')}]
 
@@ -159,6 +164,7 @@ def cbb(day, v2_line, opened, market, home, away, completed):
     own = lambda m: m if side == 'home' else -m
     pick = f'{_side(team, own(now))} (opened {_side(team, own(opened)).split()[-1]})'
     return [{'key': 'cbb_v2_open', 'label': res['label'], 'pick': pick, 'record': record_text(res),
+             'why': f'our CBB model is {abs(gap):.1f} pts off the opener ({_side(team, own(opened))}); the edge is at the opener',
              'side': side, 'line': float(now), 'kind': 'spread', 'tentative': bool(res.get('tentative')),
              'tracking': not strict(res, 'cbb_v2_open')}]
 
@@ -182,6 +188,7 @@ def cbb_3p(p3, market, home, away, completed):
     gap = abs(h[0] - a[0]) * 100
     return [{'key': 'cbb_3p_fade', 'label': res['label'], 'pick': f'{_side(team, own)} (3P% edge {gap:.0f} pts to the other side)',
              'record': record_text(res), 'side': side, 'line': float(market), 'kind': 'spread',
+             'why': f"{away if side == 'home' else home}'s net 3-point % is {gap:.0f} pts better; hot shooting tends to cool off",
              'tentative': bool(res.get('tentative')), 'tracking': not strict(res, 'cbb_3p_fade')}]
 
 
@@ -202,12 +209,15 @@ def cfb_los(los, home, away, completed):
     return {'side': side, 'team': home if side == 'home' else away, 'gap': round(abs(h[0] - a[0]) * 100, 1)}
 
 
-def los_tag_html(t, esc):
+def los_item(t, market):
+    """Trench Warfare (tracking) as a Strategies row item. market = home margin."""
     if not t:
-        return ''
-    return (f'<span class="gtag watch" title="Tracking, not proven: the team with the much better line-of-scrimmage '
-            f'(stuff rate) numbers covered 55% of 703 vs the opener in past seasons, but that is within luck for the '
-            f'number of patterns tested">{NAMES["cfb_los"]} (tracking): {esc(t["team"])} (+{t["gap"]:g} pts)</span>')
+        return []
+    own = market if t['side'] == 'home' else -market
+    return [{'action': 'Back', 'what': _side(t['team'], own) if market == market else t['team'], 'name': NAMES['cfb_los'],
+             'why': f"{t['team']} are {t['gap']:g} pts better at the line of scrimmage (stuff rate)", 'tracking': True,
+             'title': 'Tracking, not proven: the team with the much better line-of-scrimmage (stuff rate) numbers covered '
+                      '55% of 703 vs the opener in past seasons, but that is within luck for the number of patterns tested'}]
 
 
 CBB_TRACK = {   # prior_game_systems.py (2026-11-19): met the strict bar at the opener, but within luck for 86 tests
@@ -237,11 +247,14 @@ def cbb_track(last, day, market, home, away, completed):
         picks.append(('cbb_tov_carry', 'home' if th else 'away'))
     out = []
     for key, side in picks:
-        team = home if side == 'home' else away
+        team, other = (home, away) if side == 'home' else (away, home)
         label, record = CBB_TRACK[key]
+        mine = h if side == 'home' else a
+        why = (f'{other} played yesterday; {team} has had 2+ days off' if key == 'cbb_b2b_fade'
+               else f'{team} forced turnovers on {100 * (mine[1] or 0):.0f}% of possessions last game')
         out.append({'key': key, 'label': label, 'pick': _side(team, market if side == 'home' else -market),
                     'record': record, 'side': side, 'line': float(market), 'kind': 'spread', 'tentative': True,
-                    'tracking': True})
+                    'tracking': True, 'why': why})
     return out
 
 
@@ -269,11 +282,13 @@ def nfl_track(prof, market, home, away, completed, name=str, postseason=False):
     # Defense Discount (nfl_def_fade) retired 2026-11-20: fails rule 4 (51.8% since 2021, 50.7% the last 3 seasons)
     out = []
     for key, side in picks:
-        team = home if side == 'home' else away
+        team, other = (home, away) if side == 'home' else (away, home)
         label, record = NFL_TRACK[key]
+        mine, theirs = (h, a) if side == 'home' else (a, h)
+        why = f"{name(team)}' offense gains enough on {mine[1]:.0%} of plays, {name(other)}' on {theirs[1]:.0%}"
         out.append({'key': key, 'label': label, 'pick': _side(name(team), market if side == 'home' else -market),
                     'record': record, 'side': side, 'line': float(market), 'kind': 'spread', 'tentative': True,
-                    'tracking': True})
+                    'tracking': True, 'why': why})
     return out
 
 
@@ -294,8 +309,49 @@ NAMES = {   # the name each strategy goes by everywhere on the site (Dylan, 2026
 }
 
 
-def tag_html(systems, esc):
-    return ''.join(f'<span class="gtag {"watch" if s.get("tracking") else "system"}" '
-                   f'title="{esc(s["label"] + ": " + s["record"] + (" -- tracking, not proven enough for Best spots" if s.get("tracking") else ""))}">'
-                   f'{esc(NAMES.get(s.get("key"), "System"))}{" (tracking)" if s.get("tracking") else ""}: {esc(s["pick"])}</span>'
-                   for s in systems)
+def items(systems):
+    """Strategy dicts -> row items: {action, what, name, why, tracking, title} (see strategy_row)."""
+    import re
+    out = []
+    for s in systems:
+        m = re.match(r'^(.*?)(?: \((.*)\))?$', s['pick'])
+        what, paren = m.group(1), m.group(2)
+        out.append({'action': 'Bet' if s.get('kind') == 'total' else 'Back', 'what': what,
+                    'name': NAMES.get(s.get('key'), 'System'), 'why': s.get('why') or paren or '',
+                    'tracking': bool(s.get('tracking')),
+                    'title': s['label'] + ': ' + s['record'] + (' (tracking: not proven enough for Best spots)'
+                                                                if s.get('tracking') else '')})
+    return out
+
+
+def strategy_row(its, esc, k=None):
+    """
+    One 'Strategies' row on a game card (Dylan, 2026-11-20: make it abundantly clear who each one backs, less
+    crowded). Strategies are grouped by what they say to do: 'BACK Murray State +3.5' once, then each strategy on its
+    own line with the reason in plain words; proven ones first, tracking ones grey and marked.
+    """
+    if not its:
+        return ''
+    groups = {}
+    for it in its:
+        groups.setdefault((it['action'], it['what']), []).append(it)
+    order = sorted(groups.items(), key=lambda g: all(i['tracking'] for i in g[1]))
+    html = ''
+    for (action, what), xs in order:
+        xs = sorted(xs, key=lambda i: i['tracking'])
+        allt = all(i['tracking'] for i in xs)
+        html += (f'<div class="sgrp{" trk" if allt else ""}"><div class="sact"><span class="sverb">{esc(action)}</span>'
+                 f'<b>{esc(what)}</b></div>')
+        for i in xs:
+            html += (f'<div class="sitem{" trk" if i["tracking"] else ""}" title="{esc(i["title"])}">'
+                     f'<span class="sname">{esc(i["name"])}</span>'
+                     + ('<span class="strk">tracking</span>' if i['tracking'] else '')
+                     + (f' <span class="swhy">{esc(i["why"])}</span>' if i['why'] else '') + '</div>')
+        html += '</div>'
+    label = k('Strategies') if k else f'<span class="k">Strategies</span>'
+    return f'<div class="lmove strats">{label}{html}</div>'
+
+
+def tag_html(systems, esc, extra=(), k=None):
+    """The Strategies row for these systems plus any extra items (teaser legs, CFB tracking leans)."""
+    return strategy_row(items(systems) + list(extra), esc, k)

@@ -547,7 +547,7 @@ def generate_html(power, metrics, days, info):
                           g['home'], g['away'], bool(g['score']))
             sysl += sy.cbb_3p(info.get('p3') or {}, g['market'], g['home'], g['away'], bool(g['score']))
             sysl += sy.cbb_track(info.get('last') or {}, g['kick'].date(), g['market'], g['home'], g['away'], bool(g['score']))
-            move += sy.tag_html(sysl, theme.esc)
+            move += sy.tag_html(sysl, theme.esc, k=theme.k)
             pr = '' if big or g['score'] else val.card_row('cbb', margin, g['market'], g['home'], g['away'], info['val_live'])
             t_ours = info['total_fn'](g['home'], g['away'], g['neutral']) if info.get('total_fn') else np.nan
             pr += '' if g['score'] else tot.card_row('cbb', t_ours, g.get('total', np.nan))

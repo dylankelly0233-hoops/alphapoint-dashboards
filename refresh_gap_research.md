@@ -11,7 +11,8 @@ Used by every NFL run (daily 10 AM; Mon/Wed/Thu/Fri 5 PM; Sunday 11:45 AM) and C
   "<gid>": {"verdict": "explained", "summary": "One sentence: why the market is where it is.",
             "reasons": [{"text": "QB Patrick Mahomes (ankle) ruled out Wednesday; backup starts.", "source": "ESPN",
                          "url": "https://...", "date": "2026-11-19"}],
-            "returning": [{"team": "...", "player": "...", "text": "...", "url": "..."}]}}}
+            "returning": [{"team": "...", "player": "...", "text": "...", "url": "..."}],
+            "swings": {"<team key, as in home / away>": "One sentence: what changed since its last game, with the source."}}}}
 ```
 
 ## What to check for every game (both teams)
@@ -35,6 +36,8 @@ Then pick one:
 - **explained**: what you found plausibly covers most of the gap (about two thirds or more), and it pushes the market's way.
 - **partly**: it covers some of the gap, or it's real but small.
 - **unexplained**: nothing found that justifies the market's number. This is a valid, useful answer; don't stretch to find a reason.
+
+**Swings (required).** For every team whose `history.swing` is 4+ points either way, our gap on that team moved that much since its previous game (e.g. last game we were 3 pts higher on it than the market, now 4 pts lower = a 7-pt swing). Find out why and write one sentence in `swings` under that team's key: usually a player returning or going out (our ratings don't see it, the market does), sometimes a big result that moved the market, a coaching change, or a line move. Name the player or event and the date, e.g. "QB Kyler Murray (hamstring) is out; the market dropped Minnesota about 4 pts, our ratings didn't." If you find nothing, write "Nothing found: the market moved on Minnesota without a clear reason." The game card shows this right under the swing.
 
 Write `summary` as one plain sentence a bettor can read in five seconds, e.g. "Market has Mahomes out; our ratings don't know." or "Nothing in the news; the market just rates Houston higher than we do." If a team's `history` shows we've been higher or lower on it for 4+ straight games, mention whether you found a reason (an injury our ratings never caught, a coaching change) or not.
 

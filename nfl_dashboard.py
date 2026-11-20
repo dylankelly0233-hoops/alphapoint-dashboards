@@ -469,8 +469,18 @@ def generate_html(power, vals, sched, week, info):
                       wx=info['weather'].get(str(r.game_id)), roof=wx.NFL_STADIUMS.get(r.home, (0, 0, ''))[2])
         sysl += sy.nfl_track(info.get('sr') or {}, r.market, r.home, r.away, bool(r.score), lambda t: nick(vm.full_name(t)),
                              postseason=str(getattr(r, 'game_type', 'REG')) not in ('REG', 'nan'))   # tracking only
-        tag_html += sy.tag_html(sysl, theme.esc)
+        extra = []
+        if tag_label:
+            star = '★' in tag_label[0]
+            extra.append({'action': 'Tease', 'what': tag_label[0].replace('Teaser ', '').replace('★ ', ''),
+                          'name': sy.NAMES['teaser'] + (' ★' if star else ''),
+                          'why': ('+1.5 / +2.5 underdog with a low total' if star else
+                                  f'underdog +1.5 to +3, {"total " + format(r.total, "g") if not pd.isna(r.total) and r.total <= TEASER_TOTAL_MAX else "division game"}')
+                                 + ' · two-team teaser at −110 or better', 'tracking': False,
+                          'title': 'Six-point two-team teaser leg; about 77% of legs won out of sample. Needs −110 pricing.'})
+        tag_html = ''
         move = ex.line_move(info['opened'].get(str(r.game_id)), r.market, pm, nick(home), nick(away), 'First seen')
+        move += sy.tag_html(sysl, theme.esc, extra, k=theme.k)
         move += ex.rating_confidence(by_src.get(r.home, {}), by_src.get(r.away, {}), 0.0 if r.neutral else HFA_POINTS)
         if not r.score and not r.neutral and r.home in wx.NFL_STADIUMS:
             move += wx.weather_row(info['weather'].get(str(r.game_id)), wx.NFL_STADIUMS[r.home][2])

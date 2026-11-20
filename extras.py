@@ -154,7 +154,7 @@ def injury_card_row(cards, away, home, name=lambda t: t):
                 if e.get('impact') and e['impact'].get('team_games'):
                     gp, tg = e['impact']['games'], e['impact']['team_games']
                     txt = f"{e.get('player') or txt.split(' — ')[0]} {e.get('status', '').lower()} · has played {gp} of {tg} games"
-                txt = txt if len(txt) <= 110 else txt[:109].rsplit(' ', 1)[0] + '…'
+                txt = txt if len(txt) <= 240 else txt[:239].rsplit(' ', 1)[0] + '…'   # curation allows 200; show it all
                 cls = 'ret' if e.get('tag') == 'RETURNING' else ''
             else:
                 continue

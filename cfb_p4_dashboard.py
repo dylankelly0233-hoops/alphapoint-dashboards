@@ -680,13 +680,20 @@ def generate_html(p4, vals, sched, week, season_type, info):
         # CFBD spreads are home-perspective with negative = home favored, so the market's home margin is −spread
         mkt_margin = -r.market if r.market == r.market else np.nan
         edge = theme.edge_text(pm, mkt_margin, r.home, r.away)
-        tag_html, labels = blowout_tags(r, last)
+        _, labels = blowout_tags(r, last)
         v2 = cfbm.line(info.get('shadow'), r.home, r.away, r.neutral)
         sysl = sy.cfb(int(getattr(r, 'week', week) or week), season_type, v2, info['opened'].get(str(r.game_id)), mkt_margin, r.home, r.away, r.completed)
-        tag_html += sy.tag_html(sysl, theme.esc)
         los = sy.cfb_los(info.get('los') or {}, r.home, r.away, r.completed)     # tracking only, not on Best spots
-        tag_html += sy.los_tag_html(los, theme.esc)
+        extra = sy.los_item(los, mkt_margin)
+        if labels:                                   # the old bounce-back label: not proven against the line
+            bm, bopp = last.get(r.away, (0, ''))
+            extra.append({'action': 'Back', 'what': sy._side(r.away, -mkt_margin) if mkt_margin == mkt_margin else r.away,
+                          'name': 'Bounce-Back', 'why': f'{r.away} lost by {-bm} to {bopp} last time out', 'tracking': True,
+                          'title': f'Away teams off a {BLOWOUT_MARGIN}+ point loss covered 55.4% (739 games, 2016-25), '
+                                   f'not strong enough to count as proven'})
+        tag_html = ''
         move = ex.line_move(info['opened'].get(str(r.game_id)), mkt_margin, pm, r.home, r.away)
+        move += sy.tag_html(sysl, theme.esc, extra, k=theme.k)
         big = ex.lopsided(mkt_margin, r.margin)
         move += ex.rating_confidence(info['by_source'].get(r.home, {}), info['by_source'].get(r.away, {}),
                                      _hfa(r), big)

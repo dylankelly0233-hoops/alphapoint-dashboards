@@ -128,6 +128,13 @@ def verdict(sport, gid):
     return ((notes(sport).get('games') or {}).get(str(gid)) or {}).get('verdict')
 
 
+def _vs(gap, name):
+    """'3.0 pts higher on Vikings than the market' (gap = our line minus the market's, from this team's side)."""
+    if abs(gap) < 0.5:
+        return f'in line with the market on {name}'
+    return f'{abs(gap):.1f} pts {"higher" if gap > 0 else "lower"} on {name} than the market'
+
+
 VERDICT_TEXT = {'explained': 'Explained', 'partly': 'Partly explained', 'unexplained': 'Unexplained'}
 
 
@@ -156,8 +163,11 @@ def card_row(sport, gid, ours, market, home, away, home_name, away_name, complet
         if t:
             bits.append(f'· {theme.esc(t)} Could be a team the market prices differently.')
         if h and abs(h.get('swing') or 0) >= SWING:
-            bits.append(f'· Our gap on {theme.esc(name)} moved {h["swing"]:+g} pts since its last game: often a player '
-                        f'returning or going out that ratings do not see yet.')
+            why = ((n or {}).get('swings') or {}).get(team) or ((n or {}).get('swings') or {}).get(name)
+            bits.append(f'· <b>Swing on {theme.esc(name)}:</b> last game we were {theme.esc(_vs(h["last"], name))}; this game '
+                        f'we are {theme.esc(_vs(g, name))}, a {abs(h["swing"]):g}-pt swing. '
+                        + (f'<b>Why:</b> {theme.esc(why)}' if why else
+                           'Not researched yet; usually a player returning or going out that our ratings do not see yet.'))
     return (f'<div class="lmove gapwhy">{theme.k("Why the market differs")}'
             + ''.join(f'<div>{b}</div>' for b in bits) + '</div>')
 

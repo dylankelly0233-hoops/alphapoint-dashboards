@@ -90,6 +90,7 @@ TIPS = {
     'Impact': 'Our estimate of how many points per game the team is worse without this player: his points over a replacement-level player (PORPAG), blended with last season early on. An estimate, not an exact number.',
     'Injury adj.': 'Our projected line after taking out the players reported out or doubtful, each at his estimated impact, scaled down for games he has already missed once the season is a few weeks old (by then the ratings reflect those games). Questionable players are not counted.',
     'Edge': 'How far our line is from the market, shown as the side our number likes. It is a reason to look closer, not a bet.',
+    'Strategies': 'Every strategy that applies to this game, grouped by what it says to bet. Each line names the strategy and why it applies. Green = proven (it can appear on Best spots); grey "tracking" = being watched, not proven, never a Best spots pick. See the Strategies tab for how each one works.',
     'Line': 'Where the spread opened (or was first seen) and where it is now. A move toward our number means the market is coming around to it; a move away means it disagrees.',
     'Value': 'What our disagreement with the market is worth. Fair = the market moved only part of the way toward our number: the share of past gaps vs the opening line that showed up in results (it is small, and re-tuned weekly). The cover chance at the posted line counts key numbers (NFL 3 and 7) and pushes; −110 needs 52.4% to break even. The second line is how often gaps this size saw the line move toward our number.',
     'Our pricing': 'How our line is built, in points toward each team: the rating gap, then home edge and any crowd, game-situation, back-to-back or goalie adjustments. A Spread line appears only when the posted spread clears −110 at our fair line (the market moved part of the way toward our number, by how much of past gaps showed up in results, with key numbers and pushes counted). A Total line appears when our total clears −110 or sits 3+ points from the market. Hover the percentage for the fair number.',
@@ -558,6 +559,17 @@ td.pos { color: var(--pos); font-weight: 600; } td.neg { color: var(--neg); font
 .gtag.bounce { background: var(--pos); }
 .gtag.teaser { background: #6d4bd8; } .gtag.teaser.max { background: #4a2fb0; }
 .gtag.system { background: #0f766e; } .gtag.watch { background: #64748b; }
+.strats .sgrp { margin-top: 6px; padding-left: 10px; border-left: 3px solid #0f766e; }
+.strats .sgrp.trk { border-left-color: #94a3b8; }
+.strats .sact { color: var(--ink); font-size: 14px; }
+.strats .sverb { font: 700 11px/1 var(--display); letter-spacing: .8px; text-transform: uppercase; color: #fff;
+                 background: #0f766e; border-radius: 4px; padding: 3px 6px; margin-right: 6px; vertical-align: 1px; }
+.strats .sgrp.trk .sverb { background: #64748b; }
+.strats .sitem { font-size: 12.5px; line-height: 1.4; margin-top: 2px; }
+.strats .sname { font-weight: 700; color: #0f766e; } .strats .sitem.trk .sname { color: var(--muted); }
+.strats .strk { font: 700 9.5px/1 var(--display); letter-spacing: .6px; text-transform: uppercase; color: var(--muted);
+                border: 1px solid var(--line); border-radius: 3px; padding: 2px 4px; margin-left: 5px; vertical-align: 1px; }
+.strats .swhy { color: var(--muted); }
 .gapwhy div { margin: 2px 0; font-size: 13.5px; line-height: 1.45; } .gapwhy a { color: var(--accent); }
 .gverdict { font: 700 11px/1 var(--display); letter-spacing: .6px; text-transform: uppercase; padding: 3px 6px;
             border-radius: 4px; color: #fff; background: #64748b; }
