@@ -577,7 +577,7 @@ def featured_games():
             continue
         chips, score = [], 0.0
         if f.get('marquee'):
-            score += FEAT_POINTS['marquee']; chips.append(('marquee', f['marquee']))
+            score += FEAT_POINTS['marquee']   # scores; the chip shows the TV network instead (Dylan, 2026-11-20)
         if abs(s['market_num']) <= CLOSE_LINE.get(key, 3.0):
             score += FEAT_POINTS['competitive']          # still scores; no chip (Dylan, 2026-11-20)
         if f.get('tv'):

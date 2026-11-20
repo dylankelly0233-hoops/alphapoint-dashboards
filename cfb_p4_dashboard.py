@@ -31,6 +31,7 @@ Data
 """
 
 import html
+import json
 import os
 import re
 from datetime import datetime, timezone
@@ -374,8 +375,28 @@ def _crowd(r):
     return c if isinstance(c, dict) else None
 
 
+def week_tv(week, season_type):
+    """{game id: TV network(s)} for one week (CFBD /games/media, cached like the other CFBD pulls)."""
+    path = f'cfbv_media_{YEAR}_{season_type[0]}{week}.json'
+    if not vm.cache_stale(path):
+        try:
+            return {int(k): v for k, v in json.load(open(path)).items()}
+        except (OSError, ValueError):
+            pass
+    out = {}
+    for m in vm.cfbd_get('/games/media', params={'year': YEAR, 'week': week, 'seasonType': season_type}) or []:
+        if m.get('mediaType') == 'tv' and m.get('outlet'):
+            out[m['id']] = ', '.join(dict.fromkeys(filter(None, [out.get(m['id']), m['outlet']])))
+    try:
+        json.dump(out, open(path, 'w'))
+    except OSError:
+        pass
+    return out
+
+
 def build_schedule(week, season_type, p4_names, power, fcs, metrics):
     games = vm.cfbd_get('/games', params={'year': YEAR, 'week': week, 'seasonType': season_type})
+    tv = week_tv(week, season_type)
     lines = fetch_week_lines(week, season_type)
     comp  = dict(zip(metrics['Team'], metrics['Composite'])) if not metrics.empty else {}
 
@@ -394,6 +415,7 @@ def build_schedule(week, season_type, p4_names, power, fcs, metrics):
         rows.append({
             'game_id': g.get('id'), 'kick': kick, 'tbd': bool(g.get('startTimeTBD')), 'home': home, 'away': away, 'neutral': bool(g.get('neutralSite')),
             'venue_id': g.get('venueId'), 'hfa': hfa, 'crowd': crowd_info, 'conf': bool(g.get('conferenceGame')),
+            'tv': tv.get(g.get('id')),
             'home_rating': h_r, 'away_rating': a_r, 'margin': margin,
             'market': mkt[0] if mkt else np.nan, 'market_book': mkt[1] if mkt else '',
             'market_open': mkt[2] if mkt else None, 'total': mkt[3] if mkt else np.nan,
@@ -746,8 +768,7 @@ def generate_html(p4, vals, sched, week, season_type, info):
                              feat={'key': 'cfb', 'home_key': r.home, 'away_key': r.away, 'held': bool(held),
                                    'p4': r.home in p4n or r.away in p4n,
                                    'marquee': next(iter(info['featured'].get(r.game_id) or []), None),
-                                   'tv': ('Prime time' if pd.Timestamp(r.kick).hour >= 19 or pd.Timestamp(r.kick).weekday() < 5 else None)
-                                         if r.kick is not None and not pd.isna(r.kick) and not getattr(r, 'tbd', False) else None},
+                                   'tv': getattr(r, 'tv', None) if isinstance(getattr(r, 'tv', None), str) else None},
                              open_src='cfbd' if str(r.game_id) in info.get('open_cfbd', ()) else None))
         card = theme.game_card(when, venue, side(r.away, r.away_rating, r.away_value),
                                side(r.home, r.home_rating, r.home_value), proj, mkt, r.score, edge, tag_html, move,
