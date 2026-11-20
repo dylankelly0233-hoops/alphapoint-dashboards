@@ -243,7 +243,7 @@ def cbb_track(last, day, market, home, away, completed):
     elif ra <= 1 and rh >= 2:
         picks.append(('cbb_b2b_fade', 'home'))
     th, ta = (h[1] or 0) >= 0.25, (a[1] or 0) >= 0.25
-    if th != ta:
+    if h[1] is not None and a[1] is not None and th != ta:      # both last games' box scores must be in
         picks.append(('cbb_tov_carry', 'home' if th else 'away'))
     out = []
     for key, side in picks:

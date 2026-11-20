@@ -290,6 +290,44 @@ def injury_row(wire_data, g, margin):
             f'{theme.esc(ex.line_text(g["home"], g["away"], margin))} → <b>{theme.esc(ex.line_text(g["home"], g["away"], adj))}</b></div>')
 
 
+def espn_dates(by_espn, back=6):
+    """
+    {team: [(Eastern date, UTC date 'YYYY-MM-DD'), ...]} for every D1 game ESPN lists from `back` days ago through the
+    lookahead window, finished or not. Rest days for the tracking leans come from here, not the box scores: box scores
+    can lag a day (Murray State at NC State, 2026-11-19, was missing) and are stamped in UTC, so a late game lands
+    on the next day (Dylan, 2026-11-20).
+    """
+    out, today = {}, datetime.now().date()
+    for i in range(-back, LOOKAHEAD_DAYS):
+        for ev in _espn_day(today + timedelta(days=i)):
+            t = pd.Timestamp(ev['date'])
+            et, utc = t.tz_convert('America/New_York').date(), t.tz_convert('UTC').strftime('%Y-%m-%d')
+            for c in ev['competitions'][0]['competitors']:
+                name = by_espn.get(str(c['team'].get('id')))
+                if name:
+                    out.setdefault(name, set()).add((et, utc))
+    return {k: sorted(v) for k, v in out.items()}
+
+
+def game_last(info, g):
+    """
+    Inputs for systems.cbb_track for this game: {team: (Eastern date of its previous game, turnovers forced per
+    possession in that game or None)}. The turnover rate is used only when the box score of that same game is in
+    (box dates are UTC, matched to ESPN's UTC date); otherwise that lean is skipped rather than using an older game.
+    """
+    day, out = g['kick'].date(), {}
+    for t in (g['home'], g['away']):
+        prev = [x for x in (info.get('espn_dates') or {}).get(t, []) if x[0] < day]
+        box = (info.get('last') or {}).get(t)
+        if prev:
+            et, utc = prev[-1]
+            tov = box[1] if box and str(box[0]) == utc else None
+            out[t] = (et, tov)
+        elif box and (day - box[0]).days > LOOKAHEAD_DAYS + 6:      # last game older than ESPN's window: rested
+            out[t] = (box[0], None)
+    return out
+
+
 def upcoming_games(by_espn, focus):
     """Games on the next GAME_DAYS dates that include a P4 / Big East team."""
     days, today = [], datetime.now().date()
@@ -546,7 +584,7 @@ def generate_html(power, metrics, days, info):
             sysl = sy.cbb(cm2.season_day(g['kick'].date(), SEASON), v2, info['opened'].get(g['game_id']), g['market'],
                           g['home'], g['away'], bool(g['score']))
             sysl += sy.cbb_3p(info.get('p3') or {}, g['market'], g['home'], g['away'], bool(g['score']))
-            sysl += sy.cbb_track(info.get('last') or {}, g['kick'].date(), g['market'], g['home'], g['away'], bool(g['score']))
+            sysl += sy.cbb_track(game_last(info, g), g['kick'].date(), g['market'], g['home'], g['away'], bool(g['score']))
             move += sy.tag_html(sysl, theme.esc, k=theme.k)
             pr = '' if big or g['score'] else val.card_row('cbb', margin, g['market'], g['home'], g['away'], info['val_live'])
             t_ours = info['total_fn'](g['home'], g['away'], g['neutral']) if info.get('total_fn') else np.nan
@@ -800,7 +838,8 @@ def main():
                                          if not units.empty else {},
                                          'opened': {str(r['game_id']): r.get('opened') for r in market_rows},
                                          'v2': model_v2, 'p3': cm2.p3_net(box, set(teams['team'])),
-                                         'last': cm2.last_games(box, set(teams['team']))})
+                                         'last': cm2.last_games(box, set(teams['team'])),
+                                         'espn_dates': espn_dates(by_espn)})
 
 
 if __name__ == '__main__':
