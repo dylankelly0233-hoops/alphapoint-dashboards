@@ -53,6 +53,16 @@ def load(sport):
     g = g[(g.stype == 2) & g.hs.notna() & g['as'].notna()].copy()
     g['start'] = pd.to_datetime(g.start, utc=True)
     g['day'] = g.start.dt.tz_convert('America/New_York').dt.date
+    # DATA FIX (2026-11-20, after the first run, rules unchanged): many ESPN NHL moneyline pairs are not a real
+    # two-way market (both sides plus odds; implied chances summing to ~83%). Keep a moneyline / total only when its
+    # two prices imply 100-112%, i.e. a real market with a normal margin.
+    imp = lambda o: np.where(o < 0, -o / (-o + 100), 100 / (o + 100))
+    if 'ml_home' in g:
+        ok = pd.Series(imp(g.ml_home) + imp(g.ml_away), index=g.index).between(1.0, 1.12)
+        g.loc[~ok, ['ml_home', 'ml_away']] = np.nan
+    if 'over_odds' in g:
+        ok = pd.Series(imp(g.over_odds) + imp(g.under_odds), index=g.index).between(1.0, 1.12)
+        g.loc[~ok & g.over_odds.notna(), ['over_odds', 'under_odds']] = np.nan
     return g.sort_values('start').reset_index(drop=True)
 
 
@@ -137,8 +147,7 @@ def grade_total(g, pick, priced):
     if not priced:
         return won
     odds = np.where(pick == 'over', g.over_odds, g.under_odds)
-    odds = np.where(pd.isna(odds), -110, odds)
-    return american_ret(won, odds)
+    return np.where(pd.isna(odds), np.nan, american_ret(won, odds))
 
 
 def two(L, g, col):
