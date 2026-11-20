@@ -134,8 +134,6 @@ LANDING_CSS = """
        background: var(--surface-2); color: var(--muted); border: 1px solid var(--line); }
 /* Priced value: win chance shaded green by how far it clears what −110 needs */
 .sedge .pv { display: inline-block; font-weight: 700; font-size: 15px; color: var(--pos); padding: 2px 6px; border-radius: 6px; }
-.sedge .pv.strong { background: var(--pos); color: #fff; }
-.sedge .pv.slight { color: var(--pos); opacity: .6; font-weight: 600; }
 .spotsguide p, .spotsguide li, .spotsguide dd { max-width: 75ch; line-height: 1.5; }
 .spotsguide ul, .spotsguide ol { margin: 4px 0 12px; padding-left: 20px; }
 .spotsguide dl.plain { display: block; margin: 0 0 8px; } .spotsguide dl.plain dt { font-weight: 700; margin-top: 8px; }
@@ -299,7 +297,8 @@ def proven_list():
     except (OSError, ValueError, KeyError):
         return 'none yet'
     names = [slice_label(m.split('_')[0], m.split('_')[1], sl) for m, segs in mk.items()
-             for sl, r in segs.items() if r.get('passed') and m.split('_')[0] in BEST_SPORTS]
+             for sl, r in segs.items() if r.get('passed') and m.split('_')[0] in BEST_SPORTS
+             and strict_proof(r.get('all') or {})]
     return ', '.join(names) or 'none yet'
 
 
@@ -483,6 +482,12 @@ def _reason(timing, main, basis, record, tip=''):
             + (f' title="{theme.esc(tip)}"' if tip else '') + f'>Based on: {theme.esc(basis)} · {theme.esc(record)}</span></span>')
 
 
+def strict_proof(pr):
+    """The strict bar for a Fair Line Value slice: 300+ games and a 95% low end of at least 51% vs the opener."""
+    r, n = pr.get('rate') or 0, pr.get('n') or 0
+    return n >= sy.STRICT_N and n and r - 1.96 * (r * (1 - r) / n) ** 0.5 >= sy.STRICT_LO
+
+
 def best_spots():
     """
     The home page's Best spots, built only on what has held up in testing (2026-11-16):
@@ -508,10 +513,10 @@ def best_spots():
         if s['sort'] <= now or s['dt'] > now + timedelta(days=7):
             continue
         s['teaser'] = next(((label, team) for label, team in s['tags'] if label.startswith('Teaser')), None)
-        s['systems'] = s.get('systems') or []                       # proven systems show whatever our line says
+        s['systems'] = [x for x in s.get('systems') or [] if not x.get('tracking')]   # strict bar only (systems.strict)
         flagged = bool(s.get('flags'))                              # big news move / lopsided: our number isn't trusted
-        s['priced'] = [] if flagged else [x for x in s.get('priced') or [] if x.get('proof')]
-        s['watch'] = None if flagged or s['priced'] else s.get('watch')
+        s['priced'] = [] if flagged else [x for x in s.get('priced') or [] if x.get('proof') and strict_proof(x['proof'])]
+        s['watch'] = None          # Early Bird Watch is a timing note, not a bet: game cards only (Dylan, 2026-11-19)
         if s['priced'] or s['teaser'] or s['systems'] or s['watch']:
             rows.append(s)
 
@@ -566,8 +571,7 @@ def best_spots():
         if s['priced']:
             best = max(s['priced'], key=lambda x: x['ev'])
             need = (110 / 210) * (1 - best.get('push', 0))
-            margin = best['p'] - need
-            cls = 'pv strong' if margin >= 0.03 else 'pv' if margin >= 0.015 else 'pv slight'
+            cls = 'pv'          # one style: the size of the margin over -110 did not predict results (2026-11-19 tier check)
             tip = (f'{best["kind"]} {best["text"]}: wins {100 * best["p"]:.1f}%, needs {100 * need:.1f}% at −110 · '
                    f'about {100 * best["ev"]:+.1f}¢ per $1')
             right = f'<span class="{cls}" title="{theme.esc(tip)}">{100 * best["p"]:.1f}%</span>'
@@ -816,7 +820,8 @@ def strategy_record(key, sysr):
                 + (' (only just passed)' if r.get('tentative') else '')
                 + ('' if r.get('passed') else ' (not passing right now, so not on Best spots)'))
     return {'priced': 'NFL spreads 57% of 248 against the opener; other markets as listed on each row',
-            'teaser': 'about 77% of legs out of sample (2015–25)',
+            'teaser': '76% of 717 legs at the closing line, 2014–26 (re-checked on the full odds history: 77% and 76% '
+                      'in the two halves; 75% of 1,005 at the opener back to 2006). Needs about 74% per leg at −120',
             'watch': 'the line moved toward our number 58%+ of the time in these gap sizes',
             'cfb_los': '55% of 703 against the opener in past seasons (not proven)'}.get(key, '')
 
@@ -829,22 +834,49 @@ def spots_guide():
     except (OSError, ValueError):
         sysr = {}
     timing = {'priced': 'early', 'teaser': 'range', 'watch': 'timing', 'cfb_los': None}
-    cards = ''
+    def status(key):
+        """(on Best spots?, why not) under the strict bar."""
+        if key == 'watch':
+            return False, 'It is a timing note, not a bet: these sides won only 51–52% against the opener.'
+        if key == 'cfb_los':
+            return False, 'Its record is within luck for how many ideas we tested.'
+        if key == 'priced':
+            return proven_list() != 'none yet', ''
+        if key == 'teaser':
+            return True, ''
+        r = sysr.get(key) or {}
+        if sy.strict(r):
+            return True, ''
+        if r.get('chosen_after_holdout'):
+            return False, 'Its settings (5 points, from Nov 15) were picked after seeing all the past data, so its record ' \
+                          'is not a clean test. It needs new seasons to prove itself.'
+        if r.get('passed'):
+            return False, 'It passed, but only just: the low end of its likely range is under 51%.'
+        return False, 'It is not passing its test right now.'
+    cards, tracked = '', ''
     for key, sports, what, why in STRATEGY_GUIDE:
+        on, why_not = status(key)
         t = timing[key] if key in timing else system_timing(key)
-        cards += (f'<section class="card strat" id="strat-{key}"><h3>{theme.esc(sy.NAMES.get(key, key))}</h3>'
-                  f'<p class="stratmeta">{_badge(t) if t else "<span class=\"tm timing\">Tracking</span>"}'
+        card = (f'<section class="card strat" id="strat-{key}"><h3>{theme.esc(sy.NAMES.get(key, key))}</h3>'
+                  f'<p class="stratmeta">{_badge(t) if t and on else "<span class=\"tm timing\">Tracking</span>"}'
                   f'<span>{theme.esc(sports)}</span></p>'
-                  f'<p><b>What it does.</b> {theme.esc(what)}</p>'
+                  + (f'<p class="hint"><b>Not on Best spots.</b> {theme.esc(why_not)} It still shows on game cards '
+                     f'(grey), and is re-tested every month.</p>' if not on else '')
+                  + f'<p><b>What it does.</b> {theme.esc(what)}</p>'
                   f'<p><b>Why it can work.</b> {theme.esc(why.format(proven=proven_list()))}</p>'
                   f'<p class="hint"><b>Record:</b> {theme.esc(strategy_record(key, sysr))}</p></section>')
+        if on:
+            cards += card
+        else:
+            tracked += card
     badges = ''.join(f'<dt>{_badge(t)}</dt><dd>{theme.esc(TIMING[t][2])}</dd>' for t in TIMING)
     intro = [
         ('How Best spots works',
-         '<p>Best spots lists upcoming games where one of the strategies below applies. Every strategy <b>held up when we '
-         'tested it on past seasons</b>, in both the earlier and later years on its own. It is research, not picks: it '
-         'shows where the numbers have pointed, not what to bet. Everything is re-tested every month, and anything that '
-         'stops holding up drops off on its own.</p><p>Each game is one line: the side, the strategy name, and a '
+         '<p>Best spots lists upcoming games where a <b>proven</b> strategy applies. Proven means all four: it beat the '
+         'line in the earlier and later years of past seasons on its own; the low end of its likely win rate is 51% or '
+         'better (not a near miss); it has 300+ past games; and its rule was set before the later years were looked at. '
+         'Anything short of that is listed under Tracking below and stays off Best spots. It is research, not picks. '
+         'Everything is re-tested every month, and anything that stops holding up drops off on its own.</p><p>Each game is one line: the side, the strategy name, and a '
          'colored <b>when-to-bet</b> badge. Tap it for the details and the game card. Use the chips at the top to show '
          'one sport or one strategy.</p>'),
         ('When to bet',
@@ -878,8 +910,9 @@ def spots_guide():
          'Even the best of these win 54–57% of the time.</li></ol>'),
     ]
     sec = lambda items: ''.join(f'<section class="card"><h3>{theme.esc(t)}</h3>{c}</section>' for t, c in items)
-    return (f'<div class="info spotsguide">{sec(intro)}<h2 class="stratsh">The strategies</h2>'
-            f'<div class="stratgrid">{cards}</div>{sec(outro)}</div>')
+    return (f'<div class="info spotsguide">{sec(intro)}<h2 class="stratsh">On Best spots: proven</h2>'
+            f'<div class="stratgrid">{cards}</div><h2 class="stratsh">Tracking: not proven enough yet</h2>'
+            f'<div class="stratgrid">{tracked}</div>{sec(outro)}</div>')
 
 
 SPORT_LABEL = {'nfl': 'NFL', 'cfb': 'College football', 'cbb': 'College basketball', 'nba': 'NBA', 'nhl': 'NHL', 'epl': 'Premier League'}

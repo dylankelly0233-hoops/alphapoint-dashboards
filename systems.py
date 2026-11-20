@@ -27,6 +27,21 @@ def _passed(sport, key):
     return r if r and r.get('passed') else None
 
 
+STRICT_LO, STRICT_N = 0.51, 300   # Dylan, 2026-11-19: Best spots shows only legit proven track records
+
+
+def strict(r):
+    """
+    The bar for Best spots: passed both halves (system_test bar) AND the 95% low end of its record is at least 51%
+    AND 300+ decided games AND the rule was not picked after looking at the later half ('chosen_after_holdout').
+    Systems that pass the old bar but not this one still show on game cards, as tracking.
+    """
+    if not r or not r.get('passed') or r.get('chosen_after_holdout'):
+        return False
+    a = r[r.get('bench', 'open')]['all']
+    return a['lo'] >= STRICT_LO and a['n'] >= STRICT_N
+
+
 def record_text(r):
     bench = r.get('bench', 'open')
     a = r[bench]['all']
@@ -64,7 +79,7 @@ def nfl(r, total_top10, name=str, wx=None, roof=None):
         if res:
             out.append({'key': key, 'label': res['label'].split(' (')[0], 'pick': pick, 'record': record_text(res),
                         'side': side, 'line': float(line), 'kind': 'total' if side in ('over', 'under') else 'spread',
-                        'tentative': bool(res.get('tentative'))})
+                        'tentative': bool(res.get('tentative')), 'tracking': not strict(res)})
     return out
 
 
@@ -88,7 +103,7 @@ def cfb(week, season_type, v2_line, opened, market, home, away, completed):
     own = lambda m: m if side == 'home' else -m          # the backed team's own margin
     pick = f'{_side(team, own(now))} (opened {_side(team, own(opened)).split()[-1]})'
     return [{'key': 'cfb_v2_open', 'label': res['label'], 'pick': pick, 'record': record_text(res),
-             'side': side, 'line': float(now), 'kind': 'spread', 'tentative': bool(res.get('tentative'))}]
+             'side': side, 'line': float(now), 'kind': 'spread', 'tentative': bool(res.get('tentative')), 'tracking': not strict(res)}]
 
 
 def cbb(day, v2_line, opened, market, home, away, completed):
@@ -109,7 +124,7 @@ def cbb(day, v2_line, opened, market, home, away, completed):
     own = lambda m: m if side == 'home' else -m
     pick = f'{_side(team, own(now))} (opened {_side(team, own(opened)).split()[-1]})'
     return [{'key': 'cbb_v2_open', 'label': res['label'], 'pick': pick, 'record': record_text(res),
-             'side': side, 'line': float(now), 'kind': 'spread', 'tentative': bool(res.get('tentative'))}]
+             'side': side, 'line': float(now), 'kind': 'spread', 'tentative': bool(res.get('tentative')), 'tracking': not strict(res)}]
 
 
 def cbb_3p(p3, market, home, away, completed):
@@ -131,7 +146,7 @@ def cbb_3p(p3, market, home, away, completed):
     gap = abs(h[0] - a[0]) * 100
     return [{'key': 'cbb_3p_fade', 'label': res['label'], 'pick': f'{_side(team, own)} (3P% edge {gap:.0f} pts to the other side)',
              'record': record_text(res), 'side': side, 'line': float(market), 'kind': 'spread',
-             'tentative': bool(res.get('tentative'))}]
+             'tentative': bool(res.get('tentative')), 'tracking': not strict(res)}]
 
 
 LOS_GAP, LOS_MIN_GAMES = 0.10, 3
@@ -176,5 +191,7 @@ NAMES = {   # the name each strategy goes by everywhere on the site (Dylan, 2026
 
 
 def tag_html(systems, esc):
-    return ''.join(f'<span class="gtag system" title="{esc(s["label"] + ": " + s["record"])}">'
-                   f'{esc(NAMES.get(s.get("key"), "System"))}: {esc(s["pick"])}</span>' for s in systems)
+    return ''.join(f'<span class="gtag {"watch" if s.get("tracking") else "system"}" '
+                   f'title="{esc(s["label"] + ": " + s["record"] + (" -- tracking, not proven enough for Best spots" if s.get("tracking") else ""))}">'
+                   f'{esc(NAMES.get(s.get("key"), "System"))}{" (tracking)" if s.get("tracking") else ""}: {esc(s["pick"])}</span>'
+                   for s in systems)

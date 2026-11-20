@@ -1373,7 +1373,8 @@
     "holds_to_close": false,
     "min_day": 45,
     "gap": 5.0,
-    "source": "cbb_model_v2_test.py"
+    "source": "cbb_model_v2_test.py",
+    "chosen_after_holdout": true
    },
    "cbb_3p_fade": {
     "label": "Fade the hot 3-point team (net 3P% gap 7+ pts)",

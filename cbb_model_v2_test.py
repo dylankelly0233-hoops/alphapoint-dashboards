@@ -102,6 +102,7 @@ def system_entry(P, thr, min_day, col='v2'):
     return {'label': f'AlphaPoint CBB model {thr:g}+ pts from the opener', 'kind': 'spread', **out, 'bench': 'open',
             'passed': bool(passed), 'tentative': bool(passed and o['all']['lo'] < 0.51),
             'holds_to_close': bool(out['close']['all']['lo'] > 0.5), 'min_day': int(min_day), 'gap': thr,
+            'chosen_after_holdout': True,     # 5 pts / Nov 15 were picked after both halves were printed (tracking only)
             'source': 'cbb_model_v2_test.py'}
 
 
