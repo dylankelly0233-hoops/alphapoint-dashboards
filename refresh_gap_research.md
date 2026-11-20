@@ -48,7 +48,7 @@ Then pick a verdict:
 - **partly**: it covers some of the gap, or it's real but small.
 - **unexplained**: nothing found that justifies the market's number. A valid, useful answer; don't stretch.
 
-**Swings (required).** For every team whose `history.swing` is 4+ points either way, write one sentence in `swings` under that team's key saying what changed since its previous game (a player returning or going out, a big result that moved the market, a coaching change, a line move), with the player or event and the date. If you find nothing: "Nothing found: the market moved on <team> without a clear reason."
+**Swings (required, every game, flagged or not).** `swings_to_explain` lists every team whose gap against the market moved by `swing_min`+ points since its previous game (e.g. last game we were 3 pts higher on it than the market, now 4 pts lower = a 7-pt swing). For **each one**, write one sentence in `games[<gid>].swings[<team key>]` saying what changed: usually a player returning or going out (our ratings don't see it, the market does), sometimes a big result that moved the market, a coaching change, or a line move. Name the player or event and the date. Create the game entry if the game isn't flagged (it can hold only `swings`). If you find nothing: "Nothing found: the market moved on <team> without a clear reason." The game card shows this right under the swing; an unexplained swing shows "Not researched yet", so don't skip any.
 
 Write `summary` as one plain sentence a bettor can read in five seconds. If a team's `history` shows we've been higher or lower on it for 4+ straight games, say whether you found a reason or not.
 

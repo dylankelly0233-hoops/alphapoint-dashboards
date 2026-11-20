@@ -26,7 +26,8 @@ import dashboard_theme as theme
 GAP_MIN = {'nfl': 2.0, 'cfb': 3.0, 'nba': 3.0, 'cbb': 4.0}
 WATCH_ALL = {'nfl', 'cfb', 'nba', 'cbb'}   # Rating watch for every team on the slate (CBB: games with a Power 4 / Big East team)
 HIST_N = 6            # each team's last N logged games for the 'consistently higher / lower' read
-SWING = 4.0           # our gap on a team moved this much since its previous game -> worth checking who is in or out
+SWING = {'nfl': 4.0, 'cfb': 7.0, 'nba': 4.0, 'cbb': 4.5}   # our gap on a team moved this much since its previous game
+                     # -> worth checking who is in or out (about the biggest 10% of swings in each sport, 2026-11-20)
 
 
 def _team_gaps(sport):
@@ -105,9 +106,13 @@ def write_candidates(sport, games, wire_path=None):
                     'history': {g['home_name']: history(sport, g['home'], gap), g['away_name']: history(sport, g['away'], -gap)}})
         out.append(rec)
     teams = sorted({t for r in out if r['gap_flag'] or sport in WATCH_ALL for t in (r['home'], r['away'])})
+    swings = sorted({(r['gid'], side) for r in out for side, name in (('home', r['home_name']), ('away', r['away_name']))
+                     if abs(((r['history'] or {}).get(name) or {}).get('swing') or 0) >= SWING[sport]})
     with open(f'gap_candidates_{sport}.json', 'w', encoding='utf-8') as f:
         json.dump({'sport': sport, 'generated': datetime.now(timezone.utc).isoformat(timespec='seconds'),
-                   'gap_min': GAP_MIN[sport], 'watch_teams': teams, 'games': out}, f, ensure_ascii=False, indent=1, default=str)
+                   'gap_min': GAP_MIN[sport], 'swing_min': SWING[sport], 'watch_teams': teams,
+                   'swings_to_explain': [{'gid': g, 'team': next(r[side] for r in out if r['gid'] == g)} for g, side in swings],
+                   'games': out}, f, ensure_ascii=False, indent=1, default=str)
     return out
 
 
@@ -208,7 +213,7 @@ def card_row(sport, gid, ours, market, home, away, home_name, away_name, complet
         t = history_text(h, name)
         if t:
             bits.append(f'· {theme.esc(t)} Could be a team the market prices differently.')
-        if h and abs(h.get('swing') or 0) >= SWING:
+        if h and abs(h.get('swing') or 0) >= SWING[sport]:
             why = ((n_any or {}).get('swings') or {}).get(team) or ((n_any or {}).get('swings') or {}).get(name)
             bits.append(f'· <b>Swing on {theme.esc(name)}:</b> last game we were {theme.esc(_vs(h["last"], name))}; this game '
                         f'we are {theme.esc(_vs(g, name))}, a {abs(h["swing"]):g}-pt swing. '
