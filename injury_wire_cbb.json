@@ -1,16 +1,16 @@
 {
  "sport": "cbb",
  "week": 20261120,
- "generated": "2026-11-20T16:30:00-05:00",
+ "generated": "2026-11-20T16:45:00-05:00",
  "movers": [
   {
    "team": "North Carolina",
    "tag": "KEY",
    "player": "Neo Avdalas",
    "status": "out",
-   "text": "Starter Neo Avdalas (24 mpg) is sidelined with a wrist injury (reported 11/17); UNC is adjusting its starting lineup and rotation without him.",
-   "source": "On3",
-   "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOMjZTOFFPMERiLXktUkJXNEw2TFVwd1hPRjVUbkRWeU5XTzFOTlkzNTRJbjJPQUpaWG04SjRUekVlLTlSMXhlSHZiX0hhWTVpbG43V1BRUUtvYlBlRkh1WUFKR1NzRkwydV8tN2VkeHNyeDFRWGh5RndSTndmWU1RYk9vd1pnU1Q1QXhzZDNWUGVMb2xC?oc=5",
+   "text": "Starter Neo Avdalas (24 mpg, team-high 3.8 apg) fractured his left wrist vs. Georgia and had surgery; UNC says he is out about two months (announced 11/17).",
+   "source": "ESPN",
+   "url": "https://www.espn.com/mens-college-basketball/story/_/id/50511206/north-carolina-guard-neo-avdalas-wrist-2-months",
    "date": "2026-11-17"
   },
   {
@@ -63,9 +63,9 @@
     "tag": "KEY",
     "player": "Neo Avdalas",
     "status": "out",
-    "text": "Starter Neo Avdalas (24 mpg) is sidelined with a wrist injury (reported 11/17); UNC is adjusting its starting lineup and rotation without him.",
-    "source": "On3",
-    "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOMjZTOFFPMERiLXktUkJXNEw2TFVwd1hPRjVUbkRWeU5XTzFOTlkzNTRJbjJPQUpaWG04SjRUekVlLTlSMXhlSHZiX0hhWTVpbG43V1BRUUtvYlBlRkh1WUFKR1NzRkwydV8tN2VkeHNyeDFRWGh5RndSTndmWU1RYk9vd1pnU1Q1QXhzZDNWUGVMb2xC?oc=5",
+    "text": "Starter Neo Avdalas (24 mpg, team-high 3.8 apg) fractured his left wrist vs. Georgia and had surgery; UNC says he is out about two months (announced 11/17).",
+    "source": "ESPN",
+    "url": "https://www.espn.com/mens-college-basketball/story/_/id/50511206/north-carolina-guard-neo-avdalas-wrist-2-months",
     "date": "2026-11-17"
    }
   ]
