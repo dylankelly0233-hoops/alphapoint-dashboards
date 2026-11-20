@@ -1,131 +1,73 @@
 {
-  "sport": "cbb",
-  "week": 20261119,
-  "generated": "2026-11-19T16:23:23-05:00",
-  "movers": [
-    {
-      "team": "Florida",
-      "tag": "KEY",
-      "player": "Boogie Fland",
-      "status": "out",
-      "text": "PG Boogie Fland (25 mpg) is ruled out vs. West Virginia with a right shoulder injury he re-aggravated vs. Notre Dame; he played through it vs. Houston (4 pts).",
-      "source": "On3",
-      "url": "https://www.on3.com/teams/florida-gators/news/florida-guard-boogie-fland-ruled-out-for-the-west-virginia-game/",
-      "date": "2026-11-19"
-    },
-    {
-      "team": "Kansas",
-      "tag": "KEY",
-      "player": "Tyran Stokes",
-      "status": "questionable",
-      "text": "Freshman Tyran Stokes (23 mpg) has a right-leg bone bruise and missed West Virginia 11/18; Bill Self calls him day-to-day and a likely game-time decision vs. Houston.",
-      "source": "Yahoo Sports",
-      "url": "https://sports.yahoo.com/articles/kansas-tyran-stokes-still-uncertain-144630208.html",
-      "date": "2026-11-19"
-    },
-    {
-      "team": "North Carolina",
-      "tag": "KEY",
-      "player": "Neo Avdalas",
-      "status": "out",
-      "text": "Starter Neo Avdalas (24 mpg) is sidelined with a wrist injury (reported 11/17); UNC is adjusting its starting lineup.",
-      "source": "On3",
-      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOMjZTOFFPMERiLXktUkJXNEw2TFVwd1hPRjVUbkRWeU5XTzFOTlkzNTRJbjJPQUpaWG04SjRUekVlLTlSMXhlSHZiX0hhWTVpbG43V1BRUUtvYlBlRkh1WUFKR1NzRkwydV8tN2VkeHNyeDFRWGh5RndSTndmWU1RYk9vd1pnU1Q1QXhzZDNWUGVMb2xC?oc=5",
-      "date": "2026-11-17"
-    },
-    {
-      "team": "Wisconsin",
-      "tag": "KEY",
-      "player": "Braeden Carrington",
-      "status": "questionable",
-      "text": "G Braeden Carrington (28 mpg): imaging after a head collision 11/15 came back clear; Greg Gard said it looks like he'll play vs. Seton Hall. Jack Janicki starts if not.",
-      "source": "On3",
-      "url": "https://www.on3.com/sites/badger-blitz/news/braeden-carrington-injury-update-wisconsin-badgers-basketball-baha-mar-championship/",
-      "date": "2026-11-18"
-    },
-    {
-      "team": "Michigan State",
-      "tag": "KEY",
-      "player": "Coen Carr",
-      "status": "questionable",
-      "text": "F Coen Carr (22 mpg) has knee tendinitis per Tom Izzo; he may sit or play limited minutes vs. Detroit Mercy.",
-      "source": "Yahoo Sports",
-      "url": "https://sports.yahoo.com/articles/tom-izzo-provides-injury-coen-142231394.html",
-      "date": "2026-11-18"
-    }
-  ],
-  "teams": {
-    "Kansas": [
-      {
-        "team": "Kansas",
-        "tag": "KEY",
-        "player": "Tyran Stokes",
-        "status": "questionable",
-        "text": "Freshman Tyran Stokes (23 mpg) has a right-leg bone bruise and missed West Virginia 11/18; Bill Self calls him day-to-day and a likely game-time decision vs. Houston.",
-        "source": "Yahoo Sports",
-        "url": "https://sports.yahoo.com/articles/kansas-tyran-stokes-still-uncertain-144630208.html",
-        "date": "2026-11-19"
-      }
-    ],
-    "North Carolina": [
-      {
-        "team": "North Carolina",
-        "tag": "KEY",
-        "player": "Neo Avdalas",
-        "status": "out",
-        "text": "Starter Neo Avdalas (24 mpg) is sidelined with a wrist injury (reported 11/17); UNC is adjusting its starting lineup.",
-        "source": "On3",
-        "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOMjZTOFFPMERiLXktUkJXNEw2TFVwd1hPRjVUbkRWeU5XTzFOTlkzNTRJbjJPQUpaWG04SjRUekVlLTlSMXhlSHZiX0hhWTVpbG43V1BRUUtvYlBlRkh1WUFKR1NzRkwydV8tN2VkeHNyeDFRWGh5RndSTndmWU1RYk9vd1pnU1Q1QXhzZDNWUGVMb2xC?oc=5",
-        "date": "2026-11-17"
-      }
-    ],
-    "Florida": [
-      {
-        "team": "Florida",
-        "tag": "KEY",
-        "player": "Boogie Fland",
-        "status": "out",
-        "text": "PG Boogie Fland (25 mpg) is ruled out vs. West Virginia with a right shoulder injury he re-aggravated vs. Notre Dame; he played through it vs. Houston (4 pts).",
-        "source": "On3",
-        "url": "https://www.on3.com/teams/florida-gators/news/florida-guard-boogie-fland-ruled-out-for-the-west-virginia-game/",
-        "date": "2026-11-19"
-      }
-    ],
-    "Wisconsin": [
-      {
-        "team": "Wisconsin",
-        "tag": "KEY",
-        "player": "Braeden Carrington",
-        "status": "questionable",
-        "text": "G Braeden Carrington (28 mpg): imaging after a head collision 11/15 came back clear; Greg Gard said it looks like he'll play vs. Seton Hall. Jack Janicki starts if not.",
-        "source": "On3",
-        "url": "https://www.on3.com/sites/badger-blitz/news/braeden-carrington-injury-update-wisconsin-badgers-basketball-baha-mar-championship/",
-        "date": "2026-11-18"
-      }
-    ],
-    "Michigan State": [
-      {
-        "team": "Michigan State",
-        "tag": "KEY",
-        "player": "Coen Carr",
-        "status": "questionable",
-        "text": "F Coen Carr (22 mpg) has knee tendinitis per Tom Izzo; he may sit or play limited minutes vs. Detroit Mercy.",
-        "source": "Yahoo Sports",
-        "url": "https://sports.yahoo.com/articles/tom-izzo-provides-injury-coen-142231394.html",
-        "date": "2026-11-18"
-      }
-    ],
-    "Texas A&M": [
-      {
-        "team": "Texas A&M",
-        "tag": "KEY",
-        "player": "Jordan Pope",
-        "status": "limited",
-        "text": "G Jordan Pope (23 mpg) has a minor Achilles strain; Bucky McMillan says it shouldn't keep him out at TCU but could limit his minutes.",
-        "source": "Yahoo Sports",
-        "url": "https://sports.yahoo.com/articles/bucky-mcmillan-reveals-texas-m-183715973.html",
-        "date": "2026-11-17"
-      }
-    ]
+ "sport": "cbb",
+ "week": 20261120,
+ "generated": "2026-11-20T16:30:00-05:00",
+ "movers": [
+  {
+   "team": "North Carolina",
+   "tag": "KEY",
+   "player": "Neo Avdalas",
+   "status": "out",
+   "text": "Starter Neo Avdalas (24 mpg) is sidelined with a wrist injury (reported 11/17); UNC is adjusting its starting lineup and rotation without him.",
+   "source": "On3",
+   "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOMjZTOFFPMERiLXktUkJXNEw2TFVwd1hPRjVUbkRWeU5XTzFOTlkzNTRJbjJPQUpaWG04SjRUekVlLTlSMXhlSHZiX0hhWTVpbG43V1BRUUtvYlBlRkh1WUFKR1NzRkwydV8tN2VkeHNyeDFRWGh5RndSTndmWU1RYk9vd1pnU1Q1QXhzZDNWUGVMb2xC?oc=5",
+   "date": "2026-11-17"
+  },
+  {
+   "team": "Michigan State",
+   "tag": "KEY",
+   "player": "Jordan Scott",
+   "status": "questionable",
+   "text": "Starter Jordan Scott (23 mpg, shoulder) was limited in practice after the loss at Tennessee and is questionable vs. Detroit Mercy; Tom Izzo said decisions come game day.",
+   "source": "MLive (Yahoo Sports)",
+   "url": "https://sports.yahoo.com/articles/2-michigan-state-basketball-starters-014325745.html",
+   "date": "2026-11-20"
+  },
+  {
+   "team": "Michigan State",
+   "tag": "KEY",
+   "player": "Coen Carr",
+   "status": "questionable",
+   "text": "Starter Coen Carr (22 mpg, knee tendinitis) was limited in practice and is questionable vs. Detroit Mercy; Izzo downplayed the injury as not serious.",
+   "source": "MLive (Yahoo Sports)",
+   "url": "https://sports.yahoo.com/articles/2-michigan-state-basketball-starters-014325745.html",
+   "date": "2026-11-20"
   }
+ ],
+ "teams": {
+  "Michigan State": [
+   {
+    "team": "Michigan State",
+    "tag": "KEY",
+    "player": "Jordan Scott",
+    "status": "questionable",
+    "text": "Starter Jordan Scott (23 mpg, shoulder) was limited in practice after the loss at Tennessee and is questionable vs. Detroit Mercy; Tom Izzo said decisions come game day.",
+    "source": "MLive (Yahoo Sports)",
+    "url": "https://sports.yahoo.com/articles/2-michigan-state-basketball-starters-014325745.html",
+    "date": "2026-11-20"
+   },
+   {
+    "team": "Michigan State",
+    "tag": "KEY",
+    "player": "Coen Carr",
+    "status": "questionable",
+    "text": "Starter Coen Carr (22 mpg, knee tendinitis) was limited in practice and is questionable vs. Detroit Mercy; Izzo downplayed the injury as not serious.",
+    "source": "MLive (Yahoo Sports)",
+    "url": "https://sports.yahoo.com/articles/2-michigan-state-basketball-starters-014325745.html",
+    "date": "2026-11-20"
+   }
+  ],
+  "North Carolina": [
+   {
+    "team": "North Carolina",
+    "tag": "KEY",
+    "player": "Neo Avdalas",
+    "status": "out",
+    "text": "Starter Neo Avdalas (24 mpg) is sidelined with a wrist injury (reported 11/17); UNC is adjusting its starting lineup and rotation without him.",
+    "source": "On3",
+    "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOMjZTOFFPMERiLXktUkJXNEw2TFVwd1hPRjVUbkRWeU5XTzFOTlkzNTRJbjJPQUpaWG04SjRUekVlLTlSMXhlSHZiX0hhWTVpbG43V1BRUUtvYlBlRkh1WUFKR1NzRkwydV8tN2VkeHNyeDFRWGh5RndSTndmWU1RYk9vd1pnU1Q1QXhzZDNWUGVMb2xC?oc=5",
+    "date": "2026-11-17"
+   }
+  ]
+ }
 }
