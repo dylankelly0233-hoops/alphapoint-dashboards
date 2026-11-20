@@ -182,6 +182,18 @@ def p3_net(box, teams):
         return {}
 
 
+def last_games(box, teams):
+    """{team: (date of its last D1-vs-D1 game, opponents' turnovers per possession in it)} for the prior-game trackers."""
+    try:
+        b = box[box.team.isin(teams) & box.opponent.isin(teams)].copy()
+        b['d'] = pd.to_datetime(b['date'])
+        b = b.sort_values('d').drop_duplicates('team', keep='last')
+        return {r.team: (r.d.date(), (r.o_tov / r.poss) if r.poss else None) for r in b.itertuples()}
+    except Exception as e:
+        print(f'  ! last games: {e}')
+        return {}
+
+
 def line(mod, home, away, neutral):
     """v2's home margin, or None."""
     if not mod:

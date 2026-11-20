@@ -174,6 +174,41 @@ def los_tag_html(t, esc):
             f'number of patterns tested">{NAMES["cfb_los"]} (tracking): {esc(t["team"])} (+{t["gap"]:g} pts)</span>')
 
 
+CBB_TRACK = {   # prior_game_systems.py (2026-11-19): met the strict bar at the opener, but within luck for 86 tests
+    'cbb_b2b_fade': ('Back-to-back team vs a rested opponent (fade)', '57% of 395 vs the opener; 52% of 1,432 vs the close'),
+    'cbb_tov_carry': ('Forced turnovers on 25%+ of possessions last game (back)', '54% of 930 vs the opener; 52% of 4,336 vs the close'),
+}
+
+
+def cbb_track(last, day, market, home, away, completed):
+    """
+    TRACKING ONLY (never on Best spots): the two CBB prior-game rules, exactly as tested in prior_game_systems.py.
+    last = {team: (date of its last D1 game, turnovers it forced per possession in that game)}; day = this game's date.
+      Tired Legs Fade     a team that played yesterday (1 day or less) vs an opponent with 2+ days off -> back the opponent
+      Takeaway Carryover  exactly one team forced turnovers on 25%+ of possessions in its last game   -> back that team
+    """
+    h, a = last.get(home), last.get(away)
+    if completed or not h or not a or market is None or market != market:
+        return []
+    picks = []
+    rh, ra = (day - h[0]).days, (day - a[0]).days
+    if rh <= 1 and ra >= 2:
+        picks.append(('cbb_b2b_fade', 'away'))
+    elif ra <= 1 and rh >= 2:
+        picks.append(('cbb_b2b_fade', 'home'))
+    th, ta = (h[1] or 0) >= 0.25, (a[1] or 0) >= 0.25
+    if th != ta:
+        picks.append(('cbb_tov_carry', 'home' if th else 'away'))
+    out = []
+    for key, side in picks:
+        team = home if side == 'home' else away
+        label, record = CBB_TRACK[key]
+        out.append({'key': key, 'label': label, 'pick': _side(team, market if side == 'home' else -market),
+                    'record': record, 'side': side, 'line': float(market), 'kind': 'spread', 'tentative': True,
+                    'tracking': True})
+    return out
+
+
 def _side(team, margin):
     """'Bills −3' / 'Bills +3' for a team whose own expected margin (positive = favored) is `margin`."""
     if margin != margin:
@@ -186,7 +221,8 @@ NAMES = {   # the name each strategy goes by everywhere on the site (Dylan, 2026
     'cfb_v2_open': 'CFB Opener Snipe', 'cbb_v2_open': 'Hoops Opener Snipe', 'cbb_3p_fade': 'Brick Bounce-Back',
     'nfl_bye_edge': 'Fresh Legs', 'nfl_div_under': 'Family Feud Under', 'nfl_high_total_under': 'Sky-High Under',
     'nfl_wind_under': 'Wind Tunnel Under', 'priced': 'Fair Line Value', 'teaser': 'Key Number Tease',
-    'watch': 'Early Bird Watch', 'cfb_los': 'Trench Warfare',
+    'watch': 'Early Bird Watch', 'cfb_los': 'Trench Warfare', 'cbb_b2b_fade': 'Tired Legs Fade',
+    'cbb_tov_carry': 'Takeaway Carryover',
 }
 
 

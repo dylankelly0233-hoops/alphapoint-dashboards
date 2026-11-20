@@ -801,6 +801,17 @@ STRATEGY_GUIDE = [   # (key, sports, what it does, why it can work) -- plain Eng
      'Not a bet. Our number is far enough from the market that, in past seasons, the line moved toward ours most of '
      'the time (NFL gaps of 2+ points, college basketball gaps of 2–4).',
      'It is about timing: if you already like that side, earlier has usually been better. It does not say the side wins.'),
+    ('cbb_b2b_fade', 'College basketball (tracking only)',
+     'A team playing on back-to-back days, against an opponent with at least two days off. Backs the rested team.',
+     'Tired legs are real, but the market already knows about schedules: against the opener this won 57% of 395, '
+     'against the closing line only 52%. It was one of 86 prior-game ideas we tested, and one or two of those should look '
+     'this good by luck alone, so it has to prove itself on new games.'),
+    ('cbb_tov_carry', 'College basketball (tracking only)',
+     'A team whose defense forced turnovers on a quarter or more of the other team\'s possessions in its last game. Backs '
+     'that team (only when its opponent did not also do it).',
+     'A defense that forces lots of turnovers may be better than its box-score ratings show, and the market may be '
+     'slow to give it credit, especially as an underdog. Steady every season (52% of 4,336 vs the close, 54% of 930 vs '
+     'the opener), but the edge is small and it was one of 86 ideas tested.'),
     ('cfb_los', 'College football (tracking only)',
      'Compares how often each team\'s defense stuffs runs at or behind the line with how often its own offense gets '
      'stuffed. When one team is 10+ points better, the game card shows a grey tag. It is not on Best spots.',
@@ -823,7 +834,9 @@ def strategy_record(key, sysr):
             'teaser': '76% of 717 legs at the closing line, 2014–26 (re-checked on the full odds history: 77% and 76% '
                       'in the two halves; 75% of 1,005 at the opener back to 2006). Needs about 74% per leg at −120',
             'watch': 'the line moved toward our number 58%+ of the time in these gap sizes',
-            'cfb_los': '55% of 703 against the opener in past seasons (not proven)'}.get(key, '')
+            'cfb_los': '55% of 703 against the opener in past seasons (not proven)',
+            'cbb_b2b_fade': '57% of 395 against the opener, 52% of 1,432 against the close (not proven)',
+            'cbb_tov_carry': '54% of 930 against the opener, 52% of 4,336 against the close (not proven)'}.get(key, '')
 
 
 def spots_guide():
@@ -833,12 +846,13 @@ def spots_guide():
                 .get('systems', {}).values() for k, r in rs.items()}
     except (OSError, ValueError):
         sysr = {}
-    timing = {'priced': 'early', 'teaser': 'range', 'watch': 'timing', 'cfb_los': None}
+    timing = {'priced': 'early', 'teaser': 'range', 'watch': 'timing', 'cfb_los': None, 'cbb_b2b_fade': None,
+              'cbb_tov_carry': None}
     def status(key):
         """(on Best spots?, why not) under the strict bar."""
         if key == 'watch':
             return False, 'It is a timing note, not a bet: these sides won only 51–52% against the opener.'
-        if key == 'cfb_los':
+        if key in ('cfb_los', 'cbb_b2b_fade', 'cbb_tov_carry'):
             return False, 'Its record is within luck for how many ideas we tested.'
         if key == 'priced':
             return proven_list() != 'none yet', ''

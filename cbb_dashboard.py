@@ -546,6 +546,7 @@ def generate_html(power, metrics, days, info):
             sysl = sy.cbb(cm2.season_day(g['kick'].date(), SEASON), v2, info['opened'].get(g['game_id']), g['market'],
                           g['home'], g['away'], bool(g['score']))
             sysl += sy.cbb_3p(info.get('p3') or {}, g['market'], g['home'], g['away'], bool(g['score']))
+            sysl += sy.cbb_track(info.get('last') or {}, g['kick'].date(), g['market'], g['home'], g['away'], bool(g['score']))
             move += sy.tag_html(sysl, theme.esc)
             pr = '' if big or g['score'] else val.card_row('cbb', margin, g['market'], g['home'], g['away'], info['val_live'])
             t_ours = info['total_fn'](g['home'], g['away'], g['neutral']) if info.get('total_fn') else np.nan
@@ -601,6 +602,7 @@ def generate_html(power, metrics, days, info):
                                      **({cm2.SHADOW_LABEL: v2} if v2 is not None else {})},   # logged, never blended
                          'hfa': hfa_g - g.get('spots', 0.0),      # logged home edge = base + crowd (calibrate.py); spots below
                          'context': {'scale': SCALE, 'crowd': g.get('crowd'),
+                                     'track': [[x['key'], x['side']] for x in sysl if x.get('tracking')] or None,
                                      'total': [None if t_ours != t_ours else round(t_ours, 1),
                                                None if g.get('total') != g.get('total') else g.get('total')], 'spots': g.get('spot_parts') or None, 'signals': {t: s for t in (g['away'], g['home'])
                                                  if (s := _signal(comp.get(t), games_played.get(t, 0)))},
@@ -797,7 +799,8 @@ def main():
                                          'mu_prof': mu.profiles(units, mu.BASKETBALL_CATS, mu.BASKETBALL_STYLES)
                                          if not units.empty else {},
                                          'opened': {str(r['game_id']): r.get('opened') for r in market_rows},
-                                         'v2': model_v2, 'p3': cm2.p3_net(box, set(teams['team']))})
+                                         'v2': model_v2, 'p3': cm2.p3_net(box, set(teams['team'])),
+                                         'last': cm2.last_games(box, set(teams['team']))})
 
 
 if __name__ == '__main__':

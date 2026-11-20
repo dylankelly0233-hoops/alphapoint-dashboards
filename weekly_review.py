@@ -315,28 +315,45 @@ def best_spots_record(scored):
     return out
 
 
+TRACKED = {   # key -> (name, backtest) for the weekly 'Tracking' section
+    'los': ('CFB Trench Warfare (stuff-rate edge 10+ pts)', '55% of 703 vs the opener'),
+    'cbb_v2_open': ('CBB Hoops Opener Snipe', '56% of 374 vs the opener, settings picked after the fact'),
+    'cbb_b2b_fade': ('CBB Tired Legs Fade', '57% of 395 vs the opener'),
+    'cbb_tov_carry': ('CBB Takeaway Carryover', '54% of 930 vs the opener'),
+    'nfl_bye_edge': ('NFL Fresh Legs', '54% of 556 vs the opener, near miss'),
+    'nfl_div_under': ('NFL Family Feud Under', '53% of 1,195 vs the opener, near miss'),
+}
+
+
 def tracking_record(scored):
-    """Leans we track but have NOT proven (never on Best spots): graded vs the first-seen line and the last line."""
-    d = scored.get('cfb')
-    if d is None or d.empty or 'context' not in d:
-        return ['  Nothing graded yet.']
+    """Leans we track but have NOT proven (never on Best spots): graded vs the first-seen line and the last line.
+    CFB logs context 'los' = [side, gap]; CBB logs context 'track' = [[key, side], ...] (spreads only)."""
     rows = []
-    for g in d.itertuples():
-        try:
-            los = (json.loads(g.context) or {}).get('los')
-        except (TypeError, ValueError):
-            los = None
-        if not los or g.result != g.result:
+    for sport in ('cfb', 'cbb'):
+        d = scored.get(sport)
+        if d is None or d.empty or 'context' not in d:
             continue
-        for bench, line in (('first seen', g.opened), ('last line', g.market_last)):
-            if line == line and line is not None and g.result != line:
-                rows.append({'bench': bench, 'won': float((g.result > line) == (los[0] == 'home'))})
+        for g in d.itertuples():
+            try:
+                ctx = json.loads(g.context) or {}
+            except (TypeError, ValueError):
+                continue
+            picks = ([('los', ctx['los'][0])] if ctx.get('los') else []) + [tuple(x) for x in ctx.get('track') or []]
+            if not picks or g.result != g.result:
+                continue
+            for key, side in picks:
+                for bench, line in (('first seen', g.opened), ('last line', g.market_last)):
+                    if line == line and line is not None and g.result != line:
+                        rows.append({'key': key, 'bench': bench, 'won': float((g.result > line) == (side == 'home'))})
     if not rows:
-        return ['  CFB line of scrimmage (stuff-rate edge 10+ pts): no finished games yet.']
+        return ['  No finished tracked games yet.']
     df = pd.DataFrame(rows)
-    return ['  CFB line of scrimmage (stuff-rate edge 10+ pts): ' + '; '.join(
-        f'vs the {b} {x.won.mean():.0%} of {len(x)}' for b, x in df.groupby('bench', sort=False))
-        + ' (backtest 55% of 703 vs the opener; unproven)']
+    out = []
+    for key, x in df.groupby('key', sort=False):
+        name, bt = TRACKED.get(key, (key, ''))
+        out.append(f'  {name}: ' + '; '.join(f'vs the {b} {y.won.mean():.0%} of {len(y)}' for b, y in x.groupby('bench', sort=False))
+                   + (f' (backtest {bt})' if bt else ''))
+    return out
 
 
 def main():
