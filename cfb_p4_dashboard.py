@@ -794,7 +794,7 @@ def generate_html(p4, vals, sched, week, season_type, info):
     sched_html = (
         f'<div class="sechead"><h2>Games</h2><span class="hint">Projected lines include home field, scaled by crowd size '
         f'(none at neutral sites)</span></div>'
-        + theme.filter_bar('games-conf', 'cfb-games', 'Conference', conf_opts, 'Either team in it')
+        + theme.filter_bar('games-conf', 'cfb-games', 'Conference', conf_opts, 'Either team in it', default='P4')
         + '<div id="cfb-games">' + (theme.week_switch('cfb-weeks', panes) if len(panes) > 1 else panes[0][2]) + '</div>'
         + theme.method_note(
             f'Every game with an FBS team, this week and next (use the switch; filter by conference above). <b>Projected</b> is the composite rating gap plus '

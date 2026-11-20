@@ -211,9 +211,9 @@ def table(table_id, headers, rows_html, sortable=True):
             f'<thead><tr>{ths}</tr></thead><tbody>{rows_html}</tbody></table></div></div>')
 
 
-def filter_bar(select_id, table_id, label, options, note=''):
-    """options: list of (value, label)."""
-    opts = ''.join(f'<option value="{esc(v)}">{esc(l)}</option>' for v, l in options)
+def filter_bar(select_id, table_id, label, options, note='', default=''):
+    """options: list of (value, label); default = the value selected (and applied) when the page opens."""
+    opts = ''.join(f'<option value="{esc(v)}"{" selected" if v == default else ""}>{esc(l)}</option>' for v, l in options)
     note_html = f'<span class="hint">{note}</span>' if note else ''
     return (f'<div class="toolbar"><label for="{select_id}">{esc(label)}</label>'
             f'<select id="{select_id}" class="filter" data-table="{table_id}">'
@@ -865,6 +865,7 @@ document.querySelectorAll('select.filter').forEach(sel => sel.onchange = () => {
     if (head && head.classList.contains('sechead')) head.hidden = !any;
   });
 });
+document.querySelectorAll('select.filter').forEach(sel => { if (sel.value) sel.onchange(); });   // apply defaults
 
 // Team pages: any element with data-team opens that team's pop-up (data embedded as JSON by extras.team_modal)
 (function () {

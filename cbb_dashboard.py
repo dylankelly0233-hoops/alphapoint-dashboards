@@ -715,7 +715,7 @@ def generate_html(power, metrics, days, info):
     featured_html = fx.tab(''.join(features), ('Featured games', 'Top 25 clashes and upset watch, next three game days'),
                            'No ranked-vs-ranked or upset-watch games in the next three game days.')
     games_html = (
-        theme.filter_bar('games-conf', 'cbb-games', 'Conference', conf_opts, 'Either team in it')
+        theme.filter_bar('games-conf', 'cbb-games', 'Conference', conf_opts, 'Either team in it', default='P4')
         + '<div id="cbb-games">' + (sections or '<p class="hint">No Division I games in the next three weeks.</p>') + '</div>'
         + theme.method_note(
             f'The next {GAME_DAYS} game days, every Division I game (filter by conference above). <b>Projected</b> is the composite rating gap '
