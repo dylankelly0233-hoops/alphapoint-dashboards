@@ -293,6 +293,36 @@ def nfl_track(prof, market, home, away, completed, name=str, postseason=False):
     return out
 
 
+MLB_TRACK = {   # pro_systems_research.py M5 (2026-11-20): +19.9% per bet over 194 vs the close, short of 300 bets
+    'mlb_aces_under': ('Under when both starters have a FIP of 3.50 or lower and the total is 8.5+',
+                       '+20% per bet over 194 games vs the closing total (2019-26), short of the 300-game minimum'),
+}
+
+
+def research_fip(hr, bb, k, outs):
+    """FIP exactly as the research computed it: (13 HR + 3 BB - 2 K) / IP + 3.10 (no hit batters, fixed constant)."""
+    ip = outs / 3
+    return (13 * hr + 3 * bb - 2 * k) / ip + 3.10 if ip else float('nan')
+
+
+def mlb_track(home_sp, away_sp, total, completed):
+    """
+    TRACKING ONLY (never on Best spots): Aces Under, exactly as tested (pro_systems_research.py M5). home_sp / away_sp =
+    each probable starter's THIS-SEASON totals before the game: {'starts', 'outs', 'hr', 'bb', 'k'}. Both need 5+ starts
+    and 25+ innings and a research_fip of 3.50 or lower, and the posted total must be 8.5+. Graded vs the closing total.
+    TO WIRE IN (MLB game cards, planned Feb 2027): call this per game, show via tag_html, log context 'track'.
+    """
+    if completed or total is None or total != total or total < 8.5 or not home_sp or not away_sp:
+        return []
+    for sp in (home_sp, away_sp):
+        if sp.get('starts', 0) < 5 or sp.get('outs', 0) < 75 or research_fip(sp['hr'], sp['bb'], sp['k'], sp['outs']) > 3.5:
+            return []
+    label, record = MLB_TRACK['mlb_aces_under']
+    return [{'key': 'mlb_aces_under', 'label': label, 'pick': f'Under {total:g}', 'record': record, 'side': 'under',
+             'line': float(total), 'kind': 'total', 'tentative': True, 'tracking': True,
+             'why': 'both starters have a FIP of 3.50 or lower, but the total is still 8.5+'}]
+
+
 def _side(team, margin):
     """'Bills −3' / 'Bills +3' for a team whose own expected margin (positive = favored) is `margin`."""
     if margin != margin:
@@ -307,6 +337,7 @@ NAMES = {   # the name each strategy goes by everywhere on the site (Dylan, 2026
     'nfl_wind_under': 'Wind Tunnel Under', 'priced': 'Fair Line Value', 'teaser': 'Key Number Tease',
     'watch': 'Early Bird Watch', 'cfb_los': 'Trench Warfare', 'cbb_b2b_fade': 'Tired Legs Fade',
     'cbb_tov_carry': 'Takeaway Carryover', 'nfl_off_sr': 'Moving the Chains', 'nfl_def_fade': 'Defense Discount',
+    'mlb_aces_under': 'Aces Under',
 }
 
 
@@ -324,7 +355,7 @@ def hold_row(held, esc, k=None, name=str):
             f'no strategy is shown for this game until it is. This clears on the next hourly update after it posts.</span></div>')
 
 
-BENCH_DEFAULT = {'cbb_3p_fade': 'close', 'nfl_wind_under': 'close', 'teaser': 'teaser'}
+BENCH_DEFAULT = {'cbb_3p_fade': 'close', 'nfl_wind_under': 'close', 'teaser': 'teaser', 'mlb_aces_under': 'close'}
 
 
 def bench(key):

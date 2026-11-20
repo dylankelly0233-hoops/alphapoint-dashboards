@@ -984,6 +984,13 @@ STRATEGY_GUIDE = [   # (key, sports, what it does, why it can work) -- plain Eng
      'A defense that forces lots of turnovers may be better than its box-score ratings show, and the market may be '
      'slow to give it credit, especially as an underdog. Steady every season (52% of 4,746 vs the close, 54% of 1,090 vs '
      'the opener), but the edge is small and it was one of 86 ideas tested.'),
+    ('mlb_aces_under', 'MLB (tracking only, starts with the 2027 season)',
+     'The under when both probable starters have a FIP of 3.50 or lower this season (5+ starts) but the total is still '
+     '8.5 or more.',
+     'FIP measures what a pitcher controls (strikeouts, walks, home runs). When two pitchers are throwing well but the '
+     'total is still high, the market may be leaning on ERA or the park. It returned 20% per bet over 194 games against '
+     'the closing total from 2019 on, profitable in both halves and recently, but 194 games is short of our 300-game '
+     'minimum, so it has to prove itself on new games. Graded against the closing total.'),
     ('nfl_off_sr', 'NFL (tracking only)',
      'Backs the team whose offense has the better success rate this season (how often a play gains enough: 40% of '
      'the yards needed on first down, 60% on second, all of it on third or fourth), from week 4 on. It tags most games.',
@@ -1050,6 +1057,7 @@ def strategy_record(key, sysr):
             'cbb_b2b_fade': '55% of 559 against the opener, 52% of 1,710 against the close (not proven)',
             'cbb_tov_carry': '54% of 1,090 against the opener, 52% of 4,746 against the close (not proven)',
             'nfl_off_sr': '53% of 4,030 against the opener, 52% of 4,227 against the close (not proven)',
+            'mlb_aces_under': '+20% per bet over 194 games against the closing total, 2019-26 (not proven: under 300 games)',
             'nfl_def_fade': '54% of 1,061 against the close, 53% of 1,004 against the opener (not proven)'}.get(key, '')
 
 
@@ -1061,7 +1069,7 @@ def spots_guide():
     except (OSError, ValueError):
         sysr = {}
     timing = {'priced': 'early', 'teaser': 'range', 'watch': 'timing', 'cfb_los': None, 'cbb_b2b_fade': None,
-              'cbb_tov_carry': None, 'nfl_off_sr': None, 'nfl_def_fade': None}
+              'cbb_tov_carry': None, 'nfl_off_sr': None, 'nfl_def_fade': None, 'mlb_aces_under': None}
     def status(key):
         """(on Best spots?, why not) under the strict bar."""
         if key == 'watch':
@@ -1070,6 +1078,9 @@ def spots_guide():
             return False, ('Retired 2026-11-20: it worked for years (56% against the close in 2006-10) but has stopped: '
                            '52% since 2021 and 51% over the last three seasons. The market seems to have fixed it, so it '
                            'no longer shows on game cards.')
+        if key == 'mlb_aces_under':
+            return False, ('Only 194 past games, short of the 300 we require. It starts tracking on game cards when the '
+                           '2027 MLB season begins.')
         if key == 'nfl_off_sr':
             return False, ('It beats the luck bar, but the 2006-15 half came in at 52.1%, just under the 52.4% needed. '
                            'It has been stronger lately (56% since 2021), which it now has to show on new games.')

@@ -343,6 +343,7 @@ TRACKED = {   # key -> (name, backtest) for the weekly 'Tracking' section
     'nfl_bye_edge': ('NFL Fresh Legs', '54% of 556 vs the opener, near miss'),
     'nfl_div_under': ('NFL Family Feud Under', '53% of 1,195 vs the opener, near miss'),
     'nfl_off_sr': ('NFL Moving the Chains (better offensive success rate)', '53% of 4,030 vs the opener'),
+    'mlb_aces_under': ('MLB Aces Under (two strong starters, total 8.5+)', '+20% per bet over 194 vs the close'),
 }
 
 
@@ -350,7 +351,7 @@ def tracking_record(scored):
     """Leans we track but have NOT proven (never on Best spots): graded vs the first-seen line and the last line.
     CFB logs context 'los' = [side, gap]; CBB and NFL log context 'track' = [[key, side], ...] (spreads only)."""
     rows = []
-    for sport in ('cfb', 'cbb', 'nfl'):
+    for sport in ('cfb', 'cbb', 'nfl', 'mlb'):
         d = scored.get(sport)
         if d is None or d.empty or 'context' not in d:
             continue
