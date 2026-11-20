@@ -579,7 +579,7 @@ def featured_games():
         if f.get('marquee'):
             score += FEAT_POINTS['marquee']; chips.append(('marquee', f['marquee']))
         if abs(s['market_num']) <= CLOSE_LINE.get(key, 3.0):
-            score += FEAT_POINTS['competitive']; chips.append(('close', f'Close game: {s["market"]}'))
+            score += FEAT_POINTS['competitive']          # still scores; no chip (Dylan, 2026-11-20)
         if f.get('tv'):
             score += FEAT_POINTS['tv']; chips.append(('tv', f['tv']))
         notes = gr.notes(key)
@@ -625,7 +625,7 @@ def featured_games():
             bottom = re.findall(r'<p class="fx-bottom">.*?</p>', pv['html'], re.S)
             base = s['page'].split('#')[0]
             # numbers strip: our line, the market, where it opened
-            nums = (f'<div class="fnums"><span><em>Ours</em>{theme.esc(s["ours"])}</span>'
+            nums = (f'<div class="fnums"><span><em>AlphaPoint</em>{theme.esc(s["ours"])}</span>'
                     f'<span><em>Market</em>{theme.esc(s["market"])}</span>'
                     + (f'<span><em>Opened</em>{theme.esc(s["open_spread"])}</span>' if s.get('open_spread') else '')
                     + '</div>')
