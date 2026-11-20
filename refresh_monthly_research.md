@@ -14,7 +14,7 @@ Wait for it to finish (you'll be notified; don't poll in a tight loop). If the l
 
 ## 3. Publish the updated tables
 Only if it ran. From DIR:
-1. `git add valuation.json totals.json totals_prior.json tag_backtest.json backtests.json priced_value_test.json segment_test.json system_test.json nba_prior_*.json` (add only files that exist)
+1. `git add valuation.json totals.json totals_prior.json tag_backtest.json backtests.json priced_value_test.json segment_test.json system_test.json criteria.json nba_prior_*.json` (add only files that exist)
 2. `git -c user.name="Dylan Kelly" -c user.email="dylankelly0233@gmail.com" commit -m "Monthly research tables"`. Nothing to commit is fine.
 3. `git pull --rebase`, then `git push`. The push rebuilds the site with the new tables.
 

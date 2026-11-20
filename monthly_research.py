@@ -35,7 +35,8 @@ STEPS = [('Game situations', ['situational_research.py']), ('Spread value tables
          ('NBA season start file', ['nba_value_metrics.py', '--prior']),
          ('CFB model v2 data', ['cfb_model_fetch2.py', '--current']), ('CFB model v2 record', ['cfb_model_v2_test.py', '--write']),
          ('CBB model v2 record', ['cbb_model_v2_test.py', '--refit', '--write', '5', '45']),
-         ('CBB 3-point fade record', ['stat_matchup_test.py', '--write'])]
+         ('CBB 3-point fade record', ['stat_matchup_test.py', '--write']),
+         ('Proven-rule audit (luck + recent seasons)', ['criteria_audit.py', '--write'])]
 OUTPUTS = ['valuation.json', 'totals.json', 'totals_prior.json', 'tag_backtest.json', 'backtests.json', 'priced_value_test.json',
            'segment_test.json', 'system_test.json', f'nba_prior_{date.today().year + (date.today().month >= 8)}.json']
 NAMES = {'nfl': 'NFL', 'cfb': 'CFB', 'cbb': 'CBB', 'nba': 'NBA', 'nhl': 'NHL', 'epl': 'EPL'}

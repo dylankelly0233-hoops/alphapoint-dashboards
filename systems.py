@@ -28,18 +28,52 @@ def _passed(sport, key):
 
 
 STRICT_LO, STRICT_N = 0.51, 300   # Dylan, 2026-11-19: Best spots shows only legit proven track records
+KILL_N, KILL_RATE = 200, 0.50       # Dylan, 2026-11-20: last 200 live bets under 50% -> back to tracking
+
+_C = {}
 
 
-def strict(r):
+def _json(path):
+    if path not in _C:
+        try:
+            _C[path] = json.load(open(path, encoding='utf-8'))
+        except (OSError, ValueError):
+            _C[path] = {}
+    return _C[path]
+
+
+def criteria(key):
+    """This strategy's rule 3 / 4 entry from criteria.json (criteria_audit.py, monthly), or None."""
+    return (_json('criteria.json').get('strategies') or {}).get(key)
+
+
+def killed(key):
+    """Rule 7: weekly_review.py's live_kill.json entry when the last KILL_N live bets won under KILL_RATE."""
+    k = (_json('live_kill.json').get('strategies') or {}).get(key)
+    return k if k and k.get('killed') else None
+
+
+def criteria_ok(key):
+    """Rules 3 (luck check) and 4 (still working) passed in the last monthly audit, and the kill switch has not tripped."""
+    c = criteria(key)
+    return bool(c and c.get('passes')) and not killed(key)
+
+
+def strict(r, key=None, check_criteria=True):
     """
-    The bar for Best spots: passed both halves (system_test bar) AND the 95% low end of its record is at least 51%
-    AND 300+ decided games AND the rule was not picked after looking at the later half ('chosen_after_holdout').
-    Systems that pass the old bar but not this one still show on game cards, as tracking.
+    The full bar for Best spots (Dylan, 2026-11-19 and 2026-11-20):
+      2. passed both halves (system_test bar) AND 95% low end >= 51% AND 300+ decided games AND the rule was not
+         picked after looking at the later half ('chosen_after_holdout');
+      3-4. criteria.json: beats the luck bar for its batch and its last 5 seasons are above break-even;
+      7. live_kill.json: its last 200 live bets have not fallen under 50%.
+    Systems that miss any of it still show on game cards, as tracking.
     """
     if not r or not r.get('passed') or r.get('chosen_after_holdout'):
         return False
     a = r[r.get('bench', 'open')]['all']
-    return a['lo'] >= STRICT_LO and a['n'] >= STRICT_N
+    if not (a['lo'] >= STRICT_LO and a['n'] >= STRICT_N):
+        return False
+    return not check_criteria or (key is not None and criteria_ok(key))
 
 
 def record_text(r):
@@ -79,7 +113,7 @@ def nfl(r, total_top10, name=str, wx=None, roof=None):
         if res:
             out.append({'key': key, 'label': res['label'].split(' (')[0], 'pick': pick, 'record': record_text(res),
                         'side': side, 'line': float(line), 'kind': 'total' if side in ('over', 'under') else 'spread',
-                        'tentative': bool(res.get('tentative')), 'tracking': not strict(res)})
+                        'tentative': bool(res.get('tentative')), 'tracking': not strict(res, key)})
     return out
 
 
@@ -103,7 +137,8 @@ def cfb(week, season_type, v2_line, opened, market, home, away, completed):
     own = lambda m: m if side == 'home' else -m          # the backed team's own margin
     pick = f'{_side(team, own(now))} (opened {_side(team, own(opened)).split()[-1]})'
     return [{'key': 'cfb_v2_open', 'label': res['label'], 'pick': pick, 'record': record_text(res),
-             'side': side, 'line': float(now), 'kind': 'spread', 'tentative': bool(res.get('tentative')), 'tracking': not strict(res)}]
+             'side': side, 'line': float(now), 'kind': 'spread', 'tentative': bool(res.get('tentative')),
+             'tracking': not strict(res, 'cfb_v2_open')}]
 
 
 def cbb(day, v2_line, opened, market, home, away, completed):
@@ -124,7 +159,8 @@ def cbb(day, v2_line, opened, market, home, away, completed):
     own = lambda m: m if side == 'home' else -m
     pick = f'{_side(team, own(now))} (opened {_side(team, own(opened)).split()[-1]})'
     return [{'key': 'cbb_v2_open', 'label': res['label'], 'pick': pick, 'record': record_text(res),
-             'side': side, 'line': float(now), 'kind': 'spread', 'tentative': bool(res.get('tentative')), 'tracking': not strict(res)}]
+             'side': side, 'line': float(now), 'kind': 'spread', 'tentative': bool(res.get('tentative')),
+             'tracking': not strict(res, 'cbb_v2_open')}]
 
 
 def cbb_3p(p3, market, home, away, completed):
@@ -146,7 +182,7 @@ def cbb_3p(p3, market, home, away, completed):
     gap = abs(h[0] - a[0]) * 100
     return [{'key': 'cbb_3p_fade', 'label': res['label'], 'pick': f'{_side(team, own)} (3P% edge {gap:.0f} pts to the other side)',
              'record': record_text(res), 'side': side, 'line': float(market), 'kind': 'spread',
-             'tentative': bool(res.get('tentative')), 'tracking': not strict(res)}]
+             'tentative': bool(res.get('tentative')), 'tracking': not strict(res, 'cbb_3p_fade')}]
 
 
 LOS_GAP, LOS_MIN_GAMES = 0.10, 3
@@ -230,8 +266,7 @@ def nfl_track(prof, market, home, away, completed, name=str, postseason=False):
     picks = []
     if h[1] != a[1]:
         picks.append(('nfl_off_sr', 'home' if h[1] > a[1] else 'away'))
-    if h[2] == h[2] and a[2] == a[2] and abs(h[2] - a[2]) >= NFL_DEF_GAP:
-        picks.append(('nfl_def_fade', 'home' if h[2] > a[2] else 'away'))      # the team with the WORSE defense
+    # Defense Discount (nfl_def_fade) retired 2026-11-20: fails rule 4 (51.8% since 2021, 50.7% the last 3 seasons)
     out = []
     for key, side in picks:
         team = home if side == 'home' else away

@@ -13,7 +13,7 @@ It writes `DIR\last_review.md`, and `calibration.json` / `calibration_log.csv` w
 
 ## 2b. Publish the tuned settings
 From DIR:
-1. `git add calibration.json calibration_log.csv` (calibration_log.csv may not exist yet; add only what exists)
+1. `git add calibration.json calibration_log.csv live_kill.json` (calibration_log.csv may not exist yet; add only what exists)
 2. `git -c user.name="Dylan Kelly" -c user.email="dylankelly0233@gmail.com" commit -m "Weekly calibration"`. If it says there's nothing to commit, that's fine.
 3. `git pull --rebase`, then `git push`. The push triggers a site rebuild with the new settings.
 If the push fails, say so in the email.

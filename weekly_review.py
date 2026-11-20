@@ -250,6 +250,23 @@ def golf_review():
     return out
 
 
+def kill_switch(df):
+    """
+    Rule 7 (Dylan, 2026-11-20): a Best spots strategy whose last 200 graded live bets won under 50% goes back to
+    tracking until it recovers. Writes live_kill.json (committed in the weekly push; systems.killed reads it).
+    """
+    import systems as sy
+    res = {}
+    for key, x in df[df['key'].notna()].groupby('key'):
+        w = x.sort_values('listed')['won'].dropna().tail(sy.KILL_N)
+        res[key] = {'n': len(w), 'rate': round(float(w.mean()), 4) if len(w) else None,
+                    'killed': bool(len(w) >= sy.KILL_N and w.mean() < sy.KILL_RATE)}
+    json.dump({'updated': datetime.now().date().isoformat(), 'kill_n': sy.KILL_N,
+               'kill_rate': sy.KILL_RATE, 'strategies': res}, open('live_kill.json', 'w', encoding='utf-8'), indent=1)
+    hit = [k for k, v in res.items() if v['killed']]
+    return [f'  KILL SWITCH: {", ".join(hit)} paused (last {sy.KILL_N} live bets under 50%).'] if hit else []
+
+
 def best_spots_record(scored):
     """
     Live record of Best spots (best_spots_log.csv, written by build_site.py the first time each pick is listed):
@@ -295,11 +312,14 @@ def best_spots_record(scored):
         if r.reason == 'priced' and r.p == r.p and r.need == r.need:
             mg = r.p - r.need
             tier = 'badge (3+)' if mg >= 0.03 else 'green text (1.5-3)' if mg >= 0.015 else 'faded (<1.5)'
-        rows.append({'group': f'{r.sport.upper()} {r.reason}: {r.detail}', 'reason': r.reason, 'tier': tier, 'won': won, 'clv': clv})
+        key = (r.detail if r.reason == 'system' else 'teaser' if r.reason == 'teaser' else
+               f'{r.sport}_{r.kind}|{str(r.detail).rsplit(" ", 1)[0]}' if r.reason == 'priced' else None)
+        rows.append({'group': f'{r.sport.upper()} {r.reason}: {r.detail}', 'reason': r.reason, 'tier': tier, 'won': won, 'clv': clv,
+                     'key': key, 'listed': r.listed})
     if not rows:
         return ['  No finished Best spots games yet.']
     df = pd.DataFrame(rows)
-    out = []
+    out = kill_switch(df)
 
     def line_for(name, x):
         w, c = x['won'].dropna(), x['clv'].dropna()
@@ -323,7 +343,6 @@ TRACKED = {   # key -> (name, backtest) for the weekly 'Tracking' section
     'nfl_bye_edge': ('NFL Fresh Legs', '54% of 556 vs the opener, near miss'),
     'nfl_div_under': ('NFL Family Feud Under', '53% of 1,195 vs the opener, near miss'),
     'nfl_off_sr': ('NFL Moving the Chains (better offensive success rate)', '53% of 4,030 vs the opener'),
-    'nfl_def_fade': ('NFL Defense Discount (fade the much better defense)', '54% of 1,061 vs the close'),
 }
 
 
