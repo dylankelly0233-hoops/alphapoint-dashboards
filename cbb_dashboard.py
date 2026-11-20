@@ -698,6 +698,7 @@ def generate_html(power, metrics, days, info):
                                  info['opened'].get(g['game_id']), big, key='cbb', total=(t_ours, g.get('total')),
                                  gid=g['game_id'], ctx={'p4': g['home'] in p4set or g['away'] in p4set}, systems=sysl,
                                  feat={'key': 'cbb', 'home_key': g['home'], 'away_key': g['away'], 'held': bool(held),
+                                       'p4': g['home'] in p4set or g['away'] in p4set,
                                        'marquee': next(iter(info['featured'].get(g['game_id']) or []), None),
                                        'tv': g.get('tv') or None}))
         sections += (f'<div class="sechead"><h2>{day.strftime("%A, %b %d").replace(" 0", " ")}</h2>'

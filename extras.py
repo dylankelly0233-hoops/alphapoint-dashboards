@@ -524,6 +524,10 @@ def _val():
 
 
 def write_spots(sport, spots):
+    import featured
+    for s in spots:          # the sport's Featured-tab preview rides along for the home page (build_site.featured_games)
+        if s and s.get('gid') in featured.PREVIEWS:
+            s.setdefault('feat', {})['preview'] = featured.PREVIEWS[s['gid']]
     with open(f'spots_{sport}.json', 'w', encoding='utf-8') as f:
         json.dump([s for s in spots if s], f, ensure_ascii=False, indent=1)
     save_first_totals(sport.lower())

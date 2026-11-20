@@ -153,14 +153,20 @@ def preview(d):
     return ''.join(f'<p>{theme.esc(p)}</p>' for p in paras) + f'<p class="fx-bottom">{bottom}</p>'
 
 
+PREVIEWS = {}     # game id -> this build's preview, so the home page can show a shortened copy (extras.write_spots)
+
+
 def card(d, game_card_html, panel_html='', side_notes=''):
     """One featured game: reasons, preview, the regular game card, notes, and the open matchup grid."""
     reasons = ''.join(f'<span class="fx-reason">{theme.esc(r)}</span>' for r in d.get('reasons', []))
+    pv = d.get('preview_html') or preview(d)
+    PREVIEWS[str(d.get('game_id'))] = {'html': pv, 'reasons': list(d.get('reasons', [])), 'when': d.get('when', ''),
+                                       'title': f'{_named(d["away"], d.get("away_rank"))} @ {_named(d["home"], d.get("home_rank"))}'}
     grid = f'<div class="fx-matchup">{panel_html}</div>' if panel_html else ''
     return (f'<article class="card fx"><div class="fx-top">{reasons}</div>'
             f'<div class="fx-body"><div class="fx-text"><h3>{theme.esc(_named(d["away"], d.get("away_rank")))} @ '
             f'{theme.esc(_named(d["home"], d.get("home_rank")))}</h3><p class="fx-when">{theme.esc(d.get("when", ""))}</p>'
-            f'{d.get("preview_html") or preview(d)}</div><div class="fx-side">{game_card_html}{side_notes}</div></div>{grid}</article>')
+            f'{pv}</div><div class="fx-side">{game_card_html}{side_notes}</div></div>{grid}</article>')
 
 
 def notes(d):

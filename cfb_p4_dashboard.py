@@ -744,6 +744,7 @@ def generate_html(p4, vals, sched, week, season_type, info):
                              ctx={'conf': str(getattr(r, 'conf', '')).lower() in ('true', '1'),
                                   'p4': r.home in p4n or r.away in p4n}, systems=sysl,
                              feat={'key': 'cfb', 'home_key': r.home, 'away_key': r.away, 'held': bool(held),
+                                   'p4': r.home in p4n or r.away in p4n,
                                    'marquee': next(iter(info['featured'].get(r.game_id) or []), None),
                                    'tv': ('Prime time' if pd.Timestamp(r.kick).hour >= 19 or pd.Timestamp(r.kick).weekday() < 5 else None)
                                          if r.kick is not None and not pd.isna(r.kick) and not getattr(r, 'tbd', False) else None},

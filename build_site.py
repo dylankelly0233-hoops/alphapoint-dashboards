@@ -46,7 +46,10 @@ LANDING_CSS = """
 .feat { padding: 16px 18px; margin: 0 0 16px; }
 .feathead h2 { margin: 0 0 4px; } .feathead .hint { display: block; margin-bottom: 6px; }
 .featday { font: 700 12px/1 var(--display); letter-spacing: 1px; text-transform: uppercase; color: var(--muted); margin: 14px 0 8px; }
-.featgrid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.featgrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.ftext p { margin: 6px 0 0; font-size: 14px; line-height: 1.5; } .ftext .fx-bottom { border-left: 3px solid var(--accent);
+           padding-left: 10px; } .flinks { display: flex; gap: 16px; font-size: 13px; font-weight: 600; margin-top: 4px; }
+.flinks a { color: var(--accent); text-decoration: none; } h3.fmatch { margin: 0; }
 .featcard { display: flex; flex-direction: column; gap: 6px; padding: 12px 14px; text-decoration: none; color: var(--ink);
             border-top: 3px solid var(--accent); }
 .featcard:hover, .featcard:focus-visible { box-shadow: 0 8px 20px rgba(10, 20, 40, .12); outline: none; }
@@ -512,7 +515,7 @@ def strict_proof(pr, key=None, check_criteria=True):
 
 
 FEAT_POINTS = {'marquee': 2, 'competitive': 1, 'tv': 1, 'story': 1, 'proven': 1}
-FEAT_MIN, FEAT_PER_DAY, FEAT_PER_SPORT = 2, 3, 2
+FEAT_MIN, FEAT_PER_DAY, FEAT_PER_SPORT = 1, 2, 1   # Dylan, 2026-11-20: 'one or maybe 2 max per day'
 CLOSE_LINE = {'nfl': 3.0, 'cfb': 3.0, 'nba': 4.0, 'cbb': 4.0}
 
 
@@ -536,6 +539,7 @@ def featured_games():
       marquee matchup (ranked vs ranked, a top-10 team in a close game, or both teams in our top quarter)  2
       competitive (market spread 3 or less in football, 4 or less in basketball)                             1
       prime time / national TV                                                                               1
+      (a game must have a marquee matchup or prime time / national TV, and in college a Power 4 / Big East team)
       a storyline: a Research Assistant rating-watch item on either team, or an unexplained gap             1
       a proven strategy applies (once)                                                                       1
       tracking strategies: tiebreaker only
@@ -560,6 +564,13 @@ def featured_games():
                 or f.get('held') or s.get('market_num') is None:
             continue
         key = f.get('key') or s['sport'].lower()
+        # a featured game needs a headline reason (marquee matchup or prime time / national TV), and in college at
+        # least one Power 4 team (Big East counts in basketball): a close line, news or a strategy alone doesn't make a
+        # Delaware @ New Mexico State worth featuring (Dylan, 2026-11-20)
+        if not (f.get('marquee') or f.get('tv')) or (key in ('cfb', 'cbb') and not f.get('p4')):
+            continue
+        if not f.get('preview'):     # only games with a write-up in their sport's Featured tab (the home page shortens it)
+            continue
         chips, score = [], 0.0
         if f.get('marquee'):
             score += FEAT_POINTS['marquee']; chips.append(('marquee', f['marquee']))
@@ -601,19 +612,25 @@ def featured_games():
         nice = d.strftime('%a %b %d').replace(' 0', ' ')
         html += f'<h3 class="featday">{"Today" if d == today else "Tomorrow"} · {theme.esc(nice)}</h3><div class="featgrid">'
         for score, edge, dt, s, chips in sorted(days[d], key=lambda c: c[2]):
-            t = dt.astimezone().strftime('%I:%M %p').lstrip('0')
+            pv = s['feat']['preview']
+            t = dt.astimezone().strftime('%a %I:%M %p').replace(' 0', ' ')
             chip = lambda c: (f'<span class="fchip {c[0]}"' + (f' title="{theme.esc(c[2])}"' if len(c) > 2 else '')
                               + f'>{theme.esc(c[1])}</span>')
-            html += (f'<a class="card featcard" href="{theme.esc(s["page"])}">'
+            # the sport's preview, shortened: its opening paragraph and its bottom line
+            paras = re.findall(r'<p>.*?</p>', pv['html'], re.S)
+            bottom = re.findall(r'<p class="fx-bottom">.*?</p>', pv['html'], re.S)
+            base = s['page'].split('#')[0]
+            html += (f'<article class="card featcard">'
                      f'<span class="fmeta"><span class="fsport">{theme.esc(s["sport"])}</span>{theme.esc(t)} ET</span>'
-                     f'<span class="fmatch">{theme.esc(s["away"])} <span>@</span> {theme.esc(s["home"])}</span>'
-                     f'<span class="flines">Ours <b>{theme.esc(s["ours"])}</b> · Market <b>{theme.esc(s["market"])}</b></span>'
+                     f'<h3 class="fmatch">{theme.esc(pv.get("title") or s["away"] + " @ " + s["home"])}</h3>'
                      f'<span class="fwhy">{"".join(chip(c) for c in chips)}</span>'
-                     f'<span class="fgo">Open game →</span></a>')
+                     f'<div class="ftext">{"".join(paras[:1])}{"".join(bottom[:1])}</div>'
+                     f'<span class="flinks"><a href="{theme.esc(base)}#featured">Full preview →</a>'
+                     f'<a href="{theme.esc(s["page"])}">Game card →</a></span></article>')
         html += '</div>'
-    return ('<section class="card feat"><div class="feathead"><h2>Featured games</h2><span class="hint">The most '
-            'interesting games of the day: big matchups, close lines, prime time, news worth knowing. Research, not '
-            'picks; tap a game for its full card.</span></div>' + html + '</section>')
+    return ('<section class="card feat"><div class="feathead"><h2>Featured games</h2><span class="hint">The game or two '
+            'worth knowing about each day, from each sport’s Featured tab. Research, not picks.</span></div>'
+            + html + '</section>')
 
 
 def best_spots():
