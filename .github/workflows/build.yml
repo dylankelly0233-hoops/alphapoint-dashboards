@@ -2,7 +2,7 @@
 # Runs every hour from 7 AM to 1 AM ET, started by an outside timer (a cron-job.org job, set up
 # 2026-11-11, that calls the workflow_dispatch API at :17 with a fine-grained token limited to Actions
 # on this repository; the token expires about Nov 2027 and needs renewing). Also runs whenever Claude's
-# daily run pushes a new Injury Wire file, and on demand (Actions tab → "Build dashboards" → Run
+# daily run pushes a new Injury Wire or Research Assistant file, and on demand (Actions tab → "Build dashboards" → Run
 # workflow). The cron below is a backup only: GitHub's free scheduler runs it about 3-4 times a day.
 name: Build dashboards
 
@@ -11,7 +11,7 @@ on:
     - cron: '17 0-4,12-23 * * *'   # UTC; asks for :17 past every hour, 7-8 AM to 11 PM-midnight ET (best-effort)
   push:
     branches: [main]
-    paths: ['*.py', 'injury_wire_*.json', 'cbb_torvik_*.csv', 'calibration.json', '.github/workflows/build.yml']
+    paths: ['*.py', 'injury_wire_*.json', 'gap_notes_*.json', 'cbb_torvik_*.csv', 'calibration.json', '.github/workflows/build.yml']
   workflow_dispatch:
 
 permissions:
