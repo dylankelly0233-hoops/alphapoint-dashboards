@@ -22,6 +22,7 @@ from datetime import datetime, timedelta
 import requests
 
 import dashboard_theme as theme
+import systems as sy
 import perf_page
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -90,6 +91,12 @@ LANDING_CSS = """
 .tm.early { background: #b45309; } .tm.kick { background: #15803d; } .tm.late { background: #1d4ed8; }
 .tm.range { background: #6d4bd8; } .tm.timing { background: #64748b; }
 .syslist li { margin-bottom: 6px; }
+.stratsh { margin: 8px 0 0; font: 700 20px/1.1 var(--display); text-transform: uppercase; letter-spacing: .6px; }
+.stratgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
+.strat { scroll-margin-top: 12px; } .strat p { margin: 0 0 10px; }
+.stratmeta { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--muted); }
+.spotlist .sabout { font-weight: 500; color: var(--muted); }
+@media (max-width: 560px) { .stratgrid { grid-template-columns: 1fr; } }
 .sfilters { display: flex; flex-wrap: wrap; gap: 6px; margin: 6px 0 4px; }
 .schip { border: 1px solid var(--line); background: transparent; color: var(--ink); border-radius: 999px; padding: 6px 11px;
          font: 600 12.5px/1 var(--body); cursor: pointer; }
@@ -388,12 +395,7 @@ SYSTEM_BASIS = {   # what each Best spots system is built on
     'nfl_bye_edge': 'Situation: rest (bye week)', 'nfl_div_under': 'Situation: division game',
     'nfl_high_total_under': 'Situation: very high total',
 }
-STRATEGY_SHORT = {   # one or two words per strategy: filter chips and the one-line rows
-    'priced': 'Priced value', 'teaser': 'Teaser leg', 'watch': 'Line-move watch',
-    'cfb_v2_open': 'CFB model', 'cbb_v2_open': 'CBB model', 'cbb_3p_fade': '3-point fade',
-    'nfl_wind_under': 'Wind under', 'nfl_bye_edge': 'Off a bye', 'nfl_div_under': 'Division under',
-    'nfl_high_total_under': 'High-total under',
-}
+STRATEGY_SHORT = sy.NAMES   # chips, rows and the Strategies page all use the same names (systems.py)
 _SYS = None
 
 
@@ -469,24 +471,24 @@ def best_spots():
             out.append(('priced', t, x['text'], _reason(
                 t, f'{x["kind"]} <b>{theme.esc(x["text"])}</b> {100 * x["p"]:.1f}%'
                    + (f' (push {100 * x["push"]:.0f}%)' if x.get('push', 0) >= 0.03 else '')
-                   + (f' · opened {theme.esc(opener)}' if opener else '') + ' · Priced value',
+                   + (f' · opened {theme.esc(opener)}' if opener else '') + f' · {sy.NAMES["priced"]}',
                 f'our ratings, priced ({label})', f'{100 * pr["rate"]:.0f}% of {pr["n"]:,} vs the opener', tip)))
         for x in s['systems']:
             k = x.get('key') or 'system'
             t = system_timing(k)
-            out.append((k, t, x['pick'], _reason(t, f'<b>{theme.esc(x["pick"])}</b> · {theme.esc(x["label"])}',
+            out.append((k, t, x['pick'], _reason(t, f'<b>{theme.esc(x["pick"])}</b> · {theme.esc(sy.NAMES.get(k, x["label"]))}',
                                                  SYSTEM_BASIS.get(k, 'Situation'), x['record'])))
         if s['teaser']:
             leg = s['teaser'][0].replace('Teaser ', '').replace('★ ', '')
             out.append(('teaser', 'range', f'{s["teaser"][1]} teaser leg',
-                        _reason('range', f'Teaser leg <b>{theme.esc(leg)}</b>',
+                        _reason('range', f'<b>{theme.esc(leg)}</b> · {sy.NAMES["teaser"]}',
                                 "NFL teaser rules (Dylan's study, 2015-25)", 'about 77% of legs won')))
         if s['watch']:
             w = s['watch']
             side = s['home'] if w['toward'] == 'home' else s['away']
             out.append(('watch', 'timing', f'Watch {side}', _reason(
                 'timing', f'Ours {theme.esc(s["ours"])} vs market {theme.esc(s["market"])}: watch '
-                          f'<b>{theme.esc(side)}</b> · Line-move watch',
+                          f'<b>{theme.esc(side)}</b> · {sy.NAMES["watch"]}',
                 'our ratings vs the market', f'gaps of {w["label"]} pts moved toward our number '
                 f'{100 * w["rate"]:.0f}% of {w["n"]:,}')))
         return out
@@ -513,7 +515,10 @@ def best_spots():
                 f'{theme.esc(s["home"])} · {theme.esc(src)}{more}</span></span>'
                 f'<span class="sedge">{_badge(rs[0][1])}{right}</span></summary>'
                 f'<div class="sdetail">{"".join(r[3] for r in rs)}{_labels(s)}'
-                f'<a class="sopen" href="{theme.esc(s["page"])}">Open game card →</a></div></details></li>')
+                f'<a class="sopen" href="{theme.esc(s["page"])}">Open game card →</a>'
+                f'<a class="sopen sabout" href="#spotsguide" onclick="showTab(\'spotsguide\'); '
+                f'document.getElementById(\'strat-{keys[0]}\').scrollIntoView(); return false">'
+                f'What is {theme.esc(STRATEGY_SHORT.get(keys[0], "this"))}? →</a></div></details></li>')
 
     log_spots(rows)
     today = datetime.now().astimezone().date()
@@ -534,7 +539,7 @@ def best_spots():
         f' <span><span class="scount">{len(v)}</span></span></summary><ol class="spotlist">{"".join(v)}</ol></details>'
         for d, v in days.items())
     if watch_only:
-        body += (f'<details class="sgroup swatch"><summary class="spotday">Line-move watch <span>timing notes, not bets · '
+        body += (f'<details class="sgroup swatch"><summary class="spotday">{sy.NAMES["watch"]} <span>timing notes, not bets · '
                  f'<span class="scount">{len(watch_only)}</span></span></summary><ol class="spotlist">'
                  + ''.join(row_html(s, rs) for s, rs in watch_only) + '</ol></details>')
     # filter chips: sport and strategy, built from what is listed now (counts include the watch section)
@@ -683,77 +688,129 @@ def run(script):
     return r.returncode == 0
 
 
+STRATEGY_GUIDE = [   # (key, sports, what it does, why it can work) -- plain English for the Strategies page
+    ('cfb_v2_open', 'College football',
+     'Our own college football model rates every team on a dozen stats (how often plays succeed, big plays, havoc '
+     'plays like sacks and tackles for loss, how well the line blocks), each adjusted for who the team has played. From '
+     'week 5 on, when our number is 3 or more points away from the opening line, it backs our side.',
+     'The opener is the softest line of the week: it is posted before most bettors weigh in. In past seasons the line '
+     'moved toward our number about 70% of the time, so the edge is real but mostly gone by kickoff.'),
+    ('cbb_v2_open', 'College basketball',
+     'The basketball version: our model rates every team on shooting, turnovers, rebounding, free throws and pace, '
+     'adjusted for opponent. From November 15 on, when our number is 5 or more points from the opening line, it backs '
+     'our side.',
+     'Same idea as the football one: openers on hundreds of college basketball games are hard to set well. Its record '
+     'covers less than two seasons of opening lines, so treat it as newer and less proven than the football version.'),
+    ('cbb_3p_fade', 'College basketball',
+     'Compares each team\'s 3-point shooting with the 3-point shooting it allows. When one team is 7+ points better at '
+     'that than its opponent, it backs the other team (the one that has been "bricking").',
+     'A few weeks of 3-point shooting is mostly luck, especially what opponents shoot against you. The market treats a '
+     'hot or cold streak as real. This one held up against the closing line too, every season from 2022 on.'),
+    ('priced', 'NFL, college football, college basketball',
+     'We take our projected line, move it most of the way back toward the market (in the past only part of a '
+     'disagreement turned out to be real), and work out how often each side covers at the posted number. A game is '
+     'listed when that beats what −110 odds need, but only in markets where this exact rule has beaten the opener '
+     'before.',
+     'It is our ratings, priced honestly. The markets where it has passed so far: {proven}.'),
+    ('nfl_bye_edge', 'NFL',
+     'A team coming off its bye week, playing a team that did not have one. Backs the rested team.',
+     'Two weeks to prepare and heal. The market prices some of it, but in past seasons not all of it at the opener.'),
+    ('nfl_div_under', 'NFL',
+     'Division rivals play twice a year. This backs the under in those games.',
+     'Defenses know the opposing scheme well, which tends to keep scores down more than the total expects.'),
+    ('nfl_high_total_under', 'NFL',
+     'When a game\'s total is among the highest 10% of the season, it backs the under.',
+     'The public loves overs in expected shootouts, and the very highest totals have been set a little too high.'),
+    ('nfl_wind_under', 'NFL',
+     'Outdoor games with 15+ mph wind in the forecast (checked within 48 hours of kickoff). Backs the under.',
+     'Wind hurts deep passing and kicking. It was tested on game-time wind, so it means the most once the forecast settles.'),
+    ('teaser', 'NFL',
+     'Six-point teasers on underdogs of +1.5 to +3, moving them through 3 and 7 (the two most common final margins), in '
+     'games with a total of 46 or lower or a division matchup. From your own teaser study.',
+     'Low-scoring games land on 3 and 7 even more often. A two-team teaser at −120 needs each leg to win about 74%; '
+     'these legs won about 77% in the years the rule was not built on (2015–25).'),
+    ('watch', 'NFL, college basketball',
+     'Not a bet. Our number is far enough from the market that, in past seasons, the line moved toward ours most of '
+     'the time (NFL gaps of 2+ points, college basketball gaps of 2–4).',
+     'It is about timing: if you already like that side, earlier has usually been better. It does not say the side wins.'),
+    ('cfb_los', 'College football (tracking only)',
+     'Compares how often each team\'s defense stuffs runs at or behind the line with how often its own offense gets '
+     'stuffed. When one team is 10+ points better, the game card shows a grey tag. It is not on Best spots.',
+     'Winning the line of scrimmage sounds like it should matter, and it won 55% against the opener in past seasons, but '
+     'that is within luck for how many ideas we tested. It is graded every week and joins Best spots only if it keeps '
+     'holding up.'),
+]
+
+
+def strategy_record(key, sysr):
+    """One line on how a strategy has done, from the same test files the site uses."""
+    if key in sysr:
+        r = sysr[key]
+        b = r.get('bench', 'open')
+        a = r[b]['all']
+        return (f'{100 * a["rate"]:.0f}% of {a["n"]:,} past games against the {"opening" if b == "open" else "closing"} line'
+                + (' (only just passed)' if r.get('tentative') else '')
+                + ('' if r.get('passed') else ' (not passing right now, so not on Best spots)'))
+    return {'priced': 'NFL spreads 57% of 248 against the opener; other markets as listed on each row',
+            'teaser': 'about 77% of legs out of sample (2015–25)',
+            'watch': 'the line moved toward our number 58%+ of the time in these gap sizes',
+            'cfb_los': '55% of 703 against the opener in past seasons (not proven)'}.get(key, '')
+
+
 def spots_guide():
-    """'Best spots explained': what each section means, in plain English, with today's proven list."""
+    """The Strategies page: what each Best spots strategy does, in plain English, with its badge and record."""
     try:
-        sy = json.load(open(os.path.join(HERE, 'system_test.json'), encoding='utf-8')).get('systems', {})
+        sysr = {k: r for rs in json.load(open(os.path.join(HERE, 'system_test.json'), encoding='utf-8'))
+                .get('systems', {}).values() for k, r in rs.items()}
     except (OSError, ValueError):
-        sy = {}
-    systems = [(SPORT_LABEL.get(sp, sp.upper()), r['label'].split(' (')[0].split(', judged')[0], r, k)
-               for sp, rs in sy.items() for k, r in rs.items() if r.get('passed')]
-    sys_items = ''.join(
-        f'<li>{_badge(system_timing(k))}<b>{theme.esc(sp)}:</b> {theme.esc(lab)} '
-        f'<span class="hint">(based on: {theme.esc(SYSTEM_BASIS.get(k, "situation"))})</span>. '
-        f'{100 * r[r.get("bench", "open")]["all"]["rate"]:.0f}% of '
-        f'{r[r.get("bench", "open")]["all"]["n"]:,} past games against the '
-        f'{"opening" if r.get("bench", "open") == "open" else "closing"} line'
-        f'{" (tentative: only just passed)" if r.get("tentative") else ""}.</li>' for sp, lab, r, k in systems) or '<li>None right now.</li>'
+        sysr = {}
+    timing = {'priced': 'early', 'teaser': 'range', 'watch': 'timing', 'cfb_los': None}
+    cards = ''
+    for key, sports, what, why in STRATEGY_GUIDE:
+        t = timing[key] if key in timing else system_timing(key)
+        cards += (f'<section class="card strat" id="strat-{key}"><h3>{theme.esc(sy.NAMES.get(key, key))}</h3>'
+                  f'<p class="stratmeta">{_badge(t) if t else "<span class=\"tm timing\">Tracking</span>"}'
+                  f'<span>{theme.esc(sports)}</span></p>'
+                  f'<p><b>What it does.</b> {theme.esc(what)}</p>'
+                  f'<p><b>Why it can work.</b> {theme.esc(why.format(proven=proven_list()))}</p>'
+                  f'<p class="hint"><b>Record:</b> {theme.esc(strategy_record(key, sysr))}</p></section>')
     badges = ''.join(f'<dt>{_badge(t)}</dt><dd>{theme.esc(TIMING[t][2])}</dd>' for t in TIMING)
-    cards = [
-        ('What this is',
-         '<p>Best spots lists upcoming games where our research has found something that <b>held up when we tested it on '
-         'past seasons</b>. It is research, not picks: it tells you where the numbers have historically pointed, not what '
-         'to bet. Everything here is re-tested every month; anything that stops holding up drops off on its own.</p>'
-         '<p>Games are listed by day (today first), then by sport. Every reason a game is listed reads the same way: '
-         'a colored <b>when-to-bet</b> badge, the side, the name of the rule (<b>Priced value</b>, a <b>system</b>, a '
-         '<b>teaser leg</b> or the <b>line-move watch</b>), then a grey line with <b>what it is based on</b> (one of our '
-         'models, a stat, a situation) and <b>its record against the line it was judged on</b>. A game that qualifies '
-         'more than one way shows every reason.</p>'),
+    intro = [
+        ('How Best spots works',
+         '<p>Best spots lists upcoming games where one of the strategies below applies. Every strategy <b>held up when we '
+         'tested it on past seasons</b>, in both the earlier and later years on its own. It is research, not picks: it '
+         'shows where the numbers have pointed, not what to bet. Everything is re-tested every month, and anything that '
+         'stops holding up drops off on its own.</p><p>Each game is one line: the side, the strategy name, and a '
+         'colored <b>when-to-bet</b> badge. Tap it for the details and the game card. Use the chips at the top to show '
+         'one sport or one strategy.</p>'),
         ('When to bet',
-         '<p>Each edge was measured against a specific line, and that decides when it is worth anything. The badge says '
-         'which:</p><dl class="plain">' + badges + '</dl><p>Most of what we have is <b>Bet early</b>: the market finds '
-         'the same thing by kickoff. Only edges that also beat the closing line get <b>Good to kickoff</b>.</p>'),
+         '<p>Each edge was measured against a specific line, and that decides when it is worth anything:</p>'
+         '<dl class="plain">' + badges + '</dl><p>Most of what we have is <b>Bet early</b>: the market finds the same '
+         'thing by kickoff. Only edges that also beat the closing line get <b>Good to kickoff</b>.</p>'),
+    ]
+    outro = [
         ('Words you will see',
          '<dl class="plain"><dt>The opener</dt><dd>The first line posted for a game. Most of our edges show up against it '
          'and fade as the line moves toward the final ("closing") number.</dd>'
          '<dt>The close</dt><dd>The last line before kickoff, the sharpest number. Beating it is much harder than '
          'beating the opener.</dd>'
-         '<dt>Fair number</dt><dd>Our line, moved most of the way back toward the market. In the past only part of a '
-         'disagreement with the market turned out to be real, so that is all we count.</dd>'
-         '<dt>Win chance vs. needed</dt><dd>The number on the right of a Priced value row: how often that side wins at '
-         'the posted line by our fair number, next to what it takes to break even at standard −110 odds (52.4%, a bit less '
-         'when a push is possible). Solid green badge = clears it by 3+ points, green text = 1.5–3, faded = less. Even the '
-         'best rows are only a few points over.</dd></dl>'),
-        ('Priced value',
-         f'<p>A spread or total where our fair number beats the standard −110 price, <b>only</b> in places where that '
-         f'exact rule has already beaten the opening line in past seasons, in both the earlier and later years on its own. '
-         f'Right now that is: {theme.esc(proven_list())}.</p><p>Each row shows the opener and that spot\'s past record, '
-         f'for example "CFB conference spreads: 54% vs opener (1,198)".</p>'),
-        ('NFL teaser legs',
-         '<p>Six-point teasers on NFL underdogs of +1.5 to +3, in games with a total of 46 or lower or a division '
-         'matchup. Teasing them through 3 and 7 won about 77% of legs in years the rule was not built on (2015–25). '
-         'A two-team teaser at −120 needs each leg to win about 74%, so 77% is a real but modest edge.</p>'),
-        ('Proven systems',
-         f'<p>Simple, fixed situations ("unders when the wind is 15+ mph") written down before testing and checked on '
-         f'every past season we have, or a rule built on one of our own models. A system shows up here only if it beat '
-         f'the line in both the earlier and later years. They show whatever our own line says. Passing now:</p>'
-         f'<ul class="syslist">{sys_items}</ul>'),
-        ('Line-move watch',
-         '<p>Our number is far enough from the market that, in past seasons, the line moved toward ours most of the time '
-         '(NFL gaps of 2+ points, college basketball gaps of 2–4). It is about timing: if you like that side, earlier has '
-         'usually been better. It is not a claim that the side wins.</p>'),
+         '<dt>Win chance vs. needed</dt><dd>The number on the right of a ' + sy.NAMES['priced'] + ' row: how often that '
+         'side wins at the posted line, next to what it takes to break even at −110 (52.4%, a bit less when a push is '
+         'possible). Solid green = clears it by 3+ points, green text = 1.5–3, faded = less.</dd></dl>'),
         ('What is not here, and why',
          '<p><b>BUY / SELL tags</b> (teams winning more or less than their play) are on the team pages but not here: replayed '
          'on past seasons they won about 50% against the line. <b>The NHL and Premier League</b> are off until something '
-         'there passes the same tests; two ideas are close and being re-tested monthly. <b>Games we flag</b> (a big line '
-         'move that usually means news, or a lopsided college mismatch) stay off Priced value.</p>'),
+         'there passes the same tests. <b>Games we flag</b> (a big line move that usually means news, or a lopsided college '
+         'mismatch) stay off ' + sy.NAMES['priced'] + '.</p>'),
         ('How to use it',
          '<ol><li>Read the badge first: <b>Bet early</b> rows are worth the most near the opener; <b>Good to kickoff</b> '
-         'rows can wait.</li><li>For early ones, check the line you can get against the opener on the row.</li><li>Tap the game for its card: injuries, weather and how our line is built.</li>'
-         '<li>Treat each row as a reason to look closer, not a bet. Even the best of these win 55–57% of the time.</li></ol>'),
+         'rows can wait.</li><li>For early ones, compare the line you can get with the opener shown.</li><li>Open the game '
+         'card: injuries, weather and how our line is built.</li><li>Treat each row as a reason to look closer, not a bet. '
+         'Even the best of these win 54–57% of the time.</li></ol>'),
     ]
-    body = ''.join(f'<section class="card"><h3>{theme.esc(t)}</h3>{c}</section>' for t, c in cards)
-    return f'<div class="info spotsguide">{body}</div>'
+    sec = lambda items: ''.join(f'<section class="card"><h3>{theme.esc(t)}</h3>{c}</section>' for t, c in items)
+    return (f'<div class="info spotsguide">{sec(intro)}<h2 class="stratsh">The strategies</h2>'
+            f'<div class="stratgrid">{cards}</div>{sec(outro)}</div>')
 
 
 SPORT_LABEL = {'nfl': 'NFL', 'cfb': 'College football', 'cbb': 'College basketball', 'nba': 'NBA', 'nhl': 'NHL', 'epl': 'Premier League'}
@@ -776,7 +833,7 @@ def landing(results):
                              subtitle='Power ratings, value metrics and market data for the NFL, college football, '
                                       'college basketball, the NBA, the NHL, MLB, the Premier League and PGA Tour golf. Research, not picks.',
                              meta_items=[('Updated', updated)],
-                             tabs=[('home', 'Dashboards', home), ('spotsguide', 'Best spots explained', spots_guide()),
+                             tabs=[('home', 'Dashboards', home), ('spotsguide', 'Strategies', spots_guide()),
                                    ('performance', 'Model performance', perf_tab()),
                                    ('guide', 'How to use', guide()), ('info', 'Info', info)],
                              footer='AlphaPoint Sports · Not financial or gambling advice')

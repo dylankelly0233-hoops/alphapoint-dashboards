@@ -156,7 +156,7 @@ def los_tag_html(t, esc):
         return ''
     return (f'<span class="gtag watch" title="Tracking, not proven: the team with the much better line-of-scrimmage '
             f'(stuff rate) numbers covered 55% of 703 vs the opener in past seasons, but that is within luck for the '
-            f'number of patterns tested">Line of scrimmage: {esc(t["team"])} (+{t["gap"]:g} pts)</span>')
+            f'number of patterns tested">{NAMES["cfb_los"]} (tracking): {esc(t["team"])} (+{t["gap"]:g} pts)</span>')
 
 
 def _side(team, margin):
@@ -167,6 +167,14 @@ def _side(team, margin):
     return f'{team} PK' if m == 0 else f'{team} {"−" if margin > 0 else "+"}{m:g}'
 
 
+NAMES = {   # the name each strategy goes by everywhere on the site (Dylan, 2026-11-19)
+    'cfb_v2_open': 'CFB Opener Snipe', 'cbb_v2_open': 'Hoops Opener Snipe', 'cbb_3p_fade': 'Brick Bounce-Back',
+    'nfl_bye_edge': 'Fresh Legs', 'nfl_div_under': 'Family Feud Under', 'nfl_high_total_under': 'Sky-High Under',
+    'nfl_wind_under': 'Wind Tunnel Under', 'priced': 'Fair Line Value', 'teaser': 'Key Number Tease',
+    'watch': 'Early Bird Watch', 'cfb_los': 'Trench Warfare',
+}
+
+
 def tag_html(systems, esc):
-    return ''.join(f'<span class="gtag system" title="{esc(s["label"] + ": " + s["record"])}">System: {esc(s["pick"])}</span>'
-                   for s in systems)
+    return ''.join(f'<span class="gtag system" title="{esc(s["label"] + ": " + s["record"])}">'
+                   f'{esc(NAMES.get(s.get("key"), "System"))}: {esc(s["pick"])}</span>' for s in systems)
