@@ -1,0 +1,270 @@
+{
+ "sport": "nba",
+ "generated": "2026-11-21T19:23:25+00:00",
+ "gap_min": 3.0,
+ "swing_min": 4.0,
+ "watch_teams": [
+  "BOS",
+  "DAL",
+  "LAC",
+  "MEM",
+  "MIN",
+  "NO",
+  "NY",
+  "POR",
+  "SA",
+  "SAC"
+ ],
+ "swings_to_explain": [
+  {
+   "gid": "401910024",
+   "team": "NY"
+  },
+  {
+   "gid": "401910025",
+   "team": "DAL"
+  },
+  {
+   "gid": "401910026",
+   "team": "MEM"
+  },
+  {
+   "gid": "401910026",
+   "team": "MIN"
+  }
+ ],
+ "games": [
+  {
+   "gid": "401910024",
+   "home": "NY",
+   "away": "POR",
+   "home_name": "Knicks",
+   "away_name": "Trail Blazers",
+   "weather": null,
+   "kick": "2026-11-21T19:30:00-05:00",
+   "ours": 3.0,
+   "market": 3.5,
+   "opened": 5.5,
+   "gap": -0.5,
+   "gap_flag": false,
+   "we_like": "Trail Blazers",
+   "ours_text": "Knicks −3",
+   "market_text": "Knicks −3.5",
+   "sources": {
+    "Sagarin": 2.6,
+    "TeamRankings": 3.0,
+    "Net rating": 3.1
+   },
+   "injury_wire": {
+    "NY": [
+     "OG Anunoby (34.0 mpg, left calf tightness) was downgraded from questionable to doubtful vs POR on the NBA's 11 AM report (11/21)."
+    ],
+    "POR": [
+     "Deni Avdija (32.5 mpg, foot) is questionable at NY after missing the last two games (report as of 11/20)."
+    ]
+   },
+   "history": {
+    "Knicks": {
+     "n": 6,
+     "higher": 0,
+     "lower": 4,
+     "avg": -2.1,
+     "last": -5.0,
+     "swing": 4.5
+    },
+    "Trail Blazers": {
+     "n": 6,
+     "higher": 2,
+     "lower": 1,
+     "avg": 0.3,
+     "last": -0.0,
+     "swing": 0.6
+    }
+   }
+  },
+  {
+   "gid": "401910025",
+   "home": "DAL",
+   "away": "LAC",
+   "home_name": "Mavericks",
+   "away_name": "Clippers",
+   "weather": null,
+   "kick": "2026-11-21T20:00:00-05:00",
+   "ours": 5.8,
+   "market": 5.5,
+   "opened": 5.5,
+   "gap": 0.3,
+   "gap_flag": false,
+   "we_like": "Mavericks",
+   "ours_text": "Mavericks −6",
+   "market_text": "Mavericks −5.5",
+   "sources": {
+    "Sagarin": 6.8,
+    "TeamRankings": 6.4,
+    "Net rating": 3.7
+   },
+   "injury_wire": {
+    "DAL": [
+     "P.J. Washington (30.9 mpg, left shoulder impingement) is questionable vs LAC and gets a pregame evaluation; Walter Clayton Jr. (knee) is also questionable."
+    ],
+    "LAC": []
+   },
+   "history": {
+    "Mavericks": {
+     "n": 6,
+     "higher": 2,
+     "lower": 3,
+     "avg": -1.4,
+     "last": -5.3,
+     "swing": 5.6
+    },
+    "Clippers": {
+     "n": 6,
+     "higher": 2,
+     "lower": 2,
+     "avg": 0.0,
+     "last": 0.4,
+     "swing": -0.7
+    }
+   }
+  },
+  {
+   "gid": "401910026",
+   "home": "MIN",
+   "away": "MEM",
+   "home_name": "Timberwolves",
+   "away_name": "Grizzlies",
+   "weather": null,
+   "kick": "2026-11-21T20:00:00-05:00",
+   "ours": 5.5,
+   "market": 6.5,
+   "opened": 5.5,
+   "gap": -1.0,
+   "gap_flag": false,
+   "we_like": "Grizzlies",
+   "ours_text": "Timberwolves −5.5",
+   "market_text": "Timberwolves −6.5",
+   "sources": {
+    "Sagarin": 5.7,
+    "TeamRankings": 5.7,
+    "Net rating": 4.7
+   },
+   "injury_wire": {
+    "MIN": [],
+    "MEM": [
+     "Cameron Boozer (30.8 mpg, right ankle sprain), Jerami Grant (22.1, calf) and Javon Small (22.2, personal) are out at MIN; Ty Jerome (hip) is probable."
+    ]
+   },
+   "history": {
+    "Timberwolves": {
+     "n": 6,
+     "higher": 4,
+     "lower": 0,
+     "avg": 1.9,
+     "last": 5.0,
+     "swing": -6.0
+    },
+    "Grizzlies": {
+     "n": 6,
+     "higher": 5,
+     "lower": 1,
+     "avg": 1.8,
+     "last": -3.1,
+     "swing": 4.1
+    }
+   }
+  },
+  {
+   "gid": "401910027",
+   "home": "SA",
+   "away": "NO",
+   "home_name": "Spurs",
+   "away_name": "Pelicans",
+   "weather": null,
+   "kick": "2026-11-21T20:00:00-05:00",
+   "ours": 19.4,
+   "market": 18.5,
+   "opened": 16.5,
+   "gap": 0.9,
+   "gap_flag": false,
+   "we_like": "Spurs",
+   "ours_text": "Spurs −19.5",
+   "market_text": "Spurs −18.5",
+   "sources": {
+    "Sagarin": 18.9,
+    "TeamRankings": 18.8,
+    "Net rating": 18.4
+   },
+   "injury_wire": {
+    "SA": [
+     "Dylan Harper (31.7 mpg, hip) is out and expected to miss two to three weeks (11/19 report); he missed the last game."
+    ],
+    "NO": []
+   },
+   "history": {
+    "Spurs": {
+     "n": 6,
+     "higher": 0,
+     "lower": 2,
+     "avg": -1.6,
+     "last": -0.4,
+     "swing": 1.3
+    },
+    "Pelicans": {
+     "n": 6,
+     "higher": 2,
+     "lower": 4,
+     "avg": -1.3,
+     "last": -2.4,
+     "swing": 1.5
+    }
+   }
+  },
+  {
+   "gid": "401910028",
+   "home": "SAC",
+   "away": "BOS",
+   "home_name": "Kings",
+   "away_name": "Celtics",
+   "weather": null,
+   "kick": "2026-11-21T22:00:00-05:00",
+   "ours": -16.3,
+   "market": -13.5,
+   "opened": -12.5,
+   "gap": -2.8,
+   "gap_flag": false,
+   "we_like": "Celtics",
+   "ours_text": "Celtics −16.5",
+   "market_text": "Celtics −13.5",
+   "sources": {
+    "Sagarin": -15.2,
+    "TeamRankings": -15.7,
+    "Net rating": -15.7
+   },
+   "injury_wire": {
+    "SAC": [],
+    "BOS": [
+     "Jayson Tatum (34.1 mpg, rest) is questionable at SAC; Derrick White (29.9 mpg, shoulder) is also questionable (report as of 11/21 AM)."
+    ]
+   },
+   "history": {
+    "Kings": {
+     "n": 6,
+     "higher": 2,
+     "lower": 2,
+     "avg": 1.2,
+     "last": -1.7,
+     "swing": -1.0
+    },
+    "Celtics": {
+     "n": 6,
+     "higher": 0,
+     "lower": 4,
+     "avg": -1.9,
+     "last": 0.9,
+     "swing": 1.9
+    }
+   }
+  }
+ ]
+}

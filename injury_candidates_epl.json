@@ -1,0 +1,989 @@
+{
+ "sport": "epl",
+ "week": 20261121,
+ "collected": "2026-11-21T19:23+00:00",
+ "games": [
+  [
+   "FUL",
+   "MNC"
+  ],
+  [
+   "NFO",
+   "BOU"
+  ],
+  [
+   "SUN",
+   "AVL"
+  ],
+  [
+   "LEE",
+   "CHE"
+  ],
+  [
+   "CRY",
+   "COV"
+  ],
+  [
+   "IPS",
+   "TOT"
+  ],
+  [
+   "ARS",
+   "NEW"
+  ],
+  [
+   "BHA",
+   "HUL"
+  ],
+  [
+   "MAN",
+   "LIV"
+  ],
+  [
+   "EVE",
+   "BRE"
+  ]
+ ],
+ "teams": {
+  "ARS": {
+   "name": "Arsenal",
+   "items": [
+    {
+     "team": "ARS",
+     "tag": "NEWS",
+     "text": "Three Arsenal Stars Ruled Out of Premier League Clash With Newcastle United",
+     "source": "Yahoo Sports",
+     "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPWE5JVTctRURyMVRNNkJhLVdIVmpRSmdHakNZRjgyUUVZaUluOGZZWVl6VF82TlZuT1BCQi1rbUhYbG1oTWJpNVJ3eE9HM1ZJbW54akJFUWF3TWR2aVlCd0xhMzFPNDFCT1hDUzdnQnAybms0SnZvZ3BJcnJaMGkxNHVFeFh1RENvNHc?oc=5",
+     "date": "2026-11-20"
+    },
+    {
+     "team": "ARS",
+     "tag": "NEWS",
+     "text": "Arsenal player accidentally leaked injury update via fantasy football",
+     "source": "USA Today",
+     "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQUV9uRkFjQnYwTlktbUxLRWV3ZDJZN3ljbWthZDBLRndtSkwzNzFLVms5RmduWWpPcFRMQlA2WmsxcjVXS1RHUzJOdHV6emlMNlcwR2UtTW9OVU5wczFSMm5PekprYy1VdVU3WGY3LWFQQm8xenhqVUxkcjEyd1JEc3VPOWx5WEZ5VC1lU19BWGhVQkN4Y1kwU3RwcXA5T2JxUExmdDh6bW12S1dHNVJoUnN3?oc=5",
+     "date": "2026-11-20"
+    }
+   ],
+   "headlines": [
+    {
+     "title": "Three Arsenal Stars Ruled Out of Premier League Clash With Newcastle United",
+     "source": "Yahoo Sports",
+     "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPWE5JVTctRURyMVRNNkJhLVdIVmpRSmdHakNZRjgyUUVZaUluOGZZWVl6VF82TlZuT1BCQi1rbUhYbG1oTWJpNVJ3eE9HM1ZJbW54akJFUWF3TWR2aVlCd0xhMzFPNDFCT1hDUzdnQnAybms0SnZvZ3BJcnJaMGkxNHVFeFh1RENvNHc?oc=5",
+     "date": "2026-11-20"
+    },
+    {
+     "title": "Arsenal player accidentally leaked injury update via fantasy football",
+     "source": "USA Today",
+     "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQUV9uRkFjQnYwTlktbUxLRWV3ZDJZN3ljbWthZDBLRndtSkwzNzFLVms5RmduWWpPcFRMQlA2WmsxcjVXS1RHUzJOdHV6emlMNlcwR2UtTW9OVU5wczFSMm5PekprYy1VdVU3WGY3LWFQQm8xenhqVUxkcjEyd1JEc3VPOWx5WEZ5VC1lU19BWGhVQkN4Y1kwU3RwcXA5T2JxUExmdDh6bW12S1dHNVJoUnN3?oc=5",
+     "date": "2026-11-20"
+    },
+    {
+     "title": "Arsenal at Newcastle United Premier League preview: Injuries, suspensions, and predicted lineups",
+     "source": "The Short Fuse",
+     "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxQcDFEVG5WUmxmN0cwRE9jYS04NE4tcVVEZ0Q1Rld5cVkyMXlaTTd5WFkzdjNtZldoVnZsY2VYVFFRMk01a1JsMXpuS2JiZG5RWVplc0NXNFVlc29PXzMyRHEwYmJMU21pamRzbjJQSnpabFFidkRMUXQ2VTBNVkxhSjF6cDFWcGRtZlRRSTFwTk9TSmpJZmVvS3JUei04dHJfRGQ0SllwTjdYU3ZSYjFrSnNDaUxtQXV0eHpJcHltOTZaSmctbFlfR2JSZHAyVkRkOGtqbU9MTE9mZTEyRkc5M0tGZW9NQzhQVV94bGVFRDdNWlg1T0phSA?oc=5",
+     "date": "2026-11-19"
+    },
+    {
+     "title": "Mikel Arteta provides injury update on Bukayo Saka while defender set for long-awaited return",
+     "source": "Yahoo",
+     "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOdDZibjZwa29HWk8tUkloa0FFZkVHOHVHS3lSR05hQWdFd1BhWnBYYnVfb3JDTWRRTk9hMHdPVVpjQURsR0lYMG1DZ3BYNW1TZkpyR1ZYcGVjdnBwcTlITzVNQkhGT2VXWjAxdzNoRUFxUUliQ0o5RlNZNVFDNHlvYmtEOVEyVjNyS2c?oc=5",
+     "date": "2026-11-20"
+    }
+   ]
+  },
+  "AVL": {
+   "name": "Aston Villa",
+   "items": [
+    {
+     "team": "AVL",
+     "tag": "NEWS",
+     "text": "Aston Villa Vs Sunderland Injury Latest: Unai Emery Suffers Blow As Black Cats Duo Doubtful",
+     "source": "Yahoo Sports",
+     "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOTnZNOW5DRUEwWGU0bTZFTUp3UnVFaEdwS2MyLWt0emN6YzBmbHNfUDUwQXJ2clYtOEpzWUd1dDNIdTZIMF9reWhHYkxvd1dBbUZ6Z0RER1FLX1BINzVnd0xOdWpWaEJjQzNkYlB1TGlHb0VRMlZOdnRCRTF1MkUwVG1XRnpZUjZI?oc=5",
+     "date": "2026-11-18"
+    },
+    {
+     "team": "AVL",
+     "tag": "NEWS",
+     "text": "Aston Villa vs Sunderland injury news: Full list as Villa lose Cash and 2 return",
+     "source": "Dave.Sport",
+     "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE53d1NtWk9PbVBDbHNhbURhdWZQYnBOMGNZdEwzT3czeU1sTThSdTh6cEV4ZUpvbm9OOXh2emtYZGJSM2U2YUY5a0hMSWpCRklUSHhObEhXQWJpanhBZzZKV3NpS1pjUDlCejZxOUFWOA?oc=5",
+     "date": "2026-11-20"
+    }
+   ],
+   "headlines": [
+    {
+     "title": "Aston Villa Vs Sunderland Injury Latest: Unai Emery Suffers Blow As Black Cats Duo Doubtful",
+     "source": "Yahoo Sports",
+     "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOTnZNOW5DRUEwWGU0bTZFTUp3UnVFaEdwS2MyLWt0emN6YzBmbHNfUDUwQXJ2clYtOEpzWUd1dDNIdTZIMF9reWhHYkxvd1dBbUZ6Z0RER1FLX1BINzVnd0xOdWpWaEJjQzNkYlB1TGlHb0VRMlZOdnRCRTF1MkUwVG1XRnpZUjZI?oc=5",
+     "date": "2026-11-18"
+    },
+    {
+     "title": "Aston Villa vs Sunderland injury news: Full list as Villa lose Cash and 2 return",
+     "source": "Dave.Sport",
+     "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE53d1NtWk9PbVBDbHNhbURhdWZQYnBOMGNZdEwzT3czeU1sTThSdTh6cEV4ZUpvbm9OOXh2emtYZGJSM2U2YUY5a0hMSWpCRklUSHhObEhXQWJpanhBZzZKV3NpS1pjUDlCejZxOUFWOA?oc=5",
+     "date": "2026-11-20"
+    },
+    {
+     "title": "Aston Villa receive Johan Manzambi injury boost",
+     "source": "Read Aston Villa",
+     "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNUHBZeFNQSFI5OTZzVElFcFg4YXZPZFAxd090ZWdmWlYtTzF2bjFudHkyc2dnVHZ2WTU4NU1nZUgzME9lSW95ekZwaFlmdmQzMExiME9XU2hFV0VBdHJzS1MyN1RUb2tsVm44N2dtYS1TMkxtbjduNTVRcEViU1RrT2FfRVM?oc=5",
+     "date": "2026-11-21"
+    },
+    {
+     "title": "Sunderland Injury Latest: Brian Brobbey and Granit Xhaka Blows Ahead of Aston Villa Clash",
+     "source": "Yahoo",
+     "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQc1FYN0lTS1hoMGl1SThUTVh5NV91VURENElvcHpVOExyNk9ZT09zOGhqLW9VVWx5a1RJUzU5MVh2NjdMR1VmdmhOQWJVTDk3bnVRRTFwTUxxa0ktdXk4RTJQQ1hVc1pMNTFvSTRCRV9FRjh3NVZuRm9VdVFYbmhFNGdhbVcwblBNVm5TTVBJbw?oc=5",
+     "date": "2026-11-20"
+    }
+   ]
+  },
+  "BHA": {
+   "name": "Brighton & Hove Albion",
+   "items": [
+    {
+     "team": "BHA",
+     "tag": "NEWS",
+     "text": "Premier League Injuries: Latest Injury News, Updates & Suspensions",
+     "source": "RotoWire",
+     "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQVFlsRkNUbUtNNWV4aXdQYk9oc0x4cHlGZ05YODY5NjBmVC1STENGQUpMN1ZncnVqVlJ2emhNeXhaaWdibUpVczU1R040djdNeDBvbUNHdEFIVEJjaFgxNGlaMDRTTzJVcVg5ajZCMlJXYV9PRjBRSUZpZkxFcm5KYnJtLUw4ODIwdENiNE9GLVZYa24xYWczems1N29uc3JUeENMcmk0c1NxS0pkZHc?oc=5",
+     "date": "2026-11-20"
+    },
+    {
+     "team": "BHA",
+     "tag": "NEWS",
+     "text": "Brighton coach faults Nigeria for Zadok Yohanna’s injury setback",
+     "source": "Premium Times Nigeria",
+     "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQZG5oMklqYjBFTzl3NDJQWkVpYURoLWVmcU5iN3ZNMVY0ZlM2VDI2endiTDIzSDFHZkdXMTlMY1hneXhseWxVTDVpSG5aczNMbkU2TlVkem5HQld3WmI4Y1FCOXZPR2swWUxmNTVrVzNGOFg0TDAtWXV6SjAzZWVkclR3bTIyWXEwODQ2aUltVGdDRkxKYjc4a3NMT3hyejUtVTI4bkcxWHRxOXpsMTNGMzBPN1RKQ2FhbW1Bcnc0aw?oc=5",
+     "date": "2026-11-20"
+    }
+   ],
+   "headlines": [
+    {
+     "title": "Premier League Injuries: Latest Injury News, Updates & Suspensions",
+     "source": "RotoWire",
+     "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQVFlsRkNUbUtNNWV4aXdQYk9oc0x4cHlGZ05YODY5NjBmVC1STENGQUpMN1ZncnVqVlJ2emhNeXhaaWdibUpVczU1R040djdNeDBvbUNHdEFIVEJjaFgxNGlaMDRTTzJVcVg5ajZCMlJXYV9PRjBRSUZpZkxFcm5KYnJtLUw4ODIwdENiNE9GLVZYa24xYWczems1N29uc3JUeENMcmk0c1NxS0pkZHc?oc=5",
+     "date": "2026-11-20"
+    },
+    {
+     "title": "Brighton coach faults Nigeria for Zadok Yohanna’s injury setback",
+     "source": "Premium Times Nigeria",
+     "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQZG5oMklqYjBFTzl3NDJQWkVpYURoLWVmcU5iN3ZNMVY0ZlM2VDI2endiTDIzSDFHZkdXMTlMY1hneXhseWxVTDVpSG5aczNMbkU2TlVkem5HQld3WmI4Y1FCOXZPR2swWUxmNTVrVzNGOFg0TDAtWXV6SjAzZWVkclR3bTIyWXEwODQ2aUltVGdDRkxKYjc4a3NMT3hyejUtVTI4bkcxWHRxOXpsMTNGMzBPN1RKQ2FhbW1Bcnc0aw?oc=5",
+     "date": "2026-11-20"
+    },
+    {
+     "title": "Double injury blow for Arsenal! Mikel Arteta confirms setback as William Saliba & Bukayo Saka updates issued ahead of Newcastle trip",
+     "source": "Goal.com",
+     "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOX1hHem8xRnlCZVd6OEdfcURxV0Zpc2tTYWE2R1Bnck1BNC1BX1EzMnN6QUthbFJkYl84V1ptT0UzVDM1MDBQckJFSmNlT1pMNlNnUDdyQTJFS3JieEhidV9FT3FUQS1jV0k0a3pSd0hUVnk5Y040em15MzlOb3o1SnpFemU5S1hhQlJ5WS1iN1ZQNlFNT1A5U3NjdUhfTG0tWlBRYjlzYUM4THZySEJENi1ES3RYTGdxUjYwWGVKTVNma05z?oc=5",
+     "date": "2026-11-20"
+    },
+    {
+     "title": "Brighton Waits No More? Femi Azeez Takes Another Step After Injury Setback",
+     "source": "Sports247 Nigeria",
+     "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQOGlscWFwQ2c5UEJwNS1hSngxbTUxT0tfV0xISXJPcVVyTHp2ejJJU1BkUDFzMEluaTlFRWtFVDJFSl9SVTh4eW9BN19adTdPNGQ0d1BaOWdLUXJSeDRHNWtMOHB5bDM4RXQ1ZjhKdC1uNUFockdMNk9pUzBPOFpxZXAzaEN6aFJCbUI5aFE3bHdEOWsteE1YajhLNzlQRmJR?oc=5",
+     "date": "2026-11-20"
+    }
+   ]
+  },
+  "BOU": {
+   "name": "AFC Bournemouth",
+   "items": [
+    {
+     "team": "BOU",
+     "tag": "NEWS",
+     "text": "Double injury blow for Arsenal! Mikel Arteta confirms setback as William Saliba & Bukayo Saka updates issued ahead of Newcastle trip",
+     "source": "Goal.com",
+     "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOLUM5TS1mYlVmb01zZS14eGtIODNWYm5nNVFwZ3NIM0ZSZ1NuazZPamQteW95WFNGVm5wZm1aMjlmS05lZ1JyMGJFUXRJZ01kcDM1aGM4cE9lQ3Y1WEdLV01QM01JWEM3RUtDQU56a2c4QThKeVRyLTlMUGJtT0dFS3Nxck5wYXdWQlRtTUUycktBeWZYYXdNNnp1RTJFalBuZUszOVlhN3E4QnZmWnVqdzN6UmwydzhlWURFbWVZTVJ5RW80?oc=5",
+     "date": "2026-11-20"
+    },
+    {
+     "team": "BOU",
+     "tag": "NEWS",
+     "text": "Chelsea injury nightmare? Moises Caicedo explains shock substitution and provides fitness update ahead of Leeds clash",
+     "source": "Goal.com",
+     "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQZElTc3NEdHVJbzZrZGhMNkZFNDhFN0JTaGhzWG9WMG10WGVnUVpnei11a3Y0QW1XdHE0WXJfUE1qOGVHM2JDTW9MMzRlZFppSWFqRE12TWd2QWlSTFNvaFZza3JqaG1JejBNN0p3OFlqdG9TV1o4Y3BFMzBmWi1LYVNfWGRjc0xqbjJnWTNjQ1FWQWx2clM3VUNfU2FlYldfMUU3MWxOb1JKZEtDcnRwakhTNjEtQQ?oc=5",
+     "date": "2026-11-19"
+    }
+   ],
+   "headlines": [
+    {
+     "title": "Double injury blow for Arsenal! Mikel Arteta confirms setback as William Saliba & Bukayo Saka updates issued ahead of Newcastle trip",
+     "source": "Goal.com",
+     "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOLUM5TS1mYlVmb01zZS14eGtIODNWYm5nNVFwZ3NIM0ZSZ1NuazZPamQteW95WFNGVm5wZm1aMjlmS05lZ1JyMGJFUXRJZ01kcDM1aGM4cE9lQ3Y1WEdLV01QM01JWEM3RUtDQU56a2c4QThKeVRyLTlMUGJtT0dFS3Nxck5wYXdWQlRtTUUycktBeWZYYXdNNnp1RTJFalBuZUszOVlhN3E4QnZmWnVqdzN6UmwydzhlWURFbWVZTVJ5RW80?oc=5",
+     "date": "2026-11-20"
+    },
+    {
+     "title": "Chelsea injury nightmare? Moises Caicedo explains shock substitution and provides fitness update ahead of Leeds clash",
+     "source": "Goal.com",
+     "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQZElTc3NEdHVJbzZrZGhMNkZFNDhFN0JTaGhzWG9WMG10WGVnUVpnei11a3Y0QW1XdHE0WXJfUE1qOGVHM2JDTW9MMzRlZFppSWFqRE12TWd2QWlSTFNvaFZza3JqaG1JejBNN0p3OFlqdG9TV1o4Y3BFMzBmWi1LYVNfWGRjc0xqbjJnWTNjQ1FWQWx2clM3VUNfU2FlYldfMUU3MWxOb1JKZEtDcnRwakhTNjEtQQ?oc=5",
+     "date": "2026-11-19"
+    },
+    {
+     "title": "Tottenham vs Ipswich Town early injury news as 2 ruled out and 4 doubts",
+     "source": "Hotspur HQ",
+     "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNRU5NdC04RkExSVhMcVVmVUk1eHY1eTdwVENfRGVUb1RrS0R4ejktV3JiNU1nSW9uQXJSMUt1SjFjcEI1VlZaNUFQSmxNS3dyZlhodXVIUmVNVUc5V05veEhuOEhSTnQ0cmg1WHlmTDh0bUtHT25qV3VQNzJjT1Jfdk9qNA?oc=5",
+     "date": "2026-11-18"
+    },
+    {
+     "title": "What Moises Caicedo was seen doing straight after coming off injured v Leeds",
+     "source": "The Chelsea Chronicle",
+     "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOcXFpcjhVNVZGMlIyMWZLZjRHaXFNbnh3c3RFNUNXRVVkTHVkREQtN3pobUQtZlM2R0F1aHBieHUtbGM3cTRlN0R5b1p6OTdvc1E2cHNBd2ZUQ1BzWV9tYWIwdDVCZnFQQmU3M09peFlTYjkzcUlVVUozZUdQY3ExeHYzTndyc1RNQTIta0hFcVVhdVh0TDVFeHFHN2EtNm1kSlJlelB4Wk9NMTBqRzVUMF9GV2trZ1d0ZXVibzBZd0w3VThyYy1F?oc=5",
+     "date": "2026-11-21"
+    }
+   ]
+  },
+  "BRE": {
+   "name": "Brentford",
+   "items": [
+    {
+     "team": "BRE",
+     "tag": "NEWS",
+     "text": "Injury update: Hickey and Collins 'out for a number of weeks'",
+     "source": "Brentford FC",
+     "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNMGNZQ1ZiRzBaTWRNUzU1VGVLd1VrUUowVWxMQy1fX0Ytb0RaUVFfMmZwOUNPOEhDYW1VazhSaXR2VUx1OFhiRHA3emM3bld2VGVkZUNoemMwUGd4RnZqaFB4M0p0Z3VCLXI5aGc0WjU0eHVpT3lXNzVrdHFIOFFVU0pZdzI2enlGNzdycFdBaUVMR05KclNNTnVBYVg2WVRLODBTN1Y2aUZlaHJoa1J4Mm43NXdDSUloaEE?oc=5",
+     "date": "2026-11-20"
+    },
+    {
+     "team": "BRE",
+     "tag": "NEWS",
+     "text": "Premier League star set for spell on sidelines after picking up injury on international duty",
+     "source": "talkSPORT",
+     "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNM3hmQWtTVkF0TWR4OWhkalM1Z0hkdmdzbmhPeUJMRFBqaW40eHJjUHJYTUdwUmpsZlRaN1pPS1EtRkZTOGJlRnE3MUVBa3RZM1N0bUhIU0dZQ0ZUMjZxUE1aZV9uNlQ1bEwzNXdFeWNfWm5KRmJHbkUtbjRGeGY3OU1GUkJlWXBjWWk2VzZaa0UzbXF2WjBSMg?oc=5",
+     "date": "2026-11-16"
+    }
+   ],
+   "headlines": [
+    {
+     "title": "Injury update: Hickey and Collins 'out for a number of weeks'",
+     "source": "Brentford FC",
+     "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNMGNZQ1ZiRzBaTWRNUzU1VGVLd1VrUUowVWxMQy1fX0Ytb0RaUVFfMmZwOUNPOEhDYW1VazhSaXR2VUx1OFhiRHA3emM3bld2VGVkZUNoemMwUGd4RnZqaFB4M0p0Z3VCLXI5aGc0WjU0eHVpT3lXNzVrdHFIOFFVU0pZdzI2enlGNzdycFdBaUVMR05KclNNTnVBYVg2WVRLODBTN1Y2aUZlaHJoa1J4Mm43NXdDSUloaEE?oc=5",
+     "date": "2026-11-20"
+    },
+    {
+     "title": "Premier League star set for spell on sidelines after picking up injury on international duty",
+     "source": "talkSPORT",
+     "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNM3hmQWtTVkF0TWR4OWhkalM1Z0hkdmdzbmhPeUJMRFBqaW40eHJjUHJYTUdwUmpsZlRaN1pPS1EtRkZTOGJlRnE3MUVBa3RZM1N0bUhIU0dZQ0ZUMjZxUE1aZV9uNlQ1bEwzNXdFeWNfWm5KRmJHbkUtbjRGeGY3OU1GUkJlWXBjWWk2VzZaa0UzbXF2WjBSMg?oc=5",
+     "date": "2026-11-16"
+    },
+    {
+     "title": "Brentford vs Everton early injury news as 3 ruled out and 4 doubts",
+     "source": "LiveScore",
+     "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxNUXhjamJiMVc3TGlOT014MDQ4MmRPTWhKdDdzQlI4Mm1aMjRUNmQzLVJDd0hEdHBIMGZMYndYZzdXUkhpZFZyR181M3o3bWkzT3h3NnJQeVVic0t4cFhfenF4WmJzUExGcFFTaFNpU2pKUmJaWXd3ZHFtZXNQWHVwbDdaM2lvSG9ieVFkX01XR1B3MWZMYzBvVVExQ2g2djBLZFZQNFIwdG9lckF1b2QwaVdhVEtycWZ3SmxiaE53OUhXT0MxU1FyNFJqLVY1T2FYd0h6SXJOMkpxN0Q0S2tj?oc=5",
+     "date": "2026-11-18"
+    },
+    {
+     "title": "Jack Grealish latest as seven could miss out in Brentford vs Everton",
+     "source": "Yahoo Sports",
+     "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQUGoyaVhTUzFwVXFFR2J2eEc2X2duVi04QlFEQmhYaVlmS2xuWERIaGx2SWpzSUZTZTVGR1pJNzZoUXpSYUwyY2FaVjRua2FJS3JCd1RYcDJOM3N5QktPSUZnOVNreEZXRzJac05nZzF5d1ZBVHlTbU9VUW50VXFWR1MzSUQ0Z1lL?oc=5",
+     "date": "2026-11-17"
+    }
+   ]
+  },
+  "CHE": {
+   "name": "Chelsea",
+   "items": [
+    {
+     "team": "CHE",
+     "tag": "NEWS",
+     "text": "Premier League Injuries: Latest Injury News, Updates & Suspensions",
+     "source": "RotoWire",
+     "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQVFlsRkNUbUtNNWV4aXdQYk9oc0x4cHlGZ05YODY5NjBmVC1STENGQUpMN1ZncnVqVlJ2emhNeXhaaWdibUpVczU1R040djdNeDBvbUNHdEFIVEJjaFgxNGlaMDRTTzJVcVg5ajZCMlJXYV9PRjBRSUZpZkxFcm5KYnJtLUw4ODIwdENiNE9GLVZYa24xYWczems1N29uc3JUeENMcmk0c1NxS0pkZHc?oc=5",
+     "date": "2026-11-20"
+    },
+    {
+     "team": "CHE",
+     "tag": "NEWS",
+     "text": "Moises Caicedo limps off injured after sickening fall in Chelsea’s clash vs Leeds as fans say ‘this is scary to watch’",
+     "source": "The Sun",
+     "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQV2p2U2pkU080NzZnZWhEMUg5eTA4ZGxldkdYSjlHX3ZfNEZiZ19UMm9zbVFNSmdyUnNpZE1nU2FnOUpEYW9xZS16aC1yNnNTaThLTUd0LWpteDBxRGV4d2NuTEE3N0ZYM3k2RV9abmdGN0R3cm1Lc2pEbl9PNzNldGppN0FHcWJoUXJwLXI1M0xvRW5Jd0xTMg?oc=5",
+     "date": "2026-11-21"
+    }
+   ],
+   "headlines": [
+    {
+     "title": "Premier League Injuries: Latest Injury News, Updates & Suspensions",
+     "source": "RotoWire",
+     "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQVFlsRkNUbUtNNWV4aXdQYk9oc0x4cHlGZ05YODY5NjBmVC1STENGQUpMN1ZncnVqVlJ2emhNeXhaaWdibUpVczU1R040djdNeDBvbUNHdEFIVEJjaFgxNGlaMDRTTzJVcVg5ajZCMlJXYV9PRjBRSUZpZkxFcm5KYnJtLUw4ODIwdENiNE9GLVZYa24xYWczems1N29uc3JUeENMcmk0c1NxS0pkZHc?oc=5",
+     "date": "2026-11-20"
+    },
+    {
+     "title": "Moises Caicedo limps off injured after sickening fall in Chelsea’s clash vs Leeds as fans say ‘this is scary to watch’",
+     "source": "The Sun",
+     "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQV2p2U2pkU080NzZnZWhEMUg5eTA4ZGxldkdYSjlHX3ZfNEZiZ19UMm9zbVFNSmdyUnNpZE1nU2FnOUpEYW9xZS16aC1yNnNTaThLTUd0LWpteDBxRGV4d2NuTEE3N0ZYM3k2RV9abmdGN0R3cm1Lc2pEbl9PNzNldGppN0FHcWJoUXJwLXI1M0xvRW5Jd0xTMg?oc=5",
+     "date": "2026-11-21"
+    },
+    {
+     "title": "Chelsea injury nightmare? Moises Caicedo explains shock substitution and provides fitness update ahead of Leeds clash",
+     "source": "Yahoo",
+     "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxORG9namxweWpSbFBLMzctM0xzdnlqOWFnMkhIdTE1WWltVmFNZU9MTGk0NUw3QnVUOXdheEpSd3hWaE42aGoteUc0dGZZX29aelpXemtSUDhWQ2RpTVRYZVFFYW9jdjNLdWV5NmhzWWxsSmFZWnhfbWJxbWVlVUJqNWFGNmVUWG1mMUdIdS0wRl8?oc=5",
+     "date": "2026-11-19"
+    },
+    {
+     "title": "Joao Pedro injury update with five Chelsea stars to miss Leeds clash",
+     "source": "Metro.co.uk",
+     "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPdFExVmFsU1BuV0MwaFRpdFZXMy05U3hDTFBNcU03UGRIeFlPcVBTT2tpY2lJTnREMWxEcjctY3ZjbkRYYWNyNWV3amU1bE9uVGQxWTlUUENNQ3RHY29nSHpGNGJJOHVOXzNCNlRyaXdsc3hPaFRhc2FoZ1VTTjB0S1lTSHB1Wnpnc1YweDZvZzlQcnRyeGozZUdGTWVGYUdkVE5F0gGoAUFVX3lxTFB5YjdBZ2RURW83UnNWVVZJOWhkT1psbjZsV2VrOFNuck54dVhJN2FNNVJwTkhYU2VQc2ZudnZfMEE2SG12QnY2dVc3SUxkcE5US19fM2dlTVBuTUtVOFlxNnVvZnV1Rm16TXY2YmlVUWNORmFiWHBxeDFWOGdnUnktRlpoc0JwUFNJVHF2QW5FcTd5QkxwT3dkWURCX0tOTXdfakowOG5XWA?oc=5",
+     "date": "2026-11-20"
+    }
+   ]
+  },
+  "COV": {
+   "name": "Coventry City",
+   "items": [
+    {
+     "team": "COV",
+     "tag": "NEWS",
+     "text": "Premier League Injuries: Latest Injury News, Updates & Suspensions",
+     "source": "RotoWire",
+     "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQVFlsRkNUbUtNNWV4aXdQYk9oc0x4cHlGZ05YODY5NjBmVC1STENGQUpMN1ZncnVqVlJ2emhNeXhaaWdibUpVczU1R040djdNeDBvbUNHdEFIVEJjaFgxNGlaMDRTTzJVcVg5ajZCMlJXYV9PRjBRSUZpZkxFcm5KYnJtLUw4ODIwdENiNE9GLVZYa24xYWczems1N29uc3JUeENMcmk0c1NxS0pkZHc?oc=5",
+     "date": "2026-11-20"
+    },
+    {
+     "team": "COV",
+     "tag": "NEWS",
+     "text": "Haji Wright \"progressing well\" ahead of Coventry City return - x",
+     "source": "SBI Soccer",
+     "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPdHdyUG5qTW1FYktoQjBQMkEybml3U25VUHZnR3hMUmlqaTZ4a3FxT2FXOWhsQVByMWZYZ3l2NG1Pd3g1YnR0UjNCYnFsVVV0MXlOb0hNMmR3MjJvajUtV3hqT3d0dTV5d2xwY1ZVaXNZbGpsT1FkMldDZ21URktwTTFsZFRZajRKWmZCYVNfRUZfUdIBmgFBVV95cUxPcnY3VnN4eTJpN1QxemNRb3N6cnE3TW5md0g4Snp4cU80bmUtenNjOWRoWGNfc2EzellzSURBeVdkTEpFTUwwUlM0bUppeUJUMEtkd09tNDFZXzdkS2VnTU5hWlhTNzJXS1JLUkpacDEtNXFkY1c5TVV6Vld6QXdXdFQ5VEZ5RWphV3VxbWdLM2FLU3VYTWE0U3dR?oc=5",
+     "date": "2026-11-19"
+    }
+   ],
+   "headlines": [
+    {
+     "title": "Premier League Injuries: Latest Injury News, Updates & Suspensions",
+     "source": "RotoWire",
+     "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQVFlsRkNUbUtNNWV4aXdQYk9oc0x4cHlGZ05YODY5NjBmVC1STENGQUpMN1ZncnVqVlJ2emhNeXhaaWdibUpVczU1R040djdNeDBvbUNHdEFIVEJjaFgxNGlaMDRTTzJVcVg5ajZCMlJXYV9PRjBRSUZpZkxFcm5KYnJtLUw4ODIwdENiNE9GLVZYa24xYWczems1N29uc3JUeENMcmk0c1NxS0pkZHc?oc=5",
+     "date": "2026-11-20"
+    },
+    {
+     "title": "Haji Wright \"progressing well\" ahead of Coventry City return - x",
+     "source": "SBI Soccer",
+     "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPdHdyUG5qTW1FYktoQjBQMkEybml3U25VUHZnR3hMUmlqaTZ4a3FxT2FXOWhsQVByMWZYZ3l2NG1Pd3g1YnR0UjNCYnFsVVV0MXlOb0hNMmR3MjJvajUtV3hqT3d0dTV5d2xwY1ZVaXNZbGpsT1FkMldDZ21URktwTTFsZFRZajRKWmZCYVNfRUZfUdIBmgFBVV95cUxPcnY3VnN4eTJpN1QxemNRb3N6cnE3TW5md0g4Snp4cU80bmUtenNjOWRoWGNfc2EzellzSURBeVdkTEpFTUwwUlM0bUppeUJUMEtkd09tNDFZXzdkS2VnTU5hWlhTNzJXS1JLUkpacDEtNXFkY1c5TVV6Vld6QXdXdFQ5VEZ5RWphV3VxbWdLM2FLU3VYTWE0U3dR?oc=5",
+     "date": "2026-11-19"
+    },
+    {
+     "title": "Premier League star suffers freak injury coming out of TUNNEL in bizarre scenes during Coventry's 3-2 win over Palace",
+     "source": "The Sun",
+     "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNM2NCMlFGd0lqdUw5elpqdi1sWDFnZ3Ywa3Z4aU5idmlvSmxxMGNrWTIzWHlqVjlfcE1BbTdLenVMd3ExbHpWMjFVUlpsU05xRlRYelBiRnB1U3RSVjFmaTktM2hDRmNheXNYVUtDbHV0R2JyOXlhWXRSME5NMERNdVptZFpoVGkyT2J2dDg3bXJhN21ZY1NKSW9QVFo?oc=5",
+     "date": "2026-11-21"
+    },
+    {
+     "title": "Coventry City duo closing in on returns",
+     "source": "Yahoo Sports",
+     "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQckFrS1dFdzNrazJ4Mk0xbXMzTks0N1lYMENRbWxfWGl4QnBRZ0plbVoyVVM3elZnZlNXSHVqMUJrR3FaQ0tjR29mTG90QVZvRExlc3NHcl9VM2JuU2pCZldGZmpib2p3VGxsTFg0NFBvaEVkMzBWQkFzUXRvcEFLb3lteElVdG5FSnc?oc=5",
+     "date": "2026-11-19"
+    }
+   ]
+  },
+  "CRY": {
+   "name": "Crystal Palace",
+   "items": [
+    {
+     "team": "CRY",
+     "tag": "NEWS",
+     "text": "Premier League Injuries: Latest Injury News, Updates & Suspensions",
+     "source": "RotoWire",
+     "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQVFlsRkNUbUtNNWV4aXdQYk9oc0x4cHlGZ05YODY5NjBmVC1STENGQUpMN1ZncnVqVlJ2emhNeXhaaWdibUpVczU1R040djdNeDBvbUNHdEFIVEJjaFgxNGlaMDRTTzJVcVg5ajZCMlJXYV9PRjBRSUZpZkxFcm5KYnJtLUw4ODIwdENiNE9GLVZYa24xYWczems1N29uc3JUeENMcmk0c1NxS0pkZHc?oc=5",
+     "date": "2026-11-20"
+    },
+    {
+     "team": "CRY",
+     "tag": "NEWS",
+     "text": "Premier League star suffers freak injury coming out of TUNNEL in bizarre scenes during Coventry's 3-2 win over Palace",
+     "source": "The Sun",
+     "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNM2NCMlFGd0lqdUw5elpqdi1sWDFnZ3Ywa3Z4aU5idmlvSmxxMGNrWTIzWHlqVjlfcE1BbTdLenVMd3ExbHpWMjFVUlpsU05xRlRYelBiRnB1U3RSVjFmaTktM2hDRmNheXNYVUtDbHV0R2JyOXlhWXRSME5NMERNdVptZFpoVGkyT2J2dDg3bXJhN21ZY1NKSW9QVFo?oc=5",
+     "date": "2026-11-21"
+    }
+   ],
+   "headlines": [
+    {
+     "title": "Premier League Injuries: Latest Injury News, Updates & Suspensions",
+     "source": "RotoWire",
+     "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQVFlsRkNUbUtNNWV4aXdQYk9oc0x4cHlGZ05YODY5NjBmVC1STENGQUpMN1ZncnVqVlJ2emhNeXhaaWdibUpVczU1R040djdNeDBvbUNHdEFIVEJjaFgxNGlaMDRTTzJVcVg5ajZCMlJXYV9PRjBRSUZpZkxFcm5KYnJtLUw4ODIwdENiNE9GLVZYa24xYWczems1N29uc3JUeENMcmk0c1NxS0pkZHc?oc=5",
+     "date": "2026-11-20"
+    },
+    {
+     "title": "Premier League star suffers freak injury coming out of TUNNEL in bizarre scenes during Coventry's 3-2 win over Palace",
+     "source": "The Sun",
+     "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNM2NCMlFGd0lqdUw5elpqdi1sWDFnZ3Ywa3Z4aU5idmlvSmxxMGNrWTIzWHlqVjlfcE1BbTdLenVMd3ExbHpWMjFVUlpsU05xRlRYelBiRnB1U3RSVjFmaTktM2hDRmNheXNYVUtDbHV0R2JyOXlhWXRSME5NMERNdVptZFpoVGkyT2J2dDg3bXJhN21ZY1NKSW9QVFo?oc=5",
+     "date": "2026-11-21"
+    },
+    {
+     "title": "Lampard delivers Onyeka’s injury update ahead of Crystal Palace clash",
+     "source": "Premium Times Nigeria",
+     "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPVzJnNUZrblZYdGltVkNEd3ljc0NfdmdkOTA1ekVzY1hoRjljN0t4aHRjUWFDc1U1SEx5VzZBYmFNY2JubzJkSWFId1NMS1hCTDNwUHhfc1oxMVlvZ2ZTT2tLZWpvT3VJT1RlWnZtR096Wk14T0hyTjhDdWpMck1RYUpyNk80WVZwVklULU9aZ0dpQlRoNTYyQ0gwRFpJcUx2Z2VrbEtWOXpKU0lON2VDbS1objk5THJzVUZIM0xWRWhmdXlJSGc?oc=5",
+     "date": "2026-11-20"
+    },
+    {
+     "title": "Ismaila Sarr Injury Timeline: When is the Crystal Palace winger expected to return?",
+     "source": "news.bet365.com",
+     "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxOWmhfR3Q2dmY2SlNSU1dLQUp3OGhkRGZ1R1g0T1dVNXZaZENaYzBpM1RJYXFhZkRHVFN5MUI1VFpET3dHVndiTmwyWDdfSS1pbTBtcEs4Q0pxRUFZVGZ0RU5FY3pVZHY5TlFkbTRMV2pvMGpPVHJEYVI1RXFEdml4dmRjZVpwbjN1WE0yWkNLQnlTSHc1LXh1ejE3YXJwOUdIbWhhM21vNkZIclNmZnRtOFZMVkZBUEFxelJNc2l2N0NvcHBKWlhpVW9ZcGN4Yk96cDNkUy13?oc=5",
+     "date": "2026-11-19"
+    }
+   ]
+  },
+  "EVE": {
+   "name": "Everton",
+   "items": [
+    {
+     "team": "EVE",
+     "tag": "NEWS",
+     "text": "Injury update: Hickey and Collins 'out for a number of weeks'",
+     "source": "Brentford FC",
+     "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNMGNZQ1ZiRzBaTWRNUzU1VGVLd1VrUUowVWxMQy1fX0Ytb0RaUVFfMmZwOUNPOEhDYW1VazhSaXR2VUx1OFhiRHA3emM3bld2VGVkZUNoemMwUGd4RnZqaFB4M0p0Z3VCLXI5aGc0WjU0eHVpT3lXNzVrdHFIOFFVU0pZdzI2enlGNzdycFdBaUVMR05KclNNTnVBYVg2WVRLODBTN1Y2aUZlaHJoa1J4Mm43NXdDSUloaEE?oc=5",
+     "date": "2026-11-20"
+    },
+    {
+     "team": "EVE",
+     "tag": "NEWS",
+     "text": "Keith Wyness backs Christian Norgaard to make Everton impact after injury return",
+     "source": "Read Everton",
+     "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPRXVQTkpwWTZTMWdvN3JNQUhQQ2IxM1JuUDZISmw4dFdweHltNzBiT3hJVExCT3ZCSmJmOEY2Y0JVNXVWbjBOWVZsOW9jWnVYRldDbHZHSjlCcmVGRS1PRWxuMmVPejBsZ2xuZmhDMFZCSUFoVFJkbUNvd2dTWXdTR3g1R0I?oc=5",
+     "date": "2026-11-18"
+    }
+   ],
+   "headlines": [
+    {
+     "title": "Injury update: Hickey and Collins 'out for a number of weeks'",
+     "source": "Brentford FC",
+     "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNMGNZQ1ZiRzBaTWRNUzU1VGVLd1VrUUowVWxMQy1fX0Ytb0RaUVFfMmZwOUNPOEhDYW1VazhSaXR2VUx1OFhiRHA3emM3bld2VGVkZUNoemMwUGd4RnZqaFB4M0p0Z3VCLXI5aGc0WjU0eHVpT3lXNzVrdHFIOFFVU0pZdzI2enlGNzdycFdBaUVMR05KclNNTnVBYVg2WVRLODBTN1Y2aUZlaHJoa1J4Mm43NXdDSUloaEE?oc=5",
+     "date": "2026-11-20"
+    },
+    {
+     "title": "Keith Wyness backs Christian Norgaard to make Everton impact after injury return",
+     "source": "Read Everton",
+     "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPRXVQTkpwWTZTMWdvN3JNQUhQQ2IxM1JuUDZISmw4dFdweHltNzBiT3hJVExCT3ZCSmJmOEY2Y0JVNXVWbjBOWVZsOW9jWnVYRldDbHZHSjlCcmVGRS1PRWxuMmVPejBsZ2xuZmhDMFZCSUFoVFJkbUNvd2dTWXdTR3g1R0I?oc=5",
+     "date": "2026-11-18"
+    },
+    {
+     "title": "Brentford vs Everton early injury news as 3 ruled out and 4 doubts",
+     "source": "LiveScore",
+     "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxNUXhjamJiMVc3TGlOT014MDQ4MmRPTWhKdDdzQlI4Mm1aMjRUNmQzLVJDd0hEdHBIMGZMYndYZzdXUkhpZFZyR181M3o3bWkzT3h3NnJQeVVic0t4cFhfenF4WmJzUExGcFFTaFNpU2pKUmJaWXd3ZHFtZXNQWHVwbDdaM2lvSG9ieVFkX01XR1B3MWZMYzBvVVExQ2g2djBLZFZQNFIwdG9lckF1b2QwaVdhVEtycWZ3SmxiaE53OUhXT0MxU1FyNFJqLVY1T2FYd0h6SXJOMkpxN0Q0S2tj?oc=5",
+     "date": "2026-11-18"
+    },
+    {
+     "title": "Alonso issues injury updates on Joao Pedro, Moises Caicedo, Maxence Lacroix, Reece James and more",
+     "source": "Yahoo Sports",
+     "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPQS1KVXhJaWxoZGRVN1h2TUxwZDg5TG5iQ1ZvLV9hd29IaHBXMjViTnJxdFRVQmJOYzhQNWlvVEZDYnVEY3VwTEdjcFU4WENwS1BQUDJrcXRzME1WVXg4QWljb0lLS2pDR28zVGFIYS1faGR3d2pKZ3UtVWp5QzBTeGZYZW9NUl9HRUE?oc=5",
+     "date": "2026-11-20"
+    }
+   ]
+  },
+  "FUL": {
+   "name": "Fulham",
+   "items": [
+    {
+     "team": "FUL",
+     "tag": "NEWS",
+     "text": "Man City XI vs Fulham: Confirmed team news, predicted lineup and injury latest for Premier League",
+     "source": "Yahoo Sports",
+     "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9FTzFqcDVxdkVKTE5GSDQ5ZjJCR3czbkItOWNSYVdpY1lvNFNBck84aTJZTS1qeHBUVVdkU2hQc0daZU45dVoxREVoMFVTU21wVm1CeWpiWjBjSlNTUERFVF9wSDVoaFlhaEw4eEYwVGdrdVpaSGJPZV93?oc=5",
+     "date": "2026-11-19"
+    },
+    {
+     "team": "FUL",
+     "tag": "NEWS",
+     "text": "Man City vs Fulham injury news: Latest on Guéhi and 2 doubts",
+     "source": "Dave.Sport",
+     "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE90ZllJZmZNbEp0MFo4ZFFvd1ZCLW9qN29EdXFDZlNGUnNMRl9BRHpvc3VpamwyWVFCTTJ3aTdwclNUdGx6Rmx5OHpHN0lhSV9CS3J2ZlQtNW4tRHdRc19vbVVScXpoQQ?oc=5",
+     "date": "2026-11-20"
+    }
+   ],
+   "headlines": [
+    {
+     "title": "Man City XI vs Fulham: Confirmed team news, predicted lineup and injury latest for Premier League",
+     "source": "Yahoo Sports",
+     "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9FTzFqcDVxdkVKTE5GSDQ5ZjJCR3czbkItOWNSYVdpY1lvNFNBck84aTJZTS1qeHBUVVdkU2hQc0daZU45dVoxREVoMFVTU21wVm1CeWpiWjBjSlNTUERFVF9wSDVoaFlhaEw4eEYwVGdrdVpaSGJPZV93?oc=5",
+     "date": "2026-11-19"
+    },
+    {
+     "title": "Man City vs Fulham injury news: Latest on Guéhi and 2 doubts",
+     "source": "Dave.Sport",
+     "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE90ZllJZmZNbEp0MFo4ZFFvd1ZCLW9qN29EdXFDZlNGUnNMRl9BRHpvc3VpamwyWVFCTTJ3aTdwclNUdGx6Rmx5OHpHN0lhSV9CS3J2ZlQtNW4tRHdRc19vbVVScXpoQQ?oc=5",
+     "date": "2026-11-20"
+    },
+    {
+     "title": "Man City XI vs Fulham: Confirmed team news, predicted lineup and injury latest for Premier League",
+     "source": "AOL.co.uk",
+     "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9fd3FKRDdYbEFIcF9TMWFxWlhiazF1RW9abXJlcl9TNVE5bmQ0WU82dVBTMW9SNGZ0dnVtMVlkZ28xWWhqZGhQUi1kc2JWOG1MZXZWOHI0VDdxNGxkQjlhNmtJaHZMRFJCZEhyTmw4R1MwTEhnMmc?oc=5",
+     "date": "2026-11-20"
+    },
+    {
+     "title": "Man City vs. Fulham tracker: Injury updates, prediction, storylines, and more",
+     "source": "LiveScore",
+     "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxQUmxueTZvT3dOOEJTZnktQUZxbFZZdlNSckZ5SXNPQ1duMm9IajhKdF9LTGJqdVppeUxzQW4takVrQjVhRVFuNUoyWnRtM3RhMjJ3NC1acllPaWJmcEEwSWlLejE3U1hJUUM1MnlEWnBqZUVPOU1manJMNlo4U2Q2UGc0ZndWWEtZd0FZTk5fOXhrRnVPU0JQdEdJM3E4b1JISHhHOHQtOGN4YWp0dkVuN2loVk1Vb2t2Q0pCVUtUZEtRQmtJdHBPMDYxQlVLS184Z0hrNnJuWS1NTHltdTBJUw?oc=5",
+     "date": "2026-11-20"
+    }
+   ]
+  },
+  "HUL": {
+   "name": "Hull City",
+   "items": [
+    {
+     "team": "HUL",
+     "tag": "NEWS",
+     "text": "Hull City-Brighton: Hull arrive with five injury absences and 11 points",
+     "source": "Tu Futbolero",
+     "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPMGVPdUV4N1RSdVZoV1lZT1lOVTJWT2h1bUNNTGxyeGZxYUZoWjlhSXBYd21ac01seGlISUV6Znd0QjQ1dXQwaWF3eEh0ajJwMVY5dDFrV2pFeVZmTUt0ZkIxb21EVDdlVk1MYjdqYmhKZ0FweDFkNEZqZjJlc0FibEJPWkYyc0VEUDFhcnA1cU5xUHBYb0g3U3B3dC12S3JrNEs4Q3F3?oc=5",
+     "date": "2026-11-21"
+    },
+    {
+     "team": "HUL",
+     "tag": "NEWS",
+     "text": "Sergej Jakirovic issues Hull City injury update ahead of Brighton",
+     "source": "SussexWorld",
+     "url": "https://news.google.com/rss/articles/CBMijAJBVV95cUxOTFFmY0VjOW03QzMwSFJlc1o0dGx0STl0ajkzNHNoSEE2RWJFX2cweDNtODZPWnNyYUR2MHBzZzJ1OWptWG1ib2c3SkdpX0c1TkRUWHoyOFpvekJEZG83YWV0VDNaOXZaRlNubk5sVVZxSXpxbENmMzJKQzdTc2lkSVotYWJMOUZpWDhTTTVoMG5LcGtjSVV5R3ZQSlB6NVZLZlBGVnJIbC1sNlVYblowbjJEVWhEeF9LRHdGeUVKQzA5bmRNSU9IWndwdzlfT29jSWVYcnlERWFaLXVwSHhxWkpBaGt5MHgzNFRpdEx3UW1KZ2hscktlZXVJRFpYRUNpVm9xbEEwYmJ1Y18z?oc=5",
+     "date": "2026-11-20"
+    }
+   ],
+   "headlines": [
+    {
+     "title": "Hull City-Brighton: Hull arrive with five injury absences and 11 points",
+     "source": "Tu Futbolero",
+     "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPMGVPdUV4N1RSdVZoV1lZT1lOVTJWT2h1bUNNTGxyeGZxYUZoWjlhSXBYd21ac01seGlISUV6Znd0QjQ1dXQwaWF3eEh0ajJwMVY5dDFrV2pFeVZmTUt0ZkIxb21EVDdlVk1MYjdqYmhKZ0FweDFkNEZqZjJlc0FibEJPWkYyc0VEUDFhcnA1cU5xUHBYb0g3U3B3dC12S3JrNEs4Q3F3?oc=5",
+     "date": "2026-11-21"
+    },
+    {
+     "title": "Sergej Jakirovic issues Hull City injury update ahead of Brighton",
+     "source": "SussexWorld",
+     "url": "https://news.google.com/rss/articles/CBMijAJBVV95cUxOTFFmY0VjOW03QzMwSFJlc1o0dGx0STl0ajkzNHNoSEE2RWJFX2cweDNtODZPWnNyYUR2MHBzZzJ1OWptWG1ib2c3SkdpX0c1TkRUWHoyOFpvekJEZG83YWV0VDNaOXZaRlNubk5sVVZxSXpxbENmMzJKQzdTc2lkSVotYWJMOUZpWDhTTTVoMG5LcGtjSVV5R3ZQSlB6NVZLZlBGVnJIbC1sNlVYblowbjJEVWhEeF9LRHdGeUVKQzA5bmRNSU9IWndwdzlfT29jSWVYcnlERWFaLXVwSHhxWkpBaGt5MHgzNFRpdEx3UW1KZ2hscktlZXVJRFpYRUNpVm9xbEEwYmJ1Y18z?oc=5",
+     "date": "2026-11-20"
+    },
+    {
+     "title": "Mohamed Belloumi Injury Update: When is the Hull City winger expected to return?",
+     "source": "news.bet365.com",
+     "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNOW82cUpwQW52Z1ZrZV9uVjNBZkJvRVo5RU9OSFpDVERkVjRoU2VUWUJCcklVdWVHN3lJQzhoTkxpb0ZteVpJQV9fZlc4V2FlZ3JzZGN6OWgycE5HLXlCc3FIUWF0WEdObVdva0ZqM1o1MW9Da0ZWeWlVOHdTWWp6RFdCXy1hYmpKVFJibWdHWWoxWjBmbVVXOW9BdUxZbDg?oc=5",
+     "date": "2026-11-20"
+    },
+    {
+     "title": "Hull City handed major injury boost with key duo ready for Premier League return",
+     "source": "Hull Live",
+     "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNbkhiVWlMazFXUXdzWDJfQXZsVEJtejM5N296cmdub0F3TjFXMndCY0M2TkxhVG5HVTNoYTktR2xOOER5M3VWXzI2RkNsb3Jjb085VWZROVliM1JJMjFkdFBIMC0yTEVEc3lGaXVnU2pqWEFzWGN4dVI2VDBwM2RzbXFjWWNIVmVUeURfb1VncHdoRU1KSmppSExaVnNRZEJN?oc=5",
+     "date": "2026-11-19"
+    }
+   ]
+  },
+  "IPS": {
+   "name": "Ipswich Town",
+   "items": [
+    {
+     "team": "IPS",
+     "tag": "NEWS",
+     "text": "Italy star Tonali out for Tottenham Hotspur, but Udogie back to start",
+     "source": "Yahoo Sports",
+     "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOc2VLcmdBUm1xclFaY1o2LUhvbTVoS1hzWmx4OWh2SU9SR2VUZlBZaVAySjl2LWpPUlZySGZlMDE0V0lLclRKdk5zbDB6ekEyc09BQUFacUxsUVNFbGJPM3F6T2JVNHBQX0h1RFVVTWd5bUVITDlENFJJdVNtN2FKd3NLb09WU3YtTXB3SQ?oc=5",
+     "date": "2026-11-21"
+    },
+    {
+     "team": "IPS",
+     "tag": "NEWS",
+     "text": "Roberto De Zerbi confirms triple Tottenham injury boost but two stars ruled out vs Ipswich",
+     "source": "Football London",
+     "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPa0RHQ2RiSWM5YndLZ0xXaVNGTzJ5eGxmQ0gwb25PVUE3eXJjbTJTN2RwQVJ2dFAtQ19tVC1CcUZKemROZTA3T0JZQ2JyYWpndlpWeXJNQUloNXJPUWpzaXVjNlpoSTBULVRaQjJNSGJzS2VnNl90eWZPa1drRTFTcDl4NFJDSXJ1RFZVckowMnBUcHMyV2ROdw?oc=5",
+     "date": "2026-11-20"
+    }
+   ],
+   "headlines": [
+    {
+     "title": "Italy star Tonali out for Tottenham Hotspur, but Udogie back to start",
+     "source": "Yahoo Sports",
+     "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOc2VLcmdBUm1xclFaY1o2LUhvbTVoS1hzWmx4OWh2SU9SR2VUZlBZaVAySjl2LWpPUlZySGZlMDE0V0lLclRKdk5zbDB6ekEyc09BQUFacUxsUVNFbGJPM3F6T2JVNHBQX0h1RFVVTWd5bUVITDlENFJJdVNtN2FKd3NLb09WU3YtTXB3SQ?oc=5",
+     "date": "2026-11-21"
+    },
+    {
+     "title": "Roberto De Zerbi confirms triple Tottenham injury boost but two stars ruled out vs Ipswich",
+     "source": "Football London",
+     "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPa0RHQ2RiSWM5YndLZ0xXaVNGTzJ5eGxmQ0gwb25PVUE3eXJjbTJTN2RwQVJ2dFAtQ19tVC1CcUZKemROZTA3T0JZQ2JyYWpndlpWeXJNQUloNXJPUWpzaXVjNlpoSTBULVRaQjJNSGJzS2VnNl90eWZPa1drRTFTcDl4NFJDSXJ1RFZVckowMnBUcHMyV2ROdw?oc=5",
+     "date": "2026-11-20"
+    },
+    {
+     "title": "Tottenham Hotspur vs Ipswich Town Premier League game preview: Team news and injury latest",
+     "source": "Goal.com",
+     "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQdWVCa2VEbHFKVVpWODNiN2puRDVOcTdUZnc5TE1VZTVYMlhGcjBPT0V6cXNzRTVmRF9kU3RpSGloMmxaOGg5am9IMVppd3dKT2trSzNHVUFQSW5GMUk5cjdYZ190R0lGTGNUR0U5RXhnQm9PMk1vclJzazBGSXk4S1ZVWlNIdWEweUZ6akYtb1pWYTJMUHNVMG9aUjBRWU5J?oc=5",
+     "date": "2026-11-21"
+    },
+    {
+     "title": "Six Tottenham Hotspur stars set to return for Ipswich Town clash",
+     "source": "Yahoo Sports",
+     "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOdEt1X2toZ2htZVhINmxVVHByc085RzFrTEdZZlFVbDluenFpQl9lMTRfek96Z2Uzb1VYNzJsNFBqSzI3MmViamc3VHI1MWpfMU1mVkh4MEkxTFRMWWNYRU0xT2tUYmhVSlVaSmY4QUJOdDFCMjN5RElHOUc4a3k4UXdDLUlPYUU?oc=5",
+     "date": "2026-11-19"
+    }
+   ]
+  },
+  "LEE": {
+   "name": "Leeds United",
+   "items": [
+    {
+     "team": "LEE",
+     "tag": "NEWS",
+     "text": "Chelsea XI vs Leeds: Starting lineup, confirmed team news, injury latest for Premier League today",
+     "source": "Yahoo Sports",
+     "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPbDd2bGRMSTd3MnRxRWFZNW5wamZ3ZG1ndkZ6MnZvX0tiZG41aHBTc2xrbHY4NHRXWjVDM1g2VW1FeGlOemlZMGpOV2JPcTFNSDR2NktSdUZBeUtJWWRKR1FFRnNhSURRUldTSHBNQWJTX3dQZ2lhbUQydlZfU0JRb3A3bE8?oc=5",
+     "date": "2026-11-21"
+    },
+    {
+     "team": "LEE",
+     "tag": "NEWS",
+     "text": "Chelsea player ratings vs Leeds United: Xabi Alonso's side collapse in 4-1 home defeat after Moises Caicedo injury",
+     "source": "Goal.com",
+     "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxPdldXekczTXM2T1FRaElLZFktWFlFSC12U3BRUlkzd1NOcUJfcXdmMkZUYzRHQnZUekd4NXd2UFNrN2VuZVRaaTBlYzNmTGQwUGd2cXhuWmstVWJpSFRQV0ltVHgwVTF0aFhQa3lETkpTRHhmSElFVFA4SV9ZZmZWank5eWQzT2VjWUl3MWZKRFF4ZndIdTFqOERUcUhjUnJSZGZnZEZsY1JuZWpMY3BtaHR5OWdtS29fdm1WeFNScl9CX1MwUjV5ZGtnclJ2RjQyU2FlZjdCcWNYck0?oc=5",
+     "date": "2026-11-21"
+    }
+   ],
+   "headlines": [
+    {
+     "title": "Chelsea XI vs Leeds: Starting lineup, confirmed team news, injury latest for Premier League today",
+     "source": "Yahoo Sports",
+     "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPbDd2bGRMSTd3MnRxRWFZNW5wamZ3ZG1ndkZ6MnZvX0tiZG41aHBTc2xrbHY4NHRXWjVDM1g2VW1FeGlOemlZMGpOV2JPcTFNSDR2NktSdUZBeUtJWWRKR1FFRnNhSURRUldTSHBNQWJTX3dQZ2lhbUQydlZfU0JRb3A3bE8?oc=5",
+     "date": "2026-11-21"
+    },
+    {
+     "title": "Chelsea player ratings vs Leeds United: Xabi Alonso's side collapse in 4-1 home defeat after Moises Caicedo injury",
+     "source": "Goal.com",
+     "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxPdldXekczTXM2T1FRaElLZFktWFlFSC12U3BRUlkzd1NOcUJfcXdmMkZUYzRHQnZUekd4NXd2UFNrN2VuZVRaaTBlYzNmTGQwUGd2cXhuWmstVWJpSFRQV0ltVHgwVTF0aFhQa3lETkpTRHhmSElFVFA4SV9ZZmZWank5eWQzT2VjWUl3MWZKRFF4ZndIdTFqOERUcUhjUnJSZGZnZEZsY1JuZWpMY3BtaHR5OWdtS29fdm1WeFNScl9CX1MwUjV5ZGtnclJ2RjQyU2FlZjdCcWNYck0?oc=5",
+     "date": "2026-11-21"
+    },
+    {
+     "title": "Moises Caicedo limps off injured after sickening fall in Chelsea’s clash vs Leeds as fans say ‘this is scary to watch’",
+     "source": "The Sun",
+     "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQV2p2U2pkU080NzZnZWhEMUg5eTA4ZGxldkdYSjlHX3ZfNEZiZ19UMm9zbVFNSmdyUnNpZE1nU2FnOUpEYW9xZS16aC1yNnNTaThLTUd0LWpteDBxRGV4d2NuTEE3N0ZYM3k2RV9abmdGN0R3cm1Lc2pEbl9PNzNldGppN0FHcWJoUXJwLXI1M0xvRW5Jd0xTMg?oc=5",
+     "date": "2026-11-21"
+    },
+    {
+     "title": "Injury-hit Chelsea aim to halt slide against Leeds as Alonso confirms Pedro's absence",
+     "source": "The Straits Times",
+     "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOZ2Fpc1FoNHVUUG9jM2dzNU52dF9WU1pkZEUwRXhYN3ZSMmhCdi1KeDJpaDdoTnpFMzZuOWNmMk16ZUlJaWZ4QS1jZ0lxcFZKWVhXOTdpY2hFQ3NKQl9ITzNoMHAwV1I3dU43S1BEakRpQW9LaVdLa2FQcjF5NWlaTXlidFhGRk1BTzNVaGM3TDh2ZFI5WGxOTUtDTTctRXVXWTctOVFQSUkxVi1wQ1RweGstZV9uczRNVXlVQndiS2pIUHlHdEpJ?oc=5",
+     "date": "2026-11-20"
+    }
+   ]
+  },
+  "LIV": {
+   "name": "Liverpool",
+   "items": [
+    {
+     "team": "LIV",
+     "tag": "NEWS",
+     "text": "Hugo Ekitike injury update",
+     "source": "Liverpool FC",
+     "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9ENGlxZ0pRVU1VdDlyRXhpV0tkWWI2UExBN1dkUi1LTVlURXQyOGpPWFdSMU01SjZBTUlZYkpGZ0F2VmF4TXV4RERhU0Q5N1NIYWkxLTIzNnBPaHprSGM2WWNjbzBnR2R1eWJLRDNNLTZ2Rk0wTlZV?oc=5",
+     "date": "2026-11-21"
+    },
+    {
+     "team": "LIV",
+     "tag": "NEWS",
+     "text": "Confirmed: Liverpool receive triple injury boost ahead of Man United clash",
+     "source": "Yahoo Sports",
+     "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPZlJ3bUVxek9xVFdDZXAzTHFOTlpkX3h3SVZtVXBTYXFPNzZ2WlhsR0pLSUdCTUJjZXdHRXpBdHMwNlE4ZlBDQ2xjZkhhWWZwZms2M1c4RlJobG5MMjB0R3hmeXNHbDluaG9jOGNVSlRkclY3QkJ6UEFUaS1aWWhhWTZoMzF6Vk5yWVZvSWlwZk56UXBt?oc=5",
+     "date": "2026-11-20"
+    }
+   ],
+   "headlines": [
+    {
+     "title": "Hugo Ekitike injury update",
+     "source": "Liverpool FC",
+     "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9ENGlxZ0pRVU1VdDlyRXhpV0tkWWI2UExBN1dkUi1LTVlURXQyOGpPWFdSMU01SjZBTUlZYkpGZ0F2VmF4TXV4RERhU0Q5N1NIYWkxLTIzNnBPaHprSGM2WWNjbzBnR2R1eWJLRDNNLTZ2Rk0wTlZV?oc=5",
+     "date": "2026-11-21"
+    },
+    {
+     "title": "Confirmed: Liverpool receive triple injury boost ahead of Man United clash",
+     "source": "Yahoo Sports",
+     "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPZlJ3bUVxek9xVFdDZXAzTHFOTlpkX3h3SVZtVXBTYXFPNzZ2WlhsR0pLSUdCTUJjZXdHRXpBdHMwNlE4ZlBDQ2xjZkhhWWZwZms2M1c4RlJobG5MMjB0R3hmeXNHbDluaG9jOGNVSlRkclY3QkJ6UEFUaS1aWWhhWTZoMzF6Vk5yWVZvSWlwZk56UXBt?oc=5",
+     "date": "2026-11-20"
+    },
+    {
+     "title": "Liverpool injury update: Van Dijk, Leoni, Frimpong latest return dates",
+     "source": "London Evening Standard",
+     "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxObHFnWERSTzlDNW8weWlZYTdhVlJzeXVDbXdKTnloMGUyNEd0aGl2NnpPSVlQQ2ZPZnJSLVp5dkJwTm9xTFk0Y0ZNWWh6c3B1eXVROTFBMDRESjE4alZUNEU0aHE0N0tfczVDQS1SR2YzTFlfUXRkS2hzRmswdEFOWTg3QUNGY3AxR3U2b0JLaXBPRjZ0ZE04TXNtVUFMMUpNNHdqWXljTms1UHZBZS1DaVJQMkZSUGpLTlVBMUdzRVFGTFZHYmpKbmVNcw?oc=5",
+     "date": "2026-11-21"
+    },
+    {
+     "title": "Liverpool star pulled out of game with freak injury following GTA release",
+     "source": "FourFourTwo",
+     "url": "https://news.google.com/rss/articles/CBMijgJBVV95cUxQcWh2TW84ZXJaanVneFNPZHhXc0ZMTFllU1AzbDZoWmVLUjFIVzBHc09vRDFCSV9oaVB4N2VWU2U4V05tTnpHZVR6dGx5UUU5QW04dGctSHpDQUszN240cEk4VmNidUV4ckc0bHM2bjFuQk95OXo3RDNWV2txYzA5QS1fTTZ2RHJJU0NpRzV4WWZXdW1vN0hUVThUWWhJbEdDRENWamEtZldpZnpkb0FuTXNsSXhkOG9LczFyVUJzYVdhb25IblpyX2FTakh3Yk9mSjhSMDJGNmxRbGJCcFA0SzM5NE8ydWVYdVFxRldTQXFuZmM0akRmb0ozZ24zY3Nva05lVkwxZFFQM1JHdnc?oc=5",
+     "date": "2026-11-20"
+    }
+   ]
+  },
+  "MAN": {
+   "name": "Manchester United",
+   "items": [
+    {
+     "team": "MAN",
+     "tag": "NEWS",
+     "text": "Liverpool vs Man Utd prediction: Betting tips, odds, injury news & predicted line-ups",
+     "source": "Yahoo Sports",
+     "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNMWlzak5adnJtYUJtRGx3anNBYXNmUEJMTVF2NTlBNmtJZG9nVWtBVEQzVUxVXzVXRnFrbF9LNG5hSzhGdUlibS1pQ3BTQi03S3p3OGU0em9LTGdYVGZaQk14RTZHWXM0ZGxFbnhNSmhmM1pWaEtrYkdQcUFYdzhaNFB5aXlpRmM?oc=5",
+     "date": "2026-11-21"
+    },
+    {
+     "team": "MAN",
+     "tag": "NEWS",
+     "text": "Premier League Injuries: Latest Injury News, Updates & Suspensions",
+     "source": "RotoWire",
+     "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQVFlsRkNUbUtNNWV4aXdQYk9oc0x4cHlGZ05YODY5NjBmVC1STENGQUpMN1ZncnVqVlJ2emhNeXhaaWdibUpVczU1R040djdNeDBvbUNHdEFIVEJjaFgxNGlaMDRTTzJVcVg5ajZCMlJXYV9PRjBRSUZpZkxFcm5KYnJtLUw4ODIwdENiNE9GLVZYa24xYWczems1N29uc3JUeENMcmk0c1NxS0pkZHc?oc=5",
+     "date": "2026-11-20"
+    }
+   ],
+   "headlines": [
+    {
+     "title": "Liverpool vs Man Utd prediction: Betting tips, odds, injury news & predicted line-ups",
+     "source": "Yahoo Sports",
+     "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNMWlzak5adnJtYUJtRGx3anNBYXNmUEJMTVF2NTlBNmtJZG9nVWtBVEQzVUxVXzVXRnFrbF9LNG5hSzhGdUlibS1pQ3BTQi03S3p3OGU0em9LTGdYVGZaQk14RTZHWXM0ZGxFbnhNSmhmM1pWaEtrYkdQcUFYdzhaNFB5aXlpRmM?oc=5",
+     "date": "2026-11-21"
+    },
+    {
+     "title": "Premier League Injuries: Latest Injury News, Updates & Suspensions",
+     "source": "RotoWire",
+     "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQVFlsRkNUbUtNNWV4aXdQYk9oc0x4cHlGZ05YODY5NjBmVC1STENGQUpMN1ZncnVqVlJ2emhNeXhaaWdibUpVczU1R040djdNeDBvbUNHdEFIVEJjaFgxNGlaMDRTTzJVcVg5ajZCMlJXYV9PRjBRSUZpZkxFcm5KYnJtLUw4ODIwdENiNE9GLVZYa24xYWczems1N29uc3JUeENMcmk0c1NxS0pkZHc?oc=5",
+     "date": "2026-11-20"
+    },
+    {
+     "title": "Confirmed: Liverpool receive triple injury boost ahead of Man United clash",
+     "source": "Yahoo Sports",
+     "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPZlJ3bUVxek9xVFdDZXAzTHFOTlpkX3h3SVZtVXBTYXFPNzZ2WlhsR0pLSUdCTUJjZXdHRXpBdHMwNlE4ZlBDQ2xjZkhhWWZwZms2M1c4RlJobG5MMjB0R3hmeXNHbDluaG9jOGNVSlRkclY3QkJ6UEFUaS1aWWhhWTZoMzF6Vk5yWVZvSWlwZk56UXBt?oc=5",
+     "date": "2026-11-20"
+    },
+    {
+     "title": "Pochettino’s first Manchester United headache before blockbuster debut against Liverpool: EPL Injury Update",
+     "source": "football360.com.au",
+     "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPVjBtMTJ5dXlTNFFIdjdTS3hnMmcteHlPelRYVDZVUXh3X2xwSGJzM20zUmRWVXVWUmVLa3RsX2ZhN0pYYnVlMDRkQmV6UHoxMXphdnN1anhSVTB1ZE93c3JJS1VPSWg1dTQzZnNIUXItM3RtaVdYc1Z4ME9VQ296TkxnYjh0NFlnekpienllZTQwVzVjYkN5YVA3R1VoVHl3YzgxUTR0WXlLVlJyUFdiUkd3?oc=5",
+     "date": "2026-11-17"
+    }
+   ]
+  },
+  "MNC": {
+   "name": "Manchester City",
+   "items": [
+    {
+     "team": "MNC",
+     "tag": "NEWS",
+     "text": "Premier League Injuries: Latest Injury News, Updates & Suspensions",
+     "source": "RotoWire",
+     "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQVFlsRkNUbUtNNWV4aXdQYk9oc0x4cHlGZ05YODY5NjBmVC1STENGQUpMN1ZncnVqVlJ2emhNeXhaaWdibUpVczU1R040djdNeDBvbUNHdEFIVEJjaFgxNGlaMDRTTzJVcVg5ajZCMlJXYV9PRjBRSUZpZkxFcm5KYnJtLUw4ODIwdENiNE9GLVZYa24xYWczems1N29uc3JUeENMcmk0c1NxS0pkZHc?oc=5",
+     "date": "2026-11-20"
+    },
+    {
+     "team": "MNC",
+     "tag": "NEWS",
+     "text": "Man City XI vs Fulham: Confirmed team news, predicted lineup and injury latest for Premier League",
+     "source": "Yahoo Sports",
+     "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9FTzFqcDVxdkVKTE5GSDQ5ZjJCR3czbkItOWNSYVdpY1lvNFNBck84aTJZTS1qeHBUVVdkU2hQc0daZU45dVoxREVoMFVTU21wVm1CeWpiWjBjSlNTUERFVF9wSDVoaFlhaEw4eEYwVGdrdVpaSGJPZV93?oc=5",
+     "date": "2026-11-19"
+    }
+   ],
+   "headlines": [
+    {
+     "title": "Premier League Injuries: Latest Injury News, Updates & Suspensions",
+     "source": "RotoWire",
+     "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQVFlsRkNUbUtNNWV4aXdQYk9oc0x4cHlGZ05YODY5NjBmVC1STENGQUpMN1ZncnVqVlJ2emhNeXhaaWdibUpVczU1R040djdNeDBvbUNHdEFIVEJjaFgxNGlaMDRTTzJVcVg5ajZCMlJXYV9PRjBRSUZpZkxFcm5KYnJtLUw4ODIwdENiNE9GLVZYa24xYWczems1N29uc3JUeENMcmk0c1NxS0pkZHc?oc=5",
+     "date": "2026-11-20"
+    },
+    {
+     "title": "Man City XI vs Fulham: Confirmed team news, predicted lineup and injury latest for Premier League",
+     "source": "Yahoo Sports",
+     "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9FTzFqcDVxdkVKTE5GSDQ5ZjJCR3czbkItOWNSYVdpY1lvNFNBck84aTJZTS1qeHBUVVdkU2hQc0daZU45dVoxREVoMFVTU21wVm1CeWpiWjBjSlNTUERFVF9wSDVoaFlhaEw4eEYwVGdrdVpaSGJPZV93?oc=5",
+     "date": "2026-11-19"
+    },
+    {
+     "title": "Liverpool star pulled out of game with freak injury following GTA release",
+     "source": "FourFourTwo",
+     "url": "https://news.google.com/rss/articles/CBMijgJBVV95cUxQcWh2TW84ZXJaanVneFNPZHhXc0ZMTFllU1AzbDZoWmVLUjFIVzBHc09vRDFCSV9oaVB4N2VWU2U4V05tTnpHZVR6dGx5UUU5QW04dGctSHpDQUszN240cEk4VmNidUV4ckc0bHM2bjFuQk95OXo3RDNWV2txYzA5QS1fTTZ2RHJJU0NpRzV4WWZXdW1vN0hUVThUWWhJbEdDRENWamEtZldpZnpkb0FuTXNsSXhkOG9LczFyVUJzYVdhb25IblpyX2FTakh3Yk9mSjhSMDJGNmxRbGJCcFA0SzM5NE8ydWVYdVFxRldTQXFuZmM0akRmb0ozZ24zY3Nva05lVkwxZFFQM1JHdnc?oc=5",
+     "date": "2026-11-20"
+    },
+    {
+     "title": "Josko Gvardiol Injury Update: Is the Manchester City defender available to face Fulham?",
+     "source": "news.bet365.com",
+     "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOVXZVRnR2VGd3cVFvRkxwOE1UbDlNcFI2b2RTWWJOeVhYa3lsQlY0MFdGWFdHSUpyRGFxVlFIZ1J5MzRqOGdmVDUtVG1CSWNvX0V2Z3Npc1hKTWtZZzc5WXItdTVvQ1NwSzlGSkpfQzlKOXU2cU94d2dkQlZKQjZCTHhJTVAyTTY5cmlFeEo1T19qelBTYVlXcmJLU1h5aWNLRVdpMA?oc=5",
+     "date": "2026-11-20"
+    }
+   ]
+  },
+  "NEW": {
+   "name": "Newcastle United",
+   "items": [
+    {
+     "team": "NEW",
+     "tag": "NEWS",
+     "text": "David Raya injury news, latest update as Arsenal star goes off vs Newcastle",
+     "source": "NBC Sports",
+     "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQbHByNVpfbkZaMW1RLThmeGFyVjNFVnpfS013UXh0Sk02c3ptdXpRdHZ0bHEwYXZibUNhY2VKcjZ6WjlyRXlCcWVndEl6TkdFT1BUaWZNNWFCUWZLVmxvaWJhbFUxdU5fWVNxY2tBcDVUa2NHXzl2bGhVZ0FRM2RzdzFkNTBnSW83NkxabERSTFZaM1Y3NHJnRGpwWG5CZ2hERnlBSzJ0dGg2aUVQU2tjU19B?oc=5",
+     "date": "2026-11-21"
+    },
+    {
+     "team": "NEW",
+     "tag": "NEWS",
+     "text": "Premier League Injuries: Latest Injury News, Updates & Suspensions",
+     "source": "RotoWire",
+     "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQVFlsRkNUbUtNNWV4aXdQYk9oc0x4cHlGZ05YODY5NjBmVC1STENGQUpMN1ZncnVqVlJ2emhNeXhaaWdibUpVczU1R040djdNeDBvbUNHdEFIVEJjaFgxNGlaMDRTTzJVcVg5ajZCMlJXYV9PRjBRSUZpZkxFcm5KYnJtLUw4ODIwdENiNE9GLVZYa24xYWczems1N29uc3JUeENMcmk0c1NxS0pkZHc?oc=5",
+     "date": "2026-11-20"
+    }
+   ],
+   "headlines": [
+    {
+     "title": "David Raya injury news, latest update as Arsenal star goes off vs Newcastle",
+     "source": "NBC Sports",
+     "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQbHByNVpfbkZaMW1RLThmeGFyVjNFVnpfS013UXh0Sk02c3ptdXpRdHZ0bHEwYXZibUNhY2VKcjZ6WjlyRXlCcWVndEl6TkdFT1BUaWZNNWFCUWZLVmxvaWJhbFUxdU5fWVNxY2tBcDVUa2NHXzl2bGhVZ0FRM2RzdzFkNTBnSW83NkxabERSTFZaM1Y3NHJnRGpwWG5CZ2hERnlBSzJ0dGg2aUVQU2tjU19B?oc=5",
+     "date": "2026-11-21"
+    },
+    {
+     "title": "Premier League Injuries: Latest Injury News, Updates & Suspensions",
+     "source": "RotoWire",
+     "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQVFlsRkNUbUtNNWV4aXdQYk9oc0x4cHlGZ05YODY5NjBmVC1STENGQUpMN1ZncnVqVlJ2emhNeXhaaWdibUpVczU1R040djdNeDBvbUNHdEFIVEJjaFgxNGlaMDRTTzJVcVg5ajZCMlJXYV9PRjBRSUZpZkxFcm5KYnJtLUw4ODIwdENiNE9GLVZYa24xYWczems1N29uc3JUeENMcmk0c1NxS0pkZHc?oc=5",
+     "date": "2026-11-20"
+    },
+    {
+     "title": "Arsenal at Newcastle United Premier League preview: Injuries, suspensions, and predicted lineups",
+     "source": "The Short Fuse",
+     "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxQcDFEVG5WUmxmN0cwRE9jYS04NE4tcVVEZ0Q1Rld5cVkyMXlaTTd5WFkzdjNtZldoVnZsY2VYVFFRMk01a1JsMXpuS2JiZG5RWVplc0NXNFVlc29PXzMyRHEwYmJMU21pamRzbjJQSnpabFFidkRMUXQ2VTBNVkxhSjF6cDFWcGRtZlRRSTFwTk9TSmpJZmVvS3JUei04dHJfRGQ0SllwTjdYU3ZSYjFrSnNDaUxtQXV0eHpJcHltOTZaSmctbFlfR2JSZHAyVkRkOGtqbU9MTE9mZTEyRkc5M0tGZW9NQzhQVV94bGVFRDdNWlg1T0phSA?oc=5",
+     "date": "2026-11-19"
+    },
+    {
+     "title": "Saliba, Saka, Zubimendi - Arsenal injury latest and return dates ahead of Newcastle clash",
+     "source": "Football London",
+     "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPMm0wOFJoelZYUzBNcUZBZ3gxcmNCczZINmtHWTdxa3NnNnE5UXBXMi11S0RpWm5jUzRBWHYyUXhHeWZpOVc2NDdKU3N4S0R1YmEtQmNLMFZ4eVo1VHhJb3hmMk45WktnUkNwa2xkZFJ5RHJaVTA2dEI2Tmc2UWc0VFhaWGhNYV9RcHk4ZS1GaUs4WGPSAZgBQVVfeXFMUDh4NmxHSTBrRWpnN3ljZ21icGJhNmw5UFlKMVdwWGF3SXNXUXNjUVVSeHNmT3otTElpZTFXQS1oc2pHeVB3X3pCVmJfMC0zVDAyejRDNjA1Z2NQRnUtQUFCZHdLbkNjMDV1V3dBRUVTWEVSNEtmZndUVTlSSlRhX2pFYmNtMFdmWEJ3b0sxN2I5R0p0VEtnR0Q?oc=5",
+     "date": "2026-11-20"
+    }
+   ]
+  },
+  "NFO": {
+   "name": "Nottingham Forest",
+   "items": [
+    {
+     "team": "NFO",
+     "tag": "NEWS",
+     "text": "Man City XI vs Fulham: Confirmed team news, predicted lineup and injury latest for Premier League",
+     "source": "London Evening Standard",
+     "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxNZ3BaYS1McEVTT2dtZlJhUDB0YVBzMUdpYWRYTC1kbkVlQm1pS2w1ZDRLNHlOTDhaQXVQTGJhX01Bd0NoeHR2OWNJeFFLYThEdndfdkYzalc4ZFFfNnZ4dzBTQmtCMkxXUWxOeEdQRGV5UjNxT0hpeHAxa2tQWnlQZnNrUGNfd1BOMXFPd2tCSDlGemVLYnVnNWdleFZCZmFGTkcydnFBV0d2TFFmUFZvNW1uc0ZMNkZuSTF1M1RrS1BHVVppbVYzU3pGRGRsQ2d6SHNrN3psVUM5RDg?oc=5",
+     "date": "2026-11-20"
+    },
+    {
+     "team": "NFO",
+     "tag": "NEWS",
+     "text": "Nottingham Forest dealt several injury worries ahead of Bournemouth as Glasner confirms absences",
+     "source": "LiveScore",
+     "url": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxPQmRUbmxSXzNYaVBDRWpiMGptVHIyQWJXUnd5dHNKNWp5NVZ2dDd0T3JJTG1rdmVEUTloX0tZRDdrVHh2NndlZlZudWN0V3VxdjR6TU9HcFpMQjBaLU1ZQXlRM0ZhY1poaUtzTkdsRVN2c0lKLWZsdk9wMWo0enhkeF9yeVQxTWhON1NKTC01QkpmRGN2Y2w1S0dOLXlacUp0S0ZwVmZURDRzOEVPWG54NTZENWpCdHg3ekNVV2lYZTFuYlBfS1NSRU9GYjRnN0JnTmtrb3M5QU5DbUdPUHl4Sk5iMXlyRHVUU0ZKSnozbWRGS1k2dUE?oc=5",
+     "date": "2026-11-19"
+    }
+   ],
+   "headlines": [
+    {
+     "title": "Man City XI vs Fulham: Confirmed team news, predicted lineup and injury latest for Premier League",
+     "source": "London Evening Standard",
+     "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxNZ3BaYS1McEVTT2dtZlJhUDB0YVBzMUdpYWRYTC1kbkVlQm1pS2w1ZDRLNHlOTDhaQXVQTGJhX01Bd0NoeHR2OWNJeFFLYThEdndfdkYzalc4ZFFfNnZ4dzBTQmtCMkxXUWxOeEdQRGV5UjNxT0hpeHAxa2tQWnlQZnNrUGNfd1BOMXFPd2tCSDlGemVLYnVnNWdleFZCZmFGTkcydnFBV0d2TFFmUFZvNW1uc0ZMNkZuSTF1M1RrS1BHVVppbVYzU3pGRGRsQ2d6SHNrN3psVUM5RDg?oc=5",
+     "date": "2026-11-20"
+    },
+    {
+     "title": "Nottingham Forest dealt several injury worries ahead of Bournemouth as Glasner confirms absences",
+     "source": "LiveScore",
+     "url": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxPQmRUbmxSXzNYaVBDRWpiMGptVHIyQWJXUnd5dHNKNWp5NVZ2dDd0T3JJTG1rdmVEUTloX0tZRDdrVHh2NndlZlZudWN0V3VxdjR6TU9HcFpMQjBaLU1ZQXlRM0ZhY1poaUtzTkdsRVN2c0lKLWZsdk9wMWo0enhkeF9yeVQxTWhON1NKTC01QkpmRGN2Y2w1S0dOLXlacUp0S0ZwVmZURDRzOEVPWG54NTZENWpCdHg3ekNVV2lYZTFuYlBfS1NSRU9GYjRnN0JnTmtrb3M5QU5DbUdPUHl4Sk5iMXlyRHVUU0ZKSnozbWRGS1k2dUE?oc=5",
+     "date": "2026-11-19"
+    },
+    {
+     "title": "FPL Gameweek 11 Tips: Fantasy Football Must-Haves, Captain Picks and Injury Report",
+     "source": "Yahoo Sports",
+     "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNTFBoUUZWM3RiUUg5dDZVS0h5RWg3a1JtcWV1ZlU0OXpyM3ROUW9DaEQyT3ZPd0ZHT3NlOGJaeVJ5d1dYT1k3WThpRkZwZmlzSVprWXYwTGF3UkRCWW5KSmFGQkhOcEZ1VDZoZndxYUtkbVdYbVRsNk5oTlpRa0FOQ1MyTQ?oc=5",
+     "date": "2026-11-20"
+    },
+    {
+     "title": "Man City XI vs Fulham: Confirmed team news, predicted lineup and injury latest for Premier League",
+     "source": "Yahoo Sports",
+     "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9FTzFqcDVxdkVKTE5GSDQ5ZjJCR3czbkItOWNSYVdpY1lvNFNBck84aTJZTS1qeHBUVVdkU2hQc0daZU45dVoxREVoMFVTU21wVm1CeWpiWjBjSlNTUERFVF9wSDVoaFlhaEw4eEYwVGdrdVpaSGJPZV93?oc=5",
+     "date": "2026-11-19"
+    }
+   ]
+  },
+  "SUN": {
+   "name": "Sunderland",
+   "items": [
+    {
+     "team": "SUN",
+     "tag": "NEWS",
+     "text": "Injury-hit Chelsea aim to halt slide against Leeds as Alonso confirms Pedro's absence",
+     "source": "Reuters",
+     "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOdFVvVWVUanZqeFB5SC05Q0k5TlYzZ09SX0x5Q3EtY0FCLUJsd2piRTdlVXh2ZW9YUGVwNHh3WFIyTmhnMnIwX3VBRGcwVmlWRXotaXVqT0FyeS1tcEkxb2hEdzE4eW5sY3RiZ2M1R0VjQjdZc3lXdkp3WDdIcU9CZ0VsZzZpa2lTU2JLWEZpTXVza3ZPMG5BT3hmbXBrQ1cxZGtFOUJiZHFrVDlBbGtvSUJMREU4ZmFnak00WXdHSmd1blY5aF93?oc=5",
+     "date": "2026-11-20"
+    },
+    {
+     "team": "SUN",
+     "tag": "NEWS",
+     "text": "Aston Villa Vs Sunderland Injury Latest: Unai Emery Suffers Blow As Black Cats Duo Doubtful",
+     "source": "Yahoo Sports",
+     "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOTnZNOW5DRUEwWGU0bTZFTUp3UnVFaEdwS2MyLWt0emN6YzBmbHNfUDUwQXJ2clYtOEpzWUd1dDNIdTZIMF9reWhHYkxvd1dBbUZ6Z0RER1FLX1BINzVnd0xOdWpWaEJjQzNkYlB1TGlHb0VRMlZOdnRCRTF1MkUwVG1XRnpZUjZI?oc=5",
+     "date": "2026-11-18"
+    }
+   ],
+   "headlines": [
+    {
+     "title": "Injury-hit Chelsea aim to halt slide against Leeds as Alonso confirms Pedro's absence",
+     "source": "Reuters",
+     "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOdFVvVWVUanZqeFB5SC05Q0k5TlYzZ09SX0x5Q3EtY0FCLUJsd2piRTdlVXh2ZW9YUGVwNHh3WFIyTmhnMnIwX3VBRGcwVmlWRXotaXVqT0FyeS1tcEkxb2hEdzE4eW5sY3RiZ2M1R0VjQjdZc3lXdkp3WDdIcU9CZ0VsZzZpa2lTU2JLWEZpTXVza3ZPMG5BT3hmbXBrQ1cxZGtFOUJiZHFrVDlBbGtvSUJMREU4ZmFnak00WXdHSmd1blY5aF93?oc=5",
+     "date": "2026-11-20"
+    },
+    {
+     "title": "Aston Villa Vs Sunderland Injury Latest: Unai Emery Suffers Blow As Black Cats Duo Doubtful",
+     "source": "Yahoo Sports",
+     "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOTnZNOW5DRUEwWGU0bTZFTUp3UnVFaEdwS2MyLWt0emN6YzBmbHNfUDUwQXJ2clYtOEpzWUd1dDNIdTZIMF9reWhHYkxvd1dBbUZ6Z0RER1FLX1BINzVnd0xOdWpWaEJjQzNkYlB1TGlHb0VRMlZOdnRCRTF1MkUwVG1XRnpZUjZI?oc=5",
+     "date": "2026-11-18"
+    },
+    {
+     "title": "Sunderland Injury Latest: Brian Brobbey and Granit Xhaka Blows Ahead of Aston Villa Clash",
+     "source": "Yahoo",
+     "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQc1FYN0lTS1hoMGl1SThUTVh5NV91VURENElvcHpVOExyNk9ZT09zOGhqLW9VVWx5a1RJUzU5MVh2NjdMR1VmdmhOQWJVTDk3bnVRRTFwTUxxa0ktdXk4RTJQQ1hVc1pMNTFvSTRCRV9FRjh3NVZuRm9VdVFYbmhFNGdhbVcwblBNVm5TTVBJbw?oc=5",
+     "date": "2026-11-20"
+    },
+    {
+     "title": "Key Sunderland duo set for spells out with injury",
+     "source": "LiveScore",
+     "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPRkRPa0RFRnNaVVB4VDJEazZfTDBPeXlzUmJZVXdLZ0FLVVpyZW1VaHZ4cWlhaEJHWnZzMmZoTWhwZ1Y0OGYwaWhydzAzUG9lTlJISWdISWhCNGJvOGRMTS1wOWU5ZlpuWUF2U0ZsdU9zbnBPNUNmRW0yOHFfNnJ2a0dGZHBTMXJPZUh3NnV5VUNYanRfcWpkYnV5NDYxNXpfOFYzRkdDa2FVVUFOOW0xZHJjRFdSbUE?oc=5",
+     "date": "2026-11-19"
+    }
+   ]
+  },
+  "TOT": {
+   "name": "Tottenham Hotspur",
+   "items": [
+    {
+     "team": "TOT",
+     "tag": "NEWS",
+     "text": "Italy star Tonali out for Tottenham Hotspur, but Udogie back to start",
+     "source": "Yahoo Sports",
+     "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOc2VLcmdBUm1xclFaY1o2LUhvbTVoS1hzWmx4OWh2SU9SR2VUZlBZaVAySjl2LWpPUlZySGZlMDE0V0lLclRKdk5zbDB6ekEyc09BQUFacUxsUVNFbGJPM3F6T2JVNHBQX0h1RFVVTWd5bUVITDlENFJJdVNtN2FKd3NLb09WU3YtTXB3SQ?oc=5",
+     "date": "2026-11-21"
+    },
+    {
+     "team": "TOT",
+     "tag": "NEWS",
+     "text": "Team news | Bergvall, Savio, Udogie available, Tel and Tosin out of Ipswich clash",
+     "source": "Tottenham Hotspur",
+     "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxONzlIU05BV3dJNWhMa2c3TmlVWm5GLWJySEdtbEJvT1NENFctSU5WNnQtbmVpa3dzTUVPWVZyRHVJVGpSUFNPZlRSTGhYTWR1Q3NmWDFtekVyTXhaZnVsYjhxM1FzVG9RcXp5cmc2Z0tPaGlfOXlrRHllbWhNNFZSV0FuandIS1dib1RBWFcyLVRqQmVrall3dC14UVpYdHhMaEhJNHJhbm1NYkk3dEcxYmh2NmszaVhidG5lNjhsMA?oc=5",
+     "date": "2026-11-20"
+    }
+   ],
+   "headlines": [
+    {
+     "title": "Italy star Tonali out for Tottenham Hotspur, but Udogie back to start",
+     "source": "Yahoo Sports",
+     "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOc2VLcmdBUm1xclFaY1o2LUhvbTVoS1hzWmx4OWh2SU9SR2VUZlBZaVAySjl2LWpPUlZySGZlMDE0V0lLclRKdk5zbDB6ekEyc09BQUFacUxsUVNFbGJPM3F6T2JVNHBQX0h1RFVVTWd5bUVITDlENFJJdVNtN2FKd3NLb09WU3YtTXB3SQ?oc=5",
+     "date": "2026-11-21"
+    },
+    {
+     "title": "Team news | Bergvall, Savio, Udogie available, Tel and Tosin out of Ipswich clash",
+     "source": "Tottenham Hotspur",
+     "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxONzlIU05BV3dJNWhMa2c3TmlVWm5GLWJySEdtbEJvT1NENFctSU5WNnQtbmVpa3dzTUVPWVZyRHVJVGpSUFNPZlRSTGhYTWR1Q3NmWDFtekVyTXhaZnVsYjhxM1FzVG9RcXp5cmc2Z0tPaGlfOXlrRHllbWhNNFZSV0FuandIS1dib1RBWFcyLVRqQmVrall3dC14UVpYdHhMaEhJNHJhbm1NYkk3dEcxYmh2NmszaVhidG5lNjhsMA?oc=5",
+     "date": "2026-11-20"
+    },
+    {
+     "title": "Seven players set to miss Tottenham vs Ipswich as Roberto De Zerbi suffers cruel injury blow",
+     "source": "Football London",
+     "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPdkVRNnUwQ0IybEo3SEE3NGJjMkNHT0NzakFhRUpRR194eE5ndW0wNDc2QlVaNkxuQlE3X1JjakZmM0dJRFZ2OHk0c2xLN0FHR24ycGNaRWxvTldwb0ZzbC1rc3I5OUs5cVRSUWVGVW1Ma2hGMmRNVlhtYjJHZk1OcFdnaGNhU2Q5RmtJbFRYRTNONFI0VUQ5cQ?oc=5",
+     "date": "2026-11-20"
+    },
+    {
+     "title": "It looks like Tottenham are getting 4 major injury returns vs. Ipswich",
+     "source": "LiveScore",
+     "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQdE9WMVB1Vlk2OVRjNTZuQU85X2NKZ1R2ckdyZ3pCMHBxX2RRUlotdkdNZWhzcHBoLXNEMk1ibFZadFRwNi1yTm5rNWJiWDFqZTA2a25jUnpIWHUxMTB5R1Z5ZXFUQWMxY25mZmkwT0drcHN6Y3dqQ2tnemlRRnhmckJjeEhOdXl4ZFB5cngyRUl3VF9STVZKTndlOW9KYzJ6SUZmbV8xQlUteGtCdVU4b2owcElUcklXRkhvTS1UdnZmeHF3QkhKZy1aU3ZaUUI5UnlxcGVB?oc=5",
+     "date": "2026-11-19"
+    }
+   ]
+  }
+ }
+}

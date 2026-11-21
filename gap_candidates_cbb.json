@@ -1,0 +1,59 @@
+{
+ "sport": "cbb",
+ "generated": "2026-11-21T19:23:15+00:00",
+ "gap_min": 4.0,
+ "swing_min": 4.5,
+ "watch_teams": [
+  "Michigan",
+  "Villanova"
+ ],
+ "swings_to_explain": [],
+ "games": [
+  {
+   "gid": "401921776",
+   "home": "Villanova",
+   "away": "Michigan",
+   "home_name": "Villanova",
+   "away_name": "Michigan",
+   "weather": null,
+   "kick": "2026-11-21T19:00:00-05:00",
+   "ours": -5.8,
+   "market": -4.5,
+   "opened": -3.5,
+   "gap": -1.3,
+   "gap_flag": false,
+   "we_like": "Michigan",
+   "ours_text": "Michigan −6",
+   "market_text": "Michigan −4.5",
+   "sources": {
+    "TeamRankings": -2.0,
+    "Haslametrics": -3.9,
+    "Torvik preseason": 0.7,
+    "AlphaPoint model": -9.8,
+    "AlphaPoint v2 (shadow)": -10.7
+   },
+   "injury_wire": {
+    "Villanova": [],
+    "Michigan": []
+   },
+   "history": {
+    "Villanova": {
+     "n": 4,
+     "higher": 1,
+     "lower": 2,
+     "avg": -0.5,
+     "last": 0.8,
+     "swing": -2.1
+    },
+    "Michigan": {
+     "n": 3,
+     "higher": 2,
+     "lower": 0,
+     "avg": 2.1,
+     "last": 0.5,
+     "swing": 0.8
+    }
+   }
+  }
+ ]
+}

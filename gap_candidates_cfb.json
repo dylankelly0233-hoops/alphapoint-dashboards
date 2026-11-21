@@ -1,0 +1,2767 @@
+{
+ "sport": "cfb",
+ "generated": "2026-11-21T19:22:07+00:00",
+ "gap_min": 3.0,
+ "swing_min": 7.0,
+ "watch_teams": [
+  "Alabama",
+  "App State",
+  "Arizona",
+  "Arizona State",
+  "Arkansas",
+  "Arkansas State",
+  "Auburn",
+  "Baylor",
+  "Boise State",
+  "California",
+  "Clemson",
+  "Coastal Carolina",
+  "Colorado State",
+  "Delaware",
+  "Duke",
+  "Florida",
+  "Florida Atlantic",
+  "Florida International",
+  "Florida State",
+  "Fresno State",
+  "Georgia",
+  "Georgia Southern",
+  "Georgia State",
+  "Hawai'i",
+  "Illinois",
+  "Indiana",
+  "Iowa",
+  "Kansas State",
+  "Kennesaw State",
+  "Kentucky",
+  "LSU",
+  "Louisiana",
+  "Louisiana Tech",
+  "Louisville",
+  "Marshall",
+  "Maryland",
+  "Miami",
+  "Michigan",
+  "Mississippi State",
+  "Missouri",
+  "NC State",
+  "Nebraska",
+  "Nevada",
+  "New Mexico State",
+  "North Carolina",
+  "North Dakota State",
+  "Northern Illinois",
+  "Northwestern",
+  "Notre Dame",
+  "Ohio State",
+  "Oklahoma",
+  "Oklahoma State",
+  "Old Dominion",
+  "Ole Miss",
+  "Oregon",
+  "Oregon State",
+  "Penn State",
+  "Pittsburgh",
+  "Rutgers",
+  "SMU",
+  "Samford",
+  "San Diego State",
+  "San José State",
+  "South Alabama",
+  "South Carolina",
+  "South Florida",
+  "Southern Miss",
+  "Stanford",
+  "Syracuse",
+  "TCU",
+  "Tennessee",
+  "Texas",
+  "Texas A&M",
+  "Texas State",
+  "Texas Tech",
+  "Troy",
+  "UAB",
+  "UCLA",
+  "UConn",
+  "UL Monroe",
+  "UNLV",
+  "USC",
+  "UTSA",
+  "Utah",
+  "Utah State",
+  "Vanderbilt",
+  "Virginia",
+  "Virginia Tech",
+  "Wake Forest",
+  "Washington",
+  "Washington State"
+ ],
+ "swings_to_explain": [
+  {
+   "gid": "401856762",
+   "team": "Mississippi State"
+  },
+  {
+   "gid": "401856762",
+   "team": "Ole Miss"
+  },
+  {
+   "gid": "401856764",
+   "team": "Clemson"
+  },
+  {
+   "gid": "401856765",
+   "team": "Tennessee"
+  },
+  {
+   "gid": "401856765",
+   "team": "Vanderbilt"
+  },
+  {
+   "gid": "401856873",
+   "team": "Arizona State"
+  },
+  {
+   "gid": "401856873",
+   "team": "Arizona"
+  },
+  {
+   "gid": "401858307",
+   "team": "SMU"
+  },
+  {
+   "gid": "401858313",
+   "team": "NC State"
+  },
+  {
+   "gid": "401858313",
+   "team": "North Carolina"
+  }
+ ],
+ "games": [
+  {
+   "gid": "401858527",
+   "home": "Illinois",
+   "away": "Iowa",
+   "home_name": "Illinois",
+   "away_name": "Iowa",
+   "weather": {
+    "temp": 69.6,
+    "wind": 10.7,
+    "gust": 14.8,
+    "wet": 0
+   },
+   "kick": "2026-11-21T14:30:00-05:00",
+   "ours": -4.5,
+   "market": -8.0,
+   "opened": -6.5,
+   "gap": 3.5,
+   "gap_flag": true,
+   "we_like": "Illinois",
+   "ours_text": "Iowa −4.5",
+   "market_text": "Iowa −8",
+   "sources": {
+    "Sagarin": -2.8,
+    "SP+": -7.3,
+    "AlphaPoint (shadow)": -6.6
+   },
+   "injury_wire": {
+    "Illinois": [
+     "QB Katin Houser is not likely to play vs Iowa after surgery on a broken nose, Bret Bielema said Tuesday; Michael Clayton II has started in his absence."
+    ],
+    "Iowa": [
+     "Star WR Tony Diaz (left the Purdue game hurt) has 'a chance' to play at Illinois, per Kirk Ferentz; Xavier Styles is likely out."
+    ]
+   },
+   "history": {
+    "Illinois": {
+     "n": 2,
+     "higher": 0,
+     "lower": 0,
+     "avg": -0.0,
+     "last": -0.5,
+     "swing": 4.0
+    },
+    "Iowa": {
+     "n": 2,
+     "higher": 0,
+     "lower": 1,
+     "avg": -2.4,
+     "last": -0.7,
+     "swing": -2.8
+    }
+   }
+  },
+  {
+   "gid": "401862833",
+   "home": "Florida Atlantic",
+   "away": "South Florida",
+   "home_name": "Florida Atlantic",
+   "away_name": "South Florida",
+   "weather": {
+    "temp": 75.9,
+    "wind": 6.4,
+    "gust": 15.7,
+    "wet": 34
+   },
+   "kick": "2026-11-21T14:30:00-05:00",
+   "ours": -2.3,
+   "market": -2.5,
+   "opened": 1.0,
+   "gap": 0.2,
+   "gap_flag": false,
+   "we_like": "Florida Atlantic",
+   "ours_text": "South Florida −2.5",
+   "market_text": "South Florida −2.5",
+   "sources": {
+    "Sagarin": 0.5,
+    "SP+": -5.6,
+    "AlphaPoint (shadow)": -1.4
+   },
+   "injury_wire": {
+    "Florida Atlantic": [],
+    "South Florida": []
+   },
+   "history": {
+    "Florida Atlantic": null,
+    "South Florida": null
+   }
+  },
+  {
+   "gid": "401869929",
+   "home": "App State",
+   "away": "UL Monroe",
+   "home_name": "App State",
+   "away_name": "UL Monroe",
+   "weather": {
+    "temp": 53.3,
+    "wind": 9.9,
+    "gust": 17.7,
+    "wet": 1
+   },
+   "kick": "2026-11-21T14:30:00-05:00",
+   "ours": 16.8,
+   "market": 14.0,
+   "opened": 14.5,
+   "gap": 2.8,
+   "gap_flag": false,
+   "we_like": "App State",
+   "ours_text": "App State −17",
+   "market_text": "App State −14",
+   "sources": {
+    "Sagarin": 12.6,
+    "SP+": 22.8,
+    "AlphaPoint (shadow)": 13.6
+   },
+   "injury_wire": {
+    "App State": [],
+    "UL Monroe": []
+   },
+   "history": {
+    "App State": null,
+    "UL Monroe": null
+   }
+  },
+  {
+   "gid": "401869946",
+   "home": "Louisiana",
+   "away": "Coastal Carolina",
+   "home_name": "Louisiana",
+   "away_name": "Coastal Carolina",
+   "weather": {
+    "temp": 78.8,
+    "wind": 1.6,
+    "gust": 2.9,
+    "wet": 0
+   },
+   "kick": "2026-11-21T15:00:00-05:00",
+   "ours": 10.1,
+   "market": 10.0,
+   "opened": 10.0,
+   "gap": 0.1,
+   "gap_flag": false,
+   "we_like": "Louisiana",
+   "ours_text": "Louisiana −10",
+   "market_text": "Louisiana −10",
+   "sources": {
+    "Sagarin": 8.5,
+    "SP+": 12.8,
+    "AlphaPoint (shadow)": 16.9
+   },
+   "injury_wire": {
+    "Louisiana": [],
+    "Coastal Carolina": []
+   },
+   "history": {
+    "Louisiana": null,
+    "Coastal Carolina": null
+   }
+  },
+  {
+   "gid": "401871077",
+   "home": "New Mexico State",
+   "away": "Delaware",
+   "home_name": "New Mexico State",
+   "away_name": "Delaware",
+   "weather": {
+    "temp": 61.2,
+    "wind": 15.7,
+    "gust": 26.2,
+    "wet": 0
+   },
+   "kick": "2026-11-21T15:00:00-05:00",
+   "ours": -8.0,
+   "market": -2.5,
+   "opened": -3.5,
+   "gap": -5.5,
+   "gap_flag": true,
+   "we_like": "Delaware",
+   "ours_text": "Delaware −8",
+   "market_text": "Delaware −2.5",
+   "sources": {
+    "Sagarin": -8.2,
+    "SP+": -8.8,
+    "AlphaPoint (shadow)": -0.7
+   },
+   "injury_wire": {
+    "New Mexico State": [],
+    "Delaware": []
+   },
+   "history": {
+    "New Mexico State": null,
+    "Delaware": null
+   }
+  },
+  {
+   "gid": "401871078",
+   "home": "Kennesaw State",
+   "away": "Florida International",
+   "home_name": "Kennesaw State",
+   "away_name": "Florida International",
+   "weather": {
+    "temp": 62.6,
+    "wind": 12.2,
+    "gust": 28.0,
+    "wet": 22
+   },
+   "kick": "2026-11-21T15:00:00-05:00",
+   "ours": 2.7,
+   "market": 2.5,
+   "opened": 4.0,
+   "gap": 0.2,
+   "gap_flag": false,
+   "we_like": "Kennesaw State",
+   "ours_text": "Kennesaw State −2.5",
+   "market_text": "Kennesaw State −2.5",
+   "sources": {
+    "Sagarin": 3.4,
+    "SP+": 2.3,
+    "AlphaPoint (shadow)": 4.5
+   },
+   "injury_wire": {
+    "Kennesaw State": [],
+    "Florida International": []
+   },
+   "history": {
+    "Kennesaw State": null,
+    "Florida International": null
+   }
+  },
+  {
+   "gid": "401856755",
+   "home": "Texas",
+   "away": "Arkansas",
+   "home_name": "Texas",
+   "away_name": "Arkansas",
+   "weather": {
+    "temp": 69.4,
+    "wind": 7.4,
+    "gust": 14.5,
+    "wet": 1
+   },
+   "kick": "2026-11-21T15:30:00-05:00",
+   "ours": 22.9,
+   "market": 18.5,
+   "opened": 21.0,
+   "gap": 4.4,
+   "gap_flag": true,
+   "we_like": "Texas",
+   "ours_text": "Texas −23",
+   "market_text": "Texas −18.5",
+   "sources": {
+    "Sagarin": 19.4,
+    "SP+": 28.6,
+    "AlphaPoint (shadow)": 20.0
+   },
+   "injury_wire": {
+    "Texas": [
+     "Star edge rusher Colin Simmons is back on the Texas injury report ahead of Arkansas.",
+     "DT Hero Kanu is out for the season after surgery for a torn biceps."
+    ],
+    "Arkansas": []
+   },
+   "history": {
+    "Texas": {
+     "n": 2,
+     "higher": 2,
+     "lower": 0,
+     "avg": 2.0,
+     "last": 2.5,
+     "swing": 1.9
+    },
+    "Arkansas": {
+     "n": 2,
+     "higher": 0,
+     "lower": 1,
+     "avg": -1.8,
+     "last": -3.9,
+     "swing": -0.4
+    }
+   }
+  },
+  {
+   "gid": "401856747",
+   "home": "Auburn",
+   "away": "Samford",
+   "home_name": "Auburn",
+   "away_name": "Samford",
+   "weather": {
+    "temp": 61.4,
+    "wind": 12.3,
+    "gust": 24.8,
+    "wet": 12
+   },
+   "kick": "2026-11-21T15:30:00-05:00",
+   "ours": 37.9,
+   "market": 48.5,
+   "opened": 48.5,
+   "gap": -10.6,
+   "gap_flag": true,
+   "we_like": "Samford",
+   "ours_text": "Auburn −38",
+   "market_text": "Auburn −48.5",
+   "sources": {},
+   "injury_wire": {
+    "Auburn": [],
+    "Samford": []
+   },
+   "history": {
+    "Auburn": {
+     "n": 2,
+     "higher": 0,
+     "lower": 1,
+     "avg": -2.7,
+     "last": -5.0,
+     "swing": -5.6
+    },
+    "Samford": null
+   }
+  },
+  {
+   "gid": "401856754",
+   "home": "Tennessee",
+   "away": "LSU",
+   "home_name": "Tennessee",
+   "away_name": "LSU",
+   "weather": {
+    "temp": 70.0,
+    "wind": 2.3,
+    "gust": 5.6,
+    "wet": 0
+   },
+   "kick": "2026-11-21T15:30:00-05:00",
+   "ours": 4.1,
+   "market": -1.0,
+   "opened": -1.0,
+   "gap": 5.1,
+   "gap_flag": true,
+   "we_like": "Tennessee",
+   "ours_text": "Tennessee −4",
+   "market_text": "LSU −1",
+   "sources": {
+    "Sagarin": 4.4,
+    "SP+": 3.9,
+    "AlphaPoint (shadow)": -2.3
+   },
+   "injury_wire": {
+    "Tennessee": [
+     "QB George MacIntyre (knee) left the Texas A&M win in the 3rd quarter; per On3 he is not expected to miss time and should be available vs LSU. Faizon Brandon finished that game.",
+     "WR Mike Matthews (knee) and OL Nic Moore are out for the season; Moore is the 11th Vol lost for the year."
+    ],
+    "LSU": [
+     "Top WRs Jackson Harris and Winston Watkins Jr. were listed questionable vs Tennessee; On3 tracked both on Thursday's report.",
+     "LB Whit Weeks is officially out vs Tennessee on Thursday's SEC availability report.",
+     "TE Trey'Dez Green is off the injury report, and CB Aidan Anding is probable after missing the whole season (Achilles)."
+    ]
+   },
+   "history": {
+    "Tennessee": {
+     "n": 2,
+     "higher": 2,
+     "lower": 0,
+     "avg": 2.5,
+     "last": 3.4,
+     "swing": 1.7
+    },
+    "LSU": {
+     "n": 2,
+     "higher": 0,
+     "lower": 1,
+     "avg": -1.7,
+     "last": -2.5,
+     "swing": -2.6
+    }
+   }
+  },
+  {
+   "gid": "401861968",
+   "home": "UConn",
+   "away": "Old Dominion",
+   "home_name": "UConn",
+   "away_name": "Old Dominion",
+   "weather": {
+    "temp": 60.1,
+    "wind": 3.6,
+    "gust": 7.4,
+    "wet": 0
+   },
+   "kick": "2026-11-21T15:30:00-05:00",
+   "ours": 15.4,
+   "market": 14.0,
+   "opened": 13.5,
+   "gap": 1.4,
+   "gap_flag": false,
+   "we_like": "UConn",
+   "ours_text": "UConn −15.5",
+   "market_text": "UConn −14",
+   "sources": {
+    "Sagarin": 14.1,
+    "SP+": 18.5,
+    "AlphaPoint (shadow)": 16.3
+   },
+   "injury_wire": {
+    "UConn": [],
+    "Old Dominion": []
+   },
+   "history": {
+    "UConn": {
+     "n": 1,
+     "higher": 0,
+     "lower": 0,
+     "avg": 0.8,
+     "last": 0.8,
+     "swing": 0.6
+    },
+    "Old Dominion": null
+   }
+  },
+  {
+   "gid": "401858535",
+   "home": "Washington",
+   "away": "Indiana",
+   "home_name": "Washington",
+   "away_name": "Indiana",
+   "weather": {
+    "temp": 45.2,
+    "wind": 0.8,
+    "gust": 7.2,
+    "wet": 0
+   },
+   "kick": "2026-11-21T15:30:00-05:00",
+   "ours": -7.3,
+   "market": -9.0,
+   "opened": -7.5,
+   "gap": 1.7,
+   "gap_flag": false,
+   "we_like": "Washington",
+   "ours_text": "Indiana −7.5",
+   "market_text": "Indiana −9",
+   "sources": {
+    "Sagarin": -6.0,
+    "SP+": -10.0,
+    "AlphaPoint (shadow)": -9.6
+   },
+   "injury_wire": {
+    "Washington": [],
+    "Indiana": [
+     "Indiana ruled out eight players for the Washington game, including LB Rolijah Hardy and AJ Harris; starting G Joe Brunner is out for the season (ACL).",
+     "Indiana RB Khobie Martin is back for the Washington game, a boost to the Hoosiers' run game."
+    ]
+   },
+   "history": {
+    "Washington": {
+     "n": 2,
+     "higher": 1,
+     "lower": 0,
+     "avg": 0.8,
+     "last": 1.8,
+     "swing": -0.1
+    },
+    "Indiana": {
+     "n": 1,
+     "higher": 0,
+     "lower": 0,
+     "avg": -0.1,
+     "last": -0.1,
+     "swing": -1.6
+    }
+   }
+  },
+  {
+   "gid": "401856871",
+   "home": "Baylor",
+   "away": "Texas Tech",
+   "home_name": "Baylor",
+   "away_name": "Texas Tech",
+   "weather": {
+    "temp": 71.8,
+    "wind": 10.8,
+    "gust": 17.9,
+    "wet": 0
+   },
+   "kick": "2026-11-21T15:30:00-05:00",
+   "ours": -4.4,
+   "market": -5.5,
+   "opened": -3.5,
+   "gap": 1.1,
+   "gap_flag": false,
+   "we_like": "Baylor",
+   "ours_text": "Texas Tech −4.5",
+   "market_text": "Texas Tech −5.5",
+   "sources": {
+    "Sagarin": -3.2,
+    "SP+": -6.3,
+    "AlphaPoint (shadow)": -0.8
+   },
+   "injury_wire": {
+    "Baylor": [],
+    "Texas Tech": []
+   },
+   "history": {
+    "Baylor": {
+     "n": 2,
+     "higher": 2,
+     "lower": 0,
+     "avg": 2.2,
+     "last": 3.4,
+     "swing": -2.2
+    },
+    "Texas Tech": {
+     "n": 2,
+     "higher": 2,
+     "lower": 0,
+     "avg": 2.2,
+     "last": 3.2,
+     "swing": -4.4
+    }
+   }
+  },
+  {
+   "gid": "401858304",
+   "home": "Florida State",
+   "away": "NC State",
+   "home_name": "Florida State",
+   "away_name": "NC State",
+   "weather": {
+    "temp": 61.9,
+    "wind": 8.3,
+    "gust": 17.4,
+    "wet": 2
+   },
+   "kick": "2026-11-21T15:30:00-05:00",
+   "ours": 10.3,
+   "market": 10.5,
+   "opened": 9.0,
+   "gap": -0.2,
+   "gap_flag": false,
+   "we_like": "NC State",
+   "ours_text": "Florida State −10.5",
+   "market_text": "Florida State −10.5",
+   "sources": {
+    "Sagarin": 9.7,
+    "SP+": 11.8,
+    "AlphaPoint (shadow)": 12.9
+   },
+   "injury_wire": {
+    "Florida State": [
+     "Starting edge Rylan Kennedy is reported out for the season; FSU downgraded two more starters and has 23 players ruled out vs NC State.",
+     "Starting RB Amari Thomas is expected to miss the rest of the season after being hurt vs Pittsburgh."
+    ],
+    "NC State": [
+     "WR Keenan Jackson, Will Wilson and Chase Bond are out vs Florida State; Popo Aguirre is probable."
+    ]
+   },
+   "history": {
+    "Florida State": {
+     "n": 2,
+     "higher": 0,
+     "lower": 1,
+     "avg": -1.5,
+     "last": -2.2,
+     "swing": 2.0
+    },
+    "NC State": {
+     "n": 2,
+     "higher": 1,
+     "lower": 0,
+     "avg": 1.8,
+     "last": 3.8,
+     "swing": -3.6
+    }
+   }
+  },
+  {
+   "gid": "401858532",
+   "home": "Penn State",
+   "away": "Rutgers",
+   "home_name": "Penn State",
+   "away_name": "Rutgers",
+   "weather": {
+    "temp": 59.2,
+    "wind": 8.4,
+    "gust": 15.2,
+    "wet": 0
+   },
+   "kick": "2026-11-21T15:30:00-05:00",
+   "ours": 23.7,
+   "market": 25.5,
+   "opened": 24.0,
+   "gap": -1.8,
+   "gap_flag": false,
+   "we_like": "Rutgers",
+   "ours_text": "Penn State −23.5",
+   "market_text": "Penn State −25.5",
+   "sources": {
+    "Sagarin": 21.3,
+    "SP+": 28.5,
+    "AlphaPoint (shadow)": 25.5
+   },
+   "injury_wire": {
+    "Penn State": [
+     "RB Carson Hansen, who left the Minnesota win in the first half, is now doubtful for Penn State's game vs Rutgers."
+    ],
+    "Rutgers": [
+     "Three Rutgers quarterbacks are on the Big Ten injury report for the Penn State game; Greg Schiano called the QB situation grim.",
+     "Leading tackler ruled out for the final 3 games; star WR KJ Duff is out for the season after high-ankle surgery."
+    ]
+   },
+   "history": {
+    "Penn State": {
+     "n": 2,
+     "higher": 0,
+     "lower": 1,
+     "avg": -1.4,
+     "last": -2.9,
+     "swing": 1.1
+    },
+    "Rutgers": {
+     "n": 2,
+     "higher": 1,
+     "lower": 0,
+     "avg": 1.3,
+     "last": -0.6,
+     "swing": 2.3
+    }
+   }
+  },
+  {
+   "gid": "401858528",
+   "home": "Michigan",
+   "away": "UCLA",
+   "home_name": "Michigan",
+   "away_name": "UCLA",
+   "weather": {
+    "temp": 63.0,
+    "wind": 8.0,
+    "gust": 17.4,
+    "wet": 0
+   },
+   "kick": "2026-11-21T15:30:00-05:00",
+   "ours": -5.8,
+   "market": -3.5,
+   "opened": -5.5,
+   "gap": -2.3,
+   "gap_flag": false,
+   "we_like": "UCLA",
+   "ours_text": "UCLA −6",
+   "market_text": "UCLA −3.5",
+   "sources": {
+    "Sagarin": -3.2,
+    "SP+": -9.8,
+    "AlphaPoint (shadow)": -9.0
+   },
+   "injury_wire": {
+    "Michigan": [
+     "Michigan ruled out 3 offensive linemen for UCLA; WR JJ Buchanan is likely out for the season. Andrew Marsh's status is being tracked."
+    ],
+    "UCLA": []
+   },
+   "history": {
+    "Michigan": {
+     "n": 2,
+     "higher": 0,
+     "lower": 1,
+     "avg": -1.0,
+     "last": -1.9,
+     "swing": -0.4
+    },
+    "UCLA": {
+     "n": 2,
+     "higher": 1,
+     "lower": 0,
+     "avg": 0.9,
+     "last": 0.5,
+     "swing": 1.8
+    }
+   }
+  },
+  {
+   "gid": "401856752",
+   "home": "Oklahoma",
+   "away": "Texas A&M",
+   "home_name": "Oklahoma",
+   "away_name": "Texas A&M",
+   "weather": {
+    "temp": 67.3,
+    "wind": 17.3,
+    "gust": 25.7,
+    "wet": 0
+   },
+   "kick": "2026-11-21T15:45:00-05:00",
+   "ours": 5.8,
+   "market": 7.0,
+   "opened": 7.0,
+   "gap": -1.2,
+   "gap_flag": false,
+   "we_like": "Texas A&M",
+   "ours_text": "Oklahoma −6",
+   "market_text": "Oklahoma −7",
+   "sources": {
+    "Sagarin": 7.1,
+    "SP+": 4.7,
+    "AlphaPoint (shadow)": 6.5
+   },
+   "injury_wire": {
+    "Oklahoma": [],
+    "Texas A&M": [
+     "Captain S Marcus Ratcliffe is ruled out vs Oklahoma; WR Norman is questionable as the WR room deals with more injuries."
+    ]
+   },
+   "history": {
+    "Oklahoma": {
+     "n": 2,
+     "higher": 1,
+     "lower": 1,
+     "avg": -0.8,
+     "last": -3.4,
+     "swing": 2.2
+    },
+    "Texas A&M": {
+     "n": 2,
+     "higher": 1,
+     "lower": 1,
+     "avg": -0.1,
+     "last": -3.4,
+     "swing": 4.6
+    }
+   }
+  },
+  {
+   "gid": "401871101",
+   "home": "Southern Miss",
+   "away": "South Alabama",
+   "home_name": "Southern Miss",
+   "away_name": "South Alabama",
+   "weather": {
+    "temp": 74.4,
+    "wind": 7.5,
+    "gust": 10.3,
+    "wet": 0
+   },
+   "kick": "2026-11-21T16:00:00-05:00",
+   "ours": -5.9,
+   "market": -5.0,
+   "opened": -5.5,
+   "gap": -0.9,
+   "gap_flag": false,
+   "we_like": "South Alabama",
+   "ours_text": "South Alabama −6",
+   "market_text": "South Alabama −5",
+   "sources": {
+    "Sagarin": -6.9,
+    "SP+": -6.0,
+    "AlphaPoint (shadow)": -5.4
+   },
+   "injury_wire": {
+    "Southern Miss": [],
+    "South Alabama": []
+   },
+   "history": {
+    "Southern Miss": null,
+    "South Alabama": null
+   }
+  },
+  {
+   "gid": "401869958",
+   "home": "Marshall",
+   "away": "Georgia State",
+   "home_name": "Marshall",
+   "away_name": "Georgia State",
+   "weather": {
+    "temp": 70.2,
+    "wind": 4.7,
+    "gust": 9.6,
+    "wet": 0
+   },
+   "kick": "2026-11-21T16:00:00-05:00",
+   "ours": -2.1,
+   "market": 3.0,
+   "opened": -1.0,
+   "gap": -5.1,
+   "gap_flag": true,
+   "we_like": "Georgia State",
+   "ours_text": "Georgia State −2",
+   "market_text": "Marshall −3",
+   "sources": {
+    "Sagarin": -2.8,
+    "SP+": -1.8,
+    "AlphaPoint (shadow)": -3.1
+   },
+   "injury_wire": {
+    "Marshall": [],
+    "Georgia State": []
+   },
+   "history": {
+    "Marshall": null,
+    "Georgia State": null
+   }
+  },
+  {
+   "gid": "401864543",
+   "home": "North Dakota State",
+   "away": "Northern Illinois",
+   "home_name": "North Dakota State",
+   "away_name": "Northern Illinois",
+   "weather": null,
+   "kick": "2026-11-21T16:00:00-05:00",
+   "ours": 30.4,
+   "market": 26.0,
+   "opened": 26.0,
+   "gap": 4.4,
+   "gap_flag": true,
+   "we_like": "North Dakota State",
+   "ours_text": "North Dakota State −30.5",
+   "market_text": "North Dakota State −26",
+   "sources": {
+    "Sagarin": 23.7,
+    "SP+": 40.8,
+    "AlphaPoint (shadow)": 31.5
+   },
+   "injury_wire": {
+    "North Dakota State": [],
+    "Northern Illinois": []
+   },
+   "history": {
+    "North Dakota State": null,
+    "Northern Illinois": null
+   }
+  },
+  {
+   "gid": "401869953",
+   "home": "Troy",
+   "away": "Georgia Southern",
+   "home_name": "Troy",
+   "away_name": "Georgia Southern",
+   "weather": {
+    "temp": 61.8,
+    "wind": 11.0,
+    "gust": 22.8,
+    "wet": 16
+   },
+   "kick": "2026-11-21T16:00:00-05:00",
+   "ours": -12.0,
+   "market": -9.5,
+   "opened": -8.0,
+   "gap": -2.5,
+   "gap_flag": false,
+   "we_like": "Georgia Southern",
+   "ours_text": "Georgia Southern −12",
+   "market_text": "Georgia Southern −9.5",
+   "sources": {
+    "Sagarin": -9.9,
+    "SP+": -15.7,
+    "AlphaPoint (shadow)": -14.3
+   },
+   "injury_wire": {
+    "Troy": [],
+    "Georgia Southern": []
+   },
+   "history": {
+    "Troy": null,
+    "Georgia Southern": null
+   }
+  },
+  {
+   "gid": "401860920",
+   "home": "Texas State",
+   "away": "Washington State",
+   "home_name": "Texas State",
+   "away_name": "Washington State",
+   "weather": {
+    "temp": 67.7,
+    "wind": 2.5,
+    "gust": 8.9,
+    "wet": 2
+   },
+   "kick": "2026-11-21T18:00:00-05:00",
+   "ours": 12.7,
+   "market": 13.5,
+   "opened": 10.5,
+   "gap": -0.8,
+   "gap_flag": false,
+   "we_like": "Washington State",
+   "ours_text": "Texas State −12.5",
+   "market_text": "Texas State −13.5",
+   "sources": {
+    "Sagarin": 8.3,
+    "SP+": 18.5,
+    "AlphaPoint (shadow)": 18.5
+   },
+   "injury_wire": {
+    "Texas State": [],
+    "Washington State": []
+   },
+   "history": {
+    "Texas State": null,
+    "Washington State": null
+   }
+  },
+  {
+   "gid": "401858534",
+   "home": "USC",
+   "away": "Maryland",
+   "home_name": "USC",
+   "away_name": "Maryland",
+   "weather": {
+    "temp": 69.1,
+    "wind": 2.8,
+    "gust": 3.1,
+    "wet": 0
+   },
+   "kick": "2026-11-21T18:15:00-05:00",
+   "ours": 16.8,
+   "market": 17.5,
+   "opened": 17.0,
+   "gap": -0.7,
+   "gap_flag": false,
+   "we_like": "Maryland",
+   "ours_text": "USC −17",
+   "market_text": "USC −17.5",
+   "sources": {
+    "Sagarin": 16.4,
+    "SP+": 18.9,
+    "AlphaPoint (shadow)": 19.9
+   },
+   "injury_wire": {
+    "USC": [
+     "Edge Braylan Shelby and TE Mark Bowman are listed questionable for USC vs Maryland."
+    ],
+    "Maryland": [
+     "QB Malik Washington (left knee/lower body) did not start vs Wisconsin; transfer Cardell Williams started. Maryland plays at USC on Nov. 21."
+    ]
+   },
+   "history": {
+    "USC": {
+     "n": 1,
+     "higher": 0,
+     "lower": 0,
+     "avg": 0.1,
+     "last": 0.1,
+     "swing": -0.8
+    },
+    "Maryland": {
+     "n": 2,
+     "higher": 0,
+     "lower": 1,
+     "avg": -0.9,
+     "last": -0.5,
+     "swing": 1.1
+    }
+   }
+  },
+  {
+   "gid": "401856865",
+   "home": "Kansas State",
+   "away": "Arizona",
+   "home_name": "Kansas State",
+   "away_name": "Arizona",
+   "weather": {
+    "temp": 53.0,
+    "wind": 16.8,
+    "gust": 23.7,
+    "wet": 65
+   },
+   "kick": "2026-11-21T19:00:00-05:00",
+   "ours": -7.1,
+   "market": -10.0,
+   "opened": -9.0,
+   "gap": 2.9,
+   "gap_flag": false,
+   "we_like": "Kansas State",
+   "ours_text": "Arizona −7",
+   "market_text": "Arizona −10",
+   "sources": {
+    "Sagarin": -7.8,
+    "SP+": -7.6,
+    "AlphaPoint (shadow)": -7.9
+   },
+   "injury_wire": {
+    "Kansas State": [
+     "Dillon Duff is likely to start at QB vs Arizona after starting the TCU loss; Avery Johnson has been out since October (neck/shoulder)."
+    ],
+    "Arizona": []
+   },
+   "history": {
+    "Kansas State": {
+     "n": 2,
+     "higher": 2,
+     "lower": 0,
+     "avg": 5.5,
+     "last": 6.7,
+     "swing": -3.7
+    },
+    "Arizona": {
+     "n": 2,
+     "higher": 1,
+     "lower": 1,
+     "avg": -0.0,
+     "last": -1.6,
+     "swing": -1.4
+    }
+   }
+  },
+  {
+   "gid": "401869938",
+   "home": "Louisiana Tech",
+   "away": "Arkansas State",
+   "home_name": "Louisiana Tech",
+   "away_name": "Arkansas State",
+   "weather": {
+    "temp": 70.7,
+    "wind": 6.7,
+    "gust": 12.8,
+    "wet": 0
+   },
+   "kick": "2026-11-21T19:00:00-05:00",
+   "ours": 12.1,
+   "market": 15.0,
+   "opened": 14.5,
+   "gap": -2.9,
+   "gap_flag": false,
+   "we_like": "Arkansas State",
+   "ours_text": "Louisiana Tech −12",
+   "market_text": "Louisiana Tech −15",
+   "sources": {
+    "Sagarin": 13.6,
+    "SP+": 12.1,
+    "AlphaPoint (shadow)": 17.1
+   },
+   "injury_wire": {
+    "Louisiana Tech": [],
+    "Arkansas State": []
+   },
+   "history": {
+    "Louisiana Tech": null,
+    "Arkansas State": null
+   }
+  },
+  {
+   "gid": "401858302",
+   "home": "Miami",
+   "away": "Virginia Tech",
+   "home_name": "Miami",
+   "away_name": "Virginia Tech",
+   "weather": {
+    "temp": 73.7,
+    "wind": 5.9,
+    "gust": 16.1,
+    "wet": 5
+   },
+   "kick": "2026-11-21T19:00:00-05:00",
+   "ours": 23.4,
+   "market": 20.5,
+   "opened": 20.5,
+   "gap": 2.9,
+   "gap_flag": false,
+   "we_like": "Miami",
+   "ours_text": "Miami −23.5",
+   "market_text": "Miami −20.5",
+   "sources": {
+    "Sagarin": 24.8,
+    "SP+": 24.4,
+    "AlphaPoint (shadow)": 26.0
+   },
+   "injury_wire": {
+    "Miami": [
+     "Miami WR Malachi Toney (ankle) remains out; Mario Cristobal says he is 'really close' with an ACC title game return in view. RB Mark Fletcher got a positive update after leaving Duke."
+    ],
+    "Virginia Tech": []
+   },
+   "history": {
+    "Miami": {
+     "n": 2,
+     "higher": 1,
+     "lower": 0,
+     "avg": 1.5,
+     "last": -0.8,
+     "swing": 3.7
+    },
+    "Virginia Tech": {
+     "n": 2,
+     "higher": 0,
+     "lower": 0,
+     "avg": -0.1,
+     "last": 0.3,
+     "swing": -3.2
+    }
+   }
+  },
+  {
+   "gid": "401864544",
+   "home": "San José State",
+   "away": "UNLV",
+   "home_name": "San José State",
+   "away_name": "UNLV",
+   "weather": {
+    "temp": 52.0,
+    "wind": 7.4,
+    "gust": 15.7,
+    "wet": 1
+   },
+   "kick": "2026-11-21T19:00:00-05:00",
+   "ours": -7.9,
+   "market": -6.5,
+   "opened": -6.0,
+   "gap": -1.4,
+   "gap_flag": false,
+   "we_like": "UNLV",
+   "ours_text": "UNLV −8",
+   "market_text": "UNLV −6.5",
+   "sources": {
+    "Sagarin": -7.8,
+    "SP+": -9.1,
+    "AlphaPoint (shadow)": -5.9
+   },
+   "injury_wire": {
+    "San José State": [],
+    "UNLV": []
+   },
+   "history": {
+    "San José State": null,
+    "UNLV": null
+   }
+  },
+  {
+   "gid": "401860918",
+   "home": "Fresno State",
+   "away": "Colorado State",
+   "home_name": "Fresno State",
+   "away_name": "Colorado State",
+   "weather": {
+    "temp": 53.1,
+    "wind": 0.2,
+    "gust": 1.6,
+    "wet": 0
+   },
+   "kick": "2026-11-21T19:30:00-05:00",
+   "ours": 18.5,
+   "market": 20.5,
+   "opened": 21.5,
+   "gap": -2.0,
+   "gap_flag": false,
+   "we_like": "Colorado State",
+   "ours_text": "Fresno State −18.5",
+   "market_text": "Fresno State −20.5",
+   "sources": {
+    "Sagarin": 18.9,
+    "SP+": 20.0,
+    "AlphaPoint (shadow)": 21.9
+   },
+   "injury_wire": {
+    "Fresno State": [],
+    "Colorado State": []
+   },
+   "history": {
+    "Fresno State": null,
+    "Colorado State": null
+   }
+  },
+  {
+   "gid": "401858308",
+   "home": "California",
+   "away": "Stanford",
+   "home_name": "California",
+   "away_name": "Stanford",
+   "weather": {
+    "temp": 50.2,
+    "wind": 4.0,
+    "gust": 13.4,
+    "wet": 11
+   },
+   "kick": "2026-11-21T19:30:00-05:00",
+   "ours": -1.6,
+   "market": -3.0,
+   "opened": -2.5,
+   "gap": 1.4,
+   "gap_flag": false,
+   "we_like": "California",
+   "ours_text": "Stanford −1.5",
+   "market_text": "Stanford −3",
+   "sources": {
+    "Sagarin": -2.2,
+    "SP+": -1.5,
+    "AlphaPoint (shadow)": -2.4
+   },
+   "injury_wire": {
+    "California": [],
+    "Stanford": []
+   },
+   "history": {
+    "California": {
+     "n": 1,
+     "higher": 0,
+     "lower": 1,
+     "avg": -2.0,
+     "last": -2.0,
+     "swing": 3.4
+    },
+    "Stanford": {
+     "n": 1,
+     "higher": 0,
+     "lower": 0,
+     "avg": -0.3,
+     "last": -0.3,
+     "swing": -1.1
+    }
+   }
+  },
+  {
+   "gid": "401856753",
+   "home": "South Carolina",
+   "away": "Georgia",
+   "home_name": "South Carolina",
+   "away_name": "Georgia",
+   "weather": {
+    "temp": 60.8,
+    "wind": 10.4,
+    "gust": 21.5,
+    "wet": 54
+   },
+   "kick": "2026-11-21T19:30:00-05:00",
+   "ours": -12.4,
+   "market": -14.5,
+   "opened": -16.5,
+   "gap": 2.1,
+   "gap_flag": false,
+   "we_like": "South Carolina",
+   "ours_text": "Georgia −12.5",
+   "market_text": "Georgia −14.5",
+   "sources": {
+    "Sagarin": -10.3,
+    "SP+": -16.5,
+    "AlphaPoint (shadow)": -15.7
+   },
+   "injury_wire": {
+    "South Carolina": [
+     "QB LaNorris Sellers (ankle), who sat vs Arkansas, is not on the SEC availability report and is on track to play vs Georgia.",
+     "WR Nyck Harbor (upper body) missed Arkansas and WR Mazeo Bennett Jr. left it (upper body). Shane Beamer: availability of both unknown for Georgia."
+    ],
+    "Georgia": [
+     "Starting C Drew Bobo, out vs Missouri (Cortez Smith filled in), has a chance to play vs South Carolina."
+    ]
+   },
+   "history": {
+    "South Carolina": {
+     "n": 2,
+     "higher": 1,
+     "lower": 1,
+     "avg": 0.4,
+     "last": 3.9,
+     "swing": -1.8
+    },
+    "Georgia": {
+     "n": 2,
+     "higher": 1,
+     "lower": 0,
+     "avg": 0.7,
+     "last": 0.2,
+     "swing": -2.3
+    }
+   }
+  },
+  {
+   "gid": "401856751",
+   "home": "Missouri",
+   "away": "Kentucky",
+   "home_name": "Missouri",
+   "away_name": "Kentucky",
+   "weather": {
+    "temp": 63.8,
+    "wind": 7.9,
+    "gust": 17.7,
+    "wet": 3
+   },
+   "kick": "2026-11-21T19:30:00-05:00",
+   "ours": 5.8,
+   "market": 5.0,
+   "opened": 5.5,
+   "gap": 0.8,
+   "gap_flag": false,
+   "we_like": "Missouri",
+   "ours_text": "Missouri −6",
+   "market_text": "Missouri −5",
+   "sources": {
+    "Sagarin": 5.1,
+    "SP+": 6.7,
+    "AlphaPoint (shadow)": 6.3
+   },
+   "injury_wire": {
+    "Missouri": [],
+    "Kentucky": [
+     "WR Nic Anderson (questionable) is trending toward playing vs Missouri; Jahlil Florence is also questionable."
+    ]
+   },
+   "history": {
+    "Missouri": {
+     "n": 2,
+     "higher": 0,
+     "lower": 1,
+     "avg": -0.8,
+     "last": -0.2,
+     "swing": 1.0
+    },
+    "Kentucky": {
+     "n": 2,
+     "higher": 0,
+     "lower": 1,
+     "avg": -0.5,
+     "last": 0.4,
+     "swing": -1.2
+    }
+   }
+  },
+  {
+   "gid": "401858306",
+   "home": "Louisville",
+   "away": "Pittsburgh",
+   "home_name": "Louisville",
+   "away_name": "Pittsburgh",
+   "weather": {
+    "temp": 58.0,
+    "wind": 1.5,
+    "gust": 1.6,
+    "wet": 0
+   },
+   "kick": "2026-11-21T19:30:00-05:00",
+   "ours": 10.8,
+   "market": 12.5,
+   "opened": 13.5,
+   "gap": -1.7,
+   "gap_flag": false,
+   "we_like": "Pittsburgh",
+   "ours_text": "Louisville −11",
+   "market_text": "Louisville −12.5",
+   "sources": {
+    "Sagarin": 10.9,
+    "SP+": 11.6,
+    "AlphaPoint (shadow)": 10.6
+   },
+   "injury_wire": {
+    "Louisville": [],
+    "Pittsburgh": []
+   },
+   "history": {
+    "Louisville": {
+     "n": 2,
+     "higher": 1,
+     "lower": 1,
+     "avg": -0.2,
+     "last": 2.5,
+     "swing": -4.2
+    },
+    "Pittsburgh": {
+     "n": 1,
+     "higher": 1,
+     "lower": 0,
+     "avg": 2.2,
+     "last": 2.2,
+     "swing": -0.5
+    }
+   }
+  },
+  {
+   "gid": "401858307",
+   "home": "Notre Dame",
+   "away": "SMU",
+   "home_name": "Notre Dame",
+   "away_name": "SMU",
+   "weather": {
+    "temp": 53.3,
+    "wind": 6.0,
+    "gust": 16.8,
+    "wet": 0
+   },
+   "kick": "2026-11-21T19:30:00-05:00",
+   "ours": 18.2,
+   "market": 20.5,
+   "opened": 20.5,
+   "gap": -2.3,
+   "gap_flag": false,
+   "we_like": "SMU",
+   "ours_text": "Notre Dame −18",
+   "market_text": "Notre Dame −20.5",
+   "sources": {
+    "Sagarin": 19.8,
+    "SP+": 18.3,
+    "AlphaPoint (shadow)": 27.4
+   },
+   "injury_wire": {
+    "Notre Dame": [
+     "Notre Dame defensive starter Francis Brewu is off the injury report and returns for the SMU game."
+    ],
+    "SMU": []
+   },
+   "history": {
+    "Notre Dame": {
+     "n": 2,
+     "higher": 1,
+     "lower": 1,
+     "avg": -1.3,
+     "last": 1.1,
+     "swing": -3.5
+    },
+    "SMU": {
+     "n": 2,
+     "higher": 0,
+     "lower": 1,
+     "avg": -2.6,
+     "last": -5.7,
+     "swing": 8.1
+    }
+   }
+  },
+  {
+   "gid": "401862836",
+   "home": "UAB",
+   "away": "UTSA",
+   "home_name": "UAB",
+   "away_name": "UTSA",
+   "weather": {
+    "temp": 60.6,
+    "wind": 3.7,
+    "gust": 14.5,
+    "wet": 1
+   },
+   "kick": "2026-11-21T20:00:00-05:00",
+   "ours": -7.0,
+   "market": -4.0,
+   "opened": -6.0,
+   "gap": -3.0,
+   "gap_flag": true,
+   "we_like": "UTSA",
+   "ours_text": "UTSA −7",
+   "market_text": "UTSA −4",
+   "sources": {
+    "Sagarin": -8.1,
+    "SP+": -7.0,
+    "AlphaPoint (shadow)": 0.6
+   },
+   "injury_wire": {
+    "UAB": [],
+    "UTSA": []
+   },
+   "history": {
+    "UAB": null,
+    "UTSA": null
+   }
+  },
+  {
+   "gid": "401856872",
+   "home": "TCU",
+   "away": "Utah",
+   "home_name": "TCU",
+   "away_name": "Utah",
+   "weather": {
+    "temp": 67.4,
+    "wind": 8.7,
+    "gust": 22.8,
+    "wet": 2
+   },
+   "kick": "2026-11-21T21:00:00-05:00",
+   "ours": -8.3,
+   "market": -8.5,
+   "opened": -6.5,
+   "gap": 0.2,
+   "gap_flag": false,
+   "we_like": "TCU",
+   "ours_text": "Utah −8.5",
+   "market_text": "Utah −8.5",
+   "sources": {
+    "Sagarin": -6.8,
+    "SP+": -11.3,
+    "AlphaPoint (shadow)": -8.4
+   },
+   "injury_wire": {
+    "TCU": [
+     "QB Jaden Craig is doubtful vs Utah; backup Adam Schobel is expected to make his first career start, per the Fort Worth Star-Telegram."
+    ],
+    "Utah": []
+   },
+   "history": {
+    "TCU": {
+     "n": 2,
+     "higher": 0,
+     "lower": 2,
+     "avg": -4.1,
+     "last": -6.7,
+     "swing": 6.8
+    },
+    "Utah": {
+     "n": 2,
+     "higher": 1,
+     "lower": 0,
+     "avg": 1.1,
+     "last": 1.6,
+     "swing": -1.7
+    }
+   }
+  },
+  {
+   "gid": "401860925",
+   "home": "Boise State",
+   "away": "San Diego State",
+   "home_name": "Boise State",
+   "away_name": "San Diego State",
+   "weather": {
+    "temp": 38.4,
+    "wind": 7.5,
+    "gust": 11.2,
+    "wet": 1
+   },
+   "kick": "2026-11-21T21:30:00-05:00",
+   "ours": 18.5,
+   "market": 20.5,
+   "opened": 17.0,
+   "gap": -2.0,
+   "gap_flag": false,
+   "we_like": "San Diego State",
+   "ours_text": "Boise State −18.5",
+   "market_text": "Boise State −20.5",
+   "sources": {
+    "Sagarin": 17.9,
+    "SP+": 21.2,
+    "AlphaPoint (shadow)": 21.2
+   },
+   "injury_wire": {
+    "Boise State": [],
+    "San Diego State": []
+   },
+   "history": {
+    "Boise State": null,
+    "San Diego State": null
+   }
+  },
+  {
+   "gid": "401856870",
+   "home": "Arizona State",
+   "away": "Oklahoma State",
+   "home_name": "Arizona State",
+   "away_name": "Oklahoma State",
+   "weather": {
+    "temp": 54.7,
+    "wind": 5.4,
+    "gust": 7.2,
+    "wet": 0
+   },
+   "kick": "2026-11-21T22:15:00-05:00",
+   "ours": -4.1,
+   "market": -2.5,
+   "opened": -3.0,
+   "gap": -1.6,
+   "gap_flag": false,
+   "we_like": "Oklahoma State",
+   "ours_text": "Oklahoma State −4",
+   "market_text": "Oklahoma State −2.5",
+   "sources": {
+    "Sagarin": -2.6,
+    "SP+": -6.6,
+    "AlphaPoint (shadow)": -2.6
+   },
+   "injury_wire": {
+    "Arizona State": [],
+    "Oklahoma State": [
+     "QB Drew Mestemaker is listed questionable vs Arizona State with a stinger (shoulder), hurt vs Texas Tech; Eric Morris's earlier updates trended positive."
+    ]
+   },
+   "history": {
+    "Arizona State": {
+     "n": 2,
+     "higher": 2,
+     "lower": 0,
+     "avg": 2.6,
+     "last": 1.0,
+     "swing": -2.7
+    },
+    "Oklahoma State": {
+     "n": 2,
+     "higher": 0,
+     "lower": 2,
+     "avg": -3.8,
+     "last": -3.2,
+     "swing": 4.9
+    }
+   }
+  },
+  {
+   "gid": "401860919",
+   "home": "Oregon State",
+   "away": "Utah State",
+   "home_name": "Oregon State",
+   "away_name": "Utah State",
+   "weather": {
+    "temp": 40.0,
+    "wind": 1.8,
+    "gust": 11.9,
+    "wet": 9
+   },
+   "kick": "2026-11-21T22:30:00-05:00",
+   "ours": 11.4,
+   "market": 7.0,
+   "opened": 8.5,
+   "gap": 4.4,
+   "gap_flag": true,
+   "we_like": "Oregon State",
+   "ours_text": "Oregon State −11.5",
+   "market_text": "Oregon State −7",
+   "sources": {
+    "Sagarin": 10.7,
+    "SP+": 13.3,
+    "AlphaPoint (shadow)": 13.1
+   },
+   "injury_wire": {
+    "Oregon State": [],
+    "Utah State": []
+   },
+   "history": {
+    "Oregon State": null,
+    "Utah State": null
+   }
+  },
+  {
+   "gid": "401864541",
+   "home": "Nevada",
+   "away": "Hawai'i",
+   "home_name": "Nevada",
+   "away_name": "Hawai'i",
+   "weather": {
+    "temp": 34.7,
+    "wind": 3.7,
+    "gust": 5.6,
+    "wet": 0
+   },
+   "kick": "2026-11-21T22:30:00-05:00",
+   "ours": 4.7,
+   "market": 7.0,
+   "opened": 4.0,
+   "gap": -2.3,
+   "gap_flag": false,
+   "we_like": "Hawai'i",
+   "ours_text": "Nevada −4.5",
+   "market_text": "Nevada −7",
+   "sources": {
+    "Sagarin": 2.1,
+    "SP+": 7.7,
+    "AlphaPoint (shadow)": 6.1
+   },
+   "injury_wire": {
+    "Nevada": [],
+    "Hawai'i": []
+   },
+   "history": {
+    "Nevada": null,
+    "Hawai'i": null
+   }
+  },
+  {
+   "gid": "401856879",
+   "home": "Texas Tech",
+   "away": "TCU",
+   "home_name": "Texas Tech",
+   "away_name": "TCU",
+   "weather": {
+    "temp": 49.8,
+    "wind": 8.7,
+    "gust": 15.0,
+    "wet": 3
+   },
+   "kick": "2026-11-26T20:00:00-05:00",
+   "ours": 13.0,
+   "market": 10.5,
+   "opened": 16.5,
+   "gap": 2.5,
+   "gap_flag": false,
+   "we_like": "Texas Tech",
+   "ours_text": "Texas Tech −13",
+   "market_text": "Texas Tech −10.5",
+   "sources": {
+    "Sagarin": 11.9,
+    "SP+": 15.2,
+    "AlphaPoint (shadow)": 11.5
+   },
+   "injury_wire": {
+    "Texas Tech": [],
+    "TCU": [
+     "QB Jaden Craig is doubtful vs Utah; backup Adam Schobel is expected to make his first career start, per the Fort Worth Star-Telegram."
+    ]
+   },
+   "history": {
+    "Texas Tech": {
+     "n": 2,
+     "higher": 2,
+     "lower": 0,
+     "avg": 2.2,
+     "last": 3.2,
+     "swing": -0.8
+    },
+    "TCU": {
+     "n": 2,
+     "higher": 0,
+     "lower": 2,
+     "avg": -4.1,
+     "last": -6.7,
+     "swing": 4.2
+    }
+   }
+  },
+  {
+   "gid": "401858536",
+   "home": "Iowa",
+   "away": "Nebraska",
+   "home_name": "Iowa",
+   "away_name": "Nebraska",
+   "weather": {
+    "temp": 37.0,
+    "wind": 12.1,
+    "gust": 18.3,
+    "wet": 3
+   },
+   "kick": "2026-11-27T12:00:00-05:00",
+   "ours": 5.8,
+   "market": 6.5,
+   "opened": 6.5,
+   "gap": -0.7,
+   "gap_flag": false,
+   "we_like": "Nebraska",
+   "ours_text": "Iowa −6",
+   "market_text": "Iowa −6.5",
+   "sources": {
+    "Sagarin": 7.6,
+    "SP+": 4.3,
+    "AlphaPoint (shadow)": 2.6
+   },
+   "injury_wire": {
+    "Iowa": [
+     "Star WR Tony Diaz (left the Purdue game hurt) has 'a chance' to play at Illinois, per Kirk Ferentz; Xavier Styles is likely out."
+    ],
+    "Nebraska": [
+     "Three Nebraska defensive starters are out vs Ohio State, including Jahsear Whittington, per the Big Ten availability report."
+    ]
+   },
+   "history": {
+    "Iowa": {
+     "n": 2,
+     "higher": 0,
+     "lower": 1,
+     "avg": -2.4,
+     "last": -0.7,
+     "swing": 0.0
+    },
+    "Nebraska": {
+     "n": 3,
+     "higher": 0,
+     "lower": 0,
+     "avg": 0.1,
+     "last": 0.2,
+     "swing": 0.4
+    }
+   }
+  },
+  {
+   "gid": "401856762",
+   "home": "Ole Miss",
+   "away": "Mississippi State",
+   "home_name": "Ole Miss",
+   "away_name": "Mississippi State",
+   "weather": {
+    "temp": 48.5,
+    "wind": 7.4,
+    "gust": 12.3,
+    "wet": 0
+   },
+   "kick": "2026-11-27T12:00:00-05:00",
+   "ours": 15.4,
+   "market": 14.5,
+   "opened": 14.5,
+   "gap": 0.9,
+   "gap_flag": false,
+   "we_like": "Ole Miss",
+   "ours_text": "Ole Miss −15.5",
+   "market_text": "Ole Miss −14.5",
+   "sources": {
+    "Sagarin": 16.3,
+    "SP+": 16.1,
+    "AlphaPoint (shadow)": 20.8
+   },
+   "injury_wire": {
+    "Ole Miss": [],
+    "Mississippi State": [
+     "QB AJ Swann is out vs Tennessee Tech after being hurt again at Auburn; Mississippi State is down to its third-string QB."
+    ]
+   },
+   "history": {
+    "Ole Miss": {
+     "n": 3,
+     "higher": 1,
+     "lower": 2,
+     "avg": -1.5,
+     "last": -6.7,
+     "swing": 7.7
+    },
+    "Mississippi State": {
+     "n": 3,
+     "higher": 2,
+     "lower": 1,
+     "avg": 0.8,
+     "last": -9.3,
+     "swing": 8.4
+    }
+   }
+  },
+  {
+   "gid": "401856759",
+   "home": "Florida State",
+   "away": "Florida",
+   "home_name": "Florida State",
+   "away_name": "Florida",
+   "weather": {
+    "temp": 65.9,
+    "wind": 4.5,
+    "gust": 5.1,
+    "wet": 5
+   },
+   "kick": "2026-11-27T15:30:00-05:00",
+   "ours": -0.1,
+   "market": -4.5,
+   "opened": -4.5,
+   "gap": 4.4,
+   "gap_flag": true,
+   "we_like": "Florida State",
+   "ours_text": "Florida PK",
+   "market_text": "Florida −4.5",
+   "sources": {
+    "Sagarin": -3.9,
+    "SP+": 3.3,
+    "AlphaPoint (shadow)": 5.0
+   },
+   "injury_wire": {
+    "Florida State": [
+     "Starting edge Rylan Kennedy is reported out for the season; FSU downgraded two more starters and has 23 players ruled out vs NC State.",
+     "Starting RB Amari Thomas is expected to miss the rest of the season after being hurt vs Pittsburgh."
+    ],
+    "Florida": [
+     "DJ Coleman and WR Vernell Brown III are out vs Vanderbilt per Florida's initial injury report."
+    ]
+   },
+   "history": {
+    "Florida State": {
+     "n": 2,
+     "higher": 0,
+     "lower": 1,
+     "avg": -1.5,
+     "last": -2.2,
+     "swing": 6.6
+    },
+    "Florida": {
+     "n": 3,
+     "higher": 0,
+     "lower": 1,
+     "avg": -0.9,
+     "last": -0.4,
+     "swing": -4.0
+    }
+   }
+  },
+  {
+   "gid": "401856756",
+   "home": "Texas A&M",
+   "away": "Texas",
+   "home_name": "Texas A&M",
+   "away_name": "Texas",
+   "weather": {
+    "temp": 55.5,
+    "wind": 5.6,
+    "gust": 7.4,
+    "wet": 8
+   },
+   "kick": "2026-11-27T19:30:00-05:00",
+   "ours": -7.8,
+   "market": -7.5,
+   "opened": -2.5,
+   "gap": -0.3,
+   "gap_flag": false,
+   "we_like": "Texas",
+   "ours_text": "Texas −8",
+   "market_text": "Texas −7.5",
+   "sources": {
+    "Sagarin": -5.8,
+    "SP+": -11.3,
+    "AlphaPoint (shadow)": -8.2
+   },
+   "injury_wire": {
+    "Texas A&M": [
+     "Captain S Marcus Ratcliffe is ruled out vs Oklahoma; WR Norman is questionable as the WR room deals with more injuries."
+    ],
+    "Texas": [
+     "Star edge rusher Colin Simmons is back on the Texas injury report ahead of Arkansas.",
+     "DT Hero Kanu is out for the season after surgery for a torn biceps."
+    ]
+   },
+   "history": {
+    "Texas A&M": {
+     "n": 2,
+     "higher": 1,
+     "lower": 1,
+     "avg": -0.1,
+     "last": -3.4,
+     "swing": 3.1
+    },
+    "Texas": {
+     "n": 2,
+     "higher": 2,
+     "lower": 0,
+     "avg": 2.0,
+     "last": 2.5,
+     "swing": -2.2
+    }
+   }
+  },
+  {
+   "gid": "401858314",
+   "home": "Syracuse",
+   "away": "Notre Dame",
+   "home_name": "Syracuse",
+   "away_name": "Notre Dame",
+   "weather": null,
+   "kick": "2026-11-28T12:00:00-05:00",
+   "ours": -21.0,
+   "market": -20.5,
+   "opened": -20.5,
+   "gap": -0.5,
+   "gap_flag": false,
+   "we_like": "Notre Dame",
+   "ours_text": "Notre Dame −21",
+   "market_text": "Notre Dame −20.5",
+   "sources": {
+    "Sagarin": -18.7,
+    "SP+": -26.3,
+    "AlphaPoint (shadow)": -26.5
+   },
+   "injury_wire": {
+    "Syracuse": [],
+    "Notre Dame": [
+     "Notre Dame defensive starter Francis Brewu is off the injury report and returns for the SMU game."
+    ]
+   },
+   "history": {
+    "Syracuse": {
+     "n": 3,
+     "higher": 0,
+     "lower": 2,
+     "avg": -1.6,
+     "last": 0.2,
+     "swing": -0.7
+    },
+    "Notre Dame": {
+     "n": 2,
+     "higher": 1,
+     "lower": 1,
+     "avg": -1.3,
+     "last": 1.1,
+     "swing": -0.6
+    }
+   }
+  },
+  {
+   "gid": "401858313",
+   "home": "North Carolina",
+   "away": "NC State",
+   "home_name": "North Carolina",
+   "away_name": "NC State",
+   "weather": {
+    "temp": 55.0,
+    "wind": 6.9,
+    "gust": 11.0,
+    "wet": 13
+   },
+   "kick": "2026-11-28T12:00:00-05:00",
+   "ours": 10.0,
+   "market": -1.5,
+   "opened": -1.5,
+   "gap": 11.5,
+   "gap_flag": true,
+   "we_like": "North Carolina",
+   "ours_text": "North Carolina −10",
+   "market_text": "NC State −1.5",
+   "sources": {
+    "Sagarin": 11.2,
+    "SP+": 9.8,
+    "AlphaPoint (shadow)": 13.2
+   },
+   "injury_wire": {
+    "North Carolina": [
+     "QB Billy Edwards Jr. (upper body, left the Louisville loss in the 3rd quarter) remains uncertain on UNC's initial injury report for Virginia. Freshman Travis Burgess finished last game."
+    ],
+    "NC State": [
+     "WR Keenan Jackson, Will Wilson and Chase Bond are out vs Florida State; Popo Aguirre is probable."
+    ]
+   },
+   "history": {
+    "North Carolina": {
+     "n": 3,
+     "higher": 0,
+     "lower": 2,
+     "avg": -1.7,
+     "last": -1.9,
+     "swing": 13.5
+    },
+    "NC State": {
+     "n": 2,
+     "higher": 1,
+     "lower": 0,
+     "avg": 1.8,
+     "last": 3.8,
+     "swing": -15.4
+    }
+   }
+  },
+  {
+   "gid": "401858540",
+   "home": "Ohio State",
+   "away": "Michigan",
+   "home_name": "Ohio State",
+   "away_name": "Michigan",
+   "weather": {
+    "temp": 45.3,
+    "wind": 6.7,
+    "gust": 9.6,
+    "wet": 7
+   },
+   "kick": "2026-11-28T12:00:00-05:00",
+   "ours": 18.9,
+   "market": 12.5,
+   "opened": 13.5,
+   "gap": 6.4,
+   "gap_flag": true,
+   "we_like": "Ohio State",
+   "ours_text": "Ohio State −19",
+   "market_text": "Ohio State −12.5",
+   "sources": {
+    "Sagarin": 17.5,
+    "SP+": 22.1,
+    "AlphaPoint (shadow)": 21.3
+   },
+   "injury_wire": {
+    "Ohio State": [
+     "QB Julian Sayin (throwing arm, hurt Oct. 17 at Indiana) remains sidelined; freshman Luke Fahey has started. Ryan Day gave an encouraging Sayin update this week; no return date.",
+     "Starting LG Luke Montgomery and Brock Boyd are cleared to return vs Nebraska, per the Big Ten availability report."
+    ],
+    "Michigan": [
+     "Michigan ruled out 3 offensive linemen for UCLA; WR JJ Buchanan is likely out for the season. Andrew Marsh's status is being tracked."
+    ]
+   },
+   "history": {
+    "Ohio State": {
+     "n": 3,
+     "higher": 1,
+     "lower": 0,
+     "avg": 0.5,
+     "last": -0.2,
+     "swing": 6.6
+    },
+    "Michigan": {
+     "n": 2,
+     "higher": 0,
+     "lower": 1,
+     "avg": -1.0,
+     "last": -1.9,
+     "swing": -4.4
+    }
+   }
+  },
+  {
+   "gid": "401858537",
+   "home": "Northwestern",
+   "away": "Illinois",
+   "home_name": "Northwestern",
+   "away_name": "Illinois",
+   "weather": {
+    "temp": 40.6,
+    "wind": 9.3,
+    "gust": 14.1,
+    "wet": 3
+   },
+   "kick": "2026-11-28T12:30:00-05:00",
+   "ours": 2.9,
+   "market": -3.5,
+   "opened": -3.5,
+   "gap": 6.4,
+   "gap_flag": true,
+   "we_like": "Northwestern",
+   "ours_text": "Northwestern −3",
+   "market_text": "Illinois −3.5",
+   "sources": {
+    "Sagarin": 2.0,
+    "SP+": 4.2,
+    "AlphaPoint (shadow)": 8.0
+   },
+   "injury_wire": {
+    "Northwestern": [
+     "QB Aidan Chiles (upper body) is ruled out vs Minnesota, his third straight missed game."
+    ],
+    "Illinois": [
+     "QB Katin Houser is not likely to play vs Iowa after surgery on a broken nose, Bret Bielema said Tuesday; Michael Clayton II has started in his absence."
+    ]
+   },
+   "history": {
+    "Northwestern": {
+     "n": 3,
+     "higher": 2,
+     "lower": 0,
+     "avg": 2.8,
+     "last": 3.6,
+     "swing": 2.9
+    },
+    "Illinois": {
+     "n": 2,
+     "higher": 0,
+     "lower": 0,
+     "avg": -0.0,
+     "last": -0.5,
+     "swing": -5.9
+    }
+   }
+  },
+  {
+   "gid": "401858317",
+   "home": "Virginia Tech",
+   "away": "Virginia",
+   "home_name": "Virginia Tech",
+   "away_name": "Virginia",
+   "weather": {
+    "temp": 41.5,
+    "wind": 6.2,
+    "gust": 11.2,
+    "wet": 21
+   },
+   "kick": "2026-11-28T15:00:00-05:00",
+   "ours": 1.5,
+   "market": 1.5,
+   "opened": 1.5,
+   "gap": 0.0,
+   "gap_flag": false,
+   "we_like": "Virginia Tech",
+   "ours_text": "Virginia Tech −1.5",
+   "market_text": "Virginia Tech −1.5",
+   "sources": {
+    "Sagarin": -0.2,
+    "SP+": 3.0,
+    "AlphaPoint (shadow)": 1.2
+   },
+   "injury_wire": {
+    "Virginia Tech": [],
+    "Virginia": []
+   },
+   "history": {
+    "Virginia Tech": {
+     "n": 2,
+     "higher": 0,
+     "lower": 0,
+     "avg": -0.1,
+     "last": 0.3,
+     "swing": -0.3
+    },
+    "Virginia": {
+     "n": 2,
+     "higher": 2,
+     "lower": 0,
+     "avg": 2.0,
+     "last": 1.9,
+     "swing": -2.0
+    }
+   }
+  },
+  {
+   "gid": "401858543",
+   "home": "UCLA",
+   "away": "USC",
+   "home_name": "UCLA",
+   "away_name": "USC",
+   "weather": {
+    "temp": 73.2,
+    "wind": 4.9,
+    "gust": 2.7,
+    "wet": 6
+   },
+   "kick": "2026-11-28T15:30:00-05:00",
+   "ours": 7.0,
+   "market": 2.5,
+   "opened": -10.5,
+   "gap": 4.5,
+   "gap_flag": true,
+   "we_like": "UCLA",
+   "ours_text": "UCLA −7",
+   "market_text": "UCLA −2.5",
+   "sources": {
+    "Sagarin": 4.6,
+    "SP+": 9.8,
+    "AlphaPoint (shadow)": 6.8
+   },
+   "injury_wire": {
+    "UCLA": [],
+    "USC": [
+     "Edge Braylan Shelby and TE Mark Bowman are listed questionable for USC vs Maryland."
+    ]
+   },
+   "history": {
+    "UCLA": {
+     "n": 2,
+     "higher": 1,
+     "lower": 0,
+     "avg": 0.9,
+     "last": 0.5,
+     "swing": 4.0
+    },
+    "USC": {
+     "n": 1,
+     "higher": 0,
+     "lower": 0,
+     "avg": 0.1,
+     "last": 0.1,
+     "swing": -4.6
+    }
+   }
+  },
+  {
+   "gid": "401856763",
+   "home": "Missouri",
+   "away": "Oklahoma",
+   "home_name": "Missouri",
+   "away_name": "Oklahoma",
+   "weather": {
+    "temp": 56.2,
+    "wind": 12.5,
+    "gust": 25.5,
+    "wet": 2
+   },
+   "kick": "2026-11-28T16:15:00-05:00",
+   "ours": 4.1,
+   "market": 1.5,
+   "opened": 1.5,
+   "gap": 2.6,
+   "gap_flag": false,
+   "we_like": "Missouri",
+   "ours_text": "Missouri −4",
+   "market_text": "Missouri −1.5",
+   "sources": {
+    "Sagarin": 1.6,
+    "SP+": 6.6,
+    "AlphaPoint (shadow)": 2.4
+   },
+   "injury_wire": {
+    "Missouri": [],
+    "Oklahoma": []
+   },
+   "history": {
+    "Missouri": {
+     "n": 2,
+     "higher": 0,
+     "lower": 1,
+     "avg": -0.8,
+     "last": -0.2,
+     "swing": 2.8
+    },
+    "Oklahoma": {
+     "n": 2,
+     "higher": 1,
+     "lower": 1,
+     "avg": -0.8,
+     "last": -3.4,
+     "swing": 0.8
+    }
+   }
+  },
+  {
+   "gid": "401856873",
+   "home": "Arizona",
+   "away": "Arizona State",
+   "home_name": "Arizona",
+   "away_name": "Arizona State",
+   "weather": {
+    "temp": 65.7,
+    "wind": 4.0,
+    "gust": 4.9,
+    "wet": 1
+   },
+   "kick": "2026-11-28T21:00:00-05:00",
+   "ours": 11.6,
+   "market": 4.5,
+   "opened": 4.5,
+   "gap": 7.1,
+   "gap_flag": true,
+   "we_like": "Arizona",
+   "ours_text": "Arizona −11.5",
+   "market_text": "Arizona −4.5",
+   "sources": {
+    "Sagarin": 9.4,
+    "SP+": 14.9,
+    "AlphaPoint (shadow)": 10.8
+   },
+   "injury_wire": {
+    "Arizona": [],
+    "Arizona State": []
+   },
+   "history": {
+    "Arizona": {
+     "n": 2,
+     "higher": 1,
+     "lower": 1,
+     "avg": -0.0,
+     "last": -1.6,
+     "swing": 8.7
+    },
+    "Arizona State": {
+     "n": 2,
+     "higher": 2,
+     "lower": 0,
+     "avg": 2.6,
+     "last": 1.0,
+     "swing": -8.1
+    }
+   }
+  },
+  {
+   "gid": "401856764",
+   "home": "Clemson",
+   "away": "South Carolina",
+   "home_name": "Clemson",
+   "away_name": "South Carolina",
+   "weather": {
+    "temp": 41.7,
+    "wind": 3.9,
+    "gust": 5.8,
+    "wet": 5
+   },
+   "kick": "2026-11-28T00:00:00-05:00",
+   "ours": -4.3,
+   "market": 3.0,
+   "opened": 3.0,
+   "gap": -7.3,
+   "gap_flag": true,
+   "we_like": "South Carolina",
+   "ours_text": "South Carolina −4.5",
+   "market_text": "Clemson −3",
+   "sources": {
+    "Sagarin": -3.6,
+    "SP+": -6.1,
+    "AlphaPoint (shadow)": -7.9
+   },
+   "injury_wire": {
+    "Clemson": [],
+    "South Carolina": [
+     "QB LaNorris Sellers (ankle), who sat vs Arkansas, is not on the SEC availability report and is on track to play vs Georgia.",
+     "WR Nyck Harbor (upper body) missed Arkansas and WR Mazeo Bennett Jr. left it (upper body). Shane Beamer: availability of both unknown for Georgia."
+    ]
+   },
+   "history": {
+    "Clemson": {
+     "n": 3,
+     "higher": 2,
+     "lower": 1,
+     "avg": 0.3,
+     "last": 1.4,
+     "swing": -8.7
+    },
+    "South Carolina": {
+     "n": 2,
+     "higher": 1,
+     "lower": 1,
+     "avg": 0.4,
+     "last": 3.9,
+     "swing": 3.4
+    }
+   }
+  },
+  {
+   "gid": "401858312",
+   "home": "Wake Forest",
+   "away": "Duke",
+   "home_name": "Wake Forest",
+   "away_name": "Duke",
+   "weather": {
+    "temp": 46.3,
+    "wind": 10.5,
+    "gust": 23.7,
+    "wet": 4
+   },
+   "kick": "2026-11-28T00:00:00-05:00",
+   "ours": 10.9,
+   "market": 10.5,
+   "opened": 10.5,
+   "gap": 0.4,
+   "gap_flag": false,
+   "we_like": "Wake Forest",
+   "ours_text": "Wake Forest −11",
+   "market_text": "Wake Forest −10.5",
+   "sources": {
+    "Sagarin": 9.6,
+    "SP+": 13.2,
+    "AlphaPoint (shadow)": 20.1
+   },
+   "injury_wire": {
+    "Wake Forest": [],
+    "Duke": []
+   },
+   "history": {
+    "Wake Forest": {
+     "n": 3,
+     "higher": 2,
+     "lower": 1,
+     "avg": 2.3,
+     "last": -2.6,
+     "swing": 2.9
+    },
+    "Duke": {
+     "n": 3,
+     "higher": 0,
+     "lower": 1,
+     "avg": -0.1,
+     "last": -1.4,
+     "swing": 1.0
+    }
+   }
+  },
+  {
+   "gid": "401856757",
+   "home": "Alabama",
+   "away": "Auburn",
+   "home_name": "Alabama",
+   "away_name": "Auburn",
+   "weather": {
+    "temp": 44.6,
+    "wind": 3.3,
+    "gust": 5.6,
+    "wet": 4
+   },
+   "kick": "2026-11-28T00:00:00-05:00",
+   "ours": 17.2,
+   "market": 15.5,
+   "opened": 10.0,
+   "gap": 1.7,
+   "gap_flag": false,
+   "we_like": "Alabama",
+   "ours_text": "Alabama −17",
+   "market_text": "Alabama −15.5",
+   "sources": {
+    "Sagarin": 14.2,
+    "SP+": 21.9,
+    "AlphaPoint (shadow)": 17.1
+   },
+   "injury_wire": {
+    "Alabama": [],
+    "Auburn": []
+   },
+   "history": {
+    "Alabama": {
+     "n": 3,
+     "higher": 1,
+     "lower": 1,
+     "avg": 1.8,
+     "last": -1.0,
+     "swing": 2.8
+    },
+    "Auburn": {
+     "n": 2,
+     "higher": 0,
+     "lower": 1,
+     "avg": -2.7,
+     "last": -5.0,
+     "swing": 3.3
+    }
+   }
+  },
+  {
+   "gid": "401856765",
+   "home": "Vanderbilt",
+   "away": "Tennessee",
+   "home_name": "Vanderbilt",
+   "away_name": "Tennessee",
+   "weather": {
+    "temp": 43.6,
+    "wind": 4.7,
+    "gust": 10.5,
+    "wet": 2
+   },
+   "kick": "2026-11-28T00:00:00-05:00",
+   "ours": -16.4,
+   "market": -3.0,
+   "opened": -3.0,
+   "gap": -13.4,
+   "gap_flag": true,
+   "we_like": "Tennessee",
+   "ours_text": "Tennessee −16.5",
+   "market_text": "Tennessee −3",
+   "sources": {
+    "Sagarin": -13.4,
+    "SP+": -21.8,
+    "AlphaPoint (shadow)": -16.7
+   },
+   "injury_wire": {
+    "Vanderbilt": [
+     "QB Jared Curtis is off the SEC injury report for the Florida game after an injury update earlier in the week."
+    ],
+    "Tennessee": [
+     "QB George MacIntyre (knee) left the Texas A&M win in the 3rd quarter; per On3 he is not expected to miss time and should be available vs LSU. Faizon Brandon finished that game.",
+     "WR Mike Matthews (knee) and OL Nic Moore are out for the season; Moore is the 11th Vol lost for the year."
+    ]
+   },
+   "history": {
+    "Vanderbilt": {
+     "n": 3,
+     "higher": 0,
+     "lower": 2,
+     "avg": -4.0,
+     "last": 0.4,
+     "swing": -13.8
+    },
+    "Tennessee": {
+     "n": 2,
+     "higher": 2,
+     "lower": 0,
+     "avg": 2.5,
+     "last": 3.4,
+     "swing": 10.0
+    }
+   }
+  },
+  {
+   "gid": "401858541",
+   "home": "Oregon",
+   "away": "Washington",
+   "home_name": "Oregon",
+   "away_name": "Washington",
+   "weather": {
+    "temp": 49.5,
+    "wind": 2.6,
+    "gust": 2.5,
+    "wet": 39
+   },
+   "kick": "2026-11-28T00:00:00-05:00",
+   "ours": 12.7,
+   "market": 12.5,
+   "opened": 15.5,
+   "gap": 0.2,
+   "gap_flag": false,
+   "we_like": "Oregon",
+   "ours_text": "Oregon −12.5",
+   "market_text": "Oregon −12.5",
+   "sources": {
+    "Sagarin": 14.4,
+    "SP+": 12.2,
+    "AlphaPoint (shadow)": 11.6
+   },
+   "injury_wire": {
+    "Oregon": [],
+    "Washington": []
+   },
+   "history": {
+    "Oregon": {
+     "n": 3,
+     "higher": 1,
+     "lower": 2,
+     "avg": -1.3,
+     "last": -3.5,
+     "swing": 3.7
+    },
+    "Washington": {
+     "n": 2,
+     "higher": 1,
+     "lower": 0,
+     "avg": 0.8,
+     "last": 1.8,
+     "swing": -2.0
+    }
+   }
+  },
+  {
+   "gid": "401856761",
+   "home": "Kentucky",
+   "away": "Louisville",
+   "home_name": "Kentucky",
+   "away_name": "Louisville",
+   "weather": {
+    "temp": 37.9,
+    "wind": 12.8,
+    "gust": 21.5,
+    "wet": 3
+   },
+   "kick": "2026-11-28T00:00:00-05:00",
+   "ours": -2.5,
+   "market": 1.5,
+   "opened": 1.5,
+   "gap": -4.0,
+   "gap_flag": true,
+   "we_like": "Louisville",
+   "ours_text": "Louisville −2.5",
+   "market_text": "Kentucky −1.5",
+   "sources": {
+    "Sagarin": 0.9,
+    "SP+": -6.6,
+    "AlphaPoint (shadow)": -7.8
+   },
+   "injury_wire": {
+    "Kentucky": [
+     "WR Nic Anderson (questionable) is trending toward playing vs Missouri; Jahlil Florence is also questionable."
+    ],
+    "Louisville": []
+   },
+   "history": {
+    "Kentucky": {
+     "n": 2,
+     "higher": 0,
+     "lower": 1,
+     "avg": -0.5,
+     "last": 0.4,
+     "swing": -4.4
+    },
+    "Louisville": {
+     "n": 2,
+     "higher": 1,
+     "lower": 1,
+     "avg": -0.2,
+     "last": 2.5,
+     "swing": 1.5
+    }
+   }
+  }
+ ]
+}
