@@ -33,6 +33,8 @@ nfl_value_metrics.html
 
 # Local refresh notes (for the email digest)
 last_refresh_*.md
+!last_refresh_nfl.md
+!last_refresh_cfb.md
 
 __pycache__/
 .idea/
