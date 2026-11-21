@@ -1,6 +1,6 @@
 {
  "sport": "cbb",
- "generated": "2026-11-20T17:05:00-05:00",
+ "generated": "2026-11-21T11:30:00-05:00",
  "teams": {
   "North Carolina": {
    "watch": [
@@ -15,47 +15,5 @@
    ]
   }
  },
- "games": {
-  "401912710": {
-   "verdict": "partly",
-   "summary": "UNC lost starting PG Neo Avdalas for about two months and the line has dropped from 20.5 to 18.5; that covers some of our 4-point gap, and a preseason-heavy source (Torvik 25.3) pushes ours up.",
-   "reasons": [
-    {
-     "text": "Neo Avdalas (24 mpg, UNC's leading assist man) is out about two months after wrist surgery; Terrence Brown, Matt Able and Jaydon Young take on bigger roles.",
-     "source": "ESPN",
-     "url": "https://www.espn.com/mens-college-basketball/story/_/id/50511206/north-carolina-guard-neo-avdalas-wrist-2-months",
-     "date": "2026-11-17"
-    },
-    {
-     "text": "The line has moved from UNC -20.5 at open to -18.5, toward Marshall, since the Avdalas news.",
-     "source": "AlphaPoint line feed",
-     "url": "",
-     "date": "2026-11-20"
-    },
-    {
-     "text": "Marshall (2-3) snapped a three-game skid by beating East Tennessee State 67-55 on Tuesday; Fazl Oshodi scored a season-high 20.",
-     "source": "Field Level Media",
-     "url": "https://fieldlevelmedia.com/ncaab/missing-point-guard-north-carolina-looking-for-rebound-vs-marshall/",
-     "date": "2026-11-19"
-    }
-   ],
-   "returning": [],
-   "swings": {}
-  },
-  "401921692": {
-   "swings": {
-    "Wisconsin": "Wisconsin lost 74-69 to Seton Hall in the Baha Mar semifinal on 11/19 after trailing by 17 at the half; Braeden Carrington played (17 pts) (AP, 11/20)."
-   }
-  },
-  "401909545": {
-   "swings": {
-    "Iowa": "Xavier's B. Appelhans is out for multiple weeks and Nikos Chitikoudis was hurt vs. Cleveland State; Iowa C Andrew McKeever is still limited by a back injury (HawkCentral/Covers, 11/20)."
-   }
-  },
-  "401925865": {
-   "swings": {
-    "Mississippi State": "Nothing found: the market moved on Mississippi State without a clear reason. No injuries reported; the game is at a neutral site in Jackson (Field Level Media, 11/19)."
-   }
-  }
- }
+ "games": {}
 }
