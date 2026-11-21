@@ -1,139 +1,127 @@
 {
-  "sport": "epl",
-  "week": 20261119,
-  "generated": "2026-11-19T11:15:22-05:00",
-  "movers": [
-    {
-      "team": "MAN",
-      "tag": "KEY",
-      "text": "Manager change: Mauricio Pochettino takes charge; his debut is the Liverpool match. Reports also list Shaw, Baleba and Rashford return-date updates.",
-      "source": "football360.com.au",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPVjBtMTJ5dXlTNFFIdjdTS3hnMmcteHlPelRYVDZVUXh3X2xwSGJzM20zUmRWVXVWUmVLa3RsX2ZhN0pYYnVlMDRkQmV6UHoxMXphdnN1anhSVTB1ZE93c3JJS1VPSWg1dTQzZnNIUXItM3RtaVdYc1Z4ME9VQ296TkxnYjh0NFlnekpienllZTQwVzVjYkN5YVA3R1VoVHl3YzgxUTR0WXlLVlJyUFdiUkd3?oc=5",
-      "date": "2026-11-17"
-    },
-    {
-      "team": "CHE",
-      "tag": "KEY",
-      "text": "Striker Joao Pedro faces an anxious injury wait before Leeds; Moises Caicedo was subbed off and gave a fitness update; reports say nine players set to miss.",
-      "source": "Football London",
-      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNZEZlT3VFX1lKX2d6UXFYd1p2TEVBZ0ZVdmpzQVRKdWUzMVlXNFNRTlAzYTdqWTNsRHBCY3d1dlJySmxlZGUwMjhRdDR2UW5XSHF0ZTZ6bTdKaDRTcmNTYmk4Tlg5NFpOWUphZU93UWE0YlZ2SGZQaHg1NjRURjY1NVJoTDdyNmpkQ2c?oc=5",
-      "date": "2026-11-19"
-    },
-    {
-      "team": "BRE",
-      "tag": "CLUSTER",
-      "text": "Striker Igor Thiago reported out for Everton; captain/CB Nathan Collins had a knee scan after international duty and is a growing concern.",
-      "source": "Read Everton",
-      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPNVlJRjRVd192TFpOb0VxaG1udUxjUEhtVlU2eGtNMHRZY3VQbzlhSjY5eFFUSks3M052Z09kTy1PbjV1N3U1VDZxQTVoTkVNWHdRaFBveTBVSjY4ajlWMkJWVkpEUEl0TVVVQTcyMTk5bE5aVGpEakFoWHktekk0NnM3UE1yRXZhVGhOUlludVU?oc=5",
-      "date": "2026-11-18"
-    },
-    {
-      "team": "LIV",
-      "tag": "RETURNING",
-      "text": "Midfielder Dominik Szoboszlai: Hungary boss gave a definitive update described as an injury boost ahead of Man United; Liverpool reported a double injury boost.",
-      "source": "Goal.com",
-      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOcWRQSkMzRFdvbGZSM0hteXRRa2RyUkx6cXFKbGhLSmNHSW5FY3JLamE4UWxPRUNzTkkyc19HYWdGbkQ0N0RjX3BUQ2VwRTItWmJybUFKMmhPOURDWERzREtCYjJ0T0RYcGhyWHNId2FWY3BDeXZnMzlNNmNtWjdjNzQ4R0hodWdOVWptb0xjM3FqRGNpRFdCMXVDVzh5WHJZZ2dsSU5FR2I4TEYxXzgxODZneDVXbUFvOVNSMnJhZmtoVEsyZEg4eldR?oc=5",
-      "date": "2026-11-17"
-    },
-    {
-      "team": "NFO",
-      "tag": "KEY",
-      "text": "Manager Oliver Glasner confirmed several absences for Bournemouth and an agreement with Switzerland over winger Dan Ndoye's injury.",
-      "source": "TribalFootball",
-      "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxNWGxndXVZSjNHVk9HR183aUV2eXBZYXFiSVhxYnpwNnJOcGtKSnVGZ284UlVNQnpNRi1Rcl81QjNJOXVWUk1LYTJ2dFE1STJwbzJpQUcwYTFsRV9PNHpGM1U2SEZWaW9vQ1FSY21EdG11N1pfdy1Bb2JQM1RZMHNKS1EzOW84cFNEd1JSeERSOXRYLWMtNk5HNDNnT1NJcU5tczZQbzlZOGkzbkVFdUlKemtpMDF4eWFKZndaUTN4YVpWZFF0THFyWFBubThkeERiSTViN1dtR1NRWVltb3BxY3dn?oc=5",
-      "date": "2026-11-19"
-    }
-  ],
-  "teams": {
-    "MAN": [
-      {
-        "team": "MAN",
-        "tag": "KEY",
-        "text": "Manager change: Mauricio Pochettino takes charge; his debut is the Liverpool match. Reports also list Shaw, Baleba and Rashford return-date updates.",
-        "source": "football360.com.au",
-        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPVjBtMTJ5dXlTNFFIdjdTS3hnMmcteHlPelRYVDZVUXh3X2xwSGJzM20zUmRWVXVWUmVLa3RsX2ZhN0pYYnVlMDRkQmV6UHoxMXphdnN1anhSVTB1ZE93c3JJS1VPSWg1dTQzZnNIUXItM3RtaVdYc1Z4ME9VQ296TkxnYjh0NFlnekpienllZTQwVzVjYkN5YVA3R1VoVHl3YzgxUTR0WXlLVlJyUFdiUkd3?oc=5",
-        "date": "2026-11-17"
-      }
-    ],
-    "CHE": [
-      {
-        "team": "CHE",
-        "tag": "KEY",
-        "text": "Striker Joao Pedro faces an anxious injury wait before Leeds; Moises Caicedo was subbed off and gave a fitness update; reports say nine players set to miss.",
-        "source": "Football London",
-        "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNZEZlT3VFX1lKX2d6UXFYd1p2TEVBZ0ZVdmpzQVRKdWUzMVlXNFNRTlAzYTdqWTNsRHBCY3d1dlJySmxlZGUwMjhRdDR2UW5XSHF0ZTZ6bTdKaDRTcmNTYmk4Tlg5NFpOWUphZU93UWE0YlZ2SGZQaHg1NjRURjY1NVJoTDdyNmpkQ2c?oc=5",
-        "date": "2026-11-19"
-      }
-    ],
-    "BRE": [
-      {
-        "team": "BRE",
-        "tag": "CLUSTER",
-        "text": "Striker Igor Thiago reported out for Everton; captain/CB Nathan Collins had a knee scan after international duty and is a growing concern.",
-        "source": "Read Everton",
-        "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPNVlJRjRVd192TFpOb0VxaG1udUxjUEhtVlU2eGtNMHRZY3VQbzlhSjY5eFFUSks3M052Z09kTy1PbjV1N3U1VDZxQTVoTkVNWHdRaFBveTBVSjY4ajlWMkJWVkpEUEl0TVVVQTcyMTk5bE5aVGpEakFoWHktekk0NnM3UE1yRXZhVGhOUlludVU?oc=5",
-        "date": "2026-11-18"
-      }
-    ],
-    "LIV": [
-      {
-        "team": "LIV",
-        "tag": "RETURNING",
-        "text": "Midfielder Dominik Szoboszlai: Hungary boss gave a definitive update described as an injury boost ahead of Man United; Liverpool reported a double injury boost.",
-        "source": "Goal.com",
-        "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOcWRQSkMzRFdvbGZSM0hteXRRa2RyUkx6cXFKbGhLSmNHSW5FY3JLamE4UWxPRUNzTkkyc19HYWdGbkQ0N0RjX3BUQ2VwRTItWmJybUFKMmhPOURDWERzREtCYjJ0T0RYcGhyWHNId2FWY3BDeXZnMzlNNmNtWjdjNzQ4R0hodWdOVWptb0xjM3FqRGNpRFdCMXVDVzh5WHJZZ2dsSU5FR2I4TEYxXzgxODZneDVXbUFvOVNSMnJhZmtoVEsyZEg4eldR?oc=5",
-        "date": "2026-11-17"
-      }
-    ],
-    "NFO": [
-      {
-        "team": "NFO",
-        "tag": "KEY",
-        "text": "Manager Oliver Glasner confirmed several absences for Bournemouth and an agreement with Switzerland over winger Dan Ndoye's injury.",
-        "source": "TribalFootball",
-        "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxNWGxndXVZSjNHVk9HR183aUV2eXBZYXFiSVhxYnpwNnJOcGtKSnVGZ284UlVNQnpNRi1Rcl81QjNJOXVWUk1LYTJ2dFE1STJwbzJpQUcwYTFsRV9PNHpGM1U2SEZWaW9vQ1FSY21EdG11N1pfdy1Bb2JQM1RZMHNKS1EzOW84cFNEd1JSeERSOXRYLWMtNk5HNDNnT1NJcU5tczZQbzlZOGkzbkVFdUlKemtpMDF4eWFKZndaUTN4YVpWZFF0THFyWFBubThkeERiSTViN1dtR1NRWVltb3BxY3dn?oc=5",
-        "date": "2026-11-19"
-      }
-    ],
-    "SUN": [
-      {
-        "team": "SUN",
-        "tag": "KEY",
-        "text": "Two key Sunderland players set for spells out injured, per LiveScore; striker Brian Brobbey's return timeline in question.",
-        "source": "LiveScore",
-        "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPRkRPa0RFRnNaVVB4VDJEazZfTDBPeXlzUmJZVXdLZ0FLVVpyZW1VaHZ4cWlhaEJHWnZzMmZoTWhwZ1Y0OGYwaWhydzAzUG9lTlJISWdISWhCNGJvOGRMTS1wOWU5ZlpuWUF2U0ZsdU9zbnBPNUNmRW0yOHFfNnJ2a0dGZHBTMXJPZUh3NnV5VUNYanRfcWpkYnV5NDYxNXpfOFYzRkdDa2FVVUFOOW0xZHJjRFdSbUE?oc=5",
-        "date": "2026-11-19"
-      }
-    ],
-    "AVL": [
-      {
-        "team": "AVL",
-        "tag": "KEY",
-        "text": "Right back Matty Cash an injury blow ahead of Sunderland, per Read Aston Villa.",
-        "source": "Read Aston Villa",
-        "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPVXUzVktJRVdyVFAtOC1TUVdwR3J2cktaUXFYNExFelEyT2FjZVBOTWtDdU5mSzgyNDRNRTVHeHFEcWpQTF9wWDZfdWZwR3BIZWNoQXF5SF82TWNEcTVaVTlIaWNSbDYzZzE2S3RibE1GbklSTUlENUFhaVhPQms3TXdXOGVKZw?oc=5",
-        "date": "2026-11-18"
-      }
-    ],
-    "TOT": [
-      {
-        "team": "TOT",
-        "tag": "RETURNING",
-        "text": "Six Tottenham players reported set to return for Ipswich; updates on Savio, Tel, Mudryk, Bergvall and Xavi return dates.",
-        "source": "Yahoo Sports",
-        "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOdEt1X2toZ2htZVhINmxVVHByc085RzFrTEdZZlFVbDluenFpQl9lMTRfek96Z2Uzb1VYNzJsNFBqSzI3MmViamc3VHI1MWpfMU1mVkh4MEkxTFRMWWNYRU0xT2tUYmhVSlVaSmY4QUJOdDFCMjN5RElHOUc4a3k4UXdDLUlPYUU?oc=5",
-        "date": "2026-11-19"
-      }
-    ],
-    "CRY": [
-      {
-        "team": "CRY",
-        "tag": "KEY",
-        "text": "Manager change pending: Crystal Palace reported closing in on appointing Thomas Frank (11/16).",
-        "source": "London Evening Standard",
-        "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOdEJtU0dWMmtqd2tua2o0YkpaSUk3LWxEM2VBbkx6TTNwOS1CUVhUczFHN1VqbmVQQ2NfSjR6TEl5azVWY1Biams1WmgwcVNWMTVzV3FrWi11VEZjaHA3N29QVm14dVN4eDJuWVlHYkdwbXVSRU4zRm16aVhLem1icVRrQ3ZFYl9tM2JNRGlpQWRLNVQ2ZmZzNEd2dUJ1eXJBVndwR0RHc0FELUl5Rmtr?oc=5",
-        "date": "2026-11-16"
-      }
-    ]
+ "sport": "epl",
+ "week": 20261121,
+ "generated": "2026-11-21T12:15:00-05:00",
+ "movers": [
+  {
+   "team": "MAN",
+   "tag": "KEY",
+   "text": "Manager change: Mauricio Pochettino, appointed last week to replace Michael Carrick, takes charge of Man United for the first time at Liverpool on 11/22.",
+   "source": "Sports Illustrated",
+   "url": "https://www.si.com/soccer/liverpool-vs-man-utd-predicted-lineups-important-reds-return-pochettino-first-xi-11-22-26",
+   "date": "2026-11-21"
+  },
+  {
+   "team": "ARS",
+   "tag": "KEY",
+   "text": "Winger Bukayo Saka (regular starter, quad) is out for about another month, per Mikel Arteta; midfielder Martin Zubimendi (hamstring) is also out at Newcastle.",
+   "source": "Real Broadcasting Network",
+   "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPTUlPaE9WeXI1WEZZVlFFX1g0cm1zZHc2RHpKWWVJVnVpQ3daWExPOUtpSjBVTnEtX2JvNGhHY0VPVmNaTVNxbUN5SjNSUUZkVmhFQW1zUFA2NWdJRUZNM1hGWmh0NXJGdENjVEFlOUtaVGNrNkhaYUctUmZmQTlFbXFNbEFGcE9VTGh4dw?oc=5",
+   "date": "2026-11-21"
+  },
+  {
+   "team": "CHE",
+   "tag": "KEY",
+   "text": "Striker Joao Pedro (first-choice No. 9, thigh) is out vs Leeds, Xabi Alonso confirmed; reports list five Chelsea players missing the match.",
+   "source": "Reuters",
+   "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOdFVvVWVUanZqeFB5SC05Q0k5TlYzZ09SX0x5Q3EtY0FCLUJsd2piRTdlVXh2ZW9YUGVwNHh3WFIyTmhnMnIwX3VBRGcwVmlWRXotaXVqT0FyeS1tcEkxb2hEdzE4eW5sY3RiZ2M1R0VjQjdZc3lXdkp3WDdIcU9CZ0VsZzZpa2lTU2JLWEZpTXVza3ZPMG5BT3hmbXBrQ1cxZGtFOUJiZHFrVDlBbGtvSUJMREU4ZmFnak00WXdHSmd1blY5aF93?oc=5",
+   "date": "2026-11-20"
+  },
+  {
+   "team": "BRE",
+   "tag": "CLUSTER",
+   "text": "Brentford say defenders Aaron Hickey and Nathan Collins are out 'for a number of weeks', both regular starters at the back, before Everton.",
+   "source": "Brentford FC",
+   "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNMGNZQ1ZiRzBaTWRNUzU1VGVLd1VrUUowVWxMQy1fX0Ytb0RaUVFfMmZwOUNPOEhDYW1VazhSaXR2VUx1OFhiRHA3emM3bld2VGVkZUNoemMwUGd4RnZqaFB4M0p0Z3VCLXI5aGc0WjU0eHVpT3lXNzVrdHFIOFFVU0pZdzI2enlGNzdycFdBaUVMR05KclNNTnVBYVg2WVRLODBTN1Y2aUZlaHJoa1J4Mm43NXdDSUloaEE?oc=5",
+   "date": "2026-11-20"
+  },
+  {
+   "team": "LIV",
+   "tag": "RETURNING",
+   "text": "Captain Virgil van Dijk (centre-back) is cleared after withdrawing from the Netherlands squad; Jeremie Frimpong (right-back) is back from injury for Man United.",
+   "source": "Sports Illustrated",
+   "url": "https://www.si.com/soccer/liverpool-vs-man-utd-predicted-lineups-important-reds-return-pochettino-first-xi-11-22-26",
+   "date": "2026-11-21"
   }
+ ],
+ "teams": {
+  "MAN": [
+   {
+    "team": "MAN",
+    "tag": "KEY",
+    "text": "Manager change: Mauricio Pochettino, appointed last week to replace Michael Carrick, takes charge of Man United for the first time at Liverpool on 11/22.",
+    "source": "Sports Illustrated",
+    "url": "https://www.si.com/soccer/liverpool-vs-man-utd-predicted-lineups-important-reds-return-pochettino-first-xi-11-22-26",
+    "date": "2026-11-21"
+   }
+  ],
+  "ARS": [
+   {
+    "team": "ARS",
+    "tag": "KEY",
+    "text": "Winger Bukayo Saka (regular starter, quad) is out for about another month, per Mikel Arteta; midfielder Martin Zubimendi (hamstring) is also out at Newcastle.",
+    "source": "Real Broadcasting Network",
+    "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPTUlPaE9WeXI1WEZZVlFFX1g0cm1zZHc2RHpKWWVJVnVpQ3daWExPOUtpSjBVTnEtX2JvNGhHY0VPVmNaTVNxbUN5SjNSUUZkVmhFQW1zUFA2NWdJRUZNM1hGWmh0NXJGdENjVEFlOUtaVGNrNkhaYUctUmZmQTlFbXFNbEFGcE9VTGh4dw?oc=5",
+    "date": "2026-11-21"
+   },
+   {
+    "team": "ARS",
+    "tag": "RETURNING",
+    "text": "Centre-back William Saliba (first-choice defender) is fit for Arsenal's trip to Newcastle after his injury, per Arteta's 11/20 update.",
+    "source": "Gulf Times",
+    "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOUlZiN3EtUmFQMjZfc2FTS1RlZFFqRjdUbVlEd3hOcVMyM3k2R1dHekdzTy1Uc1lHWUE5aXItS29MMkVTcTVuMEdIaXI1Y0J0MHM3Q0JVQmFrR09xSU1MT2NqcHVwcGtRV3o3aXllUkdZLVNvU3lfM3JsUTBWRHJHOHVIWTlCVWRYWFVKekR3OHRaZWZvQUYxVmpBRHg5eWFfTlhzanMyblhfbjBxLUFwVTR5cW9ZRkhTdURGZkdab1JoUEJCaFdiY0VuZk3SAdIBQVVfeXFMTUw0U2JzbmZOTzZ1WWk0RVNNWjRCRVkteUFrSmxMZTNyT2Z5ZkhHZXBONFhydDZ2cHFydUoyQlFhOEc1SHU1U0lRbGE1WTdjQ3EwWnFVcWlHSXpEOGZwSVNsSk80V3NZV0dHdlpyYWhWR3dYaldGeHdNNG1yUUNHSmZDQXFfR1lFaHBTOS1MWXd4Q1VzNjNlazhyODlhWV8zVFcxU2J3UzJCU2NlTVVBQWR5Y0tfZGdMZzQ0QW0zeDV5eDI2enNuMFRSTks5RmJvSThB?oc=5",
+    "date": "2026-11-19"
+   }
+  ],
+  "CHE": [
+   {
+    "team": "CHE",
+    "tag": "KEY",
+    "text": "Striker Joao Pedro (first-choice No. 9, thigh) is out vs Leeds, Xabi Alonso confirmed; reports list five Chelsea players missing the match.",
+    "source": "Reuters",
+    "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOdFVvVWVUanZqeFB5SC05Q0k5TlYzZ09SX0x5Q3EtY0FCLUJsd2piRTdlVXh2ZW9YUGVwNHh3WFIyTmhnMnIwX3VBRGcwVmlWRXotaXVqT0FyeS1tcEkxb2hEdzE4eW5sY3RiZ2M1R0VjQjdZc3lXdkp3WDdIcU9CZ0VsZzZpa2lTU2JLWEZpTXVza3ZPMG5BT3hmbXBrQ1cxZGtFOUJiZHFrVDlBbGtvSUJMREU4ZmFnak00WXdHSmd1blY5aF93?oc=5",
+    "date": "2026-11-20"
+   }
+  ],
+  "TOT": [
+   {
+    "team": "TOT",
+    "tag": "RETURNING",
+    "text": "Spurs confirm Lucas Bergvall, Savio and Destiny Udogie are available vs Ipswich; Mathys Tel and Tosin are out, and Sandro Tonali is reported out.",
+    "source": "Tottenham Hotspur",
+    "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxONzlIU05BV3dJNWhMa2c3TmlVWm5GLWJySEdtbEJvT1NENFctSU5WNnQtbmVpa3dzTUVPWVZyRHVJVGpSUFNPZlRSTGhYTWR1Q3NmWDFtekVyTXhaZnVsYjhxM1FzVG9RcXp5cmc2Z0tPaGlfOXlrRHllbWhNNFZSV0FuandIS1dib1RBWFcyLVRqQmVrall3dC14UVpYdHhMaEhJNHJhbm1NYkk3dEcxYmh2NmszaVhidG5lNjhsMA?oc=5",
+    "date": "2026-11-20"
+   }
+  ],
+  "LIV": [
+   {
+    "team": "LIV",
+    "tag": "RETURNING",
+    "text": "Captain Virgil van Dijk (centre-back) is cleared after withdrawing from the Netherlands squad; Jeremie Frimpong (right-back) is back from injury for Man United.",
+    "source": "Sports Illustrated",
+    "url": "https://www.si.com/soccer/liverpool-vs-man-utd-predicted-lineups-important-reds-return-pochettino-first-xi-11-22-26",
+    "date": "2026-11-21"
+   }
+  ],
+  "BRE": [
+   {
+    "team": "BRE",
+    "tag": "CLUSTER",
+    "text": "Brentford say defenders Aaron Hickey and Nathan Collins are out 'for a number of weeks', both regular starters at the back, before Everton.",
+    "source": "Brentford FC",
+    "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNMGNZQ1ZiRzBaTWRNUzU1VGVLd1VrUUowVWxMQy1fX0Ytb0RaUVFfMmZwOUNPOEhDYW1VazhSaXR2VUx1OFhiRHA3emM3bld2VGVkZUNoemMwUGd4RnZqaFB4M0p0Z3VCLXI5aGc0WjU0eHVpT3lXNzVrdHFIOFFVU0pZdzI2enlGNzdycFdBaUVMR05KclNNTnVBYVg2WVRLODBTN1Y2aUZlaHJoa1J4Mm43NXdDSUloaEE?oc=5",
+    "date": "2026-11-20"
+   }
+  ],
+  "AVL": [
+   {
+    "team": "AVL",
+    "tag": "KEY",
+    "text": "Right-back Matty Cash (regular starter) is out vs Sunderland, per a full Villa injury list that also has two players returning.",
+    "source": "Dave.Sport",
+    "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE53d1NtWk9PbVBDbHNhbURhdWZQYnBOMGNZdEwzT3czeU1sTThSdTh6cEV4ZUpvbm9OOXh2emtYZGJSM2U2YUY5a0hMSWpCRklUSHhObEhXQWJpanhBZzZKV3NpS1pjUDlCejZxOUFWOA?oc=5",
+    "date": "2026-11-20"
+   }
+  ]
+ }
 }
