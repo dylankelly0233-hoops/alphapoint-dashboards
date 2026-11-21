@@ -1,6 +1,6 @@
 {
  "sport": "nfl",
- "generated": "2026-11-20T17:30:00-05:00",
+ "generated": "2026-11-21T10:30:00-05:00",
  "games": {
   "2026_12_NE_LAC": {
    "verdict": "explained",
@@ -56,7 +56,37 @@
   "2026_11_MIN_SF": {
    "swings": {
     "MIN": "QB Kyler Murray (hamstring) is ruled out and Kirk Cousins starts; the market dropped Minnesota, our ratings didn't (ESPN, Nov 20)."
-   }
+   },
+   "verdict": "explained",
+   "summary": "Kyler Murray is out and Kirk Cousins starts, with WR Jordan Addison also out; that covers most of our 2-point gap.",
+   "reasons": [
+    {
+     "text": "QB Kyler Murray (hamstring) is ruled out; Kirk Cousins starts at San Francisco.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nfl/injuries",
+     "date": "2026-11-20"
+    },
+    {
+     "text": "WR Jordan Addison is out after thumb surgery.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nfl/injuries",
+     "date": "2026-11-18"
+    },
+    {
+     "text": "Partly offsetting: TE T.J. Hockenson and LB Blake Cashman are back; 49ers WR Mike Evans is questionable.",
+     "source": "The Viking Age",
+     "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPeUVMaVVlZU5vYUdId0YyRGo1ejV5a1NDSzJMRHJMbVJYOXRxTHpyT1ZnY213Y0xjYWVPc2I5RjJZSkRqcjlHVWNCYWRabWVrZS1PTzdwN21OTHAzNGxtdFRUZmlYZHpld0VJd0hNVkNyazc4QjNUclNsUVlmZDhvWm03X05OZDRkUHVEODZHMFlhbnVn?oc=5",
+     "date": "2026-11-21"
+    }
+   ],
+   "returning": [
+    {
+     "team": "MIN",
+     "player": "T.J. Hockenson",
+     "text": "TE (wrist) has no injury designation for San Francisco.",
+     "url": "https://www.espn.com/nfl/injuries"
+    }
+   ]
   },
   "2026_11_NO_CHI": {
    "verdict": "partly",
@@ -287,10 +317,10 @@
     {
      "direction": "too_low",
      "since": "2026-11-19",
-     "text": "WR DeVonta Smith (hamstring), out five of the last six games, practiced fully and is set to return.",
-     "source": "ESPN",
-     "url": "https://www.espn.com/nfl/injuries",
-     "date": "2026-11-19"
+     "text": "WR DeVonta Smith (hamstring), out five of the last six games, will play vs. the Steelers per the final injury report.",
+     "source": "Bleeding Green Nation",
+     "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxOYWRYRWhTbU1LU3Q5VURPYi1VdVk3bUNJdTFkcGNHa2VIb2c0ODVkZm5TU21jczk1TTh2cUNaTWowck5pSWEzQUF5aGhnUGpTLVZ1ajg5TkpwcVA2MjZjLWlNMUcySy1HUVJkTEwtMG5TU2xBcUJ5Rzktd05Lb0U2d3ZGSjc0aTZDYldzSWR6dFNXSFVWZDJNMDdRQUlwZXNUVkMzQ0hOanpKaDZseFB3YVRYUHMxcGYtbWF5WjhZdTYybGFMWGlzUC0xSWFIcHJ6N09XTnBhQkNNa1o0OG1jQ0pkdkpOa1k?oc=5",
+     "date": "2026-11-21"
     }
    ]
   },

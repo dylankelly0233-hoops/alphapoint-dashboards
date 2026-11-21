@@ -1,7 +1,7 @@
 {
  "sport": "nfl",
  "week": 11,
- "generated": "2026-11-20T17:25:00-05:00",
+ "generated": "2026-11-21T10:25:00-05:00",
  "movers": [
   {
    "team": "ARI",
@@ -235,10 +235,10 @@
    {
     "team": "PHI",
     "tag": "RETURNING",
-    "text": "WR DeVonta Smith (hamstring), out five of six games, practiced fully Thursday. LB Zack Baun (back) is out.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-20"
+    "text": "WR DeVonta Smith (hamstring), out five of six games, will play vs. the Steelers per the final report. LB Zack Baun (back) is ruled out.",
+    "source": "Bleeding Green Nation",
+    "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxOYWRYRWhTbU1LU3Q5VURPYi1VdVk3bUNJdTFkcGNHa2VIb2c0ODVkZm5TU21jczk1TTh2cUNaTWowck5pSWEzQUF5aGhnUGpTLVZ1ajg5TkpwcVA2MjZjLWlNMUcySy1HUVJkTEwtMG5TU2xBcUJ5Rzktd05Lb0U2d3ZGSjc0aTZDYldzSWR6dFNXSFVWZDJNMDdRQUlwZXNUVkMzQ0hOanpKaDZseFB3YVRYUHMxcGYtbWF5WjhZdTYybGFMWGlzUC0xSWFIcHJ6N09XTnBhQkNNa1o0OG1jQ0pkdkpOa1k?oc=5",
+    "date": "2026-11-21"
    }
   ],
   "CIN": [
@@ -315,6 +315,16 @@
     "source": "ESPN",
     "url": "https://www.espn.com/nfl/injuries",
     "date": "2026-11-20"
+   }
+  ],
+  "LAC": [
+   {
+    "team": "LAC",
+    "tag": "KEY",
+    "text": "LB Daiyan Henley (knee) is ruled out vs. the Jets; CB Tarheeb Still (ankle) is questionable.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nfl/injuries",
+    "date": "2026-11-21"
    }
   ]
  }
