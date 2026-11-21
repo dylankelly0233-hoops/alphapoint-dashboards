@@ -206,3 +206,5 @@ listed,sport,gid,kick,reason,detail,kind,side,line,p,need
 2026-11-20T16:18-05:00,cfb,401856759,2026-11-27T15:30:00-05:00,system,cfb_v2_open,spread,home,-4.5,,
 2026-11-20T20:21-05:00,cfb,401856756,2026-11-27T19:30:00-05:00,system,cfb_v2_open,spread,away,-7.5,,
 2026-11-20T21:19-05:00,nfl,2026_11_ARI_KC,2026-11-22T13:00:00-05:00,system,nfl_wind_under,total,under,40.5,,
+2026-11-20T22:21-05:00,cbb,401921811,2026-11-21T13:00:00-05:00,system,cbb_3p_fade,spread,away,27.5,,
+2026-11-20T22:21-05:00,cbb,401919828,2026-11-21T13:30:00-05:00,system,cbb_3p_fade,spread,home,6.5,,
