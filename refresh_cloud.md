@@ -4,9 +4,31 @@ Moved to the cloud on 2026-11-21 so the runs don't depend on Dylan's laptop bein
 Actions every hour, and each build publishes the inputs these runs need (`injury_candidates_{sport}.json`,
 `gap_candidates_{sport}.json` and `BUILT_AT.txt`) on the repo's `data` branch. This run reads those files, does the two
 jobs a script can't do (curating the Injury Wire and the Research Assistant), and pushes the results to `main`, which
-starts a new build. Always do the full run when it fires, even if a laptop run or an earlier cloud run already
-refreshed today: news changes, and Dylan schedules these on purpose. **Don't edit code, and don't run the dashboard scripts** (they need API keys and caches this
+starts a new build. **Don't edit code, and don't run the dashboard scripts** (they need API keys and caches this
 machine doesn't have).
+
+**Laptop runs and cloud runs both exist (Dylan, 2026-11-21).** The laptop runs the same jobs about 30 minutes before
+each cloud run, with full web access, but only when the laptop is on. Always run when you fire; never skip. Check the
+`generated` times of `injury_wire_{sport}.json` and `gap_notes_{sport}.json` on `main`:
+- **Updated within the last 90 minutes** (the laptop just ran): do a **re-check**. Keep its work. Search for news since
+  that time (late scratches, status changes, line moves), and fill every gap it left: flagged games without a verdict,
+  `swings_to_explain` entries without a sentence, and watch teams in flagged games with no Rating watch check. Update
+  `generated` only if you changed something.
+- **Older** (the laptop was off): do the **full** run below.
+
+**Your network is limited.** Web search works, but most news sites and all news.google.com links (the `url`s in the
+candidates' headlines) can't be opened. To research well anyway:
+- Run searches in `extended` mode, several at a time, with specific queries: player name + team + opponent + "status" or
+  "availability report", and the week or date. Search the exact headline title from the candidates file to find the
+  article itself.
+- Use the facts in the search results' summaries, and cite the real article URL shown in the results (ESPN, team
+  sites, On3, 247Sports, SI, Yahoo, Rotowire, Action Network, Covers), never a news.google.com link. Use the article's
+  date, not today's.
+- If a fact appears only in a headline and no summary confirms it, say only what the headline says ("listed
+  questionable", "expected to start"). Don't guess beyond it.
+- Don't retry WebFetch on a host that failed once.
+- Don't cut corners because of the limit: cover every flagged game, every swing and every watch team, as the
+  runbooks require.
 
 Your prompt names the **sport** (`nfl`, `cfb`, `cbb`, or `cbb+nba`) and the **mode**:
 - `daily`: the morning run.
@@ -51,6 +73,7 @@ Football only: write `reports/last_refresh_{sport}.md` (create the folder if nee
 `last_refresh_*.md` files are the laptop's and are git-ignored) (do it before step 4 so it is in the same commit). Line 1
 `Date: YYYY-MM-DD HH:MM` (Eastern), line 2 `Status: pushed` or `Status: failed — <reason>`, then up to 5 lines: the
 week, the inputs' build time, the number of Injury Wire items and the top 1–2 movers, the Research Assistant line from
-its runbook, and any warnings. The 11 AM digest reads it.
+its runbook, whether this was a full run or a re-check of the laptop's run, and any warnings. The 11 AM digest reads
+it. In a re-check, keep the laptop report's facts and add what you changed.
 
 Finish every run with the same lines as your final message.
