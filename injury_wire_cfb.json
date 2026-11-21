@@ -1,7 +1,7 @@
 {
  "sport": "cfb",
  "week": 12,
- "generated": "2026-11-21T10:16:06-05:00",
+ "generated": "2026-11-21T18:12:13-05:00",
  "movers": [
   {
    "team": "TCU",
@@ -12,36 +12,36 @@
    "date": "2026-11-21"
   },
   {
-   "team": "Illinois",
-   "tag": "QB",
-   "text": "QB Katin Houser is not likely to play vs Iowa after surgery on a broken nose, Bret Bielema said Tuesday; Michael Clayton II has started in his absence.",
-   "source": "Field Level Media",
-   "url": "https://fieldlevelmedia.com/latest-stories?storyId=268624",
-   "date": "2026-11-17"
-  },
-  {
    "team": "South Carolina",
    "tag": "QB",
-   "text": "QB LaNorris Sellers (ankle), who sat vs Arkansas, is not on the SEC availability report and is on track to play vs Georgia.",
-   "source": "Field Level Media",
-   "url": "https://fieldlevelmedia.com/ncaaf/no-21-south-carolina-hopes-to-slow-no-1-georgia-awaits-lanorris-sellers-status/",
-   "date": "2026-11-19"
-  },
-  {
-   "team": "Wisconsin",
-   "tag": "QB",
-   "text": "Wisconsin will start Colton Joseph at QB vs Purdue; freshman Ryan Hopkins (questionable) was hurt in the Maryland game.",
-   "source": "Bucky's 5th Quarter",
-   "url": "https://news.google.com/rss/articles/CBMihgJBVV95cUxQWHlBb0x6RTl0WUROMmV5eXhnclRnN19LLUE1QWkwZ2VvQTV2ajRoUU5DWEFWaFVVS3lRT096dEhXUnVXX05sYzFzNjlvOUZlZ1E4QmtjMFpST2RfSTdrMi1QS3ZVWW5lNlZsNV9KOWc3VmFhS0hWNUYyYzRJUjgyVEpCT0lHQWlMMXJBY0dZeFkyUTU4SXBRT3BabDJvRVhvSGxtbGNhX1hYa0VqLWpLbkh4b25odG0xX2l2V2JORGt2RU1ZLV9sU3ZpM2Y0ZGFnM0NwdDVpbGZYV3F3ZWhCOGpqWm9VN2tUbnhPbUFGQ0JQcDh2d2ZKeHN6SnB4ZkdFSG5EbTV3?oc=5",
+   "text": "QB LaNorris Sellers (ankle), who sat vs Arkansas, was left off every SEC availability report this week and is expected to play vs Georgia.",
+   "source": "Yahoo Sports",
+   "url": "https://sports.yahoo.com/articles/lanorris-sellers-play-vs-georgia-011505696.html",
    "date": "2026-11-21"
   },
   {
-   "team": "North Carolina",
+   "team": "Oklahoma State",
    "tag": "QB",
-   "text": "QB Billy Edwards Jr. (upper body, left the Louisville loss in the 3rd quarter) remains uncertain on UNC's initial injury report for Virginia. Freshman Travis Burgess finished last game.",
-   "source": "Keeping It Heel",
-   "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNejZ4b0ZFMWVGdEFMVVdDQzBxcG1rZ21hN0tLZk5YVkh3eGRDdW00MGtjNHBDSWtxcm1lUk00M2ZTSUVWSUUweThYRk03bjhEY2h1V2ZOQlo0X0E3VXQ3emNEVFBLdjV3eHFobTI3blVxb2pWdnlYVEhSWXBHaHNzNzhDdjBVNkZqNS1qWUIwZzVpM2I2Z0hhZVZfRmFjZV9tcDJvTXlqMkdjR05XRDM3dVlmMzBqYUkxS1phd2xicTB1aDg?oc=5",
-   "date": "2026-11-19"
+   "text": "QB Drew Mestemaker (right shoulder stinger) was questionable for Arizona State; Eric Morris expected him to be OK. Final Big 12 status comes 90 minutes before kickoff.",
+   "source": "The Oklahoman",
+   "url": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxQX1U1QVh5WUY2bFJPdmFLRmNWWUcxaTlrZTN0cEJQa0otakVMSmx1bG5QNWp6Qm10ejdLaHlyY2dJTXVGdzlKck00eWlVTEh4T3pBdDBnSHh0NEtwSTlDU3VJTFh0ekRwYUNaQzdXTnl4MURhV2oyVDRYS2dSUkgxZUdPLUxzd2l2WUEtbk10VzdQWHZyZHlVOFdsS01nSTNxa3h0OEozX3dkUGI0SWcwSTNrcXZYcXRKUWRMTERxR1dUZlFVUDA2bmpYTWdsNnRJUi1HVExDVGFLTkE4MXMwcElhVTZwcm5KaERaYzJHcUxaNGlPTkE?oc=5",
+   "date": "2026-11-21"
+  },
+  {
+   "team": "Syracuse",
+   "tag": "QB",
+   "text": "QB Steve Angeli left the 27-15 loss at Boston College in the 3rd quarter and was seen with his right arm in a sling; Malachi Nelson finished. No timeline yet.",
+   "source": "ESPN",
+   "url": "https://www.espn.com/college-football/story/_/id/50552810/syracuse-qb-steve-angeli-exits-injury-arm-sling",
+   "date": "2026-11-21"
+  },
+  {
+   "team": "Alabama",
+   "tag": "QB",
+   "text": "QB Keelon Russell sat out the Chattanooga game with a nagging injury; Austin Mack started. Three Alabama starters also missed the game.",
+   "source": "On3",
+   "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNMHI2cHZEa25LVDk1SDJoRWNid0JpRE1VVkVsbG5JOExtSk95bWZkX1ZySTVCNWJhS3E5Sldrd2JJVUpOMk9wdHVxbDJrbUVZdHNhTDRoV2dnRjBEcWIxZTVJclJEZm9oaG1iZFJIS1Y5RzFpbzQtU1NHZTN0ZVFUWEI3MTRocDM3Q2E4ekI3MWVDX25GaHMwVllUZkRYYUNsRm16NlJtd0pWaEFucTFsazNCS0RHTFU?oc=5",
+   "date": "2026-11-21"
   }
  ],
  "teams": {
@@ -49,28 +49,28 @@
    {
     "team": "South Carolina",
     "tag": "QB",
-    "text": "QB LaNorris Sellers (ankle), who sat vs Arkansas, is not on the SEC availability report and is on track to play vs Georgia.",
-    "source": "Field Level Media",
-    "url": "https://fieldlevelmedia.com/ncaaf/no-21-south-carolina-hopes-to-slow-no-1-georgia-awaits-lanorris-sellers-status/",
-    "date": "2026-11-19"
+    "text": "QB LaNorris Sellers (ankle), who sat vs Arkansas, was left off every SEC availability report this week and is expected to play vs Georgia.",
+    "source": "Yahoo Sports",
+    "url": "https://sports.yahoo.com/articles/lanorris-sellers-play-vs-georgia-011505696.html",
+    "date": "2026-11-21"
    },
    {
     "team": "South Carolina",
     "tag": "CLUSTER",
-    "text": "WR Nyck Harbor (upper body) missed Arkansas and WR Mazeo Bennett Jr. left it (upper body). Shane Beamer: availability of both unknown for Georgia.",
-    "source": "247Sports",
-    "url": "https://247sports.com/college/south-carolina/article/south-carolina-football-injury-report-lanorris-sellers-nyck-harbor-isaiah-augustave-292820861/",
-    "date": "2026-11-15"
+    "text": "WR Mazeo Bennett Jr., DB Judge Collier and edge Anthony Addison were downgraded to out on Friday night's report; WR Nyck Harbor was upgraded and is available.",
+    "source": "Yahoo Sports",
+    "url": "https://sports.yahoo.com/articles/least-8-south-carolina-players-151920053.html",
+    "date": "2026-11-21"
    }
   ],
   "North Carolina": [
    {
     "team": "North Carolina",
     "tag": "QB",
-    "text": "QB Billy Edwards Jr. (upper body, left the Louisville loss in the 3rd quarter) remains uncertain on UNC's initial injury report for Virginia. Freshman Travis Burgess finished last game.",
-    "source": "Keeping It Heel",
-    "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNejZ4b0ZFMWVGdEFMVVdDQzBxcG1rZ21hN0tLZk5YVkh3eGRDdW00MGtjNHBDSWtxcm1lUk00M2ZTSUVWSUUweThYRk03bjhEY2h1V2ZOQlo0X0E3VXQ3emNEVFBLdjV3eHFobTI3blVxb2pWdnlYVEhSWXBHaHNzNzhDdjBVNkZqNS1qWUIwZzVpM2I2Z0hhZVZfRmFjZV9tcDJvTXlqMkdjR05XRDM3dVlmMzBqYUkxS1phd2xicTB1aDg?oc=5",
-    "date": "2026-11-19"
+    "text": "Freshman Travis Burgess made his first career start in the 41-24 loss at Virginia; QB Billy Edwards Jr. (upper body) was a game-time decision and did not start.",
+    "source": "Tar Heel Tribune",
+    "url": "https://tarheeltribune.com/2026/11/21/burgess-shines-in-first-start-but-mistakes-virginias-big-plays-bury-unc/",
+    "date": "2026-11-21"
    }
   ],
   "Northwestern": [
@@ -125,9 +125,9 @@
    {
     "team": "Wisconsin",
     "tag": "QB",
-    "text": "Wisconsin will start Colton Joseph at QB vs Purdue; freshman Ryan Hopkins (questionable) was hurt in the Maryland game.",
-    "source": "Bucky's 5th Quarter",
-    "url": "https://news.google.com/rss/articles/CBMihgJBVV95cUxQWHlBb0x6RTl0WUROMmV5eXhnclRnN19LLUE1QWkwZ2VvQTV2ajRoUU5DWEFWaFVVS3lRT096dEhXUnVXX05sYzFzNjlvOUZlZ1E4QmtjMFpST2RfSTdrMi1QS3ZVWW5lNlZsNV9KOWc3VmFhS0hWNUYyYzRJUjgyVEpCT0lHQWlMMXJBY0dZeFkyUTU4SXBRT3BabDJvRVhvSGxtbGNhX1hYa0VqLWpLbkh4b25odG0xX2l2V2JORGt2RU1ZLV9sU3ZpM2Y0ZGFnM0NwdDVpbGZYV3F3ZWhCOGpqWm9VN2tUbnhPbUFGQ0JQcDh2d2ZKeHN6SnB4ZkdFSG5EbTV3?oc=5",
+    "text": "Wisconsin started Colton Joseph at QB vs Purdue; freshman Ryan Hopkins, hurt in the Maryland game, was listed available on the game-day report.",
+    "source": "On3",
+    "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPRU44WEVxNXVKRXZZdGkxSnhfem5lYjBnZmlRS3MyQmxHWTM3TVgzaXRJdVlJMC1iMDA2bG9sMjZ4bzVvaVdPZUt0TTZRTXREclBXNVYxWWltNGs0cFdKeFFHQTBCdm1saDlKZmFJVDIzeTJmSDhOd0hXUUU5N0hTdDZpZktTNmI4SldEcHhfdkJ0eUl6WDBYakYzVl9PdDNrOEk5S1RUbXE?oc=5",
     "date": "2026-11-21"
    },
    {
@@ -147,6 +147,14 @@
     "source": "The Clarion-Ledger",
     "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxQVWxNVlhTQ1Zsbk5KOW03UTRtelJxeFRjbm9Sa3pEU0FkZVdjczMwazg0MFVlMHdEVU1SaGpHS2VqUW9vTGtjV3NzOC1FVE9sYUNrWllnTjR0NjAteDlpTGp4SU5fS1pGQk51V3VfRU1Oejd0cFVXQjNJM3g0N3lmRU1hMXliSmhDTVZra0FYcTBuSTRiUWluQ3RIOGt3ejNCYmgtRHRMdzNqQ2VUaWZaUjA2Mi1VUlNJQ2x5SlZlV09KZXViRUp2NzlKY3piT0ZmNmNDTy1GQ0ZxRmFnU3EzeUN5ZDlKSHBQaXc?oc=5",
     "date": "2026-11-19"
+   },
+   {
+    "team": "Mississippi State",
+    "tag": "CLUSTER",
+    "text": "RB Fluff Bothwell was out vs Tennessee Tech and star WR Anthony Evans III left that game hurt.",
+    "source": "Yahoo Sports",
+    "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNWGpnOXRiR0JRaHRPN1RkWjB2VnowZUFsRXRUREcyWllxaVIzNUZkeTRrdmZGeGxUT2JYbUZ5Z2dOQ3RtS3ZZQ1BzZVFUalQtS3pTR1JFbmp5X0dMaXozZnhnMi1uMHZiREFILVdXV1FQZ3dHVzJGRmZ5MnM1bGN4ZnJlZGZOU1U?oc=5",
+    "date": "2026-11-21"
    }
   ],
   "Tennessee": [
@@ -191,10 +199,10 @@
    {
     "team": "Oklahoma State",
     "tag": "QB",
-    "text": "QB Drew Mestemaker is listed questionable vs Arizona State with a stinger (shoulder), hurt vs Texas Tech; Eric Morris's earlier updates trended positive.",
-    "source": "Yahoo Sports",
-    "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNQV9qMF96MjNRWE16ckI4RDgySW9wUmZTZFk5a2pNQm05Qmx5N0UzNXRXZTlidG9lLVFIZTh2YU05SUwxT0Vfc0FXS3F2YUZ1YzlpelVkdmRsb2VaZWJsc3ZDaEo2b2hIM2NnUmc1MDRaRnlqN0NOanhUSUZteFl4REJaOWE2RHhlM2c?oc=5",
-    "date": "2026-11-19"
+    "text": "QB Drew Mestemaker (right shoulder stinger) was questionable for Arizona State; Eric Morris expected him to be OK. Final Big 12 status comes 90 minutes before kickoff.",
+    "source": "The Oklahoman",
+    "url": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxQX1U1QVh5WUY2bFJPdmFLRmNWWUcxaTlrZTN0cEJQa0otakVMSmx1bG5QNWp6Qm10ejdLaHlyY2dJTXVGdzlKck00eWlVTEh4T3pBdDBnSHh0NEtwSTlDU3VJTFh0ekRwYUNaQzdXTnl4MURhV2oyVDRYS2dSUkgxZUdPLUxzd2l2WUEtbk10VzdQWHZyZHlVOFdsS01nSTNxa3h0OEozX3dkUGI0SWcwSTNrcXZYcXRKUWRMTERxR1dUZlFVUDA2bmpYTWdsNnRJUi1HVExDVGFLTkE4MXMwcElhVTZwcm5KaERaYzJHcUxaNGlPTkE?oc=5",
+    "date": "2026-11-21"
    }
   ],
   "Rutgers": [
@@ -229,10 +237,10 @@
    {
     "team": "Vanderbilt",
     "tag": "QB",
-    "text": "QB Jared Curtis is off the SEC injury report for the Florida game after an injury update earlier in the week.",
-    "source": "The Tennessean",
-    "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxOdGx0VXhUdW9FUkNZS1NuelBJajlwUlhRcFh2VTdEbHlucXNvay1wWnZMQ3c1Wmx2Q3NRUmMyUGFEX3lNWThjcTJCNF90cU1XUC03ZjhtYm1fZk16YTI5T2d0SEgzRUM5NTJEWk1zMXNBUXhfX25VSS0xVUVHSzlaZmdUemdhbmlaN2t2ZnFGVDhJelVRdnpNc3JnT2ZwODFWSFh4bXN2S0tXNUwxN29XRFBxLWVLcUFNZEpfa1poTXlhNVY1Mm0xQjRpT1ZkVGEtX19ubVZpZS15T3Z6RFpJ?oc=5",
-    "date": "2026-11-19"
+    "text": "QB Jared Curtis re-aggravated an old wrist injury late in the Florida loss and returned; Clark Lea does not expect a long-term issue and expects him to practice this week.",
+    "source": "Yahoo Sports",
+    "url": "https://sports.yahoo.com/articles/jared-curtis-injury-latest-news-200027177.html",
+    "date": "2026-11-21"
    }
   ],
   "TCU": [
@@ -249,10 +257,18 @@
    {
     "team": "Texas",
     "tag": "KEY",
-    "text": "Star edge rusher Colin Simmons is back on the Texas injury report ahead of Arkansas.",
-    "source": "On3",
-    "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNWjZPdE1aOUtPdTJrRENhbU92b3lfTjRvcW8zazNGNjNWTDQ3ZWRGOHRoT1hEbXBJOTdiMWxpZndiT1l6aTZ0Nk9fLXZIbjIwTFI5TWtYZm1xM1Btdl9oMGoxakNJb1Zva3dXSjlsWlZFSm5vUzM3ejZZMi02RXRlNUd3UDhpRFRzR1E4MUtlV2xHQnU1bjZVUE1xQzBCU3IyOFp0Uk9oMFFrTG90OE5OQzVBakJhaEhmVE5ZRDFZay1jMExZeFJmSjVB?oc=5",
-    "date": "2026-11-19"
+    "text": "Star edge rusher Colin Simmons was officially ruled out vs Arkansas.",
+    "source": "Yahoo Sports",
+    "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNV1Q3LXRUeFZ2U1BRaUE4eHZzeUEzZW10OWVzZS1oU3YyVEM3SFRLakp5RXBlcXRIT2hzZWRoZUZVU0dudFk4d0J2cjVTTV94UVdsVWM1Q2hLZFZoMkhGNjgwRXRxR0JoRElEcFRTaDJ2LUJZbHpad09veXdSSFVlWVNzSFc?oc=5",
+    "date": "2026-11-21"
+   },
+   {
+    "team": "Texas",
+    "tag": "KEY",
+    "text": "Texas DB Kobe Black left the Arkansas game with what looked like a significant injury.",
+    "source": "Sports Illustrated",
+    "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOLTV1STlzN2h1VkVKcDZCWVVQSUl3bkthV01JQjBNNmNUZTFva1A2MV82ZUFaQ0ZwOU1rVmluMEZnRUpnQklNWDNxSGhfdTFibGdWaGVERHBTdm5ST1VvY2ZCaG82YV8tMEY4c213dmVMekx5T3lBMXhVZXkwVUNLMlZDWTNhaWE3VGJTdHRUVXhQeXM1RmViQ2c1M3IyaXVUdWpqZmtrbHZIS080RFE?oc=5",
+    "date": "2026-11-21"
    },
    {
     "team": "Texas",
@@ -442,6 +458,46 @@
     "text": "Star DT Keanu Tanuvasa is a surprise addition to BYU's injury report for the Kansas game.",
     "source": "Sports Illustrated",
     "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPcXdzZGxpeWo4MDFYM3JaV3l3TWlSNmZ5Y0Zwa3NpUXRKaUdVeFpnZ0RVVGpYV3pBOUxqZWtNcXQzbEFmMlpaMU1hTXZxazFvS3M5MndkVE1ybnRoeU1lTWp2bk8zcDI5TWRGeHZGem9lS2VqcjdHQ1NiV2FaR0NjbDc4UjVHZnA5TVViSE16bENyNFZ0eGppT2Eya0h6Vkw2TjRiUll5TWZxcVlxNHVFTlZQMnpWUkFVUVE?oc=5",
+    "date": "2026-11-21"
+   }
+  ],
+  "Syracuse": [
+   {
+    "team": "Syracuse",
+    "tag": "QB",
+    "text": "QB Steve Angeli left the 27-15 loss at Boston College in the 3rd quarter and was seen with his right arm in a sling; Malachi Nelson finished. No timeline yet.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/college-football/story/_/id/50552810/syracuse-qb-steve-angeli-exits-injury-arm-sling",
+    "date": "2026-11-21"
+   }
+  ],
+  "Alabama": [
+   {
+    "team": "Alabama",
+    "tag": "QB",
+    "text": "QB Keelon Russell sat out the Chattanooga game with a nagging injury; Austin Mack started. Three Alabama starters also missed the game.",
+    "source": "On3",
+    "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNMHI2cHZEa25LVDk1SDJoRWNid0JpRE1VVkVsbG5JOExtSk95bWZkX1ZySTVCNWJhS3E5Sldrd2JJVUpOMk9wdHVxbDJrbUVZdHNhTDRoV2dnRjBEcWIxZTVJclJEZm9oaG1iZFJIS1Y5RzFpbzQtU1NHZTN0ZVFUWEI3MTRocDM3Q2E4ekI3MWVDX25GaHMwVllUZkRYYUNsRm16NlJtd0pWaEFucTFsazNCS0RHTFU?oc=5",
+    "date": "2026-11-21"
+   }
+  ],
+  "Houston": [
+   {
+    "team": "Houston",
+    "tag": "QB",
+    "text": "Houston ruled out starting QB Conner Weigman (undisclosed injury) for the West Virginia game; Keisean Henderson played QB in the win.",
+    "source": "Houston Chronicle",
+    "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPREFqaUhEZEZNTmNJZm15THZ4Ul9qMm5XQUJ5akJsLTJzSlpfcEtoLVhOc3hScDBkRjNLbWxDU0otWGZiRUpQbGRKeldOc1FqTncxV3N6WFhpSkNjTmVKcm9jdmQ5aUJraXhJQ1JnbE0zNGIwV0dqV2VaV3lZWlpPMG9TSkRYblBhaE5va1FhZGFGRGplRTI2czNGa3k5SFBJRFJfT2ZIaWI5Rmc?oc=5",
+    "date": "2026-11-21"
+   }
+  ],
+  "Oregon": [
+   {
+    "team": "Oregon",
+    "tag": "KEY",
+    "text": "Starting RB Dierre Hill Jr. left the Michigan State win with a lower-body injury and was in a walking boot afterward.",
+    "source": "OregonLive.com",
+    "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPVmJQaExkVUNPMFV4VEZoMElEYkNsUXhLZ2tMQWljZUFCNm9sT19wRWZGSjZrNjRiYnlxSUpfZHRpXzN0Y0NldDRJZ2FNaThGeGF1b0RPRHFtTTVCNTJ1V0g0d3FRQUh1TWlXVno1QzJXTGh3U1JoT0VLS01rZE1ZcFdaUkhWQzFPX1JpdExWb0VRQ09wZllNU2lqR3J2N01hSzBWQ0RqZnc4ZkVFM0V2cG1iMGdpcURSd2Jn?oc=5",
     "date": "2026-11-21"
    }
   ]
