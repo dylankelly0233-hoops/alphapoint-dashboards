@@ -4,7 +4,8 @@ Moved to the cloud on 2026-11-21 so the runs don't depend on Dylan's laptop bein
 Actions every hour, and each build publishes the inputs these runs need (`injury_candidates_{sport}.json`,
 `gap_candidates_{sport}.json` and `BUILT_AT.txt`) on the repo's `data` branch. This run reads those files, does the two
 jobs a script can't do (curating the Injury Wire and the Research Assistant), and pushes the results to `main`, which
-starts a new build. **Don't edit code, and don't run the dashboard scripts** (they need API keys and caches this
+starts a new build. Always do the full run when it fires, even if a laptop run or an earlier cloud run already
+refreshed today: news changes, and Dylan schedules these on purpose. **Don't edit code, and don't run the dashboard scripts** (they need API keys and caches this
 machine doesn't have).
 
 Your prompt names the **sport** (`nfl`, `cfb`, `cbb`, or `cbb+nba`) and the **mode**:
@@ -37,16 +38,17 @@ wrote: it is newer than the `injury_wire` items inside the candidates file.
 
 ## 4. Push
 ```
-git add injury_wire_SPORT.json gap_notes_SPORT.json last_refresh_SPORT.md
-git -c user.name="Dylan Kelly" -c user.email="dylankelly0233@gmail.com" commit -m "SPORT MODE refresh (cloud)"
+git add injury_wire_SPORT.json gap_notes_SPORT.json reports/last_refresh_SPORT.md
+git commit -m "SPORT MODE refresh (cloud)"
 git pull --rebase && git push origin main
 ```
-(No `last_refresh` file for basketball: the 11 AM laptop run writes `last_refresh_cbb.md`.) If nothing changed, that's
+(Use the session's own git author. No report file for basketball: the 11 AM laptop run writes `last_refresh_cbb.md`.) If nothing changed, that's
 fine. If the pull hits a conflict, `git rebase --abort` and report it. If the push to `main` is refused, report the
 exact error and stop: don't push anywhere else.
 
 ## 5. Report
-Football only: write `last_refresh_{sport}.md` (do it before step 4 so it is in the same commit). Line 1
+Football only: write `reports/last_refresh_{sport}.md` (create the folder if needed; the root-level
+`last_refresh_*.md` files are the laptop's and are git-ignored) (do it before step 4 so it is in the same commit). Line 1
 `Date: YYYY-MM-DD HH:MM` (Eastern), line 2 `Status: pushed` or `Status: failed — <reason>`, then up to 5 lines: the
 week, the inputs' build time, the number of Injury Wire items and the top 1–2 movers, the Research Assistant line from
 its runbook, and any warnings. The 11 AM digest reads it.
