@@ -1,6 +1,6 @@
 {
  "sport": "cfb",
- "generated": "2026-11-21T18:15:20-05:00",
+ "generated": "2026-11-21T18:37:11-05:00",
  "teams": {
   "Clemson": {
    "watch": [
@@ -317,6 +317,18 @@
      "date": "2026-11-21"
     }
    ]
+  },
+  "Georgia": {
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-14",
+     "text": "Starting C Drew Bobo misses a second straight game (ruled out for South Carolina on Nov. 21); Cortez Smith starts again.",
+     "source": "On3",
+     "url": "https://www.on3.com/teams/georgia-bulldogs/news/georgia-injury-report-dawgs-without-drew-bobo-at-south-carolina/",
+     "date": "2026-11-21"
+    }
+   ]
   }
  },
  "games": {
@@ -533,6 +545,62 @@
    "swings": {
     "Mississippi State": "QB AJ Swann is out (Clarion-Ledger, Nov. 19), RB Fluff Bothwell missed the Nov. 21 game and WR Anthony Evans III left it hurt.",
     "Ole Miss": "Nothing found: the market moved on Ole Miss without a clear reason; its last game was against FCS Wofford."
+   },
+   "verdict": "explained",
+   "summary": "Mississippi State is down to its third-string QB with RB Fluff Bothwell out and WR Anthony Evans III hurt; the line has moved from Ole Miss -14.5 to -19.5.",
+   "reasons": [
+    {
+     "text": "QB Kamario Taylor is out for the season (foot surgery, announced Oct. 27) and fill-in AJ Swann was hurt again at Auburn, leaving the third-string QB.",
+     "source": "Yahoo Sports",
+     "url": "https://sports.yahoo.com/college-football/breaking-news/article/mississippi-state-qb-kamario-taylor-out-for-rest-of-2026-season-160824202.html",
+     "date": "2026-10-27"
+    },
+    {
+     "text": "RB Fluff Bothwell missed the Nov. 21 Tennessee Tech game and WR Anthony Evans III left it hurt (see Mississippi State's Injury Wire).",
+     "source": "Yahoo Sports",
+     "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNWGpnOXRiR0JRaHRPN1RkWjB2VnowZUFsRXRUREcyWllxaVIzNUZkeTRrdmZGeGxUT2JYbUZ5Z2dOQ3RtS3ZZQ1BzZVFUalQtS3pTR1JFbmp5X0dMaXozZnhnMi1uMHZiREFILVdXV1FQZ3dHVzJGRmZ5MnM1bGN4ZnJlZGZOU1U?oc=5",
+     "date": "2026-11-21"
+    }
+   ],
+   "returning": []
+  },
+  "401866472": {
+   "verdict": "partly",
+   "summary": "Forecast wind of about 16 mph (gusts 30+) at Akron and our SP+ input running far above Sagarin explain part of the gap; no new Buffalo or Akron injury news found.",
+   "reasons": [
+    {
+     "text": "Forecast for Nov. 27 at Akron: wind about 16 mph with gusts over 30, which tends to compress margins toward the underdog.",
+     "source": "Open-Meteo",
+     "url": "https://open-meteo.com/",
+     "date": "2026-11-21"
+    },
+    {
+     "text": "Buffalo QB E. Holmes (knee) was shut down for the season about three weeks ago; the market has had time to price it.",
+     "source": "Covers",
+     "url": "https://www.covers.com/sport/football/ncaaf/injuries",
+     "date": "2026-11-21"
+    }
+   ],
+   "returning": [],
+   "swings": {}
+  },
+  "401862836": {
+   "verdict": "unexplained",
+   "summary": "No injury or other news found for the move from UTSA -6 to -4; UAB's questionable RBs, if anything, point our way.",
+   "reasons": [
+    {
+     "text": "UAB RBs Bam McReynolds and Ja'Vin Simpkins are questionable for UTSA, which would hurt UAB, not help it.",
+     "source": "Rotowire",
+     "url": "https://www.rotowire.com/cfootball/headlines/bam-mcreynolds-injury-status-questionable-versus-utsa-240841",
+     "date": "2026-11-20"
+    }
+   ],
+   "returning": [],
+   "swings": {}
+  },
+  "401866470": {
+   "swings": {
+    "Kent State": "Kent State lost 20-3 to Miami (OH) on Nov. 17 with QB Dru DeShields held to 92 passing yards; no injury news found, the market marked Kent State down after the loss."
    }
   }
  }

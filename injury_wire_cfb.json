@@ -1,7 +1,7 @@
 {
  "sport": "cfb",
  "week": 12,
- "generated": "2026-11-21T18:12:13-05:00",
+ "generated": "2026-11-21T18:37:11-05:00",
  "movers": [
   {
    "team": "TCU",
@@ -308,11 +308,11 @@
   "Georgia": [
    {
     "team": "Georgia",
-    "tag": "RETURNING",
-    "text": "Starting C Drew Bobo, out vs Missouri (Cortez Smith filled in), has a chance to play vs South Carolina.",
+    "tag": "KEY",
+    "text": "Starting C Drew Bobo was ruled out on the SEC's final report for South Carolina, his second straight missed game; sophomore Cortez Smith is expected to start again.",
     "source": "On3",
-    "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOeDlkR0dfZG1nT0JlLWVZTDFwVm9XdFBteUx2Y0FzcFhrdXBGX1g3Y2gySnhkU2hneFFzTmd0aHZUd2NGcDF6M2VNdEM1UTc3Z2Ywb0ZTLUlJRnpJYUJ4UHJFWV9mTlhUdTJyZDgwd3NTUGdCNjkyaWJLU1RyX0E0RzNVU3JkaTVaM1BMY0ZMM2tyUUJ3TkN1UnZxeGJ3ZnliazlWaUtFUnE0NDFoRTJMeHgzY1pXNlJv?oc=5",
-    "date": "2026-11-19"
+    "url": "https://www.on3.com/teams/georgia-bulldogs/news/georgia-injury-report-dawgs-without-drew-bobo-at-south-carolina/",
+    "date": "2026-11-21"
    }
   ],
   "Iowa": [
@@ -328,11 +328,11 @@
   "Kentucky": [
    {
     "team": "Kentucky",
-    "tag": "KEY",
-    "text": "WR Nic Anderson (questionable) is trending toward playing vs Missouri; Jahlil Florence is also questionable.",
-    "source": "A Sea Of Blue",
-    "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNbENTclZMWXhxMnJjcXc4MWNkZVZwQks4ME5SdUk3OGhBd3h5N0o5N0JMWlgtcFF1cHRXcmVFS2xoUkY1RDVOYWlnSzRhbmdOMkxDRTVfYkJEc3pkTEN5cnVQeXBGMnVvTGU1aEhoWnZXQnFUSVYzbktJeHRlY0FxOUJFZnpwcElJdWIxRzVfbVNabW1GUUVtQ19VZG1MX2c?oc=5",
-    "date": "2026-11-20"
+    "tag": "RETURNING",
+    "text": "WR Nic Anderson, who missed the Florida game, was removed from Kentucky's final availability report and will play at Missouri.",
+    "source": "Rotowire",
+    "url": "https://www.rotowire.com/cfootball/headlines/nic-anderson-news-will-suit-up-saturday-240647",
+    "date": "2026-11-21"
    }
   ],
   "Michigan": [
