@@ -1,6 +1,6 @@
 {
  "sport": "cfb",
- "generated": "2026-11-21T09:14:56-05:00",
+ "generated": "2026-11-21T10:16:06-05:00",
  "teams": {
   "Clemson": {
    "watch": [
@@ -155,7 +155,7 @@
     {
      "direction": "unclear",
      "since": "2026-11-14",
-     "text": "Wisconsin will start Colton Joseph at QB vs Purdue after freshman Ryan Hopkins was hurt vs Maryland; Joseph started earlier in the season.",
+     "text": "Wisconsin starts Colton Joseph at QB vs Purdue after freshman Ryan Hopkins was hurt in the Maryland game.",
      "source": "Bucky's 5th Quarter",
      "url": "https://news.google.com/rss/articles/CBMihgJBVV95cUxQWHlBb0x6RTl0WUROMmV5eXhnclRnN19LLUE1QWkwZ2VvQTV2ajRoUU5DWEFWaFVVS3lRT096dEhXUnVXX05sYzFzNjlvOUZlZ1E4QmtjMFpST2RfSTdrMi1QS3ZVWW5lNlZsNV9KOWc3VmFhS0hWNUYyYzRJUjgyVEpCT0lHQWlMMXJBY0dZeFkyUTU4SXBRT3BabDJvRVhvSGxtbGNhX1hYa0VqLWpLbkh4b25odG0xX2l2V2JORGt2RU1ZLV9sU3ZpM2Y0ZGFnM0NwdDVpbGZYV3F3ZWhCOGpqWm9VN2tUbnhPbUFGQ0JQcDh2d2ZKeHN6SnB4ZkdFSG5EbTV3?oc=5",
      "date": "2026-11-21"
@@ -278,6 +278,18 @@
      "text": "RB Carson Hansen, who left the Minnesota win in the first half, is now doubtful vs Rutgers.",
      "source": "On3",
      "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxNQVVJZFpXUE9kVnNLMXhON2Ywam9QclRKc0RoWlMtTEktTlJxVl9fckNkQk9tbFQ0TnBYQlByZFRWa2pfZjBYaTlFS2tuTHI0NUlBMmkwYkFGQmlnTDkxRmdUSExZcDBPZmdTV3pONzB3OWs4MzZBcFl0Qy1sTzBpaDZ2RlphMFA1U2tYU0NHRUZ6WXYyeDR4M2N0UDFqUDk0OElzb2pXemN0VlhzVzlRTF9WRjVDNDhyN3RKQkpULUYyZGN6U3k5Z2c0WFZNT3lyS29OWGJlWXpHWHAyUDVNN1Y4aw?oc=5",
+     "date": "2026-11-21"
+    }
+   ]
+  },
+  "Oregon": {
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-20",
+     "text": "RB Dierre Hill Jr. left the Nov. 20 Michigan State win with a lower-body injury and was in a walking boot afterward; status for Washington unknown.",
+     "source": "OregonLive.com",
+     "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPVmJQaExkVUNPMFV4VEZoMElEYkNsUXhLZ2tMQWljZUFCNm9sT19wRWZGSjZrNjRiYnlxSUpfZHRpXzN0Y0NldDRJZ2FNaThGeGF1b0RPRHFtTTVCNTJ1V0g0d3FRQUh1TWlXVno1QzJXTGh3U1JoT0VLS01rZE1ZcFdaUkhWQzFPX1JpdExWb0VRQ09wZllNU2lqR3J2N01hSzBWQ0RqZnc4ZkVFM0V2cG1iMGdpcURSd2Jn?oc=5",
      "date": "2026-11-21"
     }
    ]
@@ -482,7 +494,10 @@
      "date": "2026-11-19"
     }
    ],
-   "returning": []
+   "returning": [],
+   "swings": {
+    "Ohio State": "Nothing new found since the Nebraska game: QB Julian Sayin is still out (Nov. 19) and the early Michigan line (opened Ohio State -13.5) sits well below our number."
+   }
   },
   "401856873": {
    "verdict": "unexplained",
