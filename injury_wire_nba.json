@@ -1,14 +1,14 @@
 {
  "sport": "nba",
  "week": 20261121,
- "generated": "2026-11-21T11:17:59-05:00",
+ "generated": "2026-11-21T11:42:12-05:00",
  "movers": [
   {
    "team": "PHI",
    "tag": "KEY",
-   "text": "Tyrese Maxey (36.1 mpg, foot) is questionable vs MIL after missing the last game (report as of 11/20).",
-   "source": "TalkBasket",
-   "url": "https://www.talkbasket.net/229429-nba-injury-report-maxey-tatum-listed-on-saturday-november-21",
+   "text": "Tyrese Maxey (36.1 mpg, right foot sprain) is questionable vs MIL after missing the last game; he was a full participant in Friday's practice.",
+   "source": "CBS Sports",
+   "url": "https://www.cbssports.com/fantasy/basketball/news/76ers-tyrese-maxey-questionable-for-saturday-540195/",
    "date": "2026-11-21"
   },
   {
@@ -28,20 +28,20 @@
    "date": "2026-11-21"
   },
   {
+   "team": "NY",
+   "tag": "KEY",
+   "text": "OG Anunoby (34.0 mpg, left calf tightness) was downgraded from questionable to doubtful vs POR on the NBA's 11 AM report (11/21).",
+   "source": "CBS Sports",
+   "url": "https://www.cbssports.com/fantasy/basketball/news/knicks-og-anunoby-downgraded-to-doubtful/",
+   "date": "2026-11-21"
+  },
+  {
    "team": "MEM",
    "tag": "CLUSTER",
    "text": "Cameron Boozer (30.8 mpg, right ankle sprain), Jerami Grant (22.1, calf) and Javon Small (22.2, personal) are out at MIN; Ty Jerome (hip) is probable.",
    "source": "ESPN",
    "url": "https://www.espn.com/nba/injuries",
    "date": "2026-11-21"
-  },
-  {
-   "team": "SA",
-   "tag": "KEY",
-   "text": "Dylan Harper (31.7 mpg, hip) is out and expected to miss two to three weeks (11/19 report); he missed the last game.",
-   "source": "ESPN",
-   "url": "https://www.espn.com/nba/injuries",
-   "date": "2026-11-19"
   }
  ],
  "teams": {
@@ -49,9 +49,9 @@
    {
     "team": "PHI",
     "tag": "KEY",
-    "text": "Tyrese Maxey (36.1 mpg, foot) is questionable vs MIL after missing the last game (report as of 11/20).",
-    "source": "TalkBasket",
-    "url": "https://www.talkbasket.net/229429-nba-injury-report-maxey-tatum-listed-on-saturday-november-21",
+    "text": "Tyrese Maxey (36.1 mpg, right foot sprain) is questionable vs MIL after missing the last game; he was a full participant in Friday's practice.",
+    "source": "CBS Sports",
+    "url": "https://www.cbssports.com/fantasy/basketball/news/76ers-tyrese-maxey-questionable-for-saturday-540195/",
     "date": "2026-11-21"
    },
    {
@@ -107,10 +107,10 @@
    {
     "team": "NY",
     "tag": "KEY",
-    "text": "OG Anunoby (34.0 mpg, calf) is questionable vs POR (report as of 11/20).",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nba/injuries",
-    "date": "2026-11-20"
+    "text": "OG Anunoby (34.0 mpg, left calf tightness) was downgraded from questionable to doubtful vs POR on the NBA's 11 AM report (11/21).",
+    "source": "CBS Sports",
+    "url": "https://www.cbssports.com/fantasy/basketball/news/knicks-og-anunoby-downgraded-to-doubtful/",
+    "date": "2026-11-21"
    }
   ],
   "POR": [

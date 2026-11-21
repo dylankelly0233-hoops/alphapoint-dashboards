@@ -1,6 +1,6 @@
 {
  "sport": "nba",
- "generated": "2026-11-21T11:17:59-05:00",
+ "generated": "2026-11-21T11:42:12-05:00",
  "teams": {
   "PHI": {
    "watch": [
@@ -43,9 +43,9 @@
     {
      "direction": "unclear",
      "since": "2026-11-21",
-     "text": "Jayson Tatum (rest) and Derrick White (shoulder) are questionable at SAC; neither has missed a game yet this season.",
-     "source": "TalkBasket",
-     "url": "https://www.talkbasket.net/229429-nba-injury-report-maxey-tatum-listed-on-saturday-november-21",
+     "text": "Jayson Tatum (rest; has sat 1 of 15 games) and Derrick White (left AC joint contusion) are questionable at SAC; Baylor Scheierman would likely start if either sits.",
+     "source": "CelticsBlog",
+     "url": "https://www.celticsblog.com/boston-celtics-news/150715/celtics-injury-report-sacramento-kings-jayson-tatum-derrick-white",
      "date": "2026-11-21"
     }
    ]
@@ -85,6 +85,18 @@
      "date": "2026-11-20"
     }
    ]
+  },
+  "NY": {
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-20",
+     "text": "OG Anunoby (34.0 mpg, calf) is doubtful vs POR on 11/21, his first time on the injury report this season; ratings were built with him playing.",
+     "source": "CBS Sports",
+     "url": "https://www.cbssports.com/fantasy/basketball/news/knicks-og-anunoby-downgraded-to-doubtful/",
+     "date": "2026-11-21"
+    }
+   ]
   }
  },
  "games": {
@@ -97,6 +109,11 @@
    "swings": {
     "MEM": "Cameron Boozer (ankle), Jerami Grant (calf) and Javon Small (personal) were ruled out for MIN on 11/20-21; the market prices it, our ratings don't (ESPN, 11/21).",
     "MIN": "Nothing found: the market moved on MIN without a clear reason; Edwards is still out and MIN lost 102-99 at NY on 11/19, but MEM's three absences pull the line MIN's way (ESPN)."
+   }
+  },
+  "401910024": {
+   "swings": {
+    "NY": "OG Anunoby (calf) went on the report 11/20 and was downgraded to doubtful at 11 AM 11/21, while POR's Deni Avdija (foot) is questionable after missing two games (CBS Sports, Blazer's Edge)."
    }
   }
  }
