@@ -1,189 +1,147 @@
 {
-  "sport": "nhl",
-  "week": 20261119,
-  "generated": "2026-11-19T11:13:53-05:00",
-  "movers": [
-    {
-      "team": "COL",
-      "tag": "CLUSTER",
-      "text": "C Nathan MacKinnon (20.2 TOI, lower body) out at least one month (11/14); D Cale Makar (22.4) out, missed 3 straight; D Josh Manson (15.0) on IR.",
-      "source": "ESPN",
-      "url": "https://www.espn.com/nhl/injuries",
-      "date": "2026-11-14"
-    },
-    {
-      "team": "CHI",
-      "tag": "KEY",
-      "text": "C Connor Bedard (20.1 TOI) being evaluated for a shoulder injury (11/18), day-to-day; D Bowen Byram (24.7, upper body) out the next two games.",
-      "source": "ESPN",
-      "url": "https://www.espn.com/nhl/injuries",
-      "date": "2026-11-18"
-    },
-    {
-      "team": "TB",
-      "tag": "KEY",
-      "text": "LW Brandon Hagel (20.5 TOI, lower body) placed on IR Thursday, retroactive to Nov. 15; C Zemgus Girgensons (14.3, upper body) day-to-day.",
-      "source": "ESPN",
-      "url": "https://www.espn.com/nhl/injuries",
-      "date": "2026-11-19"
-    },
-    {
-      "team": "LA",
-      "tag": "KEY",
-      "text": "LW Artemi Panarin (21.4 TOI) listed out, has missed the last 2 games.",
-      "source": "ESPN",
-      "url": "https://www.espn.com/nhl/injuries",
-      "date": "2026-11-19"
-    },
-    {
-      "team": "OTT",
-      "tag": "KEY",
-      "text": "D Thomas Chabot (23.5 TOI) day-to-day, has missed the last 4 games.",
-      "source": "ESPN",
-      "url": "https://www.espn.com/nhl/injuries",
-      "date": "2026-11-18"
-    }
-  ],
-  "teams": {
-    "COL": [
-      {
-        "team": "COL",
-        "tag": "CLUSTER",
-        "text": "C Nathan MacKinnon (20.2 TOI, lower body) out at least one month (11/14); D Cale Makar (22.4) out, missed 3 straight; D Josh Manson (15.0) on IR.",
-        "source": "ESPN",
-        "url": "https://www.espn.com/nhl/injuries",
-        "date": "2026-11-14"
-      }
-    ],
-    "CHI": [
-      {
-        "team": "CHI",
-        "tag": "KEY",
-        "text": "C Connor Bedard (20.1 TOI) being evaluated for a shoulder injury (11/18), day-to-day; D Bowen Byram (24.7, upper body) out the next two games.",
-        "source": "ESPN",
-        "url": "https://www.espn.com/nhl/injuries",
-        "date": "2026-11-18"
-      }
-    ],
-    "TB": [
-      {
-        "team": "TB",
-        "tag": "KEY",
-        "text": "LW Brandon Hagel (20.5 TOI, lower body) placed on IR Thursday, retroactive to Nov. 15; C Zemgus Girgensons (14.3, upper body) day-to-day.",
-        "source": "ESPN",
-        "url": "https://www.espn.com/nhl/injuries",
-        "date": "2026-11-19"
-      }
-    ],
-    "LA": [
-      {
-        "team": "LA",
-        "tag": "KEY",
-        "text": "LW Artemi Panarin (21.4 TOI) listed out, has missed the last 2 games.",
-        "source": "ESPN",
-        "url": "https://www.espn.com/nhl/injuries",
-        "date": "2026-11-19"
-      }
-    ],
-    "OTT": [
-      {
-        "team": "OTT",
-        "tag": "KEY",
-        "text": "D Thomas Chabot (23.5 TOI) day-to-day, has missed the last 4 games.",
-        "source": "ESPN",
-        "url": "https://www.espn.com/nhl/injuries",
-        "date": "2026-11-18"
-      }
-    ],
-    "UTAH": [
-      {
-        "team": "UTAH",
-        "tag": "CLUSTER",
-        "text": "D John Marino (20.4 TOI) back in a regular jersey, cleared for contact; RW Dylan Guenther (17.2) in non-contact; D Nate Schmidt (19.1) week-to-week; C Nick Schmaltz (17.1) on IR.",
-        "source": "ESPN",
-        "url": "https://www.espn.com/nhl/injuries",
-        "date": "2026-11-18"
-      }
-    ],
-    "MTL": [
-      {
-        "team": "MTL",
-        "tag": "CLUSTER",
-        "text": "D Mike Matheson (23.5 TOI) out about 2-3 weeks; RW Josh Anderson (14.1) out about 3-4 weeks (both announced 11/15).",
-        "source": "ESPN",
-        "url": "https://www.espn.com/nhl/injuries",
-        "date": "2026-11-15"
-      }
-    ],
-    "DET": [
-      {
-        "team": "DET",
-        "tag": "CLUSTER",
-        "text": "C Dylan Larkin (21.7 TOI) on IR; D Albert Johansson (15.7) ruled out Wed vs BOS; D William Wallinder (16.8) day-to-day.",
-        "source": "ESPN",
-        "url": "https://www.espn.com/nhl/injuries",
-        "date": "2026-11-19"
-      }
-    ],
-    "WPG": [
-      {
-        "team": "WPG",
-        "tag": "CLUSTER",
-        "text": "D Dylan DeMelo (19.4 TOI, lower body) on IR since 11/13; D Elias Salomonsson (18.3) also on IR.",
-        "source": "ESPN",
-        "url": "https://www.espn.com/nhl/injuries",
-        "date": "2026-11-13"
-      }
-    ],
-    "DAL": [
-      {
-        "team": "DAL",
-        "tag": "CLUSTER",
-        "text": "D Tyler Myers (16.3 TOI) out; D Lian Bichsel (15.5, lower body) on IR since 11/14.",
-        "source": "ESPN",
-        "url": "https://www.espn.com/nhl/injuries",
-        "date": "2026-11-18"
-      }
-    ],
-    "NYI": [
-      {
-        "team": "NYI",
-        "tag": "KEY",
-        "text": "D Logan Stanley (20.7 TOI) and C Jean-Gabriel Pageau (15.8) day-to-day; D Alexander Romanov (16.6) on IR.",
-        "source": "ESPN",
-        "url": "https://www.espn.com/nhl/injuries",
-        "date": "2026-11-18"
-      }
-    ],
-    "ANA": [
-      {
-        "team": "ANA",
-        "tag": "KEY",
-        "text": "RW Beckett Sennecke (20.4 TOI) day-to-day, missed the last game.",
-        "source": "ESPN",
-        "url": "https://www.espn.com/nhl/injuries",
-        "date": "2026-11-18"
-      }
-    ],
-    "VGK": [
-      {
-        "team": "VGK",
-        "tag": "KEY",
-        "text": "D Noah Hanifin (20.4 TOI) out, has missed 4 games.",
-        "source": "ESPN",
-        "url": "https://www.espn.com/nhl/injuries",
-        "date": "2026-11-10"
-      }
-    ],
-    "EDM": [
-      {
-        "team": "EDM",
-        "tag": "RETURNING",
-        "text": "C Ryan Nugent-Hopkins (18.2 TOI) listed day-to-day after missing 11 games.",
-        "source": "ESPN",
-        "url": "https://www.espn.com/nhl/injuries",
-        "date": "2026-11-18"
-      }
-    ]
+ "sport": "nhl",
+ "week": 20261121,
+ "generated": "2026-11-21T12:00:00-05:00",
+ "movers": [
+  {
+   "team": "MIN",
+   "tag": "KEY",
+   "text": "D Quinn Hughes (27.8 TOI/gm) is listed day-to-day ahead of Saturday at VAN; he has not missed a game this season.",
+   "source": "ESPN",
+   "url": "https://www.espn.com/nhl/injuries",
+   "date": "2026-11-20"
+  },
+  {
+   "team": "CHI",
+   "tag": "KEY",
+   "text": "C Connor Bedard (20.1 TOI/gm, shoulder) was moved to out on 11/19 after an evaluation 11/18; he has missed 7 games this season.",
+   "source": "ESPN",
+   "url": "https://www.espn.com/nhl/injuries",
+   "date": "2026-11-19"
+  },
+  {
+   "team": "LA",
+   "tag": "KEY",
+   "text": "LW Artemi Panarin (21.4 TOI/gm) is day-to-day after missing the last three games; Trevor Moore (16.2) is also day-to-day.",
+   "source": "ESPN",
+   "url": "https://www.espn.com/nhl/injuries",
+   "date": "2026-11-20"
+  },
+  {
+   "team": "PIT",
+   "tag": "KEY",
+   "text": "C Evgeni Malkin (17.7 TOI/gm) is out and has missed two straight; Bryan Rust (lower body, 14 games missed) is skating in a non-contact jersey.",
+   "source": "ESPN",
+   "url": "https://www.espn.com/nhl/injuries",
+   "date": "2026-11-20"
+  },
+  {
+   "team": "MTL",
+   "tag": "CLUSTER",
+   "text": "D Mike Matheson (23.5 TOI/gm) is out 2-3 weeks and forwards Josh Anderson (3-4 weeks) and Chris Kreider are on IR (announced 11/15).",
+   "source": "ESPN",
+   "url": "https://www.espn.com/nhl/injuries",
+   "date": "2026-11-15"
   }
+ ],
+ "teams": {
+  "MIN": [
+   {
+    "team": "MIN",
+    "tag": "KEY",
+    "text": "D Quinn Hughes (27.8 TOI/gm) is listed day-to-day ahead of Saturday at VAN; he has not missed a game this season.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nhl/injuries",
+    "date": "2026-11-20"
+   }
+  ],
+  "CHI": [
+   {
+    "team": "CHI",
+    "tag": "KEY",
+    "text": "C Connor Bedard (20.1 TOI/gm, shoulder) was moved to out on 11/19 after an evaluation 11/18; he has missed 7 games this season.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nhl/injuries",
+    "date": "2026-11-19"
+   },
+   {
+    "team": "CHI",
+    "tag": "KEY",
+    "text": "D Bowen Byram (24.7 TOI/gm, upper body) is on IR and will not play in Chicago's next two games, per CHGO (11/17).",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nhl/injuries",
+    "date": "2026-11-17"
+   }
+  ],
+  "LA": [
+   {
+    "team": "LA",
+    "tag": "KEY",
+    "text": "LW Artemi Panarin (21.4 TOI/gm) is day-to-day after missing the last three games; Trevor Moore (16.2) is also day-to-day.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nhl/injuries",
+    "date": "2026-11-20"
+   }
+  ],
+  "PIT": [
+   {
+    "team": "PIT",
+    "tag": "KEY",
+    "text": "C Evgeni Malkin (17.7 TOI/gm) is out and has missed two straight; Bryan Rust (lower body, 14 games missed) is skating in a non-contact jersey.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nhl/injuries",
+    "date": "2026-11-20"
+   }
+  ],
+  "MTL": [
+   {
+    "team": "MTL",
+    "tag": "CLUSTER",
+    "text": "D Mike Matheson (23.5 TOI/gm) is out 2-3 weeks and forwards Josh Anderson (3-4 weeks) and Chris Kreider are on IR (announced 11/15).",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nhl/injuries",
+    "date": "2026-11-15"
+   }
+  ],
+  "NYI": [
+   {
+    "team": "NYI",
+    "tag": "CLUSTER",
+    "text": "Defensemen Logan Stanley (20.7 TOI/gm) and Ryan Pulock (17.6) are day-to-day for Saturday at DET; Alexander Romanov remains on IR.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nhl/injuries",
+    "date": "2026-11-20"
+   }
+  ],
+  "WPG": [
+   {
+    "team": "WPG",
+    "tag": "KEY",
+    "text": "D Dylan DeMelo (19.4 TOI/gm, lower body) is expected to miss 4-6 weeks, per the Jets' site (11/19).",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nhl/injuries",
+    "date": "2026-11-19"
+   }
+  ],
+  "UTAH": [
+   {
+    "team": "UTAH",
+    "tag": "RETURNING",
+    "text": "D John Marino (20.4 TOI/gm, missed 14) is day-to-day and close to returning; RW Dylan Guenther (17.2) was upgraded to day-to-day before ANA.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nhl/injuries",
+    "date": "2026-11-20"
+   }
+  ],
+  "TB": [
+   {
+    "team": "TB",
+    "tag": "KEY",
+    "text": "LW Brandon Hagel (20.5 TOI/gm, lower body) was placed on IR retroactive to Nov. 15 (Tampa Bay Times, 11/19).",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nhl/injuries",
+    "date": "2026-11-19"
+   }
+  ]
+ }
 }
