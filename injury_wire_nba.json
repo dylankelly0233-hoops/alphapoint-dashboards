@@ -1,38 +1,14 @@
 {
  "sport": "nba",
  "week": 20261121,
- "generated": "2026-11-21T11:42:12-05:00",
+ "generated": "2026-11-21T16:47:19-05:00",
  "movers": [
   {
-   "team": "PHI",
-   "tag": "KEY",
-   "text": "Tyrese Maxey (36.1 mpg, right foot sprain) is questionable vs MIL after missing the last game; he was a full participant in Friday's practice.",
-   "source": "CBS Sports",
-   "url": "https://www.cbssports.com/fantasy/basketball/news/76ers-tyrese-maxey-questionable-for-saturday-540195/",
-   "date": "2026-11-21"
-  },
-  {
-   "team": "PHI",
+   "team": "BOS",
    "tag": "CLUSTER",
-   "text": "Jaylen Brown (34.7 mpg, hamstring; individual work only Friday) and Dean Wade (26.7 mpg, hamstring) are out vs MIL.",
+   "text": "Jayson Tatum (34.1 mpg, rest) and Derrick White (29.9 mpg, shoulder) were ruled out at SAC; Mitchell Robinson (17.5 mpg, illness) is also out (11/21).",
    "source": "ESPN",
    "url": "https://www.espn.com/nba/injuries",
-   "date": "2026-11-20"
-  },
-  {
-   "team": "BOS",
-   "tag": "KEY",
-   "text": "Jayson Tatum (34.1 mpg, rest) is questionable at SAC; Derrick White (29.9 mpg, shoulder) is also questionable (report as of 11/21 AM).",
-   "source": "TalkBasket",
-   "url": "https://www.talkbasket.net/229429-nba-injury-report-maxey-tatum-listed-on-saturday-november-21",
-   "date": "2026-11-21"
-  },
-  {
-   "team": "NY",
-   "tag": "KEY",
-   "text": "OG Anunoby (34.0 mpg, left calf tightness) was downgraded from questionable to doubtful vs POR on the NBA's 11 AM report (11/21).",
-   "source": "CBS Sports",
-   "url": "https://www.cbssports.com/fantasy/basketball/news/knicks-og-anunoby-downgraded-to-doubtful/",
    "date": "2026-11-21"
   },
   {
@@ -42,34 +18,58 @@
    "source": "ESPN",
    "url": "https://www.espn.com/nba/injuries",
    "date": "2026-11-21"
+  },
+  {
+   "team": "NO",
+   "tag": "CLUSTER",
+   "text": "Trey Murphy III (32.4 mpg, knee) and Trendon Watford (17.8 mpg, ankle) were ruled out at SA; Dejounte Murray (31.4 mpg, ankle) is also out (11/21).",
+   "source": "ESPN",
+   "url": "https://www.espn.com/nba/injuries",
+   "date": "2026-11-21"
+  },
+  {
+   "team": "NY",
+   "tag": "KEY",
+   "text": "OG Anunoby (34.0 mpg, left calf tightness) is doubtful vs POR; Karl-Anthony Towns (32.7 mpg, illness) is questionable with a call near the 7:30 PM tip (11/21).",
+   "source": "Rotowire",
+   "url": "https://www.rotowire.com/basketball/headlines/karl-anthony-towns-injury-questionable-due-to-illness-540324",
+   "date": "2026-11-21"
+  },
+  {
+   "team": "DAL",
+   "tag": "KEY",
+   "text": "P.J. Washington (30.9 mpg, illness/shoulder) was downgraded from questionable to doubtful vs LAC; Walter Clayton Jr. (knee) is questionable (11/21 report).",
+   "source": "NBC Sports",
+   "url": "https://www.nbcsports.com/fantasy/basketball/player-news/2026-11-21/p-j-washington-shoulder-downgraded-to-doubtful",
+   "date": "2026-11-21"
   }
  ],
  "teams": {
   "PHI": [
    {
     "team": "PHI",
-    "tag": "KEY",
-    "text": "Tyrese Maxey (36.1 mpg, right foot sprain) is questionable vs MIL after missing the last game; he was a full participant in Friday's practice.",
-    "source": "CBS Sports",
-    "url": "https://www.cbssports.com/fantasy/basketball/news/76ers-tyrese-maxey-questionable-for-saturday-540195/",
+    "tag": "CLUSTER",
+    "text": "Jaylen Brown (34.7 mpg, hamstring) and Dean Wade (26.7 mpg, hamstring) are out vs MIL.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nba/injuries",
     "date": "2026-11-21"
    },
    {
     "team": "PHI",
-    "tag": "CLUSTER",
-    "text": "Jaylen Brown (34.7 mpg, hamstring; individual work only Friday) and Dean Wade (26.7 mpg, hamstring) are out vs MIL.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nba/injuries",
-    "date": "2026-11-20"
+    "tag": "RETURNING",
+    "text": "Tyrese Maxey (36.1 mpg, right foot sprain) was upgraded from questionable to available vs MIL after missing the last game (11/21 afternoon).",
+    "source": "CBS Sports",
+    "url": "https://www.cbssports.com/fantasy/basketball/news/76ers-tyrese-maxey-available-saturday/",
+    "date": "2026-11-21"
    }
   ],
   "BOS": [
    {
     "team": "BOS",
-    "tag": "KEY",
-    "text": "Jayson Tatum (34.1 mpg, rest) is questionable at SAC; Derrick White (29.9 mpg, shoulder) is also questionable (report as of 11/21 AM).",
-    "source": "TalkBasket",
-    "url": "https://www.talkbasket.net/229429-nba-injury-report-maxey-tatum-listed-on-saturday-november-21",
+    "tag": "CLUSTER",
+    "text": "Jayson Tatum (34.1 mpg, rest) and Derrick White (29.9 mpg, shoulder) were ruled out at SAC; Mitchell Robinson (17.5 mpg, illness) is also out (11/21).",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nba/injuries",
     "date": "2026-11-21"
    }
   ],
@@ -97,9 +97,9 @@
    {
     "team": "DAL",
     "tag": "KEY",
-    "text": "P.J. Washington (30.9 mpg, left shoulder impingement) is questionable vs LAC and gets a pregame evaluation; Walter Clayton Jr. (knee) is also questionable.",
-    "source": "Heavy",
-    "url": "https://heavy.com/sports/nba/dallas-mavericks/injury-report-vs-clippers-november-21/",
+    "text": "P.J. Washington (30.9 mpg, illness/shoulder) was downgraded from questionable to doubtful vs LAC; Walter Clayton Jr. (knee) is questionable (11/21 report).",
+    "source": "NBC Sports",
+    "url": "https://www.nbcsports.com/fantasy/basketball/player-news/2026-11-21/p-j-washington-shoulder-downgraded-to-doubtful",
     "date": "2026-11-21"
    }
   ],
@@ -107,9 +107,9 @@
    {
     "team": "NY",
     "tag": "KEY",
-    "text": "OG Anunoby (34.0 mpg, left calf tightness) was downgraded from questionable to doubtful vs POR on the NBA's 11 AM report (11/21).",
-    "source": "CBS Sports",
-    "url": "https://www.cbssports.com/fantasy/basketball/news/knicks-og-anunoby-downgraded-to-doubtful/",
+    "text": "OG Anunoby (34.0 mpg, left calf tightness) is doubtful vs POR; Karl-Anthony Towns (32.7 mpg, illness) is questionable with a call near the 7:30 PM tip (11/21).",
+    "source": "Rotowire",
+    "url": "https://www.rotowire.com/basketball/headlines/karl-anthony-towns-injury-questionable-due-to-illness-540324",
     "date": "2026-11-21"
    }
   ],
@@ -117,10 +117,20 @@
    {
     "team": "POR",
     "tag": "KEY",
-    "text": "Deni Avdija (32.5 mpg, foot) is questionable at NY after missing the last two games (report as of 11/20).",
+    "text": "Deni Avdija (32.5 mpg, left foot contusion) is questionable at NY after missing the last two games; the final call comes Saturday (11/21).",
+    "source": "Blazer's Edge",
+    "url": "https://www.blazersedge.com/trail-blazers-injury-report/118709/portland-trail-blazers-deni-avdija-injury-report-new-york-knicks-nba-news-robert-williams-ja-morant",
+    "date": "2026-11-21"
+   }
+  ],
+  "NO": [
+   {
+    "team": "NO",
+    "tag": "CLUSTER",
+    "text": "Trey Murphy III (32.4 mpg, knee) and Trendon Watford (17.8 mpg, ankle) were ruled out at SA; Dejounte Murray (31.4 mpg, ankle) is also out (11/21).",
     "source": "ESPN",
     "url": "https://www.espn.com/nba/injuries",
-    "date": "2026-11-20"
+    "date": "2026-11-21"
    }
   ]
  }

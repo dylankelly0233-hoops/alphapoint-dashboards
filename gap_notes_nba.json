@@ -1,16 +1,16 @@
 {
  "sport": "nba",
- "generated": "2026-11-21T16:40:00-05:00",
+ "generated": "2026-11-21T16:47:19-05:00",
  "teams": {
   "PHI": {
    "watch": [
     {
      "direction": "too_high",
      "since": "2026-11-19",
-     "text": "Jaylen Brown (34.7 mpg) and Dean Wade (26.7 mpg) are out vs MIL with hamstring injuries and Tyrese Maxey (36.1 mpg, foot) is questionable; all three missed the last game.",
-     "source": "ESPN",
-     "url": "https://www.espn.com/nba/injuries",
-     "date": "2026-11-20"
+     "text": "Jaylen Brown (34.7 mpg) and Dean Wade (26.7 mpg) are out vs MIL with hamstring injuries; Tyrese Maxey (foot) was cleared to play after missing the last game.",
+     "source": "CBS Sports",
+     "url": "https://www.cbssports.com/fantasy/basketball/news/76ers-tyrese-maxey-available-saturday/",
+     "date": "2026-11-21"
     }
    ]
   },
@@ -43,7 +43,7 @@
     {
      "direction": "too_high",
      "since": "2026-11-21",
-     "text": "Jayson Tatum (rest) and Derrick White (shoulder) were both ruled out at SAC on 11/21; ratings were built with both playing almost every game.",
+     "text": "Jayson Tatum (rest), Derrick White (shoulder) and Mitchell Robinson (illness) were ruled out at SAC on 11/21; ratings were built with Tatum and White playing almost every game.",
      "source": "ESPN",
      "url": "https://www.espn.com/nba/injuries",
      "date": "2026-11-21"
@@ -97,6 +97,30 @@
      "date": "2026-11-21"
     }
    ]
+  },
+  "POR": {
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-16",
+     "text": "Deni Avdija (24.2 ppg, foot contusion from 11/16 vs MIN) missed the last two games and is questionable at NY; Ja Morant (hamstring) and Shaedon Sharpe (meniscus) are out.",
+     "source": "Blazer's Edge",
+     "url": "https://www.blazersedge.com/trail-blazers-injury-report/118709/portland-trail-blazers-deni-avdija-injury-report-new-york-knicks-nba-news-robert-williams-ja-morant",
+     "date": "2026-11-21"
+    }
+   ]
+  },
+  "LAC": {
+   "watch": [
+    {
+     "direction": "too_low",
+     "since": "2026-11-23",
+     "text": "Brandon Ingram has not played this season (Achilles/heel) and is out again at DAL; he is expected to debut Monday vs HOU, which our ratings (built without him) won't see.",
+     "source": "Heavy",
+     "url": "https://heavy.com/sports/nba/los-angeles-clippers/injury-report-vs-mavericks-november-21/",
+     "date": "2026-11-21"
+    }
+   ]
   }
  },
  "games": {
@@ -118,7 +142,7 @@
   },
   "401910028": {
    "verdict": "explained",
-   "summary": "Boston ruled out Jayson Tatum and Derrick White at SAC; our ratings assume both play, which covers most of the 3.5-point gap.",
+   "summary": "Boston ruled out Jayson Tatum, Derrick White and Mitchell Robinson at SAC; our ratings assume Tatum and White play, which covers most of the 3.5-point gap.",
    "reasons": [
     {
      "text": "Jayson Tatum (rest) and Derrick White (shoulder) are out for Boston at Sacramento on 11/21.",

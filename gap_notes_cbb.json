@@ -1,6 +1,6 @@
 {
  "sport": "cbb",
- "generated": "2026-11-21T16:30:00-05:00",
+ "generated": "2026-11-21T16:47:19-05:00",
  "teams": {
   "North Carolina": {
    "watch": [
@@ -11,6 +11,18 @@
      "source": "ESPN",
      "url": "https://www.espn.com/mens-college-basketball/story/_/id/50511206/north-carolina-guard-neo-avdalas-wrist-2-months",
      "date": "2026-11-17"
+    }
+   ]
+  },
+  "Villanova": {
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-15",
+     "text": "Guard Darryl Simmons II (ankle sprain vs Rider) missed the 81-61 loss at Pitt on 11/17 and is unlikely vs Michigan; ratings carry the early games he played.",
+     "source": "Villanova Athletics",
+     "url": "https://villanova.com/news/2026/11/19/mens-basketball-wildcats-to-welcome-no-18-michigan-on-alumni-night.aspx",
+     "date": "2026-11-19"
     }
    ]
   }

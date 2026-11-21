@@ -1,7 +1,7 @@
 {
  "sport": "cbb",
  "week": 20261121,
- "generated": "2026-11-21T16:24:00-05:00",
+ "generated": "2026-11-21T16:47:19-05:00",
  "movers": [
   {
    "team": "North Carolina",
@@ -89,6 +89,18 @@
     "source": "Yahoo Sports",
     "url": "https://sports.yahoo.com/articles/pair-spartans-questionable-vs-detroit-010412122.html",
     "date": "2026-11-20"
+   }
+  ],
+  "Villanova": [
+   {
+    "team": "Villanova",
+    "tag": "KEY",
+    "player": "Darryl Simmons II",
+    "status": "questionable",
+    "text": "Guard Darryl Simmons II (13.8 mpg, right ankle sprain from the Rider win) missed the 81-61 loss at Pitt; no official word for Michigan and previews call a return unlikely.",
+    "source": "Villanova Athletics",
+    "url": "https://villanova.com/news/2026/11/19/mens-basketball-wildcats-to-welcome-no-18-michigan-on-alumni-night.aspx",
+    "date": "2026-11-19"
    }
   ]
  }
