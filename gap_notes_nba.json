@@ -1,15 +1,75 @@
 {
  "sport": "nba",
- "generated": "2026-11-20T17:05:00-05:00",
+ "generated": "2026-11-21T11:55:00-05:00",
  "teams": {
-  "OKC": {
+  "PHI": {
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-19",
+     "text": "Jaylen Brown (34.7 mpg) and Dean Wade (26.7 mpg) are out vs MIL with hamstring injuries and Tyrese Maxey (36.1 mpg, foot) is questionable; all three missed the last game.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nba/injuries",
+     "date": "2026-11-20"
+    }
+   ]
+  },
+  "MEM": {
    "watch": [
     {
      "direction": "too_high",
      "since": "2026-11-20",
-     "text": "Chet Holmgren (knee), Jalen Williams (ankle surgery), Cason Wallace (shoulder surgery), Nikola Topic and Thomas Sorber are out vs NO 11/20; Alex Caruso (hip) is questionable.",
+     "text": "Cameron Boozer (30.8 mpg, ankle), Jerami Grant (22.1) and Javon Small (22.2) are all out at MIN on 11/21; none had missed a game before.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nba/injuries",
+     "date": "2026-11-21"
+    }
+   ]
+  },
+  "SA": {
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-19",
+     "text": "Dylan Harper (31.7 mpg, hip) is out two to three weeks as of 11/19; ratings were built with him playing 15 of 16 games.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nba/injuries",
+     "date": "2026-11-19"
+    }
+   ]
+  },
+  "BOS": {
+   "watch": [
+    {
+     "direction": "unclear",
+     "since": "2026-11-21",
+     "text": "Jayson Tatum (rest) and Derrick White (shoulder) are questionable at SAC; neither has missed a game yet this season.",
+     "source": "TalkBasket",
+     "url": "https://www.talkbasket.net/229429-nba-injury-report-maxey-tatum-listed-on-saturday-november-21",
+     "date": "2026-11-21"
+    }
+   ]
+  },
+  "DAL": {
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-20",
+     "text": "P.J. Washington (30.9 mpg, shoulder impingement) and Walter Clayton Jr. (knee) are questionable vs LAC; Dereck Lively II (foot) is still out, ESPN estimates Nov 27.",
      "source": "Heavy",
-     "url": "https://heavy.com/sports/nba/oklahoma-city-thunder/injury-report-vs-pelicans-november-20/",
+     "url": "https://heavy.com/sports/nba/dallas-mavericks/injury-report-vs-clippers-november-21/",
+     "date": "2026-11-21"
+    }
+   ]
+  },
+  "MIN": {
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-10-29",
+     "text": "Anthony Edwards (33.8 mpg) has missed 10 of 16 games after right-knee arthroscopy; early-season ratings still carry the games he played.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nba/injuries",
      "date": "2026-11-20"
     }
    ]
@@ -18,169 +78,25 @@
    "watch": [
     {
      "direction": "too_high",
-     "since": "2026-11-17",
-     "text": "Dejounte Murray (ankle), Trendon Watford and Bennedict Mathurin are out at OKC 11/20; Trey Murphy III (knee tendinopathy) is questionable after missing recent games.",
-     "source": "Athlon Sports",
-     "url": "https://athlonsports.com/nba/oklahoma-city-thunder/final-injury-report-for-pelicans-thunder-will-alex-caruso-trey-murphy-iii-play",
+     "since": "2026-11-13",
+     "text": "Dejounte Murray (31.4 mpg, ankle) has missed the last three games; Trendon Watford and Bennedict Mathurin also sat 11/20 at OKC.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nba/injuries",
      "date": "2026-11-20"
-    }
-   ]
-  },
-  "HOU": {
-   "watch": [
-    {
-     "direction": "too_high",
-     "since": "2026-11-18",
-     "text": "C Alperen Sengun (32.8 mpg) has a corneal abrasion from 11/18 vs IND and is questionable at DEN; Clint Capela (ankle) is out and Steven Adams (quad) questionable.",
-     "source": "FanSided",
-     "url": "https://fansided.com/nba/is-alperen-sengun-playing-tonight-latest-nba-injury-report-for-rockets-vs-nuggets",
-     "date": "2026-11-20"
-    }
-   ]
-  },
-  "ATL": {
-   "watch": [
-    {
-     "direction": "too_high",
-     "since": "2026-11-17",
-     "text": "G CJ McCollum (26.4 mpg, calf) is out at least four weeks as of 11/17; Kingston Flemings (back) and Jock Landale (hip) also sat 11/18 at OKC.",
-     "source": "ESPN",
-     "url": "https://www.espn.com/nba/injuries",
-     "date": "2026-11-17"
-    }
-   ]
-  },
-  "CLE": {
-   "watch": [
-    {
-     "direction": "too_high",
-     "since": "2026-11-19",
-     "text": "C Evan Mobley (32 mpg, toe sprain) is out and re-evaluated in 7-10 days; Peyton Watson (back) and Jaylon Tyson (ankle) sat 11/18 vs MEM, day-to-day.",
-     "source": "ESPN",
-     "url": "https://www.espn.com/nba/injuries",
-     "date": "2026-11-19"
-    }
-   ]
-  },
-  "DET": {
-   "watch": [
-    {
-     "direction": "too_high",
-     "since": "2026-11-18",
-     "text": "G Cade Cunningham (35 mpg, knee) missed 11/18 vs NO and is day-to-day; F Duncan Robinson (30.6 mpg, quad) is out about a week.",
-     "source": "ESPN",
-     "url": "https://www.espn.com/nba/injuries",
-     "date": "2026-11-19"
-    }
-   ]
-  },
-  "LAL": {
-   "watch": [
-    {
-     "direction": "too_high",
-     "since": "2026-11-19",
-     "text": "G Austin Reaves (35 mpg, heel) remains out with no return timetable as of 11/19; JJ Redick said his pregame workout went well.",
-     "source": "ESPN",
-     "url": "https://www.espn.com/nba/injuries",
-     "date": "2026-11-19"
-    }
-   ]
-  },
-  "TOR": {
-   "watch": [
-    {
-     "direction": "unclear",
-     "since": "2026-11-18",
-     "text": "RJ Barrett (hamstring) and Scottie Barnes (injury management) both sat 11/18 vs WSH and are day-to-day; Collin Murray-Boyles left that game ill.",
-     "source": "ESPN",
-     "url": "https://www.espn.com/nba/injuries",
-     "date": "2026-11-19"
-    }
-   ]
-  },
-  "IND": {
-   "watch": [
-    {
-     "direction": "too_high",
-     "since": "2026-11-18",
-     "text": "G Andrew Nembhard (33.4 mpg, hip) sat 11/18 vs HOU and is day-to-day; Tyrese Haliburton (hamstring) still has no return timetable.",
-     "source": "ESPN",
-     "url": "https://www.espn.com/nba/injuries",
-     "date": "2026-11-19"
     }
    ]
   }
  },
  "games": {
-  "401909310": {
-   "verdict": "explained",
-   "summary": "OKC is without Holmgren, Jalen Williams, Wallace and Topic (Caruso questionable), which plausibly covers most of our 3-point gap; NO is also short Murray, with Murphy questionable.",
-   "reasons": [
-    {
-     "text": "OKC rules out Chet Holmgren, Jalen Williams, Cason Wallace, Nikola Topic and Thomas Sorber; Alex Caruso is questionable with a new hip issue.",
-     "source": "Heavy",
-     "url": "https://heavy.com/sports/nba/oklahoma-city-thunder/injury-report-vs-pelicans-november-20/",
-     "date": "2026-11-20"
-    },
-    {
-     "text": "NO is without Dejounte Murray, Bennedict Mathurin and Trendon Watford; Trey Murphy III is questionable (knee tendinopathy).",
-     "source": "Athlon Sports",
-     "url": "https://athlonsports.com/nba/oklahoma-city-thunder/final-injury-report-for-pelicans-thunder-will-alex-caruso-trey-murphy-iii-play",
-     "date": "2026-11-20"
-    },
-    {
-     "text": "The market hasn't moved from its open (OKC -11.5).",
-     "source": "AlphaPoint line feed",
-     "url": "",
-     "date": "2026-11-20"
-    }
-   ],
-   "returning": [
-    {
-     "team": "NO",
-     "player": "Trey Murphy III",
-     "text": "Questionable after missing recent games with knee tendinopathy.",
-     "url": "https://athlonsports.com/nba/oklahoma-city-thunder/final-injury-report-for-pelicans-thunder-will-alex-caruso-trey-murphy-iii-play"
-    }
-   ],
-   "swings": {}
-  },
-  "401909312": {
-   "verdict": "partly",
-   "summary": "Sengun is a coin flip with an eye injury and HOU is thin at center (Capela out, Adams questionable) while DEN is healthy; that covers part of our 3.9-point gap.",
-   "reasons": [
-    {
-     "text": "C Alperen Sengun is questionable with a left-eye corneal abrasion from 11/18; Ime Udoka was unsure he'd play because the eye was swollen.",
-     "source": "FanSided",
-     "url": "https://fansided.com/nba/is-alperen-sengun-playing-tonight-latest-nba-injury-report-for-rockets-vs-nuggets",
-     "date": "2026-11-20"
-    },
-    {
-     "text": "HOU also has Clint Capela (ankle) out and Steven Adams (quad) questionable, leaving little center depth.",
-     "source": "Heavy",
-     "url": "https://heavy.com/sports/nba/houston-rockets/injury-report-vs-nuggets-november-20/",
-     "date": "2026-11-20"
-    },
-    {
-     "text": "DEN's report is nearly clean (Jokic not listed; Julian Strawther out). We've been lower than the market on DEN in 5 of 6 games; no injury reason found for that.",
-     "source": "Sports Illustrated",
-     "url": "https://www.si.com/nba/nuggets/onsi/nuggets-could-get-huge-boost-vs-rockets-with-lopsided-injury-report",
-     "date": "2026-11-20"
-    }
-   ],
-   "returning": [],
+  "401910025": {
    "swings": {
-    "HOU": "Alperen Sengun left 11/18 vs IND with an eye injury (corneal abrasion) and is questionable at DEN; Capela is also out (FanSided, 11/20)."
+    "DAL": "Nothing clear found: the market moved on DAL without a clear reason; P.J. Washington (shoulder) and Walter Clayton Jr. (knee) were listed questionable 11/20 (Heavy, 11/21)."
    }
   },
-  "401909307": {
+  "401910026": {
    "swings": {
-    "CLE": "C Evan Mobley (32 mpg) went out with a toe sprain, re-evaluated in 7-10 days (ESPN, 11/19); the line has dropped from CLE -7.5 at open to -5.5."
-   }
-  },
-  "401909305": {
-   "swings": {
-    "CHA": "Nothing found: the market moved on CHA without a clear reason."
+    "MEM": "Cameron Boozer (ankle), Jerami Grant (calf) and Javon Small (personal) were ruled out for MIN on 11/20-21; the market prices it, our ratings don't (ESPN, 11/21).",
+    "MIN": "Nothing found: the market moved on MIN without a clear reason; Edwards is still out and MIN lost 102-99 at NY on 11/19, but MEM's three absences pull the line MIN's way (ESPN)."
    }
   }
  }
