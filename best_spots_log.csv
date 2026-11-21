@@ -226,3 +226,6 @@ listed,sport,gid,kick,reason,detail,kind,side,line,p,need
 2026-11-21T12:20-05:00,cfb,401858313,2026-11-28T12:00:00-05:00,system,cfb_v2_open,spread,home,-1.5,,
 2026-11-21T12:20-05:00,cfb,401858540,2026-11-28T12:00:00-05:00,priced,conference game spread,spread,home,12.5,0.5568,0.5238
 2026-11-21T12:20-05:00,cfb,401858540,2026-11-28T12:00:00-05:00,system,cfb_v2_open,spread,home,12.5,,
+2026-11-21T13:20-05:00,nfl,2026_12_KC_BUF,2026-11-26T20:20:00-05:00,system,nfl_high_total_under,total,under,51.5,,
+2026-11-21T13:20-05:00,cfb,401858537,2026-11-28T12:30:00-05:00,priced,conference game spread,spread,home,-3.5,0.5521,0.5238
+2026-11-21T13:20-05:00,cfb,401858537,2026-11-28T12:30:00-05:00,system,cfb_v2_open,spread,home,-3.5,,
