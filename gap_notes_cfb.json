@@ -1,6 +1,6 @@
 {
  "sport": "cfb",
- "generated": "2026-11-22T09:35:00-05:00",
+ "generated": "2026-11-22T09:35:13-05:00",
  "teams": {
   "Clemson": {
    "watch": [
@@ -19,10 +19,10 @@
     {
      "direction": "too_low",
      "since": "2026-11-14",
-     "text": "QB LaNorris Sellers (ankle) missed the 34-6 Arkansas loss; he was left off every SEC report and was expected to play vs Georgia on Nov. 21.",
-     "source": "Yahoo Sports",
-     "url": "https://sports.yahoo.com/articles/lanorris-sellers-play-vs-georgia-011505696.html",
-     "date": "2026-11-21"
+     "text": "QB LaNorris Sellers (ankle) missed the Arkansas loss and returned vs Georgia on Nov. 21 (87 passing yards, 1 INT in a 34-6 loss); our ratings carry the game without him.",
+     "source": "WIS-TV",
+     "url": "https://www.wistv.com/2026/11/22/south-carolina-vs-georgia/",
+     "date": "2026-11-22"
     },
     {
      "direction": "too_high",
@@ -124,6 +124,14 @@
   },
   "Florida State": {
    "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-14",
+     "text": "FSU had its top four RBs out (No. 5 Zay Parks started) in the 28-10 home loss to NC State on Nov. 21; edge Rylan Kennedy and RB Amari Thomas are out for the season.",
+     "source": "WRAL (AP)",
+     "url": "https://www.wral.com/news/ap/3e53f-cj-bailey-davion-gause-lead-nc-state-to-28-10-win-over-florida-state/",
+     "date": "2026-11-21"
+    },
     {
      "direction": "too_high",
      "since": "2026-11-14",
@@ -233,12 +241,12 @@
   "Alabama": {
    "watch": [
     {
-     "direction": "too_high",
+     "direction": "unclear",
      "since": "2026-11-21",
-     "text": "QB Keelon Russell sat out the Nov. 21 Chattanooga game with a nagging injury and Austin Mack started; his status for Auburn is not yet known.",
-     "source": "On3",
-     "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNMHI2cHZEa25LVDk1SDJoRWNid0JpRE1VVkVsbG5JOExtSk95bWZkX1ZySTVCNWJhS3E5Sldrd2JJVUpOMk9wdHVxbDJrbUVZdHNhTDRoV2dnRjBEcWIxZTVJclJEZm9oaG1iZFJIS1Y5RzFpbzQtU1NHZTN0ZVFUWEI3MTRocDM3Q2E4ekI3MWVDX25GaHMwVllUZkRYYUNsRm16NlJtd0pWaEFucTFsazNCS0RHTFU?oc=5",
-     "date": "2026-11-21"
+     "text": "QB Keelon Russell (ankle) sat out the Nov. 21 Chattanooga win; DeBoer expects him 'full speed, full go' this week for Auburn, so our ratings likely see the right QB.",
+     "source": "Heavy",
+     "url": "https://heavy.com/sports/college-football/alabama-crimson-tide/alabama-kalen-deboer-provides-injury-update-on-qb-keelon-russell-2/",
+     "date": "2026-11-22"
     }
    ]
   },
@@ -313,6 +321,30 @@
      "date": "2026-11-21"
     }
    ]
+  },
+  "NC State": {
+   "watch": [
+    {
+     "direction": "too_low",
+     "since": "2026-11-21",
+     "text": "NC State won 28-10 at Florida State on Nov. 21 (CJ Bailey 292 yds, 3 TD), not in our Week 11 ratings yet; RB Duke Scott was hurt again in the game.",
+     "source": "WRAL (AP)",
+     "url": "https://www.wral.com/news/ap/3e53f-cj-bailey-davion-gause-lead-nc-state-to-28-10-win-over-florida-state/",
+     "date": "2026-11-21"
+    }
+   ]
+  },
+  "Ole Miss": {
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-17",
+     "text": "RB Kewan Lacy is out for the season and RB Shekai Mills-Knight has a high ankle sprain (Pete Golding, Nov. 17); our ratings were built mostly with Lacy.",
+     "source": "HottyToddy.com",
+     "url": "https://www.hottytoddy.com/2026/11/17/ole-miss-injury-report-lacy-mills-knight-frazier-wofford/",
+     "date": "2026-11-17"
+    }
+   ]
   }
  },
  "games": {
@@ -377,12 +409,18 @@
      "source": "247Sports",
      "url": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxQeW9hN0F5WmF1VTkzZmNYUG9Mb0pibHZqZGxFSTFGYm9zNTRMNXBpRXV3TWtxaDdQRnJFYndnZmpDSmQ2NFRia0NiNWNuSUhOMkVOdGFNNGNVbkhYZnRBWFhJQWI1Z3dNekRWbXd0ZmJweEhGR1FUR3E5aVp5eW9XOW1meEJOVTBsS3JTa0pDanF1YVRraGFIRWY2THplWkpHUklEU2J2Rl81MHA2ZktPODNLcEdlaC0wWWx6bVlKZ1NDa1l2Z2FucG1faTdvRDNrMWZCQ01sN05iLW9CU3g3d01kSldZTk5fUmR5SGNKUlp1UXhaZmc?oc=5",
      "date": "2026-11-20"
+    },
+    {
+     "text": "NC State beat Florida State 28-10 on Nov. 21, outscoring it 21-0 after halftime; RB Duke Scott was hurt again.",
+     "source": "WRAL (AP)",
+     "url": "https://www.wral.com/news/ap/3e53f-cj-bailey-davion-gause-lead-nc-state-to-28-10-win-over-florida-state/",
+     "date": "2026-11-21"
     }
    ],
    "returning": [],
    "swings": {
     "North Carolina": "QB Billy Edwards Jr. (upper body) did not start at Virginia on Nov. 21 and freshman Travis Burgess started in a 41-24 loss (Tar Heel Tribune).",
-    "NC State": "Nothing found: the market moved on NC State without a clear reason; its Nov. 21 result vs Florida State (23 FSU players out) was not confirmed."
+    "NC State": "NC State won 28-10 at Florida State on Nov. 21 (CJ Bailey 292 yds, 3 TD, per AP), which our Week 11 ratings don't include yet; no other news found."
    }
   },
   "401858540": {
@@ -415,22 +453,35 @@
   },
   "401856873": {
    "verdict": "unexplained",
-   "summary": "Nothing in the news explains it; both teams played Nov. 21 (Arizona at Kansas State, Arizona State vs Oklahoma State) and the market rates Arizona State closer than we do.",
-   "reasons": [],
+   "summary": "Nothing in the news explains it: Arizona won 35-28 in OT at Kansas State and Arizona State blew a 17-point lead in a 30-27 OT loss to Oklahoma State on Nov. 21, both pushing toward our side.",
+   "reasons": [
+    {
+     "text": "Arizona beat Kansas State 35-28 in OT on Nov. 21; Noah Fifita threw for 323 yards and 2 TDs. Not in our Week 11 ratings yet.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/college-football/recap/_/gameId/401856865",
+     "date": "2026-11-21"
+    },
+    {
+     "text": "Arizona State lost 30-27 in OT to Oklahoma State on Nov. 21 after leading by 17 at halftime; QB Jake Fette threw the OT interception.",
+     "source": "Pistols Firing",
+     "url": "https://pistolsfiringblog.com/instant-recap-oklahoma-state-defeats-arizona-state-30-27-on-overtime-pick/",
+     "date": "2026-11-21"
+    }
+   ],
    "returning": [],
    "swings": {
-    "Arizona": "Nothing found: the market moved on Arizona without a clear reason."
+    "Arizona": "Nothing found: the market moved on Arizona without a clear reason; Arizona's 35-28 OT win at Kansas State on Nov. 21 points the other way."
    }
   },
   "401856764": {
    "verdict": "partly",
-   "summary": "Clemson beat Duke 20-10 with a QB rotation and South Carolina lost 34-6 without Sellers, which explains part of it; Sellers is expected back vs Georgia tonight.",
+   "summary": "Clemson beat Duke 20-10 with a QB rotation and South Carolina lost without Sellers, then lost 34-6 to Georgia with him back; that explains part of it.",
    "reasons": [
     {
-     "text": "QB LaNorris Sellers (ankle) sat vs Arkansas but was left off every SEC report this week and is expected to play vs Georgia.",
-     "source": "Yahoo Sports",
-     "url": "https://sports.yahoo.com/articles/lanorris-sellers-play-vs-georgia-011505696.html",
-     "date": "2026-11-21"
+     "text": "QB LaNorris Sellers (ankle) sat vs Arkansas and returned vs Georgia on Nov. 21, a 34-6 loss.",
+     "source": "WIS-TV",
+     "url": "https://www.wistv.com/2026/11/22/south-carolina-vs-georgia/",
+     "date": "2026-11-22"
     },
     {
      "text": "QB Tait Reynolds (knee surgery) is out for the season and backup Christopher Vizzina was also hurt vs Georgia Tech. Clemson is turning to its third-string QB for Duke.",
@@ -446,8 +497,14 @@
   },
   "401856759": {
    "verdict": "partly",
-   "summary": "FSU's growing injury list (edge Rylan Kennedy and RB Amari Thomas out for the season) and Florida's win over Vanderbilt on Saturday explain part of the gap.",
+   "summary": "FSU's injuries (top four RBs out, edge Rylan Kennedy lost for the year), its 28-10 home loss to NC State and Florida's win over Vanderbilt on Saturday explain part of the gap.",
    "reasons": [
+    {
+     "text": "FSU lost 28-10 at home to NC State on Nov. 21 with its top four RBs out; Ashton Daniels threw 2 INTs. Not in our Week 11 ratings yet.",
+     "source": "WRAL (AP)",
+     "url": "https://www.wral.com/news/ap/3e53f-cj-bailey-davion-gause-lead-nc-state-to-28-10-win-over-florida-state/",
+     "date": "2026-11-21"
+    },
     {
      "text": "Starting edge Rylan Kennedy is reported out for the season; FSU downgraded two more starters and has 23 players ruled out vs NC State.",
      "source": "Yahoo Sports",
@@ -459,12 +516,6 @@
      "source": "Tallahassee Democrat",
      "url": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxPelhKRk1yZkg3X0NQc1FoZHNDT3I3YlVpOXFHaWc5VnVqRmlQYlFUdV9yS3pXQXVIVmJrWDRMcGY3RHExeHIwTzNfVklIWFNrVEkwU0xWcjk5c2ZrMUlBb2F4NTM2TGN0MFlLdW9OcDlhOUVhejd5Z3gyMXUtUzhZNi1kNUUzUXFrekZCc0x6NnU0WTAxREhJVGM1dkZRV0JKd3l6VkhXdzhxTEtOT3JzejVhaEVhQXZrMGxYZEZVTlU4TzctSGU0cm9ubHR4ZFJYUGgwb2gtZnlyY2xYOWlFU25uN0ZGVVZ4T0NtQg?oc=5",
      "date": "2026-11-16"
-    },
-    {
-     "text": "Florida beat Vanderbilt on Nov. 21 (Vanderbilt trailed 34-27 late); our ratings run through Week 11.",
-     "source": "Yahoo Sports",
-     "url": "https://sports.yahoo.com/articles/jared-curtis-injury-latest-news-200027177.html",
-     "date": "2026-11-21"
     }
    ],
    "returning": []
@@ -500,7 +551,7 @@
   },
   "401856761": {
    "verdict": "unexplained",
-   "summary": "Nothing in the news explains it; both teams play tonight (Kentucky at Missouri, Louisville vs Pittsburgh), and WR Nic Anderson was trending toward playing for Kentucky.",
+   "summary": "Nothing in the news explains it; Kentucky lost at Missouri on Nov. 21 and lost RB CJ Baxter and Malachi Wood to injuries in that game.",
    "reasons": [
     {
      "text": "WR Nic Anderson (questionable) is trending toward playing vs Missouri; Jahlil Florence is also questionable.",
@@ -512,25 +563,31 @@
    "returning": []
   },
   "401856757": {
-   "verdict": "partly",
-   "summary": "Alabama QB Keelon Russell sat out the Chattanooga game with a nagging injury and his Iron Bowl status is unknown; that covers part of the 3.3-pt gap.",
+   "verdict": "unexplained",
+   "summary": "Alabama QB Keelon Russell is expected back for the Iron Bowl after resting his ankle, so his absence no longer explains the market sitting 3 points below us on Alabama.",
    "reasons": [
     {
-     "text": "QB Keelon Russell sat out the Nov. 21 Chattanooga game with a nagging injury; Austin Mack started. Three other starters also missed it.",
-     "source": "On3",
-     "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNMHI2cHZEa25LVDk1SDJoRWNid0JpRE1VVkVsbG5JOExtSk95bWZkX1ZySTVCNWJhS3E5Sldrd2JJVUpOMk9wdHVxbDJrbUVZdHNhTDRoV2dnRjBEcWIxZTVJclJEZm9oaG1iZFJIS1Y5RzFpbzQtU1NHZTN0ZVFUWEI3MTRocDM3Q2E4ekI3MWVDX25GaHMwVllUZkRYYUNsRm16NlJtd0pWaEFucTFsazNCS0RHTFU?oc=5",
+     "text": "Kalen DeBoer expects QB Keelon Russell (ankle) to be 'full speed, full go' in practice this week after sitting out the Chattanooga game.",
+     "source": "Heavy",
+     "url": "https://heavy.com/sports/college-football/alabama-crimson-tide/alabama-kalen-deboer-provides-injury-update-on-qb-keelon-russell-2/",
+     "date": "2026-11-22"
+    },
+    {
+     "text": "Auburn beat FCS Samford 59-10 on Nov. 21; Tristan Ti'a threw for 341 yards and four first-half TDs.",
+     "source": "CBS Sports",
+     "url": "https://www.cbssports.com/college-football/gametracker/boxscore/NCAAF_20261121_SAMF@AUBURN/",
      "date": "2026-11-21"
     }
    ],
    "returning": [],
    "swings": {
-    "Auburn": "No Auburn news found; the likely driver is Alabama QB Keelon Russell sitting out the Nov. 21 Chattanooga game with Austin Mack starting."
+    "Auburn": "No Auburn injury news found; Auburn beat FCS Samford 59-10 on Nov. 21 (Tristan Ti'a 341 yds), and Alabama QB Keelon Russell sat out Chattanooga before being expected back."
    }
   },
   "401856762": {
    "swings": {
     "Mississippi State": "QB AJ Swann is out (Clarion-Ledger, Nov. 19), RB Fluff Bothwell missed the Nov. 21 game and WR Anthony Evans III left it hurt.",
-    "Ole Miss": "Nothing found: the market moved on Ole Miss without a clear reason; its last game was against FCS Wofford."
+    "Ole Miss": "Nothing found: the market moved on Ole Miss without a clear reason (it lost RB Kewan Lacy for the season, which points the other way); its last game was vs FCS Wofford."
    },
    "verdict": "explained",
    "summary": "Mississippi State is down to its third-string QB with RB Fluff Bothwell out and WR Anthony Evans III hurt; the line has moved from Ole Miss -14.5 to -19.5.",

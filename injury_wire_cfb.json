@@ -1,7 +1,7 @@
 {
  "sport": "cfb",
  "week": 12,
- "generated": "2026-11-22T09:25:00-05:00",
+ "generated": "2026-11-22T09:35:13-05:00",
  "movers": [
   {
    "team": "UCLA",
@@ -22,10 +22,10 @@
   {
    "team": "Alabama",
    "tag": "QB",
-   "text": "QB Keelon Russell sat out the Chattanooga game with a nagging injury; Austin Mack started. Three Alabama starters also missed the game.",
-   "source": "On3",
-   "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNMHI2cHZEa25LVDk1SDJoRWNid0JpRE1VVkVsbG5JOExtSk95bWZkX1ZySTVCNWJhS3E5Sldrd2JJVUpOMk9wdHVxbDJrbUVZdHNhTDRoV2dnRjBEcWIxZTVJclJEZm9oaG1iZFJIS1Y5RzFpbzQtU1NHZTN0ZVFUWEI3MTRocDM3Q2E4ekI3MWVDX25GaHMwVllUZkRYYUNsRm16NlJtd0pWaEFucTFsazNCS0RHTFU?oc=5",
-   "date": "2026-11-21"
+   "text": "QB Keelon Russell (ankle) sat out the Chattanooga win with Austin Mack starting; Kalen DeBoer expects him 'full speed, full go' in practice this week for Auburn.",
+   "source": "Heavy",
+   "url": "https://heavy.com/sports/college-football/alabama-crimson-tide/alabama-kalen-deboer-provides-injury-update-on-qb-keelon-russell-2/",
+   "date": "2026-11-22"
   },
   {
    "team": "Syracuse",
@@ -49,10 +49,10 @@
    {
     "team": "South Carolina",
     "tag": "QB",
-    "text": "QB LaNorris Sellers (ankle), who sat vs Arkansas, was left off every SEC availability report this week and is expected to play vs Georgia.",
-    "source": "Yahoo Sports",
-    "url": "https://sports.yahoo.com/articles/lanorris-sellers-play-vs-georgia-011505696.html",
-    "date": "2026-11-21"
+    "text": "QB LaNorris Sellers (ankle) returned vs Georgia on Nov. 21 after sitting vs Arkansas; 87 passing yards, 1 INT, sacked 3 times in a 34-6 loss.",
+    "source": "WIS-TV",
+    "url": "https://www.wistv.com/2026/11/22/south-carolina-vs-georgia/",
+    "date": "2026-11-22"
    },
    {
     "team": "South Carolina",
@@ -365,6 +365,14 @@
    {
     "team": "Florida State",
     "tag": "CLUSTER",
+    "text": "Florida State's top four RBs were all out for the 28-10 loss to NC State on Nov. 21; Zay Parks, the No. 5 back, started.",
+    "source": "WRAL (AP)",
+    "url": "https://www.wral.com/news/ap/3e53f-cj-bailey-davion-gause-lead-nc-state-to-28-10-win-over-florida-state/",
+    "date": "2026-11-21"
+   },
+   {
+    "team": "Florida State",
+    "tag": "CLUSTER",
     "text": "Starting edge Rylan Kennedy is reported out for the season; FSU downgraded two more starters and has 23 players ruled out vs NC State.",
     "source": "Yahoo Sports",
     "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOMGZYWGhidnFFeWZMQS1UcGZKYTlRc0VvZXJCdmtmNXRSUmZZOGpKWXVveW50Q3FwMHFpa2M0d1Q4TzhyX284bFgta2h0QS1YRzlfTEtmVEo5MG42NFNLLXJaTEdObkRPaGd6RG83UmVXZlQyVll4c3ZHNXR5STFIMnlrSUw?oc=5",
@@ -380,6 +388,14 @@
    }
   ],
   "NC State": [
+   {
+    "team": "NC State",
+    "tag": "KEY",
+    "text": "RB Duke Scott was hurt again in NC State's 28-10 win at Florida State on Nov. 21; Davion Gause replaced him. No status yet for the North Carolina game.",
+    "source": "WRAL (AP)",
+    "url": "https://www.wral.com/news/ap/3e53f-cj-bailey-davion-gause-lead-nc-state-to-28-10-win-over-florida-state/",
+    "date": "2026-11-21"
+   },
    {
     "team": "NC State",
     "tag": "CLUSTER",
@@ -499,10 +515,10 @@
    {
     "team": "Alabama",
     "tag": "QB",
-    "text": "QB Keelon Russell sat out the Chattanooga game with a nagging injury; Austin Mack started. Three Alabama starters also missed the game.",
-    "source": "On3",
-    "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNMHI2cHZEa25LVDk1SDJoRWNid0JpRE1VVkVsbG5JOExtSk95bWZkX1ZySTVCNWJhS3E5Sldrd2JJVUpOMk9wdHVxbDJrbUVZdHNhTDRoV2dnRjBEcWIxZTVJclJEZm9oaG1iZFJIS1Y5RzFpbzQtU1NHZTN0ZVFUWEI3MTRocDM3Q2E4ekI3MWVDX25GaHMwVllUZkRYYUNsRm16NlJtd0pWaEFucTFsazNCS0RHTFU?oc=5",
-    "date": "2026-11-21"
+    "text": "QB Keelon Russell (ankle) sat out the Chattanooga win with Austin Mack starting; Kalen DeBoer expects him 'full speed, full go' in practice this week for Auburn.",
+    "source": "Heavy",
+    "url": "https://heavy.com/sports/college-football/alabama-crimson-tide/alabama-kalen-deboer-provides-injury-update-on-qb-keelon-russell-2/",
+    "date": "2026-11-22"
    }
   ],
   "Houston": [
@@ -543,6 +559,16 @@
     "source": "Yahoo Sports",
     "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOVzNhVTkxZjl1M1Z2Z3Z5UldzZE9TcE1mdXM0X3Z5QlhBN0FKSE1WSkU0QXlNVzNHSUZyLVc0cHlfNEFQd1pka2JQRHBsTmtRV0RITDFGYXpZNkVJQ3F4OUx4T0ZMU3JoV3VOalF4MjhBdUFoTTZ1dUE5eGMzYkJ2UWphSzg3M0Rucnc?oc=5",
     "date": "2026-11-21"
+   }
+  ],
+  "Ole Miss": [
+   {
+    "team": "Ole Miss",
+    "tag": "KEY",
+    "text": "RB Kewan Lacy is done for the season and freshman RB Shekai Mills-Knight has a high ankle sprain, per Pete Golding; Makhi Frazier was expected back from a thumb injury.",
+    "source": "HottyToddy.com",
+    "url": "https://www.hottytoddy.com/2026/11/17/ole-miss-injury-report-lacy-mills-knight-frazier-wofford/",
+    "date": "2026-11-17"
    }
   ]
  }

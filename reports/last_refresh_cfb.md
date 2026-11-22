@@ -1,6 +1,6 @@
-Date: 2026-11-21 18:38
+Date: 2026-11-22 09:35
 Status: pushed
-Week 12 (night games + Thanksgiving/rivalry week); inputs built 2026-11-21 18:24 ET.
-Injury Wire: 48 items; top movers TCU QB Jaden Craig doubtful (Adam Schobel to start vs Utah), South Carolina QB LaNorris Sellers expected to play vs Georgia.
-Research Assistant: 24 teams with rating-watch items; 13 gap games (1 explained, 8 partly, 4 unexplained)
-Re-check of the laptop's 6:12 PM run: Georgia C Drew Bobo now ruled out, Kentucky WR Nic Anderson cleared; added verdicts for UTSA-UAB, Buffalo-Akron, Mississippi State-Ole Miss and the Kent State swing. Mestemaker (Okla St) still a game-time decision.
+Week 12 candidates (rivalry-week slate, 22 games); inputs built 2026-11-22 09:29 ET.
+Injury Wire: 56 items; top movers UCLA QB Ty Dieffenbach carted off vs Michigan (no diagnosis), Ohio State QB Julian Sayin still out (est. return Nov. 28).
+Research Assistant: 24 teams with rating-watch items; 9 gap games (2 explained, 5 partly, 2 unexplained)
+Re-check of the laptop's 9:25 AM run: Alabama QB Keelon Russell expected 'full go' for Auburn (Iron Bowl verdict partly -> unexplained); added Saturday results (NC State 28-10 at FSU, Arizona OT win at K-State, ASU OT loss to Okla St, Sellers back in 34-6 loss to Georgia); new items for Ole Miss RB Kewan Lacy (out for season), NC State RB Duke Scott, FSU's top four RBs out.
