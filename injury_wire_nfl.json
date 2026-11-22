@@ -1,359 +1,375 @@
 {
- "sport": "nfl",
- "week": 11,
- "generated": "2026-11-22T10:36:00-05:00",
- "movers": [
-  {
-   "team": "ARI",
-   "tag": "QB",
-   "text": "QB Carson Beck (back) is ruled out at Kansas City; Josh Johnson starts, with Joey Aguilar as backup. Gardner Minshew is on IR after UCL surgery.",
-   "source": "ESPN",
-   "url": "https://www.espn.com/nfl/injuries",
-   "date": "2026-11-21"
-  },
-  {
-   "team": "TB",
-   "tag": "QB",
-   "text": "QB Baker Mayfield (foot/right thumb) is listed questionable but slated to play at Detroit, per NFL Network's Ian Rapoport. Jalon Daniels is the backup.",
-   "source": "ESPN",
-   "url": "https://www.espn.com/nfl/injuries",
-   "date": "2026-11-22"
-  },
-  {
-   "team": "MIN",
-   "tag": "QB",
-   "text": "QB Kyler Murray (hamstring) is ruled out; Kirk Cousins starts against San Francisco in Mexico City.",
-   "source": "ESPN",
-   "url": "https://www.espn.com/nfl/injuries",
-   "date": "2026-11-20"
-  },
-  {
-   "team": "NO",
-   "tag": "CLUSTER",
-   "text": "OL: OT Taliese Fuaga (knee), C Erik McCoy (biceps) and OT Asim Richards (knee) are all ruled out at Chicago. Three line starters missing.",
-   "source": "ESPN",
-   "url": "https://www.espn.com/nfl/injuries",
-   "date": "2026-11-21"
-  },
-  {
-   "team": "DAL",
-   "tag": "CLUSTER",
-   "text": "CB DaRon Bland (ankle) went on IR Saturday, S Jalen Thompson (hamstring) was downgraded to out, and G Tyler Booker (high-ankle sprain) is out vs. Tennessee.",
-   "source": "ESPN",
-   "url": "https://www.espn.com/nfl/injuries",
-   "date": "2026-11-22"
+  "sport": "nfl",
+  "week": 11,
+  "generated": "2026-11-22T12:17:00-05:00",
+  "movers": [
+    {
+      "team": "ARI",
+      "tag": "QB",
+      "text": "QB Carson Beck (back) is out at Kansas City; 40-year-old Josh Johnson starts, with rookie Joey Aguilar as backup. Gardner Minshew is on IR.",
+      "source": "AZCardinals.com",
+      "url": "https://www.azcardinals.com/news/josh-johnson-start-confirmed-after-carson-beck-downgraded",
+      "date": "2026-11-22"
+    },
+    {
+      "team": "MIN",
+      "tag": "QB",
+      "text": "QB Kyler Murray (hamstring) is ruled out; Kirk Cousins starts against San Francisco in Mexico City.",
+      "source": "ESPN",
+      "url": "https://www.espn.com/nfl/injuries",
+      "date": "2026-11-20"
+    },
+    {
+      "team": "NO",
+      "tag": "CLUSTER",
+      "text": "OL: OT Taliese Fuaga, C Erik McCoy and OT Asim Richards are inactive at Chicago. Three line starters missing.",
+      "source": "NewOrleansSaints.com",
+      "url": "https://www.neworleanssaints.com/news/new-orleans-saints-inactives-chicago-bears-2026-nfl-week-11",
+      "date": "2026-11-22"
+    },
+    {
+      "team": "DAL",
+      "tag": "KEY",
+      "text": "TE Jake Ferguson (knee/ankle) is inactive vs. Tennessee; Brian Schottenheimer said he would likely miss multiple weeks. S P.J. Locke III (concussion) is also inactive.",
+      "source": "NBC Sports",
+      "url": "https://www.nbcsports.com/fantasy/football/player-news/2026-11-22/jake-ferguson-leads-cowboys-inactives-vs-titans",
+      "date": "2026-11-22"
+    },
+    {
+      "team": "DET",
+      "tag": "CLUSTER",
+      "text": "Secondary: CBs D.J. Reed (hip, third straight game) and Ennis Rakestraw Jr. (shoulder) are inactive vs. Tampa Bay. DE Aidan Hutchinson (ACL) is out for the season; C Cade Mays is on IR.",
+      "source": "DetroitLions.com",
+      "url": "https://www.detroitlions.com/news/inactives-lions-vs-buccaneers-joseph-reed-rakestraw",
+      "date": "2026-11-22"
+    }
+  ],
+  "teams": {
+    "ARI": [
+      {
+        "team": "ARI",
+        "tag": "QB",
+        "text": "QB Carson Beck (back) is out at Kansas City; 40-year-old Josh Johnson starts, with rookie Joey Aguilar as backup. Gardner Minshew is on IR.",
+        "source": "AZCardinals.com",
+        "url": "https://www.azcardinals.com/news/josh-johnson-start-confirmed-after-carson-beck-downgraded",
+        "date": "2026-11-22"
+      },
+      {
+        "team": "ARI",
+        "tag": "KEY",
+        "text": "G Jon Gaines II (ankle) is out a fourth straight game; C Hjalte Froholdt is cleared from concussion protocol and starts.",
+        "source": "ESPN",
+        "url": "https://www.espn.com/nfl/injuries",
+        "date": "2026-11-21"
+      }
+    ],
+    "TB": [
+      {
+        "team": "TB",
+        "tag": "QB",
+        "text": "QB Baker Mayfield (foot/right thumb), listed questionable, is active and starts at Detroit. S Antoine Winfield Jr. (ankle) and CB Josh Hayes (knee) are inactive.",
+        "source": "Buccaneers.com",
+        "url": "https://www.buccaneers.com/news/bucs-lions-inactives-baker-mayfield-will-start",
+        "date": "2026-11-22"
+      }
+    ],
+    "MIN": [
+      {
+        "team": "MIN",
+        "tag": "QB",
+        "text": "QB Kyler Murray (hamstring) is ruled out; Kirk Cousins starts against San Francisco in Mexico City.",
+        "source": "ESPN",
+        "url": "https://www.espn.com/nfl/injuries",
+        "date": "2026-11-20"
+      },
+      {
+        "team": "MIN",
+        "tag": "KEY",
+        "text": "WR Jordan Addison had thumb surgery and is out; the Vikings will not place him on IR, per Kevin O'Connell.",
+        "source": "ESPN",
+        "url": "https://www.espn.com/nfl/injuries",
+        "date": "2026-11-18"
+      },
+      {
+        "team": "MIN",
+        "tag": "RETURNING",
+        "text": "TE T.J. Hockenson (wrist) has no injury designation and LB Blake Cashman (concussion) is cleared; both are back vs. San Francisco.",
+        "source": "ESPN",
+        "url": "https://www.espn.com/nfl/injuries",
+        "date": "2026-11-20"
+      }
+    ],
+    "NO": [
+      {
+        "team": "NO",
+        "tag": "CLUSTER",
+        "text": "OL: OT Taliese Fuaga, C Erik McCoy and OT Asim Richards are inactive at Chicago. Three line starters missing.",
+        "source": "NewOrleansSaints.com",
+        "url": "https://www.neworleanssaints.com/news/new-orleans-saints-inactives-chicago-bears-2026-nfl-week-11",
+        "date": "2026-11-22"
+      },
+      {
+        "team": "NO",
+        "tag": "KEY",
+        "text": "Defense: LB Pete Werner and CB Martin Emerson Jr. are inactive at Chicago, and starting S Justin Reid was released at his request.",
+        "source": "Yahoo Sports",
+        "url": "https://sports.yahoo.com/articles/orleans-saints-vs-chicago-bears-163640959.html",
+        "date": "2026-11-22"
+      }
+    ],
+    "KC": [
+      {
+        "team": "KC",
+        "tag": "CLUSTER",
+        "text": "OL: G Trey Smith and OT Jaylon Moore are inactive vs. Arizona, as are RB Kenneth Walker III and DTs Peter Woods and Omarr Norman-Lott.",
+        "source": "Arrowhead Pride",
+        "url": "https://www.arrowheadpride.com/kansas-city-chiefs-injuries/217091/chiefs-cardinals-inactives-peter-woods-to-miss-third-straight-game",
+        "date": "2026-11-22"
+      }
+    ],
+    "NYJ": [
+      {
+        "team": "NYJ",
+        "tag": "QB",
+        "text": "QB Geno Smith (ankle) has no injury designation and starts at the Chargers. WR Omar Cooper (ankle) is out; G Dylan Parham (knee) is questionable.",
+        "source": "ESPN",
+        "url": "https://www.espn.com/nfl/injuries",
+        "date": "2026-11-21"
+      }
+    ],
+    "BAL": [
+      {
+        "team": "BAL",
+        "tag": "QB",
+        "text": "QB Lamar Jackson (thumb surgery, IR) could return Week 16, per ESPN's Dan Graziano. Jacoby Brissett starts at Carolina.",
+        "source": "ESPN",
+        "url": "https://www.espn.com/nfl/injuries",
+        "date": "2026-11-18"
+      },
+      {
+        "team": "BAL",
+        "tag": "CLUSTER",
+        "text": "CB Marlon Humphrey (team decision), S Jaylinn Hawkins (knee) and DT Nnamdi Madubuike (hamstring) are inactive at Carolina.",
+        "source": "Baltimore Ravens",
+        "url": "https://www.baltimoreravens.com/news/ravens-inactives-adam-randall-panthers-gameday-2026",
+        "date": "2026-11-22"
+      }
+    ],
+    "DET": [
+      {
+        "team": "DET",
+        "tag": "CLUSTER",
+        "text": "Secondary: CBs D.J. Reed (hip, third straight game) and Ennis Rakestraw Jr. (shoulder) are inactive vs. Tampa Bay. DE Aidan Hutchinson (ACL) is out for the season; C Cade Mays is on IR.",
+        "source": "DetroitLions.com",
+        "url": "https://www.detroitlions.com/news/inactives-lions-vs-buccaneers-joseph-reed-rakestraw",
+        "date": "2026-11-22"
+      },
+      {
+        "team": "DET",
+        "tag": "RETURNING",
+        "text": "S Kerby Joseph is active vs. Tampa Bay for the first time this season.",
+        "source": "Yahoo Sports",
+        "url": "https://sports.yahoo.com/articles/kerby-joseph-active-detroit-lions-163821505.html",
+        "date": "2026-11-22"
+      }
+    ],
+    "DAL": [
+      {
+        "team": "DAL",
+        "tag": "CLUSTER",
+        "text": "CB DaRon Bland (ankle) went on IR Saturday, S Jalen Thompson (hamstring) was downgraded to out, and G Tyler Booker (high-ankle sprain) is out vs. Tennessee.",
+        "source": "ESPN",
+        "url": "https://www.espn.com/nfl/injuries",
+        "date": "2026-11-22"
+      },
+      {
+        "team": "DAL",
+        "tag": "KEY",
+        "text": "TE Jake Ferguson (knee/ankle) is inactive vs. Tennessee; Brian Schottenheimer said he would likely miss multiple weeks. S P.J. Locke III (concussion) is also inactive.",
+        "source": "NBC Sports",
+        "url": "https://www.nbcsports.com/fantasy/football/player-news/2026-11-22/jake-ferguson-leads-cowboys-inactives-vs-titans",
+        "date": "2026-11-22"
+      }
+    ],
+    "BUF": [
+      {
+        "team": "BUF",
+        "tag": "KEY",
+        "text": "TE Dalton Kincaid (thumb/ankle) is inactive vs. Miami, along with CB Christian Benford (groin) and LB Dorian Williams (calf).",
+        "source": "SI",
+        "url": "https://www.si.com/nfl/bills/onsi/dalton-kincaid-headlines-bills-week-11-inactive-list-vs-dolphins",
+        "date": "2026-11-22"
+      }
+    ],
+    "CHI": [
+      {
+        "team": "CHI",
+        "tag": "KEY",
+        "text": "CB Kyler Gordon (shoulder) is inactive vs. New Orleans; the injury could also keep him out of the Thanksgiving game at Detroit.",
+        "source": "Bleacher Nation",
+        "url": "https://www.bleachernation.com/bears/2026/11/22/bears-pregamin-inactives-3/",
+        "date": "2026-11-22"
+      }
+    ],
+    "SF": [
+      {
+        "team": "SF",
+        "tag": "RETURNING",
+        "text": "WR Mike Evans (Achilles), out since leaving Week 6 early, is questionable but expected to play vs. Minnesota in Mexico City, per NFL Network's Mike Garafolo. LB Dre Greenlaw is questionable.",
+        "source": "NFL.com",
+        "url": "https://www.nfl.com/news/niners-wr-mike-evans-achilles-expected-to-play-sunday-vs-vikings",
+        "date": "2026-11-21"
+      }
+    ],
+    "MIA": [
+      {
+        "team": "MIA",
+        "tag": "QB",
+        "text": "QB Malik Willis (groin/core) is on IR; Kyle McCord remains the starter at Buffalo.",
+        "source": "ESPN",
+        "url": "https://www.espn.com/nfl/injuries",
+        "date": "2026-11-16"
+      },
+      {
+        "team": "MIA",
+        "tag": "KEY",
+        "text": "S Dante Trader Jr. (shoulder/groin) is inactive at Buffalo; C Aaron Brewer cleared concussion protocol and plays.",
+        "source": "Yahoo Sports",
+        "url": "https://sports.yahoo.com/articles/miami-dolphins-inactives-updates-c-164656139.html",
+        "date": "2026-11-22"
+      }
+    ],
+    "PHI": [
+      {
+        "team": "PHI",
+        "tag": "QB",
+        "text": "Joe Milton starts vs. the Steelers for a second straight game; Tanner McKee is the backup. Jalen Hurts is on IR.",
+        "source": "ESPN",
+        "url": "https://www.espn.com/nfl/injuries",
+        "date": "2026-11-18"
+      },
+      {
+        "team": "PHI",
+        "tag": "KEY",
+        "text": "LB Zack Baun (back) and WR Dontayvion Wicks (ankle/foot) were placed on IR Saturday.",
+        "source": "ESPN",
+        "url": "https://www.espn.com/nfl/injuries",
+        "date": "2026-11-21"
+      },
+      {
+        "team": "PHI",
+        "tag": "RETURNING",
+        "text": "WR DeVonta Smith (hamstring), out five of six games, practiced fully and will play vs. the Steelers.",
+        "source": "ESPN",
+        "url": "https://www.espn.com/nfl/injuries",
+        "date": "2026-11-21"
+      }
+    ],
+    "CIN": [
+      {
+        "team": "CIN",
+        "tag": "KEY",
+        "text": "G Dalton Risner (knees) is ruled out for Monday at Washington; G Dylan Fairchild (oblique) is questionable. QB Joe Burrow (illness) has no designation.",
+        "source": "ESPN",
+        "url": "https://www.espn.com/nfl/injuries",
+        "date": "2026-11-22"
+      },
+      {
+        "team": "CIN",
+        "tag": "RETURNING",
+        "text": "S Kyle Dugger (quadriceps), out six games, is questionable for Monday at Washington.",
+        "source": "ESPN",
+        "url": "https://www.espn.com/nfl/injuries",
+        "date": "2026-11-22"
+      }
+    ],
+    "WAS": [
+      {
+        "team": "WAS",
+        "tag": "KEY",
+        "text": "CB Amik Robertson (ankle) and G Lucas Patrick (concussion) are questionable for Monday vs. Cincinnati.",
+        "source": "ESPN",
+        "url": "https://www.espn.com/nfl/injuries",
+        "date": "2026-11-22"
+      }
+    ],
+    "JAX": [
+      {
+        "team": "JAX",
+        "tag": "KEY",
+        "text": "C Robert Hainsey (knee) is out for Sunday at the Giants, per Liam Coen.",
+        "source": "ESPN",
+        "url": "https://www.espn.com/nfl/injuries",
+        "date": "2026-11-18"
+      }
+    ],
+    "LV": [
+      {
+        "team": "LV",
+        "tag": "KEY",
+        "text": "TE Brock Bowers (ankle/quad) is questionable at Denver after limited practices Thu-Fri; the Raiders may wait until near the 4:25 PM ET kickoff to decide.",
+        "source": "Yahoo Sports",
+        "url": "https://sports.yahoo.com/articles/brock-bowers-playing-today-latest-135410717.html",
+        "date": "2026-11-21"
+      }
+    ],
+    "PIT": [
+      {
+        "team": "PIT",
+        "tag": "KEY",
+        "text": "LB Nick Herbig is inactive at Philadelphia; LB Patrick Queen (broken thumb) and S DeShon Elliott (knee), both questionable, are active. G Mason McCormick is on IR.",
+        "source": "Steelers Depot",
+        "url": "https://steelersdepot.com/2026/11/steelers-vs-eagles-inactives-for-week-11/",
+        "date": "2026-11-22"
+      }
+    ],
+    "TEN": [
+      {
+        "team": "TEN",
+        "tag": "RETURNING",
+        "text": "WR Carnell Tate (shoulder), out two games, is active at Dallas.",
+        "source": "CBS Sports",
+        "url": "https://www.cbssports.com/fantasy/football/news/titans-carnell-tate-active-versus-cowboys/",
+        "date": "2026-11-22"
+      },
+      {
+        "team": "TEN",
+        "tag": "KEY",
+        "text": "WR Wan'Dale Robinson (ankle) is on IR and out for the season, per Robert Saleh.",
+        "source": "ESPN",
+        "url": "https://www.espn.com/nfl/injuries",
+        "date": "2026-11-18"
+      }
+    ],
+    "DEN": [
+      {
+        "team": "DEN",
+        "tag": "RETURNING",
+        "text": "S Talanoa Hufanga (ankle), out four games, has no designation vs. Las Vegas; CB Kris Abrams-Draine is back. S Brandon Jones (hamstring) is questionable.",
+        "source": "ESPN",
+        "url": "https://www.espn.com/nfl/injuries",
+        "date": "2026-11-21"
+      }
+    ],
+    "LAC": [
+      {
+        "team": "LAC",
+        "tag": "KEY",
+        "text": "LB Daiyan Henley (knee) is ruled out vs. the Jets; CB Tarheeb Still (ankle) is questionable.",
+        "source": "ESPN",
+        "url": "https://www.espn.com/nfl/injuries",
+        "date": "2026-11-21"
+      }
+    ],
+    "IND": [
+      {
+        "team": "IND",
+        "tag": "QB",
+        "text": "The Colts released QB Daniel Jones; Shane Steichen named Anthony Richardson the starter going forward, with Riley Leonard as backup.",
+        "source": "ESPN",
+        "url": "https://www.espn.com/nfl/injuries",
+        "date": "2026-11-20"
+      }
+    ]
   }
- ],
- "teams": {
-  "ARI": [
-   {
-    "team": "ARI",
-    "tag": "QB",
-    "text": "QB Carson Beck (back) is ruled out at Kansas City; Josh Johnson starts, with Joey Aguilar as backup. Gardner Minshew is on IR after UCL surgery.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-21"
-   },
-   {
-    "team": "ARI",
-    "tag": "KEY",
-    "text": "G Jon Gaines II (ankle) is out a fourth straight game; C Hjalte Froholdt is cleared from concussion protocol and starts.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-21"
-   }
-  ],
-  "TB": [
-   {
-    "team": "TB",
-    "tag": "QB",
-    "text": "QB Baker Mayfield (foot/right thumb) is listed questionable but slated to play at Detroit, per NFL Network's Ian Rapoport. Jalon Daniels is the backup.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-22"
-   },
-   {
-    "team": "TB",
-    "tag": "KEY",
-    "text": "S Antoine Winfield Jr. (ankle) is out for Sunday at Detroit.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-20"
-   }
-  ],
-  "MIN": [
-   {
-    "team": "MIN",
-    "tag": "QB",
-    "text": "QB Kyler Murray (hamstring) is ruled out; Kirk Cousins starts against San Francisco in Mexico City.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-20"
-   },
-   {
-    "team": "MIN",
-    "tag": "KEY",
-    "text": "WR Jordan Addison had thumb surgery and is out; the Vikings will not place him on IR, per Kevin O'Connell.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-18"
-   },
-   {
-    "team": "MIN",
-    "tag": "RETURNING",
-    "text": "TE T.J. Hockenson (wrist) has no injury designation and LB Blake Cashman (concussion) is cleared; both are back vs. San Francisco.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-20"
-   }
-  ],
-  "NO": [
-   {
-    "team": "NO",
-    "tag": "CLUSTER",
-    "text": "OL: OT Taliese Fuaga (knee), C Erik McCoy (biceps) and OT Asim Richards (knee) are all ruled out at Chicago. Three line starters missing.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-21"
-   }
-  ],
-  "KC": [
-   {
-    "team": "KC",
-    "tag": "CLUSTER",
-    "text": "OL: G Trey Smith (concussion) and OT Jaylon Moore (ankle) are out vs. Arizona. RB Kenneth Walker III (groin) is also out.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-21"
-   }
-  ],
-  "NYJ": [
-   {
-    "team": "NYJ",
-    "tag": "QB",
-    "text": "QB Geno Smith (ankle) has no injury designation and starts at the Chargers. WR Omar Cooper (ankle) is out; G Dylan Parham (knee) is questionable.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-21"
-   }
-  ],
-  "BAL": [
-   {
-    "team": "BAL",
-    "tag": "QB",
-    "text": "QB Lamar Jackson (thumb surgery, IR) could return Week 16, per ESPN's Dan Graziano. Jacoby Brissett starts at Carolina.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-18"
-   },
-   {
-    "team": "BAL",
-    "tag": "CLUSTER",
-    "text": "CB Marlon Humphrey won't play at Carolina (team decision); S Jaylinn Hawkins (knee) and DT Nnamdi Madubuike (hamstring) are ruled out.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-20"
-   }
-  ],
-  "DET": [
-   {
-    "team": "DET",
-    "tag": "CLUSTER",
-    "text": "DE Aidan Hutchinson (torn ACL) is out for the season; C Cade Mays (ankle) was placed on IR Saturday. CB D.J. Reed (hip), out two games, is questionable.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-22"
-   }
-  ],
-  "DAL": [
-   {
-    "team": "DAL",
-    "tag": "CLUSTER",
-    "text": "CB DaRon Bland (ankle) went on IR Saturday, S Jalen Thompson (hamstring) was downgraded to out, and G Tyler Booker (high-ankle sprain) is out vs. Tennessee.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-22"
-   }
-  ],
-  "BUF": [
-   {
-    "team": "BUF",
-    "tag": "KEY",
-    "text": "CB Christian Benford (groin) and LB Dorian Williams (calf) are out vs. Miami; TE Dalton Kincaid (thumb/ankle) is doubtful.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-20"
-   }
-  ],
-  "CHI": [
-   {
-    "team": "CHI",
-    "tag": "KEY",
-    "text": "CB Kyler Gordon (shoulder) is out vs. New Orleans, per the Bears' final injury report.",
-    "source": "Yahoo Sports",
-    "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPSDBYcGNXTHdpeEloTmwtR1lYWmktTG1scjFCQ1NDdzN5U1BGRHRoMF9WMWpxWFluYXpKNE1CSGRZajVybjVJUGtFMlpMX25YeVh5Z0VkQTZOV0R3WVlCWGNUNDN0cFQ3UnZZVl9kS29SYlhGblhab3BiLVFud09aa2xYZmE?oc=5",
-    "date": "2026-11-20"
-   }
-  ],
-  "SF": [
-   {
-    "team": "SF",
-    "tag": "RETURNING",
-    "text": "WR Mike Evans (Achilles), out since leaving Week 6 early, is questionable but expected to play vs. Minnesota in Mexico City, per NFL Network's Mike Garafolo. LB Dre Greenlaw is questionable.",
-    "source": "NFL.com",
-    "url": "https://www.nfl.com/news/niners-wr-mike-evans-achilles-expected-to-play-sunday-vs-vikings",
-    "date": "2026-11-21"
-   }
-  ],
-  "MIA": [
-   {
-    "team": "MIA",
-    "tag": "QB",
-    "text": "QB Malik Willis (groin/core) is on IR; Kyle McCord remains the starter at Buffalo.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-16"
-   },
-   {
-    "team": "MIA",
-    "tag": "KEY",
-    "text": "S Dante Trader Jr. (shoulder/groin) is doubtful at Buffalo; C Aaron Brewer (concussion) is questionable.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-21"
-   }
-  ],
-  "PHI": [
-   {
-    "team": "PHI",
-    "tag": "QB",
-    "text": "Joe Milton starts vs. the Steelers for a second straight game; Tanner McKee is the backup. Jalen Hurts is on IR.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-18"
-   },
-   {
-    "team": "PHI",
-    "tag": "KEY",
-    "text": "LB Zack Baun (back) and WR Dontayvion Wicks (ankle/foot) were placed on IR Saturday.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-21"
-   },
-   {
-    "team": "PHI",
-    "tag": "RETURNING",
-    "text": "WR DeVonta Smith (hamstring), out five of six games, practiced fully and will play vs. the Steelers.",
-    "source": "Bleeding Green Nation",
-    "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxOYWRYRWhTbU1LU3Q5VURPYi1VdVk3bUNJdTFkcGNHa2VIb2c0ODVkZm5TU21jczk1TTh2cUNaTWowck5pSWEzQUF5aGhnUGpTLVZ1ajg5TkpwcVA2MjZjLWlNMUcySy1HUVJkTEwtMG5TU2xBcUJ5Rzktd05Lb0U2d3ZGSjc0aTZDYldzSWR6dFNXSFVWZDJNMDdRQUlwZXNUVkMzQ0hOanpKaDZseFB3YVRYUHMxcGYtbWF5WjhZdTYybGFMWGlzUC0xSWFIcHJ6N09XTnBhQkNNa1o0OG1jQ0pkdkpOa1k?oc=5",
-    "date": "2026-11-21"
-   }
-  ],
-  "CIN": [
-   {
-    "team": "CIN",
-    "tag": "KEY",
-    "text": "G Dalton Risner (knees) is ruled out for Monday at Washington; G Dylan Fairchild (oblique) is questionable. QB Joe Burrow (illness) has no designation.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-22"
-   },
-   {
-    "team": "CIN",
-    "tag": "RETURNING",
-    "text": "S Kyle Dugger (quadriceps), out six games, is questionable for Monday at Washington.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-22"
-   }
-  ],
-  "WAS": [
-   {
-    "team": "WAS",
-    "tag": "KEY",
-    "text": "CB Amik Robertson (ankle) and G Lucas Patrick (concussion) are questionable for Monday vs. Cincinnati.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-22"
-   }
-  ],
-  "JAX": [
-   {
-    "team": "JAX",
-    "tag": "KEY",
-    "text": "C Robert Hainsey (knee) is out for Sunday at the Giants, per Liam Coen.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-18"
-   }
-  ],
-  "LV": [
-   {
-    "team": "LV",
-    "tag": "KEY",
-    "text": "TE Brock Bowers (ankle/quad) is questionable at Denver after limited practices Thu-Fri; the Raiders may wait until near the 4:25 PM ET kickoff to decide.",
-    "source": "Yahoo Sports",
-    "url": "https://sports.yahoo.com/articles/brock-bowers-playing-today-latest-135410717.html",
-    "date": "2026-11-21"
-   }
-  ],
-  "PIT": [
-   {
-    "team": "PIT",
-    "tag": "KEY",
-    "text": "G Mason McCormick (dislocated ankle) is on IR; LB Patrick Queen (hand) is questionable at Philadelphia. WR Michael Pittman Jr. is not expected to be activated.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-21"
-   }
-  ],
-  "TEN": [
-   {
-    "team": "TEN",
-    "tag": "RETURNING",
-    "text": "WR Carnell Tate (shoulder), out two games, is expected to play at Dallas, per NFL Network's Ian Rapoport.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-22"
-   },
-   {
-    "team": "TEN",
-    "tag": "KEY",
-    "text": "WR Wan'Dale Robinson (ankle) is on IR and out for the season, per Robert Saleh.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-18"
-   }
-  ],
-  "DEN": [
-   {
-    "team": "DEN",
-    "tag": "RETURNING",
-    "text": "S Talanoa Hufanga (ankle), out four games, has no designation vs. Las Vegas; CB Kris Abrams-Draine is back. S Brandon Jones (hamstring) is questionable.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-21"
-   }
-  ],
-  "LAC": [
-   {
-    "team": "LAC",
-    "tag": "KEY",
-    "text": "LB Daiyan Henley (knee) is ruled out vs. the Jets; CB Tarheeb Still (ankle) is questionable.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-21"
-   }
-  ],
-  "IND": [
-   {
-    "team": "IND",
-    "tag": "QB",
-    "text": "The Colts released QB Daniel Jones; Shane Steichen named Anthony Richardson the starter going forward, with Riley Leonard as backup.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-20"
-   }
-  ]
- }
 }
