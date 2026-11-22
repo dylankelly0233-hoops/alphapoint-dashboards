@@ -1,8 +1,18 @@
 {
  "sport": "cbb",
- "week": 20261121,
- "generated": "2026-11-21T16:47:19-05:00",
+ "week": 20261122,
+ "generated": "2026-11-22T11:45:00-05:00",
  "movers": [
+  {
+   "team": "Dayton",
+   "tag": "KEY",
+   "player": "Landen Joseph",
+   "status": "questionable",
+   "text": "Starting PG Landen Joseph (26.5 mpg) hurt his right ankle late in the 63-46 win over Utah on 11/20 and left on crutches; no update before the Northwestern game.",
+   "source": "Yahoo Sports",
+   "url": "https://sports.yahoo.com/articles/dayton-basketball-flyers-back-500-020300840.html",
+   "date": "2026-11-21"
+  },
   {
    "team": "North Carolina",
    "tag": "KEY",
@@ -14,37 +24,51 @@
    "date": "2026-11-17"
   },
   {
-   "team": "Dayton",
-   "tag": "KEY",
-   "player": "Landen Joseph",
-   "status": "questionable",
-   "text": "Point guard Landen Joseph (26.5 mpg) limped off with an ankle injury late in the 63-46 win over Utah on 11/20 and left on crutches; no update yet. Tristian Ford ran the point after.",
-   "source": "University of Dayton Athletics",
-   "url": "https://daytonflyers.com/news/2026/11/21/mens-basketball-udmbb-cruises-past-utah-xx-xx.aspx",
-   "date": "2026-11-21"
-  },
-  {
-   "team": "Michigan State",
-   "tag": "KEY",
-   "player": "Jordan Scott",
-   "status": "questionable",
-   "text": "Starter Jordan Scott (23 mpg, shoulder) is questionable vs. Detroit Mercy (noon ET); he seemed to re-aggravate it at Tennessee and Tom Izzo said the call is up to the doctors.",
+   "team": "Northwestern",
+   "tag": "CLUSTER",
+   "player": "Ryan Soulis",
+   "status": "out",
+   "text": "Northwestern lost F Ryan Soulis (11 mpg) for the season (foot surgery, hurt 11/13 vs DePaul); big man Luke McEldon is also out, leaving Okku Federiko and 7-3 Symon Ghai at center.",
    "source": "Yahoo Sports",
-   "url": "https://sports.yahoo.com/articles/pair-spartans-questionable-vs-detroit-010412122.html",
-   "date": "2026-11-20"
-  },
-  {
-   "team": "Michigan State",
-   "tag": "KEY",
-   "player": "Coen Carr",
-   "status": "questionable",
-   "text": "Starter Coen Carr (22 mpg, right knee tendinitis) is questionable vs. Detroit Mercy; Kaleb Glenn and Cam Ward would see more minutes if he and Scott sit.",
-   "source": "Yahoo Sports",
-   "url": "https://sports.yahoo.com/articles/pair-spartans-questionable-vs-detroit-010412122.html",
-   "date": "2026-11-20"
+   "url": "https://sports.yahoo.com/articles/northwestern-mbb-dealt-unfortunate-ryan-193025202.html",
+   "date": "2026-11-17"
   }
  ],
  "teams": {
+  "Dayton": [
+   {
+    "team": "Dayton",
+    "tag": "KEY",
+    "player": "Landen Joseph",
+    "status": "questionable",
+    "text": "Starting PG Landen Joseph (26.5 mpg) hurt his right ankle late in the 63-46 win over Utah on 11/20 and left on crutches; no update before the Northwestern game.",
+    "source": "Yahoo Sports",
+    "url": "https://sports.yahoo.com/articles/dayton-basketball-flyers-back-500-020300840.html",
+    "date": "2026-11-21"
+   },
+   {
+    "team": "Dayton",
+    "tag": "RETURNING",
+    "player": "Zaide Lowery",
+    "status": "returning",
+    "text": "Zaide Lowery (22.5 mpg) returned vs Utah on 11/20 after missing four games with an ankle injury; he went down briefly in that game but came back.",
+    "source": "Yahoo Sports",
+    "url": "https://sports.yahoo.com/articles/dayton-basketball-flyers-back-500-020300840.html",
+    "date": "2026-11-21"
+   }
+  ],
+  "Northwestern": [
+   {
+    "team": "Northwestern",
+    "tag": "CLUSTER",
+    "player": "Ryan Soulis",
+    "status": "out",
+    "text": "Northwestern lost F Ryan Soulis (11 mpg) for the season (foot surgery, hurt 11/13 vs DePaul); big man Luke McEldon is also out, leaving Okku Federiko and 7-3 Symon Ghai at center.",
+    "source": "Yahoo Sports",
+    "url": "https://sports.yahoo.com/articles/northwestern-mbb-dealt-unfortunate-ryan-193025202.html",
+    "date": "2026-11-17"
+   }
+  ],
   "North Carolina": [
    {
     "team": "North Carolina",
@@ -55,52 +79,6 @@
     "source": "ESPN",
     "url": "https://www.espn.com/mens-college-basketball/story/_/id/50511206/north-carolina-guard-neo-avdalas-wrist-2-months",
     "date": "2026-11-17"
-   }
-  ],
-  "Dayton": [
-   {
-    "team": "Dayton",
-    "tag": "KEY",
-    "player": "Landen Joseph",
-    "status": "questionable",
-    "text": "Point guard Landen Joseph (26.5 mpg) limped off with an ankle injury late in the 63-46 win over Utah on 11/20 and left on crutches; no update yet. Tristian Ford ran the point after.",
-    "source": "University of Dayton Athletics",
-    "url": "https://daytonflyers.com/news/2026/11/21/mens-basketball-udmbb-cruises-past-utah-xx-xx.aspx",
-    "date": "2026-11-21"
-   }
-  ],
-  "Michigan State": [
-   {
-    "team": "Michigan State",
-    "tag": "KEY",
-    "player": "Jordan Scott",
-    "status": "questionable",
-    "text": "Starter Jordan Scott (23 mpg, shoulder) is questionable vs. Detroit Mercy (noon ET); he seemed to re-aggravate it at Tennessee and Tom Izzo said the call is up to the doctors.",
-    "source": "Yahoo Sports",
-    "url": "https://sports.yahoo.com/articles/pair-spartans-questionable-vs-detroit-010412122.html",
-    "date": "2026-11-20"
-   },
-   {
-    "team": "Michigan State",
-    "tag": "KEY",
-    "player": "Coen Carr",
-    "status": "questionable",
-    "text": "Starter Coen Carr (22 mpg, right knee tendinitis) is questionable vs. Detroit Mercy; Kaleb Glenn and Cam Ward would see more minutes if he and Scott sit.",
-    "source": "Yahoo Sports",
-    "url": "https://sports.yahoo.com/articles/pair-spartans-questionable-vs-detroit-010412122.html",
-    "date": "2026-11-20"
-   }
-  ],
-  "Villanova": [
-   {
-    "team": "Villanova",
-    "tag": "KEY",
-    "player": "Darryl Simmons II",
-    "status": "questionable",
-    "text": "Guard Darryl Simmons II (13.8 mpg, right ankle sprain from the Rider win) missed the 81-61 loss at Pitt; no official word for Michigan and previews call a return unlikely.",
-    "source": "Villanova Athletics",
-    "url": "https://villanova.com/news/2026/11/19/mens-basketball-wildcats-to-welcome-no-18-michigan-on-alumni-night.aspx",
-    "date": "2026-11-19"
    }
   ]
  }

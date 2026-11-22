@@ -1,7 +1,31 @@
 {
  "sport": "cbb",
- "generated": "2026-11-21T16:47:19-05:00",
+ "generated": "2026-11-22T11:45:00-05:00",
  "teams": {
+  "Dayton": {
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-20",
+     "text": "Starting PG Landen Joseph (26.5 mpg) hurt his ankle vs Utah on 11/20 and left on crutches; ratings built with him playing overstate Dayton if he sits vs Northwestern.",
+     "source": "Yahoo Sports",
+     "url": "https://sports.yahoo.com/articles/dayton-basketball-flyers-back-500-020300840.html",
+     "date": "2026-11-21"
+    }
+   ]
+  },
+  "Northwestern": {
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-13",
+     "text": "Northwestern lost Ryan Soulis for the season (foot, 11/13) and Luke McEldon is out; thin frontcourt in losses to DePaul and Columbia (75-53) that early ratings didn't see.",
+     "source": "The Daily Northwestern",
+     "url": "https://dailynorthwestern.com/2026/11/17/sports/mens-basketball-northwestern-falls-to-columbia-75-53-in-second-straight-loss/",
+     "date": "2026-11-17"
+    }
+   ]
+  },
   "North Carolina": {
    "watch": [
     {
@@ -13,19 +37,18 @@
      "date": "2026-11-17"
     }
    ]
-  },
-  "Villanova": {
-   "watch": [
-    {
-     "direction": "too_high",
-     "since": "2026-11-15",
-     "text": "Guard Darryl Simmons II (ankle sprain vs Rider) missed the 81-61 loss at Pitt on 11/17 and is unlikely vs Michigan; ratings carry the early games he played.",
-     "source": "Villanova Athletics",
-     "url": "https://villanova.com/news/2026/11/19/mens-basketball-wildcats-to-welcome-no-18-michigan-on-alumni-night.aspx",
-     "date": "2026-11-19"
-    }
-   ]
   }
  },
- "games": {}
+ "games": {
+  "401920736": {
+   "swings": {
+    "Dayton": "The market moved up on Dayton after its 63-46 upset of Utah on 11/20 and Northwestern's injury-hit slide (Soulis out for the season), despite PG Landen Joseph's ankle injury (Yahoo, 11/21)."
+   }
+  },
+  "401921420": {
+   "swings": {
+    "Minnesota": "Nothing found: the market moved on Minnesota without a clear reason; the line fell from 10.5 to 8.5 even after the 85-70 win over Oklahoma State and Kai Shinholster's return (11/20)."
+   }
+  }
+ }
 }

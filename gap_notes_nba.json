@@ -1,88 +1,64 @@
 {
  "sport": "nba",
- "generated": "2026-11-21T16:47:19-05:00",
+ "generated": "2026-11-22T11:45:00-05:00",
  "teams": {
-  "PHI": {
+  "OKC": {
    "watch": [
     {
      "direction": "too_high",
-     "since": "2026-11-19",
-     "text": "Jaylen Brown (34.7 mpg) and Dean Wade (26.7 mpg) are out vs MIL with hamstring injuries; Tyrese Maxey (foot) was cleared to play after missing the last game.",
-     "source": "CBS Sports",
-     "url": "https://www.cbssports.com/fantasy/basketball/news/76ers-tyrese-maxey-available-saturday/",
+     "since": "2026-10-28",
+     "text": "Jalen Williams and Chet Holmgren have missed 10 of 16 games; Caruso and Jaylin Williams are new outs and SGA (back/neck) is questionable at MIA on 11/22.",
+     "source": "ClutchPoints",
+     "url": "https://clutchpoints.com/nba/nba-stories/thunder-vs-heat-injury-report-shai-gilgeous-alexander-giannis-antetokounmpo-headline-long-list",
      "date": "2026-11-21"
     }
    ]
   },
-  "MEM": {
+  "MIA": {
    "watch": [
     {
      "direction": "too_high",
-     "since": "2026-11-20",
-     "text": "Cameron Boozer (30.8 mpg, ankle), Jerami Grant (22.1) and Javon Small (22.2) are all out at MIN on 11/21; none had missed a game before.",
-     "source": "ESPN",
-     "url": "https://www.espn.com/nba/injuries",
+     "since": "2026-11-21",
+     "text": "Giannis Antetokounmpo (right groin tendinitis, limited Saturday) is questionable vs OKC; he has played every game this season, so ratings assume him.",
+     "source": "NBC Sports",
+     "url": "https://www.nbcsports.com/fantasy/basketball/player-news/2026-11-21/giannis-antetokounmpo-groin-questionable-sunday",
      "date": "2026-11-21"
     }
    ]
   },
-  "SA": {
+  "GS": {
    "watch": [
     {
      "direction": "too_high",
-     "since": "2026-11-19",
-     "text": "Dylan Harper (31.7 mpg, hip) is out two to three weeks as of 11/19; ratings were built with him playing 15 of 16 games.",
+     "since": "2026-11-12",
+     "text": "Stephen Curry (oblique tear) has missed 3 straight and is out vs BOS, estimated back about Dec 12; ratings still lean on the 13 games he played. Porzingis and Butler are also out.",
      "source": "ESPN",
-     "url": "https://www.espn.com/nba/injuries",
-     "date": "2026-11-19"
+     "url": "https://www.espn.com/nba/game/_/gameId/401910035/celtics-warriors",
+     "date": "2026-11-22"
     }
    ]
   },
   "BOS": {
    "watch": [
     {
-     "direction": "too_high",
+     "direction": "unclear",
      "since": "2026-11-21",
-     "text": "Jayson Tatum (rest), Derrick White (shoulder) and Mitchell Robinson (illness) were ruled out at SAC on 11/21; ratings were built with Tatum and White playing almost every game.",
-     "source": "ESPN",
-     "url": "https://www.espn.com/nba/injuries",
+     "text": "Tatum (rest) and White (shoulder) sat the first night of the back-to-back at SAC on 11/21; Sunday status vs GS not posted yet. If both play, the SAC result understates Boston.",
+     "source": "Athlon Sports",
+     "url": "https://athlonsports.com/nba/boston-celtics/final-injury-report-for-celtics-kings-will-jayson-tatum-derrick-white-play",
      "date": "2026-11-21"
     }
    ]
   },
-  "DAL": {
+  "CHI": {
    "watch": [
     {
      "direction": "too_high",
-     "since": "2026-11-20",
-     "text": "P.J. Washington (30.9 mpg, illness/shoulder) was downgraded to doubtful vs LAC on 11/21; Walter Clayton Jr. (knee) is questionable and Dereck Lively II (foot) is out until about Nov 27.",
-     "source": "ESPN",
-     "url": "https://www.espn.com/nba/injuries",
-     "date": "2026-11-21"
-    }
-   ]
-  },
-  "MIN": {
-   "watch": [
-    {
-     "direction": "too_high",
-     "since": "2026-10-29",
-     "text": "Anthony Edwards (33.8 mpg) has missed 10 of 16 games after right-knee arthroscopy; early-season ratings still carry the games he played.",
-     "source": "ESPN",
-     "url": "https://www.espn.com/nba/injuries",
-     "date": "2026-11-20"
-    }
-   ]
-  },
-  "NO": {
-   "watch": [
-    {
-     "direction": "too_high",
-     "since": "2026-11-13",
-     "text": "Trey Murphy III (knee) and Trendon Watford (ankle) were ruled out at SA on 11/21; Dejounte Murray (ankle) and Bennedict Mathurin (foot) are still out.",
-     "source": "ESPN",
-     "url": "https://www.espn.com/nba/injuries",
-     "date": "2026-11-21"
+     "since": "2026-11-12",
+     "text": "Caleb Wilson (hand, 4-6 weeks) is out since 11/12 and Norman Powell strained a hamstring on 11/21; the Bulls are without their two leading scorers vs DEN.",
+     "source": "Bleacher Nation",
+     "url": "https://www.bleachernation.com/bulls/2026/11/22/norman-powell-injured/",
+     "date": "2026-11-22"
     }
    ]
   },
@@ -90,68 +66,158 @@
    "watch": [
     {
      "direction": "too_high",
-     "since": "2026-11-20",
-     "text": "OG Anunoby (34.0 mpg, calf) is doubtful vs POR on 11/21, Karl-Anthony Towns (illness) is questionable and Jordan Clarkson (foot) is out.",
+     "since": "2026-11-21",
+     "text": "OG Anunoby (calf) and Karl-Anthony Towns (illness) missed 11/21 vs POR and are game-time decisions vs IND; Jordan Clarkson is out.",
      "source": "ESPN",
-     "url": "https://www.espn.com/nba/injuries",
-     "date": "2026-11-21"
+     "url": "https://www.espn.com/nba/game/_/gameId/401910034",
+     "date": "2026-11-22"
     }
    ]
   },
-  "POR": {
+  "IND": {
    "watch": [
     {
      "direction": "too_high",
-     "since": "2026-11-16",
-     "text": "Deni Avdija (24.2 ppg, foot contusion from 11/16 vs MIN) missed the last two games and is questionable at NY; Ja Morant (hamstring) and Shaedon Sharpe (meniscus) are out.",
-     "source": "Blazer's Edge",
-     "url": "https://www.blazersedge.com/trail-blazers-injury-report/118709/portland-trail-blazers-deni-avdija-injury-report-new-york-knicks-nba-news-robert-williams-ja-morant",
+     "since": "2026-11-21",
+     "text": "Pascal Siakam (hip) is questionable at NY, with Haliburton (9 games missed, 2+ more weeks) and McConnell already out.",
+     "source": "Heavy",
+     "url": "https://heavy.com/sports/nba/indiana-pacers/pascal-siakam-injury-knicks/",
+     "date": "2026-11-22"
+    }
+   ]
+  },
+  "DAL": {
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-21",
+     "text": "P.J. Washington (30.9 mpg) missed 11/21 vs LAC (illness/shoulder); no status yet for the back-to-back at UTAH. Lively (foot) says he is close to his season debut.",
+     "source": "Dallas Sports Journal",
+     "url": "https://dallassportsjournal.com/pj-washington-out-walter-clayton-available-mavericks-clippers/",
      "date": "2026-11-21"
     }
    ]
   },
-  "LAC": {
+  "ATL": {
    "watch": [
     {
-     "direction": "too_low",
-     "since": "2026-11-23",
-     "text": "Brandon Ingram has not played this season (Achilles/heel) and is out again at DAL; he is expected to debut Monday vs HOU, which our ratings (built without him) won't see.",
-     "source": "Heavy",
-     "url": "https://heavy.com/sports/nba/los-angeles-clippers/injury-report-vs-mavericks-november-21/",
+     "direction": "too_high",
+     "since": "2026-11-17",
+     "text": "CJ McCollum (calf) is out at least four weeks from 11/17 and Landale is out; Flemings (lumbar) is questionable vs DET.",
+     "source": "Yahoo Sports",
+     "url": "https://sports.yahoo.com/articles/hawks-vs-pistons-prediction-preview-113752341.html",
+     "date": "2026-11-22"
+    }
+   ]
+  },
+  "DET": {
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-17",
+     "text": "Duncan Robinson (quad, since 11/17) and Jalen Duren (hamstring, 11 games) are out at ATL; Cade Cunningham (knee) is probable.",
+     "source": "Athlon Sports",
+     "url": "https://athlonsports.com/nba/detroit-pistons/final-injury-report-for-pistons-hawks-will-cade-cunningham-jalen-duren-play",
+     "date": "2026-11-22"
+    }
+   ]
+  },
+  "UTAH": {
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-11",
+     "text": "Lauri Markkanen (hand fracture, 11/11, at least a month) has missed 6 games and Jaren Jackson Jr. (MCL) 10; ratings still carry early games with them.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nba/injuries",
+     "date": "2026-11-20"
+    }
+   ]
+  },
+  "ORL": {
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-10-24",
+     "text": "Paolo Banchero (high-ankle sprain, 4-6 weeks from 10/24) has missed 10 of 15 games; a return could come soon, check before tip.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nba/injuries",
      "date": "2026-11-21"
     }
    ]
   }
  },
  "games": {
-  "401910025": {
-   "swings": {
-    "DAL": "P.J. Washington (shoulder/illness) was downgraded to doubtful vs LAC on 11/21 and Clayton Jr. is questionable; the market prices it, our ratings don't (ESPN, 11/21)."
-   }
-  },
-  "401910026": {
-   "swings": {
-    "MEM": "Cameron Boozer (ankle), Jerami Grant (calf) and Javon Small (personal) were ruled out for MIN on 11/20-21; the market prices it, our ratings don't (ESPN, 11/21).",
-    "MIN": "Nothing found: the market moved on MIN without a clear reason; Edwards is still out and MIN lost 102-99 at NY on 11/19, but MEM's three absences pull the line MIN's way (ESPN)."
-   }
-  },
-  "401910024": {
-   "swings": {
-    "NY": "OG Anunoby (calf) was downgraded to doubtful on 11/21, Towns (illness) is questionable and Clarkson is out; the line fell from Knicks -5.5 to -2.5 (ESPN, 11/21)."
-   }
-  },
-  "401910028": {
-   "verdict": "explained",
-   "summary": "Boston ruled out Jayson Tatum, Derrick White and Mitchell Robinson at SAC; our ratings assume Tatum and White play, which covers most of the 3.5-point gap.",
+  "401910030": {
+   "verdict": "partly",
+   "summary": "OKC is short-handed (Caruso and Jaylin Williams out, J. Williams and Holmgren still out) and SGA is questionable; that covers part of the 7-point gap, more if SGA sits.",
    "reasons": [
     {
-     "text": "Jayson Tatum (rest) and Derrick White (shoulder) are out for Boston at Sacramento on 11/21.",
-     "source": "ESPN",
-     "url": "https://www.espn.com/nba/injuries",
+     "text": "Shai Gilgeous-Alexander (low back contusion/neck strain) is questionable at MIA; Caruso and Jaylin Williams are out.",
+     "source": "ClutchPoints",
+     "url": "https://clutchpoints.com/nba/nba-stories/thunder-vs-heat-injury-report-shai-gilgeous-alexander-giannis-antetokounmpo-headline-long-list",
+     "date": "2026-11-21"
+    },
+    {
+     "text": "Giannis Antetokounmpo (groin tendinitis) is also questionable for Miami, which would push the other way.",
+     "source": "NBC Sports",
+     "url": "https://www.nbcsports.com/fantasy/basketball/player-news/2026-11-21/giannis-antetokounmpo-groin-questionable-sunday",
      "date": "2026-11-21"
     }
    ],
+   "returning": [],
+   "swings": {
+    "OKC": "SGA was added as questionable (back/neck) and Caruso and Jaylin Williams were ruled out for 11/22; the market moved from Heat -2.5 to -4.5 (ClutchPoints, 11/21).",
+    "MIA": "Same game: the market moved toward Miami on OKC's injury list (SGA questionable, Caruso out), not on Miami news; Giannis is questionable too (NBC Sports, 11/21)."
+   }
+  },
+  "401910032": {
+   "verdict": "explained",
+   "summary": "Chicago is without its two leading scorers (Caleb Wilson since 11/12, Norman Powell's hamstring on 11/21), which covers the 3-point gap.",
+   "reasons": [
+    {
+     "text": "Norman Powell (mild right hamstring strain on 11/21) is out/questionable vs DEN and Jalen Smith (illness) is questionable.",
+     "source": "ClutchPoints",
+     "url": "https://clutchpoints.com/nba/denver-nuggets/nuggets-vs-bulls-injury-report-norman-powell-jalen-smith",
+     "date": "2026-11-22"
+    },
+    {
+     "text": "Caleb Wilson (hand) is out 4-6 weeks from 11/12; the line moved from Nuggets -8.5 to -9.5.",
+     "source": "Bleacher Nation",
+     "url": "https://www.bleachernation.com/bulls/2026/11/22/norman-powell-injured/",
+     "date": "2026-11-22"
+    }
+   ],
    "returning": []
+  },
+  "401910035": {
+   "verdict": "partly",
+   "summary": "Golden State is without Stephen Curry (out since 11/12) and the market expects Tatum and White back after resting at SAC; Curry covers part of the 5.7-point gap.",
+   "reasons": [
+    {
+     "text": "Stephen Curry (oblique tear) is out vs BOS, ESPN estimates Dec 12; our ratings still carry his 13 games.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nba/game/_/gameId/401910035/celtics-warriors",
+     "date": "2026-11-22"
+    },
+    {
+     "text": "Tatum (rest) and White (shoulder) sat the first night of the back-to-back on 11/21; no Sunday status posted yet.",
+     "source": "Athlon Sports",
+     "url": "https://athlonsports.com/nba/boston-celtics/final-injury-report-for-celtics-kings-will-jayson-tatum-derrick-white-play",
+     "date": "2026-11-21"
+    }
+   ],
+   "returning": [
+    {
+     "team": "BOS",
+     "player": "Jayson Tatum",
+     "text": "Rested 11/21 at SAC (first night of back-to-back); expected back vs GS but not confirmed.",
+     "url": "https://athlonsports.com/nba/boston-celtics/final-injury-report-for-celtics-kings-will-jayson-tatum-derrick-white-play"
+    }
+   ],
+   "swings": {
+    "BOS": "At SAC on 11/21 Tatum and White sat, so the market was low on Boston; for GS the market prices them back after the rest night (Athlon, 11/21)."
+   }
   }
  }
 }
