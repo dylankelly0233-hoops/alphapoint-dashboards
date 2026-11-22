@@ -1,17 +1,17 @@
 {
  "sport": "cbb",
  "week": 20261122,
- "generated": "2026-11-22T11:45:00-05:00",
+ "generated": "2026-11-22T16:47:00-05:00",
  "movers": [
   {
    "team": "Dayton",
    "tag": "KEY",
-   "player": "Landen Joseph",
-   "status": "questionable",
-   "text": "Starting PG Landen Joseph (26.5 mpg) hurt his right ankle late in the 63-46 win over Utah on 11/20 and left on crutches; no update before the Northwestern game.",
+   "text": "Starting PG Landen Joseph (26.5 mpg, ankle, hurt 11/20 vs Utah) did not play vs Northwestern on 11/22; Dayton lost 79-55. Malcolm Thomas (ankle) was also out.",
    "source": "Yahoo Sports",
-   "url": "https://sports.yahoo.com/articles/dayton-basketball-flyers-back-500-020300840.html",
-   "date": "2026-11-21"
+   "url": "https://sports.yahoo.com/articles/karasinski-scores-26-west-adds-202640192.html",
+   "date": "2026-11-22",
+   "player": "Landen Joseph",
+   "status": "out"
   },
   {
    "team": "North Carolina",
@@ -39,12 +39,12 @@
    {
     "team": "Dayton",
     "tag": "KEY",
-    "player": "Landen Joseph",
-    "status": "questionable",
-    "text": "Starting PG Landen Joseph (26.5 mpg) hurt his right ankle late in the 63-46 win over Utah on 11/20 and left on crutches; no update before the Northwestern game.",
+    "text": "Starting PG Landen Joseph (26.5 mpg, ankle, hurt 11/20 vs Utah) did not play vs Northwestern on 11/22; Dayton lost 79-55. Malcolm Thomas (ankle) was also out.",
     "source": "Yahoo Sports",
-    "url": "https://sports.yahoo.com/articles/dayton-basketball-flyers-back-500-020300840.html",
-    "date": "2026-11-21"
+    "url": "https://sports.yahoo.com/articles/karasinski-scores-26-west-adds-202640192.html",
+    "date": "2026-11-22",
+    "player": "Landen Joseph",
+    "status": "out"
    },
    {
     "team": "Dayton",

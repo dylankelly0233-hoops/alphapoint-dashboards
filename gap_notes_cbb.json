@@ -1,16 +1,16 @@
 {
  "sport": "cbb",
- "generated": "2026-11-22T11:45:00-05:00",
+ "generated": "2026-11-22T16:47:00-05:00",
  "teams": {
   "Dayton": {
    "watch": [
     {
      "direction": "too_high",
      "since": "2026-11-20",
-     "text": "Starting PG Landen Joseph (26.5 mpg) hurt his ankle vs Utah on 11/20 and left on crutches; ratings built with him playing overstate Dayton if he sits vs Northwestern.",
+     "text": "Starting PG Landen Joseph (ankle, hurt 11/20 vs Utah) sat vs Northwestern on 11/22 and Dayton lost 79-55; ratings built with him overstate Dayton while he is out.",
      "source": "Yahoo Sports",
-     "url": "https://sports.yahoo.com/articles/dayton-basketball-flyers-back-500-020300840.html",
-     "date": "2026-11-21"
+     "url": "https://sports.yahoo.com/articles/karasinski-scores-26-west-adds-202640192.html",
+     "date": "2026-11-22"
     }
    ]
   },
@@ -47,7 +47,7 @@
   },
   "401921420": {
    "swings": {
-    "Minnesota": "Nothing found: the market moved on Minnesota without a clear reason; the line fell from 10.5 to 8.5 even after the 85-70 win over Oklahoma State and Kai Shinholster's return (11/20)."
+    "Minnesota": "Nothing found: the market moved on Minnesota without a clear reason; the line is 9.5 from a 10.5 open despite the 85-70 win over Oklahoma State and no injury news for either team (11/22)."
    }
   }
  }

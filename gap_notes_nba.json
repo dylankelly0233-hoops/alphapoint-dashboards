@@ -1,16 +1,16 @@
 {
  "sport": "nba",
- "generated": "2026-11-22T11:45:00-05:00",
+ "generated": "2026-11-22T16:47:00-05:00",
  "teams": {
   "OKC": {
    "watch": [
     {
      "direction": "too_high",
      "since": "2026-10-28",
-     "text": "Jalen Williams and Chet Holmgren have missed 10 of 16 games; Caruso and Jaylin Williams are new outs and SGA (back/neck) is questionable at MIA on 11/22.",
-     "source": "ClutchPoints",
-     "url": "https://clutchpoints.com/nba/nba-stories/thunder-vs-heat-injury-report-shai-gilgeous-alexander-giannis-antetokounmpo-headline-long-list",
-     "date": "2026-11-21"
+     "text": "SGA was ruled out at MIA on 11/22 (back/neck); with Jalen Williams, Holmgren, Caruso and Cason Wallace also out, ratings built on healthy OKC games overstate it tonight.",
+     "source": "NBC Sports",
+     "url": "https://www.nbcsports.com/fantasy/basketball/player-news/2026-11-22/shai-gilgeous-alexander-back-neck-out-sunday",
+     "date": "2026-11-22"
     }
    ]
   },
@@ -41,12 +41,12 @@
   "BOS": {
    "watch": [
     {
-     "direction": "unclear",
+     "direction": "too_low",
      "since": "2026-11-21",
-     "text": "Tatum (rest) and White (shoulder) sat the first night of the back-to-back at SAC on 11/21; Sunday status vs GS not posted yet. If both play, the SAC result understates Boston.",
-     "source": "Athlon Sports",
-     "url": "https://athlonsports.com/nba/boston-celtics/final-injury-report-for-celtics-kings-will-jayson-tatum-derrick-white-play",
-     "date": "2026-11-21"
+     "text": "Tatum and White sat the 97-96 loss at SAC on 11/21 but are off the 11/22 report vs GS; that loss understates the Boston that plays tonight.",
+     "source": "RotoWire",
+     "url": "https://rotowire.com/basketball/headlines/jayson-tatum-news-off-injury-report-sunday-540517",
+     "date": "2026-11-22"
     }
    ]
   },
@@ -55,9 +55,9 @@
     {
      "direction": "too_high",
      "since": "2026-11-12",
-     "text": "Caleb Wilson (hand, 4-6 weeks) is out since 11/12 and Norman Powell strained a hamstring on 11/21; the Bulls are without their two leading scorers vs DEN.",
-     "source": "Bleacher Nation",
-     "url": "https://www.bleachernation.com/bulls/2026/11/22/norman-powell-injured/",
+     "text": "Norman Powell (hamstring) was ruled out vs DEN on 11/22 and Caleb Wilson (hand, 4-6 weeks) has been out since 11/12: the Bulls are without their two leading scorers.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nba/story/_/id/50564049/bulls-g-norman-powell-sidelined-mild-hamstring-injury",
      "date": "2026-11-22"
     }
    ]
@@ -67,9 +67,9 @@
     {
      "direction": "too_high",
      "since": "2026-11-21",
-     "text": "OG Anunoby (calf) and Karl-Anthony Towns (illness) missed 11/21 vs POR and are game-time decisions vs IND; Jordan Clarkson is out.",
-     "source": "ESPN",
-     "url": "https://www.espn.com/nba/game/_/gameId/401910034",
+     "text": "OG Anunoby (calf) is out vs IND for a second straight game and Karl-Anthony Towns (illness) is questionable; Jordan Clarkson is out.",
+     "source": "CBS Sports",
+     "url": "https://www.cbssports.com/fantasy/basketball/news/knicks-og-anunoby-ruled-out-sunday-540483/",
      "date": "2026-11-22"
     }
    ]
@@ -91,10 +91,10 @@
     {
      "direction": "too_high",
      "since": "2026-11-21",
-     "text": "P.J. Washington (30.9 mpg) missed 11/21 vs LAC (illness/shoulder); no status yet for the back-to-back at UTAH. Lively (foot) says he is close to his season debut.",
-     "source": "Dallas Sports Journal",
-     "url": "https://dallassportsjournal.com/pj-washington-out-walter-clayton-available-mavericks-clippers/",
-     "date": "2026-11-21"
+     "text": "P.J. Washington (illness) is doubtful at UTAH on 11/22 after missing 11/21 vs LAC; Walter Clayton Jr. is questionable on the back-to-back.",
+     "source": "NBC Sports",
+     "url": "https://www.nbcsports.com/fantasy/basketball/player-news/2026-11-22/p-j-washington-illness-doubtful-vs-utah",
+     "date": "2026-11-22"
     }
    ]
   },
@@ -149,26 +149,31 @@
  },
  "games": {
   "401910030": {
-   "verdict": "partly",
-   "summary": "OKC is short-handed (Caruso and Jaylin Williams out, J. Williams and Holmgren still out) and SGA is questionable; that covers part of the 7-point gap, more if SGA sits.",
+   "verdict": "explained",
+   "summary": "OKC ruled out Shai Gilgeous-Alexander on 11/22 on top of Jalen Williams, Holmgren, Caruso and Wallace; that covers most of the 6-point gap. Giannis is still questionable for Miami.",
    "reasons": [
     {
-     "text": "Shai Gilgeous-Alexander (low back contusion/neck strain) is questionable at MIA; Caruso and Jaylin Williams are out.",
-     "source": "ClutchPoints",
-     "url": "https://clutchpoints.com/nba/nba-stories/thunder-vs-heat-injury-report-shai-gilgeous-alexander-giannis-antetokounmpo-headline-long-list",
-     "date": "2026-11-21"
+     "text": "Shai Gilgeous-Alexander (low back contusion/neck strain) was ruled out at MIA on 11/22 after being listed questionable.",
+     "source": "NBC Sports",
+     "url": "https://www.nbcsports.com/fantasy/basketball/player-news/2026-11-22/shai-gilgeous-alexander-back-neck-out-sunday",
+     "date": "2026-11-22"
     },
     {
-     "text": "Giannis Antetokounmpo (groin tendinitis) is also questionable for Miami, which would push the other way.",
-     "source": "NBC Sports",
-     "url": "https://www.nbcsports.com/fantasy/basketball/player-news/2026-11-21/giannis-antetokounmpo-groin-questionable-sunday",
-     "date": "2026-11-21"
+     "text": "Caruso, Cason Wallace, Jalen Williams and Chet Holmgren are also out for OKC.",
+     "source": "Yahoo Sports",
+     "url": "https://sports.yahoo.com/articles/thunder-vs-heat-injury-report-154004338.html",
+     "date": "2026-11-22"
+    },
+    {
+     "text": "Giannis Antetokounmpo (right groin tendinitis) is questionable for Miami and will be re-evaluated before the 6 PM tip; if he sits it pushes the other way.",
+     "source": "Heavy",
+     "url": "https://heavy.com/sports/nba/miami-heat/injury-report-vs-thunder-november-22/",
+     "date": "2026-11-22"
     }
    ],
    "returning": [],
    "swings": {
-    "OKC": "SGA was added as questionable (back/neck) and Caruso and Jaylin Williams were ruled out for 11/22; the market moved from Heat -2.5 to -4.5 (ClutchPoints, 11/21).",
-    "MIA": "Same game: the market moved toward Miami on OKC's injury list (SGA questionable, Caruso out), not on Miami news; Giannis is questionable too (NBC Sports, 11/21)."
+    "MIA": "The market moved toward Miami (Heat -2.5 open, -3.5 now) on OKC's injury list, with SGA ruled out on 11/22, not on Miami news; Giannis is questionable (NBC Sports, 11/22)."
    }
   },
   "401910032": {
@@ -191,8 +196,8 @@
    "returning": []
   },
   "401910035": {
-   "verdict": "partly",
-   "summary": "Golden State is without Stephen Curry (out since 11/12) and the market expects Tatum and White back after resting at SAC; Curry covers part of the 5.7-point gap.",
+   "verdict": "explained",
+   "summary": "Golden State is without Stephen Curry (out since 11/12) while Tatum and White are off Boston's report after resting at SAC; together they cover most of the 6-point gap.",
    "reasons": [
     {
      "text": "Stephen Curry (oblique tear) is out vs BOS, ESPN estimates Dec 12; our ratings still carry his 13 games.",
@@ -201,22 +206,28 @@
      "date": "2026-11-22"
     },
     {
-     "text": "Tatum (rest) and White (shoulder) sat the first night of the back-to-back on 11/21; no Sunday status posted yet.",
-     "source": "Athlon Sports",
-     "url": "https://athlonsports.com/nba/boston-celtics/final-injury-report-for-celtics-kings-will-jayson-tatum-derrick-white-play",
-     "date": "2026-11-21"
+     "text": "Tatum (rest) and White (AC joint) sat at SAC on 11/21 but are off the injury report for the GS game on 11/22.",
+     "source": "NBC Sports",
+     "url": "https://www.nbcsports.com/fantasy/basketball/player-news/2026-11-22/derrick-white-shoulder-off-injury-report-vs-gsw",
+     "date": "2026-11-22"
     }
    ],
    "returning": [
     {
      "team": "BOS",
      "player": "Jayson Tatum",
-     "text": "Rested 11/21 at SAC (first night of back-to-back); expected back vs GS but not confirmed.",
-     "url": "https://athlonsports.com/nba/boston-celtics/final-injury-report-for-celtics-kings-will-jayson-tatum-derrick-white-play"
+     "text": "Rested 11/21 at SAC; off the 11/22 injury report and expected to play at GS.",
+     "url": "https://rotowire.com/basketball/headlines/jayson-tatum-news-off-injury-report-sunday-540517"
+    },
+    {
+     "team": "BOS",
+     "player": "Derrick White",
+     "text": "Missed 11/21 at SAC (AC joint contusion); off the 11/22 injury report vs GS.",
+     "url": "https://www.nbcsports.com/fantasy/basketball/player-news/2026-11-22/derrick-white-shoulder-off-injury-report-vs-gsw"
     }
    ],
    "swings": {
-    "BOS": "At SAC on 11/21 Tatum and White sat, so the market was low on Boston; for GS the market prices them back after the rest night (Athlon, 11/21)."
+    "BOS": "Tatum and White sat at SAC on 11/21, so the market was low on Boston there; both are off the 11/22 report, so the market prices them back at GS (RotoWire, 11/22)."
    }
   }
  }
