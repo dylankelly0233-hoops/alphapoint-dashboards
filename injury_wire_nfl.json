@@ -1,7 +1,7 @@
 {
  "sport": "nfl",
  "week": 11,
- "generated": "2026-11-22T10:20:00-05:00",
+ "generated": "2026-11-22T10:36:00-05:00",
  "movers": [
   {
    "team": "ARI",
@@ -199,9 +199,9 @@
    {
     "team": "SF",
     "tag": "RETURNING",
-    "text": "WR Mike Evans (Achilles tendinitis), who has missed three games, is questionable vs. Minnesota in Mexico City; LB Dre Greenlaw (neck) is also questionable.",
-    "source": "49ers.com",
-    "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOcms3Tmw4bUc2WFhmbGZaeF83dUk0bnJJc1B5eV92SjBQZzJYamhSSVdwVUlZb19MUGp3ZFBiVnNEU0QyeVZBSXpMWUJGanZKZXFyejVLajlXTy1rcVBQU3UwSnNwcklTNG8tU2llZ1FLSkpUY09ZLVNhRXdJYnh0OGJlODBFZUN3blFFaHdMZFhCU3JWTXNkeTdmSUstR1ZwdTlHbnBTRXlnRDFEMmhv?oc=5",
+    "text": "WR Mike Evans (Achilles), out since leaving Week 6 early, is questionable but expected to play vs. Minnesota in Mexico City, per NFL Network's Mike Garafolo. LB Dre Greenlaw is questionable.",
+    "source": "NFL.com",
+    "url": "https://www.nfl.com/news/niners-wr-mike-evans-achilles-expected-to-play-sunday-vs-vikings",
     "date": "2026-11-21"
    }
   ],
@@ -291,10 +291,10 @@
    {
     "team": "LV",
     "tag": "KEY",
-    "text": "TE Brock Bowers (ankle) is questionable at Denver; he said Friday his availability is still up in the air.",
-    "source": "Raiders.com",
-    "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE91R2pfMHJIc21WUWRnRHBxZzQ1Q3dBclBQRWxnZlhaekpSTWtlWFpJeXZydUt2QlFYUWZTQWlPc0ZWcFJUSGQ0aC1udFhNQVlZUGg2UWF2aHFuZEFMWjNrR0N2OWpRZC1OMjBOdGZHMHhDSUFL?oc=5",
-    "date": "2026-11-20"
+    "text": "TE Brock Bowers (ankle/quad) is questionable at Denver after limited practices Thu-Fri; the Raiders may wait until near the 4:25 PM ET kickoff to decide.",
+    "source": "Yahoo Sports",
+    "url": "https://sports.yahoo.com/articles/brock-bowers-playing-today-latest-135410717.html",
+    "date": "2026-11-21"
    }
   ],
   "PIT": [

@@ -1,6 +1,6 @@
 {
  "sport": "nfl",
- "generated": "2026-11-22T10:25:00-05:00",
+ "generated": "2026-11-22T10:36:00-05:00",
  "games": {
   "2026_12_NE_LAC": {
    "verdict": "explained",
@@ -413,6 +413,18 @@
      "source": "ESPN",
      "url": "https://www.espn.com/nfl/injuries",
      "date": "2026-11-20"
+    }
+   ]
+  },
+  "SF": {
+   "watch": [
+    {
+     "direction": "too_low",
+     "since": "2026-10-18",
+     "text": "WR Mike Evans (Achilles) left Week 6 early and has missed the games since; he is expected back vs. Minnesota, so recent results came without him.",
+     "source": "NFL.com",
+     "url": "https://www.nfl.com/news/niners-wr-mike-evans-achilles-expected-to-play-sunday-vs-vikings",
+     "date": "2026-11-21"
     }
    ]
   }
