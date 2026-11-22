@@ -1,6 +1,6 @@
 {
  "sport": "nfl",
- "generated": "2026-11-21T10:30:00-05:00",
+ "generated": "2026-11-22T10:25:00-05:00",
  "games": {
   "2026_12_NE_LAC": {
    "verdict": "explained",
@@ -25,34 +25,6 @@
     "NE": "Drake Maye's fractured ankle (Week 10) put Tommy DeVito at QB; the market marked New England down, our ratings still carry Maye (theScore, Nov 17)."
    }
   },
-  "2026_11_ARI_KC": {
-   "verdict": "partly",
-   "summary": "Arizona is down to its third QB (Josh Johnson expected to start); that covers part of the 2.5-point gap, while Kansas City's line and RB injuries push back.",
-   "reasons": [
-    {
-     "text": "QB Gardner Minshew (elbow) is on IR after UCL surgery; Carson Beck (back spasms) did not practice Friday and Josh Johnson is expected to start.",
-     "source": "ESPN",
-     "url": "https://www.espn.com/nfl/injuries",
-     "date": "2026-11-20"
-    },
-    {
-     "text": "The line opened Kansas City -13.5 and is now -16.5, moving 3 points with the Arizona QB news.",
-     "source": "AlphaPoint line history",
-     "url": "https://dylankelly0233-hoops.github.io/alphapoint-dashboards/",
-     "date": "2026-11-20"
-    },
-    {
-     "text": "Pushing the other way: Chiefs G Trey Smith, OT Jaylon Moore and RB Kenneth Walker III are all ruled out.",
-     "source": "ESPN",
-     "url": "https://www.espn.com/nfl/injuries",
-     "date": "2026-11-20"
-    }
-   ],
-   "returning": [],
-   "swings": {
-    "KC": "Arizona lost Gardner Minshew and likely Carson Beck (Josh Johnson expected to start), so the market pushed Kansas City from -13.5 to -16.5; our ratings don't see QB changes (ESPN, Nov 20)."
-   }
-  },
   "2026_11_MIN_SF": {
    "swings": {
     "MIN": "QB Kyler Murray (hamstring) is ruled out and Kirk Cousins starts; the market dropped Minnesota, our ratings didn't (ESPN, Nov 20)."
@@ -73,9 +45,9 @@
      "date": "2026-11-18"
     },
     {
-     "text": "Partly offsetting: TE T.J. Hockenson and LB Blake Cashman are back; 49ers WR Mike Evans is questionable.",
-     "source": "The Viking Age",
-     "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPeUVMaVVlZU5vYUdId0YyRGo1ejV5a1NDSzJMRHJMbVJYOXRxTHpyT1ZnY213Y0xjYWVPc2I5RjJZSkRqcjlHVWNCYWRabWVrZS1PTzdwN21OTHAzNGxtdFRUZmlYZHpld0VJd0hNVkNyazc4QjNUclNsUVlmZDhvWm03X05OZDRkUHVEODZHMFlhbnVn?oc=5",
+     "text": "Partly offsetting: TE T.J. Hockenson and LB Blake Cashman are back; 49ers WR Mike Evans (Achilles) is questionable after missing three games.",
+     "source": "49ers.com",
+     "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOcms3Tmw4bUc2WFhmbGZaeF83dUk0bnJJc1B5eV92SjBQZzJYamhSSVdwVUlZb19MUGp3ZFBiVnNEU0QyeVZBSXpMWUJGanZKZXFyejVLajlXTy1rcVBQU3UwSnNwcklTNG8tU2llZ1FLSkpUY09ZLVNhRXdJYnh0OGJlODBFZUN3blFFaHdMZFhCU3JWTXNkeTdmSUstR1ZwdTlHbnBTRXlnRDFEMmhv?oc=5",
      "date": "2026-11-21"
     }
    ],
@@ -93,10 +65,10 @@
    "summary": "New Orleans is missing three offensive line starters, which explains part of the 3-point gap; Chicago losing CB Kyler Gordon pushes slightly the other way.",
    "reasons": [
     {
-     "text": "Saints OT Taliese Fuaga (knee) and C Erik McCoy (biceps) are ruled out; OT Asim Richards (knee) is out for weeks: three line starters.",
+     "text": "Saints OT Taliese Fuaga (knee), C Erik McCoy (biceps) and OT Asim Richards (knee) are all ruled out: three line starters.",
      "source": "ESPN",
      "url": "https://www.espn.com/nfl/injuries",
-     "date": "2026-11-20"
+     "date": "2026-11-21"
     },
     {
      "text": "Chicago (7-2) comes off its bye; Circa lists Bears -10.5, so books differ by a point.",
@@ -119,10 +91,10 @@
    "summary": "Aidan Hutchinson's season-ending ACL tear moved this line from Detroit -2.5 (spring) to Chicago -2.5; that's worth about 2 of our 4-point gap.",
    "reasons": [
     {
-     "text": "DE Aidan Hutchinson (torn ACL) is on IR and out for the season; C Cade Mays (ankle) is out this week vs. Tampa Bay.",
+     "text": "DE Aidan Hutchinson (torn ACL) is on IR for the season; C Cade Mays (ankle) went on IR Saturday, so he misses at least four games.",
      "source": "ESPN",
      "url": "https://www.espn.com/nfl/injuries",
-     "date": "2026-11-20"
+     "date": "2026-11-22"
     },
     {
      "text": "The early (May) line had Detroit -2.5, so the market has swung about 5 points since then.",
@@ -133,7 +105,7 @@
    ],
    "returning": [],
    "swings": {
-    "DET": "DE Aidan Hutchinson tore his ACL and is out for the season; the market marked Detroit down, our ratings haven't caught up (ESPN, Nov 18)."
+    "DET": "DE Aidan Hutchinson tore his ACL and C Cade Mays went on IR; the market marked Detroit down, our ratings haven't caught up (ESPN, Nov 22)."
    }
   },
   "2026_12_NYG_IND": {
@@ -191,7 +163,59 @@
   },
   "2026_12_PHI_DAL": {
    "swings": {
-    "DAL": "Dallas lost 46-40 to the 49ers in Week 10 and lost CB DaRon Bland and G Tyler Booker to high-ankle sprains for multiple weeks; our ratings were higher on Dallas before that (ESPN, Nov 16)."
+    "DAL": "CB DaRon Bland went on IR Saturday, S Jalen Thompson was downgraded to out, and G Tyler Booker is out; the market marked Dallas down, our ratings didn't (ESPN, Nov 22)."
+   }
+  },
+  "2026_11_TB_DET": {
+   "verdict": "partly",
+   "summary": "Detroit lost DE Aidan Hutchinson for the season and C Cade Mays to IR, which covers part of the 3-point gap; Baker Mayfield is slated to play, so Tampa Bay's QB isn't the reason.",
+   "reasons": [
+    {
+     "text": "DE Aidan Hutchinson (torn ACL) is on IR for the season; C Cade Mays (ankle) was placed on IR Saturday.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nfl/injuries",
+     "date": "2026-11-22"
+    },
+    {
+     "text": "CB D.J. Reed (hip), out the last two games, is questionable.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nfl/injuries",
+     "date": "2026-11-20"
+    },
+    {
+     "text": "Tampa Bay QB Baker Mayfield (foot/thumb) is slated to play per Ian Rapoport; S Antoine Winfield Jr. is out for the Bucs.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nfl/injuries",
+     "date": "2026-11-22"
+    }
+   ],
+   "returning": [],
+   "swings": {
+    "DET": "DE Aidan Hutchinson's season-ending ACL tear (placed on IR Nov 18) and C Cade Mays going to IR moved the market off Detroit; our ratings still carry Hutchinson (ESPN, Nov 22)."
+   }
+  },
+  "2026_12_WAS_ARI": {
+   "verdict": "partly",
+   "summary": "Arizona's QB room is the likely reason: Gardner Minshew is on IR and Carson Beck sat out Week 11 with a back injury, after a 34-6 loss to the Rams.",
+   "reasons": [
+    {
+     "text": "QB Gardner Minshew (elbow) is on IR after UCL surgery; Carson Beck (back) was ruled out at Kansas City and Josh Johnson started. Beck's next chance is Washington.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nfl/injuries",
+     "date": "2026-11-21"
+    },
+    {
+     "text": "Arizona lost 34-6 to the Rams in Week 10 and plays at Kansas City before this game.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nfl/injuries",
+     "date": "2026-11-19"
+    }
+   ],
+   "returning": []
+  },
+  "2026_12_GB_LA": {
+   "swings": {
+    "GB": "Edge Micah Parsons (ACL) is targeting his season debut at the Rams on Nov 25 after practicing since early November; the market moved toward Green Bay, our ratings were built without him (Packers.com, Nov 4)."
    }
   }
  },
@@ -225,10 +249,10 @@
     {
      "direction": "too_high",
      "since": "2026-11-16",
-     "text": "DE Aidan Hutchinson tore his ACL and is out for the season; the ratings still include his games. C Cade Mays is also out this week.",
+     "text": "DE Aidan Hutchinson tore his ACL and is out for the season; C Cade Mays went on IR Saturday. Our ratings still include Hutchinson's games.",
      "source": "ESPN",
      "url": "https://www.espn.com/nfl/injuries",
-     "date": "2026-11-20"
+     "date": "2026-11-22"
     }
    ]
   },
@@ -237,10 +261,10 @@
     {
      "direction": "too_high",
      "since": "2026-11-15",
-     "text": "QB Gardner Minshew (elbow) is on IR after UCL surgery and starter Carson Beck (back) missed Friday; Josh Johnson is expected to start at Kansas City.",
+     "text": "QB Gardner Minshew (elbow) is on IR after UCL surgery and starter Carson Beck (back) was ruled out at Kansas City; Josh Johnson started Week 11.",
      "source": "ESPN",
      "url": "https://www.espn.com/nfl/injuries",
-     "date": "2026-11-20"
+     "date": "2026-11-21"
     }
    ]
   },
@@ -285,10 +309,10 @@
     {
      "direction": "unclear",
      "since": "2026-11-18",
-     "text": "QB Baker Mayfield (foot/thumb) is questionable at Detroit after limited practices; Todd Bowles says he is trending toward starting, rookie Jalon Daniels if not.",
+     "text": "QB Baker Mayfield (foot/right thumb) is questionable but slated to play at Detroit, per Ian Rapoport; S Antoine Winfield Jr. is out.",
      "source": "ESPN",
      "url": "https://www.espn.com/nfl/injuries",
-     "date": "2026-11-20"
+     "date": "2026-11-22"
     }
    ]
   },
@@ -321,6 +345,14 @@
      "source": "Bleeding Green Nation",
      "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxOYWRYRWhTbU1LU3Q5VURPYi1VdVk3bUNJdTFkcGNHa2VIb2c0ODVkZm5TU21jczk1TTh2cUNaTWowck5pSWEzQUF5aGhnUGpTLVZ1ajg5TkpwcVA2MjZjLWlNMUcySy1HUVJkTEwtMG5TU2xBcUJ5Rzktd05Lb0U2d3ZGSjc0aTZDYldzSWR6dFNXSFVWZDJNMDdRQUlwZXNUVkMzQ0hOanpKaDZseFB3YVRYUHMxcGYtbWF5WjhZdTYybGFMWGlzUC0xSWFIcHJ6N09XTnBhQkNNa1o0OG1jQ0pkdkpOa1k?oc=5",
      "date": "2026-11-21"
+    },
+    {
+     "direction": "too_high",
+     "since": "2026-11-21",
+     "text": "LB Zack Baun (back), a 93% snap starter, and WR Dontayvion Wicks were placed on IR Saturday.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nfl/injuries",
+     "date": "2026-11-22"
     }
    ]
   },
@@ -341,10 +373,10 @@
     {
      "direction": "too_high",
      "since": "2026-11-16",
-     "text": "CB DaRon Bland and G Tyler Booker (high-ankle sprains) are expected to miss multiple weeks.",
+     "text": "CB DaRon Bland (IR Saturday), G Tyler Booker (high-ankle sprain) and S Jalen Thompson are all out; Bland and Booker were full-time starters.",
      "source": "ESPN",
      "url": "https://www.espn.com/nfl/injuries",
-     "date": "2026-11-16"
+     "date": "2026-11-22"
     }
    ]
   },
@@ -357,6 +389,30 @@
      "source": "ESPN",
      "url": "https://www.espn.com/nfl/injuries",
      "date": "2026-11-16"
+    }
+   ]
+  },
+  "GB": {
+   "watch": [
+    {
+     "direction": "too_low",
+     "since": "2026-11-04",
+     "text": "Edge Micah Parsons, out since last December's ACL tear, returned to practice Nov 4 and is targeting a Nov 25 debut at the Rams, per Ian Rapoport; our ratings were built without him.",
+     "source": "Packers.com",
+     "url": "https://www.packers.com/news/micah-parsons-return-clears-another-hurdle-nov-4-2026",
+     "date": "2026-11-04"
+    }
+   ]
+  },
+  "NYJ": {
+   "watch": [
+    {
+     "direction": "unclear",
+     "since": "2026-11-15",
+     "text": "QB Geno Smith (ankle) is cleared to start at the Chargers after Cade Klubnik played much of the Week 10 loss to Buffalo.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nfl/injuries",
+     "date": "2026-11-20"
     }
    ]
   }
