@@ -191,8 +191,12 @@ def last_verified(sport, gid, *teams):
         stamps.append(t.get('checked'))
     best = None
     for s in stamps:
+        if not s:
+            continue
         try:
             ts = pd.Timestamp(s)
+            if pd.isna(ts):
+                continue
             ts = ts.tz_localize('UTC') if ts.tzinfo is None else ts
             best = ts if best is None or ts > best else best
         except (ValueError, TypeError):
