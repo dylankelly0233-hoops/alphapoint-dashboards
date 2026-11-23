@@ -302,3 +302,4 @@ listed,sport,gid,kick,reason,detail,kind,side,line,p,need
 2026-11-22T23:43-05:00,cfb,401858312,2026-11-28T15:30:00-05:00,priced,conference game spread,spread,away,14.5,0.5391,0.5238
 2026-11-23T00:22-05:00,cfb,401866470,2026-11-24T19:00:00-05:00,system,cfb_v2_open,spread,home,5.0,,
 2026-11-23T00:22-05:00,cfb,401864549,2026-11-27T15:30:00-05:00,system,cfb_v2_open,spread,away,-9.0,,
+2026-11-23T01:20-05:00,cbb,401921210,2026-11-23T17:30:00-05:00,system,cbb_3p_fade,spread,away,-4.5,,
