@@ -1,6 +1,6 @@
 {
   "sport": "nfl",
-  "generated": "2026-11-23T08:44:30-05:00",
+  "generated": "2026-11-23T09:42:19-05:00",
   "games": {
     "2026_12_NE_LAC": {
       "verdict": "explained",
@@ -174,7 +174,38 @@
     "2026_12_GB_LA": {
       "swings": {
         "GB": "Edge Micah Parsons (ACL) is targeting his season debut at the Rams on Nov 25 after practicing since early November; the market moved toward Green Bay, our ratings were built without him (Packers.com, Nov 4)."
-      }
+      },
+      "checked": "2026-11-23T09:42:19-05:00",
+      "verdict": "explained",
+      "summary": "The market sits below us mainly because Rams WR Puka Nacua is out (likely for the season after Nov 12 knee surgery) and Packers edge Micah Parsons is expected to debut; our ratings were built with Nacua and without Parsons.",
+      "reasons": [
+        {
+          "text": "Rams WR Puka Nacua went on IR Nov 12 (knee MCL, turf toe), had surgery and is likely out for the season; most of our Rams ratings include him.",
+          "source": "NFL.com",
+          "url": "https://www.nfl.com/news/rams-wr-puka-nacua-likely-out-for-season-knee-surgery",
+          "date": "2026-11-12"
+        },
+        {
+          "text": "Packers edge Micah Parsons (ACL) is on track to make his 2026 debut at the Rams Wednesday, per Fox's Jay Glazer.",
+          "source": "Yahoo Sports",
+          "url": "https://sports.yahoo.com/articles/major-micah-parsons-injury-emerges-055649224.html",
+          "date": "2026-11-22"
+        },
+        {
+          "text": "Rams WR Davante Adams (hamstring, IR since Oct 20) won't play; on Sunday's first report S Kam Curl (toe) and TE Terrance Ferguson did not practice, RB Kyren Williams was limited.",
+          "source": "Yahoo Sports",
+          "url": "https://sports.yahoo.com/articles/rams-injury-report-week-12-004824216.html",
+          "date": "2026-11-22"
+        }
+      ],
+      "returning": [
+        {
+          "team": "GB",
+          "player": "Micah Parsons",
+          "text": "Expected season debut Nov 25 after last December's ACL tear.",
+          "url": "https://sports.yahoo.com/articles/major-micah-parsons-injury-emerges-055649224.html"
+        }
+      ]
     }
   },
   "teams": {
@@ -387,12 +418,13 @@
         {
           "direction": "too_low",
           "since": "2026-11-04",
-          "text": "Edge Micah Parsons, out since last December's ACL tear, returned to practice Nov 4 and is targeting a Nov 25 debut at the Rams, per Ian Rapoport; our ratings were built without him.",
-          "source": "Packers.com",
-          "url": "https://www.packers.com/news/micah-parsons-return-clears-another-hurdle-nov-4-2026",
-          "date": "2026-11-04"
+          "text": "Edge Micah Parsons, out since last December's ACL tear, is on track to make his 2026 debut Nov 25 at the Rams per Jay Glazer; our ratings were built without him.",
+          "source": "Yahoo Sports",
+          "url": "https://sports.yahoo.com/articles/major-micah-parsons-injury-emerges-055649224.html",
+          "date": "2026-11-22"
         }
-      ]
+      ],
+      "checked": "2026-11-23T09:42:19-05:00"
     },
     "NYJ": {
       "watch": [
@@ -469,6 +501,19 @@
           "source": "Yahoo Sports",
           "url": "https://sports.yahoo.com/articles/commanders-vs-bengals-saturday-injury-211519338.html",
           "date": "2026-11-21"
+        }
+      ]
+    },
+    "LA": {
+      "checked": "2026-11-23T09:42:19-05:00",
+      "watch": [
+        {
+          "direction": "too_high",
+          "since": "2026-11-12",
+          "text": "WR Puka Nacua went on IR Nov 12 after knee (MCL) surgery and is likely out for the season; WR Davante Adams (hamstring) also stays out, so ratings built with both overstate the Rams.",
+          "source": "NFL.com",
+          "url": "https://www.nfl.com/news/rams-wr-puka-nacua-likely-out-for-season-knee-surgery",
+          "date": "2026-11-12"
         }
       ]
     }

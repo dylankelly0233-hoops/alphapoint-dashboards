@@ -1,6 +1,6 @@
 {
  "sport": "cbb",
- "generated": "2026-11-23T08:44:30-05:00",
+ "generated": "2026-11-23T09:42:19-05:00",
  "teams": {
   "Dayton": {
    "watch": [
@@ -35,8 +35,17 @@
      "source": "ESPN",
      "url": "https://www.espn.com/mens-college-basketball/story/_/id/50511206/north-carolina-guard-neo-avdalas-wrist-2-months",
      "date": "2026-11-17"
+    },
+    {
+     "direction": "too_low",
+     "since": "2026-11-20",
+     "text": "7-foot C Cameron Fens missed the first four games over NCAA eligibility and is now playing under a temporary restraining order (through a hearing or Dec 1).",
+     "source": "WRAL",
+     "url": "https://www.wral.com/sports/northcarolina-mens-basketball-cameron-fens-first-game-vs-marshall-november-2026/",
+     "date": "2026-11-21"
     }
-   ]
+   ],
+   "checked": "2026-11-23T09:42:19-05:00"
   },
   "Tennessee": {
    "watch": [
@@ -56,6 +65,10 @@
   },
   "Tulsa": {
    "checked": "2026-11-22T22:42:20-05:00",
+   "watch": []
+  },
+  "Monmouth": {
+   "checked": "2026-11-23T09:42:19-05:00",
    "watch": []
   }
  },
@@ -122,10 +135,40 @@
    }
   },
   "401913102": {
-   "checked": "2026-11-23T08:44:30-05:00",
+   "checked": "2026-11-23T09:42:19-05:00",
    "swings": {
     "Monmouth": "Nothing found on Monmouth (no injuries reported); the move is mostly UNC: PG Neo Avdalas is out about two months after Nov 16 wrist surgery (UNC), which the market weighs more than our ratings."
-   }
+   },
+   "verdict": "partly",
+   "summary": "Losing PG Neo Avdalas (wrist, out ~2 months) explains some of the gap, but newly eligible 7-footer Cameron Fens cuts the other way, so most of our 4.7-point edge on UNC is unexplained.",
+   "reasons": [
+    {
+     "text": "Starting guard Neo Avdalas (team-high 15 assists) broke his left wrist vs Georgia Nov 13, had surgery Nov 16 and is out about two months.",
+     "source": "GoHeels.com",
+     "url": "https://goheels.com/news/2026/11/22/mens-basketball-welcomes-monmouth-monday",
+     "date": "2026-11-22"
+    },
+    {
+     "text": "C Cameron Fens, who missed the first four games, is eligible under a temporary restraining order (through a hearing or Dec 1) and debuted vs Marshall; ratings mostly built without him.",
+     "source": "WRAL",
+     "url": "https://www.wral.com/sports/northcarolina-mens-basketball-cameron-fens-first-game-vs-marshall-november-2026/",
+     "date": "2026-11-21"
+    },
+    {
+     "text": "No injuries reported for Monmouth (1-4); the line drifted from UNC -20.5 to -18.5 without a clear news reason.",
+     "source": "Tar Heel Tribune",
+     "url": "https://tarheeltribune.com/2026/11/22/monmouth-at-unc-tv-info-stats-scouting-hawks-notes-lineup-combinations-and-more/",
+     "date": "2026-11-22"
+    }
+   ],
+   "returning": [
+    {
+     "team": "North Carolina",
+     "player": "Cameron Fens",
+     "text": "Eligible by court order after missing the first four games.",
+     "url": "https://www.wral.com/sports/northcarolina-mens-basketball-cameron-fens-first-game-vs-marshall-november-2026/"
+    }
+   ]
   }
  }
 }
