@@ -1228,6 +1228,46 @@ LEGAL_SECTIONS = [   # legal.html (Dylan, 2026-11-22: disclaimers before the sit
 ]
 
 
+AI_CRAWLERS = ['GPTBot', 'ChatGPT-User', 'OAI-SearchBot', 'CCBot', 'ClaudeBot', 'Claude-Web', 'anthropic-ai',
+               'Google-Extended', 'PerplexityBot', 'Bytespider', 'Applebot-Extended', 'meta-externalagent',
+               'Amazonbot', 'cohere-ai', 'Diffbot', 'ImagesiftBot', 'Omgilibot', 'Timpibot']
+
+
+def site_extras():
+    """
+    404.html (GitHub Pages shows it for any missing page), sitemap.xml and robots.txt (Dylan, 2026-11-23). robots.txt
+    asks AI crawlers to stay out (the copyright notice forbids scraping); search engines stay welcome. Crawlers only read
+    robots.txt at the root of a domain, so it takes effect once the site has its own domain.
+    """
+    pages = ['index.html'] + [p for p, *_ in DASHBOARDS] + ['legal.html']
+    day = datetime.now().strftime('%Y-%m-%d')
+    urls = ''.join(f'<url><loc>{LIVE_SITE}{"" if p == "index.html" else p}</loc><lastmod>{day}</lastmod></url>'
+                   for p in pages if os.path.exists(os.path.join(SITE, p)))
+    with open(os.path.join(SITE, 'sitemap.xml'), 'w', encoding='utf-8') as f:
+        f.write('<?xml version="1.0" encoding="UTF-8"?>\n'
+                f'<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{urls}</urlset>\n')
+    robots = ['# AlphaPoint Sports: our ratings and research may not be scraped or used to train AI models',
+              '# (see legal.html#copyright).']
+    robots += [f'User-agent: {b}' for b in AI_CRAWLERS] + ['Disallow: /', '', 'User-agent: *', 'Allow: /', '',
+                                                         f'Sitemap: {LIVE_SITE}sitemap.xml']
+    with open(os.path.join(SITE, 'robots.txt'), 'w', encoding='utf-8') as f:
+        f.write('\n'.join(robots) + '\n')
+    links = ''.join(f'<a class="card tile" href="{LIVE_SITE}{p}"><span class="abbr">{theme.esc(a)}</span>'
+                    f'<span class="name">{theme.esc(n)}</span></a>' for p, _, _, a, n, *_ in DASHBOARDS)
+    body = (f'<div class="info"><section class="card"><h3>That page isn’t here</h3><p>The link may be old or mistyped. '
+            f'Try the <a href="{LIVE_SITE}">home page</a> or jump straight to a sport:</p></section></div>'
+            f'<div class="tiles">{links}</div>')
+    page = theme.render_page(title='Page not found · AlphaPoint Sports', league='404', headline='Page not found',
+                             meta_items=[], tabs=[('nf', 'Not found', body)], footer='AlphaPoint Sports')
+    page = page.replace('</style>', LANDING_CSS + '</style>', 1)
+    # the 404 page can be shown at any depth, so its links back into the site must be absolute
+    page = page.replace('href="index.html', f'href="{LIVE_SITE}index.html').replace('href="legal.html', f'href="{LIVE_SITE}legal.html')
+    with open(os.path.join(SITE, '404.html'), 'w', encoding='utf-8') as f:
+        f.write('<!DOCTYPE html>\n<html lang="en">\n<head>\n<meta charset="utf-8">\n'
+                '<meta name="viewport" content="width=device-width, initial-scale=1">\n<meta name="robots" content="noindex">\n'
+                f'<base href="{LIVE_SITE}">\n</head>\n<body>\n{page}\n</body>\n</html>')
+
+
 def legal_page():
     """legal.html: the full disclaimer and responsible-gaming page the footer of every page links to."""
     body = '<div class="info">' + ''.join(
@@ -1399,7 +1439,11 @@ def main():
         f.write(landing(results))
     with open(os.path.join(SITE, 'legal.html'), 'w', encoding='utf-8') as f:
         f.write(legal_page())
-    for page in [p for p, *_ in DASHBOARDS] + ['index.html', 'legal.html']:
+    try:
+        site_extras()
+    except Exception as e:                          # cosmetic: never block publishing
+        print(f'  ! 404 / sitemap / robots: {e}')
+    for page in [p for p, *_ in DASHBOARDS] + ['index.html', 'legal.html', '404.html']:
         if os.path.exists(os.path.join(SITE, page)):
             try:
                 head_tags(page)
