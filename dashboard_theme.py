@@ -12,6 +12,7 @@ load images from other sites, so they have to travel inside the HTML.
 """
 
 import base64
+from datetime import date
 import html
 import os
 import re
@@ -1025,7 +1026,10 @@ document.querySelectorAll('table.sortable').forEach(t => {
 LEGAL = ('Research and education only: not betting, financial or legal advice, and no result is guaranteed. 21+ '
          '(or the legal age where you live); bet only where it is legal. Gambling problem? Call or text '
          '<a href="tel:18004262537">1-800-GAMBLER</a>. Not affiliated with any league, team, sportsbook or data provider; '
-         'team names and logos belong to their owners. <a href="legal.html">Disclaimer &amp; responsible gaming</a>')
+         'team names and logos belong to their owners. <a href="legal.html">Disclaimer &amp; responsible gaming</a><br>'
+         f'© {date.today().year} AlphaPoint Sports. All rights reserved. Our ratings, projections, '
+         'fair lines and research may not be copied, scraped, republished or resold without our written permission. '
+         '<a href="legal.html#copyright">Copyright &amp; use</a>')
 
 
 def render_page(*, title, league, headline, meta_items, tabs, footer, extra='', subtitle=''):

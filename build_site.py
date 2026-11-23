@@ -1210,6 +1210,17 @@ LEGAL_SECTIONS = [   # legal.html (Dylan, 2026-11-22: disclaimers before the sit
         'Ratings, odds, injury and game data come from the sources named at the bottom of each page.',
         'AlphaPoint is independent: not affiliated with or endorsed by any league, team, sportsbook, exchange or data '
         'provider. Team names, logos and trademarks belong to their owners and are shown only to identify teams.']),
+    ('Copyright and use of this site', [   # Dylan, 2026-11-23: 'no one can copy our ratings or project without consent'
+        'AlphaPoint Sports owns its original work on this site: our ratings and power rankings, projected and fair '
+        'lines, win probabilities, strategies and their track records, Research Assistant notes, written analysis, '
+        'and the site’s software, design and layout. All rights reserved.',
+        'You may read the site and share links to it for your own personal, non-commercial use.',
+        'Without our written permission you may not copy, republish, redistribute or sell any of that work; scrape, '
+        'crawl or bulk-download the site or its data files by automated means; use it to build or feed another '
+        'product, model, dataset or service (including training AI models); or copy the site’s code or design.',
+        'Data, names and logos that come from others remain theirs (see below); these terms cover only what AlphaPoint '
+        'creates. The public source code is visible on GitHub so the site can be hosted there, but it is not licensed '
+        'for reuse.']),
     ('Privacy', [
         'The site has no accounts, no ads, no cookies and no tracking, and stores nothing in your browser. It is hosted '
         'on GitHub Pages and loads fonts from Google Fonts; those services may keep standard technical logs of visits.']),
@@ -1219,7 +1230,8 @@ LEGAL_SECTIONS = [   # legal.html (Dylan, 2026-11-22: disclaimers before the sit
 def legal_page():
     """legal.html: the full disclaimer and responsible-gaming page the footer of every page links to."""
     body = '<div class="info">' + ''.join(
-        f'<section class="card"><h3>{theme.esc(title)}</h3>' + ''.join(f'<p>{theme.esc(p)}</p>' for p in ps) + '</section>'
+        '<section class="card"' + (' id="copyright"' if title.startswith('Copyright') else '') + '>'
+        f'<h3>{theme.esc(title)}</h3>' + ''.join(f'<p>{theme.esc(p)}</p>' for p in ps) + '</section>'
         for title, ps in LEGAL_SECTIONS) + '</div>'
     page = theme.render_page(title='Disclaimer & responsible gaming · AlphaPoint Sports', league='Disclaimer',
                              headline='Disclaimer & responsible gaming', meta_items=[],
