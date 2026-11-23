@@ -1,6 +1,6 @@
 {
  "sport": "nhl",
- "generated": "2026-11-23T12:41:40-05:00",
+ "generated": "2026-11-23T14:45:00-05:00",
  "teams": {
   "OTT": {
    "checked": "2026-11-23T11:20:10-05:00",
@@ -171,6 +171,23 @@
   "SJ": {
    "checked": "2026-11-23T12:41:40-05:00",
    "watch": []
+  },
+  "EDM": {
+   "checked": "2026-11-23T14:45:00-05:00",
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-22",
+     "text": "Zach Hyman (illness) and Ryan Nugent-Hopkins listed out on ESPN's game page for Nov. 24 (expected back that day per MoneyPuck); status unconfirmed. Goalie Andersen on IR (knee) to ~Jan. 9.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nhl/game/_/gameId/401892780/golden-knights-oilers",
+     "date": "2026-11-23"
+    }
+   ]
+  },
+  "VGK": {
+   "watch": [],
+   "checked": "2026-11-23T14:45:00-05:00"
   }
  },
  "games": {
@@ -223,6 +240,26 @@
      "date": "2026-11-23"
     }
    ]
+  },
+  "401892780": {
+   "checked": "2026-11-23T14:45:00-05:00",
+   "verdict": "partly",
+   "summary": "Hyman and Nugent-Hopkins may miss the game and Edmonton's starting goalie is unconfirmed, which covers part of the gap; the rest is our Sagarin side (EDM +0.56) vs xG (VGK +0.06).",
+   "reasons": [
+    {
+     "text": "ESPN's game page lists Zach Hyman (illness) and Ryan Nugent-Hopkins as out for Nov. 24; other feeds call them day-to-day.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nhl/game/_/gameId/401892780/golden-knights-oilers",
+     "date": "2026-11-23"
+    },
+    {
+     "text": "Starting goalies unconfirmed: Carter Hart projected for Vegas; Edmonton between Tristan Jarry and Devin Levi with Andersen on IR.",
+     "source": "Daily Faceoff",
+     "url": "https://www.dailyfaceoff.com/starting-goalies/2026-11-24",
+     "date": "2026-11-23"
+    }
+   ],
+   "returning": []
   }
  }
 }

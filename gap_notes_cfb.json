@@ -1,6 +1,6 @@
 {
  "sport": "cfb",
- "generated": "2026-11-23T09:40:04-05:00",
+ "generated": "2026-11-23T14:45:00-05:00",
  "teams": {
   "Clemson": {
    "watch": [
@@ -131,7 +131,7 @@
   },
   "Notre Dame": {
    "watch": [],
-   "checked": "2026-11-23T09:45:00-05:00"
+   "checked": "2026-11-23T14:45:00-05:00"
   },
   "TCU": {
    "watch": [],
@@ -168,17 +168,17 @@
    "checked": "2026-11-23T09:45:00-05:00"
   },
   "Syracuse": {
+   "checked": "2026-11-23T14:45:00-05:00",
    "watch": [
     {
      "direction": "too_high",
      "since": "2026-11-21",
-     "text": "QB Steve Angeli left the Nov. 21 BC loss with a throwing-shoulder injury (arm in a sling); backup Malachi Nelson re-aggravated his ankle. No update for Notre Dame.",
-     "source": "Orange Fizz",
-     "url": "https://playdanewyork.com/2026/11/syracuse-football-falls-to-boston-college-27-15-angeli-injury/",
-     "date": "2026-11-22"
+     "text": "QB Steve Angeli (AC joint, right shoulder, hurt Nov. 21 at BC) ruled out vs Notre Dame by Fran Brown on Monday; Malachi Nelson starts. Our ratings were built with Angeli.",
+     "source": "The Daily Orange",
+     "url": "https://dailyorange.com/2026/11/syracuse-football-steve-angeli-ruled-out-notre-dame/",
+     "date": "2026-11-23"
     }
-   ],
-   "checked": "2026-11-23T09:45:00-05:00"
+   ]
   },
   "Florida": {
    "watch": [],
@@ -1288,6 +1288,26 @@
    "swings": {
     "Ohio": "Nothing found: the market moved on Ohio without a clear reason; no current Ohio or Toledo QB news turned up."
    }
+  },
+  "401858314": {
+   "checked": "2026-11-23T14:45:00-05:00",
+   "verdict": "explained",
+   "summary": "Syracuse loses starting QB Steve Angeli (shoulder) for the finale and starts Malachi Nelson, which our ratings don't see; that covers most of our 3.8-pt gap.",
+   "reasons": [
+    {
+     "text": "Fran Brown ruled QB Steve Angeli out Monday with an AC joint injury in his right shoulder from the Nov. 21 BC loss; Malachi Nelson starts.",
+     "source": "The Daily Orange",
+     "url": "https://dailyorange.com/2026/11/syracuse-football-steve-angeli-ruled-out-notre-dame/",
+     "date": "2026-11-23"
+    },
+    {
+     "text": "Nelson re-aggravated his ankle late in the BC game, so the backup is not fully healthy either.",
+     "source": "Orange Fizz",
+     "url": "https://playdanewyork.com/2026/11/syracuse-football-falls-to-boston-college-27-15-angeli-injury/",
+     "date": "2026-11-22"
+    }
+   ],
+   "returning": []
   }
  }
 }
