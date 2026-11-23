@@ -467,7 +467,7 @@ def save_first_totals(key):
 
 
 def spot(sport, page, kick, away, home, ours, market, tags=(), signals=(), opened=None, lopsided_game=False, tbd=False,
-         key=None, total=(None, None), gid=None, ctx=None, systems=(), open_src=None, feat=None):
+         key=None, total=(None, None), gid=None, ctx=None, systems=(), open_src=None, feat=None, hold=None):
     """
     One upcoming game for the home page. open_src: where `opened` came from ('cfbd' = the data provider's real opening
     line; None = the first line our hourly log saw). ours / market = home margins; tags = [(label, team the tag favors)];
@@ -489,7 +489,9 @@ def spot(sport, page, kick, away, home, ours, market, tags=(), signals=(), opene
             'edge': None if edge is None else round(abs(edge), 1),
             'edge_side': None if edge is None or abs(edge) < theme.EDGE_MIN else (home if edge > 0 else away),
             'tags': [list(t) for t in tags], 'signals': [list(s) for s in signals if s[1]],
-            'flags': (['news'] if news_move(opened, market) else []) + (['lopsided'] if lopsided_game else []),
+            'flags': (['news'] if news_move(opened, market) else []) + (['lopsided'] if lopsided_game else [])
+                     + (['hold'] if hold else []),
+            'hold': hold,      # gap_research.lean_hold: QB change or a gap the news explains -> never on Best spots
             # key = valuation's sport code: lines that clear −110 at a fair number built from a PROVEN slice, and the
             # line-move watch. ctx: phase / conference-game / Power 4 flags for slice membership.
             'priced': [] if not key or lopsided_game else _val().proven_lines(

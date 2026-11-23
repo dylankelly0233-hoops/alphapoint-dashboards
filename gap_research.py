@@ -152,6 +152,38 @@ def verdict(sport, gid):
     return ((notes(sport).get('games') or {}).get(str(gid)) or {}).get('verdict')
 
 
+QB_SPORTS = {'nfl', 'cfb'}
+
+
+def lean_hold(sport, gid, home, away, home_name, away_name, wire_items):
+    """
+    Why this game's lean and strategy badges should be held, or None (Dylan, 2026-11-23, after USC @ UCLA showed
+    'Soft lean: UCLA +7' while UCLA's top two QBs were hurt):
+      1. QB-change hold (NFL, CFB): either team has a QB item on the Injury Wire (a starter out, doubtful or
+         questionable, a backup starting, or a starter coming back). Our ratings were built on the old QB situation.
+         It lifts when the Injury Wire drops the item (the new situation has been played into the ratings).
+      2. Explained gap (every sport with the Research Assistant): its verdict is 'explained', i.e. the news covers
+         most of our gap with the market, in the market's direction.
+    wire_items: {team key: [Injury Wire items]}.
+    """
+    if sport in QB_SPORTS:
+        for team, name in ((away, away_name), (home, home_name)):
+            q = [i for i in (wire_items or {}).get(team) or [] if str(i.get('tag', '')).upper() == 'QB']
+            if q:
+                return (f"{name}'s quarterback situation has changed and our ratings were built on the old one: "
+                        f"{str(q[0].get('text', '')).strip().rstrip('.')}.")
+    n = ((notes(sport).get('games') or {}).get(str(gid)) or {})
+    if n.get('verdict') == 'explained':
+        return f"the news covers most of the gap between our number and the market: {str(n.get('summary', '')).strip().rstrip('.')}."
+    return None
+
+
+def partly(sport, gid):
+    """The Research Assistant's one-line summary when it found news that covers part of the gap, else None."""
+    n = ((notes(sport).get('games') or {}).get(str(gid)) or {})
+    return str(n.get('summary', '')).strip().rstrip('.') or None if n.get('verdict') == 'partly' else None
+
+
 def _vs(gap, name, sport=None):
     """'3.0 pts higher on Vikings than the market' (gap = our line minus the market's, from this team's side)."""
     if abs(gap) < 0.5 * ONE.get(sport, 1.0):

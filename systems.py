@@ -423,7 +423,7 @@ def items(systems):
     return out
 
 
-def strategy_row(its, esc, k=None, ctx=None):
+def strategy_row(its, esc, k=None, ctx=None, hold=None):
     """
     One 'Strategies' row on a game card (Dylan, 2026-11-20: make it abundantly clear who each one backs, less
     crowded). Strategies are grouped by what they say to do: 'BACK Murray State +3.5' once, then each strategy on its
@@ -431,6 +431,8 @@ def strategy_row(its, esc, k=None, ctx=None):
     """
     if not its:
         return ''
+    if hold:   # news hold (gap_research.lean_hold): show what the numbers say, greyed, with why it is on hold
+        its = [{**i, 'action': 'On hold', 'tracking': True} for i in its]
     groups = {}
     for it in its:
         groups.setdefault((it['action'], it['what']), []).append(it)
@@ -450,7 +452,9 @@ def strategy_row(its, esc, k=None, ctx=None):
                      + (f'<span class="swhy">{esc(i["why"])}</span>' if i['why'] else '') + '</div>')
         html += '</div>'
     label = k('Strategies') if k else f'<span class="k">Strategies</span>'
-    return f'<div class="lmove strats">{label}{html}</div>'
+    note = (f'<div class="hint">On hold, not a lean: {esc(hold)} The strategies below come from the numbers alone; '
+            f'this game stays off Best spots until the news is in our ratings.</div>') if hold else ''
+    return f'<div class="lmove strats">{label}{note}{html}</div>'
 
 
 SLICE_NAMES = {'all': '', 'mid': 'mid-season games', 'early': 'early-season games', 'late': 'late-season games',
@@ -480,7 +484,7 @@ def flv_items(sport, priced, flags=()):
     State +19 was on Best spots but not on its game card, whose 'Our pricing' line uses the all-games share instead of
     the proven slice). priced = extras.spot()['priced']; flags = its flags (a big news move or a lopsided game drops it).
     """
-    if flags:
+    if [f for f in flags or () if f != 'hold']:   # a news hold still shows the item (greyed) on the game card
         return []
     out = []
     for x in priced or []:
@@ -497,7 +501,7 @@ def flv_items(sport, priced, flags=()):
     return out
 
 
-def tag_html(systems, esc, extra=(), k=None, ctx=None):
+def tag_html(systems, esc, extra=(), k=None, ctx=None, hold=None):
     """The Strategies row for these systems plus any extra items (teaser legs, CFB tracking leans).
     ctx = {'opened', 'market', 'open_total', 'total'} so each line can say exactly which number to bet."""
-    return strategy_row(items(systems) + list(extra), esc, k, ctx)
+    return strategy_row(items(systems) + list(extra), esc, k, ctx, hold)

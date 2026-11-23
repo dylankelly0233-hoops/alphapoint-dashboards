@@ -719,6 +719,9 @@ def generate_html(p4, vals, sched, week, season_type, info):
         big = ex.lopsided(mkt_margin, r.margin)
         t_ours = info['total_fn'](r.home, r.away, r.neutral) if info.get('total_fn') else np.nan
         t_mkt = getattr(r, 'total', np.nan)
+        # news hold (QB change / news explains the gap): strategies greyed, no lean, off Best spots
+        nh = None if r.completed else gr.lean_hold('cfb', r.game_id, r.home, r.away, r.home, r.away,
+                                                   (info['wire'] or {}).get('items'))
         # the Best spots entry first, so the card's Strategies row can carry its Fair Line Value line too
         sp = ex.spot('CFB', 'cfb.html#sched', r.kick, r.away, r.home, r.margin, mkt_margin, labels,
                              [(r.away, sig(r.away_value)), (r.home, sig(r.home_value))],
@@ -731,14 +734,15 @@ def generate_html(p4, vals, sched, week, season_type, info):
                                    'p4': r.home in p4n or r.away in p4n,
                                    'marquee': next(iter(info['featured'].get(r.game_id) or []), None),
                                    'tv': getattr(r, 'tv', None) if isinstance(getattr(r, 'tv', None), str) else None},
-                             open_src='cfbd' if str(r.game_id) in info.get('open_cfbd', ()) else None)
+                             open_src='cfbd' if str(r.game_id) in info.get('open_cfbd', ()) else None, hold=nh)
         if not held:
             extra += sy.flv_items('cfb', (sp or {}).get('priced'), (sp or {}).get('flags'))
         tag_html = ''
         move = ex.line_move(info['opened'].get(str(r.game_id)), mkt_margin, pm, r.home, r.away)
         move += sy.hold_row(held, theme.esc, theme.k) if held else sy.tag_html(sysl, theme.esc, extra, k=theme.k, ctx={
             'opened': info['opened'].get(str(r.game_id)), 'market': mkt_margin,
-            'open_total': ex.first_total('cfb', r.game_id, getattr(r, 'total', None)), 'total': getattr(r, 'total', None)})
+            'open_total': ex.first_total('cfb', r.game_id, getattr(r, 'total', None)), 'total': getattr(r, 'total', None)},
+            hold=nh)
         move += ex.rating_confidence(info['by_source'].get(r.home, {}), info['by_source'].get(r.away, {}),
                                      _hfa(r), big)
         stadium = info['roofs'].get(str(r.game_id))
@@ -790,6 +794,7 @@ def generate_html(p4, vals, sched, week, season_type, info):
                  'signals': {t: (sig(v), v) for t, v in ((r.away, r.away_value), (r.home, r.home_value))
                              if v is not None and v == v},
                  'injuries': {t: fx.injuries(info['wire'], t) for t in (r.away, r.home)},
+                 'hold': nh, 'partly': gr.partly('cfb', r.game_id),
                  'wind': (info['weather'].get(str(r.game_id)) or {}).get('wind'), 'tags': [l for l, _ in labels]}
             grid = (mu.panel(r.away, r.home, str, prof, MU_CATS, MU_STYLES, info['mu_games'], head=False)
                     if head is not None or (r.home in prof and r.away in prof) else '')

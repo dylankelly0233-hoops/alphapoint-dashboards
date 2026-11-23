@@ -130,7 +130,10 @@ def preview(d):
     # 4. Bottom line (a lean, never a pick). The guards come first: a big line move usually means news our ratings
     # don't know yet, and in lopsided college games the market has been more accurate than ratings.
     news = news_move(d.get('opened'), mkt) if has_mkt else False
-    if news:
+    if d.get('hold'):      # gap_research.lean_hold (Dylan, 2026-11-23): QB change, or news that explains the gap
+        bottom = (f'<b>No lean.</b> {theme.esc(d["hold"][0].upper() + d["hold"][1:])} Our number is context here, '
+                  f'not a reason to bet, until that news is in our ratings.')
+    elif news:
         moved = theme.spread_num(theme.round_half(abs(mkt - d['opened'])))
         bottom = (f'<b>Hold.</b> The line has moved {moved} points since it opened, which usually means news (an injury or '
                   f'lineup change) that our ratings don\'t know about yet. Check the Injury Wire before trusting any edge.')
@@ -146,6 +149,8 @@ def preview(d):
         bottom = f'<b>{soft}: {theme.esc(now)}.</b> It holds at {theme.esc(floor)} or better; past that, the edge is gone.'
         if conf == 'Low':
             bottom += ' With the ratings split, size down or wait for news.'
+        if d.get('partly'):
+            bottom += f' The Research Assistant found news that covers part of this gap: {theme.esc(d["partly"])}.'
     elif edge is not None:
         bottom = '<b>No lean.</b> Our number agrees with the market; this is one to watch, not to force.'
     else:

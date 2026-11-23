@@ -483,6 +483,9 @@ def generate_html(power, vals, sched, week, info):
                                  + ' · two-team teaser at −110 or better', 'tracking': False,
                           'title': 'Six-point two-team teaser leg; about 77% of legs won out of sample. Needs −110 pricing.'})
         t_ours = info['total_fn'](r.home, r.away, r.neutral) if info.get('total_fn') else np.nan
+        # news hold (QB change / news explains the gap): strategies greyed, no lean, off Best spots
+        nh = None if r.score else gr.lean_hold('nfl', r.game_id, r.home, r.away, nick(vm.full_name(r.home)),
+                                               nick(vm.full_name(r.away)), (info['wire'] or {}).get('items'))
         # the Best spots entry first, so the card's Strategies row can carry its Fair Line Value line too
         sp = ex.spot('NFL', 'nfl.html#sched', r.kick, nick(away), nick(home), r.margin, r.market,
                              [tag_label] if tag_label else [],
@@ -491,14 +494,14 @@ def generate_html(power, vals, sched, week, info):
                              systems=sysl,
                              feat={'key': 'nfl', 'home_key': r.home, 'away_key': r.away, 'held': bool(held),
                                    'marquee': ('Top-8 matchup' if r.home in top8 and r.away in top8 else None),
-                                   'tv': fx.nfl_slot(r.kick, r.neutral)})
+                                   'tv': fx.nfl_slot(r.kick, r.neutral)}, hold=nh)
         if not held:
             extra += sy.flv_items('nfl', (sp or {}).get('priced'), (sp or {}).get('flags'))
         tag_html = ''
         move = ex.line_move(info['opened'].get(str(r.game_id)), r.market, pm, nick(home), nick(away), 'First seen')
         move += sy.hold_row(held, theme.esc, theme.k) if held else sy.tag_html(sysl, theme.esc, extra, k=theme.k, ctx={
             'opened': info['opened'].get(str(r.game_id)), 'market': r.market,
-            'open_total': ex.first_total('nfl', r.game_id, r.total), 'total': r.total})
+            'open_total': ex.first_total('nfl', r.game_id, r.total), 'total': r.total}, hold=nh)
         move += ex.rating_confidence(by_src.get(r.home, {}), by_src.get(r.away, {}), 0.0 if r.neutral else HFA_POINTS)
         if not r.score and not r.neutral and r.home in wx.NFL_STADIUMS:
             move += wx.weather_row(info['weather'].get(str(r.game_id)), wx.NFL_STADIUMS[r.home][2])
@@ -554,6 +557,7 @@ def generate_html(power, vals, sched, week, info):
                  'signals': {nick(vm.full_name(t)): (sig(v), v) for t, v in ((r.away, r.away_value), (r.home, r.home_value))
                              if v is not None and v == v},
                  'injuries': {nick(vm.full_name(t)): fx.injuries(info['wire'], t) for t in (r.away, r.home)},
+                 'hold': nh, 'partly': gr.partly('nfl', r.game_id),
                  'wind': (info['weather'].get(str(r.game_id)) or {}).get('wind'), 'tags': [tag_label[0]] if tag_label else []}
             grid = mu.panel(r.away, r.home, nm, prof, MU_CATS, MU_STYLES, info['mu_games'], head=False) if has_mu else ''
             features.append(fx.card(d, card, grid, fx.notes(d)))

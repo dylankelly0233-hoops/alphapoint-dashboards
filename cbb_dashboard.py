@@ -633,6 +633,7 @@ def generate_html(power, metrics, days, info):
                 sysl += sy.cbb_3p(info.get('p3') or {}, g['market'], g['home'], g['away'], bool(g['score']))
                 sysl += sy.cbb_track(game_last(info, g), g['kick'].date(), g['market'], g['home'], g['away'], bool(g['score']))
             t_ours = info['total_fn'](g['home'], g['away'], g['neutral']) if info.get('total_fn') else np.nan
+            nh = None if g['score'] else gr.lean_hold('cbb', g['game_id'], g['home'], g['away'], g['home'], g['away'], {})
             # the Best spots entry first, so the card's Strategies row can carry its Fair Line Value line too
             sp = ex.spot('CBB', 'cbb.html#games', g['kick'], g['away'], g['home'], margin, g['market'], [],
                          [(t, _signal(comp.get(t), games_played.get(t, 0))) for t in (g['away'], g['home'])],
@@ -641,7 +642,7 @@ def generate_html(power, metrics, days, info):
                          feat={'key': 'cbb', 'home_key': g['home'], 'away_key': g['away'], 'held': bool(held),
                                'p4': g['home'] in p4set or g['away'] in p4set,
                                'marquee': next(iter(info['featured'].get(g['game_id']) or []), None),
-                               'tv': g.get('tv') or None})
+                               'tv': g.get('tv') or None}, hold=nh)
             if held:
                 move += sy.hold_row({t: [x.strftime('%b %d').replace(' 0', ' ') for x in d] for t, d in held.items()},
                                     theme.esc, theme.k)
@@ -649,7 +650,7 @@ def generate_html(power, metrics, days, info):
                 move += sy.tag_html(sysl, theme.esc, sy.flv_items('cbb', (sp or {}).get('priced'), (sp or {}).get('flags')),
                                     k=theme.k, ctx={
                     'opened': info['opened'].get(g['game_id']), 'market': g['market'],
-                    'open_total': ex.first_total('cbb', g['game_id'], g.get('total')), 'total': g.get('total')})
+                    'open_total': ex.first_total('cbb', g['game_id'], g.get('total')), 'total': g.get('total')}, hold=nh)
             pr = '' if big or g['score'] else val.card_row('cbb', margin, g['market'], g['home'], g['away'], info['val_live'])
             pr += '' if g['score'] else tot.card_row('cbb', t_ours, g.get('total', np.nan))
             hfa_all = g.get('hfa', 0.0 if g['neutral'] else HFA_POINTS)
@@ -690,7 +691,8 @@ def generate_html(power, metrics, days, info):
                      'lopsided': big, 'mismatch': head[0] if head else None,
                      'signals': {t: (_signal(comp.get(t), games_played.get(t, 0)), comp[t]) for t in (g['away'], g['home'])
                                  if comp.get(t) is not None},
-                     'injuries': {t: fx.injuries(info['wire'], t) for t in (g['away'], g['home'])}}
+                     'injuries': {t: fx.injuries(info['wire'], t) for t in (g['away'], g['home'])},
+                     'hold': nh, 'partly': gr.partly('cbb', g['game_id'])}
                 grid = (mu.panel(g['away'], g['home'], str, mprof, mu.BASKETBALL_CATS, mu.BASKETBALL_STYLES,
                                  info['mu_games'], extra=mu.pace_line(info['mu_units'], g['away'], g['home'], str),
                                  head=False) if has_mu else '')

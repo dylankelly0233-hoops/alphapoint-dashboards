@@ -8,6 +8,8 @@ Goal: from `injury_candidates_{sport}.json`, keep **only injury news that could 
 3. **KEY**: a team's best non-QB players (top WR, LT, top pass rusher, CB1, every-down RB/TE) newly out or doubtful. Depth players never qualify.
 4. **RETURNING**: a starter coming back after missing games (activated off IR, full practice, cleared). This matters because the line may still price him out.
 
+**A QB item puts the game on hold** (since 2026-11-23, NFL and CFB): no lean, strategies greyed, off Best spots. So tag `QB` only for a real change to who starts or how healthy the starter is this week, and drop the item once the new situation has been played (the new starter or the returning starter has played a full game since): from then on our ratings see it.
+
 ## What to drop
 - Players who already returned and played last week, stat-line notes ("caught 3 passes…"), in-game "questionable to return" notes from last week's game, practice-squad moves, depth players, kickers and punters.
 - Long-term IR players the market has priced in for weeks. Exception: they count toward an active cluster.

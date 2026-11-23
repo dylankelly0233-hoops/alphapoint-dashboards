@@ -668,6 +668,8 @@ def best_spots():
         s['sort'] = s['dt'] + timedelta(hours=23, minutes=59) if s.get('tbd') else s['dt']
         if s['sort'] <= now or s['dt'] > now + timedelta(days=7):
             continue
+        if s.get('hold'):          # QB change / news explains the gap (gap_research.lean_hold): not a spot at all
+            continue
         s['teaser'] = next(((label, team) for label, team in s['tags'] if label.startswith('Teaser')), None) \
             if sy.criteria_ok('teaser') else None
         s['systems'] = [x for x in s.get('systems') or [] if not x.get('tracking')]   # strict bar only (systems.strict)
@@ -1144,7 +1146,10 @@ def spots_guide():
          '<p><b>BUY / SELL tags</b> (teams winning more or less than their play) are on the team pages but not here: replayed '
          'on past seasons they won about 50% against the line. <b>The NHL and Premier League</b> are off until something '
          'there passes the same tests. <b>Games we flag</b> (a big line move that usually means news, or a lopsided college '
-         'mismatch) stay off ' + sy.NAMES['priced'] + '.</p>'),
+         'mismatch) stay off ' + sy.NAMES['priced'] + '. <b>Games on news hold</b> are off Best spots entirely: a '
+         'quarterback change on either team (our ratings were built on the old one), or a gap our Research Assistant found '
+         'the news explains. Their game cards still show the strategies, greyed, with the reason. <b>Strategies that stop '
+         'working live</b> are paused: 20+ live bets with a record too far under break-even to be bad luck.</p>'),
         ('How to use it',
          '<ol><li>Read the badge first: <b>Bet early</b> rows are worth the most near the opener; <b>Good to kickoff</b> '
          'rows can wait.</li><li>For early ones, compare the line you can get with the opener shown.</li><li>Open the game '

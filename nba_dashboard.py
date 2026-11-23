@@ -357,6 +357,8 @@ def generate_html(power, metrics, days, info):
             when = g['kick'].strftime('%I:%M %p').lstrip('0') + ' ET'
             move = ex.line_move(info['opened'].get(g['game_id']), g['market'], pm, short[g['home']], short[g['away']],
                                 'First seen')
+            nh = None if g['score'] else gr.lean_hold('nba', g['game_id'], g['home'], g['away'], short[g['home']],
+                                                      short[g['away']], {})
             # the Best spots entry first, so the card can show its Fair Line Value line in a Strategies row
             sp = ex.spot('NBA', 'nba.html#games', g['kick'], short[g['away']], short[g['home']], margin, g['market'],
                          [], [(short[t], _signal(comp.get(t), gp.get(t, 0))) for t in (g['away'], g['home'])],
@@ -365,11 +367,11 @@ def generate_html(power, metrics, days, info):
                                 g.get('total')),
                          feat={'key': 'nba', 'home_key': g['home'], 'away_key': g['away'], 'held': False,
                                'marquee': 'Top-8 matchup' if g['home'] in top8 and g['away'] in top8 else None,
-                               'tv': g.get('tv') or None})
+                               'tv': g.get('tv') or None}, hold=nh)
             move += sy.tag_html([], theme.esc, sy.flv_items('nba', (sp or {}).get('priced'), (sp or {}).get('flags')),
                                 k=theme.k, ctx={'opened': info['opened'].get(g['game_id']), 'market': g['market'],
                                                 'open_total': ex.first_total('nba', g['game_id'], g.get('total')),
-                                                'total': g.get('total')})
+                                                'total': g.get('total')}, hold=nh)
             move += ex.rating_confidence(by_src.get(g['home'], {}), by_src.get(g['away'], {}),
                                          g['hfa'])
             if not g['score']:
@@ -417,7 +419,8 @@ def generate_html(power, metrics, days, info):
                      'mismatch': head[0] if head else None,
                      'signals': {nm(t): (_signal(comp.get(t), gp.get(t, 0)), comp[t]) for t in (g['away'], g['home'])
                                  if comp.get(t) is not None},
-                     'injuries': {nm(t): fx.injuries(info['wire'], t) for t in (g['away'], g['home'])}}
+                     'injuries': {nm(t): fx.injuries(info['wire'], t) for t in (g['away'], g['home'])},
+                     'hold': nh, 'partly': gr.partly('nba', g['game_id'])}
                 grid = (mu.panel(g['away'], g['home'], nm, mprof, mu.BASKETBALL_CATS, mu.BASKETBALL_STYLES, info['mu_games'],
                                  extra=mu.pace_line(info['mu_units'], g['away'], g['home'], nm), head=False) if has_mu else '')
                 features.append(fx.card(d, card, grid, fx.notes(d)))
