@@ -146,7 +146,7 @@
     "source": "theScore",
     "url": "https://www.thescore.com/nfl/news/3663234",
     "date": "2026-11-22",
-    "qb_status": "new_starter"
+    "qb_status": "settled"
    },
    {
     "team": "PHI",
@@ -257,7 +257,7 @@
     "source": "ESPN",
     "url": "https://www.espn.com/nfl/injuries",
     "date": "2026-11-18",
-    "qb_status": "new_starter"
+    "qb_status": "settled"
    }
   ],
   "MIA": [

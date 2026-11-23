@@ -10,10 +10,10 @@ Goal: from `injury_candidates_{sport}.json`, keep **only injury news that could 
 
 **A QB item puts the game on hold** (since 2026-11-23, NFL and CFB): no lean, strategies greyed, off Best spots. So tag `QB` only for a real change to who starts or how healthy the starter is this week. Every QB item must also carry `"qb_status"` (Dylan, 2026-11-23):
 - `"uncertain"`: who starts this game isn't known yet (questionable, doubtful, game-time decision, a possible return). Holds.
-- `"new_starter"`: the expected starter has fewer than 3 straight starts as this team's starter. Holds.
+- `"new_starter"`: the regular starter has missed fewer than 3 straight games (the change is new to our ratings). Holds.
 - `"returning"`: the regular starter's first game back after missing 2+ games. Holds.
-- `"settled"`: the expected starter has 3+ straight starts and nothing about this week's starter is in doubt (e.g. the injured starter is on IR or out for the season with no return this week). Does **not** hold; keep the item only if the context still helps a reader, otherwise drop it.
-Count starts from the box scores or the official depth chart, not from memory. An item without `qb_status` is treated as holding.
+- `"settled"`: the regular starter has missed 3+ straight games and isn't expected back this week, whichever backups have played since (Dylan, 2026-11-23: the Eagles went Hurts → McKee → Milton; our ratings already reflect life without Hurts, and a backup-for-backup swap is small). Does **not** hold; keep the item only if the context still helps a reader, otherwise drop it.
+Count games missed from the box scores, not from memory. An item without `qb_status` is treated as holding.
 
 ## What to drop
 - Players who already returned and played last week, stat-line notes ("caught 3 passes…"), in-game "questionable to return" notes from last week's game, practice-squad moves, depth players, kickers and punters.
