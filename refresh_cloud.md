@@ -65,16 +65,17 @@ git add injury_wire_SPORT.json gap_notes_SPORT.json reports/last_refresh_SPORT.m
 git commit -m "SPORT MODE refresh (cloud)"
 git pull --rebase && git push origin main
 ```
-(Use the session's own git author. No report file for basketball: the 11 AM laptop run writes `last_refresh_cbb.md`.) If nothing changed, that's
+(Use the session's own git author.) If nothing changed, that's
 fine. If the pull hits a conflict, `git rebase --abort` and report it. If the push to `main` is refused, report the
 exact error and stop: don't push anywhere else.
 
 ## 5. Report
-Football only: write `reports/last_refresh_{sport}.md` (create the folder if needed; the root-level
+Write `reports/last_refresh_{sport}.md` (basketball: `reports/last_refresh_cbb.md`, with one line each for NBA, NHL and
+EPL: Injury Wire items, top 1–2 movers and the Research Assistant line) (create the folder if needed; the root-level
 `last_refresh_*.md` files are the laptop's and are git-ignored) (do it before step 4 so it is in the same commit). Line 1
 `Date: YYYY-MM-DD HH:MM` (Eastern), line 2 `Status: pushed` or `Status: failed — <reason>`, then up to 5 lines: the
 week, the inputs' build time, the number of Injury Wire items and the top 1–2 movers, the Research Assistant line from
-its runbook, whether this was a full run or a re-check of the laptop's run, and any warnings. The 11 AM digest reads
-it. In a re-check, keep the laptop report's facts and add what you changed.
+its runbook, whether this was a full run or a re-check of the laptop's run, and any warnings. The cloud daily digest
+(12:20 PM, `refresh_digest_cloud.md`) reads it. In `late` mode, keep the morning report's lines and add what changed. In a re-check, keep the laptop report's facts and add what you changed.
 
 Finish every run with the same lines as your final message.

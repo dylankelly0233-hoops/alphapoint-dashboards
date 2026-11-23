@@ -98,7 +98,10 @@ jobs:
       - name: Publish research inputs to the data branch
         continue-on-error: true
         run: |
-          mkdir -p /tmp/data && cp injury_candidates_*.json gap_candidates_*.json /tmp/data/ 2>/dev/null || true
+          mkdir -p /tmp/data && cp injury_candidates_*.json gap_candidates_*.json results_*.csv /tmp/data/ 2>/dev/null || true
+          # health reports for the cloud daily digest (refresh_digest_cloud.md); final scores for the cloud weekly email
+          python -c "import model_performance as m; l, w = m.health_lines(); print('MODEL HEALTH'); [print('  ' + x) for x in l]; print('Warnings:' if w else 'Warnings: none'); [print('  ! ' + x) for x in w]" > /tmp/data/model_health.txt 2>&1 || true
+          python gap_health.py > /tmp/data/gap_health.txt 2>&1 || true
           date -Iseconds > /tmp/data/BUILT_AT.txt
           cd /tmp/data && git init -q -b data && git add -A
           git -c user.name="alphapoint-bot" -c user.email="actions@users.noreply.github.com" commit -qm "Research inputs [skip ci]"

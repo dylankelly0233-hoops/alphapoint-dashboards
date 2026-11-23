@@ -31,4 +31,4 @@ The push starts a GitHub build automatically.
 ## 5. Report (6 lines or fewer)
 Include the week, the nfelo fetch time, the ratings "through" date the script printed, the number of Injury Wire items with the top 1–2 movers, whether the push succeeded, and any warnings (lines starting with `  ! `).
 
-Also save the report to `DIR\last_refresh_nfl.md`, replacing the file. Make the first line `Date: YYYY-MM-DD HH:MM` (local time) and the second line `Status: pushed` or `Status: failed — <reason>`. Then add the report lines, plus the current BUY and SELL teams. The 11 AM CBB run reads this file to build Dylan's daily email digest.
+Also save the report to `DIR\reports\last_refresh_nfl.md`, replacing the file. Make the first line `Date: YYYY-MM-DD HH:MM` (local time) and the second line `Status: pushed` or `Status: failed — <reason>`. Then add the report lines, plus the current BUY and SELL teams. The cloud daily digest (12:20 PM, `refresh_digest_cloud.md`) reads this file, so publish it: from DIR, `git add reports/last_refresh_nfl.md`, commit with the message "NFL report" (same author flags as above), `git pull --rebase`, and `git push`.

@@ -58,6 +58,6 @@ bt_att_*.csv
 research_cache/
 situational_research.md
 research_state.json
-research_summary.md
+/research_summary.md
 research_log_*.txt
 gap_candidates_*.json
