@@ -1,6 +1,6 @@
-Date: 2026-11-22 12:17
+Date: 2026-11-23 10:37
 Status: pushed
-Week 11 (Sunday slate + MNF CIN @ WAS); inputs built 2026-11-22 11:51 ET.
-Injury Wire: 35 items on 23 teams, updated with 1 PM inactives. Top movers: ARI QB Carson Beck out (Josh Johnson starts); TB QB Baker Mayfield active and starting.
-Research Assistant: 17 teams with rating-watch items; 8 gap games (4 explained, 4 partly, 0 unexplained); all 8 swings explained.
-Full run (the last notes were 100 min old), built on the 10:36 notes. Inactives added: DAL TE Jake Ferguson, BUF TE Dalton Kincaid, DET CBs D.J. Reed and Ennis Rakestraw (S Kerby Joseph back), NO LB Pete Werner, CB Martin Emerson and S Justin Reid (released) -> NO @ CHI now explained. 4:25 PM: LV Brock Bowers still a game-time call. Removed news.google links.
+Week 11 wire (MNF CIN @ WAS tonight) + Week 12 slate incl. Thanksgiving; inputs built 2026-11-23 10:25 ET.
+Injury Wire: 31 items on 22 teams. Top movers: LAC QB Justin Herbert in concussion protocol; NE QB Drake Maye out (Tommy DeVito starts).
+Research Assistant: 23 teams with rating-watch items; 5 gap games (2 explained, 3 partly, 0 unexplained); all 3 swings explained.
+Re-check of the laptop's 10:25 run (kept its work). Added PHI RB Saquon Barkley (left arm, left Sunday's game; says he expects to play Thursday). No new word on Herbert, Carson Beck or MNF inactives yet.

@@ -1,7 +1,7 @@
 {
   "sport": "nfl",
   "week": 11,
-  "generated": "2026-11-23T10:25:00-05:00",
+  "generated": "2026-11-23T10:36:00-05:00",
   "movers": [
     {
       "team": "LAC",
@@ -144,6 +144,14 @@
         "text": "CB Quinyon Mitchell (hamstring) was ruled out in the fourth quarter vs. Pittsburgh; no timeline for Thursday at Dallas. LB Zack Baun (back) is on IR.",
         "source": "Philadelphia Inquirer",
         "url": "https://www.inquirer.com/eagles/live/eagles-news-saquon-barkley-injury-updates-thanksgiving-cowboys-20261123.html",
+        "date": "2026-11-23"
+      },
+      {
+        "team": "PHI",
+        "tag": "KEY",
+        "text": "RB Saquon Barkley left the 19-16 win over Pittsburgh in the fourth quarter with a left arm/shoulder injury; no diagnosis yet. He said afterward he expects to play Thursday at Dallas.",
+        "source": "Bleacher Report",
+        "url": "https://bleacherreport.com/articles/25536604-saquon-barkley-updates-status-eagles-cowboys-thanksgiving-game-after-missing-end-steelers-win",
         "date": "2026-11-23"
       }
     ],

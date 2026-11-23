@@ -1,9 +1,9 @@
 {
   "sport": "nfl",
-  "generated": "2026-11-23T10:25:00-05:00",
+  "generated": "2026-11-23T10:36:00-05:00",
   "teams": {
     "ARI": {
-      "checked": "2026-11-23T10:25:00-05:00",
+      "checked": "2026-11-23T10:36:00-05:00",
       "watch": [
         {
           "direction": "too_high",
@@ -50,7 +50,7 @@
       "watch": []
     },
     "CHI": {
-      "checked": "2026-11-23T10:25:00-05:00",
+      "checked": "2026-11-23T10:36:00-05:00",
       "watch": [
         {
           "direction": "too_high",
@@ -63,7 +63,7 @@
       ]
     },
     "CIN": {
-      "checked": "2026-11-23T10:25:00-05:00",
+      "checked": "2026-11-23T10:36:00-05:00",
       "watch": [
         {
           "direction": "too_high",
@@ -88,7 +88,7 @@
       "watch": []
     },
     "DAL": {
-      "checked": "2026-11-23T10:25:00-05:00",
+      "checked": "2026-11-23T10:36:00-05:00",
       "watch": [
         {
           "direction": "too_high",
@@ -113,7 +113,7 @@
       "watch": []
     },
     "DET": {
-      "checked": "2026-11-23T10:25:00-05:00",
+      "checked": "2026-11-23T10:36:00-05:00",
       "watch": [
         {
           "direction": "too_high",
@@ -203,7 +203,7 @@
       ]
     },
     "LAC": {
-      "checked": "2026-11-23T10:25:00-05:00",
+      "checked": "2026-11-23T10:36:00-05:00",
       "watch": [
         {
           "direction": "too_high",
@@ -263,7 +263,7 @@
       ]
     },
     "NE": {
-      "checked": "2026-11-23T10:25:00-05:00",
+      "checked": "2026-11-23T10:36:00-05:00",
       "watch": [
         {
           "direction": "too_high",
@@ -314,7 +314,7 @@
       ]
     },
     "PHI": {
-      "checked": "2026-11-23T10:25:00-05:00",
+      "checked": "2026-11-23T10:36:00-05:00",
       "watch": [
         {
           "direction": "too_high",
@@ -335,7 +335,7 @@
         {
           "direction": "too_high",
           "since": "2026-11-21",
-          "text": "LB Zack Baun (back) is on IR, and CB Quinyon Mitchell (hamstring) left the Steelers game with no timeline for Thursday at Dallas.",
+          "text": "LB Zack Baun (back) is on IR; CB Quinyon Mitchell (hamstring) and RB Saquon Barkley (left arm) left the Steelers game, both uncertain for Thursday at Dallas.",
           "source": "Philadelphia Inquirer",
           "url": "https://www.inquirer.com/eagles/live/eagles-news-saquon-barkley-injury-updates-thanksgiving-cowboys-20261123.html",
           "date": "2026-11-23"
@@ -389,7 +389,7 @@
       "watch": []
     },
     "WAS": {
-      "checked": "2026-11-23T10:25:00-05:00",
+      "checked": "2026-11-23T10:36:00-05:00",
       "watch": [
         {
           "direction": "unclear",
@@ -430,7 +430,7 @@
       "swings": {
         "LAC": "Drake Maye's fractured ankle put Tommy DeVito at QB for New England, so the market moved to the Chargers; Herbert's concussion (Nov 22) has since trimmed that (ESPN, Nov 23)."
       },
-      "checked": "2026-11-23T10:25:00-05:00"
+      "checked": "2026-11-23T10:36:00-05:00"
     },
     "2026_12_CHI_DET": {
       "verdict": "partly",
@@ -459,7 +459,7 @@
       "swings": {
         "DET": "DE Aidan Hutchinson tore his ACL and C Cade Mays went on IR; the market marked Detroit down, our ratings haven't caught up (ESPN, Nov 22)."
       },
-      "checked": "2026-11-23T10:25:00-05:00"
+      "checked": "2026-11-23T10:36:00-05:00"
     },
     "2026_12_NYG_IND": {
       "verdict": "explained",
@@ -534,7 +534,7 @@
         }
       ],
       "returning": [],
-      "checked": "2026-11-23T10:25:00-05:00"
+      "checked": "2026-11-23T10:36:00-05:00"
     },
     "2026_12_GB_LA": {
       "swings": {
