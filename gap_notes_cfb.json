@@ -1,6 +1,6 @@
 {
  "sport": "cfb",
- "generated": "2026-11-22T09:35:13-05:00",
+ "generated": "2026-11-22T21:47:20-05:00",
  "teams": {
   "Clemson": {
    "watch": [
@@ -345,6 +345,30 @@
      "date": "2026-11-17"
     }
    ]
+  },
+  "Pittsburgh": {
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-10-04",
+     "text": "QB Mason Heintschel tore his ACL in early October; Pitt is 1-5 since, but our ratings still carry his early games.",
+     "source": "Yahoo Sports",
+     "url": "https://sports.yahoo.com/articles/slumping-pitt-opens-road-favorite-171706460.html",
+     "date": "2026-11-22"
+    }
+   ]
+  },
+  "North Texas": {
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-14",
+     "text": "Starting QB Tayven Jackson (upper body) misses the UAB game; Chris Jimerson Jr. starts and backup Chaston Ditta is also hurt.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/college-football/story/_/id/50513204/north-texas-qb-tayven-jackson-upper-body-injury",
+     "date": "2026-11-17"
+    }
+   ]
   }
  },
  "games": {
@@ -625,7 +649,9 @@
     }
    ],
    "returning": [],
-   "swings": {}
+   "swings": {
+    "Buffalo": "Buffalo has won six straight (40-21 over Central Michigan on 11/18, Messiah Burch 200 rush yds); our ratings rose with the streak more than the market, which still prices QB E. Holmes's season-ending knee injury (UB Athletics)."
+   }
   },
   "401866470": {
    "swings": {
@@ -650,6 +676,259 @@
     }
    ],
    "returning": []
+  },
+  "401871062": {
+   "verdict": "partly",
+   "summary": "Jacksonville State has already clinched its CUSA title-game spot (vs Liberty), so this game means less to it; Delaware just won 42-30 behind 5 TD passes. SP+ (-9.4) is far from Sagarin (-0.3).",
+   "reasons": [
+    {
+     "text": "Jax State clinched a third straight CUSA title-game berth with a 25-20 comeback win over Missouri State on Nov. 21; Liberty is the opponent.",
+     "source": "Yahoo Sports",
+     "url": "https://sports.yahoo.com/articles/jacksonville-state-football-clinches-cusa-234929900.html",
+     "date": "2026-11-21"
+    },
+    {
+     "text": "Delaware QB Nick Minicucci threw 5 TDs (31-of-41, 398 yds) in a 42-30 win at New Mexico State; the Blue Hens are 6-5 and bowl-eligible.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/college-football/recap/_/gameId/401871077",
+     "date": "2026-11-21"
+    }
+   ],
+   "returning": [],
+   "swings": {
+    "Delaware": "Delaware won 42-30 at New Mexico State on Nov. 21 with Nick Minicucci throwing 5 TDs; the market moved up on the Blue Hens, while Jax State has a title game next (ESPN, 11/21)."
+   }
+  },
+  "401864549": {
+   "verdict": "unexplained",
+   "summary": "No injury or QB news found for either team; San José State lost 24-22 to UNLV on a failed 2-point try. Our line leans on SP+ (-22.6) far more than Sagarin (-10.2).",
+   "reasons": [
+    {
+     "text": "San José State (5-7) fell 24-22 to UNLV on Nov. 21 when Luke Weaver's tying 2-point pass fell incomplete; Weaver started and played the whole game.",
+     "source": "SJSU Athletics",
+     "url": "https://sjsuspartans.com/news/2026/11/21/spartans-drop-game-to-unlv-after-late-rally-falls-short",
+     "date": "2026-11-21"
+    }
+   ],
+   "returning": [],
+   "swings": {}
+  },
+  "401871063": {
+   "verdict": "partly",
+   "summary": "Liberty (10-1, 7-0 CUSA) has clinched the CUSA title game, so this regular-season finale is low-stakes for it; no injury news found. SP+ and our model run far above Sagarin.",
+   "reasons": [
+    {
+     "text": "Liberty had already clinched a CUSA title-game spot before Week 12 and will face Jacksonville State.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/college-football/story/_/id/50512475/conference-title-game-clinching-scenarios-week-12",
+     "date": "2026-11-20"
+    },
+    {
+     "text": "Liberty beat Western Kentucky 45-14 on Nov. 21 for its 10th straight win; QB Deshawn Purdie threw for 344 yds, no injuries reported.",
+     "source": "Liberty Athletics",
+     "url": "https://libertyflames.com/news/2026/11/21/football-no-22-liberty-jumps-out-early-in-45-14-win-over-wku",
+     "date": "2026-11-21"
+    }
+   ],
+   "returning": [],
+   "swings": {}
+  },
+  "401862843": {
+   "verdict": "explained",
+   "summary": "North Texas starting QB Tayven Jackson will miss the UAB game (upper body), with sophomore Chris Jimerson Jr. starting and backup Chaston Ditta also hurt; our ratings were built with Jackson.",
+   "reasons": [
+    {
+     "text": "Neal Brown: Jackson 'will definitely miss Saturday and then the UAB game as well'; he hopes Jackson is back for a title or bowl game.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/college-football/story/_/id/50513204/north-texas-qb-tayven-jackson-upper-body-injury",
+     "date": "2026-11-17"
+    },
+    {
+     "text": "Chris Jimerson Jr. starts until Jackson returns; backup Chaston Ditta has been out since an October injury.",
+     "source": "Underdog Dynasty",
+     "url": "https://www.underdogdynasty.com/american-conference/47820/north-texas-qb-tayven-jackson-out-for-regular-season-chris-jimerson-jr-takes-over",
+     "date": "2026-11-18"
+    }
+   ],
+   "returning": [],
+   "swings": {}
+  },
+  "401858315": {
+   "verdict": "explained",
+   "summary": "Pitt is 1-5 since QB Mason Heintschel tore his ACL in early October and its starter vs Cal is unclear; our ratings, especially SP+ (-20.1), still carry his early-season games.",
+   "reasons": [
+    {
+     "text": "Pittsburgh is 1-5 since losing QB Mason Heintschel (torn ACL); Holden Geriner struggled and was pulled for freshman Corey Dailey, starter vs Cal unclear. Opened Pitt -7.5.",
+     "source": "Yahoo Sports",
+     "url": "https://sports.yahoo.com/articles/slumping-pitt-opens-road-favorite-171706460.html",
+     "date": "2026-11-22"
+    },
+    {
+     "text": "Heintschel's season ended with a torn ACL.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/college-football/story/_/id/50093457/pitt-qb-mason-heintschel-season-torn-acl",
+     "date": "2026-10-05"
+    }
+   ],
+   "returning": [],
+   "swings": {}
+  },
+  "401858316": {
+   "verdict": "unexplained",
+   "summary": "No SMU injury news found; Stanford just beat Cal 44-28 to reach bowl eligibility, which may have lifted the market on the Cardinal. Most of the gap comes from SP+ (-19.4 vs Sagarin -8.3).",
+   "reasons": [
+    {
+     "text": "Stanford won the Big Game 44-28 at Cal on Nov. 21 (Davis Warren 2 TD, Micah Ford 151 rush yds) and is 6-5, bowl-eligible for the first time since 2018.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/college-football/recap/_/gameId/401858308",
+     "date": "2026-11-21"
+    }
+   ],
+   "returning": [],
+   "swings": {}
+  },
+  "401866475": {
+   "verdict": "partly",
+   "summary": "UMass QB Pop Watson's ankle is a question mark after the 34-33 loss to Akron, which could explain part of the market's lean to Bowling Green; SP+ (-6.4) and Sagarin (+2.8) disagree.",
+   "reasons": [
+    {
+     "text": "UMass QB Pop Watson's availability after an ankle injury was flagged before the Akron game; no update found for the Bowling Green trip.",
+     "source": "Hustle Belt",
+     "url": "https://www.hustlebelt.com/mac-football/43743/bowling-green-falcons-at-umass-minutemen-football-game-preview-week-14-2025",
+     "date": "2026-11-14"
+    },
+    {
+     "text": "Bowling Green's offense has been opened up for QB Jay Kastanin, per a Nov. 20 Toledo preview.",
+     "source": "Yahoo Sports",
+     "url": "https://sports.yahoo.com/articles/bowling-green-vs-toledo-prediction-124508369.html",
+     "date": "2026-11-20"
+    }
+   ],
+   "returning": [],
+   "swings": {}
+  },
+  "401866474": {
+   "verdict": "partly",
+   "summary": "Central Michigan's starting QB Angel Flores is out for the season after ankle surgery (Jadyn Glasser starts), and CMU just lost 40-21 at Buffalo; our ratings still carry some Flores games.",
+   "reasons": [
+    {
+     "text": "Angel Flores will miss the rest of 2026 after ankle surgery, per Mitten Football; Jadyn Glasser starts in his place.",
+     "source": "Fox Sports",
+     "url": "https://www.foxsports.com/college-football/central-michigan-chippewas-team",
+     "date": "2026-10-02"
+    },
+    {
+     "text": "Buffalo beat Central Michigan 40-21 on Nov. 18 behind Messiah Burch's 200 rushing yards.",
+     "source": "UB Athletics",
+     "url": "https://ubbulls.com/news/2026/11/19/football-bulls-grill-central-michigan-40-21",
+     "date": "2026-11-19"
+    }
+   ],
+   "returning": [],
+   "swings": {}
+  },
+  "401864550": {
+   "verdict": "unexplained",
+   "summary": "No injury or QB news found for UTEP or Northern Illinois; our sources split (Sagarin NIU -3.4, SP+ UTEP -2.5, our model NIU -6.8).",
+   "reasons": [],
+   "returning": [],
+   "swings": {}
+  },
+  "401862841": {
+   "verdict": "unexplained",
+   "summary": "No Army or Rice injury news found this week; the Army-Navy game follows, but nothing reported suggests Army is holding back.",
+   "reasons": [],
+   "returning": [],
+   "swings": {}
+  },
+  "401858311": {
+   "verdict": "partly",
+   "summary": "Miami is still without WR Malachi Toney (ankle surgery, likely out vs BC) and TE Elija Lofton left the Virginia Tech game hurt; real but small next to a 3.7-point gap.",
+   "reasons": [
+    {
+     "text": "Toney had surgery on a high ankle sprain from a Nov. 4 practice; Cristobal says he is about 1.5 weeks out, so the BC game looks unlikely.",
+     "source": "Fox Sports",
+     "url": "https://www.foxsports.com/stories/college-football/miami-coach-mario-cristobal-updates-malachi-toneys-recovery-eyes-possible-return-within-2-weeks",
+     "date": "2026-11-20"
+    }
+   ],
+   "returning": [],
+   "swings": {}
+  },
+  "401862842": {
+   "verdict": "unexplained",
+   "summary": "No Navy or Charlotte injury news found; Navy won 38-34 at Memphis on a late fourth-down TD, a result our ratings credited more than the market did.",
+   "reasons": [
+    {
+     "text": "Navy beat Memphis 38-34 on Nov. 21; Vic Listorti's 6-yard TD run on fourth down came with 15 seconds left.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/college-football/game/_/gameId/401862834",
+     "date": "2026-11-21"
+    }
+   ],
+   "returning": [],
+   "swings": {
+    "Navy": "Navy's 38-34 win over Memphis on a last-minute fourth-down TD (11/21) raised our ratings more than the market; no injury news found (ESPN)."
+   }
+  },
+  "401860928": {
+   "verdict": "unexplained",
+   "summary": "No Texas State or Utah State injury or QB news found for this game; all three of our sources agree on Texas State by 10-12.",
+   "reasons": [],
+   "returning": [],
+   "swings": {}
+  },
+  "401869930": {
+   "verdict": "unexplained",
+   "summary": "Nothing current found: App State QB Malachi Singleton's status has changed several times this season (out Oct. 11, later available) and no update for South Alabama turned up.",
+   "reasons": [],
+   "returning": [],
+   "swings": {}
+  },
+  "401862839": {
+   "verdict": "unexplained",
+   "summary": "No Tulane or USF injury news found for this game; USF QB Michael Van Buren left the ECU game in early November with an undisclosed injury and no follow-up was found.",
+   "reasons": [
+    {
+     "text": "USF QB Michael Van Buren left in the second quarter with an undisclosed injury; the staff said an injury report would follow.",
+     "source": "USF Oracle",
+     "url": "https://www.usforacle.com/2026/11/03/usf-football-ecu-michael-van-buren/",
+     "date": "2026-11-03"
+    }
+   ],
+   "returning": [],
+   "swings": {}
+  },
+  "401864547": {
+   "verdict": "unexplained",
+   "summary": "No Hawai'i or Sacramento State (2-9) injury news found; nothing explains the market's shorter number.",
+   "reasons": [],
+   "returning": [],
+   "swings": {}
+  },
+  "401869959": {
+   "swings": {
+    "Georgia State": "Backup QB Ayden Pereira threw 3 TDs in the 28-27 loss at Marshall (11/21) with Cameran Brown listed doubtful; the market moved up on Georgia State after the strong showing (Georgia State Athletics)."
+   }
+  },
+  "401871102": {
+   "swings": {
+    "Marshall": "Carlos Del Rio-Wilson made his first start since Oct. 10 in the 28-27 win over Georgia State (11/21) after Zion Turner and Khalil Wilkins were hurt; our ratings rose, the market less so (WCHS)."
+   }
+  },
+  "401858544": {
+   "verdict": "partly",
+   "summary": "Wisconsin's QB job is unsettled (Colton Joseph vs freshman Ryan Hopkins, who was hurt) and injuries are piling up on defense, which covers part of a 4.4-point gap in a rivalry game.",
+   "reasons": [
+    {
+     "text": "Wisconsin has a QB decision for Black Friday between Colton Joseph and Ryan Hopkins; the writer argues for Joseph.",
+     "source": "Yahoo Sports",
+     "url": "https://sports.yahoo.com/articles/wisconsin-football-huge-qb-decision-120006571.html",
+     "date": "2026-11-22"
+    }
+   ],
+   "returning": [],
+   "swings": {}
   }
  }
 }

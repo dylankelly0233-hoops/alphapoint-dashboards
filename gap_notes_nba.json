@@ -1,6 +1,6 @@
 {
  "sport": "nba",
- "generated": "2026-11-22T19:55:00-05:00",
+ "generated": "2026-11-22T21:47:20-05:00",
  "teams": {
   "OKC": {
    "watch": [
@@ -165,6 +165,30 @@
      "date": "2026-11-22"
     }
    ]
+  },
+  "SA": {
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-22",
+     "text": "Wembanyama (lower back tightness) and Fox (shin) are questionable for 11/23 at SAC.",
+     "source": "NBC Sports",
+     "url": "https://www.nbcsports.com/fantasy/basketball/player-news/2026-11-22/victor-wembanyama-back-questionable-monday",
+     "date": "2026-11-22"
+    }
+   ]
+  },
+  "POR": {
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-23",
+     "text": "Ja Morant (hamstring, est. Dec 1) and Shaedon Sharpe (meniscus, est. March) are out.",
+     "source": "Rip City Radio",
+     "url": "https://ripcityradio.iheart.com/content/2026-11-23-trail-blazers-vs-76ers-injury-report-nov-23/",
+     "date": "2026-11-23"
+    }
+   ]
   }
  },
  "games": {
@@ -227,7 +251,66 @@
      "text": "Probable vs POR after missing two games (hamstring).",
      "url": "https://www.espn.com/nba/injuries"
     }
+   ],
+   "verdict": "partly",
+   "summary": "Philadelphia gets Jaylen Brown and Dean Wade (hamstrings) back as probable and is on a five-game win streak, while Portland is without Ja Morant and Shaedon Sharpe; that covers part of the gap.",
+   "reasons": [
+    {
+     "text": "Brown and Wade (hamstrings) are probable vs POR after missing two games; Adem Bona is also listed.",
+     "source": "PhillyVoice",
+     "url": "https://www.phillyvoice.com/sixers-news-76ers-analysis-injury-report-update-trail-blazers-jaylen-brown-dean-wade-adem-bona-ja-morant-nba/",
+     "date": "2026-11-23"
+    },
+    {
+     "text": "Portland is out Ja Morant (hamstring, est. Dec 1), Shaedon Sharpe (meniscus, est. March), Vit Krejci and Chris Youngblood.",
+     "source": "Rip City Radio",
+     "url": "https://ripcityradio.iheart.com/content/2026-11-23-trail-blazers-vs-76ers-injury-report-nov-23/",
+     "date": "2026-11-23"
+    }
    ]
+  },
+  "401910045": {
+   "verdict": "explained",
+   "summary": "Victor Wembanyama (lower back tightness, after his 50-point game) and De'Aaron Fox (shin) are both questionable at Sacramento, so the market is pricing a possible rest night.",
+   "reasons": [
+    {
+     "text": "Wembanyama (back) is questionable for Monday at SAC; Fox (right shin contusion) and Jordan McLaughlin (shoulder) are also questionable.",
+     "source": "NBC Sports",
+     "url": "https://www.nbcsports.com/fantasy/basketball/player-news/2026-11-22/victor-wembanyama-back-questionable-monday",
+     "date": "2026-11-22"
+    }
+   ],
+   "returning": [],
+   "swings": {
+    "SA": "Wembanyama (back) and Fox (shin) were listed questionable for 11/23 after Wembanyama's 50-point game; the market discounts the Spurs, our ratings don't (NBC Sports, 11/22)."
+   }
+  },
+  "401910040": {
+   "verdict": "unexplained",
+   "summary": "Anthony Edwards has been out since Oct. 29 knee surgery, so our ratings already reflect most of his absence; Brooklyn's Nolan Traore and Grant Nelson are game-time calls, which pushes the other way.",
+   "reasons": [
+    {
+     "text": "Edwards had right knee arthroscopic surgery on Oct. 29 and is expected to miss at least eight weeks (late December).",
+     "source": "Star Tribune",
+     "url": "https://www.startribune.com/anthony-edwards-injury-timeline-minnesota-timberwolves-golden-state-warriors-game-wolves-roster-news/601906109",
+     "date": "2026-10-29"
+    },
+    {
+     "text": "Nets: Traore (hamstring) and Nelson (ankle) game-time decisions; Wolves also without Jaylen Clark and Donte DiVincenzo.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nba/game/_/gameId/401910040/nets-timberwolves",
+     "date": "2026-11-23"
+    }
+   ],
+   "returning": [],
+   "swings": {
+    "BKN": "Nothing found: the market moved on Brooklyn without a clear reason; Traore and Nelson are only game-time decisions (ESPN, 11/23)."
+   }
+  },
+  "401910042": {
+   "swings": {
+    "PHX": "Trey Murphy III (knees) is probable for New Orleans vs PHX after missing 7 of 8 games (29 min in his 11/20 return); the market prices him back, our ratings don't (Rotowire, 11/22)."
+   }
   }
  }
 }
