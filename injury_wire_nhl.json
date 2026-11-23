@@ -1,47 +1,47 @@
 {
  "sport": "nhl",
- "week": 20261121,
- "generated": "2026-11-21T11:17:59-05:00",
+ "week": 20261122,
+ "generated": "2026-11-22T20:00:00-05:00",
  "movers": [
   {
    "team": "MIN",
    "tag": "KEY",
-   "text": "D Quinn Hughes (27.8 TOI/gm) is listed day-to-day ahead of Saturday at VAN; he has not missed a game this season.",
+   "text": "D Quinn Hughes (27.8 TOI, upper body) will miss the rest of Minnesota's road trip, including the SJ game (The Athletic via ESPN, 11/21).",
    "source": "ESPN",
    "url": "https://www.espn.com/nhl/injuries",
-   "date": "2026-11-20"
+   "date": "2026-11-21"
   },
   {
    "team": "CHI",
-   "tag": "KEY",
-   "text": "C Connor Bedard (20.1 TOI/gm, shoulder) was moved to out on 11/19 after an evaluation 11/18; he has missed 7 games this season.",
+   "tag": "CLUSTER",
+   "text": "C Connor Bedard (20.1 TOI, shoulder) went on IR 11/22, D Wyatt Kaiser (19.3) got a 3-game suspension 11/22, and D Bowen Byram (24.7) has missed 17 games.",
    "source": "ESPN",
    "url": "https://www.espn.com/nhl/injuries",
-   "date": "2026-11-19"
+   "date": "2026-11-22"
+  },
+  {
+   "team": "EDM",
+   "tag": "RETURNING",
+   "text": "C Ryan Nugent-Hopkins (18.2 TOI) is slated to return vs Vegas on Tuesday after missing 13 games (Oilers TV via ESPN); Zach Hyman (17.2) remains out.",
+   "source": "ESPN",
+   "url": "https://www.espn.com/nhl/injuries",
+   "date": "2026-11-21"
+  },
+  {
+   "team": "ANA",
+   "tag": "CLUSTER",
+   "text": "RW Beckett Sennecke (20.3 TOI, upper body) went on IR 11/21 and C Leo Carlsson (19.8, upper body) is day-to-day (The Athletic, 11/22).",
+   "source": "ESPN",
+   "url": "https://www.espn.com/nhl/injuries",
+   "date": "2026-11-22"
   },
   {
    "team": "LA",
    "tag": "KEY",
-   "text": "LW Artemi Panarin (21.4 TOI/gm) is day-to-day after missing the last three games; Trevor Moore (16.2) is also day-to-day.",
+   "text": "LW Artemi Panarin (21.4 TOI) is day-to-day after missing 4 games; D Erik Gustafsson (19.7, 5 missed) and Trevor Moore (16.2) are also day-to-day.",
    "source": "ESPN",
    "url": "https://www.espn.com/nhl/injuries",
-   "date": "2026-11-20"
-  },
-  {
-   "team": "PIT",
-   "tag": "KEY",
-   "text": "C Evgeni Malkin (17.7 TOI/gm) is out and has missed two straight; Bryan Rust (lower body, 14 games missed) is skating in a non-contact jersey.",
-   "source": "ESPN",
-   "url": "https://www.espn.com/nhl/injuries",
-   "date": "2026-11-20"
-  },
-  {
-   "team": "MTL",
-   "tag": "CLUSTER",
-   "text": "D Mike Matheson (23.5 TOI/gm) is out 2-3 weeks and forwards Josh Anderson (3-4 weeks) and Chris Kreider are on IR (announced 11/15).",
-   "source": "ESPN",
-   "url": "https://www.espn.com/nhl/injuries",
-   "date": "2026-11-15"
+   "date": "2026-11-22"
   }
  ],
  "teams": {
@@ -49,75 +49,87 @@
    {
     "team": "MIN",
     "tag": "KEY",
-    "text": "D Quinn Hughes (27.8 TOI/gm) is listed day-to-day ahead of Saturday at VAN; he has not missed a game this season.",
+    "text": "D Quinn Hughes (27.8 TOI, upper body) will miss the rest of Minnesota's road trip, including the SJ game (The Athletic via ESPN, 11/21).",
     "source": "ESPN",
     "url": "https://www.espn.com/nhl/injuries",
-    "date": "2026-11-20"
+    "date": "2026-11-21"
    }
   ],
   "CHI": [
    {
     "team": "CHI",
-    "tag": "KEY",
-    "text": "C Connor Bedard (20.1 TOI/gm, shoulder) was moved to out on 11/19 after an evaluation 11/18; he has missed 7 games this season.",
+    "tag": "CLUSTER",
+    "text": "C Connor Bedard (20.1 TOI, shoulder) went on IR 11/22, D Wyatt Kaiser (19.3) got a 3-game suspension 11/22, and D Bowen Byram (24.7) has missed 17 games.",
     "source": "ESPN",
     "url": "https://www.espn.com/nhl/injuries",
-    "date": "2026-11-19"
-   },
+    "date": "2026-11-22"
+   }
+  ],
+  "EDM": [
    {
-    "team": "CHI",
-    "tag": "KEY",
-    "text": "D Bowen Byram (24.7 TOI/gm, upper body) is on IR and will not play in Chicago's next two games, per CHGO (11/17).",
+    "team": "EDM",
+    "tag": "RETURNING",
+    "text": "C Ryan Nugent-Hopkins (18.2 TOI) is slated to return vs Vegas on Tuesday after missing 13 games (Oilers TV via ESPN); Zach Hyman (17.2) remains out.",
     "source": "ESPN",
     "url": "https://www.espn.com/nhl/injuries",
-    "date": "2026-11-17"
+    "date": "2026-11-21"
+   }
+  ],
+  "ANA": [
+   {
+    "team": "ANA",
+    "tag": "CLUSTER",
+    "text": "RW Beckett Sennecke (20.3 TOI, upper body) went on IR 11/21 and C Leo Carlsson (19.8, upper body) is day-to-day (The Athletic, 11/22).",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nhl/injuries",
+    "date": "2026-11-22"
    }
   ],
   "LA": [
    {
     "team": "LA",
     "tag": "KEY",
-    "text": "LW Artemi Panarin (21.4 TOI/gm) is day-to-day after missing the last three games; Trevor Moore (16.2) is also day-to-day.",
+    "text": "LW Artemi Panarin (21.4 TOI) is day-to-day after missing 4 games; D Erik Gustafsson (19.7, 5 missed) and Trevor Moore (16.2) are also day-to-day.",
     "source": "ESPN",
     "url": "https://www.espn.com/nhl/injuries",
-    "date": "2026-11-20"
+    "date": "2026-11-22"
    }
   ],
-  "PIT": [
+  "TB": [
    {
-    "team": "PIT",
+    "team": "TB",
     "tag": "KEY",
-    "text": "C Evgeni Malkin (17.7 TOI/gm) is out and has missed two straight; Bryan Rust (lower body, 14 games missed) is skating in a non-contact jersey.",
+    "text": "LW Brandon Hagel (20.5 TOI, lower body) is on IR retroactive to 11/15 (Tampa Bay Times via ESPN); Zemgus Girgensons (upper body) is also out.",
     "source": "ESPN",
     "url": "https://www.espn.com/nhl/injuries",
-    "date": "2026-11-20"
+    "date": "2026-11-19"
+   }
+  ],
+  "VAN": [
+   {
+    "team": "VAN",
+    "tag": "KEY",
+    "text": "C Elias Pettersson (19.0 TOI, upper body) was not expected to play vs Chicago on 11/22, per the Canucks broadcast.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nhl/injuries",
+    "date": "2026-11-21"
    }
   ],
   "MTL": [
    {
     "team": "MTL",
-    "tag": "CLUSTER",
-    "text": "D Mike Matheson (23.5 TOI/gm) is out 2-3 weeks and forwards Josh Anderson (3-4 weeks) and Chris Kreider are on IR (announced 11/15).",
+    "tag": "KEY",
+    "text": "D Mike Matheson (23.5 TOI, lower body) is out about 2-3 weeks from 11/15; Josh Anderson and Chris Kreider are on IR.",
     "source": "ESPN",
     "url": "https://www.espn.com/nhl/injuries",
     "date": "2026-11-15"
-   }
-  ],
-  "NYI": [
-   {
-    "team": "NYI",
-    "tag": "CLUSTER",
-    "text": "Defensemen Logan Stanley (20.7 TOI/gm) and Ryan Pulock (17.6) are day-to-day for Saturday at DET; Alexander Romanov remains on IR.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nhl/injuries",
-    "date": "2026-11-20"
    }
   ],
   "WPG": [
    {
     "team": "WPG",
     "tag": "KEY",
-    "text": "D Dylan DeMelo (19.4 TOI/gm, lower body) is expected to miss 4-6 weeks, per the Jets' site (11/19).",
+    "text": "D Dylan DeMelo (19.4 TOI, lower body) is expected to be out 4-6 weeks from 11/19, per the Jets' site.",
     "source": "ESPN",
     "url": "https://www.espn.com/nhl/injuries",
     "date": "2026-11-19"
@@ -126,21 +138,11 @@
   "UTAH": [
    {
     "team": "UTAH",
-    "tag": "RETURNING",
-    "text": "D John Marino (20.4 TOI/gm, missed 14) is day-to-day and close to returning; RW Dylan Guenther (17.2) was upgraded to day-to-day before ANA.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nhl/injuries",
-    "date": "2026-11-20"
-   }
-  ],
-  "TB": [
-   {
-    "team": "TB",
     "tag": "KEY",
-    "text": "LW Brandon Hagel (20.5 TOI/gm, lower body) was placed on IR retroactive to Nov. 15 (Tampa Bay Times, 11/19).",
+    "text": "RW Clayton Keller (19.2 TOI) is day-to-day; D John Marino (20.4, 15 games missed) is close to returning and Dylan Guenther was upgraded to day-to-day.",
     "source": "ESPN",
     "url": "https://www.espn.com/nhl/injuries",
-    "date": "2026-11-19"
+    "date": "2026-11-22"
    }
   ]
  }
