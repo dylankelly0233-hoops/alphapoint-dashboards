@@ -1230,6 +1230,35 @@ def legal_page():
             f'</head>\n<body>\n{page}\n</body>\n</html>')
 
 
+def externalize(page):
+    """
+    Move a published page's on-demand data into files beside it (Dylan, 2026-11-22: slim the pages; CBB was 220 KB
+    gzipped, half of it data only used when someone taps a team or a matchup): the team pop-up JSON goes to
+    <page>_teams.json and the matchup templates to <page>_mu.html, fetched on the first tap (dashboard_theme JS).
+    A version stamp in the link makes browsers fetch the new file after each build. The local and shareable copies keep
+    everything inline.
+    """
+    path = os.path.join(SITE, page)
+    with open(path, encoding='utf-8') as f:
+        s = f.read()
+    stem, ver = page[:-5], datetime.now().strftime('%Y%m%d%H%M')
+    m = re.search(r'(<script type="application/json" id="team-data")>(.*?)</script>', s, re.S)
+    if m and len(m.group(2)) > 5000:
+        with open(os.path.join(SITE, f'{stem}_teams.json'), 'w', encoding='utf-8') as f:
+            f.write(m.group(2))
+        s = s.replace(m.group(0), f'{m.group(1)} data-src="{stem}_teams.json?v={ver}"></script>', 1)
+    tpl = re.findall(r'<template id="mu-[^"]*">.*?</template>', s, re.S)
+    if tpl:
+        with open(os.path.join(SITE, f'{stem}_mu.html'), 'w', encoding='utf-8') as f:
+            f.write(''.join(tpl))
+        first = s.index(tpl[0])
+        for t in tpl:
+            s = s.replace(t, '', 1)
+        s = s[:first] + f'<div id="mu-src" hidden data-src="{stem}_mu.html?v={ver}"></div>' + s[first:]
+    with open(path, 'w', encoding='utf-8') as f:
+        f.write(s)
+
+
 def keep_live_copy(page):
     """
     A dashboard failed and this build has no copy of its page (GitHub starts each build with an empty site/):
@@ -1240,6 +1269,11 @@ def keep_live_copy(page):
         if r.ok and 'AlphaPoint' in r.text:
             with open(os.path.join(SITE, page), 'w', encoding='utf-8') as f:
                 f.write(r.text)
+            for dep in set(re.findall(r'data-src="([A-Za-z0-9_.-]+)(?:\?[^"]*)?"', r.text)):   # its on-demand data files
+                d = requests.get(LIVE_SITE + dep, timeout=30)
+                if d.ok:
+                    with open(os.path.join(SITE, dep), 'w', encoding='utf-8') as f:
+                        f.write(d.text)
             print(f'  Kept the live copy of {page}.')
             return
         print(f'  ! No live copy of {page} to keep (HTTP {r.status_code}).')
@@ -1281,6 +1315,11 @@ def main():
         results[page] = ok and os.path.exists(src) and os.path.getmtime(src) > before
         if results[page]:
             shutil.copyfile(src, os.path.join(SITE, page))
+            try:
+                externalize(page)
+            except Exception as e:                  # never block publishing: the page still works with inline data
+                print(f'  ! {page}: could not move on-demand data to files: {e}')
+                shutil.copyfile(src, os.path.join(SITE, page))
         elif not os.path.exists(os.path.join(SITE, page)):
             keep_live_copy(page)
     try:

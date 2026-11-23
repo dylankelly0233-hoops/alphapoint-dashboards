@@ -870,11 +870,14 @@ document.querySelectorAll('select.filter').forEach(sel => sel.onchange = () => {
 });
 document.querySelectorAll('select.filter').forEach(sel => { if (sel.value) sel.onchange(); });   // apply defaults
 
-// Team pages: any element with data-team opens that team's pop-up (data embedded as JSON by extras.team_modal)
+// Team pages: any element with data-team opens that team's pop-up (data embedded as JSON by extras.team_modal; on the
+// website build_site moves it to a file named in data-src, fetched on the first tap to keep the page light)
 (function () {
   const dlg = document.getElementById('team-modal'), blob = document.getElementById('team-data');
   if (!dlg || !blob || !dlg.showModal) return;
-  const data = JSON.parse(blob.textContent), body = dlg.querySelector('.tbody');
+  let data = blob.dataset.src ? null : JSON.parse(blob.textContent);
+  const body = dlg.querySelector('.tbody');
+  const load = () => data ? Promise.resolve(data) : fetch(blob.dataset.src).then(r => r.json()).then(d => (data = d));
   const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls;
                                    if (text != null) e.textContent = text; return e; };
   const sign = v => (v > 0 ? '+' : v < 0 ? '−' : '') + Math.abs(v).toFixed(2);
@@ -894,7 +897,8 @@ document.querySelectorAll('select.filter').forEach(sel => { if (sel.value) sel.o
     p.setAttribute('points', hist.map((h, i) => x(i) + ',' + y(h[1])).join(' ')); svg.appendChild(p);
     return svg;
   }
-  function open(key) {
+  function open(key) { load().then(() => show(key)).catch(() => {}); }
+  function show(key) {
     const t = data[key]; if (!t) return;
     body.replaceChildren();
     const head = el('div', 'thead'), nm = el('div'), h = el('h2', null, t.name);
@@ -958,15 +962,21 @@ document.querySelectorAll('select.filter').forEach(sel => { if (sel.value) sel.o
   window.addEventListener('scroll', close, {passive: true});
 })();
 
-// Matchup panels: a [data-matchup] button opens that game's hidden <template> in the matchup dialog
+// Matchup panels: a [data-matchup] button opens that game's hidden <template> in the matchup dialog. On the website
+// build_site moves the templates to a file (#mu-src data-src), fetched on the first tap.
 (function () {
   const dlg = document.getElementById('mu-modal');
   if (!dlg || !dlg.showModal) return;
-  const body = dlg.querySelector('.tbody');
+  const body = dlg.querySelector('.tbody'), src = document.getElementById('mu-src');
+  let ready = src ? null : Promise.resolve();
+  const load = () => ready || (ready = fetch(src.dataset.src).then(r => r.text())
+                                         .then(h => src.insertAdjacentHTML('afterend', h)).catch(() => { ready = null; }));
   document.addEventListener('click', e => {
     const b = e.target.closest('[data-matchup]'); if (!b) return;
-    const t = document.getElementById('mu-' + b.dataset.matchup); if (!t) return;
-    body.replaceChildren(t.content.cloneNode(true)); dlg.showModal(); dlg.querySelector('.tclose').focus();
+    load().then(() => {
+      const t = document.getElementById('mu-' + b.dataset.matchup); if (!t) return;
+      body.replaceChildren(t.content.cloneNode(true)); dlg.showModal(); dlg.querySelector('.tclose').focus();
+    });
   });
   dlg.querySelector('.tclose').onclick = () => dlg.close();
   dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
