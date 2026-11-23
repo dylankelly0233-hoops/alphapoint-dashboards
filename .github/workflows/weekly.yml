@@ -3,12 +3,12 @@
 # (Dylan approved the automatic weekly tuning 2026-11-08), and commits only the settings calibrate.py writes plus a
 # public-safe list of what changed (reports/model_changes.md). The full review, with the private Best spots record and
 # Research Assistant scorecard, is NOT published: the cloud weekly-email routine (refresh_weekly_cloud.md) re-runs
-# weekly_review.py in its own sandbox about 45 minutes later and emails it to Dylan.
+# weekly_review.py in its own sandbox at 11 AM ET and emails it to Dylan.
 name: Weekly tuning
 
 on:
   schedule:
-    - cron: '0 15 * * 0'     # Sunday 15:00 UTC = 10 AM ET in winter, 11 AM in summer (best-effort timing)
+    - cron: '0 13 * * 0'     # Sunday 13:00 UTC = 8 AM ET in winter, 9 AM in summer (GitHub may start it up to ~1 h late; the email is at 11)
   workflow_dispatch:
     inputs:
       calibrate:

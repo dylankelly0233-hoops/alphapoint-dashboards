@@ -1,7 +1,7 @@
-# Weekly review email (runbook for the Claude cloud routine, Sunday ~10:50 AM ET)
+# Weekly review email (runbook for the Claude cloud routine, Sunday 11 AM ET)
 
 Moved off Dylan's laptop on 2026-11-23. The tuning itself runs in GitHub Actions (`.github/workflows/weekly.yml`,
-Sunday 10 AM ET): it scores the week, lets `calibrate.py` tune the model and commits the new settings plus
+Sunday 8 AM ET): it scores the week, lets `calibrate.py` tune the model and commits the new settings plus
 `reports/model_changes.md`. The full review includes two **private** sections (the Best spots live record and the
 Research Assistant scorecard: Dylan, "keep it private"), and the repository is public, so the review is never
 committed: this run rebuilds it here, in this sandbox, and emails it. **Don't edit code, don't run calibrate.py or
