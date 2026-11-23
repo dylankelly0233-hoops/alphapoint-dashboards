@@ -1,6 +1,6 @@
 {
  "sport": "nba",
- "generated": "2026-11-22T22:42:20-05:00",
+ "generated": "2026-11-22T23:41:08-05:00",
  "teams": {
   "OKC": {
    "checked": "2026-11-22T22:42:20-05:00",
@@ -305,8 +305,10 @@
    ],
    "returning": [],
    "swings": {
-    "BKN": "Nothing found: the market moved on Brooklyn without a clear reason; Traore and Nelson are only game-time decisions (ESPN, 11/23)."
-   }
+    "BKN": "Nothing found: the market moved on Brooklyn without a clear reason; Traore and Nelson are only game-time decisions (ESPN, 11/23).",
+    "MIN": "Nothing found: the market moved on Minnesota without a clear reason; Edwards (out since Oct. 29 knee surgery), Clark and DiVincenzo were already out last game, and only Brooklyn's Traore and Nelson are game-time calls (ESPN, 11/23)."
+   },
+   "checked": "2026-11-22T23:41:08-05:00"
   },
   "401910042": {
    "swings": {
