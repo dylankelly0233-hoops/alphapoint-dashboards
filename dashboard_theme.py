@@ -33,9 +33,10 @@ FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com">'
 # LOGOS
 # ==========================================
 _LOGO_CSS = {}   # css class → data URI (or logos/ file link); each logo appears once and is reused everywhere
-LOGO_LINK = False  # True: the site page links logos/<file>.png (served beside it) instead of embedding them.
-                   # For pages with hundreds of teams (CBB, all D1): keeps the page light and phones fetch only
-                   # the logos on the tab in view. The shareable copy still embeds them (write_outputs).
+LOGO_LINK = True   # the site page links logos/<file>.png (served beside it) instead of embedding them: keeps pages
+                   # light (CFB was 720 KB gzipped, 560 KB of it embedded logos; Dylan, 2026-11-22), phones fetch only
+                   # the logos on the tab in view, and the browser caches them across pages. The shareable copy still
+                   # embeds them (write_outputs). build_site.py copies logos/ into the site after every page is built.
 
 
 def logo_uri(key, espn_path, px=LOGO_PX):
@@ -774,6 +775,8 @@ details.method summary { cursor: pointer; padding: 11px 14px; font: 700 13px/1 v
 details.method div { padding: 0 14px 12px; font-size: 13.5px; color: var(--muted); max-width: 90ch; }
 details.method b { color: var(--ink); }
 .foot { color: var(--muted); font-size: 12px; text-align: center; padding-block: 18px 26px; }
+.foot .legal { max-width: 760px; margin: 10px auto 0; font-size: 11.5px; line-height: 1.5; }
+.foot .legal a { color: inherit; text-decoration: underline; }
 @media (max-width: 560px) { table.data td, table.data th { padding: 7px 8px; } .logo.md { width: 26px; height: 26px; } }
 @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
 """
@@ -998,6 +1001,13 @@ document.querySelectorAll('table.sortable').forEach(t => {
 """
 
 
+# On every page (Dylan, 2026-11-22: disclaimers before the site goes public). The full text is legal.html (build_site).
+LEGAL = ('Research and education only: not betting, financial or legal advice, and no result is guaranteed. 21+ '
+         '(or the legal age where you live); bet only where it is legal. Gambling problem? Call or text '
+         '<a href="tel:18004262537">1-800-GAMBLER</a>. Not affiliated with any league, team, sportsbook or data provider; '
+         'team names and logos belong to their owners. <a href="legal.html">Disclaimer &amp; responsible gaming</a>')
+
+
 def render_page(*, title, league, headline, meta_items, tabs, footer, extra='', subtitle=''):
     """
     tabs: list of (id, label, html). The first tab opens by default (or the one in the link's #hash).
@@ -1025,7 +1035,7 @@ def render_page(*, title, league, headline, meta_items, tabs, footer, extra='', 
   <nav class="tabs" role="tablist">{nav}</nav>
 </div></header>
 <main><div class="wrap">{pages}</div></main>
-<footer class="foot"><div class="wrap">{footer}</div></footer>
+<footer class="foot"><div class="wrap">{footer}<p class="legal">{LEGAL}</p></div></footer>
 {extra}
 <script>{JS}</script>"""
 

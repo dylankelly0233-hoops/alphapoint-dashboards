@@ -92,6 +92,7 @@ details.allspots { margin: 0 0 16px; } details.allspots > summary { cursor: poin
 .updated { margin-top: 16px; }
 .info { display: grid; gap: 16px; }
 .info section { padding: 18px 20px 6px; }
+.info section > p { margin: 0 0 12px; line-height: 1.55; max-width: 760px; }
 .info h3 { font: 700 18px/1.1 var(--display); text-transform: uppercase; letter-spacing: .8px; margin: 0 0 10px; }
 .info dl { margin: 0; display: grid; grid-template-columns: minmax(120px, 160px) 1fr; gap: 8px 16px; }
 .info dt { font: 700 13px/1.4 var(--display); letter-spacing: .8px; text-transform: uppercase; color: var(--muted); }
@@ -1186,6 +1187,49 @@ def landing(results):
             f'</head>\n<body>\n{page}\n</body>\n</html>')
 
 
+LEGAL_SECTIONS = [   # legal.html (Dylan, 2026-11-22: disclaimers before the site goes public). Plain language; formal
+                     # Terms of Use and a Privacy Policy should be reviewed by a lawyer before sign-ups or affiliate links.
+    ('Research, not advice', [
+        'AlphaPoint Sports is a research and education site. Nothing here is betting, financial or legal advice, '
+        'and nothing here is a pick or a recommendation to place a bet.',
+        'Projections, fair lines, strategies and track records are estimates from models and past data. Past results, '
+        'including backtests, do not guarantee future results, and any bet can lose.',
+        'Data comes from public sources and is refreshed on a schedule, so it can be late, incomplete or wrong. Always '
+        'check the current line and any injury news with your sportsbook before you act on anything.']),
+    ('Age and where it is legal', [
+        'Sports betting is for adults 21 and over (or the legal age where you live), and only where it is legal. '
+        'It is your responsibility to know and follow the laws where you are.',
+        'AlphaPoint does not take bets, hold money or work with any sportsbook.']),
+    ('Responsible gaming', [
+        'Bet only what you can afford to lose. Set a budget and a time limit before you start, and never chase losses.',
+        'If betting stops being fun, take a break. Most sportsbooks and many states offer deposit limits, cool-off '
+        'periods and self-exclusion.',
+        'Help is free and confidential, 24/7: call or text 1-800-GAMBLER (1-800-426-2537). More at the National Council '
+        'on Problem Gambling (ncpgambling.org) and Gamblers Anonymous (gamblersanonymous.org).']),
+    ('Data, names and logos', [
+        'Ratings, odds, injury and game data come from the sources named at the bottom of each page.',
+        'AlphaPoint is independent: not affiliated with or endorsed by any league, team, sportsbook, exchange or data '
+        'provider. Team names, logos and trademarks belong to their owners and are shown only to identify teams.']),
+    ('Privacy', [
+        'The site has no accounts, no ads, no cookies and no tracking, and stores nothing in your browser. It is hosted '
+        'on GitHub Pages and loads fonts from Google Fonts; those services may keep standard technical logs of visits.']),
+]
+
+
+def legal_page():
+    """legal.html: the full disclaimer and responsible-gaming page the footer of every page links to."""
+    body = '<div class="info">' + ''.join(
+        f'<section class="card"><h3>{theme.esc(title)}</h3>' + ''.join(f'<p>{theme.esc(p)}</p>' for p in ps) + '</section>'
+        for title, ps in LEGAL_SECTIONS) + '</div>'
+    page = theme.render_page(title='Disclaimer & responsible gaming · AlphaPoint Sports', league='Disclaimer',
+                             headline='Disclaimer & responsible gaming', meta_items=[],
+                             tabs=[('legal', 'Disclaimer', body)], footer='AlphaPoint Sports')
+    page = page.replace('</style>', LANDING_CSS + '</style>', 1)
+    return ('<!DOCTYPE html>\n<html lang="en">\n<head>\n<meta charset="utf-8">\n'
+            '<meta name="viewport" content="width=device-width, initial-scale=1">\n'
+            f'</head>\n<body>\n{page}\n</body>\n</html>')
+
+
 def keep_live_copy(page):
     """
     A dashboard failed and this build has no copy of its page (GitHub starts each build with an empty site/):
@@ -1239,8 +1283,6 @@ def main():
             shutil.copyfile(src, os.path.join(SITE, page))
         elif not os.path.exists(os.path.join(SITE, page)):
             keep_live_copy(page)
-    if os.path.isdir(os.path.join(HERE, 'logos')):   # logo files for pages that link them (CBB)
-        shutil.copytree(os.path.join(HERE, 'logos'), os.path.join(SITE, 'logos'), dirs_exist_ok=True)
     try:
         import model_performance
         model_performance.build()
@@ -1248,6 +1290,10 @@ def main():
         print(f'  ! model performance: {e}')
     with open(os.path.join(SITE, 'index.html'), 'w', encoding='utf-8') as f:
         f.write(landing(results))
+    with open(os.path.join(SITE, 'legal.html'), 'w', encoding='utf-8') as f:
+        f.write(legal_page())
+    if os.path.isdir(os.path.join(HERE, 'logos')):   # logo files the pages link (theme.LOGO_LINK); last, after every page
+        shutil.copytree(os.path.join(HERE, 'logos'), os.path.join(SITE, 'logos'), dirs_exist_ok=True)
     print('\nSite built:', {p: 'ok' if ok else 'FAILED' for p, ok in results.items()})
 
 
