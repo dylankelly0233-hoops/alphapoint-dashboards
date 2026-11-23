@@ -1,42 +1,60 @@
 {
  "sport": "epl",
- "week": 20261122,
- "generated": "2026-11-22T20:05:00-05:00",
+ "week": 20261123,
+ "generated": "2026-11-23T11:20:10-05:00",
  "movers": [
   {
    "team": "BRE",
-   "tag": "CLUSTER",
-   "text": "Brentford say defenders Nathan Collins (centre-back) and Aaron Hickey (full-back) are out for a number of weeks, so both miss the Everton match on 11/23.",
-   "source": "Brentford FC",
-   "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNMGNZQ1ZiRzBaTWRNUzU1VGVLd1VrUUowVWxMQy1fX0Ytb0RaUVFfMmZwOUNPOEhDYW1VazhSaXR2VUx1OFhiRHA3emM3bld2VGVkZUNoemMwUGd4RnZqaFB4M0p0Z3VCLXI5aGc0WjU0eHVpT3lXNzVrdHFIOFFVU0pZdzI2enlGNzdycFdBaUVMR05KclNNTnVBYVg2WVRLODBTN1Y2aUZlaHJoa1J4Mm43NXdDSUloaEE?oc=5",
-   "date": "2026-11-20"
+   "tag": "KEY",
+   "text": "Brentford's first-choice striker Igor Thiago is suspended for three Premier League games, starting vs Everton on 11/23 (BBC).",
+   "source": "BBC via Yahoo Sports",
+   "url": "https://sports.yahoo.com/articles/andrews-team-news-thiagos-suspension-153425694.html",
+   "date": "2026-11-21"
   },
   {
    "team": "BRE",
-   "tag": "KEY",
-   "text": "Read Everton (11/18) reports Brentford face Everton without first-choice striker Igor Thiago; lineups are confirmed an hour before kickoff.",
-   "source": "Read Everton",
-   "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPNVlJRjRVd192TFpOb0VxaG1udUxjUEhtVlU2eGtNMHRZY3VQbzlhSjY5eFFUSks3M052Z09kTy1PbjV1N3U1VDZxQTVoTkVNWHdRaFBveTBVSjY4ajlWMkJWVkpEUEl0TVVVQTcyMTk5bE5aVGpEakFoWHktekk0NnM3UE1yRXZhVGhOUlludVU?oc=5",
-   "date": "2026-11-18"
+   "tag": "CLUSTER",
+   "text": "Brentford defenders Nathan Collins (centre-back) and Aaron Hickey (full-back) are out for several weeks, per Keith Andrews; Rico Henry is also out. Lineups confirmed an hour before kickoff.",
+   "source": "Sports Mole",
+   "url": "https://www.sportsmole.co.uk/football/brentford/injury-news/news/andrews-confirms-double-brentford-injury-blow-ahead-of-everton-meeting_609532.html",
+   "date": "2026-11-21"
+  },
+  {
+   "team": "EVE",
+   "tag": "RETURNING",
+   "text": "Everton's Jack Grealish (regular starter, left wing) is available again after missing time with illness and a club-protocol breach, per David Moyes.",
+   "source": "Goodison News",
+   "url": "https://www.goodisonnews.com/injuries/brentford-vs-everton-team-news-latest-as-jack-grealish-ready-but-five-to-miss-out",
+   "date": "2026-11-21"
   }
  ],
  "teams": {
   "BRE": [
    {
     "team": "BRE",
-    "tag": "CLUSTER",
-    "text": "Brentford say defenders Nathan Collins (centre-back) and Aaron Hickey (full-back) are out for a number of weeks, so both miss the Everton match on 11/23.",
-    "source": "Brentford FC",
-    "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNMGNZQ1ZiRzBaTWRNUzU1VGVLd1VrUUowVWxMQy1fX0Ytb0RaUVFfMmZwOUNPOEhDYW1VazhSaXR2VUx1OFhiRHA3emM3bld2VGVkZUNoemMwUGd4RnZqaFB4M0p0Z3VCLXI5aGc0WjU0eHVpT3lXNzVrdHFIOFFVU0pZdzI2enlGNzdycFdBaUVMR05KclNNTnVBYVg2WVRLODBTN1Y2aUZlaHJoa1J4Mm43NXdDSUloaEE?oc=5",
-    "date": "2026-11-20"
+    "tag": "KEY",
+    "text": "Brentford's first-choice striker Igor Thiago is suspended for three Premier League games, starting vs Everton on 11/23 (BBC).",
+    "source": "BBC via Yahoo Sports",
+    "url": "https://sports.yahoo.com/articles/andrews-team-news-thiagos-suspension-153425694.html",
+    "date": "2026-11-21"
    },
    {
     "team": "BRE",
-    "tag": "KEY",
-    "text": "Read Everton (11/18) reports Brentford face Everton without first-choice striker Igor Thiago; lineups are confirmed an hour before kickoff.",
-    "source": "Read Everton",
-    "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPNVlJRjRVd192TFpOb0VxaG1udUxjUEhtVlU2eGtNMHRZY3VQbzlhSjY5eFFUSks3M052Z09kTy1PbjV1N3U1VDZxQTVoTkVNWHdRaFBveTBVSjY4ajlWMkJWVkpEUEl0TVVVQTcyMTk5bE5aVGpEakFoWHktekk0NnM3UE1yRXZhVGhOUlludVU?oc=5",
-    "date": "2026-11-18"
+    "tag": "CLUSTER",
+    "text": "Brentford defenders Nathan Collins (centre-back) and Aaron Hickey (full-back) are out for several weeks, per Keith Andrews; Rico Henry is also out. Lineups confirmed an hour before kickoff.",
+    "source": "Sports Mole",
+    "url": "https://www.sportsmole.co.uk/football/brentford/injury-news/news/andrews-confirms-double-brentford-injury-blow-ahead-of-everton-meeting_609532.html",
+    "date": "2026-11-21"
+   }
+  ],
+  "EVE": [
+   {
+    "team": "EVE",
+    "tag": "RETURNING",
+    "text": "Everton's Jack Grealish (regular starter, left wing) is available again after missing time with illness and a club-protocol breach, per David Moyes.",
+    "source": "Goodison News",
+    "url": "https://www.goodisonnews.com/injuries/brentford-vs-everton-team-news-latest-as-jack-grealish-ready-but-five-to-miss-out",
+    "date": "2026-11-21"
    }
   ]
  }

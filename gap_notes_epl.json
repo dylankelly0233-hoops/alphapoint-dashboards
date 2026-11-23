@@ -1,9 +1,9 @@
 {
  "sport": "epl",
- "generated": "2026-11-23T08:44:30-05:00",
+ "generated": "2026-11-23T11:20:10-05:00",
  "teams": {
   "BRE": {
-   "checked": "2026-11-23T08:44:30-05:00",
+   "checked": "2026-11-23T11:20:10-05:00",
    "watch": [
     {
      "direction": "too_high",
@@ -32,7 +32,7 @@
    ]
   },
   "EVE": {
-   "checked": "2026-11-23T08:44:30-05:00",
+   "checked": "2026-11-23T11:20:10-05:00",
    "watch": [
     {
      "direction": "too_low",
