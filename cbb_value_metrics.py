@@ -130,6 +130,9 @@ def d1_teams():
                         'conference': t.get('conference') or ''} for t in data])
     if not df.empty:
         df.to_csv(path, index=False)
+    elif os.path.exists(path):   # API down (502s, 2026-11-23): the saved team list beats a crashed build
+        print('  ! CBBD /teams unavailable: using the saved team list')
+        return pd.read_csv(path)
     return df
 
 
