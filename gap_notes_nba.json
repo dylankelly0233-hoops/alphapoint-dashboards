@@ -1,9 +1,9 @@
 {
  "sport": "nba",
- "generated": "2026-11-23T15:05:00-05:00",
+ "generated": "2026-11-23T16:58:00-05:00",
  "teams": {
   "OKC": {
-   "checked": "2026-11-23T15:05:00-05:00",
+   "checked": "2026-11-23T16:58:00-05:00",
    "watch": [
     {
      "direction": "too_high",
@@ -85,7 +85,7 @@
    ]
   },
   "IND": {
-   "checked": "2026-11-23T15:05:00-05:00",
+   "checked": "2026-11-23T16:58:00-05:00",
    "watch": [
     {
      "direction": "too_high",
@@ -161,6 +161,14 @@
   "PHI": {
    "watch": [
     {
+     "direction": "too_high",
+     "since": "2026-11-23",
+     "text": "Joel Embiid (32 mpg) is questionable vs POR on 11/23 (illness, per the 4:45 PM ET official report); if he sits, ratings built with him overstate PHI tonight.",
+     "source": "NBA official injury report",
+     "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-23_04_45PM.pdf",
+     "date": "2026-11-23"
+    },
+    {
      "direction": "too_low",
      "since": "2026-11-19",
      "text": "Jaylen Brown and Dean Wade (hamstrings) missed the last two games and are probable vs POR on 11/23; those two games understate Philadelphia.",
@@ -169,10 +177,10 @@
      "date": "2026-11-22"
     }
    ],
-   "checked": "2026-11-23T11:17:25-05:00"
+   "checked": "2026-11-23T16:58:00-05:00"
   },
   "SA": {
-   "checked": "2026-11-23T15:05:00-05:00",
+   "checked": "2026-11-23T16:58:00-05:00",
    "watch": [
     {
      "direction": "too_high",
@@ -195,7 +203,7 @@
      "date": "2026-11-23"
     }
    ],
-   "checked": "2026-11-23T11:17:25-05:00"
+   "checked": "2026-11-23T16:58:00-05:00"
   },
   "MEM": {
    "checked": "2026-11-23T15:05:00-05:00",
@@ -279,11 +287,11 @@
   },
   "NO": {
    "watch": [],
-   "checked": "2026-11-23T11:17:25-05:00"
+   "checked": "2026-11-23T16:58:00-05:00"
   },
   "PHX": {
    "watch": [],
-   "checked": "2026-11-23T11:17:25-05:00"
+   "checked": "2026-11-23T16:58:00-05:00"
   },
   "SAC": {
    "checked": "2026-11-23T15:05:00-05:00",
@@ -359,6 +367,12 @@
    "summary": "Philadelphia gets Jaylen Brown and Dean Wade (hamstrings) back as probable and is on a five-game win streak, while Portland is without Ja Morant and Shaedon Sharpe; that covers part of the gap.",
    "reasons": [
     {
+     "text": "Joel Embiid was downgraded to questionable (illness on the 4:45 PM ET official report) for 11/23, which may weigh on the 76ers' price.",
+     "source": "NBA official injury report",
+     "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-23_04_45PM.pdf",
+     "date": "2026-11-23"
+    },
+    {
      "text": "Brown and Wade (hamstrings) are probable vs POR after missing two games; Adem Bona is also listed.",
      "source": "PhillyVoice",
      "url": "https://www.phillyvoice.com/sixers-news-76ers-analysis-injury-report-update-trail-blazers-jaylen-brown-dean-wade-adem-bona-ja-morant-nba/",
@@ -371,7 +385,7 @@
      "date": "2026-11-23"
     }
    ],
-   "checked": "2026-11-23T11:17:25-05:00"
+   "checked": "2026-11-23T16:58:00-05:00"
   },
   "401910045": {
    "verdict": "explained",
@@ -388,7 +402,7 @@
    "swings": {
     "SA": "Wembanyama (back) and Fox (shin) were listed questionable for 11/23 after Wembanyama's 50-point game; the market discounts the Spurs, our ratings don't (NBC Sports, 11/22)."
    },
-   "checked": "2026-11-23T15:05:00-05:00"
+   "checked": "2026-11-23T16:58:00-05:00"
   },
   "401910040": {
    "verdict": "unexplained",
@@ -424,10 +438,10 @@
    "swings": {
     "PHX": "Trey Murphy III (knees) is probable for New Orleans vs PHX after missing 7 of 8 games (29 min in his 11/20 return); the market prices him back, our ratings don't (Rotowire, 11/22)."
    },
-   "checked": "2026-11-23T11:17:25-05:00"
+   "checked": "2026-11-23T16:58:00-05:00"
   },
   "401910038": {
-   "checked": "2026-11-23T15:05:00-05:00",
+   "checked": "2026-11-23T16:58:00-05:00",
    "swings": {
     "OKC": "SGA (back) was ruled out again for Monday at IND (FanDuel, Nov 22); with the market already pricing his absence and Indiana also short-handed (Haliburton, McConnell out), the gap on OKC fell from 9.7 to 1.7."
    }

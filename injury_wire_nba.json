@@ -1,14 +1,14 @@
 {
  "sport": "nba",
  "week": 20261123,
- "generated": "2026-11-23T15:04:32-05:00",
+ "generated": "2026-11-23T16:58:00-05:00",
  "movers": [
   {
    "team": "SA",
    "tag": "KEY",
-   "text": "Victor Wembanyama (30.3 mpg, low back tightness) and De'Aaron Fox (29.0, shin) are questionable on Monday's report, to be evaluated before the 10 PM ET tip at SAC; Harper and Harris are out.",
-   "source": "Yahoo Sports",
-   "url": "https://sports.yahoo.com/articles/victor-wembanyama-aaron-fox-playing-161712245.html",
+   "text": "Victor Wembanyama (30.3 mpg, low back tightness) and De'Aaron Fox (29.0, shin) are still questionable on the NBA's 4:45 PM ET report on 11/23, before the 10 PM ET tip at SAC.",
+   "source": "NBA official injury report",
+   "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-23_04_45PM.pdf",
    "date": "2026-11-23"
   },
   {
@@ -17,6 +17,14 @@
    "text": "Shai Gilgeous-Alexander (33.5 mpg, back) is out at IND on 11/23 for a 2nd straight game; Alex Caruso is ruled out on the official report, and ESPN lists Jalen Williams and Chet Holmgren out.",
    "source": "Rotowire",
    "url": "https://www.rotowire.com/basketball/headlines/alex-caruso-injury-ruled-out-monday-540667",
+   "date": "2026-11-23"
+  },
+  {
+   "team": "PHI",
+   "tag": "KEY",
+   "text": "Joel Embiid (32.0 mpg) was downgraded to questionable vs POR on 11/23; the NBA's 4:45 PM ET official injury report lists him with an illness. Brown and Wade remain probable.",
+   "source": "NBA official injury report",
+   "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-23_04_45PM.pdf",
    "date": "2026-11-23"
   },
   {
@@ -34,14 +42,6 @@
    "source": "Yahoo Sports",
    "url": "https://sports.yahoo.com/articles/injuries-brandon-miller-cameron-boozer-110842699.html",
    "date": "2026-11-23"
-  },
-  {
-   "team": "CHA",
-   "tag": "CLUSTER",
-   "text": "Charlotte has Grayson Allen (27.2 mpg, concussion), Dennis Schroder (30.0) and Grant Williams (22.0) out vs MEM on 11/23 with Kon Knueppel; Brandon Miller (knee) is probable, likely to play.",
-   "source": "Rotowire",
-   "url": "https://rotowire.com/basketball/headlines/brandon-miller-injury-likely-to-play-monday-540533",
-   "date": "2026-11-23"
   }
  ],
  "teams": {
@@ -49,9 +49,9 @@
    {
     "team": "SA",
     "tag": "KEY",
-    "text": "Victor Wembanyama (30.3 mpg, low back tightness) and De'Aaron Fox (29.0, shin) are questionable on Monday's report, to be evaluated before the 10 PM ET tip at SAC; Harper and Harris are out.",
-    "source": "Yahoo Sports",
-    "url": "https://sports.yahoo.com/articles/victor-wembanyama-aaron-fox-playing-161712245.html",
+    "text": "Victor Wembanyama (30.3 mpg, low back tightness) and De'Aaron Fox (29.0, shin) are still questionable on the NBA's 4:45 PM ET report on 11/23, before the 10 PM ET tip at SAC.",
+    "source": "NBA official injury report",
+    "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-23_04_45PM.pdf",
     "date": "2026-11-23"
    }
   ],
@@ -108,6 +108,14 @@
   "PHI": [
    {
     "team": "PHI",
+    "tag": "KEY",
+    "text": "Joel Embiid (32.0 mpg) was downgraded to questionable vs POR on 11/23; the NBA's 4:45 PM ET official injury report lists him with an illness. Brown and Wade remain probable.",
+    "source": "NBA official injury report",
+    "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-23_04_45PM.pdf",
+    "date": "2026-11-23"
+   },
+   {
+    "team": "PHI",
     "tag": "RETURNING",
     "text": "Jaylen Brown (34.7 mpg) and Dean Wade (26.7) are probable vs POR on 11/23 after missing two games with hamstring injuries (ESPN, 11/22 report).",
     "source": "ESPN",
@@ -149,10 +157,10 @@
    {
     "team": "NO",
     "tag": "RETURNING",
-    "text": "Trey Murphy III (32.4 mpg, knees) and Zion Williamson (32.4, thigh) are probable vs PHX on 11/23; Dejounte Murray (ankle) remains out.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nba/injuries",
-    "date": "2026-11-22"
+    "text": "Trey Murphy III (32.4 mpg, knees) is listed available and Zion Williamson (32.4, thigh) probable vs PHX on the NBA's 4:45 PM ET report on 11/23; Dejounte Murray (ankle) remains out.",
+    "source": "NBA official injury report",
+    "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-23_04_45PM.pdf",
+    "date": "2026-11-23"
    }
   ],
   "IND": [
