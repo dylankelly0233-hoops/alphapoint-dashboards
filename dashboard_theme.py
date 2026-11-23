@@ -817,9 +817,14 @@ document.querySelectorAll('nav.tabs button').forEach(b => b.onclick = () => {
     }
     el.classList.add('open', 'flash');
     try { history.scrollRestoration = 'manual'; } catch (e) {}
-    // twice: once quickly, then again after late layout (logos, phone column tweaks) has settled
-    setTimeout(() => el.scrollIntoView({block: 'start', behavior: 'smooth'}), 150);
-    setTimeout(() => { if (Math.abs(el.getBoundingClientRect().top) > 120) el.scrollIntoView({block: 'start'}); }, 900);
+    // once quickly, then keep it in place while late layout (logos loading above it, phone column tweaks) settles:
+    // re-anchor for a few seconds unless the reader starts scrolling or tapping
+    let user = false;
+    ['wheel', 'touchstart', 'keydown', 'mousedown'].forEach(ev => window.addEventListener(ev, () => { user = true; }, {once: true, passive: true}));
+    setTimeout(() => el.scrollIntoView({block: 'start'}), 150);
+    [600, 1200, 2000, 3000, 4500].forEach(t => setTimeout(() => {
+      if (!user && Math.abs(el.getBoundingClientRect().top) > 80) el.scrollIntoView({block: 'start'});
+    }, t));
     setTimeout(() => el.classList.remove('flash'), 3000);
   });
 })();
