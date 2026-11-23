@@ -24,6 +24,15 @@ sport's current `injury_wire_{sport}.json`, then use `/tmp/in/gap_candidates_{sp
 - **swing**: write the one sentence in `games[<gid>].swings[<team>]`.
 - **stale**: re-check those teams' Rating watch for news since the notes were written (scratches, returns, status
   changes); update, add or remove their items.
+- **final** (the pre-game check, first priority when a game starts soon): for each listed game, check the latest
+  official status for both teams (the NFL inactives, the NBA official injury report, the conference availability
+  report, a coach's pre-game note). Confirm every Rating watch item and reason on the card is still true: update a
+  player's status if it changed, remove what no longer applies, add a late scratch or a surprise return. Re-read the
+  verdict: change it if the news changed. Then stamp `checked` on the game entry and both team entries, even when
+  nothing changed.
+
+Every entry you touch gets `"checked": "<now>"` (see refresh_gap_research.md): that stamp is the "Last verified" time
+the card shows.
 
 Work biggest gap first. Follow the cloud network notes in `refresh_cloud.md` (search works; most news pages and
 news.google.com links can't be opened; cite the real article URL from search results).
@@ -42,5 +51,6 @@ If the pull hits a conflict (a scheduled run pushed the same file meanwhile): `g
 and push again. If the push to `main` is refused, report the exact error and stop.
 
 ## 4. Report
-One or two lines: per sport, gaps researched (verdict counts), swings explained, teams re-checked; or
+One or two lines: per sport, gaps researched (verdict counts), swings explained, teams re-checked, pre-game checks
+done (and what changed); or
 `Catch-up: nothing new`.

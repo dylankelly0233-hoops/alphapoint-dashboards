@@ -177,6 +177,29 @@ def watch_bits(sport, team, name):
     return out
 
 
+def last_verified(sport, gid, *teams):
+    """
+    When this game's research was last checked (Dylan, 2026-11-22: a 'last verified' time on every note is 'an absolute
+    must'): the latest 'checked' stamp on the game entry or either team's Rating watch entry, which every run sets on
+    what it re-checks; falls back to the notes file's 'generated' time for entries written before stamps existed.
+    teams: (key, display name) pairs, matched like watch_bits.
+    """
+    n = notes(sport)
+    stamps = [((n.get('games') or {}).get(str(gid)) or {}).get('checked')]
+    for key, name in teams:
+        t = (n.get('teams') or {}).get(key) or (n.get('teams') or {}).get(name) or {}
+        stamps.append(t.get('checked'))
+    best = None
+    for s in stamps:
+        try:
+            ts = pd.Timestamp(s)
+            ts = ts.tz_localize('UTC') if ts.tzinfo is None else ts
+            best = ts if best is None or ts > best else best
+        except (ValueError, TypeError):
+            continue
+    return best.isoformat() if best is not None else n.get('generated')
+
+
 def card_row(sport, gid, ours, market, home, away, home_name, away_name, completed=False):
     """
     The Research Assistant block on a game card (Dylan, 2026-11-20: 'double and triple down'): on EVERY upcoming game
@@ -221,8 +244,8 @@ def card_row(sport, gid, ours, market, home, away, home_name, away_name, complet
                            'Not researched yet; usually a player returning or going out that our ratings do not see yet.'))
     if not bits:
         return ''
-    gen = notes(sport).get('generated')
-    bits.append(f'<span class="hint">{"Researched " + theme.esc(when_text(gen)) if gen else "Not researched yet"}. '
+    gen = last_verified(sport, gid, (home, home_name), (away, away_name))
+    bits.append(f'<span class="hint">{"Last verified " + theme.esc(when_text(gen)) if gen else "Not researched yet"}. '
                 f'Research only: our line is not changed.</span>')
     return (f'<div class="lmove gapwhy">{theme.k("Research Assistant")}'
             + ''.join(f'<div>{b}</div>' for b in bits) + '</div>')

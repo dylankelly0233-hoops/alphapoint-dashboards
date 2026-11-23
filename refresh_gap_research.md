@@ -11,17 +11,23 @@ Used by every NFL run (daily 10 AM; Mon/Wed/Thu/Fri 5 PM; Sunday 11:45 AM), ever
 - `games`: each game has our line (`ours_text`, `ours`) and the market's (`market_text`, `market`), both as home margins (positive = home favored), the `gap` (ours − market), `gap_flag` (true = far enough from the market to research why), `we_like`, the opener, each rating source's line (`sources`), weather, the curated Injury Wire items for both teams (`injury_wire`), and each team's recent `history` against the market: `higher` / `lower` = in how many of its last `n` games our line was 1+ point higher / lower on that team than the market, `avg` = the average gap, `swing` = how far today's gap moved from that team's previous game.
 - The previous `DIR\gap_notes_{sport}.json` (if any): keep what is still true, update what changed, drop what no longer matters.
 
-**Output:** `DIR\gap_notes_{sport}.json`, replacing the file. `generated` is the current time with the Eastern offset (the card shows it as "Researched Fri 10:15 AM ET"):
+**Output:** `DIR\gap_notes_{sport}.json`, replacing the file. `generated` is the current time with the Eastern offset.
+
+**`checked` stamps (Dylan, 2026-11-22: "an absolute must").** Every game entry and every team entry you look at gets
+`"checked": "<now, ISO with offset>"`, **even when you found nothing new and changed nothing**: it means "verified as
+of this time". The card shows the latest stamp as "Last verified Sun 6:40 PM ET". A team you checked and found nothing
+for still gets an entry: `{"watch": [], "checked": "..."}`. Never copy an old stamp forward on something you did not
+re-check.
 
 ```json
 {"sport": "nfl", "generated": "2026-11-20T10:15:00-05:00",
  "teams": {
-   "<team key, as in home / away>": {"watch": [
+   "<team key, as in home / away>": {"checked": "2026-11-20T10:15:00-05:00", "watch": [
       {"direction": "too_low", "since": "2026-11-02",
        "text": "QB Caleb Williams missed Weeks 7-9 (Bears went 0-3) and returned in Week 10; our ratings still carry those three games.",
        "source": "ESPN", "url": "https://...", "date": "2026-11-12"}]}},
  "games": {
-   "<gid>": {"verdict": "explained", "summary": "One sentence: why the market is where it is.",
+   "<gid>": {"checked": "2026-11-20T10:15:00-05:00", "verdict": "explained", "summary": "One sentence: why the market is where it is.",
              "reasons": [{"text": "...", "source": "ESPN", "url": "https://...", "date": "2026-11-19"}],
              "returning": [{"team": "...", "player": "...", "text": "...", "url": "..."}],
              "swings": {"<team key>": "One sentence: what changed since its last game, with the source."}}}}
@@ -30,6 +36,10 @@ Used by every NFL run (daily 10 AM; Mon/Wed/Thu/Fri 5 PM; Sunday 11:45 AM), ever
 ## 1. Rating watch (every team in `watch_teams`)
 Our ratings (Sagarin, SP+, TeamRankings, nfelo, our own models) are built from **past results**. They go wrong when the team that played those games is not the team taking the field now. For each team, look back over this week and the previous 4-6 weeks (whole season for long absences) and list anything that makes the past results a poor guide to the team today:
 - **A key player missed games and is back** (ratings built through his absence: `too_low`). Say how many games he missed and when he returned.
+  **Who's back is a required check for every team, not an afterthought** (Dylan, 2026-11-22: nearly all items were
+  `too_high`; returns are where ratings are most wrong). For each team ask: who missed games this season and is now
+  active, probable or practicing fully? Who returns from suspension? Use the Injury Wire's RETURNING items, the official
+  report's status changes (out → questionable → active) and box scores (a starter's minutes back to normal).
 - **A key player is newly out or limited** for this game or recently (`too_high`). QB first, then other key starters, clusters (several linemen, several guards).
 - **Played well or badly with a player who is now gone** (trade, season-ending injury, suspension).
 - **Coaching or system change**: a firing, interim coach, coordinator change, a new starting QB (`unclear` unless the direction is obvious).
@@ -53,6 +63,15 @@ Then pick a verdict:
 Write `summary` as one plain sentence a bettor can read in five seconds. If a team's `history` shows we've been higher or lower on it for 4+ straight games, say whether you found a reason or not.
 
 ## Rules
+**Sources, best first (Dylan, 2026-11-22: "we should be finding actual injury reports if/when possible"):**
+1. The official report itself: the NFL team injury report (team site or NFL.com), the NBA official injury report
+   (official.nba.com / NBA injury report PDF), conference availability reports in college football (SEC, ACC, Big Ten,
+   Big 12 publish them the night before), NHL team announcements, a coach's own quote at a press conference.
+2. The team's own site or a named beat writer quoting the team.
+3. National outlets (ESPN, CBS, Yahoo, Rotowire, On3, 247Sports, SI).
+Link the most official source you found, and say which report it is in the text when you can ("on Friday's SEC
+availability report"). Never cite a news.google.com redirect: use the publisher's own URL from the search result.
+
 Use web search and fetch (ESPN, team sites, beat writers, CBS / Rotowire injury pages, Action Network or Covers for line moves). Use only what you actually find; every item needs a source link and date. Don't invent players, injuries or reports; if a page is unclear, leave it out. Keep each sentence under about 200 characters, at most 3 reasons per game. If there are more than 25 flagged games, do the 25 with the biggest |gap| first and note how many were skipped; if there are more than 40 watch teams, cover the teams in flagged games first.
 
 Then add `gap_notes_{sport}.json` to the commit in the runbook's push step, and add one line to the report: `Research Assistant: W teams with rating-watch items; N gap games (E explained, P partly, U unexplained)`.

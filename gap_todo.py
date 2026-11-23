@@ -8,6 +8,8 @@ candidates (gap_candidates_{sport}.json, from the hourly build) with the latest 
   swings  swings_to_explain entries with no sentence yet, same window
   stale   teams playing within STALE_SOON hours when the sport's notes are older than STALE_H hours (their Rating
           watch needs a fresh look before the game)
+  final   games showing research that start within FINAL_H hours and were not verified inside that window: the
+          pre-game check (statuses, inactives, late scratches) every card gets before kickoff
 Windows: football 7 days (lines post a week ahead), basketball 36 hours (lines post the day before).
 
 Run: python gap_todo.py [--json] [--dir DIR]   (DIR = where the candidates files are; default: here)
@@ -21,6 +23,7 @@ from datetime import datetime, timedelta, timezone
 SPORTS = ('nfl', 'cfb', 'nba', 'cbb')
 WINDOW_H = {'nfl': 24 * 7, 'cfb': 24 * 7, 'nba': 36, 'cbb': 36}
 STALE_H, STALE_SOON = 12, 12
+FINAL_H = 2          # every game showing research is re-verified within its last 2 hours before kickoff
 
 
 def _load(path):
@@ -37,6 +40,18 @@ def _kick(g):
         return k if k.tzinfo else k.replace(tzinfo=timezone.utc)
     except (KeyError, TypeError, ValueError):
         return None
+
+
+def _latest(stamps):
+    best = None
+    for s in stamps:
+        try:
+            t = datetime.fromisoformat(s)
+            t = t if t.tzinfo else t.replace(tzinfo=timezone.utc)
+            best = t if best is None or t > best else best
+        except (TypeError, ValueError):
+            continue
+    return best
 
 
 def todo(sport, cand_dir='.', now=None):
@@ -59,6 +74,22 @@ def todo(sport, cand_dir='.', now=None):
         age = (now - datetime.fromisoformat(n['generated'])).total_seconds() / 3600
     except (KeyError, TypeError, ValueError):
         age = None
+    # final pre-game check (Dylan, 2026-11-22: 'an absolute must'): a game whose card shows research (a game entry or a
+    # Rating watch item on either team) and starts within FINAL_H hours must be verified inside that window
+    teams = n.get('teams') or {}
+    final = []
+    for gid, g in games.items():
+        k = _kick(g)
+        if k is None or not (now < k <= now + timedelta(hours=FINAL_H)):
+            continue
+        entry = notes.get(gid) or {}
+        tw = [teams.get(g.get('home')) or {}, teams.get(g.get('away')) or {}]
+        if not (entry.get('verdict') or entry.get('swings') or any(t.get('watch') for t in tw)):
+            continue
+        last = _latest([entry.get('checked')] + [t.get('checked') for t in tw]) or _latest([n.get('generated')])
+        if last is None or last < k - timedelta(hours=FINAL_H):
+            final.append({'gid': gid, 'game': f"{g.get('away')} @ {g.get('home')}", 'kick': g.get('kick'),
+                          'last_verified': last.isoformat() if last else None})
     stale = []
     if age is None or age > STALE_H:
         for g in games.values():
@@ -66,7 +97,7 @@ def todo(sport, cand_dir='.', now=None):
                 stale += [g.get('away'), g.get('home')]
     return {'gaps': [{'gid': g['gid'], 'game': f"{g.get('away')} @ {g.get('home')}", 'kick': g.get('kick'),
                       'gap': g.get('gap')} for g in sorted(gaps, key=lambda g: -abs(g.get('gap') or 0))],
-            'swings': swings, 'stale': sorted({t for t in stale if t}), 'notes_age_h': age}
+            'swings': swings, 'stale': sorted({t for t in stale if t}), 'final': final, 'notes_age_h': age}
 
 
 if __name__ == '__main__':
@@ -77,15 +108,18 @@ if __name__ == '__main__':
     else:
         any_ = False
         for sp, t in out.items():
-            if t['gaps'] or t['swings'] or t['stale']:
+            if t['gaps'] or t['swings'] or t['stale'] or t['final']:
                 any_ = True
                 print(f"{sp.upper()}: {len(t['gaps'])} gap games to research, {len(t['swings'])} swings to explain, "
-                      f"{len(t['stale'])} teams playing within {STALE_SOON}h with notes older than {STALE_H}h")
+                      f"{len(t['stale'])} teams playing within {STALE_SOON}h with notes older than {STALE_H}h, "
+                      f"{len(t['final'])} games due their pre-game check")
                 for g in t['gaps']:
                     print(f"  gap    {g['gid']}  {g['game']}  {g['kick']}  gap {g['gap']}")
                 for s in t['swings']:
                     print(f"  swing  {s['gid']}  {s['team']}  ({s['game']}, {s['kick']})")
                 if t['stale']:
                     print('  stale  ' + ', '.join(t['stale']))
+                for g in t['final']:
+                    print(f"  final  {g['gid']}  {g['game']}  {g['kick']}  last verified {g['last_verified']}")
         if not any_:
             print('NOTHING TO DO')
