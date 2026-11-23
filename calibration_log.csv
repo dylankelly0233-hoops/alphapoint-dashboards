@@ -11,3 +11,19 @@ date,sport,setting,old,new,games,why
 2026-11-16,nhl,hfa,0.28,0.25,51,market lines imply spread 1.00x and home edge 0.21 over 51 games
 2026-11-16,nhl,tie_boost,1.35,1.4,,22.5% of 325 games reached overtime
 2026-11-16,epl,dc_rho,-0.08,-0.066,,27.0% of 100 matches drawn
+2026-11-22,nfl,scale,1.005,1.012,58,market lines imply spread 1.02x and home edge 1.31 over 58 games
+2026-11-22,nfl,hfa,1.6,1.5,58,market lines imply spread 1.02x and home edge 1.31 over 58 games
+2026-11-22,cfb,scale,0.941,0.942,156,market lines imply spread 0.92x and home edge 2.66 over 156 games
+2026-11-22,cfb,crowd_slope,1.35,1.15,123,market lines imply 0.89 points per doubling of crowd over 123 home games
+2026-11-22,cbb,scale,1.15,1.125,499,market lines imply spread 1.14x and home edge 3.27 over 499 games
+2026-11-22,cbb,hfa,2.7,3.2,499,market lines imply spread 1.14x and home edge 3.27 over 499 games
+2026-11-22,cbb,crowd_slope,0.93,0.73,286,market lines imply -0.01 points per doubling of crowd over 286 home games
+2026-11-22,nba,scale,1.046,1.02,126,market lines imply spread 1.03x and home edge 1.55 over 126 games
+2026-11-22,nba,hfa,1.9,1.8,126,market lines imply spread 1.03x and home edge 1.55 over 126 games
+2026-11-22,nhl,scale,0.998,0.953,97,market lines imply spread 0.93x and home edge 0.20 over 97 games
+2026-11-22,nhl,hfa,0.25,0.23,97,market lines imply spread 0.93x and home edge 0.20 over 97 games
+2026-11-22,nfl,value_share,0.153,0.148,36,our logged games show -0.13 ± 1.16 over 36 games; backtest +0.15
+2026-11-22,cbb,value_share,0.185,0.168,467,our logged games show +0.08 ± 0.16 over 467 games; backtest +0.18
+2026-11-22,nba,value_share,-0.146,0.0,119,our logged games show -1.02 ± 0.44 over 119 games; backtest -0.15
+2026-11-22,nhl,tie_boost,1.4,1.425,,22.3% of 373 games reached overtime
+2026-11-22,epl,dc_rho,-0.066,-0.078,,27.5% of 109 matches drawn

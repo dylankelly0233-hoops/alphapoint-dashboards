@@ -1,0 +1,62 @@
+{
+ "updated": "2026-11-22",
+ "kill_n": 200,
+ "kill_rate": 0.5,
+ "strategies": {
+  "cbb_3p_fade": {
+   "n": 10,
+   "rate": 0.4,
+   "killed": false
+  },
+  "cbb_v2_open": {
+   "n": 15,
+   "rate": 0.4667,
+   "killed": false
+  },
+  "cfb_spread|conference game": {
+   "n": 7,
+   "rate": 0.4286,
+   "killed": false
+  },
+  "cfb_spread|mid": {
+   "n": 27,
+   "rate": 0.2593,
+   "killed": false
+  },
+  "cfb_total|Power 4 / Big East game": {
+   "n": 11,
+   "rate": 0.4545,
+   "killed": false
+  },
+  "cfb_v2_open": {
+   "n": 27,
+   "rate": 0.4444,
+   "killed": false
+  },
+  "nfl_bye_edge": {
+   "n": 2,
+   "rate": 0.0,
+   "killed": false
+  },
+  "nfl_div_under": {
+   "n": 2,
+   "rate": 1.0,
+   "killed": false
+  },
+  "nfl_high_total_under": {
+   "n": 1,
+   "rate": 0.0,
+   "killed": false
+  },
+  "nfl_wind_under": {
+   "n": 1,
+   "rate": 0.0,
+   "killed": false
+  },
+  "teaser": {
+   "n": 1,
+   "rate": 1.0,
+   "killed": false
+  }
+ }
+}

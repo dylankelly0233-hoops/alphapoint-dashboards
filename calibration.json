@@ -1,33 +1,39 @@
 {
   "nfl": {
-    "scale": 1.005,
-    "hfa": 1.6,
-    "market_updated": "2026-11-12T00:32+00:00"
+    "scale": 1.012,
+    "hfa": 1.5,
+    "market_updated": "2026-11-22T18:38+00:00",
+    "value_share": 0.148
   },
   "cfb": {
-    "scale": 0.941,
+    "scale": 0.942,
     "hfa": 2.6,
-    "market_updated": "2026-11-12T00:32+00:00"
+    "market_updated": "2026-11-22T18:38+00:00",
+    "crowd_slope": 1.15,
+    "value_share": 0.014
   },
   "cbb": {
-    "scale": 1.15,
-    "hfa": 2.7,
-    "market_updated": "2026-11-12T00:32+00:00"
+    "scale": 1.125,
+    "hfa": 3.2,
+    "market_updated": "2026-11-22T18:38+00:00",
+    "crowd_slope": 0.73,
+    "value_share": 0.168
   },
   "nba": {
-    "scale": 1.046,
-    "hfa": 1.9,
-    "market_updated": "2026-11-12T00:32+00:00"
+    "scale": 1.02,
+    "hfa": 1.8,
+    "market_updated": "2026-11-22T18:38+00:00",
+    "value_share": 0.0
   },
   "nhl": {
-    "scale": 0.998,
-    "hfa": 0.25,
-    "market_updated": "2026-11-16T00:47+00:00",
-    "tie_boost_updated": "2026-11-16T00:47+00:00",
-    "tie_boost": 1.4
+    "scale": 0.953,
+    "hfa": 0.23,
+    "market_updated": "2026-11-22T18:38+00:00",
+    "tie_boost_updated": "2026-11-22T18:38+00:00",
+    "tie_boost": 1.425
   },
   "epl": {
-    "dc_rho_updated": "2026-11-16T00:47+00:00",
-    "dc_rho": -0.066
+    "dc_rho_updated": "2026-11-22T18:38+00:00",
+    "dc_rho": -0.078
   }
 }
