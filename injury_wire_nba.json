@@ -1,23 +1,23 @@
 {
  "sport": "nba",
  "week": 20261123,
- "generated": "2026-11-23T11:17:25-05:00",
+ "generated": "2026-11-23T15:04:32-05:00",
  "movers": [
   {
    "team": "SA",
    "tag": "KEY",
-   "text": "Victor Wembanyama (30.3 mpg, back) and De'Aaron Fox (29.0, shin) are questionable at SAC on 11/23 (Jared Weiss, The Athletic, via ESPN); Dylan Harper (hip) is out 2-3 weeks.",
-   "source": "ESPN",
-   "url": "https://www.espn.com/nba/injuries",
+   "text": "Victor Wembanyama (30.3 mpg, low back tightness) and De'Aaron Fox (29.0, shin) are questionable on Monday's report, to be evaluated before the 10 PM ET tip at SAC; Harper and Harris are out.",
+   "source": "Yahoo Sports",
+   "url": "https://sports.yahoo.com/articles/victor-wembanyama-aaron-fox-playing-161712245.html",
    "date": "2026-11-23"
   },
   {
    "team": "OKC",
-   "tag": "KEY",
-   "text": "Shai Gilgeous-Alexander (33.5 mpg, back) is out at IND on 11/23 after missing the 11/22 game at MIA; Caruso, Mara and Jaylin Williams also sat 11/22.",
-   "source": "FanDuel Research",
-   "url": "https://www.fanduel.com/research/nba/player-news/injuries/shai-gilgeous-alexander-out-november-23-2026-against-pacers-back",
-   "date": "2026-11-22"
+   "tag": "CLUSTER",
+   "text": "Shai Gilgeous-Alexander (33.5 mpg, back) is out at IND on 11/23 for a 2nd straight game; Alex Caruso is ruled out on the official report, and ESPN lists Jalen Williams and Chet Holmgren out.",
+   "source": "Rotowire",
+   "url": "https://www.rotowire.com/basketball/headlines/alex-caruso-injury-ruled-out-monday-540667",
+   "date": "2026-11-23"
   },
   {
    "team": "LAL",
@@ -30,18 +30,18 @@
   {
    "team": "MEM",
    "tag": "CLUSTER",
-   "text": "Cameron Boozer (30.8 mpg, ankle) is out at CHA on 11/23 and Jerami Grant (22.1, calf strain) is out with a two-week re-evaluation; Scotty Pippen Jr. (back) is week-to-week.",
-   "source": "ESPN",
-   "url": "https://www.espn.com/nba/injuries",
+   "text": "Cameron Boozer (30.8 mpg, ankle) and Jerami Grant (22.1, calf) are out at CHA on the NBA's 10 AM ET report on 11/23; GG Jackson and Scotty Pippen Jr. are out too.",
+   "source": "Yahoo Sports",
+   "url": "https://sports.yahoo.com/articles/injuries-brandon-miller-cameron-boozer-110842699.html",
    "date": "2026-11-23"
   },
   {
    "team": "CHA",
    "tag": "CLUSTER",
-   "text": "Charlotte ruled out Grayson Allen (27.2 mpg, concussion) and Grant Williams (22.0, hamstring) vs MEM on 11/23; Dennis Schroder (hamstring) is out, Brandon Miller probable (knee).",
-   "source": "ESPN",
-   "url": "https://www.espn.com/nba/injuries",
-   "date": "2026-11-22"
+   "text": "Charlotte has Grayson Allen (27.2 mpg, concussion), Dennis Schroder (30.0) and Grant Williams (22.0) out vs MEM on 11/23 with Kon Knueppel; Brandon Miller (knee) is probable, likely to play.",
+   "source": "Rotowire",
+   "url": "https://rotowire.com/basketball/headlines/brandon-miller-injury-likely-to-play-monday-540533",
+   "date": "2026-11-23"
   }
  ],
  "teams": {
@@ -49,20 +49,20 @@
    {
     "team": "SA",
     "tag": "KEY",
-    "text": "Victor Wembanyama (30.3 mpg, back) and De'Aaron Fox (29.0, shin) are questionable at SAC on 11/23 (Jared Weiss, The Athletic, via ESPN); Dylan Harper (hip) is out 2-3 weeks.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nba/injuries",
+    "text": "Victor Wembanyama (30.3 mpg, low back tightness) and De'Aaron Fox (29.0, shin) are questionable on Monday's report, to be evaluated before the 10 PM ET tip at SAC; Harper and Harris are out.",
+    "source": "Yahoo Sports",
+    "url": "https://sports.yahoo.com/articles/victor-wembanyama-aaron-fox-playing-161712245.html",
     "date": "2026-11-23"
    }
   ],
   "OKC": [
    {
     "team": "OKC",
-    "tag": "KEY",
-    "text": "Shai Gilgeous-Alexander (33.5 mpg, back) is out at IND on 11/23 after missing the 11/22 game at MIA; Caruso, Mara and Jaylin Williams also sat 11/22.",
-    "source": "FanDuel Research",
-    "url": "https://www.fanduel.com/research/nba/player-news/injuries/shai-gilgeous-alexander-out-november-23-2026-against-pacers-back",
-    "date": "2026-11-22"
+    "tag": "CLUSTER",
+    "text": "Shai Gilgeous-Alexander (33.5 mpg, back) is out at IND on 11/23 for a 2nd straight game; Alex Caruso is ruled out on the official report, and ESPN lists Jalen Williams and Chet Holmgren out.",
+    "source": "Rotowire",
+    "url": "https://www.rotowire.com/basketball/headlines/alex-caruso-injury-ruled-out-monday-540667",
+    "date": "2026-11-23"
    }
   ],
   "LAL": [
@@ -79,9 +79,9 @@
    {
     "team": "MEM",
     "tag": "CLUSTER",
-    "text": "Cameron Boozer (30.8 mpg, ankle) is out at CHA on 11/23 and Jerami Grant (22.1, calf strain) is out with a two-week re-evaluation; Scotty Pippen Jr. (back) is week-to-week.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nba/injuries",
+    "text": "Cameron Boozer (30.8 mpg, ankle) and Jerami Grant (22.1, calf) are out at CHA on the NBA's 10 AM ET report on 11/23; GG Jackson and Scotty Pippen Jr. are out too.",
+    "source": "Yahoo Sports",
+    "url": "https://sports.yahoo.com/articles/injuries-brandon-miller-cameron-boozer-110842699.html",
     "date": "2026-11-23"
    }
   ],
@@ -89,10 +89,10 @@
    {
     "team": "CHA",
     "tag": "CLUSTER",
-    "text": "Charlotte ruled out Grayson Allen (27.2 mpg, concussion) and Grant Williams (22.0, hamstring) vs MEM on 11/23; Dennis Schroder (hamstring) is out, Brandon Miller probable (knee).",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nba/injuries",
-    "date": "2026-11-22"
+    "text": "Charlotte has Grayson Allen (27.2 mpg, concussion), Dennis Schroder (30.0) and Grant Williams (22.0) out vs MEM on 11/23 with Kon Knueppel; Brandon Miller (knee) is probable, likely to play.",
+    "source": "Rotowire",
+    "url": "https://rotowire.com/basketball/headlines/brandon-miller-injury-likely-to-play-monday-540533",
+    "date": "2026-11-23"
    }
   ],
   "BKN": [
@@ -153,6 +153,16 @@
     "source": "ESPN",
     "url": "https://www.espn.com/nba/injuries",
     "date": "2026-11-22"
+   }
+  ],
+  "IND": [
+   {
+    "team": "IND",
+    "tag": "CLUSTER",
+    "text": "Pascal Siakam (32.3 mpg, hip) is questionable vs OKC on 11/23; Aaron Nesmith (27.3) and T.J. McConnell are out, and Tyrese Haliburton (33.0) remains out.",
+    "source": "Heavy",
+    "url": "https://heavy.com/sports/nba/indiana-pacers/pascal-siakam-injury-thunder",
+    "date": "2026-11-23"
    }
   ]
  }

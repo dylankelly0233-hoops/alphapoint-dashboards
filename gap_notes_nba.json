@@ -1,17 +1,17 @@
 {
  "sport": "nba",
- "generated": "2026-11-23T11:44:49-05:00",
+ "generated": "2026-11-23T15:05:00-05:00",
  "teams": {
   "OKC": {
-   "checked": "2026-11-23T11:17:25-05:00",
+   "checked": "2026-11-23T15:05:00-05:00",
    "watch": [
     {
      "direction": "too_high",
      "since": "2026-11-22",
-     "text": "SGA (low back contusion) is out Monday at IND after also missing the Nov 22 loss at MIA; Jalen Williams, Holmgren, Caruso and Wallace remain out.",
-     "source": "FanDuel Research",
-     "url": "https://www.fanduel.com/research/nba/player-news/injuries/shai-gilgeous-alexander-out-november-23-2026-against-pacers-back",
-     "date": "2026-11-22"
+     "text": "SGA (back) is out at IND on 11/23 for a 2nd straight game; Caruso is ruled out on the official report and ESPN lists Jalen Williams and Chet Holmgren out.",
+     "source": "Rotowire",
+     "url": "https://www.rotowire.com/basketball/headlines/alex-caruso-injury-ruled-out-monday-540667",
+     "date": "2026-11-23"
     }
    ]
   },
@@ -85,17 +85,17 @@
    ]
   },
   "IND": {
+   "checked": "2026-11-23T15:05:00-05:00",
    "watch": [
     {
      "direction": "too_high",
-     "since": "2026-11-21",
-     "text": "Pascal Siakam (hip) is questionable at NY, with Haliburton (9 games missed, 2+ more weeks) and McConnell already out.",
+     "since": "2026-11-10",
+     "text": "Siakam (hip) is questionable vs OKC on 11/23; Nesmith and McConnell are out and Haliburton remains out.",
      "source": "Heavy",
-     "url": "https://heavy.com/sports/nba/indiana-pacers/pascal-siakam-injury-knicks/",
-     "date": "2026-11-22"
+     "url": "https://heavy.com/sports/nba/indiana-pacers/pascal-siakam-injury-thunder",
+     "date": "2026-11-23"
     }
-   ],
-   "checked": "2026-11-23T11:17:25-05:00"
+   ]
   },
   "DAL": {
    "watch": [
@@ -172,17 +172,17 @@
    "checked": "2026-11-23T11:17:25-05:00"
   },
   "SA": {
+   "checked": "2026-11-23T15:05:00-05:00",
    "watch": [
     {
      "direction": "too_high",
-     "since": "2026-11-22",
-     "text": "Wembanyama (lower back tightness) and Fox (shin) are questionable for 11/23 at SAC.",
-     "source": "NBC Sports",
-     "url": "https://www.nbcsports.com/fantasy/basketball/player-news/2026-11-22/victor-wembanyama-back-questionable-monday",
-     "date": "2026-11-22"
+     "since": "2026-11-23",
+     "text": "Wembanyama (low back tightness, has not missed a game) and Fox (shin) are questionable on Monday's report, evaluated before the 10 PM ET tip; Harper, Harris out.",
+     "source": "Yahoo Sports",
+     "url": "https://sports.yahoo.com/articles/victor-wembanyama-aaron-fox-playing-161712245.html",
+     "date": "2026-11-23"
     }
-   ],
-   "checked": "2026-11-23T11:44:49-05:00"
+   ]
   },
   "POR": {
    "watch": [
@@ -198,27 +198,27 @@
    "checked": "2026-11-23T11:17:25-05:00"
   },
   "MEM": {
-   "checked": "2026-11-23T11:17:25-05:00",
+   "checked": "2026-11-23T15:05:00-05:00",
    "watch": [
     {
      "direction": "too_high",
      "since": "2026-11-21",
-     "text": "Cameron Boozer (30.8 mpg, ankle sprain) misses a 2nd straight game and Jerami Grant (calf strain) is out with a two-week re-evaluation; Scotty Pippen Jr. also out.",
-     "source": "Covers",
-     "url": "https://www.covers.com/nba/grizzlies-vs-hornets-prediction-picks-nov-23-2026",
+     "text": "Cameron Boozer (30.8 mpg, ankle) and Jerami Grant (calf) are out at CHA on the NBA's 10 AM ET report on 11/23; GG Jackson and Pippen Jr. are out too.",
+     "source": "Yahoo Sports",
+     "url": "https://sports.yahoo.com/articles/injuries-brandon-miller-cameron-boozer-110842699.html",
      "date": "2026-11-23"
     }
    ]
   },
   "CHA": {
-   "checked": "2026-11-23T11:17:25-05:00",
+   "checked": "2026-11-23T15:05:00-05:00",
    "watch": [
     {
      "direction": "too_high",
-     "since": "2026-11-22",
-     "text": "Grayson Allen (concussion protocol), Kon Knueppel (hamstring), Dennis Schroder (hamstring) and Grant Williams are all out vs Memphis on 11/23.",
-     "source": "TalkBasket",
-     "url": "https://www.talkbasket.net/229770-nba-injury-report-wembanyama-fox-listed-on-monday-november-23",
+     "since": "2026-11-15",
+     "text": "Allen (concussion), Schroder, Grant Williams and Knueppel are out vs MEM on 11/23; Brandon Miller (knee) is probable and likely to play.",
+     "source": "Rotowire",
+     "url": "https://rotowire.com/basketball/headlines/brandon-miller-injury-likely-to-play-monday-540533",
      "date": "2026-11-23"
     }
    ]
@@ -255,7 +255,7 @@
      "date": "2026-11-23"
     }
    ],
-   "checked": "2026-11-23T11:44:49-05:00"
+   "checked": "2026-11-23T15:05:00-05:00"
   },
   "CLE": {
    "watch": [],
@@ -274,8 +274,8 @@
    "checked": "2026-11-23T11:17:25-05:00"
   },
   "MIN": {
-   "watch": [],
-   "checked": "2026-11-23T11:44:49-05:00"
+   "checked": "2026-11-23T15:05:00-05:00",
+   "watch": []
   },
   "NO": {
    "watch": [],
@@ -286,8 +286,8 @@
    "checked": "2026-11-23T11:17:25-05:00"
   },
   "SAC": {
-   "watch": [],
-   "checked": "2026-11-23T11:44:49-05:00"
+   "checked": "2026-11-23T15:05:00-05:00",
+   "watch": []
   },
   "TOR": {
    "watch": [],
@@ -388,7 +388,7 @@
    "swings": {
     "SA": "Wembanyama (back) and Fox (shin) were listed questionable for 11/23 after Wembanyama's 50-point game; the market discounts the Spurs, our ratings don't (NBC Sports, 11/22)."
    },
-   "checked": "2026-11-23T11:44:49-05:00"
+   "checked": "2026-11-23T15:05:00-05:00"
   },
   "401910040": {
    "verdict": "unexplained",
@@ -405,6 +405,12 @@
      "source": "ESPN",
      "url": "https://www.espn.com/nba/injuries",
      "date": "2026-11-23"
+    },
+    {
+     "text": "Afternoon report: Edwards (knee) and DiVincenzo out for Minnesota; Traore out and Grant Nelson (ankle) a game-time decision for Brooklyn.",
+     "source": "Yahoo Sports",
+     "url": "https://sports.yahoo.com/articles/nets-timberwolves-game-preview-watch-151106050.html",
+     "date": "2026-11-23"
     }
    ],
    "returning": [],
@@ -412,7 +418,7 @@
     "BKN": "Nolan Traore (hamstring strain) went from game-time decision to an 8-10 week re-evaluation on 11/23 (HoopsHype via ESPN); the market has moved on Brooklyn with it.",
     "MIN": "Nothing found: the market moved on Minnesota without a clear reason; Edwards (out since Oct. 29 knee surgery), Clark and DiVincenzo were already out last game, and only Brooklyn's Traore and Nelson are game-time calls (ESPN, 11/23)."
    },
-   "checked": "2026-11-23T11:44:49-05:00"
+   "checked": "2026-11-23T15:05:00-05:00"
   },
   "401910042": {
    "swings": {
@@ -421,13 +427,13 @@
    "checked": "2026-11-23T11:17:25-05:00"
   },
   "401910038": {
-   "checked": "2026-11-23T11:17:25-05:00",
+   "checked": "2026-11-23T15:05:00-05:00",
    "swings": {
     "OKC": "SGA (back) was ruled out again for Monday at IND (FanDuel, Nov 22); with the market already pricing his absence and Indiana also short-handed (Haliburton, McConnell out), the gap on OKC fell from 9.7 to 1.7."
    }
   },
   "401910036": {
-   "checked": "2026-11-23T11:17:25-05:00",
+   "checked": "2026-11-23T15:05:00-05:00",
    "verdict": "partly",
    "summary": "Memphis is without Cameron Boozer (2nd straight game) and Jerami Grant, which pulled the line from 3.5 to 2.5, but Charlotte is missing four rotation players too, so it covers only part of our 3.5-pt gap.",
    "reasons": [

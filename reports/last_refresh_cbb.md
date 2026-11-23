@@ -1,0 +1,7 @@
+Date: 2026-11-23 15:06
+Status: pushed
+Week 20261123 (late check, cbb+nba+nhl+epl); inputs built 2026-11-23 14:54 ET. No morning cloud report on file; wire/notes started from the 11:15-11:44 AM runs (older than 90 min -> late re-scan).
+CBB: Injury Wire 6 items (was 1): added Louisville (Trimble back, Ellis out), Tennessee (Haralson questionable for Maryland 11/24), Illinois (Coleman + flu cases close to returning), Syracuse (Dual ankle). Movers: UNC Avdalas out ~2 months; Louisville Trimble returning. Research Assistant: 7 teams with rating-watch items; 4 gap games (0 explained, 1 partly, 3 unexplained) - added TTU@Louisville and GaSo@NKU verdicts + Louisville / Georgia Southern swings.
+NBA: Injury Wire 12 items (OKC now a cluster: SGA, Caruso, J. Williams, Holmgren out; Wemby/Fox still questionable for 10 PM tip; IND Siakam questionable, Nesmith out). Research Assistant: 19 teams with rating-watch items; 3 gap games (1 explained, 1 partly, 1 unexplained).
+NHL: Injury Wire 7 items (unchanged); Ullmark confirmed starting vs CGY, Montreal's new C Dylan Larkin debuts vs LA (rating watch). Research Assistant: 12 teams with rating-watch items; 1 gap game (0 explained, 1 partly, 0 unexplained). EPL: no new searches (laptop notes 1:41 PM; EVE@BRE in progress); Injury Wire 7 items; Research Assistant: 12 teams with rating-watch items; 7 gap games (1 explained, 2 partly, 4 unexplained).
+! CBB rating watch covers 16 of 56 watch teams (mostly mid-majors unchecked); EPL watch 12 of 20.

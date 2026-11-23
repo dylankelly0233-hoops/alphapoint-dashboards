@@ -1,7 +1,7 @@
 {
  "sport": "cbb",
  "week": 20261123,
- "generated": "2026-11-23T11:15:06-05:00",
+ "generated": "2026-11-23T15:04:32-05:00",
  "movers": [
   {
    "team": "North Carolina",
@@ -12,6 +12,36 @@
    "source": "ESPN",
    "url": "https://www.espn.com/mens-college-basketball/story/_/id/50511206/north-carolina-guard-neo-avdalas-wrist-2-months",
    "date": "2026-11-17"
+  },
+  {
+   "team": "Louisville",
+   "tag": "RETURNING",
+   "player": "Seth Trimble",
+   "status": "returning",
+   "text": "Louisville's Seth Trimble (28 mpg) missed the Stetson win with a minor injury; Pat Kelsey said on 11/23 he is on track to play in the Players Era opener vs Texas Tech.",
+   "source": "Courier-Journal (Yahoo)",
+   "url": "https://sports.yahoo.com/articles/louisvilles-isaac-ellis-miss-players-162521731.html",
+   "date": "2026-11-23"
+  },
+  {
+   "team": "Tennessee",
+   "tag": "KEY",
+   "player": "Jalen Haralson",
+   "status": "questionable",
+   "text": "Tennessee's Jalen Haralson (20.5 mpg, right knee hyperextension 11/17) sat out Coastal Carolina; MRI showed swelling only, and Rick Barnes thinks he will be ready for Maryland on 11/24.",
+   "source": "Knoxville News Sentinel (Yahoo)",
+   "url": "https://sports.yahoo.com/articles/jalen-haralson-injury-tennessee-basketball-230640171.html",
+   "date": "2026-11-21"
+  },
+  {
+   "team": "Syracuse",
+   "tag": "KEY",
+   "player": "Garwey Dual",
+   "status": "questionable",
+   "text": "Syracuse PG Garwey Dual (24.2 mpg) hurt his right ankle vs Lafayette on 11/21 and sat the second half in a walking boot; X-rays ordered, no status yet for UAlbany on 11/25.",
+   "source": "Yahoo Sports",
+   "url": "https://sports.yahoo.com/articles/syracuse-basketball-garwey-dual-exits-222915016.html",
+   "date": "2026-11-21"
   }
  ],
  "teams": {
@@ -25,6 +55,64 @@
     "source": "ESPN",
     "url": "https://www.espn.com/mens-college-basketball/story/_/id/50511206/north-carolina-guard-neo-avdalas-wrist-2-months",
     "date": "2026-11-17"
+   }
+  ],
+  "Louisville": [
+   {
+    "team": "Louisville",
+    "tag": "RETURNING",
+    "player": "Seth Trimble",
+    "status": "returning",
+    "text": "Louisville's Seth Trimble (28 mpg) missed the Stetson win with a minor injury; Pat Kelsey said on 11/23 he is on track to play in the Players Era opener vs Texas Tech.",
+    "source": "Courier-Journal (Yahoo)",
+    "url": "https://sports.yahoo.com/articles/louisvilles-isaac-ellis-miss-players-162521731.html",
+    "date": "2026-11-23"
+   },
+   {
+    "team": "Louisville",
+    "tag": "KEY",
+    "player": "Isaac Ellis",
+    "status": "out",
+    "text": "Louisville reserve guard Isaac Ellis (13.5 mpg, ankle, hurt vs Stetson) will miss the Players Era Festival; Kelsey: \"We do not expect him to play this week at all.\"",
+    "source": "Courier-Journal (Yahoo)",
+    "url": "https://sports.yahoo.com/articles/louisvilles-isaac-ellis-miss-players-162521731.html",
+    "date": "2026-11-23"
+   }
+  ],
+  "Tennessee": [
+   {
+    "team": "Tennessee",
+    "tag": "KEY",
+    "player": "Jalen Haralson",
+    "status": "questionable",
+    "text": "Tennessee's Jalen Haralson (20.5 mpg, right knee hyperextension 11/17) sat out Coastal Carolina; MRI showed swelling only, and Rick Barnes thinks he will be ready for Maryland on 11/24.",
+    "source": "Knoxville News Sentinel (Yahoo)",
+    "url": "https://sports.yahoo.com/articles/jalen-haralson-injury-tennessee-basketball-230640171.html",
+    "date": "2026-11-21"
+   }
+  ],
+  "Illinois": [
+   {
+    "team": "Illinois",
+    "tag": "RETURNING",
+    "player": "Quentin Coleman",
+    "status": "questionable",
+    "text": "Illinois' Quentin Coleman (26.8 mpg), Lincoln Williams and Zvonimir Ivisic missed the Eastern Illinois win with illness; On3 reports the flu-hit Illini are close to returning for Winthrop.",
+    "source": "On3",
+    "url": "https://www.on3.com/sites/orange-blue-news/news/illinois-basketball-notebook-2/",
+    "date": "2026-11-22"
+   }
+  ],
+  "Syracuse": [
+   {
+    "team": "Syracuse",
+    "tag": "KEY",
+    "player": "Garwey Dual",
+    "status": "questionable",
+    "text": "Syracuse PG Garwey Dual (24.2 mpg) hurt his right ankle vs Lafayette on 11/21 and sat the second half in a walking boot; X-rays ordered, no status yet for UAlbany on 11/25.",
+    "source": "Yahoo Sports",
+    "url": "https://sports.yahoo.com/articles/syracuse-basketball-garwey-dual-exits-222915016.html",
+    "date": "2026-11-21"
    }
   ]
  }

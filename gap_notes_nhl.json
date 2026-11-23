@@ -1,9 +1,9 @@
 {
  "sport": "nhl",
- "generated": "2026-11-23T14:45:00-05:00",
+ "generated": "2026-11-23T15:05:00-05:00",
  "teams": {
   "OTT": {
-   "checked": "2026-11-23T11:20:10-05:00",
+   "checked": "2026-11-23T15:05:00-05:00",
    "watch": [
     {
      "direction": "too_high",
@@ -12,14 +12,6 @@
      "source": "Bleacher Nation",
      "url": "https://bleachernation.com/picks/2026/11/22/senators-vs-flames-how-to-watch-odds-picks-predictions-3",
      "date": "2026-11-22"
-    },
-    {
-     "direction": "unclear",
-     "since": "2026-11-23",
-     "text": "Starting goalie not confirmed before the morning skate: Linus Ullmark (11-1-0, 4 of the last 6 starts) projected, Samuel Ersson the alternative.",
-     "source": "Squawka",
-     "url": "https://www.squawka.com/ca/news/nhl/flames-vs-senators-prediction-team-news/",
-     "date": "2026-11-23"
     }
    ]
   },
@@ -50,8 +42,17 @@
    ]
   },
   "MTL": {
-   "checked": "2026-11-23T11:20:10-05:00",
-   "watch": []
+   "checked": "2026-11-23T15:05:00-05:00",
+   "watch": [
+    {
+     "direction": "too_low",
+     "since": "2026-11-22",
+     "text": "Montreal acquired C Dylan Larkin from Detroit on 11/22 (for Kirby Dach, G Samuel Montembeault, Hage and picks); he debuts vs LA tonight as the 2nd-line center.",
+     "source": "NHL.com",
+     "url": "https://www.nhl.com/news/larkin-to-make-montreal-canadiens-debut-tonight-against-kings-after-red-wings-trade",
+     "date": "2026-11-23"
+    }
+   ]
   },
   "UTAH": {
    "checked": "2026-11-23T11:20:10-05:00",
@@ -192,9 +193,9 @@
  },
  "games": {
   "401892775": {
-   "checked": "2026-11-23T11:20:10-05:00",
+   "checked": "2026-11-23T15:05:00-05:00",
    "verdict": "partly",
-   "summary": "Ottawa is missing three forwards (Eklund, Foegele, Burakovsky) and hasn't confirmed its goalie, which covers some of why the market is lower on the Senators than we are.",
+   "summary": "Ottawa is missing three forwards (Eklund, Foegele, Burakovsky), which covers some of the gap; Linus Ullmark (.937, 11-1-0) was first off at the morning skate and starts.",
    "reasons": [
     {
      "text": "Senators forwards William Eklund, Warren Foegele and Andre Burakovsky are out.",
@@ -203,16 +204,10 @@
      "date": "2026-11-22"
     },
     {
-     "text": "Ottawa's starter (Ullmark projected, Ersson possible) is unconfirmed before the morning skate.",
-     "source": "Squawka",
-     "url": "https://www.squawka.com/ca/news/nhl/flames-vs-senators-prediction-team-news/",
+     "text": "Linus Ullmark was first off the ice at Monday's morning skate and is starting against Calgary.",
+     "source": "CBS Sports",
+     "url": "https://www.cbssports.com/fantasy/hockey/news/senators-linus-ullmark-starting-against-calgary-600825/",
      "date": "2026-11-23"
-    },
-    {
-     "text": "Against that, Calgary is without Kevin Bahl (season) and Jonathan Huberdeau.",
-     "source": "The Hockey Writers",
-     "url": "https://thehockeywriters.com/flames-week-ahead-schedule-storylines-still-searching-for-consistency-pospisil-injury-and-more",
-     "date": "2026-11-22"
     }
    ]
   },
@@ -260,6 +255,9 @@
     }
    ],
    "returning": []
+  },
+  "401892774": {
+   "checked": "2026-11-23T15:05:00-05:00"
   }
  }
 }

@@ -1,6 +1,6 @@
 {
  "sport": "cbb",
- "generated": "2026-11-23T12:41:40-05:00",
+ "generated": "2026-11-23T15:05:00-05:00",
  "teams": {
   "Dayton": {
    "watch": [
@@ -48,8 +48,17 @@
    "checked": "2026-11-23T11:15:06-05:00"
   },
   "Tennessee": {
-   "watch": [],
-   "checked": "2026-11-23T11:15:06-05:00"
+   "checked": "2026-11-23T15:05:00-05:00",
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-17",
+     "text": "Jalen Haralson (20.5 mpg, knee hyperextension 11/17) missed Coastal Carolina; Barnes expects him back for Maryland on 11/24, but it is unconfirmed.",
+     "source": "Knoxville News Sentinel (Yahoo)",
+     "url": "https://sports.yahoo.com/articles/jalen-haralson-injury-tennessee-basketball-230640171.html",
+     "date": "2026-11-21"
+    }
+   ]
   },
   "Oregon State": {
    "checked": "2026-11-23T12:41:40-05:00",
@@ -96,12 +105,29 @@
    "checked": "2026-11-23T11:15:06-05:00"
   },
   "Louisville": {
-   "watch": [],
-   "checked": "2026-11-23T11:15:06-05:00"
+   "checked": "2026-11-23T15:05:00-05:00",
+   "watch": [
+    {
+     "direction": "too_low",
+     "since": "2026-11-20",
+     "text": "Seth Trimble (28 mpg) missed the Stetson win; Kelsey says he is on track to play vs Texas Tech on 11/24, so one game in the ratings came without him.",
+     "source": "Courier-Journal (Yahoo)",
+     "url": "https://sports.yahoo.com/articles/louisvilles-isaac-ellis-miss-players-162521731.html",
+     "date": "2026-11-23"
+    },
+    {
+     "direction": "too_high",
+     "since": "2026-11-20",
+     "text": "Reserve guard Isaac Ellis (13.5 mpg, ankle) is out for the whole Players Era Festival week.",
+     "source": "Courier-Journal (Yahoo)",
+     "url": "https://sports.yahoo.com/articles/louisvilles-isaac-ellis-miss-players-162521731.html",
+     "date": "2026-11-23"
+    }
+   ]
   },
   "Texas Tech": {
-   "watch": [],
-   "checked": "2026-11-23T11:15:06-05:00"
+   "checked": "2026-11-23T15:05:00-05:00",
+   "watch": []
   },
   "Maryland": {
    "watch": [],
@@ -132,6 +158,14 @@
      "date": "2026-11-23"
     }
    ]
+  },
+  "Georgia Southern": {
+   "checked": "2026-11-23T15:05:00-05:00",
+   "watch": []
+  },
+  "Northern Kentucky": {
+   "checked": "2026-11-23T15:05:00-05:00",
+   "watch": []
   }
  },
  "games": {
@@ -186,10 +220,21 @@
    }
   },
   "401921029": {
-   "checked": "2026-11-22T22:42:20-05:00",
+   "checked": "2026-11-23T15:05:00-05:00",
    "swings": {
-    "Northern Kentucky": "Nothing found: the market moved on Northern Kentucky without a clear reason (no injuries reported; opened -2.5, now -3.5)."
-   }
+    "Northern Kentucky": "Nothing found: the market moved on Northern Kentucky without a clear reason (no injuries reported; opened -2.5, now -3.5).",
+    "Georgia Southern": "Nothing found: the market moved on Georgia Southern without a clear reason (no injuries listed on Covers, 11/23)."
+   },
+   "verdict": "unexplained",
+   "summary": "Every source we use has Northern Kentucky by 5-6+, the market by 2.5 (unchanged from the open); no injury or lineup news found for either team.",
+   "reasons": [
+    {
+     "text": "Covers' game page lists no injuries for Georgia Southern or Northern Kentucky for the 7 PM ET game on 11/23.",
+     "source": "Covers",
+     "url": "https://www.covers.com/sport/basketball/ncaab/matchup/393061",
+     "date": "2026-11-23"
+    }
+   ]
   },
   "401928830": {
    "checked": "2026-11-23T11:42:03-05:00",
@@ -255,6 +300,30 @@
    "checked": "2026-11-23T11:15:06-05:00",
    "swings": {
     "Utah Valley": "Nothing found: the market moved on Utah Valley without a clear reason; no injury news found, and the line rose from Utah Valley -3.5 at open to -4.5."
+   }
+  },
+  "401915942": {
+   "checked": "2026-11-23T15:05:00-05:00",
+   "verdict": "unexplained",
+   "summary": "Our AlphaPoint models drive the gap; TeamRankings and Haslametrics agree with the market's Texas Tech -5.5, and Louisville's news (Trimble back, Ellis out) doesn't push toward Tech.",
+   "reasons": [
+    {
+     "text": "Seth Trimble is expected to play after missing the Stetson game; backup guard Isaac Ellis (ankle) is out all week. Neutral site in Las Vegas; line unchanged from the 5.5 opener.",
+     "source": "Courier-Journal (Yahoo)",
+     "url": "https://sports.yahoo.com/articles/louisvilles-isaac-ellis-miss-players-162521731.html",
+     "date": "2026-11-23"
+    }
+   ],
+   "returning": [
+    {
+     "team": "Louisville",
+     "player": "Seth Trimble",
+     "text": "On track to play after missing the Stetson win with a minor injury.",
+     "url": "https://sports.yahoo.com/articles/louisvilles-isaac-ellis-miss-players-162521731.html"
+    }
+   ],
+   "swings": {
+    "Louisville": "Louisville moved from 3 pts below the market to 4.3 above: Seth Trimble sat its last game (vs Stetson) and returns now, which the market may price differently; no other news found (Courier-Journal, 11/23)."
    }
   }
  }
