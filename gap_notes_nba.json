@@ -1,6 +1,6 @@
 {
  "sport": "nba",
- "generated": "2026-11-22T16:47:00-05:00",
+ "generated": "2026-11-22T19:55:00-05:00",
  "teams": {
   "OKC": {
    "watch": [
@@ -47,6 +47,14 @@
      "source": "RotoWire",
      "url": "https://rotowire.com/basketball/headlines/jayson-tatum-news-off-injury-report-sunday-540517",
      "date": "2026-11-22"
+    },
+    {
+     "direction": "too_high",
+     "since": "2026-11-22",
+     "text": "Paul George (rest) and Mitchell Robinson (illness) are out at GS on 11/22; ratings built with George overstate Boston tonight.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nba/injuries",
+     "date": "2026-11-22"
     }
    ]
   },
@@ -67,9 +75,9 @@
     {
      "direction": "too_high",
      "since": "2026-11-21",
-     "text": "OG Anunoby (calf) is out vs IND for a second straight game and Karl-Anthony Towns (illness) is questionable; Jordan Clarkson is out.",
-     "source": "CBS Sports",
-     "url": "https://www.cbssports.com/fantasy/basketball/news/knicks-og-anunoby-ruled-out-sunday-540483/",
+     "text": "OG Anunoby (calf) is out vs IND for a second straight game and Miles McBride (abdomen) is out too, per the evening 11/22 report.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nba/injuries",
      "date": "2026-11-22"
     }
    ]
@@ -145,59 +153,24 @@
      "date": "2026-11-21"
     }
    ]
+  },
+  "PHI": {
+   "watch": [
+    {
+     "direction": "too_low",
+     "since": "2026-11-19",
+     "text": "Jaylen Brown and Dean Wade (hamstrings) missed the last two games and are probable vs POR on 11/23; those two games understate Philadelphia.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nba/injuries",
+     "date": "2026-11-22"
+    }
+   ]
   }
  },
  "games": {
-  "401910030": {
-   "verdict": "explained",
-   "summary": "OKC ruled out Shai Gilgeous-Alexander on 11/22 on top of Jalen Williams, Holmgren, Caruso and Wallace; that covers most of the 6-point gap. Giannis is still questionable for Miami.",
-   "reasons": [
-    {
-     "text": "Shai Gilgeous-Alexander (low back contusion/neck strain) was ruled out at MIA on 11/22 after being listed questionable.",
-     "source": "NBC Sports",
-     "url": "https://www.nbcsports.com/fantasy/basketball/player-news/2026-11-22/shai-gilgeous-alexander-back-neck-out-sunday",
-     "date": "2026-11-22"
-    },
-    {
-     "text": "Caruso, Cason Wallace, Jalen Williams and Chet Holmgren are also out for OKC.",
-     "source": "Yahoo Sports",
-     "url": "https://sports.yahoo.com/articles/thunder-vs-heat-injury-report-154004338.html",
-     "date": "2026-11-22"
-    },
-    {
-     "text": "Giannis Antetokounmpo (right groin tendinitis) is questionable for Miami and will be re-evaluated before the 6 PM tip; if he sits it pushes the other way.",
-     "source": "Heavy",
-     "url": "https://heavy.com/sports/nba/miami-heat/injury-report-vs-thunder-november-22/",
-     "date": "2026-11-22"
-    }
-   ],
-   "returning": [],
-   "swings": {
-    "MIA": "The market moved toward Miami (Heat -2.5 open, -3.5 now) on OKC's injury list, with SGA ruled out on 11/22, not on Miami news; Giannis is questionable (NBC Sports, 11/22)."
-   }
-  },
-  "401910032": {
-   "verdict": "explained",
-   "summary": "Chicago is without its two leading scorers (Caleb Wilson since 11/12, Norman Powell's hamstring on 11/21), which covers the 3-point gap.",
-   "reasons": [
-    {
-     "text": "Norman Powell (mild right hamstring strain on 11/21) is out/questionable vs DEN and Jalen Smith (illness) is questionable.",
-     "source": "ClutchPoints",
-     "url": "https://clutchpoints.com/nba/denver-nuggets/nuggets-vs-bulls-injury-report-norman-powell-jalen-smith",
-     "date": "2026-11-22"
-    },
-    {
-     "text": "Caleb Wilson (hand) is out 4-6 weeks from 11/12; the line moved from Nuggets -8.5 to -9.5.",
-     "source": "Bleacher Nation",
-     "url": "https://www.bleachernation.com/bulls/2026/11/22/norman-powell-injured/",
-     "date": "2026-11-22"
-    }
-   ],
-   "returning": []
-  },
   "401910035": {
-   "verdict": "explained",
-   "summary": "Golden State is without Stephen Curry (out since 11/12) while Tatum and White are off Boston's report after resting at SAC; together they cover most of the 6-point gap.",
+   "verdict": "partly",
+   "summary": "Curry's absence and Tatum/White returning explain most of the gap, but Boston ruling out Paul George and Mitchell Robinson on 11/22 pushes back toward GS; the line moved from Celtics -8.5 to -7.5.",
    "reasons": [
     {
      "text": "Stephen Curry (oblique tear) is out vs BOS, ESPN estimates Dec 12; our ratings still carry his 13 games.",
@@ -209,6 +182,12 @@
      "text": "Tatum (rest) and White (AC joint) sat at SAC on 11/21 but are off the injury report for the GS game on 11/22.",
      "source": "NBC Sports",
      "url": "https://www.nbcsports.com/fantasy/basketball/player-news/2026-11-22/derrick-white-shoulder-off-injury-report-vs-gsw",
+     "date": "2026-11-22"
+    },
+    {
+     "text": "Paul George (rest) and Mitchell Robinson (illness) were ruled out for Boston at GS on 11/22.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nba/injuries",
      "date": "2026-11-22"
     }
    ],
@@ -229,6 +208,26 @@
    "swings": {
     "BOS": "Tatum and White sat at SAC on 11/21, so the market was low on Boston there; both are off the 11/22 report, so the market prices them back at GS (RotoWire, 11/22)."
    }
+  },
+  "401910037": {
+   "swings": {
+    "PHI": "Jaylen Brown and Dean Wade (hamstrings) missed two games and are probable vs POR on 11/23; the market prices them back, our ratings don't (ESPN, 11/22).",
+    "POR": "Nothing found on Portland itself; the move most likely reflects Philadelphia's Brown and Wade being listed probable after missing two games (ESPN, 11/22)."
+   },
+   "returning": [
+    {
+     "team": "PHI",
+     "player": "Jaylen Brown",
+     "text": "Probable vs POR after missing two games (hamstring).",
+     "url": "https://www.espn.com/nba/injuries"
+    },
+    {
+     "team": "PHI",
+     "player": "Dean Wade",
+     "text": "Probable vs POR after missing two games (hamstring).",
+     "url": "https://www.espn.com/nba/injuries"
+    }
+   ]
   }
  }
 }
