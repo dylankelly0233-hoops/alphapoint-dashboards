@@ -218,9 +218,11 @@ def card_row(sport, ours, market, home, away, live=None, name=str):
     rec = record(sport, a['gap'], live)
     if rec and rec['moved']['n']:
         tip += f' · gaps of {rec["label"]} pts: line moved toward our number {rec["moved"]["rate"]:.0%} in our backtest'
-    push = f' · push {a["push"]:.0%}' if a['push'] >= 0.03 else ''      # a push refunds the stake: it can clear −110 under 52.4%
+    # a push refunds the stake, so the win chance needed at -110 is 52.4% of the games that don't push
+    need = (110 / 210) * (1 - a['push'])
+    push = f', push {a["push"]:.0%}' if a['push'] >= 0.03 else ''
     return (f'<span class="pline"><span class="tag">Spread</span>{theme.esc(posted)} covers '
-            f'<span class="pos" title="{theme.esc(tip)}">{a["p"]:.1%}</span>{push}</span>')
+            f'<span class="pos" title="{theme.esc(tip)}">{a["p"]:.1%}</span> (needs {need:.1%} at −110{push})</span>')
 
 
 def rebuild_keys(sports=SPORTS):

@@ -671,6 +671,8 @@ def best_spots():
             continue
         if s.get('hold'):          # QB change / news explains the gap (gap_research.lean_hold): not a spot at all
             continue
+        if 'lopsided' in (s.get('flags') or []):   # 20+ point college lines (Dylan, 2026-11-23: 'Winthrop +42.5')
+            continue
         s['teaser'] = next(((label, team) for label, team in s['tags'] if label.startswith('Teaser')), None) \
             if sy.criteria_ok('teaser') else None
         s['systems'] = [x for x in s.get('systems') or [] if not x.get('tracking')]   # strict bar only (systems.strict)
@@ -708,7 +710,8 @@ def best_spots():
             t = 'kick' if pr.get('holds_to_close') else 'early'
             op = opener_html(s, x['kind'], x.get('side'), x.get('line'), seen) if t == 'early' else ('', '')
             out.append(('priced', t, x['text'], _reason(
-                t, f'{x["kind"]} <b>{theme.esc(x["text"])}</b> {100 * x["p"]:.1f}%'
+                t, f'{x["kind"]} <b>{theme.esc(x["text"])}</b> covers {100 * x["p"]:.1f}%, needs '
+                   f'{100 * (110 / 210) * (1 - x.get("push", 0)):.1f}% at −110'
                    + (f' (push {100 * x["push"]:.0f}%)' if x.get('push', 0) >= 0.03 else '')
                    + (f' · opened {theme.esc(opener)}' if opener else '') + f' · {sy.NAMES["priced"]}',
                 f'our ratings, priced ({label})', f'{100 * pr["rate"]:.0f}% of {pr["n"]:,} vs the opener', tip) + op[1], op[0]))
@@ -747,7 +750,8 @@ def best_spots():
             cls = 'pv'          # one style: the size of the margin over -110 did not predict results (2026-11-19 tier check)
             tip = (f'{best["kind"]} {best["text"]}: wins {100 * best["p"]:.1f}%, needs {100 * need:.1f}% at −110 · '
                    f'about {100 * best["ev"]:+.1f}¢ per $1')
-            right = f'<span class="{cls}" title="{theme.esc(tip)}">{100 * best["p"]:.1f}%</span>'
+            right = (f'<span class="{cls}" title="{theme.esc(tip)}">{100 * best["p"]:.1f}%'
+                     f'<small> / {100 * need:.1f}% needed</small></span>')
         more = f' · {len(rs)} reasons' if len(rs) > 1 else ''
         return (f'<li data-sport="{theme.esc(s["sport"])}" data-strat="{" ".join(keys)}"><details class="spot"><summary>'
                 f'<span class="sday">{theme.esc(when)}</span>{league_mark(s["sport"])}'
@@ -1166,8 +1170,8 @@ def spots_guide():
         ('What is not here, and why',
          '<p><b>BUY / SELL tags</b> (teams winning more or less than their play) are on the team pages but not here: replayed '
          'on past seasons they won about 50% against the line. <b>The NHL and Premier League</b> are off until something '
-         'there passes the same tests. <b>Games we flag</b> (a big line move that usually means news, or a lopsided college '
-         'mismatch) stay off ' + sy.NAMES['priced'] + '. <b>Games on news hold</b> are off Best spots entirely: a '
+         'there passes the same tests. <b>Games we flag</b> (a big line move that usually means news) stay off ' + sy.NAMES['priced'] + '. '
+         '<b>Lopsided college games</b> (a line of 20+ points) stay off Best spots entirely. <b>Games on news hold</b> are off Best spots entirely: a '
          'quarterback change on either team (our ratings were built on the old one), or a gap our Research Assistant found '
          'the news explains. Their game cards still show the strategies, greyed, with the reason. <b>Strategies that stop '
          'working live</b> are paused: 20+ live bets with a record too far under break-even to be bad luck.</p>'),
