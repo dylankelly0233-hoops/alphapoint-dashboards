@@ -1,6 +1,6 @@
 {
  "sport": "nhl",
- "generated": "2026-11-23T11:20:10-05:00",
+ "generated": "2026-11-23T12:41:40-05:00",
  "teams": {
   "OTT": {
    "checked": "2026-11-23T11:20:10-05:00",
@@ -139,7 +139,7 @@
    ]
   },
   "MIN": {
-   "checked": "2026-11-23T11:20:10-05:00",
+   "checked": "2026-11-23T12:41:40-05:00",
    "watch": [
     {
      "direction": "too_high",
@@ -169,7 +169,7 @@
    "watch": []
   },
   "SJ": {
-   "checked": "2026-11-23T11:20:10-05:00",
+   "checked": "2026-11-23T12:41:40-05:00",
    "watch": []
   }
  },
@@ -196,6 +196,31 @@
      "source": "The Hockey Writers",
      "url": "https://thehockeywriters.com/flames-week-ahead-schedule-storylines-still-searching-for-consistency-pospisil-injury-and-more",
      "date": "2026-11-22"
+    }
+   ]
+  },
+  "401892779": {
+   "checked": "2026-11-23T12:41:40-05:00",
+   "verdict": "partly",
+   "summary": "The Wild are without No. 1 D Quinn Hughes again tonight, which our ratings don't see; that covers part of the gap between our 68% and the market's 63% on Minnesota.",
+   "reasons": [
+    {
+     "text": "Quinn Hughes (hurt Thursday at Calgary; not a concussion) misses a second straight game tonight at SJ; next chance to return is Wednesday vs Utah.",
+     "source": "NHL.com",
+     "url": "https://www.nhl.com/news/quinn-hughes-injury-status-report-november-21-2026",
+     "date": "2026-11-21"
+    },
+    {
+     "text": "Starting goalies not confirmed: Wallstedt projected for Minnesota; Nedeljkovic projected for San Jose by most sources (some list Askarov).",
+     "source": "Daily Faceoff",
+     "url": "https://www.dailyfaceoff.com/starting-goalies",
+     "date": "2026-11-23"
+    },
+    {
+     "text": "Moneyline opened at about Wild -1.0 goals and has drifted toward the Sharks, consistent with the Hughes news.",
+     "source": "Field Level Media",
+     "url": "https://fieldlevelmedia.com/news/wild-kaprizov-put-franchise-point-streaks-on-line-vs-sharks/",
+     "date": "2026-11-23"
     }
    ]
   }
