@@ -378,6 +378,52 @@ def tracking_record(scored):
     return out
 
 
+def ra_scorecard(scored):
+    """
+    PRIVATE scorecard for the Research Assistant (Dylan, 2026-11-22: measure it, but 'keep it private, don't advertise
+    it until we have a good story to tell'). Never shown on the site; weekly email only.
+    For every finished game where our line was GAP_MIN+ from the closing line, grouped by the verdict the Research
+    Assistant had logged ('explained' / 'partly' / 'unexplained' / not researched):
+      cover   how often the side our line preferred covered the closing line (the story we hope for: unexplained gaps
+              cover more, explained gaps less, because the market knew something our ratings didn't)
+      miss    our average miss vs the closing line's on those games
+    Season to date; small samples are labelled so nobody reads too much into them.
+    """
+    import gap_research as gr
+    out = []
+    for sport in ('nfl', 'cfb', 'nba', 'cbb'):
+        d = scored.get(sport)
+        if d is None or d.empty or 'context' not in d:
+            continue
+        rows = []
+        for g in d.itertuples():
+            if g.result != g.result or g.market_last != g.market_last or g.ours_last != g.ours_last:
+                continue
+            gap = g.ours_last - g.market_last
+            if abs(gap) < gr.GAP_MIN.get(sport, 3):
+                continue
+            try:
+                v = (json.loads(g.context) or {}).get('gap_verdict') or 'not researched'
+            except (TypeError, ValueError):
+                v = 'not researched'
+            m = g.result - g.market_last
+            rows.append({'v': v, 'won': np.nan if m == 0 else float(np.sign(m) == np.sign(gap)),
+                         'ours': abs(g.result - g.ours_last), 'close': abs(m)})
+        if not rows:
+            continue
+        df = pd.DataFrame(rows)
+        bits = []
+        for v in ('unexplained', 'partly', 'explained', 'not researched'):
+            x = df[df.v == v]
+            if x.empty:
+                continue
+            w = x.won.dropna()
+            bits.append(f'{v} {w.mean():.0%} of {len(w)}' + (' (small)' if len(w) < 50 else '')
+                        + f', miss ours {x.ours.mean():.1f} vs close {x.close.mean():.1f}')
+        out.append(f'  {sport.upper()} (gaps {gr.GAP_MIN.get(sport, 3):g}+ pts): ' + '; '.join(bits))
+    return out or ['  No finished gap games with logged verdicts yet.']
+
+
 def main():
     now = datetime.now(timezone.utc)
     body = [f'Date: {now.astimezone(ET):%Y-%m-%d %H:%M} ET', 'Status: ok', '']
@@ -390,6 +436,11 @@ def main():
         body += [f'GOLF: review failed ({e})', '']
     body += ['Best spots, live record (internal)'] + best_spots_record(scored) + ['']
     body += ['Tracking (not proven, not on Best spots)'] + tracking_record(scored) + ['']
+    try:
+        body += (['Research Assistant scorecard (PRIVATE: not on the site; does our side cover the closing line, '
+                  'by the verdict logged?)'] + ra_scorecard(scored) + [''])
+    except Exception as e:
+        body += [f'Research Assistant scorecard: failed ({e})', '']
     try:
         import situational
         body += [f'Game situations in use (since {situational.SINCE})'] + situational.live_check(scored) + ['']
