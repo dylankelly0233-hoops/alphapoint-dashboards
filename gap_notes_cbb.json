@@ -1,6 +1,6 @@
 {
  "sport": "cbb",
- "generated": "2026-11-23T16:58:00-05:00",
+ "generated": "2026-11-23T17:43:18-05:00",
  "teams": {
   "Dayton": {
    "watch": [
@@ -172,11 +172,11 @@
    ]
   },
   "Georgia Southern": {
-   "checked": "2026-11-23T15:05:00-05:00",
+   "checked": "2026-11-23T17:43:18-05:00",
    "watch": []
   },
   "Northern Kentucky": {
-   "checked": "2026-11-23T15:05:00-05:00",
+   "checked": "2026-11-23T17:43:18-05:00",
    "watch": []
   },
   "Yale": {
@@ -264,7 +264,7 @@
    }
   },
   "401921029": {
-   "checked": "2026-11-23T15:05:00-05:00",
+   "checked": "2026-11-23T17:43:18-05:00",
    "swings": {
     "Northern Kentucky": "Nothing found: the market moved on Northern Kentucky without a clear reason (no injuries reported; opened -2.5, now -3.5).",
     "Georgia Southern": "Nothing found: the market moved on Georgia Southern without a clear reason (no injuries listed on Covers, 11/23)."

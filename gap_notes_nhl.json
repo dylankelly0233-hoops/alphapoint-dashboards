@@ -1,9 +1,9 @@
 {
  "sport": "nhl",
- "generated": "2026-11-23T15:05:00-05:00",
+ "generated": "2026-11-23T17:43:18-05:00",
  "teams": {
   "OTT": {
-   "checked": "2026-11-23T15:05:00-05:00",
+   "checked": "2026-11-23T17:43:18-05:00",
    "watch": [
     {
      "direction": "too_high",
@@ -16,7 +16,7 @@
    ]
   },
   "CGY": {
-   "checked": "2026-11-23T11:20:10-05:00",
+   "checked": "2026-11-23T17:43:18-05:00",
    "watch": [
     {
      "direction": "too_high",
@@ -29,20 +29,20 @@
    ]
   },
   "LA": {
-   "checked": "2026-11-23T11:20:10-05:00",
+   "checked": "2026-11-23T17:43:18-05:00",
    "watch": [
     {
      "direction": "too_low",
      "since": "2026-11-23",
-     "text": "LW Artemi Panarin (personal, missed 4 games) and D Erik Gustafsson (upper body) are day-to-day and expected back Monday at Montreal; not confirmed.",
-     "source": "Inside the Rink",
-     "url": "https://insidetherink.com/nhl-game-preview-los-angeles-kings-at-montreal-canadiens-with-line-combinations-11-23-2026/",
+     "text": "LW Artemi Panarin (personal, missed 4 games) is projected back on the top line and PP1 at Montreal; D Erik Gustafsson is on IR and out.",
+     "source": "Daily Faceoff",
+     "url": "https://www.dailyfaceoff.com/teams/los-angeles-kings/line-combinations",
      "date": "2026-11-23"
     }
    ]
   },
   "MTL": {
-   "checked": "2026-11-23T15:05:00-05:00",
+   "checked": "2026-11-23T17:43:18-05:00",
    "watch": [
     {
      "direction": "too_low",
@@ -55,32 +55,32 @@
    ]
   },
   "UTAH": {
-   "checked": "2026-11-23T11:20:10-05:00",
+   "checked": "2026-11-23T17:43:18-05:00",
    "watch": [
     {
-     "direction": "too_low",
-     "since": "2026-11-23",
-     "text": "Dylan Guenther (IR since Nov 11, 2-4 weeks) and D John Marino (15 games missed) are nearing returns from upper-body injuries; not confirmed for Winnipeg.",
-     "source": "Inside the Rink",
-     "url": "https://insidetherink.com/nhl-game-preview-utah-mammoth-vs-winnipeg-jets-with-line-combinations-11-23-2026/",
+     "direction": "too_high",
+     "since": "2026-11-11",
+     "text": "Dylan Guenther (IR since Nov 11, 2-4 weeks) and D John Marino (IR) remain out of the projected lineup at Winnipeg.",
+     "source": "Daily Faceoff",
+     "url": "https://www.dailyfaceoff.com/teams/utah-mammoth/line-combinations",
      "date": "2026-11-23"
     },
     {
-     "direction": "too_high",
+     "direction": "unclear",
      "since": "2026-11-21",
-     "text": "Clayton Keller (illness) missed Saturday vs Anaheim and is day-to-day for Monday.",
-     "source": "ESPN",
-     "url": "https://www.espn.com/nhl/injuries",
+     "text": "Clayton Keller (illness) missed Saturday vs Anaheim but is projected back on PP1 Monday; Nick Schmaltz is day-to-day.",
+     "source": "Daily Faceoff",
+     "url": "https://www.dailyfaceoff.com/teams/utah-mammoth/line-combinations",
      "date": "2026-11-23"
     }
    ]
   },
   "WPG": {
-   "checked": "2026-11-23T11:20:10-05:00",
+   "checked": "2026-11-23T17:43:18-05:00",
    "watch": []
   },
   "TOR": {
-   "checked": "2026-11-23T11:20:10-05:00",
+   "checked": "2026-11-23T17:43:18-05:00",
    "watch": [
     {
      "direction": "too_high",
@@ -93,7 +93,7 @@
    ]
   },
   "NYI": {
-   "checked": "2026-11-23T11:20:10-05:00",
+   "checked": "2026-11-23T17:43:18-05:00",
    "watch": [
     {
      "direction": "too_high",
@@ -114,7 +114,7 @@
    ]
   },
   "CBJ": {
-   "checked": "2026-11-23T11:20:10-05:00",
+   "checked": "2026-11-23T17:43:18-05:00",
    "watch": [
     {
      "direction": "too_high",
@@ -127,7 +127,7 @@
    ]
   },
   "NJ": {
-   "checked": "2026-11-23T11:20:10-05:00",
+   "checked": "2026-11-23T17:43:18-05:00",
    "watch": [
     {
      "direction": "too_high",
@@ -193,7 +193,7 @@
  },
  "games": {
   "401892775": {
-   "checked": "2026-11-23T15:05:00-05:00",
+   "checked": "2026-11-23T17:43:18-05:00",
    "verdict": "partly",
    "summary": "Ottawa is missing three forwards (Eklund, Foegele, Burakovsky), which covers some of the gap; Linus Ullmark (.937, 11-1-0) was first off at the morning skate and starts.",
    "reasons": [
@@ -260,7 +260,16 @@
    "returning": []
   },
   "401892774": {
-   "checked": "2026-11-23T15:05:00-05:00"
+   "checked": "2026-11-23T17:43:18-05:00"
+  },
+  "401892773": {
+   "checked": "2026-11-23T17:43:18-05:00"
+  },
+  "401892776": {
+   "checked": "2026-11-23T17:43:18-05:00"
+  },
+  "401892777": {
+   "checked": "2026-11-23T17:43:18-05:00"
   }
  }
 }
