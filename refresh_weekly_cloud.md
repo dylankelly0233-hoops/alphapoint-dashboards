@@ -24,6 +24,10 @@ If it fails entirely, still send the email with what you have and the error.
   `Tuned: true`; otherwise write "The weekly tuning did not run today (see GitHub Actions → Weekly tuning)" and flag it
   in the Takeaways.
 - `reports/research_summary.md`: the monthly research summary, included only if its Date line is within the last 7 days.
+- `reports/golf_review.md`: the Golf section (our numbers vs. Kalshi), built by the Actions run, which can reach ESPN
+  and Kalshi. Use it for Golf instead of the golf lines in your own `last_review.md` when its Date is today.
+- If your rebuild printed `! ESPN ...` lines, a few games' scores couldn't be fetched from here: mention it in one
+  line in that sport's section; it doesn't change the rest.
 - `reports/nfl_odds_date.txt`: the date the private NFL opening-line file was last refreshed (written by the laptop's
   monthly research run).
 

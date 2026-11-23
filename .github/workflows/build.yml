@@ -81,7 +81,7 @@ jobs:
           restore-keys: data-
 
       - name: Build dashboards
-        run: python build_site.py
+        run: python build_site.py 2>&1 | tee /tmp/build.log
 
       # If another build saved its history first, this save can conflict. Don't let that block publishing:
       # the snapshot is simply recorded again on the next run.
@@ -102,6 +102,7 @@ jobs:
           # health reports for the cloud daily digest (refresh_digest_cloud.md); final scores for the cloud weekly email
           python -c "import model_performance as m; l, w = m.health_lines(); print('MODEL HEALTH'); [print('  ' + x) for x in l]; print('Warnings:' if w else 'Warnings: none'); [print('  ! ' + x) for x in w]" > /tmp/data/model_health.txt 2>&1 || true
           python gap_health.py > /tmp/data/gap_health.txt 2>&1 || true
+          grep -a "Site built:" /tmp/build.log > /tmp/data/pages.txt 2>/dev/null || echo "Site built: unknown" > /tmp/data/pages.txt
           date -Iseconds > /tmp/data/BUILT_AT.txt
           cd /tmp/data && git init -q -b data && git add -A
           git -c user.name="alphapoint-bot" -c user.email="actions@users.noreply.github.com" commit -qm "Research inputs [skip ci]"

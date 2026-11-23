@@ -87,12 +87,14 @@ jobs:
             echo ""
             sed -n '/^Model changes this week/,/^$/p' last_review.md 2>/dev/null || true
           } > reports/model_changes.md
+          # golf vs Kalshi needs ESPN / Kalshi, which the cloud email run can't reach: save that (public) section here
+          { echo "Date: $(date '+%Y-%m-%d %H:%M') ET"; echo ""; sed -n '/^GOLF/,/^$/p' last_review.md 2>/dev/null; } > reports/golf_review.md
           cat reports/model_changes.md
 
       - name: Commit the tuned settings
         run: |
           git config user.name "alphapoint-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add reports/model_changes.md
+          git add reports/model_changes.md reports/golf_review.md
           for f in calibration.json calibration_log.csv live_kill.json; do [ -f "$f" ] && git add "$f"; done
           git diff --cached --quiet || (git commit -m "Weekly calibration" && (git pull --rebase || (git rebase --abort; false)) && git push)

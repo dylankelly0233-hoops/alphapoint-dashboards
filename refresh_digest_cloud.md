@@ -12,7 +12,7 @@ All times are Eastern: `TZ=America/New_York date '+%Y-%m-%d %H:%M'`.
 ```
 git checkout main && git pull --rebase
 git fetch origin data
-for f in BUILT_AT.txt model_health.txt gap_health.txt; do echo "== $f"; git show origin/data:$f; done
+for f in BUILT_AT.txt pages.txt model_health.txt gap_health.txt; do echo "== $f"; git show origin/data:$f; done
 for s in cfb nfl cbb; do echo "== $s"; cat reports/last_refresh_$s.md 2>/dev/null || echo "(no report)"; done
 curl -s "https://api.github.com/repos/dylankelly0233-hoops/alphapoint-dashboards/actions/runs?per_page=30" \
   | python3 -c "import json,sys; d=json.load(sys.stdin); [print(r['name'], r['conclusion'] or r['status'], r['created_at']) for r in d.get('workflow_runs', [])]"
@@ -31,6 +31,8 @@ Body:
    - Site build: `OK (last success <time> ET)`, or `FAILED <n> times in the last 24 hours — github.com/dylankelly0233-hoops/alphapoint-dashboards/actions`
      (count only "Build dashboards" runs with conclusion `failure` created in the last 24 hours; `cancelled` is normal).
    - Data freshness: from `BUILT_AT.txt`; flag it if the last build is more than 3 hours old.
+   - Pages: from `pages.txt` (the latest build's result per page); flag any page marked `FAILED` (the site keeps the
+     last good copy of that page, so it goes stale until a build succeeds; often a data provider being down).
    - Research runs: for each of CFB, NFL, CBB, flag a report whose Date is more than 26 hours old (in season) or whose
      Status is failed. NFL / CFB reports are only expected while their seasons run (CFB through the bowls, NFL
      through the Super Bowl).
