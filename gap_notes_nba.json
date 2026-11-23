@@ -1,15 +1,16 @@
 {
  "sport": "nba",
- "generated": "2026-11-22T21:47:20-05:00",
+ "generated": "2026-11-22T22:42:20-05:00",
  "teams": {
   "OKC": {
+   "checked": "2026-11-22T22:42:20-05:00",
    "watch": [
     {
      "direction": "too_high",
-     "since": "2026-10-28",
-     "text": "SGA was ruled out at MIA on 11/22 (back/neck); with Jalen Williams, Holmgren, Caruso and Cason Wallace also out, ratings built on healthy OKC games overstate it tonight.",
-     "source": "NBC Sports",
-     "url": "https://www.nbcsports.com/fantasy/basketball/player-news/2026-11-22/shai-gilgeous-alexander-back-neck-out-sunday",
+     "since": "2026-11-22",
+     "text": "SGA (low back contusion) is out Monday at IND after also missing the Nov 22 loss at MIA; Jalen Williams, Holmgren, Caruso and Wallace remain out.",
+     "source": "FanDuel Research",
+     "url": "https://www.fanduel.com/research/nba/player-news/injuries/shai-gilgeous-alexander-out-november-23-2026-against-pacers-back",
      "date": "2026-11-22"
     }
    ]
@@ -310,6 +311,12 @@
   "401910042": {
    "swings": {
     "PHX": "Trey Murphy III (knees) is probable for New Orleans vs PHX after missing 7 of 8 games (29 min in his 11/20 return); the market prices him back, our ratings don't (Rotowire, 11/22)."
+   }
+  },
+  "401910038": {
+   "checked": "2026-11-22T22:42:20-05:00",
+   "swings": {
+    "OKC": "SGA (back) was ruled out again for Monday at IND (FanDuel, Nov 22); with the market already pricing his absence and Indiana also short-handed (Haliburton, McConnell out), the gap on OKC fell from 9.7 to 1.7."
    }
   }
  }

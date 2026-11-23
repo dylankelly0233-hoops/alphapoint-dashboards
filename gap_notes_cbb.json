@@ -1,6 +1,6 @@
 {
  "sport": "cbb",
- "generated": "2026-11-22T19:45:00-05:00",
+ "generated": "2026-11-22T22:42:20-05:00",
  "teams": {
   "Dayton": {
    "watch": [
@@ -49,6 +49,14 @@
      "date": "2026-11-21"
     }
    ]
+  },
+  "Oregon State": {
+   "checked": "2026-11-22T22:42:20-05:00",
+   "watch": []
+  },
+  "Tulsa": {
+   "checked": "2026-11-22T22:42:20-05:00",
+   "watch": []
   }
  },
  "games": {
@@ -74,6 +82,43 @@
   "401915943": {
    "swings": {
     "Oregon": "Nothing found: the market moved on Oregon without a clear reason; no current injury news found, and the line has held at St. John's -8.5 since it opened (11/22)."
+   }
+  },
+  "401921658": {
+   "checked": "2026-11-22T22:42:20-05:00",
+   "verdict": "unexplained",
+   "summary": "No injury or news found for either team; the market backs unbeaten Oregon State (6-0) by 6.5 at a neutral site in Palm Desert while most of our sources make it a near pick'em.",
+   "reasons": [
+    {
+     "text": "Oregon State enters 6-0; Tulsa is 4-1 after a 72-61 loss to Mississippi State on Nov 20. Neutral site (Acrisure Series); no injuries listed for either team.",
+     "source": "On3",
+     "url": "https://www.on3.com/teams/oregon-state-beavers/news/oregon-state-heads-to-acrisure-series-unbeaten-faces-tulsa-and-san-francisco/",
+     "date": "2026-11-22"
+    }
+   ]
+  },
+  "401911457": {
+   "checked": "2026-11-22T22:42:20-05:00",
+   "swings": {
+    "Nevada": "Nevada lost 83-66 to Washington at the Acrisure Series; the market moved down on the Wolf Pack after it, while our ratings barely moved (Nevada Sports Net)."
+   }
+  },
+  "401921029": {
+   "checked": "2026-11-22T22:42:20-05:00",
+   "swings": {
+    "Northern Kentucky": "Nothing found: the market moved on Northern Kentucky without a clear reason (no injuries reported; opened -2.5, now -3.5)."
+   }
+  },
+  "401928830": {
+   "checked": "2026-11-22T22:42:20-05:00",
+   "swings": {
+    "Akron": "Nothing found on Akron; the opponent changed: Wright State is unbeaten (5-0) but plays without Dominic Pangonis and Noah Lewis (WHIO)."
+   }
+  },
+  "401929286": {
+   "checked": "2026-11-22T22:42:20-05:00",
+   "swings": {
+    "Yale": "Nothing found: the market moved on Yale without a clear reason (no injuries listed; last result a 76-74 OT win over Vermont on Nov 18)."
    }
   }
  }

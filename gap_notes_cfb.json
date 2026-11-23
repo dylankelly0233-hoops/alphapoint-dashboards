@@ -1,6 +1,6 @@
 {
  "sport": "cfb",
- "generated": "2026-11-22T21:47:20-05:00",
+ "generated": "2026-11-22T22:42:20-05:00",
  "teams": {
   "Clemson": {
    "watch": [
@@ -369,6 +369,40 @@
      "date": "2026-11-17"
     }
    ]
+  },
+  "UCF": {
+   "checked": "2026-11-22T22:42:20-05:00",
+   "watch": [
+    {
+     "direction": "too_low",
+     "since": "2026-10-03",
+     "text": "QB Alonza Barnett III missed five games with a hamstring injury and has started the last three since returning; ratings still carry the games without him.",
+     "source": "Yahoo Sports",
+     "url": "https://sports.yahoo.com/fantasy/article/week-13-college-fantasy-football-waiver-wire-pickups-brandon-smith-josh-derry-among-top-adds-for-title-matchups-200218133.html",
+     "date": "2026-11-22"
+    }
+   ]
+  },
+  "Colorado": {
+   "checked": "2026-11-22T22:42:20-05:00",
+   "watch": []
+  },
+  "Indiana": {
+   "checked": "2026-11-22T22:42:20-05:00",
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-21",
+     "text": "C Bray Lynch and WR Nick Marsh were hurt in the Nov 21 loss at Washington, with G Joe Brunner already out for the season (ACL); status for Purdue unknown.",
+     "source": "Yahoo Sports",
+     "url": "https://sports.yahoo.com/articles/indiana-football-starting-center-bray-222149193.html",
+     "date": "2026-11-21"
+    }
+   ]
+  },
+  "Purdue": {
+   "checked": "2026-11-22T22:42:20-05:00",
+   "watch": []
   }
  },
  "games": {
@@ -929,6 +963,58 @@
    ],
    "returning": [],
    "swings": {}
+  },
+  "401856875": {
+   "checked": "2026-11-22T22:42:20-05:00",
+   "verdict": "unexplained",
+   "summary": "Nothing found that justifies Colorado (4-7) as a 2-point favorite: UCF's QB Alonza Barnett is back starting after a five-game hamstring absence, which if anything favors our UCF side.",
+   "reasons": [
+    {
+     "text": "UCF QB Alonza Barnett III missed five games (hamstring) and has started the last three since returning, including a 48-17 win over Iowa State.",
+     "source": "Yahoo Sports",
+     "url": "https://sports.yahoo.com/fantasy/article/week-13-college-fantasy-football-waiver-wire-pickups-brandon-smith-josh-derry-among-top-adds-for-title-matchups-200218133.html",
+     "date": "2026-11-22"
+    },
+    {
+     "text": "Colorado (4-7) lost 35-28 at Cincinnati with QB Isaac Wilson throwing three interceptions; no new Colorado injury news found.",
+     "source": "Heartland College Sports",
+     "url": "https://www.heartlandcollegesports.com/2026/11/22/ucf-colorado-prediction-odds-injury-report-2026/",
+     "date": "2026-11-22"
+    }
+   ],
+   "returning": [
+    {
+     "team": "UCF",
+     "player": "Alonza Barnett III",
+     "text": "Back from a five-game hamstring absence; three starts since.",
+     "url": "https://sports.yahoo.com/fantasy/article/week-13-college-fantasy-football-waiver-wire-pickups-brandon-smith-josh-derry-among-top-adds-for-title-matchups-200218133.html"
+    }
+   ]
+  },
+  "401858538": {
+   "checked": "2026-11-22T22:42:20-05:00",
+   "verdict": "partly",
+   "summary": "Indiana came out of the 27-24 OT loss at Washington banged up (C Bray Lynch, WR Nick Marsh hurt; G Joe Brunner already out), which explains part of the market being 3 points shorter than us.",
+   "reasons": [
+    {
+     "text": "Starting C Bray Lynch left the Washington game with a lower-body injury late in the first half (Austin Leibfried replaced him); no update for Purdue yet.",
+     "source": "Yahoo Sports",
+     "url": "https://sports.yahoo.com/articles/indiana-football-starting-center-bray-222149193.html",
+     "date": "2026-11-21"
+    },
+    {
+     "text": "WR Nick Marsh suffered an undisclosed injury in the final minutes against Washington, per the Herald-Times; status unknown.",
+     "source": "Rotowire",
+     "url": "https://rotowire.com/cfootball/headlines/nick-marsh-injury-suffers-injury-saturday-240935",
+     "date": "2026-11-21"
+    },
+    {
+     "text": "Indiana lost 27-24 in OT at Washington; the line opened Indiana -22.5 and has drifted to -21.5.",
+     "source": "Hoosier Huddle",
+     "url": "https://hoosierhuddle.com/2026/11/22/game-wrap-and-reaction-washington-27-no-9-indiana-24-ot/",
+     "date": "2026-11-22"
+    }
+   ]
   }
  }
 }
