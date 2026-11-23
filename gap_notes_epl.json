@@ -1,9 +1,9 @@
 {
  "sport": "epl",
- "generated": "2026-11-23T11:44:49-05:00",
+ "generated": "2026-11-23T13:41:28-05:00",
  "teams": {
   "BRE": {
-   "checked": "2026-11-23T11:20:10-05:00",
+   "checked": "2026-11-23T13:41:28-05:00",
    "watch": [
     {
      "direction": "too_high",
@@ -32,7 +32,7 @@
    ]
   },
   "EVE": {
-   "checked": "2026-11-23T11:20:10-05:00",
+   "checked": "2026-11-23T13:41:28-05:00",
    "watch": [
     {
      "direction": "too_low",
@@ -50,7 +50,7 @@
     {
      "direction": "too_high",
      "since": "2026-11-14",
-     "text": "Striker João Pedro (thigh) is out until about January, confirmed by Xabi Alonso before the Leeds game; Reece James (knee surgery) is also out until about January.",
+     "text": "Striker Jo\u00e3o Pedro (thigh) is out until about January, confirmed by Xabi Alonso before the Leeds game; Reece James (knee surgery) is also out until about January.",
      "source": "Yahoo Sports",
      "url": "https://uk.sports.yahoo.com/news/chelsea-injury-moises-caicedo-joao-061519783.html",
      "date": "2026-11-21"
@@ -58,7 +58,7 @@
     {
      "direction": "too_high",
      "since": "2026-11-21",
-     "text": "Moisés Caicedo went off after 21 minutes of the 4-1 loss to Leeds on Nov 21 with a back knock; no return date, Alonso hopes to have him for Forest on Nov 27.",
+     "text": "Mois\u00e9s Caicedo went off after 21 minutes of the 4-1 loss to Leeds on Nov 21 with a back knock; no return date, Alonso hopes to have him for Forest on Nov 27.",
      "source": "Sports Mole",
      "url": "https://www.sportsmole.co.uk/football/chelsea/injury-news/news/moises-misery-chelseas-caicedo-suffers-new-injury-vs-leeds_609578.html",
      "date": "2026-11-21"
@@ -71,7 +71,7 @@
     {
      "direction": "unclear",
      "since": "2026-11-20",
-     "text": "Neco Williams (arm, hurt vs Ipswich) started the 2-0 loss at Bournemouth on Nov 22 despite being a doubt; Nicolás Domínguez is out until about January.",
+     "text": "Neco Williams (arm, hurt vs Ipswich) started the 2-0 loss at Bournemouth on Nov 22 despite being a doubt; Nicol\u00e1s Dom\u00ednguez is out until about January.",
      "source": "LiveScore",
      "url": "https://livescore.com/en/news/football/team/nottingham-forest/daily/sunday-nottingham-forest-daily-news-20261122",
      "date": "2026-11-22"
@@ -92,7 +92,7 @@
     {
      "direction": "too_high",
      "since": "2026-10-29",
-     "text": "Striker Benjamin Šeško (shin) has been out since late October with no return date; Marcus Rashford (hip), Luke Shaw, Carlos Baleba and Manuel Ugarte are also out.",
+     "text": "Striker Benjamin \u0160e\u0161ko (shin) has been out since late October with no return date; Marcus Rashford (hip), Luke Shaw, Carlos Baleba and Manuel Ugarte are also out.",
      "source": "Yahoo Sports",
      "url": "https://sports.yahoo.com/articles/man-united-dealt-major-injury-075000654.html",
      "date": "2026-11-22"
@@ -105,7 +105,7 @@
     {
      "direction": "too_high",
      "since": "2026-11-29",
-     "text": "Jean-Philippe Mateta and Yéremy Pino are reported suspended for the Hull game on Nov 29, and Ismaïla Sarr (groin) is out (OG.com preview citing the Premier League list).",
+     "text": "Jean-Philippe Mateta and Y\u00e9remy Pino are reported suspended for the Hull game on Nov 29, and Isma\u00efla Sarr (groin) is out (OG.com preview citing the Premier League list).",
      "source": "OG.com",
      "url": "https://og.com/learn/crystal-palace-hull-city-11-26-prediction",
      "date": "2026-11-23"
@@ -191,7 +191,7 @@
     {
      "direction": "too_high",
      "since": "2026-10-24",
-     "text": "Bukayo Saka is about four weeks from a return (eight-week injury, per Arteta) and Martín Zubimendi (hamstring, hurt with Spain) is out for a few weeks.",
+     "text": "Bukayo Saka is about four weeks from a return (eight-week injury, per Arteta) and Mart\u00edn Zubimendi (hamstring, hurt with Spain) is out for a few weeks.",
      "source": "Daily Cannon",
      "url": "https://dailycannon.com/2026/11/arteta-arsenal-injuries-saka-zubimendi/",
      "date": "2026-11-20"
@@ -211,10 +211,10 @@
   "401879225": {
    "checked": "2026-11-23T11:44:49-05:00",
    "verdict": "unexplained",
-   "summary": "Our xG model makes Forest the favorite while the market backs Chelsea; Chelsea's absences (João Pedro, Reece James, a Caicedo knock) point our way, so nothing found justifies the market's price.",
+   "summary": "Our xG model makes Forest the favorite while the market backs Chelsea; Chelsea's absences (Jo\u00e3o Pedro, Reece James, a Caicedo knock) point our way, so nothing found justifies the market's price.",
    "reasons": [
     {
-     "text": "Chelsea are without striker João Pedro and Reece James until about January, and Caicedo went off with a back knock in the 4-1 loss to Leeds.",
+     "text": "Chelsea are without striker Jo\u00e3o Pedro and Reece James until about January, and Caicedo went off with a back knock in the 4-1 loss to Leeds.",
      "source": "Yahoo Sports",
      "url": "https://uk.sports.yahoo.com/news/chelsea-injury-moises-caicedo-joao-061519783.html",
      "date": "2026-11-21"
@@ -247,7 +247,7 @@
      "date": "2026-11-21"
     },
     {
-     "text": "Against it: United have a new manager (Pochettino, from Nov 22) and are without Šeško, Rashford, Shaw, Baleba and Ugarte.",
+     "text": "Against it: United have a new manager (Pochettino, from Nov 22) and are without \u0160e\u0161ko, Rashford, Shaw, Baleba and Ugarte.",
      "source": "Yahoo Sports",
      "url": "https://sports.yahoo.com/articles/man-united-dealt-major-injury-075000654.html",
      "date": "2026-11-22"
@@ -361,6 +361,9 @@
    ],
    "returning": [],
    "swings": {}
+  },
+  "401879237": {
+   "checked": "2026-11-23T13:41:28-05:00"
   }
  }
 }

@@ -1,6 +1,6 @@
 {
   "sport": "nfl",
-  "generated": "2026-11-23T10:36:00-05:00",
+  "generated": "2026-11-23T13:41:28-05:00",
   "teams": {
     "ARI": {
       "checked": "2026-11-23T10:36:00-05:00",
@@ -63,12 +63,12 @@
       ]
     },
     "CIN": {
-      "checked": "2026-11-23T10:36:00-05:00",
+      "checked": "2026-11-23T13:41:28-05:00",
       "watch": [
         {
           "direction": "too_high",
           "since": "2026-11-21",
-          "text": "RG Dalton Risner (knee) and LB Oren Burks (groin, placed on IR) are ruled out for Monday at Washington; G Dylan Fairchild (oblique) and CB Dax Hill (illness) are questionable.",
+          "text": "RG Dalton Risner (knee) and LB Oren Burks (groin, placed on IR) are ruled out for Monday at Washington; G Dylan Fairchild (oblique) and CB Dax Hill (illness, did not practice) are questionable, WR Andrei Iosivas (thumb) doubtful.",
           "source": "Cincy Jungle",
           "url": "https://www.cincyjungle.com/cincinnati-bengals-injuries/206210/commanders-injury-report-dalton-risner-dax-hill-dylan-fairchild",
           "date": "2026-11-21"
@@ -389,14 +389,14 @@
       "watch": []
     },
     "WAS": {
-      "checked": "2026-11-23T10:36:00-05:00",
+      "checked": "2026-11-23T13:41:28-05:00",
       "watch": [
         {
           "direction": "unclear",
           "since": "2026-11-21",
-          "text": "Questionable on the final report: CB Amik Robertson (ankle), RB Rachaad White (heel) and RB Jacory Croskey-Merritt (groin, on IR, needs activation); C Lucas Patrick cleared concussion protocol.",
+          "text": "Questionable on the final report: CB Amik Robertson (ankle, a game-time decision per Dan Quinn), RB Rachaad White (heel) and RB Jacory Croskey-Merritt (groin, trending toward playing per Quinn); C Lucas Patrick cleared concussion protocol and will start.",
           "source": "Yahoo Sports",
-          "url": "https://sports.yahoo.com/articles/commanders-vs-bengals-saturday-injury-211519338.html",
+          "url": "https://sports.yahoo.com/articles/commanders-injury-updates-four-questionable-055947268.html",
           "date": "2026-11-21"
         }
       ]
@@ -571,6 +571,9 @@
           "url": "https://sports.yahoo.com/articles/major-micah-parsons-injury-emerges-055649224.html"
         }
       ]
+    },
+    "2026_11_CIN_WAS": {
+      "checked": "2026-11-23T13:41:28-05:00"
     }
   }
 }
