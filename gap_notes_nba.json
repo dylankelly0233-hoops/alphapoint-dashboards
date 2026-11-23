@@ -1,6 +1,6 @@
 {
  "sport": "nba",
- "generated": "2026-11-23T11:17:25-05:00",
+ "generated": "2026-11-23T11:44:49-05:00",
  "teams": {
   "OKC": {
    "checked": "2026-11-23T11:17:25-05:00",
@@ -182,7 +182,7 @@
      "date": "2026-11-22"
     }
    ],
-   "checked": "2026-11-23T11:17:25-05:00"
+   "checked": "2026-11-23T11:44:49-05:00"
   },
   "POR": {
    "watch": [
@@ -255,7 +255,7 @@
      "date": "2026-11-23"
     }
    ],
-   "checked": "2026-11-23T11:17:25-05:00"
+   "checked": "2026-11-23T11:44:49-05:00"
   },
   "CLE": {
    "watch": [],
@@ -275,7 +275,7 @@
   },
   "MIN": {
    "watch": [],
-   "checked": "2026-11-23T11:17:25-05:00"
+   "checked": "2026-11-23T11:44:49-05:00"
   },
   "NO": {
    "watch": [],
@@ -287,7 +287,7 @@
   },
   "SAC": {
    "watch": [],
-   "checked": "2026-11-23T11:17:25-05:00"
+   "checked": "2026-11-23T11:44:49-05:00"
   },
   "TOR": {
    "watch": [],
@@ -388,7 +388,7 @@
    "swings": {
     "SA": "Wembanyama (back) and Fox (shin) were listed questionable for 11/23 after Wembanyama's 50-point game; the market discounts the Spurs, our ratings don't (NBC Sports, 11/22)."
    },
-   "checked": "2026-11-23T11:17:25-05:00"
+   "checked": "2026-11-23T11:44:49-05:00"
   },
   "401910040": {
    "verdict": "unexplained",
@@ -412,7 +412,7 @@
     "BKN": "Nolan Traore (hamstring strain) went from game-time decision to an 8-10 week re-evaluation on 11/23 (HoopsHype via ESPN); the market has moved on Brooklyn with it.",
     "MIN": "Nothing found: the market moved on Minnesota without a clear reason; Edwards (out since Oct. 29 knee surgery), Clark and DiVincenzo were already out last game, and only Brooklyn's Traore and Nelson are game-time calls (ESPN, 11/23)."
    },
-   "checked": "2026-11-23T11:17:25-05:00"
+   "checked": "2026-11-23T11:44:49-05:00"
   },
   "401910042": {
    "swings": {

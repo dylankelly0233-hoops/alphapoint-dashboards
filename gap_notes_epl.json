@@ -1,6 +1,6 @@
 {
  "sport": "epl",
- "generated": "2026-11-23T11:20:10-05:00",
+ "generated": "2026-11-23T11:44:49-05:00",
  "teams": {
   "BRE": {
    "checked": "2026-11-23T11:20:10-05:00",
@@ -43,7 +43,324 @@
      "date": "2026-11-21"
     }
    ]
+  },
+  "CHE": {
+   "checked": "2026-11-23T11:44:49-05:00",
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-14",
+     "text": "Striker João Pedro (thigh) is out until about January, confirmed by Xabi Alonso before the Leeds game; Reece James (knee surgery) is also out until about January.",
+     "source": "Yahoo Sports",
+     "url": "https://uk.sports.yahoo.com/news/chelsea-injury-moises-caicedo-joao-061519783.html",
+     "date": "2026-11-21"
+    },
+    {
+     "direction": "too_high",
+     "since": "2026-11-21",
+     "text": "Moisés Caicedo went off after 21 minutes of the 4-1 loss to Leeds on Nov 21 with a back knock; no return date, Alonso hopes to have him for Forest on Nov 27.",
+     "source": "Sports Mole",
+     "url": "https://www.sportsmole.co.uk/football/chelsea/injury-news/news/moises-misery-chelseas-caicedo-suffers-new-injury-vs-leeds_609578.html",
+     "date": "2026-11-21"
+    }
+   ]
+  },
+  "NFO": {
+   "checked": "2026-11-23T11:44:49-05:00",
+   "watch": [
+    {
+     "direction": "unclear",
+     "since": "2026-11-20",
+     "text": "Neco Williams (arm, hurt vs Ipswich) started the 2-0 loss at Bournemouth on Nov 22 despite being a doubt; Nicolás Domínguez is out until about January.",
+     "source": "LiveScore",
+     "url": "https://livescore.com/en/news/football/team/nottingham-forest/daily/sunday-nottingham-forest-daily-news-20261122",
+     "date": "2026-11-22"
+    }
+   ]
+  },
+  "MAN": {
+   "checked": "2026-11-23T11:44:49-05:00",
+   "watch": [
+    {
+     "direction": "unclear",
+     "since": "2026-11-22",
+     "text": "Mauricio Pochettino took charge for the Nov 22 game at Liverpool: a new manager, so past results are a weaker guide.",
+     "source": "Yahoo Sports",
+     "url": "https://sports.yahoo.com/articles/man-united-dealt-major-injury-075000654.html",
+     "date": "2026-11-22"
+    },
+    {
+     "direction": "too_high",
+     "since": "2026-10-29",
+     "text": "Striker Benjamin Šeško (shin) has been out since late October with no return date; Marcus Rashford (hip), Luke Shaw, Carlos Baleba and Manuel Ugarte are also out.",
+     "source": "Yahoo Sports",
+     "url": "https://sports.yahoo.com/articles/man-united-dealt-major-injury-075000654.html",
+     "date": "2026-11-22"
+    }
+   ]
+  },
+  "CRY": {
+   "checked": "2026-11-23T11:44:49-05:00",
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-29",
+     "text": "Jean-Philippe Mateta and Yéremy Pino are reported suspended for the Hull game on Nov 29, and Ismaïla Sarr (groin) is out (OG.com preview citing the Premier League list).",
+     "source": "OG.com",
+     "url": "https://og.com/learn/crystal-palace-hull-city-11-26-prediction",
+     "date": "2026-11-23"
+    }
+   ]
+  },
+  "HUL": {
+   "checked": "2026-11-23T11:44:49-05:00",
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-22",
+     "text": "Midfielder Tim Iroegbunam went off in the first half vs Brighton with a hamstring problem and awaits an MRI, per Hull's manager.",
+     "source": "The False 9",
+     "url": "https://thefalse9.com/2026/11/hull-city-news-today-23-november-2026.html",
+     "date": "2026-11-23"
+    }
+   ]
+  },
+  "TOT": {
+   "checked": "2026-11-23T11:44:49-05:00",
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-21",
+     "text": "Spurs are without Xavi Simons and Wilson Odobert (knees), Mathys Tel and Mykhailo Mudryk; Sandro Tonali (illness) and Tosin Adarabioyo are doubts for Sunderland on Nov 29.",
+     "source": "Squawka",
+     "url": "https://www.squawka.com/us/news/premier-league/match-preview-sunderland-vs-tottenham-29-11-26-premier-league/",
+     "date": "2026-11-23"
+    }
+   ]
+  },
+  "SUN": {
+   "checked": "2026-11-23T11:44:49-05:00",
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-19",
+     "text": "Joint-top scorer Brian Brobbey (thigh) and Granit Xhaka (calf, longer) missed the Villa game and have no return date; Dan Ballard and Romaine Mundle are out until late December.",
+     "source": "Sunderland AFC",
+     "url": "https://www.safc.com/news/2026/november/19/every-word-le-bris-said-on-brobbey--ahoka-and-villa",
+     "date": "2026-11-19"
+    }
+   ]
+  },
+  "MNC": {
+   "checked": "2026-11-23T11:44:49-05:00",
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-14",
+     "text": "Antoine Semenyo (knee) is out; City drew 1-1 with Fulham on Nov 21, now four league games without a win.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/soccer/match/_/gameId/401879233/fulham-manchester-city",
+     "date": "2026-11-21"
+    }
+   ]
+  },
+  "LEE": {
+   "checked": "2026-11-23T11:44:49-05:00",
+   "watch": [
+    {
+     "direction": "too_low",
+     "since": "2026-11-20",
+     "text": "Anton Stach, Noah Okafor and Dominic Calvert-Lewin are all back in full training and Daniel Farke reports no injuries; Leeds then beat Chelsea 4-1 on Nov 21.",
+     "source": "Premier League News Now",
+     "url": "https://premierleaguenewsnow.com/2026/11/20/leeds-injury-news-stach-okafor-calvert-lewin-chelsea/",
+     "date": "2026-11-20"
+    }
+   ]
+  },
+  "ARS": {
+   "checked": "2026-11-23T11:44:49-05:00",
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-21",
+     "text": "Goalkeeper David Raya hurt his shoulder in the 2-2 draw at Newcastle on Nov 21; MRI ordered, Arteta called it 'not good news', later reports say no surgery needed.",
+     "source": "Sports Mole",
+     "url": "https://www.sportsmole.co.uk/football/arsenal/injury-news/news/not-good-news-arteta-issues-raya-update-after-injury-scare_609593.html",
+     "date": "2026-11-21"
+    },
+    {
+     "direction": "too_high",
+     "since": "2026-10-24",
+     "text": "Bukayo Saka is about four weeks from a return (eight-week injury, per Arteta) and Martín Zubimendi (hamstring, hurt with Spain) is out for a few weeks.",
+     "source": "Daily Cannon",
+     "url": "https://dailycannon.com/2026/11/arteta-arsenal-injuries-saka-zubimendi/",
+     "date": "2026-11-20"
+    },
+    {
+     "direction": "too_low",
+     "since": "2026-11-21",
+     "text": "William Saliba was available for the first time this season after a long-term back problem.",
+     "source": "Daily Cannon",
+     "url": "https://dailycannon.com/2026/11/arteta-arsenal-injuries-saka-zubimendi/",
+     "date": "2026-11-20"
+    }
+   ]
   }
  },
- "games": {}
+ "games": {
+  "401879225": {
+   "checked": "2026-11-23T11:44:49-05:00",
+   "verdict": "unexplained",
+   "summary": "Our xG model makes Forest the favorite while the market backs Chelsea; Chelsea's absences (João Pedro, Reece James, a Caicedo knock) point our way, so nothing found justifies the market's price.",
+   "reasons": [
+    {
+     "text": "Chelsea are without striker João Pedro and Reece James until about January, and Caicedo went off with a back knock in the 4-1 loss to Leeds.",
+     "source": "Yahoo Sports",
+     "url": "https://uk.sports.yahoo.com/news/chelsea-injury-moises-caicedo-joao-061519783.html",
+     "date": "2026-11-21"
+    },
+    {
+     "text": "Forest lost 2-0 at Bournemouth on Nov 22; Neco Williams (arm) played through a doubt.",
+     "source": "LiveScore",
+     "url": "https://livescore.com/en/news/football/team/nottingham-forest/daily/sunday-nottingham-forest-daily-news-20261122",
+     "date": "2026-11-22"
+    }
+   ],
+   "returning": [],
+   "swings": {}
+  },
+  "401879226": {
+   "checked": "2026-11-23T11:44:49-05:00",
+   "verdict": "explained",
+   "summary": "Brentford are without suspended striker Igor Thiago (three games) and defenders Collins and Hickey, which covers most of why the market is higher on United than our xG model.",
+   "reasons": [
+    {
+     "text": "Igor Thiago, Brentford's first-choice striker, is suspended for three league games starting Nov 23 (this is the second).",
+     "source": "BBC via Yahoo Sports",
+     "url": "https://sports.yahoo.com/articles/andrews-team-news-thiagos-suspension-153425694.html",
+     "date": "2026-11-21"
+    },
+    {
+     "text": "Brentford defenders Nathan Collins and Aaron Hickey are out for several weeks; Rico Henry is also out.",
+     "source": "Sports Mole",
+     "url": "https://www.sportsmole.co.uk/football/brentford/injury-news/news/andrews-confirms-double-brentford-injury-blow-ahead-of-everton-meeting_609532.html",
+     "date": "2026-11-21"
+    },
+    {
+     "text": "Against it: United have a new manager (Pochettino, from Nov 22) and are without Šeško, Rashford, Shaw, Baleba and Ugarte.",
+     "source": "Yahoo Sports",
+     "url": "https://sports.yahoo.com/articles/man-united-dealt-major-injury-075000654.html",
+     "date": "2026-11-22"
+    }
+   ],
+   "returning": [],
+   "swings": {}
+  },
+  "401878750": {
+   "checked": "2026-11-23T11:44:49-05:00",
+   "verdict": "partly",
+   "summary": "Thiago's suspension (third game) and Brentford's missing defenders explain part of the market's lean to Arsenal, but Arsenal are also missing Saka, Zubimendi and possibly Raya.",
+   "reasons": [
+    {
+     "text": "Brentford striker Igor Thiago serves the last game of a three-match ban here; Collins and Hickey are out for several weeks.",
+     "source": "BBC via Yahoo Sports",
+     "url": "https://sports.yahoo.com/articles/andrews-team-news-thiagos-suspension-153425694.html",
+     "date": "2026-11-21"
+    },
+    {
+     "text": "Arsenal: Saka about four weeks away, Zubimendi out a few weeks, Raya's shoulder under assessment; Saliba is back.",
+     "source": "Daily Cannon",
+     "url": "https://dailycannon.com/2026/11/arteta-arsenal-injuries-saka-zubimendi/",
+     "date": "2026-11-20"
+    }
+   ],
+   "returning": [
+    {
+     "team": "ARS",
+     "player": "William Saliba",
+     "text": "Available for the first time this season after a back problem.",
+     "url": "https://dailycannon.com/2026/11/arteta-arsenal-injuries-saka-zubimendi/"
+    }
+   ],
+   "swings": {}
+  },
+  "401879230": {
+   "checked": "2026-11-23T11:44:49-05:00",
+   "verdict": "unexplained",
+   "summary": "The market backs Palace much more than our model even though Palace are reported to be without suspended Mateta and Pino and injured Sarr; Hull's Iroegbunam hamstring is the only point the market's way.",
+   "reasons": [
+    {
+     "text": "Mateta and Pino reported suspended for this game, Sarr (groin) out (OG.com preview).",
+     "source": "OG.com",
+     "url": "https://og.com/learn/crystal-palace-hull-city-11-26-prediction",
+     "date": "2026-11-23"
+    },
+    {
+     "text": "Hull midfielder Tim Iroegbunam (hamstring) awaits an MRI after going off vs Brighton.",
+     "source": "The False 9",
+     "url": "https://thefalse9.com/2026/11/hull-city-news-today-23-november-2026.html",
+     "date": "2026-11-23"
+    }
+   ],
+   "returning": [],
+   "swings": {}
+  },
+  "401879224": {
+   "checked": "2026-11-23T11:44:49-05:00",
+   "verdict": "partly",
+   "summary": "Sunderland are missing joint-top scorer Brobbey, Xhaka and two more starters, which explains part of the market's lean to Spurs, but Spurs have a long injury list of their own.",
+   "reasons": [
+    {
+     "text": "Sunderland: Brobbey (thigh) and Xhaka (calf) out with no return date; Ballard and Mundle out until late December.",
+     "source": "Sunderland AFC",
+     "url": "https://www.safc.com/news/2026/november/19/every-word-le-bris-said-on-brobbey--ahoka-and-villa",
+     "date": "2026-11-19"
+    },
+    {
+     "text": "Spurs: Xavi Simons, Odobert, Tel and Mudryk out; Tonali (illness) and Adarabioyo doubtful.",
+     "source": "Squawka",
+     "url": "https://www.squawka.com/us/news/premier-league/match-preview-sunderland-vs-tottenham-29-11-26-premier-league/",
+     "date": "2026-11-23"
+    }
+   ],
+   "returning": [],
+   "swings": {}
+  },
+  "401879220": {
+   "checked": "2026-11-23T11:44:49-05:00",
+   "verdict": "unexplained",
+   "summary": "Nothing found that justifies the market's lean to Forest at Hull beyond Hull's Iroegbunam hamstring scare; Forest lost 2-0 at Bournemouth on Nov 22.",
+   "reasons": [
+    {
+     "text": "Hull midfielder Tim Iroegbunam (hamstring) awaits an MRI.",
+     "source": "The False 9",
+     "url": "https://thefalse9.com/2026/11/hull-city-news-today-23-november-2026.html",
+     "date": "2026-11-23"
+    }
+   ],
+   "returning": [],
+   "swings": {}
+  },
+  "401879218": {
+   "checked": "2026-11-23T11:44:49-05:00",
+   "verdict": "unexplained",
+   "summary": "The market backs City far more than our model despite City's four-game league winless run and Semenyo's absence, while Leeds have a fully fit squad after a 4-1 win at Chelsea.",
+   "reasons": [
+    {
+     "text": "City drew 1-1 with Fulham on Nov 21, four league games without a win; Semenyo (knee) out.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/soccer/match/_/gameId/401879233/fulham-manchester-city",
+     "date": "2026-11-21"
+    },
+    {
+     "text": "Leeds report no injuries, with Stach, Okafor and Calvert-Lewin back in full training.",
+     "source": "Premier League News Now",
+     "url": "https://premierleaguenewsnow.com/2026/11/20/leeds-injury-news-stach-okafor-calvert-lewin-chelsea/",
+     "date": "2026-11-20"
+    }
+   ],
+   "returning": [],
+   "swings": {}
+  }
+ }
 }

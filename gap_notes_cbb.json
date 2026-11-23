@@ -1,6 +1,6 @@
 {
  "sport": "cbb",
- "generated": "2026-11-23T11:42:03-05:00",
+ "generated": "2026-11-23T11:44:49-05:00",
  "teams": {
   "Dayton": {
    "watch": [
@@ -52,11 +52,11 @@
    "checked": "2026-11-23T11:15:06-05:00"
   },
   "Oregon State": {
-   "checked": "2026-11-22T22:42:20-05:00",
+   "checked": "2026-11-23T11:44:49-05:00",
    "watch": []
   },
   "Tulsa": {
-   "checked": "2026-11-22T22:42:20-05:00",
+   "checked": "2026-11-23T11:44:49-05:00",
    "watch": []
   },
   "Monmouth": {
@@ -73,11 +73,11 @@
   },
   "Michigan": {
    "watch": [],
-   "checked": "2026-11-23T11:15:06-05:00"
+   "checked": "2026-11-23T11:44:49-05:00"
   },
   "Creighton": {
    "watch": [],
-   "checked": "2026-11-23T11:15:06-05:00"
+   "checked": "2026-11-23T11:44:49-05:00"
   },
   "Temple": {
    "watch": [],
@@ -148,7 +148,7 @@
    ],
    "returning": [],
    "swings": {},
-   "checked": "2026-11-23T11:15:06-05:00"
+   "checked": "2026-11-23T11:44:49-05:00"
   },
   "401909800": {
    "swings": {
@@ -161,7 +161,7 @@
    }
   },
   "401921658": {
-   "checked": "2026-11-22T22:42:20-05:00",
+   "checked": "2026-11-23T11:44:49-05:00",
    "verdict": "unexplained",
    "summary": "No injury or news found for either team; the market backs unbeaten Oregon State (6-0) by 6.5 at a neutral site in Palm Desert while most of our sources make it a near pick'em.",
    "reasons": [
@@ -170,6 +170,12 @@
      "source": "On3",
      "url": "https://www.on3.com/teams/oregon-state-beavers/news/oregon-state-heads-to-acrisure-series-unbeaten-faces-tulsa-and-san-francisco/",
      "date": "2026-11-22"
+    },
+    {
+     "text": "Oregon State's own preview of the Palm Springs trip lists no injuries; still no injury news for Tulsa on game day.",
+     "source": "Oregon State Athletics",
+     "url": "https://osubeavers.com/news/2026/11/21/mens-basketball-beavers-headed-to-palm-springs-for-acrisure-series",
+     "date": "2026-11-21"
     }
    ]
   },
