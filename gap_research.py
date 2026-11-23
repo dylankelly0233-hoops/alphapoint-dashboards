@@ -298,6 +298,7 @@ def card_row(sport, gid, ours, market, home, away, home_name, away_name, complet
         return ''
     gen = last_verified(sport, gid, (home, home_name), (away, away_name))
     bits.append(f'<span class="hint">{"Last verified " + theme.esc(when_text(gen)) if gen else "Not researched yet"}. '
+                f'AI-assisted research from the linked sources: check them before relying on it. '
                 f'Research only: our line is not changed.</span>')
     return (f'<div class="lmove gapwhy">{theme.k("Research Assistant")}'
             + ''.join(f'<div>{b}</div>' for b in bits) + '</div>')

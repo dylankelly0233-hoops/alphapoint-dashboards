@@ -140,15 +140,23 @@ def preview(d):
     elif d.get('lopsided'):
         bottom = ('<b>No lean.</b> In lopsided games like this the market has been more accurate than power ratings, so '
                   'our number is context, not a reason to bet.')
+    elif edge is not None and abs(edge) >= LEAN_MIN and any(
+            (sd == 'home') != (edge > 0) for _, _, sd in d.get('proven_sides') or ()):
+        # our ratings and a tested strategy point opposite ways (2026-11-23 audit: Tennessee lean vs Maryland +4.5)
+        side_home = edge > 0
+        other = next(x for x in d['proven_sides'] if (x[2] == 'home') != side_home)
+        bottom = (f'<b>Mixed signals.</b> Our ratings lean {theme.esc(side_line(h if side_home else a, mkt, side_home))}, '
+                  f'but {theme.esc(other[0])} (a tested pattern) favors {theme.esc(other[1].split(" (")[0])}. They point '
+                  f'opposite ways, so there is no lean here.')
     elif edge is not None and abs(edge) >= LEAN_MIN:
         side_home = edge > 0
         side = h if side_home else a
         now = side_line(side, mkt, side_home)
         floor = side_line(side, ours - (1 if side_home else -1), side_home)      # where the edge shrinks to 1 point
-        soft = 'Soft lean' if conf == 'Low' else 'Lean'
+        soft = 'Weak lean' if conf == 'Low' else 'Lean'
         bottom = f'<b>{soft}: {theme.esc(now)}.</b> It holds at {theme.esc(floor)} or better; past that, the edge is gone.'
         if conf == 'Low':
-            bottom += ' With the ratings split, size down or wait for news.'
+            bottom += ' The rating sources disagree, so this lean is weak.'
         if d.get('partly'):
             bottom += f' The Research Assistant found news that covers part of this gap: {theme.esc(d["partly"])}.'
     elif edge is not None:

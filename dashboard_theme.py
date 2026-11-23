@@ -1063,7 +1063,8 @@ document.querySelectorAll('table.sortable').forEach(t => {
 
 # On every page (Dylan, 2026-11-22: disclaimers before the site goes public). The full text is legal.html (build_site).
 LEGAL = ('Research and education only: not betting, financial or legal advice, and no result is guaranteed. 21+ '
-         '(or the legal age where you live); bet only where it is legal. Gambling problem? Call or text '
+         '(or the legal age where you live); bet only where it is legal. Research Assistant and Injury Wire notes '
+         'are written with AI from the linked sources and can contain errors. Gambling problem? Call or text '
          '<a href="tel:18004262537">1-800-GAMBLER</a>. Not affiliated with any league, team, sportsbook or data provider; '
          'team names and logos belong to their owners. <a href="legal.html">Disclaimer &amp; responsible gaming</a><br>'
          f'© {date.today().year} AlphaPoint Sports. All rights reserved. Our ratings, projections, '

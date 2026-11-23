@@ -692,7 +692,7 @@ def generate_html(power, metrics, days, info):
                      'signals': {t: (_signal(comp.get(t), games_played.get(t, 0)), comp[t]) for t in (g['away'], g['home'])
                                  if comp.get(t) is not None},
                      'injuries': {t: fx.injuries(info['wire'], t) for t in (g['away'], g['home'])},
-                     'hold': nh, 'partly': gr.partly('cbb', g['game_id'])}
+                     'hold': nh, 'proven_sides': sy.proven_sides('cbb', sp), 'partly': gr.partly('cbb', g['game_id'])}
                 grid = (mu.panel(g['away'], g['home'], str, mprof, mu.BASKETBALL_CATS, mu.BASKETBALL_STYLES,
                                  info['mu_games'], extra=mu.pace_line(info['mu_units'], g['away'], g['home'], str),
                                  head=False) if has_mu else '')

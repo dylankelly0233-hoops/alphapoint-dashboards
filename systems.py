@@ -380,9 +380,9 @@ def bet_text(it, ctx):
     b, side, what = it.get('bench', 'open'), it.get('side'), it['what']
     pts = lambda v: f'{v:g} pt{"" if v == 1 else "s"}'
     if b == 'teaser':
-        return 'Graded at the closing line: tease it while the underdog is +1.5 to +3'
+        return 'Tested at the closing line: applies while the underdog is +1.5 to +3'
     if b == 'close':
-        return f'Graded vs the closing line: {what} now is fine up to kickoff'
+        return f'Tested vs the closing line: {what} (held up through kickoff in past seasons)'
     ctx = ctx or {}
     if side in ('home', 'away'):
         o, now = ctx.get('opened'), ctx.get('market')
@@ -392,11 +392,11 @@ def bet_text(it, ctx):
         own = (lambda m: m) if side == 'home' else (lambda m: -m)
         o_txt = _side(team, own(o))
         if now is None or now != now:
-            return f'Bet the opener: {o_txt}'
+            return f'Tested vs the opener: {o_txt}'
         gone = round(((now - o) if side == 'home' else (o - now)) * 2) / 2
         move = ('same as the opener' if gone == 0 else f'{pts(gone)} already gone' if gone > 0
                 else f'{pts(-gone)} better than the opener')
-        return f'Bet the opener: {o_txt} · now {_side(team, own(now)).split()[-1]}, {move}'
+        return f'Tested vs the opener: {o_txt} · now {_side(team, own(now)).split()[-1]}, {move}'
     if side in ('over', 'under'):
         o, now = ctx.get('open_total'), ctx.get('total')
         if o is None or o != o:
@@ -404,7 +404,7 @@ def bet_text(it, ctx):
         gone = round(((o - now) if side == 'under' else (now - o)) * 2) / 2 if now == now and now is not None else 0
         move = ('same as the opener' if gone == 0 else f'{pts(gone)} already gone' if gone > 0
                 else f'{pts(-gone)} better than the opener')
-        return f'Bet the opening total: {side.title()} {o:g} · now {now:g}, {move}'
+        return f'Tested vs the opening total: {side.title()} {o:g} · now {now:g}, {move}'
     return ''
 
 
@@ -421,6 +421,9 @@ def items(systems):
                     'title': s['label'] + ': ' + s['record'] + (' (tracking: not proven enough for Best spots)'
                                                                 if s.get('tracking') else '')})
     return out
+
+
+VERB = {'Back': 'Favors', 'Bet': 'Favors', 'Tease': 'Teaser leg'}   # research wording (2026-11-23 audit)
 
 
 def strategy_row(its, esc, k=None, ctx=None, hold=None):
@@ -441,7 +444,8 @@ def strategy_row(its, esc, k=None, ctx=None, hold=None):
     for (action, what), xs in order:
         xs = sorted(xs, key=lambda i: i['tracking'])
         allt = all(i['tracking'] for i in xs)
-        html += (f'<div class="sgrp{" trk" if allt else ""}"><div class="sact"><span class="sverb">{esc(action)}</span>'
+        verb = VERB.get(action, action)
+        html += (f'<div class="sgrp{" trk" if allt else ""}"><div class="sact"><span class="sverb">{esc(verb)}</span>'
                  f'<b>{esc(what)}</b></div>')
         for i in xs:
             bt = bet_text(i, ctx)
@@ -454,6 +458,10 @@ def strategy_row(its, esc, k=None, ctx=None, hold=None):
     label = k('Strategies') if k else f'<span class="k">Strategies</span>'
     note = (f'<div class="hint">On hold, not a lean: {esc(hold)} The strategies below come from the numbers alone; '
             f'this game stays off Best spots until the news is in our ratings.</div>') if hold else ''
+    sides = {i.get('side') for i in its if not i['tracking'] and i.get('side') in ('home', 'away')}
+    if len(sides) == 2 and not hold:
+        note += ('<div class="hint"><b>Mixed signals:</b> tested strategies point to opposite sides of this game, so '
+                 'neither is a lean and the game stays off Best spots.</div>')
     return f'<div class="lmove strats">{label}{note}{html}</div>'
 
 
@@ -476,6 +484,21 @@ def strict_proof(pr, key=None, check_criteria=True):
     if not (n >= STRICT_N and n and r - 1.96 * (r * (1 - r) / n) ** 0.5 >= STRICT_LO):
         return False
     return not check_criteria or (key is not None and criteria_ok(key))
+
+
+def proven_sides(sport, sp):
+    """
+    [(strategy name, pick text, 'home'|'away')] for the tested (non-tracking) spread strategies on one game's Best spots
+    entry (extras.spot), Fair Line Value included: what the featured preview checks its lean against.
+    """
+    if not sp:
+        return []
+    out = [(NAMES.get(x.get('key'), x.get('label', 'A tested strategy')), x.get('pick', ''), x.get('side'))
+           for x in sp.get('systems') or [] if not x.get('tracking') and x.get('kind', 'spread') == 'spread'
+           and x.get('side') in ('home', 'away')]
+    out += [(i['name'], i['what'], i.get('side')) for i in flv_items(sport, sp.get('priced'), sp.get('flags'))
+            if i.get('side') in ('home', 'away') and i['action'] == 'Back']
+    return out
 
 
 def flv_items(sport, priced, flags=()):

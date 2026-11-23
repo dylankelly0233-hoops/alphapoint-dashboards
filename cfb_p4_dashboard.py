@@ -794,7 +794,7 @@ def generate_html(p4, vals, sched, week, season_type, info):
                  'signals': {t: (sig(v), v) for t, v in ((r.away, r.away_value), (r.home, r.home_value))
                              if v is not None and v == v},
                  'injuries': {t: fx.injuries(info['wire'], t) for t in (r.away, r.home)},
-                 'hold': nh, 'partly': gr.partly('cfb', r.game_id),
+                 'hold': nh, 'proven_sides': sy.proven_sides('cfb', sp), 'partly': gr.partly('cfb', r.game_id),
                  'wind': (info['weather'].get(str(r.game_id)) or {}).get('wind'), 'tags': [l for l, _ in labels]}
             grid = (mu.panel(r.away, r.home, str, prof, MU_CATS, MU_STYLES, info['mu_games'], head=False)
                     if head is not None or (r.home in prof and r.away in prof) else '')

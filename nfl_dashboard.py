@@ -557,7 +557,7 @@ def generate_html(power, vals, sched, week, info):
                  'signals': {nick(vm.full_name(t)): (sig(v), v) for t, v in ((r.away, r.away_value), (r.home, r.home_value))
                              if v is not None and v == v},
                  'injuries': {nick(vm.full_name(t)): fx.injuries(info['wire'], t) for t in (r.away, r.home)},
-                 'hold': nh, 'partly': gr.partly('nfl', r.game_id),
+                 'hold': nh, 'proven_sides': sy.proven_sides('nfl', sp), 'partly': gr.partly('nfl', r.game_id),
                  'wind': (info['weather'].get(str(r.game_id)) or {}).get('wind'), 'tags': [tag_label[0]] if tag_label else []}
             grid = mu.panel(r.away, r.home, nm, prof, MU_CATS, MU_STYLES, info['mu_games'], head=False) if has_mu else ''
             features.append(fx.card(d, card, grid, fx.notes(d)))
@@ -589,7 +589,7 @@ def generate_html(power, vals, sched, week, info):
             f'like at the market number; gaps of {theme.EDGE_STRONG:g}+ points are highlighted and gaps under '
             f'{theme.EDGE_MIN:g} show as None. Trade signals come from the value metrics. <b>Line</b> shows the spread when '
             f'we first saw the game and where it is now, and whether the market has moved toward our number (a good sign '
-            f'for the edge) or away from it. <b>Teaser tags</b> come from Dylan\'s teaser study (2-team, 6-point teasers): '
+            f'for the edge) or away from it. <b>Teaser tags</b> come from our study of 2-team, 6-point NFL teasers: '
             f'underdogs of +1.5 to +3 in games with a total of {TEASER_TOTAL_MAX} or lower or a division matchup won about '
             f'77% of legs out of sample (2015–25), and +1.5 / +2.5 dogs with a low total (★) about 78.5%. Break-even is '
             f'72.4% per leg at −110, so the edge depends on getting −110 (about 73.9% at −120). The full-sample rates are '

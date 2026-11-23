@@ -420,7 +420,7 @@ def generate_html(power, metrics, days, info):
                      'signals': {nm(t): (_signal(comp.get(t), gp.get(t, 0)), comp[t]) for t in (g['away'], g['home'])
                                  if comp.get(t) is not None},
                      'injuries': {nm(t): fx.injuries(info['wire'], t) for t in (g['away'], g['home'])},
-                     'hold': nh, 'partly': gr.partly('nba', g['game_id'])}
+                     'hold': nh, 'proven_sides': sy.proven_sides('nba', sp), 'partly': gr.partly('nba', g['game_id'])}
                 grid = (mu.panel(g['away'], g['home'], nm, mprof, mu.BASKETBALL_CATS, mu.BASKETBALL_STYLES, info['mu_games'],
                                  extra=mu.pace_line(info['mu_units'], g['away'], g['home'], nm), head=False) if has_mu else '')
                 features.append(fx.card(d, card, grid, fx.notes(d)))
