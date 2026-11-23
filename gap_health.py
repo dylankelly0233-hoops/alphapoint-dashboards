@@ -47,10 +47,12 @@ def check(sport):
             f'rating-watch teams {watch} · swings explained {len(sw_done)}/{len(sw)}')
     if age > STALE_H:
         warn.append(f'{sport.upper()} Research Assistant notes are {age:.0f} hours old')
-    if len(done) < len(flagged):
-        warn.append(f'{sport.upper()}: {len(flagged) - len(done)} flagged gap games not researched')
-    if len(sw_done) < len(sw):
-        warn.append(f'{sport.upper()}: {len(sw) - len(sw_done)} swings not explained')
+    import gap_todo                       # same windows the hourly catch-up uses (football 7 days, basketball 36 h)
+    td = gap_todo.todo(sport)
+    if td['gaps']:
+        warn.append(f"{sport.upper()}: {len(td['gaps'])} flagged gap games still not researched (the hourly catch-up should clear them)")
+    if td['swings']:
+        warn.append(f"{sport.upper()}: {len(td['swings'])} swings still not explained")
     return line, warn
 
 
