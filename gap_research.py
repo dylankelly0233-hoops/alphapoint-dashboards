@@ -23,11 +23,22 @@ import pandas as pd
 
 import dashboard_theme as theme
 
-GAP_MIN = {'nfl': 2.0, 'cfb': 3.0, 'nba': 3.0, 'cbb': 4.0}
-WATCH_ALL = {'nfl', 'cfb', 'nba', 'cbb'}   # Rating watch for every team on the slate (CBB: games with a Power 4 / Big East team)
+GAP_MIN = {'nfl': 2.0, 'cfb': 3.0, 'nba': 3.0, 'cbb': 4.0, 'nhl': 0.3, 'epl': 0.4}   # NHL / EPL in goals (~biggest quarter)
+WATCH_ALL = {'nfl', 'cfb', 'nba', 'cbb', 'nhl', 'epl'}   # Rating watch for every team on the slate (CBB: games with a Power 4 / Big East team)
 HIST_N = 6            # each team's last N logged games for the 'consistently higher / lower' read
-SWING = {'nfl': 4.0, 'cfb': 7.0, 'nba': 4.0, 'cbb': 4.5}   # our gap on a team moved this much since its previous game
+SWING = {'nfl': 4.0, 'cfb': 7.0, 'nba': 4.0, 'cbb': 4.5, 'nhl': 0.6, 'epl': 0.6}   # our gap on a team moved this much since its previous game
                      # -> worth checking who is in or out (about the biggest 10% of swings in each sport, 2026-11-20)
+UNIT = {'nhl': 'goals', 'epl': 'goals'}   # everything else is points
+DIGITS = {'nhl': 2, 'epl': 2}
+ONE = {'nhl': 0.15, 'epl': 0.15}   # 'higher / lower on a team' = a gap this big (1 point elsewhere)
+
+
+def _r(sport, x):
+    return round(x, DIGITS.get(sport, 1))
+
+
+def _u(sport):
+    return UNIT.get(sport, 'pts')
 
 
 def _team_gaps(sport):
@@ -60,21 +71,23 @@ def history(sport, team, gap_now=None):
     g = [x for _, x in _HIST[sport].get(team, [])][-HIST_N:]
     if not g:
         return None
-    out = {'n': len(g), 'higher': sum(x >= 1 for x in g), 'lower': sum(x <= -1 for x in g),
-           'avg': round(sum(g) / len(g), 1), 'last': round(g[-1], 1)}
+    one = ONE.get(sport, 1.0)
+    out = {'n': len(g), 'higher': sum(x >= one for x in g), 'lower': sum(x <= -one for x in g),
+           'avg': _r(sport, sum(g) / len(g)), 'last': _r(sport, g[-1])}
     if gap_now is not None:
-        out['swing'] = round(gap_now - g[-1], 1)
+        out['swing'] = _r(sport, gap_now - g[-1])
     return out
 
 
-def history_text(h, name):
+def history_text(h, name, sport=None):
     """'We have been higher on Chiefs than the market in 5 of their last 6 games (average +2.8)'."""
     if not h or h['n'] < 3:
         return ''
-    if h['higher'] >= max(4, h['n'] - 1) and h['avg'] >= 1.5:
-        return f'We have been higher on {name} than the market in {h["higher"]} of their last {h["n"]} games (average +{h["avg"]:g}).'
-    if h['lower'] >= max(4, h['n'] - 1) and h['avg'] <= -1.5:
-        return f'We have been lower on {name} than the market in {h["lower"]} of their last {h["n"]} games (average {h["avg"]:g}).'
+    big = 1.5 * ONE.get(sport, 1.0)
+    if h['higher'] >= max(4, h['n'] - 1) and h['avg'] >= big:
+        return f'We have been higher on {name} than the market in {h["higher"]} of their last {h["n"]} games (average +{h["avg"]:g} {_u(sport)}).'
+    if h['lower'] >= max(4, h['n'] - 1) and h['avg'] <= -big:
+        return f'We have been lower on {name} than the market in {h["lower"]} of their last {h["n"]} games (average {h["avg"]:g} {_u(sport)}).'
     return ''
 
 
@@ -97,11 +110,12 @@ def write_candidates(sport, games, wire_path=None):
         if not flag and sport not in WATCH_ALL:
             continue
         rec = {k: g.get(k) for k in ('gid', 'home', 'away', 'home_name', 'away_name', 'weather')}
-        rec.update({'kick': pd.Timestamp(g['kick']).isoformat(), 'ours': round(o, 1), 'market': m,
-                    'opened': g.get('opened'), 'gap': round(gap, 1), 'gap_flag': bool(flag),
+        rec.update({'kick': pd.Timestamp(g['kick']).isoformat(), 'ours': _r(sport, o), 'market': m,
+                    'opened': g.get('opened'), 'gap': _r(sport, gap), 'gap_flag': bool(flag),
                     'we_like': g['home_name'] if gap > 0 else g['away_name'],
-                    'ours_text': _line(g, o), 'market_text': _line(g, m),
-                    'sources': {k: round(v, 1) for k, v in (g.get('sources') or {}).items() if v == v},
+                    'ours_text': g.get('ours_text') or _line(g, o), 'market_text': g.get('market_text') or _line(g, m),
+                    'unit': _u(sport),
+                    'sources': {k: _r(sport, v) for k, v in (g.get('sources') or {}).items() if v == v},
                     'injury_wire': {t: [i.get('text') for i in wire.get(t, [])] for t in (g['home'], g['away'])},
                     'history': {g['home_name']: history(sport, g['home'], gap), g['away_name']: history(sport, g['away'], -gap)}})
         out.append(rec)
@@ -138,11 +152,11 @@ def verdict(sport, gid):
     return ((notes(sport).get('games') or {}).get(str(gid)) or {}).get('verdict')
 
 
-def _vs(gap, name):
+def _vs(gap, name, sport=None):
     """'3.0 pts higher on Vikings than the market' (gap = our line minus the market's, from this team's side)."""
-    if abs(gap) < 0.5:
+    if abs(gap) < 0.5 * ONE.get(sport, 1.0):
         return f'in line with the market on {name}'
-    return f'{abs(gap):.1f} pts {"higher" if gap > 0 else "lower"} on {name} than the market'
+    return f'{abs(gap):.{DIGITS.get(sport, 1)}f} {_u(sport)} {"higher" if gap > 0 else "lower"} on {name} than the market'
 
 
 VERDICT_TEXT = {'explained': 'Explained', 'partly': 'Partly explained', 'unexplained': 'Unexplained'}
@@ -237,13 +251,13 @@ def card_row(sport, gid, ours, market, home, away, home_name, away_name, complet
         bits.append('<span class="hint">Not researched yet: the Research Assistant checks gaps like this on its next run.</span>')
     for team, name, g in ((home, home_name, gap), (away, away_name, -gap)):
         h = history(sport, team, g)
-        t = history_text(h, name)
+        t = history_text(h, name, sport)
         if t:
             bits.append(f'· {theme.esc(t)} Could be a team the market prices differently.')
         if h and abs(h.get('swing') or 0) >= SWING[sport]:
             why = ((n_any or {}).get('swings') or {}).get(team) or ((n_any or {}).get('swings') or {}).get(name)
-            bits.append(f'· <b>Swing on {theme.esc(name)}:</b> last game we were {theme.esc(_vs(h["last"], name))}; this game '
-                        f'we are {theme.esc(_vs(g, name))}, a {abs(h["swing"]):g}-pt swing. '
+            bits.append(f'· <b>Swing on {theme.esc(name)}:</b> last game we were {theme.esc(_vs(h["last"], name, sport))}; this game '
+                        f'we are {theme.esc(_vs(g, name, sport))}, a {abs(h["swing"]):g}-{_u(sport).rstrip("s")} swing. '
                         + (f'<b>Why:</b> {theme.esc(why)}' if why else
                            'Not researched yet; usually a player returning or going out that our ratings do not see yet.'))
     if not bits:

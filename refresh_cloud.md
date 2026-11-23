@@ -46,7 +46,8 @@ git fetch origin data
 cat <(git show origin/data:BUILT_AT.txt)
 for f in injury_candidates_SPORT.json gap_candidates_SPORT.json; do git show origin/data:$f > $f; done
 ```
-(For `cbb+nba`, fetch both sports' files.) These files are git-ignored on `main`; never commit them. If `BUILT_AT` is
+(For `cbb+nba`, fetch the files for all four of `cbb`, `nba`, `nhl` and `epl`: the basketball runs also cover NHL and
+EPL, like the laptop's 11 AM run. Skip EPL when it has no matches in the next three days.) These files are git-ignored on `main`; never commit them. If `BUILT_AT` is
 more than 3 hours old, carry on but add the warning `  ! inputs are N hours old` to the report.
 
 ## 2. Injury Wire
@@ -60,7 +61,7 @@ wrote: it is newer than the `injury_wire` items inside the candidates file.
 
 ## 4. Push
 ```
-git add injury_wire_SPORT.json gap_notes_SPORT.json reports/last_refresh_SPORT.md
+git add injury_wire_SPORT.json gap_notes_SPORT.json reports/last_refresh_SPORT.md   # cbb+nba: all four sports' files
 git commit -m "SPORT MODE refresh (cloud)"
 git pull --rebase && git push origin main
 ```

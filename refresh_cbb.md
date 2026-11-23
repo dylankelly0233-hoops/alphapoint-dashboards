@@ -32,14 +32,14 @@ Add an NBA line to `last_refresh_cbb.md`: the number of NBA Injury Wire items an
 ## 2d. NHL build and Injury Wire
 From DIR: `$env:PYTHONIOENCODING = "utf-8"; $env:NHL_NO_BROWSER = "1"; python nhl_dashboard.py > "$env:TEMP\nhl_build.log" 2>&1; Get-Content "$env:TEMP\nhl_build.log" | Select-String "Sagarin|goalies|Injury Wire|  ! |Traceback"`
 Then run `git checkout -- line_history_nhl.csv ratings_history_nhl.csv projections_nhl.csv source_history_nhl.csv` if those files exist; GitHub's builds own them.
-Follow `DIR\refresh_injury_curation.md` with sport = `nhl`, writing `DIR\injury_wire_nhl.json`. Then `git add injury_wire_nhl.json`, commit with the message "NHL Injury Wire" (same author flags as above), `git pull --rebase`, and `git push`.
-Add an NHL line to `last_refresh_cbb.md`: the number of NHL Injury Wire items and the top 1–2 movers.
+Follow `DIR\refresh_injury_curation.md` with sport = `nhl`, writing `DIR\injury_wire_nhl.json`. Then the Research Assistant: follow `DIR\refresh_gap_research.md` with sport = `nhl`, writing `DIR\gap_notes_nhl.json`. Then `git add injury_wire_nhl.json gap_notes_nhl.json`, commit with the message "NHL Injury Wire" (same author flags as above), `git pull --rebase`, and `git push`.
+Add an NHL line to `last_refresh_cbb.md`: the number of NHL Injury Wire items, the top 1–2 movers, and the Research Assistant line.
 
 ## 2e. EPL build and Injury Wire
 From DIR: `$env:PYTHONIOENCODING = "utf-8"; $env:EPL_NO_BROWSER = "1"; python epl_dashboard.py > "$env:TEMP\epl_build.log" 2>&1; Get-Content "$env:TEMP\epl_build.log" | Select-String "matches|ClubElo|Injury Wire|  ! |Traceback"`
 Then run `git checkout -- line_history_epl.csv ratings_history_epl.csv projections_epl.csv source_history_epl.csv` if those files exist; GitHub's builds own them.
-If there are no Premier League matches in the next three days (an international break), skip the curation. Otherwise follow `DIR\refresh_injury_curation.md` with sport = `epl`, writing `DIR\injury_wire_epl.json`. Then `git add injury_wire_epl.json`, commit with the message "EPL Injury Wire" (same author flags as above), `git pull --rebase`, and `git push`.
-Add an EPL line to `last_refresh_cbb.md`: the number of EPL Injury Wire items and the top 1–2 movers.
+If there are no Premier League matches in the next three days (an international break), skip the curation. Otherwise follow `DIR\refresh_injury_curation.md` with sport = `epl`, writing `DIR\injury_wire_epl.json`, then the Research Assistant: follow `DIR\refresh_gap_research.md` with sport = `epl`, writing `DIR\gap_notes_epl.json`. Then `git add injury_wire_epl.json gap_notes_epl.json`, commit with the message "EPL Injury Wire" (same author flags as above), `git pull --rebase`, and `git push`.
+Add an EPL line to `last_refresh_cbb.md`: the number of EPL Injury Wire items, the top 1–2 movers, and the Research Assistant line.
 
 ## 2f. Model health check
 From DIR: `$env:PYTHONIOENCODING = "utf-8"; python model_performance.py > "$env:TEMP\model_health.log" 2>&1; Get-Content "$env:TEMP\model_health.log"`

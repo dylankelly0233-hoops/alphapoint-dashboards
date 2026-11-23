@@ -31,6 +31,7 @@ import epl_model as m
 import epl_value_metrics as vm
 import extras as ex
 import featured as fx
+import gap_research as gr
 import injury_wire as wire
 import markets as mk
 
@@ -347,6 +348,8 @@ def generate_html(power, metrics, days, info):
                                                           scale=CONF_SCALE)
             if not g['score'] and info['wire'].get('mode') == 'curated':
                 move += ex.injury_card_row(info['wire'].get('items'), g['home'], g['away'], short, sport='epl')
+            move += gr.card_row('epl', g['game_id'], g['margin'], g['mkt_margin'], g['home'], g['away'],
+                                short(g['home']), short(g['away']), bool(g['score']))
             tags = ''
             if FATIGUE_TAG:
                 for t in (g['home'], g['away']):
@@ -374,7 +377,8 @@ def generate_html(power, metrics, days, info):
                              'confidence': ex.confidence_level(by_src.get(g['home'], {}), by_src.get(g['away'], {}), hfa_g,
                                                                scale=CONF_SCALE),
                              'flags': ['news'] if news else [], 'sources': src_lines, 'hfa': hfa_g,
-                             'context': {'scale': SCALE, 'signals': {t: signal(t) for t in (g['home'], g['away']) if signal(t)},
+                             'context': {'scale': SCALE, 'gap_verdict': gr.verdict('epl', g['game_id']),
+                                         'signals': {t: signal(t) for t in (g['home'], g['away']) if signal(t)},
                                          'total': round(g['total_ours'], 2), 'mkt_total': g['total'],
                                          'probs': [round(x, 4) for x in g['probs']],
                                          'mkt_probs': [round(x, 4) for x in g['mkt']] if g['mkt'] else None}})
@@ -393,6 +397,13 @@ def generate_html(power, metrics, days, info):
                      f'{HFA_GOALS:g} goals of home advantage</span></div><div class="games">{cards}</div>')
     ex.write_spots('epl', spots)
     ex.log_projections('epl', plog)
+    now = pd.Timestamp.now(tz='America/New_York')
+    gr.write_candidates('epl', [{'gid': str(p['game_id']), 'kick': p['kickoff'], 'home': p['home'], 'away': p['away'],
+                                 'home_name': short(p['home']), 'away_name': short(p['away']),
+                                 'ours': p['ours'], 'market': p['market'], 'opened': p.get('opened'), 'sources': p.get('sources'),
+                                 'ours_text': _three(p['context'].get('probs'), short(p['home']), short(p['away'])),
+                                 'market_text': _three(p['context'].get('mkt_probs'), short(p['home']), short(p['away']))}
+                                for p in plog if pd.Timestamp(p['kickoff']) > now])   # Research Assistant (refresh_gap_research.md)
     featured_html = fx.tab(''.join(features), ('Game of the Day', 'The best matchup of each matchday by our power ratings'),
                            'No matches in the next few days.')
     games_html = (

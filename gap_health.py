@@ -12,7 +12,7 @@ import json
 from datetime import datetime, timezone
 
 STALE_H = 30
-SPORTS = ('nfl', 'cfb', 'nba', 'cbb')
+SPORTS = ('nfl', 'cfb', 'nba', 'cbb', 'nhl', 'epl')
 
 
 def _load(path):

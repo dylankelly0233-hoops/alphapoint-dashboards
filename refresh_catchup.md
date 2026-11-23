@@ -12,7 +12,7 @@ All times are Eastern: `TZ=America/New_York date '+%Y-%m-%dT%H:%M:%S%:z'`.
 ```
 git checkout main && git pull --rebase
 git fetch origin data
-mkdir -p /tmp/in && for s in nfl cfb nba cbb; do git show origin/data:gap_candidates_$s.json > /tmp/in/gap_candidates_$s.json; git show origin/data:injury_candidates_$s.json > /tmp/in/injury_candidates_$s.json; done
+mkdir -p /tmp/in && for s in nfl cfb nba cbb nhl epl; do git show origin/data:gap_candidates_$s.json > /tmp/in/gap_candidates_$s.json; git show origin/data:injury_candidates_$s.json > /tmp/in/injury_candidates_$s.json; done
 python3 gap_todo.py --dir /tmp/in
 ```
 If it prints `NOTHING TO DO`, finish with the single line `Catch-up: nothing new` and stop.
@@ -26,7 +26,8 @@ sport's current `injury_wire_{sport}.json`, then use `/tmp/in/gap_candidates_{sp
   changes); update, add or remove their items.
 - **final** (the pre-game check, first priority when a game starts soon): for each listed game, check the latest
   official status for both teams (the NFL inactives, the NBA official injury report, the conference availability
-  report, a coach's pre-game note). Confirm every Rating watch item and reason on the card is still true: update a
+  report, the NHL team's confirmed starting goalie and lineup, the Premier League confirmed XI an hour before kickoff,
+  a coach's pre-game note). Confirm every Rating watch item and reason on the card is still true: update a
   player's status if it changed, remove what no longer applies, add a late scratch or a surprise return. Re-read the
   verdict: change it if the news changed. Then stamp `checked` on the game entry and both team entries, even when
   nothing changed.

@@ -805,6 +805,11 @@ document.querySelectorAll('nav.tabs button').forEach(b => b.onclick = () => {
   if (!el) return;
   // after the rest of this script has run (the week switch's click handler is set up further down)
   window.addEventListener('load', () => {
+    // a default filter (CBB opens on Power 4 + Big East) may hide the linked card: reset that filter to All
+    if (el.hidden) document.querySelectorAll('select.filter').forEach(s => {
+      const r = document.getElementById(s.dataset.table);
+      if (r && r.contains(el) && s.value) { s.value = ''; s.onchange(); }
+    });
     const pane = el.closest('.wkpane');
     if (pane && !pane.classList.contains('on')) {
       const b = document.querySelector('.wk[data-wkgroup="' + pane.dataset.wkgroup + '"][data-wk="' + pane.dataset.wk + '"]');

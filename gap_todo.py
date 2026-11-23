@@ -20,8 +20,8 @@ import os
 import sys
 from datetime import datetime, timedelta, timezone
 
-SPORTS = ('nfl', 'cfb', 'nba', 'cbb')
-WINDOW_H = {'nfl': 24 * 7, 'cfb': 24 * 7, 'nba': 36, 'cbb': 36}
+SPORTS = ('nfl', 'cfb', 'nba', 'cbb', 'nhl', 'epl')
+WINDOW_H = {'nfl': 24 * 7, 'cfb': 24 * 7, 'nba': 36, 'cbb': 36, 'nhl': 36, 'epl': 72}
 STALE_H, STALE_SOON = 12, 12
 FINAL_H = 2          # every game showing research is re-verified within its last 2 hours before kickoff
 
