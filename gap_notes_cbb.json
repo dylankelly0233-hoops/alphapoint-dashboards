@@ -1,6 +1,6 @@
 {
  "sport": "cbb",
- "generated": "2026-11-23T15:05:00-05:00",
+ "generated": "2026-11-23T15:06:50-05:00",
  "teams": {
   "Dayton": {
    "watch": [
@@ -166,6 +166,22 @@
   "Northern Kentucky": {
    "checked": "2026-11-23T15:05:00-05:00",
    "watch": []
+  },
+  "Yale": {
+   "watch": [],
+   "checked": "2026-11-23T15:06:50-05:00"
+  },
+  "Belmont": {
+   "watch": [],
+   "checked": "2026-11-23T15:06:50-05:00"
+  },
+  "Nevada": {
+   "watch": [],
+   "checked": "2026-11-23T15:06:50-05:00"
+  },
+  "San Francisco": {
+   "watch": [],
+   "checked": "2026-11-23T15:06:50-05:00"
   }
  },
  "games": {
@@ -214,9 +230,9 @@
    ]
   },
   "401911457": {
-   "checked": "2026-11-22T22:42:20-05:00",
+   "checked": "2026-11-23T15:06:50-05:00",
    "swings": {
-    "Nevada": "Nevada lost 83-66 to Washington at the Acrisure Series; the market moved down on the Wolf Pack after it, while our ratings barely moved (Nevada Sports Net)."
+    "Nevada": "Nevada's last game was a 91-74 home win over Idaho on Nov 19 (Elijah Price 21 pts); our ratings rose on the Wolf Pack more than the market did. No injury news (Nevada Athletics)."
    }
   },
   "401921029": {
@@ -243,7 +259,7 @@
    }
   },
   "401929286": {
-   "checked": "2026-11-22T22:42:20-05:00",
+   "checked": "2026-11-23T15:06:50-05:00",
    "swings": {
     "Yale": "Nothing found: the market moved on Yale without a clear reason (no injuries listed; last result a 76-74 OT win over Vermont on Nov 18)."
    }
