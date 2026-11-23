@@ -47,7 +47,9 @@ Body:
 3. **Model health**: the lines of `model_health.txt` as printed (one per sport: yesterday, 7 and 30 days, our average
    miss vs. the closing line's), then each warning on its own line starting with "Watch:", or "No warnings." Keep the
    numbers as printed; don't call games wins or losses.
-4. **Research Assistant**: the lines of `gap_health.txt` as printed, including any "Watch:" lines (Dylan cares a lot
+4. **Research Assistant**: one line from `reports/note_audit.md` first: `Fact-check: <n> sentences flagged (<time>)`,
+   listing up to 3 of them if any (the hourly catch-up fixes them), or `Fact-check: all confirmed`; then the lines of
+   `gap_health.txt` as printed, including any "Watch:" lines (Dylan cares a lot
    about this feature; never drop the section).
 5. End with `— AlphaPoint Sports (automated)`.
 

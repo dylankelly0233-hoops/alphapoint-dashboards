@@ -1,0 +1,43 @@
+# Fact-check the Research Assistant notes against ESPN results (note_audit.py; Dylan, 2026-11-23).
+# Twice a day: before the 12:20 PM digest and in the evening. Writes reports/note_audit.json (the hourly cloud
+# catch-up fixes whatever it lists, via gap_todo.py) and reports/note_audit.md (shown in the daily digest).
+name: Note fact-check
+
+on:
+  schedule:
+    - cron: '45 16 * * *'    # 11:45 AM ET in winter (12:45 PM in summer)
+    - cron: '45 0 * * *'     # 7:45 PM ET in winter (8:45 PM in summer)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: audit
+  cancel-in-progress: true
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      TZ: America/New_York
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - run: pip install requests
+      - run: python note_audit.py
+      - name: Commit the report
+        run: |
+          git config user.name "alphapoint-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add reports/note_audit.json reports/note_audit.md
+          git diff --cached --quiet && exit 0
+          git commit -m "Note fact-check [skip ci]"
+          for i in 1 2 3; do git pull --rebase && git push && exit 0; sleep 10; done
+          exit 1

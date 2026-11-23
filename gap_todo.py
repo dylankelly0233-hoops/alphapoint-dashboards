@@ -95,7 +95,14 @@ def todo(sport, cand_dir='.', now=None):
         for g in games.values():
             if upcoming(g, STALE_SOON):
                 stale += [g.get('away'), g.get('home')]
-    return {'gaps': [{'gid': g['gid'], 'game': f"{g.get('away')} @ {g.get('home')}", 'kick': g.get('kick'),
+    # fact-check flags (note_audit.py, run by GitHub Actions twice a day): sentences still in the notes exactly as flagged
+    audit = []
+    au = _load(os.path.join('reports', 'note_audit.json')) or {}
+    texts = {json.dumps(n, ensure_ascii=False)}
+    for f in au.get('items') or []:
+        if f.get('sport') == sport and f.get('text') and json.dumps(f['text'], ensure_ascii=False)[1:-1] in next(iter(texts)):
+            audit.append({'where': f.get('where'), 'issues': f.get('issues'), 'text': f.get('text')})
+    return {'audit': audit, 'gaps': [{'gid': g['gid'], 'game': f"{g.get('away')} @ {g.get('home')}", 'kick': g.get('kick'),
                       'gap': g.get('gap')} for g in sorted(gaps, key=lambda g: -abs(g.get('gap') or 0))],
             'swings': swings, 'stale': sorted({t for t in stale if t}), 'final': final, 'notes_age_h': age}
 
@@ -108,17 +115,19 @@ if __name__ == '__main__':
     else:
         any_ = False
         for sp, t in out.items():
-            if t['gaps'] or t['swings'] or t['stale'] or t['final']:
+            if t['gaps'] or t['swings'] or t['stale'] or t['final'] or t['audit']:
                 any_ = True
                 print(f"{sp.upper()}: {len(t['gaps'])} gap games to research, {len(t['swings'])} swings to explain, "
                       f"{len(t['stale'])} teams playing within {STALE_SOON}h with notes older than {STALE_H}h, "
-                      f"{len(t['final'])} games due their pre-game check")
+                      f"{len(t['final'])} games due their pre-game check, {len(t['audit'])} fact-check flags")
                 for g in t['gaps']:
                     print(f"  gap    {g['gid']}  {g['game']}  {g['kick']}  gap {g['gap']}")
                 for s in t['swings']:
                     print(f"  swing  {s['gid']}  {s['team']}  ({s['game']}, {s['kick']})")
                 if t['stale']:
                     print('  stale  ' + ', '.join(t['stale']))
+                for a in t['audit']:
+                    print(f"  audit  {a['where']}  {'; '.join(a['issues'] or [])}")
                 for g in t['final']:
                     print(f"  final  {g['gid']}  {g['game']}  {g['kick']}  last verified {g['last_verified']}")
         if not any_:

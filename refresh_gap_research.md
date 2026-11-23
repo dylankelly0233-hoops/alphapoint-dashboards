@@ -70,7 +70,9 @@ that never happened). Any game result, score, record or "missed N games" count i
 team's ESPN schedule, e.g. `curl -s "https://site.api.espn.com/apis/site/v2/sports/<path>/teams/<team id>/schedule"`
 (paths: `football/nfl`, `football/college-football`, `basketball/nba`, `basketball/mens-college-basketball`,
 `hockey/nhl`, `soccer/eng.1`). If you can't confirm it, leave the number out. When re-checking an old entry, verify its
-results the same way and fix or remove anything that doesn't match.
+results the same way and fix or remove anything that doesn't match. A nightly fact-check (`note_audit.py`) re-checks
+every score, record, named result and games-missed count; a number you confirmed that it can't see (a conference or
+"since" record) goes in the entry's `"verified_numbers"` list, e.g. `["7-0"]`.
 
 **Sources, best first (Dylan, 2026-11-22: "we should be finding actual injury reports if/when possible"):**
 1. The official report itself: the NFL team injury report (team site or NFL.com), the NBA official injury report

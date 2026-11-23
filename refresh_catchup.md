@@ -24,6 +24,12 @@ sport's current `injury_wire_{sport}.json`, then use `/tmp/in/gap_candidates_{sp
 - **swing**: write the one sentence in `games[<gid>].swings[<team>]`.
 - **stale**: re-check those teams' Rating watch for news since the notes were written (scratches, returns, status
   changes); update, add or remove their items.
+- **audit** (fact-check flags from `note_audit.py`, which GitHub Actions runs twice a day against ESPN results): the
+  sentence at `where` in `gap_notes_{sport}.json` has a score, record, named result or games-missed count that
+  couldn't be confirmed. Check it against the team's ESPN schedule or the player's game log (see "Verify every result"
+  in refresh_gap_research.md). Wrong: fix the sentence or remove the number. Out-of-date count: re-count it. Correct
+  but the checker can't see it (a conference or "since" record, a goalie's record): add the exact number, e.g. `"7-0"`,
+  to that entry's `"verified_numbers"` list so it isn't flagged again. Stamp `checked` either way.
 - **final** (the pre-game check, first priority when a game starts soon): for each listed game, check the latest
   official status for both teams (the NFL inactives, the NBA official injury report, the conference availability
   report, the NHL team's confirmed starting goalie and lineup, the Premier League confirmed XI an hour before kickoff,

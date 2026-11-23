@@ -233,7 +233,10 @@
      "date": "2026-11-22"
     }
    ],
-   "checked": "2026-11-23T09:45:00-05:00"
+   "checked": "2026-11-23T09:45:00-05:00",
+   "verified_numbers": [
+    "1-5"
+   ]
   },
   "North Texas": {
    "checked": "2026-11-23T09:40:04-05:00",
@@ -896,7 +899,11 @@
    ],
    "returning": [],
    "swings": {},
-   "checked": "2026-11-23T09:40:04-05:00"
+   "checked": "2026-11-23T09:40:04-05:00",
+   "verified_numbers": [
+    "10-1",
+    "7-0"
+   ]
   },
   "401862843": {
    "verdict": "explained",
@@ -936,6 +943,9 @@
      "url": "https://www.espn.com/college-football/story/_/id/50093457/pitt-qb-mason-heintschel-season-torn-acl",
      "date": "2026-10-05"
     }
+   ],
+   "verified_numbers": [
+    "1-5"
    ]
   },
   "401858316": {
