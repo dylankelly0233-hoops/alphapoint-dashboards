@@ -1,7 +1,7 @@
 {
   "sport": "nfl",
   "week": 11,
-  "generated": "2026-11-22T12:17:00-05:00",
+  "generated": "2026-11-22T19:45:00-05:00",
   "movers": [
     {
       "team": "ARI",
@@ -14,10 +14,10 @@
     {
       "team": "MIN",
       "tag": "QB",
-      "text": "QB Kyler Murray (hamstring) is ruled out; Kirk Cousins starts against San Francisco in Mexico City.",
-      "source": "ESPN",
-      "url": "https://www.espn.com/nfl/injuries",
-      "date": "2026-11-20"
+      "text": "QB Kyler Murray (hamstring) is inactive; Kirk Cousins starts Sunday night against San Francisco in Mexico City.",
+      "source": "49ers.com",
+      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPOVAyZmFqd3J2RWZYa2NjcF95MWJXXzFxMVV0UmVIcVBEYjQ3VkNXcG1kUWZXNmdjT0pjbTRtT25tZzhTZVhCdS1CSGZtVnkxT0ozd3ZLWTM3Q1BYeTVzdk9Ed240QWhnSGhjdFlSMGdBWEVzc0M3QTdfVmF0bE1BRG91RXp0T05GVkpoTk4tR3diVUNXeTNSMVFEemtzVU0?oc=5",
+      "date": "2026-11-22"
     },
     {
       "team": "NO",
@@ -77,18 +77,18 @@
       {
         "team": "MIN",
         "tag": "QB",
-        "text": "QB Kyler Murray (hamstring) is ruled out; Kirk Cousins starts against San Francisco in Mexico City.",
-        "source": "ESPN",
-        "url": "https://www.espn.com/nfl/injuries",
-        "date": "2026-11-20"
+        "text": "QB Kyler Murray (hamstring) is inactive; Kirk Cousins starts Sunday night against San Francisco in Mexico City.",
+        "source": "49ers.com",
+        "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPOVAyZmFqd3J2RWZYa2NjcF95MWJXXzFxMVV0UmVIcVBEYjQ3VkNXcG1kUWZXNmdjT0pjbTRtT25tZzhTZVhCdS1CSGZtVnkxT0ozd3ZLWTM3Q1BYeTVzdk9Ed240QWhnSGhjdFlSMGdBWEVzc0M3QTdfVmF0bE1BRG91RXp0T05GVkpoTk4tR3diVUNXeTNSMVFEemtzVU0?oc=5",
+        "date": "2026-11-22"
       },
       {
         "team": "MIN",
-        "tag": "KEY",
-        "text": "WR Jordan Addison had thumb surgery and is out; the Vikings will not place him on IR, per Kevin O'Connell.",
+        "tag": "CLUSTER",
+        "text": "WR Jordan Addison (thumb surgery) and CB Isaiah Rodgers (quadriceps) are inactive vs. San Francisco.",
         "source": "ESPN",
         "url": "https://www.espn.com/nfl/injuries",
-        "date": "2026-11-18"
+        "date": "2026-11-22"
       },
       {
         "team": "MIN",
@@ -215,10 +215,10 @@
       {
         "team": "SF",
         "tag": "RETURNING",
-        "text": "WR Mike Evans (Achilles), out since leaving Week 6 early, is questionable but expected to play vs. Minnesota in Mexico City, per NFL Network's Mike Garafolo. LB Dre Greenlaw is questionable.",
-        "source": "NFL.com",
-        "url": "https://www.nfl.com/news/niners-wr-mike-evans-achilles-expected-to-play-sunday-vs-vikings",
-        "date": "2026-11-21"
+        "text": "WR Mike Evans (Achilles), out since leaving Week 6 early, is active vs. Minnesota; LB Dre Greenlaw (neck) is inactive.",
+        "source": "49ers.com",
+        "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPOVAyZmFqd3J2RWZYa2NjcF95MWJXXzFxMVV0UmVIcVBEYjQ3VkNXcG1kUWZXNmdjT0pjbTRtT25tZzhTZVhCdS1CSGZtVnkxT0ozd3ZLWTM3Q1BYeTVzdk9Ed240QWhnSGhjdFlSMGdBWEVzc0M3QTdfVmF0bE1BRG91RXp0T05GVkpoTk4tR3diVUNXeTNSMVFEemtzVU0?oc=5",
+        "date": "2026-11-22"
       }
     ],
     "MIA": [
@@ -287,7 +287,7 @@
       {
         "team": "WAS",
         "tag": "KEY",
-        "text": "CB Amik Robertson (ankle) and G Lucas Patrick (concussion) are questionable for Monday vs. Cincinnati.",
+        "text": "CB Amik Robertson (ankle, hurt in Friday practice) is questionable for Monday vs. Cincinnati; C Lucas Patrick cleared concussion protocol and will start, per Dan Quinn.",
         "source": "ESPN",
         "url": "https://www.espn.com/nfl/injuries",
         "date": "2026-11-22"
@@ -307,10 +307,10 @@
       {
         "team": "LV",
         "tag": "KEY",
-        "text": "TE Brock Bowers (ankle/quad) is questionable at Denver after limited practices Thu-Fri; the Raiders may wait until near the 4:25 PM ET kickoff to decide.",
-        "source": "Yahoo Sports",
-        "url": "https://sports.yahoo.com/articles/brock-bowers-playing-today-latest-135410717.html",
-        "date": "2026-11-21"
+        "text": "TE Brock Bowers (ankle/quad) is inactive at Denver after limited practices Thursday and Friday.",
+        "source": "Silver And Black Pride",
+        "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPVkxxT0k3dXRTWU1vNVFlbHV0VWs5aUZrVTNNTW81azNmd0dYd3Q1cW14V2s0Ujdwemo3NGczZXo4RlVNUnp3MEk1bGtWbmZIRFJkZ3AtaUpncWFfcm1SMXVYRXVoVlg3aG9TYTNzZDAyU3YwZ3NZd3Q2X3dKTC1LVWVsUTQtcEJGdjNZZDFaNm8wUjhJaXRQLWxPazRORUx1cTFiMnJJRWNkbkV5RElxUmh2WDhfMFU?oc=5",
+        "date": "2026-11-22"
       }
     ],
     "PIT": [
@@ -355,10 +355,10 @@
       {
         "team": "LAC",
         "tag": "KEY",
-        "text": "LB Daiyan Henley (knee) is ruled out vs. the Jets; CB Tarheeb Still (ankle) is questionable.",
-        "source": "ESPN",
-        "url": "https://www.espn.com/nfl/injuries",
-        "date": "2026-11-21"
+        "text": "LB Daiyan Henley (knee) and CB Tarheeb Still (ankle) are inactive vs. the Jets; WR Ladd McConkey is active.",
+        "source": "Chargers.com",
+        "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOTF9kd1E2S3otdE9BM1hNYVZEeG5SR2xuYmh1RFFYNkYzbXl0cjE5THBQeVFmZWtzVDhMb0dhOEdobUlpUUZPRGMxQ1p5OWtUN0tFOTF5ODE2Z3Nsa3hta3lVcFNvSzZWUmZTaDNpWGdIN0ZNeXFVN2V0V2pja2REa3BLRWxqLWtrdVY2Tk15b3lOdkNpdm1IcmFjQm9tWkRpRWhv?oc=5",
+        "date": "2026-11-22"
       }
     ],
     "IND": [
