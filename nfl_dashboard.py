@@ -511,7 +511,8 @@ def generate_html(power, vals, sched, week, info):
         pr = '' if r.score else val.card_row('nfl', r.margin, r.market, r.home, r.away, info['val_live'], lambda t: nick(vm.full_name(t)))
         pr += '' if r.score else tot.card_row('nfl', t_ours, r.total)
         move += ex.why_row([('Ratings', r.margin - (0.0 if r.neutral else HFA_POINTS)), ('Home field', 0.0 if r.neutral else HFA_POINTS)],
-                           r.margin, r.market, r.home, r.away, lambda t: nick(vm.full_name(t)), lead=pr)
+                           r.margin, r.market, r.home, r.away, lambda t: nick(vm.full_name(t)), lead=pr,
+                           note='' if r.score else ex.NO_EDGE)
         move += gr.card_row('nfl', r.game_id, r.margin, r.market, r.home, r.away, nick(home), nick(away), bool(r.score))
         prof = info['mu_prof']
         if r.home in prof and r.away in prof:

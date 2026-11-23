@@ -403,9 +403,9 @@ def log_spots(rows):
 
 TIMING = {    # which line an edge was tested against: (css class, label, plain-English meaning). Research wording,
               # not betting instructions (Dylan, 2026-11-23 skeptic audit: 'Bet early' read like a pick service)
-    'early': ('early', 'Opener edge', 'Tested against the opening line; in past seasons it was mostly gone by kickoff. The '
+    'early': ('early', 'Opener edge', 'Tested against the opening line; in past seasons it was mostly gone by game time. The '
                                       'further the current line is from the opener shown, the less of it is left.'),
-    'kick': ('kick', 'Holds to kickoff', 'Held up against the closing line too, not just the opener.'),
+    'kick': ('kick', 'Holds to the close', 'Held up against the closing line too, not just the opener.'),
     'late': ('late', 'Game-day', 'Depends on game-day conditions (the wind forecast) and was tested at the closing line, so '
                                  'it means the most once the forecast is settled.'),
     'range': ('range', 'Line range', 'The rule is about the line itself (+1.5 to +3): it applies while the line is in that '
@@ -424,7 +424,7 @@ _SYS = None
 
 
 def system_timing(key):
-    """Opener edge unless the system held up at the close (then holds to kickoff); wind needs the game-day forecast."""
+    """Opener edge unless the system held up at the close (then holds to the close); wind needs the game-day forecast."""
     global _SYS
     if _SYS is None:
         try:
@@ -1145,7 +1145,7 @@ def spots_guide():
         ('Which line each edge was tested against',
          '<p>Each edge was measured against a specific line, and that decides what the record means:</p>'
          '<dl class="plain">' + badges + '</dl><p>Most of what we have is an <b>Opener edge</b>: the market finds the same '
-         'thing by kickoff. Only edges that also beat the closing line are marked <b>Holds to kickoff</b>. Most readers '
+         'thing by game time. Only edges that also beat the closing line are marked <b>Holds to the close</b>. Most readers '
          'can\'t get the opening line (it is posted early, often with low limits), so read an Opener edge as research on '
          'how the line moves, not as a price you can count on.</p>'),
     ]
@@ -1158,7 +1158,7 @@ def spots_guide():
          'our tests used. <b>College basketball and the NFL</b> use the first line our hourly check saw, with the time; '
          'in college basketball that has matched the real opener exactly 64% of the time and within a point 91% of the '
          'time, usually about 2½ days before tip. Totals use the first total we saw.</dd>'
-         '<dt>The close</dt><dd>The last line before kickoff, the sharpest number. Beating it is much harder than '
+         '<dt>The close</dt><dd>The last line before the game starts, the sharpest number. Beating it is much harder than '
          'beating the opener.</dd>'
          '<dt>Win chance vs. needed</dt><dd>The number on the right of a ' + sy.NAMES['priced'] + ' row: how often that '
          'side wins at the posted line, next to what it takes to break even at −110 (52.4%, a bit less when a push is '
@@ -1172,7 +1172,7 @@ def spots_guide():
          'the news explains. Their game cards still show the strategies, greyed, with the reason. <b>Strategies that stop '
          'working live</b> are paused: 20+ live bets with a record too far under break-even to be bad luck.</p>'),
         ('How to use it',
-         '<ol><li>Read the badge first: <b>Opener edge</b> rows were tested against the opener; <b>Holds to kickoff</b> '
+         '<ol><li>Read the badge first: <b>Opener edge</b> rows were tested against the opener; <b>Holds to the close</b> '
          'rows can wait.</li><li>For early ones, compare the line you can get with the opener shown.</li><li>Open the game '
          'card: injuries, weather and how our line is built.</li><li>Treat each row as a reason to look closer, not a bet. '
          'Even the best of these win 54–57% of the time.</li></ol>'),

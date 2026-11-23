@@ -385,7 +385,8 @@ def generate_html(power, metrics, days, info):
                                    val.card_row('nba', margin, g['market'], g['home'], g['away'], info['val_live'],
                                                 lambda t: short.get(t, t))
                                    + tot.card_row('nba', info['total_fn'](g['home'], g['away'], g['neutral'])
-                                                  if info.get('total_fn') else np.nan, g.get('total'))))
+                                                  if info.get('total_fn') else np.nan, g.get('total'))),
+                               note='' if g['score'] else ex.NO_EDGE)
             move += gr.card_row('nba', g['game_id'], margin, g['market'], g['home'], g['away'],
                                 short.get(g['home'], g['home']), short.get(g['away'], g['away']), bool(g['score']))
             mprof = info['mu_prof']

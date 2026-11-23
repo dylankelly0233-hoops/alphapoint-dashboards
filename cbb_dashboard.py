@@ -656,7 +656,8 @@ def generate_html(power, metrics, days, info):
             hfa_all = g.get('hfa', 0.0 if g['neutral'] else HFA_POINTS)
             move += ex.why_row([('Ratings', margin - hfa_all), ('Home court', 0.0 if g['neutral'] else HFA_POINTS),
                                 ('Crowd', (g.get('crowd') or {}).get('adj'))] + list(g.get('spot_parts') or []),
-                               margin, g['market'], g['home'], g['away'], lead=pr)
+                               margin, g['market'], g['home'], g['away'], lead=pr,
+                               note='' if g['score'] else ex.LOPSIDED_NOTE if big else ex.NO_EDGE)
             if not big:
                 move += gr.card_row('cbb', g['game_id'], margin, g['market'], g['home'], g['away'], g['home'], g['away'],
                                     bool(g['score']))

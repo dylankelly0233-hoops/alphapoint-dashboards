@@ -535,21 +535,33 @@ def write_spots(sport, spots):
     save_first_totals(sport.lower())
 
 
-def why_row(parts, ours, market, home, away, name=lambda t: t, unit='', digits=1, lead=''):
+NO_EDGE = 'No spread or total clears −110 right now.'
+LOPSIDED_NOTE = 'Not priced: in lopsided games the market has been more accurate than ratings.'
+HOME_LABELS = ('Home court', 'Home field', 'Home ice')
+
+
+def why_row(parts, ours, market, home, away, name=lambda t: t, unit='', digits=1, lead='', note=''):
     """
     'Our pricing' block for a game card: any notable spread / total lines (lead, from valuation.card_row and
     totals.card_row; empty unless they clear −110 or the total gap is big), then how our line is built: parts =
     [(label, points to the home side)], the first being the rating gap; they add up to `ours` (home margin).
+    note: shown in place of the price lines when there are none (NO_EDGE, LOPSIDED_NOTE), so every upcoming game's
+    block has the same two parts: the price, then 'Built from' (Dylan, 2026-11-23: cards looked inconsistent).
     """
+    if not lead and note:
+        lead = f'<span class="hint">{theme.esc(note)}</span>'
     if _nan(ours):
         return f'<div class="lmove pricing">{theme.k("Our pricing")}{lead}</div>' if lead else ''
     bits = []
     for lab, v in parts:
+        if lab in HOME_LABELS and v is not None and not _nan(v) and abs(v) < 0.5 / 10 ** digits:
+            bits.append('Neutral site')
+            continue
         if v is None or _nan(v) or abs(v) < 0.5 / 10 ** digits:
             continue
         team = name(home) if v > 0 else name(away)
         bits.append(f'{theme.esc(lab)} <b>{theme.esc(team)} +{abs(v):.{digits}f}</b>')
     if not bits and not lead:
         return ''
-    built = f'<span class="pline">{" · ".join(bits)}</span>' if bits else ''
+    built = f'<span class="pline">Built from: {" · ".join(bits)}</span>' if bits else ''
     return f'<div class="lmove pricing">{theme.k("Our pricing")}{lead}{built}</div>'

@@ -382,7 +382,7 @@ def bet_text(it, ctx):
     if b == 'teaser':
         return 'Tested at the closing line: applies while the underdog is +1.5 to +3'
     if b == 'close':
-        return f'Tested vs the closing line: {what} (held up through kickoff in past seasons)'
+        return f'Tested vs the closing line: {what} (held up against the closing line in past seasons)'
     ctx = ctx or {}
     if side in ('home', 'away'):
         o, now = ctx.get('opened'), ctx.get('market')
