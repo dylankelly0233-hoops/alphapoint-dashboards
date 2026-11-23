@@ -1,0 +1,49 @@
+{
+ "sport": "epl",
+ "generated": "2026-11-23T08:44:30-05:00",
+ "teams": {
+  "BRE": {
+   "checked": "2026-11-23T08:44:30-05:00",
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-23",
+     "text": "First-choice striker Igor Thiago is suspended for three Premier League games, starting vs Everton on Nov 23.",
+     "source": "BBC via Yahoo Sports",
+     "url": "https://sports.yahoo.com/articles/andrews-team-news-thiagos-suspension-153425694.html",
+     "date": "2026-11-21"
+    },
+    {
+     "direction": "too_high",
+     "since": "2026-11-21",
+     "text": "Defenders Nathan Collins and Aaron Hickey (hurt on international duty) are out for several weeks; Rico Henry and Kaye Furo also out.",
+     "source": "Sports Mole",
+     "url": "https://www.sportsmole.co.uk/football/brentford/injury-news/news/andrews-confirms-double-brentford-injury-blow-ahead-of-everton-meeting_609532.html",
+     "date": "2026-11-21"
+    },
+    {
+     "direction": "too_low",
+     "since": "2026-11-21",
+     "text": "Fabio Carvalho has a strong chance to be in the squad after missing the last four games, per Keith Andrews.",
+     "source": "Brentford FC",
+     "url": "https://www.brentfordfc.com/en/matches/mens/brentford-v-everton-premier-league-20261123?tab=pre-match",
+     "date": "2026-11-21"
+    }
+   ]
+  },
+  "EVE": {
+   "checked": "2026-11-23T08:44:30-05:00",
+   "watch": [
+    {
+     "direction": "too_low",
+     "since": "2026-11-21",
+     "text": "Everton report no injury concerns after the international break; Jack Grealish, out after an illness and a club-protocol breach, is confirmed available by David Moyes.",
+     "source": "Goodison News",
+     "url": "https://www.goodisonnews.com/injuries/brentford-vs-everton-team-news-latest-as-jack-grealish-ready-but-five-to-miss-out",
+     "date": "2026-11-21"
+    }
+   ]
+  }
+ },
+ "games": {}
+}

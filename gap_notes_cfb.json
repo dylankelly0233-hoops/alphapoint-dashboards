@@ -1,6 +1,6 @@
 {
  "sport": "cfb",
- "generated": "2026-11-22T22:42:20-05:00",
+ "generated": "2026-11-23T08:44:30-05:00",
  "teams": {
   "Clemson": {
    "watch": [
@@ -942,8 +942,33 @@
   },
   "401869959": {
    "swings": {
-    "Georgia State": "Backup QB Ayden Pereira threw 3 TDs in the 28-27 loss at Marshall (11/21) with Cameran Brown listed doubtful; the market moved up on Georgia State after the strong showing (Georgia State Athletics)."
-   }
+    "Georgia State": "Starting QB Cameran Brown may return Nov 28 after missing several games (Rotowire, 11/21); the market is pricing a better Georgia State than our ratings, built on his absence."
+   },
+   "checked": "2026-11-23T08:44:30-05:00",
+   "verdict": "partly",
+   "summary": "Georgia State may get starting QB Cameran Brown back for the finale, which explains some of the market being 3 points closer than us.",
+   "reasons": [
+    {
+     "text": "Georgia State QB Cameran Brown (undisclosed) has missed several games with Ayden Pereira starting; Nov 21 report says the Louisiana game is his last chance to return.",
+     "source": "Rotowire",
+     "url": "https://www.rotowire.com/cfootball/headlines/cameran-brown-injury-wont-play-at-marshall-240701",
+     "date": "2026-11-21"
+    },
+    {
+     "text": "Louisiana is already bowl eligible (8-3) after beating South Alabama 28-26.",
+     "source": "97.3 The Dawg",
+     "url": "https://973thedawg.com/ixp/37/p/cajuns-beat-south-alabama-bowl-eligible/",
+     "date": "2026-11-21"
+    }
+   ],
+   "returning": [
+    {
+     "team": "Georgia State",
+     "player": "Cameran Brown",
+     "text": "Starting QB, out since late October; possible return Nov 28.",
+     "url": "https://www.rotowire.com/cfootball/headlines/cameran-brown-injury-wont-play-at-marshall-240701"
+    }
+   ]
   },
   "401871102": {
    "swings": {
@@ -1013,6 +1038,25 @@
      "source": "Hoosier Huddle",
      "url": "https://hoosierhuddle.com/2026/11/22/game-wrap-and-reaction-washington-27-no-9-indiana-24-ot/",
      "date": "2026-11-22"
+    }
+   ]
+  },
+  "401860929": {
+   "checked": "2026-11-23T08:44:30-05:00",
+   "verdict": "unexplained",
+   "summary": "Nothing found that makes slumping Washington State a 2.5-point favorite (opened 1) over a San Diego State team that beat it 26-20 on Oct 31.",
+   "reasons": [
+    {
+     "text": "Washington State lost 42-14 at Texas State on Nov 21, its worst loss of the season, extending a long losing run.",
+     "source": "Yahoo Sports",
+     "url": "https://sports.yahoo.com/articles/washington-states-blowout-loss-texas-173637286.html",
+     "date": "2026-11-22"
+    },
+    {
+     "text": "San Diego State beat Washington State 26-20 on Oct 31 even without QB Jayden Denegal (ankle); no current SDSU QB news found.",
+     "source": "Fox Sports",
+     "url": "https://www.foxsports.com/college-football/san-diego-state-aztecs-team",
+     "date": "2026-11-01"
     }
    ]
   }

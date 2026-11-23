@@ -1,6 +1,6 @@
 {
   "sport": "nfl",
-  "generated": "2026-11-22T19:45:00-05:00",
+  "generated": "2026-11-23T08:44:30-05:00",
   "games": {
     "2026_12_NE_LAC": {
       "verdict": "explained",
@@ -435,6 +435,40 @@
           "source": "Bleacher Nation",
           "url": "https://www.bleachernation.com/bears/2026/11/22/bears-pregamin-inactives-3/",
           "date": "2026-11-22"
+        }
+      ]
+    },
+    "CIN": {
+      "checked": "2026-11-23T08:44:30-05:00",
+      "watch": [
+        {
+          "direction": "too_high",
+          "since": "2026-11-21",
+          "text": "RG Dalton Risner (knee) and LB Oren Burks (groin, placed on IR) are ruled out for Monday at Washington; G Dylan Fairchild (oblique) and CB Dax Hill (illness) are questionable.",
+          "source": "Cincy Jungle",
+          "url": "https://www.cincyjungle.com/cincinnati-bengals-injuries/206210/commanders-injury-report-dalton-risner-dax-hill-dylan-fairchild",
+          "date": "2026-11-21"
+        },
+        {
+          "direction": "too_low",
+          "since": "2026-11-21",
+          "text": "S Kyle Dugger (quad), who has missed six games, is questionable to return Monday; QB Joe Burrow (illness) practiced fully all week.",
+          "source": "Yahoo Sports",
+          "url": "https://sports.yahoo.com/articles/bengals-declare-two-players-against-232818676.html",
+          "date": "2026-11-21"
+        }
+      ]
+    },
+    "WAS": {
+      "checked": "2026-11-23T08:44:30-05:00",
+      "watch": [
+        {
+          "direction": "unclear",
+          "since": "2026-11-21",
+          "text": "Questionable on the final report: CB Amik Robertson (ankle), RB Rachaad White (heel) and RB Jacory Croskey-Merritt (groin, on IR, needs activation); C Lucas Patrick cleared concussion protocol.",
+          "source": "Yahoo Sports",
+          "url": "https://sports.yahoo.com/articles/commanders-vs-bengals-saturday-injury-211519338.html",
+          "date": "2026-11-21"
         }
       ]
     }

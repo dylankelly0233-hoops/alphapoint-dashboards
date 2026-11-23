@@ -1,0 +1,169 @@
+{
+ "sport": "nhl",
+ "generated": "2026-11-23T08:44:30-05:00",
+ "teams": {
+  "OTT": {
+   "checked": "2026-11-23T08:44:30-05:00",
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-22",
+     "text": "Forwards William Eklund (ankle), Warren Foegele (knee) and Andre Burakovsky (lower body) are out vs Calgary; Hayden Hodgson (groin) is day-to-day.",
+     "source": "Bleacher Nation",
+     "url": "https://bleachernation.com/picks/2026/11/22/senators-vs-flames-how-to-watch-odds-picks-predictions-3",
+     "date": "2026-11-22"
+    },
+    {
+     "direction": "unclear",
+     "since": "2026-11-23",
+     "text": "Starting goalie not confirmed before the morning skate: Linus Ullmark (11-1-0, 4 of the last 6 starts) projected, Samuel Ersson the alternative.",
+     "source": "Squawka",
+     "url": "https://www.squawka.com/ca/news/nhl/flames-vs-senators-prediction-team-news/",
+     "date": "2026-11-23"
+    }
+   ]
+  },
+  "CGY": {
+   "checked": "2026-11-23T08:44:30-05:00",
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-22",
+     "text": "D Kevin Bahl is out for the season (Achilles surgery) and Jonathan Huberdeau (hip) is out; Martin Pospisil (upper body) is day-to-day after a hit from Chicago's Wyatt Kaiser.",
+     "source": "The Hockey Writers",
+     "url": "https://thehockeywriters.com/flames-week-ahead-schedule-storylines-still-searching-for-consistency-pospisil-injury-and-more",
+     "date": "2026-11-22"
+    }
+   ]
+  },
+  "LA": {
+   "checked": "2026-11-23T08:44:30-05:00",
+   "watch": [
+    {
+     "direction": "too_low",
+     "since": "2026-11-23",
+     "text": "LW Artemi Panarin (personal, missed 4 games) and D Erik Gustafsson (upper body) are day-to-day and expected back Monday at Montreal; not confirmed.",
+     "source": "Inside the Rink",
+     "url": "https://insidetherink.com/nhl-game-preview-los-angeles-kings-at-montreal-canadiens-with-line-combinations-11-23-2026/",
+     "date": "2026-11-23"
+    }
+   ]
+  },
+  "MTL": {
+   "checked": "2026-11-23T08:44:30-05:00",
+   "watch": []
+  },
+  "UTAH": {
+   "checked": "2026-11-23T08:44:30-05:00",
+   "watch": [
+    {
+     "direction": "too_low",
+     "since": "2026-11-23",
+     "text": "Dylan Guenther (IR since Nov 11, 2-4 weeks) and D John Marino (15 games missed) are nearing returns from upper-body injuries; not confirmed for Winnipeg.",
+     "source": "Inside the Rink",
+     "url": "https://insidetherink.com/nhl-game-preview-utah-mammoth-vs-winnipeg-jets-with-line-combinations-11-23-2026/",
+     "date": "2026-11-23"
+    },
+    {
+     "direction": "too_high",
+     "since": "2026-11-21",
+     "text": "Clayton Keller (illness) missed Saturday vs Anaheim and is day-to-day for Monday.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nhl/injuries",
+     "date": "2026-11-23"
+    }
+   ]
+  },
+  "WPG": {
+   "checked": "2026-11-23T08:44:30-05:00",
+   "watch": []
+  },
+  "TOR": {
+   "checked": "2026-11-23T08:44:30-05:00",
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-10-26",
+     "text": "Toronto has the most players on IR in the league and has lost 9 of 10; Kirill Marchenko (out since Oct 26) and Colton Sissons skated in non-contact jerseys Sunday; Jack Roslovic is day-to-day.",
+     "source": "NHL.com",
+     "url": "https://www.nhl.com/islanders/news/game-preview-islanders-vs-maple-leafs-nov-23-2026",
+     "date": "2026-11-23"
+    }
+   ]
+  },
+  "NYI": {
+   "checked": "2026-11-23T08:44:30-05:00",
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-23",
+     "text": "D Alexander Romanov is out with a torn ACL; D Ryan Pulock (lower body) is day-to-day.",
+     "source": "Bettors Insider",
+     "url": "https://bettorsinsider.com/nhl/2026/11/23/maple-leafs-vs-islanders-prediction-sorokin-edge-in-elmont/",
+     "date": "2026-11-23"
+    },
+    {
+     "direction": "too_low",
+     "since": "2026-11-14",
+     "text": "Mathew Barzal returned Nov 14 after missing the start of the season.",
+     "source": "Bettors Insider",
+     "url": "https://bettorsinsider.com/nhl/2026/11/23/maple-leafs-vs-islanders-prediction-sorokin-edge-in-elmont/",
+     "date": "2026-11-23"
+    }
+   ]
+  },
+  "CBJ": {
+   "checked": "2026-11-23T08:44:30-05:00",
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-16",
+     "text": "C Sean Monahan (did not travel, projected back Nov 25) and Conor Garland (IR) are out with upper-body injuries.",
+     "source": "Bettors Insider",
+     "url": "https://bettorsinsider.com/nhl/2026/11/23/blue-jackets-vs-devils-prediction-back-the-devils-to-cover/",
+     "date": "2026-11-23"
+    }
+   ]
+  },
+  "NJ": {
+   "checked": "2026-11-23T08:44:30-05:00",
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-17",
+     "text": "Out: Anthony Mantha (throat fracture surgery), D Johnathan Kovacevic (high ankle sprain, 4-6 weeks from Nov 17) and D Seamus Casey (knee).",
+     "source": "NHL.com",
+     "url": "https://www.nhl.com/devils/news/preview-2026020378",
+     "date": "2026-11-23"
+    }
+   ]
+  }
+ },
+ "games": {
+  "401892775": {
+   "checked": "2026-11-23T08:44:30-05:00",
+   "verdict": "partly",
+   "summary": "Ottawa is missing three forwards (Eklund, Foegele, Burakovsky) and hasn't confirmed its goalie, which covers some of why the market is lower on the Senators than we are.",
+   "reasons": [
+    {
+     "text": "Senators forwards William Eklund, Warren Foegele and Andre Burakovsky are out.",
+     "source": "Bleacher Nation",
+     "url": "https://bleachernation.com/picks/2026/11/22/senators-vs-flames-how-to-watch-odds-picks-predictions-3",
+     "date": "2026-11-22"
+    },
+    {
+     "text": "Ottawa's starter (Ullmark projected, Ersson possible) is unconfirmed before the morning skate.",
+     "source": "Squawka",
+     "url": "https://www.squawka.com/ca/news/nhl/flames-vs-senators-prediction-team-news/",
+     "date": "2026-11-23"
+    },
+    {
+     "text": "Against that, Calgary is without Kevin Bahl (season) and Jonathan Huberdeau.",
+     "source": "The Hockey Writers",
+     "url": "https://thehockeywriters.com/flames-week-ahead-schedule-storylines-still-searching-for-consistency-pospisil-injury-and-more",
+     "date": "2026-11-22"
+    }
+   ]
+  }
+ }
+}
