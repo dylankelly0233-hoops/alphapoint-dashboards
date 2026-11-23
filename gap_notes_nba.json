@@ -1,6 +1,6 @@
 {
  "sport": "nba",
- "generated": "2026-11-22T23:41:08-05:00",
+ "generated": "2026-11-23T10:50:00-05:00",
  "teams": {
   "OKC": {
    "checked": "2026-11-22T22:42:20-05:00",
@@ -190,6 +190,53 @@
      "date": "2026-11-23"
     }
    ]
+  },
+  "MEM": {
+   "checked": "2026-11-23T10:50:00-05:00",
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-21",
+     "text": "Cameron Boozer (30.8 mpg, ankle sprain) misses a 2nd straight game and Jerami Grant (calf strain) is out with a two-week re-evaluation; Scotty Pippen Jr. also out.",
+     "source": "Covers",
+     "url": "https://www.covers.com/nba/grizzlies-vs-hornets-prediction-picks-nov-23-2026",
+     "date": "2026-11-23"
+    }
+   ]
+  },
+  "CHA": {
+   "checked": "2026-11-23T10:50:00-05:00",
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-22",
+     "text": "Grayson Allen (concussion protocol), Kon Knueppel (hamstring), Dennis Schroder (hamstring) and Grant Williams are all out vs Memphis on 11/23.",
+     "source": "TalkBasket",
+     "url": "https://www.talkbasket.net/229770-nba-injury-report-wembanyama-fox-listed-on-monday-november-23",
+     "date": "2026-11-23"
+    }
+   ]
+  },
+  "LAL": {
+   "checked": "2026-11-23T10:50:00-05:00",
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-11",
+     "text": "Austin Reaves (35.2 mpg, left heel bruise) is ruled out vs Utah on 11/23, his 4th straight missed game despite a full practice Sunday; Friday at San Antonio is the target.",
+     "source": "Yahoo Sports",
+     "url": "https://sports.yahoo.com/articles/lakers-austin-reaves-status-mondays-015942951.html",
+     "date": "2026-11-23"
+    },
+    {
+     "direction": "too_low",
+     "since": "2026-11-23",
+     "text": "Walker Kessler returns from injury for Monday's game vs Utah.",
+     "source": "Silver Screen and Roll",
+     "url": "https://www.silverscreenandroll.com/lakers-game-previews/129324/lakers-vs-jazz-discussion-injury-report-how-to-watch-tv-stream-start-time-luka-doncic-austin-reaves",
+     "date": "2026-11-23"
+    }
+   ]
   }
  },
  "games": {
@@ -319,6 +366,39 @@
    "checked": "2026-11-22T22:42:20-05:00",
    "swings": {
     "OKC": "SGA (back) was ruled out again for Monday at IND (FanDuel, Nov 22); with the market already pricing his absence and Indiana also short-handed (Haliburton, McConnell out), the gap on OKC fell from 9.7 to 1.7."
+   }
+  },
+  "401910036": {
+   "checked": "2026-11-23T10:50:00-05:00",
+   "verdict": "partly",
+   "summary": "Memphis is without Cameron Boozer (2nd straight game) and Jerami Grant, which pulled the line from 3.5 to 2.5, but Charlotte is missing four rotation players too, so it covers only part of our 3.5-pt gap.",
+   "reasons": [
+    {
+     "text": "Grizzlies: Cameron Boozer (ankle sprain, 2nd straight missed game) and Jerami Grant (calf strain, re-evaluated in two weeks) are out at Charlotte.",
+     "source": "Covers",
+     "url": "https://www.covers.com/nba/grizzlies-vs-hornets-prediction-picks-nov-23-2026",
+     "date": "2026-11-23"
+    },
+    {
+     "text": "Hornets: Grayson Allen (concussion protocol), Kon Knueppel (hamstring), Dennis Schroder (hamstring) and Grant Williams are out; Brandon Miller probable with a knee bruise.",
+     "source": "TalkBasket",
+     "url": "https://www.talkbasket.net/229770-nba-injury-report-wembanyama-fox-listed-on-monday-november-23",
+     "date": "2026-11-23"
+    },
+    {
+     "text": "Line: Memphis opened -3.5 and most books still show -3.5; DraftKings is at -2.5.",
+     "source": "Bleacher Nation",
+     "url": "https://www.bleachernation.com/picks/2026/11/23/grizzlies-vs-hornets-predictions-best-bets-and-odds-monday-november-23-2026/",
+     "date": "2026-11-23"
+    }
+   ],
+   "returning": [],
+   "swings": {}
+  },
+  "401910044": {
+   "checked": "2026-11-23T10:50:00-05:00",
+   "swings": {
+    "LAL": "Market is higher on the Lakers than at their last game even with Austin Reaves ruled out a 4th straight game: Walker Kessler returns from injury and Utah is still without Markkanen and Jaren Jackson Jr. (Yahoo, 11/23)."
    }
   }
  }

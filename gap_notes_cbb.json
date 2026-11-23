@@ -1,6 +1,6 @@
 {
  "sport": "cbb",
- "generated": "2026-11-23T09:42:19-05:00",
+ "generated": "2026-11-23T10:50:00-05:00",
  "teams": {
   "Dayton": {
    "watch": [
@@ -70,6 +70,14 @@
   "Monmouth": {
    "checked": "2026-11-23T09:42:19-05:00",
    "watch": []
+  },
+  "San Diego State": {
+   "watch": [],
+   "checked": "2026-11-23T10:50:00-05:00"
+  },
+  "Iowa State": {
+   "watch": [],
+   "checked": "2026-11-23T10:50:00-05:00"
   }
  },
  "games": {
@@ -169,6 +177,12 @@
      "url": "https://www.wral.com/sports/northcarolina-mens-basketball-cameron-fens-first-game-vs-marshall-november-2026/"
     }
    ]
+  },
+  "401909775": {
+   "checked": "2026-11-23T10:50:00-05:00",
+   "swings": {
+    "San Diego State": "Nothing found: no injury news for the unbeaten Aztecs (Nick Anderson's season-long knee injury is old news); we were 4.7 pts higher on them last game and now match the 7.5 for this Players Era neutral-site opener."
+   }
   }
  }
 }
