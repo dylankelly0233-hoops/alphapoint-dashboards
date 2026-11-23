@@ -65,6 +65,13 @@ Then pick a verdict:
 Write `summary` as one plain sentence a bettor can read in five seconds. If a team's `history` shows we've been higher or lower on it for 4+ straight games, say whether you found a reason or not.
 
 ## Rules
+**Verify every result before you write it** (2026-11-23: a note written from search snippets claimed a Nevada loss
+that never happened). Any game result, score, record or "missed N games" count in a note must be checked against the
+team's ESPN schedule, e.g. `curl -s "https://site.api.espn.com/apis/site/v2/sports/<path>/teams/<team id>/schedule"`
+(paths: `football/nfl`, `football/college-football`, `basketball/nba`, `basketball/mens-college-basketball`,
+`hockey/nhl`, `soccer/eng.1`). If you can't confirm it, leave the number out. When re-checking an old entry, verify its
+results the same way and fix or remove anything that doesn't match.
+
 **Sources, best first (Dylan, 2026-11-22: "we should be finding actual injury reports if/when possible"):**
 1. The official report itself: the NFL team injury report (team site or NFL.com), the NBA official injury report
    (official.nba.com / NBA injury report PDF), conference availability reports in college football (SEC, ACC, Big Ten,
