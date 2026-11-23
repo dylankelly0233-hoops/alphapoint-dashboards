@@ -1,6 +1,6 @@
 {
  "sport": "cbb",
- "generated": "2026-11-23T17:43:18-05:00",
+ "generated": "2026-11-23T18:43:45-05:00",
  "teams": {
   "Dayton": {
    "watch": [
@@ -45,7 +45,7 @@
      "date": "2026-11-21"
     }
    ],
-   "checked": "2026-11-23T11:15:06-05:00"
+   "checked": "2026-11-23T18:43:45-05:00"
   },
   "Tennessee": {
    "checked": "2026-11-23T16:05:00-05:00",
@@ -69,7 +69,7 @@
    "watch": []
   },
   "Monmouth": {
-   "checked": "2026-11-23T09:42:19-05:00",
+   "checked": "2026-11-23T18:43:45-05:00",
    "watch": []
   },
   "San Diego State": {
@@ -110,11 +110,11 @@
   },
   "Utah Valley": {
    "watch": [],
-   "checked": "2026-11-23T11:15:06-05:00"
+   "checked": "2026-11-23T18:43:45-05:00"
   },
   "Stephen F. Austin": {
    "watch": [],
-   "checked": "2026-11-23T11:15:06-05:00"
+   "checked": "2026-11-23T18:43:45-05:00"
   },
   "Louisville": {
    "checked": "2026-11-23T15:05:00-05:00",
@@ -210,6 +210,38 @@
   "Washington": {
    "watch": [],
    "checked": "2026-11-23T16:58:00-05:00"
+  },
+  "West Georgia": {
+   "watch": [],
+   "checked": "2026-11-23T18:43:45-05:00"
+  },
+  "Tennessee Tech": {
+   "watch": [],
+   "checked": "2026-11-23T18:43:45-05:00"
+  },
+  "Campbell": {
+   "watch": [],
+   "checked": "2026-11-23T18:43:45-05:00"
+  },
+  "Coastal Carolina": {
+   "watch": [],
+   "checked": "2026-11-23T18:43:45-05:00"
+  },
+  "Furman": {
+   "watch": [],
+   "checked": "2026-11-23T18:43:45-05:00"
+  },
+  "Elon": {
+   "watch": [],
+   "checked": "2026-11-23T18:43:45-05:00"
+  },
+  "UC Santa Barbara": {
+   "watch": [],
+   "checked": "2026-11-23T18:43:45-05:00"
+  },
+  "UNC Greensboro": {
+   "watch": [],
+   "checked": "2026-11-23T18:43:45-05:00"
   }
  },
  "games": {
@@ -293,7 +325,7 @@
    }
   },
   "401913102": {
-   "checked": "2026-11-23T09:42:19-05:00",
+   "checked": "2026-11-23T18:43:45-05:00",
    "swings": {
     "Monmouth": "Nothing found on Monmouth (no injuries reported); the move is mostly UNC: PG Neo Avdalas is out about two months after Nov 16 wrist surgery (UNC), which the market weighs more than our ratings."
    },
@@ -366,7 +398,7 @@
    ]
   },
   "401921208": {
-   "checked": "2026-11-23T11:15:06-05:00",
+   "checked": "2026-11-23T18:43:45-05:00",
    "swings": {
     "Utah Valley": "Nothing found: the market moved on Utah Valley without a clear reason; no injury news found, and the line rose from Utah Valley -3.5 at open to -4.5."
    }
@@ -426,6 +458,58 @@
    "checked": "2026-11-23T16:45:00-05:00",
    "swings": {
     "Maryland Eastern Shore": "Nothing found beyond results: no injury news; UMES lost 81-61 at IU Indy on 11/22 and is 0-5 on the road, and the market has moved further against them than we have."
+   }
+  },
+  "401917904": {
+   "checked": "2026-11-23T18:43:45-05:00",
+   "verdict": "unexplained",
+   "summary": "No injury or lineup news found for either team; Tennessee Tech's results vs D1 teams and West Georgia's 0-4 start vs D1 back a big spread, but nothing explains the market going 5 points past our number.",
+   "reasons": [
+    {
+     "text": "West Georgia is 0-4 vs Division I (lost by 17 at DePaul, 23 at Loyola Chicago, 3 vs UNC Asheville, 24 at Charleston Southern); its two wins came vs non-D1 Columbia (SC) and Paine.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/mens-college-basketball/team/schedule/_/id/2698",
+     "date": "2026-11-23",
+     "verified_numbers": [
+      "0-4"
+     ]
+    },
+    {
+     "text": "Tennessee Tech won 98-77 at UNC Asheville on 11/18, the same team that won 73-70 at West Georgia on 11/12; our ratings already count both results.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/mens-college-basketball/team/schedule/_/id/2635",
+     "date": "2026-11-23"
+    },
+    {
+     "text": "No injuries listed for either team on Covers' college basketball injury report (11/23).",
+     "source": "Covers",
+     "url": "https://www.covers.com/sport/basketball/ncaab/injuries",
+     "date": "2026-11-23"
+    }
+   ],
+   "returning": [],
+   "verified_numbers": [
+    "0-4"
+   ]
+  },
+  "401920742": {
+   "checked": "2026-11-23T18:43:45-05:00",
+   "swings": {
+    "Campbell": "Campbell won 80-70 at Kansas State on 11/21 (ESPN); our results-based ratings moved up on Campbell more than the market did. No injury news found.",
+    "Coastal Carolina": "Coastal's previous gap came in a 78-51 loss at No. 14 Tennessee on 11/21 (ESPN); no injury news in Coastal's 11/23 game preview, so the change mostly reflects Campbell's win at Kansas State."
+   },
+   "reasons": []
+  },
+  "401921142": {
+   "checked": "2026-11-23T18:43:45-05:00",
+   "swings": {
+    "Furman": "Nothing found: the market moved on Furman without a clear reason; no injuries reported (Covers, 11/23), and Furman's last game was a 108-69 win over non-D1 Clinton on 11/21."
+   }
+  },
+  "401926184": {
+   "checked": "2026-11-23T18:43:45-05:00",
+   "swings": {
+    "UC Santa Barbara": "UNC Greensboro plays at Pepperdine tonight (11/23) and at UCSB the next night, a road back-to-back on a West Coast trip that the market prices more than our ratings do (ESPN schedule)."
    }
   }
  }

@@ -1,6 +1,6 @@
 {
  "sport": "nba",
- "generated": "2026-11-23T17:43:18-05:00",
+ "generated": "2026-11-23T18:43:45-05:00",
  "teams": {
   "OKC": {
    "checked": "2026-11-23T17:43:18-05:00",
@@ -72,13 +72,13 @@
     {
      "direction": "too_high",
      "since": "2026-11-12",
-     "text": "Norman Powell (hamstring) was ruled out vs DEN on 11/22 and Caleb Wilson (hand, 4-6 weeks) has been out since 11/12: the Bulls are without their two leading scorers.",
-     "source": "ESPN",
-     "url": "https://www.espn.com/nba/story/_/id/50564049/bulls-g-norman-powell-sidelined-mild-hamstring-injury",
-     "date": "2026-11-22"
+     "text": "Norman Powell (hamstring) and Caleb Wilson (hand fracture) are both out vs CLE on the NBA's 6:30 PM ET report on 11/23, and Nic Claxton is questionable (illness): the Bulls are without their two leading scorers.",
+     "source": "NBA official injury report",
+     "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-23_06_30PM.pdf",
+     "date": "2026-11-23"
     }
    ],
-   "checked": "2026-11-23T11:17:25-05:00"
+   "checked": "2026-11-23T18:43:45-05:00"
   },
   "NY": {
    "watch": [
@@ -274,8 +274,17 @@
    "checked": "2026-11-23T17:43:18-05:00"
   },
   "CLE": {
-   "watch": [],
-   "checked": "2026-11-23T11:17:25-05:00"
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-16",
+     "text": "Evan Mobley (left great toe sprain) is out at CHI on the NBA's 6:30 PM ET report on 11/23, with Nae'Qwan Tomlin (back) also out; Jaylon Tyson (ankle) is probable.",
+     "source": "NBA official injury report",
+     "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-23_06_30PM.pdf",
+     "date": "2026-11-23"
+    }
+   ],
+   "checked": "2026-11-23T18:43:45-05:00"
   },
   "HOU": {
    "watch": [],
@@ -295,11 +304,11 @@
   },
   "NO": {
    "watch": [],
-   "checked": "2026-11-23T16:58:00-05:00"
+   "checked": "2026-11-23T18:43:45-05:00"
   },
   "PHX": {
    "watch": [],
-   "checked": "2026-11-23T16:58:00-05:00"
+   "checked": "2026-11-23T18:43:45-05:00"
   },
   "SAC": {
    "checked": "2026-11-23T15:05:00-05:00",
@@ -446,7 +455,7 @@
    "swings": {
     "PHX": "Trey Murphy III (knees) is probable for New Orleans vs PHX after missing 7 of 8 games (29 min in his 11/20 return); the market prices him back, our ratings don't (Rotowire, 11/22)."
    },
-   "checked": "2026-11-23T16:58:00-05:00"
+   "checked": "2026-11-23T18:43:45-05:00"
   },
   "401910038": {
    "checked": "2026-11-23T17:43:18-05:00",
@@ -486,6 +495,9 @@
    "swings": {
     "LAL": "Market is higher on the Lakers than at their last game even with Austin Reaves ruled out a 4th straight game: Walker Kessler returns from injury and Utah is still without Markkanen and Jaren Jackson Jr. (Yahoo, 11/23)."
    }
+  },
+  "401910041": {
+   "checked": "2026-11-23T18:43:45-05:00"
   }
  }
 }
