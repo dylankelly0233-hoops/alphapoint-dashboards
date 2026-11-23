@@ -38,6 +38,10 @@ Body:
      through the Super Bowl).
    - Weekly tuning (Mondays only): read `reports/model_changes.md`; flag it if its Date is more than 8 days old or its
      Status is failed.
+   - Clock change (only on the Monday right after the 2nd Sunday of March or the 1st Sunday of November): the cloud and
+     GitHub schedules are in UTC, so they run an hour off after the clocks change. Add `Clocks changed Sunday: confirm
+     the schedules were shifted (the laptop task "AlphaPoint: shift cloud schedules" does it, or ask Claude)` and treat
+     it as a Health problem. Also flag it if this digest itself arrives at 11:20 AM or 1:20 PM instead of 12:20 PM ET.
    If nothing is wrong, write the single line `Health: all OK`.
 2. One short section per sport (CFB, NFL, CBB, NBA, NHL, EPL; NBA, NHL and EPL are lines in the CBB report):
    a heading line like `CFB — Week 13 — refreshed 9:36 AM`; if the report's Date isn't today write
