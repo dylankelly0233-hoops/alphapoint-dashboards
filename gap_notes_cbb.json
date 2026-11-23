@@ -1,6 +1,6 @@
 {
  "sport": "cbb",
- "generated": "2026-11-23T15:06:50-05:00",
+ "generated": "2026-11-23T16:05:00-05:00",
  "teams": {
   "Dayton": {
    "watch": [
@@ -48,7 +48,7 @@
    "checked": "2026-11-23T11:15:06-05:00"
   },
   "Tennessee": {
-   "checked": "2026-11-23T15:05:00-05:00",
+   "checked": "2026-11-23T16:05:00-05:00",
    "watch": [
     {
      "direction": "too_high",
@@ -74,11 +74,11 @@
   },
   "San Diego State": {
    "watch": [],
-   "checked": "2026-11-23T10:50:00-05:00"
+   "checked": "2026-11-23T16:05:00-05:00"
   },
   "Iowa State": {
    "watch": [],
-   "checked": "2026-11-23T10:50:00-05:00"
+   "checked": "2026-11-23T16:05:00-05:00"
   },
   "Michigan": {
    "watch": [],
@@ -89,12 +89,24 @@
    "checked": "2026-11-23T11:44:49-05:00"
   },
   "Temple": {
-   "watch": [],
-   "checked": "2026-11-23T11:15:06-05:00"
+   "checked": "2026-11-23T16:05:00-05:00",
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-22",
+     "text": "Guard Jordan Marsh (18-30 mpg, 16 pts in the opener) missed the 11/22 SFA game with an upper-body injury; day to day, status for UT Martin unconfirmed.",
+     "source": "Temple Athletics",
+     "url": "https://owlsports.com/news/2026/11/22/mens-basketball-temple-drops-paradise-jam-semifinal-to-stephen-f-austin",
+     "date": "2026-11-22",
+     "verified_numbers": [
+      "16"
+     ]
+    }
+   ]
   },
   "UT Martin": {
    "watch": [],
-   "checked": "2026-11-23T11:15:06-05:00"
+   "checked": "2026-11-23T16:05:00-05:00"
   },
   "Utah Valley": {
    "watch": [],
@@ -131,7 +143,7 @@
   },
   "Maryland": {
    "watch": [],
-   "checked": "2026-11-23T11:15:06-05:00"
+   "checked": "2026-11-23T16:05:00-05:00"
   },
   "Wright State": {
    "checked": "2026-11-23T11:42:03-05:00",
@@ -182,6 +194,10 @@
   "San Francisco": {
    "watch": [],
    "checked": "2026-11-23T15:06:50-05:00"
+  },
+  "Maryland Eastern Shore": {
+   "watch": [],
+   "checked": "2026-11-23T16:05:00-05:00"
   }
  },
  "games": {
@@ -301,16 +317,41 @@
    ]
   },
   "401909775": {
-   "checked": "2026-11-23T10:50:00-05:00",
+   "checked": "2026-11-23T16:05:00-05:00",
    "swings": {
-    "San Diego State": "Nothing found: no injury news for the unbeaten Aztecs (Nick Anderson's season-long knee injury is old news); we were 4.7 pts higher on them last game and now match the 7.5 for this Players Era neutral-site opener."
-   }
+    "San Diego State": "Nothing found: no injury news for the unbeaten Aztecs (Nick Anderson's season-long knee injury is old news); we were 4.7 pts higher on them last game and now match the 7.5 for this Players Era neutral-site opener.",
+    "Iowa State": "Nothing found: the market moved on Iowa State without a clear reason; no injury news, and the line rose from -7.5 at open to -11.5 (DraftKings -9.5)."
+   },
+   "verdict": "unexplained",
+   "summary": "Unexplained: no injury news for either team (Iowa State's Wiggins and Toure have been out all season), yet the line went from Iowa State -7.5 at open to -11.5 (-9.5 at DraftKings).",
+   "reasons": [
+    {
+     "text": "Iowa State's only absences are season-long (Wiggins, Achilles; Toure, shoulder, back in January), already in our ratings; the regular rotation played on 11/15.",
+     "source": "Covers",
+     "url": "https://www.covers.com/sport/basketball/ncaab/injuries",
+     "date": "2026-11-23"
+    },
+    {
+     "text": "Previews from 11/22-11/23 list no availability news for either team; Iowa State has not played since 11/15.",
+     "source": "Iowa State Daily",
+     "url": "https://iowastatedaily.com/349348/sports/a-guide-to-the-2026-players-era-tournament/",
+     "date": "2026-11-22"
+    }
+   ]
   },
   "401921210": {
-   "checked": "2026-11-23T11:15:06-05:00",
+   "checked": "2026-11-23T16:05:00-05:00",
    "swings": {
-    "Temple": "Nothing found: the market moved on Temple without a clear reason; no injury news found, and the line slid from Temple -4.5 at open to -2.5."
-   }
+    "Temple": "Likely guard Jordan Marsh: he missed the 11/22 SFA loss with an upper-body (wrist) injury and is day to day, and the line slid from Temple -4.5 to -2.5."
+   },
+   "reasons": [
+    {
+     "text": "Temple guard Jordan Marsh (18-30 mpg) missed the 11/22 loss to Stephen F. Austin with an upper-body injury and is day to day for UT Martin.",
+     "source": "Temple Athletics",
+     "url": "https://owlsports.com/news/2026/11/22/mens-basketball-temple-drops-paradise-jam-semifinal-to-stephen-f-austin",
+     "date": "2026-11-22"
+    }
+   ]
   },
   "401921208": {
    "checked": "2026-11-23T11:15:06-05:00",
@@ -340,6 +381,39 @@
    ],
    "swings": {
     "Louisville": "Louisville moved from 3 pts below the market to 4.3 above: Seth Trimble sat its last game (vs Stetson) and returns now, which the market may price differently; no other news found (Courier-Journal, 11/23)."
+   }
+  },
+  "401906853": {
+   "checked": "2026-11-23T16:05:00-05:00",
+   "verdict": "partly",
+   "summary": "Part of it: Tennessee's Jalen Haralson (knee) is still day to day for this neutral-site game, and the line has come down from Tennessee -5.5 to -3.5/-4.5; we found nothing else.",
+   "reasons": [
+    {
+     "text": "Jalen Haralson (about 22-25 mpg) hyperextended his knee on 11/17, missed Coastal Carolina on 11/21; Barnes thinks he'll be ready but it isn't confirmed.",
+     "source": "On3",
+     "url": "https://www.on3.com/teams/tennessee-volunteers/news/jalen-haralson-update-rick-barnes-tennessee-basketball-injury/",
+     "date": "2026-11-21"
+    },
+    {
+     "text": "The line opened Tennessee -5.5 and has moved toward Maryland (-3.5 in our feed, -4.5 at DraftKings) with no other injury news found for either team.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401906853",
+     "date": "2026-11-23"
+    }
+   ],
+   "returning": [
+    {
+     "team": "Tennessee",
+     "player": "Jalen Haralson",
+     "text": "Missed 11/21 with a knee hyperextension; Barnes expects him back for Maryland, unconfirmed.",
+     "url": "https://sports.yahoo.com/articles/jalen-haralson-injury-tennessee-basketball-230640171.html"
+    }
+   ]
+  },
+  "401920752": {
+   "checked": "2026-11-23T16:05:00-05:00",
+   "swings": {
+    "Maryland Eastern Shore": "Nothing found beyond results: no injury news; UMES lost 81-61 at IU Indy on 11/22 and is 0-5 on the road, and the market has moved further against them than we have."
    }
   }
  }
