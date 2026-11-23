@@ -134,6 +134,13 @@ def _cover_rate(d):
     return win.mean(), int(keep.sum())
 
 
+# (our source's label, the restricted source it should replace, games needed): Dylan, 2026-11-23 (licensing before the
+# paid tier). The weekly email says READY once ours is at least as accurate over that many recent live games.
+SWAP_CHECKS = {'nfl': [('AlphaPoint (shadow)', 'nfelo', 100)],
+               'cbb': [('AlphaPoint model', 'TeamRankings', 300), ('AlphaPoint v2 (shadow)', 'TeamRankings', 300)],
+               'nba': [('Net rating', 'TeamRankings', 200)]}
+
+
 def summarize(d, sport):
     """Report lines for one block of finished games."""
     if d.empty:
@@ -171,21 +178,24 @@ def summarize(d, sport):
         s = pd.DataFrame(rows, columns=['src', 'err']).groupby('src')['err']
         lines.append('  By source (average miss, bias): ' + '; '.join(
             f'{k} {v.abs().mean():.1f}, {v.mean():+.1f} over {len(v)}' for k, v in s))
-        if sport == 'nfl':     # can our own model replace nfelo yet? (Dylan, 2026-11-23: free data before charging)
+        # can our own models replace the restricted sources yet? (Dylan, 2026-11-23: free data before charging)
+        for ours_lab, theirs, need in SWAP_CHECKS.get(sport, ()):
             pair = []
-            for r in d.itertuples():
+            for r in d.sort_values('kickoff').itertuples():
                 try:
                     src = json.loads(r.sources_last or '{}')
                 except (TypeError, ValueError):
                     continue
-                if 'nfelo' in src and 'AlphaPoint (shadow)' in src:
-                    pair.append((abs(r.result - src['AlphaPoint (shadow)']), abs(r.result - src['nfelo'])))
+                if theirs in src and ours_lab in src:
+                    pair.append((abs(r.result - src[ours_lab]), abs(r.result - src[theirs])))
+            pair = pair[-need:]                     # the most recent games: our models improve as a season goes
             if pair:
-                ours, nf = (sum(x[i] for x in pair) / len(pair) for i in (0, 1))
-                ready = len(pair) >= 100 and ours <= nf
-                lines.append(f'  Replace nfelo? Our model {ours:.2f} vs nfelo {nf:.2f} average miss over {len(pair)} live games: '
-                             + ('READY: ours is at least as accurate over 100+ games. Ask Claude to swap it into the blend.'
-                                if ready else 'not yet (needs 100+ games and an average miss no worse than nfelo).'))
+                ours, them = (sum(x[i] for x in pair) / len(pair) for i in (0, 1))
+                ready = len(pair) >= need and ours <= them
+                lines.append(f'  Replace {theirs}? {ours_lab} {ours:.2f} vs {theirs} {them:.2f} average miss over the last '
+                             f'{len(pair)} live games: '
+                             + (f'READY: ours is at least as accurate over {need}+ games. Ask Claude to swap it into the blend.'
+                                if ready else f'not yet (needs {need}+ games and an average miss no worse than {theirs}).'))
     conf = d.groupby('confidence')
     lines.append('  By confidence (average miss): ' + '; '.join(
         f'{c} {(g["result"] - g["ours_last"]).abs().mean():.1f} over {len(g)}'
