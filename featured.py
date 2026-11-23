@@ -195,12 +195,18 @@ def tab(cards, intro, empty):
 
 
 def injuries(wire, team, n=2):
-    """The top Injury Wire notes for one team (short)."""
+    """
+    The top Injury Wire notes for one team, in full (Dylan, 2026-11-23: a 160-character cut hid who starts at QB).
+    Curated items are written to 200 characters; only an unusually long one is shortened, at a sentence end.
+    """
     items = ((wire or {}).get('items') or {}).get(team) or []
     out = []
     for i in items[:n]:
         t = ' '.join(str(i.get('text', '')).split())
-        out.append(t if len(t) <= 160 else t[:159].rsplit(' ', 1)[0] + '…')
+        if len(t) > 320:
+            cut = t[:320].rfind('. ')
+            t = t[:cut + 1] if cut > 120 else t[:319].rsplit(' ', 1)[0] + '…'
+        out.append(t)
     return out
 
 
