@@ -838,7 +838,7 @@ def generate_html(p4, vals, sched, week, season_type, info):
             f'{theme.EDGE_MIN:g} show as None. FCS opponents are rated with Sagarin only. Trade signals come from the value metrics. '
             f'<b>Line</b> shows where the spread opened and where it is now, and whether the market has moved toward our '
             f'number (a good sign for the edge) or away from it. <b>Bounce-back</b> tags an away team coming off a '
-            f'{BLOWOUT_MARGIN}+ point loss: in Dylan\'s 2016–25 backtest those teams covered 55.4% of 739 games (+5.6% ROI).'))
+            f'{BLOWOUT_MARGIN}+ point loss: in our 2016–25 backtest those teams covered 55.4% of 739 games (+5.6% ROI).'))
 
     # --- Injury Wire tab ---
     games = [{'away': r.away, 'home': r.home,
