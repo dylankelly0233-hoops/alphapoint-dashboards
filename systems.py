@@ -29,6 +29,9 @@ def _passed(sport, key):
 
 STRICT_LO, STRICT_N = 0.51, 300   # Dylan, 2026-11-19: Best spots shows only legit proven track records
 KILL_N, KILL_RATE = 200, 0.50       # Dylan, 2026-11-20: last 200 live bets under 50% -> back to tracking
+EARLY_N, EARLY_P = 20, 0.05         # Dylan, 2026-11-23 ('we should def not be advertising anything at 41%'): 20+ live bets
+                                    # and a record that bad has under a 5% chance by luck alone vs break-even -> paused
+BREAK_EVEN = {'teaser': 0.7238}     # per-leg break-even for a 2-team 6-pt teaser at -110; everything else -110: 52.38%
 
 _C = {}
 

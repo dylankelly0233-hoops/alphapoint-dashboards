@@ -1009,14 +1009,16 @@ def criteria_text(key):
     return (f'luck check z {c["z"]:.2f} vs {c["bar"]:.2f} needed ({"passed" if c["luck_ok"] else "missed"}); '
             f'last 5 seasons ({c["recent_seasons"]}) {100 * c["recent"]:.1f}% of {c["recent_n"]:,} '
             f'({"above" if c["recent_ok"] else "below"} the {100 * c["break_even"]:.1f}% break-even)'
-            + (f'; live: {100 * k["rate"]:.0f}% of the last {k["n"]} bets, under 50%, so it is paused' if k else ''))
+            + (f'; live: {k.get("wins", round(k["rate"] * k["n"]))} of {k["n"]} bets ({100 * k["rate"]:.0f}%), '
+               f'too far under break-even to be luck, so it is paused' if k else ''))
 
 
 def criteria_why(key):
     """Why a strategy that meets the long-history bar is not on Best spots (rules 3, 4, 7)."""
     c, k = sy.criteria(key), sy.killed(key)
     if k:
-        return f'Its last {k["n"]} live bets won only {100 * k["rate"]:.0f}%, under 50%, so it is paused until it recovers.'
+        return (f'Its live bets since we started listing it won only {100 * k["rate"]:.0f}% ({k["n"]} graded), too far under '
+                f'break-even to be bad luck, so it is paused until it recovers.')
     if not c:
         return 'It has not been through the monthly luck and recent-seasons checks yet.'
     if not c['luck_ok']:

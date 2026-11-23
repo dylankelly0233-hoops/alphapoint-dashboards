@@ -253,18 +253,34 @@ def golf_review():
 def kill_switch(df):
     """
     Rule 7 (Dylan, 2026-11-20): a Best spots strategy whose last 200 graded live bets won under 50% goes back to
-    tracking until it recovers. Writes live_kill.json (committed in the weekly push; systems.killed reads it).
+    tracking until it recovers. Early pause (Dylan, 2026-11-23: 'we should def not be advertising anything at 41%'):
+    with 20+ graded live bets, a record so bad that luck alone would produce it under 5% of the time against the -110
+    break-even also sends it back to tracking; it returns on its own once the record recovers. Writes live_kill.json
+    (committed by the Sunday tuning run; systems.killed reads it, and Best spots / game cards drop paused strategies).
     """
+    from scipy.stats import binom
     import systems as sy
     res = {}
     for key, x in df[df['key'].notna()].groupby('key'):
         w = x.sort_values('listed')['won'].dropna().tail(sy.KILL_N)
-        res[key] = {'n': len(w), 'rate': round(float(w.mean()), 4) if len(w) else None,
-                    'killed': bool(len(w) >= sy.KILL_N and w.mean() < sy.KILL_RATE)}
-    json.dump({'updated': datetime.now().date().isoformat(), 'kill_n': sy.KILL_N,
-               'kill_rate': sy.KILL_RATE, 'strategies': res}, open('live_kill.json', 'w', encoding='utf-8'), indent=1)
-    hit = [k for k, v in res.items() if v['killed']]
-    return [f'  KILL SWITCH: {", ".join(hit)} paused (last {sy.KILL_N} live bets under 50%).'] if hit else []
+        n, wins = len(w), int(w.sum()) if len(w) else 0
+        be = sy.BREAK_EVEN.get(key, 0.5238)
+        p = float(binom.cdf(wins, n, be)) if n else None
+        long_run = bool(n >= sy.KILL_N and w.mean() < sy.KILL_RATE)
+        early = bool(n >= sy.EARLY_N and p is not None and p < sy.EARLY_P)
+        res[key] = {'n': n, 'wins': wins, 'rate': round(float(w.mean()), 4) if n else None, 'break_even': be,
+                    'p_luck': round(p, 4) if p is not None else None, 'killed': long_run or early,
+                    'why': 'long_run' if long_run else 'early' if early else None}
+    json.dump({'updated': datetime.now().date().isoformat(), 'kill_n': sy.KILL_N, 'kill_rate': sy.KILL_RATE,
+               'early_n': sy.EARLY_N, 'early_p': sy.EARLY_P, 'strategies': res},
+              open('live_kill.json', 'w', encoding='utf-8'), indent=1)
+    out = []
+    for k, v in res.items():
+        if v['killed']:
+            out.append(f'  PAUSED: {k}: {v["wins"]} of {v["n"]} live ({100 * v["rate"]:.0f}%), '
+                       + (f'chance of a record this bad by luck {100 * v["p_luck"]:.1f}% (early pause, under 5%)'
+                          if v['why'] == 'early' else f'last {sy.KILL_N} under 50%'))
+    return out
 
 
 def best_spots_record(scored):
