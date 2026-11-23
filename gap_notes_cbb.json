@@ -1,6 +1,6 @@
 {
  "sport": "cbb",
- "generated": "2026-11-22T16:47:00-05:00",
+ "generated": "2026-11-22T19:45:00-05:00",
  "teams": {
   "Dayton": {
    "watch": [
@@ -37,17 +37,43 @@
      "date": "2026-11-17"
     }
    ]
+  },
+  "Tennessee": {
+   "watch": [
+    {
+     "direction": "unclear",
+     "since": "2026-11-20",
+     "text": "Rotation wing Jalen Haralson (20.5 mpg) missed the 11/20 Coastal Carolina game; reported as possibly back next week, so his status vs Maryland is uncertain.",
+     "source": "Knoxville News Sentinel",
+     "url": "https://news.google.com/rss/articles/CBMihwJBVV95cUxQakk4eUdlXzRfTGNLUHhpYVlXTFNsN1RzMmMzVENGLVZ5ajdKWldpc1l5SWxRM2wxRXlZWDZQdFpfanRqNkkxZU9OMGVLT2ZNUGlRTWF0UmM1RFdzZ0t0N0JGeENpanFnOEhmTXZ4RVBXdWtKUXZlUjVSczdFbnNJc3FkQVBING5rMEFPc0dSOVJMcFFmMklTOGNTYTZyOVBUWm9kcE85MmwwNjJDLVNFcTlRZzh4WnQzNDlhZkRyZl9wX3VWcVR3UEE5S3d6a1E3LU9URHNpN3ZLMUFVRFRhRjNPYWFjdkhDY29iMkNRWkpBRHd4NFhJemU2dFRKVEd4dUNUODFwRQ?oc=5",
+     "date": "2026-11-21"
+    }
+   ]
   }
  },
  "games": {
-  "401920736": {
+  "401909495": {
+   "verdict": "unexplained",
+   "summary": "The gap comes from our own AlphaPoint model (Michigan by 14.4); TeamRankings, Haslametrics and Torvik (3.7-4.7) agree with the market's 4.5. No injury news found for either team.",
+   "reasons": [
+    {
+     "text": "Neutral-site Players Era game in Las Vegas on 11/24; Creighton's opening game of the event, and no line move from the 4.5 opener.",
+     "source": "Creighton Athletics",
+     "url": "https://gocreighton.com/news/2026/5/21/mens-basketball-to-open-players-era-16-against-michigan",
+     "date": "2026-05-21"
+    }
+   ],
+   "returning": [],
+   "swings": {}
+  },
+  "401909800": {
    "swings": {
-    "Dayton": "The market moved up on Dayton after its 63-46 upset of Utah on 11/20 and Northwestern's injury-hit slide (Soulis out for the season), despite PG Landen Joseph's ankle injury (Yahoo, 11/21)."
+    "Kansas State": "Nothing found: the market moved on Kansas State without a clear reason; no injury news found, and the line has held at Gonzaga -12.5 since it opened (11/22)."
    }
   },
-  "401921420": {
+  "401915943": {
    "swings": {
-    "Minnesota": "Nothing found: the market moved on Minnesota without a clear reason; the line is 9.5 from a 10.5 open despite the 85-70 win over Oklahoma State and no injury news for either team (11/22)."
+    "Oregon": "Nothing found: the market moved on Oregon without a clear reason; no current injury news found, and the line has held at St. John's -8.5 since it opened (11/22)."
    }
   }
  }
