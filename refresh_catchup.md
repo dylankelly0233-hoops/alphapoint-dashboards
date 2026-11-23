@@ -35,8 +35,8 @@ sport's current `injury_wire_{sport}.json`, then use `/tmp/in/gap_candidates_{sp
 Every entry you touch gets `"checked": "<now>"` (see refresh_gap_research.md): that stamp is the "Last verified" time
 the card shows.
 
-Work biggest gap first. Follow the cloud network notes in `refresh_cloud.md` (search works; most news pages and
-news.google.com links can't be opened; cite the real article URL from search results).
+Work biggest gap first. Follow the research notes in `refresh_cloud.md`: open the official report or the
+publisher's page itself and cite its own URL, never a news.google.com link.
 
 **Edit, don't rewrite**: load the current `gap_notes_{sport}.json`, change only the entries above, keep every other
 game and team exactly as it is, and set `generated` to now.

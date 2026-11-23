@@ -16,19 +16,19 @@ each cloud run, with full web access, but only when the laptop is on. Always run
   `generated` only if you changed something.
 - **Older** (the laptop was off): do the **full** run below.
 
-**Your network is limited.** Web search works, but most news sites and all news.google.com links (the `url`s in the
-candidates' headlines) can't be opened. To research well anyway:
-- Run searches in `extended` mode, several at a time, with specific queries: player name + team + opponent + "status" or
-  "availability report", and the week or date. Search the exact headline title from the candidates file to find the
-  article itself.
-- Use the facts in the search results' summaries, and cite the real article URL shown in the results (ESPN, team
-  sites, On3, 247Sports, SI, Yahoo, Rotowire, Action Network, Covers), never a news.google.com link. Use the article's
-  date, not today's.
-- If a fact appears only in a headline and no summary confirms it, say only what the headline says ("listed
-  questionable", "expected to start"). Don't guess beyond it.
-- Don't retry WebFetch on a host that failed once.
-- Don't cut corners because of the limit: cover every flagged game, every swing and every watch team, as the
-  runbooks require.
+**Your network is open** (Dylan switched the cloud environment to Full access on 2026-11-23). Research the way a
+careful reporter would:
+- **Open the source itself** with WebFetch: the official report first (NFL team injury reports, the NBA official
+  injury report, conference availability reports, team announcements), then the team site or a named beat writer,
+  then national outlets (ESPN, CBS, Yahoo, Rotowire, On3, 247Sports, SI, The Athletic summaries). Read the page and
+  cite its own URL and date.
+- Search in `extended` mode when a standard search comes back thin, with specific queries: player name + team +
+  opponent + "status" or "availability report", and the date. Search the exact headline title from the candidates
+  file to find the article itself.
+- **Never cite a news.google.com link**: open it or search the headline to reach the publisher's page, and cite that.
+- If a site still refuses (a paywall, a bot check), don't try to get around it: use another source, or say only what
+  the search result's summary states.
+- Cover every flagged game, every swing and every watch team, as the runbooks require.
 
 Your prompt names the **sport** (`nfl`, `cfb`, `cbb`, or `cbb+nba`) and the **mode**:
 - `daily`: the morning run.
