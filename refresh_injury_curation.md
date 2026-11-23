@@ -16,6 +16,11 @@ Goal: from `injury_candidates_{sport}.json`, keep **only injury news that could 
 ## How to work
 1. Read `injury_candidates_{sport}.json` in full. Each team has rule-based `items`, `headlines` (title, source, url, date), and for NFL, `starters_on_report` with ESPN status, notes, and snap share (`pct`, the fraction of snaps played; 0.6+ = starter).
 2. When a QB's status is unclear or the notes conflict, check with WebSearch, using at most 12 searches per run. Prioritize QBs, then clusters. Use the article's URL as the source.
+   **Prefer the official report** (Dylan, 2026-11-22): the team's or league's own injury report (NFL team injury
+   report, NBA official injury report, the SEC / ACC / Big Ten / Big 12 availability report, the coach's own quote)
+   beats a story about it. When you find it, link it and name it in the text ("on Friday's SEC availability report").
+   Never use a news.google.com redirect as the source URL: use the publisher's own link. Players who are **back** count
+   as much as players who are out: add RETURNING items whenever a regular returns.
 3. Write facts only: status, injury, practice participation, timeline, who starts instead. No predictions or betting advice. Keep each item to 200 characters or fewer (the game card shows the whole item). Write it so the reader can't mistake whose player it is: the item sits under its own team, so say "Michigan ruled out 3 offensive linemen for the UCLA game", never "...for UCLA", and don't name the opponent in a way that reads like it's the injured team.
 
 ## Output: `injury_wire_{sport}.json`
