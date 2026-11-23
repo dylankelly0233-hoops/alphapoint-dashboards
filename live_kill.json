@@ -1,11 +1,11 @@
 {
- "updated": "2026-11-22",
+ "updated": "2026-11-23",
  "kill_n": 200,
  "kill_rate": 0.5,
  "strategies": {
   "cbb_3p_fade": {
-   "n": 10,
-   "rate": 0.4,
+   "n": 12,
+   "rate": 0.4167,
    "killed": false
   },
   "cbb_v2_open": {
@@ -34,18 +34,23 @@
    "killed": false
   },
   "nfl_bye_edge": {
-   "n": 2,
-   "rate": 0.0,
+   "n": 4,
+   "rate": 0.5,
    "killed": false
   },
   "nfl_div_under": {
-   "n": 2,
-   "rate": 1.0,
+   "n": 3,
+   "rate": 0.6667,
    "killed": false
   },
   "nfl_high_total_under": {
    "n": 1,
    "rate": 0.0,
+   "killed": false
+  },
+  "nfl_spread|all": {
+   "n": 2,
+   "rate": 0.5,
    "killed": false
   },
   "nfl_wind_under": {
@@ -54,8 +59,8 @@
    "killed": false
   },
   "teaser": {
-   "n": 1,
-   "rate": 1.0,
+   "n": 3,
+   "rate": 0.6667,
    "killed": false
   }
  }
