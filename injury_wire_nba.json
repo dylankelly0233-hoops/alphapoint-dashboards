@@ -1,77 +1,117 @@
 {
  "sport": "nba",
- "week": 20261122,
- "generated": "2026-11-22T19:55:00-05:00",
+ "week": 20261123,
+ "generated": "2026-11-23T11:17:25-05:00",
  "movers": [
   {
-   "team": "BOS",
+   "team": "SA",
    "tag": "KEY",
-   "text": "Paul George (30.1 mpg, rest) and Mitchell Robinson (17.5, illness) were ruled out at GS on 11/22 (WEEI via ESPN, evening report).",
+   "text": "Victor Wembanyama (30.3 mpg, back) and De'Aaron Fox (29.0, shin) are questionable at SAC on 11/23 (Jared Weiss, The Athletic, via ESPN); Dylan Harper (hip) is out 2-3 weeks.",
    "source": "ESPN",
    "url": "https://www.espn.com/nba/injuries",
-   "date": "2026-11-22"
+   "date": "2026-11-23"
   },
   {
-   "team": "MEM",
-   "tag": "CLUSTER",
-   "text": "Cameron Boozer (30.8 mpg, ankle) and Jerami Grant (22.1, calf) are ruled out at CHA on 11/23; Scotty Pippen Jr. (back) is still week-to-week.",
-   "source": "ESPN",
-   "url": "https://www.espn.com/nba/injuries",
-   "date": "2026-11-22"
-  },
-  {
-   "team": "CHA",
-   "tag": "CLUSTER",
-   "text": "Grayson Allen (27.2 mpg, concussion) and Grant Williams (22.0, hamstring) are out vs MEM on 11/23; Dennis Schroder (30.0, hamstring) remains out. Brandon Miller is probable.",
-   "source": "ESPN",
-   "url": "https://www.espn.com/nba/injuries",
+   "team": "OKC",
+   "tag": "KEY",
+   "text": "Shai Gilgeous-Alexander (33.5 mpg, back) is out at IND on 11/23 after missing the 11/22 game at MIA; Caruso, Mara and Jaylin Williams also sat 11/22.",
+   "source": "FanDuel Research",
+   "url": "https://www.fanduel.com/research/nba/player-news/injuries/shai-gilgeous-alexander-out-november-23-2026-against-pacers-back",
    "date": "2026-11-22"
   },
   {
    "team": "LAL",
-   "tag": "RETURNING",
-   "text": "Austin Reaves (35.2 mpg, heel) has missed 3 games but was a full participant in Sunday's practice (LA Times via ESPN, 11/22).",
+   "tag": "KEY",
+   "text": "Austin Reaves (35.2 mpg, heel) is ruled out vs UTAH on 11/23 (Jovan Buha, The Athletic, via ESPN), his 4th straight missed game.",
    "source": "ESPN",
    "url": "https://www.espn.com/nba/injuries",
-   "date": "2026-11-22"
+   "date": "2026-11-23"
   },
   {
-   "team": "PHI",
-   "tag": "RETURNING",
-   "text": "Jaylen Brown (34.7 mpg) and Dean Wade (26.7), both hamstring, are probable vs POR on 11/23 after missing two games each.",
+   "team": "MEM",
+   "tag": "CLUSTER",
+   "text": "Cameron Boozer (30.8 mpg, ankle) is out at CHA on 11/23 and Jerami Grant (22.1, calf strain) is out with a two-week re-evaluation; Scotty Pippen Jr. (back) is week-to-week.",
+   "source": "ESPN",
+   "url": "https://www.espn.com/nba/injuries",
+   "date": "2026-11-23"
+  },
+  {
+   "team": "CHA",
+   "tag": "CLUSTER",
+   "text": "Charlotte ruled out Grayson Allen (27.2 mpg, concussion) and Grant Williams (22.0, hamstring) vs MEM on 11/23; Dennis Schroder (hamstring) is out, Brandon Miller probable (knee).",
    "source": "ESPN",
    "url": "https://www.espn.com/nba/injuries",
    "date": "2026-11-22"
   }
  ],
  "teams": {
-  "GS": [
+  "SA": [
    {
-    "team": "GS",
+    "team": "SA",
     "tag": "KEY",
-    "text": "Stephen Curry (26.5 mpg, oblique tear) is out vs BOS, his fourth straight absence; ESPN estimates a Dec 12 return. Brandon Williams (hamstring) is also out.",
+    "text": "Victor Wembanyama (30.3 mpg, back) and De'Aaron Fox (29.0, shin) are questionable at SAC on 11/23 (Jared Weiss, The Athletic, via ESPN); Dylan Harper (hip) is out 2-3 weeks.",
     "source": "ESPN",
-    "url": "https://www.espn.com/nba/game/_/gameId/401910035/celtics-warriors",
+    "url": "https://www.espn.com/nba/injuries",
+    "date": "2026-11-23"
+   }
+  ],
+  "OKC": [
+   {
+    "team": "OKC",
+    "tag": "KEY",
+    "text": "Shai Gilgeous-Alexander (33.5 mpg, back) is out at IND on 11/23 after missing the 11/22 game at MIA; Caruso, Mara and Jaylin Williams also sat 11/22.",
+    "source": "FanDuel Research",
+    "url": "https://www.fanduel.com/research/nba/player-news/injuries/shai-gilgeous-alexander-out-november-23-2026-against-pacers-back",
     "date": "2026-11-22"
    }
   ],
-  "NY": [
+  "LAL": [
    {
-    "team": "NY",
+    "team": "LAL",
     "tag": "KEY",
-    "text": "OG Anunoby (34.0 mpg, calf) and Miles McBride (17.2, abdomen) are ruled out vs IND on 11/22 per the evening ESPN report.",
+    "text": "Austin Reaves (35.2 mpg, heel) is ruled out vs UTAH on 11/23 (Jovan Buha, The Athletic, via ESPN), his 4th straight missed game.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nba/injuries",
+    "date": "2026-11-23"
+   }
+  ],
+  "MEM": [
+   {
+    "team": "MEM",
+    "tag": "CLUSTER",
+    "text": "Cameron Boozer (30.8 mpg, ankle) is out at CHA on 11/23 and Jerami Grant (22.1, calf strain) is out with a two-week re-evaluation; Scotty Pippen Jr. (back) is week-to-week.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nba/injuries",
+    "date": "2026-11-23"
+   }
+  ],
+  "CHA": [
+   {
+    "team": "CHA",
+    "tag": "CLUSTER",
+    "text": "Charlotte ruled out Grayson Allen (27.2 mpg, concussion) and Grant Williams (22.0, hamstring) vs MEM on 11/23; Dennis Schroder (hamstring) is out, Brandon Miller probable (knee).",
     "source": "ESPN",
     "url": "https://www.espn.com/nba/injuries",
     "date": "2026-11-22"
    }
   ],
-  "IND": [
+  "BKN": [
    {
-    "team": "IND",
+    "team": "BKN",
     "tag": "KEY",
-    "text": "Pascal Siakam (32.3 mpg, left hip) is questionable at NY; Tyrese Haliburton (hamstring) stays out at least two more weeks and T.J. McConnell (hamstring) is out.",
-    "source": "Heavy",
-    "url": "https://heavy.com/sports/nba/indiana-pacers/pascal-siakam-injury-knicks/",
+    "text": "Nolan Traore (22.3 mpg) has a right hamstring strain and will be re-evaluated in about 8-10 weeks (Michael Scotto, HoopsHype, via ESPN, 11/23).",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nba/injuries",
+    "date": "2026-11-23"
+   }
+  ],
+  "PHI": [
+   {
+    "team": "PHI",
+    "tag": "RETURNING",
+    "text": "Jaylen Brown (34.7 mpg) and Dean Wade (26.7) are probable vs POR on 11/23 after missing two games with hamstring injuries (ESPN, 11/22 report).",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nba/injuries",
     "date": "2026-11-22"
    }
   ],
@@ -79,65 +119,27 @@
    {
     "team": "CHI",
     "tag": "CLUSTER",
-    "text": "Norman Powell (29.5 mpg, mild right hamstring strain) was ruled out vs DEN on 11/22 and Caleb Wilson (30.7, hand) is out; Nic Claxton (illness) is questionable, Jalen Smith probable.",
+    "text": "Norman Powell (29.5 mpg, mild hamstring strain, re-evaluated later this week) and Caleb Wilson (30.7, hand, 4-6 weeks from 11/12) are out for Chicago.",
     "source": "ESPN",
-    "url": "https://www.espn.com/nba/story/_/id/50564049/bulls-g-norman-powell-sidelined-mild-hamstring-injury",
+    "url": "https://www.espn.com/nba/injuries",
     "date": "2026-11-22"
    }
   ],
-  "BOS": [
+  "TOR": [
    {
-    "team": "BOS",
+    "team": "TOR",
+    "tag": "CLUSTER",
+    "text": "RJ Barrett (34.1 mpg, hamstring, re-evaluated in two weeks from 11/19) and Kawhi Leonard (26.0, knee) are out for Toronto; Collin Murray-Boyles (concussion) is probable vs MIL.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nba/injuries",
+    "date": "2026-11-22"
+   }
+  ],
+  "CLE": [
+   {
+    "team": "CLE",
     "tag": "KEY",
-    "text": "Paul George (30.1 mpg, rest) and Mitchell Robinson (17.5, illness) were ruled out at GS on 11/22 (WEEI via ESPN, evening report).",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nba/injuries",
-    "date": "2026-11-22"
-   },
-   {
-    "team": "BOS",
-    "tag": "RETURNING",
-    "text": "Jayson Tatum (rest) and Derrick White (AC joint) sat at SAC on 11/21 but are off the injury report for the GS game on 11/22 and expected to play.",
-    "source": "RotoWire",
-    "url": "https://rotowire.com/basketball/headlines/jayson-tatum-news-off-injury-report-sunday-540517",
-    "date": "2026-11-22"
-   }
-  ],
-  "CHA": [
-   {
-    "team": "CHA",
-    "tag": "CLUSTER",
-    "text": "Grayson Allen (27.2 mpg, concussion) and Grant Williams (22.0, hamstring) are out vs MEM on 11/23; Dennis Schroder (30.0, hamstring) remains out. Brandon Miller is probable.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nba/injuries",
-    "date": "2026-11-22"
-   }
-  ],
-  "MEM": [
-   {
-    "team": "MEM",
-    "tag": "CLUSTER",
-    "text": "Cameron Boozer (30.8 mpg, ankle) and Jerami Grant (22.1, calf) are ruled out at CHA on 11/23; Scotty Pippen Jr. (back) is still week-to-week.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nba/injuries",
-    "date": "2026-11-22"
-   }
-  ],
-  "LAL": [
-   {
-    "team": "LAL",
-    "tag": "RETURNING",
-    "text": "Austin Reaves (35.2 mpg, heel) has missed 3 games but was a full participant in Sunday's practice (LA Times via ESPN, 11/22).",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nba/injuries",
-    "date": "2026-11-22"
-   }
-  ],
-  "PHI": [
-   {
-    "team": "PHI",
-    "tag": "RETURNING",
-    "text": "Jaylen Brown (34.7 mpg) and Dean Wade (26.7), both hamstring, are probable vs POR on 11/23 after missing two games each.",
+    "text": "Evan Mobley (32.1 mpg, right great toe sprain) remains out, re-evaluated 7-10 days from 11/16; Jaylon Tyson (23.9, ankle) is probable at CHI on 11/23.",
     "source": "ESPN",
     "url": "https://www.espn.com/nba/injuries",
     "date": "2026-11-22"
@@ -147,7 +149,7 @@
    {
     "team": "NO",
     "tag": "RETURNING",
-    "text": "Trey Murphy III (32.4 mpg, knees) is probable vs PHX on 11/23 after missing 6 games; Zion Williamson (thigh) probable; Dejounte Murray (ankle) has missed 4.",
+    "text": "Trey Murphy III (32.4 mpg, knees) and Zion Williamson (32.4, thigh) are probable vs PHX on 11/23; Dejounte Murray (ankle) remains out.",
     "source": "ESPN",
     "url": "https://www.espn.com/nba/injuries",
     "date": "2026-11-22"
