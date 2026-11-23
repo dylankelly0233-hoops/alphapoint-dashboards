@@ -1,18 +1,8 @@
 {
  "sport": "cbb",
- "week": 20261122,
- "generated": "2026-11-22T19:45:00-05:00",
+ "week": 20261123,
+ "generated": "2026-11-23T11:15:06-05:00",
  "movers": [
-  {
-   "team": "Dayton",
-   "tag": "KEY",
-   "text": "Starting PG Landen Joseph (26.5 mpg, ankle, hurt 11/20 vs Utah) did not play vs Northwestern on 11/22; Dayton lost 79-55. Malcolm Thomas (ankle) was also out.",
-   "source": "Yahoo Sports",
-   "url": "https://sports.yahoo.com/articles/karasinski-scores-26-west-adds-202640192.html",
-   "date": "2026-11-22",
-   "player": "Landen Joseph",
-   "status": "out"
-  },
   {
    "team": "North Carolina",
    "tag": "KEY",
@@ -22,53 +12,9 @@
    "source": "ESPN",
    "url": "https://www.espn.com/mens-college-basketball/story/_/id/50511206/north-carolina-guard-neo-avdalas-wrist-2-months",
    "date": "2026-11-17"
-  },
-  {
-   "team": "Northwestern",
-   "tag": "CLUSTER",
-   "player": "Ryan Soulis",
-   "status": "out",
-   "text": "Northwestern lost F Ryan Soulis (11 mpg) for the season (foot surgery, hurt 11/13 vs DePaul); big man Luke McEldon is also out, leaving Okku Federiko and 7-3 Symon Ghai at center.",
-   "source": "Yahoo Sports",
-   "url": "https://sports.yahoo.com/articles/northwestern-mbb-dealt-unfortunate-ryan-193025202.html",
-   "date": "2026-11-17"
   }
  ],
  "teams": {
-  "Dayton": [
-   {
-    "team": "Dayton",
-    "tag": "KEY",
-    "text": "Starting PG Landen Joseph (26.5 mpg, ankle, hurt 11/20 vs Utah) did not play vs Northwestern on 11/22; Dayton lost 79-55. Malcolm Thomas (ankle) was also out.",
-    "source": "Yahoo Sports",
-    "url": "https://sports.yahoo.com/articles/karasinski-scores-26-west-adds-202640192.html",
-    "date": "2026-11-22",
-    "player": "Landen Joseph",
-    "status": "out"
-   },
-   {
-    "team": "Dayton",
-    "tag": "RETURNING",
-    "player": "Zaide Lowery",
-    "status": "returning",
-    "text": "Zaide Lowery (22.5 mpg) returned vs Utah on 11/20 after missing four games with an ankle injury; he went down briefly in that game but came back.",
-    "source": "Yahoo Sports",
-    "url": "https://sports.yahoo.com/articles/dayton-basketball-flyers-back-500-020300840.html",
-    "date": "2026-11-21"
-   }
-  ],
-  "Northwestern": [
-   {
-    "team": "Northwestern",
-    "tag": "CLUSTER",
-    "player": "Ryan Soulis",
-    "status": "out",
-    "text": "Northwestern lost F Ryan Soulis (11 mpg) for the season (foot surgery, hurt 11/13 vs DePaul); big man Luke McEldon is also out, leaving Okku Federiko and 7-3 Symon Ghai at center.",
-    "source": "Yahoo Sports",
-    "url": "https://sports.yahoo.com/articles/northwestern-mbb-dealt-unfortunate-ryan-193025202.html",
-    "date": "2026-11-17"
-   }
-  ],
   "North Carolina": [
    {
     "team": "North Carolina",
@@ -79,18 +25,6 @@
     "source": "ESPN",
     "url": "https://www.espn.com/mens-college-basketball/story/_/id/50511206/north-carolina-guard-neo-avdalas-wrist-2-months",
     "date": "2026-11-17"
-   }
-  ],
-  "Tennessee": [
-   {
-    "team": "Tennessee",
-    "tag": "KEY",
-    "player": "Jalen Haralson",
-    "status": "questionable",
-    "text": "Tennessee's Jalen Haralson (20.5 mpg) sat out the 11/20 win over Coastal Carolina; the News Sentinel (11/21) says he may return next week. Status for the Maryland game unconfirmed.",
-    "source": "Knoxville News Sentinel",
-    "url": "https://news.google.com/rss/articles/CBMihwJBVV95cUxQakk4eUdlXzRfTGNLUHhpYVlXTFNsN1RzMmMzVENGLVZ5ajdKWldpc1l5SWxRM2wxRXlZWDZQdFpfanRqNkkxZU9OMGVLT2ZNUGlRTWF0UmM1RFdzZ0t0N0JGeENpanFnOEhmTXZ4RVBXdWtKUXZlUjVSczdFbnNJc3FkQVBING5rMEFPc0dSOVJMcFFmMklTOGNTYTZyOVBUWm9kcE85MmwwNjJDLVNFcTlRZzh4WnQzNDlhZkRyZl9wX3VWcVR3UEE5S3d6a1E3LU9URHNpN3ZLMUFVRFRhRjNPYWFjdkhDY29iMkNRWkpBRHd4NFhJemU2dFRKVEd4dUNUODFwRQ?oc=5",
-    "date": "2026-11-21"
    }
   ]
  }

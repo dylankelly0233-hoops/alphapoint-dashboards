@@ -1,6 +1,6 @@
 {
  "sport": "cbb",
- "generated": "2026-11-23T10:50:00-05:00",
+ "generated": "2026-11-23T11:15:06-05:00",
  "teams": {
   "Dayton": {
    "watch": [
@@ -45,19 +45,11 @@
      "date": "2026-11-21"
     }
    ],
-   "checked": "2026-11-23T09:42:19-05:00"
+   "checked": "2026-11-23T11:15:06-05:00"
   },
   "Tennessee": {
-   "watch": [
-    {
-     "direction": "unclear",
-     "since": "2026-11-20",
-     "text": "Rotation wing Jalen Haralson (20.5 mpg) missed the 11/20 Coastal Carolina game; reported as possibly back next week, so his status vs Maryland is uncertain.",
-     "source": "Knoxville News Sentinel",
-     "url": "https://news.google.com/rss/articles/CBMihwJBVV95cUxQakk4eUdlXzRfTGNLUHhpYVlXTFNsN1RzMmMzVENGLVZ5ajdKWldpc1l5SWxRM2wxRXlZWDZQdFpfanRqNkkxZU9OMGVLT2ZNUGlRTWF0UmM1RFdzZ0t0N0JGeENpanFnOEhmTXZ4RVBXdWtKUXZlUjVSczdFbnNJc3FkQVBING5rMEFPc0dSOVJMcFFmMklTOGNTYTZyOVBUWm9kcE85MmwwNjJDLVNFcTlRZzh4WnQzNDlhZkRyZl9wX3VWcVR3UEE5S3d6a1E3LU9URHNpN3ZLMUFVRFRhRjNPYWFjdkhDY29iMkNRWkpBRHd4NFhJemU2dFRKVEd4dUNUODFwRQ?oc=5",
-     "date": "2026-11-21"
-    }
-   ]
+   "watch": [],
+   "checked": "2026-11-23T11:15:06-05:00"
   },
   "Oregon State": {
    "checked": "2026-11-22T22:42:20-05:00",
@@ -78,6 +70,42 @@
   "Iowa State": {
    "watch": [],
    "checked": "2026-11-23T10:50:00-05:00"
+  },
+  "Michigan": {
+   "watch": [],
+   "checked": "2026-11-23T11:15:06-05:00"
+  },
+  "Creighton": {
+   "watch": [],
+   "checked": "2026-11-23T11:15:06-05:00"
+  },
+  "Temple": {
+   "watch": [],
+   "checked": "2026-11-23T11:15:06-05:00"
+  },
+  "UT Martin": {
+   "watch": [],
+   "checked": "2026-11-23T11:15:06-05:00"
+  },
+  "Utah Valley": {
+   "watch": [],
+   "checked": "2026-11-23T11:15:06-05:00"
+  },
+  "Stephen F. Austin": {
+   "watch": [],
+   "checked": "2026-11-23T11:15:06-05:00"
+  },
+  "Louisville": {
+   "watch": [],
+   "checked": "2026-11-23T11:15:06-05:00"
+  },
+  "Texas Tech": {
+   "watch": [],
+   "checked": "2026-11-23T11:15:06-05:00"
+  },
+  "Maryland": {
+   "watch": [],
+   "checked": "2026-11-23T11:15:06-05:00"
   }
  },
  "games": {
@@ -93,7 +121,8 @@
     }
    ],
    "returning": [],
-   "swings": {}
+   "swings": {},
+   "checked": "2026-11-23T11:15:06-05:00"
   },
   "401909800": {
    "swings": {
@@ -182,6 +211,18 @@
    "checked": "2026-11-23T10:50:00-05:00",
    "swings": {
     "San Diego State": "Nothing found: no injury news for the unbeaten Aztecs (Nick Anderson's season-long knee injury is old news); we were 4.7 pts higher on them last game and now match the 7.5 for this Players Era neutral-site opener."
+   }
+  },
+  "401921210": {
+   "checked": "2026-11-23T11:15:06-05:00",
+   "swings": {
+    "Temple": "Nothing found: the market moved on Temple without a clear reason; no injury news found, and the line slid from Temple -4.5 at open to -2.5."
+   }
+  },
+  "401921208": {
+   "checked": "2026-11-23T11:15:06-05:00",
+   "swings": {
+    "Utah Valley": "Nothing found: the market moved on Utah Valley without a clear reason; no injury news found, and the line rose from Utah Valley -3.5 at open to -4.5."
    }
   }
  }
