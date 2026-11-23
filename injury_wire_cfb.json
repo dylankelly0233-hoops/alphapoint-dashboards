@@ -9,7 +9,8 @@
    "text": "QB Ty Dieffenbach was carted off in OT of the Nov. 21 loss to Michigan (left leg); X-rays were reportedly negative and his USC status is uncertain. Nico Iamaleava is out for the season.",
    "source": "ESPN",
    "url": "https://www.espn.com/college-football/story/_/id/50556107/ucla-qb-ty-dieffenbach-carted-3ot-loss-michigan",
-   "date": "2026-11-22"
+   "date": "2026-11-22",
+   "qb_status": "uncertain"
   },
   {
    "team": "Ohio State",
@@ -17,7 +18,8 @@
    "text": "QB Julian Sayin (throwing arm) has missed every game since Oct. 17 with freshman Luke Fahey starting; Rotowire estimates a Nov. 28 return. Ohio State has not confirmed it.",
    "source": "Rotowire",
    "url": "https://www.rotowire.com/cfootball/player.php?id=45114",
-   "date": "2026-11-21"
+   "date": "2026-11-21",
+   "qb_status": "uncertain"
   },
   {
    "team": "Syracuse",
@@ -25,7 +27,8 @@
    "text": "QB Steve Angeli left the BC loss with a throwing-shoulder injury, arm in a sling; no update for Notre Dame. Malachi Nelson finished but re-aggravated his ankle.",
    "source": "Orange Fizz",
    "url": "https://playdanewyork.com/2026/11/syracuse-football-falls-to-boston-college-27-15-angeli-injury/",
-   "date": "2026-11-22"
+   "date": "2026-11-22",
+   "qb_status": "uncertain"
   },
   {
    "team": "Mississippi State",
@@ -33,7 +36,8 @@
    "text": "Jeff Lebby said Nov. 22 the Egg Bowl starter depends on how injured QB AJ Swann practices this week; Billy Puckett started the Tennessee Tech win.",
    "source": "The Clarion-Ledger",
    "url": "https://sports.yahoo.com/articles/jeff-lebby-decide-mississippi-state-203027643.html",
-   "date": "2026-11-22"
+   "date": "2026-11-22",
+   "qb_status": "uncertain"
   },
   {
    "team": "Clemson",
@@ -41,7 +45,8 @@
    "text": "Dabo Swinney said backup QB Christopher Vizzina (concussion) 'definitely will not be back' for South Carolina; third-stringer Trent Pearman is in line to start again.",
    "source": "Heavy",
    "url": "https://heavy.com/sports/college-football/clemson-tigers/dabo-swinney-drops-sobering-injury-update-ahead-of-south-carolina-showdown/",
-   "date": "2026-11-23"
+   "date": "2026-11-23",
+   "qb_status": "new_starter"
   }
  ],
  "teams": {
@@ -52,7 +57,8 @@
     "text": "QB Ty Dieffenbach was carted off in OT of the Nov. 21 loss to Michigan (left leg); X-rays were reportedly negative and his USC status is uncertain. Nico Iamaleava is out for the season.",
     "source": "ESPN",
     "url": "https://www.espn.com/college-football/story/_/id/50556107/ucla-qb-ty-dieffenbach-carted-3ot-loss-michigan",
-    "date": "2026-11-22"
+    "date": "2026-11-22",
+    "qb_status": "uncertain"
    }
   ],
   "Ohio State": [
@@ -62,7 +68,8 @@
     "text": "QB Julian Sayin (throwing arm) has missed every game since Oct. 17 with freshman Luke Fahey starting; Rotowire estimates a Nov. 28 return. Ohio State has not confirmed it.",
     "source": "Rotowire",
     "url": "https://www.rotowire.com/cfootball/player.php?id=45114",
-    "date": "2026-11-21"
+    "date": "2026-11-21",
+    "qb_status": "uncertain"
    }
   ],
   "Syracuse": [
@@ -72,7 +79,8 @@
     "text": "QB Steve Angeli left the BC loss with a throwing-shoulder injury, arm in a sling; no update for Notre Dame. Malachi Nelson finished but re-aggravated his ankle.",
     "source": "Orange Fizz",
     "url": "https://playdanewyork.com/2026/11/syracuse-football-falls-to-boston-college-27-15-angeli-injury/",
-    "date": "2026-11-22"
+    "date": "2026-11-22",
+    "qb_status": "uncertain"
    }
   ],
   "Mississippi State": [
@@ -82,7 +90,8 @@
     "text": "Jeff Lebby said Nov. 22 the Egg Bowl starter depends on how injured QB AJ Swann practices this week; Billy Puckett started the Tennessee Tech win.",
     "source": "The Clarion-Ledger",
     "url": "https://sports.yahoo.com/articles/jeff-lebby-decide-mississippi-state-203027643.html",
-    "date": "2026-11-22"
+    "date": "2026-11-22",
+    "qb_status": "uncertain"
    }
   ],
   "Clemson": [
@@ -92,7 +101,8 @@
     "text": "Dabo Swinney said backup QB Christopher Vizzina (concussion) 'definitely will not be back' for South Carolina; third-stringer Trent Pearman is in line to start again.",
     "source": "Heavy",
     "url": "https://heavy.com/sports/college-football/clemson-tigers/dabo-swinney-drops-sobering-injury-update-ahead-of-south-carolina-showdown/",
-    "date": "2026-11-23"
+    "date": "2026-11-23",
+    "qb_status": "new_starter"
    },
    {
     "team": "Clemson",
@@ -110,7 +120,8 @@
     "text": "QB Conner Weigman (shoulder) missed the West Virginia win and will work to return for Baylor; freshman Keisean Henderson made his first start.",
     "source": "ClutchPoints",
     "url": "https://clutchpoints.com/ncaa-football/houston-football-news-starting-qb-conner-weigman-crucial-injury-update-west-virginia",
-    "date": "2026-11-21"
+    "date": "2026-11-21",
+    "qb_status": "new_starter"
    }
   ],
   "North Carolina": [
@@ -120,7 +131,8 @@
     "text": "QB Billy Edwards Jr. (upper body) did not start the 41-24 loss at Virginia; freshman Travis Burgess made his first start. No status yet for NC State.",
     "source": "Tar Heel Tribune",
     "url": "https://tarheeltribune.com/2026/11/21/burgess-shines-in-first-start-but-mistakes-virginias-big-plays-bury-unc/",
-    "date": "2026-11-21"
+    "date": "2026-11-21",
+    "qb_status": "new_starter"
    }
   ],
   "Alabama": [
@@ -150,7 +162,8 @@
     "text": "QB LaNorris Sellers (ankle) returned vs Georgia on Nov. 21 after sitting vs Arkansas; 87 passing yards, 1 INT, sacked 3 times in a 34-6 loss.",
     "source": "WIS-TV",
     "url": "https://www.wistv.com/2026/11/22/south-carolina-vs-georgia/",
-    "date": "2026-11-22"
+    "date": "2026-11-22",
+    "qb_status": "returning"
    }
   ],
   "Vanderbilt": [
@@ -160,7 +173,8 @@
     "text": "QB Jared Curtis re-aggravated an old wrist injury late in the Florida loss and returned; Clark Lea does not expect a long-term issue and expects him to practice this week.",
     "source": "Yahoo Sports",
     "url": "https://sports.yahoo.com/articles/jared-curtis-injury-latest-news-200027177.html",
-    "date": "2026-11-21"
+    "date": "2026-11-21",
+    "qb_status": "settled"
    }
   ],
   "Florida State": [

@@ -161,14 +161,16 @@ def lean_hold(sport, gid, home, away, home_name, away_name, wire_items):
     'Soft lean: UCLA +7' while UCLA's top two QBs were hurt):
       1. QB-change hold (NFL, CFB): either team has a QB item on the Injury Wire (a starter out, doubtful or
          questionable, a backup starting, or a starter coming back). Our ratings were built on the old QB situation.
-         It lifts when the Injury Wire drops the item (the new situation has been played into the ratings).
+         It lifts when the Injury Wire drops the item, or marks it qb_status 'settled' (Dylan, 2026-11-23: a backup with
+         3+ straight starts and no change expected this week is already in our ratings). Items with no qb_status hold.
       2. Explained gap (every sport with the Research Assistant): its verdict is 'explained', i.e. the news covers
          most of our gap with the market, in the market's direction.
     wire_items: {team key: [Injury Wire items]}.
     """
     if sport in QB_SPORTS:
         for team, name in ((away, away_name), (home, home_name)):
-            q = [i for i in (wire_items or {}).get(team) or [] if str(i.get('tag', '')).upper() == 'QB']
+            q = [i for i in (wire_items or {}).get(team) or [] if str(i.get('tag', '')).upper() == 'QB'
+                 and str(i.get('qb_status', '')).lower() != 'settled']
             if q:
                 return (f"{name}'s quarterback situation has changed and our ratings were built on the old one: "
                         f"{str(q[0].get('text', '')).strip().rstrip('.')}.")
