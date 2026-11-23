@@ -64,7 +64,6 @@ HTML_OUTPUT     = 'cbb_dashboard.html'
 SHARE_OUTPUT    = 'cbb_dashboard_share.html'
 CACHE_HOURS     = 6
 
-ESPN_SCOREBOARD = 'https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/scoreboard'
 
 AVG_POSSESSIONS = 68.0     # D1 average possessions per game; converts Torvik's per-100 margin to points
 HFA_POINTS      = 3.0      # home-court edge for an average team (markets ~3)
@@ -246,39 +245,65 @@ def build_power(teams, sources, unmatched, weights=None):
 
 
 # ==========================================
-# 4. UPCOMING GAMES (ESPN)
+# 4. UPCOMING GAMES (CollegeBasketballData; Dylan, 2026-11-23: off ESPN before the paid tier)
 # ==========================================
-def _espn_day(day):
+# Games, posted lines (DraftKings, else Bovada) and broadcasts come from CBBD, which allows commercial use. Game ids
+# stay ESPN's (CBBD's sourceId), so every log, note and Best spots record keeps working. Neutral-site games: CBBD and
+# ESPN sometimes disagree on which team is "home"; a game already in our log keeps the log's orientation.
+NATIONAL_TV = {'ESPN', 'ESPN2', 'ESPNU', 'ABC', 'CBS', 'CBSSN', 'CBS Sports Network', 'FOX', 'FS1', 'FS2', 'NBC', 'USA',
+               'USA Network', 'TNT', 'TBS', 'truTV', 'BTN', 'Big Ten Network', 'ACCN', 'ACC Network', 'SECN',
+               'SEC Network', 'Peacock', 'NBCSN'}
+LINE_BOOKS = ('Draft Kings', 'DraftKings', 'Bovada', 'ESPN Bet')
+_SLATE = {}
+
+
+def _log_sides():
+    """{game id: (home, away)} as already logged, to keep a game's orientation stable."""
     try:
-        r = requests.get(ESPN_SCOREBOARD, params={'dates': day.strftime('%Y%m%d'), 'groups': 50, 'limit': 400}, timeout=30)
-        r.raise_for_status()
-        return r.json().get('events', [])
-    except Exception as e:
-        print(f'  ! ESPN scoreboard {day:%Y-%m-%d}: {e}')
-        return []
+        p = pd.read_csv('projections_cbb.csv', dtype={'game_id': str}, usecols=['game_id', 'home', 'away'])
+        return {g: (h, a) for g, h, a in zip(p.game_id, p.home, p.away)}
+    except (OSError, ValueError):
+        return {}
 
 
-def _market(comp, home_abbr):
-    """Market margin for the home team (positive = home favored), from ESPN's posted odds."""
-    odds = (comp.get('odds') or [{}])[0] if comp.get('odds') else {}
-    details = (odds.get('details') or '').strip()
-    if not details:
-        return np.nan
-    if details.upper() in ('EVEN', 'PK', 'PICK'):
-        return 0.0
-    m = re.match(r'^(\S+)\s+([+-]?\d+(?:\.\d+)?)$', details)
-    if not m:
-        return np.nan
-    pts = abs(float(m.group(2)))
-    return pts if m.group(1).upper() == (home_abbr or '').upper() else -pts
-
-
-def _total(comp):
-    """Posted game total from ESPN's odds, or NaN."""
-    try:
-        return float(((comp.get('odds') or [{}])[0] or {}).get('overUnder'))
-    except (TypeError, ValueError):
-        return np.nan
+def slate(back=6):
+    """
+    Every D1 game from `back` days ago through LOOKAHEAD_DAYS ahead: dicts with game_id (ESPN id), kick (Eastern),
+    start (UTC), home, away, neutral, market (home margin, + = home favored), total, opened (CBBD's opening spread as
+    a home margin), tv (national broadcast names), status, score. Fetched once per build.
+    """
+    if 'games' in _SLATE:
+        return _SLATE['games']
+    today = datetime.now().date()
+    lo, hi = (today - timedelta(days=back)).isoformat(), (today + timedelta(days=LOOKAHEAD_DAYS + 1)).isoformat()
+    q = {'season': SEASON, 'startDateRange': lo, 'endDateRange': hi}
+    games = vm.cbbd_get('/games', q) or []
+    lines = {x.get('gameId'): x.get('lines') or [] for x in (vm.cbbd_get('/lines', q) or [])}
+    media = {x.get('gameId'): x.get('broadcasts') or [] for x in (vm.cbbd_get('/games/media', q) or [])}
+    logged = _log_sides()
+    out = []
+    for g in games:
+        gid = str(g.get('sourceId') or f"cbbd{g.get('id')}")
+        home, away = g.get('homeTeam'), g.get('awayTeam')
+        book = next((x for b in LINE_BOOKS for x in lines.get(g.get('id'), []) if x.get('provider') == b), None)
+        num = lambda v: float(v) if v is not None else np.nan
+        market = -num(book.get('spread')) if book else np.nan          # CBBD: home team's spread (- = home favored)
+        opened = -num(book.get('spreadOpen')) if book else np.nan
+        total = num(book.get('overUnder')) if book else np.nan
+        hs, as_ = g.get('homePoints'), g.get('awayPoints')
+        if logged.get(gid) == (away, home):                             # keep the logged orientation
+            home, away, market, opened, hs, as_ = away, home, -market, -opened, as_, hs
+        start = pd.Timestamp(g['startDate'])
+        start = start.tz_localize('UTC') if start.tzinfo is None else start.tz_convert('UTC')
+        tv = ', '.join(dict.fromkeys(b.get('broadcastName') for b in media.get(g.get('id'), [])
+                                     if b.get('broadcastName') in NATIONAL_TV))
+        final = str(g.get('status', '')).lower() == 'final'
+        out.append({'game_id': gid, 'start': start, 'kick': start.tz_convert('America/New_York'),
+                    'tbd': bool(g.get('startTimeTbd')), 'home': home, 'away': away,
+                    'neutral': bool(g.get('neutralSite')), 'market': market, 'opened': opened, 'total': total,
+                    'tv': tv, 'final': final, 'score': f'{as_}-{hs}' if final else ''})
+    _SLATE['games'] = out
+    return out
 
 
 def injury_row(wire_data, g, margin):
@@ -295,38 +320,30 @@ def injury_row(wire_data, g, margin):
 
 def espn_dates(by_espn, back=6):
     """
-    {team: [(Eastern date, UTC date 'YYYY-MM-DD'), ...]} for every D1 game ESPN lists from `back` days ago through the
+    {team: [(Eastern date, UTC date 'YYYY-MM-DD'), ...]} for every D1 game on the slate from `back` days ago through the
     lookahead window, finished or not. Rest days for the tracking leans come from here, not the box scores: box scores
     can lag a day (Murray State at NC State, 2026-11-19, was missing) and are stamped in UTC, so a late game lands
     on the next day (Dylan, 2026-11-20).
     """
-    out, today = {}, datetime.now().date()
-    for i in range(-back, LOOKAHEAD_DAYS):
-        for ev in _espn_day(today + timedelta(days=i)):
-            t = pd.Timestamp(ev['date'])
-            et, utc = t.tz_convert('America/New_York').date(), t.tz_convert('UTC').strftime('%Y-%m-%d')
-            for c in ev['competitions'][0]['competitors']:
-                name = by_espn.get(str(c['team'].get('id')))
-                if name:
-                    out.setdefault(name, set()).add((et, utc))
+    out = {}
+    for g in slate(back):
+        et, utc = g['kick'].date(), g['start'].strftime('%Y-%m-%d')
+        for name in (g['home'], g['away']):
+            out.setdefault(name, set()).add((et, utc))
     return {k: sorted(v) for k, v in out.items()}
-
 
 def _box_missing(box, by_espn):
     """{team: [Eastern dates]} of D1 games ESPN shows as final (yesterday and today) whose box score we don't have."""
-    import freshness as fr
     have = set(zip(box['team'], box['date'].astype(str))) if not box.empty else set()
     now = pd.Timestamp.now(tz='UTC')
     out = {}
-    for start, h, a, _ in fr.finals('cbb', days=3):
-        if start + pd.Timedelta(hours=fr.FINAL_LAG) > now:
+    for g in slate(3):
+        if not g['final'] or g['start'] < now - pd.Timedelta(days=3) or g['start'] + pd.Timedelta(hours=3.5) > now:
             continue
-        for tid in (h, a):
-            t = by_espn.get(str(tid))
-            if t and (t, start.strftime('%Y-%m-%d')) not in have:
-                out.setdefault(t, []).append(start.tz_convert('America/New_York').date())
+        for t in (g['home'], g['away']):
+            if t in by_espn.values() and (t, g['start'].strftime('%Y-%m-%d')) not in have:
+                out.setdefault(t, []).append(g['kick'].date())
     return out
-
 
 def box_complete(box, by_espn):
     """
@@ -367,35 +384,22 @@ def game_last(info, g):
 def upcoming_games(by_espn, focus):
     """Games on the next GAME_DAYS dates that include a P4 / Big East team."""
     days, today = [], datetime.now().date()
+    espn_of = {t: e for e, t in by_espn.items()}
     for i in range(LOOKAHEAD_DAYS):
         day = today + timedelta(days=i)
         games = []
-        for ev in _espn_day(day):
-            comp = ev['competitions'][0]
-            side = {c['homeAway']: c for c in comp['competitors']}
-            if 'home' not in side or 'away' not in side:
+        for g in slate():
+            if g['kick'].date() != day or (g['home'] not in focus and g['away'] not in focus):
                 continue
-            h, a = side['home']['team'], side['away']['team']
-            hn, an = by_espn.get(str(h.get('id')), h.get('location') or h.get('displayName')), \
-                     by_espn.get(str(a.get('id')), a.get('location') or a.get('displayName'))
-            if hn not in focus and an not in focus:
-                continue
-            done = ev.get('status', {}).get('type', {}).get('completed')
-            games.append({
-                'game_id': str(ev.get('id')),
-                'kick': pd.Timestamp(ev['date']).tz_convert('America/New_York'),
-                'home': hn, 'away': an, 'home_espn': h.get('id'), 'away_espn': a.get('id'),
-                'neutral': bool(comp.get('neutralSite')), 'market': _market(comp, h.get('abbreviation')),
-                'tv': ex.national_tv(comp),
-                'total': _total(comp),
-                'score': f"{side['away'].get('score')}-{side['home'].get('score')}" if done else '',
-            })
+            games.append({'game_id': g['game_id'], 'kick': g['kick'], 'home': g['home'], 'away': g['away'],
+                          'home_espn': espn_of.get(g['home']), 'away_espn': espn_of.get(g['away']),
+                          'neutral': g['neutral'], 'market': g['market'], 'tv': g['tv'], 'total': g['total'],
+                          'opened_cbbd': g['opened'], 'score': g['score']})
         if games:
             days.append((day, sorted(games, key=lambda g: g['kick'])))
         if len(days) >= GAME_DAYS:
             break
     return days
-
 
 # ==========================================
 # 5. HTML
@@ -821,7 +825,7 @@ def main():
     metrics = vm.run()
     print(f'  {len(metrics)} teams with {vm.MIN_GAMES}+ D1 games.')
 
-    print('[3/4] Upcoming games (ESPN)...')
+    print('[3/4] Upcoming games (CollegeBasketballData)...')
     by_espn = {str(e).split('.')[0]: t for t, e in zip(teams['team'], teams['espn_id']) if pd.notna(e)}
     days = upcoming_games(by_espn, set(power['team']))
     print(f'  {sum(len(g) for _, g in days)} games over {len(days)} days'
