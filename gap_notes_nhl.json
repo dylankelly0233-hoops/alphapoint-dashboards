@@ -1,9 +1,9 @@
 {
  "sport": "nhl",
- "generated": "2026-11-23T08:44:30-05:00",
+ "generated": "2026-11-23T11:20:10-05:00",
  "teams": {
   "OTT": {
-   "checked": "2026-11-23T08:44:30-05:00",
+   "checked": "2026-11-23T11:20:10-05:00",
    "watch": [
     {
      "direction": "too_high",
@@ -24,7 +24,7 @@
    ]
   },
   "CGY": {
-   "checked": "2026-11-23T08:44:30-05:00",
+   "checked": "2026-11-23T11:20:10-05:00",
    "watch": [
     {
      "direction": "too_high",
@@ -37,7 +37,7 @@
    ]
   },
   "LA": {
-   "checked": "2026-11-23T08:44:30-05:00",
+   "checked": "2026-11-23T11:20:10-05:00",
    "watch": [
     {
      "direction": "too_low",
@@ -50,11 +50,11 @@
    ]
   },
   "MTL": {
-   "checked": "2026-11-23T08:44:30-05:00",
+   "checked": "2026-11-23T11:20:10-05:00",
    "watch": []
   },
   "UTAH": {
-   "checked": "2026-11-23T08:44:30-05:00",
+   "checked": "2026-11-23T11:20:10-05:00",
    "watch": [
     {
      "direction": "too_low",
@@ -75,11 +75,11 @@
    ]
   },
   "WPG": {
-   "checked": "2026-11-23T08:44:30-05:00",
+   "checked": "2026-11-23T11:20:10-05:00",
    "watch": []
   },
   "TOR": {
-   "checked": "2026-11-23T08:44:30-05:00",
+   "checked": "2026-11-23T11:20:10-05:00",
    "watch": [
     {
      "direction": "too_high",
@@ -92,7 +92,7 @@
    ]
   },
   "NYI": {
-   "checked": "2026-11-23T08:44:30-05:00",
+   "checked": "2026-11-23T11:20:10-05:00",
    "watch": [
     {
      "direction": "too_high",
@@ -113,7 +113,7 @@
    ]
   },
   "CBJ": {
-   "checked": "2026-11-23T08:44:30-05:00",
+   "checked": "2026-11-23T11:20:10-05:00",
    "watch": [
     {
      "direction": "too_high",
@@ -126,7 +126,7 @@
    ]
   },
   "NJ": {
-   "checked": "2026-11-23T08:44:30-05:00",
+   "checked": "2026-11-23T11:20:10-05:00",
    "watch": [
     {
      "direction": "too_high",
@@ -137,11 +137,45 @@
      "date": "2026-11-23"
     }
    ]
+  },
+  "MIN": {
+   "checked": "2026-11-23T11:20:10-05:00",
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-21",
+     "text": "No. 1 D Quinn Hughes (27.8 TOI, upper body) misses the rest of the road trip, including tonight at SJ.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nhl/injuries",
+     "date": "2026-11-21"
+    }
+   ]
+  },
+  "ANA": {
+   "checked": "2026-11-23T11:20:10-05:00",
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-21",
+     "text": "Beckett Sennecke (20.3 TOI) went on IR 11/21 and Leo Carlsson (19.8) is day-to-day, two top-six forwards out or doubtful at SEA.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nhl/injuries",
+     "date": "2026-11-22"
+    }
+   ]
+  },
+  "SEA": {
+   "checked": "2026-11-23T11:20:10-05:00",
+   "watch": []
+  },
+  "SJ": {
+   "checked": "2026-11-23T11:20:10-05:00",
+   "watch": []
   }
  },
  "games": {
   "401892775": {
-   "checked": "2026-11-23T08:44:30-05:00",
+   "checked": "2026-11-23T11:20:10-05:00",
    "verdict": "partly",
    "summary": "Ottawa is missing three forwards (Eklund, Foegele, Burakovsky) and hasn't confirmed its goalie, which covers some of why the market is lower on the Senators than we are.",
    "reasons": [
