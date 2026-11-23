@@ -64,8 +64,6 @@ jobs:
             nbav_*.csv
             nbav_*.txt
             nba_*.html
-            cbb_warrennolan_*.html
-            cbb_evanmiya.html
             news_cache_*.json
             nhl_*.csv
             nhl_*.html

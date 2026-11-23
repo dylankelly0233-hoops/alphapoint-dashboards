@@ -4,8 +4,7 @@ AlphaPoint Sports — published college basketball power ratings that GitHub's s
 Dylan Kelly
 
   TeamRankings  predictive rating, points vs. an average team (the rating gap = projected margin)
-  Warren Nolan  Elo ratings for every D1 team (preseason values before games are played)
-  EvanMiya      kept for reference only: the free page lists just the top ~22 teams, too few to blend
+  (Warren Nolan and EvanMiya fetchers removed 2026-11-22: unused, and EvanMiya's terms ban scrapers; data rights audit)
 
 KenPom, Torvik and Sonny Moore all block GitHub's servers, so they can't be used for automatic builds
 (cbb_dashboard.py reads a saved Torvik preseason file until TeamRankings is current).
@@ -22,8 +21,6 @@ from datetime import date, datetime
 import requests
 
 TEAMRANKINGS_URL = 'https://www.teamrankings.com/ncaa-basketball/ranking/predictive-by-other'
-EVANMIYA_URL     = 'https://evanmiya.com/?team_ratings'
-WARRENNOLAN_URL  = 'https://www.warrennolan.com/basketball/{season}/elo'
 CACHE_HOURS      = 6
 
 # Source spelling → CBBD name (anything not listed matches after normalizing)
@@ -57,20 +54,6 @@ TEAMRANKINGS_ALIASES = {
     'UT Rio Grande': 'UT Rio Grande Valley', 'W Carolina': 'Western Carolina', 'W Georgia': 'West Georgia',
     'W Illinois': 'Western Illinois', 'W Kentucky': 'Western Kentucky', 'W Michigan': 'Western Michigan',
 }
-WARRENNOLAN_ALIASES = {
-    'Albany': 'UAlbany', 'American': 'American University', 'Appalachian State': 'App State', 'Connecticut': 'UConn',
-    'Detroit': 'Detroit Mercy', 'FAU': 'Florida Atlantic', 'FGCU': 'Florida Gulf Coast', 'FIU': 'Florida International',
-    'Grambling State': 'Grambling', 'LSU New Orleans': 'New Orleans', 'Long Island': 'Long Island University',
-    'Miami (FL)': 'Miami', "Mount Saint Mary's": "Mount St. Mary's", 'North Carolina State': 'NC State',
-    'Penn': 'Pennsylvania', 'Presbyterian College': 'Presbyterian', 'Queens': 'Queens University',
-    'SIUE': 'SIU Edwardsville', "Saint Mary's College": "Saint Mary's", 'Saint Thomas': 'St. Thomas-Minnesota',
-    'Sam Houston State': 'Sam Houston', 'Seattle University': 'Seattle U', 'Southeast Missouri': 'Southeast Missouri State',
-    'Southeastern Louisiana': 'SE Louisiana', 'Tennessee-Martin': 'UT Martin', 'ULM': 'UL Monroe', 'UMKC': 'Kansas City',
-    'UMass': 'Massachusetts', 'UNCG': 'UNC Greensboro', 'UNCW': 'UNC Wilmington', 'UTA': 'UT Arlington',
-    'UTRGV': 'UT Rio Grande Valley',
-}
-
-
 def _page(url, cache, headers=None):
     """Fetch a page, caching it to disk; falls back to the cached copy if the site is down."""
     if os.path.exists(cache) and (time.time() - os.path.getmtime(cache)) / 3600 < CACHE_HOURS:
@@ -233,29 +216,3 @@ def fetch_haslametrics(season):
         except (TypeError, ValueError):
             continue
     return ratings, games, through
-
-
-def fetch_evanmiya():
-    """EvanMiya team ratings → {team: net rating}. The page carries the current season (preseason before games)."""
-    text = _page(EVANMIYA_URL, 'cbb_evanmiya.html')
-    ratings = {}
-    for row in re.findall(r'role="row">(.*?)(?=<div class="[^"]*__row|$)', text, re.S):
-        team = re.search(r'data-col="team".*?>([^<>]+)</a>', row, re.S)
-        net = re.search(r'data-col="diff"[^>]*>\s*<div[^>]*>\s*(-?[\d.]+)', row, re.S)
-        if team and net:
-            ratings[html.unescape(team.group(1)).strip()] = float(net.group(1))
-    return ratings
-
-
-def fetch_warrennolan(season):
-    """Warren Nolan Elo → {team: Elo}. Backup source."""
-    text = _page(WARRENNOLAN_URL.format(season=season), f'cbb_warrennolan_{season}.html')
-    ratings = {}
-    for tr in re.findall(r'<tr[^>]*>(.*?)</tr>', text, re.S):
-        c = _cells(tr)
-        if len(c) >= 3:
-            try:
-                ratings[c[0]] = float(c[2])
-            except ValueError:
-                continue
-    return ratings
