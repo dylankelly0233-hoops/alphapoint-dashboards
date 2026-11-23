@@ -1,126 +1,42 @@
 {
  "sport": "epl",
- "week": 20261121,
- "generated": "2026-11-21T11:17:59-05:00",
+ "week": 20261122,
+ "generated": "2026-11-22T20:05:00-05:00",
  "movers": [
-  {
-   "team": "MAN",
-   "tag": "KEY",
-   "text": "Manager change: Mauricio Pochettino, appointed last week to replace Michael Carrick, takes charge of Man United for the first time at Liverpool on 11/22.",
-   "source": "Sports Illustrated",
-   "url": "https://www.si.com/soccer/liverpool-vs-man-utd-predicted-lineups-important-reds-return-pochettino-first-xi-11-22-26",
-   "date": "2026-11-21"
-  },
-  {
-   "team": "ARS",
-   "tag": "KEY",
-   "text": "Winger Bukayo Saka (regular starter, quad) is out for about another month, per Mikel Arteta; midfielder Martin Zubimendi (hamstring) is also out at Newcastle.",
-   "source": "Real Broadcasting Network",
-   "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPTUlPaE9WeXI1WEZZVlFFX1g0cm1zZHc2RHpKWWVJVnVpQ3daWExPOUtpSjBVTnEtX2JvNGhHY0VPVmNaTVNxbUN5SjNSUUZkVmhFQW1zUFA2NWdJRUZNM1hGWmh0NXJGdENjVEFlOUtaVGNrNkhaYUctUmZmQTlFbXFNbEFGcE9VTGh4dw?oc=5",
-   "date": "2026-11-21"
-  },
-  {
-   "team": "CHE",
-   "tag": "KEY",
-   "text": "Striker Joao Pedro (first-choice No. 9, thigh) is out vs Leeds, Xabi Alonso confirmed; reports list five Chelsea players missing the match.",
-   "source": "Reuters",
-   "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOdFVvVWVUanZqeFB5SC05Q0k5TlYzZ09SX0x5Q3EtY0FCLUJsd2piRTdlVXh2ZW9YUGVwNHh3WFIyTmhnMnIwX3VBRGcwVmlWRXotaXVqT0FyeS1tcEkxb2hEdzE4eW5sY3RiZ2M1R0VjQjdZc3lXdkp3WDdIcU9CZ0VsZzZpa2lTU2JLWEZpTXVza3ZPMG5BT3hmbXBrQ1cxZGtFOUJiZHFrVDlBbGtvSUJMREU4ZmFnak00WXdHSmd1blY5aF93?oc=5",
-   "date": "2026-11-20"
-  },
   {
    "team": "BRE",
    "tag": "CLUSTER",
-   "text": "Brentford say defenders Aaron Hickey and Nathan Collins are out 'for a number of weeks', both regular starters at the back, before Everton.",
+   "text": "Brentford say defenders Nathan Collins (centre-back) and Aaron Hickey (full-back) are out for a number of weeks, so both miss the Everton match on 11/23.",
    "source": "Brentford FC",
    "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNMGNZQ1ZiRzBaTWRNUzU1VGVLd1VrUUowVWxMQy1fX0Ytb0RaUVFfMmZwOUNPOEhDYW1VazhSaXR2VUx1OFhiRHA3emM3bld2VGVkZUNoemMwUGd4RnZqaFB4M0p0Z3VCLXI5aGc0WjU0eHVpT3lXNzVrdHFIOFFVU0pZdzI2enlGNzdycFdBaUVMR05KclNNTnVBYVg2WVRLODBTN1Y2aUZlaHJoa1J4Mm43NXdDSUloaEE?oc=5",
    "date": "2026-11-20"
   },
   {
-   "team": "LIV",
-   "tag": "RETURNING",
-   "text": "Captain Virgil van Dijk (centre-back) is cleared after withdrawing from the Netherlands squad; Jeremie Frimpong (right-back) is back from injury for Man United.",
-   "source": "Sports Illustrated",
-   "url": "https://www.si.com/soccer/liverpool-vs-man-utd-predicted-lineups-important-reds-return-pochettino-first-xi-11-22-26",
-   "date": "2026-11-21"
+   "team": "BRE",
+   "tag": "KEY",
+   "text": "Read Everton (11/18) reports Brentford face Everton without first-choice striker Igor Thiago; lineups are confirmed an hour before kickoff.",
+   "source": "Read Everton",
+   "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPNVlJRjRVd192TFpOb0VxaG1udUxjUEhtVlU2eGtNMHRZY3VQbzlhSjY5eFFUSks3M052Z09kTy1PbjV1N3U1VDZxQTVoTkVNWHdRaFBveTBVSjY4ajlWMkJWVkpEUEl0TVVVQTcyMTk5bE5aVGpEakFoWHktekk0NnM3UE1yRXZhVGhOUlludVU?oc=5",
+   "date": "2026-11-18"
   }
  ],
  "teams": {
-  "MAN": [
-   {
-    "team": "MAN",
-    "tag": "KEY",
-    "text": "Manager change: Mauricio Pochettino, appointed last week to replace Michael Carrick, takes charge of Man United for the first time at Liverpool on 11/22.",
-    "source": "Sports Illustrated",
-    "url": "https://www.si.com/soccer/liverpool-vs-man-utd-predicted-lineups-important-reds-return-pochettino-first-xi-11-22-26",
-    "date": "2026-11-21"
-   }
-  ],
-  "ARS": [
-   {
-    "team": "ARS",
-    "tag": "KEY",
-    "text": "Winger Bukayo Saka (regular starter, quad) is out for about another month, per Mikel Arteta; midfielder Martin Zubimendi (hamstring) is also out at Newcastle.",
-    "source": "Real Broadcasting Network",
-    "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPTUlPaE9WeXI1WEZZVlFFX1g0cm1zZHc2RHpKWWVJVnVpQ3daWExPOUtpSjBVTnEtX2JvNGhHY0VPVmNaTVNxbUN5SjNSUUZkVmhFQW1zUFA2NWdJRUZNM1hGWmh0NXJGdENjVEFlOUtaVGNrNkhaYUctUmZmQTlFbXFNbEFGcE9VTGh4dw?oc=5",
-    "date": "2026-11-21"
-   },
-   {
-    "team": "ARS",
-    "tag": "RETURNING",
-    "text": "Centre-back William Saliba (first-choice defender) is fit for Arsenal's trip to Newcastle after his injury, per Arteta's 11/20 update.",
-    "source": "Gulf Times",
-    "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOUlZiN3EtUmFQMjZfc2FTS1RlZFFqRjdUbVlEd3hOcVMyM3k2R1dHekdzTy1Uc1lHWUE5aXItS29MMkVTcTVuMEdIaXI1Y0J0MHM3Q0JVQmFrR09xSU1MT2NqcHVwcGtRV3o3aXllUkdZLVNvU3lfM3JsUTBWRHJHOHVIWTlCVWRYWFVKekR3OHRaZWZvQUYxVmpBRHg5eWFfTlhzanMyblhfbjBxLUFwVTR5cW9ZRkhTdURGZkdab1JoUEJCaFdiY0VuZk3SAdIBQVVfeXFMTUw0U2JzbmZOTzZ1WWk0RVNNWjRCRVkteUFrSmxMZTNyT2Z5ZkhHZXBONFhydDZ2cHFydUoyQlFhOEc1SHU1U0lRbGE1WTdjQ3EwWnFVcWlHSXpEOGZwSVNsSk80V3NZV0dHdlpyYWhWR3dYaldGeHdNNG1yUUNHSmZDQXFfR1lFaHBTOS1MWXd4Q1VzNjNlazhyODlhWV8zVFcxU2J3UzJCU2NlTVVBQWR5Y0tfZGdMZzQ0QW0zeDV5eDI2enNuMFRSTks5RmJvSThB?oc=5",
-    "date": "2026-11-19"
-   }
-  ],
-  "CHE": [
-   {
-    "team": "CHE",
-    "tag": "KEY",
-    "text": "Striker Joao Pedro (first-choice No. 9, thigh) is out vs Leeds, Xabi Alonso confirmed; reports list five Chelsea players missing the match.",
-    "source": "Reuters",
-    "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOdFVvVWVUanZqeFB5SC05Q0k5TlYzZ09SX0x5Q3EtY0FCLUJsd2piRTdlVXh2ZW9YUGVwNHh3WFIyTmhnMnIwX3VBRGcwVmlWRXotaXVqT0FyeS1tcEkxb2hEdzE4eW5sY3RiZ2M1R0VjQjdZc3lXdkp3WDdIcU9CZ0VsZzZpa2lTU2JLWEZpTXVza3ZPMG5BT3hmbXBrQ1cxZGtFOUJiZHFrVDlBbGtvSUJMREU4ZmFnak00WXdHSmd1blY5aF93?oc=5",
-    "date": "2026-11-20"
-   }
-  ],
-  "TOT": [
-   {
-    "team": "TOT",
-    "tag": "RETURNING",
-    "text": "Spurs confirm Lucas Bergvall, Savio and Destiny Udogie are available vs Ipswich; Mathys Tel and Tosin are out, and Sandro Tonali is reported out.",
-    "source": "Tottenham Hotspur",
-    "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxONzlIU05BV3dJNWhMa2c3TmlVWm5GLWJySEdtbEJvT1NENFctSU5WNnQtbmVpa3dzTUVPWVZyRHVJVGpSUFNPZlRSTGhYTWR1Q3NmWDFtekVyTXhaZnVsYjhxM1FzVG9RcXp5cmc2Z0tPaGlfOXlrRHllbWhNNFZSV0FuandIS1dib1RBWFcyLVRqQmVrall3dC14UVpYdHhMaEhJNHJhbm1NYkk3dEcxYmh2NmszaVhidG5lNjhsMA?oc=5",
-    "date": "2026-11-20"
-   }
-  ],
-  "LIV": [
-   {
-    "team": "LIV",
-    "tag": "RETURNING",
-    "text": "Captain Virgil van Dijk (centre-back) is cleared after withdrawing from the Netherlands squad; Jeremie Frimpong (right-back) is back from injury for Man United.",
-    "source": "Sports Illustrated",
-    "url": "https://www.si.com/soccer/liverpool-vs-man-utd-predicted-lineups-important-reds-return-pochettino-first-xi-11-22-26",
-    "date": "2026-11-21"
-   }
-  ],
   "BRE": [
    {
     "team": "BRE",
     "tag": "CLUSTER",
-    "text": "Brentford say defenders Aaron Hickey and Nathan Collins are out 'for a number of weeks', both regular starters at the back, before Everton.",
+    "text": "Brentford say defenders Nathan Collins (centre-back) and Aaron Hickey (full-back) are out for a number of weeks, so both miss the Everton match on 11/23.",
     "source": "Brentford FC",
     "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNMGNZQ1ZiRzBaTWRNUzU1VGVLd1VrUUowVWxMQy1fX0Ytb0RaUVFfMmZwOUNPOEhDYW1VazhSaXR2VUx1OFhiRHA3emM3bld2VGVkZUNoemMwUGd4RnZqaFB4M0p0Z3VCLXI5aGc0WjU0eHVpT3lXNzVrdHFIOFFVU0pZdzI2enlGNzdycFdBaUVMR05KclNNTnVBYVg2WVRLODBTN1Y2aUZlaHJoa1J4Mm43NXdDSUloaEE?oc=5",
     "date": "2026-11-20"
-   }
-  ],
-  "AVL": [
+   },
    {
-    "team": "AVL",
+    "team": "BRE",
     "tag": "KEY",
-    "text": "Right-back Matty Cash (regular starter) is out vs Sunderland, per a full Villa injury list that also has two players returning.",
-    "source": "Dave.Sport",
-    "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE53d1NtWk9PbVBDbHNhbURhdWZQYnBOMGNZdEwzT3czeU1sTThSdTh6cEV4ZUpvbm9OOXh2emtYZGJSM2U2YUY5a0hMSWpCRklUSHhObEhXQWJpanhBZzZKV3NpS1pjUDlCejZxOUFWOA?oc=5",
-    "date": "2026-11-20"
+    "text": "Read Everton (11/18) reports Brentford face Everton without first-choice striker Igor Thiago; lineups are confirmed an hour before kickoff.",
+    "source": "Read Everton",
+    "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPNVlJRjRVd192TFpOb0VxaG1udUxjUEhtVlU2eGtNMHRZY3VQbzlhSjY5eFFUSks3M052Z09kTy1PbjV1N3U1VDZxQTVoTkVNWHdRaFBveTBVSjY4ajlWMkJWVkpEUEl0TVVVQTcyMTk5bE5aVGpEakFoWHktekk0NnM3UE1yRXZhVGhOUlludVU?oc=5",
+    "date": "2026-11-18"
    }
   ]
  }
