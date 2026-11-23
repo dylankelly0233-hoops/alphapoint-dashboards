@@ -83,6 +83,7 @@ HFA_POINTS, SOURCE_WEIGHTS = ex.calibrated('cbb', HFA_POINTS, SOURCE_WEIGHTS)   
 SCALE = ex.calibrated_value('cbb', 'scale', 1.0)      # weekly-tuned rating stretch
 CROWD_SLOPE = ex.calibrated_value('cbb', 'crowd_slope', crowd.SLOPE['cbb'])   # home edge per doubling of crowd
 FALLBACK_SD     = 9.5      # typical D1 SD in points, used if no points-based source loads
+RA_TOP          = 100      # Research Assistant also covers games with a top-100 team (our ratings) or national TV
 LOGO_PX         = 48       # smaller logos (displayed at 24–30px)
 theme.LOGO_LINK = True     # all of D1 (~365 teams): link logo files instead of embedding them (2.7 MB → light)
 LOOKAHEAD_DAYS  = 21
@@ -598,9 +599,15 @@ def generate_html(power, metrics, days, info):
     # Confidence only counts sources with real weight: one still ramping in (a few games of data) is noisy
     trusted = [c for c in s['stats'] if s.get('weights', {}).get(c, 1.0) >= 0.25 * SOURCE_WEIGHTS.get(c, 1.0)]
     by_src = {t: {c: v[c] for c in trusted} for t, v in all_src.items()}
+    # Research Assistant coverage (Dylan, 2026-11-22: 'please enhance the coverage'): P4 / Big East games, plus any game
+    # with a top-RA_TOP team in our ratings or on national TV (was P4 / Big East only: often a single flagged game a day)
+    top_ra = set(sorted(rating, key=lambda t: -rating[t] if rating[t] == rating[t] else 0)[:RA_TOP])
+    ra_scope = set()
     for day, games in days:
         cards = ''
         for g in games:
+            if {g['home'], g['away']} & (p4set | top_ra) or g.get('tv'):
+                ra_scope.add(g['game_id'])
             h_r, a_r = rating.get(g['home'], np.nan), rating.get(g['away'], np.nan)
             margin = g.get('proj', SCALE * (h_r - a_r) + (g.get('hfa', 0.0 if g['neutral'] else HFA_POINTS)))   # blended per-source line
             pm = theme.round_half(margin)
@@ -716,7 +723,7 @@ def generate_html(power, metrics, days, info):
                                  'home_name': p['home'], 'away_name': p['away'], 'ours': p['ours'], 'market': p['market'],
                                  'opened': p.get('opened'), 'sources': p.get('sources')}
                                 for p in plog if pd.Timestamp(p['kickoff']) > now and 'lopsided' not in p['flags']
-                                and (p['home'] in p4set or p['away'] in p4set)])   # Research Assistant: P4 / Big East gaps
+                                and p['game_id'] in ra_scope])   # Research Assistant coverage: see ra_scope above
     featured_html = fx.tab(''.join(features), ('Featured games', 'Top 25 clashes and upset watch, next three game days'),
                            'No ranked-vs-ranked or upset-watch games in the next three game days.')
     games_html = (
