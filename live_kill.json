@@ -2,66 +2,116 @@
  "updated": "2026-11-23",
  "kill_n": 200,
  "kill_rate": 0.5,
+ "early_n": 20,
+ "early_p": 0.05,
  "strategies": {
   "cbb_3p_fade": {
    "n": 12,
+   "wins": 5,
    "rate": 0.4167,
-   "killed": false
+   "break_even": 0.5238,
+   "p_luck": 0.3245,
+   "killed": false,
+   "why": null
   },
   "cbb_v2_open": {
    "n": 15,
+   "wins": 7,
    "rate": 0.4667,
-   "killed": false
+   "break_even": 0.5238,
+   "p_luck": 0.4256,
+   "killed": false,
+   "why": null
   },
   "cfb_spread|conference game": {
    "n": 7,
+   "wins": 3,
    "rate": 0.4286,
-   "killed": false
+   "break_even": 0.5238,
+   "p_luck": 0.4481,
+   "killed": false,
+   "why": null
   },
   "cfb_spread|mid": {
    "n": 27,
+   "wins": 7,
    "rate": 0.2593,
-   "killed": false
+   "break_even": 0.5238,
+   "p_luck": 0.0048,
+   "killed": true,
+   "why": "early"
   },
   "cfb_total|Power 4 / Big East game": {
    "n": 11,
+   "wins": 5,
    "rate": 0.4545,
-   "killed": false
+   "break_even": 0.5238,
+   "p_luck": 0.4358,
+   "killed": false,
+   "why": null
   },
   "cfb_v2_open": {
    "n": 27,
+   "wins": 12,
    "rate": 0.4444,
-   "killed": false
+   "break_even": 0.5238,
+   "p_luck": 0.2632,
+   "killed": false,
+   "why": null
   },
   "nfl_bye_edge": {
    "n": 4,
+   "wins": 2,
    "rate": 0.5,
-   "killed": false
+   "break_even": 0.5238,
+   "p_luck": 0.651,
+   "killed": false,
+   "why": null
   },
   "nfl_div_under": {
    "n": 3,
+   "wins": 2,
    "rate": 0.6667,
-   "killed": false
+   "break_even": 0.5238,
+   "p_luck": 0.8563,
+   "killed": false,
+   "why": null
   },
   "nfl_high_total_under": {
    "n": 1,
+   "wins": 0,
    "rate": 0.0,
-   "killed": false
+   "break_even": 0.5238,
+   "p_luck": 0.4762,
+   "killed": false,
+   "why": null
   },
   "nfl_spread|all": {
    "n": 2,
+   "wins": 1,
    "rate": 0.5,
-   "killed": false
+   "break_even": 0.5238,
+   "p_luck": 0.7256,
+   "killed": false,
+   "why": null
   },
   "nfl_wind_under": {
    "n": 1,
+   "wins": 0,
    "rate": 0.0,
-   "killed": false
+   "break_even": 0.5238,
+   "p_luck": 0.4762,
+   "killed": false,
+   "why": null
   },
   "teaser": {
    "n": 3,
+   "wins": 2,
    "rate": 0.6667,
-   "killed": false
+   "break_even": 0.7238,
+   "p_luck": 0.6208,
+   "killed": false,
+   "why": null
   }
  }
 }
