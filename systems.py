@@ -450,6 +450,50 @@ def strategy_row(its, esc, k=None, ctx=None):
     return f'<div class="lmove strats">{label}{html}</div>'
 
 
+SLICE_NAMES = {'all': '', 'mid': 'mid-season games', 'early': 'early-season games', 'late': 'late-season games',
+               'conference game': 'conference games', 'non-conference': 'non-conference games',
+               'Power 4 / Big East game': 'Power 4 games'}
+
+
+def slice_label(sport, kind, sl):
+    """'CFB mid-season spreads'."""
+    mid = SLICE_NAMES.get(sl, sl)
+    return (f'{sport.upper()} {mid + " " if mid else ""}{"spreads" if kind in ("Spread", "spread") else "totals"}'
+            .replace('games spreads', 'spreads').replace('games totals', 'totals'))
+
+
+def strict_proof(pr, key=None, check_criteria=True):
+    """The full bar for a Fair Line Value slice: 300+ games and a 95% low end of at least 51% vs the opener, plus
+    rules 3, 4 and 7 (criteria.json luck + recent checks, live_kill.json) for its key 'market|slice'."""
+    r, n = pr.get('rate') or 0, pr.get('n') or 0
+    if not (n >= STRICT_N and n and r - 1.96 * (r * (1 - r) / n) ** 0.5 >= STRICT_LO):
+        return False
+    return not check_criteria or (key is not None and criteria_ok(key))
+
+
+def flv_items(sport, priced, flags=()):
+    """
+    Fair Line Value as Strategies row items, with exactly the filter Best spots uses (Dylan, 2026-11-22: Mississippi
+    State +19 was on Best spots but not on its game card, whose 'Our pricing' line uses the all-games share instead of
+    the proven slice). priced = extras.spot()['priced']; flags = its flags (a big news move or a lopsided game drops it).
+    """
+    if flags:
+        return []
+    out = []
+    for x in priced or []:
+        pr = x.get('proof')
+        if not pr or not strict_proof(pr, f"{sport.lower()}_{x['kind'].lower()}|{pr['slice']}"):
+            continue
+        out.append({'action': 'Back' if x['kind'] == 'Spread' else 'Bet', 'what': x['text'], 'name': NAMES['priced'],
+                    'bench': 'close' if pr.get('holds_to_close') else 'open', 'side': x.get('side'), 'tracking': False,
+                    'why': (f"covers {100 * x['p']:.1f}% at our fair line"
+                            + (f" (push {100 * x['push']:.0f}%)" if x.get('push', 0) >= 0.03 else '')
+                            + f" · {slice_label(sport, x['kind'], pr['slice'])}: {100 * pr['rate']:.0f}% of {pr['n']:,} vs the opener"),
+                    'title': ('Our ratings, priced: the line moved most of the way back toward the market, then the cover '
+                              'chance at the posted number. Listed only in markets where this rule beat the opener before.')})
+    return out
+
+
 def tag_html(systems, esc, extra=(), k=None, ctx=None):
     """The Strategies row for these systems plus any extra items (teaser legs, CFB tracking leans).
     ctx = {'opened', 'market', 'open_total', 'total'} so each line can say exactly which number to bet."""

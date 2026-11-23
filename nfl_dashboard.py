@@ -482,6 +482,18 @@ def generate_html(power, vals, sched, week, info):
                                   f'underdog +1.5 to +3, {"total " + format(r.total, "g") if not pd.isna(r.total) and r.total <= TEASER_TOTAL_MAX else "division game"}')
                                  + ' · two-team teaser at −110 or better', 'tracking': False,
                           'title': 'Six-point two-team teaser leg; about 77% of legs won out of sample. Needs −110 pricing.'})
+        t_ours = info['total_fn'](r.home, r.away, r.neutral) if info.get('total_fn') else np.nan
+        # the Best spots entry first, so the card's Strategies row can carry its Fair Line Value line too
+        sp = ex.spot('NFL', 'nfl.html#sched', r.kick, nick(away), nick(home), r.margin, r.market,
+                             [tag_label] if tag_label else [],
+                             [(nick(away), sig(r.away_value)), (nick(home), sig(r.home_value))],
+                             info['opened'].get(str(r.game_id)), key='nfl', total=(t_ours, r.total), gid=r.game_id,
+                             systems=sysl,
+                             feat={'key': 'nfl', 'home_key': r.home, 'away_key': r.away, 'held': bool(held),
+                                   'marquee': ('Top-8 matchup' if r.home in top8 and r.away in top8 else None),
+                                   'tv': fx.nfl_slot(r.kick, r.neutral)})
+        if not held:
+            extra += sy.flv_items('nfl', (sp or {}).get('priced'), (sp or {}).get('flags'))
         tag_html = ''
         move = ex.line_move(info['opened'].get(str(r.game_id)), r.market, pm, nick(home), nick(away), 'First seen')
         move += sy.hold_row(held, theme.esc, theme.k) if held else sy.tag_html(sysl, theme.esc, extra, k=theme.k, ctx={
@@ -494,7 +506,6 @@ def generate_html(power, vals, sched, week, info):
             move += ex.injury_card_row(info.get('inj_cards'), r.away, r.home, lambda t: nick(vm.full_name(t)), sport='nfl')
             move += ex.liquidity_row(next((x.get('spread') for x in info['market_rows'] if str(x.get('game_id')) == str(r.game_id)), None))
         pr = '' if r.score else val.card_row('nfl', r.margin, r.market, r.home, r.away, info['val_live'], lambda t: nick(vm.full_name(t)))
-        t_ours = info['total_fn'](r.home, r.away, r.neutral) if info.get('total_fn') else np.nan
         pr += '' if r.score else tot.card_row('nfl', t_ours, r.total)
         move += ex.why_row([('Ratings', r.margin - (0.0 if r.neutral else HFA_POINTS)), ('Home field', 0.0 if r.neutral else HFA_POINTS)],
                            r.margin, r.market, r.home, r.away, lambda t: nick(vm.full_name(t)), lead=pr)
@@ -522,14 +533,7 @@ def generate_html(power, vals, sched, week, info):
             gaps.append({'gid': str(r.game_id), 'kick': r.kick, 'home': r.home, 'away': r.away, 'home_name': home,
                          'away_name': away, 'ours': r.margin, 'market': r.market, 'opened': info['opened'].get(str(r.game_id)),
                          'sources': plog[-1]['sources'], 'weather': info['weather'].get(str(r.game_id))})
-        spots.append(ex.spot('NFL', 'nfl.html#sched', r.kick, nick(away), nick(home), r.margin, r.market,
-                             [tag_label] if tag_label else [],
-                             [(nick(away), sig(r.away_value)), (nick(home), sig(r.home_value))],
-                             info['opened'].get(str(r.game_id)), key='nfl', total=(t_ours, r.total), gid=r.game_id,
-                             systems=sysl,
-                             feat={'key': 'nfl', 'home_key': r.home, 'away_key': r.away, 'held': bool(held),
-                                   'marquee': ('Top-8 matchup' if r.home in top8 and r.away in top8 else None),
-                                   'tv': fx.nfl_slot(r.kick, r.neutral)}))
+        spots.append(sp)
         card = theme.game_card(theme.kick_text(r.kick), 'Neutral site' if r.neutral else '',
                                side(r.away, away, r.away_value), side(r.home, home, r.home_value),
                                proj, mkt, r.score,

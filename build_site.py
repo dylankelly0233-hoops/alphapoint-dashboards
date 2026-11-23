@@ -305,16 +305,7 @@ def proven_markets():
     return ok
 
 
-SLICE_NAMES = {'all': '', 'mid': 'mid-season games', 'early': 'early-season games', 'late': 'late-season games',
-               'conference game': 'conference games', 'non-conference': 'non-conference games',
-               'Power 4 / Big East game': 'Power 4 games'}
-
-
-def slice_label(sport, kind, sl):
-    """'CFB mid-season spreads'."""
-    mid = SLICE_NAMES.get(sl, sl)
-    return (f'{sport.upper()} {mid + " " if mid else ""}{"spreads" if kind in ("Spread", "spread") else "totals"}'
-            .replace('games spreads', 'spreads').replace('games totals', 'totals'))
+SLICE_NAMES, slice_label = sy.SLICE_NAMES, sy.slice_label      # shared with the game cards (systems.flv_items)
 
 
 def proven_list():
@@ -509,13 +500,7 @@ def _reason(timing, main, basis, record, tip=''):
             + (f' title="{theme.esc(tip)}"' if tip else '') + f'>Based on: {theme.esc(basis)} · {theme.esc(record)}</span></span>')
 
 
-def strict_proof(pr, key=None, check_criteria=True):
-    """The full bar for a Fair Line Value slice: 300+ games and a 95% low end of at least 51% vs the opener, plus
-    rules 3, 4 and 7 (criteria.json luck + recent checks, live_kill.json) for its key 'market|slice'."""
-    r, n = pr.get('rate') or 0, pr.get('n') or 0
-    if not (n >= sy.STRICT_N and n and r - 1.96 * (r * (1 - r) / n) ** 0.5 >= sy.STRICT_LO):
-        return False
-    return not check_criteria or (key is not None and sy.criteria_ok(key))
+strict_proof = sy.strict_proof                                  # shared with the game cards (systems.flv_items)
 
 
 FEAT_POINTS = {'marquee': 2, 'competitive': 1, 'tv': 1, 'story': 1, 'proven': 1}

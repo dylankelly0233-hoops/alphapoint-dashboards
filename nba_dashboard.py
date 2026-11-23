@@ -32,6 +32,7 @@ import pandas as pd
 import cbb_ratings as cbr
 import dashboard_theme as theme
 import extras as ex
+import systems as sy
 import gap_research as gr
 import featured as fx
 import injury_wire as wire
@@ -356,6 +357,19 @@ def generate_html(power, metrics, days, info):
             when = g['kick'].strftime('%I:%M %p').lstrip('0') + ' ET'
             move = ex.line_move(info['opened'].get(g['game_id']), g['market'], pm, short[g['home']], short[g['away']],
                                 'First seen')
+            # the Best spots entry first, so the card can show its Fair Line Value line in a Strategies row
+            sp = ex.spot('NBA', 'nba.html#games', g['kick'], short[g['away']], short[g['home']], margin, g['market'],
+                         [], [(short[t], _signal(comp.get(t), gp.get(t, 0))) for t in (g['away'], g['home'])],
+                         info['opened'].get(g['game_id']), key='nba', gid=g['game_id'],
+                         total=(info['total_fn'](g['home'], g['away'], g['neutral']) if info.get('total_fn') else None,
+                                g.get('total')),
+                         feat={'key': 'nba', 'home_key': g['home'], 'away_key': g['away'], 'held': False,
+                               'marquee': 'Top-8 matchup' if g['home'] in top8 and g['away'] in top8 else None,
+                               'tv': g.get('tv') or None})
+            move += sy.tag_html([], theme.esc, sy.flv_items('nba', (sp or {}).get('priced'), (sp or {}).get('flags')),
+                                k=theme.k, ctx={'opened': info['opened'].get(g['game_id']), 'market': g['market'],
+                                                'open_total': ex.first_total('nba', g['game_id'], g.get('total')),
+                                                'total': g.get('total')})
             move += ex.rating_confidence(by_src.get(g['home'], {}), by_src.get(g['away'], {}),
                                          g['hfa'])
             if not g['score']:
@@ -418,14 +432,7 @@ def generate_html(power, metrics, days, info):
                          'context': {'scale': SCALE, 'gap_verdict': gr.verdict('nba', g['game_id']), 'rest': g['rest_parts'] or None, 'inj': g.get('inj_parts') or None, 'signals': {t: s for t in (g['away'], g['home']) if (s := _signal(comp.get(t), gp.get(t, 0)))},
                                      'mu_side': mu.headline_side(mprof, mu.BASKETBALL_CATS, g['away'], g['home'])
                                      if g['home'] in mprof and g['away'] in mprof else None}})
-            spots.append(ex.spot('NBA', 'nba.html#games', g['kick'], short[g['away']], short[g['home']], margin, g['market'],
-                                 [], [(short[t], _signal(comp.get(t), gp.get(t, 0))) for t in (g['away'], g['home'])],
-                                 info['opened'].get(g['game_id']), key='nba', gid=g['game_id'],
-                                 total=(info['total_fn'](g['home'], g['away'], g['neutral']) if info.get('total_fn') else None,
-                                        g.get('total')),
-                                 feat={'key': 'nba', 'home_key': g['home'], 'away_key': g['away'], 'held': False,
-                                       'marquee': 'Top-8 matchup' if g['home'] in top8 and g['away'] in top8 else None,
-                                       'tv': g.get('tv') or None}))
+            spots.append(sp)
         sections += (f'<div class="sechead"><h2>{day.strftime("%A, %b %d").replace(" 0", " ")}</h2>'
                      f'<span class="hint">{len(games)} game{"" if len(games) == 1 else "s"} · projected lines include '
                      f'{HFA_POINTS:g} points of home court</span></div><div class="games">{cards}</div>')

@@ -620,18 +620,30 @@ def generate_html(power, metrics, days, info):
             held = {t: d for t, d in (info.get('box_missing') or {}).items() if t in (g['home'], g['away'])}
             if held:      # a team's latest game isn't in the stats yet: hold every stat-based strategy for this game
                 sysl = []
-                move += sy.hold_row({t: [x.strftime('%b %d').replace(' 0', ' ') for x in d] for t, d in held.items()},
-                                    theme.esc, theme.k)
             else:
                 sysl = sy.cbb(cm2.season_day(g['kick'].date(), SEASON), v2, info['opened'].get(g['game_id']), g['market'],
                               g['home'], g['away'], bool(g['score']))
                 sysl += sy.cbb_3p(info.get('p3') or {}, g['market'], g['home'], g['away'], bool(g['score']))
                 sysl += sy.cbb_track(game_last(info, g), g['kick'].date(), g['market'], g['home'], g['away'], bool(g['score']))
-                move += sy.tag_html(sysl, theme.esc, k=theme.k, ctx={
+            t_ours = info['total_fn'](g['home'], g['away'], g['neutral']) if info.get('total_fn') else np.nan
+            # the Best spots entry first, so the card's Strategies row can carry its Fair Line Value line too
+            sp = ex.spot('CBB', 'cbb.html#games', g['kick'], g['away'], g['home'], margin, g['market'], [],
+                         [(t, _signal(comp.get(t), games_played.get(t, 0))) for t in (g['away'], g['home'])],
+                         info['opened'].get(g['game_id']), big, key='cbb', total=(t_ours, g.get('total')),
+                         gid=g['game_id'], ctx={'p4': g['home'] in p4set or g['away'] in p4set}, systems=sysl,
+                         feat={'key': 'cbb', 'home_key': g['home'], 'away_key': g['away'], 'held': bool(held),
+                               'p4': g['home'] in p4set or g['away'] in p4set,
+                               'marquee': next(iter(info['featured'].get(g['game_id']) or []), None),
+                               'tv': g.get('tv') or None})
+            if held:
+                move += sy.hold_row({t: [x.strftime('%b %d').replace(' 0', ' ') for x in d] for t, d in held.items()},
+                                    theme.esc, theme.k)
+            else:
+                move += sy.tag_html(sysl, theme.esc, sy.flv_items('cbb', (sp or {}).get('priced'), (sp or {}).get('flags')),
+                                    k=theme.k, ctx={
                     'opened': info['opened'].get(g['game_id']), 'market': g['market'],
                     'open_total': ex.first_total('cbb', g['game_id'], g.get('total')), 'total': g.get('total')})
             pr = '' if big or g['score'] else val.card_row('cbb', margin, g['market'], g['home'], g['away'], info['val_live'])
-            t_ours = info['total_fn'](g['home'], g['away'], g['neutral']) if info.get('total_fn') else np.nan
             pr += '' if g['score'] else tot.card_row('cbb', t_ours, g.get('total', np.nan))
             hfa_all = g.get('hfa', 0.0 if g['neutral'] else HFA_POINTS)
             move += ex.why_row([('Ratings', margin - hfa_all), ('Home court', 0.0 if g['neutral'] else HFA_POINTS),
@@ -693,14 +705,7 @@ def generate_html(power, metrics, days, info):
                                                  if (s := _signal(comp.get(t), games_played.get(t, 0)))},
                                      'mu_side': mu.headline_side(mprof, mu.BASKETBALL_CATS, g['away'], g['home'])
                                      if g['home'] in mprof and g['away'] in mprof else None}})
-            spots.append(ex.spot('CBB', 'cbb.html#games', g['kick'], g['away'], g['home'], margin, g['market'], [],
-                                 [(t, _signal(comp.get(t), games_played.get(t, 0))) for t in (g['away'], g['home'])],
-                                 info['opened'].get(g['game_id']), big, key='cbb', total=(t_ours, g.get('total')),
-                                 gid=g['game_id'], ctx={'p4': g['home'] in p4set or g['away'] in p4set}, systems=sysl,
-                                 feat={'key': 'cbb', 'home_key': g['home'], 'away_key': g['away'], 'held': bool(held),
-                                       'p4': g['home'] in p4set or g['away'] in p4set,
-                                       'marquee': next(iter(info['featured'].get(g['game_id']) or []), None),
-                                       'tv': g.get('tv') or None}))
+            spots.append(sp)
         sections += (f'<div class="sechead"><h2>{day.strftime("%A, %b %d").replace(" 0", " ")}</h2>'
                      f'<span class="hint">{len(games)} game{"" if len(games) == 1 else "s"}</span></div>'
                      f'<div class="games">{cards}</div>')

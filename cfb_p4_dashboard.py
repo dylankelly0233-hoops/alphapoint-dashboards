@@ -716,12 +716,29 @@ def generate_html(p4, vals, sched, week, season_type, info):
                           'name': 'Bounce-Back', 'bench': 'close', 'side': 'away', 'why': f'{r.away} lost by {-bm} to {bopp} last time out', 'tracking': True,
                           'title': f'Away teams off a {BLOWOUT_MARGIN}+ point loss covered 55.4% (739 games, 2016-25), '
                                    f'not strong enough to count as proven'})
+        big = ex.lopsided(mkt_margin, r.margin)
+        t_ours = info['total_fn'](r.home, r.away, r.neutral) if info.get('total_fn') else np.nan
+        t_mkt = getattr(r, 'total', np.nan)
+        # the Best spots entry first, so the card's Strategies row can carry its Fair Line Value line too
+        sp = ex.spot('CFB', 'cfb.html#sched', r.kick, r.away, r.home, r.margin, mkt_margin, labels,
+                             [(r.away, sig(r.away_value)), (r.home, sig(r.home_value))],
+                             info['opened'].get(str(r.game_id)), big, tbd=bool(getattr(r, 'tbd', False)),
+                             key='cfb', total=(t_ours, t_mkt), gid=r.game_id,
+                             # every game on this page has a Power 4 team (or Notre Dame): the Power 4 slice applies
+                             ctx={'conf': str(getattr(r, 'conf', '')).lower() in ('true', '1'),
+                                  'p4': r.home in p4n or r.away in p4n}, systems=sysl,
+                             feat={'key': 'cfb', 'home_key': r.home, 'away_key': r.away, 'held': bool(held),
+                                   'p4': r.home in p4n or r.away in p4n,
+                                   'marquee': next(iter(info['featured'].get(r.game_id) or []), None),
+                                   'tv': getattr(r, 'tv', None) if isinstance(getattr(r, 'tv', None), str) else None},
+                             open_src='cfbd' if str(r.game_id) in info.get('open_cfbd', ()) else None)
+        if not held:
+            extra += sy.flv_items('cfb', (sp or {}).get('priced'), (sp or {}).get('flags'))
         tag_html = ''
         move = ex.line_move(info['opened'].get(str(r.game_id)), mkt_margin, pm, r.home, r.away)
         move += sy.hold_row(held, theme.esc, theme.k) if held else sy.tag_html(sysl, theme.esc, extra, k=theme.k, ctx={
             'opened': info['opened'].get(str(r.game_id)), 'market': mkt_margin,
             'open_total': ex.first_total('cfb', r.game_id, getattr(r, 'total', None)), 'total': getattr(r, 'total', None)})
-        big = ex.lopsided(mkt_margin, r.margin)
         move += ex.rating_confidence(info['by_source'].get(r.home, {}), info['by_source'].get(r.away, {}),
                                      _hfa(r), big)
         stadium = info['roofs'].get(str(r.game_id))
@@ -732,8 +749,6 @@ def generate_html(p4, vals, sched, week, season_type, info):
         if not r.completed:
             move += ex.liquidity_row(next((x.get('spread') for x in info['market_rows'] if str(x.get('game_id')) == str(r.game_id)), None))
         pr = '' if big or r.completed else val.card_row('cfb', r.margin, mkt_margin, r.home, r.away, info['val_live'])
-        t_ours = info['total_fn'](r.home, r.away, r.neutral) if info.get('total_fn') else np.nan
-        t_mkt = getattr(r, 'total', np.nan)
         pr += '' if r.completed else tot.card_row('cfb', t_ours, t_mkt)
         move += ex.why_row([('Ratings', r.margin - _hfa(r)), ('Home field', 0.0 if r.neutral else HFA_POINTS),
                             ('Crowd', (_crowd(r) or {}).get('adj'))], r.margin, mkt_margin, r.home, r.away, lead=pr)
@@ -758,18 +773,7 @@ def generate_html(p4, vals, sched, week, season_type, info):
                                  'tags': [list(x) for x in labels], 'los': [los['side'], los['gap']] if los else None,
                                  'gap_verdict': gr.verdict('cfb', r.game_id),
                                  'mu_side': mu.headline_side(prof, MU_CATS, r.away, r.home) if r.home in prof and r.away in prof else None}})
-        spots.append(ex.spot('CFB', 'cfb.html#sched', r.kick, r.away, r.home, r.margin, mkt_margin, labels,
-                             [(r.away, sig(r.away_value)), (r.home, sig(r.home_value))],
-                             info['opened'].get(str(r.game_id)), big, tbd=bool(getattr(r, 'tbd', False)),
-                             key='cfb', total=(t_ours, t_mkt), gid=r.game_id,
-                             # every game on this page has a Power 4 team (or Notre Dame): the Power 4 slice applies
-                             ctx={'conf': str(getattr(r, 'conf', '')).lower() in ('true', '1'),
-                                  'p4': r.home in p4n or r.away in p4n}, systems=sysl,
-                             feat={'key': 'cfb', 'home_key': r.home, 'away_key': r.away, 'held': bool(held),
-                                   'p4': r.home in p4n or r.away in p4n,
-                                   'marquee': next(iter(info['featured'].get(r.game_id) or []), None),
-                                   'tv': getattr(r, 'tv', None) if isinstance(getattr(r, 'tv', None), str) else None},
-                             open_src='cfbd' if str(r.game_id) in info.get('open_cfbd', ()) else None))
+        spots.append(sp)
         card = theme.game_card(when, venue, side(r.away, r.away_rating, r.away_value),
                                side(r.home, r.home_rating, r.home_value), proj, mkt, r.score, edge, tag_html, move,
                                gid=r.game_id, group=f'{group_of.get(r.home, "FCS")}|{group_of.get(r.away, "FCS")}')
