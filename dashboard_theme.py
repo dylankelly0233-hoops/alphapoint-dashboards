@@ -383,9 +383,9 @@ CSS = """
 :root {
   --bg: #eef1f5; --surface: #ffffff; --surface-2: #f6f8fb; --ink: #0f1724; --muted: #5b6676; --line: #dde3ea;
   --mast: #0b1a2e; --mast-2: #13263f; --mast-ink: #ffffff; --mast-muted: #a9b7c9;
-  --accent: #1d6ff2; --accent-ink: #ffffff;
+  --accent: #1a5fd0; --accent-ink: #ffffff;   /* darker blues/greens/oranges: WCAG AA contrast (2026-11-23) */
   --pos: #0f7d45; --pos-bg: #e1f3e8; --neg: #c0352b; --neg-bg: #fbe5e2;
-  --t5: #0b7a3e; --t4: #3f9b52; --t3: #8793a3; --t2: #d9792e; --t1: #c0352b; --chip-ink: #ffffff;
+  --t5: #0b7a3e; --t4: #2e7d3f; --t3: #66727f; --t2: #b35f1c; --t1: #c0352b; --chip-ink: #ffffff;
   --display: 'Barlow Condensed', 'Arial Narrow', 'Roboto Condensed', sans-serif;
   --body: 'Barlow', 'Segoe UI', system-ui, -apple-system, sans-serif;
   --radius: 10px;
@@ -395,7 +395,7 @@ CSS = """
   --mast: #050a12; --mast-2: #0d1828; --mast-ink: #ffffff; --mast-muted: #8fa0b6;
   --accent: #4b8dff; --accent-ink: #050a12;
   --pos: #49c47e; --pos-bg: #10291b; --neg: #f07065; --neg-bg: #33150f;
-  --t5: #1f9a55; --t4: #4ea862; --t3: #5d6a7c; --t2: #c9702c; --t1: #c4443a; --chip-ink: #ffffff;
+  --t5: #187a43; --t4: #2b7f40; --t3: #5d6a7c; --t2: #a85a1f; --t1: #c4443a; --chip-ink: #ffffff;
   color-scheme: dark;
 } }
 :root[data-theme="dark"] {
@@ -403,7 +403,7 @@ CSS = """
   --mast: #050a12; --mast-2: #0d1828; --mast-ink: #ffffff; --mast-muted: #8fa0b6;
   --accent: #4b8dff; --accent-ink: #050a12;
   --pos: #49c47e; --pos-bg: #10291b; --neg: #f07065; --neg-bg: #33150f;
-  --t5: #1f9a55; --t4: #4ea862; --t3: #5d6a7c; --t2: #c9702c; --t1: #c4443a; --chip-ink: #ffffff;
+  --t5: #187a43; --t4: #2b7f40; --t3: #5d6a7c; --t2: #a85a1f; --t1: #c4443a; --chip-ink: #ffffff;
   color-scheme: dark;
 }
 * { box-sizing: border-box; }
@@ -644,7 +644,7 @@ dialog.tmodal::backdrop { background: rgba(5, 10, 18, .6); }
 .tipbox { position: absolute; z-index: 50; max-width: min(300px, calc(100vw - 32px)); padding: 9px 11px; border-radius: 8px;
           background: var(--mast); color: var(--mast-ink); font: 400 13px/1.45 var(--body); letter-spacing: 0; text-transform: none;
           box-shadow: 0 10px 28px rgba(0, 0, 0, .3); }
-.navlink { margin-left: auto; align-self: center; padding: 8px 4px; white-space: nowrap; color: var(--mast-muted);
+.navlink { margin-left: 4px; align-self: center; padding: 4px 4px; white-space: nowrap; color: var(--mast-muted);
            font: 600 13px/1 var(--display); letter-spacing: .8px; text-transform: uppercase; text-decoration: none; }
 .navlink:hover { color: var(--mast-ink); }
 
@@ -698,8 +698,8 @@ dialog.tmodal::backdrop { background: rgba(5, 10, 18, .6); }
 nav.tabs.more + .tabmore { display: block; }
 nav.tabs { scrollbar-width: none; } nav.tabs::-webkit-scrollbar { display: none; }
 /* finished games: dimmed and listed after the games still to play */
-.card.game.final { opacity: .62; }
-.card.game.final:hover, .card.game.final.open, .card.game.final.flash { opacity: 1; }
+.card.game.final { filter: grayscale(.85); background: var(--surface-2); }   /* grayed, not faded: text keeps its contrast */
+.card.game.final:hover, .card.game.final.open, .card.game.final.flash { filter: none; background: var(--surface); }
 @media (max-width: 560px) { .colbtn { display: inline-block; margin: 0 0 8px; font: 700 12px/1 var(--display); letter-spacing: 1px;
   text-transform: uppercase; color: var(--accent); background: none; border: 1px solid var(--line); border-radius: 6px; padding: 6px 10px; } }
 @media (max-width: 640px) {
@@ -1088,9 +1088,9 @@ def render_page(*, title, league, headline, meta_items, tabs, footer, extra='', 
     tabs = first + [t for t in tabs if t not in first]
     meta_items = [(k_, _clock(v) if k_ == 'Updated' else v) for k_, v in meta_items]
     meta = ''.join(f'<span>{esc(k)} <b>{esc(v)}</b></span>' for k, v in meta_items)
+    if league != 'Home':   # outside the tab bar: a role="tablist" may only contain tabs (screen readers)
+        meta += '<a class="navlink" href="index.html#guide">How to use</a>'
     nav = ''.join(f'<button data-page="{tid}" role="tab">{esc(lbl)}</button>' for tid, lbl, _ in tabs)
-    if league != 'Home':
-        nav += '<a class="navlink" href="index.html#guide">How to use</a>'
     pages = ''.join(f'<section class="page" id="{tid}">{body}</section>' for tid, _, body in tabs)
     logo_css = '\n'.join(f'.{c} {{ background-image: url({d}); }}' for c, d in _LOGO_CSS.items())
     return f"""<title>{esc(title)}</title>
