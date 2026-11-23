@@ -171,6 +171,21 @@ def summarize(d, sport):
         s = pd.DataFrame(rows, columns=['src', 'err']).groupby('src')['err']
         lines.append('  By source (average miss, bias): ' + '; '.join(
             f'{k} {v.abs().mean():.1f}, {v.mean():+.1f} over {len(v)}' for k, v in s))
+        if sport == 'nfl':     # can our own model replace nfelo yet? (Dylan, 2026-11-23: free data before charging)
+            pair = []
+            for r in d.itertuples():
+                try:
+                    src = json.loads(r.sources_last or '{}')
+                except (TypeError, ValueError):
+                    continue
+                if 'nfelo' in src and 'AlphaPoint (shadow)' in src:
+                    pair.append((abs(r.result - src['AlphaPoint (shadow)']), abs(r.result - src['nfelo'])))
+            if pair:
+                ours, nf = (sum(x[i] for x in pair) / len(pair) for i in (0, 1))
+                ready = len(pair) >= 100 and ours <= nf
+                lines.append(f'  Replace nfelo? Our model {ours:.2f} vs nfelo {nf:.2f} average miss over {len(pair)} live games: '
+                             + ('READY: ours is at least as accurate over 100+ games. Ask Claude to swap it into the blend.'
+                                if ready else 'not yet (needs 100+ games and an average miss no worse than nfelo).'))
     conf = d.groupby('confidence')
     lines.append('  By confidence (average miss): ' + '; '.join(
         f'{c} {(g["result"] - g["ours_last"]).abs().mean():.1f} over {len(g)}'

@@ -42,6 +42,7 @@ import futures as fut
 import totals as tot
 import systems as sy
 import gap_research as gr
+import nfl_model as nflm
 import nfl_model_fetch as nmf
 import featured as fx
 import matchups as mu
@@ -454,6 +455,9 @@ def generate_html(power, vals, sched, week, info):
     # --- Games tab: this week and next week, behind a switch ---
     rating = dict(zip(power['abbr'], power['composite']))
     by_src = {r.abbr: {'nfelo': r.nfelo, 'Sagarin': r.sagarin} for r in power.itertuples()}
+    # our own model: logged and scored next to the blend sources, never blended and never in the confidence chip
+    shadow = info.get('shadow') or {}
+    log_src = lambda t: {**by_src.get(t, {}), **({nflm.SHADOW_LABEL: shadow[t]} if t in shadow else {})}
     sig = lambda v: 'BUY' if v is not None and v == v and v < -spot else 'SELL' if v is not None and v == v and v > spot else ''
     spots, panels, features, plog, gaps = [], {}, [], [], []
 
@@ -525,7 +529,7 @@ def generate_html(power, vals, sched, week, info):
                      'ours': r.margin, 'market': r.market, 'opened': info['opened'].get(str(r.game_id)),
                      'confidence': ex.confidence_level(by_src.get(r.home, {}), by_src.get(r.away, {}), hfa_g),
                      'flags': ['news'] if ex.news_move(info['opened'].get(str(r.game_id)), r.market) else [],
-                     'sources': ex.source_lines(by_src.get(r.home, {}), by_src.get(r.away, {}), hfa_g), 'hfa': hfa_g,
+                     'sources': ex.source_lines(log_src(r.home), log_src(r.away), hfa_g), 'hfa': hfa_g,
                      'context': {'scale': SCALE, 'total': [None if t_ours != t_ours else round(t_ours, 1),
                                                            None if pd.isna(r.total) else r.total],
                                  'signals': {t: s for t, s in ((r.away, sig(r.away_value)), (r.home, sig(r.home_value))) if s},
@@ -772,6 +776,12 @@ def main():
             'opened': {**next_opened, **{str(r['game_id']): r.get('opened') for r in market_rows}},
             'mu_prof': mu.profiles(units, MU_CATS, MU_STYLES) if not units.empty else {}, 'mu_games': cover,
             'sr': nmf.sr_profile(vm.SEASON), 'held': nmf.missing(full, vm.SEASON)}
+    try:       # our own NFL rating as a zero-weight shadow next to nfelo and Sagarin (Dylan, 2026-11-23)
+        info['shadow'] = nflm.team_ratings(vm.SEASON, wire_data.get('items'))
+        print(f"  Shadow model (AlphaPoint): {len(info['shadow'])} teams")
+    except Exception as e:
+        print(f'  ! shadow model skipped: {e}')
+        info['shadow'] = {}
     generate_html(power, vals, sched, week, info)
 
 
