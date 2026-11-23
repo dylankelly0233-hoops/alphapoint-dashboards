@@ -12,6 +12,7 @@ doesn't stop the others; its page simply keeps the last good copy.
 GitHub Actions runs this on a schedule (.github/workflows/build.yml); it also works locally.
 """
 
+import html as html_lib
 import json
 import re
 import os
@@ -1316,6 +1317,61 @@ def perf_tab():
         return perf_page.tab(None)
 
 
+DESCRIPTIONS = {   # <meta name="description"> and the link-preview text (Dylan, 2026-11-23: cosmetic pass)
+    'index.html': 'Power ratings, fair lines, market data and daily injury and line research for the NFL, college '
+                  'football, college basketball, the NBA, NHL, MLB, Premier League and golf. Research, not picks.',
+    'cfb.html': 'College football power ratings, fair lines and research for every FBS game: line moves, injuries and '
+                'why our number differs from the market.',
+    'nfl.html': 'NFL power ratings, fair lines and research for every game: line moves, injuries, teasers and why our '
+                'number differs from the market.',
+    'cbb.html': 'College basketball power ratings, fair lines and research for all of Division I: line moves, '
+                'injuries and why our number differs from the market.',
+    'nba.html': 'NBA power ratings, fair lines and research for every game: rest, injuries, line moves and why our '
+                'number differs from the market.',
+    'nhl.html': 'NHL win probabilities, probable goalies, fair moneylines and research for every game.',
+    'epl.html': 'Premier League win, draw and loss probabilities, fair prices and team news research for every match.',
+    'mlb.html': 'MLB power ratings, probable starters, fair lines and research for every game.',
+    'golf.html': 'Golf win, top-10 and placement probabilities for PGA Tour events and the majors.',
+    'legal.html': 'AlphaPoint Sports disclaimer, responsible gaming resources and terms of use.',
+}
+
+
+def head_tags(page):
+    """
+    Add the site icon, home-screen icon, search description and link-preview tags (Open Graph / X cards) to a
+    published page's <head>. Skips a page that already has them (a copy kept from the live site).
+    """
+    path = os.path.join(SITE, page)
+    with open(path, encoding='utf-8') as f:
+        s = f.read()
+    if 'og:image' in s or '<head>' not in s:
+        return
+    stem = page[:-5]
+    m = re.search(r'<title>(.*?)</title>', s, re.S)
+    title = theme.esc(html_lib.unescape(m.group(1)).strip()) if m else 'AlphaPoint Sports'
+    desc = theme.esc(DESCRIPTIONS.get(page, DESCRIPTIONS['index.html']))
+    img = f'{LIVE_SITE}brand/og-{stem if os.path.exists(os.path.join(HERE, "brand", f"og-{stem}.png")) else "index"}.png'
+    url = LIVE_SITE + ('' if page == 'index.html' else page)
+    pairs = [('name', 'description', desc), ('name', 'theme-color', '#0b1a2e'),
+             ('name', 'apple-mobile-web-app-title', 'AlphaPoint'),
+             ('property', 'og:type', 'website'), ('property', 'og:site_name', 'AlphaPoint Sports'),
+             ('property', 'og:title', title), ('property', 'og:description', desc), ('property', 'og:url', url),
+             ('property', 'og:image', img), ('property', 'og:image:width', '1200'), ('property', 'og:image:height', '630'),
+             ('name', 'twitter:card', 'summary_large_image'), ('name', 'twitter:title', title),
+             ('name', 'twitter:description', desc), ('name', 'twitter:image', img)]
+    tags = [f'<meta {k}="{n}" content="{v}">' for k, n, v in pairs]
+    tags += ['<link rel="icon" type="image/png" sizes="32x32" href="brand/favicon-32.png">',
+             '<link rel="icon" type="image/png" sizes="48x48" href="brand/favicon-48.png">',
+             '<link rel="apple-touch-icon" href="brand/icon-180.png">']
+    if m:   # the title belongs in <head> too (the theme puts it at the top of <body>)
+        s = s.replace(m.group(0), '', 1)
+        tags.insert(0, m.group(0))
+    tags = '\n'.join(tags) + '\n'
+    s = s.replace('</head>', tags + '</head>', 1)
+    with open(path, 'w', encoding='utf-8') as f:
+        f.write(s)
+
+
 def main():
     os.makedirs(SITE, exist_ok=True)
     results = {}
@@ -1343,6 +1399,14 @@ def main():
         f.write(landing(results))
     with open(os.path.join(SITE, 'legal.html'), 'w', encoding='utf-8') as f:
         f.write(legal_page())
+    for page in [p for p, *_ in DASHBOARDS] + ['index.html', 'legal.html']:
+        if os.path.exists(os.path.join(SITE, page)):
+            try:
+                head_tags(page)
+            except Exception as e:                  # cosmetic: never block publishing
+                print(f'  ! {page}: could not add head tags: {e}')
+    if os.path.isdir(os.path.join(HERE, 'brand')):   # icons and link-preview images (make_brand.py)
+        shutil.copytree(os.path.join(HERE, 'brand'), os.path.join(SITE, 'brand'), dirs_exist_ok=True)
     if os.path.isdir(os.path.join(HERE, 'logos')):   # logo files the pages link (theme.LOGO_LINK); last, after every page
         shutil.copytree(os.path.join(HERE, 'logos'), os.path.join(SITE, 'logos'), dirs_exist_ok=True)
     print('\nSite built:', {p: 'ok' if ok else 'FAILED' for p, ok in results.items()})

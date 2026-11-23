@@ -282,7 +282,7 @@ def game_card(when, venue, away, home, projected, market, final='', edge='', tag
                 'Details</button></div>') if move else ''
     gattr = f' data-gid="{esc(str(gid))}"' if gid is not None else ''      # Best spots links open this card
     gattr += f' data-group="{esc(group)}"' if group else ''                    # conference filter ('P4 SEC|G5 Sun Belt')
-    return (f'<article class="card game"{gattr}><header><span>{esc(when)}</span><span>{esc(venue)}</span></header>'
+    return (f'<article class="card game{" final" if final else ""}"{gattr}><header><span>{esc(when)}</span><span>{esc(venue)}</span></header>'
             f'{tags_html}{side(away, labels[0])}{side(home, labels[1])}'
             f'<footer><div>{k("Projected")}<b>{projected}</b></div>'
             f'<div>{k("Market")}<span>{market}</span></div>'
@@ -660,9 +660,13 @@ dialog.tmodal::backdrop { background: rgba(5, 10, 18, .6); }
   .gmore { margin-left: auto; font: 700 12px/1 var(--display); letter-spacing: 1px; text-transform: uppercase; color: var(--accent);
            background: none; border: 1px solid var(--line); border-radius: 6px; padding: 6px 10px; }
   .card.game.open .gmore { color: var(--muted); }
-  /* 3. the Games tab first in the tab bar, and a fade on the right edge so it's clear the bar scrolls */
-  nav.tabs button[data-page="games"], nav.tabs button[data-page="sched"], nav.tabs button[data-page="week"] { order: -1; }
-  nav.tabs { -webkit-mask-image: linear-gradient(90deg, #000 85%, transparent); mask-image: linear-gradient(90deg, #000 85%, transparent); }
+  /* 3. compact header: the brand and title scroll away, the tab bar stays pinned at the top (top set by JS) */
+  .mast { position: sticky; top: var(--mast-top, 0px); z-index: 30; }
+  .mast .wrap { padding-block: 12px 0; }
+  .brand .mark { font-size: 22px; }
+  .brandrow .meta { font-size: 12px; }
+  h1.title { font-size: 24px; margin: 8px 0 4px; }
+  .card.game, .page { scroll-margin-top: 56px; }
   /* 5. wide tables: the name column stays put while the numbers scroll */
   table.data .stick { position: sticky; z-index: 1; background: var(--surface); }
   table.data th.stick { background: var(--surface-2, var(--surface)); }
@@ -685,6 +689,17 @@ dialog.tmodal::backdrop { background: rgba(5, 10, 18, .6); }
   .gmore { padding: 9px 12px; }
 }
 .colbtn, .mwhen { display: none; }
+/* Tab bar hint (Dylan, 2026-11-23: tabs past the edge looked like they weren't there): when the bar scrolls, fade its
+   right edge and show a > button that scrolls it; both go away at the end of the bar */
+.mast .wrap { position: relative; }
+.tabmore { display: none; position: absolute; right: 0; bottom: 3px; height: 38px; width: 44px; padding: 0 6px 0 0; border: 0;
+           cursor: pointer; text-align: right; font: 700 26px/1 var(--body); color: var(--mast-ink);
+           background: linear-gradient(90deg, transparent, var(--mast-2) 55%); }
+nav.tabs.more + .tabmore { display: block; }
+nav.tabs { scrollbar-width: none; } nav.tabs::-webkit-scrollbar { display: none; }
+/* finished games: dimmed and listed after the games still to play */
+.card.game.final { opacity: .62; }
+.card.game.final:hover, .card.game.final.open, .card.game.final.flash { opacity: 1; }
 @media (max-width: 560px) { .colbtn { display: inline-block; margin: 0 0 8px; font: 700 12px/1 var(--display); letter-spacing: 1px;
   text-transform: uppercase; color: var(--accent); background: none; border: 1px solid var(--line); border-radius: 6px; padding: 6px 10px; } }
 @media (max-width: 640px) {
@@ -694,6 +709,7 @@ dialog.tmodal::backdrop { background: rgba(5, 10, 18, .6); }
   .grid3 > .card { flex: 0 0 84%; scroll-snap-align: start; scroll-margin-left: 16px; }
   .freshbar { flex-wrap: nowrap; overflow-x: auto; white-space: nowrap; margin: 0 -16px 12px; padding: 0 16px 4px; scrollbar-width: none; }
   .freshbar::-webkit-scrollbar { display: none; }
+  .freshbar { -webkit-mask-image: linear-gradient(90deg, #000 88%, transparent); mask-image: linear-gradient(90deg, #000 88%, transparent); }
 }
 
 
@@ -783,6 +799,29 @@ details.method b { color: var(--ink); }
 """
 
 JS = """
+// Finished games go after the games still to play in each day / week list (they stay on the page, dimmed)
+document.querySelectorAll('.games').forEach(box => {
+  box.querySelectorAll(':scope > .card.game.final').forEach(c => box.appendChild(c));
+});
+// Tab bar: show the > hint while there are tabs past the right edge; the button scrolls the bar
+(function () {
+  const nav = document.querySelector('nav.tabs'), more = document.querySelector('.tabmore');
+  if (!nav || !more) return;
+  const check = () => nav.classList.toggle('more', nav.scrollLeft + nav.clientWidth < nav.scrollWidth - 4);
+  nav.addEventListener('scroll', check, {passive: true});
+  window.addEventListener('resize', check);
+  more.addEventListener('click', () => nav.scrollBy({left: nav.clientWidth * 0.7, behavior: 'smooth'}));
+  check();
+  // keep the open tab visible in the bar
+  window.addEventListener('load', () => { const on = nav.querySelector('button.on'); if (on) on.scrollIntoView({block: 'nearest', inline: 'nearest'}); check(); });
+})();
+// Phones: the header is sticky with a negative top, so the brand and title scroll away and only the tab bar stays
+(function () {
+  const mast = document.querySelector('.mast'), nav = document.querySelector('nav.tabs');
+  if (!mast || !nav) return;
+  const set = () => mast.style.setProperty('--mast-top', -(mast.offsetHeight - nav.offsetHeight - 3) + 'px');
+  set(); window.addEventListener('resize', set); window.addEventListener('load', set);
+})();
 function showTab(id) {
   const b = document.querySelector('nav.tabs button[data-page="' + id + '"]');
   if (!b) return false;
@@ -1032,6 +1071,12 @@ LEGAL = ('Research and education only: not betting, financial or legal advice, a
          '<a href="legal.html#copyright">Copyright &amp; use</a>')
 
 
+def _clock(v):
+    """'Nov 23, 01:43 PM' -> 'Nov 23, 1:43 PM ET' (one format on every page; the build runs on Eastern time)."""
+    v = re.sub(r'(\D)0(\d:\d\d)', r'\1\2', str(v))
+    return v if v.endswith(' ET') else v + ' ET'
+
+
 def render_page(*, title, league, headline, meta_items, tabs, footer, extra='', subtitle=''):
     """
     tabs: list of (id, label, html). The first tab opens by default (or the one in the link's #hash).
@@ -1039,6 +1084,9 @@ def render_page(*, title, league, headline, meta_items, tabs, footer, extra='', 
     subtitle: optional line under the headline.
     Returns the page as a fragment (title, fonts, style, markup, script).
     """
+    first = [t for t in tabs if t[0] in ('games', 'sched', 'week')]   # Dylan, 2026-11-23: open on today's games
+    tabs = first + [t for t in tabs if t not in first]
+    meta_items = [(k_, _clock(v) if k_ == 'Updated' else v) for k_, v in meta_items]
     meta = ''.join(f'<span>{esc(k)} <b>{esc(v)}</b></span>' for k, v in meta_items)
     nav = ''.join(f'<button data-page="{tid}" role="tab">{esc(lbl)}</button>' for tid, lbl, _ in tabs)
     if league != 'Home':
@@ -1057,6 +1105,7 @@ def render_page(*, title, league, headline, meta_items, tabs, footer, extra='', 
   </div>
   <h1 class="title{' has-sub' if subtitle else ''}">{esc(headline)}</h1>{f'<p class="subtitle">{esc(subtitle)}</p>' if subtitle else ''}
   <nav class="tabs" role="tablist">{nav}</nav>
+  <button type="button" class="tabmore" aria-label="More tabs" tabindex="-1">&rsaquo;</button>
 </div></header>
 <main><div class="wrap">{pages}</div></main>
 <footer class="foot"><div class="wrap">{footer}<p class="legal">{LEGAL}</p></div></footer>
