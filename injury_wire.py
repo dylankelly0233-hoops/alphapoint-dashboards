@@ -31,8 +31,16 @@ from urllib.parse import quote_plus
 import pandas as pd
 import requests
 
-ESPN_NFL_INJURIES = 'https://site.api.espn.com/apis/site/v2/sports/football/nfl/injuries'
 ESPN_NFL_PAGE     = 'https://www.espn.com/nfl/injuries'
+# NFL (Dylan, 2026-11-23: off ESPN before the paid tier): the league's official weekly injury report and weekly
+# rosters (injured reserve), both from nflverse (free, CC BY 4.0). The report starts with Wednesday's practice report;
+# it has statuses and practice participation, no notes.
+NFL_REPORT_URL    = 'https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_{season}.parquet'
+NFL_ROSTER_URL    = 'https://github.com/nflverse/nflverse-data/releases/download/weekly_rosters/roster_weekly_{season}.parquet'
+NFL_PAGE          = 'https://www.nfl.com/injuries/'
+NFL_SOURCE        = 'NFL injury report'
+PRACTICE = {'Did Not Participate In Practice': 'did not practice', 'Limited Participation in Practice': 'limited in practice',
+            'Full Participation in Practice': 'full practice'}
 SNAPS_URL         = 'https://github.com/nflverse/nflverse-data/releases/download/snap_counts/snap_counts_{season}.parquet'
 GNEWS_RSS         = 'https://news.google.com/rss/search?q={q}&hl=en-US&gl=US&ceid=US:en'
 
@@ -193,40 +201,17 @@ def nfl_candidates(season, week, games, team_names):
     playing = {t for g in games for t in g}
     info, qbs = _nfl_snaps_info(season)
 
-    try:
-        feed = requests.get(ESPN_NFL_INJURIES, timeout=30).json().get('injuries', [])
-    except Exception as e:
-        print(f'  ! ESPN injury feed unavailable: {e}')
-        feed = []
-
     now = _now()
     teams = {}
-    for t in feed:
-        abbr = abbr_by_name.get(t.get('displayName'))
-        if abbr not in playing:
-            continue
-        rows = []
-        for i in t.get('injuries', []):
-            a = i.get('athlete', {})
-            name = a.get('displayName', '')
-            try:
-                updated = datetime.fromisoformat(i.get('date', '').replace('Z', '+00:00'))
-            except ValueError:
-                updated = None
-            st = info.get((abbr, _norm(name)), {})
-            rows.append({
-                'name': name, 'pos': a.get('position', {}).get('abbreviation') or st.get('pos', ''),
-                'status': i.get('status', ''), 'injury': (i.get('details') or {}).get('type', ''),
-                'note': _clip(i.get('shortComment'), 220), 'detail': _clip(i.get('longComment'), 400),
-                'days_old': (now - updated).days if updated else 99,
-                'date': updated.strftime('%Y-%m-%d') if updated else '',
-                'pct': round(st.get('pct', 0.0), 2), 'missed_recent': st.get('missed_recent', 0),
-                'missed_last': st.get('missed_last', 0),
-                'missed': st.get('missed'), 'team_games': st.get('team_games'),
-                'qb1': _norm(name) in qbs.get(abbr, set()),
-            })
-        teams[abbr] = rows
+    for r in _nfl_report_rows(season, week, playing):
+        st = info.get((r['team'], _norm(r['name'])), {})
+        r.update({'pos': r['pos'] or st.get('pos', ''), 'date': now.strftime('%Y-%m-%d'),
+                  'pct': round(st.get('pct', 0.0), 2), 'missed_recent': st.get('missed_recent', 0),
+                  'missed_last': st.get('missed_last', 0), 'missed': st.get('missed'),
+                  'team_games': st.get('team_games'), 'qb1': _norm(r['name']) in qbs.get(r['team'], set())})
+        teams.setdefault(r.pop('team'), []).append(r)
 
+    it = lambda *a: _item(*a, source=NFL_SOURCE, url=NFL_PAGE)
     out = {'sport': 'nfl', 'week': week, 'collected': now.isoformat(timespec='minutes'), 'games': games, 'teams': {}}
     for abbr in sorted(playing):
         rows = teams.get(abbr, [])
@@ -238,10 +223,10 @@ def nfl_candidates(season, week, games, team_names):
                 continue
             used.add(r['name'])
             if r['status'] != 'Active':
-                items.append(_item(abbr, 'QB', f"QB {r['name']} {r['status'].lower()}"
+                items.append(it(abbr, 'QB', f"QB {r['name']} {r['status'].lower()}"
                                    f"{' (' + r['injury'].lower() + ')' if r['injury'] else ''} — {r['note']}", r))
             elif r['days_old'] <= RETURN_DAYS and r['missed_last']:
-                items.append(_item(abbr, 'RETURNING', f"QB {r['name']} back after missing time — {r['note']}", r))
+                items.append(it(abbr, 'RETURNING', f"QB {r['name']} back after missing time — {r['note']}", r))
 
         # CLUSTER: 2+ starters out in one unit
         for unit, positions in UNITS.items():
@@ -251,21 +236,21 @@ def nfl_candidates(season, week, games, team_names):
                 used.update(r['name'] for r in hits)
                 who = ', '.join(f"{r['name']} ({r['pos']}, {r['status']})" for r in sorted(hits, key=lambda r: -r['pct']))
                 newest = min(hits, key=lambda r: r['days_old'])
-                items.append(_item(abbr, 'CLUSTER', f"{len(hits)} {unit} starters out: {who}", newest))
+                items.append(it(abbr, 'CLUSTER', f"{len(hits)} {unit} starters out: {who}", newest))
 
         # KEY: high-snap starter newly out/doubtful, or questionable if he's an every-down player
         keys = [r for r in rows if r['name'] not in used and r['days_old'] <= FRESH_DAYS and (
                 (r['status'] in OUTISH and r['pct'] >= KEY_PCT) or (r['status'] == 'Questionable' and r['pct'] >= 0.85))]
         for r in sorted(keys, key=lambda r: -r['pct'])[:2]:
             used.add(r['name'])
-            items.append(_item(abbr, 'KEY', f"{r['pos']} {r['name']} {r['status'].lower()}"
+            items.append(it(abbr, 'KEY', f"{r['pos']} {r['name']} {r['status'].lower()}"
                                f"{' (' + r['injury'].lower() + ')' if r['injury'] else ''} — {r['note']}", r))
 
         # RETURNING: starter who sat out the last game and is now active or questionable
         rets = [r for r in rows if r['name'] not in used and r['status'] in ('Active', 'Questionable')
                 and r['days_old'] <= RETURN_DAYS and r['missed_last'] and r['pct'] >= STARTER_PCT]
         for r in sorted(rets, key=lambda r: -r['pct'])[:2]:
-            items.append(_item(abbr, 'RETURNING', f"{r['pos']} {r['name']} trending back — {r['note']}", r))
+            items.append(it(abbr, 'RETURNING', f"{r['pos']} {r['name']} trending back — {r['note']}", r))
 
         # Raw notes for the curation step: every starter on the report, plus QBs
         raw = [r for r in rows if r['pct'] >= STARTER_PCT or r['pos'] == 'QB']
@@ -278,6 +263,70 @@ def nfl_candidates(season, week, games, team_names):
         out['teams'][abbr] = {'name': team_names[abbr], 'items': items, 'starters_on_report': raw, 'headlines': news,
                               'card': card}
     return out
+
+
+def _nfl_parquet(url, path, cols):
+    """Download an nflverse file, keeping a local copy for outages."""
+    try:
+        d = pd.read_parquet(url, columns=cols)
+        d.to_csv(path, index=False)
+        return d
+    except Exception as e:
+        print(f'  ! {os.path.basename(url)} unavailable: {e}')
+        return pd.read_csv(path) if os.path.exists(path) else pd.DataFrame(columns=cols)
+
+
+def _nfl_report_rows(season, week, playing):
+    """
+    One row per player for this week from the official injury report, plus players on injured reserve (or PUP / NFI)
+    from the latest weekly roster. Players on the report with no game status are listed as Active.
+    days_old: 0 for a status new this week, else about 7 per straight week with the same status (so long-term
+    absences don't read as fresh news).
+    """
+    rep = _nfl_parquet(NFL_REPORT_URL.format(season=season), f'nfl_injuries_{season}.csv',
+                       ['week', 'team', 'gsis_id', 'position', 'full_name', 'report_primary_injury',
+                        'report_status', 'practice_primary_injury', 'practice_status'])
+    ros = _nfl_parquet(NFL_ROSTER_URL.format(season=season), f'nfl_rosters_{season}.csv',
+                       ['week', 'team', 'gsis_id', 'position', 'full_name', 'status', 'status_description_abbr'])
+    for d in (rep, ros):
+        d['team'] = d['team'].replace({'LAR': 'LA', 'JAC': 'JAX'})
+    rep['report_status'] = rep['report_status'].fillna('Active')
+    seen = {}                                      # (gsis, status) -> weeks listed
+    for w, g in rep[rep.week <= week].groupby('week'):
+        for k in zip(g.gsis_id, g.report_status):
+            seen.setdefault(k, set()).add(int(w))
+
+    def streak(k, last):
+        n = 0
+        while last - n - 1 in seen.get(k, ()):
+            n += 1
+        return n
+
+    rows, have = [], set()
+    rw = int(ros[ros.week <= week + 1].week.max()) if not ros.empty else week
+    res = ros[ros.status.eq('RES')]
+    on_res = set(res[res.week == rw].gsis_id)          # injured reserve beats the week's report (placed after it)
+    for r in rep[(rep.week == week) & rep.team.isin(playing)].itertuples():
+        injury = r.report_primary_injury or r.practice_primary_injury or ''
+        injury = '' if str(injury).lower().startswith('not injury') or str(injury) == 'nan' else str(injury)
+        prac = PRACTICE.get(r.practice_status, '')
+        note = '; '.join(x for x in (f'{r.report_status} on the Week {week} report' if r.report_status != 'Active' else
+                                     f'on the Week {week} report with no game status', prac) if x)
+        status, old = r.report_status, 7 * streak((r.gsis_id, r.report_status), week)
+        if r.gsis_id in on_res:
+            status, note, old = 'Injured Reserve', f'on injured reserve ({note})', 0 if rw > week else old
+        rows.append({'team': r.team, 'name': r.full_name, 'pos': r.position or '', 'status': status,
+                     'injury': injury, 'note': note, 'detail': '', 'days_old': old})
+        have.add(r.gsis_id)
+    if not ros.empty:
+        first = res.groupby('gsis_id').week.min()
+        for r in res[(res.week == rw) & res.team.isin(playing) & ~res.gsis_id.isin(have)].itertuples():
+            code = str(r.status_description_abbr)
+            label = {'R04': 'PUP list', 'R05': 'non-football injury list'}.get(code, 'injured reserve')
+            rows.append({'team': r.team, 'name': r.full_name, 'pos': r.position or '', 'status': 'Injured Reserve',
+                         'injury': '', 'note': f'on {label}' + (' (designated to return)' if code == 'R48' else ''),
+                         'detail': '', 'days_old': 7 * max(0, rw - int(first[r.gsis_id]))})
+    return rows
 
 
 def _nfl_snaps_info(season):

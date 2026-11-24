@@ -21,7 +21,7 @@ Count games missed from the box scores, not from memory. An item without `qb_sta
 - Anything you can't tie to a source in the candidates file or a lookup.
 
 ## How to work
-1. Read `injury_candidates_{sport}.json` in full. Each team has rule-based `items`, `headlines` (title, source, url, date), and for NFL, `starters_on_report` with ESPN status, notes, and snap share (`pct`, the fraction of snaps played; 0.6+ = starter).
+1. Read `injury_candidates_{sport}.json` in full. Each team has rule-based `items`, `headlines` (title, source, url, date), and for NFL, `starters_on_report` with the official injury report's status and practice participation (plus players on injured reserve from the weekly roster), and snap share (`pct`, the fraction of snaps played; 0.6+ = starter).
 2. When a QB's status is unclear or the notes conflict, check with WebSearch, using at most 12 searches per run. Prioritize QBs, then clusters. Use the article's URL as the source.
    **Prefer the official report** (Dylan, 2026-11-22): the team's or league's own injury report (NFL team injury
    report, NBA official injury report, the SEC / ACC / Big Ten / Big 12 availability report, the coach's own quote)
@@ -44,7 +44,7 @@ Count games missed from the box scores, not from memory. An item without `qb_sta
 ```
 Each item looks like this:
 ```json
-{"team": "<team key>", "tag": "QB|CLUSTER|KEY|RETURNING", "text": "...", "source": "ESPN", "url": "https://...", "date": "YYYY-MM-DD"}
+{"team": "<team key>", "tag": "QB|CLUSTER|KEY|RETURNING", "text": "...", "source": "NFL injury report", "url": "https://...", "date": "YYYY-MM-DD"}
 ```
 - `week` must equal the `week` in the candidates file. `generated` is the current local time, in ISO format with its UTC offset.
 - **Team keys**: NFL uses the abbreviations in the candidates file (`KC`, `LA`, `WAS`, ...). CFB and CBB use the exact school names in the candidates file (`Ohio State`, `Miami`, `St. John's`, ...).

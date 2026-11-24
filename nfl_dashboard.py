@@ -604,8 +604,8 @@ def generate_html(power, vals, sched, week, info):
     games = [{'away': r.away, 'home': r.home, 'when': theme.kick_text(r.kick)} for r in sched.itertuples()]
     injury_html = theme.injury_tab(
         games, info['wire'], lambda ab: (vm.full_name(ab), _logo(ab, meta)),
-        'Sources: ESPN injury reports (status and notes) and recent news headlines; starters are identified from '
-        'nflverse snap counts.')
+        "Sources: the NFL's official weekly injury report (from Wednesday's practice report on) and injured reserve "
+        'from weekly rosters, via nflverse, plus recent news; starters are identified from nflverse snap counts.')
 
     # --- Markets tab ---
     for row in info['market_rows']:
