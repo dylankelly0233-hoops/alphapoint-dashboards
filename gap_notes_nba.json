@@ -1,6 +1,6 @@
 {
  "sport": "nba",
- "generated": "2026-11-23T19:42:09-05:00",
+ "generated": "2026-11-23T20:42:33-05:00",
  "teams": {
   "OKC": {
    "checked": "2026-11-23T17:43:18-05:00",
@@ -107,14 +107,23 @@
    ]
   },
   "DAL": {
+   "checked": "2026-11-23T20:42:33-05:00",
    "watch": [
     {
      "direction": "too_high",
      "since": "2026-11-21",
-     "text": "P.J. Washington (illness) is doubtful at UTAH on 11/22 after missing 11/21 vs LAC; Walter Clayton Jr. is questionable on the back-to-back.",
-     "source": "NBC Sports",
-     "url": "https://www.nbcsports.com/fantasy/basketball/player-news/2026-11-22/p-j-washington-illness-doubtful-vs-utah",
-     "date": "2026-11-22"
+     "text": "P.J. Washington (illness) is questionable at Denver on 11/24 after missing the last two games; Zaccharie Risacher has started in his place.",
+     "source": "Rotowire",
+     "url": "https://www.rotowire.com/basketball/headlines/pj-washington-injury-iffy-for-tuesday-540703",
+     "date": "2026-11-23"
+    },
+    {
+     "direction": "too_high",
+     "since": "2026-11-20",
+     "text": "C Dereck Lively II (foot) is out, listed by ESPN as out since 11/20 with 11/27 the earliest return.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nba/team/injuries/_/name/dal",
+     "date": "2026-11-23"
     }
    ]
   },
@@ -151,9 +160,17 @@
      "source": "ESPN",
      "url": "https://www.espn.com/nba/injuries",
      "date": "2026-11-20"
+    },
+    {
+     "direction": "too_high",
+     "since": "2026-11-20",
+     "text": "Centers Jusuf Nurkic (foot, out since 11/20) and Jaxson Hayes (knee, ruled out 11/23) are both out vs the Lakers, thinning Utah's frontcourt further.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nba/team/injuries/_/name/utah",
+     "date": "2026-11-23"
     }
    ],
-   "checked": "2026-11-23T15:24:31-05:00"
+   "checked": "2026-11-23T20:42:33-05:00"
   },
   "ORL": {
    "watch": [
@@ -241,14 +258,14 @@
    ]
   },
   "LAL": {
-   "checked": "2026-11-23T11:17:25-05:00",
+   "checked": "2026-11-23T20:42:33-05:00",
    "watch": [
     {
      "direction": "too_high",
      "since": "2026-11-11",
-     "text": "Austin Reaves (35.2 mpg, left heel bruise) is ruled out vs Utah on 11/23, his 4th straight missed game despite a full practice Sunday; Friday at San Antonio is the target.",
-     "source": "Yahoo Sports",
-     "url": "https://sports.yahoo.com/articles/lakers-austin-reaves-status-mondays-015942951.html",
+     "text": "Austin Reaves (35.2 mpg, left heel bruise) is out vs Utah on 11/23, his 4th straight missed game; ESPN's injury report lists Friday 11/27 as his target.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nba/team/injuries/_/name/lal",
      "date": "2026-11-23"
     },
     {
@@ -318,6 +335,10 @@
   "TOR": {
    "watch": [],
    "checked": "2026-11-23T11:17:25-05:00"
+  },
+  "DEN": {
+   "checked": "2026-11-23T20:42:33-05:00",
+   "watch": []
   }
  },
  "games": {
@@ -492,7 +513,7 @@
    "swings": {}
   },
   "401910044": {
-   "checked": "2026-11-23T11:17:25-05:00",
+   "checked": "2026-11-23T20:42:33-05:00",
    "swings": {
     "LAL": "Market is higher on the Lakers than at their last game even with Austin Reaves ruled out a 4th straight game: Walker Kessler returns from injury and Utah is still without Markkanen and Jaren Jackson Jr. (Yahoo, 11/23)."
    }
@@ -505,6 +526,34 @@
     "BOS": "At GS on 11/22 the market priced Stephen Curry's absence (our ratings don't see it) and we sat 7.2 lower on Boston; at WSH the Wizards have no new absence and Paul George (rested 11/22) is expected back, so the gap closed to 2.2 (CelticsBlog, 11/23)."
    },
    "checked": "2026-11-23T19:42:09-05:00"
+  },
+  "401909316": {
+   "checked": "2026-11-23T20:42:33-05:00",
+   "verdict": "partly",
+   "summary": "Dallas may be without P.J. Washington again and is without Dereck Lively II at altitude; that covers part of the gap between our Nuggets -5 and the market's -8.5. We have been lower on Denver in 4 of its last 6 games, with no injury reason found (ESPN lists no Nuggets injuries).",
+   "reasons": [
+    {
+     "text": "P.J. Washington (illness) is questionable for Tuesday at Denver after missing the last two games.",
+     "source": "Rotowire",
+     "url": "https://www.rotowire.com/basketball/headlines/pj-washington-injury-iffy-for-tuesday-540703",
+     "date": "2026-11-23"
+    },
+    {
+     "text": "Dereck Lively II (foot) is out; Tobi Lawal (groin) was also ruled out on 11/23.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nba/team/injuries/_/name/dal",
+     "date": "2026-11-23"
+    },
+    {
+     "text": "Denver has no players on ESPN's injury report and has won three straight, including 151-145 vs Chicago on 11/22.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nba/team/schedule/_/name/den",
+     "date": "2026-11-23"
+    }
+   ],
+   "swings": {
+    "DAL": "At Utah on 11/22 the market was higher on Dallas than we were against a Jazz team missing Markkanen and Jaren Jackson Jr.; now it is lower on Dallas at Denver with Washington iffy and Lively out (Rotowire, ESPN, 11/23)."
+   }
   }
  }
 }

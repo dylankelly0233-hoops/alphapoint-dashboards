@@ -1,6 +1,6 @@
 {
  "sport": "nhl",
- "generated": "2026-11-23T19:42:09-05:00",
+ "generated": "2026-11-23T20:42:33-05:00",
  "teams": {
   "OTT": {
    "checked": "2026-11-23T17:43:18-05:00",
@@ -140,15 +140,23 @@
    ]
   },
   "MIN": {
-   "checked": "2026-11-23T12:41:40-05:00",
+   "checked": "2026-11-23T20:42:33-05:00",
    "watch": [
     {
      "direction": "too_high",
      "since": "2026-11-21",
-     "text": "No. 1 D Quinn Hughes (27.8 TOI, upper body) misses the rest of the road trip, including tonight at SJ.",
+     "text": "No. 1 D Quinn Hughes (27.8 TOI, upper body) was placed on injured reserve on 11/23 and misses tonight at SJ.",
      "source": "ESPN",
-     "url": "https://www.espn.com/nhl/injuries",
-     "date": "2026-11-21"
+     "url": "https://www.espn.com/nhl/team/injuries/_/name/min",
+     "date": "2026-11-23"
+    },
+    {
+     "direction": "unclear",
+     "since": "2026-11-23",
+     "text": "Filip Gustavsson starts tonight in his season debut instead of Jesper Wallstedt.",
+     "source": "Daily Faceoff",
+     "url": "https://www.dailyfaceoff.com/starting-goalies/2026-11-23",
+     "date": "2026-11-23"
     }
    ]
   },
@@ -170,8 +178,17 @@
    "watch": []
   },
   "SJ": {
-   "checked": "2026-11-23T12:41:40-05:00",
-   "watch": []
+   "checked": "2026-11-23T20:42:33-05:00",
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-23",
+     "text": "D Jacob Trouba (lower body) is out and F Kiefer Sherwood (upper body) went on injured reserve on 11/23; both listed out until at least 12/1.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nhl/team/injuries/_/name/sj",
+     "date": "2026-11-23"
+    }
+   ]
   },
   "EDM": {
    "checked": "2026-11-23T14:45:00-05:00",
@@ -215,20 +232,20 @@
    ]
   },
   "401892779": {
-   "checked": "2026-11-23T12:41:40-05:00",
+   "checked": "2026-11-23T20:42:33-05:00",
    "verdict": "partly",
-   "summary": "The Wild are without No. 1 D Quinn Hughes again tonight, which our ratings don't see; that covers part of the gap between our 68% and the market's 63% on Minnesota.",
+   "summary": "The Wild are without No. 1 D Quinn Hughes (now on injured reserve) and start Filip Gustavsson in his season debut, which our ratings don't see; that covers part of the gap between our 67% and the market's 62% on Minnesota.",
    "reasons": [
     {
-     "text": "Quinn Hughes (hurt Thursday at Calgary; not a concussion) misses a second straight game tonight at SJ; next chance to return is Wednesday vs Utah.",
-     "source": "NHL.com",
-     "url": "https://www.nhl.com/news/quinn-hughes-injury-status-report-november-21-2026",
-     "date": "2026-11-21"
+     "text": "Quinn Hughes (upper body, hurt at Calgary) was placed on injured reserve on 11/23 and misses tonight at SJ; ESPN lists 11/27 as his earliest return.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nhl/team/injuries/_/name/min",
+     "date": "2026-11-23"
     },
     {
-     "text": "Starting goalies not confirmed: Wallstedt projected for Minnesota; Nedeljkovic projected for San Jose by most sources (some list Askarov).",
+     "text": "Confirmed starters: Filip Gustavsson makes his season debut for Minnesota (Joe Smith); Yaroslav Askarov starts for San Jose (Max Miller).",
      "source": "Daily Faceoff",
-     "url": "https://www.dailyfaceoff.com/starting-goalies",
+     "url": "https://www.dailyfaceoff.com/starting-goalies/2026-11-23",
      "date": "2026-11-23"
     },
     {
