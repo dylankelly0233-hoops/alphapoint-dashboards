@@ -367,8 +367,16 @@ def tune_value_share(sport, d, cal, now, out, log):
     if not t:
         return
     d = d.dropna(subset=['ours_first', 'opened', 'result'])
+    since = t.get('share_model_since')
+    if since:          # the live models changed on this date (share_test.py): learn only from their own logged lines
+        d = d[d['kickoff'].astype(str) >= since] if 'kickoff' in d else d.iloc[0:0]
+        prior, prior_se = t['share_model'], t['share_model_se'] * SHARE_PRIOR_INFLATE
+        if cal.get(sport, {}).get('value_share_since') != since:     # first tune on the new models: start from the prior
+            cal.setdefault(sport, {})['value_share'] = prior
+            cal[sport]['value_share_since'] = since
+    else:
+        prior, prior_se = t['share_backtest'], t['share_se'] * SHARE_PRIOR_INFLATE
     gap, y = (d['ours_first'] - d['opened']).to_numpy(float), (d['result'] - d['opened']).to_numpy(float)
-    prior, prior_se = t['share_backtest'], t['share_se'] * SHARE_PRIOR_INFLATE
     if len(d) >= 30 and (gap ** 2).sum() > 0:
         b = float((gap * y).sum() / (gap ** 2).sum())
         se = float(np.sqrt(((y - b * gap) ** 2).sum() / (len(d) - 1) / (gap ** 2).sum()))

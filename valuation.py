@@ -99,7 +99,8 @@ def build(sports=SPORTS):
             buckets.append({'lo': lo, 'hi': hi,
                             'moved_toward': _rate((np.sign(mv[moved]) == np.sign(gap[s][moved])).to_numpy()),
                             'beat_open': _rate((np.sign(y[s][beat]) == np.sign(gap[s][beat])).to_numpy())})
-        out['sports'][sp] = {'sigma': round(sigma, 2), 'keys': keys, 'share_backtest': round(share, 3),
+        keep = {k: v for k, v in out['sports'].get(sp, {}).items() if k.startswith('share_model')}   # share_test.py
+        out['sports'][sp] = {**keep, 'sigma': round(sigma, 2), 'keys': keys, 'share_backtest': round(share, 3),
                              'share_se': round(se, 3), 'n_open': int(len(o)), 'buckets': buckets,
                              'seasons': sorted(int(s) for s in w['season'].unique())}
         print(f'{sp}: sigma {sigma:.1f}, share of gap vs opener {share:+.3f} ± {se:.3f} over {len(o):,} games; '
@@ -125,11 +126,31 @@ def tables():
     return _T
 
 
+def cfb_early(today=None):
+    """Roughly CFB weeks 1-4 (week 5 starts in the last third of September)."""
+    d = today or date.today()
+    return d.month < 9 or (d.month == 9 and d.day < 20)
+
+
 def share(sport):
-    """Share of our gap that's been real: weekly-tuned value if there is one, else the backtest's (never below 0)."""
-    import extras as ex
+    """
+    Share of our gap that's been real (never below 0). Since 2026-11-24 the base is share_model, measured on the models
+    now live (share_test.py; CFB has a separate weeks 1-4 value); the weekly-tuned value counts only once it has been
+    re-tuned on lines logged since that switch (calibration.json value_share_since). Before: the backtest rating's share.
+    """
     t = tables().get(sport, {})
-    return max(0.0, float(ex.calibrated_value(sport, 'value_share', t.get('share_backtest', 0.0))))
+    if 'share_model' not in t:
+        import extras as ex
+        return max(0.0, float(ex.calibrated_value(sport, 'value_share', t.get('share_backtest', 0.0))))
+    base = t['share_model_early'] if sport == 'cfb' and 'share_model_early' in t and cfb_early() else t['share_model']
+    try:
+        c = json.load(open('calibration.json', encoding='utf-8')).get(sport, {})
+    except (OSError, ValueError):
+        c = {}
+    tuned = c.get('value_share') if c.get('value_share_since') == t.get('share_model_since') else None
+    if tuned is not None and not (sport == 'cfb' and cfb_early()):
+        base = tuned
+    return max(0.0, float(base))
 
 
 def margin_dist(sport, mu, sigma=None):

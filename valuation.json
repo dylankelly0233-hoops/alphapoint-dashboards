@@ -100,7 +100,11 @@
     2024,
     2025,
     2026
-   ]
+   ],
+   "share_model": 0.05,
+   "share_model_se": 0.063,
+   "share_model_n": 4356,
+   "share_model_since": "2026-11-24"
   },
   "cfb": {
    "sigma": 15.26,
@@ -199,7 +203,13 @@
     2024,
     2025,
     2026
-   ]
+   ],
+   "share_model": 0.414,
+   "share_model_se": 0.06,
+   "share_model_n": 2803,
+   "share_model_since": "2026-11-24",
+   "share_model_early": -0.055,
+   "share_model_early_se": 0.04
   },
   "cbb": {
    "sigma": 11.2,
@@ -297,7 +307,11 @@
     2024,
     2025,
     2026
-   ]
+   ],
+   "share_model": -0.084,
+   "share_model_se": 0.041,
+   "share_model_n": 7218,
+   "share_model_since": "2026-11-24"
   },
   "nba": {
    "sigma": 14.22,
