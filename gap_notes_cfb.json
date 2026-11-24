@@ -1,9 +1,9 @@
 {
  "sport": "cfb",
- "generated": "2026-11-24T09:47:17-05:00",
+ "generated": "2026-11-24T10:49:40-05:00",
  "teams": {
   "Clemson": {
-   "checked": "2026-11-24T09:44:47-05:00",
+   "checked": "2026-11-24T10:49:40-05:00",
    "watch": [
     {
      "direction": "too_high",
@@ -24,7 +24,7 @@
    ]
   },
   "South Carolina": {
-   "checked": "2026-11-24T09:44:47-05:00",
+   "checked": "2026-11-24T10:49:40-05:00",
    "watch": [
     {
      "direction": "too_low",
@@ -50,8 +50,20 @@
    ]
   },
   "Northwestern": {
-   "checked": "2026-11-24T09:44:47-05:00",
-   "watch": []
+   "checked": "2026-11-24T10:49:40-05:00",
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-08",
+     "text": "QB Aidan Chiles (upper body) has missed the last three games (all losses) and his status for Illinois is unknown; Nicco Marchiol has started.",
+     "source": "SI (Northwestern On SI)",
+     "url": "https://www.si.com/college/northwestern/football/from-6-2-to-6-5-northwestern-s-season-unravels-without-qb-aidan-chiles",
+     "date": "2026-11-22"
+    }
+   ],
+   "verified_numbers": [
+    "0-3"
+   ]
   },
   "Ohio State": {
    "watch": [
@@ -70,7 +82,7 @@
    ]
   },
   "Illinois": {
-   "checked": "2026-11-24T09:44:47-05:00",
+   "checked": "2026-11-24T10:49:40-05:00",
    "watch": []
   },
   "Mississippi State": {
@@ -248,7 +260,7 @@
    "checked": "2026-11-24T09:45:04-05:00"
   },
   "Kentucky": {
-   "checked": "2026-11-24T09:44:47-05:00",
+   "checked": "2026-11-24T10:49:40-05:00",
    "watch": [
     {
      "direction": "too_high",
@@ -261,7 +273,7 @@
    ]
   },
   "Duke": {
-   "checked": "2026-11-24T09:44:47-05:00",
+   "checked": "2026-11-24T10:49:40-05:00",
    "watch": [
     {
      "direction": "too_high",
@@ -434,7 +446,7 @@
    "watch": []
   },
   "Arkansas": {
-   "checked": "2026-11-24T09:44:47-05:00",
+   "checked": "2026-11-24T10:49:40-05:00",
    "watch": []
   },
   "Auburn": {
@@ -504,11 +516,11 @@
    ]
   },
   "LSU": {
-   "checked": "2026-11-24T09:44:47-05:00",
+   "checked": "2026-11-24T10:49:40-05:00",
    "watch": []
   },
   "Louisville": {
-   "checked": "2026-11-24T09:44:47-05:00",
+   "checked": "2026-11-24T10:49:40-05:00",
    "watch": []
   },
   "Maryland": {
@@ -624,8 +636,17 @@
    "checked": "2026-11-24T09:45:04-05:00"
   },
   "Utah": {
-   "checked": "2026-11-24T09:44:47-05:00",
-   "watch": []
+   "checked": "2026-11-24T10:49:40-05:00",
+   "watch": [
+    {
+     "direction": "unclear",
+     "since": "2026-11-07",
+     "text": "RB Wayshawn Parker has 23 carries in the last four games (one series each vs Arizona and TCU) and may be rested; Utah has clinched the Big 12 title game.",
+     "source": "Salt Lake Tribune",
+     "url": "https://www.sltrib.com/sports/utah-utes/2026/11/24/utes-rb-wayshawn-parker-didnt/",
+     "date": "2026-11-24"
+    }
+   ]
   },
   "Virginia": {
    "checked": "2026-11-24T09:44:47-05:00",
@@ -636,7 +657,7 @@
    "watch": []
   },
   "Wake Forest": {
-   "checked": "2026-11-24T09:44:47-05:00",
+   "checked": "2026-11-24T10:49:40-05:00",
    "watch": [
     {
      "direction": "too_high",
@@ -645,6 +666,14 @@
      "source": "AP",
      "url": "https://www.wral.com/news/ap/de676-no-8-wake-forest-loses-running-back-ty-clark-to-season-ending-injury/",
      "date": "2026-11-23"
+    },
+    {
+     "direction": "unclear",
+     "since": "2026-11-21",
+     "text": "Wake Forest has clinched the ACC title game vs Miami, so the Duke finale carries less at stake for it.",
+     "source": "Yahoo Sports",
+     "url": "https://sports.yahoo.com/articles/duke-looking-football-weaknesses-wake-101500876.html",
+     "date": "2026-11-24"
     }
    ]
   },
@@ -653,8 +682,17 @@
    "watch": []
   },
   "West Virginia": {
-   "checked": "2026-11-24T09:44:47-05:00",
-   "watch": []
+   "checked": "2026-11-24T10:49:40-05:00",
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-21",
+     "text": "QB Michael Hawkins Jr. aggravated an ankle injury in the Houston loss and couldn't return; Rich Rodriguez's update leaves him uncertain for Utah.",
+     "source": "Heartland College Sports",
+     "url": "https://www.heartlandcollegesports.com/2026/11/22/west-virginia-vs-utah-prediction-odds-injury-report-for-week-13/",
+     "date": "2026-11-22"
+    }
+   ]
   },
   "Hawai'i": {
    "checked": "2026-11-24T09:44:45-05:00",
@@ -946,11 +984,11 @@
    "watch": []
   },
   "Memphis": {
-   "checked": "2026-11-24T09:44:45-05:00",
+   "checked": "2026-11-24T10:49:40-05:00",
    "watch": []
   },
   "Temple": {
-   "checked": "2026-11-24T09:44:45-05:00",
+   "checked": "2026-11-24T10:49:40-05:00",
    "watch": [
     {
      "direction": "unclear",
@@ -1081,15 +1119,15 @@
    "watch": []
   },
   "Florida International": {
-   "checked": "2026-11-24T09:44:45-05:00",
+   "checked": "2026-11-24T10:49:40-05:00",
    "watch": []
   },
   "Sam Houston": {
-   "checked": "2026-11-24T09:44:45-05:00",
+   "checked": "2026-11-24T10:49:40-05:00",
    "watch": []
   },
   "Arkansas State": {
-   "checked": "2026-11-24T09:44:45-05:00",
+   "checked": "2026-11-24T10:49:40-05:00",
    "watch": [
     {
      "direction": "unclear",
@@ -1102,15 +1140,15 @@
    ]
   },
   "Troy": {
-   "checked": "2026-11-24T09:44:45-05:00",
+   "checked": "2026-11-24T10:49:40-05:00",
    "watch": []
   },
   "Colorado State": {
-   "checked": "2026-11-24T09:44:45-05:00",
+   "checked": "2026-11-24T10:49:40-05:00",
    "watch": []
   },
   "Boise State": {
-   "checked": "2026-11-24T09:44:45-05:00",
+   "checked": "2026-11-24T10:49:40-05:00",
    "watch": []
   },
   "UNLV": {
@@ -1122,11 +1160,11 @@
    "watch": []
   },
   "Fresno State": {
-   "checked": "2026-11-24T09:44:45-05:00",
+   "checked": "2026-11-24T10:49:40-05:00",
    "watch": []
   },
   "Oregon State": {
-   "checked": "2026-11-24T09:44:45-05:00",
+   "checked": "2026-11-24T10:49:40-05:00",
    "watch": [
     {
      "direction": "too_high",
@@ -1169,7 +1207,7 @@
    ]
   },
   "401858540": {
-   "checked": "2026-11-24T09:45:04-05:00",
+   "checked": "2026-11-24T10:49:40-05:00",
    "verdict": "partly",
    "summary": "Ohio State is 1-3 with Luke Fahey since QB Julian Sayin's Oct. 17 elbow injury and Sayin is not expected back for Michigan, covering a good part of the gap; Michigan's QB is also banged up.",
    "reasons": [
@@ -1193,7 +1231,8 @@
     }
    ],
    "swings": {
-    "Ohio State": "Ohio State lost 31-28 at Nebraska on Nov. 21 with QB Julian Sayin still out and not expected back for Michigan (Athlon); the market marked the Buckeyes down more than our ratings."
+    "Ohio State": "Ohio State lost 31-28 at Nebraska on Nov. 21 with QB Julian Sayin still out and not expected back for Michigan (Athlon); the market marked the Buckeyes down more than our ratings.",
+    "Michigan": "Michigan beat UCLA 18-16 on Nov. 21; QB Bryce Underwood has a lower-body injury but is expected to start, which points our way. The swing mostly reflects our model change today."
    },
    "verified_numbers": [
     "1-3"
@@ -1219,7 +1258,7 @@
    ]
   },
   "401856759": {
-   "checked": "2026-11-24T09:45:04-05:00",
+   "checked": "2026-11-24T10:49:40-05:00",
    "verdict": "partly",
    "summary": "FSU is on an interim coach (Norvell fired after Clemson) and badly depleted at RB after a 28-10 home loss to NC State, which explains part of the market's lean to Florida.",
    "reasons": [
@@ -1235,7 +1274,11 @@
      "url": "https://sports.yahoo.com/articles/rick-stockstill-addresses-fsus-quarterback-193047559.html",
      "date": "2026-11-23"
     }
-   ]
+   ],
+   "swings": {
+    "Florida": "Florida beat Vanderbilt 34-27 on Nov. 21; WR Vernell Brown III is ruled out vs FSU (WRUF), which points our way. The swing mostly reflects our model change today.",
+    "Florida State": "FSU lost 28-10 at home to NC State on Nov. 21 with its top four RBs out under interim Rick Stockstill; the market marked it down more than we did."
+   }
   },
   "401858543": {
    "checked": "2026-11-24T09:45:04-05:00",
@@ -1403,7 +1446,7 @@
    "swings": {}
   },
   "401871063": {
-   "checked": "2026-11-24T09:45:00-05:00",
+   "checked": "2026-11-24T10:49:40-05:00",
    "verdict": "partly",
    "summary": "Liberty (10-1) has clinched the CUSA title game and plays Jacksonville State next week, so this finale is low-stakes for it; no injury news. SP+ and our model run far above Sagarin.",
    "reasons": [
@@ -1427,7 +1470,10 @@
     }
    ],
    "returning": [],
-   "swings": {},
+   "swings": {
+    "Liberty": "Liberty beat WKU 45-14 on Nov. 21 for its 10th straight win and has clinched the CUSA title game; no injury found. The swing mostly reflects our model change today.",
+    "Missouri State": "Missouri State lost 25-20 at Jacksonville State on Nov. 21 with QB Henry Belin IV playing throughout; nothing else found."
+   },
    "verified_numbers": [
     "10-1"
    ]
@@ -1460,7 +1506,7 @@
    "swings": {}
   },
   "401858315": {
-   "checked": "2026-11-24T09:45:04-05:00",
+   "checked": "2026-11-24T10:49:40-05:00",
    "verdict": "explained",
    "summary": "Pitt is 1-5 since QB Mason Heintschel's ACL tear and was routed 42-10 at Louisville; our ratings still carry his early games.",
    "reasons": [
@@ -1479,7 +1525,11 @@
    ],
    "verified_numbers": [
     "1-5"
-   ]
+   ],
+   "swings": {
+    "Pittsburgh": "Pitt was routed 42-10 at Louisville on Nov. 22 with Holden Geriner throwing 2 INTs (TribLive); the market dropped Pitt more than our model did.",
+    "California": "Cal lost 44-28 at home to Stanford on Nov. 21, its fourth straight loss, changing QBs in the second quarter (ESPN)."
+   }
   },
   "401858316": {
    "checked": "2026-11-24T09:45:04-05:00",
@@ -1501,7 +1551,7 @@
    ]
   },
   "401866475": {
-   "checked": "2026-11-24T09:45:00-05:00",
+   "checked": "2026-11-24T10:49:40-05:00",
    "verdict": "partly",
    "summary": "UMass QB Pop Watson missed the Akron game and is unconfirmed for this one, which explains part of the lean to Bowling Green, but BG is also on its backup QB (Kastantin likely out for the year).",
    "reasons": [
@@ -1525,7 +1575,9 @@
     }
    ],
    "returning": [],
-   "swings": {}
+   "swings": {
+    "Massachusetts": "QB Pop Watson (ankle) missed the 34-33 loss to Akron on Nov. 19 and has no update for Bowling Green (MassLive), so the market is lower on UMass."
+   }
   },
   "401866474": {
    "checked": "2026-11-24T09:45:00-05:00",
@@ -1774,7 +1826,7 @@
    }
   },
   "401858544": {
-   "checked": "2026-11-24T09:45:04-05:00",
+   "checked": "2026-11-24T10:49:40-05:00",
    "verdict": "unexplained",
    "summary": "Nothing found justifies the market's shorter number: Colton Joseph is set to keep the QB job after the 42-10 win at Purdue, which favors our side; it is a rivalry game.",
    "reasons": [
@@ -1784,7 +1836,11 @@
      "url": "https://sports.yahoo.com/articles/luke-fickell-updates-wisconsin-footballs-183846787.html",
      "date": "2026-11-23"
     }
-   ]
+   ],
+   "swings": {
+    "Minnesota": "Minnesota beat Northwestern 20-17 on Nov. 21 against a backup QB; no injury news found. The swing mostly reflects our model change today.",
+    "Wisconsin": "Wisconsin won 42-10 at Purdue on Nov. 21 behind Colton Joseph, who Fickell says 'has earned the right' to keep starting (Badgers On SI)."
+   }
   },
   "401856875": {
    "checked": "2026-11-24T09:45:04-05:00",
@@ -1814,7 +1870,7 @@
    ]
   },
   "401858538": {
-   "checked": "2026-11-24T09:47:17-05:00",
+   "checked": "2026-11-24T10:49:40-05:00",
    "verdict": "partly",
    "summary": "Indiana is banged up (C Bray Lynch 'doesn't look good', G Joe Brunner out for the year) and Cignetti won't name a QB between Grant Wilson and Josh Hoover, which covers part of the gap.",
    "reasons": [
@@ -1830,7 +1886,10 @@
      "url": "https://www.wral.com/news/ap/96fa0-cignetti-non-committal-on-staring-qb-against-purdue-but-no-12-indiana-could-be-missing-its-center/",
      "date": "2026-11-23"
     }
-   ]
+   ],
+   "swings": {
+    "Indiana": "Cignetti won't name a QB (Grant Wilson or Josh Hoover) and C Bray Lynch 'doesn't look good' after the loss at Washington (AP), so the market is lower on Indiana than we are."
+   }
   },
   "401860929": {
    "checked": "2026-11-24T09:45:00-05:00",
@@ -1884,6 +1943,272 @@
     }
    ],
    "returning": []
+  },
+  "401856761": {
+   "checked": "2026-11-24T10:49:40-05:00",
+   "verdict": "unexplained",
+   "summary": "Nothing found justifies Kentucky being only a short home dog: Kentucky has lost three of four and its RB1 and right tackle are game-time calls, which points our way.",
+   "reasons": [
+    {
+     "text": "Kentucky has lost three of its last four (at Tennessee, vs Florida, at Missouri); Louisville has won four straight, the last 42-10 over Pitt.",
+     "source": "ESPN",
+     "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/96/schedule",
+     "date": "2026-11-24"
+    },
+    {
+     "text": "RB CJ Baxter and RT Malachi Wood (hurt at Missouri) are day to day, likely game-time decisions, Will Stein said.",
+     "source": "Louisville Courier Journal",
+     "url": "https://sports.yahoo.com/articles/uks-offense-2-key-starters-173029694.html",
+     "date": "2026-11-23"
+    },
+    {
+     "text": "Stein calls it 'the most important game for us as a program' and wants Kroger Field 'electric': a home rivalry spot, the likely source of the market's number.",
+     "source": "UK Athletics",
+     "url": "https://ukathletics.com/news/2026/11/23/stein-focused-on-present-not-past-regarding-louisville/",
+     "date": "2026-11-23"
+    }
+   ],
+   "swings": {
+    "Louisville": "Louisville beat Pitt 42-10 on Nov. 22, its fourth straight win; no new injury found. The swing mostly reflects our model change today.",
+    "Kentucky": "Kentucky lost 28-14 at Missouri on Nov. 22, its third loss in four games, and RB CJ Baxter and RT Malachi Wood are day to day (Courier Journal)."
+   }
+  },
+  "401858312": {
+   "checked": "2026-11-24T10:49:40-05:00",
+   "verdict": "partly",
+   "summary": "Wake Forest lost leading rusher Ty Clark for the season and has already clinched the ACC title game vs Miami, which covers some of the gap; Duke also lost LB Luke Mergott.",
+   "reasons": [
+    {
+     "text": "RB Ty Clark (591 yds, 11 TD) is out for the season after the 50-29 win at Georgia Tech, Jake Dickert said; Deuce Lawrence takes over.",
+     "source": "AP",
+     "url": "https://www.wral.com/news/ap/de676-no-8-wake-forest-loses-running-back-ty-clark-to-season-ending-injury/",
+     "date": "2026-11-23"
+    },
+    {
+     "text": "Wake Forest has clinched its ACC Championship Game spot vs Miami, so this finale carries less at stake for it (possible lookahead).",
+     "source": "Yahoo Sports",
+     "url": "https://sports.yahoo.com/articles/duke-looking-football-weaknesses-wake-101500876.html",
+     "date": "2026-11-24"
+    },
+    {
+     "text": "Duke LB Luke Mergott is out for the season; CB Kyon Loud, who missed Clemson, is expected back (points both ways).",
+     "source": "Yahoo Sports",
+     "url": "https://sports.yahoo.com/articles/duke-footballs-luke-mergott-rest-203438201.html",
+     "date": "2026-11-23"
+    }
+   ],
+   "swings": {
+    "Duke": "Duke lost 20-10 at home to Clemson's third-string QB on Nov. 21 and lost LB Luke Mergott for the season (Yahoo Sports).",
+    "Wake Forest": "RB Ty Clark is out for the season (AP, Nov. 23) and Wake has clinched the ACC title game, both reasons the market sits lower on Wake than we do."
+   }
+  },
+  "401856880": {
+   "checked": "2026-11-24T10:49:40-05:00",
+   "verdict": "unexplained",
+   "summary": "Nothing found justifies the shorter Utah line: West Virginia's QB Michael Hawkins Jr. is uncertain with an aggravated ankle, which points our way; Utah has clinched the Big 12 title game.",
+   "reasons": [
+    {
+     "text": "WVU QB Michael Hawkins Jr. aggravated an ankle injury in the 34-31 loss to Houston and couldn't return; his status for Utah is uncertain.",
+     "source": "Heartland College Sports",
+     "url": "https://www.heartlandcollegesports.com/2026/11/22/west-virginia-vs-utah-prediction-odds-injury-report-for-week-13/",
+     "date": "2026-11-22"
+    },
+    {
+     "text": "Utah RB Wayshawn Parker has had 23 carries in the last four games and may be rested; our ratings already carry those games.",
+     "source": "Salt Lake Tribune",
+     "url": "https://www.sltrib.com/sports/utah-utes/2026/11/24/utes-rb-wayshawn-parker-didnt/",
+     "date": "2026-11-24"
+    },
+    {
+     "text": "Utah (11-0) has secured a Big 12 championship game spot, a small lookahead risk the market may be pricing.",
+     "source": "KSL",
+     "url": "https://sports.ksl.com/ncaa/utah/morgan-scalleys-utah/579143",
+     "date": "2026-11-23"
+    }
+   ],
+   "verified_numbers": [
+    "11-0"
+   ]
+  },
+  "401862838": {
+   "checked": "2026-11-24T10:49:40-05:00",
+   "verdict": "unexplained",
+   "summary": "Nothing found: no injury or QB news for Memphis or Temple this week; the market's shorter number may reflect Memphis's 38-34 loss at Navy.",
+   "reasons": [
+    {
+     "text": "Memphis lost 38-34 at Navy on Nov. 21 with QB Marcus Stokes playing the whole game; no injury reported.",
+     "source": "ESPN",
+     "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/235/schedule",
+     "date": "2026-11-24"
+    },
+    {
+     "text": "Temple (2-9) went back to QB Jaxon Smolik for the 31-27 loss to Rice, with Ajani Sheppard nursing an ankle injury.",
+     "source": "Philadelphia Inquirer",
+     "url": "https://www.inquirer.com/college-sports/temple/kc-keeler-qb-change-jaxon-smolik-ajani-sheppard-rice-20261116.html",
+     "date": "2026-11-16"
+    }
+   ],
+   "swings": {
+    "Temple": "Temple lost 31-27 to Rice on Nov. 20 with Jaxon Smolik back at QB; nothing new this week. The swing mostly reflects our model change today."
+   },
+   "verified_numbers": [
+    "2-9"
+   ]
+  },
+  "401856758": {
+   "checked": "2026-11-24T10:49:40-05:00",
+   "verdict": "unexplained",
+   "summary": "Nothing found: no new LSU or Arkansas injury news; LSU has lost three straight and Arkansas lost 45-3 at Texas, so the market is simply lower on LSU than we are.",
+   "reasons": [
+    {
+     "text": "LSU lost 27-13 at Tennessee on Nov. 21, its third straight loss (Alabama, Texas, Tennessee); Kiffin called it 'an offensive issue.'",
+     "source": "Saturday Down South",
+     "url": "https://www.saturdaydownsouth.com/news/college-football/lane-kiffin-says-tennessee-loss-wasnt-for-lack-of-fight-effort/",
+     "date": "2026-11-22"
+    },
+    {
+     "text": "Arkansas (4-7) lost 45-3 at Texas on Nov. 21 and is out of bowl contention, which would favor our side.",
+     "source": "ESPN",
+     "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/8/schedule",
+     "date": "2026-11-24"
+    }
+   ],
+   "swings": {
+    "LSU": "LSU lost 27-13 at Tennessee on Nov. 21, its third straight loss; no new injury found (Saturday Down South). The swing mostly reflects our model change today."
+   },
+   "verified_numbers": [
+    "4-7"
+   ]
+  },
+  "401860927": {
+   "checked": "2026-11-24T10:49:40-05:00",
+   "verdict": "partly",
+   "summary": "Oregon State is without QB Braden Atkinson for a third straight game and Fresno State won the first meeting 38-22, which covers part of the gap.",
+   "reasons": [
+    {
+     "text": "Atkinson (right hand) is out at Fresno State; Maalik Murphy starts again (OSU 1-1 in his starts).",
+     "source": "Yahoo Sports",
+     "url": "https://sports.yahoo.com/articles/oregon-state-qb-braden-atkinson-193332418.html",
+     "date": "2026-11-23"
+    },
+    {
+     "text": "Fresno State beat Oregon State 38-22 on Nov. 1 in their first meeting this season.",
+     "source": "ESPN",
+     "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/278/schedule",
+     "date": "2026-11-24"
+    },
+    {
+     "text": "OSU starting CB TJ Crandall was cleared to return from a concussion (points our way).",
+     "source": "Yahoo Sports",
+     "url": "https://sports.yahoo.com/articles/oregon-state-starting-cb-cleared-203631953.html",
+     "date": "2026-11-23"
+    }
+   ],
+   "verified_numbers": [
+    "1-1"
+   ]
+  },
+  "401858537": {
+   "checked": "2026-11-24T10:49:40-05:00",
+   "verdict": "partly",
+   "summary": "Northwestern has lost all three games without QB Aidan Chiles and his status for Illinois is unknown, which explains part of the market's shorter number.",
+   "reasons": [
+    {
+     "text": "Chiles (upper body) has missed the last three games, Nicco Marchiol starting; Northwestern lost all three and has lost four straight.",
+     "source": "SI (Northwestern On SI)",
+     "url": "https://www.si.com/college/northwestern/football/from-6-2-to-6-5-northwestern-s-season-unravels-without-qb-aidan-chiles",
+     "date": "2026-11-22"
+    },
+    {
+     "text": "Illinois lost 34-17 at home to Iowa on Nov. 21, its second straight loss, with QB Katin Houser playing; no new injury found.",
+     "source": "ESPN",
+     "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/356/schedule",
+     "date": "2026-11-24"
+    }
+   ],
+   "swings": {
+    "Illinois": "Illinois lost 34-17 at home to Iowa on Nov. 21, its second straight loss; no injury news found. The swing mostly reflects our model change today."
+   },
+   "verified_numbers": [
+    "0-3"
+   ]
+  },
+  "401869939": {
+   "checked": "2026-11-24T10:49:40-05:00",
+   "verdict": "partly",
+   "summary": "Arkansas State fired Butch Jones and lost 48-3 in its first game under interim Jalen Ortiz, which explains part of the market's smaller number.",
+   "reasons": [
+    {
+     "text": "Butch Jones was fired Nov. 17; interim Jalen Ortiz's first game was a 48-3 loss at Louisiana Tech.",
+     "source": "KY3 (AP)",
+     "url": "https://www.ky3.com/2026/11/18/arkansas-state-fires-coach-butch-jones-after-team-regressed-his-sixth-season-charge/",
+     "date": "2026-11-18"
+    },
+    {
+     "text": "Troy QB Goose Crowder is back from his October shoulder injury and started the last two games, though Troy lost 45-7 to Georgia Southern.",
+     "source": "ESPN",
+     "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/2653/schedule",
+     "date": "2026-11-24"
+    }
+   ]
+  },
+  "401871082": {
+   "checked": "2026-11-24T10:49:40-05:00",
+   "verdict": "unexplained",
+   "summary": "Nothing found: no injury or coaching news for Sam Houston or FIU this week; the market is simply less sure of FIU than we are.",
+   "reasons": [
+    {
+     "text": "Sam Houston (1-10) has lost its last six, the last 31-28 to Middle Tennessee; FIU (4-7) has lost two straight.",
+     "source": "ESPN",
+     "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/2534/schedule",
+     "date": "2026-11-24"
+    }
+   ],
+   "verified_numbers": [
+    "1-10",
+    "4-7"
+   ]
+  },
+  "401860926": {
+   "checked": "2026-11-24T10:49:40-05:00",
+   "verdict": "unexplained",
+   "summary": "Nothing found: QB Maddux Madsen played in the 22-20 home loss to San Diego State and no new injury was reported; the market cooled on Boise after the upset.",
+   "reasons": [
+    {
+     "text": "San Diego State beat Boise State 22-20 on a walk-off field goal Nov. 21; Madsen threw two INTs and lost a fumble but finished the game.",
+     "source": "Yahoo Sports",
+     "url": "https://sports.yahoo.com/articles/no-17-boise-state-stunned-022250574.html",
+     "date": "2026-11-22"
+    },
+    {
+     "text": "Colorado State (3-8) allowed 73 points at Washington State and 49 at Fresno State in its last two games.",
+     "source": "ESPN",
+     "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/teams/36/schedule",
+     "date": "2026-11-24"
+    }
+   ],
+   "verified_numbers": [
+    "3-8"
+   ]
+  },
+  "401856764": {
+   "checked": "2026-11-24T10:49:40-05:00",
+   "verdict": "explained",
+   "summary": "Clemson starts third-string QB Trent Pearman (Reynolds out for the year, Vizzina concussed) while South Carolina has LaNorris Sellers back, which covers the gap.",
+   "reasons": [
+    {
+     "text": "Swinney said backup QB Christopher Vizzina (concussion) 'definitely will not be back'; Trent Pearman starts again after the 20-10 win at Duke.",
+     "source": "Heavy",
+     "url": "https://heavy.com/sports/college-football/clemson-tigers/dabo-swinney-drops-sobering-injury-update-ahead-of-south-carolina-showdown/",
+     "date": "2026-11-23"
+    },
+    {
+     "text": "Sellers missed the 34-6 loss at Arkansas and returned vs Georgia on Nov. 21; our ratings carry the game without him.",
+     "source": "WIS-TV",
+     "url": "https://www.wistv.com/2026/11/22/south-carolina-vs-georgia/",
+     "date": "2026-11-22"
+    }
+   ]
   }
  }
 }
