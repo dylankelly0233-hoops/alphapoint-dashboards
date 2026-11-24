@@ -1,6 +1,6 @@
 {
  "sport": "nhl",
- "generated": "2026-11-23T17:43:18-05:00",
+ "generated": "2026-11-23T19:42:09-05:00",
  "teams": {
   "OTT": {
    "checked": "2026-11-23T17:43:18-05:00",
@@ -153,20 +153,20 @@
    ]
   },
   "ANA": {
-   "checked": "2026-11-23T11:20:10-05:00",
+   "checked": "2026-11-23T19:42:09-05:00",
    "watch": [
     {
      "direction": "too_high",
      "since": "2026-11-21",
-     "text": "Beckett Sennecke (20.3 TOI) went on IR 11/21 and Leo Carlsson (19.8) is day-to-day, two top-six forwards out or doubtful at SEA.",
-     "source": "ESPN",
-     "url": "https://www.espn.com/nhl/injuries",
-     "date": "2026-11-22"
+     "text": "Leo Carlsson (upper body, 19.8 TOI) is not expected to play at SEA on 11/23 after missing Sunday's practice (Nico Myatovic recalled), and Beckett Sennecke (20.3 TOI) is on IR: two top-six forwards out. Starting goalies not confirmed yet.",
+     "source": "NHL.com",
+     "url": "https://nhl.com/news/nhl-status-report-news-and-notes-november-23-2026",
+     "date": "2026-11-23"
     }
    ]
   },
   "SEA": {
-   "checked": "2026-11-23T11:20:10-05:00",
+   "checked": "2026-11-23T19:42:09-05:00",
    "watch": []
   },
   "SJ": {
@@ -270,6 +270,9 @@
   },
   "401892777": {
    "checked": "2026-11-23T17:43:18-05:00"
+  },
+  "401892778": {
+   "checked": "2026-11-23T19:42:09-05:00"
   }
  }
 }
