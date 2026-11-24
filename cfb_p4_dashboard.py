@@ -4,12 +4,18 @@ AlphaPoint Sports — CFB Power & Value Dashboard (Power 4 + Notre Dame)
 Dylan Kelly
 
 One HTML dashboard (opens automatically) with three tabs:
-  1. Power Ratings  — composite of Sagarin + SP+, 0 = average FBS team
+  1. Power Ratings  — our own CFB model (cfb_model.py), 0 = average FBS team
   2. Value Metrics  — W − xW screener from cfb_value_metrics.py, P4 + ND only
   3. Week Schedule  — this week's P4/ND games, projected line (with home field),
                       BUY / SELL tags from the value metrics
 
-Rating math
+Rating math (since 2026-11-24, Dylan: launch on data we may republish)
+  Ratings and projected lines are our own model, cfb_model.py (v2 multi-stat, CollegeFootballData): each team's
+  rating is its share of the model's line, so rating gap + the model's home part = the model's projected line, the
+  same number the Best spots system cfb_v2_open was tested on. FCS opponents have no rating (no projection).
+  The Sagarin + SP+ blend below (fetch_sagarin, fetch_sp, build_power_ratings) is kept but no longer called.
+
+Old rating math (unused)
   Both sources are already on a points scale with home field kept separate,
   so a rating gap = projected neutral-site margin. To put them on one scale:
     1. Center each source on its FBS average  → average FBS team = 0
@@ -72,14 +78,15 @@ TEAMS_CACHE     = f'p4_fbs_teams_conf_{YEAR}.csv'
 META_CACHE      = f'p4_team_meta_v3_{YEAR}.csv'  # ESPN ids, team colors (badges), abbreviations, mascots; FBS + FCS
 
 SAGARIN_BLEND   = {'predictor': 0.60, 'golden_mean': 0.20, 'recent': 0.20}
-SOURCE_WEIGHTS  = {'sagarin': 0.50, 'sp': 0.50}
+MODEL_LABEL     = 'AlphaPoint model'
+SOURCE_WEIGHTS  = {'model': 1.0}               # one source since 2026-11-24 (was Sagarin 0.50 / SP+ 0.50)
 
 # Home-field advantage added to the home team's projected margin (0 at neutral sites).
 # CFB home field has shrunk from the old ~3+ points; markets price an average team at about
 # 2.5 now (Sagarin's 3.65 includes FCS mismatches and older seasons).
 HFA_POINTS      = 2.5
 HFA_POINTS, SOURCE_WEIGHTS = ex.calibrated('cfb', HFA_POINTS, SOURCE_WEIGHTS)   # weekly tuning (calibrate.py)
-SCALE = ex.calibrated_value('cfb', 'scale', 1.0)      # weekly-tuned rating stretch
+SCALE = 1.0     # the model's ratings are already fit to game margins (the weekly-tuned stretch was for the old blend)
 CROWD_SLOPE = ex.calibrated_value('cfb', 'crowd_slope', crowd.SLOPE['cfb'])   # home edge per doubling of crowd
 _HOME_EDGE = None
 
@@ -394,7 +401,18 @@ def week_tv(week, season_type):
     return out
 
 
-def build_schedule(week, season_type, p4_names, power, fcs, metrics):
+def build_own_ratings(teams, model):
+    """Our model's team ratings as the power table (same columns the page used for the old blend)."""
+    df = teams.copy()
+    r = cfbm.team_ratings(model)
+    df['model'] = df['team'].map(r)
+    df['composite'] = df['model']
+    df['fbs_rank'] = df['composite'].rank(ascending=False, method='min')
+    v = df['model'].dropna()
+    return df, {}, {'target_sd': float(v.std()) if len(v) else 1.0, 'stats': {}, 'unmatched': {}}
+
+
+def build_schedule(week, season_type, p4_names, power, fcs, metrics, model=None):
     games = vm.cfbd_get('/games', params={'year': YEAR, 'week': week, 'seasonType': season_type})
     tv = week_tv(week, season_type)
     lines = fetch_week_lines(week, season_type)
@@ -409,6 +427,9 @@ def build_schedule(week, season_type, p4_names, power, fcs, metrics):
         a_r, _ = rating_for(away, power, fcs)
         hfa, crowd_info = home_edge().for_game(home, HFA_POINTS, bool(g.get('neutralSite')))
         margin = SCALE * (h_r - a_r) + hfa if not (np.isnan(h_r) or np.isnan(a_r)) else np.nan  # home − away, incl. HFA
+        own = cfbm.line(model, home, away, bool(g.get('neutralSite')))
+        if own is not None and not (np.isnan(h_r) or np.isnan(a_r)):     # our model's own line; its home part is the rest
+            margin, hfa = own, own - (h_r - a_r)
 
         kick = pd.Timestamp(g['startDate']).tz_convert('America/New_York') if g.get('startDate') else None
         mkt = lines.get(g.get('id'))
@@ -653,11 +674,12 @@ def generate_html(p4, vals, sched, week, season_type, info):
                                       ('FBS Rk', 'opt'), ('Trade Signal', '')], rows)
         + theme.method_note(
             f'<b>Rating</b> is points above or below an average FBS team (0.0); the gap between two teams is the projected '
-            f'margin at a neutral site. Sagarin blend: {blend} (through {theme.esc(info["sag_asof"] or "unknown")}). '
-            f'SP+: Bill Connelly\'s ratings via collegefootballdata.com. Each source is centered on '
-            f'its FBS average and rescaled to a common SD of {s["target_sd"]:.2f} points, then blended '
-            f'{int(SOURCE_WEIGHTS["sagarin"] * 100)}/{int(SOURCE_WEIGHTS["sp"] * 100)}. Raw scales: {stats_txt}. '
-            f'Unmatched names: {theme.esc(unmatched)}. Records include all games. <b>Biggest movers</b> compares today\'s '
+            f'margin at a neutral site. It is AlphaPoint\'s own model, built from every FBS game\'s stats '
+            f'(collegefootballdata.com): EPA per play, success rate, explosiveness, havoc, line play, turnovers and '
+            f'scoring margin, each adjusted for opponent and weighted toward recent games, starting from last season '
+            f'adjusted for returning production and talent. It is newer than the public computer ratings and, on average, '
+            f'a little less accurate than the market, so treat a big gap with the market as a question, not an answer. '
+            f'FCS opponents are not rated. Records include all games. <b>Biggest movers</b> compares today\'s '
             f'rating with the one saved about a week earlier. Click any team for its page.'))
 
     # --- Value tab ---
@@ -772,8 +794,7 @@ def generate_html(p4, vals, sched, week, season_type, info):
                      'confidence': ex.confidence_level(h_src, a_src, hfa_g, big),
                      'flags': (['news'] if ex.news_move(info['opened'].get(str(r.game_id)), mkt_margin) else [])
                               + (['lopsided'] if big else []),
-                     'sources': {**ex.source_lines(h_src, a_src, hfa_g),
-                                 **({cfbm.SHADOW_LABEL: v2} if v2 is not None else {})},   # logged, never blended (cfb_model.py)
+                     'sources': {MODEL_LABEL: v2} if v2 is not None else {},
                      'hfa': hfa_g,
                      'context': {'scale': SCALE, 'crowd': _crowd(r), 'total': [None if t_ours != t_ours else round(t_ours, 1),
                                                                          None if t_mkt != t_mkt else t_mkt], 'signals': {t: s for t, s in ((r.away, sig(r.away_value)), (r.home, sig(r.home_value))) if s},
@@ -838,7 +859,7 @@ def generate_html(p4, vals, sched, week, season_type, info):
             f'each card. <b>Market</b> is the posted '
             f'spread, for comparison. <b>Edge</b> is how many points our projected line differs from the market, shown as '
             f'the side we like at the market number; gaps of {theme.EDGE_STRONG:g}+ points are highlighted and gaps under '
-            f'{theme.EDGE_MIN:g} show as None. FCS opponents are rated with Sagarin only. Trade signals come from the value metrics. '
+            f'{theme.EDGE_MIN:g} show as None. Games against FCS opponents have no projection. Trade signals come from the value metrics. '
             f'<b>Line</b> shows where the spread opened and where it is now, and whether the market has moved toward our '
             f'number (a good sign for the edge) or away from it. <b>Bounce-back</b> tags an away team coming off a '
             f'{BLOWOUT_MARGIN}+ point loss: in our 2016–25 backtest those teams covered 55.4% of 739 games (+5.6% ROI).'))
@@ -875,7 +896,7 @@ def generate_html(p4, vals, sched, week, season_type, info):
         tabs=[('power', 'Power Ratings', power_html), ('featured', 'Featured', featured_html), ('value', 'Value Metrics', value_html),
               ('sched', 'Games', sched_html), ('markets', 'Markets', markets_html),
               ('injuries', 'Injury Wire', injury_html)],
-        footer='AlphaPoint Sports · Data: Sagarin, SP+ (via collegefootballdata.com) · '
+        footer='AlphaPoint Sports · Data: collegefootballdata.com · '
                'Not financial or gambling advice',
         extra=ex.team_modal(teams) + mu.templates(panels))
     theme.write_outputs(page, HTML_OUTPUT, SHARE_OUTPUT, 'CFB_NO_BROWSER')
@@ -940,11 +961,10 @@ def main():
     fbs_names = set(teams['team'])       # since 2026-11-16 the page covers every FBS team (Dylan); P4 is a filter
     print(f'  {len(fbs_names)} FBS teams ({len(p4_names)} Power 4 + Notre Dame).')
 
-    print('[2/5] Power ratings (Sagarin + SP+)...')
-    sag, sag_asof = fetch_sagarin()
-    sp = fetch_sp()
-    print(f'  Sagarin: {len(sag)} teams (through {sag_asof})  |  SP+: {len(sp)} teams')
-    power, fcs, scale_info = build_power_ratings(teams, sag, sp)
+    print('[2/5] Power ratings (AlphaPoint model)...')
+    model = shadow_model()
+    sag, sag_asof = pd.DataFrame(), None
+    power, fcs, scale_info = build_own_ratings(teams, model)
     for src, names in scale_info['unmatched'].items():
         print(f'  ! {src} names not matched to CFBD: {", ".join(names)}')
 
@@ -953,17 +973,25 @@ def main():
 
     print('[4/5] Week schedule...')
     week, season_type = (WEEK, 'regular') if WEEK else current_week()
-    sched = build_schedule(week, season_type, fbs_names, power, fcs, metrics)
-    next_sched = build_schedule(week + 1, season_type, fbs_names, power, fcs, metrics)
+    sched = build_schedule(week, season_type, fbs_names, power, fcs, metrics, model)
+    next_sched = build_schedule(week + 1, season_type, fbs_names, power, fcs, metrics, model)
     print(f'  Next week (Week {week + 1}): {len(next_sched)} games.')
     print(f'  Week {week}: {len(sched)} games involving an FBS team.')
 
     print('[5/5] Building dashboard...')
     # Record from Sagarin (all games); value-metric W-L is FBS-only
-    sag_rec = {}
-    if not sag.empty:
-        names = match_names(sag['name'], SAGARIN_ALIASES, set(teams['team']))
-        sag_rec = {names[n]: f'{w}-{l}' for n, w, l in zip(sag['name'], sag['W'], sag['L']) if names[n]}
+    sag_rec = {}                 # records from every completed game, FCS opponents included (CFBD)
+    try:
+        ag = pd.read_csv(vm.GAMES_CACHE)
+        for h, a, hp, ap in zip(ag['home_team'], ag['away_team'], ag['home_pts'], ag['away_pts']):
+            if hp == hp and ap == ap and hp != ap:
+                for t, won in ((h, hp > ap), (a, ap > hp)):
+                    w, l = sag_rec.get(t, (0, 0))
+                    sag_rec[t] = (w + won, l + (not won))
+        sag_rec = {t: f'{w}-{l}' for t, (w, l) in sag_rec.items()}
+    except Exception as e:
+        print(f'  ! records unavailable: {e}')
+        sag_rec = {}
     comp = dict(zip(metrics['Team'], metrics['Composite'])) if not metrics.empty else {}
 
     p4 = power[power['team'].isin(fbs_names)].copy()
@@ -992,8 +1020,7 @@ def main():
     hist = ex.snapshot_ratings('cfb', dict(zip(power['team'], power['composite'])))
     ex.snapshot_sources('cfb', power, 'team', list(SOURCE_WEIGHTS))
     results = load_results()
-    freshness = [('Sagarin', f'through {sag_asof}' if sag_asof else 'not available', ex.fetched(SAGARIN_CACHE)[1]),
-                 ('SP+', *ex.fetched(f'p4_sp_{YEAR}.csv')), ('Scores', *ex.fetched(vm.GAMES_CACHE)),
+    freshness = [('Scores', *ex.fetched(vm.GAMES_CACHE)),
                  ('Lines', 'live each refresh', True), ('Play-by-play', *ex.fetched(vm.ADV_BOX_CACHE)),
                  ex.wire_freshness(wire_data)]
     units = fetch_unit_stats()
@@ -1020,14 +1047,14 @@ def main():
     except Exception as e:
         print(f'  ! totals model failed: {e}')
         total_fn = None
-    info = {'shadow': shadow_model(), 'los': cfbm.los_net(YEAR), 'held': cfbm.missing(YEAR, vm.fetch_games()), 'p4_names': p4_names, 'total_fn': total_fn, 'val_live': val.live_records('cfb'), 'scale': scale_info, 'sag_asof': sag_asof, 'rating_sd': float(power['composite'].std()),   # FBS-wide spread, sets the rating chip colors
+    info = {'shadow': model, 'los': cfbm.los_net(YEAR), 'held': cfbm.missing(YEAR, vm.fetch_games()), 'p4_names': p4_names, 'total_fn': total_fn, 'val_live': val.live_records('cfb'), 'scale': scale_info, 'sag_asof': sag_asof, 'rating_sd': float(power['composite'].std()),   # FBS-wide spread, sets the rating chip colors
             'wire': wire_data, 'market_rows': market_rows, 'history': hist, 'freshness': freshness, 'results': results,
             'weeks': [(week, sched, last_results(results[0], week, season_type))]
                      + ([(week + 1, next_sched, next_last)] if not next_sched.empty else []),
             'weather': weather, 'roofs': roofs, 'ranks': ranks,
             'featured': {r.game_id: fx.college_reasons(r.away, r.home, ranks, -r.market if r.market == r.market else np.nan)
                          for r in sched.itertuples() if not r.completed},
-            'by_source': {r.team: {'Sagarin': r.sagarin, 'SP+': r.sp} for r in power.itertuples()},
+            'by_source': {r.team: {MODEL_LABEL: r.model} for r in power.itertuples()},   # one source: no agreement chip
             'mu_prof': mu.profiles(units, MU_CATS, MU_STYLES) if not units.empty else {},
             'mu_games': cover_log(*results),
             'opened': {**{str(r.game_id): -r.market_open for r in next_sched.itertuples()

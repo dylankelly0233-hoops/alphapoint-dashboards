@@ -46,7 +46,13 @@ def snapshot_ratings(sport, ratings):
                         for t, r in ratings.items() if not _nan(r)])
     hist = pd.concat([hist[hist['date'] != today], new], ignore_index=True).sort_values(['date', 'team'])
     hist.to_csv(path, index=False)
-    return hist
+    since = RATING_RESET.get(sport)        # a new rating method: movers and charts compare it only with itself
+    return hist[hist['date'] >= since].reset_index(drop=True) if since else hist
+
+
+# The rating method changed on these dates (2026-11-24: our own models replaced the restricted blends), so older
+# snapshots measure something else; they stay in ratings_history_{sport}.csv but aren't shown.
+RATING_RESET = {'nfl': '2026-11-24', 'cfb': '2026-11-24', 'cbb': '2026-11-24'}
 
 
 def snapshot_sources(sport, df, key, cols):

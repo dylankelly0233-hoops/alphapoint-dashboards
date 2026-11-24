@@ -158,6 +158,18 @@ def ratings(g, adv, params, asof):
     return out
 
 
+def team_ratings(model):
+    """{team: points vs an average FBS team on a neutral field}: the team's share of the stage-2 line (each feature's
+    weight x the team's own value), centered on the FBS teams we rate. line() = rating gap + home part."""
+    if not model:
+        return {}
+    p, feats = model['params']['stage2'], model['params']['feats']
+    w = {f: b / sd for f, b, sd in zip(feats, p['b'], p['sd']) if f != 'home'}
+    r = {t: sum(w[f] * model[f][t] for f in w if t in model[f]) for t in model['M']}
+    m = float(np.mean(list(r.values()))) if r else 0.0
+    return {t: v - m for t, v in r.items()}
+
+
 def line(model, home, away, neutral):
     """v2 home margin for one game, or None if a team isn't an FBS team we rate."""
     if not model or home not in model['M'] or away not in model['M']:

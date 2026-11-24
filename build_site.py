@@ -44,7 +44,7 @@ DASHBOARDS = [
 ]
 # Launch lineup (Dylan, 2026-11-24): only sports built entirely on data we may republish are published. The others
 # still build privately (their logs keep feeding research) but the site shows a "coming soon" page in their place.
-ACTIVE = {'nfl.html', 'cbb.html'}
+ACTIVE = {'nfl.html', 'cfb.html', 'cbb.html'}     # CFB on our own model since 2026-11-24 (Dylan)
 
 LANDING_CSS = """
 .feat { padding: 16px 18px; margin: 0 0 16px; }
@@ -316,7 +316,7 @@ def proven_list():
     return ', '.join(names) or 'none yet'
 
 
-BEST_SPORTS = ('nfl', 'cbb')   # the published sports only (2026-11-24; was nfl, cfb, cbb, nba)
+BEST_SPORTS = ('nfl', 'cfb', 'cbb')   # the published sports only (2026-11-24; was nfl, cfb, cbb, nba)
 
 
 def _day_sport_groups(rows, row_html):
@@ -820,16 +820,16 @@ root.querySelectorAll('.schip').forEach(function(c){c.addEventListener('click',f
 INFO = [
     ('Every dashboard', [
         ('Power Ratings', 'One rating per team: points above or below an average team (0.0). The gap between two '
-                          'teams is the projected margin on a neutral field. NFL ratings are our own model, built from '
-                          'play-by-play data; college basketball blends our own model with Haslametrics after putting them '
-                          'on the same scale.'),
+                          'teams is the projected margin on a neutral field. NFL and college football ratings are our own '
+                          'models, built from play-by-play and game stats; college basketball blends our own model with '
+                          'Haslametrics after putting them on the same scale.'),
         ('Value Metrics', 'Wins over expectation (W − xW): how many more or fewer games a team has won than its underlying '
                           'play supports. Below zero means the record is worse than the play (a buy candidate); above zero '
                           'means it has been winning more than it should (a sell candidate).'),
         ('Trade Signal', 'BUY / SELL tags from the value metrics, shown wherever a team appears.'),
         ('Games', 'This week\'s games with our projected spread (home field included, rounded to the half point), the '
                   'posted market spread, and the Edge — how far our number is from the market and which side we like. '
-                  'The NFL page has a This week / Next week switch, so you can look ahead once next '
+                  'NFL and college football have a This week / Next week switch, so you can look ahead once next '
                   'week\'s lines post; games still to play are listed first.'),
         ('Featured', 'The marquee games, each with a written preview: ranked-vs-ranked and upset-watch games in college '
                      '(a top-10 team favored by 7 or less, or an underdog) and NFL primetime games. Previews are written automatically from the numbers on the page: '
@@ -1199,8 +1199,8 @@ def landing(results):
         + ''.join(f'<dt>{theme.esc(k)}</dt><dd>{theme.esc(v)}</dd>' for k, v in rows) + '</dl></section>'
         for title, rows in INFO) + '</div>'
     page = theme.render_page(title='AlphaPoint Sports', league='Home', headline='Sharper research, every game',
-                             subtitle='Power ratings, value metrics and market data for the NFL and college basketball, '
-                                      'with more sports coming soon. Research, not picks.',
+                             subtitle='Power ratings, value metrics and market data for the NFL, college football and '
+                                      'college basketball, with more sports coming soon. Research, not picks.',
                              meta_items=[('Updated', updated)],
                              tabs=[('home', 'Dashboards', home), ('spotsguide', 'Strategies', spots_guide()),
                                    # Model performance is private since 2026-11-23 (Dylan: 'track it here, not publicly'):
@@ -1448,8 +1448,8 @@ def head_tags(page):
 def coming_soon(name):
     """The page shown for a sport that isn't published yet (ACTIVE)."""
     body = (f'<div class="info"><section class="card"><h3>{theme.esc(name)} is coming soon</h3>'
-            f'<p>We are rebuilding this page on our own models and data we can publish. Until then, the NFL and college '
-            f'basketball pages are live.</p></section></div>'
+            f'<p>We are rebuilding this page on our own models and data we can publish. Until then, these pages are '
+            f'live:</p></section></div>'
             + '<div class="tiles">' + ''.join(
                 f'<a class="card tile" href="{p}"><span class="abbr">{a}</span><span class="name">{theme.esc(n)}</span>'
                 f'<span class="go">Open →</span></a>' for p, _, _, a, n, *_ in DASHBOARDS if p in ACTIVE) + '</div>')
