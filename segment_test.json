@@ -704,8 +704,7 @@
     },
     "share": 0.384,
     "sigma": 15.1,
-    "avg_ev": 0.064,
-    "off_best_spots": true
+    "avg_ev": 0.064
    },
    "favorite": {
     "col": "favdog",
@@ -927,8 +926,7 @@
     },
     "share": 0.349,
     "sigma": 15.03,
-    "avg_ev": 0.057,
-    "off_best_spots": true
+    "avg_ev": 0.057
    },
    "non-conference": {
     "col": "confname",

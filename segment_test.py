@@ -34,9 +34,9 @@ P4 = {'ACC', 'Big Ten', 'Big 12', 'SEC', 'Big East', 'Pac-12'}
 # Since 2026-11-24 these spreads are tested on the models now live (segment_retest.py loaders: walk-forward predictions
 # of nfl_model / cfb_model v2 / cbb_model), not backtests.py's results-only rating. NBA spreads and all totals unchanged.
 LIVE_MODEL_SPREADS = ('nfl', 'cfb', 'cbb')
-# Slices that pass but stay off Best spots by Dylan's decision (2026-11-24: "conference only" for CFB spreads);
-# written with off_best_spots = True and skipped by valuation.proven_lines and build_site.
-OFF_BEST_SPOTS = {'cfb_spread|mid', 'cfb_spread|line under 7'}
+# Slices that pass but stay off Best spots by Dylan's decision, written with off_best_spots = True and skipped by
+# valuation.proven_lines and build_site. Empty since 2026-11-24 (Dylan: mid-season and lines under 7 back in).
+OFF_BEST_SPOTS = set()
 
 
 def _wilson(k, n, z=1.96):
