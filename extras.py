@@ -584,4 +584,41 @@ def why_row(parts, ours, market, home, away, name=lambda t: t, unit='', digits=1
     if not bits and not lead:
         return ''
     built = f'<span class="pline">Built from: {" · ".join(bits)}</span>' if bits else ''
-    return f'<div class="lmove pricing">{theme.k("Our pricing")}{lead}{built}</div>'
+    chart = why_chart(parts, ours, market, name(home), name(away), digits)
+    return f'<div class="lmove pricing">{theme.k("Our pricing")}{lead}{built}{chart}</div>'
+
+
+def why_chart(parts, ours, market, home_name, away_name, digits=1):
+    """
+    The 'Built from' parts as a small bar chart (Dylan, 2026-11-24): a centre line, the away team to the left and the
+    home team to the right, one bar per part, then our line and a dashed marker at the market's number. Inline SVG
+    using the page's colour variables, so it follows light / dark mode.
+    """
+    rows = [(lab, float(v)) for lab, v in parts if v is not None and not _nan(v) and abs(v) >= 0.5 / 10 ** digits]
+    if not rows or _nan(ours):
+        return ''
+    mk = None if market is None or _nan(market) else float(market)
+    span = max([abs(v) for _, v in rows] + [abs(ours)] + ([abs(mk)] if mk is not None else [])) or 1.0
+    W, L, R, rh = 340, 96, 16, 15                    # width, label column, right pad, row height
+    mid = L + (W - L - R) / 2
+    sc = (W - L - R) / 2 / span
+    allrows = rows + [('Our line', float(ours))]
+    H = 18 + rh * len(allrows) + 6
+    out = [f'<svg class="whychart" viewBox="0 0 {W} {H}" width="100%" role="img" '
+           f'aria-label="How our line is built, next to the market">',
+           f'<text x="{L}" y="11" class="wl">{theme.esc(away_name)} ←</text>',
+           f'<text x="{W - R}" y="11" class="wl" text-anchor="end">→ {theme.esc(home_name)}</text>']
+    y = 18
+    for lab, v in allrows:
+        x0, x1 = (mid, mid + v * sc) if v >= 0 else (mid + v * sc, mid)
+        cls = 'wt' if lab == 'Our line' else 'wb'
+        out.append(f'<text x="{L - 6}" y="{y + 10}" class="wl" text-anchor="end">{theme.esc(lab)}</text>'
+                   f'<rect x="{x0:.1f}" y="{y + 2}" width="{max(x1 - x0, 1.5):.1f}" height="{rh - 5}" rx="2" class="{cls}"/>')
+        y += rh
+    out.append(f'<line x1="{mid}" y1="16" x2="{mid}" y2="{y}" class="wz"/>')
+    if mk is not None:
+        xm = mid + mk * sc
+        out.append(f'<line x1="{xm:.1f}" y1="16" x2="{xm:.1f}" y2="{y}" class="wm"/>'
+                   f'<text x="{xm:.1f}" y="{y + 5}" class="wl" text-anchor="middle">market</text>')
+    out.append('</svg>')
+    return ''.join(out)

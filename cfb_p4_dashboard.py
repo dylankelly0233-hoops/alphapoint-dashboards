@@ -782,8 +782,8 @@ def generate_html(p4, vals, sched, week, season_type, info):
             move += ex.liquidity_row(next((x.get('spread') for x in info['market_rows'] if str(x.get('game_id')) == str(r.game_id)), None))
         pr = '' if big or r.completed else val.card_row('cfb', r.margin, mkt_margin, r.home, r.away, info['val_live'])
         pr += '' if r.completed else tot.card_row('cfb', t_ours, t_mkt)
-        move += ex.why_row([('Ratings', r.margin - _hfa(r)), ('Home field', 0.0 if r.neutral else HFA_POINTS),
-                            ('Crowd', (_crowd(r) or {}).get('adj'))], r.margin, mkt_margin, r.home, r.away, lead=pr,
+        # since 2026-11-24 the line is our model's: its own home-field part (no separate crowd term), rating gap the rest
+        move += ex.why_row([('Ratings', r.margin - _hfa(r)), ('Home field', _hfa(r))], r.margin, mkt_margin, r.home, r.away, lead=pr,
                            note='' if r.completed else ex.LOPSIDED_NOTE if big else ex.NO_EDGE)
         move += gr.card_row('cfb', r.game_id, r.margin, mkt_margin, r.home, r.away, r.home, r.away, bool(r.completed))
         prof = info['mu_prof']

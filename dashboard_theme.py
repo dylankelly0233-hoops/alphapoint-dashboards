@@ -606,6 +606,12 @@ td.pos { color: var(--pos); font-weight: 600; } td.neg { color: var(--neg); font
 .lmove b { color: var(--ink); }
 .card.game.flash { outline: 3px solid var(--accent); outline-offset: 2px; transition: outline-color .4s; }
 .card.game { scroll-margin-top: 64px; }
+.whychart { display: block; max-width: 420px; margin-top: 6px; overflow: visible; }
+.whychart .wl { font: 600 10px var(--display); fill: var(--muted); letter-spacing: .3px; }
+.whychart .wb { fill: color-mix(in srgb, var(--accent) 45%, var(--surface)); }
+.whychart .wt { fill: var(--accent); }
+.whychart .wz { stroke: var(--line); stroke-width: 1; }
+.whychart .wm { stroke: var(--ink); stroke-width: 1.2; stroke-dasharray: 3 3; }
 .lmove.pricing .pline { display: block; margin-top: 2px; } .lmove.pricing .k + .pline { display: inline; margin-top: 0; }
 .lmove .pline .tag { font: 700 10.5px/1 var(--display); letter-spacing: .8px; text-transform: uppercase; color: var(--muted); margin-right: 6px; }
 .newsflag { display: block; margin-top: 4px; padding: 5px 8px; border-radius: 6px; background: var(--neg-bg); color: var(--neg);
@@ -1311,6 +1317,21 @@ document.querySelectorAll('table.sortable').forEach(t => {
     n.appendChild(b);
   }));
   apply();
+})();
+
+// First visit: how to read a card (Dylan, 2026-11-24). Shown once per browser; 'Got it' hides it for good.
+(function () {
+  const card = document.querySelector('article.card.game:not(.final)');
+  if (!card) return;
+  try { if (localStorage.getItem('ap_tip_seen')) return; } catch (e) { return; }
+  const tip = document.createElement('div');
+  tip.className = 'sincebar firsttip';
+  tip.innerHTML = '<span><b>New here?</b> Each card shows <b>our number</b> next to the <b>market</b> line; the gap is research, ' +
+                  'not a pick. Tap <b>?</b> next to any label for what it means, <b>Details</b> for the research behind a game, ' +
+                  '<b>☆</b> to pin a team and <b>Share</b> for an image of the matchup.</span><button type="button">Got it</button>';
+  tip.querySelector('button').addEventListener('click', () => { tip.remove(); try { localStorage.setItem('ap_tip_seen', '1'); } catch (e) {} });
+  const sec = card.closest('section.page');
+  if (sec) sec.insertBefore(tip, sec.firstChild);
 })();
 """
 
