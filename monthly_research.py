@@ -39,6 +39,7 @@ STEPS = [('Game situations', ['situational_research.py']), ('Spread value tables
          ('Live-model fair line shares', ['share_test.py', '--fresh']), ('Conference strength', ['conf_strength_test.py']),
          ('Slice test (Best spots)', ['segment_test.py']),
          ('CBB 3-point fade record', ['stat_matchup_test.py', '--write']),
+         ('CBB December check (pre-registered, due Jan 5 2027)', ['cbb_december_check.py']),
          ('Proven-rule audit (luck + recent seasons)', ['criteria_audit.py', '--write'])]
 OUTPUTS = ['valuation.json', 'totals.json', 'totals_prior.json', 'tag_backtest.json', 'backtests.json', 'priced_value_test.json',
            'segment_test.json', 'system_test.json', f'nba_prior_{date.today().year + (date.today().month >= 8)}.json']
