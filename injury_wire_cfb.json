@@ -1,7 +1,7 @@
 {
  "sport": "cfb",
  "week": 13,
- "generated": "2026-11-24T09:42:53-05:00",
+ "generated": "2026-11-24T09:47:17-05:00",
  "movers": [
   {
    "team": "UCLA",
@@ -264,6 +264,17 @@
     "source": "HottyToddy.com",
     "url": "https://www.hottytoddy.com/2026/11/17/ole-miss-injury-report-lacy-mills-knight-frazier-wofford/",
     "date": "2026-11-17"
+   }
+  ],
+  "Texas A&M": [
+   {
+    "team": "Texas A&M",
+    "tag": "QB",
+    "qb_status": "uncertain",
+    "text": "Mike Elko has not named a QB for Texas: Brady Hart started the 28-7 loss at Oklahoma after Marcel Reed was benched vs Tennessee.",
+    "source": "Houston Chronicle",
+    "url": "https://sports.yahoo.com/articles/texas-m-undecided-quarterback-against-002629155.html",
+    "date": "2026-11-24"
    }
   ]
  }

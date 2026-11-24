@@ -1,8 +1,9 @@
 {
  "sport": "cfb",
- "generated": "2026-11-24T08:45:20-05:00",
+ "generated": "2026-11-24T09:47:17-05:00",
  "teams": {
   "Clemson": {
+   "checked": "2026-11-24T09:44:47-05:00",
    "watch": [
     {
      "direction": "too_high",
@@ -20,10 +21,10 @@
      "url": "https://heavy.com/sports/college-football/clemson-tigers/dabo-swinney-drops-sobering-injury-update-ahead-of-south-carolina-showdown/",
      "date": "2026-11-23"
     }
-   ],
-   "checked": "2026-11-23T09:45:00-05:00"
+   ]
   },
   "South Carolina": {
+   "checked": "2026-11-24T09:44:47-05:00",
    "watch": [
     {
      "direction": "too_low",
@@ -32,80 +33,82 @@
      "source": "WIS-TV",
      "url": "https://www.wistv.com/2026/11/22/south-carolina-vs-georgia/",
      "date": "2026-11-22"
-    },
-    {
-     "direction": "too_high",
-     "since": "2026-11-14",
-     "text": "WR Mazeo Bennett Jr., DB Judge Collier and edge Anthony Addison were downgraded to out for Georgia on Friday; WR Nyck Harbor is available.",
-     "source": "Yahoo Sports",
-     "url": "https://sports.yahoo.com/articles/least-8-south-carolina-players-151920053.html",
-     "date": "2026-11-21"
     }
-   ],
-   "checked": "2026-11-23T09:45:00-05:00"
+   ]
   },
   "North Carolina": {
+   "checked": "2026-11-24T09:44:47-05:00",
    "watch": [
     {
-     "direction": "too_high",
+     "direction": "unclear",
      "since": "2026-11-14",
-     "text": "QB Billy Edwards Jr. (upper body, hurt Nov. 14 vs Louisville) did not start at Virginia; freshman Travis Burgess made his first start in a 41-24 loss on Nov. 21.",
+     "text": "QB Billy Edwards Jr. warmed up but didn't play at Virginia; Belichick said he was 'doing a lot better' by week's end but won't name a starter between him and Travis Burgess for NC State.",
      "source": "Tar Heel Tribune",
-     "url": "https://tarheeltribune.com/2026/11/21/burgess-shines-in-first-start-but-mistakes-virginias-big-plays-bury-unc/",
-     "date": "2026-11-21"
+     "url": "https://tarheeltribune.com/2026/11/23/belichick-says-qb-starter-unclear-but-he-has-confidence-in-both/",
+     "date": "2026-11-23"
     }
-   ],
-   "checked": "2026-11-23T09:45:00-05:00"
+   ]
   },
   "Northwestern": {
-   "watch": [],
-   "checked": "2026-11-23T09:45:00-05:00"
+   "checked": "2026-11-24T09:44:47-05:00",
+   "watch": []
   },
   "Ohio State": {
    "watch": [
     {
-     "direction": "unclear",
+     "direction": "too_high",
      "since": "2026-10-17",
-     "text": "QB Julian Sayin has missed every game since Oct. 17 with Luke Fahey starting; Rotowire estimates a Nov. 28 return (Michigan). Not confirmed by Ohio State.",
-     "source": "Rotowire",
-     "url": "https://www.rotowire.com/cfootball/player.php?id=45114",
+     "text": "QB Julian Sayin (right elbow surgery) has missed four games since Oct. 17 (OSU 1-3) and is not expected back for Michigan; Luke Fahey starts. Ratings still carry Sayin's games.",
+     "source": "Athlon Sports",
+     "url": "https://sports.yahoo.com/articles/julian-sayin-injury-ohio-state-165509614.html",
      "date": "2026-11-21"
     }
    ],
-   "checked": "2026-11-23T09:45:00-05:00"
+   "checked": "2026-11-24T09:45:04-05:00",
+   "verified_numbers": [
+    "1-3"
+   ]
   },
   "Illinois": {
-   "watch": [
-    {
-     "direction": "too_high",
-     "since": "2026-11-17",
-     "text": "QB Katin Houser is not likely to play vs Iowa after broken-nose surgery; Michael Clayton II starts. The line moved from Iowa -6.5 to -9.5.",
-     "source": "Field Level Media",
-     "url": "https://fieldlevelmedia.com/latest-stories?storyId=268624",
-     "date": "2026-11-17"
-    }
-   ],
-   "checked": "2026-11-23T09:45:00-05:00"
+   "checked": "2026-11-24T09:44:47-05:00",
+   "watch": []
   },
   "Mississippi State": {
    "watch": [
     {
      "direction": "too_high",
      "since": "2026-10-27",
-     "text": "Starter Kamario Taylor is out for the season (foot) and fill-in AJ Swann is hurt; Lebby says the Egg Bowl QB depends on Swann's practice, with Billy Puckett the alternative.",
+     "text": "Starter Kamario Taylor is out for the season and fill-in AJ Swann (left foot, wore a boot) missed Tennessee Tech; Lebby says the Egg Bowl QB is 'still being decided', Billy Puckett the alternative.",
      "source": "The Clarion-Ledger",
-     "url": "https://sports.yahoo.com/articles/jeff-lebby-decide-mississippi-state-203027643.html",
-     "date": "2026-11-22"
+     "url": "https://sports.yahoo.com/articles/mississippi-state-egg-bowl-qb-231921493.html",
+     "date": "2026-11-21"
     }
    ],
-   "checked": "2026-11-23T09:45:00-05:00"
+   "checked": "2026-11-24T09:45:04-05:00"
   },
   "Tennessee": {
-   "watch": [],
-   "checked": "2026-11-23T09:45:00-05:00"
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-19",
+     "text": "WR Mike Matthews (knee) is out for the season; RB DeSean Bishop (leg, left the LSU game) 'looked good' Monday but is being evaluated through the week.",
+     "source": "BVM Sports",
+     "url": "http://bvmsports.com/2026/11/23/josh-heupel-updates-desean-bishops-injury-before-vanderbilt-game/",
+     "date": "2026-11-23"
+    }
+   ],
+   "checked": "2026-11-24T09:45:04-05:00"
   },
   "Florida State": {
    "watch": [
+    {
+     "direction": "unclear",
+     "since": "2026-11-01",
+     "text": "Mike Norvell was fired after the Oct. 31 home loss to Clemson; interim Rick Stockstill is 2-1 and says Ashton Daniels (FBS-high 14 INTs) stays the starter.",
+     "source": "FSU Wire (USA Today)",
+     "url": "https://sports.yahoo.com/articles/rick-stockstill-addresses-fsus-quarterback-193047559.html",
+     "date": "2026-11-23"
+    },
     {
      "direction": "too_high",
      "since": "2026-11-14",
@@ -115,60 +118,107 @@
      "date": "2026-11-21"
     }
    ],
-   "checked": "2026-11-23T09:45:00-05:00"
+   "checked": "2026-11-24T09:45:04-05:00",
+   "verified_numbers": [
+    "2-1"
+   ]
   },
   "Texas": {
-   "watch": [],
-   "checked": "2026-11-23T09:45:00-05:00"
+   "checked": "2026-11-24T09:44:47-05:00",
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-21",
+     "text": "S Kobe Black (knee, hurt vs Arkansas) is out for the season per Steve Sarkisian; a top backup with 341 snaps. DT Hero Kanu (biceps surgery) could 'potentially' return for the playoffs.",
+     "source": "Houston Chronicle",
+     "url": "https://sports.yahoo.com/articles/texas-defensive-back-kobe-black-233814243.html",
+     "date": "2026-11-23"
+    }
+   ]
   },
   "Michigan": {
-   "watch": [],
-   "checked": "2026-11-23T09:45:00-05:00"
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-21",
+     "text": "QB Bryce Underwood has a lower-body injury from the Nov. 21 UCLA win; Whittingham says he starts at Ohio State barring a practice setback. RB Jordan Marshall missed UCLA, hoped back.",
+     "source": "SB Nation / Yahoo",
+     "url": "https://sports.yahoo.com/articles/michigan-qb-bryce-underwood-dealing-170000084.html",
+     "date": "2026-11-23"
+    }
+   ],
+   "checked": "2026-11-24T09:45:04-05:00"
   },
   "Nebraska": {
-   "watch": [],
-   "checked": "2026-11-23T09:45:00-05:00"
+   "checked": "2026-11-24T09:44:47-05:00",
+   "watch": []
   },
   "Notre Dame": {
-   "watch": [],
-   "checked": "2026-11-23T14:45:00-05:00"
+   "checked": "2026-11-24T09:44:47-05:00",
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-21",
+     "text": "S Luke Talich (torn Achilles vs SMU, team leader with 3 INTs) is out for the season; LB Kyngstonn Viliamu-Asa (knee) and WR Jaden Greathouse (hand) are ruled out for Syracuse.",
+     "source": "Fighting Irish Wire",
+     "url": "https://sports.yahoo.com/articles/notre-dame-without-two-stars-190310502.html",
+     "date": "2026-11-23"
+    }
+   ]
   },
   "TCU": {
-   "watch": [],
-   "checked": "2026-11-23T09:45:00-05:00"
+   "checked": "2026-11-24T09:44:47-05:00",
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-21",
+     "text": "QB Jaden Craig (ankle) was ruled out for Texas Tech on Monday's initial Big 12 availability report after missing the Utah loss; sophomore Adam Schobel makes his second start.",
+     "source": "Fort Worth Star-Telegram",
+     "url": "https://sports.yahoo.com/articles/tcu-starting-quarterback-ruled-regular-033343887.html",
+     "date": "2026-11-24"
+    },
+    {
+     "direction": "unclear",
+     "since": "2026-11-22",
+     "text": "TCU fired Sonny Dykes on Sunday after the 38-17 home loss to Utah; defensive coordinator Andy Avalos is interim coach for Texas Tech. RB G'Ivori Graham is also out.",
+     "source": "Fort Worth Star-Telegram",
+     "url": "https://sports.yahoo.com/articles/tcu-starting-quarterback-ruled-regular-033343887.html",
+     "date": "2026-11-24"
+    }
+   ]
   },
   "Oregon": {
-   "watch": [],
-   "checked": "2026-11-23T09:45:00-05:00"
+   "checked": "2026-11-24T09:44:47-05:00",
+   "watch": []
   },
   "Alabama": {
    "watch": [
     {
      "direction": "unclear",
      "since": "2026-11-21",
-     "text": "QB Keelon Russell (ankle) sat out the Nov. 21 Chattanooga win; DeBoer expects him 'full speed, full go' this week for Auburn.",
-     "source": "Heavy",
-     "url": "https://heavy.com/sports/college-football/alabama-crimson-tide/alabama-kalen-deboer-provides-injury-update-on-qb-keelon-russell-2/",
-     "date": "2026-11-22"
+     "text": "QB Keelon Russell (ankle) sat out the Nov. 21 Chattanooga win; DeBoer said Nov. 23 he is in a 'good spot' and expected to practice fully for Auburn. Not formally named starter.",
+     "source": "WBRC",
+     "url": "https://www.wbrc.com/2026/11/23/deboer-keelon-russell-good-spot-heading-into-iron-bowl-preparation/",
+     "date": "2026-11-23"
     }
    ],
-   "checked": "2026-11-23T09:45:00-05:00"
+   "checked": "2026-11-24T09:45:04-05:00"
   },
   "Vanderbilt": {
    "watch": [
     {
      "direction": "unclear",
      "since": "2026-11-21",
-     "text": "QB Jared Curtis aggravated a lingering left wrist injury vs Florida on Nov. 21 but returned; Clark Lea expects him to practice and start vs Tennessee.",
-     "source": "Sports Illustrated",
-     "url": "https://www.si.com/college/vanderbilt/football/clark-lea-updates-jared-curtis-status-for-vanderbilt-football-following-wrist-injury-against-florida-01m7zynqpf2m",
-     "date": "2026-11-22"
+     "text": "QB Jared Curtis (hand/wrist) is 'banged up' but expected to play; OL Clinton Azubuike (carted off at Florida) and Lyndon Cooper (shoulder) are questionable, per Clark Lea.",
+     "source": "The Tennessean",
+     "url": "https://sports.yahoo.com/articles/jared-curtis-offensive-line-injury-195204501.html",
+     "date": "2026-11-23"
     }
    ],
-   "checked": "2026-11-23T09:45:00-05:00"
+   "checked": "2026-11-24T09:45:04-05:00"
   },
   "Syracuse": {
-   "checked": "2026-11-23T14:45:00-05:00",
+   "checked": "2026-11-24T09:44:47-05:00",
    "watch": [
     {
      "direction": "too_high",
@@ -182,72 +232,115 @@
   },
   "Florida": {
    "watch": [],
-   "checked": "2026-11-23T09:45:00-05:00"
+   "checked": "2026-11-24T09:45:04-05:00"
   },
   "UCLA": {
    "watch": [
     {
      "direction": "too_high",
      "since": "2026-11-21",
-     "text": "QB Ty Dieffenbach was carted off in OT vs Michigan on Nov. 21 (left leg); X-rays reportedly negative, USC status uncertain. Nico Iamaleava is out for the year.",
-     "source": "ESPN",
-     "url": "https://www.espn.com/college-football/story/_/id/50556107/ucla-qb-ty-dieffenbach-carted-3ot-loss-michigan",
-     "date": "2026-11-22"
+     "text": "QB Ty Dieffenbach (minor hip injury) was carted off in OT at Michigan Nov. 21; Chesney says he is not ruled out for USC but 'nowhere near in the clear'. Madden Iamaleava is next.",
+     "source": "ESPN / ABC7",
+     "url": "https://abc7.com/post/sources-ucla-qb-dieffenbach-dealing-minor-hip-injury/20070191/",
+     "date": "2026-11-23"
     }
    ],
-   "checked": "2026-11-23T09:45:00-05:00"
+   "checked": "2026-11-24T09:45:04-05:00"
   },
   "Kentucky": {
-   "watch": [],
-   "checked": "2026-11-23T09:45:00-05:00"
+   "checked": "2026-11-24T09:44:47-05:00",
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-21",
+     "text": "RB CJ Baxter (RB1 in 10 of 11 games) and RT Malachi Wood (10 straight starts) were hurt at Missouri; Will Stein calls both day to day, likely game-time decisions for Louisville.",
+     "source": "Louisville Courier Journal",
+     "url": "https://sports.yahoo.com/articles/uks-offense-2-key-starters-173029694.html",
+     "date": "2026-11-23"
+    }
+   ]
   },
   "Duke": {
-   "watch": [],
-   "checked": "2026-11-23T09:45:00-05:00"
+   "checked": "2026-11-24T09:44:47-05:00",
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-21",
+     "text": "LB Luke Mergott (leg, hurt before halftime vs Clemson) is out for the season, Manny Diaz said Monday; Will Felder takes more snaps. Diaz hopes to have Kyon Loud back.",
+     "source": "Yahoo Sports",
+     "url": "https://sports.yahoo.com/articles/duke-footballs-luke-mergott-rest-203438201.html",
+     "date": "2026-11-23"
+    }
+   ]
   },
   "NC State": {
-   "watch": [],
-   "checked": "2026-11-23T09:45:00-05:00"
+   "checked": "2026-11-24T09:44:47-05:00",
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-21",
+     "text": "RB Duke Scott, back from a lower-body injury, was hurt again in the 28-10 win at Florida State (7 carries, 24 yards); his status for North Carolina is unknown.",
+     "source": "Rotowire (via 247Sports)",
+     "url": "https://www.rotowire.com/cfootball/headlines/duke-scott-injury-suffers-injury-saturday-240946",
+     "date": "2026-11-22"
+    }
+   ]
   },
   "Ole Miss": {
    "watch": [
     {
      "direction": "too_high",
      "since": "2026-11-17",
-     "text": "RB Kewan Lacy is out for the season and RB Shekai Mills-Knight has a high ankle sprain (Pete Golding, Nov. 17); our ratings were built mostly with Lacy.",
+     "text": "RB Kewan Lacy is out for the season (shoulder surgery); RB Shekai Mills-Knight (high ankle) is a game-time call but 'ahead of where we thought', per Golding Nov. 23.",
      "source": "HottyToddy.com",
-     "url": "https://www.hottytoddy.com/2026/11/17/ole-miss-injury-report-lacy-mills-knight-frazier-wofford/",
-     "date": "2026-11-17"
+     "url": "https://www.hottytoddy.com/2026/11/23/pete-golding-ole-miss-egg-bowl-press-conference/",
+     "date": "2026-11-23"
+    },
+    {
+     "direction": "too_low",
+     "since": "2026-11-23",
+     "text": "DL Kam Franklin (hamstring) and Will Echoles, held out vs Wofford, practiced fully Monday and are expected to play; Golding takes back defensive play-calling for the Egg Bowl.",
+     "source": "HottyToddy.com",
+     "url": "https://www.hottytoddy.com/2026/11/23/pete-golding-ole-miss-egg-bowl-press-conference/",
+     "date": "2026-11-23"
     }
    ],
-   "checked": "2026-11-23T09:45:00-05:00"
+   "checked": "2026-11-24T09:45:04-05:00"
   },
   "Pittsburgh": {
    "watch": [
     {
      "direction": "too_high",
-     "since": "2026-10-04",
-     "text": "QB Mason Heintschel tore his ACL in early October; Pitt is 1-5 since and Narduzzi has not named a starter (Holden Geriner or Corey Dailey) for Cal.",
+     "since": "2026-10-02",
+     "text": "QB Mason Heintschel tore his ACL in the Oct. 2 win at Virginia Tech; Pitt is 1-5 since, and Narduzzi says Holden Geriner starts if healthy. No new update found this week.",
      "source": "TribLive",
      "url": "https://triblive.com/sports/pitt-football-notebook-pat-narduzzi-says-holden-geriner-if-healthy-is-starting-qb/",
      "date": "2026-11-22"
     }
    ],
-   "checked": "2026-11-23T09:45:00-05:00",
+   "checked": "2026-11-24T09:45:04-05:00",
    "verified_numbers": [
     "1-5"
    ]
   },
   "North Texas": {
-   "checked": "2026-11-23T09:40:04-05:00",
+   "checked": "2026-11-24T09:45:00-05:00",
    "watch": [
     {
      "direction": "too_high",
      "since": "2026-11-14",
-     "text": "Starting QB Tayven Jackson (upper body) misses the UAB game; Chris Jimerson Jr. starts and backup Chaston Ditta is also hurt.",
-     "source": "ESPN",
-     "url": "https://www.espn.com/college-football/story/_/id/50513204/north-texas-qb-tayven-jackson-upper-body-injury",
-     "date": "2026-11-17"
+     "text": "Starting QB Tayven Jackson (upper body) is ruled out for UAB, and backup Chris Jimerson Jr. hurt his knee at Tulane on Nov. 21; Neal Brown was not optimistic about him.",
+     "source": "Denton Record-Chronicle",
+     "url": "https://dentonrc.com/sports/colleges/mean_green/unt-falls-in-heartbreaker-at-tulane-after-losing-third-qb-this-season/article_43584c12-0f62-422b-a74d-93de23f88d88.html",
+     "date": "2026-11-21"
+    },
+    {
+     "direction": "too_high",
+     "since": "2026-11-21",
+     "text": "Third QB Chaston Ditta is 'not going to be ready,' so slot receiver James Tyre (4-of-7 at Tulane) could start at quarterback vs UAB.",
+     "source": "Denton Record-Chronicle",
+     "url": "https://dentonrc.com/sports/colleges/mean_green/unt-falls-in-heartbreaker-at-tulane-after-losing-third-qb-this-season/article_43584c12-0f62-422b-a74d-93de23f88d88.html",
+     "date": "2026-11-21"
     }
    ]
   },
@@ -255,243 +348,338 @@
    "watch": [
     {
      "direction": "too_low",
-     "since": "2026-10-03",
-     "text": "QB Alonza Barnett III missed five games with a hamstring injury and has started the last four since returning; ratings still carry the games without him.",
+     "since": "2026-09-19",
+     "text": "QB Alonza Barnett III missed five games (Sept. 19-Oct. 24, hamstring) and has played the last four since Oct. 30; ratings still carry the games without him.",
      "source": "Yahoo Sports",
      "url": "https://sports.yahoo.com/fantasy/article/week-13-college-fantasy-football-waiver-wire-pickups-brandon-smith-josh-derry-among-top-adds-for-title-matchups-200218133.html",
      "date": "2026-11-22"
     }
    ],
-   "checked": "2026-11-23T15:24:31-05:00"
+   "checked": "2026-11-24T09:45:04-05:00"
   },
   "Colorado": {
    "watch": [],
-   "checked": "2026-11-23T09:45:00-05:00"
+   "checked": "2026-11-24T09:45:04-05:00"
   },
   "Indiana": {
+   "checked": "2026-11-24T09:44:47-05:00",
    "watch": [
     {
      "direction": "too_high",
      "since": "2026-11-21",
-     "text": "C Bray Lynch (lower leg) and WR Nick Marsh were hurt in the Nov. 21 OT loss at Washington, G Joe Brunner is out for the year, and Cignetti hasn't named a QB for Purdue.",
-     "source": "The Daily Hoosier",
-     "url": "https://www.thedailyhoosier.com/injury-concerns-mounting-for-iu-football-ahead-of-season-finale/",
-     "date": "2026-11-22"
+     "text": "Cignetti said C Bray Lynch (lower leg) 'doesn't look good'; WR Nick Marsh left the Washington loss, G Joe Brunner is out for the year and RB Turbo Richard (shoulder) has missed two games.",
+     "source": "AP",
+     "url": "https://www.wral.com/news/ap/96fa0-cignetti-non-committal-on-staring-qb-against-purdue-but-no-12-indiana-could-be-missing-its-center/",
+     "date": "2026-11-23"
+    },
+    {
+     "direction": "unclear",
+     "since": "2026-11-14",
+     "text": "QB undecided for Purdue: Grant Wilson started the last two games while Josh Hoover (right shoulder) was hurt; Hoover relieved him at Washington, and both get first-team reps.",
+     "source": "AP",
+     "url": "https://www.wral.com/news/ap/96fa0-cignetti-non-committal-on-staring-qb-against-purdue-but-no-12-indiana-could-be-missing-its-center/",
+     "date": "2026-11-23"
     }
-   ],
-   "checked": "2026-11-23T09:45:00-05:00"
+   ]
   },
   "Purdue": {
-   "watch": [],
-   "checked": "2026-11-23T09:45:00-05:00"
+   "checked": "2026-11-24T09:44:47-05:00",
+   "watch": []
   },
   "Houston": {
+   "checked": "2026-11-24T09:44:47-05:00",
    "watch": [
     {
      "direction": "unclear",
      "since": "2026-11-21",
-     "text": "QB Conner Weigman (shoulder) missed the Nov. 21 West Virginia win and is working to return for Baylor; freshman Keisean Henderson started.",
-     "source": "ClutchPoints",
-     "url": "https://clutchpoints.com/ncaa-football/houston-football-news-starting-qb-conner-weigman-crucial-injury-update-west-virginia",
-     "date": "2026-11-21"
+     "text": "QB Conner Weigman (shoulder) missed the West Virginia win; Willie Fritz said he 'threw the ball some and felt a little better' Monday, decision by Thursday or Friday; else Keisean Henderson starts.",
+     "source": "Houston Chronicle",
+     "url": "https://sports.yahoo.com/articles/uhs-conner-weigman-felt-little-204200052.html",
+     "date": "2026-11-23"
     }
-   ],
-   "checked": "2026-11-23T09:45:00-05:00"
+   ]
   },
   "SMU": {
    "watch": [
     {
      "direction": "too_high",
      "since": "2026-11-21",
-     "text": "QB Kevin Jennings hurt his ankle in the 2nd quarter of the Nov. 21 loss at Notre Dame and was limited, per Rhett Lashlee; no status yet for Stanford.",
+     "text": "QB Kevin Jennings rolled his ankle in the 2nd quarter of the Nov. 21 loss at Notre Dame and was limited, per Lashlee; no status update found yet for Stanford.",
      "source": "Yahoo Sports",
      "url": "https://sports.yahoo.com/articles/defense-powers-no-3-notre-065611575.html",
      "date": "2026-11-22"
     }
    ],
-   "checked": "2026-11-23T09:45:00-05:00"
+   "checked": "2026-11-24T09:45:04-05:00"
   },
   "Wisconsin": {
    "watch": [
     {
      "direction": "too_low",
      "since": "2026-11-21",
-     "text": "Colton Joseph returned as Wisconsin's starting QB in the Nov. 21 win at Purdue after freshman Ryan Hopkins was hurt; the Badgers started Hopkins in earlier games.",
-     "source": "Sports Illustrated",
-     "url": "https://www.si.com/college/wisconsin/football/rohrer-s-reaction-wisconsin-bullies-purdue-setting-the-stage-for-enormous-axe-game",
-     "date": "2026-11-22"
+     "text": "Colton Joseph started the 42-10 win at Purdue on Nov. 21; Fickell says Joseph 'has earned the right' (no formal call yet) and Ryan Hopkins only cleared concussion protocol late last week.",
+     "source": "SI (Badgers On SI)",
+     "url": "https://sports.yahoo.com/articles/luke-fickell-updates-wisconsin-footballs-183846787.html",
+     "date": "2026-11-23"
     }
    ],
-   "checked": "2026-11-23T09:45:00-05:00"
+   "checked": "2026-11-24T09:45:04-05:00"
   },
   "Arizona": {
-   "watch": [],
-   "checked": "2026-11-23T09:45:00-05:00"
+   "checked": "2026-11-24T09:44:47-05:00",
+   "watch": []
   },
   "Arizona State": {
-   "watch": [],
-   "checked": "2026-11-23T09:45:00-05:00"
+   "checked": "2026-11-24T09:44:47-05:00",
+   "watch": []
   },
   "Arkansas": {
-   "watch": [],
-   "checked": "2026-11-23T09:45:00-05:00"
+   "checked": "2026-11-24T09:44:47-05:00",
+   "watch": []
   },
   "Auburn": {
    "watch": [],
-   "checked": "2026-11-23T09:45:00-05:00"
+   "checked": "2026-11-24T09:45:04-05:00"
   },
   "BYU": {
-   "watch": [],
-   "checked": "2026-11-23T09:45:00-05:00"
+   "checked": "2026-11-24T09:44:47-05:00",
+   "watch": []
   },
   "Baylor": {
-   "watch": [],
-   "checked": "2026-11-23T09:45:00-05:00"
+   "checked": "2026-11-24T09:44:47-05:00",
+   "watch": []
   },
   "Boston College": {
    "watch": [],
-   "checked": "2026-11-23T09:45:00-05:00"
+   "checked": "2026-11-24T09:45:04-05:00"
   },
   "California": {
    "watch": [],
-   "checked": "2026-11-23T09:45:00-05:00"
+   "checked": "2026-11-24T09:45:04-05:00"
   },
   "Cincinnati": {
-   "watch": [],
-   "checked": "2026-11-23T09:45:00-05:00"
+   "checked": "2026-11-24T09:44:47-05:00",
+   "watch": []
   },
   "Georgia": {
-   "watch": [],
-   "checked": "2026-11-23T09:45:00-05:00"
+   "checked": "2026-11-24T09:44:47-05:00",
+   "watch": [
+    {
+     "direction": "too_low",
+     "since": "2026-11-14",
+     "text": "C Drew Bobo (back) missed the last two games; Kirby Smart: 'We think he'll be able to play this week.' There is no SEC availability report for the nonconference Georgia Tech game.",
+     "source": "Atlanta Journal-Constitution",
+     "url": "https://www.ajc.com/sports/2026/11/kirby-smart-drew-bobo-injury/",
+     "date": "2026-11-23"
+    }
+   ]
   },
   "Georgia Tech": {
-   "watch": [],
-   "checked": "2026-11-23T09:45:00-05:00"
+   "checked": "2026-11-24T09:44:47-05:00",
+   "watch": []
   },
   "Iowa": {
-   "watch": [],
-   "checked": "2026-11-23T09:45:00-05:00"
+   "checked": "2026-11-24T09:44:47-05:00",
+   "watch": []
   },
   "Iowa State": {
-   "watch": [],
-   "checked": "2026-11-23T09:45:00-05:00"
+   "checked": "2026-11-24T09:44:47-05:00",
+   "watch": []
   },
   "Kansas": {
-   "watch": [],
-   "checked": "2026-11-23T09:45:00-05:00"
+   "checked": "2026-11-24T09:44:47-05:00",
+   "watch": []
   },
   "Kansas State": {
-   "watch": [],
-   "checked": "2026-11-23T09:45:00-05:00"
+   "checked": "2026-11-24T09:44:47-05:00",
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-10-24",
+     "text": "QB Avery Johnson has been out since late October and is expected to miss the rest of the season; Dillon Duff has started for the Wildcats, so our ratings still carry his early starts.",
+     "source": "Roundtable Sports",
+     "url": "https://sports.yahoo.com/articles/whats-latest-kansas-state-qb-190039100.html",
+     "date": "2026-11-18"
+    }
+   ]
   },
   "LSU": {
-   "watch": [],
-   "checked": "2026-11-23T09:45:00-05:00"
+   "checked": "2026-11-24T09:44:47-05:00",
+   "watch": []
   },
   "Louisville": {
-   "watch": [],
-   "checked": "2026-11-23T09:45:00-05:00"
+   "checked": "2026-11-24T09:44:47-05:00",
+   "watch": []
   },
   "Maryland": {
-   "watch": [],
-   "checked": "2026-11-23T09:45:00-05:00"
+   "checked": "2026-11-24T09:44:47-05:00",
+   "watch": []
   },
   "Miami": {
-   "watch": [],
-   "checked": "2026-11-23T09:45:00-05:00"
+   "watch": [
+    {
+     "direction": "too_low",
+     "since": "2026-11-23",
+     "text": "CB Ja'Boree Antoine (out all season since fall camp) and RG Max Buchanan (knee, hurt vs Clemson Oct. 3) are back practicing; Cristobal says both may play BC.",
+     "source": "South Florida Sun-Sentinel",
+     "url": "https://sports.yahoo.com/articles/two-key-hurricanes-could-return-214300192.html",
+     "date": "2026-11-23"
+    },
+    {
+     "direction": "too_high",
+     "since": "2026-11-03",
+     "text": "WR Malachi Toney (high ankle sprain, surgery) has been out since a Nov. 4 practice; Cristobal put him about 1.5 weeks out, so BC looks unlikely.",
+     "source": "Fox Sports",
+     "url": "https://www.foxsports.com/stories/college-football/miami-coach-mario-cristobal-updates-malachi-toneys-recovery-eyes-possible-return-within-2-weeks",
+     "date": "2026-11-20"
+    }
+   ],
+   "checked": "2026-11-24T09:45:04-05:00"
   },
   "Michigan State": {
-   "watch": [],
-   "checked": "2026-11-23T09:45:00-05:00"
+   "checked": "2026-11-24T09:44:47-05:00",
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-14",
+     "text": "QB Alessio Milivojevic (arm, hurt vs Washington) is almost certainly out at Rutgers; third-stringer Kayd Coffman started the 45-7 loss to Oregon, and Cam Fancher (leg) is 'hopeful'.",
+     "source": "Sports Illustrated (Spartan Nation)",
+     "url": "https://www.si.com/college/michiganstate/football/three-questions-facing-msu-entering-final-week-at-rutgers",
+     "date": "2026-11-23"
+    }
+   ]
   },
   "Minnesota": {
    "watch": [],
-   "checked": "2026-11-23T09:45:00-05:00"
+   "checked": "2026-11-24T09:45:04-05:00"
   },
   "Missouri": {
-   "watch": [],
-   "checked": "2026-11-23T09:45:00-05:00"
+   "checked": "2026-11-24T09:44:47-05:00",
+   "watch": []
   },
   "Oklahoma": {
-   "watch": [],
-   "checked": "2026-11-23T09:45:00-05:00"
+   "checked": "2026-11-24T09:44:47-05:00",
+   "watch": []
   },
   "Oklahoma State": {
-   "watch": [],
-   "checked": "2026-11-23T09:45:00-05:00"
+   "checked": "2026-11-24T09:44:47-05:00",
+   "watch": []
   },
   "Penn State": {
-   "watch": [],
-   "checked": "2026-11-23T09:45:00-05:00"
+   "checked": "2026-11-24T09:44:47-05:00",
+   "watch": []
   },
   "Rutgers": {
-   "watch": [],
-   "checked": "2026-11-23T09:45:00-05:00"
+   "checked": "2026-11-24T09:44:47-05:00",
+   "watch": []
   },
   "Stanford": {
    "watch": [],
-   "checked": "2026-11-23T09:45:00-05:00"
+   "checked": "2026-11-24T09:45:04-05:00"
   },
   "Texas A&M": {
-   "watch": [],
-   "checked": "2026-11-23T09:45:00-05:00"
+   "checked": "2026-11-24T09:44:47-05:00",
+   "watch": [
+    {
+     "direction": "unclear",
+     "since": "2026-11-14",
+     "text": "Mike Elko has not picked a QB for Texas: Marcel Reed was benched vs Tennessee and Brady Hart started the 28-7 loss at Oklahoma (8 of 20, 131 yards, 1 TD, 1 INT).",
+     "source": "Houston Chronicle",
+     "url": "https://sports.yahoo.com/articles/texas-m-undecided-quarterback-against-002629155.html",
+     "date": "2026-11-24"
+    },
+    {
+     "direction": "too_high",
+     "since": "2026-11-24",
+     "text": "Elko ruled out sophomore DT Landon Rink (illness) for Texas; he also missed the Oklahoma game.",
+     "source": "Aggies Wire",
+     "url": "https://sports.yahoo.com/articles/texas-m-dl-dealing-illness-102540755.html",
+     "date": "2026-11-24"
+    }
+   ]
   },
   "Texas Tech": {
-   "watch": [],
-   "checked": "2026-11-23T09:45:00-05:00"
+   "checked": "2026-11-24T09:44:47-05:00",
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-23",
+     "text": "RB Quinten Joyner, WR Jalen Jones and S Miquel Dingle Jr. are out and OLB LaDamion Guyton doubtful on Monday's initial Big 12 availability report for TCU.",
+     "source": "Staking the Plains",
+     "url": "https://www.stakingtheplains.com/2026/11/24/the-week-ahead-tcu-vs-texas-tech/",
+     "date": "2026-11-24"
+    },
+    {
+     "direction": "too_low",
+     "since": "2026-11-23",
+     "text": "WR Coy Eakin is probable and Joey McGuire expects him back in his starting role; McGuire said WR Micah Hudson should be good and RB Cam Dickey is close to 100%.",
+     "source": "Staking the Plains",
+     "url": "https://www.stakingtheplains.com/2026/11/24/the-week-ahead-tcu-vs-texas-tech/",
+     "date": "2026-11-24"
+    }
+   ]
   },
   "USC": {
    "watch": [],
-   "checked": "2026-11-23T09:45:00-05:00"
+   "checked": "2026-11-24T09:45:04-05:00"
   },
   "Utah": {
-   "watch": [],
-   "checked": "2026-11-23T09:45:00-05:00"
+   "checked": "2026-11-24T09:44:47-05:00",
+   "watch": []
   },
   "Virginia": {
-   "watch": [],
-   "checked": "2026-11-23T09:45:00-05:00"
+   "checked": "2026-11-24T09:44:47-05:00",
+   "watch": []
   },
   "Virginia Tech": {
-   "watch": [],
-   "checked": "2026-11-23T09:45:00-05:00"
+   "checked": "2026-11-24T09:44:47-05:00",
+   "watch": []
   },
   "Wake Forest": {
-   "watch": [],
-   "checked": "2026-11-23T09:45:00-05:00"
-  },
-  "Washington": {
-   "watch": [],
-   "checked": "2026-11-23T09:45:00-05:00"
-  },
-  "West Virginia": {
-   "watch": [],
-   "checked": "2026-11-23T09:45:00-05:00"
-  },
-  "Hawai'i": {
-   "checked": "2026-11-23T09:40:04-05:00",
+   "checked": "2026-11-24T09:44:47-05:00",
    "watch": [
     {
      "direction": "too_high",
      "since": "2026-11-21",
-     "text": "Starting QB Micah Alejado was carted off with a lower-leg injury on Nov. 21 at Nevada; no diagnosis yet, so he may miss the Sacramento State finale.",
-     "source": "West Hawaii Today",
-     "url": "https://www.westhawaiitoday.com/2026/11/23/sports/warriors-lose-qb-micah-alejado-to-injury-in-loss-to-wolf-pack/",
+     "text": "RB Ty Clark (team-high 591 rushing yards, 11 TDs) is out for the season after being hurt in the 50-29 win at Georgia Tech, Jake Dickert said Monday; Deuce Lawrence and Jamar Searcy step in.",
+     "source": "AP",
+     "url": "https://www.wral.com/news/ap/de676-no-8-wake-forest-loses-running-back-ty-clark-to-season-ending-injury/",
+     "date": "2026-11-23"
+    }
+   ]
+  },
+  "Washington": {
+   "checked": "2026-11-24T09:44:47-05:00",
+   "watch": []
+  },
+  "West Virginia": {
+   "checked": "2026-11-24T09:44:47-05:00",
+   "watch": []
+  },
+  "Hawai'i": {
+   "checked": "2026-11-24T09:44:45-05:00",
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-22",
+     "text": "Starting QB Micah Alejado (left knee, carted off in the 16-8 loss at Nevada) is out for the Sacramento State finale; freshman Bjorn Jurgensen makes his first career start.",
+     "source": "Hawaii News Now",
+     "url": "https://www.hawaiinewsnow.com/2026/11/24/uh-quarterback-micah-alejado-out-season-finale-against-sacramento-state/",
      "date": "2026-11-23"
     }
    ]
   },
   "Sacramento State": {
-   "checked": "2026-11-23T09:40:04-05:00",
+   "checked": "2026-11-24T09:44:45-05:00",
    "watch": []
   },
   "South Florida": {
-   "checked": "2026-11-23T09:40:04-05:00",
+   "checked": "2026-11-24T09:45:00-05:00",
    "watch": [
     {
      "direction": "too_high",
      "since": "2026-10-31",
-     "text": "QB Michael Van Buren (8 starts) has been out since Oct. 31; Luke Kromenhoek has started since and USF has lost three straight.",
+     "text": "QB Michael Van Buren has been out since Oct. 31; Luke Kromenhoek has started since and USF has lost three straight.",
      "source": "Yahoo Sports",
      "url": "https://sports.yahoo.com/articles/michael-van-buren-playing-tonight-215923313.html",
      "date": "2026-11-06"
@@ -507,16 +695,16 @@
    ]
   },
   "Tulane": {
-   "checked": "2026-11-23T09:40:04-05:00",
+   "checked": "2026-11-24T09:45:00-05:00",
    "watch": []
   },
   "South Alabama": {
-   "checked": "2026-11-23T09:40:04-05:00",
+   "checked": "2026-11-24T09:45:00-05:00",
    "watch": [
     {
      "direction": "too_low",
      "since": "2026-11-07",
-     "text": "QB Bishop Davenport returned as the starter on Nov. 7 after missing games with an injury; earlier games without him still weigh on our rating.",
+     "text": "QB Bishop Davenport returned as the starter on Nov. 7 after missing games with an injury and has started every game since; earlier games without him still weigh on our rating.",
      "source": "BVM Sports",
      "url": "https://bvmsports.com/2026/11/07/south-alabama-falls-28-26-after-rally-at-louisiana/",
      "date": "2026-11-07"
@@ -524,53 +712,62 @@
    ]
   },
   "App State": {
-   "checked": "2026-11-23T09:40:04-05:00",
+   "checked": "2026-11-24T09:45:00-05:00",
    "watch": []
   },
   "UTEP": {
-   "checked": "2026-11-23T09:40:04-05:00",
+   "checked": "2026-11-24T09:45:00-05:00",
    "watch": [
     {
      "direction": "too_high",
-     "since": "2026-11-18",
-     "text": "Coach Scotty Walden fired mid-November (interim Kyle Beyer), and starting QB EJ Colson is out with Raymond Moore III starting.",
+     "since": "2026-11-12",
+     "text": "Coach Scotty Walden was fired (interim Kyle Beyer), and QB EJ Colson has been out since Nov. 12 with Raymond Moore III starting; Rotowire lists Nov. 28 as his estimated return, unconfirmed.",
      "source": "Rotowire",
-     "url": "https://www.rotowire.com/cfootball/headlines/ej-colson-injury-will-remain-out-friday-240326",
-     "date": "2026-11-19"
+     "url": "https://www.rotowire.com/cfootball/player/ej-colson-46876",
+     "date": "2026-11-17"
     }
    ]
   },
   "Northern Illinois": {
-   "checked": "2026-11-23T09:40:04-05:00",
+   "checked": "2026-11-24T09:45:00-05:00",
    "watch": []
   },
   "Army": {
-   "checked": "2026-11-23T09:40:04-05:00",
-   "watch": []
+   "checked": "2026-11-24T09:45:00-05:00",
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-21",
+     "text": "Army played the 10-6 loss to East Carolina on Nov. 21 without three starting offensive linemen (C Brady Small in a boot, Kyle Kloska, Henry Appleton); Paolo Gennarelli also left hurt.",
+     "source": "Times Herald-Record (via Yahoo Sports)",
+     "url": "https://sports.yahoo.com/articles/army-football-bows-east-carolina-203414953.html",
+     "date": "2026-11-21"
+    }
+   ]
   },
   "Rice": {
-   "checked": "2026-11-23T09:40:04-05:00",
+   "checked": "2026-11-24T09:45:00-05:00",
    "watch": []
   },
   "Texas State": {
-   "checked": "2026-11-23T09:40:04-05:00",
+   "checked": "2026-11-24T09:45:00-05:00",
    "watch": []
   },
   "Utah State": {
-   "checked": "2026-11-23T09:40:04-05:00",
+   "checked": "2026-11-24T09:45:00-05:00",
    "watch": []
   },
   "San Diego State": {
-   "checked": "2026-11-23T09:40:04-05:00",
+   "checked": "2026-11-24T09:45:00-05:00",
    "watch": []
   },
   "Washington State": {
-   "checked": "2026-11-23T09:40:04-05:00",
+   "checked": "2026-11-24T09:45:00-05:00",
    "watch": [
     {
      "direction": "unclear",
      "since": "2026-10-31",
-     "text": "Washington State has slumped badly, capped by a 42-14 loss at Texas State on Nov. 21; QB Owen Eshelman played the whole game, no injury reported.",
+     "text": "Washington State (2-9) has slumped, capped by a 42-14 loss at Texas State on Nov. 21; QB Owen Eshelman played the whole game, no injury reported.",
      "source": "Spokesman-Review",
      "url": "https://www.spokesman.com/stories/2026/nov/21/wsu-was-far-too-careless-in-key-areas-to-beat-texa/",
      "date": "2026-11-21"
@@ -578,20 +775,20 @@
    ]
   },
   "Massachusetts": {
-   "checked": "2026-11-23T09:40:04-05:00",
+   "checked": "2026-11-24T09:45:00-05:00",
    "watch": [
     {
      "direction": "too_high",
-     "since": "2026-11-13",
-     "text": "QB Pop Watson re-injured his ankle early vs Toledo after missing two October games; he was on the injury report before Akron and his status for Bowling Green is unknown.",
-     "source": "Yahoo Sports",
-     "url": "https://sports.yahoo.com/articles/akron-vs-umass-prediction-pick-130341627.html",
-     "date": "2026-11-18"
+     "since": "2026-11-11",
+     "text": "QB Pop Watson hurt his ankle early vs Toledo and missed the Nov. 18 Akron game (Logan Inagawa started); no update yet for Bowling Green.",
+     "source": "MassLive (via Yahoo Sports)",
+     "url": "https://sports.yahoo.com/articles/umass-football-loss-akron-leaves-045725029.html",
+     "date": "2026-11-19"
     }
    ]
   },
   "Central Michigan": {
-   "checked": "2026-11-23T09:40:04-05:00",
+   "checked": "2026-11-24T09:45:00-05:00",
    "watch": [
     {
      "direction": "too_high",
@@ -604,72 +801,75 @@
    ]
   },
   "Georgia State": {
-   "checked": "2026-11-23T09:40:04-05:00",
+   "checked": "2026-11-24T09:45:00-05:00",
    "watch": [
     {
-     "direction": "too_low",
-     "since": "2026-11-21",
-     "text": "Starting QB Cameran Brown has missed several games (Ayden Pereira starting) and may return for the Nov. 28 finale.",
+     "direction": "unclear",
+     "since": "2026-11-04",
+     "text": "Starting QB Cameran Brown is out again for the Nov. 28 Louisiana game (his fourth straight missed game, per 247Sports via Rotowire); Ayden Pereira starts.",
      "source": "Rotowire",
-     "url": "https://www.rotowire.com/cfootball/headlines/cameran-brown-injury-wont-play-at-marshall-240701",
-     "date": "2026-11-21"
+     "url": "https://www.rotowire.com/cfootball/player/cameran-brown-44855",
+     "date": "2026-11-23"
     }
    ]
   },
   "Jacksonville State": {
-   "checked": "2026-11-23T09:40:04-05:00",
+   "checked": "2026-11-24T09:45:00-05:00",
    "watch": []
   },
   "Akron": {
-   "checked": "2026-11-23T09:40:04-05:00",
+   "checked": "2026-11-24T09:45:00-05:00",
    "watch": []
   },
   "Buffalo": {
-   "checked": "2026-11-23T09:40:04-05:00",
+   "checked": "2026-11-24T09:45:00-05:00",
    "watch": []
   },
   "Ball State": {
-   "checked": "2026-11-23T09:40:04-05:00",
+   "checked": "2026-11-24T09:45:00-05:00",
    "watch": []
   },
   "Delaware": {
-   "checked": "2026-11-23T09:40:04-05:00",
+   "checked": "2026-11-24T09:45:00-05:00",
    "watch": []
   },
   "Liberty": {
-   "checked": "2026-11-23T09:40:04-05:00",
-   "watch": []
+   "checked": "2026-11-24T09:45:00-05:00",
+   "watch": [],
+   "verified_numbers": [
+    "10-1"
+   ]
   },
   "Missouri State": {
-   "checked": "2026-11-23T09:40:04-05:00",
+   "checked": "2026-11-24T09:45:00-05:00",
    "watch": []
   },
   "Louisiana": {
-   "checked": "2026-11-23T09:40:04-05:00",
+   "checked": "2026-11-24T09:45:00-05:00",
    "watch": []
   },
   "North Dakota State": {
-   "checked": "2026-11-23T09:40:04-05:00",
+   "checked": "2026-11-24T09:45:00-05:00",
    "watch": []
   },
   "San José State": {
-   "checked": "2026-11-23T09:40:04-05:00",
+   "checked": "2026-11-24T09:45:00-05:00",
    "watch": []
   },
   "UAB": {
-   "checked": "2026-11-23T09:40:04-05:00",
+   "checked": "2026-11-24T09:45:00-05:00",
    "watch": []
   },
   "Marshall": {
-   "checked": "2026-11-23T09:40:04-05:00",
+   "checked": "2026-11-24T09:45:00-05:00",
    "watch": []
   },
   "UL Monroe": {
-   "checked": "2026-11-23T09:40:04-05:00",
+   "checked": "2026-11-24T09:45:00-05:00",
    "watch": []
   },
   "Eastern Michigan": {
-   "checked": "2026-11-24T08:45:20-05:00",
+   "checked": "2026-11-24T09:44:45-05:00",
    "watch": [
     {
      "direction": "too_high",
@@ -679,59 +879,304 @@
      "url": "https://www.therx.com/college-football/kent-state-eastern-michigan-prediction-2026/56036/",
      "date": "2026-11-24"
     }
+   ],
+   "verified_numbers": [
+    "0-3"
    ]
   },
   "Miami (OH)": {
-   "checked": "2026-11-24T08:45:20-05:00",
+   "checked": "2026-11-24T09:44:45-05:00",
    "watch": [
     {
      "direction": "too_high",
      "since": "2026-11-11",
-     "text": "True freshman Drew Bellisari, the fourth-string QB, starts again; Caleb Heavner was hurt vs Ohio on 11/11 and Gotkowski and McComb are out for the season.",
+     "text": "True freshman Drew Bellisari, the fourth-string QB, starts again (2-0 so far); Caleb Heavner was hurt vs Ohio on 11/11 and Gotkowski and McComb are out for the season.",
      "source": "The Rx",
      "url": "https://www.therx.com/college-football/miami-oh-western-michigan-prediction-november-24-2026/56024/",
      "date": "2026-11-24"
     }
+   ],
+   "verified_numbers": [
+    "2-0"
    ]
   },
   "Kent State": {
-   "checked": "2026-11-24T08:45:20-05:00",
+   "checked": "2026-11-24T09:44:45-05:00",
    "watch": []
   },
   "Western Michigan": {
-   "checked": "2026-11-24T08:45:20-05:00",
+   "checked": "2026-11-24T09:44:45-05:00",
    "watch": []
+  },
+  "Bowling Green": {
+   "checked": "2026-11-24T09:45:00-05:00",
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-10-31",
+     "text": "Starting QB Jay Kastantin (9 starts) was hurt Oct. 31 and Eddie George said he will probably miss the rest of the year; Austin Novosad has started the last two games.",
+     "source": "BG Falcon Media",
+     "url": "https://bgfalconmedia.com/184448/sports/how-dii-transfer-jay-kastantins-led-falcon-football-in-2026/",
+     "date": "2026-11-23"
+    },
+    {
+     "direction": "too_high",
+     "since": "2026-11-20",
+     "text": "Bowling Green was also without RB Austyn Dendy and WR Winn Sharp in the 19-0 loss at Toledo on Nov. 20.",
+     "source": "By The Belt",
+     "url": "https://www.bythebelt.com/toledo-rockets-bowling-green-falcons-mac-football-game-recap-stats-score-november-20-2026-battle-of-i-75/",
+     "date": "2026-11-21"
+    }
+   ]
+  },
+  "Ohio": {
+   "checked": "2026-11-24T09:44:45-05:00",
+   "watch": []
+  },
+  "Toledo": {
+   "checked": "2026-11-24T09:44:45-05:00",
+   "watch": []
+  },
+  "UTSA": {
+   "checked": "2026-11-24T09:44:45-05:00",
+   "watch": []
+  },
+  "Tulsa": {
+   "checked": "2026-11-24T09:44:45-05:00",
+   "watch": []
+  },
+  "Memphis": {
+   "checked": "2026-11-24T09:44:45-05:00",
+   "watch": []
+  },
+  "Temple": {
+   "checked": "2026-11-24T09:44:45-05:00",
+   "watch": [
+    {
+     "direction": "unclear",
+     "since": "2026-11-20",
+     "text": "K.C. Keeler moved Jaxon Smolik back in as the starter vs Rice (27-31 loss) with Ajani Sheppard struggling and nursing an ankle injury.",
+     "source": "Philadelphia Inquirer",
+     "url": "https://www.inquirer.com/college-sports/temple/kc-keeler-qb-change-jaxon-smolik-ajani-sheppard-rice-20261116.html",
+     "date": "2026-11-16"
+    }
+   ]
+  },
+  "New Mexico": {
+   "checked": "2026-11-24T09:44:45-05:00",
+   "watch": [
+    {
+     "direction": "unclear",
+     "since": "2026-11-21",
+     "text": "Coach Jason Eck benched Toa Fa'avae for Luke Moga, who won his first career start 24-17 at Wyoming (234 yards passing, 1 TD, plus a rushing TD).",
+     "source": "KRQE",
+     "url": "https://www.krqe.com/sports/local-sports/luke-moga-shines-in-first-career-start-as-lobos-secure-second-straight-9-win-season/",
+     "date": "2026-11-22"
+    }
+   ]
+  },
+  "Air Force": {
+   "checked": "2026-11-24T09:44:45-05:00",
+   "watch": []
+  },
+  "Georgia Southern": {
+   "checked": "2026-11-24T09:44:45-05:00",
+   "watch": []
+  },
+  "Louisiana Tech": {
+   "checked": "2026-11-24T09:44:45-05:00",
+   "watch": []
+  },
+  "Charlotte": {
+   "checked": "2026-11-24T09:44:45-05:00",
+   "watch": []
+  },
+  "Navy": {
+   "checked": "2026-11-24T09:44:45-05:00",
+   "watch": []
+  },
+  "Wyoming": {
+   "checked": "2026-11-24T09:44:45-05:00",
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-15",
+     "text": "QB Tyler Hughes has a small fracture in his right forearm from the 41-35 win at UNLV; backup Landon Sims has started the last two (1-1), and no return has been announced.",
+     "source": "Heavy",
+     "url": "https://heavy.com/sports/college-football/wyoming-tyler-hughes-injury-update-bad-news-qb-depth-chart/",
+     "date": "2026-11-17"
+    }
+   ],
+   "verified_numbers": [
+    "1-1"
+   ]
+  },
+  "UConn": {
+   "checked": "2026-11-24T09:44:45-05:00",
+   "watch": []
+  },
+  "Western Kentucky": {
+   "checked": "2026-11-24T09:44:45-05:00",
+   "watch": []
+  },
+  "Kennesaw State": {
+   "checked": "2026-11-24T09:44:45-05:00",
+   "watch": [
+    {
+     "direction": "unclear",
+     "since": "2026-11-07",
+     "text": "Landon Varnes has run the offense the last three games (KSU 3-0) after Rickie Collins was benched and then hurt; KSU was 2-6 before, and Collins was questionable on the C-USA report on Nov. 21.",
+     "source": "RotoWire",
+     "url": "https://www.rotowire.com/cfootball/headlines/rickie-collins-injury-officially-deemed-questionable-240766",
+     "date": "2026-11-21"
+    }
+   ],
+   "verified_numbers": [
+    "3-0",
+    "2-6"
+   ]
+  },
+  "East Carolina": {
+   "checked": "2026-11-24T09:44:45-05:00",
+   "watch": []
+  },
+  "Florida Atlantic": {
+   "checked": "2026-11-24T09:44:45-05:00",
+   "watch": []
+  },
+  "Old Dominion": {
+   "checked": "2026-11-24T09:44:45-05:00",
+   "watch": []
+  },
+  "Southern Miss": {
+   "checked": "2026-11-24T09:44:45-05:00",
+   "watch": [
+    {
+     "direction": "unclear",
+     "since": "2026-11-06",
+     "text": "Coach Blake Anderson replaced Landry Lyddy (two straight wins) with dual-threat John White on Nov. 5; Southern Miss is 0-3 in White's starts.",
+     "source": "Sports Illustrated",
+     "url": "https://www.si.com/college/southernmiss/southern-miss-names-redshirt-sophomore-qb-john-white-as-starter-vs-james-madison",
+     "date": "2026-11-05"
+    }
+   ],
+   "verified_numbers": [
+    "0-3"
+   ]
+  },
+  "James Madison": {
+   "checked": "2026-11-24T09:44:45-05:00",
+   "watch": []
+  },
+  "Coastal Carolina": {
+   "checked": "2026-11-24T09:44:45-05:00",
+   "watch": []
+  },
+  "Middle Tennessee": {
+   "checked": "2026-11-24T09:44:45-05:00",
+   "watch": []
+  },
+  "New Mexico State": {
+   "checked": "2026-11-24T09:44:45-05:00",
+   "watch": []
+  },
+  "Florida International": {
+   "checked": "2026-11-24T09:44:45-05:00",
+   "watch": []
+  },
+  "Sam Houston": {
+   "checked": "2026-11-24T09:44:45-05:00",
+   "watch": []
+  },
+  "Arkansas State": {
+   "checked": "2026-11-24T09:44:45-05:00",
+   "watch": [
+    {
+     "direction": "unclear",
+     "since": "2026-11-17",
+     "text": "Butch Jones was fired on Nov. 17; associate head coach Jalen Ortiz is interim for the last two games, and the first one was a 48-3 loss at Louisiana Tech.",
+     "source": "KY3 (AP)",
+     "url": "https://www.ky3.com/2026/11/18/arkansas-state-fires-coach-butch-jones-after-team-regressed-his-sixth-season-charge/",
+     "date": "2026-11-18"
+    }
+   ]
+  },
+  "Troy": {
+   "checked": "2026-11-24T09:44:45-05:00",
+   "watch": []
+  },
+  "Colorado State": {
+   "checked": "2026-11-24T09:44:45-05:00",
+   "watch": []
+  },
+  "Boise State": {
+   "checked": "2026-11-24T09:44:45-05:00",
+   "watch": []
+  },
+  "UNLV": {
+   "checked": "2026-11-24T09:44:45-05:00",
+   "watch": []
+  },
+  "Nevada": {
+   "checked": "2026-11-24T09:44:45-05:00",
+   "watch": []
+  },
+  "Fresno State": {
+   "checked": "2026-11-24T09:44:45-05:00",
+   "watch": []
+  },
+  "Oregon State": {
+   "checked": "2026-11-24T09:44:45-05:00",
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-14",
+     "text": "QB Braden Atkinson (right hand, hurt vs Texas State) is out at Fresno State, his third straight missed game; Maalik Murphy starts again (OSU 1-1 in his starts).",
+     "source": "Yahoo Sports",
+     "url": "https://sports.yahoo.com/articles/oregon-state-qb-braden-atkinson-193332418.html",
+     "date": "2026-11-23"
+    }
+   ],
+   "verified_numbers": [
+    "1-1"
+   ]
   }
  },
  "games": {
   "401856765": {
-   "checked": "2026-11-23T09:45:00-05:00",
+   "checked": "2026-11-24T09:45:04-05:00",
    "verdict": "partly",
-   "summary": "Tennessee has lost several starters for the season (WR Mike Matthews among them), which covers some of the gap; Vanderbilt QB Jared Curtis is expected to start.",
+   "summary": "Tennessee is missing WR Mike Matthews for the year and RB DeSean Bishop is day to day, covering some of the gap; Vanderbilt QB Jared Curtis is expected to play.",
    "reasons": [
     {
-     "text": "WR Mike Matthews (knee) is out for the season; George MacIntyre's knee was not expected to cost him time.",
+     "text": "WR Mike Matthews (knee) is out for the season.",
      "source": "ClutchPoints",
      "url": "https://clutchpoints.com/ncaa-football/tennessee-football-news-george-macintyre-positive-injury-update-mike-matthews-news-less-fortunate",
      "date": "2026-11-19"
     },
     {
-     "text": "Clark Lea expects QB Jared Curtis (wrist) to practice and start vs Tennessee.",
-     "source": "Sports Illustrated",
-     "url": "https://www.si.com/college/vanderbilt/football/clark-lea-updates-jared-curtis-status-for-vanderbilt-football-following-wrist-injury-against-florida-01m7zynqpf2m",
-     "date": "2026-11-22"
+     "text": "RB DeSean Bishop (leg, left the LSU game) 'looked good' Monday, but Heupel will decide later in the week.",
+     "source": "BVM Sports",
+     "url": "http://bvmsports.com/2026/11/23/josh-heupel-updates-desean-bishops-injury-before-vanderbilt-game/",
+     "date": "2026-11-23"
+    },
+    {
+     "text": "Lea: QB Jared Curtis is banged up but expected to play; OL Clinton Azubuike and Lyndon Cooper are questionable.",
+     "source": "The Tennessean",
+     "url": "https://sports.yahoo.com/articles/jared-curtis-offensive-line-injury-195204501.html",
+     "date": "2026-11-23"
     }
    ]
   },
   "401858540": {
-   "checked": "2026-11-23T09:45:00-05:00",
+   "checked": "2026-11-24T09:45:04-05:00",
    "verdict": "partly",
-   "summary": "Ohio State is still without QB Julian Sayin (Luke Fahey has started since Oct. 17) and no return is confirmed; that covers part of a 7-point gap, not all of it.",
+   "summary": "Ohio State is 1-3 with Luke Fahey since QB Julian Sayin's Oct. 17 elbow injury and Sayin is not expected back for Michigan, covering a good part of the gap; Michigan's QB is also banged up.",
    "reasons": [
     {
-     "text": "Rotowire lists Sayin (throwing arm) out with an estimated return of Nov. 28; Ohio State has not confirmed he will play Michigan.",
-     "source": "Rotowire",
-     "url": "https://www.rotowire.com/cfootball/player.php?id=45114",
+     "text": "Sayin (right elbow surgery) has missed four games and is not expected to play Michigan; Fahey starts.",
+     "source": "Athlon Sports",
+     "url": "https://sports.yahoo.com/articles/julian-sayin-injury-ohio-state-165509614.html",
      "date": "2026-11-21"
     },
     {
@@ -739,11 +1184,20 @@
      "source": "Eleven Warriors",
      "url": "https://www.elevenwarriors.com/ohio-state-football/2026/11/165618/ohio-state-suffers-fourth-loss-of-season-at-nebraska-31-28-officially-killing-its-playoff-hopes",
      "date": "2026-11-21"
+    },
+    {
+     "text": "Michigan QB Bryce Underwood has a lower-body injury but Whittingham says he will start barring a setback (points our way).",
+     "source": "SB Nation / Yahoo",
+     "url": "https://sports.yahoo.com/articles/michigan-qb-bryce-underwood-dealing-170000084.html",
+     "date": "2026-11-23"
     }
    ],
    "swings": {
-    "Ohio State": "Ohio State lost 31-28 at Nebraska on Nov. 21 with QB Julian Sayin still out (Eleven Warriors); the market marked the Buckeyes down more than our ratings did."
-   }
+    "Ohio State": "Ohio State lost 31-28 at Nebraska on Nov. 21 with QB Julian Sayin still out and not expected back for Michigan (Athlon); the market marked the Buckeyes down more than our ratings."
+   },
+   "verified_numbers": [
+    "1-3"
+   ]
   },
   "401856873": {
    "checked": "2026-11-23T09:45:00-05:00",
@@ -765,125 +1219,158 @@
    ]
   },
   "401856759": {
-   "checked": "2026-11-23T09:45:00-05:00",
+   "checked": "2026-11-24T09:45:04-05:00",
    "verdict": "partly",
-   "summary": "FSU is badly depleted (top four RBs out in the 28-10 home loss to NC State, edge Rylan Kennedy lost for the year), which explains part of the market's lean to Florida.",
+   "summary": "FSU is on an interim coach (Norvell fired after Clemson) and badly depleted at RB after a 28-10 home loss to NC State, which explains part of the market's lean to Florida.",
    "reasons": [
     {
      "text": "FSU lost 28-10 at home to NC State on Nov. 21 with its top four RBs out; Ashton Daniels threw 2 INTs.",
      "source": "WRAL (AP)",
      "url": "https://www.wral.com/news/ap/3e53f-cj-bailey-davion-gause-lead-nc-state-to-28-10-win-over-florida-state/",
      "date": "2026-11-21"
+    },
+    {
+     "text": "Interim coach Rick Stockstill keeps Daniels (FBS-high 14 INTs) as starter; Norvell was fired after the Oct. 31 loss to Clemson.",
+     "source": "FSU Wire (USA Today)",
+     "url": "https://sports.yahoo.com/articles/rick-stockstill-addresses-fsus-quarterback-193047559.html",
+     "date": "2026-11-23"
     }
    ]
   },
   "401858543": {
-   "checked": "2026-11-23T09:45:00-05:00",
+   "checked": "2026-11-24T09:45:04-05:00",
    "verdict": "partly",
-   "summary": "UCLA QB Ty Dieffenbach's status for USC is uncertain after being carted off vs Michigan (X-rays reportedly negative); the market had USC -10.5 before that injury.",
+   "summary": "UCLA QB Ty Dieffenbach (minor hip) is not ruled out but unlikely to be full go vs USC; the market had USC -10.5 even before the injury, so most of the gap is an older disagreement about UCLA.",
    "reasons": [
     {
-     "text": "QB Ty Dieffenbach was carted off in OT of the Nov. 21 loss to Michigan; X-rays were reportedly negative and further tests are needed.",
+     "text": "Chesney Nov. 23: Dieffenbach's hip is 'a little bit better than we thought' but he is 'nowhere near in the clear'; Madden Iamaleava is next.",
+     "source": "ABC7 (ESPN)",
+     "url": "https://abc7.com/post/sources-ucla-qb-dieffenbach-dealing-minor-hip-injury/20070191/",
+     "date": "2026-11-23"
+    },
+    {
+     "text": "Nico Iamaleava is out for the season (torn ACL vs Oregon on Oct. 10).",
      "source": "ESPN",
-     "url": "https://www.espn.com/college-football/story/_/id/50556107/ucla-qb-ty-dieffenbach-carted-3ot-loss-michigan",
-     "date": "2026-11-22"
+     "url": "https://www.espn.com/college-football/story/_/id/50573866/ucla-qb-dieffenbach-not-ruled-saturday-game-vs-usc",
+     "date": "2026-11-23"
     },
     {
-     "text": "Nico Iamaleava is already out for the season (torn ACL), so Madden Iamaleava would likely start for UCLA.",
-     "source": "Heavy",
-     "url": "https://heavy.com/sports/college-football/ucla-ty-dieffenbach-injury-madden-iamaleava-decision/",
-     "date": "2026-11-22"
-    },
-    {
-     "text": "DraftKings listed USC -10.5 on Nov. 16; the SP+ projection is UCLA by 6.8, close to our line.",
+     "text": "DraftKings listed USC -10.5 on Nov. 16, before the injury; the SP+ projection is UCLA by 6.8, close to our line.",
      "source": "Redshirt Analytics",
      "url": "https://www.redshirtanalytics.com/matchups/usc-at-ucla",
      "date": "2026-11-16"
     }
    ],
    "swings": {
-    "UCLA": "QB Ty Dieffenbach was carted off in OT vs Michigan on Nov. 21 and his USC status is uncertain (ESPN); our ratings don't see it, the market does.",
-    "USC": "Mostly the other side of UCLA's QB injury: Ty Dieffenbach was carted off Nov. 21 vs Michigan, so the market moved toward USC (ESPN)."
+    "UCLA": "QB Ty Dieffenbach was carted off in OT at Michigan on Nov. 21 (minor hip, not ruled out for USC per Chesney Nov. 23, ESPN); our ratings don't see it, the market does.",
+    "USC": "Mostly the other side of UCLA's QB injury: Ty Dieffenbach was carted off Nov. 21 at Michigan and is uncertain, so the market leans USC (ESPN)."
    }
   },
   "401856757": {
-   "checked": "2026-11-23T15:24:31-05:00",
+   "checked": "2026-11-24T09:45:04-05:00",
    "reasons": [
     {
-     "text": "Kalen DeBoer expects QB Keelon Russell (ankle) to be 'full speed, full go' in practice this week after sitting out the Chattanooga game.",
-     "source": "Heavy",
-     "url": "https://heavy.com/sports/college-football/alabama-crimson-tide/alabama-kalen-deboer-provides-injury-update-on-qb-keelon-russell-2/",
-     "date": "2026-11-22"
+     "text": "DeBoer said Nov. 23 QB Keelon Russell (ankle) is in a 'good spot' and expected to practice fully after sitting out Chattanooga.",
+     "source": "WBRC",
+     "url": "https://www.wbrc.com/2026/11/23/deboer-keelon-russell-good-spot-heading-into-iron-bowl-preparation/",
+     "date": "2026-11-23"
     },
     {
-     "text": "Auburn beat FCS Samford 59-17 on Nov. 21; Tristan Ti'a threw for 341 yards and four first-half TDs.",
+     "text": "Auburn beat FCS Samford 59-17 on Nov. 21; Tristan Ti'a threw for 341 yards.",
      "source": "CBS Sports",
      "url": "https://www.cbssports.com/college-football/gametracker/boxscore/NCAAF_20261121_SAMF@AUBURN/",
      "date": "2026-11-21"
     }
    ],
    "swings": {
-    "Auburn": "No Auburn injury news found; Auburn beat FCS Samford 59-17 on Nov. 21 (Tristan Ti'a 341 yds), and Alabama QB Keelon Russell sat out Chattanooga before being expected back."
+    "Auburn": "No Auburn injury news found; Auburn beat FCS Samford 59-17 on Nov. 21, and Alabama QB Keelon Russell, out vs Chattanooga, is expected back (WBRC, Nov. 23)."
    }
   },
   "401856762": {
-   "checked": "2026-11-23T09:45:00-05:00",
+   "checked": "2026-11-24T09:45:04-05:00",
    "verdict": "explained",
-   "summary": "Mississippi State's QB for the Egg Bowl is undecided (injured AJ Swann or Billy Puckett) with starter Kamario Taylor out for the year; the line has moved toward Ole Miss.",
+   "summary": "Mississippi State still has no Egg Bowl QB named (AJ Swann in a boot, Billy Puckett the backup) with starter Kamario Taylor out for the year; the line opened and sits at Ole Miss -19.",
    "reasons": [
     {
-     "text": "QB Kamario Taylor is out for the season (foot surgery, announced Oct. 27); fill-in AJ Swann was hurt again at Auburn.",
+     "text": "QB Kamario Taylor is out for the season (announced Oct. 27); fill-in AJ Swann wore a boot and missed the Tennessee Tech win.",
      "source": "Yahoo Sports",
      "url": "https://sports.yahoo.com/college-football/breaking-news/article/mississippi-state-qb-kamario-taylor-out-for-rest-of-2026-season-160824202.html",
      "date": "2026-10-27"
     },
     {
-     "text": "Jeff Lebby on Nov. 22: the starter 'will really depend on how AJ is able to practice this week'; Billy Puckett started the Tennessee Tech win.",
+     "text": "Lebby: the Egg Bowl starter 'is still kind of being decided'; Billy Puckett threw for 232 yards in the 34-16 Tennessee Tech win.",
      "source": "The Clarion-Ledger",
-     "url": "https://sports.yahoo.com/articles/jeff-lebby-decide-mississippi-state-203027643.html",
-     "date": "2026-11-22"
+     "url": "https://sports.yahoo.com/articles/mississippi-state-egg-bowl-qb-231921493.html",
+     "date": "2026-11-21"
+    },
+    {
+     "text": "Ole Miss gets DL Kam Franklin and Will Echoles back and Golding calls the defense himself; RB Kewan Lacy is out for the year.",
+     "source": "HottyToddy.com",
+     "url": "https://www.hottytoddy.com/2026/11/23/pete-golding-ole-miss-egg-bowl-press-conference/",
+     "date": "2026-11-23"
+    }
+   ],
+   "returning": [
+    {
+     "team": "Ole Miss",
+     "player": "Kam Franklin",
+     "text": "Held out vs Wofford (hamstring); full practice Monday, expected to play.",
+     "url": "https://www.hottytoddy.com/2026/11/23/pete-golding-ole-miss-egg-bowl-press-conference/"
+    },
+    {
+     "team": "Ole Miss",
+     "player": "Will Echoles",
+     "text": "Held out vs Wofford; practiced Monday, expected to play.",
+     "url": "https://www.hottytoddy.com/2026/11/23/pete-golding-ole-miss-egg-bowl-press-conference/"
     }
    ],
    "swings": {
-    "Mississippi State": "QB AJ Swann is hurt and the Egg Bowl starter is undecided (Lebby, Nov. 22, Clarion-Ledger); backup Billy Puckett started the Nov. 21 win.",
+    "Mississippi State": "QB AJ Swann is hurt and the Egg Bowl starter is still undecided (Lebby, Nov. 21); backup Billy Puckett started the 34-16 win over Tennessee Tech.",
     "Ole Miss": "Nothing found: the market moved on Ole Miss without a clear reason (it lost RB Kewan Lacy for the season, which points the other way); its last game was vs FCS Wofford."
    }
   },
   "401866472": {
+   "checked": "2026-11-24T09:45:00-05:00",
    "verdict": "partly",
-   "summary": "Forecast wind of about 16 mph (gusts 30+) at Akron and our SP+ input running far above Sagarin explain part of the gap; no new Buffalo or Akron injury news found.",
+   "summary": "Wind (about 14 mph, gusts near 30) at Akron and SP+ running far above Sagarin explain part of the gap; Buffalo still needs a win plus help for the MAC title game.",
    "reasons": [
     {
-     "text": "Forecast for Nov. 27 at Akron: wind about 16 mph with gusts over 30, which tends to compress margins toward the underdog.",
+     "text": "Open-Meteo forecast for the Nov. 27 noon kick at Akron: wind about 14 mph with gusts near 30 and light rain, which tends to shrink margins.",
      "source": "Open-Meteo",
      "url": "https://open-meteo.com/",
-     "date": "2026-11-21"
+     "date": "2026-11-24"
     },
     {
-     "text": "Buffalo QB E. Holmes (knee) was shut down for the season about three weeks ago; the market has had time to price it.",
+     "text": "Buffalo QB E. Holmes (knee) was shut down for the season weeks ago; Jason Wright starts and the passing game is limited (6-of-13 vs CMU).",
      "source": "Covers",
      "url": "https://www.covers.com/sport/football/ncaaf/injuries",
      "date": "2026-11-21"
+    },
+    {
+     "text": "Buffalo must win and get help to reach the MAC title game; Akron has not named its QB, though Cibastian Broughton started the last three games.",
+     "source": "Predictem",
+     "url": "https://www.predictem.com/college-football/buffalo-at-akron-black-friday-preview-mac-football-odds-pick/",
+     "date": "2026-11-24"
     }
    ],
    "returning": [],
    "swings": {
-    "Buffalo": "Buffalo has won six straight (40-21 over Central Michigan on 11/18, Messiah Burch 200 rush yds); our ratings rose with the streak more than the market, which still prices QB E. Holmes's season-ending knee injury (UB Athletics)."
-   },
-   "checked": "2026-11-23T09:45:00-05:00"
+    "Buffalo": "Buffalo has won six straight (40-21 over Central Michigan on Nov. 18, Messiah Burch 200 rush yds); our ratings rose with the streak more than the market, which still prices QB E. Holmes's season-ending injury (UB Athletics)."
+   }
   },
   "401871062": {
+   "checked": "2026-11-24T09:45:00-05:00",
    "verdict": "partly",
-   "summary": "Jacksonville State has already clinched its CUSA title-game spot (vs Liberty), so this game means less to it; Delaware just won 42-30 behind 5 TD passes. SP+ (-9.4) is far from Sagarin (-0.3).",
+   "summary": "Jacksonville State has already clinched its CUSA title-game spot (at Liberty next week), so this game means less to it; Delaware just won 42-30 behind 5 TD passes. SP+ (-9.4) is far from Sagarin (-0.3).",
    "reasons": [
     {
-     "text": "Jax State clinched a third straight CUSA title-game berth with a 25-20 comeback win over Missouri State on Nov. 21; Liberty is the opponent.",
+     "text": "Jax State clinched a CUSA title-game berth with a 25-20 comeback win over Missouri State on Nov. 21; Liberty is the opponent.",
      "source": "Yahoo Sports",
      "url": "https://sports.yahoo.com/articles/jacksonville-state-football-clinches-cusa-234929900.html",
      "date": "2026-11-21"
     },
     {
-     "text": "Delaware QB Nick Minicucci threw 5 TDs (31-of-41, 398 yds) in a 42-30 win at New Mexico State; the Blue Hens are 6-5 and bowl-eligible.",
+     "text": "Delaware QB Nick Minicucci threw 5 TDs (31-of-41, 398 yds) in a 42-30 win at New Mexico State; the Blue Hens are 6-5.",
      "source": "ESPN",
      "url": "https://www.espn.com/college-football/recap/_/gameId/401871077",
      "date": "2026-11-21"
@@ -892,28 +1379,36 @@
    "returning": [],
    "swings": {
     "Delaware": "Delaware won 42-30 at New Mexico State on Nov. 21 with Nick Minicucci throwing 5 TDs; the market moved up on the Blue Hens, while Jax State has a title game next (ESPN, 11/21)."
-   },
-   "checked": "2026-11-23T09:40:04-05:00"
+   }
   },
   "401864549": {
-   "checked": "2026-11-23T09:45:00-05:00",
+   "checked": "2026-11-24T09:45:00-05:00",
    "verdict": "unexplained",
-   "summary": "No injury or QB news found for either team; Nathan Hayes is NDSU's starter and Luke Weaver started SJSU's last game. Our line leans on SP+ far more than Sagarin.",
+   "summary": "No injury or QB news justifies the shorter number; NDSU is still alive for the Mountain West title game and needs this win, while SJSU (5-7) plays out its season. Our line leans on SP+.",
    "reasons": [
+    {
+     "text": "NDSU (9-2) must beat San José State on Nov. 27 to keep its Mountain West title-game path open, per Heavy.",
+     "source": "Heavy (via Yahoo Sports)",
+     "url": "https://sports.yahoo.com/articles/ndsu-gets-promising-squeaker-against-041914250.html",
+     "date": "2026-11-22"
+    },
     {
      "text": "San José State fell 24-22 to UNLV on Nov. 21 when Luke Weaver's tying 2-point pass fell incomplete; Weaver played the whole game.",
      "source": "SJSU Athletics",
      "url": "https://sjsuspartans.com/news/2026/11/21/spartans-drop-game-to-unlv-after-late-rally-falls-short",
      "date": "2026-11-21"
     }
-   ]
+   ],
+   "returning": [],
+   "swings": {}
   },
   "401871063": {
+   "checked": "2026-11-24T09:45:00-05:00",
    "verdict": "partly",
-   "summary": "Liberty (10-1, 7-0 CUSA) has clinched the CUSA title game, so this regular-season finale is low-stakes for it; no injury news found. SP+ and our model run far above Sagarin.",
+   "summary": "Liberty (10-1) has clinched the CUSA title game and plays Jacksonville State next week, so this finale is low-stakes for it; no injury news. SP+ and our model run far above Sagarin.",
    "reasons": [
     {
-     "text": "Liberty had already clinched a CUSA title-game spot before Week 12 and will face Jacksonville State.",
+     "text": "Liberty clinched a CUSA title-game spot before Week 12 and hosts Jacksonville State on Dec. 5.",
      "source": "ESPN",
      "url": "https://www.espn.com/college-football/story/_/id/50512475/conference-title-game-clinching-scenarios-week-12",
      "date": "2026-11-20"
@@ -925,7 +1420,7 @@
      "date": "2026-11-21"
     },
     {
-     "text": "Missouri State QB Henry Belin played the whole 25-20 loss at Jacksonville State on Nov. 21 (20-of-29, 161 yds); no injury reported.",
+     "text": "Missouri State QB Henry Belin IV played the whole 25-20 loss at Jacksonville State on Nov. 21 (20-of-29); no injury reported.",
      "source": "Springfield Daily Citizen",
      "url": "https://sgfcitizen.org/springfield-sports/missouri-state/jacksonville-state-beats-missouri-state/",
      "date": "2026-11-21"
@@ -933,46 +1428,50 @@
    ],
    "returning": [],
    "swings": {},
-   "checked": "2026-11-23T09:40:04-05:00",
    "verified_numbers": [
-    "10-1",
-    "7-0"
+    "10-1"
    ]
   },
   "401862843": {
+   "checked": "2026-11-24T09:45:00-05:00",
    "verdict": "explained",
-   "summary": "North Texas starting QB Tayven Jackson will miss the UAB game (upper body), with sophomore Chris Jimerson Jr. starting and backup Chaston Ditta also hurt; our ratings were built with Jackson.",
+   "summary": "North Texas is down to its fourth QB: Tayven Jackson is out, backup Chris Jimerson Jr. hurt his knee at Tulane and Chaston Ditta isn't ready, so slot receiver James Tyre may start; our ratings were built with Jackson.",
    "reasons": [
     {
-     "text": "Neal Brown: Jackson 'will definitely miss Saturday and then the UAB game as well'; he hopes Jackson is back for a title or bowl game.",
+     "text": "Neal Brown ruled Tayven Jackson (upper body) out for the UAB game; he hopes Jackson is back for a title or bowl game.",
      "source": "ESPN",
      "url": "https://www.espn.com/college-football/story/_/id/50513204/north-texas-qb-tayven-jackson-upper-body-injury",
      "date": "2026-11-17"
     },
     {
-     "text": "Chris Jimerson Jr. starts until Jackson returns; backup Chaston Ditta has been out since an October injury.",
-     "source": "Underdog Dynasty",
-     "url": "https://www.underdogdynasty.com/american-conference/47820/north-texas-qb-tayven-jackson-out-for-regular-season-chris-jimerson-jr-takes-over",
-     "date": "2026-11-18"
+     "text": "Chris Jimerson Jr. left the 28-24 loss at Tulane early in the second half with a noncontact knee injury; Brown 'wasn't optimistic' about him.",
+     "source": "Denton Record-Chronicle",
+     "url": "https://dentonrc.com/sports/colleges/mean_green/unt-falls-in-heartbreaker-at-tulane-after-losing-third-qb-this-season/article_43584c12-0f62-422b-a74d-93de23f88d88.html",
+     "date": "2026-11-21"
+    },
+    {
+     "text": "Brown said Chaston Ditta is 'not going to be ready,' so WR James Tyre (4-of-7, 63 yds at Tulane) could start at QB vs UAB.",
+     "source": "Denton Record-Chronicle",
+     "url": "https://dentonrc.com/sports/colleges/mean_green/unt-falls-in-heartbreaker-at-tulane-after-losing-third-qb-this-season/article_43584c12-0f62-422b-a74d-93de23f88d88.html",
+     "date": "2026-11-21"
     }
    ],
    "returning": [],
-   "swings": {},
-   "checked": "2026-11-23T09:40:04-05:00"
+   "swings": {}
   },
   "401858315": {
-   "checked": "2026-11-23T09:45:00-05:00",
+   "checked": "2026-11-24T09:45:04-05:00",
    "verdict": "explained",
-   "summary": "Pitt is 1-5 since QB Mason Heintschel's ACL tear and has no named starter for Cal after a 42-10 loss at Louisville; our ratings still carry his early games.",
+   "summary": "Pitt is 1-5 since QB Mason Heintschel's ACL tear and was routed 42-10 at Louisville; our ratings still carry his early games.",
    "reasons": [
     {
-     "text": "Narduzzi has called Holden Geriner the starter when healthy; Geriner went 12-of-20 for 80 yards with 2 INTs in the 42-10 loss at Louisville.",
+     "text": "Narduzzi has called Holden Geriner the starter when healthy; Geriner threw 2 INTs in the 42-10 loss at Louisville.",
      "source": "TribLive",
      "url": "https://triblive.com/sports/pitt-football-notebook-pat-narduzzi-says-holden-geriner-if-healthy-is-starting-qb/",
      "date": "2026-11-22"
     },
     {
-     "text": "Heintschel's season ended with a torn ACL.",
+     "text": "Heintschel's season ended with a torn ACL in the Oct. 2 win at Virginia Tech.",
      "source": "ESPN",
      "url": "https://www.espn.com/college-football/story/_/id/50093457/pitt-qb-mason-heintschel-season-torn-acl",
      "date": "2026-10-05"
@@ -983,18 +1482,18 @@
    ]
   },
   "401858316": {
-   "checked": "2026-11-23T09:45:00-05:00",
+   "checked": "2026-11-24T09:45:04-05:00",
    "verdict": "partly",
-   "summary": "SMU QB Kevin Jennings hurt his ankle in the loss at Notre Dame and was limited, which covers part of the gap; Stanford just reached bowl eligibility.",
+   "summary": "SMU QB Kevin Jennings hurt his ankle in the 24-3 loss at Notre Dame (no update yet), covering part of the gap; Stanford just won the Big Game to reach 6-5.",
    "reasons": [
     {
-     "text": "Rhett Lashlee said QB Kevin Jennings hurt his ankle in the 2nd quarter at Notre Dame on Nov. 21, limiting his mobility.",
+     "text": "Lashlee said QB Kevin Jennings rolled his ankle in the 2nd quarter at Notre Dame on Nov. 21, limiting his mobility.",
      "source": "Yahoo Sports",
      "url": "https://sports.yahoo.com/articles/defense-powers-no-3-notre-065611575.html",
      "date": "2026-11-22"
     },
     {
-     "text": "Stanford won the Big Game 44-28 at Cal on Nov. 21 (Davis Warren 2 TD, Micah Ford 151 rush yds) and is 6-5, bowl-eligible for the first time since 2018.",
+     "text": "Stanford won the Big Game 44-28 at Cal on Nov. 21 and is 6-5, bowl-eligible.",
      "source": "ESPN",
      "url": "https://www.espn.com/college-football/recap/_/gameId/401858308",
      "date": "2026-11-21"
@@ -1002,38 +1501,39 @@
    ]
   },
   "401866475": {
+   "checked": "2026-11-24T09:45:00-05:00",
    "verdict": "partly",
-   "summary": "UMass QB Pop Watson's ankle is a question mark after the 34-33 loss to Akron, which could explain part of the market's lean to Bowling Green; SP+ (-6.4) and Sagarin (+2.8) disagree.",
+   "summary": "UMass QB Pop Watson missed the Akron game and is unconfirmed for this one, which explains part of the lean to Bowling Green, but BG is also on its backup QB (Kastantin likely out for the year).",
    "reasons": [
     {
-     "text": "UMass QB Pop Watson's availability after an ankle injury was flagged before the Akron game; no update found for the Bowling Green trip.",
-     "source": "Hustle Belt",
-     "url": "https://www.hustlebelt.com/mac-football/43743/bowling-green-falcons-at-umass-minutemen-football-game-preview-week-14-2025",
-     "date": "2026-11-14"
+     "text": "Pop Watson (ankle) was hurt vs Toledo and missed the Nov. 18 Akron game; Logan Inagawa started the 34-33 loss. No update for Bowling Green yet.",
+     "source": "MassLive (via Yahoo Sports)",
+     "url": "https://sports.yahoo.com/articles/umass-football-loss-akron-leaves-045725029.html",
+     "date": "2026-11-19"
     },
     {
-     "text": "Bowling Green's offense has been opened up for QB Jay Kastanin, per a Nov. 20 Toledo preview.",
-     "source": "Yahoo Sports",
-     "url": "https://sports.yahoo.com/articles/bowling-green-vs-toledo-prediction-124508369.html",
-     "date": "2026-11-20"
+     "text": "Bowling Green starter Jay Kastantin has been out since Oct. 31 and will probably miss the rest of the year (Eddie George); Austin Novosad has started two games.",
+     "source": "BG Falcon Media",
+     "url": "https://bgfalconmedia.com/184448/sports/how-dii-transfer-jay-kastantins-led-falcon-football-in-2026/",
+     "date": "2026-11-23"
     },
     {
-     "text": "UMass QB Pop Watson left the Toledo game limping and was back on the injury report before Akron; no update for Bowling Green found.",
-     "source": "Yahoo Sports",
-     "url": "https://sports.yahoo.com/articles/akron-vs-umass-prediction-pick-130341627.html",
-     "date": "2026-11-18"
+     "text": "Bowling Green was shut out 19-0 at Toledo on Nov. 20 while also missing RB Austyn Dendy and WR Winn Sharp.",
+     "source": "By The Belt",
+     "url": "https://www.bythebelt.com/toledo-rockets-bowling-green-falcons-mac-football-game-recap-stats-score-november-20-2026-battle-of-i-75/",
+     "date": "2026-11-21"
     }
    ],
    "returning": [],
-   "swings": {},
-   "checked": "2026-11-23T09:40:04-05:00"
+   "swings": {}
   },
   "401866474": {
+   "checked": "2026-11-24T09:45:00-05:00",
    "verdict": "partly",
-   "summary": "Central Michigan's starting QB Angel Flores is out for the season after ankle surgery (Jadyn Glasser starts), and CMU just lost 40-21 at Buffalo; our ratings still carry some Flores games.",
+   "summary": "Central Michigan's starting QB Angel Flores is out for the season (Jadyn Glasser starts) and CMU just lost 40-21 at Buffalo; our ratings still carry some Flores games.",
    "reasons": [
     {
-     "text": "Angel Flores will miss the rest of 2026 after ankle surgery, per Mitten Football; Jadyn Glasser starts in his place.",
+     "text": "Angel Flores will miss the rest of 2026 after ankle surgery; Jadyn Glasser starts in his place.",
      "source": "Fox Sports",
      "url": "https://www.foxsports.com/college-football/central-michigan-chippewas-team",
      "date": "2026-10-02"
@@ -1046,24 +1546,24 @@
     }
    ],
    "returning": [],
-   "swings": {},
-   "checked": "2026-11-23T09:40:04-05:00"
+   "swings": {}
   },
   "401864550": {
+   "checked": "2026-11-24T09:45:00-05:00",
    "verdict": "partly",
-   "summary": "UTEP fired coach Scotty Walden (interim Kyle Beyer) and is still without QB EJ Colson, with Raymond Moore III starting; that covers part of the market's lean to Northern Illinois.",
+   "summary": "UTEP fired coach Scotty Walden (interim Kyle Beyer) and QB EJ Colson has been out since mid-November, with Raymond Moore III starting; that covers part of the market's lean to Northern Illinois.",
    "reasons": [
     {
-     "text": "UTEP (1-9) fired Scotty Walden after an 8th straight loss; DC Kyle Beyer is interim coach for the Air Force and Northern Illinois games.",
+     "text": "UTEP (1-10) fired Scotty Walden after an 8th straight loss; DC Kyle Beyer is interim coach for the Air Force and Northern Illinois games.",
      "source": "UTEP Athletics",
      "url": "https://utepminers.com/news/2026/11/18/football-utep-faces-air-force-for-the-first-time-in-31-years-friday-night-on-the-cw.aspx",
      "date": "2026-11-18"
     },
     {
-     "text": "QB EJ Colson remained out for the Nov. 20 Air Force game; Raymond Moore III started, and Week 13 is Colson's last chance to play.",
+     "text": "EJ Colson missed the Wyoming and Air Force games; Raymond Moore III started the 52-3 loss at Air Force. Rotowire lists Nov. 28 as an estimated return, unconfirmed.",
      "source": "Rotowire",
-     "url": "https://www.rotowire.com/cfootball/headlines/ej-colson-injury-will-remain-out-friday-240326",
-     "date": "2026-11-19"
+     "url": "https://www.rotowire.com/cfootball/player/ej-colson-46876",
+     "date": "2026-11-17"
     },
     {
      "text": "Northern Illinois QB Taron Dickens threw 3 TDs in the 31-25 loss at North Dakota State on Nov. 21; NIU is 0-11.",
@@ -1073,76 +1573,108 @@
     }
    ],
    "returning": [],
-   "swings": {},
-   "checked": "2026-11-23T09:40:04-05:00"
+   "swings": {}
   },
   "401862841": {
-   "verdict": "unexplained",
-   "summary": "No Army or Rice injury news found; Army has lost two straight (10-6 to East Carolina on Nov. 21) and Rice just got its first FBS win, but our ratings already count those games.",
+   "checked": "2026-11-24T09:45:00-05:00",
+   "verdict": "partly",
+   "summary": "Army lost to East Carolina without three starting offensive linemen, which covers part of the gap; Army needs this win to be bowl eligible.",
    "reasons": [
     {
-     "text": "East Carolina beat Army 10-6 at Michie Stadium on Nov. 21; Army ran for 180 yards vs a 324.7 average and fell to 5-5.",
-     "source": "ESPN",
-     "url": "https://www.espn.com/college-football/recap/_/gameId/401862831",
+     "text": "Army played the 10-6 loss to East Carolina on Nov. 21 without three starting linemen (Brady Small, Kyle Kloska, Henry Appleton) and was held to 180 rushing yards.",
+     "source": "Times Herald-Record (via Yahoo Sports)",
+     "url": "https://sports.yahoo.com/articles/army-football-bows-east-carolina-203414953.html",
      "date": "2026-11-21"
     },
     {
-     "text": "Rice beat Temple 31-27 on Nov. 19 with three QBs (Crayton Jr., Brown, Ochoa) involved in the late comeback.",
+     "text": "Army (5-5) calls Rice a must-win for bowl eligibility; no status update on the injured linemen yet.",
+     "source": "Times Herald-Record (via Yahoo Sports)",
+     "url": "https://sports.yahoo.com/articles/army-football-bows-east-carolina-203414953.html",
+     "date": "2026-11-21"
+    },
+    {
+     "text": "Rice beat Temple 31-27 on Nov. 19 using several QBs (Crayton Jr., Ochoa) in the comeback.",
      "source": "Underdog Dynasty",
      "url": "https://www.underdogdynasty.com/american-conference/47912/rice-owls-3-qb-patrick-crayton-jr-jacurri-brown-gael-ochoa-comeback-win-thursday-31-27-temple-11-19-2026",
      "date": "2026-11-19"
     }
    ],
    "returning": [],
-   "swings": {},
-   "checked": "2026-11-23T09:40:04-05:00"
+   "swings": {}
   },
   "401858311": {
-   "checked": "2026-11-23T09:45:00-05:00",
+   "checked": "2026-11-24T09:45:04-05:00",
    "verdict": "partly",
-   "summary": "Miami is still without WR Malachi Toney (ankle) and TE Elija Lofton left the Virginia Tech game hurt; real but small next to a 3.7-point gap.",
+   "summary": "Miami is still without WR Malachi Toney, but CB Ja'Boree Antoine and RG Max Buchanan are back practicing and TE Elija Lofton should play; little here backs the market's shorter number.",
    "reasons": [
     {
-     "text": "Toney had surgery on a high ankle sprain from a Nov. 4 practice; Cristobal says he is about 1.5 weeks out, so the BC game looks unlikely.",
+     "text": "Toney (high ankle sprain, surgery) has been out since Nov. 4; Cristobal put him about 1.5 weeks out on Nov. 20.",
      "source": "Fox Sports",
      "url": "https://www.foxsports.com/stories/college-football/miami-coach-mario-cristobal-updates-malachi-toneys-recovery-eyes-possible-return-within-2-weeks",
      "date": "2026-11-20"
+    },
+    {
+     "text": "Cristobal Nov. 23: Antoine and Buchanan are practicing and may play; he expects Lofton and LB Chase Smith back.",
+     "source": "South Florida Sun-Sentinel",
+     "url": "https://sports.yahoo.com/articles/two-key-hurricanes-could-return-214300192.html",
+     "date": "2026-11-23"
+    }
+   ],
+   "returning": [
+    {
+     "team": "Miami",
+     "player": "Ja'Boree Antoine",
+     "text": "CB out all season since fall camp; practicing, may play BC.",
+     "url": "https://sports.yahoo.com/articles/two-key-hurricanes-could-return-214300192.html"
+    },
+    {
+     "team": "Miami",
+     "player": "Max Buchanan",
+     "text": "Starting RG hurt vs Clemson (knee surgery); practicing, may play BC.",
+     "url": "https://sports.yahoo.com/articles/two-key-hurricanes-could-return-214300192.html"
+    },
+    {
+     "team": "Miami",
+     "player": "Elija Lofton",
+     "text": "TE left the Virginia Tech game; Cristobal expects him to play.",
+     "url": "https://sports.yahoo.com/articles/two-key-hurricanes-could-return-214300192.html"
     }
    ]
   },
   "401860928": {
+   "checked": "2026-11-24T09:45:00-05:00",
    "verdict": "unexplained",
-   "summary": "Nothing found justifies the shorter number: Texas State just beat Washington State 42-14 and Utah State (4-7, out of bowl range) lost 31-24 at Oregon State; no QB news for either.",
+   "summary": "Nothing found justifies the shorter number: Texas State just beat Washington State 42-14, and Utah State (4-7, no bowl) lost 31-24 at Oregon State; no QB news for either.",
    "reasons": [
     {
-     "text": "Utah State lost 31-24 at Oregon State on Nov. 21, falling to 4-7.",
+     "text": "Utah State lost 31-24 at Oregon State on Nov. 21, falling to 4-7; McCae Hillstead played QB.",
      "source": "Utah State Athletics",
      "url": "https://utahstateaggies.com/news/2026/11/22/football-aggies-lose-close-contest-at-oregon-state-31-24.aspx",
      "date": "2026-11-22"
     },
     {
-     "text": "Texas State beat Washington State 42-14 in San Marcos on Nov. 21.",
+     "text": "Texas State beat Washington State 42-14 in San Marcos on Nov. 21 with Brad Jackson at QB; it beat Utah State 20-17 on Oct. 24.",
      "source": "Austin American-Statesman",
      "url": "https://www.statesman.com/sports/texas-state/football/article/texas-state-score-today-washington-state-week-12-22533433.php",
      "date": "2026-11-21"
     }
    ],
    "returning": [],
-   "swings": {},
-   "checked": "2026-11-23T09:40:04-05:00"
+   "swings": {}
   },
   "401869930": {
+   "checked": "2026-11-24T09:45:00-05:00",
    "verdict": "partly",
-   "summary": "South Alabama QB Bishop Davenport returned from injury on Nov. 7, so part of our rating comes from games without him; App State's Malachi Singleton is healthy after a 17-16 OT win over ULM.",
+   "summary": "South Alabama QB Bishop Davenport is back and the Jaguars won their last two with him, so part of our rating comes from games without him; App State has no injury news.",
    "reasons": [
     {
-     "text": "Bishop Davenport accounted for two TDs in his first start since an injury in the 28-26 loss at Louisiana on Nov. 7.",
+     "text": "Bishop Davenport returned from injury on Nov. 7 and has started since; he went 20-of-28 in the 40-35 win at Southern Miss on Nov. 21.",
      "source": "BVM Sports",
      "url": "https://bvmsports.com/2026/11/07/south-alabama-falls-28-26-after-rally-at-louisiana/",
      "date": "2026-11-07"
     },
     {
-     "text": "App State QB Malachi Singleton threw for 188 yards and 2 TDs in the 17-16 OT win over ULM; no injury news.",
+     "text": "App State QB Malachi Singleton played the whole 17-16 overtime win over ULM on Nov. 21; no injury news.",
      "source": "WataugaOnline",
      "url": "https://wataugaonline.com/blocked-kick-overtime-touchdown-lift-app-state-over-ulm/",
      "date": "2026-11-22"
@@ -1156,15 +1688,15 @@
      "url": "https://bvmsports.com/2026/11/07/south-alabama-falls-28-26-after-rally-at-louisiana/"
     }
    ],
-   "swings": {},
-   "checked": "2026-11-23T09:40:04-05:00"
+   "swings": {}
   },
   "401862839": {
+   "checked": "2026-11-24T09:45:00-05:00",
    "verdict": "partly",
-   "summary": "USF has lost three straight, parted ways with OC Tim Beck after the 35-14 loss at FAU, and has started backup Luke Kromenhoek since Van Buren's Oct. 31 injury; that covers part of the gap.",
+   "summary": "USF has lost three straight with backup Luke Kromenhoek since Van Buren's Oct. 31 injury and parted ways with OC Tim Beck after the 35-14 loss at FAU; that covers part of the gap.",
    "reasons": [
     {
-     "text": "USF lost 35-14 at Florida Atlantic on Nov. 21 (two first-half turnovers by QB Luke Kromenhoek), its third straight loss.",
+     "text": "USF lost 35-14 at Florida Atlantic on Nov. 21, its third straight loss; Luke Kromenhoek played the whole game.",
      "source": "USF Athletics",
      "url": "https://gousfbulls.com/news/2026/11/21/football-bulls-fall-at-florida-atlantic-35-14-in-weather-delayed-contest",
      "date": "2026-11-21"
@@ -1176,15 +1708,14 @@
      "date": "2026-11-22"
     },
     {
-     "text": "Starter Michael Van Buren was hurt vs UAB on Oct. 31 and ruled out on the availability report for ECU; Kromenhoek has started since.",
+     "text": "Starter Michael Van Buren was hurt vs UAB on Oct. 31; no return news found, and Kromenhoek has started since.",
      "source": "Yahoo Sports",
      "url": "https://sports.yahoo.com/articles/michael-van-buren-playing-tonight-215923313.html",
      "date": "2026-11-06"
     }
    ],
    "returning": [],
-   "swings": {},
-   "checked": "2026-11-23T09:40:04-05:00"
+   "swings": {}
   },
   "401864547": {
    "verdict": "explained",
@@ -1208,61 +1739,60 @@
    "checked": "2026-11-23T09:40:04-05:00"
   },
   "401869959": {
-   "swings": {
-    "Georgia State": "Starting QB Cameran Brown may return Nov 28 after missing several games (Rotowire, 11/21); the market is pricing a better Georgia State than our ratings, built on his absence."
-   },
-   "checked": "2026-11-23T09:40:04-05:00",
-   "verdict": "partly",
-   "summary": "Georgia State may get starting QB Cameran Brown back for the finale, which explains some of the market being 3 points closer than us.",
+   "checked": "2026-11-24T09:45:00-05:00",
+   "verdict": "unexplained",
+   "summary": "Cameran Brown is ruled out again, so the QB return that explained the market yesterday is off; Ayden Pereira starts and nothing else found justifies the market's closer number.",
    "reasons": [
     {
-     "text": "Georgia State QB Cameran Brown (undisclosed) has missed several games with Ayden Pereira starting; Nov 21 report says the Louisiana game is his last chance to return.",
+     "text": "Georgia State QB Cameran Brown (undisclosed) is out for the Louisiana game, per 247Sports' Brady Weiler; Ayden Pereira is expected to start again.",
      "source": "Rotowire",
-     "url": "https://www.rotowire.com/cfootball/headlines/cameran-brown-injury-wont-play-at-marshall-240701",
+     "url": "https://www.rotowire.com/cfootball/player/cameran-brown-44855",
+     "date": "2026-11-23"
+    },
+    {
+     "text": "With Pereira, Georgia State won 39-23 at App State on Nov. 7 and lost 28-27 at Marshall on Nov. 21 on a missed extra point with 2 seconds left.",
+     "source": "Georgia State Athletics",
+     "url": "https://georgiastatesports.com/news/2026/11/21/football-del-rio-wilson-runs-in-game-winning-td-to-lead-marshall-past-panthers-28-27.aspx",
      "date": "2026-11-21"
     },
     {
-     "text": "Louisiana is already bowl eligible (8-3) after beating South Alabama 28-26.",
+     "text": "Louisiana (8-3) beat Coastal Carolina 38-24 on Nov. 21 and is already bowl eligible.",
      "source": "97.3 The Dawg",
      "url": "https://973thedawg.com/ixp/37/p/cajuns-beat-south-alabama-bowl-eligible/",
      "date": "2026-11-21"
     }
    ],
-   "returning": [
-    {
-     "team": "Georgia State",
-     "player": "Cameran Brown",
-     "text": "Starting QB, out since late October; possible return Nov 28.",
-     "url": "https://www.rotowire.com/cfootball/headlines/cameran-brown-injury-wont-play-at-marshall-240701"
-    }
-   ]
+   "returning": [],
+   "swings": {
+    "Georgia State": "Georgia State nearly won at Marshall (28-27 on Nov. 21, missed PAT with 2 seconds left) with Ayden Pereira at QB; the market rates that team higher than our ratings do, and Cameran Brown stays out (Rotowire, 11/23)."
+   }
   },
   "401871102": {
+   "checked": "2026-11-24T09:45:00-05:00",
    "swings": {
-    "Marshall": "Carlos Del Rio-Wilson made his first start since Oct. 10 in the 28-27 win over Georgia State (11/21) after Zion Turner and Khalil Wilkins were hurt; our ratings rose, the market less so (WCHS)."
-   },
-   "checked": "2026-11-23T09:40:04-05:00"
+    "Marshall": "Carlos Del Rio-Wilson made his first start since Oct. 10 in the 28-27 win over Georgia State on Nov. 21 (3 TD passes, 1 rush TD) after earlier QB injuries; our ratings rose, the market less so (WCHS)."
+   }
   },
   "401858544": {
-   "checked": "2026-11-23T09:45:00-05:00",
+   "checked": "2026-11-24T09:45:04-05:00",
    "verdict": "unexplained",
-   "summary": "Nothing found justifies the market's shorter number: Colton Joseph returned at QB and Wisconsin beat Purdue, which favors our side. It is a rivalry game with Fickell's job in question.",
+   "summary": "Nothing found justifies the market's shorter number: Colton Joseph is set to keep the QB job after the 42-10 win at Purdue, which favors our side; it is a rivalry game.",
    "reasons": [
     {
-     "text": "Colton Joseph returned to the starting lineup in the Nov. 21 win at Purdue after Ryan Hopkins was hurt.",
-     "source": "Sports Illustrated",
-     "url": "https://www.si.com/college/wisconsin/football/rohrer-s-reaction-wisconsin-bullies-purdue-setting-the-stage-for-enormous-axe-game",
-     "date": "2026-11-22"
+     "text": "Fickell said Nov. 23 Colton Joseph 'has earned the right' after the Purdue win; Ryan Hopkins only cleared concussion protocol late last week.",
+     "source": "SI (Badgers On SI)",
+     "url": "https://sports.yahoo.com/articles/luke-fickell-updates-wisconsin-footballs-183846787.html",
+     "date": "2026-11-23"
     }
    ]
   },
   "401856875": {
-   "checked": "2026-11-23T15:24:31-05:00",
+   "checked": "2026-11-24T09:45:04-05:00",
    "verdict": "unexplained",
-   "summary": "Nothing found that justifies Colorado (4-7) as a 2-point favorite: UCF's QB Alonza Barnett is back starting after a five-game hamstring absence, which if anything favors our UCF side.",
+   "summary": "Nothing found that justifies Colorado (4-7) as a 2-point favorite: UCF QB Alonza Barnett is back and starting after a five-game absence, which if anything favors our UCF side.",
    "reasons": [
     {
-     "text": "UCF QB Alonza Barnett III missed five games (hamstring) and has started the last four since returning, including a 48-17 win over Iowa State.",
+     "text": "UCF QB Alonza Barnett III missed five games (hamstring) and has played the last four, including the 48-17 win over Iowa State.",
      "source": "Yahoo Sports",
      "url": "https://sports.yahoo.com/fantasy/article/week-13-college-fantasy-football-waiver-wire-pickups-brandon-smith-josh-derry-among-top-adds-for-title-matchups-200218133.html",
      "date": "2026-11-22"
@@ -1278,54 +1808,56 @@
     {
      "team": "UCF",
      "player": "Alonza Barnett III",
-     "text": "Back from a five-game hamstring absence; three starts since.",
+     "text": "Back from a five-game hamstring absence (Sept. 19-Oct. 24); four games since.",
      "url": "https://sports.yahoo.com/fantasy/article/week-13-college-fantasy-football-waiver-wire-pickups-brandon-smith-josh-derry-among-top-adds-for-title-matchups-200218133.html"
     }
    ]
   },
   "401858538": {
-   "checked": "2026-11-23T09:45:00-05:00",
+   "checked": "2026-11-24T09:47:17-05:00",
    "verdict": "partly",
-   "summary": "Indiana came out of the OT loss at Washington banged up (C Bray Lynch, WR Nick Marsh; G Joe Brunner out) and Cignetti hasn't named a QB, which covers part of the gap.",
+   "summary": "Indiana is banged up (C Bray Lynch 'doesn't look good', G Joe Brunner out for the year) and Cignetti won't name a QB between Grant Wilson and Josh Hoover, which covers part of the gap.",
    "reasons": [
     {
-     "text": "C Bray Lynch (lower leg) and WR Nick Marsh were hurt at Washington; Cignetti gave no update and hasn't named a QB for Purdue.",
-     "source": "The Daily Hoosier",
-     "url": "https://www.thedailyhoosier.com/injury-concerns-mounting-for-iu-football-ahead-of-season-finale/",
-     "date": "2026-11-22"
+     "text": "Cignetti won't name a QB: Grant Wilson started vs USC and at Washington, with Josh Hoover (shoulder) relieving him at Washington.",
+     "source": "AP",
+     "url": "https://www.wral.com/news/ap/96fa0-cignetti-non-committal-on-staring-qb-against-purdue-but-no-12-indiana-could-be-missing-its-center/",
+     "date": "2026-11-23"
     },
     {
-     "text": "Indiana lost 27-24 in OT at Washington; the line opened Indiana -22.5 and has drifted to -21.5.",
-     "source": "Hoosier Huddle",
-     "url": "https://hoosierhuddle.com/2026/11/22/game-wrap-and-reaction-washington-27-no-9-indiana-24-ot/",
-     "date": "2026-11-22"
+     "text": "Cignetti: 'the only one that doesn't look good right now is Bray Lynch' (C, lower leg); G Joe Brunner is out for the season.",
+     "source": "AP",
+     "url": "https://www.wral.com/news/ap/96fa0-cignetti-non-committal-on-staring-qb-against-purdue-but-no-12-indiana-could-be-missing-its-center/",
+     "date": "2026-11-23"
     }
    ]
   },
   "401860929": {
-   "checked": "2026-11-23T09:40:04-05:00",
+   "checked": "2026-11-24T09:45:00-05:00",
    "verdict": "partly",
-   "summary": "San Diego State is already set for the Dec. 4 Pac-12 title game at Boise State, so this is a tune-up for it; that may explain some of the move to Washington State (opened 1, now 2.5).",
+   "summary": "San Diego State has clinched the Pac-12 title game at Boise State on Dec. 4, so this is a tune-up; that may explain some of the move to Washington State (opened 1, now 3).",
    "reasons": [
     {
-     "text": "San Diego State's next game after this one is the Pac-12 title game at Boise State on Dec. 4, so its title-game spot is settled.",
-     "source": "ESPN",
-     "url": "https://www.espn.com/college-football/game/_/gameId/401869542",
-     "date": "2026-11-23"
+     "text": "SDSU beat Boise State 22-20 on a last-second field goal on Nov. 21, clinching a Pac-12 title-game rematch at Boise on Dec. 4; Stone Saunders started at QB.",
+     "source": "The Sporting Tribune",
+     "url": "https://www.thesportingtribune.com/2026/11/22/fb-sdsu-at-bsu-aztecs-earn-trip-to-pac12-championship-game-defense-lindsay-second-half-offense-saunders-dileva",
+     "date": "2026-11-22"
     },
     {
-     "text": "Washington State lost 42-14 at Texas State on Nov 21, its worst loss of the season, extending a long losing run.",
+     "text": "Washington State lost 42-14 at Texas State on Nov. 21, its worst loss of the season, and is 2-9.",
      "source": "Yahoo Sports",
      "url": "https://sports.yahoo.com/articles/washington-states-blowout-loss-texas-173637286.html",
      "date": "2026-11-22"
     },
     {
-     "text": "San Diego State beat Washington State 26-20 on Oct 31 even without QB Jayden Denegal (ankle); no current SDSU QB news found.",
-     "source": "Fox Sports",
-     "url": "https://www.foxsports.com/college-football/san-diego-state-aztecs-team",
-     "date": "2026-11-01"
+     "text": "Saunders replaced Jayden Denegal as SDSU's starter mid-season; SDSU beat Washington State 26-20 on Oct. 31.",
+     "source": "The Sporting Tribune",
+     "url": "https://www.thesportingtribune.com/2026/11/22/fb-sdsu-at-bsu-aztecs-earn-trip-to-pac12-championship-game-defense-lindsay-second-half-offense-saunders-dileva",
+     "date": "2026-11-22"
     }
-   ]
+   ],
+   "returning": [],
+   "swings": {}
   },
   "401866473": {
    "checked": "2026-11-23T09:45:00-05:00",
@@ -1334,21 +1866,21 @@
    }
   },
   "401858314": {
-   "checked": "2026-11-23T14:45:00-05:00",
+   "checked": "2026-11-24T09:47:17-05:00",
    "verdict": "explained",
    "summary": "Syracuse loses starting QB Steve Angeli (shoulder) for the finale and starts Malachi Nelson, which our ratings don't see; that covers most of our 3.8-pt gap.",
    "reasons": [
     {
-     "text": "Fran Brown ruled QB Steve Angeli out Monday with an AC joint injury in his right shoulder from the Nov. 21 BC loss; Malachi Nelson starts.",
-     "source": "The Daily Orange",
-     "url": "https://dailyorange.com/2026/11/syracuse-football-steve-angeli-ruled-out-notre-dame/",
+     "text": "Fran Brown ruled QB Steve Angeli out with a right AC joint injury from the Nov. 21 BC loss; Malachi Nelson starts.",
+     "source": "ESPN",
+     "url": "https://www.espnradio941.com/2026/11/23/syracuse-rules-qb-angeli-out-vs-notre-dame-due-to-shoulder-injury/",
      "date": "2026-11-23"
     },
     {
-     "text": "Nelson re-aggravated his ankle late in the BC game, so the backup is not fully healthy either.",
-     "source": "Orange Fizz",
-     "url": "https://playdanewyork.com/2026/11/syracuse-football-falls-to-boston-college-27-15-angeli-injury/",
-     "date": "2026-11-22"
+     "text": "Notre Dame is also short-handed: S Luke Talich (season), LBs Viliamu-Asa and Bowen, CB McKinney and WR Greathouse are out at Syracuse.",
+     "source": "WNDU",
+     "url": "https://www.wndu.com/2026/11/23/notre-dame-confirms-season-ending-injury-luke-talich-rules-out-several-starters-syracuse-game/",
+     "date": "2026-11-23"
     }
    ],
    "returning": []

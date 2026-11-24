@@ -1,6 +1,6 @@
-Date: 2026-11-23 09:42
+Date: 2026-11-24 09:47
 Status: pushed
-Week 13 (Thanksgiving week, 74 games incl. Dec. title games); inputs built 2026-11-23 09:24 ET.
-Injury Wire: 16 items (laptop's, unchanged); top movers UCLA QB Ty Dieffenbach carted off vs Michigan (no diagnosis yet), Ohio State QB Julian Sayin still out for Michigan.
-Research Assistant: 27 teams with rating-watch items; 26 gap games (4 explained, 16 partly, 6 unexplained)
-Re-check of the laptop's 9:16 AM run: re-verified 15 G5 gap games and added 37 watch-team checks; new: Hawai'i QB Micah Alejado carted off at Nevada (gap now explained), USF fired OC Tim Beck + Kromenhoek starting, South Alabama QB Bishop Davenport back, UTEP interim coach + QB Colson out, SDSU's title-game spot set (WSU game a tune-up).
+Week 13 (rivalry / Thanksgiving week, 71 games); inputs built 2026-11-24 09:28 ET.
+Injury Wire: 22 items, 20 teams; top movers UCLA QB Ty Dieffenbach (minor hip) not cleared but has a chance vs USC, TCU QB Jaden Craig ruled out at Texas Tech (Schobel starts, Dykes fired).
+Research Assistant: 52 teams with rating-watch items; 23 gap games (3 explained, 16 partly, 4 unexplained)
+Full run (laptop's last wire/notes were from Nov 23 9 AM): all 138 watch teams re-checked; new: Georgia State QB Cameran Brown ruled out, North Texas backup QB Jimerson also hurt, Hawai'i QB Alejado out, Wake RB Ty Clark out for year, Notre Dame defense cluster out, Texas A&M QB undecided.
