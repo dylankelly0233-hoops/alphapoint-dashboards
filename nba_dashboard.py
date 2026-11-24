@@ -224,11 +224,6 @@ def team_log(box, spreads, abbr, names):
 # ==========================================
 # 4. HTML
 # ==========================================
-def _logo(abbr, tm_logo):
-    path = tm_logo.get(abbr)
-    return theme.logo_uri(f'nba_{abbr}', path) if path else None
-
-
 def _line_text(team, pts):
     return 'PICK' if pts < 0.25 else f'{theme.esc(team)} −{theme.spread_num(pts)}'
 

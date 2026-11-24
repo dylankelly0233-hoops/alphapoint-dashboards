@@ -83,8 +83,6 @@ SCALE = ex.calibrated_value('cbb', 'scale', 1.0)      # weekly-tuned rating stre
 CROWD_SLOPE = ex.calibrated_value('cbb', 'crowd_slope', crowd.SLOPE['cbb'])   # home edge per doubling of crowd
 FALLBACK_SD     = 9.5      # typical D1 SD in points, used if no points-based source loads
 RA_TOP          = 100      # Research Assistant also covers games with a top-100 team (our ratings) or national TV
-LOGO_PX         = 48       # smaller logos (displayed at 24–30px)
-theme.LOGO_LINK = True     # all of D1 (~365 teams): link logo files instead of embedding them (2.7 MB → light)
 LOOKAHEAD_DAYS  = 21
 
 CONFERENCES     = {'SEC': 'SEC', 'B10': 'Big Ten', 'B12': 'Big 12', 'ACC': 'ACC', 'BE': 'Big East'}

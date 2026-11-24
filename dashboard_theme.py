@@ -3,26 +3,20 @@ dashboard_theme.py
 AlphaPoint Sports — shared look for the CFB, NFL and CBB dashboards
 Dylan Kelly
 
-One place for the page shell, fonts, colors, components and team logos, so both
-dashboards look the same and a style change is made once.
+One place for the page shell, fonts, colors, components and team badges, so every
+dashboard looks the same and a style change is made once.
 
-Logos are downloaded once from ESPN's image server at small size, cached in
-LOGO_DIR, and embedded in the page as data URIs. A published (shared) page can't
-load images from other sites, so they have to travel inside the HTML.
+Teams show as CSS badges (team colors and abbreviation), not logos: logos are trademarked
+artwork, and nothing on the site loads from ESPN's image server (2026-11-23).
 """
 
-import base64
 from datetime import date
 import html
 import os
 import re
 import webbrowser
 
-import requests
 
-LOGO_DIR  = 'logos'
-LOGO_PX   = 80          # downloaded size; displayed at 24–36px, so it stays sharp on retina screens
-ESPN_IMG  = 'https://a.espncdn.com/combiner/i?img={path}&h={px}&w={px}'
 
 FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com">'
          '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
@@ -31,48 +25,8 @@ FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com">'
 
 
 # ==========================================
-# LOGOS
+# TEAM BADGES
 # ==========================================
-_LOGO_CSS = {}   # css class → data URI (or logos/ file link); each logo appears once and is reused everywhere
-LOGO_LINK = True   # the site page links logos/<file>.png (served beside it) instead of embedding them: keeps pages
-                   # light (CFB was 720 KB gzipped, 560 KB of it embedded logos; Dylan, 2026-11-22), phones fetch only
-                   # the logos on the tab in view, and the browser caches them across pages. The shareable copy still
-                   # embeds them (write_outputs). build_site.py copies logos/ into the site after every page is built.
-
-
-def logo_uri(key, espn_path, px=LOGO_PX):
-    """
-    CSS class for a team logo. key = cache file name (e.g. 'nfl_BUF'),
-    espn_path = path on ESPN's CDN (e.g. '/i/teamlogos/nfl/500/buf.png').
-    px = downloaded size; pages with many teams pass a smaller size to stay light.
-    Returns None if the logo can't be fetched — the page then shows initials.
-    """
-    if not espn_path:
-        return None
-    safe = re.sub(r'[^A-Za-z0-9_-]', '_', key) + ('' if px == LOGO_PX else f'_{px}')
-    cls = f'lg-{safe}'
-    if cls in _LOGO_CSS:
-        return cls
-    os.makedirs(LOGO_DIR, exist_ok=True)
-    path = os.path.join(LOGO_DIR, safe + '.png')
-    if not os.path.exists(path):
-        try:
-            r = requests.get(ESPN_IMG.format(path=espn_path, px=px), timeout=20)
-            r.raise_for_status()
-            if not r.headers.get('content-type', '').startswith('image/'):
-                return None
-            with open(path, 'wb') as f:
-                f.write(r.content)
-        except Exception:
-            return None
-    if LOGO_LINK:
-        _LOGO_CSS[cls] = f'{LOGO_DIR}/{safe}.png'
-        return cls
-    with open(path, 'rb') as f:
-        _LOGO_CSS[cls] = 'data:image/png;base64,' + base64.b64encode(f.read()).decode()
-    return cls
-
-
 # Team badges (Dylan, 2026-11-23): team logos are trademarked artwork, so every page shows a ringed circle in the
 # team's own colors with its abbreviation instead (colors from CBBD / CFBD / nflverse, ESPN team lists for pro
 # leagues). Drawn in CSS: the ring and the letters scale with whatever size the badge is shown at, and the letter size
@@ -198,7 +152,7 @@ def _initials(name):
 
 
 def logo_img(name, logo, size='md'):
-    """logo = CSS class from logo_uri, or None for an initials badge."""
+    """logo = CSS class from team_badge, or None for an initials badge."""
     if logo:
         return f'<span class="logo {size} img{" tb" if logo in _BADGES else ""} {logo}" aria-hidden="true"></span>'
     return f'<span class="logo {size} initials" aria-hidden="true">{esc(_initials(name))}</span>'
@@ -1150,7 +1104,7 @@ def render_page(*, title, league, headline, meta_items, tabs, footer, extra='', 
         meta += '<a class="navlink" href="index.html#guide">How to use</a>'
     nav = ''.join(f'<button data-page="{tid}" role="tab">{esc(lbl)}</button>' for tid, lbl, _ in tabs)
     pages = ''.join(f'<section class="page" id="{tid}">{body}</section>' for tid, _, body in tabs)
-    logo_css = '\n'.join(f'.{c} {{ background-image: url({d}); }}' for c, d in _LOGO_CSS.items()) + '\n' + badge_css()
+    logo_css = badge_css()
     return f"""<title>{esc(title)}</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 {FONTS}
@@ -1174,11 +1128,6 @@ def render_page(*, title, league, headline, meta_items, tabs, footer, extra='', 
 def write_outputs(page, html_path, share_path, no_browser_env):
     """Write the shareable fragment and a full local page; open the local page unless the env var is set."""
     share = page
-    if LOGO_LINK:   # a shared copy can't load files from beside it: embed the linked logos there
-        def embed(m):
-            with open(m.group(1), 'rb') as f:
-                return 'url(data:image/png;base64,' + base64.b64encode(f.read()).decode() + ')'
-        share = re.sub(r'url\((' + LOGO_DIR + r'/[A-Za-z0-9_-]+\.png)\)', embed, page)
     with open(share_path, 'w', encoding='utf-8') as f:
         f.write(share)
     with open(html_path, 'w', encoding='utf-8') as f:

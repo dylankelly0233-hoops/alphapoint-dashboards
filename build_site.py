@@ -264,11 +264,6 @@ def guide():
             f'<div class="example"><span class="label">Example game (made-up numbers)</span>{card}'
             f'<section class="card read">{read}</section></div></div>')
 
-# League logos for the Best spots rows (ESPN's CDN, embedded like team logos). College football and
-# basketball share the NCAA logo, so a small ball badge tells them apart.
-LEAGUE_LOGOS = {'NFL': ('/i/teamlogos/leagues/500/nfl.png', ''), 'NBA': ('/i/teamlogos/leagues/500/nba.png', ''),
-                'NHL': ('/i/teamlogos/leagues/500/nhl.png', ''), 'EPL': ('/i/leaguelogos/soccer/500/23.png', ''),
-                'CFB': ('/i/espn/misc_logos/500/ncaa.png', '🏈'), 'CBB': ('/i/espn/misc_logos/500/ncaa.png', '🏀')}
 LEAGUE_NAMES = {'NFL': 'NFL', 'NBA': 'NBA', 'NHL': 'NHL', 'EPL': 'Premier League', 'CFB': 'College football', 'CBB': 'College basketball'}
 
 
@@ -1488,8 +1483,6 @@ def main():
                 print(f'  ! {page}: could not add head tags: {e}')
     if os.path.isdir(os.path.join(HERE, 'brand')):   # icons and link-preview images (make_brand.py)
         shutil.copytree(os.path.join(HERE, 'brand'), os.path.join(SITE, 'brand'), dirs_exist_ok=True)
-    if os.path.isdir(os.path.join(HERE, 'logos')):   # logo files the pages link (theme.LOGO_LINK); last, after every page
-        shutil.copytree(os.path.join(HERE, 'logos'), os.path.join(SITE, 'logos'), dirs_exist_ok=True)
     print('\nSite built:', {p: 'ok' if ok else 'FAILED' for p, ok in results.items()})
 
 
