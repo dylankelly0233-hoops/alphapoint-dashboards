@@ -1,6 +1,6 @@
 {
  "sport": "cbb",
- "generated": "2026-11-24T12:43:54-05:00",
+ "generated": "2026-11-24T13:50:00-05:00",
  "teams": {
   "Dayton": {
    "watch": [
@@ -48,15 +48,15 @@
    "checked": "2026-11-23T18:43:45-05:00"
   },
   "Tennessee": {
-   "checked": "2026-11-23T16:05:00-05:00",
+   "checked": "2026-11-24T13:50:00-05:00",
    "watch": [
     {
      "direction": "too_high",
      "since": "2026-11-17",
-     "text": "Jalen Haralson (20.5 mpg, knee hyperextension 11/17) missed Coastal Carolina; Barnes expects him back for Maryland on 11/24, but it is unconfirmed.",
-     "source": "Knoxville News Sentinel (Yahoo)",
-     "url": "https://sports.yahoo.com/articles/jalen-haralson-injury-tennessee-basketball-230640171.html",
-     "date": "2026-11-21"
+     "text": "Jalen Haralson (20.5 mpg, right knee hyperextension 11/17) missed Coastal Carolina and is expected to sit against Maryland on 11/24; day to day, not long term.",
+     "source": "CBS Sports",
+     "url": "https://www.cbssports.com/betting/news/no-9-tennessee-vs-maryland-cbb-odds-parlay-volunteers-should-have-too-much-in-players-era-16-vegas-matinee/",
+     "date": "2026-11-24"
     }
    ]
   },
@@ -143,7 +143,7 @@
   },
   "Maryland": {
    "watch": [],
-   "checked": "2026-11-23T16:05:00-05:00"
+   "checked": "2026-11-24T13:50:00-05:00"
   },
   "Wright State": {
    "checked": "2026-11-24T08:45:20-05:00",
@@ -477,29 +477,21 @@
    }
   },
   "401906853": {
-   "checked": "2026-11-23T16:05:00-05:00",
+   "checked": "2026-11-24T13:50:00-05:00",
    "verdict": "partly",
-   "summary": "Part of it: Tennessee's Jalen Haralson (knee) is still day to day for this neutral-site game, and the line has come down from Tennessee -5.5 to -3.5/-4.5; we found nothing else.",
+   "summary": "Part of it: Tennessee's Jalen Haralson (knee) is now expected to sit out this neutral-site game, and the line has come down from Tennessee -5.5 to -3.5/-4.5; we found nothing else.",
    "reasons": [
     {
-     "text": "Jalen Haralson (about 22-25 mpg) hyperextended his knee on 11/17, missed Coastal Carolina on 11/21; Barnes thinks he'll be ready but it isn't confirmed.",
-     "source": "On3",
-     "url": "https://www.on3.com/teams/tennessee-volunteers/news/jalen-haralson-update-rick-barnes-tennessee-basketball-injury/",
-     "date": "2026-11-21"
+     "text": "Jalen Haralson (20.5 mpg) hyperextended his right knee on 11/17 and missed Coastal Carolina on 11/21; game-day reports on 11/24 say he is expected to sit against Maryland.",
+     "source": "CBS Sports",
+     "url": "https://www.cbssports.com/betting/news/no-9-tennessee-vs-maryland-cbb-odds-parlay-volunteers-should-have-too-much-in-players-era-16-vegas-matinee/",
+     "date": "2026-11-24"
     },
     {
-     "text": "The line opened Tennessee -5.5 and has moved toward Maryland (-3.5 in our feed, -4.5 at DraftKings) with no other injury news found for either team.",
+     "text": "The line opened Tennessee -5.5 and has moved toward Maryland (-3.5 in our feed, -4.5 at DraftKings); no injury news found for Maryland.",
      "source": "ESPN",
      "url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401906853",
-     "date": "2026-11-23"
-    }
-   ],
-   "returning": [
-    {
-     "team": "Tennessee",
-     "player": "Jalen Haralson",
-     "text": "Missed 11/21 with a knee hyperextension; Barnes expects him back for Maryland, unconfirmed.",
-     "url": "https://sports.yahoo.com/articles/jalen-haralson-injury-tennessee-basketball-230640171.html"
+     "date": "2026-11-24"
     }
    ]
   },
