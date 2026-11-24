@@ -1,6 +1,6 @@
-Date: 2026-11-23 10:37
+Date: 2026-11-24 10:44
 Status: pushed
-Week 11 wire (MNF CIN @ WAS tonight) + Week 12 slate incl. Thanksgiving; inputs built 2026-11-23 10:25 ET.
-Injury Wire: 31 items on 22 teams. Top movers: LAC QB Justin Herbert in concussion protocol; NE QB Drake Maye out (Tommy DeVito starts).
-Research Assistant: 23 teams with rating-watch items; 5 gap games (2 explained, 3 partly, 0 unexplained); all 3 swings explained.
-Re-check of the laptop's 10:25 run (kept its work). Added PHI RB Saquon Barkley (left arm, left Sunday's game; says he expects to play Thursday). No new word on Herbert, Carson Beck or MNF inactives yet.
+Week 12 (GB @ LA Wed; CHI @ DET, PHI @ DAL, KC @ BUF Thanksgiving; DEN @ PIT Fri); inputs built 2026-11-24 10:29 ET.
+Injury Wire: 42 items on 25 teams. Top movers: LAC QB Justin Herbert in concussion protocol; SEA QB Sam Darnold expected back (missed Weeks 9-10).
+Research Assistant: 26 teams with rating-watch items; 9 gap games (5 explained, 4 partly, 0 unexplained); all 6 swings explained.
+Full run (laptop files were from 2026-11-23). QB holds: LAC, SEA, ARI (Beck questionable), NE (DeVito), IND (Richardson), MIA (McCord), LV (Mendoza). GB Micah Parsons cleared to debut; ARI fired DC Nick Rallis.

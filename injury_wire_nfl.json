@@ -1,51 +1,51 @@
 {
  "sport": "nfl",
- "week": 11,
- "generated": "2026-11-23T10:36:00-05:00",
+ "week": 12,
+ "generated": "2026-11-24T10:42:02-05:00",
  "movers": [
   {
    "team": "LAC",
    "tag": "QB",
-   "text": "QB Justin Herbert entered the concussion protocol after Sunday's 27-24 loss to the Jets; he must clear every step to face New England. He was sacked six times.",
-   "source": "ESPN",
-   "url": "https://www.espn.com/nfl/story/_/id/50567478/chargers-justin-herbert-lands-concussion-protocol",
+   "text": "QB Justin Herbert is in the concussion protocol after reporting symptoms following the 27-24 loss to the Jets; Jim Harbaugh said he must clear every step to face New England.",
+   "source": "Chargers.com",
+   "url": "https://www.chargers.com/news/justin-herbert-injury-update-nfl-protocol-week-12",
    "date": "2026-11-23",
    "qb_status": "uncertain"
   },
   {
-   "team": "NE",
+   "team": "SEA",
    "tag": "QB",
-   "text": "QB Drake Maye fractured his right ankle in Week 10 and could miss the rest of the season; Tommy DeVito is expected to start at the Chargers after the bye.",
-   "source": "theScore",
-   "url": "https://www.thescore.com/nfl/news/3656720",
-   "date": "2026-11-16",
-   "qb_status": "new_starter"
+   "text": "QB Sam Darnold (quadriceps/rib), who missed Weeks 9-10 before the bye, is set to start at San Francisco if Wednesday's practice goes well; Drew Lock started both games.",
+   "source": "ESPN",
+   "url": "https://www.espn.com/nfl/story/_/id/50578357/seahawks-holding-final-sam-darnold-call-vs-49ers",
+   "date": "2026-11-24",
+   "qb_status": "returning"
   },
   {
    "team": "ARI",
    "tag": "QB",
-   "text": "QB Carson Beck (back spasms) missed the 34-7 loss at Kansas City; Mike LaFleur didn't expect a multi-week absence. Josh Johnson started; Gardner Minshew is on IR.",
+   "text": "QB Carson Beck (back spasms) is questionable after missing the 34-7 loss at Kansas City, when Josh Johnson started; Gardner Minshew is on IR after UCL surgery.",
+   "source": "ESPN injuries",
+   "url": "https://www.espn.com/nfl/injuries",
+   "date": "2026-11-24",
+   "qb_status": "uncertain"
+  },
+  {
+   "team": "GB",
+   "tag": "RETURNING",
+   "text": "Edge Micah Parsons (ACL) has been cleared to make his season debut Wednesday at the Rams, per NFL Network's Ian Rapoport.",
    "source": "ESPN",
-   "url": "https://www.espn.com/nfl/story/_/id/50542595/cardinals-qb-beck-dealing-back-spasms-johnson-start",
-   "date": "2026-11-20",
-   "qb_status": "uncertain"
+   "url": "https://www.espn.com/nfl/story/_/id/50577301/sources-packers-micah-parsons-cleared-return-wednesday",
+   "date": "2026-11-24"
   },
   {
-   "team": "MIN",
+   "team": "NE",
    "tag": "QB",
-   "text": "QB Kyler Murray (hamstring) missed Sunday's 35-10 loss to San Francisco and remains week-to-week; Kirk Cousins started. WR Jordan Addison (thumb) also sat.",
-   "source": "FOX Sports",
-   "url": "https://www.foxsports.com/nfl/kyler-murray-player",
-   "date": "2026-11-22",
-   "qb_status": "uncertain"
-  },
-  {
-   "team": "SF",
-   "tag": "KEY",
-   "text": "RT Colton McKivitz broke and dislocated his left ankle vs. Minnesota, per Kyle Shanahan, likely ending his season; Vederian Lowe replaced him.",
-   "source": "49ers Webzone",
-   "url": "https://www.49erswebzone.com/articles/205424-shanahan-shares-heartbreaking-colton-mckivitz/",
-   "date": "2026-11-23"
+   "text": "Mike Vrabel said Tommy DeVito stays QB1 while Drake Maye (fractured right fibula, Week 10) is out; Maye remains on the 53-man roster.",
+   "source": "ESPN",
+   "url": "https://www.espn.com/nfl/story/_/id/50575341/mike-vrabel-patriots-sticking-tommy-devito-qb1",
+   "date": "2026-11-23",
+   "qb_status": "new_starter"
   }
  ],
  "teams": {
@@ -53,69 +53,127 @@
    {
     "team": "LAC",
     "tag": "QB",
-    "text": "QB Justin Herbert entered the concussion protocol after Sunday's 27-24 loss to the Jets; he must clear every step to face New England. He was sacked six times.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/story/_/id/50567478/chargers-justin-herbert-lands-concussion-protocol",
+    "text": "QB Justin Herbert is in the concussion protocol after reporting symptoms following the 27-24 loss to the Jets; Jim Harbaugh said he must clear every step to face New England.",
+    "source": "Chargers.com",
+    "url": "https://www.chargers.com/news/justin-herbert-injury-update-nfl-protocol-week-12",
     "date": "2026-11-23",
     "qb_status": "uncertain"
    },
    {
     "team": "LAC",
     "tag": "KEY",
-    "text": "LB Daiyan Henley (knee) and CB Tarheeb Still (ankle) were inactive vs. the Jets; the Chargers fell to 1-9.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-22"
+    "text": "LB Daiyan Henley (knee) and CB Tarheeb Still missed Week 11; Harbaugh said both are day to day in treatment this week.",
+    "source": "Chargers.com",
+    "url": "https://www.chargers.com/news/justin-herbert-injury-update-nfl-protocol-week-12",
+    "date": "2026-11-23"
    }
   ],
-  "NE": [
+  "SEA": [
    {
-    "team": "NE",
+    "team": "SEA",
     "tag": "QB",
-    "text": "QB Drake Maye fractured his right ankle in Week 10 and could miss the rest of the season; Tommy DeVito is expected to start at the Chargers after the bye.",
-    "source": "theScore",
-    "url": "https://www.thescore.com/nfl/news/3656720",
-    "date": "2026-11-16",
-    "qb_status": "new_starter"
+    "text": "QB Sam Darnold (quadriceps/rib), who missed Weeks 9-10 before the bye, is set to start at San Francisco if Wednesday's practice goes well; Drew Lock started both games.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nfl/story/_/id/50578357/seahawks-holding-final-sam-darnold-call-vs-49ers",
+    "date": "2026-11-24",
+    "qb_status": "returning"
+   },
+   {
+    "team": "SEA",
+    "tag": "CLUSTER",
+    "text": "OL: G Quenton Nelson is doubtful and LT Charles Cross questionable on ESPN's injury list for Sunday at San Francisco.",
+    "source": "ESPN injuries",
+    "url": "https://www.espn.com/nfl/injuries",
+    "date": "2026-11-24"
    }
   ],
   "ARI": [
    {
     "team": "ARI",
     "tag": "QB",
-    "text": "QB Carson Beck (back spasms) missed the 34-7 loss at Kansas City; Mike LaFleur didn't expect a multi-week absence. Josh Johnson started; Gardner Minshew is on IR.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/story/_/id/50542595/cardinals-qb-beck-dealing-back-spasms-johnson-start",
-    "date": "2026-11-20",
+    "text": "QB Carson Beck (back spasms) is questionable after missing the 34-7 loss at Kansas City, when Josh Johnson started; Gardner Minshew is on IR after UCL surgery.",
+    "source": "ESPN injuries",
+    "url": "https://www.espn.com/nfl/injuries",
+    "date": "2026-11-24",
     "qb_status": "uncertain"
    },
    {
     "team": "ARI",
-    "tag": "KEY",
-    "text": "G Jon Gaines II (ankle) was out a fourth straight game in Week 11.",
+    "tag": "CLUSTER",
+    "text": "Secondary: DBs Will Johnson and Andrew Wingard are on IR. The Cardinals also fired DC Nick Rallis on Monday; Teryl Austin is interim DC.",
     "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-22"
+    "url": "https://www.espn.com/nfl/story/_/id/50575938/cardinals-fire-defensive-coordinator-nick-rallis-sources-say",
+    "date": "2026-11-23"
    }
   ],
-  "MIN": [
+  "GB": [
    {
-    "team": "MIN",
-    "tag": "QB",
-    "text": "QB Kyler Murray (hamstring) missed Sunday's 35-10 loss to San Francisco and remains week-to-week; Kirk Cousins started. WR Jordan Addison (thumb) also sat.",
-    "source": "FOX Sports",
-    "url": "https://www.foxsports.com/nfl/kyler-murray-player",
-    "date": "2026-11-22",
-    "qb_status": "uncertain"
-   }
-  ],
-  "SF": [
+    "team": "GB",
+    "tag": "RETURNING",
+    "text": "Edge Micah Parsons (ACL) has been cleared to make his season debut Wednesday at the Rams, per NFL Network's Ian Rapoport.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nfl/story/_/id/50577301/sources-packers-micah-parsons-cleared-return-wednesday",
+    "date": "2026-11-24"
+   },
    {
-    "team": "SF",
+    "team": "GB",
     "tag": "KEY",
-    "text": "RT Colton McKivitz broke and dislocated his left ankle vs. Minnesota, per Kyle Shanahan, likely ending his season; Vederian Lowe replaced him.",
-    "source": "49ers Webzone",
-    "url": "https://www.49erswebzone.com/articles/205424-shanahan-shares-heartbreaking-colton-mckivitz/",
+    "text": "OL: guards Kevin Zeitler (triceps) and Sean Rhyan (ankle) were limited Sunday and Monday on the official report; RB Josh Jacobs (finger) also limited.",
+    "source": "Packers.com",
+    "url": "https://www.packers.com/news/packers-rams-injury-report-nov-23-2026",
+    "date": "2026-11-23"
+   }
+  ],
+  "NE": [
+   {
+    "team": "NE",
+    "tag": "QB",
+    "text": "Mike Vrabel said Tommy DeVito stays QB1 while Drake Maye (fractured right fibula, Week 10) is out; Maye remains on the 53-man roster.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nfl/story/_/id/50575341/mike-vrabel-patriots-sticking-tommy-devito-qb1",
+    "date": "2026-11-23",
+    "qb_status": "new_starter"
+   },
+   {
+    "team": "NE",
+    "tag": "RETURNING",
+    "text": "G Alijah Vera-Tucker (hamstring) was designated to return from IR on Monday.",
+    "source": "ESPN injuries",
+    "url": "https://www.espn.com/nfl/injuries",
+    "date": "2026-11-24"
+   },
+   {
+    "team": "NE",
+    "tag": "KEY",
+    "text": "WR A.J. Brown (hamstring) wasn't on the field for Monday's practice session and is listed doubtful by ESPN.",
+    "source": "ESPN injuries",
+    "url": "https://www.espn.com/nfl/injuries",
+    "date": "2026-11-24"
+   }
+  ],
+  "LA": [
+   {
+    "team": "LA",
+    "tag": "CLUSTER",
+    "text": "OL: Sean McVay ruled out G Steve Avila (hamstring) for Wednesday vs. Green Bay; C Coleman Shelton (hamstring) did not practice Sunday or Monday.",
+    "source": "Packers.com (joint report)",
+    "url": "https://www.packers.com/news/packers-rams-injury-report-nov-23-2026",
+    "date": "2026-11-23"
+   },
+   {
+    "team": "LA",
+    "tag": "KEY",
+    "text": "WR Puka Nacua (MCL surgery) is out 4-5 months and WR Davante Adams (hamstring, IR) is more likely back mid-December.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nfl/story/_/id/50556613/sources-rams-puka-nacua-4-5-months-knee-surgery",
+    "date": "2026-11-22"
+   },
+   {
+    "team": "LA",
+    "tag": "RETURNING",
+    "text": "DT Kobie Turner (groin, designated to return from IR) practiced fully Sunday and Monday; RB Kyren Williams (toe) went from limited to full.",
+    "source": "Packers.com (joint report)",
+    "url": "https://www.packers.com/news/packers-rams-injury-report-nov-23-2026",
     "date": "2026-11-23"
    }
   ],
@@ -123,45 +181,58 @@
    {
     "team": "IND",
     "tag": "QB",
-    "text": "The Colts released QB Daniel Jones; Shane Steichen named Anthony Richardson the starter going forward, with Riley Leonard as backup.",
+    "text": "The Colts released QB Daniel Jones after the 26-3 loss at Houston; Anthony Richardson Sr. makes his first start of the season vs. the Giants.",
     "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
+    "url": "https://www.espn.com/nfl/story/_/id/50542293/colts-release-qb-daniel-jones-blowout-loss-texans",
     "date": "2026-11-20",
     "qb_status": "new_starter"
    },
    {
     "team": "IND",
     "tag": "CLUSTER",
-    "text": "OTs Bernhard Raimann (concussion) and Jalen Travis (knee) and CBs Sauce Gardner (calf) and Charvarius Ward (knee) were all inactive in the 26-3 loss at Houston.",
+    "text": "Both starting OTs (Bernhard Raimann, Jalen Travis) and CBs Sauce Gardner and Charvarius Ward missed Week 11; all four are questionable for the Giants.",
     "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
+    "url": "https://www.espn.com/nfl/story/_/id/50524890/texans-rule-hunter-marks-colts-rule-ward-starting-ots",
     "date": "2026-11-19"
+   }
+  ],
+  "MIN": [
+   {
+    "team": "MIN",
+    "tag": "QB",
+    "text": "QB Kyler Murray (hamstring), out Weeks 9-11, is questionable; Kevin O'Connell has said Kirk Cousins stays the starter. WR Jordan Addison (thumb) is not expected to play.",
+    "source": "ESPN injuries",
+    "url": "https://www.espn.com/nfl/injuries",
+    "date": "2026-11-24",
+    "qb_status": "settled"
+   }
+  ],
+  "SF": [
+   {
+    "team": "SF",
+    "tag": "KEY",
+    "text": "RT Colton McKivitz fractured and dislocated his ankle vs. Minnesota and is likely done for the season; CB Deommodore Lenoir (foot) is still hurting, per Kyle Shanahan.",
+    "source": "ESPN injuries",
+    "url": "https://www.espn.com/nfl/injuries",
+    "date": "2026-11-24"
    }
   ],
   "PHI": [
    {
     "team": "PHI",
     "tag": "QB",
-    "text": "Joe Milton started the 19-16 win over the Steelers, his second straight start; Jalen Hurts is on IR.",
-    "source": "theScore",
-    "url": "https://www.thescore.com/nfl/news/3663234",
-    "date": "2026-11-22",
+    "text": "Joe Milton starts again; he started Weeks 9 and 11 after Tanner McKee (now limited, ribs) started Weeks 7-8. Jalen Hurts is on IR.",
+    "source": "Eagles.com injury report",
+    "url": "https://www.philadelphiaeagles.com/team/injury-report/week/reg-12",
+    "date": "2026-11-23",
     "qb_status": "settled"
    },
    {
     "team": "PHI",
     "tag": "KEY",
-    "text": "CB Quinyon Mitchell (hamstring) was ruled out in the fourth quarter vs. Pittsburgh; no timeline for Thursday at Dallas. LB Zack Baun (back) is on IR.",
-    "source": "Philadelphia Inquirer",
-    "url": "https://www.inquirer.com/eagles/live/eagles-news-saquon-barkley-injury-updates-thanksgiving-cowboys-20261123.html",
-    "date": "2026-11-23"
-   },
-   {
-    "team": "PHI",
-    "tag": "KEY",
-    "text": "RB Saquon Barkley left the 19-16 win over Pittsburgh in the fourth quarter with a left arm/shoulder injury; no diagnosis yet. He said afterward he expects to play Thursday at Dallas.",
-    "source": "Bleacher Report",
-    "url": "https://bleacherreport.com/articles/25536604-saquon-barkley-updates-status-eagles-cowboys-thanksgiving-game-after-missing-end-steelers-win",
+    "text": "CB Quinyon Mitchell (hamstring) did not practice on Monday's estimated report; RB Saquon Barkley (neck/illness) and TE Dallas Goedert (shin) were limited.",
+    "source": "Eagles.com injury report",
+    "url": "https://www.philadelphiaeagles.com/team/injury-report/week/reg-12",
     "date": "2026-11-23"
    }
   ],
@@ -169,37 +240,45 @@
    {
     "team": "DET",
     "tag": "CLUSTER",
-    "text": "Secondary: CBs D.J. Reed (hip, third straight game) and Ennis Rakestraw Jr. (shoulder) sat Week 11. DE Aidan Hutchinson (ACL) is out for the season; C Cade Mays is on IR.",
-    "source": "DetroitLions.com",
-    "url": "https://www.detroitlions.com/news/inactives-lions-vs-buccaneers-joseph-reed-rakestraw",
-    "date": "2026-11-22"
+    "text": "Secondary: S Chuck Clark (hamstring) and CB Ennis Rakestraw Jr. (shoulder) did not practice Monday; CB D.J. Reed (hip), out the last three games, practiced fully.",
+    "source": "DetroitLions.com injury report",
+    "url": "https://www.detroitlions.com/team/injury-report/week/reg-12",
+    "date": "2026-11-23"
    },
    {
     "team": "DET",
-    "tag": "RETURNING",
-    "text": "S Kerby Joseph played vs. Tampa Bay for the first time this season.",
-    "source": "Yahoo Sports",
-    "url": "https://sports.yahoo.com/articles/kerby-joseph-active-detroit-lions-163821505.html",
-    "date": "2026-11-22"
+    "tag": "CLUSTER",
+    "text": "Front seven: DE Aidan Hutchinson (ACL, season) and LB Jack Campbell are on IR; edge DJ Wonnum (back) did not practice Monday.",
+    "source": "DetroitLions.com injury report",
+    "url": "https://www.detroitlions.com/team/injury-report/week/reg-12",
+    "date": "2026-11-23"
    }
   ],
   "CHI": [
    {
     "team": "CHI",
     "tag": "KEY",
-    "text": "CB Kyler Gordon (shoulder) missed the Saints game after not practicing all week; a return for Thanksgiving at Detroit looks unlikely. He is not on IR.",
-    "source": "Heavy",
-    "url": "https://heavy.com/sports/nfl/chicago-bears/bears-kyler-gordon-final-saints-decision/",
-    "date": "2026-11-22"
+    "text": "CB Kyler Gordon (shoulder), who missed Week 11, and OT Theo Benedet (quadriceps) did not practice on Monday's report for Thanksgiving at Detroit.",
+    "source": "DetroitLions.com (joint report)",
+    "url": "https://www.detroitlions.com/team/injury-report/week/reg-12",
+    "date": "2026-11-23"
    }
   ],
   "KC": [
    {
     "team": "KC",
-    "tag": "CLUSTER",
-    "text": "G Trey Smith (concussion), OT Jaylon Moore (ankle) and RB Kenneth Walker III (groin) missed Week 11; all are uncertain for Thanksgiving night at Buffalo.",
-    "source": "Yahoo Sports",
-    "url": "https://sports.yahoo.com/articles/bills-vs-chiefs-injury-buffalo-121517497.html",
+    "tag": "KEY",
+    "text": "OT Jaylon Moore (ankle), RB Kenneth Walker III (groin) and TE Noah Gray (ribs) did not practice Monday; all missed or left Week 11.",
+    "source": "Chiefs.com injury report",
+    "url": "https://www.chiefs.com/team/injury-report/week/reg-12",
+    "date": "2026-11-23"
+   },
+   {
+    "team": "KC",
+    "tag": "RETURNING",
+    "text": "G Trey Smith (concussion), who missed Week 11, was a full participant on Monday's report.",
+    "source": "Chiefs.com injury report",
+    "url": "https://www.chiefs.com/team/injury-report/week/reg-12",
     "date": "2026-11-23"
    }
   ],
@@ -207,146 +286,163 @@
    {
     "team": "BUF",
     "tag": "KEY",
-    "text": "TE Dalton Kincaid (thumb/ankle) and CB Christian Benford (groin) missed Week 11; WR DJ Moore (knee) left briefly and returned. All face a short week.",
-    "source": "Yahoo Sports",
-    "url": "https://sports.yahoo.com/articles/bills-vs-chiefs-injury-buffalo-121517497.html",
+    "text": "CB Christian Benford (groin) did not practice Monday; TE Dalton Kincaid, RT Spencer Brown, G O'Cyrus Torrence and edge Greg Rousseau were limited.",
+    "source": "Chiefs.com (joint report)",
+    "url": "https://www.chiefs.com/team/injury-report/week/reg-12",
     "date": "2026-11-23"
    }
   ],
   "DAL": [
    {
     "team": "DAL",
-    "tag": "CLUSTER",
-    "text": "CB DaRon Bland (ankle) and S Jalen Thompson (hamstring) are on IR, and G Tyler Booker (high-ankle sprain) missed Week 11.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-22"
+    "tag": "KEY",
+    "text": "TE Jake Ferguson (knee/ankle) and G Tyler Booker (ankle) did not practice Monday; QB Dak Prescott (left hand) was full.",
+    "source": "Eagles.com (joint report)",
+    "url": "https://www.philadelphiaeagles.com/team/injury-report/week/reg-12",
+    "date": "2026-11-23"
    },
    {
     "team": "DAL",
-    "tag": "KEY",
-    "text": "TE Jake Ferguson (knee/ankle) sat vs. Tennessee; Brian Schottenheimer said he would likely miss multiple weeks.",
-    "source": "NBC Sports",
-    "url": "https://www.nbcsports.com/fantasy/football/player-news/2026-11-22/jake-ferguson-leads-cowboys-inactives-vs-titans",
-    "date": "2026-11-22"
+    "tag": "RETURNING",
+    "text": "S Jalen Thompson (hamstring, IR, designated to return) was a full participant on Monday's estimated report.",
+    "source": "Eagles.com (joint report)",
+    "url": "https://www.philadelphiaeagles.com/team/injury-report/week/reg-12",
+    "date": "2026-11-23"
    }
   ],
   "NO": [
    {
     "team": "NO",
     "tag": "CLUSTER",
-    "text": "OL: OT Taliese Fuaga, C Erik McCoy and OT Asim Richards were all inactive in the 21-13 loss at Chicago, a second straight game for each.",
-    "source": "NewOrleansSaints.com",
-    "url": "https://www.neworleanssaints.com/news/new-orleans-saints-inactives-chicago-bears-2026-nfl-week-11",
-    "date": "2026-11-22"
+    "text": "OL: OT Asim Richards is doubtful and OT Taliese Fuaga and C Erik McCoy questionable after all three sat the last two games.",
+    "source": "ESPN injuries",
+    "url": "https://www.espn.com/nfl/injuries",
+    "date": "2026-11-24"
    },
    {
     "team": "NO",
     "tag": "KEY",
-    "text": "Defense: LB Pete Werner and CB Martin Emerson Jr. sat at Chicago, and starting S Justin Reid was released at his request.",
-    "source": "Yahoo Sports",
-    "url": "https://sports.yahoo.com/articles/orleans-saints-vs-chicago-bears-163640959.html",
-    "date": "2026-11-22"
+    "text": "TE Juwan Johnson (hamstring) is still being evaluated after leaving the 21-13 loss at Chicago, per Kellen Moore.",
+    "source": "ESPN injuries",
+    "url": "https://www.espn.com/nfl/injuries",
+    "date": "2026-11-23"
    }
   ],
   "BAL": [
    {
     "team": "BAL",
     "tag": "QB",
-    "text": "QB Lamar Jackson (thumb surgery, IR) could return Week 16; Jacoby Brissett started the 35-33 loss at Carolina.",
-    "source": "ESPN",
+    "text": "Jacoby Brissett has started Weeks 10-11; Lamar Jackson (thumb surgery, IR) has a possible Week 16 return.",
+    "source": "ESPN injuries",
     "url": "https://www.espn.com/nfl/injuries",
     "date": "2026-11-18",
     "qb_status": "settled"
+   },
+   {
+    "team": "BAL",
+    "tag": "KEY",
+    "text": "CB Marlon Humphrey was a healthy scratch at Carolina; the Ravens are noncommittal on him for Houston. DT Nnamdi Madubuike is questionable.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nfl/story/_/id/50577306/ravens-noncommittal-whether-cb-humphrey-play-sunday",
+    "date": "2026-11-23"
    }
   ],
   "MIA": [
    {
     "team": "MIA",
     "tag": "QB",
-    "text": "QB Malik Willis (groin/core) is on IR; Kyle McCord started the 26-9 loss at Buffalo (102 passing yards).",
-    "source": "ESPN",
+    "text": "QB Malik Willis (groin/core) is on IR, surgery not foreseen per Jeff Hafley; Kyle McCord started Weeks 10-11 and goes again vs. the Jets.",
+    "source": "ESPN injuries",
     "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-22",
+    "date": "2026-11-23",
     "qb_status": "new_starter"
    }
   ],
   "LV": [
    {
     "team": "LV",
+    "tag": "QB",
+    "text": "Rookie Fernando Mendoza makes his third start since Kirk Cousins was traded to Minnesota; he was sacked five times in the Week 11 loss at Denver.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nfl/story/_/id/50569797/fernando-mendoza-settling-raiders-starting-quarterback",
+    "date": "2026-11-23",
+    "qb_status": "new_starter"
+   },
+   {
+    "team": "LV",
     "tag": "KEY",
-    "text": "TE Brock Bowers (ankle/quad) missed Week 11 at Denver; Klint Kubiak is optimistic he plays Nov. 29 at Cleveland.",
-    "source": "NBC Sports",
-    "url": "https://www.nbcsports.com/fantasy/football/player-news/2026-11-22/kubiak-optimistic-about-bowers-ankle-quad-wk-12",
-    "date": "2026-11-22"
+    "text": "TE Brock Bowers (ankle/quad), who missed Week 11 at Denver, is questionable for Sunday night at Cleveland.",
+    "source": "ESPN injuries",
+    "url": "https://www.espn.com/nfl/injuries",
+    "date": "2026-11-24"
    }
   ],
   "PIT": [
    {
     "team": "PIT",
     "tag": "KEY",
-    "text": "LB Alex Highsmith (ankle) was ruled out during Sunday's loss at Philadelphia; LB Nick Herbig was inactive. G Mason McCormick is on IR.",
-    "source": "ESPN",
+    "text": "LB Alex Highsmith (ankle) is likely out Friday vs. Denver, per Mike McCarthy; LB Nick Herbig is questionable.",
+    "source": "ESPN injuries",
     "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-22"
+    "date": "2026-11-23"
+   },
+   {
+    "team": "PIT",
+    "tag": "RETURNING",
+    "text": "WR Michael Pittman Jr. (foot, IR) should play vs. Denver; Mike McCarthy is 'very confident' he'll be on the field.",
+    "source": "ESPN injuries",
+    "url": "https://www.espn.com/nfl/injuries",
+    "date": "2026-11-23"
+   }
+  ],
+  "HOU": [
+   {
+    "team": "HOU",
+    "tag": "KEY",
+    "text": "LB Azeez Al-Shaair is on IR after groin surgery; DE Chris Braswell hurt his knee on the opening kickoff Nov. 19. DE Danielle Hunter is questionable.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nfl/story/_/id/50536083/texans-lose-chris-braswell-serious-looking-knee-injury",
+    "date": "2026-11-20"
    }
   ],
   "JAX": [
    {
     "team": "JAX",
     "tag": "CLUSTER",
-    "text": "OT Walker Little (knee) and CB Jarrian Jones (chest) left Sunday's loss to the Giants; C Robert Hainsey (knee) was inactive.",
-    "source": "ESPN",
+    "text": "OL: OT Walker Little (knee) left the Giants loss and C Robert Hainsey is questionable; RT Anton Harrison is on IR. RB Bhayshul Tuten aggravated his ankle.",
+    "source": "ESPN injuries",
     "url": "https://www.espn.com/nfl/injuries",
     "date": "2026-11-23"
    }
   ],
-  "CIN": [
+  "NYG": [
    {
-    "team": "CIN",
+    "team": "NYG",
     "tag": "KEY",
-    "text": "G Dalton Risner (knees) is ruled out for Monday at Washington; G Dylan Fairchild (oblique) is questionable. QB Joe Burrow (illness) has no designation.",
+    "text": "CB Greg Newsome II (high ankle sprain) will miss multiple weeks, John Harbaugh said Monday.",
     "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-22"
-   },
-   {
-    "team": "CIN",
-    "tag": "RETURNING",
-    "text": "S Kyle Dugger (quadriceps), out six games, is questionable for Monday at Washington.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-22"
+    "url": "https://www.espn.com/nfl/story/_/id/50576454/giants-greg-newsome-multiple-weeks-ankle-sprain",
+    "date": "2026-11-23"
    }
   ],
-  "WAS": [
+  "TEN": [
    {
-    "team": "WAS",
-    "tag": "KEY",
-    "text": "CB Amik Robertson (ankle) is questionable for Monday vs. Cincinnati; C Lucas Patrick cleared concussion protocol and will start, per Dan Quinn.",
-    "source": "ESPN",
+    "team": "TEN",
+    "tag": "CLUSTER",
+    "text": "OL: Peter Skoronski, Jackson Slater and Fernando Carmona are all on IR; RB Tyjae Spears (knee) also went on IR.",
+    "source": "ESPN injuries",
     "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-22"
+    "date": "2026-11-24"
    }
   ],
-  "GB": [
+  "TB": [
    {
-    "team": "GB",
-    "tag": "RETURNING",
-    "text": "Edge Micah Parsons (ACL) is on track to make his season debut Wednesday at the Rams, per Fox's Jay Glazer.",
-    "source": "Yahoo Sports",
-    "url": "https://sports.yahoo.com/articles/major-micah-parsons-injury-emerges-055649224.html",
-    "date": "2026-11-22"
-   }
-  ],
-  "LA": [
-   {
-    "team": "LA",
-    "tag": "KEY",
-    "text": "WR Puka Nacua (knee surgery) is on IR and likely out for the season; WR Davante Adams (hamstring, IR) also stays out.",
-    "source": "NFL.com",
-    "url": "https://www.nfl.com/news/rams-wr-puka-nacua-likely-out-for-season-knee-surgery",
-    "date": "2026-11-12"
+    "team": "TB",
+    "tag": "CLUSTER",
+    "text": "Secondary: CB Benjamin Morrison (hamstring) and CB Jacob Parrish (back) had MRIs Monday; S Antoine Winfield Jr. is questionable.",
+    "source": "ESPN injuries",
+    "url": "https://www.espn.com/nfl/injuries",
+    "date": "2026-11-24"
    }
   ]
  }
