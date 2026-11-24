@@ -25,7 +25,10 @@ import pandas as pd
 SHADOW_LABEL = 'AlphaPoint (shadow)'
 PARAMS = 'nfl_v2_params_{year}.json'
 FIX = {'STL': 'LA', 'SD': 'LAC', 'OAK': 'LV', 'JAC': 'JAX', 'LAR': 'LA'}
-BACKUP_STATUSES = {'new_starter', 'settled'}     # Injury Wire qb_status meaning a non-regular QB starts
+# Injury Wire qb_status that turns the backup adjustment on before the change shows in the starters data. 'settled'
+# (regular out 3+ games) is left to auto_backups since 2026-11-24 (Dylan: the effect should fade as the ratings take in
+# the absence): as in the research, the flag ends once the backup has started most of the last 8 games.
+BACKUP_STATUSES = {'new_starter'}
 
 
 def _fit_stat(tg, teams, asof, stat, prior, pw, p):
