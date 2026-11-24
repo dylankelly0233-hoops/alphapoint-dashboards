@@ -607,9 +607,9 @@ def generate_html(power, vals, sched, week, info):
         + theme.method_note(
             f'Every game this week and next (use the switch). <b>Projected</b> is the composite rating gap plus {HFA_POINTS:g} points for the home '
             f'team (no home field at neutral sites such as international games). <b>Market</b> is the posted spread, for '
-            f'comparison. <b>Edge</b> is how many points our projected line differs from the market, shown as the side we '
-            f'like at the market number; gaps of {theme.EDGE_STRONG:g}+ points are highlighted and gaps under '
-            f'{theme.EDGE_MIN:g} show as None. Trade signals come from the value metrics. <b>Line</b> shows the spread when '
+            f'comparison. <b>Edge</b> is how many points our projected line differs from the market, shown as the side our '
+            f'number favors at the market number; gaps of {theme.EDGE_STRONG:g}+ points are highlighted and gaps under '
+            f'{theme.EDGE_MIN:g} show as None. {theme.EDGE_NOTE} Trade signals come from the value metrics. <b>Line</b> shows the spread when '
             f'we first saw the game and where it is now, and whether the market has moved toward our number (a good sign '
             f'for the edge) or away from it. <b>Teaser tags</b> come from our study of 2-team, 6-point NFL teasers: '
             f'underdogs of +1.5 to +3 in games with a total of {TEASER_TOTAL_MAX} or lower or a division matchup won about '

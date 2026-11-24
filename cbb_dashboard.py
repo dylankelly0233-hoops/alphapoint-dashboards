@@ -766,7 +766,7 @@ def generate_html(power, metrics, days, info):
             f'+{sit.ALT_PER_1000FT:g} per 1,000 feet the home gym sits above the visitor' + "'" + f's campus, for climbs of 3,000+ feet. '
             f'Students being away over the winter break, rest days and travel distance tested as no effect. <b>Market</b> '
             f'is the posted sportsbook spread (via collegebasketballdata.com) when one exists. <b>Edge</b> is how far our line is from the market, shown as the '
-            f'side we like; gaps of {theme.EDGE_STRONG:g}+ points are highlighted. Opponents outside Division I have no rating. '
+            f'side our number favors; gaps of {theme.EDGE_STRONG:g}+ points are highlighted. {theme.EDGE_NOTE} Opponents outside Division I have no rating. '
             f'<b>Line</b> shows the opening spread and where it is now, and whether the market has moved '
             f'toward our number or away from it.'))
 

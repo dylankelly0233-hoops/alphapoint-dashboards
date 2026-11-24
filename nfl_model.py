@@ -83,12 +83,39 @@ def _games(year):
     return g
 
 
+def auto_backups(year, asof=None):
+    """
+    {team: True} when the team's most recent starter isn't its regular QB, by the research's own definition
+    (nfl_qb_adjust_test.backup_flags: regular = most common starter over the last 8 starts, at least 3), assuming the
+    last starter starts again. A safety net under the curated Injury Wire (2026-11-24 weak-points review: the Giants
+    and Cardinals had a non-regular starter with no backup flag, and the curation rules let 'settled' items drop off).
+    """
+    from collections import Counter
+    try:
+        g = pd.read_csv('https://github.com/nflverse/nfldata/raw/master/data/games.csv', low_memory=False,
+                        usecols=['season', 'gameday', 'home_team', 'away_team', 'home_qb_id', 'away_qb_id', 'home_score'])
+    except Exception:
+        return {}
+    g = g[g.season.between(year - 1, year) & g.home_score.notna()]
+    if asof is not None:
+        g = g[pd.to_datetime(g.gameday) < pd.Timestamp(asof)]
+    rows = [(d, FIX.get(t, t), q) for d, h, a, hq, aq in zip(g.gameday, g.home_team, g.away_team, g.home_qb_id, g.away_qb_id)
+            for t, q in ((h, hq), (a, aq))]
+    out = {}
+    for team, x in pd.DataFrame(rows, columns=['date', 'team', 'qb']).sort_values('date').groupby('team'):
+        seq = [q for q in x.qb if isinstance(q, str)][-8:]
+        if len(seq) >= 3 and seq[-1] != Counter(seq).most_common(1)[0][0]:
+            out[team] = True
+    return out
+
+
 def team_ratings(year, wire_items=None, asof=None):
     """
     {team: points vs an average team on a neutral field} from this season's games so far, or {} when unavailable.
     wire_items: the NFL Injury Wire's {team: [items]}; a QB item marked new_starter / settled means a non-regular QB
     starts, which takes the backup-QB adjustment (the research flagged backups from actual starters; live, the curated
-    Injury Wire is our best read of who starts).
+    Injury Wire is our best read of who starts). Since 2026-11-24 auto_backups() also flags a team whose last starter
+    wasn't its regular, unless the Wire says the regular is 'returning'.
     """
     try:
         p = json.load(open(PARAMS.format(year=year), encoding='utf-8'))
@@ -113,10 +140,12 @@ def team_ratings(year, wire_items=None, asof=None):
     coef = {f: b / sd for f, b, sd in zip(s2['feats'], s2['b'], s2['sd'])}
     q = p['qb']                # final = a + slope * v2 + backup * flag
     out = {}
+    auto = auto_backups(year, asof)
     for i, t in enumerate(teams):
         r = sum(coef[f] * feats[f][i] for f in s2['feats'] if f != 'home')
-        backup = any(str(it.get('tag', '')).upper() == 'QB' and str(it.get('qb_status', '')).lower() in BACKUP_STATUSES
-                     for it in (wire_items or {}).get(t) or [])
+        qbs = [str(it.get('qb_status', '')).lower() for it in (wire_items or {}).get(t) or []
+               if str(it.get('tag', '')).upper() == 'QB']
+        backup = any(s in BACKUP_STATUSES for s in qbs) or (auto.get(t, False) and 'returning' not in qbs)
         out[t] = round(float(q['slope'] * r + (q['backup'] if backup else 0.0)), 2)
     mean = np.mean(list(out.values()))
     return {t: round(v - mean, 2) for t, v in out.items()}

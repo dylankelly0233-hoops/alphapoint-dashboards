@@ -862,8 +862,8 @@ def generate_html(p4, vals, sched, week, season_type, info):
             f'home team\'s last {crowd.LAST_N} home crowds (reaching back to last season early on) and is shown at the top of '
             f'each card. <b>Market</b> is the posted '
             f'spread, for comparison. <b>Edge</b> is how many points our projected line differs from the market, shown as '
-            f'the side we like at the market number; gaps of {theme.EDGE_STRONG:g}+ points are highlighted and gaps under '
-            f'{theme.EDGE_MIN:g} show as None. Games against FCS opponents have no projection. Trade signals come from the value metrics. '
+            f'the side our number favors at the market number; gaps of {theme.EDGE_STRONG:g}+ points are highlighted and gaps under '
+            f'{theme.EDGE_MIN:g} show as None. {theme.EDGE_NOTE} Games against FCS opponents have no projection. Trade signals come from the value metrics. '
             f'<b>Line</b> shows where the spread opened and where it is now, and whether the market has moved toward our '
             f'number (a good sign for the edge) or away from it. <b>Bounce-back</b> tags an away team coming off a '
             f'{BLOWOUT_MARGIN}+ point loss: in our 2016–25 backtest those teams covered 55.4% of 739 games (+5.6% ROI).'))

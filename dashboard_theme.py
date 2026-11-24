@@ -241,6 +241,11 @@ def spread_num(pts):
 
 EDGE_MIN    = 0.5   # gaps smaller than this show as "None"
 EDGE_STRONG = 3.0   # gaps at least this big are highlighted
+# weak_points review (2026-11-24): our gaps with the current / closing line have been about a coin flip in all three
+# sports; the tested edges are against the opener. Said wherever Edge is explained.
+EDGE_NOTE   = ('On its own, a gap with the current or closing line has been close to a coin flip in past seasons: the '
+               "market usually knows something our ratings don't. The tested strategies on Best spots measure against "
+               'the opening line instead.')
 
 
 def edge_text(proj_margin, market_margin, home, away):

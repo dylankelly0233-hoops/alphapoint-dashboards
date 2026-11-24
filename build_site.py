@@ -828,7 +828,7 @@ INFO = [
                           'means it has been winning more than it should (a sell candidate).'),
         ('Trade Signal', 'BUY / SELL tags from the value metrics, shown wherever a team appears.'),
         ('Games', 'This week\'s games with our projected spread (home field included, rounded to the half point), the '
-                  'posted market spread, and the Edge — how far our number is from the market and which side we like. '
+                  'posted market spread, and the Edge — how far our number is from the market and which side our number favors. ' + theme.EDGE_NOTE + ' '
                   'NFL and college football have a This week / Next week switch, so you can look ahead once next '
                   'week\'s lines post; games still to play are listed first.'),
         ('Featured', 'The marquee games, each with a written preview: ranked-vs-ranked and upset-watch games in college '
