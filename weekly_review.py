@@ -322,6 +322,8 @@ def kill_switch(df):
     import systems as sy
     res = {}
     for key, x in df[df['key'].notna()].groupby('key'):
+        if key in sy.KILL_RESET:                      # a restarted strategy counts only bets listed since its restart
+            x = x[x['listed'].astype(str) >= sy.KILL_RESET[key]]
         w = x.sort_values('listed')['won'].dropna().tail(sy.KILL_N)
         n, wins = len(w), int(w.sum()) if len(w) else 0
         be = sy.BREAK_EVEN.get(key, 0.5238)

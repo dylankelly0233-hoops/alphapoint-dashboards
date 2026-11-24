@@ -32,6 +32,10 @@ KILL_N, KILL_RATE = 200, 0.50       # Dylan, 2026-11-20: last 200 live bets unde
 EARLY_N, EARLY_P = 20, 0.05         # Dylan, 2026-11-23 ('we should def not be advertising anything at 41%'): 20+ live bets
                                     # and a record that bad has under a 5% chance by luck alone vs break-even -> paused
 BREAK_EVEN = {'teaser': 0.7238}     # per-leg break-even for a 2-team 6-pt teaser at -110; everything else -110: 52.38%
+# Kill-switch restarts: live bets listed before the date don't count (weekly_review.kill_switch), and a pause recorded
+# before it is ignored. Dylan, 2026-11-24: CFB mid-season Fair Line Value's 7-20 live record came from the old
+# Sagarin/SP+ blend (share 0.23); it restarts on the live model it is now tested on.
+KILL_RESET = {'cfb_spread|mid': '2026-11-24'}
 
 _C = {}
 
@@ -52,7 +56,10 @@ def criteria(key):
 
 def killed(key):
     """Rule 7: weekly_review.py's live_kill.json entry when the last KILL_N live bets won under KILL_RATE."""
-    k = (_json('live_kill.json').get('strategies') or {}).get(key)
+    lk = _json('live_kill.json')
+    k = (lk.get('strategies') or {}).get(key)
+    if key in KILL_RESET and str(lk.get('updated', '')) < KILL_RESET[key]:     # paused before its restart date
+        return None
     return k if k and k.get('killed') else None
 
 
