@@ -26,8 +26,10 @@ PATH = 'conf_effects_cbb.json'
 
 def season_lines(season):
     """This season's games before today: (date, home conference, away conference, result - our line)."""
-    b = pd.read_csv(f'cbbv_box2_{season}.csv')
-    t = pd.read_csv(f'cbbv_teams_{season}.csv')
+    b = vm.fetch_box()            # same loaders as the live page (types and freshness handled there)
+    t = vm.d1_teams()
+    b['home'] = pd.to_numeric(b['home'], errors='coerce')
+    b['date'] = b['date'].astype(str).str[:10]
     conf = dict(zip(t.team, t.conference))
     tm = set(t.team)
     b = b[b.team.isin(tm) & b.opponent.isin(tm)]
