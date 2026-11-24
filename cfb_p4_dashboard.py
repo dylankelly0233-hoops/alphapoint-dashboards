@@ -978,6 +978,10 @@ def main():
     print('[4/5] Week schedule...')
     week, season_type = (WEEK, 'regular') if WEEK else current_week()
     sched = build_schedule(week, season_type, fbs_names, power, fcs, metrics, model)
+    if sched.empty:              # CFBD sometimes answers with nothing (2026-11-24 build): try once more before failing
+        import time
+        time.sleep(10)
+        sched = build_schedule(week, season_type, fbs_names, power, fcs, metrics, model)
     next_sched = build_schedule(week + 1, season_type, fbs_names, power, fcs, metrics, model)
     print(f'  Next week (Week {week + 1}): {len(next_sched)} games.')
     print(f'  Week {week}: {len(sched)} games involving an FBS team.')
