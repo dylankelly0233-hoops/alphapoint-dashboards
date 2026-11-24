@@ -1,6 +1,6 @@
 {
  "sport": "cfb",
- "generated": "2026-11-24T10:49:40-05:00",
+ "generated": "2026-11-24T12:43:54-05:00",
  "teams": {
   "Clemson": {
    "checked": "2026-11-24T10:49:40-05:00",
@@ -474,7 +474,7 @@
    "watch": []
   },
   "Georgia": {
-   "checked": "2026-11-24T09:44:47-05:00",
+   "checked": "2026-11-24T12:43:54-05:00",
    "watch": [
     {
      "direction": "too_low",
@@ -487,8 +487,17 @@
    ]
   },
   "Georgia Tech": {
-   "checked": "2026-11-24T09:44:47-05:00",
-   "watch": []
+   "checked": "2026-11-24T12:43:54-05:00",
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-21",
+     "text": "QB Grady Adamson (broken collarbone vs Wake Forest, Nov 21) is out for Georgia; Alberto Mendoza also left hurt, so third-stringer Graham Knowles may start.",
+     "source": "Atlanta Journal-Constitution",
+     "url": "https://www.ajc.com/sports/2026/11/georgia-tech-grady-adamson-broken-collarbone/",
+     "date": "2026-11-22"
+    }
+   ]
   },
   "Iowa": {
    "checked": "2026-11-24T09:44:47-05:00",
@@ -695,7 +704,7 @@
    ]
   },
   "Hawai'i": {
-   "checked": "2026-11-24T09:44:45-05:00",
+   "checked": "2026-11-24T12:43:54-05:00",
    "watch": [
     {
      "direction": "too_high",
@@ -1787,8 +1796,10 @@
     }
    ],
    "returning": [],
-   "swings": {},
-   "checked": "2026-11-23T09:40:04-05:00"
+   "swings": {
+    "Hawai'i": "Starting QB Micah Alejado is out for the finale after his knee injury at Nevada (Hawaii News Now, Nov 23); the market dropped on Hawai'i, our ratings don't see it."
+   },
+   "checked": "2026-11-24T12:43:54-05:00"
   },
   "401869959": {
    "checked": "2026-11-24T09:45:00-05:00",
@@ -2208,6 +2219,34 @@
      "url": "https://www.wistv.com/2026/11/22/south-carolina-vs-georgia/",
      "date": "2026-11-22"
     }
+   ]
+  },
+  "401856760": {
+   "checked": "2026-11-24T12:43:54-05:00",
+   "verdict": "unexplained",
+   "summary": "Nothing found justifies the market being 8 pts shorter on Georgia: Georgia Tech's QB news points Georgia's way, and Georgia's only listed concern is C Drew Bobo, expected back.",
+   "reasons": [
+    {
+     "text": "Georgia Tech QB Grady Adamson broke his collarbone in the 50-29 loss at Wake Forest and will miss the Georgia game; Alberto Mendoza also left hurt, status unknown.",
+     "source": "Atlanta Journal-Constitution",
+     "url": "https://www.ajc.com/sports/2026/11/georgia-tech-grady-adamson-broken-collarbone/",
+     "date": "2026-11-22"
+    },
+    {
+     "text": "Georgia C Drew Bobo (back) missed two games; Kirby Smart expects him available, so his absence would explain little of the gap.",
+     "source": "Atlanta Journal-Constitution",
+     "url": "https://www.ajc.com/sports/2026/11/kirby-smart-drew-bobo-injury/",
+     "date": "2026-11-23"
+    }
+   ],
+   "returning": [],
+   "swings": {
+    "Georgia": "Our line jumped after Georgia beat South Carolina 34-6 (Nov 22) and Georgia Tech lost 50-29 at Wake Forest; the market opened Georgia -35.5 and hasn't moved, so we're now 8 pts higher on Georgia.",
+    "Georgia Tech": "Georgia Tech gave up 50 in the loss at Wake Forest (Nov 21) and lost QB Grady Adamson to a broken collarbone (AJC, Nov 22); our rating fell and is now 8 pts below the market's."
+   },
+   "verified_numbers": [
+    "50-29",
+    "34-6"
    ]
   }
  }

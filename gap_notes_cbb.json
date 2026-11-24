@@ -1,6 +1,6 @@
 {
  "sport": "cbb",
- "generated": "2026-11-24T11:44:03-05:00",
+ "generated": "2026-11-24T12:43:54-05:00",
  "teams": {
   "Dayton": {
    "watch": [
@@ -61,8 +61,8 @@
    ]
   },
   "Oregon State": {
-   "checked": "2026-11-23T12:41:40-05:00",
-   "watch": []
+   "watch": [],
+   "checked": "2026-11-24T12:43:54-05:00"
   },
   "Tulsa": {
    "checked": "2026-11-23T12:41:40-05:00",
@@ -184,7 +184,7 @@
   },
   "San Francisco": {
    "watch": [],
-   "checked": "2026-11-23T15:06:50-05:00"
+   "checked": "2026-11-24T12:43:54-05:00"
   },
   "Maryland Eastern Shore": {
    "watch": [],
@@ -236,11 +236,11 @@
   },
   "Colorado": {
    "watch": [],
-   "checked": "2026-11-24T08:45:20-05:00"
+   "checked": "2026-11-24T12:43:54-05:00"
   },
   "Stanford": {
    "watch": [],
-   "checked": "2026-11-24T08:45:20-05:00"
+   "checked": "2026-11-24T12:43:54-05:00"
   },
   "St. Bonaventure": {
    "watch": [],
@@ -248,11 +248,11 @@
   },
   "Kent State": {
    "watch": [],
-   "checked": "2026-11-24T10:44:37-05:00"
+   "checked": "2026-11-24T12:43:54-05:00"
   },
   "Wyoming": {
    "watch": [],
-   "checked": "2026-11-24T10:44:37-05:00"
+   "checked": "2026-11-24T12:43:54-05:00"
   },
   "Oklahoma": {
    "checked": "2026-11-24T11:44:03-05:00",
@@ -274,6 +274,22 @@
   "Pittsburgh": {
    "watch": [],
    "checked": "2026-11-24T11:44:03-05:00"
+  },
+  "South Florida": {
+   "watch": [],
+   "checked": "2026-11-24T12:43:54-05:00"
+  },
+  "Stetson": {
+   "watch": [],
+   "checked": "2026-11-24T12:43:54-05:00"
+  },
+  "DePaul": {
+   "watch": [],
+   "checked": "2026-11-24T12:43:54-05:00"
+  },
+  "Purdue": {
+   "watch": [],
+   "checked": "2026-11-24T12:43:54-05:00"
   }
  },
  "games": {
@@ -550,9 +566,9 @@
   },
   "401917676": {
    "swings": {
-    "Oregon State": "Nothing found: no injury news on Oregon State. In its last game we were 5 pts lower on it than the market, and now we're level. Our ratings caught up after it beat Oregon 82-71 (Nov 20) and Tulsa 69-66 on Damarco Gory's game-winner (Nov 23, ESPN recap: https://www.espn.com/mens-college-basketball/game/_/gameId/401921658)."
+    "Oregon State": "Nothing found: no injury news on Oregon State. In its last game we were 5 pts lower on it than the market, and now we're level. Our ratings caught up after it beat Oregon 82-71 (Nov 20) and Tulsa 69-66 on DeShawn Gory's game-winner (Nov 23, ESPN recap: https://www.espn.com/mens-college-basketball/game/_/gameId/401921658)."
    },
-   "checked": "2026-11-23T22:41:52-05:00"
+   "checked": "2026-11-24T12:43:54-05:00"
   },
   "401921666": {
    "swings": {
@@ -564,10 +580,34 @@
    "swings": {
     "Stetson": "Nothing found: the market moved on Stetson without a clear reason. There's no injury news, and Stetson used its usual rotation in the 83-69 loss at Louisville (Nov 19, ESPN: https://www.espn.com/mens-college-basketball/game/_/gameId/401918950). We have been higher on Stetson than the market in both logged games and are now 1.7 pts lower on it."
    },
-   "checked": "2026-11-23T22:41:52-05:00"
+   "checked": "2026-11-24T12:43:54-05:00",
+   "verdict": "unexplained",
+   "summary": "No injury or lineup news for either team; South Florida's regular rotation all played its last game, and the line has sat at USF -18.5 since it opened.",
+   "reasons": [
+    {
+     "text": "South Florida is 3-3 with close losses to DePaul (82-80) and Saint Joseph's (83-80) and a 73-62 loss to George Mason; the market may weight that form more than we do.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/mens-college-basketball/team/schedule/_/id/58",
+     "date": "2026-11-21"
+    },
+    {
+     "text": "Previews list no injuries for either side; Stetson is 1-5, line USF -18.5, total 152.5.",
+     "source": "BetMGM",
+     "url": "https://sports.betmgm.com/en/blog/ncaab/stetson-south-florida-prediction-odds-picks-nov-24-college-basketball-jaa/",
+     "date": "2026-11-24"
+    }
+   ],
+   "returning": [],
+   "verified_numbers": [
+    "3-3",
+    "1-5",
+    "82-80",
+    "83-80",
+    "73-62"
+   ]
   },
   "401909763": {
-   "checked": "2026-11-24T08:45:20-05:00",
+   "checked": "2026-11-24T12:43:54-05:00",
    "verdict": "unexplained",
    "summary": "Neutral-site game in Palm Desert; no injuries reported for either side, and the move from Stanford -2.5 to -4.5 looks like a reaction to Colorado's 77-74 home loss to Portland.",
    "reasons": [
@@ -587,13 +627,16 @@
    "verified_numbers": [
     "2-3",
     "5-1"
-   ]
+   ],
+   "swings": {
+    "Colorado": "The market moved from Stanford -2.5 to -4.5 after Colorado's 77-74 home loss to Portland (Nov 19); no injuries found, and Colorado's regular rotation played that game (ESPN box score)."
+   }
   },
   "401927398": {
    "checked": "2026-11-24T08:45:20-05:00"
   },
   "401921707": {
-   "checked": "2026-11-24T10:44:37-05:00",
+   "checked": "2026-11-24T12:43:54-05:00",
    "verdict": "unexplained",
    "summary": "No injury or lineup news found for either team; Wyoming's full rotation played its Sunshine Slam opener and the line has sat at Wyoming -8.5 since it opened.",
    "reasons": [
@@ -611,8 +654,12 @@
     }
    ],
    "swings": {
-    "Kent State": "Nothing found: the market moved on Kent State without a clear reason; G Quinn Woidke has sat the last two games (ESPN box scores), which our ratings already include."
-   }
+    "Kent State": "Nothing found: the market moved on Kent State without a clear reason; G Quinn Woidke has sat the last two games (ESPN box scores), which our ratings already include.",
+    "Wyoming": "Nothing found: no injury news on Wyoming. Our ratings rose after it beat Duquesne 79-61 (Nov 22), while the market has held at Wyoming -8.5 since it opened."
+   },
+   "verified_numbers": [
+    "79-61"
+   ]
   },
   "401906806": {
    "checked": "2026-11-24T11:44:03-05:00",
@@ -628,6 +675,16 @@
   },
   "401928835": {
    "checked": "2026-11-24T10:44:37-05:00"
+  },
+  "401909505": {
+   "checked": "2026-11-24T12:43:54-05:00",
+   "swings": {
+    "DePaul": "Nothing found: no injury news on DePaul (5-0, full rotation in its 83-39 win over UMES on Nov 18). The market moved from Purdue -4.5 to -2.5, with betting previews backing DePaul (Sports Gambling Podcast, Nov 24: https://www.sportsgamblingpodcast.com/2026/11/24/college-basketball-picks-for-november-24th-ncaa-basketball-banter-best-bets-ep-1257/)."
+   },
+   "verified_numbers": [
+    "5-0",
+    "83-39"
+   ]
   }
  }
 }
