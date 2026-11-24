@@ -338,3 +338,5 @@ listed,sport,gid,kick,reason,detail,kind,side,line,p,need
 2026-11-24T11:39-05:00,cfb,401860927,2026-11-28T22:00:00-05:00,priced,line under 7 spread,spread,away,3.0,0.5013,0.4887
 2026-11-24T11:54-05:00,cfb,401866470,2026-11-24T19:00:00-05:00,priced,mid spread,spread,home,6.0,0.5395,0.5149
 2026-11-24T12:33-05:00,cfb,401861969,2026-11-28T12:00:00-05:00,priced,line under 7 spread,spread,away,-3.0,0.5125,0.4882
+2026-11-24T16:05-05:00,cbb,401920809,2026-11-25T14:30:00-05:00,system,cbb_3p_fade,spread,home,-5.5,,
+2026-11-24T16:05-05:00,cbb,401929287,2026-11-25T19:30:00-05:00,system,cbb_3p_fade,spread,away,4.5,,
