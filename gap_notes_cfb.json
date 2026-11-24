@@ -1,6 +1,6 @@
 {
  "sport": "cfb",
- "generated": "2026-11-24T12:43:54-05:00",
+ "generated": "2026-11-24T16:41:40-05:00",
  "teams": {
   "Clemson": {
    "checked": "2026-11-24T10:49:40-05:00",
@@ -932,7 +932,7 @@
    ]
   },
   "Miami (OH)": {
-   "checked": "2026-11-24T09:44:45-05:00",
+   "checked": "2026-11-24T16:41:40-05:00",
    "watch": [
     {
      "direction": "too_high",
@@ -952,7 +952,7 @@
    "watch": []
   },
   "Western Michigan": {
-   "checked": "2026-11-24T09:44:45-05:00",
+   "checked": "2026-11-24T16:41:40-05:00",
    "watch": []
   },
   "Bowling Green": {
@@ -2247,6 +2247,15 @@
    "verified_numbers": [
     "50-29",
     "34-6"
+   ]
+  },
+  "401866471": {
+   "checked": "2026-11-24T16:41:40-05:00",
+   "swings": {
+    "Miami (OH)": "The market came toward Miami after its 20-3 win over Kent State, the second straight win under freshman QB Drew Bellisari (Western Michigan opened -7.5, now -5), while our number stayed near -6; no new injury news (The Rx, Nov 24: https://www.therx.com/college-football/miami-oh-western-michigan-prediction-november-24-2026/56024/)."
+   },
+   "verified_numbers": [
+    "20-3"
    ]
   }
  }
