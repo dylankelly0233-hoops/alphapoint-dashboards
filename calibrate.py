@@ -249,6 +249,7 @@ def tune_to_market(sport, cal, now):
     p = pd.read_csv(path)
     p['kickoff'] = pd.to_datetime(p['kickoff'], utc=True)
     p = p[p['kickoff'] >= now - timedelta(days=MARKET_DAYS)].dropna(subset=['ours_last', 'market_last'])
+    p = p[p['kickoff'] >= _since(sport)]       # only lines from the current rating method
     if len(p) < MARKET_MIN[sport]:
         return None
     hfa_logged = (p['hfa'] if 'hfa' in p else pd.Series(np.nan, index=p.index)).fillna(DEFAULT_HFA[sport])
@@ -293,6 +294,7 @@ def tune_crowd(sport, cal, now):
     p = pd.read_csv(path)
     p['kickoff'] = pd.to_datetime(p['kickoff'], utc=True)
     p = p[p['kickoff'] >= now - timedelta(days=MARKET_DAYS)].dropna(subset=['ours_last', 'market_last'])
+    p = p[p['kickoff'] >= _since(sport)]       # only lines from the current rating method
     p = p[p['neutral'].fillna(0).astype(int) == 0]
     rows = []
     for _, r in p.iterrows():
@@ -350,6 +352,14 @@ def run_market(cal, now, out, log, force=False):
             if c_new != c_now:
                 log.append([now.date().isoformat(), sport, 'crowd_slope', c_now, c_new, c_n, c_why])
                 out.append(f'{sport.upper()}: crowd effect {c_now:g} -> {c_new:g} points per doubling ({c_why}).')
+
+
+def _since(sport):
+    """Kickoff cutoff for learning from logged lines: the date the sport's rating method last changed (extras.
+    RATING_RESET, 2026-11-24 for NFL/CFB/CBB: our own models replaced the restricted blends), else no cutoff."""
+    import extras as ex
+    d = ex.RATING_RESET.get(sport)
+    return pd.Timestamp(d, tz='UTC') if d else pd.Timestamp('1900-01-01', tz='UTC')
 
 
 SHARE_STEP = 0.05          # most the value share moves in a week
