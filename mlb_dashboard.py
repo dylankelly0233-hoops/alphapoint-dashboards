@@ -82,8 +82,10 @@ def build_power(tm, sources):
 
 
 def generate_html(power, tt, starters, info):
-    tm_logo = dict(zip(power['abbr'], power['logo']))
-    logo = lambda t: theme.logo_uri(f'mlb_{t}', tm_logo.get(t)) if tm_logo.get(t) else None
+    _c = lambda v: v if isinstance(v, str) else ''
+    _alt = dict(zip(power['abbr'], power['alt'])) if 'alt' in power else {}
+    _col = dict(zip(power['abbr'], power['color']))
+    logo = lambda t: theme.team_badge(f'mlb_{t}', t, _c(_col.get(t)), _c(_alt.get(t))) if t in _col else None
     short = dict(zip(power['abbr'], power['short']))
     full = dict(zip(power['abbr'], power['name']))
     sd = float(power['composite'].std())

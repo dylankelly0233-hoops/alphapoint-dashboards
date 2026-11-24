@@ -73,6 +73,59 @@ def logo_uri(key, espn_path, px=LOGO_PX):
     return cls
 
 
+# Team badges (Dylan, 2026-11-23): team logos are trademarked artwork, so every page shows a ringed circle in the
+# team's own colors with its abbreviation instead (colors from CBBD / CFBD / nflverse, ESPN team lists for pro
+# leagues). Drawn in CSS: the ring and the letters scale with whatever size the badge is shown at, and the letter size
+# steps down with the abbreviation's length so even four letters sit inside the ring.
+_BADGES = {}     # css class -> (abbr, fill, ring, ink)
+
+
+def _hex(c):
+    c = str(c or '').strip().lstrip('#')
+    return c.lower() if re.fullmatch(r'[0-9a-fA-F]{6}', c) else ''
+
+
+def _lum(h):
+    v = [int(h[i:i + 2], 16) / 255 for i in (0, 2, 4)]
+    v = [x / 12.92 if x <= .03928 else ((x + .055) / 1.055) ** 2.4 for x in v]
+    return .2126 * v[0] + .7152 * v[1] + .0722 * v[2]
+
+
+def _contrast(a, b):
+    x, y = _lum(a), _lum(b)
+    return (max(x, y) + .05) / (min(x, y) + .05)
+
+
+def team_badge(key, abbr, color, alt=''):
+    """
+    CSS class for a team badge: `color` fills the circle, `alt` draws the ring, and the abbreviation is written in
+    `alt` when it reads well on the fill (4.5:1), else white or near-black, whichever reads better. Without a usable
+    color the page shows the plain initials badge (returns None).
+    """
+    fill, ring = _hex(color), _hex(alt)
+    abbr = re.sub(r'[^A-Za-z0-9&]', '', str(abbr or ''))[:4].upper()
+    if not fill or not abbr:
+        return None
+    if not ring or _contrast(fill, ring) < 1.6:                       # missing or too close to the fill to see
+        ring = 'ffffff' if _lum(fill) < .4 else '1a1a1a'
+    ink = ring if _contrast(fill, ring) >= 4.5 else ('ffffff' if _contrast(fill, 'ffffff') >= _contrast(fill, '1a1a1a')
+                                                      else '1a1a1a')
+    cls = 'tb-' + re.sub(r'[^A-Za-z0-9_-]', '_', key)
+    _BADGES[cls] = (abbr, fill, ring, ink)
+    return cls
+
+
+def badge_css():
+    out = []
+    for c, (abbr, fill, ring, ink) in _BADGES.items():
+        out.append(f'.{c}{{background:#{fill};color:#{ink}}}.logo.{c}::before{{border-color:#{ring}}}'
+                   f'.{c}::after{{content:"{abbr}";font-size:{BADGE_FS[len(abbr)]}cqw}}')
+    return '\n'.join(out)
+
+
+BADGE_FS = {1: 44, 2: 42, 3: 33, 4: 26}     # letter size, % of the badge width, by abbreviation length
+
+
 # ==========================================
 # COMPONENTS
 # ==========================================
@@ -147,7 +200,7 @@ def _initials(name):
 def logo_img(name, logo, size='md'):
     """logo = CSS class from logo_uri, or None for an initials badge."""
     if logo:
-        return f'<span class="logo {size} img {logo}" aria-hidden="true"></span>'
+        return f'<span class="logo {size} img{" tb" if logo in _BADGES else ""} {logo}" aria-hidden="true"></span>'
     return f'<span class="logo {size} initials" aria-hidden="true">{esc(_initials(name))}</span>'
 
 
@@ -479,6 +532,10 @@ td.pos { color: var(--pos); font-weight: 600; } td.neg { color: var(--neg); font
 .logo { flex: none; display: inline-grid; place-items: center; }
 .logo.img { background-position: center; background-size: contain; background-repeat: no-repeat; }
 .logo.md { width: 30px; height: 30px; } .logo.sm { width: 24px; height: 24px; }
+.logo.tb { position: relative; border-radius: 50%; container-type: size; overflow: hidden; }
+.logo.tb::before { content: ""; position: absolute; inset: 0; border-radius: 50%; border: 8.5cqw solid transparent; }
+.logo.tb::after { position: relative; font-family: var(--display); font-weight: 700; line-height: 1;
+                  letter-spacing: -.02em; white-space: nowrap; }
 .logo.initials { border-radius: 50%; background: var(--surface-2); border: 1px solid var(--line);
                  font: 700 11px/1 var(--display); color: var(--muted); }
 .chip { display: inline-block; min-width: 52px; padding: 4px 7px; border-radius: 6px; font: 700 15px/1 var(--display);
@@ -953,7 +1010,7 @@ document.querySelectorAll('select.filter').forEach(sel => { if (sel.value) sel.o
     body.replaceChildren();
     const head = el('div', 'thead'), nm = el('div'), h = el('h2', null, t.name);
     h.id = 'tm-name'; nm.append(h, el('span', 'sub', t.sub));
-    if (t.logo) { const lg = el('span', 'logo img ' + t.logo); lg.setAttribute('aria-hidden', 'true'); head.append(lg); }
+    if (t.logo) { const lg = el('span', 'logo img ' + (t.logo.startsWith('tb-') ? 'tb ' : '') + t.logo); lg.setAttribute('aria-hidden', 'true'); head.append(lg); }
     head.append(nm); body.append(head);
     const stats = el('div', 'tstats');
     const stat = (k, html, text) => { const d = el('div'), b = el('b'); d.append(el('span', 'k', k));
@@ -1093,7 +1150,7 @@ def render_page(*, title, league, headline, meta_items, tabs, footer, extra='', 
         meta += '<a class="navlink" href="index.html#guide">How to use</a>'
     nav = ''.join(f'<button data-page="{tid}" role="tab">{esc(lbl)}</button>' for tid, lbl, _ in tabs)
     pages = ''.join(f'<section class="page" id="{tid}">{body}</section>' for tid, _, body in tabs)
-    logo_css = '\n'.join(f'.{c} {{ background-image: url({d}); }}' for c, d in _LOGO_CSS.items())
+    logo_css = '\n'.join(f'.{c} {{ background-image: url({d}); }}' for c, d in _LOGO_CSS.items()) + '\n' + badge_css()
     return f"""<title>{esc(title)}</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 {FONTS}

@@ -107,7 +107,7 @@ def teams():
         logo = (t.get('logos') or [{}])[0].get('href', '')
         rows.append({'abbr': t['abbreviation'], 'name': t['displayName'], 'short': t.get('name') or t['shortDisplayName'],
                      'espn_id': t['id'], 'mlb_id': mlb_id.get(t['displayName']), 'color': t.get('color', ''),
-                     'logo': re.sub(r'^https?://a\.espncdn\.com', '', logo)})
+                     'alt': t.get('alternateColor', ''), 'logo': re.sub(r'^https?://a\.espncdn\.com', '', logo)})
     df = pd.DataFrame(rows)
     df.to_csv(path, index=False)
     return df

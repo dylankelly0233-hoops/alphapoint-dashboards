@@ -123,9 +123,12 @@ def mark_full(path):
 def d1_teams():
     path = _cache('teams')
     if not _stale(path):
-        return pd.read_csv(path)
+        old = pd.read_csv(path)
+        if 'abbr' in old:                     # team badges need the abbreviation and second color (2026-11-23)
+            return old
     data = cbbd_get('/teams', {'season': SEASON})
     df = pd.DataFrame([{'team': t['school'], 'espn_id': t.get('sourceId'), 'color': t.get('primaryColor') or '',
+                        'alt': t.get('secondaryColor') or '', 'abbr': t.get('abbreviation') or '',
                         'mascot': t.get('mascot') or '',
                         'conference': t.get('conference') or ''} for t in data])
     if not df.empty:

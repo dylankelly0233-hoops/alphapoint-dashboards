@@ -404,11 +404,17 @@ def upcoming_games(by_espn, focus):
 # ==========================================
 # 5. HTML
 # ==========================================
-def _logo(espn_id):
-    if espn_id is None or (isinstance(espn_id, float) and np.isnan(espn_id)) or str(espn_id) in ('', 'nan'):
-        return None
-    eid = str(espn_id).split('.')[0]
-    return theme.logo_uri(f'ncaa_{eid}', f'/i/teamlogos/ncaa/500/{eid}.png', px=LOGO_PX)
+_BADGE = {}
+
+
+def _logo(team):
+    """The team's badge (CBBD colors and abbreviation); None (initials) for teams outside D1."""
+    if not _BADGE:
+        s = lambda v: v if isinstance(v, str) else ''
+        for r in vm.d1_teams().itertuples():
+            _BADGE[r.team] = (s(getattr(r, 'abbr', '')), s(r.color), s(getattr(r, 'alt', '')))
+    b = _BADGE.get(team)
+    return theme.team_badge(f'cbb_{team}', b[0] or team, b[1], b[2]) if b else None
 
 
 def _line_text(team, pts):
@@ -499,7 +505,7 @@ def generate_html(power, metrics, days, info):
     tiers = sorted({(grp(t, c).split(' ', 1)[0], c or 'Independent') for t, c in zip(power['team'], power['conference'])},
                    key=lambda x: (x[0] != 'P4', x[1]))
     conf_opts = [('P4', 'Power 4 + Big East'), ('MM', 'All other conferences')] + [(f'{t} {c}', c) for t, c in tiers]
-    logo = lambda t: _logo(meta.get(t, (None, ''))[0])
+    logo = _logo
     mild = 0.5
 
     # --- Power tab ---
@@ -617,7 +623,7 @@ def generate_html(power, metrics, days, info):
             pm = theme.round_half(margin)
             proj = '—' if pd.isna(pm) else _line_text(g['home'] if pm >= 0 else g['away'], abs(pm))
             mkt = '—' if pd.isna(g['market']) else _line_text(g['home'] if g['market'] >= 0 else g['away'], abs(g['market']))
-            side = lambda t, rt, eid: {'name': t, 'logo': logo(t) or _logo(eid), 'rating': rt, 'sd': sd,
+            side = lambda t, rt, eid: {'name': t, 'logo': logo(t), 'rating': rt, 'sd': sd,
                                        'key': t if t in focus_set else None,
                                        'signal': _pill(comp.get(t), games_played.get(t, 0)),
                                        'color': meta.get(t, (None, ''))[1]}

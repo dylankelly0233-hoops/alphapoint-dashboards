@@ -116,7 +116,7 @@ def teams():
         t = t['team']
         rows.append({'abbr': t['abbreviation'], 'name': t['displayName'], 'short': t['shortDisplayName'],
                      'location': t['location'], 'espn_id': t['id'], 'color': t.get('color') or '',
-                     'logo': f"/i/teamlogos/nba/500/{t['abbreviation'].lower()}.png"})
+                     'alt': t.get('alternateColor') or '', 'logo': f"/i/teamlogos/nba/500/{t['abbreviation'].lower()}.png"})
     df = pd.DataFrame(rows)
     if not df.empty:
         df.to_csv(path, index=False)

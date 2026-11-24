@@ -69,7 +69,7 @@ P4_EXTRA_TEAMS  = ('Notre Dame',)
 SAGARIN_URL     = 'http://sagarin.com/sports/cfsend.htm'   # https has a self-signed cert
 SAGARIN_CACHE   = f'p4_sagarin_{YEAR}.html'
 TEAMS_CACHE     = f'p4_fbs_teams_conf_{YEAR}.csv'
-META_CACHE      = f'p4_team_meta_v2_{YEAR}.csv'  # ESPN ids (for logos), team colors, mascots; FBS + FCS
+META_CACHE      = f'p4_team_meta_v3_{YEAR}.csv'  # ESPN ids, team colors (badges), abbreviations, mascots; FBS + FCS
 
 SAGARIN_BLEND   = {'predictor': 0.60, 'golden_mean': 0.20, 'recent': 0.20}
 SOURCE_WEIGHTS  = {'sagarin': 0.50, 'sp': 0.50}
@@ -535,6 +535,7 @@ def fetch_team_meta():
     else:
         data = vm.cfbd_get('/teams', params={'year': YEAR})
         df = pd.DataFrame([{'team': t['school'], 'id': t.get('id'), 'color': t.get('color') or '',
+                            'alt': t.get('alternateColor') or '', 'abbr': t.get('abbreviation') or '',
                             'mascot': t.get('mascot') or ''} for t in data])
         if not df.empty:
             df.to_csv(META_CACHE, index=False)
@@ -542,13 +543,14 @@ def fetch_team_meta():
     for r in df.itertuples():
         color = r.color if isinstance(r.color, str) and r.color.lower() not in ('#ffffff', '#fff') else ''
         mascot = r.mascot if isinstance(r.mascot, str) else ''
-        meta[r.team] = (int(r.id) if pd.notna(r.id) else None, color, mascot)
+        raw = lambda v: v if isinstance(v, str) else ''
+        meta[r.team] = (int(r.id) if pd.notna(r.id) else None, color, mascot, raw(r.color), raw(r.alt), raw(r.abbr))
     return meta
 
 
 def _logo(team, meta):
-    tid = meta.get(team, (None, ''))[0]
-    return theme.logo_uri(f'cfb_{tid}', f'/i/teamlogos/ncaa/500/{tid}.png') if tid else None
+    m = meta.get(team)
+    return theme.team_badge(f'cfb_{team}', m[5] or team, m[3], m[4]) if m else None
 
 
 def _line_text(team_fav, pts):

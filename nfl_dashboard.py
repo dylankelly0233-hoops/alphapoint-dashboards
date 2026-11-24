@@ -306,12 +306,11 @@ def build_schedule(full, week, power, metrics):
 # ==========================================
 def fetch_team_meta():
     """abbr → (ESPN logo path, primary color) from nflverse's team table."""
-    if not vm.cache_stale(META_CACHE, 24 * 7):
-        df = pd.read_csv(META_CACHE)
-    else:
+    df = pd.read_csv(META_CACHE) if not vm.cache_stale(META_CACHE, 24 * 7) else None
+    if df is None or 'team_color2' not in df:
         try:
             df = pd.read_csv('https://github.com/nflverse/nflverse-data/releases/download/teams/teams_colors_logos.csv'
-                             )[['team_abbr', 'team_color', 'team_logo_espn']]
+                             )[['team_abbr', 'team_color', 'team_color2', 'team_logo_espn']]
             df.to_csv(META_CACHE, index=False)
         except Exception as e:
             print(f'  ! Team logos/colors unavailable: {e}')
@@ -320,13 +319,14 @@ def fetch_team_meta():
     for r in df.itertuples():
         if r.team_abbr in vm.NFL_TEAMS:
             path = re.sub(r'^https?://a\.espncdn\.com', '', str(r.team_logo_espn))
-            meta[r.team_abbr] = (path, r.team_color if isinstance(r.team_color, str) else '')
+            meta[r.team_abbr] = (path, r.team_color if isinstance(r.team_color, str) else '',
+                                 r.team_color2 if isinstance(r.team_color2, str) else '')
     return meta
 
 
 def _logo(abbr, meta):
-    path = meta.get(abbr, ('', ''))[0]
-    return theme.logo_uri(f'nfl_{abbr}', path) if path else None
+    m = meta.get(abbr)
+    return theme.team_badge(f'nfl_{abbr}', abbr, m[1], m[2]) if m else None
 
 
 def _line_text(team_fav, pts):

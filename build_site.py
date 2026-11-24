@@ -273,15 +273,11 @@ LEAGUE_NAMES = {'NFL': 'NFL', 'NBA': 'NBA', 'NHL': 'NHL', 'EPL': 'Premier League
 
 
 def league_mark(sport):
-    """The league logo for a Best spots row, falling back to the text label if the logo can't be fetched."""
-    path, badge = LEAGUE_LOGOS.get(sport, (None, ''))
-    cls = theme.logo_uri('league_' + ('ncaa' if badge else sport.lower()), path, 96) if path else None
+    """The league badge for a Best spots row: its short name in a ringed circle (no league logos: trademarks)."""
+    cls = theme.team_badge('league_' + sport.lower(), sport, '27323d', '8b98a5')
     name = LEAGUE_NAMES.get(sport, sport)
-    if not cls:
-        return f'<span class="ssport">{theme.esc(sport)}</span>'
-    b = f'<span class="sball" aria-hidden="true">{badge}</span>' if badge else ''
     return (f'<span class="slogo" title="{theme.esc(name)}" role="img" aria-label="{theme.esc(name)}">'
-            f'<span class="logo md img {cls}"></span>{b}</span>')
+            f'<span class="logo md img tb {cls}"></span></span>')
 
 
 PROVEN_MIN_GAMES, BREAKEVEN = 100, 110 / 210

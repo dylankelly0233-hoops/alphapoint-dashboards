@@ -102,7 +102,7 @@ def teams():
                     (t.get('logos') or [{}])[0].get('href', ''))
         rows.append({'abbr': t['abbreviation'], 'name': t['displayName'], 'short': t.get('name') or t['shortDisplayName'],
                      'location': t.get('location', ''), 'espn_id': t['id'], 'color': t.get('color', ''),
-                     'logo': re.sub(r'^https?://a\.espncdn\.com', '', logo)})
+                     'alt': t.get('alternateColor', ''), 'logo': re.sub(r'^https?://a\.espncdn\.com', '', logo)})
     df = pd.DataFrame(rows)
     if len(df) >= 30:
         df.to_csv(path, index=False)

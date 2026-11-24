@@ -348,8 +348,10 @@ def _preview(g, short, full, rank, sig):
 
 
 def generate_html(power, metrics, days, info):
-    tm_logo = dict(zip(power['abbr'], power['logo']))
-    logo = lambda t: theme.logo_uri(f'nhl_{t}', tm_logo.get(t)) if tm_logo.get(t) else None
+    _c = lambda v: v if isinstance(v, str) else ''
+    _alt = dict(zip(power['abbr'], power['alt'])) if 'alt' in power else {}
+    _col = dict(zip(power['abbr'], power['color']))
+    logo = lambda t: theme.team_badge(f'nhl_{t}', t, _c(_col.get(t)), _c(_alt.get(t))) if t in _col else None
     short_map = dict(zip(power['abbr'], power['short']))
     short = lambda t: short_map.get(t, t)
     full = dict(zip(power['abbr'], power['name']))

@@ -245,8 +245,10 @@ def _signal(c, games):
 
 def generate_html(power, metrics, days, info):
     top8 = set(power.loc[power['rank'] <= 8, 'abbr'])         # featured games: both teams in our top quarter
-    tm_logo = dict(zip(power['abbr'], power['logo']))
-    logo = lambda t: _logo(t, tm_logo)
+    _c = lambda v: v if isinstance(v, str) else ''
+    _alt = dict(zip(power['abbr'], power['alt'])) if 'alt' in power else {}
+    _col = dict(zip(power['abbr'], power['color']))
+    logo = lambda t: theme.team_badge(f'nba_{t}', t, _c(_col.get(t)), _c(_alt.get(t))) if t in _col else None
     short = dict(zip(power['abbr'], power['short']))
     full = dict(zip(power['abbr'], power['name']))
     color = {r.abbr: ('#' + r.color) if isinstance(r.color, str) and r.color else '' for r in power.itertuples()}
