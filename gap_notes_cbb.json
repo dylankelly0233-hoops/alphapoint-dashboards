@@ -1,6 +1,6 @@
 {
  "sport": "cbb",
- "generated": "2026-11-24T10:44:37-05:00",
+ "generated": "2026-11-24T11:44:03-05:00",
  "teams": {
   "Dayton": {
    "watch": [
@@ -255,7 +255,7 @@
    "checked": "2026-11-24T10:44:37-05:00"
   },
   "Oklahoma": {
-   "checked": "2026-11-24T10:44:37-05:00",
+   "checked": "2026-11-24T11:44:03-05:00",
    "watch": [
     {
      "direction": "too_high",
@@ -270,6 +270,10 @@
   "Samford": {
    "watch": [],
    "checked": "2026-11-24T10:44:37-05:00"
+  },
+  "Pittsburgh": {
+   "watch": [],
+   "checked": "2026-11-24T11:44:03-05:00"
   }
  },
  "games": {
@@ -611,7 +615,7 @@
    }
   },
   "401906806": {
-   "checked": "2026-11-24T10:44:37-05:00",
+   "checked": "2026-11-24T11:44:03-05:00",
    "swings": {
     "Oklahoma": "F Duke Brennan (broken ankle in practice 11/16, starter, 8.3 ppg) is out long-term; the market priced it for the Campbell game and our ratings now carry a game without him (News 9, 11/16)."
    }

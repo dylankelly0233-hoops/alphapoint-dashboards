@@ -1,6 +1,6 @@
 {
  "sport": "nfl",
- "generated": "2026-11-24T10:45:48-05:00",
+ "generated": "2026-11-24T11:44:03-05:00",
  "teams": {
   "ARI": {
    "checked": "2026-11-24T10:43:26-05:00",
@@ -24,11 +24,11 @@
    ]
   },
   "ATL": {
-   "checked": "2026-11-24T10:43:26-05:00",
+   "checked": "2026-11-24T11:44:03-05:00",
    "watch": []
   },
   "BAL": {
-   "checked": "2026-11-24T10:43:26-05:00",
+   "checked": "2026-11-24T11:44:03-05:00",
    "watch": [
     {
      "direction": "too_high",
@@ -154,7 +154,7 @@
    ]
   },
   "HOU": {
-   "checked": "2026-11-24T10:43:26-05:00",
+   "checked": "2026-11-24T11:44:03-05:00",
    "watch": [
     {
      "direction": "too_high",
@@ -306,7 +306,7 @@
    ]
   },
   "MIN": {
-   "checked": "2026-11-24T10:43:26-05:00",
+   "checked": "2026-11-24T11:44:03-05:00",
    "watch": [
     {
      "direction": "unclear",
@@ -799,9 +799,70 @@
    ]
   },
   "2026_12_BAL_HOU": {
-   "checked": "2026-11-24T10:45:48-05:00",
+   "checked": "2026-11-24T11:44:03-05:00",
    "swings": {
-    "HOU": "Houston's 26-3 win over Indianapolis (Nov. 19) lifted our rating more than the market moved; Houston is -6.5 vs. a Ravens team on backup QB Jacoby Brissett, with DT Nnamdi Madubuike and S Jaylinn Hawkins uncertain."
+    "HOU": "Houston's 26-3 win over Indianapolis (Nov. 19) lifted our rating more than the market moved; Houston is -6.5 vs. a Ravens team on backup QB Jacoby Brissett, with DT Nnamdi Madubuike and S Jaylinn Hawkins uncertain.",
+    "BAL": "Baltimore's sixth straight loss (35-33 at Carolina, Nov. 22) with Brissett dropped our rating further, while the market, which already priced Jackson's absence, moved only from Houston -5.5 to -6.5."
+   },
+   "verdict": "partly",
+   "summary": "The market already priced Lamar Jackson's absence and stops at Houston -6.5; our ratings lean harder on Baltimore's six straight losses, and Houston's defense is banged up.",
+   "reasons": [
+    {
+     "text": "Baltimore has lost six straight (4-7), the last four with Jacoby Brissett at QB while Lamar Jackson (thumb surgery, IR) is out until Week 16 at the earliest.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nfl/story/_/id/50573132/ravens-nfl-best-beating-week-11-panthers",
+     "date": "2026-11-23"
+    },
+    {
+     "text": "Houston's front seven is thin: LB Azeez Al-Shaair is on IR after groin surgery, DE Chris Braswell hurt his knee Nov. 19 and DE Danielle Hunter is questionable.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nfl/story/_/id/50536083/texans-lose-chris-braswell-serious-looking-knee-injury",
+     "date": "2026-11-20"
+    },
+    {
+     "text": "The line opened Houston -5.5 and has moved to -6.5, toward our number but well short of it.",
+     "source": "Action Network",
+     "url": "https://www.actionnetwork.com/nfl-game/ravens-texans-score-odds-november-29-2026/290999",
+     "date": "2026-11-24"
+    }
+   ],
+   "verified_numbers": [
+    "4-7"
+   ]
+  },
+  "2026_12_ATL_MIN": {
+   "checked": "2026-11-24T11:44:03-05:00",
+   "verdict": "partly",
+   "summary": "The market keeps Minnesota -7 against a 3-7 Atlanta team that has lost five of six with shaky QB play; our ratings marked the Vikings down more after their 35-10 loss at San Francisco.",
+   "reasons": [
+    {
+     "text": "Atlanta is 3-7, has lost three straight (0-16 at TB, 17-34 vs CIN, 13-35 vs KC) and comes off its Week 11 bye; reviews cite unreliable QB play from Michael Penix Jr.",
+     "source": "Atlanta Falcons",
+     "url": "https://www.atlantafalcons.com/news/week-12-nfl-power-rankings-roundup-falcons-return-from-bye-lions-contending-giants-jaguars",
+     "date": "2026-11-24"
+    },
+    {
+     "text": "FanDuel opened Atlanta +6.5; the preview points to Minnesota's blitz-heavy defense against an Atlanta offense that has struggled vs. the blitz.",
+     "source": "Yahoo Sports",
+     "url": "https://sports.yahoo.com/articles/falcons-vs-vikings-odds-opening-154004314.html",
+     "date": "2026-11-24"
+    },
+    {
+     "text": "QB Kyler Murray (hamstring, out Weeks 9-11) is questionable, but Kevin O'Connell says Kirk Cousins stays the starter; WR Jordan Addison (thumb) is not expected to play.",
+     "source": "ESPN injuries",
+     "url": "https://www.espn.com/nfl/injuries",
+     "date": "2026-11-24"
+    }
+   ],
+   "verified_numbers": [
+    "3-7",
+    "0-16",
+    "17-34",
+    "13-35"
+   ],
+   "swings": {
+    "MIN": "Minnesota's 35-10 loss at San Francisco (Week 11) cut our rating by several points, but the market opened the Vikings -6.5 vs. Atlanta anyway and has moved to -7.",
+    "ATL": "Nothing new on Atlanta over its Week 11 bye: the swing comes from Minnesota's 35-10 loss at San Francisco lowering our Vikings rating while the market stayed at Vikings -6.5 to -7."
    }
   }
  }

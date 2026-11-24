@@ -1,6 +1,6 @@
 {
  "sport": "nba",
- "generated": "2026-11-24T08:45:20-05:00",
+ "generated": "2026-11-24T11:44:03-05:00",
  "teams": {
   "OKC": {
    "checked": "2026-11-24T08:45:20-05:00",
@@ -67,7 +67,7 @@
      "date": "2026-11-23"
     }
    ],
-   "checked": "2026-11-23T19:42:09-05:00"
+   "checked": "2026-11-24T11:44:03-05:00"
   },
   "CHI": {
    "watch": [
@@ -349,6 +349,10 @@
   "DEN": {
    "checked": "2026-11-23T20:42:33-05:00",
    "watch": []
+  },
+  "WSH": {
+   "watch": [],
+   "checked": "2026-11-24T11:44:03-05:00"
   }
  },
  "games": {
@@ -541,7 +545,28 @@
    "swings": {
     "BOS": "At GS on 11/22 the market priced Stephen Curry's absence (our ratings don't see it) and we sat 7.2 lower on Boston; at WSH the Wizards have no new absence and Paul George (rested 11/22) is expected back, so the gap closed to 2.2 (CelticsBlog, 11/23)."
    },
-   "checked": "2026-11-23T19:42:09-05:00"
+   "checked": "2026-11-24T11:44:03-05:00",
+   "verdict": "partly",
+   "summary": "Boston's three straight one-possession losses (two with Tatum or White out) drag our rating; with Tatum, White and Paul George expected back the market has moved from Celtics -10.5 to -11.5.",
+   "reasons": [
+    {
+     "text": "Boston lost 105-101 at DEN, 97-96 at SAC (Tatum and White sat) and 88-87 at GS (George rested); our ratings carry those games at full weight.",
+     "source": "RotoWire",
+     "url": "https://rotowire.com/basketball/headlines/jayson-tatum-news-off-injury-report-sunday-540517",
+     "date": "2026-11-22"
+    },
+    {
+     "text": "ESPN lists only Mitchell Robinson (illness) out for Boston; Washington is without bench pieces Tristan Vukcevic, Reece Beekman, Justin Champagnie and Jamir Watkins.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nba/game/_/gameId/401909315",
+     "date": "2026-11-24"
+    }
+   ],
+   "verified_numbers": [
+    "105-101",
+    "97-96",
+    "88-87"
+   ]
   },
   "401909316": {
    "checked": "2026-11-23T20:42:33-05:00",
