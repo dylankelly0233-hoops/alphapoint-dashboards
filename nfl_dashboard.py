@@ -4,26 +4,20 @@ AlphaPoint Sports — NFL Power & Value Dashboard
 Dylan Kelly
 
 One HTML dashboard (opens automatically) with three tabs:
-  1. Power Ratings  — composite of nfelo + Sagarin, 0 = average NFL team
+  1. Power Ratings  — our own NFL model (nfl_model.py), 0 = average NFL team
   2. Value Metrics  — W − xW screener from nfl_value_metrics.py
   3. Week Schedule  — this week's games, projected line (with home field),
                       BUY / SELL tags from the value metrics
 
 Rating math
-  Both sources rate teams in points with home field kept separate, so a rating
-  gap = projected neutral-site margin.
-    1. Center each source on the league average → average team = 0
-    2. Rescale each source's spread (SD) to the average SD of the two sources
-    3. Composite = weighted average (SOURCE_WEIGHTS): nfelo is the primary
-       rating, Sagarin a second opinion
-
-  nfelo: the "Spread Value" column (points vs an average team). nfelo is an
-  Elo model with QB adjustments and market reversion built in.
+  Since 2026-11-24 (Dylan: launch with only data we may republish) the rating is our own model, nfl_model.py:
+  points vs an average team on a neutral field, so a rating gap = projected neutral-site margin, plus the
+  calibrated home edge. It replaced the nfelo + Sagarin blend (nfelo: all rights reserved; Sagarin: terms
+  unverified). Backtest, 549 games 2024-26: nfelo 9.68 average miss, this model 9.87, the close 9.54.
+  The old fetchers (fetch_nfelo, fetch_sagarin, build_power_ratings) are kept but no longer called.
 
 Data
-  nfelo        https://www.nfeloapp.com/nfl-power-ratings/   (cached CACHE_HOURS)
-  Sagarin      http://sagarin.com/sports/nflsend.htm   (cached CACHE_HOURS)
-  nflverse     schedules, spreads, play-by-play (via nfl_value_metrics.py)
+  nflverse     schedules, spreads, play-by-play, injury reports (free, CC BY 4.0)
 """
 
 import html
@@ -66,14 +60,15 @@ NFELO_CACHE     = f'nfl_nfelo_{SEASON}.html'
 SAGARIN_CACHE   = f'nfl_sagarin_{SEASON}.html'
 META_CACHE      = 'nfl_team_meta.csv'         # ESPN logo paths and team colors (nflverse team table)
 
-SOURCE_WEIGHTS  = {'nfelo': 0.65, 'sagarin': 0.35}
+MODEL_LABEL     = 'AlphaPoint model'
+SOURCE_WEIGHTS  = {'model': 1.0}               # one source since 2026-11-24 (was nfelo 0.65 / Sagarin 0.35)
 
 # Home-field advantage added to the home team's projected margin (0 at neutral sites).
 # NFL home field has fallen from the old 3 points to roughly 1.5–2 since 2020; markets
 # and nfelo's own HFA model sit near the middle of that range.
 HFA_POINTS      = 1.7
 HFA_POINTS, SOURCE_WEIGHTS = ex.calibrated('nfl', HFA_POINTS, SOURCE_WEIGHTS)   # weekly tuning (calibrate.py)
-SCALE = ex.calibrated_value('nfl', 'scale', 1.0)      # weekly-tuned rating stretch
+SCALE = 1.0     # the model's ratings are already fit to game margins (the weekly-tuned stretch was for the old blend)
 
 # nfelo abbreviation → nflverse abbreviation (anything not listed is used as-is)
 NFELO_ALIASES   = {'LAR': 'LA', 'WSH': 'WAS', 'JAC': 'JAX', 'OAK': 'LV', 'SD': 'LAC', 'STL': 'LA'}
@@ -199,7 +194,19 @@ def fetch_sagarin():
 # ==========================================
 # 3. COMPOSITE POWER RATING
 # ==========================================
-def build_power_ratings(nfelo, sagarin):
+def build_own_ratings(ratings):
+    """Our model's ratings (points vs an average team, neutral field) as the power table. One row per team."""
+    df = pd.DataFrame({'abbr': list(vm.NFL_TEAMS)})
+    df['model'] = df['abbr'].map(ratings)
+    df['composite'] = df['model']
+    df['rank'] = df['composite'].rank(ascending=False, method='min')
+    df['team'] = df['abbr'].map(vm.full_name)
+    df['division'] = df['abbr'].map(TEAM_DIVISION).fillna('')
+    v = df['model'].dropna()
+    return df, {'target_sd': float(v.std()) if len(v) else 1.0, 'stats': {}, 'unmatched': {}}
+
+
+def build_power_ratings(nfelo, sagarin):     # the old nfelo + Sagarin blend, unused since 2026-11-24
     """Center both sources on the league average, match their SDs, blend. One row per team."""
     df = pd.DataFrame({'abbr': list(vm.NFL_TEAMS)})
     sources, unmatched = {}, {}
@@ -416,11 +423,10 @@ def generate_html(power, vals, sched, week, info):
                                       ('Trade Signal', '')], rows)
         + theme.method_note(
             f'<b>Rating</b> is points above or below an average NFL team (0.0); the gap between two teams is the projected '
-            f'margin at a neutral site. nfelo: spread value, an Elo model with QB and market adjustments (fetched '
-            f'{theme.esc(info["nfelo_asof"])}). Sagarin: overall rating (through {theme.esc(info["sagarin_asof"] or "unknown")}). '
-            f'Each source is centered on the league average and rescaled to a common SD of {s["target_sd"]:.2f} points, then '
-            f'blended {int(SOURCE_WEIGHTS["nfelo"] * 100)}% nfelo / {int(SOURCE_WEIGHTS["sagarin"] * 100)}% Sagarin. '
-            f'Raw scales: {stats_txt}. Unmatched names: {theme.esc(unmatched)}. <b>Biggest movers</b> compares today\'s '
+            f'margin at a neutral site, before home field. It is AlphaPoint\'s own model, built from this season\'s '
+            f'play-by-play and results (nflverse): opponent-adjusted team stats weighted toward recent games, starting from '
+            f'last season and fading that start out, with an adjustment when a backup quarterback starts. '
+            f'<b>Biggest movers</b> compares today\'s '
             f'rating with the one saved about a week earlier. Click any team for its page.'))
 
     # --- Value tab ---
@@ -454,10 +460,8 @@ def generate_html(power, vals, sched, week, info):
 
     # --- Games tab: this week and next week, behind a switch ---
     rating = dict(zip(power['abbr'], power['composite']))
-    by_src = {r.abbr: {'nfelo': r.nfelo, 'Sagarin': r.sagarin} for r in power.itertuples()}
-    # our own model: logged and scored next to the blend sources, never blended and never in the confidence chip
-    shadow = info.get('shadow') or {}
-    log_src = lambda t: {**by_src.get(t, {}), **({nflm.SHADOW_LABEL: shadow[t]} if t in shadow else {})}
+    by_src = {r.abbr: {MODEL_LABEL: r.model} for r in power.itertuples()}   # one source: no agreement-based confidence
+    log_src = lambda t: by_src.get(t, {})
     sig = lambda v: 'BUY' if v is not None and v == v and v < -spot else 'SELL' if v is not None and v == v and v > spot else ''
     spots, panels, features, plog, gaps = [], {}, [], [], []
 
@@ -629,7 +633,7 @@ def generate_html(power, vals, sched, week, info):
         tabs=[('power', 'Power Ratings', power_html), ('featured', 'Featured', featured_html), ('value', 'Value Metrics', value_html),
               ('sched', 'Games', sched_html), ('markets', 'Markets', markets_html),
               ('futures', 'Futures', info['futures']), ('injuries', 'Injury Wire', injury_html)],
-        footer='AlphaPoint Sports · Data: nfelo, Sagarin, nflverse · Not financial or gambling advice',
+        footer='AlphaPoint Sports · Data: nflverse · Not financial or gambling advice',
         extra=ex.team_modal(teams) + mu.templates(panels))
     theme.write_outputs(page, HTML_OUTPUT, SHARE_OUTPUT, 'NFL_NO_BROWSER')
 
@@ -679,14 +683,12 @@ def main():
     print(f'  BLUECHIP ANALYTICS — NFL DASHBOARD  |  {SEASON}')
     print('█' * 80)
 
-    print('\n[1/4] Power ratings (nfelo + Sagarin)...')
-    nfelo = fetch_nfelo()
-    sagarin, sagarin_asof = fetch_sagarin()
-    nfelo_asof = datetime.fromtimestamp(os.path.getmtime(NFELO_CACHE)).strftime('%Y-%m-%d %H:%M') \
-        if os.path.exists(NFELO_CACHE) else 'unavailable'
-    print(f'  nfelo: {len(nfelo)} teams (fetched {nfelo_asof})  |  Sagarin: {len(sagarin)} teams '
-          f'(through {sagarin_asof})')
-    power, scale_info = build_power_ratings(nfelo, sagarin)
+    print('\n[1/4] Power ratings (AlphaPoint model)...')
+    full = vm.load_full_schedule()
+    week = WEEK or current_week(full)
+    # the curated Injury Wire (when it's for this week) says which teams start a backup QB; the model adjusts for it
+    pre_wire = wire.load_wire('nfl', week, {})
+    power, scale_info = build_own_ratings(nflm.team_ratings(vm.SEASON, pre_wire.get('items')))
     for src, names in scale_info['unmatched'].items():
         print(f'  ! {src} names not matched: {", ".join(names)}')
     missing = power.loc[power['composite'].isna(), 'abbr'].tolist()
@@ -697,8 +699,6 @@ def main():
     metrics = run_value_metrics()
 
     print('[3/4] Week schedule...')
-    full = vm.load_full_schedule()
-    week = WEEK or current_week(full)
     sched = build_schedule(full, week, power, metrics)
     next_sched = build_schedule(full, week + 1, power, metrics) if (full['week'] == week + 1).any() else pd.DataFrame()
     print(f'  Next week (Week {week + 1}): {len(next_sched)} games.')
@@ -728,9 +728,7 @@ def main():
 
     hist = ex.snapshot_ratings('nfl', dict(zip(power['abbr'], power['composite'])))
     ex.snapshot_sources('nfl', power, 'abbr', list(SOURCE_WEIGHTS))
-    freshness = [('nfelo', *ex.fetched(NFELO_CACHE)),
-                 ('Sagarin', f'through {sagarin_asof}' if sagarin_asof else 'not available', ex.fetched(SAGARIN_CACHE)[1]),
-                 ('Lines & scores', *ex.fetched(vm.SCHED_CACHE)), ('Play-by-play', *ex.fetched(vm.STATS_CACHE)),
+    freshness = [('Lines & scores', *ex.fetched(vm.SCHED_CACHE)), ('Play-by-play', *ex.fetched(vm.STATS_CACHE)),
                  ex.wire_freshness(wire_data)]
     both = pd.concat([sched, next_sched], ignore_index=True) if not next_sched.empty else sched
     outdoor = [(str(r.game_id), *wx.NFL_STADIUMS[r.home][:2], r.kick) for r in both.itertuples()
@@ -767,7 +765,7 @@ def main():
         total_fn = None
     reg_tot = full.loc[full['game_type'] == 'REG', 'total_line'].dropna()
     info = {'total_top10': float(reg_tot.quantile(0.9)) if len(reg_tot) >= 50 else None,   # tested as the season's top 10%
-            'total_fn': total_fn, 'futures': futures_html, 'val_live': val.live_records('nfl'), 'scale': scale_info, 'nfelo_asof': nfelo_asof, 'sagarin_asof': sagarin_asof,
+            'total_fn': total_fn, 'futures': futures_html, 'val_live': val.live_records('nfl'), 'scale': scale_info,
             'wire': wire_data, 'inj_cards': {t: d.get('card', []) for t, d in cands.get('teams', {}).items()}, 'market_rows': market_rows, 'history': hist, 'full': full, 'freshness': freshness,
             'featured': {r.game_id: [s] + ([f'Week {wk}'] if wk != week else [])
                          for wk, df in ((week, sched), (week + 1, next_sched)) if not df.empty
@@ -776,12 +774,6 @@ def main():
             'opened': {**next_opened, **{str(r['game_id']): r.get('opened') for r in market_rows}},
             'mu_prof': mu.profiles(units, MU_CATS, MU_STYLES) if not units.empty else {}, 'mu_games': cover,
             'sr': nmf.sr_profile(vm.SEASON), 'held': nmf.missing(full, vm.SEASON)}
-    try:       # our own NFL rating as a zero-weight shadow next to nfelo and Sagarin (Dylan, 2026-11-23)
-        info['shadow'] = nflm.team_ratings(vm.SEASON, wire_data.get('items'))
-        print(f"  Shadow model (AlphaPoint): {len(info['shadow'])} teams")
-    except Exception as e:
-        print(f'  ! shadow model skipped: {e}')
-        info['shadow'] = {}
     generate_html(power, vals, sched, week, info)
 
 

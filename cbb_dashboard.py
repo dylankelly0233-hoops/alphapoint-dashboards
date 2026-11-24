@@ -74,6 +74,10 @@ GAME_DAYS       = 3        # how many upcoming game days to show
 MODEL_LABEL     = 'AlphaPoint model'
 MODEL_MIN_GAMES = 3       # the model joins the blend once teams average this many D1 games
 MODEL_FULL_GAMES = 8
+# Restricted sources are off since 2026-11-24 (Dylan: launch with only data we may republish). TeamRankings bars
+# copying without written consent and Torvik's terms are unclear; on the 184 graded games where every source logged a
+# line, Haslametrics + our model alone missed by 10.55 points per game vs 10.56 for the full blend.
+USE_RESTRICTED  = False
 # Blend weights (Torvik preseason fades out as our model ramps in; see load_sources)
 SOURCE_WEIGHTS  = {'TeamRankings': 1.0, MODEL_LABEL: 1.0, 'Haslametrics': 1.0, 'Torvik preseason': 1.0}
 # Sources in points per game; the common scale comes from the full-weight ones among these
@@ -148,7 +152,7 @@ def load_sources(teams, model=None):
     """
     canon = set(teams['team'])
     raw = {}
-    tr, tr_current = cbr.fetch_teamrankings(SEASON)
+    tr, tr_current = cbr.fetch_teamrankings(SEASON) if USE_RESTRICTED else ({}, True)
     if tr_current and len(tr) >= 300:
         raw['TeamRankings'] = (tr, cbr.TEAMRANKINGS_ALIASES)
     # Haslametrics is built from this season's games only, so like our model it sits out until teams average
@@ -161,7 +165,7 @@ def load_sources(teams, model=None):
         if hs_ramp > 0:
             raw['Haslametrics'] = (hs, cbr.HASLAMETRICS_ALIASES)
         print(f'  Haslametrics: {len(hs)} teams, games through {hs_through}, avg {hs_avg:.1f} games, weight {hs_ramp:.2f}')
-    tv = fetch_torvik()              # the saved preseason file in the repo; Torvik blocks GitHub's servers
+    tv = fetch_torvik() if USE_RESTRICTED else pd.DataFrame()   # saved preseason file; Torvik blocks GitHub's servers
     if not tv.empty:
         raw['Torvik preseason'] = (dict(zip(tv['team'], tv['pts'])), TORVIK_ALIASES)
     sources, unmatched = {}, {}
@@ -553,10 +557,10 @@ def generate_html(power, metrics, days, info):
         + theme.method_note(
             f'<b>Rating</b> is points above or below an average Division I team (0.0); the gap between two teams is the '
             f'projected margin at a neutral site. This build blends <b>{theme.esc(blend_w)}</b>. The sources: '
-            f'TeamRankings\' predictive rating, which anchors the blend all season; the <b>AlphaPoint model</b>, our own '
+            f'the <b>AlphaPoint model</b>, our own '
             f'opponent-adjusted offense, defense and tempo from every D1 box score, starting from last season’s final '
-            f'ratings (each worth {cm.PRIOR_W:g} games) so it counts from opening night; Torvik\'s saved preseason '
-            f'ratings, the early-season second opinion, which fade out as teams reach {MODEL_FULL_GAMES} games; and <b>Haslametrics</b> '
+            f'ratings adjusted for roster turnover (returning minutes and transfers) so it counts from opening night; '
+            f'and <b>Haslametrics</b> '
             f"efficiency ratings (net points per 100 possessions at each team's tempo), built from this season's games, "
             f'which join and ramp up on the same schedule as our model. Each source is centered '
             f'on its D1 average and rescaled to the spread of the full-weight points sources (SD {s["target_sd"]:.2f} '
@@ -796,7 +800,7 @@ def generate_html(power, metrics, days, info):
         tabs=[('power', 'Power Ratings', power_html), ('featured', 'Featured', featured_html), ('value', 'Value Metrics', value_html),
               ('games', 'Games', games_html),
               ('markets', 'Markets', markets_html), ('injuries', 'Injury Wire', injury_html)],
-        footer='AlphaPoint Sports · Data: TeamRankings, <a href="https://haslametrics.com" target="_blank" rel="noopener">Haslametrics</a>, Bart Torvik (preseason), collegebasketballdata.com, ESPN, '
+        footer='AlphaPoint Sports · Data: <a href="https://haslametrics.com" target="_blank" rel="noopener">Haslametrics</a>, collegebasketballdata.com, ESPN, '
                'Kalshi · Not financial or gambling advice',
         extra=ex.team_modal(teams) + mu.templates(panels))
     theme.write_outputs(page, HTML_OUTPUT, SHARE_OUTPUT, 'CBB_NO_BROWSER')
@@ -890,7 +894,7 @@ def main():
     spreads = {gid: (h, s) for gid, h, s in zip(sp['game_id'], sp['home_team'], sp['spread'])}
     tr_detail = (ex.fetched(f'cbb_teamrankings_{SEASON}.html') if 'TeamRankings' in sources
                  else ('waiting for this season', True))
-    freshness = [('TeamRankings', *tr_detail)]
+    freshness = [('TeamRankings', *tr_detail)] if USE_RESTRICTED else []
     if 'Haslametrics' in sources:
         hw = weights['Haslametrics'] / SOURCE_WEIGHTS.get('Haslametrics', 1.0)
         freshness.append(('Haslametrics', f"weight {hw:.0%}" + (f", full at {MODEL_FULL_GAMES} games" if hw < 1 else ''), True))

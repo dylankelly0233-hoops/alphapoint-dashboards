@@ -42,6 +42,9 @@ DASHBOARDS = [
     ('mlb.html', 'mlb_dashboard.py', 'mlb_dashboard.html', 'MLB', 'Pro Baseball', 'All 30 teams'),
     ('golf.html', 'golf_dashboard.py', 'golf_dashboard.html', 'GOLF', 'Golf', 'PGA Tour & majors'),
 ]
+# Launch lineup (Dylan, 2026-11-24): only sports built entirely on data we may republish are published. The others
+# still build privately (their logs keep feeding research) but the site shows a "coming soon" page in their place.
+ACTIVE = {'nfl.html', 'cbb.html'}
 
 LANDING_CSS = """
 .feat { padding: 16px 18px; margin: 0 0 16px; }
@@ -313,7 +316,7 @@ def proven_list():
     return ', '.join(names) or 'none yet'
 
 
-BEST_SPORTS = ('nfl', 'cfb', 'cbb', 'nba')   # NHL and EPL return once something there shows a real edge (Dylan, 2026-11-16)
+BEST_SPORTS = ('nfl', 'cbb')   # the published sports only (2026-11-24; was nfl, cfb, cbb, nba)
 
 
 def _day_sport_groups(rows, row_html):
@@ -816,28 +819,22 @@ root.querySelectorAll('.schip').forEach(function(c){c.addEventListener('click',f
 # Info tab: what each dashboard tab shows (dashboard → [(tab, description)])
 INFO = [
     ('Every dashboard', [
-        ('Power Ratings', 'One composite rating per team: points above or below an average team (0.0). The gap between two '
-                          'teams is the projected margin on a neutral field. Built by blending public computer ratings '
-                          '(Sagarin + SP+ for CFB, nfelo + Sagarin for NFL, TeamRankings + our own model for CBB, Sagarin + TeamRankings + '
-                          'our own adjusted net rating for NBA, Sagarin + our expected-goals model for NHL and our expected-goals model for EPL, in goals) after '
-                          'putting them on the same scale.'),
+        ('Power Ratings', 'One rating per team: points above or below an average team (0.0). The gap between two '
+                          'teams is the projected margin on a neutral field. NFL ratings are our own model, built from '
+                          'play-by-play data; college basketball blends our own model with Haslametrics after putting them '
+                          'on the same scale.'),
         ('Value Metrics', 'Wins over expectation (W − xW): how many more or fewer games a team has won than its underlying '
                           'play supports. Below zero means the record is worse than the play (a buy candidate); above zero '
                           'means it has been winning more than it should (a sell candidate).'),
         ('Trade Signal', 'BUY / SELL tags from the value metrics, shown wherever a team appears.'),
         ('Games', 'This week\'s games with our projected spread (home field included, rounded to the half point), the '
                   'posted market spread, and the Edge — how far our number is from the market and which side we like. '
-                  'NFL and college football have a This week / Next week switch, so you can look ahead once next '
-                  'week\'s lines post; games still to play are listed first. Hockey is bet on moneylines, so NHL cards show our '
-                  'win probability and fair moneyline (probable starting goalies included) against the no-vig market '
-                  'price, the edge in win-probability points, and how far the line moves if a backup goalie starts. Premier '
-                  'League cards list the home team first and show home / draw / away probabilities against the no-vig '
-                  'three-way price; the edge can be on the draw.'),
+                  'The NFL page has a This week / Next week switch, so you can look ahead once next '
+                  'week\'s lines post; games still to play are listed first.'),
         ('Featured', 'The marquee games, each with a written preview: ranked-vs-ranked and upset-watch games in college '
-                     '(a top-10 team favored by 7 or less, or an underdog), NFL primetime games, and an NBA, NHL and EPL Game of the Day '
-                     '(the best matchup by our ratings). Previews are written automatically from the numbers on the page: '
+                     '(a top-10 team favored by 7 or less, or an underdog) and NFL primetime games. Previews are written automatically from the numbers on the page: '
                      'where our ratings lean and why, the case against, and what to check. A lean is research, not a pick.'),
-        ('Line movement', 'Each game card shows where the spread opened (or was first seen) and where it is now, and whether '
+        ('Line movement', 'Each game card shows where the spread opened and where it is now, and whether '
                           'the market has moved toward our number or away from it.'),
         ('Guards', 'Two checks from our accuracy audit. If a line moves 2.5+ points from where it opened, the card warns '
                    'that it is likely news (an injury or lineup change) the ratings don\'t know yet. In college games '
@@ -1183,7 +1180,11 @@ SPORT_LABEL = {'nfl': 'NFL', 'cfb': 'College football', 'cbb': 'College basketba
 
 def landing(results):
     tiles = ''
-    for page, _, _, abbr, name, coverage in DASHBOARDS:
+    for page, _, _, abbr, name, coverage in sorted(DASHBOARDS, key=lambda d: d[0] not in ACTIVE):
+        if page not in ACTIVE:
+            tiles += (f'<a class="card tile soon" href="{page}"><span class="abbr">{abbr}</span><span class="name">'
+                      f'{theme.esc(name)}</span><span class="cov">Coming soon</span></a>')
+            continue
         warn = '' if results.get(page, True) else '<span class="warn">Last refresh failed — showing the previous version</span>'
         tiles += (f'<a class="card tile" href="{page}"><span class="abbr">{abbr}</span><span class="name">{theme.esc(name)}</span>'
                   f'<span class="cov">{theme.esc(coverage)}</span>{warn}<span class="go">Open →</span></a>')
@@ -1198,8 +1199,8 @@ def landing(results):
         + ''.join(f'<dt>{theme.esc(k)}</dt><dd>{theme.esc(v)}</dd>' for k, v in rows) + '</dl></section>'
         for title, rows in INFO) + '</div>'
     page = theme.render_page(title='AlphaPoint Sports', league='Home', headline='Sharper research, every game',
-                             subtitle='Power ratings, value metrics and market data for the NFL, college football, '
-                                      'college basketball, the NBA, the NHL, MLB, the Premier League and PGA Tour golf. Research, not picks.',
+                             subtitle='Power ratings, value metrics and market data for the NFL and college basketball, '
+                                      'with more sports coming soon. Research, not picks.',
                              meta_items=[('Updated', updated)],
                              tabs=[('home', 'Dashboards', home), ('spotsguide', 'Strategies', spots_guide()),
                                    # Model performance is private since 2026-11-23 (Dylan: 'track it here, not publicly'):
@@ -1267,7 +1268,7 @@ def site_extras():
     asks AI crawlers to stay out (the copyright notice forbids scraping); search engines stay welcome. Crawlers only read
     robots.txt at the root of a domain, so it takes effect once the site has its own domain.
     """
-    pages = ['index.html'] + [p for p, *_ in DASHBOARDS] + ['legal.html']
+    pages = ['index.html'] + [p for p, *_ in DASHBOARDS if p in ACTIVE] + ['legal.html']
     day = datetime.now().strftime('%Y-%m-%d')
     urls = ''.join(f'<url><loc>{LIVE_SITE}{"" if p == "index.html" else p}</loc><lastmod>{day}</lastmod></url>'
                    for p in pages if os.path.exists(os.path.join(SITE, p)))
@@ -1281,7 +1282,7 @@ def site_extras():
     with open(os.path.join(SITE, 'robots.txt'), 'w', encoding='utf-8') as f:
         f.write('\n'.join(robots) + '\n')
     links = ''.join(f'<a class="card tile" href="{LIVE_SITE}{p}"><span class="abbr">{theme.esc(a)}</span>'
-                    f'<span class="name">{theme.esc(n)}</span></a>' for p, _, _, a, n, *_ in DASHBOARDS)
+                    f'<span class="name">{theme.esc(n)}</span></a>' for p, _, _, a, n, *_ in DASHBOARDS if p in ACTIVE)
     body = (f'<div class="info"><section class="card"><h3>That page isn’t here</h3><p>The link may be old or mistyped. '
             f'Try the <a href="{LIVE_SITE}">home page</a> or jump straight to a sport:</p></section></div>'
             f'<div class="tiles">{links}</div>')
@@ -1444,15 +1445,36 @@ def head_tags(page):
         f.write(s)
 
 
+def coming_soon(name):
+    """The page shown for a sport that isn't published yet (ACTIVE)."""
+    body = (f'<div class="info"><section class="card"><h3>{theme.esc(name)} is coming soon</h3>'
+            f'<p>We are rebuilding this page on our own models and data we can publish. Until then, the NFL and college '
+            f'basketball pages are live.</p></section></div>'
+            + '<div class="tiles">' + ''.join(
+                f'<a class="card tile" href="{p}"><span class="abbr">{a}</span><span class="name">{theme.esc(n)}</span>'
+                f'<span class="go">Open →</span></a>' for p, _, _, a, n, *_ in DASHBOARDS if p in ACTIVE) + '</div>')
+    page = theme.render_page(title=f'{name} · AlphaPoint Sports', league=name, headline=f'{name}: coming soon',
+                             meta_items=[], tabs=[('soon', 'Coming soon', body)],
+                             footer='AlphaPoint Sports · Not financial or gambling advice')
+    page = page.replace('</style>', LANDING_CSS + '</style>', 1)
+    return ('<!DOCTYPE html>\n<html lang="en">\n<head>\n<meta charset="utf-8">\n'
+            '<meta name="viewport" content="width=device-width, initial-scale=1">\n'
+            f'</head>\n<body>\n{page}\n</body>\n</html>')
+
+
 def main():
     os.makedirs(SITE, exist_ok=True)
     results = {}
-    for page, script, output, *_ in DASHBOARDS:
+    for page, script, output, _, name, *_ in DASHBOARDS:
         src = os.path.join(HERE, output)
         before = os.path.getmtime(src) if os.path.exists(src) else 0
         ok = run(script)
         # A script can exit cleanly without building (e.g. no data); only a freshly written page counts
         results[page] = ok and os.path.exists(src) and os.path.getmtime(src) > before
+        if page not in ACTIVE:                      # built privately; the site gets the coming-soon page
+            with open(os.path.join(SITE, page), 'w', encoding='utf-8') as f:
+                f.write(coming_soon(name))
+            continue
         if results[page]:
             shutil.copyfile(src, os.path.join(SITE, page))
             try:
