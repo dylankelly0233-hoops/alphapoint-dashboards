@@ -472,8 +472,12 @@ def build_markets(days, rating, names):
             if not g['score']:
                 hist.append({'game_id': g['game_id'], 'market': posted, 'kalshi': k and k['p_home']})
     firsts = mk.record_history('cbb', hist)
+    # the opener is CollegeBasketballData's opening line, the one the strategies were backtested on (Dylan, 2026-11-24:
+    # the first line our hourly check saw differed by 1+ point in 28% of games); first-seen only when it has none
+    cbbd_open = {str(g['game_id']): g.get('opened_cbbd') for _, gs in days for g in gs}
     for row in rows:
-        row['opened'] = firsts.get(str(row['game_id']))
+        o = cbbd_open.get(str(row['game_id']))
+        row['opened'] = o if o is not None and o == o else firsts.get(str(row['game_id']))
     return rows, sorted(n for n in unmatched if n)
 
 
@@ -626,7 +630,7 @@ def generate_html(power, metrics, days, info):
                                        'signal': _pill(comp.get(t), games_played.get(t, 0)),
                                        'color': meta.get(t, (None, ''))[1]}
             when = g['kick'].strftime('%I:%M %p').lstrip('0') + ' ET'
-            move = ex.line_move(info['opened'].get(g['game_id']), g['market'], pm, g['home'], g['away'], 'First seen')
+            move = ex.line_move(info['opened'].get(g['game_id']), g['market'], pm, g['home'], g['away'], 'Opened')
             big = ex.lopsided(g['market'], margin)
             move += ex.rating_confidence(by_src.get(g['home'], {}), by_src.get(g['away'], {}),
                                          g.get('hfa', 0.0 if g['neutral'] else HFA_POINTS), big)
