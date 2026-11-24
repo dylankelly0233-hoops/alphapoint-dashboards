@@ -1,6 +1,6 @@
 # CBB / NBA / NHL / EPL daily refresh: runbook for scheduled Claude runs
 
-The website (https://dylankelly0233-hoops.github.io/alphapoint-dashboards/) is built automatically by GitHub Actions every hour, ratings included (TeamRankings and our own model, fetched by `cbb_ratings.py`). This run checks the CBB, NBA, NHL and EPL builds, curates their Injury Wires and runs the Research Assistant, and pushes them. **No email**: since 2026-11-23 the daily digest is sent by a cloud routine at 12:20 PM (`refresh_digest_cloud.md`), so it arrives with the laptop off. Don't edit code.
+The website (https://dylankelly0233-hoops.github.io/alphapoint-dashboards/) is built automatically by GitHub Actions every hour, ratings included (our own model and Haslametrics; TeamRankings and Torvik are off since 2026-11-24). Only the NFL and CBB pages are published; NBA, NHL and EPL still build privately and show a coming-soon page on the site. This run checks the CBB, NBA, NHL and EPL builds, curates their Injury Wires and runs the Research Assistant, and pushes them. **No email**: since 2026-11-23 the daily digest is sent by a cloud routine at 12:20 PM (`refresh_digest_cloud.md`), so it arrives with the laptop off. Don't edit code.
 
 - **DIR**: `C:\Users\dylan\PyCharmMiscProject\alphapoint-dashboards`
 

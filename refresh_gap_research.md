@@ -34,7 +34,7 @@ re-check.
 ```
 
 ## 1. Rating watch (every team in `watch_teams`)
-Our ratings (Sagarin, SP+, TeamRankings, nfelo, our own models) are built from **past results**. They go wrong when the team that played those games is not the team taking the field now. For each team, look back over this week and the previous 4-6 weeks (whole season for long absences) and list anything that makes the past results a poor guide to the team today:
+Our ratings (our own models; college basketball also uses Haslametrics) are built from **past results**. Since 2026-11-24 only NFL and college basketball are published, and they no longer use TeamRankings, nfelo, Sagarin, Torvik or SP+: never name those sources in a note. They go wrong when the team that played those games is not the team taking the field now. For each team, look back over this week and the previous 4-6 weeks (whole season for long absences) and list anything that makes the past results a poor guide to the team today:
 - **A key player missed games and is back** (ratings built through his absence: `too_low`). Say how many games he missed and when he returned.
   **Who's back is a required check for every team, not an afterthought** (Dylan, 2026-11-22: nearly all items were
   `too_high`; returns are where ratings are most wrong). For each team ask: who missed games this season and is now
