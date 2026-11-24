@@ -1,6 +1,6 @@
 {
  "sport": "nba",
- "generated": "2026-11-23T20:42:33-05:00",
+ "generated": "2026-11-23T21:41:56-05:00",
  "teams": {
   "OKC": {
    "checked": "2026-11-23T17:43:18-05:00",
@@ -206,14 +206,14 @@
    "checked": "2026-11-23T17:43:18-05:00"
   },
   "SA": {
-   "checked": "2026-11-23T16:58:00-05:00",
+   "checked": "2026-11-23T21:41:56-05:00",
    "watch": [
     {
      "direction": "too_high",
      "since": "2026-11-23",
-     "text": "Wembanyama (low back tightness, has not missed a game) and Fox (shin) are questionable on Monday's report, evaluated before the 10 PM ET tip; Harper, Harris out.",
-     "source": "Yahoo Sports",
-     "url": "https://sports.yahoo.com/articles/victor-wembanyama-aaron-fox-playing-161712245.html",
+     "text": "Wembanyama (low back tightness, first missed game of the season) and Fox (right shin contusion) are OUT at Sacramento on 11/23; Harper, Harris also out. McLaughlin cleared.",
+     "source": "KSAT",
+     "url": "https://www.ksat.com/sports/2026/11/24/spurs-rule-out-wembanyama-fox-for-game-at-kings/",
      "date": "2026-11-23"
     }
    ]
@@ -329,7 +329,7 @@
    "checked": "2026-11-23T18:43:45-05:00"
   },
   "SAC": {
-   "checked": "2026-11-23T15:05:00-05:00",
+   "checked": "2026-11-23T21:41:56-05:00",
    "watch": []
   },
   "TOR": {
@@ -428,8 +428,14 @@
   },
   "401910045": {
    "verdict": "explained",
-   "summary": "Victor Wembanyama (lower back tightness, after his 50-point game) and De'Aaron Fox (shin) are both questionable at Sacramento, so the market is pricing a possible rest night.",
+   "summary": "The Spurs ruled out Victor Wembanyama (low back tightness, his first missed game of the season) and De'Aaron Fox (shin) at Sacramento, so the market's discount on San Antonio is explained.",
    "reasons": [
+    {
+     "text": "Wembanyama (low back tightness) and Fox (right shin contusion) are OUT tonight at SAC after both took part in shootaround; Jordan McLaughlin (shoulder) was cleared.",
+     "source": "KSAT",
+     "url": "https://www.ksat.com/sports/2026/11/24/spurs-rule-out-wembanyama-fox-for-game-at-kings/",
+     "date": "2026-11-23"
+    },
     {
      "text": "Wembanyama (back) is questionable for Monday at SAC; Fox (right shin contusion) and Jordan McLaughlin (shoulder) are also questionable.",
      "source": "NBC Sports",
@@ -439,9 +445,9 @@
    ],
    "returning": [],
    "swings": {
-    "SA": "Wembanyama (back) and Fox (shin) were listed questionable for 11/23 after Wembanyama's 50-point game; the market discounts the Spurs, our ratings don't (NBC Sports, 11/22)."
+    "SA": "Wembanyama (back) and Fox (shin) were ruled out for 11/23 at Sacramento; the market discounts the Spurs, our ratings don't (KSAT, 11/23)."
    },
-   "checked": "2026-11-23T16:58:00-05:00"
+   "checked": "2026-11-23T21:41:56-05:00"
   },
   "401910040": {
    "verdict": "unexplained",

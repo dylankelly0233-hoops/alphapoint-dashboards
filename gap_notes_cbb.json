@@ -1,6 +1,6 @@
 {
  "sport": "cbb",
- "generated": "2026-11-23T18:43:45-05:00",
+ "generated": "2026-11-23T21:41:56-05:00",
  "teams": {
   "Dayton": {
    "watch": [
@@ -455,10 +455,13 @@
    ]
   },
   "401920752": {
-   "checked": "2026-11-23T16:45:00-05:00",
+   "checked": "2026-11-23T21:41:56-05:00",
    "swings": {
-    "Maryland Eastern Shore": "Nothing found beyond results: no injury news; UMES lost 81-61 at IU Indy on 11/22 and is 0-5 on the road, and the market has moved further against them than we have."
-   }
+    "Maryland Eastern Shore": "Nothing found beyond results: no injury news; UMES lost 81-61 to IU Indy at a neutral site on 11/22 and was 0-5 in true road games going into this one, and the market has moved further against them than we have."
+   },
+   "verified_numbers": [
+    "0-5"
+   ]
   },
   "401917904": {
    "checked": "2026-11-23T18:43:45-05:00",
