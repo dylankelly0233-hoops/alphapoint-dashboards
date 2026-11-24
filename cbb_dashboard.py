@@ -72,6 +72,10 @@ GAME_DAYS       = 3        # how many upcoming game days to show
 # (cbb_prior_{season}.json) it counts at full weight from opening night (since 2026-11-18); without one, its weight
 # ramps up as teams play, full once teams average MODEL_FULL_GAMES D1 games. Torvik preseason fades on that ramp.
 MODEL_LABEL     = 'AlphaPoint model'
+# Conference strength on our model's part of the blend (conf_strength_test.py, 2026-11-24): our model alone misrated
+# whole conferences by up to ~3 points in non-conference games; Haslametrics is left as it is.
+CONF_ADJ        = ex.conf_effects('cbb')
+CONF_OF         = {}
 MODEL_MIN_GAMES = 3       # the model joins the blend once teams average this many D1 games
 MODEL_FULL_GAMES = 8
 # Restricted sources are off since 2026-11-24 (Dylan: launch with only data we may republish). TeamRankings bars
@@ -210,6 +214,7 @@ def project_line(home, away, neutral, src_cols, weights, model, scale, hfa=None)
             continue
         if src == MODEL_LABEL and model:
             m, _ = cm.project(model, home, away, neutral=True)
+            m += CONF_ADJ.get(CONF_OF.get(home), 0.0) - CONF_ADJ.get(CONF_OF.get(away), 0.0)   # conference strength
             factor = scale['target_sd'] / scale['stats'][src][1] if src in scale['stats'] else 1.0
             if m == m:
                 lines.append(SCALE * m * factor + hfa)
@@ -828,6 +833,9 @@ def main():
     print(f"  AlphaPoint CBB model v2: {model_v2['teams']} teams, season day {model_v2['day']}." if model_v2
           else f'  ! AlphaPoint CBB model v2: no {cm2.PARAMS.format(season=SEASON)} or no data')
     sources, unmatched, weights = load_sources(teams, model)
+    CONF_OF.update(zip(teams['team'], teams['conference']))
+    if MODEL_LABEL in sources and CONF_ADJ:     # the model's ratings carry the conference adjustment too
+        sources[MODEL_LABEL] = {t: v + CONF_ADJ.get(CONF_OF.get(t), 0.0) for t, v in sources[MODEL_LABEL].items()}
     power, scale = build_power(teams, sources, unmatched, weights)
     scale['weights'] = weights
     for src, names in scale['unmatched'].items():

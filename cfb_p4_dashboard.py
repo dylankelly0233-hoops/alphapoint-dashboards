@@ -79,6 +79,7 @@ META_CACHE      = f'p4_team_meta_v3_{YEAR}.csv'  # ESPN ids, team colors (badges
 
 SAGARIN_BLEND   = {'predictor': 0.60, 'golden_mean': 0.20, 'recent': 0.20}
 MODEL_LABEL     = 'AlphaPoint model'
+CONF_ADJ        = ex.conf_effects('cfb')       # conference strength on top of the model (2026-11-24); not in cfb_v2_open
 SOURCE_WEIGHTS  = {'model': 1.0}               # one source since 2026-11-24 (was Sagarin 0.50 / SP+ 0.50)
 
 # Home-field advantage added to the home team's projected margin (0 at neutral sites).
@@ -406,7 +407,8 @@ def build_own_ratings(teams, model):
     df = teams.copy()
     r = cfbm.team_ratings(model)
     df['model'] = df['team'].map(r)
-    df['composite'] = df['model']
+    # + the conference adjustment (conf_strength_test.py): rating gaps across conferences are then the adjusted line
+    df['composite'] = df['model'] + df['conference'].map(CONF_ADJ).fillna(0.0)
     df['fbs_rank'] = df['composite'].rank(ascending=False, method='min')
     v = df['model'].dropna()
     return df, {}, {'target_sd': float(v.std()) if len(v) else 1.0, 'stats': {}, 'unmatched': {}}
@@ -429,6 +431,8 @@ def build_schedule(week, season_type, p4_names, power, fcs, metrics, model=None)
         margin = SCALE * (h_r - a_r) + hfa if not (np.isnan(h_r) or np.isnan(a_r)) else np.nan  # home − away, incl. HFA
         own = cfbm.line(model, home, away, bool(g.get('neutralSite')))
         if own is not None and not (np.isnan(h_r) or np.isnan(a_r)):     # our model's own line; its home part is the rest
+            conf = dict(zip(power['team'], power['conference']))
+            own += CONF_ADJ.get(conf.get(home), 0.0) - CONF_ADJ.get(conf.get(away), 0.0)   # conference strength
             margin, hfa = own, own - (h_r - a_r)
 
         kick = pd.Timestamp(g['startDate']).tz_convert('America/New_York') if g.get('startDate') else None

@@ -36,6 +36,20 @@ def _nan(v):
 # ==========================================
 # RATING HISTORY + MOVERS
 # ==========================================
+def conf_effects(sport):
+    """
+    {conference: points} that our own model under- (+) or over- (-) rates that conference by in non-conference games
+    (conf_strength_test.py, 2026-11-24: passed its pre-set walk-forward rule for CFB and CBB). Our model's line gets
+    + E[home conference] - E[away conference]; in-conference games are unchanged. {} if the table is missing or failed.
+    """
+    try:
+        with open(f'conf_effects_{sport}.json', encoding='utf-8') as f:
+            c = json.load(f)
+    except (OSError, ValueError):
+        return {}
+    return {k: float(v) for k, v in c.get('effects', {}).items()} if c.get('passed') else {}
+
+
 def snapshot_ratings(sport, ratings):
     """Save today's composite rating per team (replacing any earlier snapshot today). Returns the full history."""
     path = f'ratings_history_{sport}.csv'
