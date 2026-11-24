@@ -279,6 +279,16 @@ def current_week(full):
     return int(full['week'].max())
 
 
+# Rest (nfl_rest_test.py, 2026-11-24: passed its pre-set walk-forward rule): +REST_PTS per day the home team has
+# rested more than the away team (capped at +-7 days; a bye is about +7). Our model ignored rest; the market doesn't.
+REST_PTS = 0.168
+
+
+def _rest(g):
+    h, a = getattr(g, 'home_rest', np.nan), getattr(g, 'away_rest', np.nan)
+    return 0.0 if pd.isna(h) or pd.isna(a) else REST_PTS * float(np.clip(h - a, -7, 7))
+
+
 def build_schedule(full, week, power, metrics):
     games = full[full['week'] == week].copy()
     rating = dict(zip(power['abbr'], power['composite']))
@@ -295,7 +305,8 @@ def build_schedule(full, week, power, metrics):
             'game_id': g.game_id, 'kick': kick, 'home': g.home_team, 'away': g.away_team,
             'neutral': bool(getattr(g, 'neutral', 0)),
             'home_rating': h_r, 'away_rating': a_r,
-            'margin': SCALE * (h_r - a_r) + (0.0 if getattr(g, 'neutral', 0) else HFA_POINTS),   # home − away, incl. HFA
+            'margin': SCALE * (h_r - a_r) + (0.0 if getattr(g, 'neutral', 0) else HFA_POINTS) + _rest(g),   # incl. HFA, rest
+            'rest': _rest(g),
             'market': g.spread_line,                                       # positive = home favored
             'total': getattr(g, 'total_line', np.nan), 'div': getattr(g, 'div_game', 0) == 1,
             'hr': getattr(g, 'home_rest', np.nan), 'ar': getattr(g, 'away_rest', np.nan),
@@ -518,7 +529,9 @@ def generate_html(power, vals, sched, week, info):
             move += ex.liquidity_row(next((x.get('spread') for x in info['market_rows'] if str(x.get('game_id')) == str(r.game_id)), None))
         pr = '' if r.score else val.card_row('nfl', r.margin, r.market, r.home, r.away, info['val_live'], lambda t: nick(vm.full_name(t)))
         pr += '' if r.score else tot.card_row('nfl', t_ours, r.total)
-        move += ex.why_row([('Ratings', r.margin - (0.0 if r.neutral else HFA_POINTS)), ('Home field', 0.0 if r.neutral else HFA_POINTS)],
+        rest = getattr(r, 'rest', 0.0) or 0.0
+        move += ex.why_row([('Ratings', r.margin - (0.0 if r.neutral else HFA_POINTS) - rest), ('Home field', 0.0 if r.neutral else HFA_POINTS)]
+                           + ([('Rest edge', rest)] if abs(rest) >= 0.05 else []),
                            r.margin, r.market, r.home, r.away, lambda t: nick(vm.full_name(t)), lead=pr,
                            note='' if r.score else ex.NO_EDGE)
         move += gr.card_row('nfl', r.game_id, r.margin, r.market, r.home, r.away, nick(home), nick(away), bool(r.score))
