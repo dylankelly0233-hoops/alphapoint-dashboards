@@ -1,6 +1,6 @@
 {
  "sport": "cbb",
- "generated": "2026-11-23T21:41:56-05:00",
+ "generated": "2026-11-23T22:41:52-05:00",
  "teams": {
   "Dayton": {
    "watch": [
@@ -514,6 +514,24 @@
    "swings": {
     "UC Santa Barbara": "UNC Greensboro plays at Pepperdine tonight (11/23) and at UCSB the next night, a road back-to-back on a West Coast trip that the market prices more than our ratings do (ESPN schedule)."
    }
+  },
+  "401917676": {
+   "swings": {
+    "Oregon State": "Nothing found: no injury news on Oregon State. In its last game we were 5 pts lower on it than the market, and now we're level. Our ratings caught up after it beat Oregon 82-71 (Nov 20) and Tulsa 69-66 on Damarco Gory's game-winner (Nov 23, ESPN recap: https://www.espn.com/mens-college-basketball/game/_/gameId/401921658)."
+   },
+   "checked": "2026-11-23T22:41:52-05:00"
+  },
+  "401921666": {
+   "swings": {
+    "Tulsa": "Nothing found: Tulsa had no injury news and played its usual rotation in the 69-66 loss to Oregon State (Nov 23, ESPN box score: https://www.espn.com/mens-college-basketball/game/_/gameId/401921658). Last game we were 5 pts higher on Tulsa than the market; now we're level, so the market moved on Tulsa without a clear reason."
+   },
+   "checked": "2026-11-23T22:41:52-05:00"
+  },
+  "401918996": {
+   "swings": {
+    "Stetson": "Nothing found: the market moved on Stetson without a clear reason. There's no injury news, and Stetson used its usual rotation in the 83-69 loss at Louisville (Nov 19, ESPN: https://www.espn.com/mens-college-basketball/game/_/gameId/401918950). We have been higher on Stetson than the market in both logged games and are now 1.7 pts lower on it."
+   },
+   "checked": "2026-11-23T22:41:52-05:00"
   }
  }
 }
