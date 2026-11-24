@@ -31,6 +31,12 @@ PAYOUT = 100 / 110
 MARKETS = [('nfl', 'spread'), ('cfb', 'spread'), ('cbb', 'spread'), ('nba', 'spread'),
            ('nfl', 'total'), ('cfb', 'total'), ('cbb', 'total'), ('nba', 'total')]
 P4 = {'ACC', 'Big Ten', 'Big 12', 'SEC', 'Big East', 'Pac-12'}
+# Since 2026-11-24 these spreads are tested on the models now live (segment_retest.py loaders: walk-forward predictions
+# of nfl_model / cfb_model v2 / cbb_model), not backtests.py's results-only rating. NBA spreads and all totals unchanged.
+LIVE_MODEL_SPREADS = ('nfl', 'cfb', 'cbb')
+# Slices that pass but stay off Best spots by Dylan's decision (2026-11-24: "conference only" for CFB spreads);
+# written with off_best_spots = True and skipped by valuation.proven_lines and build_site.
+OFF_BEST_SPOTS = {'cfb_spread|mid', 'cfb_spread|line under 7'}
 
 
 def _wilson(k, n, z=1.96):
@@ -45,11 +51,15 @@ def _wilson(k, n, z=1.96):
 
 # ---------------- data ----------------
 def load(sport, kind):
-    path = f'{C}/seg_{sport}_{kind}.pkl'
+    live = kind == 'spread' and sport in LIVE_MODEL_SPREADS
+    path = f'{C}/seg_{sport}_{kind}{"_live" if live else ""}.pkl'
     import time
     if os.path.exists(path) and time.time() - os.path.getmtime(path) < 20 * 86400:     # rebuilt each monthly run
         return pd.read_pickle(path)
-    if kind == 'spread':
+    if live:
+        import segment_retest as rt
+        w = getattr(rt, sport)()
+    elif kind == 'spread':
         import valuation as val
         _, w = val._hist(sport)
         w = w.rename(columns={'result': 'y'})
@@ -223,7 +233,8 @@ def test_market(sport, kind):
             out[name] = {'col': col, 'discovery': disc, 'holdout': hold, 'all': both, 'passed': bool(passed),
                          'clv': clv, 'at_close': at_close,
                          'share': round(share, 3), 'sigma': round(float((g['y'] - g['close']).std()), 2),
-                         'avg_ev': round(float((v['won'].dropna() * PAYOUT - (1 - v['won'].dropna())).mean()), 3) if len(v) else None}
+                         'avg_ev': round(float((v['won'].dropna() * PAYOUT - (1 - v['won'].dropna())).mean()), 3) if len(v) else None,
+                         **({'off_best_spots': True} if f'{sport}_{kind}|{name}' in OFF_BEST_SPOTS else {})}
             print(f'  {sport} {kind} | {name:28s} disc {disc["rate"]} ({disc["n"]}) | hold {hold["rate"]} ({hold["n"]}) | '
                   f'all {both["rate"]} ({both["n"]}, {both["lo"]}-{both["hi"]}) | CLV {clv["rate"]} ({clv["n"]}) | '
                   f'at close {at_close["rate"]} ({at_close["n"]}){"  PASS" if passed else ""}', flush=True)

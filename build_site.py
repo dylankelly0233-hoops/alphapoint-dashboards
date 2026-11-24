@@ -311,7 +311,7 @@ def proven_list():
     except (OSError, ValueError, KeyError):
         return 'none yet'
     names = [slice_label(m.split('_')[0], m.split('_')[1], sl) for m, segs in mk.items()
-             for sl, r in segs.items() if r.get('passed') and m.split('_')[0] in BEST_SPORTS
+             for sl, r in segs.items() if r.get('passed') and not r.get('off_best_spots') and m.split('_')[0] in BEST_SPORTS
              and strict_proof(r.get('all') or {}, f'{m}|{sl}')]
     return ', '.join(names) or 'none yet'
 

@@ -414,7 +414,7 @@ def proven_lines(sport, ours, market, home, away, t_ours=None, t_mkt=None, ctx=N
             c.update(gapb='gap <3' if gap < 3 else 'gap 3-6' if gap < 6 else 'gap 6+', ou='over' if up else 'under')
         best = None
         for sname, r in segs.items():
-            if not r.get('passed') or not _member(sname, r['col'], c):
+            if not r.get('passed') or r.get('off_best_spots') or not _member(sname, r['col'], c):
                 continue
             a = (assess(sport, o, m, b=r['share'], sigma=r['sigma']) if kind == 'spread'
                  else tot.assess(sport, o, m, b=r['share'], sigma=r['sigma']))
