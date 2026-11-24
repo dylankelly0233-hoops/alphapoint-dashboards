@@ -209,7 +209,7 @@ def generate_html(power, tt, starters, info):
         meta_items=[('Season', season_txt + ' final'), ('Updated', datetime.now().strftime('%b %d, %I:%M %p'))],
         tabs=[('power', 'Power Ratings', power_html), ('value', 'Value Metrics', value_html),
               ('pitchers', 'Pitchers', pitch_html), ('games', 'Games', games_html)],
-        footer='AlphaPoint Sports · Data: MLB Stats API, Baseball Savant, TeamRankings, ESPN · Logos: ESPN · '
+        footer='AlphaPoint Sports · Data: MLB Stats API, Baseball Savant, TeamRankings, ESPN · '
                'Not financial or gambling advice',
         extra=ex.team_modal(teams))
     theme.write_outputs(page, HTML_OUTPUT, SHARE_OUTPUT, 'MLB_NO_BROWSER')

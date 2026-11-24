@@ -23,7 +23,7 @@ Data
   TeamRankings predictive ratings (once its page switches to this season)
   Torvik       cbb_torvik_{season}.csv, a saved preseason file (Torvik blocks GitHub's servers);
                used only until TeamRankings is current
-  Schedule     ESPN scoreboard (D1), with posted spreads when available
+  Schedule     collegebasketballdata.com (D1), with posted spreads and true openers when available
   Box scores   collegebasketballdata.com via cbb_value_metrics.py
 """
 
@@ -392,9 +392,10 @@ def upcoming_games(by_espn, focus):
             games.append({'game_id': g['game_id'], 'kick': g['kick'], 'home': g['home'], 'away': g['away'],
                           'home_espn': espn_of.get(g['home']), 'away_espn': espn_of.get(g['away']),
                           'neutral': g['neutral'], 'market': g['market'], 'tv': g['tv'], 'total': g['total'],
-                          'opened_cbbd': g['opened'], 'score': g['score']})
-        if games:
-            days.append((day, sorted(games, key=lambda g: g['kick'])))
+                          'opened_cbbd': g['opened'], 'score': g['score'], 'tbd': g.get('tbd', False)})
+        if games:      # a game with only its date set sits at midnight: list it after the day's timed games
+            days.append((day, sorted(games, key=lambda g: g['kick'] + pd.Timedelta(hours=23, minutes=59) if g['tbd']
+                                     else g['kick'])))
         if len(days) >= GAME_DAYS:
             break
     return days
@@ -430,7 +431,7 @@ def _signal(c, games):
 
 
 def _when(g):
-    return g['kick'].strftime('%a %m/%d · ') + g['kick'].strftime('%I:%M %p').lstrip('0') + ' ET'
+    return theme.kick_text(g['kick'], g.get('tbd', False))
 
 
 def fetch_ap_ranks():
@@ -629,7 +630,7 @@ def generate_html(power, metrics, days, info):
                                        'key': t if t in focus_set else None,
                                        'signal': _pill(comp.get(t), games_played.get(t, 0)),
                                        'color': meta.get(t, (None, ''))[1]}
-            when = g['kick'].strftime('%I:%M %p').lstrip('0') + ' ET'
+            when = 'Time TBD' if g.get('tbd') else g['kick'].strftime('%I:%M %p').lstrip('0') + ' ET'
             move = ex.line_move(info['opened'].get(g['game_id']), g['market'], pm, g['home'], g['away'], 'Opened')
             big = ex.lopsided(g['market'], margin)
             move += ex.rating_confidence(by_src.get(g['home'], {}), by_src.get(g['away'], {}),
@@ -649,7 +650,7 @@ def generate_html(power, metrics, days, info):
             # the Best spots entry first, so the card's Strategies row can carry its Fair Line Value line too
             sp = ex.spot('CBB', 'cbb.html#games', g['kick'], g['away'], g['home'], margin, g['market'], [],
                          [(t, _signal(comp.get(t), games_played.get(t, 0))) for t in (g['away'], g['home'])],
-                         info['opened'].get(g['game_id']), big, key='cbb', total=(t_ours, g.get('total')),
+                         info['opened'].get(g['game_id']), big, tbd=bool(g.get('tbd')), key='cbb', total=(t_ours, g.get('total')),
                          gid=g['game_id'], ctx={'p4': g['home'] in p4set or g['away'] in p4set}, systems=sysl,
                          feat={'key': 'cbb', 'home_key': g['home'], 'away_key': g['away'], 'held': bool(held),
                                'p4': g['home'] in p4set or g['away'] in p4set,
@@ -755,9 +756,9 @@ def generate_html(power, metrics, days, info):
             f'on the road +{sit.ROAD_TRIP[1]:g}, or +{sit.ROAD_TRIP[2]:g} two or more road games in; and <b>altitude</b>, '
             f'+{sit.ALT_PER_1000FT:g} per 1,000 feet the home gym sits above the visitor' + "'" + f's campus, for climbs of 3,000+ feet. '
             f'Students being away over the winter break, rest days and travel distance tested as no effect. <b>Market</b> '
-            f'is ESPN\'s posted spread when one exists. <b>Edge</b> is how far our line is from the market, shown as the '
+            f'is the posted sportsbook spread (via collegebasketballdata.com) when one exists. <b>Edge</b> is how far our line is from the market, shown as the '
             f'side we like; gaps of {theme.EDGE_STRONG:g}+ points are highlighted. Opponents outside Division I have no rating. '
-            f'<b>Line</b> shows the spread when we first saw the game and where it is now, and whether the market has moved '
+            f'<b>Line</b> shows the opening spread and where it is now, and whether the market has moved '
             f'toward our number or away from it.'))
 
     # --- Markets tab (games with a Kalshi market) ---
@@ -795,8 +796,8 @@ def generate_html(power, metrics, days, info):
         tabs=[('power', 'Power Ratings', power_html), ('featured', 'Featured', featured_html), ('value', 'Value Metrics', value_html),
               ('games', 'Games', games_html),
               ('markets', 'Markets', markets_html), ('injuries', 'Injury Wire', injury_html)],
-        footer='AlphaPoint Sports · Data: TeamRankings, Haslametrics, Bart Torvik (preseason), collegebasketballdata.com, ESPN, '
-               'Kalshi · Logos: ESPN · Not financial or gambling advice',
+        footer='AlphaPoint Sports · Data: TeamRankings, <a href="https://haslametrics.com" target="_blank" rel="noopener">Haslametrics</a>, Bart Torvik (preseason), collegebasketballdata.com, ESPN, '
+               'Kalshi · Not financial or gambling advice',
         extra=ex.team_modal(teams) + mu.templates(panels))
     theme.write_outputs(page, HTML_OUTPUT, SHARE_OUTPUT, 'CBB_NO_BROWSER')
 

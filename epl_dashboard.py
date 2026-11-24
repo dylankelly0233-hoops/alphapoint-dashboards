@@ -472,7 +472,7 @@ def generate_html(power, metrics, days, info):
         tabs=[('power', 'Power Ratings', power_html), ('featured', 'Game of the Day', featured_html),
               ('value', 'Value Metrics', value_html), ('games', 'Games', games_html),
               ('markets', 'Markets', markets_html), ('injuries', 'Injury Wire', injury_html)],
-        footer='AlphaPoint Sports · Data: football-data.co.uk, ClubElo, ESPN, Kalshi · Logos: ESPN · '
+        footer='AlphaPoint Sports · Data: football-data.co.uk, ClubElo, ESPN, Kalshi · '
                'Not financial or gambling advice',
         extra=ex.team_modal(teams))
     theme.write_outputs(page, HTML_OUTPUT, SHARE_OUTPUT, 'EPL_NO_BROWSER')

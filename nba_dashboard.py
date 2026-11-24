@@ -498,7 +498,7 @@ def generate_html(power, metrics, days, info):
               ('value', 'Value Metrics', value_html), ('games', 'Games', games_html),
               ('markets', 'Markets', markets_html), ('futures', 'Futures', info['futures']),
               ('injuries', 'Injury Wire', injury_html)],
-        footer='AlphaPoint Sports · Data: Sagarin, TeamRankings, ESPN, Kalshi · Logos: ESPN · Not financial or gambling advice',
+        footer='AlphaPoint Sports · Data: Sagarin, TeamRankings, ESPN, Kalshi · Not financial or gambling advice',
         extra=ex.team_modal(teams) + mu.templates(panels))
     theme.write_outputs(page, HTML_OUTPUT, SHARE_OUTPUT, 'NBA_NO_BROWSER')
 

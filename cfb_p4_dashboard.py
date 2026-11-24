@@ -875,7 +875,7 @@ def generate_html(p4, vals, sched, week, season_type, info):
         tabs=[('power', 'Power Ratings', power_html), ('featured', 'Featured', featured_html), ('value', 'Value Metrics', value_html),
               ('sched', 'Games', sched_html), ('markets', 'Markets', markets_html),
               ('injuries', 'Injury Wire', injury_html)],
-        footer='AlphaPoint Sports · Data: Sagarin, SP+ (via collegefootballdata.com) · Logos: ESPN · '
+        footer='AlphaPoint Sports · Data: Sagarin, SP+ (via collegefootballdata.com) · '
                'Not financial or gambling advice',
         extra=ex.team_modal(teams) + mu.templates(panels))
     theme.write_outputs(page, HTML_OUTPUT, SHARE_OUTPUT, 'CFB_NO_BROWSER')
