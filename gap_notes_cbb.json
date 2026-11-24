@@ -1,6 +1,6 @@
 {
  "sport": "cbb",
- "generated": "2026-11-24T14:44:00-05:00",
+ "generated": "2026-11-24T15:50:00-05:00",
  "teams": {
   "Dayton": {
    "watch": [
@@ -74,19 +74,19 @@
   },
   "San Diego State": {
    "watch": [],
-   "checked": "2026-11-23T16:05:00-05:00"
+   "checked": "2026-11-24T15:50:00-05:00"
   },
   "Iowa State": {
    "watch": [],
-   "checked": "2026-11-23T16:05:00-05:00"
+   "checked": "2026-11-24T15:50:00-05:00"
   },
   "Michigan": {
    "watch": [],
-   "checked": "2026-11-23T16:58:00-05:00"
+   "checked": "2026-11-24T15:50:00-05:00"
   },
   "Creighton": {
    "watch": [],
-   "checked": "2026-11-23T16:58:00-05:00"
+   "checked": "2026-11-24T15:50:00-05:00"
   },
   "Temple": {
    "checked": "2026-11-23T16:05:00-05:00",
@@ -248,11 +248,11 @@
   },
   "Kent State": {
    "watch": [],
-   "checked": "2026-11-24T12:43:54-05:00"
+   "checked": "2026-11-24T15:50:00-05:00"
   },
   "Wyoming": {
    "watch": [],
-   "checked": "2026-11-24T12:43:54-05:00"
+   "checked": "2026-11-24T15:50:00-05:00"
   },
   "Oklahoma": {
    "checked": "2026-11-24T11:44:03-05:00",
@@ -299,18 +299,28 @@
  "games": {
   "401909495": {
    "verdict": "unexplained",
-   "summary": "The gap comes from our own AlphaPoint model (Michigan by 14.4); TeamRankings, Haslametrics and Torvik (3.7-4.7) agree with the market's 4.5. No injury news found for either team.",
+   "summary": "The gap comes from our own AlphaPoint models (Michigan by 10.1, v2 15.6); Haslametrics (4.8) sits with the market, which has moved from Michigan -4.5 at open to -5.5. No injury news found for either team before tip.",
    "reasons": [
     {
-     "text": "Neutral-site Players Era game in Las Vegas on 11/24; Creighton's opening game of the event, and no line move from the 4.5 opener.",
+     "text": "Neutral-site Players Era game in Las Vegas on 11/24; Creighton's opening game of the event. The line has moved from 4.5 at open to Michigan -5.5 (DraftKings).",
      "source": "Creighton Athletics",
      "url": "https://gocreighton.com/news/2026/5/21/mens-basketball-to-open-players-era-16-against-michigan",
      "date": "2026-05-21"
+    },
+    {
+     "text": "Same-day preview: Michigan (3-2, out of the AP poll after a loss to Villanova) vs Creighton (4-1), with no injury or lineup news for either team; Michigan is now coached by Mike Boynton Jr.",
+     "source": "ClickOnDetroit",
+     "url": "https://www.clickondetroit.com/all-about-ann-arbor/2026/11/24/no-18-michigan-basketball-returns-to-las-vegas-to-defend-players-era-championship-against-creighton/",
+     "date": "2026-11-24"
     }
    ],
    "returning": [],
    "swings": {},
-   "checked": "2026-11-23T16:58:00-05:00"
+   "checked": "2026-11-24T15:50:00-05:00",
+   "verified_numbers": [
+    "3-2",
+    "4-1"
+   ]
   },
   "401909800": {
    "swings": {
@@ -413,13 +423,13 @@
    ]
   },
   "401909775": {
-   "checked": "2026-11-23T16:05:00-05:00",
+   "checked": "2026-11-24T15:50:00-05:00",
    "swings": {
-    "San Diego State": "Nothing found: no injury news for the unbeaten Aztecs (Nick Anderson's season-long knee injury is old news); we were 4.7 pts higher on them last game and now match the 7.5 for this Players Era neutral-site opener.",
-    "Iowa State": "Nothing found: the market moved on Iowa State without a clear reason; no injury news, and the line rose from -7.5 at open to -11.5 (DraftKings -9.5)."
+    "San Diego State": "Nothing found: no injury news for the unbeaten Aztecs (Nick Anderson's season-long knee injury is old news); the market has moved 2 pts away from them since the 7.5 opener for this Players Era neutral-site game.",
+    "Iowa State": "Nothing found: the market moved on Iowa State without a clear reason; no injury news, and the line went from -7.5 at open to -9.5 (DraftKings)."
    },
    "verdict": "unexplained",
-   "summary": "Unexplained: no injury news for either team (Iowa State's Wiggins and Toure have been out all season), yet the line went from Iowa State -7.5 at open to -11.5 (-9.5 at DraftKings).",
+   "summary": "Unexplained: no injury news for either team before tip (ESPN's game page lists none; Iowa State's Wiggins and Toure have been out all season), yet the line moved from Iowa State -7.5 at open to -9.5 (DraftKings).",
    "reasons": [
     {
      "text": "Iowa State's only absences are season-long (Wiggins, Achilles; Toure, shoulder, back in January), already in our ratings; the regular rotation played on 11/15.",
@@ -432,6 +442,12 @@
      "source": "Iowa State Daily",
      "url": "https://iowastatedaily.com/349348/sports/a-guide-to-the-2026-players-era-tournament/",
      "date": "2026-11-22"
+    },
+    {
+     "text": "Pre-game check 11/24: ESPN's game page lists no injuries for either team; DraftKings Iowa State -9.5.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401909775",
+     "date": "2026-11-24"
     }
    ]
   },
@@ -632,12 +648,12 @@
    "checked": "2026-11-24T08:45:20-05:00"
   },
   "401921707": {
-   "checked": "2026-11-24T12:43:54-05:00",
+   "checked": "2026-11-24T15:50:00-05:00",
    "verdict": "unexplained",
-   "summary": "No injury or lineup news found for either team; Wyoming's full rotation played its Sunshine Slam opener and the line has sat at Wyoming -8.5 since it opened.",
+   "summary": "No injury or lineup news found for either team before tip (Covers and ESPN list none); Wyoming's full rotation played its Sunshine Slam opener, and the line has moved from Wyoming -8.5 at open to -9.5, toward us.",
    "reasons": [
     {
-     "text": "Neutral site (Sunshine Slam, Ocean Center, Daytona Beach). Wyoming's top seven all played vs Duquesne on 11/22; line unchanged from the -8.5 opener.",
+     "text": "Neutral site (Sunshine Slam, Ocean Center, Daytona Beach). Wyoming's top seven all played vs Duquesne on 11/22; the line has moved from the -8.5 opener to -9.5 (DraftKings).",
      "source": "Wyoming Athletics",
      "url": "https://gowyo.com/news/2026/8/17/mens-basketball-cowboy-cagers-to-play-in-sunshine-slam.aspx",
      "date": "2026-08-17"
@@ -647,11 +663,17 @@
      "source": "ESPN",
      "url": "https://www.espn.com/mens-college-basketball/team/schedule/_/id/2309",
      "date": "2026-11-21"
+    },
+    {
+     "text": "Pre-game check 11/24: Covers lists no injuries for Kent State, and ESPN's game page lists none for either team.",
+     "source": "Covers",
+     "url": "https://www.covers.com/sport/basketball/ncaab/teams/main/kent-state-golden-flashes/injuries",
+     "date": "2026-11-24"
     }
    ],
    "swings": {
     "Kent State": "Nothing found: the market moved on Kent State without a clear reason; G Quinn Woidke has sat the last two games (ESPN box scores), which our ratings already include.",
-    "Wyoming": "Nothing found: no injury news on Wyoming. Our ratings rose after it beat Duquesne 79-61 (Nov 22), while the market has held at Wyoming -8.5 since it opened."
+    "Wyoming": "Nothing found: no injury news on Wyoming. Our ratings rose after it beat Duquesne 79-61 (Nov 22); the market has moved only from -8.5 at open to -9.5."
    },
    "verified_numbers": [
     "79-61"
