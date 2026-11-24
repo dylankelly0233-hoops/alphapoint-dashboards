@@ -329,3 +329,7 @@ listed,sport,gid,kick,reason,detail,kind,side,line,p,need
 2026-11-24T10:12-05:00,cfb,401871083,2026-11-28T14:00:00-05:00,priced,conference game spread,spread,home,3.0,0.5007,0.4892
 2026-11-24T10:12-05:00,cfb,401869939,2026-11-28T15:00:00-05:00,priced,conference game spread,spread,home,4.0,0.5313,0.5144
 2026-11-24T10:12-05:00,cfb,401866475,2026-11-28T15:30:00-05:00,priced,conference game spread,spread,home,3.0,0.4999,0.4892
+2026-11-24T11:32-05:00,cfb,401866470,2026-11-24T19:00:00-05:00,priced,conference game spread,spread,home,5.5,0.5523,0.5238
+2026-11-24T11:32-05:00,cfb,401856878,2026-11-28T14:00:00-05:00,priced,conference game spread,spread,away,3.5,0.5295,0.5238
+2026-11-24T11:32-05:00,cfb,401871082,2026-11-28T14:00:00-05:00,priced,conference game spread,spread,home,11.0,0.5233,0.5112
+2026-11-24T11:32-05:00,cfb,401858539,2026-11-28T15:30:00-05:00,priced,conference game spread,spread,away,-7.0,0.4887,0.4861
