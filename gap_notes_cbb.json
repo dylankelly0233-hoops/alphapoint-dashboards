@@ -1,863 +1,863 @@
 {
-  "sport": "cbb",
-  "generated": "2026-11-24T18:42:22-05:00",
-  "teams": {
-    "Dayton": {
-      "watch": [
-        {
-          "direction": "too_high",
-          "since": "2026-11-20",
-          "text": "Starting PG Landen Joseph (ankle, hurt 11/20 vs Utah) sat vs Northwestern on 11/22 and Dayton lost 79-55; ratings built with him overstate Dayton while he is out.",
-          "source": "Yahoo Sports",
-          "url": "https://sports.yahoo.com/articles/karasinski-scores-26-west-adds-202640192.html",
-          "date": "2026-11-22"
-        }
-      ]
-    },
-    "Northwestern": {
-      "watch": [
-        {
-          "direction": "too_high",
-          "since": "2026-11-13",
-          "text": "Northwestern lost Ryan Soulis for the season (foot, 11/13) and Luke McEldon is out; thin frontcourt in losses to DePaul and Columbia (75-53) that early ratings didn't see.",
-          "source": "The Daily Northwestern",
-          "url": "https://dailynorthwestern.com/2026/11/17/sports/mens-basketball-northwestern-falls-to-columbia-75-53-in-second-straight-loss/",
-          "date": "2026-11-17"
-        }
-      ]
-    },
-    "North Carolina": {
-      "watch": [
-        {
-          "direction": "too_high",
-          "since": "2026-11-17",
-          "text": "Starter Neo Avdalas (9.0 ppg, team-high 3.8 apg) broke his left wrist late in the 78-70 loss to Georgia; out about two months, so ratings built with him overstate UNC now.",
-          "source": "ESPN",
-          "url": "https://www.espn.com/mens-college-basketball/story/_/id/50511206/north-carolina-guard-neo-avdalas-wrist-2-months",
-          "date": "2026-11-17"
-        },
-        {
-          "direction": "too_low",
-          "since": "2026-11-20",
-          "text": "7-foot C Cameron Fens missed the first four games over NCAA eligibility and is now playing under a temporary restraining order (through a hearing or Dec 1).",
-          "source": "WRAL",
-          "url": "https://www.wral.com/sports/northcarolina-mens-basketball-cameron-fens-first-game-vs-marshall-november-2026/",
-          "date": "2026-11-21"
-        }
-      ],
-      "checked": "2026-11-23T18:43:45-05:00"
-    },
-    "Tennessee": {
-      "checked": "2026-11-24T13:50:00-05:00",
-      "watch": [
-        {
-          "direction": "too_high",
-          "since": "2026-11-17",
-          "text": "Jalen Haralson (20.5 mpg, right knee hyperextension 11/17) missed Coastal Carolina and is expected to sit against Maryland on 11/24; day to day, not long term.",
-          "source": "CBS Sports",
-          "url": "https://www.cbssports.com/betting/news/no-9-tennessee-vs-maryland-cbb-odds-parlay-volunteers-should-have-too-much-in-players-era-16-vegas-matinee/",
-          "date": "2026-11-24"
-        }
-      ]
-    },
-    "Oregon State": {
-      "watch": [],
-      "checked": "2026-11-24T12:43:54-05:00"
-    },
-    "Tulsa": {
-      "checked": "2026-11-24T14:44:00-05:00",
-      "watch": []
-    },
-    "Monmouth": {
-      "checked": "2026-11-23T18:43:45-05:00",
-      "watch": []
-    },
-    "San Diego State": {
-      "watch": [],
-      "checked": "2026-11-24T15:50:00-05:00"
-    },
-    "Iowa State": {
-      "watch": [],
-      "checked": "2026-11-24T15:50:00-05:00"
-    },
-    "Michigan": {
-      "watch": [],
-      "checked": "2026-11-24T15:50:00-05:00"
-    },
-    "Creighton": {
-      "watch": [],
-      "checked": "2026-11-24T15:50:00-05:00"
-    },
-    "Temple": {
-      "checked": "2026-11-23T16:05:00-05:00",
-      "watch": [
-        {
-          "direction": "too_high",
-          "since": "2026-11-22",
-          "text": "Guard Jordan Marsh (18-30 mpg, 16 pts in the opener) missed the 11/22 SFA game with an upper-body injury; day to day, status for UT Martin unconfirmed.",
-          "source": "Temple Athletics",
-          "url": "https://owlsports.com/news/2026/11/22/mens-basketball-temple-drops-paradise-jam-semifinal-to-stephen-f-austin",
-          "date": "2026-11-22",
-          "verified_numbers": [
-            "16"
-          ]
-        }
-      ]
-    },
-    "UT Martin": {
-      "watch": [],
-      "checked": "2026-11-23T16:05:00-05:00"
-    },
-    "Utah Valley": {
-      "watch": [],
-      "checked": "2026-11-23T18:43:45-05:00"
-    },
-    "Stephen F. Austin": {
-      "watch": [],
-      "checked": "2026-11-23T18:43:45-05:00"
-    },
-    "Louisville": {
-      "checked": "2026-11-24T18:42:22-05:00",
-      "watch": [
-        {
-          "direction": "too_low",
-          "since": "2026-11-20",
-          "text": "Seth Trimble (28 mpg) missed the Stetson win on 11/20 and Kelsey says he plays vs Texas Tech on 11/24; that game is in our ratings without him.",
-          "source": "Athlon Sports",
-          "url": "https://athlonsports.com/college-basketball/pat-kelsey-announces-seth-trimble-news-before-texas-tech-game",
-          "date": "2026-11-24"
-        },
-        {
-          "direction": "too_high",
-          "since": "2026-11-20",
-          "text": "Reserve guard Isaac Ellis (13.5 mpg, ankle) is out for the whole Players Era Festival week.",
-          "source": "Courier-Journal (Yahoo)",
-          "url": "https://sports.yahoo.com/articles/louisvilles-isaac-ellis-miss-players-162521731.html",
-          "date": "2026-11-23"
-        }
-      ]
-    },
-    "Texas Tech": {
-      "checked": "2026-11-24T18:42:22-05:00",
-      "watch": []
-    },
-    "Maryland": {
-      "watch": [],
-      "checked": "2026-11-24T13:50:00-05:00"
-    },
-    "Wright State": {
-      "checked": "2026-11-24T08:45:20-05:00",
-      "watch": [
-        {
-          "direction": "too_high",
-          "since": "2026-11-22",
-          "text": "Dominic Pangonis and Noah Lewis are out for the ESPN Events Invitational, per the school; neither played in Monday's 66-64 win over Akron.",
-          "source": "Wright State Athletics",
-          "url": "https://wsuraiders.com/news/2026/11/22/mens-basketball-mbb-preview-raiders-head-to-orlando-for-espn-invitational",
-          "date": "2026-11-22"
-        }
-      ]
-    },
-    "Akron": {
-      "watch": [],
-      "checked": "2026-11-24T10:44:37-05:00"
-    },
-    "Georgia Southern": {
-      "checked": "2026-11-23T17:43:18-05:00",
-      "watch": []
-    },
-    "Northern Kentucky": {
-      "checked": "2026-11-23T17:43:18-05:00",
-      "watch": []
-    },
-    "Yale": {
-      "watch": [],
-      "checked": "2026-11-23T15:06:50-05:00"
-    },
-    "Belmont": {
-      "watch": [],
-      "checked": "2026-11-24T10:44:37-05:00"
-    },
-    "Nevada": {
-      "watch": [],
-      "checked": "2026-11-23T15:06:50-05:00"
-    },
-    "San Francisco": {
-      "watch": [],
-      "checked": "2026-11-24T12:43:54-05:00"
-    },
-    "Maryland Eastern Shore": {
-      "watch": [],
-      "checked": "2026-11-23T16:45:00-05:00"
-    },
-    "Youngstown State": {
-      "watch": [],
-      "checked": "2026-11-23T16:45:00-05:00"
-    },
-    "BYU": {
-      "watch": [],
-      "checked": "2026-11-23T16:58:00-05:00"
-    },
-    "Washington": {
-      "watch": [],
-      "checked": "2026-11-23T16:58:00-05:00"
-    },
-    "West Georgia": {
-      "watch": [],
-      "checked": "2026-11-23T18:43:45-05:00"
-    },
-    "Tennessee Tech": {
-      "watch": [],
-      "checked": "2026-11-23T18:43:45-05:00"
-    },
-    "Campbell": {
-      "watch": [],
-      "checked": "2026-11-23T18:43:45-05:00"
-    },
-    "Coastal Carolina": {
-      "watch": [],
-      "checked": "2026-11-23T18:43:45-05:00"
-    },
-    "Furman": {
-      "watch": [],
-      "checked": "2026-11-23T18:43:45-05:00"
-    },
-    "Elon": {
-      "watch": [],
-      "checked": "2026-11-23T18:43:45-05:00"
-    },
-    "UC Santa Barbara": {
-      "watch": [],
-      "checked": "2026-11-23T18:43:45-05:00"
-    },
-    "UNC Greensboro": {
-      "watch": [],
-      "checked": "2026-11-23T18:43:45-05:00"
-    },
-    "Colorado": {
-      "watch": [],
-      "checked": "2026-11-24T12:43:54-05:00"
-    },
-    "Stanford": {
-      "watch": [],
-      "checked": "2026-11-24T12:43:54-05:00"
-    },
-    "St. Bonaventure": {
-      "watch": [],
-      "checked": "2026-11-24T08:45:20-05:00"
-    },
-    "Kent State": {
-      "watch": [],
-      "checked": "2026-11-24T15:50:00-05:00"
-    },
-    "Wyoming": {
-      "watch": [],
-      "checked": "2026-11-24T15:50:00-05:00"
-    },
-    "Oklahoma": {
-      "checked": "2026-11-24T11:44:03-05:00",
-      "watch": [
-        {
-          "direction": "too_high",
-          "since": "2026-11-16",
-          "text": "Starting F Duke Brennan broke his ankle in practice on 11/16 and is out for an extended period; he started 4 of Oklahoma's 5 games, so our ratings are mostly built with him.",
-          "source": "News 9",
-          "url": "https://www.news9.com/sports/university-of-oklahoma/oklahoma-basketball-loses-duke-brennan-for-extended-time-with-broken-ankle",
-          "date": "2026-11-16"
-        }
-      ]
-    },
-    "Samford": {
-      "watch": [],
-      "checked": "2026-11-24T17:42:02-05:00"
-    },
-    "Pittsburgh": {
-      "watch": [],
-      "checked": "2026-11-24T11:44:03-05:00"
-    },
-    "South Florida": {
-      "watch": [],
-      "checked": "2026-11-24T17:42:02-05:00"
-    },
-    "Stetson": {
-      "watch": [],
-      "checked": "2026-11-24T17:42:02-05:00"
-    },
-    "DePaul": {
-      "watch": [],
-      "checked": "2026-11-24T16:41:40-05:00"
-    },
-    "Purdue": {
-      "watch": [],
-      "checked": "2026-11-24T16:41:40-05:00"
-    },
-    "Illinois State": {
-      "watch": [],
-      "checked": "2026-11-24T14:44:00-05:00"
-    },
-    "UConn": {
-      "checked": "2026-11-24T16:50:54-05:00",
-      "watch": [
-        {
-          "direction": "too_low",
-          "since": "2026-11-23",
-          "text": "Solo Ball (offseason wrist surgery) has not played this season; Dan Hurley says he is nearing game-time-decision status for the 11/25 Duke game. If he plays, ratings built without him understate UConn.",
-          "source": "Yahoo Sports",
-          "url": "https://sports.yahoo.com/articles/solo-ball-nearing-game-time-234400882.html",
-          "date": "2026-11-23"
-        }
-      ]
-    },
-    "Alabama": {
-      "watch": [],
-      "checked": "2026-11-24T16:50:54-05:00"
-    },
-    "Arizona": {
-      "watch": [],
-      "checked": "2026-11-24T16:50:54-05:00"
-    },
-    "Arizona State": {
-      "watch": [],
-      "checked": "2026-11-24T16:50:54-05:00"
-    },
-    "Baylor": {
-      "watch": [],
-      "checked": "2026-11-24T16:50:54-05:00"
-    },
-    "Clemson": {
-      "watch": [],
-      "checked": "2026-11-24T16:50:54-05:00"
-    },
-    "Colorado State": {
-      "watch": [],
-      "checked": "2026-11-24T16:50:54-05:00"
-    },
-    "Duke": {
-      "watch": [],
-      "checked": "2026-11-24T16:50:54-05:00"
-    },
-    "Duquesne": {
-      "watch": [],
-      "checked": "2026-11-24T16:50:54-05:00"
-    },
-    "Georgia Tech": {
-      "watch": [],
-      "checked": "2026-11-24T17:42:02-05:00"
-    },
-    "Gonzaga": {
-      "watch": [],
-      "checked": "2026-11-24T16:50:54-05:00"
-    },
-    "Grand Canyon": {
-      "watch": [],
-      "checked": "2026-11-24T16:50:54-05:00"
-    },
-    "High Point": {
-      "watch": [],
-      "checked": "2026-11-24T16:50:54-05:00"
-    },
-    "Kansas State": {
-      "watch": [],
-      "checked": "2026-11-24T16:50:54-05:00"
-    },
-    "LSU": {
-      "watch": [],
-      "checked": "2026-11-24T16:50:54-05:00"
-    },
-    "Marquette": {
-      "watch": [],
-      "checked": "2026-11-24T16:50:54-05:00"
-    },
-    "Memphis": {
-      "watch": [],
-      "checked": "2026-11-24T16:50:54-05:00"
-    },
-    "Mississippi State": {
-      "watch": [],
-      "checked": "2026-11-24T16:50:54-05:00"
-    },
-    "Ohio State": {
-      "watch": [],
-      "checked": "2026-11-24T16:50:54-05:00"
-    },
-    "Oregon": {
-      "watch": [],
-      "checked": "2026-11-24T16:50:54-05:00"
-    },
-    "Penn State": {
-      "watch": [],
-      "checked": "2026-11-24T16:50:54-05:00"
-    },
-    "Providence": {
-      "watch": [],
-      "checked": "2026-11-24T16:50:54-05:00"
-    },
-    "SMU": {
-      "watch": [],
-      "checked": "2026-11-24T16:50:54-05:00"
-    },
-    "Saint Louis": {
-      "watch": [],
-      "checked": "2026-11-24T16:50:54-05:00"
-    },
-    "Santa Clara": {
-      "watch": [],
-      "checked": "2026-11-24T16:50:54-05:00"
-    },
-    "South Carolina": {
-      "watch": [],
-      "checked": "2026-11-24T16:50:54-05:00"
-    },
-    "St. John's": {
-      "watch": [],
-      "checked": "2026-11-24T16:50:54-05:00"
-    },
-    "Texas A&M": {
-      "watch": [],
-      "checked": "2026-11-24T16:50:54-05:00"
-    },
-    "USC": {
-      "watch": [],
-      "checked": "2026-11-24T16:50:54-05:00"
-    },
-    "Utah State": {
-      "watch": [],
-      "checked": "2026-11-24T16:50:54-05:00"
-    },
-    "VCU": {
-      "watch": [],
-      "checked": "2026-11-24T16:50:54-05:00"
-    },
-    "Vanderbilt": {
-      "watch": [],
-      "checked": "2026-11-24T16:50:54-05:00"
-    },
-    "Virginia": {
-      "watch": [],
-      "checked": "2026-11-24T16:50:54-05:00"
-    },
-    "Wake Forest": {
-      "watch": [],
-      "checked": "2026-11-24T16:50:54-05:00"
-    },
-    "Xavier": {
-      "watch": [],
-      "checked": "2026-11-24T16:50:54-05:00"
+ "sport": "cbb",
+ "generated": "2026-11-24T18:42:22-05:00",
+ "teams": {
+  "Dayton": {
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-20",
+     "text": "Starting PG Landen Joseph (ankle, hurt 11/20 vs Utah) sat vs Northwestern on 11/22 and Dayton lost 79-55; ratings built with him overstate Dayton while he is out.",
+     "source": "Yahoo Sports",
+     "url": "https://sports.yahoo.com/articles/karasinski-scores-26-west-adds-202640192.html",
+     "date": "2026-11-22"
     }
+   ]
   },
-  "games": {
-    "401909495": {
-      "verdict": "unexplained",
-      "summary": "The gap comes from our own AlphaPoint models (Michigan by 10.1, v2 15.6); Haslametrics (4.8) sits with the market, which has moved from Michigan -4.5 at open to -5.5. No injury news found for either team before tip.",
-      "reasons": [
-        {
-          "text": "Neutral-site Players Era game in Las Vegas on 11/24; Creighton's opening game of the event. The line has moved from 4.5 at open to Michigan -5.5 (DraftKings).",
-          "source": "Creighton Athletics",
-          "url": "https://gocreighton.com/news/2026/5/21/mens-basketball-to-open-players-era-16-against-michigan",
-          "date": "2026-05-21"
-        },
-        {
-          "text": "Same-day preview: Michigan (3-2, out of the AP poll after a loss to Villanova) vs Creighton (4-1), with no injury or lineup news for either team; Michigan is now coached by Mike Boynton Jr.",
-          "source": "ClickOnDetroit",
-          "url": "https://www.clickondetroit.com/all-about-ann-arbor/2026/11/24/no-18-michigan-basketball-returns-to-las-vegas-to-defend-players-era-championship-against-creighton/",
-          "date": "2026-11-24"
-        }
-      ],
-      "returning": [],
-      "swings": {},
-      "checked": "2026-11-24T15:50:00-05:00",
-      "verified_numbers": [
-        "3-2",
-        "4-1"
-      ]
-    },
-    "401909800": {
-      "swings": {
-        "Kansas State": "Nothing found: the market moved on Kansas State without a clear reason; no injury news found, and the line has held at Gonzaga -12.5 since it opened (11/22)."
-      }
-    },
-    "401915943": {
-      "swings": {
-        "Oregon": "Nothing found: the market moved on Oregon without a clear reason; no current injury news found, and the line has held at St. John's -8.5 since it opened (11/22)."
-      }
-    },
-    "401921658": {
-      "checked": "2026-11-23T12:41:40-05:00",
-      "verdict": "unexplained",
-      "summary": "Still no injury or news for either team at tip; the market backs unbeaten Oregon State (6-0) by 5.5 (opened 7.5, moving our way) at a neutral site in Palm Desert while most of our sources make it a near pick'em.",
-      "reasons": [
-        {
-          "text": "Oregon State enters 6-0; Tulsa is 4-1 after a 72-61 loss to Mississippi State on Nov 20. Neutral site (Acrisure Series); no injuries listed for either team.",
-          "source": "On3",
-          "url": "https://www.on3.com/teams/oregon-state-beavers/news/oregon-state-heads-to-acrisure-series-unbeaten-faces-tulsa-and-san-francisco/",
-          "date": "2026-11-22"
-        },
-        {
-          "text": "Oregon State's own preview of the Palm Springs trip lists no injuries; still no injury news for Tulsa on game day.",
-          "source": "Oregon State Athletics",
-          "url": "https://osubeavers.com/news/2026/11/21/mens-basketball-beavers-headed-to-palm-springs-for-acrisure-series",
-          "date": "2026-11-21"
-        }
-      ]
-    },
-    "401911457": {
-      "checked": "2026-11-23T15:06:50-05:00",
-      "swings": {
-        "Nevada": "Nevada's last game was a 91-74 home win over Idaho on Nov 19 (Elijah Price 21 pts); our ratings rose on the Wolf Pack more than the market did. No injury news (Nevada Athletics)."
-      }
-    },
-    "401921029": {
-      "checked": "2026-11-23T17:43:18-05:00",
-      "swings": {
-        "Northern Kentucky": "Nothing found: the market moved on Northern Kentucky without a clear reason (no injuries reported; opened -2.5, now -3.5).",
-        "Georgia Southern": "Nothing found: the market moved on Georgia Southern without a clear reason (no injuries listed on Covers, 11/23)."
-      },
-      "verdict": "unexplained",
-      "summary": "Every source we use has Northern Kentucky by 5-6+, the market by 2.5 (unchanged from the open); no injury or lineup news found for either team.",
-      "reasons": [
-        {
-          "text": "Covers' game page lists no injuries for Georgia Southern or Northern Kentucky for the 7 PM ET game on 11/23.",
-          "source": "Covers",
-          "url": "https://www.covers.com/sport/basketball/ncaab/matchup/393061",
-          "date": "2026-11-23"
-        }
-      ]
-    },
-    "401928830": {
-      "checked": "2026-11-23T11:42:03-05:00",
-      "swings": {
-        "Akron": "Nothing found on Akron; the opponent changed: Wright State is unbeaten (5-0) but plays without Dominic Pangonis and Noah Lewis (WHIO)."
-      }
-    },
-    "401929286": {
-      "checked": "2026-11-23T15:06:50-05:00",
-      "swings": {
-        "Yale": "Nothing found: the market moved on Yale without a clear reason (no injuries listed; last result a 76-74 OT win over Vermont on Nov 18)."
-      }
-    },
-    "401913102": {
-      "checked": "2026-11-23T18:43:45-05:00",
-      "swings": {
-        "Monmouth": "Nothing found on Monmouth (no injuries reported); the move is mostly UNC: PG Neo Avdalas is out about two months after Nov 16 wrist surgery (UNC), which the market weighs more than our ratings."
-      },
-      "verdict": "partly",
-      "summary": "Losing PG Neo Avdalas (wrist, out ~2 months) explains some of the gap, but newly eligible 7-footer Cameron Fens cuts the other way, so most of our 4.7-point edge on UNC is unexplained.",
-      "reasons": [
-        {
-          "text": "Starting guard Neo Avdalas (team-high 15 assists) broke his left wrist vs Georgia Nov 13, had surgery Nov 16 and is out about two months.",
-          "source": "GoHeels.com",
-          "url": "https://goheels.com/news/2026/11/22/mens-basketball-welcomes-monmouth-monday",
-          "date": "2026-11-22"
-        },
-        {
-          "text": "C Cameron Fens, who missed the first four games, is eligible under a temporary restraining order (through a hearing or Dec 1) and debuted vs Marshall; ratings mostly built without him.",
-          "source": "WRAL",
-          "url": "https://www.wral.com/sports/northcarolina-mens-basketball-cameron-fens-first-game-vs-marshall-november-2026/",
-          "date": "2026-11-21"
-        },
-        {
-          "text": "No injuries reported for Monmouth (1-4); the line drifted from UNC -20.5 to -18.5 without a clear news reason.",
-          "source": "Tar Heel Tribune",
-          "url": "https://tarheeltribune.com/2026/11/22/monmouth-at-unc-tv-info-stats-scouting-hawks-notes-lineup-combinations-and-more/",
-          "date": "2026-11-22"
-        }
-      ],
-      "returning": [
-        {
-          "team": "North Carolina",
-          "player": "Cameron Fens",
-          "text": "Eligible by court order after missing the first four games.",
-          "url": "https://www.wral.com/sports/northcarolina-mens-basketball-cameron-fens-first-game-vs-marshall-november-2026/"
-        }
-      ]
-    },
-    "401909775": {
-      "checked": "2026-11-24T15:50:00-05:00",
-      "swings": {
-        "San Diego State": "Nothing found: no injury news for the unbeaten Aztecs (Nick Anderson's season-long knee injury is old news); the market has moved 2 pts away from them since the 7.5 opener for this Players Era neutral-site game.",
-        "Iowa State": "Nothing found: the market moved on Iowa State without a clear reason; no injury news, and the line went from -7.5 at open to -9.5 (DraftKings)."
-      },
-      "verdict": "unexplained",
-      "summary": "Unexplained: no injury news for either team before tip (ESPN's game page lists none; Iowa State's Wiggins and Toure have been out all season), yet the line moved from Iowa State -7.5 at open to -9.5 (DraftKings).",
-      "reasons": [
-        {
-          "text": "Iowa State's only absences are season-long (Wiggins, Achilles; Toure, shoulder, back in January), already in our ratings; the regular rotation played on 11/15.",
-          "source": "Covers",
-          "url": "https://www.covers.com/sport/basketball/ncaab/injuries",
-          "date": "2026-11-23"
-        },
-        {
-          "text": "Previews from 11/22-11/23 list no availability news for either team; Iowa State has not played since 11/15.",
-          "source": "Iowa State Daily",
-          "url": "https://iowastatedaily.com/349348/sports/a-guide-to-the-2026-players-era-tournament/",
-          "date": "2026-11-22"
-        },
-        {
-          "text": "Pre-game check 11/24: ESPN's game page lists no injuries for either team; DraftKings Iowa State -9.5.",
-          "source": "ESPN",
-          "url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401909775",
-          "date": "2026-11-24"
-        }
-      ]
-    },
-    "401921210": {
-      "checked": "2026-11-23T16:05:00-05:00",
-      "swings": {
-        "Temple": "Likely guard Jordan Marsh: he missed the 11/22 SFA loss with an upper-body (wrist) injury and is day to day, and the line slid from Temple -4.5 to -2.5."
-      },
-      "reasons": [
-        {
-          "text": "Temple guard Jordan Marsh (18-30 mpg) missed the 11/22 loss to Stephen F. Austin with an upper-body injury and is day to day for UT Martin.",
-          "source": "Temple Athletics",
-          "url": "https://owlsports.com/news/2026/11/22/mens-basketball-temple-drops-paradise-jam-semifinal-to-stephen-f-austin",
-          "date": "2026-11-22"
-        }
-      ]
-    },
-    "401921208": {
-      "checked": "2026-11-23T18:43:45-05:00",
-      "swings": {
-        "Utah Valley": "Nothing found: the market moved on Utah Valley without a clear reason; no injury news found, and the line rose from Utah Valley -3.5 at open to -4.5."
-      }
-    },
-    "401915942": {
-      "checked": "2026-11-24T18:42:22-05:00",
-      "verdict": "unexplained",
-      "summary": "Our AlphaPoint model drives the gap (Texas Tech by 8.4; Haslametrics 4.5, v2 2.4); the market has moved from Tech -5.5 to -2.5 as Louisville confirmed Seth Trimble will play.",
-      "reasons": [
-        {
-          "text": "Pat Kelsey says Seth Trimble will play after missing the Stetson win; Isaac Ellis (ankle) is out all week, and De'Shayne Montgomery and Gabe Dynes remain out.",
-          "source": "Athlon Sports",
-          "url": "https://athlonsports.com/college-basketball/pat-kelsey-announces-seth-trimble-news-before-texas-tech-game",
-          "date": "2026-11-24"
-        },
-        {
-          "text": "Texas Tech's JT Toppin (torn ACL, February) is still out; a return around the start of Big 12 play is more likely, per Grant McCasland. Neutral site in Las Vegas.",
-          "source": "Athlon Sports",
-          "url": "https://athlonsports.com/college-basketball/pat-kelsey-announces-seth-trimble-news-before-texas-tech-game",
-          "date": "2026-11-24"
-        }
-      ],
-      "returning": [
-        {
-          "team": "Louisville",
-          "player": "Seth Trimble",
-          "text": "Confirmed to play by Pat Kelsey after missing the Stetson win.",
-          "url": "https://athlonsports.com/college-basketball/pat-kelsey-announces-seth-trimble-news-before-texas-tech-game"
-        }
-      ],
-      "swings": {
-        "Louisville": "Louisville moved from 3 pts below the market to 4.3 above: Seth Trimble sat its last game (vs Stetson) and returns now, which the market may price differently; no other news found (Courier-Journal, 11/23).",
-        "Texas Tech": "No new Texas Tech news (JT Toppin is still out); the line moved from Tech -5.5 to -2.5 as Louisville said Seth Trimble will be back from a minor injury (CBS Sports, 11/23)."
-      }
-    },
-    "401906853": {
-      "checked": "2026-11-24T13:50:00-05:00",
-      "verdict": "partly",
-      "summary": "Part of it: Tennessee's Jalen Haralson (knee) is now expected to sit out this neutral-site game, and the line has come down from Tennessee -5.5 to -3.5/-4.5; we found nothing else.",
-      "reasons": [
-        {
-          "text": "Jalen Haralson (20.5 mpg) hyperextended his right knee on 11/17 and missed Coastal Carolina on 11/21; game-day reports on 11/24 say he is expected to sit against Maryland.",
-          "source": "CBS Sports",
-          "url": "https://www.cbssports.com/betting/news/no-9-tennessee-vs-maryland-cbb-odds-parlay-volunteers-should-have-too-much-in-players-era-16-vegas-matinee/",
-          "date": "2026-11-24"
-        },
-        {
-          "text": "The line opened Tennessee -5.5 and has moved toward Maryland (-3.5 in our feed, -4.5 at DraftKings); no injury news found for Maryland.",
-          "source": "ESPN",
-          "url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401906853",
-          "date": "2026-11-24"
-        }
-      ]
-    },
-    "401920752": {
-      "checked": "2026-11-23T21:41:56-05:00",
-      "swings": {
-        "Maryland Eastern Shore": "Nothing found beyond results: no injury news; UMES lost 81-61 to IU Indy at a neutral site on 11/22 and was 0-5 in true road games going into this one, and the market has moved further against them than we have."
-      },
-      "verified_numbers": [
-        "0-5"
-      ]
-    },
-    "401917904": {
-      "checked": "2026-11-23T18:43:45-05:00",
-      "verdict": "unexplained",
-      "summary": "No injury or lineup news found for either team; Tennessee Tech's results vs D1 teams and West Georgia's 0-4 start vs D1 back a big spread, but nothing explains the market going 5 points past our number.",
-      "reasons": [
-        {
-          "text": "West Georgia is 0-4 vs Division I (lost by 17 at DePaul, 23 at Loyola Chicago, 3 vs UNC Asheville, 24 at Charleston Southern); its two wins came vs non-D1 Columbia (SC) and Paine.",
-          "source": "ESPN",
-          "url": "https://www.espn.com/mens-college-basketball/team/schedule/_/id/2698",
-          "date": "2026-11-23",
-          "verified_numbers": [
-            "0-4"
-          ]
-        },
-        {
-          "text": "Tennessee Tech won 98-77 at UNC Asheville on 11/18, the same team that won 73-70 at West Georgia on 11/12; our ratings already count both results.",
-          "source": "ESPN",
-          "url": "https://www.espn.com/mens-college-basketball/team/schedule/_/id/2635",
-          "date": "2026-11-23"
-        },
-        {
-          "text": "No injuries listed for either team on Covers' college basketball injury report (11/23).",
-          "source": "Covers",
-          "url": "https://www.covers.com/sport/basketball/ncaab/injuries",
-          "date": "2026-11-23"
-        }
-      ],
-      "returning": [],
-      "verified_numbers": [
-        "0-4"
-      ]
-    },
-    "401920742": {
-      "checked": "2026-11-23T18:43:45-05:00",
-      "swings": {
-        "Campbell": "Campbell won 80-70 at Kansas State on 11/21 (ESPN); our results-based ratings moved up on Campbell more than the market did. No injury news found.",
-        "Coastal Carolina": "Coastal's previous gap came in a 78-51 loss at No. 14 Tennessee on 11/21 (ESPN); no injury news in Coastal's 11/23 game preview, so the change mostly reflects Campbell's win at Kansas State."
-      },
-      "reasons": []
-    },
-    "401921142": {
-      "checked": "2026-11-23T18:43:45-05:00",
-      "swings": {
-        "Furman": "Nothing found: the market moved on Furman without a clear reason; no injuries reported (Covers, 11/23), and Furman's last game was a 108-69 win over non-D1 Clinton on 11/21."
-      }
-    },
-    "401926184": {
-      "checked": "2026-11-23T18:43:45-05:00",
-      "swings": {
-        "UC Santa Barbara": "UNC Greensboro plays at Pepperdine tonight (11/23) and at UCSB the next night, a road back-to-back on a West Coast trip that the market prices more than our ratings do (ESPN schedule)."
-      }
-    },
-    "401917676": {
-      "swings": {
-        "Oregon State": "Nothing found: no injury news on Oregon State. In its last game we were 5 pts lower on it than the market, and now we're level. Our ratings caught up after it beat Oregon 82-71 (Nov 20) and Tulsa 69-66 on DeShawn Gory's game-winner (Nov 23, ESPN recap: https://www.espn.com/mens-college-basketball/game/_/gameId/401921658)."
-      },
-      "checked": "2026-11-24T12:43:54-05:00"
-    },
-    "401921666": {
-      "swings": {
-        "Tulsa": "Nothing found: Tulsa had no injury news and played its usual rotation in the 69-66 loss to Oregon State (Nov 23, ESPN box score: https://www.espn.com/mens-college-basketball/game/_/gameId/401921658). Last game we were 5 pts higher on Tulsa than the market; now we're level, so the market moved on Tulsa without a clear reason."
-      },
-      "checked": "2026-11-24T14:44:00-05:00"
-    },
-    "401918996": {
-      "swings": {
-        "Stetson": "Nothing found: the market moved on Stetson without a clear reason. There's no injury news, and Stetson used its usual rotation in the 83-69 loss at Louisville (Nov 19, ESPN: https://www.espn.com/mens-college-basketball/game/_/gameId/401918950). We have been higher on Stetson than the market in both logged games and are now 1.7 pts lower on it."
-      },
-      "checked": "2026-11-24T17:42:02-05:00",
-      "verdict": "unexplained",
-      "summary": "No injury or lineup news for either team; South Florida's regular rotation all played its last game, and the line has dropped from USF -18.5 to -16.5 with no news behind the move.",
-      "reasons": [
-        {
-          "text": "South Florida is 3-3 with close losses to DePaul (82-80) and Saint Joseph's (83-80) and a 73-62 loss to George Mason; the market may weight that form more than we do.",
-          "source": "ESPN",
-          "url": "https://www.espn.com/mens-college-basketball/team/schedule/_/id/58",
-          "date": "2026-11-21"
-        },
-        {
-          "text": "Previews list no injuries for either side; Stetson is 1-5, line USF -18.5, total 152.5.",
-          "source": "BetMGM",
-          "url": "https://sports.betmgm.com/en/blog/ncaab/stetson-south-florida-prediction-odds-picks-nov-24-college-basketball-jaa/",
-          "date": "2026-11-24"
-        }
-      ],
-      "returning": [],
-      "verified_numbers": [
-        "3-3",
-        "1-5",
-        "82-80",
-        "83-80",
-        "73-62"
-      ]
-    },
-    "401909763": {
-      "checked": "2026-11-24T12:43:54-05:00",
-      "verdict": "unexplained",
-      "summary": "Neutral-site game in Palm Desert; no injuries reported for either side, and the move from Stanford -2.5 to -4.5 looks like a reaction to Colorado's 77-74 home loss to Portland.",
-      "reasons": [
-        {
-          "text": "Colorado (2-3) lost 77-74 at home to Portland last Wednesday; Tad Boyle called it one of the two most disappointing losses of his 17 years.",
-          "source": "Field Level Media",
-          "url": "https://fieldlevelmedia.com/ncaab/colorado-aims-to-shake-off-ugly-defeat-in-matchup-with-stanford/",
-          "date": "2026-11-24"
-        },
-        {
-          "text": "Stanford (5-1) lists no injuries; Nick Townsend leads at 15.8 ppg and freshman Julius Price adds 14.2.",
-          "source": "Stanford Athletics",
-          "url": "https://gostanford.com/news/2026/11/22/mens-basketball-set-for-acrisure-series",
-          "date": "2026-11-22"
-        }
-      ],
-      "verified_numbers": [
-        "2-3",
-        "5-1"
-      ],
-      "swings": {
-        "Colorado": "The market moved from Stanford -2.5 to -4.5 after Colorado's 77-74 home loss to Portland (Nov 19); no injuries found, and Colorado's regular rotation played that game (ESPN box score)."
-      }
-    },
-    "401927398": {
-      "checked": "2026-11-24T08:45:20-05:00"
-    },
-    "401921707": {
-      "checked": "2026-11-24T15:50:00-05:00",
-      "verdict": "unexplained",
-      "summary": "No injury or lineup news found for either team before tip (Covers and ESPN list none); Wyoming's full rotation played its Sunshine Slam opener, and the line has moved from Wyoming -8.5 at open to -9.5, toward us.",
-      "reasons": [
-        {
-          "text": "Neutral site (Sunshine Slam, Ocean Center, Daytona Beach). Wyoming's top seven all played vs Duquesne on 11/22; the line has moved from the -8.5 opener to -9.5 (DraftKings).",
-          "source": "Wyoming Athletics",
-          "url": "https://gowyo.com/news/2026/8/17/mens-basketball-cowboy-cagers-to-play-in-sunshine-slam.aspx",
-          "date": "2026-08-17"
-        },
-        {
-          "text": "Kent State freshman G Quinn Woidke (about 18 mpg early) has not played the last two games (ESPN box scores); no reason reported. That would lower Kent State, not raise it.",
-          "source": "ESPN",
-          "url": "https://www.espn.com/mens-college-basketball/team/schedule/_/id/2309",
-          "date": "2026-11-21"
-        },
-        {
-          "text": "Pre-game check 11/24: Covers lists no injuries for Kent State, and ESPN's game page lists none for either team.",
-          "source": "Covers",
-          "url": "https://www.covers.com/sport/basketball/ncaab/teams/main/kent-state-golden-flashes/injuries",
-          "date": "2026-11-24"
-        }
-      ],
-      "swings": {
-        "Kent State": "Nothing found: the market moved on Kent State without a clear reason; G Quinn Woidke has sat the last two games (ESPN box scores), which our ratings already include.",
-        "Wyoming": "Nothing found: no injury news on Wyoming. Our ratings rose after it beat Duquesne 79-61 (Nov 22); the market has moved only from -8.5 at open to -9.5."
-      },
-      "verified_numbers": [
-        "79-61"
-      ]
-    },
-    "401906806": {
-      "checked": "2026-11-24T11:44:03-05:00",
-      "swings": {
-        "Oklahoma": "F Duke Brennan (broken ankle in practice 11/16, starter, 8.3 ppg) is out long-term; the market priced it for the Campbell game and our ratings now carry a game without him (News 9, 11/16)."
-      }
-    },
-    "401920309": {
-      "checked": "2026-11-24T17:42:02-05:00",
-      "swings": {
-        "Samford": "Nothing found: the market moved on Samford without a clear reason; its regular rotation played in the 80-77 win over UNC Asheville on 11/22 (ESPN box score)."
-      }
-    },
-    "401928835": {
-      "checked": "2026-11-24T10:44:37-05:00"
-    },
-    "401909505": {
-      "checked": "2026-11-24T16:41:40-05:00",
-      "swings": {
-        "DePaul": "Nothing found: no injury news on DePaul (5-0, full rotation in its 83-39 win over UMES on Nov 18). The market moved from Purdue -4.5 to -2.5, with betting previews backing DePaul (Sports Gambling Podcast, Nov 24: https://www.sportsgamblingpodcast.com/2026/11/24/college-basketball-picks-for-november-24th-ncaa-basketball-banter-best-bets-ep-1257/)."
-      },
-      "verified_numbers": [
-        "5-0",
-        "83-39"
-      ]
+  "Northwestern": {
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-13",
+     "text": "Northwestern lost Ryan Soulis for the season (foot, 11/13) and Luke McEldon is out; thin frontcourt in losses to DePaul and Columbia (75-53) that early ratings didn't see.",
+     "source": "The Daily Northwestern",
+     "url": "https://dailynorthwestern.com/2026/11/17/sports/mens-basketball-northwestern-falls-to-columbia-75-53-in-second-straight-loss/",
+     "date": "2026-11-17"
     }
+   ]
+  },
+  "North Carolina": {
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-17",
+     "text": "Starter Neo Avdalas (9.0 ppg, team-high 3.8 apg) broke his left wrist late in the 78-70 loss to Georgia; out about two months, so ratings built with him overstate UNC now.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/mens-college-basketball/story/_/id/50511206/north-carolina-guard-neo-avdalas-wrist-2-months",
+     "date": "2026-11-17"
+    },
+    {
+     "direction": "too_low",
+     "since": "2026-11-20",
+     "text": "7-foot C Cameron Fens missed the first four games over NCAA eligibility and is now playing under a temporary restraining order (through a hearing or Dec 1).",
+     "source": "WRAL",
+     "url": "https://www.wral.com/sports/northcarolina-mens-basketball-cameron-fens-first-game-vs-marshall-november-2026/",
+     "date": "2026-11-21"
+    }
+   ],
+   "checked": "2026-11-23T18:43:45-05:00"
+  },
+  "Tennessee": {
+   "checked": "2026-11-24T13:50:00-05:00",
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-17",
+     "text": "Jalen Haralson (20.5 mpg, right knee hyperextension 11/17) missed Coastal Carolina and is expected to sit against Maryland on 11/24; day to day, not long term.",
+     "source": "CBS Sports",
+     "url": "https://www.cbssports.com/betting/news/no-9-tennessee-vs-maryland-cbb-odds-parlay-volunteers-should-have-too-much-in-players-era-16-vegas-matinee/",
+     "date": "2026-11-24"
+    }
+   ]
+  },
+  "Oregon State": {
+   "watch": [],
+   "checked": "2026-11-24T12:43:54-05:00"
+  },
+  "Tulsa": {
+   "checked": "2026-11-24T14:44:00-05:00",
+   "watch": []
+  },
+  "Monmouth": {
+   "checked": "2026-11-23T18:43:45-05:00",
+   "watch": []
+  },
+  "San Diego State": {
+   "watch": [],
+   "checked": "2026-11-24T15:50:00-05:00"
+  },
+  "Iowa State": {
+   "watch": [],
+   "checked": "2026-11-24T15:50:00-05:00"
+  },
+  "Michigan": {
+   "watch": [],
+   "checked": "2026-11-24T15:50:00-05:00"
+  },
+  "Creighton": {
+   "watch": [],
+   "checked": "2026-11-24T15:50:00-05:00"
+  },
+  "Temple": {
+   "checked": "2026-11-23T16:05:00-05:00",
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-22",
+     "text": "Guard Jordan Marsh (18-30 mpg, 16 pts in the opener) missed the 11/22 SFA game with an upper-body injury; day to day, status for UT Martin unconfirmed.",
+     "source": "Temple Athletics",
+     "url": "https://owlsports.com/news/2026/11/22/mens-basketball-temple-drops-paradise-jam-semifinal-to-stephen-f-austin",
+     "date": "2026-11-22",
+     "verified_numbers": [
+      "16"
+     ]
+    }
+   ]
+  },
+  "UT Martin": {
+   "watch": [],
+   "checked": "2026-11-23T16:05:00-05:00"
+  },
+  "Utah Valley": {
+   "watch": [],
+   "checked": "2026-11-23T18:43:45-05:00"
+  },
+  "Stephen F. Austin": {
+   "watch": [],
+   "checked": "2026-11-23T18:43:45-05:00"
+  },
+  "Louisville": {
+   "checked": "2026-11-24T18:42:22-05:00",
+   "watch": [
+    {
+     "direction": "too_low",
+     "since": "2026-11-20",
+     "text": "Seth Trimble (28 mpg) missed the Stetson win on 11/20 and Kelsey says he plays vs Texas Tech on 11/24; that game is in our ratings without him.",
+     "source": "Athlon Sports",
+     "url": "https://athlonsports.com/college-basketball/pat-kelsey-announces-seth-trimble-news-before-texas-tech-game",
+     "date": "2026-11-24"
+    },
+    {
+     "direction": "too_high",
+     "since": "2026-11-20",
+     "text": "Reserve guard Isaac Ellis (13.5 mpg, ankle) is out for the whole Players Era Festival week.",
+     "source": "Courier-Journal (Yahoo)",
+     "url": "https://sports.yahoo.com/articles/louisvilles-isaac-ellis-miss-players-162521731.html",
+     "date": "2026-11-23"
+    }
+   ]
+  },
+  "Texas Tech": {
+   "checked": "2026-11-24T18:42:22-05:00",
+   "watch": []
+  },
+  "Maryland": {
+   "watch": [],
+   "checked": "2026-11-24T13:50:00-05:00"
+  },
+  "Wright State": {
+   "checked": "2026-11-24T08:45:20-05:00",
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-22",
+     "text": "Dominic Pangonis and Noah Lewis are out for the ESPN Events Invitational, per the school; neither played in Monday's 66-64 win over Akron.",
+     "source": "Wright State Athletics",
+     "url": "https://wsuraiders.com/news/2026/11/22/mens-basketball-mbb-preview-raiders-head-to-orlando-for-espn-invitational",
+     "date": "2026-11-22"
+    }
+   ]
+  },
+  "Akron": {
+   "watch": [],
+   "checked": "2026-11-24T10:44:37-05:00"
+  },
+  "Georgia Southern": {
+   "checked": "2026-11-23T17:43:18-05:00",
+   "watch": []
+  },
+  "Northern Kentucky": {
+   "checked": "2026-11-23T17:43:18-05:00",
+   "watch": []
+  },
+  "Yale": {
+   "watch": [],
+   "checked": "2026-11-23T15:06:50-05:00"
+  },
+  "Belmont": {
+   "watch": [],
+   "checked": "2026-11-24T10:44:37-05:00"
+  },
+  "Nevada": {
+   "watch": [],
+   "checked": "2026-11-23T15:06:50-05:00"
+  },
+  "San Francisco": {
+   "watch": [],
+   "checked": "2026-11-24T12:43:54-05:00"
+  },
+  "Maryland Eastern Shore": {
+   "watch": [],
+   "checked": "2026-11-23T16:45:00-05:00"
+  },
+  "Youngstown State": {
+   "watch": [],
+   "checked": "2026-11-23T16:45:00-05:00"
+  },
+  "BYU": {
+   "watch": [],
+   "checked": "2026-11-23T16:58:00-05:00"
+  },
+  "Washington": {
+   "watch": [],
+   "checked": "2026-11-23T16:58:00-05:00"
+  },
+  "West Georgia": {
+   "watch": [],
+   "checked": "2026-11-23T18:43:45-05:00"
+  },
+  "Tennessee Tech": {
+   "watch": [],
+   "checked": "2026-11-23T18:43:45-05:00"
+  },
+  "Campbell": {
+   "watch": [],
+   "checked": "2026-11-23T18:43:45-05:00"
+  },
+  "Coastal Carolina": {
+   "watch": [],
+   "checked": "2026-11-23T18:43:45-05:00"
+  },
+  "Furman": {
+   "watch": [],
+   "checked": "2026-11-23T18:43:45-05:00"
+  },
+  "Elon": {
+   "watch": [],
+   "checked": "2026-11-23T18:43:45-05:00"
+  },
+  "UC Santa Barbara": {
+   "watch": [],
+   "checked": "2026-11-23T18:43:45-05:00"
+  },
+  "UNC Greensboro": {
+   "watch": [],
+   "checked": "2026-11-23T18:43:45-05:00"
+  },
+  "Colorado": {
+   "watch": [],
+   "checked": "2026-11-24T12:43:54-05:00"
+  },
+  "Stanford": {
+   "watch": [],
+   "checked": "2026-11-24T12:43:54-05:00"
+  },
+  "St. Bonaventure": {
+   "watch": [],
+   "checked": "2026-11-24T08:45:20-05:00"
+  },
+  "Kent State": {
+   "watch": [],
+   "checked": "2026-11-24T15:50:00-05:00"
+  },
+  "Wyoming": {
+   "watch": [],
+   "checked": "2026-11-24T15:50:00-05:00"
+  },
+  "Oklahoma": {
+   "checked": "2026-11-24T11:44:03-05:00",
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-16",
+     "text": "Starting F Duke Brennan broke his ankle in practice on 11/16 and is out for an extended period; he started 4 of Oklahoma's 5 games, so our ratings are mostly built with him.",
+     "source": "News 9",
+     "url": "https://www.news9.com/sports/university-of-oklahoma/oklahoma-basketball-loses-duke-brennan-for-extended-time-with-broken-ankle",
+     "date": "2026-11-16"
+    }
+   ]
+  },
+  "Samford": {
+   "watch": [],
+   "checked": "2026-11-24T17:42:02-05:00"
+  },
+  "Pittsburgh": {
+   "watch": [],
+   "checked": "2026-11-24T11:44:03-05:00"
+  },
+  "South Florida": {
+   "watch": [],
+   "checked": "2026-11-24T17:42:02-05:00"
+  },
+  "Stetson": {
+   "watch": [],
+   "checked": "2026-11-24T17:42:02-05:00"
+  },
+  "DePaul": {
+   "watch": [],
+   "checked": "2026-11-24T16:41:40-05:00"
+  },
+  "Purdue": {
+   "watch": [],
+   "checked": "2026-11-24T16:41:40-05:00"
+  },
+  "Illinois State": {
+   "watch": [],
+   "checked": "2026-11-24T14:44:00-05:00"
+  },
+  "UConn": {
+   "checked": "2026-11-24T16:50:54-05:00",
+   "watch": [
+    {
+     "direction": "too_low",
+     "since": "2026-11-23",
+     "text": "Solo Ball (offseason wrist surgery) has not played this season; Dan Hurley says he is nearing game-time-decision status for the 11/25 Duke game. If he plays, ratings built without him understate UConn.",
+     "source": "Yahoo Sports",
+     "url": "https://sports.yahoo.com/articles/solo-ball-nearing-game-time-234400882.html",
+     "date": "2026-11-23"
+    }
+   ]
+  },
+  "Alabama": {
+   "watch": [],
+   "checked": "2026-11-24T16:50:54-05:00"
+  },
+  "Arizona": {
+   "watch": [],
+   "checked": "2026-11-24T16:50:54-05:00"
+  },
+  "Arizona State": {
+   "watch": [],
+   "checked": "2026-11-24T16:50:54-05:00"
+  },
+  "Baylor": {
+   "watch": [],
+   "checked": "2026-11-24T16:50:54-05:00"
+  },
+  "Clemson": {
+   "watch": [],
+   "checked": "2026-11-24T16:50:54-05:00"
+  },
+  "Colorado State": {
+   "watch": [],
+   "checked": "2026-11-24T16:50:54-05:00"
+  },
+  "Duke": {
+   "watch": [],
+   "checked": "2026-11-24T16:50:54-05:00"
+  },
+  "Duquesne": {
+   "watch": [],
+   "checked": "2026-11-24T16:50:54-05:00"
+  },
+  "Georgia Tech": {
+   "watch": [],
+   "checked": "2026-11-24T17:42:02-05:00"
+  },
+  "Gonzaga": {
+   "watch": [],
+   "checked": "2026-11-24T16:50:54-05:00"
+  },
+  "Grand Canyon": {
+   "watch": [],
+   "checked": "2026-11-24T16:50:54-05:00"
+  },
+  "High Point": {
+   "watch": [],
+   "checked": "2026-11-24T16:50:54-05:00"
+  },
+  "Kansas State": {
+   "watch": [],
+   "checked": "2026-11-24T16:50:54-05:00"
+  },
+  "LSU": {
+   "watch": [],
+   "checked": "2026-11-24T16:50:54-05:00"
+  },
+  "Marquette": {
+   "watch": [],
+   "checked": "2026-11-24T16:50:54-05:00"
+  },
+  "Memphis": {
+   "watch": [],
+   "checked": "2026-11-24T16:50:54-05:00"
+  },
+  "Mississippi State": {
+   "watch": [],
+   "checked": "2026-11-24T16:50:54-05:00"
+  },
+  "Ohio State": {
+   "watch": [],
+   "checked": "2026-11-24T16:50:54-05:00"
+  },
+  "Oregon": {
+   "watch": [],
+   "checked": "2026-11-24T16:50:54-05:00"
+  },
+  "Penn State": {
+   "watch": [],
+   "checked": "2026-11-24T16:50:54-05:00"
+  },
+  "Providence": {
+   "watch": [],
+   "checked": "2026-11-24T16:50:54-05:00"
+  },
+  "SMU": {
+   "watch": [],
+   "checked": "2026-11-24T16:50:54-05:00"
+  },
+  "Saint Louis": {
+   "watch": [],
+   "checked": "2026-11-24T16:50:54-05:00"
+  },
+  "Santa Clara": {
+   "watch": [],
+   "checked": "2026-11-24T16:50:54-05:00"
+  },
+  "South Carolina": {
+   "watch": [],
+   "checked": "2026-11-24T16:50:54-05:00"
+  },
+  "St. John's": {
+   "watch": [],
+   "checked": "2026-11-24T16:50:54-05:00"
+  },
+  "Texas A&M": {
+   "watch": [],
+   "checked": "2026-11-24T16:50:54-05:00"
+  },
+  "USC": {
+   "watch": [],
+   "checked": "2026-11-24T16:50:54-05:00"
+  },
+  "Utah State": {
+   "watch": [],
+   "checked": "2026-11-24T16:50:54-05:00"
+  },
+  "VCU": {
+   "watch": [],
+   "checked": "2026-11-24T16:50:54-05:00"
+  },
+  "Vanderbilt": {
+   "watch": [],
+   "checked": "2026-11-24T16:50:54-05:00"
+  },
+  "Virginia": {
+   "watch": [],
+   "checked": "2026-11-24T16:50:54-05:00"
+  },
+  "Wake Forest": {
+   "watch": [],
+   "checked": "2026-11-24T16:50:54-05:00"
+  },
+  "Xavier": {
+   "watch": [],
+   "checked": "2026-11-24T16:50:54-05:00"
   }
+ },
+ "games": {
+  "401909495": {
+   "verdict": "unexplained",
+   "summary": "The gap comes from our own AlphaPoint models (Michigan by 10.1, v2 15.6); Haslametrics (4.8) sits with the market, which has moved from Michigan -4.5 at open to -5.5. No injury news found for either team before tip.",
+   "reasons": [
+    {
+     "text": "Neutral-site Players Era game in Las Vegas on 11/24; Creighton's opening game of the event. The line has moved from 4.5 at open to Michigan -5.5 (DraftKings).",
+     "source": "Creighton Athletics",
+     "url": "https://gocreighton.com/news/2026/5/21/mens-basketball-to-open-players-era-16-against-michigan",
+     "date": "2026-05-21"
+    },
+    {
+     "text": "Same-day preview: Michigan (3-2, out of the AP poll after a loss to Villanova) vs Creighton (4-1), with no injury or lineup news for either team; Michigan is now coached by Mike Boynton Jr.",
+     "source": "ClickOnDetroit",
+     "url": "https://www.clickondetroit.com/all-about-ann-arbor/2026/11/24/no-18-michigan-basketball-returns-to-las-vegas-to-defend-players-era-championship-against-creighton/",
+     "date": "2026-11-24"
+    }
+   ],
+   "returning": [],
+   "swings": {},
+   "checked": "2026-11-24T15:50:00-05:00",
+   "verified_numbers": [
+    "3-2",
+    "4-1"
+   ]
+  },
+  "401909800": {
+   "swings": {
+    "Kansas State": "Nothing found: the market moved on Kansas State without a clear reason; no injury news found, and the line has held at Gonzaga -12.5 since it opened (11/22)."
+   }
+  },
+  "401915943": {
+   "swings": {
+    "Oregon": "Nothing found: the market moved on Oregon without a clear reason; no current injury news found, and the line has held at St. John's -8.5 since it opened (11/22)."
+   }
+  },
+  "401921658": {
+   "checked": "2026-11-23T12:41:40-05:00",
+   "verdict": "unexplained",
+   "summary": "Still no injury or news for either team at tip; the market backs unbeaten Oregon State (6-0) by 5.5 (opened 7.5, moving our way) at a neutral site in Palm Desert while most of our sources make it a near pick'em.",
+   "reasons": [
+    {
+     "text": "Oregon State enters 6-0; Tulsa is 4-1 after a 72-61 loss to Mississippi State on Nov 20. Neutral site (Acrisure Series); no injuries listed for either team.",
+     "source": "On3",
+     "url": "https://www.on3.com/teams/oregon-state-beavers/news/oregon-state-heads-to-acrisure-series-unbeaten-faces-tulsa-and-san-francisco/",
+     "date": "2026-11-22"
+    },
+    {
+     "text": "Oregon State's own preview of the Palm Springs trip lists no injuries; still no injury news for Tulsa on game day.",
+     "source": "Oregon State Athletics",
+     "url": "https://osubeavers.com/news/2026/11/21/mens-basketball-beavers-headed-to-palm-springs-for-acrisure-series",
+     "date": "2026-11-21"
+    }
+   ]
+  },
+  "401911457": {
+   "checked": "2026-11-23T15:06:50-05:00",
+   "swings": {
+    "Nevada": "Nevada's last game was a 91-74 home win over Idaho on Nov 19 (Elijah Price 21 pts); our ratings rose on the Wolf Pack more than the market did. No injury news (Nevada Athletics)."
+   }
+  },
+  "401921029": {
+   "checked": "2026-11-23T17:43:18-05:00",
+   "swings": {
+    "Northern Kentucky": "Nothing found: the market moved on Northern Kentucky without a clear reason (no injuries reported; opened -2.5, now -3.5).",
+    "Georgia Southern": "Nothing found: the market moved on Georgia Southern without a clear reason (no injuries listed on Covers, 11/23)."
+   },
+   "verdict": "unexplained",
+   "summary": "Every source we use has Northern Kentucky by 5-6+, the market by 2.5 (unchanged from the open); no injury or lineup news found for either team.",
+   "reasons": [
+    {
+     "text": "Covers' game page lists no injuries for Georgia Southern or Northern Kentucky for the 7 PM ET game on 11/23.",
+     "source": "Covers",
+     "url": "https://www.covers.com/sport/basketball/ncaab/matchup/393061",
+     "date": "2026-11-23"
+    }
+   ]
+  },
+  "401928830": {
+   "checked": "2026-11-23T11:42:03-05:00",
+   "swings": {
+    "Akron": "Nothing found on Akron; the opponent changed: Wright State is unbeaten (5-0) but plays without Dominic Pangonis and Noah Lewis (WHIO)."
+   }
+  },
+  "401929286": {
+   "checked": "2026-11-23T15:06:50-05:00",
+   "swings": {
+    "Yale": "Nothing found: the market moved on Yale without a clear reason (no injuries listed; last result a 76-74 OT win over Vermont on Nov 18)."
+   }
+  },
+  "401913102": {
+   "checked": "2026-11-23T18:43:45-05:00",
+   "swings": {
+    "Monmouth": "Nothing found on Monmouth (no injuries reported); the move is mostly UNC: PG Neo Avdalas is out about two months after Nov 16 wrist surgery (UNC), which the market weighs more than our ratings."
+   },
+   "verdict": "partly",
+   "summary": "Losing PG Neo Avdalas (wrist, out ~2 months) explains some of the gap, but newly eligible 7-footer Cameron Fens cuts the other way, so most of our 4.7-point edge on UNC is unexplained.",
+   "reasons": [
+    {
+     "text": "Starting guard Neo Avdalas (team-high 15 assists) broke his left wrist vs Georgia Nov 13, had surgery Nov 16 and is out about two months.",
+     "source": "GoHeels.com",
+     "url": "https://goheels.com/news/2026/11/22/mens-basketball-welcomes-monmouth-monday",
+     "date": "2026-11-22"
+    },
+    {
+     "text": "C Cameron Fens, who missed the first four games, is eligible under a temporary restraining order (through a hearing or Dec 1) and debuted vs Marshall; ratings mostly built without him.",
+     "source": "WRAL",
+     "url": "https://www.wral.com/sports/northcarolina-mens-basketball-cameron-fens-first-game-vs-marshall-november-2026/",
+     "date": "2026-11-21"
+    },
+    {
+     "text": "No injuries reported for Monmouth (1-4); the line drifted from UNC -20.5 to -18.5 without a clear news reason.",
+     "source": "Tar Heel Tribune",
+     "url": "https://tarheeltribune.com/2026/11/22/monmouth-at-unc-tv-info-stats-scouting-hawks-notes-lineup-combinations-and-more/",
+     "date": "2026-11-22"
+    }
+   ],
+   "returning": [
+    {
+     "team": "North Carolina",
+     "player": "Cameron Fens",
+     "text": "Eligible by court order after missing the first four games.",
+     "url": "https://www.wral.com/sports/northcarolina-mens-basketball-cameron-fens-first-game-vs-marshall-november-2026/"
+    }
+   ]
+  },
+  "401909775": {
+   "checked": "2026-11-24T15:50:00-05:00",
+   "swings": {
+    "San Diego State": "Nothing found: no injury news for the unbeaten Aztecs (Nick Anderson's season-long knee injury is old news); the market has moved 2 pts away from them since the 7.5 opener for this Players Era neutral-site game.",
+    "Iowa State": "Nothing found: the market moved on Iowa State without a clear reason; no injury news, and the line went from -7.5 at open to -9.5 (DraftKings)."
+   },
+   "verdict": "unexplained",
+   "summary": "Unexplained: no injury news for either team before tip (ESPN's game page lists none; Iowa State's Wiggins and Toure have been out all season), yet the line moved from Iowa State -7.5 at open to -9.5 (DraftKings).",
+   "reasons": [
+    {
+     "text": "Iowa State's only absences are season-long (Wiggins, Achilles; Toure, shoulder, back in January), already in our ratings; the regular rotation played on 11/15.",
+     "source": "Covers",
+     "url": "https://www.covers.com/sport/basketball/ncaab/injuries",
+     "date": "2026-11-23"
+    },
+    {
+     "text": "Previews from 11/22-11/23 list no availability news for either team; Iowa State has not played since 11/15.",
+     "source": "Iowa State Daily",
+     "url": "https://iowastatedaily.com/349348/sports/a-guide-to-the-2026-players-era-tournament/",
+     "date": "2026-11-22"
+    },
+    {
+     "text": "Pre-game check 11/24: ESPN's game page lists no injuries for either team; DraftKings Iowa State -9.5.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401909775",
+     "date": "2026-11-24"
+    }
+   ]
+  },
+  "401921210": {
+   "checked": "2026-11-23T16:05:00-05:00",
+   "swings": {
+    "Temple": "Likely guard Jordan Marsh: he missed the 11/22 SFA loss with an upper-body (wrist) injury and is day to day, and the line slid from Temple -4.5 to -2.5."
+   },
+   "reasons": [
+    {
+     "text": "Temple guard Jordan Marsh (18-30 mpg) missed the 11/22 loss to Stephen F. Austin with an upper-body injury and is day to day for UT Martin.",
+     "source": "Temple Athletics",
+     "url": "https://owlsports.com/news/2026/11/22/mens-basketball-temple-drops-paradise-jam-semifinal-to-stephen-f-austin",
+     "date": "2026-11-22"
+    }
+   ]
+  },
+  "401921208": {
+   "checked": "2026-11-23T18:43:45-05:00",
+   "swings": {
+    "Utah Valley": "Nothing found: the market moved on Utah Valley without a clear reason; no injury news found, and the line rose from Utah Valley -3.5 at open to -4.5."
+   }
+  },
+  "401915942": {
+   "checked": "2026-11-24T18:42:22-05:00",
+   "verdict": "unexplained",
+   "summary": "Our AlphaPoint model drives the gap (Texas Tech by 8.4; Haslametrics 4.5, v2 2.4); the market has moved from Tech -5.5 to -2.5 as Louisville confirmed Seth Trimble will play.",
+   "reasons": [
+    {
+     "text": "Pat Kelsey says Seth Trimble will play after missing the Stetson win; Isaac Ellis (ankle) is out all week, and De'Shayne Montgomery and Gabe Dynes remain out.",
+     "source": "Athlon Sports",
+     "url": "https://athlonsports.com/college-basketball/pat-kelsey-announces-seth-trimble-news-before-texas-tech-game",
+     "date": "2026-11-24"
+    },
+    {
+     "text": "Texas Tech's JT Toppin (torn ACL, February) is still out; a return around the start of Big 12 play is more likely, per Grant McCasland. Neutral site in Las Vegas.",
+     "source": "Athlon Sports",
+     "url": "https://athlonsports.com/college-basketball/pat-kelsey-announces-seth-trimble-news-before-texas-tech-game",
+     "date": "2026-11-24"
+    }
+   ],
+   "returning": [
+    {
+     "team": "Louisville",
+     "player": "Seth Trimble",
+     "text": "Confirmed to play by Pat Kelsey after missing the Stetson win.",
+     "url": "https://athlonsports.com/college-basketball/pat-kelsey-announces-seth-trimble-news-before-texas-tech-game"
+    }
+   ],
+   "swings": {
+    "Louisville": "Louisville moved from 3 pts below the market to 4.3 above: Seth Trimble sat its last game (vs Stetson) and returns now, which the market may price differently; no other news found (Courier-Journal, 11/23).",
+    "Texas Tech": "No new Texas Tech news (JT Toppin is still out); the line moved from Tech -5.5 to -2.5 as Louisville said Seth Trimble will be back from a minor injury (CBS Sports, 11/23)."
+   }
+  },
+  "401906853": {
+   "checked": "2026-11-24T13:50:00-05:00",
+   "verdict": "partly",
+   "summary": "Part of it: Tennessee's Jalen Haralson (knee) is now expected to sit out this neutral-site game, and the line has come down from Tennessee -5.5 to -3.5/-4.5; we found nothing else.",
+   "reasons": [
+    {
+     "text": "Jalen Haralson (20.5 mpg) hyperextended his right knee on 11/17 and missed Coastal Carolina on 11/21; game-day reports on 11/24 say he is expected to sit against Maryland.",
+     "source": "CBS Sports",
+     "url": "https://www.cbssports.com/betting/news/no-9-tennessee-vs-maryland-cbb-odds-parlay-volunteers-should-have-too-much-in-players-era-16-vegas-matinee/",
+     "date": "2026-11-24"
+    },
+    {
+     "text": "The line opened Tennessee -5.5 and has moved toward Maryland (-3.5 in our feed, -4.5 at DraftKings); no injury news found for Maryland.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401906853",
+     "date": "2026-11-24"
+    }
+   ]
+  },
+  "401920752": {
+   "checked": "2026-11-23T21:41:56-05:00",
+   "swings": {
+    "Maryland Eastern Shore": "Nothing found beyond results: no injury news; UMES lost 81-61 to IU Indy at a neutral site on 11/22 and was 0-5 in true road games going into this one, and the market has moved further against them than we have."
+   },
+   "verified_numbers": [
+    "0-5"
+   ]
+  },
+  "401917904": {
+   "checked": "2026-11-23T18:43:45-05:00",
+   "verdict": "unexplained",
+   "summary": "No injury or lineup news found for either team; Tennessee Tech's results vs D1 teams and West Georgia's 0-4 start vs D1 back a big spread, but nothing explains the market going 5 points past our number.",
+   "reasons": [
+    {
+     "text": "West Georgia is 0-4 vs Division I (lost by 17 at DePaul, 23 at Loyola Chicago, 3 vs UNC Asheville, 24 at Charleston Southern); its two wins came vs non-D1 Columbia (SC) and Paine.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/mens-college-basketball/team/schedule/_/id/2698",
+     "date": "2026-11-23",
+     "verified_numbers": [
+      "0-4"
+     ]
+    },
+    {
+     "text": "Tennessee Tech won 98-77 at UNC Asheville on 11/18, the same team that won 73-70 at West Georgia on 11/12; our ratings already count both results.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/mens-college-basketball/team/schedule/_/id/2635",
+     "date": "2026-11-23"
+    },
+    {
+     "text": "No injuries listed for either team on Covers' college basketball injury report (11/23).",
+     "source": "Covers",
+     "url": "https://www.covers.com/sport/basketball/ncaab/injuries",
+     "date": "2026-11-23"
+    }
+   ],
+   "returning": [],
+   "verified_numbers": [
+    "0-4"
+   ]
+  },
+  "401920742": {
+   "checked": "2026-11-23T18:43:45-05:00",
+   "swings": {
+    "Campbell": "Campbell won 80-70 at Kansas State on 11/21 (ESPN); our results-based ratings moved up on Campbell more than the market did. No injury news found.",
+    "Coastal Carolina": "Coastal's previous gap came in a 78-51 loss at No. 14 Tennessee on 11/21 (ESPN); no injury news in Coastal's 11/23 game preview, so the change mostly reflects Campbell's win at Kansas State."
+   },
+   "reasons": []
+  },
+  "401921142": {
+   "checked": "2026-11-23T18:43:45-05:00",
+   "swings": {
+    "Furman": "Nothing found: the market moved on Furman without a clear reason; no injuries reported (Covers, 11/23), and Furman's last game was a 108-69 win over non-D1 Clinton on 11/21."
+   }
+  },
+  "401926184": {
+   "checked": "2026-11-23T18:43:45-05:00",
+   "swings": {
+    "UC Santa Barbara": "UNC Greensboro plays at Pepperdine tonight (11/23) and at UCSB the next night, a road back-to-back on a West Coast trip that the market prices more than our ratings do (ESPN schedule)."
+   }
+  },
+  "401917676": {
+   "swings": {
+    "Oregon State": "Nothing found: no injury news on Oregon State. In its last game we were 5 pts lower on it than the market, and now we're level. Our ratings caught up after it beat Oregon 82-71 (Nov 20) and Tulsa 69-66 on DeShawn Gory's game-winner (Nov 23, ESPN recap: https://www.espn.com/mens-college-basketball/game/_/gameId/401921658)."
+   },
+   "checked": "2026-11-24T12:43:54-05:00"
+  },
+  "401921666": {
+   "swings": {
+    "Tulsa": "Nothing found: Tulsa had no injury news and played its usual rotation in the 69-66 loss to Oregon State (Nov 23, ESPN box score: https://www.espn.com/mens-college-basketball/game/_/gameId/401921658). Last game we were 5 pts higher on Tulsa than the market; now we're level, so the market moved on Tulsa without a clear reason."
+   },
+   "checked": "2026-11-24T14:44:00-05:00"
+  },
+  "401918996": {
+   "swings": {
+    "Stetson": "Nothing found: the market moved on Stetson without a clear reason. There's no injury news, and Stetson used its usual rotation in the 83-69 loss at Louisville (Nov 19, ESPN: https://www.espn.com/mens-college-basketball/game/_/gameId/401918950). We have been higher on Stetson than the market in both logged games and are now 1.7 pts lower on it."
+   },
+   "checked": "2026-11-24T17:42:02-05:00",
+   "verdict": "unexplained",
+   "summary": "No injury or lineup news for either team; South Florida's regular rotation all played its last game, and the line has dropped from USF -18.5 to -16.5 with no news behind the move.",
+   "reasons": [
+    {
+     "text": "South Florida is 3-3 with close losses to DePaul (82-80) and Saint Joseph's (83-80) and a 73-62 loss to George Mason; the market may weight that form more than we do.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/mens-college-basketball/team/schedule/_/id/58",
+     "date": "2026-11-21"
+    },
+    {
+     "text": "Previews list no injuries for either side; Stetson is 1-5, line USF -18.5, total 152.5.",
+     "source": "BetMGM",
+     "url": "https://sports.betmgm.com/en/blog/ncaab/stetson-south-florida-prediction-odds-picks-nov-24-college-basketball-jaa/",
+     "date": "2026-11-24"
+    }
+   ],
+   "returning": [],
+   "verified_numbers": [
+    "3-3",
+    "1-5",
+    "82-80",
+    "83-80",
+    "73-62"
+   ]
+  },
+  "401909763": {
+   "checked": "2026-11-24T12:43:54-05:00",
+   "verdict": "unexplained",
+   "summary": "Neutral-site game in Palm Desert; no injuries reported for either side, and the move from Stanford -2.5 to -4.5 looks like a reaction to Colorado's 77-74 home loss to Portland.",
+   "reasons": [
+    {
+     "text": "Colorado (2-3) lost 77-74 at home to Portland last Wednesday; Tad Boyle called it one of the two most disappointing losses of his 17 years.",
+     "source": "Field Level Media",
+     "url": "https://fieldlevelmedia.com/ncaab/colorado-aims-to-shake-off-ugly-defeat-in-matchup-with-stanford/",
+     "date": "2026-11-24"
+    },
+    {
+     "text": "Stanford (5-1) lists no injuries; Nick Townsend leads at 15.8 ppg and freshman Julius Price adds 14.2.",
+     "source": "Stanford Athletics",
+     "url": "https://gostanford.com/news/2026/11/22/mens-basketball-set-for-acrisure-series",
+     "date": "2026-11-22"
+    }
+   ],
+   "verified_numbers": [
+    "2-3",
+    "5-1"
+   ],
+   "swings": {
+    "Colorado": "The market moved from Stanford -2.5 to -4.5 after Colorado's 77-74 home loss to Portland (Nov 19); no injuries found, and Colorado's regular rotation played that game (ESPN box score)."
+   }
+  },
+  "401927398": {
+   "checked": "2026-11-24T08:45:20-05:00"
+  },
+  "401921707": {
+   "checked": "2026-11-24T15:50:00-05:00",
+   "verdict": "unexplained",
+   "summary": "No injury or lineup news found for either team before tip (Covers and ESPN list none); Wyoming's full rotation played its Sunshine Slam opener, and the line has moved from Wyoming -8.5 at open to -9.5, toward us.",
+   "reasons": [
+    {
+     "text": "Neutral site (Sunshine Slam, Ocean Center, Daytona Beach). Wyoming's top seven all played vs Duquesne on 11/22; the line has moved from the -8.5 opener to -9.5 (DraftKings).",
+     "source": "Wyoming Athletics",
+     "url": "https://gowyo.com/news/2026/8/17/mens-basketball-cowboy-cagers-to-play-in-sunshine-slam.aspx",
+     "date": "2026-08-17"
+    },
+    {
+     "text": "Kent State freshman G Quinn Woidke (about 18 mpg early) has not played the last two games (ESPN box scores); no reason reported. That would lower Kent State, not raise it.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/mens-college-basketball/team/schedule/_/id/2309",
+     "date": "2026-11-21"
+    },
+    {
+     "text": "Pre-game check 11/24: Covers lists no injuries for Kent State, and ESPN's game page lists none for either team.",
+     "source": "Covers",
+     "url": "https://www.covers.com/sport/basketball/ncaab/teams/main/kent-state-golden-flashes/injuries",
+     "date": "2026-11-24"
+    }
+   ],
+   "swings": {
+    "Kent State": "Nothing found: the market moved on Kent State without a clear reason; G Quinn Woidke has sat the last two games (ESPN box scores), which our ratings already include.",
+    "Wyoming": "Nothing found: no injury news on Wyoming. Our ratings rose after it beat Duquesne 79-61 (Nov 22); the market has moved only from -8.5 at open to -9.5."
+   },
+   "verified_numbers": [
+    "79-61"
+   ]
+  },
+  "401906806": {
+   "checked": "2026-11-24T11:44:03-05:00",
+   "swings": {
+    "Oklahoma": "F Duke Brennan (broken ankle in practice 11/16, starter, 8.3 ppg) is out long-term; the market priced it for the Campbell game and our ratings now carry a game without him (News 9, 11/16)."
+   }
+  },
+  "401920309": {
+   "checked": "2026-11-24T17:42:02-05:00",
+   "swings": {
+    "Samford": "Nothing found: the market moved on Samford without a clear reason; its regular rotation played in the 80-77 win over UNC Asheville on 11/22 (ESPN box score)."
+   }
+  },
+  "401928835": {
+   "checked": "2026-11-24T10:44:37-05:00"
+  },
+  "401909505": {
+   "checked": "2026-11-24T16:41:40-05:00",
+   "swings": {
+    "DePaul": "Nothing found: no injury news on DePaul (5-0, full rotation in its 83-39 win over UMES on Nov 18). The market moved from Purdue -4.5 to -2.5, with betting previews backing DePaul (Sports Gambling Podcast, Nov 24: https://www.sportsgamblingpodcast.com/2026/11/24/college-basketball-picks-for-november-24th-ncaa-basketball-banter-best-bets-ep-1257/)."
+   },
+   "verified_numbers": [
+    "5-0",
+    "83-39"
+   ]
+  }
+ }
 }

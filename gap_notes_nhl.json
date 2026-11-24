@@ -1,360 +1,360 @@
 {
-  "sport": "nhl",
-  "generated": "2026-11-24T18:42:22-05:00",
-  "teams": {
-    "OTT": {
-      "checked": "2026-11-24T11:44:03-05:00",
-      "watch": [
-        {
-          "direction": "too_high",
-          "since": "2026-11-22",
-          "text": "Forwards William Eklund (ankle), Warren Foegele (knee) and Andre Burakovsky (lower body) are out vs Calgary; Hayden Hodgson (groin) is day-to-day.",
-          "source": "Bleacher Nation",
-          "url": "https://bleachernation.com/picks/2026/11/22/senators-vs-flames-how-to-watch-odds-picks-predictions-3",
-          "date": "2026-11-22"
-        }
-      ]
-    },
-    "CGY": {
-      "checked": "2026-11-23T17:43:18-05:00",
-      "watch": [
-        {
-          "direction": "too_high",
-          "since": "2026-11-22",
-          "text": "D Kevin Bahl is out for the season (Achilles surgery) and Jonathan Huberdeau (hip) is out; Martin Pospisil (upper body) is day-to-day after a hit from Chicago's Wyatt Kaiser.",
-          "source": "The Hockey Writers",
-          "url": "https://thehockeywriters.com/flames-week-ahead-schedule-storylines-still-searching-for-consistency-pospisil-injury-and-more",
-          "date": "2026-11-22"
-        }
-      ]
-    },
-    "LA": {
-      "checked": "2026-11-23T17:43:18-05:00",
-      "watch": [
-        {
-          "direction": "too_low",
-          "since": "2026-11-23",
-          "text": "LW Artemi Panarin (personal, missed 4 games) is projected back on the top line and PP1 at Montreal; D Erik Gustafsson is on IR and out.",
-          "source": "Daily Faceoff",
-          "url": "https://www.dailyfaceoff.com/teams/los-angeles-kings/line-combinations",
-          "date": "2026-11-23"
-        }
-      ]
-    },
-    "MTL": {
-      "checked": "2026-11-23T17:43:18-05:00",
-      "watch": [
-        {
-          "direction": "too_low",
-          "since": "2026-11-22",
-          "text": "Montreal acquired C Dylan Larkin from Detroit on 11/22 (for Kirby Dach, G Samuel Montembeault, Hage and picks); he debuts vs LA tonight as the 2nd-line center.",
-          "source": "NHL.com",
-          "url": "https://www.nhl.com/news/larkin-to-make-montreal-canadiens-debut-tonight-against-kings-after-red-wings-trade",
-          "date": "2026-11-23"
-        }
-      ]
-    },
-    "UTAH": {
-      "checked": "2026-11-24T11:44:03-05:00",
-      "watch": [
-        {
-          "direction": "too_high",
-          "since": "2026-11-11",
-          "text": "Dylan Guenther (IR since Nov 11, 2-4 weeks) and D John Marino (IR) remain out of the projected lineup at Winnipeg.",
-          "source": "Daily Faceoff",
-          "url": "https://www.dailyfaceoff.com/teams/utah-mammoth/line-combinations",
-          "date": "2026-11-23"
-        },
-        {
-          "direction": "unclear",
-          "since": "2026-11-21",
-          "text": "Clayton Keller (illness) missed Saturday vs Anaheim but is projected back on PP1 Monday; Nick Schmaltz is day-to-day.",
-          "source": "Daily Faceoff",
-          "url": "https://www.dailyfaceoff.com/teams/utah-mammoth/line-combinations",
-          "date": "2026-11-23"
-        }
-      ]
-    },
-    "WPG": {
-      "checked": "2026-11-23T17:43:18-05:00",
-      "watch": []
-    },
-    "TOR": {
-      "checked": "2026-11-23T17:43:18-05:00",
-      "watch": [
-        {
-          "direction": "too_high",
-          "since": "2026-10-26",
-          "text": "Toronto has the most players on IR in the league and has lost 9 of 10; Kirill Marchenko (out since Oct 26) and Colton Sissons skated in non-contact jerseys Sunday; Jack Roslovic is day-to-day.",
-          "source": "NHL.com",
-          "url": "https://www.nhl.com/islanders/news/game-preview-islanders-vs-maple-leafs-nov-23-2026",
-          "date": "2026-11-23"
-        }
-      ]
-    },
-    "NYI": {
-      "checked": "2026-11-23T17:43:18-05:00",
-      "watch": [
-        {
-          "direction": "too_high",
-          "since": "2026-11-23",
-          "text": "D Alexander Romanov is out with a torn ACL; D Ryan Pulock (lower body) is day-to-day.",
-          "source": "Bettors Insider",
-          "url": "https://bettorsinsider.com/nhl/2026/11/23/maple-leafs-vs-islanders-prediction-sorokin-edge-in-elmont/",
-          "date": "2026-11-23"
-        },
-        {
-          "direction": "too_low",
-          "since": "2026-11-14",
-          "text": "Mathew Barzal returned Nov 14 after missing the start of the season.",
-          "source": "Bettors Insider",
-          "url": "https://bettorsinsider.com/nhl/2026/11/23/maple-leafs-vs-islanders-prediction-sorokin-edge-in-elmont/",
-          "date": "2026-11-23"
-        }
-      ]
-    },
-    "CBJ": {
-      "checked": "2026-11-23T17:43:18-05:00",
-      "watch": [
-        {
-          "direction": "too_high",
-          "since": "2026-11-16",
-          "text": "C Sean Monahan (did not travel, projected back Nov 25) and Conor Garland (IR) are out with upper-body injuries.",
-          "source": "Bettors Insider",
-          "url": "https://bettorsinsider.com/nhl/2026/11/23/blue-jackets-vs-devils-prediction-back-the-devils-to-cover/",
-          "date": "2026-11-23"
-        }
-      ]
-    },
-    "NJ": {
-      "checked": "2026-11-23T17:43:18-05:00",
-      "watch": [
-        {
-          "direction": "too_high",
-          "since": "2026-11-17",
-          "text": "Out: Anthony Mantha (throat fracture surgery), D Johnathan Kovacevic (high ankle sprain, 4-6 weeks from Nov 17) and D Seamus Casey (knee).",
-          "source": "NHL.com",
-          "url": "https://www.nhl.com/devils/news/preview-2026020378",
-          "date": "2026-11-23"
-        }
-      ]
-    },
-    "MIN": {
-      "checked": "2026-11-24T11:44:03-05:00",
-      "watch": [
-        {
-          "direction": "too_high",
-          "since": "2026-11-21",
-          "text": "No. 1 D Quinn Hughes (27.8 TOI, upper body) was placed on injured reserve on 11/23 and misses tonight at SJ.",
-          "source": "ESPN",
-          "url": "https://www.espn.com/nhl/team/injuries/_/name/min",
-          "date": "2026-11-23"
-        },
-        {
-          "direction": "unclear",
-          "since": "2026-11-23",
-          "text": "Filip Gustavsson starts tonight in his season debut instead of Jesper Wallstedt.",
-          "source": "Daily Faceoff",
-          "url": "https://www.dailyfaceoff.com/starting-goalies/2026-11-23",
-          "date": "2026-11-23"
-        }
-      ]
-    },
-    "ANA": {
-      "checked": "2026-11-23T19:42:09-05:00",
-      "watch": [
-        {
-          "direction": "too_high",
-          "since": "2026-11-21",
-          "text": "Leo Carlsson (upper body, 19.8 TOI) is not expected to play at SEA on 11/23 after missing Sunday's practice (Nico Myatovic recalled), and Beckett Sennecke (20.3 TOI) is on IR: two top-six forwards out. Starting goalies not confirmed yet.",
-          "source": "NHL.com",
-          "url": "https://nhl.com/news/nhl-status-report-news-and-notes-november-23-2026",
-          "date": "2026-11-23"
-        }
-      ]
-    },
-    "SEA": {
-      "checked": "2026-11-23T19:42:09-05:00",
-      "watch": []
-    },
-    "SJ": {
-      "checked": "2026-11-23T20:42:33-05:00",
-      "watch": [
-        {
-          "direction": "too_high",
-          "since": "2026-11-23",
-          "text": "D Jacob Trouba (lower body) is out and F Kiefer Sherwood (upper body) went on injured reserve on 11/23; both listed out until at least 12/1.",
-          "source": "ESPN",
-          "url": "https://www.espn.com/nhl/team/injuries/_/name/sj",
-          "date": "2026-11-23"
-        }
-      ]
-    },
-    "EDM": {
-      "checked": "2026-11-24T18:42:22-05:00",
-      "watch": [
-        {
-          "direction": "too_high",
-          "since": "2026-11-22",
-          "text": "Zach Hyman (migraine) is out vs Vegas on 11/24; goalie Andersen (knee) is on IR, and Devon Levi is confirmed to start.",
-          "source": "ESPN",
-          "url": "https://www.espn.com/nhl/injuries",
-          "date": "2026-11-24"
-        }
-      ]
-    },
-    "VGK": {
-      "checked": "2026-11-24T18:42:22-05:00",
-      "watch": []
-    },
-    "FLA": {
-      "watch": [
-        {
-          "direction": "too_low",
-          "since": "2026-10-01",
-          "text": "Captain Aleksander Barkov (knee, out since Oct. 1) and Brad Marchand (knee) may return Wednesday vs. Ottawa; our ratings are built almost entirely without them.",
-          "source": "Yahoo Sports",
-          "url": "https://sports.yahoo.com/articles/panthers-place-cole-reinhardt-nhl-193354501.html",
-          "date": "2026-11-22"
-        }
-      ],
-      "checked": "2026-11-24T11:44:03-05:00"
+ "sport": "nhl",
+ "generated": "2026-11-24T18:42:22-05:00",
+ "teams": {
+  "OTT": {
+   "checked": "2026-11-24T11:44:03-05:00",
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-22",
+     "text": "Forwards William Eklund (ankle), Warren Foegele (knee) and Andre Burakovsky (lower body) are out vs Calgary; Hayden Hodgson (groin) is day-to-day.",
+     "source": "Bleacher Nation",
+     "url": "https://bleachernation.com/picks/2026/11/22/senators-vs-flames-how-to-watch-odds-picks-predictions-3",
+     "date": "2026-11-22"
     }
+   ]
   },
-  "games": {
-    "401892775": {
-      "checked": "2026-11-23T17:43:18-05:00",
-      "verdict": "partly",
-      "summary": "Ottawa is missing three forwards (Eklund, Foegele, Burakovsky), which covers some of the gap; Linus Ullmark (.937, 11-1-0) was first off at the morning skate and starts.",
-      "reasons": [
-        {
-          "text": "Senators forwards William Eklund, Warren Foegele and Andre Burakovsky are out.",
-          "source": "Bleacher Nation",
-          "url": "https://bleachernation.com/picks/2026/11/22/senators-vs-flames-how-to-watch-odds-picks-predictions-3",
-          "date": "2026-11-22"
-        },
-        {
-          "text": "Linus Ullmark was first off the ice at Monday's morning skate and is starting against Calgary.",
-          "source": "CBS Sports",
-          "url": "https://www.cbssports.com/fantasy/hockey/news/senators-linus-ullmark-starting-against-calgary-600825/",
-          "date": "2026-11-23"
-        }
-      ],
-      "verified_numbers": [
-        "11-1"
-      ]
-    },
-    "401892779": {
-      "checked": "2026-11-23T20:42:33-05:00",
-      "verdict": "partly",
-      "summary": "The Wild are without No. 1 D Quinn Hughes (now on injured reserve) and start Filip Gustavsson in his season debut, which our ratings don't see; that covers part of the gap between our 67% and the market's 62% on Minnesota.",
-      "reasons": [
-        {
-          "text": "Quinn Hughes (upper body, hurt at Calgary) was placed on injured reserve on 11/23 and misses tonight at SJ; ESPN lists 11/27 as his earliest return.",
-          "source": "ESPN",
-          "url": "https://www.espn.com/nhl/team/injuries/_/name/min",
-          "date": "2026-11-23"
-        },
-        {
-          "text": "Confirmed starters: Filip Gustavsson makes his season debut for Minnesota (Joe Smith); Yaroslav Askarov starts for San Jose (Max Miller).",
-          "source": "Daily Faceoff",
-          "url": "https://www.dailyfaceoff.com/starting-goalies/2026-11-23",
-          "date": "2026-11-23"
-        },
-        {
-          "text": "Moneyline opened at about Wild -1.0 goals and has drifted toward the Sharks, consistent with the Hughes news.",
-          "source": "Field Level Media",
-          "url": "https://fieldlevelmedia.com/news/wild-kaprizov-put-franchise-point-streaks-on-line-vs-sharks/",
-          "date": "2026-11-23"
-        }
-      ]
-    },
-    "401892780": {
-      "checked": "2026-11-24T18:42:22-05:00",
-      "verdict": "partly",
-      "summary": "Zach Hyman is ruled out tonight and Devon Levi is confirmed in Edmonton's net (Carter Hart likely for Vegas), which covers part of the gap; the rest is our rating split, not news.",
-      "reasons": [
-        {
-          "text": "Hyman (migraine) won't play vs Vegas, per Oilers play-by-play announcer Jack Michaels; Nugent-Hopkins was expected back after missing four games.",
-          "source": "ESPN",
-          "url": "https://www.espn.com/nhl/injuries",
-          "date": "2026-11-24"
-        },
-        {
-          "text": "Devon Levi is confirmed to start for Edmonton; Carter Hart is the likely Vegas starter.",
-          "source": "Daily Faceoff",
-          "url": "https://www.dailyfaceoff.com/starting-goalies/2026-11-24",
-          "date": "2026-11-24"
-        }
-      ],
-      "returning": []
-    },
-    "401892774": {
-      "checked": "2026-11-23T17:43:18-05:00"
-    },
-    "401892773": {
-      "checked": "2026-11-23T17:43:18-05:00"
-    },
-    "401892776": {
-      "checked": "2026-11-23T17:43:18-05:00"
-    },
-    "401892777": {
-      "checked": "2026-11-23T17:43:18-05:00"
-    },
-    "401892778": {
-      "checked": "2026-11-23T19:42:09-05:00"
-    },
-    "401892791": {
-      "checked": "2026-11-24T11:44:03-05:00",
-      "verdict": "partly",
-      "summary": "Quinn Hughes (IR) is still out for Minnesota, which accounts for part of the gap, but Utah is short Schmaltz, Marino and Schmidt too, so the market's 59% looks cautious.",
-      "reasons": [
-        {
-          "text": "No. 1 D Quinn Hughes went on IR Nov. 23 and is expected to miss Wednesday vs. Utah; John Hynes hopes for more on him Wednesday (Friedman: not believed serious).",
-          "source": "Pro Hockey Rumors",
-          "url": "https://www.prohockeyrumors.com/2026/11/wilds-quinn-hughes-leaves-road-trip-due-to-injury.html",
-          "date": "2026-11-22"
-        },
-        {
-          "text": "Utah has Nick Schmaltz, John Marino and Nate Schmidt on IR and Michael Carcone out, which cuts against the market's lean.",
-          "source": "ESPN",
-          "url": "https://www.espn.com/nhl/game/_/gameId/401892791",
-          "date": "2026-11-24"
-        }
-      ]
-    },
-    "401892784": {
-      "checked": "2026-11-24T11:44:03-05:00",
-      "verdict": "explained",
-      "summary": "Florida's captain Aleksander Barkov and Brad Marchand, out nearly all season, could return Wednesday vs. Ottawa; our ratings are built without them, the market is pricing them in.",
-      "reasons": [
-        {
-          "text": "Paul Maurice called Barkov's return Wednesday vs. Ottawa realistic and Marchand possible; Florida put Cole Reinhardt on waivers to make room. Both have knee injuries from early October.",
-          "source": "Yahoo Sports",
-          "url": "https://sports.yahoo.com/articles/panthers-place-cole-reinhardt-nhl-193354501.html",
-          "date": "2026-11-22"
-        },
-        {
-          "text": "Ottawa is still without forwards William Eklund, Warren Foegele and Andre Burakovsky (IR) and Hayden Hodgson.",
-          "source": "ESPN",
-          "url": "https://www.espn.com/nhl/game/_/gameId/401892784",
-          "date": "2026-11-24"
-        }
-      ],
-      "returning": [
-        {
-          "team": "FLA",
-          "player": "Aleksander Barkov",
-          "text": "Out since Oct. 1 (knee); return Wednesday called realistic by Paul Maurice.",
-          "url": "https://sports.yahoo.com/articles/panthers-place-cole-reinhardt-nhl-193354501.html"
-        },
-        {
-          "team": "FLA",
-          "player": "Brad Marchand",
-          "text": "Out since Oct. 6 (knee); could return Wednesday, Maurice less optimistic.",
-          "url": "https://sports.yahoo.com/articles/panthers-place-cole-reinhardt-nhl-193354501.html"
-        }
-      ]
+  "CGY": {
+   "checked": "2026-11-23T17:43:18-05:00",
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-22",
+     "text": "D Kevin Bahl is out for the season (Achilles surgery) and Jonathan Huberdeau (hip) is out; Martin Pospisil (upper body) is day-to-day after a hit from Chicago's Wyatt Kaiser.",
+     "source": "The Hockey Writers",
+     "url": "https://thehockeywriters.com/flames-week-ahead-schedule-storylines-still-searching-for-consistency-pospisil-injury-and-more",
+     "date": "2026-11-22"
     }
+   ]
+  },
+  "LA": {
+   "checked": "2026-11-23T17:43:18-05:00",
+   "watch": [
+    {
+     "direction": "too_low",
+     "since": "2026-11-23",
+     "text": "LW Artemi Panarin (personal, missed 4 games) is projected back on the top line and PP1 at Montreal; D Erik Gustafsson is on IR and out.",
+     "source": "Daily Faceoff",
+     "url": "https://www.dailyfaceoff.com/teams/los-angeles-kings/line-combinations",
+     "date": "2026-11-23"
+    }
+   ]
+  },
+  "MTL": {
+   "checked": "2026-11-23T17:43:18-05:00",
+   "watch": [
+    {
+     "direction": "too_low",
+     "since": "2026-11-22",
+     "text": "Montreal acquired C Dylan Larkin from Detroit on 11/22 (for Kirby Dach, G Samuel Montembeault, Hage and picks); he debuts vs LA tonight as the 2nd-line center.",
+     "source": "NHL.com",
+     "url": "https://www.nhl.com/news/larkin-to-make-montreal-canadiens-debut-tonight-against-kings-after-red-wings-trade",
+     "date": "2026-11-23"
+    }
+   ]
+  },
+  "UTAH": {
+   "checked": "2026-11-24T11:44:03-05:00",
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-11",
+     "text": "Dylan Guenther (IR since Nov 11, 2-4 weeks) and D John Marino (IR) remain out of the projected lineup at Winnipeg.",
+     "source": "Daily Faceoff",
+     "url": "https://www.dailyfaceoff.com/teams/utah-mammoth/line-combinations",
+     "date": "2026-11-23"
+    },
+    {
+     "direction": "unclear",
+     "since": "2026-11-21",
+     "text": "Clayton Keller (illness) missed Saturday vs Anaheim but is projected back on PP1 Monday; Nick Schmaltz is day-to-day.",
+     "source": "Daily Faceoff",
+     "url": "https://www.dailyfaceoff.com/teams/utah-mammoth/line-combinations",
+     "date": "2026-11-23"
+    }
+   ]
+  },
+  "WPG": {
+   "checked": "2026-11-23T17:43:18-05:00",
+   "watch": []
+  },
+  "TOR": {
+   "checked": "2026-11-23T17:43:18-05:00",
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-10-26",
+     "text": "Toronto has the most players on IR in the league and has lost 9 of 10; Kirill Marchenko (out since Oct 26) and Colton Sissons skated in non-contact jerseys Sunday; Jack Roslovic is day-to-day.",
+     "source": "NHL.com",
+     "url": "https://www.nhl.com/islanders/news/game-preview-islanders-vs-maple-leafs-nov-23-2026",
+     "date": "2026-11-23"
+    }
+   ]
+  },
+  "NYI": {
+   "checked": "2026-11-23T17:43:18-05:00",
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-23",
+     "text": "D Alexander Romanov is out with a torn ACL; D Ryan Pulock (lower body) is day-to-day.",
+     "source": "Bettors Insider",
+     "url": "https://bettorsinsider.com/nhl/2026/11/23/maple-leafs-vs-islanders-prediction-sorokin-edge-in-elmont/",
+     "date": "2026-11-23"
+    },
+    {
+     "direction": "too_low",
+     "since": "2026-11-14",
+     "text": "Mathew Barzal returned Nov 14 after missing the start of the season.",
+     "source": "Bettors Insider",
+     "url": "https://bettorsinsider.com/nhl/2026/11/23/maple-leafs-vs-islanders-prediction-sorokin-edge-in-elmont/",
+     "date": "2026-11-23"
+    }
+   ]
+  },
+  "CBJ": {
+   "checked": "2026-11-23T17:43:18-05:00",
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-16",
+     "text": "C Sean Monahan (did not travel, projected back Nov 25) and Conor Garland (IR) are out with upper-body injuries.",
+     "source": "Bettors Insider",
+     "url": "https://bettorsinsider.com/nhl/2026/11/23/blue-jackets-vs-devils-prediction-back-the-devils-to-cover/",
+     "date": "2026-11-23"
+    }
+   ]
+  },
+  "NJ": {
+   "checked": "2026-11-23T17:43:18-05:00",
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-17",
+     "text": "Out: Anthony Mantha (throat fracture surgery), D Johnathan Kovacevic (high ankle sprain, 4-6 weeks from Nov 17) and D Seamus Casey (knee).",
+     "source": "NHL.com",
+     "url": "https://www.nhl.com/devils/news/preview-2026020378",
+     "date": "2026-11-23"
+    }
+   ]
+  },
+  "MIN": {
+   "checked": "2026-11-24T11:44:03-05:00",
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-21",
+     "text": "No. 1 D Quinn Hughes (27.8 TOI, upper body) was placed on injured reserve on 11/23 and misses tonight at SJ.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nhl/team/injuries/_/name/min",
+     "date": "2026-11-23"
+    },
+    {
+     "direction": "unclear",
+     "since": "2026-11-23",
+     "text": "Filip Gustavsson starts tonight in his season debut instead of Jesper Wallstedt.",
+     "source": "Daily Faceoff",
+     "url": "https://www.dailyfaceoff.com/starting-goalies/2026-11-23",
+     "date": "2026-11-23"
+    }
+   ]
+  },
+  "ANA": {
+   "checked": "2026-11-23T19:42:09-05:00",
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-21",
+     "text": "Leo Carlsson (upper body, 19.8 TOI) is not expected to play at SEA on 11/23 after missing Sunday's practice (Nico Myatovic recalled), and Beckett Sennecke (20.3 TOI) is on IR: two top-six forwards out. Starting goalies not confirmed yet.",
+     "source": "NHL.com",
+     "url": "https://nhl.com/news/nhl-status-report-news-and-notes-november-23-2026",
+     "date": "2026-11-23"
+    }
+   ]
+  },
+  "SEA": {
+   "checked": "2026-11-23T19:42:09-05:00",
+   "watch": []
+  },
+  "SJ": {
+   "checked": "2026-11-23T20:42:33-05:00",
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-23",
+     "text": "D Jacob Trouba (lower body) is out and F Kiefer Sherwood (upper body) went on injured reserve on 11/23; both listed out until at least 12/1.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nhl/team/injuries/_/name/sj",
+     "date": "2026-11-23"
+    }
+   ]
+  },
+  "EDM": {
+   "checked": "2026-11-24T18:42:22-05:00",
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-22",
+     "text": "Zach Hyman (migraine) is out vs Vegas on 11/24; goalie Andersen (knee) is on IR, and Devon Levi is confirmed to start.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nhl/injuries",
+     "date": "2026-11-24"
+    }
+   ]
+  },
+  "VGK": {
+   "checked": "2026-11-24T18:42:22-05:00",
+   "watch": []
+  },
+  "FLA": {
+   "watch": [
+    {
+     "direction": "too_low",
+     "since": "2026-10-01",
+     "text": "Captain Aleksander Barkov (knee, out since Oct. 1) and Brad Marchand (knee) may return Wednesday vs. Ottawa; our ratings are built almost entirely without them.",
+     "source": "Yahoo Sports",
+     "url": "https://sports.yahoo.com/articles/panthers-place-cole-reinhardt-nhl-193354501.html",
+     "date": "2026-11-22"
+    }
+   ],
+   "checked": "2026-11-24T11:44:03-05:00"
   }
+ },
+ "games": {
+  "401892775": {
+   "checked": "2026-11-23T17:43:18-05:00",
+   "verdict": "partly",
+   "summary": "Ottawa is missing three forwards (Eklund, Foegele, Burakovsky), which covers some of the gap; Linus Ullmark (.937, 11-1-0) was first off at the morning skate and starts.",
+   "reasons": [
+    {
+     "text": "Senators forwards William Eklund, Warren Foegele and Andre Burakovsky are out.",
+     "source": "Bleacher Nation",
+     "url": "https://bleachernation.com/picks/2026/11/22/senators-vs-flames-how-to-watch-odds-picks-predictions-3",
+     "date": "2026-11-22"
+    },
+    {
+     "text": "Linus Ullmark was first off the ice at Monday's morning skate and is starting against Calgary.",
+     "source": "CBS Sports",
+     "url": "https://www.cbssports.com/fantasy/hockey/news/senators-linus-ullmark-starting-against-calgary-600825/",
+     "date": "2026-11-23"
+    }
+   ],
+   "verified_numbers": [
+    "11-1"
+   ]
+  },
+  "401892779": {
+   "checked": "2026-11-23T20:42:33-05:00",
+   "verdict": "partly",
+   "summary": "The Wild are without No. 1 D Quinn Hughes (now on injured reserve) and start Filip Gustavsson in his season debut, which our ratings don't see; that covers part of the gap between our 67% and the market's 62% on Minnesota.",
+   "reasons": [
+    {
+     "text": "Quinn Hughes (upper body, hurt at Calgary) was placed on injured reserve on 11/23 and misses tonight at SJ; ESPN lists 11/27 as his earliest return.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nhl/team/injuries/_/name/min",
+     "date": "2026-11-23"
+    },
+    {
+     "text": "Confirmed starters: Filip Gustavsson makes his season debut for Minnesota (Joe Smith); Yaroslav Askarov starts for San Jose (Max Miller).",
+     "source": "Daily Faceoff",
+     "url": "https://www.dailyfaceoff.com/starting-goalies/2026-11-23",
+     "date": "2026-11-23"
+    },
+    {
+     "text": "Moneyline opened at about Wild -1.0 goals and has drifted toward the Sharks, consistent with the Hughes news.",
+     "source": "Field Level Media",
+     "url": "https://fieldlevelmedia.com/news/wild-kaprizov-put-franchise-point-streaks-on-line-vs-sharks/",
+     "date": "2026-11-23"
+    }
+   ]
+  },
+  "401892780": {
+   "checked": "2026-11-24T18:42:22-05:00",
+   "verdict": "partly",
+   "summary": "Zach Hyman is ruled out tonight and Devon Levi is confirmed in Edmonton's net (Carter Hart likely for Vegas), which covers part of the gap; the rest is our rating split, not news.",
+   "reasons": [
+    {
+     "text": "Hyman (migraine) won't play vs Vegas, per Oilers play-by-play announcer Jack Michaels; Nugent-Hopkins was expected back after missing four games.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nhl/injuries",
+     "date": "2026-11-24"
+    },
+    {
+     "text": "Devon Levi is confirmed to start for Edmonton; Carter Hart is the likely Vegas starter.",
+     "source": "Daily Faceoff",
+     "url": "https://www.dailyfaceoff.com/starting-goalies/2026-11-24",
+     "date": "2026-11-24"
+    }
+   ],
+   "returning": []
+  },
+  "401892774": {
+   "checked": "2026-11-23T17:43:18-05:00"
+  },
+  "401892773": {
+   "checked": "2026-11-23T17:43:18-05:00"
+  },
+  "401892776": {
+   "checked": "2026-11-23T17:43:18-05:00"
+  },
+  "401892777": {
+   "checked": "2026-11-23T17:43:18-05:00"
+  },
+  "401892778": {
+   "checked": "2026-11-23T19:42:09-05:00"
+  },
+  "401892791": {
+   "checked": "2026-11-24T11:44:03-05:00",
+   "verdict": "partly",
+   "summary": "Quinn Hughes (IR) is still out for Minnesota, which accounts for part of the gap, but Utah is short Schmaltz, Marino and Schmidt too, so the market's 59% looks cautious.",
+   "reasons": [
+    {
+     "text": "No. 1 D Quinn Hughes went on IR Nov. 23 and is expected to miss Wednesday vs. Utah; John Hynes hopes for more on him Wednesday (Friedman: not believed serious).",
+     "source": "Pro Hockey Rumors",
+     "url": "https://www.prohockeyrumors.com/2026/11/wilds-quinn-hughes-leaves-road-trip-due-to-injury.html",
+     "date": "2026-11-22"
+    },
+    {
+     "text": "Utah has Nick Schmaltz, John Marino and Nate Schmidt on IR and Michael Carcone out, which cuts against the market's lean.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nhl/game/_/gameId/401892791",
+     "date": "2026-11-24"
+    }
+   ]
+  },
+  "401892784": {
+   "checked": "2026-11-24T11:44:03-05:00",
+   "verdict": "explained",
+   "summary": "Florida's captain Aleksander Barkov and Brad Marchand, out nearly all season, could return Wednesday vs. Ottawa; our ratings are built without them, the market is pricing them in.",
+   "reasons": [
+    {
+     "text": "Paul Maurice called Barkov's return Wednesday vs. Ottawa realistic and Marchand possible; Florida put Cole Reinhardt on waivers to make room. Both have knee injuries from early October.",
+     "source": "Yahoo Sports",
+     "url": "https://sports.yahoo.com/articles/panthers-place-cole-reinhardt-nhl-193354501.html",
+     "date": "2026-11-22"
+    },
+    {
+     "text": "Ottawa is still without forwards William Eklund, Warren Foegele and Andre Burakovsky (IR) and Hayden Hodgson.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nhl/game/_/gameId/401892784",
+     "date": "2026-11-24"
+    }
+   ],
+   "returning": [
+    {
+     "team": "FLA",
+     "player": "Aleksander Barkov",
+     "text": "Out since Oct. 1 (knee); return Wednesday called realistic by Paul Maurice.",
+     "url": "https://sports.yahoo.com/articles/panthers-place-cole-reinhardt-nhl-193354501.html"
+    },
+    {
+     "team": "FLA",
+     "player": "Brad Marchand",
+     "text": "Out since Oct. 6 (knee); could return Wednesday, Maurice less optimistic.",
+     "url": "https://sports.yahoo.com/articles/panthers-place-cole-reinhardt-nhl-193354501.html"
+    }
+   ]
+  }
+ }
 }
