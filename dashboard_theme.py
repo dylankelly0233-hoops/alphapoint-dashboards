@@ -824,6 +824,11 @@ details.method b { color: var(--ink); }
          background: color-mix(in srgb, var(--accent) 12%, var(--surface)); color: var(--ink); }
 .since b { font-weight: 700; }
 body.onlychg article.card.game:not(.haschg) { display: none; }
+.gshare { font: 700 12px/1 var(--display); letter-spacing: 1px; text-transform: uppercase; color: var(--accent);
+          background: none; border: 1px solid var(--line); border-radius: 6px; padding: 6px 10px; cursor: pointer; }
+.gchips .gshare + .gmore, .gchips .gmore + .gshare { margin-left: 0; }
+.sharetoast { position: fixed; left: 50%; bottom: 22px; transform: translateX(-50%); z-index: 50; padding: 10px 14px;
+              border-radius: 8px; background: var(--ink); color: var(--surface); font-size: 13.5px; box-shadow: 0 6px 20px rgba(0,0,0,.25); }
 """
 
 JS = """
@@ -1154,6 +1159,117 @@ document.querySelectorAll('table.sortable').forEach(t => {
                                                btn.textContent = on ? 'Show all games' : 'Show only changed'; });
   const sec = cards[0].closest('section.page');
   if (sec) sec.insertBefore(bar, sec.firstChild);
+})();
+
+// Shareable game image (Dylan, 2026-11-24). Drawn in the browser from the card itself: our number vs the market,
+// never a pick. Phones get the share sheet (image + link to this game's card); desktops download the image and
+// copy the link.
+(function () {
+  const cards = Array.from(document.querySelectorAll('article.card.game[data-gid]:not(.final)'));
+  if (!cards.length || !document.createElement('canvas').getContext) return;
+  const css = getComputedStyle(document.documentElement);
+  const DISPLAY = (css.getPropertyValue('--display') || 'sans-serif').trim();
+  const SPORT = (document.title.match(/AlphaPoint (.+?) Dashboard/) || [, ''])[1];
+  const clean = s => (s || '').replace(/\\s+/g, ' ').trim();
+  const foot = (c, label) => { const d = Array.from(c.querySelectorAll('footer > div')).find(x => x.textContent.indexOf(label) === 0);
+                               return d ? clean(d.textContent.slice(label.length)).replace(/^[?] */, '') : ''; };
+  const toast = msg => { const t = document.createElement('div'); t.className = 'sharetoast'; t.textContent = msg;
+                         document.body.appendChild(t); setTimeout(() => t.remove(), 2600); };
+  const badge = side => {
+    const lg = side.querySelector('.logo');
+    let abbr = '', fill = '#334155', ring = '#94a3b8', ink = '#ffffff';
+    if (lg) {
+      const st = getComputedStyle(lg), af = getComputedStyle(lg, '::after'), bf = getComputedStyle(lg, '::before');
+      abbr = (af.content || '').replace(/^["']|["']$/g, '');
+      if (!abbr || abbr === 'none' || abbr === 'normal') abbr = clean(lg.textContent);
+      fill = st.backgroundColor || fill; ring = bf.borderTopColor || ring; ink = af.color || st.color || ink;
+    }
+    return { abbr: abbr, fill: fill, ring: ring, ink: ink, name: clean((side.querySelector('.gname button, .gname') || side).childNodes[0]
+             ? (side.querySelector('.gname button') || side.querySelector('.gname')).firstChild.textContent : side.textContent) };
+  };
+  const fit = (ctx, text, max, size, weight) => {
+    let s = size;
+    do { ctx.font = weight + ' ' + s + 'px ' + DISPLAY; s -= 2; } while (ctx.measureText(text).width > max && s > 14);
+    return ctx.font;
+  };
+  function draw(c) {
+    const W = 1200, H = 675, cv = document.createElement('canvas');
+    cv.width = W; cv.height = H;
+    const x = cv.getContext('2d');
+    const g = x.createLinearGradient(0, 0, W, H); g.addColorStop(0, '#0b1424'); g.addColorStop(1, '#14233d');
+    x.fillStyle = g; x.fillRect(0, 0, W, H);
+    x.fillStyle = '#4b8dff'; x.fillRect(0, 0, W, 8);
+    x.textBaseline = 'alphabetic';
+    x.fillStyle = '#ffffff'; x.font = '700 34px ' + DISPLAY; x.fillText('ALPHAPOINT', 60, 78);
+    const aw = x.measureText('ALPHAPOINT').width;
+    x.fillStyle = '#4b8dff'; x.fillText(' SPORTS', 60 + aw, 78);
+    const when = clean((c.querySelector('header span') || {}).textContent);
+    x.fillStyle = '#93a0b2'; x.font = '600 26px ' + DISPLAY; x.textAlign = 'right';
+    x.fillText((SPORT ? SPORT.toUpperCase() + '  ·  ' : '') + when.toUpperCase(), W - 60, 78); x.textAlign = 'left';
+    const sides = Array.from(c.querySelectorAll(':scope > .side')).map(badge);
+    sides.forEach((t, i) => {
+      const cy = 170 + i * 104, cx = 104, r = 40;
+      x.beginPath(); x.arc(cx, cy, r, 0, 2 * Math.PI); x.fillStyle = t.fill; x.fill();
+      x.lineWidth = 7; x.strokeStyle = t.ring; x.beginPath(); x.arc(cx, cy, r - 3.5, 0, 2 * Math.PI); x.stroke();
+      x.fillStyle = t.ink; x.textAlign = 'center'; x.font = fit(x, t.abbr, 58, 30, '700'); x.fillText(t.abbr, cx, cy + 10);
+      x.textAlign = 'left'; x.fillStyle = '#ffffff'; x.font = fit(x, t.name, 900, 52, '700');
+      x.fillText(t.name, 168, cy + 17);
+      x.fillStyle = '#93a0b2'; x.font = '600 22px ' + DISPLAY; x.fillText(i === 0 ? 'AWAY' : 'HOME', 168, cy - 30);
+    });
+    const edge = foot(c, 'Edge'), em = edge.match(/^(.*) ([0-9.]+)$/);
+    const lm = Array.from(c.querySelectorAll('.lmove')).find(d => { const k = d.querySelector('.k'); return k && clean(k.textContent).indexOf('Line') === 0; });
+    if (lm) {
+      const t = clean(lm.textContent).replace(/^Line[?]? */, '');
+      x.fillStyle = '#93a0b2'; x.font = '700 22px ' + DISPLAY; x.fillText('LINE', 60, 352);
+      x.fillStyle = '#e6ebf2'; x.font = fit(x, t, W - 190, 30, '600'); x.fillText(t, 130, 352);
+    }
+    const boxes = [['OUR NUMBER', foot(c, 'Projected'), '#4b8dff'], ['MARKET', foot(c, 'Market'), '#e6ebf2'],
+                   ['GAP', em ? em[2] + ' pts · ' + em[1] : (edge || '—'), '#f5b942']];
+    const bw = (W - 120 - 2 * 24) / 3;
+    boxes.forEach((b, i) => {
+      const bx = 60 + i * (bw + 24), by = 405;
+      x.fillStyle = 'rgba(255,255,255,0.06)'; x.fillRect(bx, by, bw, 150);
+      x.fillStyle = b[2]; x.fillRect(bx, by, 6, 150);
+      x.fillStyle = '#93a0b2'; x.font = '700 22px ' + DISPLAY; x.fillText(b[0], bx + 26, by + 40);
+      x.fillStyle = '#ffffff'; x.font = fit(x, b[1], bw - 48, 46, '700'); x.fillText(b[1], bx + 26, by + 108);
+    });
+    x.fillStyle = '#93a0b2'; x.font = '500 21px ' + DISPLAY;
+    x.fillText('Research, not a pick: our model\\'s number next to the market. Lines move; check your sportsbook.', 60, 604);
+    x.fillText('21+ · Gambling problem? Call or text 1-800-GAMBLER', 60, 636);
+    x.textAlign = 'right'; x.fillStyle = '#ffffff'; x.font = '700 24px ' + DISPLAY;
+    x.fillText(location.host || 'alphapoint', W - 60, 636); x.textAlign = 'left';
+    return cv;
+  }
+  function link(c) {
+    const sec = c.closest('section.page');
+    return location.origin + location.pathname + '#' + (sec ? sec.id : 'games') + '~g-' + c.dataset.gid;
+  }
+  async function share(c) {
+    const cv = draw(c);
+    const url = link(c);
+    const names = Array.from(c.querySelectorAll(':scope > .side')).map(s => badge(s).name);
+    const title = names.join(' at ') + ': our number vs the market';
+    const blob = await new Promise(r => cv.toBlob(r, 'image/png'));
+    const file = new File([blob], 'alphapoint-' + c.dataset.gid + '.png', { type: 'image/png' });
+    try {
+      if (navigator.canShare && navigator.canShare({ files: [file] })) {
+        await navigator.share({ files: [file], title: title, text: title + ' (AlphaPoint Sports research) ' + url });
+        return;
+      }
+    } catch (e) { if (e && e.name === 'AbortError') return; }
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob); a.download = file.name; document.body.appendChild(a); a.click(); a.remove();
+    try { await navigator.clipboard.writeText(url); toast('Image saved · link to this game copied'); } catch (e) { toast('Image saved'); }
+  }
+  cards.forEach(c => {
+    const b = document.createElement('button');
+    b.type = 'button'; b.className = 'gshare'; b.textContent = 'Share';
+    b.addEventListener('click', e => { e.stopPropagation(); share(c); });
+    const chips = c.querySelector('.gchips');
+    if (chips) chips.insertBefore(b, chips.querySelector('.gmore'));
+    else { const d = document.createElement('div'); d.className = 'gchips'; d.appendChild(b); c.appendChild(d); }
+  });
+  window.apShareDraw = draw;            // for testing
 })();
 """
 
