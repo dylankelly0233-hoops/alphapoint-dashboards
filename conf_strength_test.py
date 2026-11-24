@@ -85,6 +85,24 @@ def effects(hist, season):
     return dict(zip(confs, b))
 
 
+def history_totals(d, season):
+    """
+    Earlier seasons' non-conference games as conference-level totals, weighted DECAY per season back from `season`:
+    {'confs': [...], 'A': X'WX, 'b': X'Wr}. cbb_conf_weekly.py adds this season's games to these and solves the same
+    ridge, so the weekly refresh matches effects() without game-level history (no per-game model results stored).
+    """
+    x = d[(d.season < season) & (d.hc != d.ac)]
+    confs = sorted(set(x.hc) | set(x.ac))
+    ix = {c: i for i, c in enumerate(confs)}
+    X = np.zeros((len(x), len(confs)))
+    X[np.arange(len(x)), x.hc.map(ix).values] = 1
+    X[np.arange(len(x)), x.ac.map(ix).values] = -1
+    w = DECAY ** (season - x.season.values).astype(float)
+    r = (x.y - x.ours).values
+    return {'confs': confs, 'A': np.round((X * w[:, None]).T @ X, 4).tolist(),
+            'b': np.round((X * w[:, None]).T @ r, 4).tolist()}
+
+
 def walk(d, test):
     """Adjusted line for every game in the test seasons, from games strictly before its date."""
     out = []
@@ -152,7 +170,8 @@ if __name__ == '__main__':
         latest = d.season.max()
         E = effects(d, latest)
         json.dump({'season': int(latest), 'through': str(d[d.season == latest].date.max()), 'K': K, 'decay': DECAY,
-                   'passed': bool(ok), 'effects': {c: round(float(v), 3) for c, v in sorted(E.items(), key=lambda t: -t[1])}},
+                   'passed': bool(ok), 'effects': {c: round(float(v), 3) for c, v in sorted(E.items(), key=lambda t: -t[1])},
+                   'history': history_totals(d, latest)},
                   open(f'conf_effects_{sport}.json', 'w'), indent=1)
         print('current conference effects (points):', {c: round(v, 1) for c, v in sorted(E.items(), key=lambda t: -t[1])[:5]},
               '...', {c: round(v, 1) for c, v in sorted(E.items(), key=lambda t: t[1])[:3]})

@@ -91,10 +91,15 @@ jobs:
           { echo "Date: $(date '+%Y-%m-%d %H:%M') ET"; echo ""; sed -n '/^GOLF/,/^$/p' last_review.md 2>/dev/null; } > reports/golf_review.md
           cat reports/model_changes.md
 
+      # CBB conference strength (cbb_conf_weekly.py, 2026-11-24): re-learned weekly from this season's non-conference
+      # games; the monthly research run re-checks the rule. A failure keeps last week's table.
+      - name: Refresh CBB conference strength
+        run: python cbb_conf_weekly.py || echo "CBB conference refresh failed; keeping last week's table"
+
       - name: Commit the tuned settings
         run: |
           git config user.name "alphapoint-bot"
           git config user.email "actions@users.noreply.github.com"
           git add reports/model_changes.md reports/golf_review.md
-          for f in calibration.json calibration_log.csv live_kill.json; do [ -f "$f" ] && git add "$f"; done
+          for f in calibration.json calibration_log.csv live_kill.json conf_effects_cbb.json; do [ -f "$f" ] && git add "$f"; done
           git diff --cached --quiet || (git commit -m "Weekly calibration" && (git pull --rebase || (git rebase --abort; false)) && git push)
