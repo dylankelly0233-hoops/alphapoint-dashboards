@@ -827,6 +827,11 @@ body.onlychg article.card.game:not(.haschg) { display: none; }
 .gshare { font: 700 12px/1 var(--display); letter-spacing: 1px; text-transform: uppercase; color: var(--accent);
           background: none; border: 1px solid var(--line); border-radius: 6px; padding: 6px 10px; cursor: pointer; }
 .gchips .gshare + .gmore, .gchips .gmore + .gshare { margin-left: 0; }
+.favbtn { background: none; border: 0; padding: 0 2px; margin-left: 4px; cursor: pointer; font-size: 15px; line-height: 1;
+          color: var(--muted); vertical-align: 1px; }
+.favbtn.on { color: #e3a008; }
+article.card.game.favgame { box-shadow: inset 4px 0 0 #e3a008; }
+.favnote { font-size: 12.5px; color: var(--muted); margin: -6px 0 12px; }
 .sharetoast { position: fixed; left: 50%; bottom: 22px; transform: translateX(-50%); z-index: 50; padding: 10px 14px;
               border-radius: 8px; background: var(--ink); color: var(--surface); font-size: 13.5px; box-shadow: 0 6px 20px rgba(0,0,0,.25); }
 """
@@ -1270,6 +1275,42 @@ document.querySelectorAll('table.sortable').forEach(t => {
     else { const d = document.createElement('div'); d.className = 'gchips'; d.appendChild(b); c.appendChild(d); }
   });
   window.apShareDraw = draw;            // for testing
+})();
+
+// Favorite teams (Dylan, 2026-11-24): a star next to each team name on the cards; games with a starred team move to
+// the top of each day / week list. Saved per sport in this browser only.
+(function () {
+  const page = location.pathname.split('/').pop() || 'index.html';
+  const KEY = 'ap_fav_' + page;
+  const cards = Array.from(document.querySelectorAll('article.card.game'));
+  if (!cards.length) return;
+  let fav = [];
+  try { fav = JSON.parse(localStorage.getItem(KEY) || '[]'); } catch (e) { fav = []; }
+  const save = () => { try { localStorage.setItem(KEY, JSON.stringify(fav)); } catch (e) {} };
+  const nameOf = side => { const n = side.querySelector('.gname'); if (!n) return '';
+                           const b = n.querySelector('button'); return (b ? b.textContent : n.firstChild ? n.firstChild.textContent : '').trim(); };
+  const order = new Map(cards.map((c, i) => [c, i]));
+  function apply() {
+    document.querySelectorAll('.favbtn').forEach(b => { const on = fav.indexOf(b.dataset.team) >= 0;
+      b.classList.toggle('on', on); b.textContent = on ? '★' : '☆';
+      b.title = on ? 'Unpin ' + b.dataset.team : 'Pin ' + b.dataset.team + ': their games go first'; });
+    cards.forEach(c => c.classList.toggle('favgame', Array.from(c.querySelectorAll(':scope > .side')).some(s => fav.indexOf(nameOf(s)) >= 0)));
+    document.querySelectorAll('.games').forEach(box => {
+      const kids = Array.from(box.querySelectorAll(':scope > article.card.game'));
+      const rank = c => (c.classList.contains('final') ? 2 : c.classList.contains('favgame') ? 0 : 1);
+      kids.sort((a, b) => rank(a) - rank(b) || order.get(a) - order.get(b)).forEach(c => box.appendChild(c));
+    });
+  }
+  cards.forEach(c => c.querySelectorAll(':scope > .side').forEach(s => {
+    const t = nameOf(s), n = s.querySelector('.gname');
+    if (!t || !n) return;
+    const b = document.createElement('button');
+    b.type = 'button'; b.className = 'favbtn'; b.dataset.team = t;
+    b.addEventListener('click', e => { e.stopPropagation();
+      fav = fav.indexOf(t) >= 0 ? fav.filter(x => x !== t) : fav.concat([t]); save(); apply(); });
+    n.appendChild(b);
+  }));
+  apply();
 })();
 """
 
