@@ -1,16 +1,16 @@
 {
- "updated": "2026-11-23",
+ "updated": "2026-11-24",
  "kill_n": 200,
  "kill_rate": 0.5,
  "early_n": 20,
  "early_p": 0.05,
  "strategies": {
   "cbb_3p_fade": {
-   "n": 12,
-   "wins": 5,
-   "rate": 0.4167,
+   "n": 17,
+   "wins": 8,
+   "rate": 0.4706,
    "break_even": 0.5238,
-   "p_luck": 0.3245,
+   "p_luck": 0.421,
    "killed": false,
    "why": null
   },
@@ -33,13 +33,13 @@
    "why": null
   },
   "cfb_spread|mid": {
-   "n": 27,
-   "wins": 7,
-   "rate": 0.2593,
+   "n": 0,
+   "wins": 0,
+   "rate": null,
    "break_even": 0.5238,
-   "p_luck": 0.0048,
-   "killed": true,
-   "why": "early"
+   "p_luck": null,
+   "killed": false,
+   "why": null
   },
   "cfb_total|Power 4 / Big East game": {
    "n": 11,
@@ -78,11 +78,11 @@
    "why": null
   },
   "nfl_high_total_under": {
-   "n": 1,
-   "wins": 0,
-   "rate": 0.0,
+   "n": 2,
+   "wins": 1,
+   "rate": 0.5,
    "break_even": 0.5238,
-   "p_luck": 0.4762,
+   "p_luck": 0.7256,
    "killed": false,
    "why": null
   },
