@@ -18,6 +18,8 @@ for yr in range(2016, 2027):
         rows = []
         for st in ('regular', 'postseason'):
             rows += get('/stats/game/advanced', year=yr, seasonType=st, excludeGarbageTime='true')
+        if not rows:          # an empty answer (2026-11-24 monthly run) must not replace real data: try again next run
+            raise SystemExit(f'{yr}: CFBD returned no advanced game stats; nothing saved')
         json.dump(rows, open(path, 'w'))
         print(yr, 'advanced rows', len(rows))
     path = f'research_cache/cfbm_{yr}.json'
