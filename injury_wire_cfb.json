@@ -1,52 +1,52 @@
 {
  "sport": "cfb",
  "week": 13,
- "generated": "2026-11-23T09:20:00-05:00",
+ "generated": "2026-11-24T09:42:53-05:00",
  "movers": [
   {
    "team": "UCLA",
    "tag": "QB",
-   "text": "QB Ty Dieffenbach was carted off in OT of the Nov. 21 loss to Michigan (left leg); X-rays were reportedly negative and his USC status is uncertain. Nico Iamaleava is out for the season.",
+   "text": "QB Ty Dieffenbach (minor hip injury, carted off Nov. 21) is not cleared; Bob Chesney says he has a chance vs USC. Madden Iamaleava starts if he can't; Nico Iamaleava is out for the year.",
    "source": "ESPN",
-   "url": "https://www.espn.com/college-football/story/_/id/50556107/ucla-qb-ty-dieffenbach-carted-3ot-loss-michigan",
-   "date": "2026-11-22",
+   "url": "https://www.espn.com/college-football/story/_/id/50573866/ucla-qb-dieffenbach-dealing-minor-hip-injury",
+   "date": "2026-11-23",
    "qb_status": "uncertain"
   },
   {
-   "team": "Ohio State",
+   "team": "TCU",
    "tag": "QB",
-   "text": "QB Julian Sayin (throwing arm) has missed every game since Oct. 17 with freshman Luke Fahey starting; Rotowire estimates a Nov. 28 return. Ohio State has not confirmed it.",
-   "source": "Rotowire",
-   "url": "https://www.rotowire.com/cfootball/player.php?id=45114",
-   "date": "2026-11-21",
-   "qb_status": "uncertain"
+   "text": "QB Jaden Craig (ankle) is out on the Big 12's first availability report for Texas Tech, his 2nd straight missed game; Adam Schobel makes his 2nd start. Andy Avalos is interim coach.",
+   "source": "Fort Worth Star-Telegram",
+   "url": "https://sports.yahoo.com/articles/tcu-starting-quarterback-ruled-regular-033343887.html",
+   "date": "2026-11-24",
+   "qb_status": "new_starter"
   },
   {
    "team": "Syracuse",
    "tag": "QB",
-   "text": "QB Steve Angeli left the BC loss with a throwing-shoulder injury, arm in a sling; no update for Notre Dame. Malachi Nelson finished but re-aggravated his ankle.",
-   "source": "Orange Fizz",
-   "url": "https://playdanewyork.com/2026/11/syracuse-football-falls-to-boston-college-27-15-angeli-injury/",
-   "date": "2026-11-22",
-   "qb_status": "uncertain"
-  },
-  {
-   "team": "Mississippi State",
-   "tag": "QB",
-   "text": "Jeff Lebby said Nov. 22 the Egg Bowl starter depends on how injured QB AJ Swann practices this week; Billy Puckett started the Tennessee Tech win.",
-   "source": "The Clarion-Ledger",
-   "url": "https://sports.yahoo.com/articles/jeff-lebby-decide-mississippi-state-203027643.html",
-   "date": "2026-11-22",
-   "qb_status": "uncertain"
-  },
-  {
-   "team": "Clemson",
-   "tag": "QB",
-   "text": "Dabo Swinney said backup QB Christopher Vizzina (concussion) 'definitely will not be back' for South Carolina; third-stringer Trent Pearman is in line to start again.",
-   "source": "Heavy",
-   "url": "https://heavy.com/sports/college-football/clemson-tigers/dabo-swinney-drops-sobering-injury-update-ahead-of-south-carolina-showdown/",
+   "text": "Fran Brown ruled QB Steve Angeli (right AC joint, hurt Nov. 21 at BC) out for Notre Dame; Malachi Nelson, who re-aggravated his ankle late in that game, starts.",
+   "source": "ESPN",
+   "url": "https://www.espnradio941.com/2026/11/23/syracuse-rules-qb-angeli-out-vs-notre-dame-due-to-shoulder-injury/",
    "date": "2026-11-23",
    "qb_status": "new_starter"
+  },
+  {
+   "team": "Houston",
+   "tag": "QB",
+   "text": "QB Conner Weigman (shoulder) missed the West Virginia win; Willie Fritz said Monday he threw and 'felt a little better', with a decision Thu/Fri. Keisean Henderson starts if not.",
+   "source": "Houston Chronicle",
+   "url": "https://sports.yahoo.com/articles/uhs-conner-weigman-felt-little-204200052.html",
+   "date": "2026-11-23",
+   "qb_status": "uncertain"
+  },
+  {
+   "team": "Indiana",
+   "tag": "QB",
+   "text": "Cignetti won't name a QB for Purdue: Grant Wilson started vs USC and at Washington, with Josh Hoover (right shoulder since Oct. 17) relieving him in the 2nd half at Washington.",
+   "source": "AP",
+   "url": "https://www.wral.com/news/ap/96fa0-cignetti-non-committal-on-staring-qb-against-purdue-but-no-12-indiana-could-be-missing-its-center/",
+   "date": "2026-11-23",
+   "qb_status": "uncertain"
   }
  ],
  "teams": {
@@ -54,43 +54,84 @@
    {
     "team": "UCLA",
     "tag": "QB",
-    "text": "QB Ty Dieffenbach was carted off in OT of the Nov. 21 loss to Michigan (left leg); X-rays were reportedly negative and his USC status is uncertain. Nico Iamaleava is out for the season.",
+    "text": "QB Ty Dieffenbach (minor hip injury, carted off Nov. 21) is not cleared; Bob Chesney says he has a chance vs USC. Madden Iamaleava starts if he can't; Nico Iamaleava is out for the year.",
     "source": "ESPN",
-    "url": "https://www.espn.com/college-football/story/_/id/50556107/ucla-qb-ty-dieffenbach-carted-3ot-loss-michigan",
-    "date": "2026-11-22",
+    "url": "https://www.espn.com/college-football/story/_/id/50573866/ucla-qb-dieffenbach-dealing-minor-hip-injury",
+    "date": "2026-11-23",
     "qb_status": "uncertain"
    }
   ],
-  "Ohio State": [
+  "TCU": [
    {
-    "team": "Ohio State",
+    "team": "TCU",
     "tag": "QB",
-    "text": "QB Julian Sayin (throwing arm) has missed every game since Oct. 17 with freshman Luke Fahey starting; Rotowire estimates a Nov. 28 return. Ohio State has not confirmed it.",
-    "source": "Rotowire",
-    "url": "https://www.rotowire.com/cfootball/player.php?id=45114",
-    "date": "2026-11-21",
-    "qb_status": "uncertain"
+    "text": "QB Jaden Craig (ankle) is out on the Big 12's first availability report for Texas Tech, his 2nd straight missed game; Adam Schobel makes his 2nd start. Andy Avalos is interim coach.",
+    "source": "Fort Worth Star-Telegram",
+    "url": "https://sports.yahoo.com/articles/tcu-starting-quarterback-ruled-regular-033343887.html",
+    "date": "2026-11-24",
+    "qb_status": "new_starter"
    }
   ],
   "Syracuse": [
    {
     "team": "Syracuse",
     "tag": "QB",
-    "text": "QB Steve Angeli left the BC loss with a throwing-shoulder injury, arm in a sling; no update for Notre Dame. Malachi Nelson finished but re-aggravated his ankle.",
-    "source": "Orange Fizz",
-    "url": "https://playdanewyork.com/2026/11/syracuse-football-falls-to-boston-college-27-15-angeli-injury/",
-    "date": "2026-11-22",
+    "text": "Fran Brown ruled QB Steve Angeli (right AC joint, hurt Nov. 21 at BC) out for Notre Dame; Malachi Nelson, who re-aggravated his ankle late in that game, starts.",
+    "source": "ESPN",
+    "url": "https://www.espnradio941.com/2026/11/23/syracuse-rules-qb-angeli-out-vs-notre-dame-due-to-shoulder-injury/",
+    "date": "2026-11-23",
+    "qb_status": "new_starter"
+   }
+  ],
+  "Houston": [
+   {
+    "team": "Houston",
+    "tag": "QB",
+    "text": "QB Conner Weigman (shoulder) missed the West Virginia win; Willie Fritz said Monday he threw and 'felt a little better', with a decision Thu/Fri. Keisean Henderson starts if not.",
+    "source": "Houston Chronicle",
+    "url": "https://sports.yahoo.com/articles/uhs-conner-weigman-felt-little-204200052.html",
+    "date": "2026-11-23",
     "qb_status": "uncertain"
    }
   ],
-  "Mississippi State": [
+  "Indiana": [
    {
-    "team": "Mississippi State",
+    "team": "Indiana",
     "tag": "QB",
-    "text": "Jeff Lebby said Nov. 22 the Egg Bowl starter depends on how injured QB AJ Swann practices this week; Billy Puckett started the Tennessee Tech win.",
-    "source": "The Clarion-Ledger",
-    "url": "https://sports.yahoo.com/articles/jeff-lebby-decide-mississippi-state-203027643.html",
-    "date": "2026-11-22",
+    "text": "Cignetti won't name a QB for Purdue: Grant Wilson started vs USC and at Washington, with Josh Hoover (right shoulder since Oct. 17) relieving him in the 2nd half at Washington.",
+    "source": "AP",
+    "url": "https://www.wral.com/news/ap/96fa0-cignetti-non-committal-on-staring-qb-against-purdue-but-no-12-indiana-could-be-missing-its-center/",
+    "date": "2026-11-23",
+    "qb_status": "uncertain"
+   },
+   {
+    "team": "Indiana",
+    "tag": "CLUSTER",
+    "text": "Indiana's starting C Bray Lynch (lower leg) 'doesn't look good' for Purdue per Cignetti, and G Joe Brunner is out for the year (knee); LB Rolijah Hardy and CB A.J. Harris are also out.",
+    "source": "AP",
+    "url": "https://www.wral.com/news/ap/96fa0-cignetti-non-committal-on-staring-qb-against-purdue-but-no-12-indiana-could-be-missing-its-center/",
+    "date": "2026-11-23"
+   }
+  ],
+  "Michigan State": [
+   {
+    "team": "Michigan State",
+    "tag": "QB",
+    "text": "QB Alessio Milivojevic (left arm) missed the Oregon loss and his Rutgers status is unclear; true freshman Kayd Coffman made his 2nd start, with backup Cam Fancher also hurt.",
+    "source": "MLive",
+    "url": "https://sports.yahoo.com/articles/michigan-state-qb-starter-remains-190246340.html",
+    "date": "2026-11-23",
+    "qb_status": "uncertain"
+   }
+  ],
+  "North Carolina": [
+   {
+    "team": "North Carolina",
+    "tag": "QB",
+    "text": "Bill Belichick calls QB Billy Edwards Jr. (upper body, hurt Nov. 14) a game-time decision for NC State; freshman Travis Burgess started the Nov. 21 loss at Virginia.",
+    "source": "On3",
+    "url": "https://www.on3.com/teams/nc-state-wolfpack/news/first-look-north-carolina-could-have-uncertainty-at-quarterback/",
+    "date": "2026-11-23",
     "qb_status": "uncertain"
    }
   ],
@@ -113,68 +154,86 @@
     "date": "2026-11-23"
    }
   ],
-  "Houston": [
+  "Ohio State": [
    {
-    "team": "Houston",
+    "team": "Ohio State",
     "tag": "QB",
-    "text": "QB Conner Weigman (shoulder) missed the West Virginia win and will work to return for Baylor; freshman Keisean Henderson made his first start.",
-    "source": "ClutchPoints",
-    "url": "https://clutchpoints.com/ncaa-football/houston-football-news-starting-qb-conner-weigman-crucial-injury-update-west-virginia",
+    "text": "QB Julian Sayin (right elbow fracture) has missed every game since Oct. 17; Ryan Day said early this month he won't be back within a month. Luke Fahey starts vs Michigan.",
+    "source": "Heavy",
+    "url": "https://heavy.com/sports/college-football/ohio-state-buckeyes/hope-revived-julian-sayin-playoff-return-injury-ohio-state/",
     "date": "2026-11-21",
-    "qb_status": "new_starter"
+    "qb_status": "settled"
    }
   ],
-  "North Carolina": [
+  "Mississippi State": [
    {
-    "team": "North Carolina",
+    "team": "Mississippi State",
     "tag": "QB",
-    "text": "QB Billy Edwards Jr. (upper body) did not start the 41-24 loss at Virginia; freshman Travis Burgess made his first start. No status yet for NC State.",
-    "source": "Tar Heel Tribune",
-    "url": "https://tarheeltribune.com/2026/11/21/burgess-shines-in-first-start-but-mistakes-virginias-big-plays-bury-unc/",
-    "date": "2026-11-21",
-    "qb_status": "new_starter"
+    "text": "Starter Kamario Taylor is out for the year (Oct. 28 surgery); Lebby has not named an Egg Bowl QB between AJ Swann (hurt, missed Tennessee Tech) and Billy Puckett, who started that win.",
+    "source": "The Clarion-Ledger",
+    "url": "https://sports.yahoo.com/articles/jeff-lebby-decide-mississippi-state-203027643.html",
+    "date": "2026-11-22",
+    "qb_status": "settled"
    }
   ],
   "Alabama": [
    {
     "team": "Alabama",
     "tag": "RETURNING",
-    "text": "QB Keelon Russell (ankle) sat out the Chattanooga win with Austin Mack starting; Kalen DeBoer expects him 'full speed, full go' in practice this week for Auburn.",
-    "source": "Heavy",
-    "url": "https://heavy.com/sports/college-football/alabama-crimson-tide/alabama-kalen-deboer-provides-injury-update-on-qb-keelon-russell-2/",
-    "date": "2026-11-22"
-   }
-  ],
-  "Indiana": [
-   {
-    "team": "Indiana",
-    "tag": "CLUSTER",
-    "text": "Indiana C Bray Lynch (lower leg) and WR Nick Marsh (late hit) were hurt in the OT loss at Washington; G Joe Brunner is out for the year. Cignetti gave no update.",
-    "source": "The Daily Hoosier",
-    "url": "https://www.thedailyhoosier.com/injury-concerns-mounting-for-iu-football-ahead-of-season-finale/",
-    "date": "2026-11-22"
-   }
-  ],
-  "South Carolina": [
-   {
-    "team": "South Carolina",
-    "tag": "QB",
-    "text": "QB LaNorris Sellers (ankle) returned vs Georgia on Nov. 21 after sitting vs Arkansas; 87 passing yards, 1 INT, sacked 3 times in a 34-6 loss.",
-    "source": "WIS-TV",
-    "url": "https://www.wistv.com/2026/11/22/south-carolina-vs-georgia/",
-    "date": "2026-11-22",
-    "qb_status": "returning"
-   }
-  ],
-  "Vanderbilt": [
-   {
-    "team": "Vanderbilt",
-    "tag": "QB",
-    "text": "QB Jared Curtis re-aggravated an old wrist injury late in the Florida loss and returned; Clark Lea does not expect a long-term issue and expects him to practice this week.",
+    "text": "QB Keelon Russell (ankle) sat out the Chattanooga win; Kalen DeBoer said Monday he expects him back without restrictions, 'full go' all week for Auburn.",
     "source": "Yahoo Sports",
-    "url": "https://sports.yahoo.com/articles/jared-curtis-injury-latest-news-200027177.html",
-    "date": "2026-11-21",
-    "qb_status": "settled"
+    "url": "https://sports.yahoo.com/articles/kalen-deboer-shares-iron-bowl-224740802.html",
+    "date": "2026-11-23"
+   }
+  ],
+  "Notre Dame": [
+   {
+    "team": "Notre Dame",
+    "tag": "CLUSTER",
+    "text": "Notre Dame ruled out S Luke Talich (Achilles, season), LB Kyngstonn Viliamu-Asa, LB Drayk Bowen and CB DJ McKinney for Syracuse; WR Jaden Greathouse (hand) is out too.",
+    "source": "WNDU",
+    "url": "https://www.wndu.com/2026/11/23/notre-dame-confirms-season-ending-injury-luke-talich-rules-out-several-starters-syracuse-game/",
+    "date": "2026-11-23"
+   }
+  ],
+  "Wake Forest": [
+   {
+    "team": "Wake Forest",
+    "tag": "KEY",
+    "text": "Leading rusher Ty Clark III (591 yds, 11 TD) is out for the rest of the season, Jake Dickert said Nov. 23; Deuce Lawrence takes over vs Duke.",
+    "source": "CBS Sports",
+    "url": "https://www.cbssports.com/college-football/news/ty-clark-injury-wake-forest-college-football-playoff-hopes/",
+    "date": "2026-11-23"
+   }
+  ],
+  "Kentucky": [
+   {
+    "team": "Kentucky",
+    "tag": "KEY",
+    "text": "RB1 CJ Baxter and RT Malachi Wood (lower body, hurt at Missouri) are day-to-day and likely game-time decisions vs Louisville; Will Stein said Baxter looks the worst.",
+    "source": "A Sea Of Blue",
+    "url": "https://www.aseaofblue.com/kentucky-wildcats-football/188964/cj-baxter-injury-update-malachi-wood-uk-vs-louisville",
+    "date": "2026-11-23"
+   }
+  ],
+  "Georgia": [
+   {
+    "team": "Georgia",
+    "tag": "KEY",
+    "text": "Starting C Drew Bobo (back) has missed two straight games; Kirby Smart calls him day-to-day and expects him available vs Georgia Tech. Cortez Smith starts if not.",
+    "source": "Yahoo Sports",
+    "url": "https://sports.yahoo.com/articles/georgia-footballs-drew-bobo-vs-223142283.html",
+    "date": "2026-11-23"
+   }
+  ],
+  "Miami": [
+   {
+    "team": "Miami",
+    "tag": "RETURNING",
+    "text": "Mario Cristobal said Ja'Boree Antoine and Max Buchanan are back at practice, S Zechariah Poyser is expected back for Boston College and WR Malachi Toney is close to returning.",
+    "source": "On3",
+    "url": "https://www.on3.com/teams/miami-hurricanes/news/cristobal-gives-miami-hurricanes-injury-update-antoine-buchanan-return-to-practice/",
+    "date": "2026-11-24"
    }
   ],
   "Florida State": [
@@ -194,16 +253,6 @@
     "text": "RB Duke Scott was hurt again in NC State's 28-10 win at Florida State on Nov. 21; Davion Gause replaced him. No status yet for the North Carolina game.",
     "source": "WRAL (AP)",
     "url": "https://www.wral.com/news/ap/3e53f-cj-bailey-davion-gause-lead-nc-state-to-28-10-win-over-florida-state/",
-    "date": "2026-11-21"
-   }
-  ],
-  "Georgia": [
-   {
-    "team": "Georgia",
-    "tag": "KEY",
-    "text": "Starting C Drew Bobo was ruled out on the SEC's final report for South Carolina, his second straight missed game; sophomore Cortez Smith started in his place.",
-    "source": "On3",
-    "url": "https://www.on3.com/teams/georgia-bulldogs/news/georgia-injury-report-dawgs-without-drew-bobo-at-south-carolina/",
     "date": "2026-11-21"
    }
   ],
