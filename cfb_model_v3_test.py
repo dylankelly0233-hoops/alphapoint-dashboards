@@ -201,6 +201,74 @@ def miss(P, years, wk5=False):
     return (x.pred - x.margin).abs().mean(), len(x)
 
 
+def _stage2(X, y, lam=50.0):
+    """ridge_fit's weights in the live format (cfb_model.line: ymean + ((x - mu) / sd) @ b)."""
+    mu, sd = X.mean(0), X.std(0) + 1e-9
+    Z = (X - mu) / sd
+    b = np.linalg.solve(Z.T @ Z + lam * np.eye(Z.shape[1]), Z.T @ (y - y.mean()))
+    return {'mu': mu.tolist(), 'sd': sd.tolist(), 'b': b.tolist(), 'ymean': float(y.mean())}
+
+
+def _ret_tal(year):
+    """(returning-production z, talent z) for a season, from the research cache or 2 CFBD calls."""
+    if year in DATA:
+        return v2t.zmaps(year)
+    path = f'{OUT}/cfbm_{year}_pre.json'
+    try:
+        d = json.load(open(path))
+    except (OSError, ValueError):
+        import cfb_value_metrics as vm
+        d = {'returning': vm.cfbd_get('/player/returning', params={'year': year}) or [],
+             'talent': vm.cfbd_get('/talent', params={'year': year}) or []}
+        json.dump(d, open(path, 'w'))
+    ret = {r['team']: r.get('percentPPA') for r in d['returning'] if r.get('percentPPA') is not None}
+    tal = {r['team']: r['talent'] for r in d['talent']}
+    rv, tv = np.array(list(ret.values()), dtype=float), np.array(list(tal.values()), dtype=float)
+    if len(rv) < 50 or len(tv) < 50:
+        raise SystemExit(f'returning production ({len(rv)}) or talent ({len(tv)}) for {year} not published yet')
+    return ({t: (v - rv.mean()) / rv.std() for t, v in ret.items()}, {t: (v - tv.mean()) / tv.std() for t, v in tal.items()})
+
+
+def build_params(year):
+    """
+    cfb_v2_params_{year}.json in the v3 format (the winner 'PH': all stats, separate weeks 1-4 / 5+ stage-2 weights):
+    stage 2 trained on every walk-forward season before `year`, preseason start from last season's finals adjusted
+    for returning production and talent (as v2). Run after last season's bowls (cfb_model_fetch2.py --current) and
+    once CFBD has this season's returning production and talent (summer).
+    """
+    if year - 1 not in DATA:
+        raise SystemExit(f'{year - 1} season data missing: extend cfb_model_v2_test.YEARS and run cfb_model_fetch2.py')
+    W = pd.concat([walk(y, ALL) for y in YEARS if YEARS[0] < y < year], ignore_index=True)
+    cols = feats(ALL, False)
+    tr = W.dropna(subset=cols)
+    early, late = tr[tr.week <= 4], tr[tr.week > 4]
+    co = prior_coefs([y for y in YEARS if YEARS[0] < y < year], ALL, False)
+    rz, tz = _ret_tal(year)
+    last = FINAL[year - 1]
+    teams = sorted(last['margin'])
+
+    def mk(key, vals):
+        a, b, c = co[key][:3]
+        return {t: round(float(a * vals[t] + b * vals[t] * rz.get(t, 0.0) + c * tz.get(t, 0.0)), 5) for t in teams if t in vals}
+    prior = {'margin': mk('margin', last['margin'])}
+    for s in ALL:
+        prior[s] = {'O': mk(f'{s}:O', last[s][0]), 'D': {} if s in SYM else mk(f'{s}:D', last[s][1])}
+    out = {'year': year, 'version': 'v3', 'trained_on': sorted(int(x) for x in tr.season.unique()), 'feats': cols,
+           'stats': ALL, 'stage2': _stage2(late[cols].values, late.margin.values),
+           'stage2_early': _stage2(early[cols].values, early.margin.values),
+           'settings': {'HL': v2t.HL, 'RIDGE': v2t.RIDGE, 'PRIOR_W': v2t.PRIOR_W, 'PRIOR_FADE': v2t.PRIOR_FADE, 'CAP': v2t.CAP},
+           'prior': prior}
+    return out
+
+
+if __name__ == '__main__' and '--params' in sys.argv:
+    yr = int(sys.argv[sys.argv.index('--params') + 1])
+    out = sys.argv[sys.argv.index('--out') + 1] if '--out' in sys.argv else f'cfb_v2_params_{yr}.json'
+    p = build_params(yr)
+    json.dump(p, open(out, 'w'))
+    print(f'wrote {out}: v3, stage 2 trained on {p["trained_on"]}, {len(p["prior"]["margin"])} teams in the preseason start')
+    sys.exit(0)
+
 if __name__ == '__main__':
     print('walking 2017-2026 (base stats)...', flush=True)
     W_all = pd.concat([walk(y, ALL) for y in YEARS if y > YEARS[0]], ignore_index=True)

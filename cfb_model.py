@@ -13,6 +13,12 @@ turnover margin, penalty yards, plus a capped scoring-margin rating.
 Stage 2: our home margin = ridge weights (trained on 2017-25 walk-forward games) x each stat's net gap + home.
 Frozen settings, weights and this season's preseason start: cfb_v2_params_{year}.json (built by the research script).
 
+v3 option (cfb_model_v3_test.py, 2026-11-24; Dylan: build it for 2027): a season's params can list more stats
+(params['stats']: + points per drive, power success, second-level and open-field yards, sack rate, rushing and passing
+success rate) and separate stage-2 weights for weeks 1-4 (params['stage2_early']). Walk-forward 2024-26: average miss
+13.10 -> 12.96 over all weeks, the same from week 5 on, so it only helps early season. Params without those keys run
+exactly as v2. Build a season's v3 params with: python cfb_model_v3_test.py --params {year}.
+
 Role: logged as a zero-weight shadow source next to Sagarin and SP+ (SHADOW_LABEL) and used by the Best spots
 system 'cfb_v2_open' (weeks 5+, our line 3+ points from the opener: 56.1% of 1,370 vs the opener 2021-26, ~52.6%
 vs the close, so the edge is at the opener). Not in the blend.
@@ -27,6 +33,8 @@ import pandas as pd
 SHADOW_LABEL = 'AlphaPoint (shadow)'
 PARAMS = 'cfb_v2_params_{year}.json'
 STATS = ['ppa', 'sr', 'expl', 'line', 'stuff', 'rush', 'pass', 'sd', 'pd', 'havoc', 'to_margin', 'pen_net']
+EXTRA_STATS = ['ppd', 'power', 'second', 'openf', 'sack', 'rsr', 'psr']      # v3 params only
+EARLY_WEEKS = 4                  # v3: games in regular-season weeks 1-4 use params['stage2_early']
 SYMMETRIC = {'to_margin', 'pen_net'}
 CACHE_HOURS = 12
 MIN_WEEK = 5                     # the Best spots rule was tested from week 5 on
@@ -52,7 +60,11 @@ def parse_adv(rows):
         out.append({'game_id': r['gameId'], 'team': r['team'], 'opponent': r['opponent'], 'plays': f('plays'),
                     'ppa': f('ppa'), 'sr': f('successRate'), 'expl': f('explosiveness'), 'line': f('lineYards'),
                     'stuff': f('stuffRate'), 'rush': f('ppa', 'rushingPlays'), 'pass': f('ppa', 'passingPlays'),
-                    'sd': f('ppa', 'standardDowns'), 'pd': f('ppa', 'passingDowns')})
+                    'sd': f('ppa', 'standardDowns'), 'pd': f('ppa', 'passingDowns'),
+                    # v3 extras (cfb_model_v3_test.add_extra)
+                    'drives': f('drives'), 'power': f('powerSuccess'), 'second': f('secondLevelYards'),
+                    'openf': f('openFieldYards'), 'rsr': f('successRate', 'rushingPlays'),
+                    'psr': f('successRate', 'passingPlays')})
     return pd.DataFrame(out)
 
 
@@ -70,10 +82,28 @@ def add_box(adv, box):
         b2['rushingAttempts'] + b2['att'])
     b2['to_margin'] = b2['turnovers_o'] - b2['turnovers']
     b2['pen_net'] = b2['pen_o'] - b2['pen']
-    adv = adv.merge(b2[['game_id', 'team', 'havoc', 'to_margin', 'pen_net']], on=['game_id', 'team'], how='left')
+    if 'sacks' in box:           # v3: sacks allowed per dropback (opponent's sacks), flipped so higher = better
+        sk = box[['game_id', 'team', 'sacks']].assign(sk_o=lambda d: d['sacks'].map(_num)).rename(columns={'team': 'team_o'})
+        b2 = b2.merge(sk[['game_id', 'team_o', 'sk_o']], on=['game_id', 'team_o'], how='left')
+        b2['sack'] = -(b2['sk_o'] / (b2['att'] + b2['sk_o']))
+    else:
+        b2['sack'] = np.nan
+    adv = adv.drop(columns=['sack'], errors='ignore').merge(
+        b2[['game_id', 'team', 'havoc', 'to_margin', 'pen_net', 'sack']], on=['game_id', 'team'], how='left')
     adv['havoc'] = -adv['havoc']
     adv['stuff'] = -adv['stuff']
     return adv.replace([np.inf, -np.inf], np.nan)
+
+
+def add_ppd(adv, g):
+    """v3: points per drive (the team's points in that game / its drives)."""
+    if g.empty or 'drives' not in adv:
+        return adv.assign(ppd=np.nan)
+    pts = pd.concat([g[['id', 'homeTeam', 'homePoints']].set_axis(['game_id', 'team', 'pts'], axis=1),
+                     g[['id', 'awayTeam', 'awayPoints']].set_axis(['game_id', 'team', 'pts'], axis=1)])
+    adv = adv.drop(columns=['ppd'], errors='ignore').merge(pts, on=['game_id', 'team'], how='left')
+    adv['ppd'] = (adv['pts'] / adv['drives']).replace([np.inf, -np.inf], np.nan)
+    return adv.drop(columns=['pts'])
 
 
 def parse_games(rows):
@@ -149,7 +179,7 @@ def ratings(g, adv, params, asof):
     start = g.date.min() if len(g) else asof
     pw = s['PRIOR_W'] * 0.5 ** (max((asof - start).days, 0) / s['PRIOR_FADE'])
     out = {'M': dict(zip(teams, fit_margin(g, teams, asof, _prior_vec(pr['margin'], teams), pw, s))), 'pw': pw}
-    for st in STATS:
+    for st in params.get('stats', STATS):
         p = _prior_vec(pr[st]['O'], teams)
         if st not in SYMMETRIC:
             p = np.concatenate([p, _prior_vec(pr[st]['D'], teams)])
@@ -163,20 +193,26 @@ def team_ratings(model):
     weight x the team's own value), centered on the FBS teams we rate. line() = rating gap + home part."""
     if not model:
         return {}
-    p, feats = model['params']['stage2'], model['params']['feats']
+    p, feats = _stage2(model), model['params']['feats']
     w = {f: b / sd for f, b, sd in zip(feats, p['b'], p['sd']) if f != 'home'}
     r = {t: sum(w[f] * model[f][t] for f in w if t in model[f]) for t in model['M']}
     m = float(np.mean(list(r.values()))) if r else 0.0
     return {t: v - m for t, v in r.items()}
 
 
+def _stage2(model):
+    """The stage-2 weights in effect: v3 params have separate ones for regular-season weeks 1-EARLY_WEEKS."""
+    pr = model['params']
+    return pr['stage2_early'] if model.get('early') and 'stage2_early' in pr else pr['stage2']
+
+
 def line(model, home, away, neutral):
     """v2 home margin for one game, or None if a team isn't an FBS team we rate."""
     if not model or home not in model['M'] or away not in model['M']:
         return None
-    p = model['params']['stage2']
+    p = _stage2(model)
     feats = {'M': model['M'][home] - model['M'][away], 'home': 0 if neutral else 1}
-    for st in STATS:
+    for st in model['params'].get('stats', STATS):
         feats[st] = model[st][home] - model[st][away]
     x = np.array([feats[f] for f in model['params']['feats']])
     return round(float(p['ymean'] + ((x - np.array(p['mu'])) / np.array(p['sd'])) @ np.array(p['b'])), 2)
@@ -276,7 +312,11 @@ def model(get, year, asof=None):
     if graw.empty or adv.empty:
         return None
     g = parse_games(graw.to_dict('records'))
-    adv = add_box(adv, box) if len(box) else adv.assign(havoc=np.nan, to_margin=np.nan, pen_net=np.nan)
+    adv = add_box(adv, box) if len(box) else adv.assign(havoc=np.nan, to_margin=np.nan, pen_net=np.nan, sack=np.nan)
+    adv = add_ppd(adv, g)
     m = ratings(g, adv, params, pd.Timestamp(asof or datetime.now().date()))
     m['params'] = params
+    reg = g[g['season_type'] == 'regular'] if 'season_type' in g else g
+    m['week'] = int(reg['week'].max()) + 1 if len(reg) else 1        # the regular-season week being projected
+    m['early'] = m['week'] <= EARLY_WEEKS and len(reg) == len(g)
     return m
