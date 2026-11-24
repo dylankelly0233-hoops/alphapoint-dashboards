@@ -313,7 +313,7 @@ def qb_row(qb, away, home):
         elif q.get('wire') == 'returning':
             txt += ' (regular starter returning per the Injury Wire; no adjustment)'
         parts.append(theme.esc(txt))
-    return f'<div class="lmove">{theme.k("QB")}{" · ".join(parts)}</div>'
+    return f'<div class="lmove qbrow">{theme.k("QB")}{" · ".join(parts)}</div>'
 
 
 def build_schedule(full, week, power, metrics):

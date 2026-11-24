@@ -812,6 +812,18 @@ details.method b { color: var(--ink); }
 .foot .legal a { color: inherit; text-decoration: underline; }
 @media (max-width: 560px) { table.data td, table.data th { padding: 7px 8px; } .logo.md { width: 26px; height: 26px; } }
 @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
+/* What changed since your last visit (this browser only) */
+.sincebar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin: 0 0 14px; padding: 10px 14px;
+            background: color-mix(in srgb, var(--accent) 12%, var(--surface)); border: 1px solid var(--line);
+            border-radius: var(--radius); font-size: 13.5px; color: var(--ink); }
+.sincebar b { font-family: var(--display); letter-spacing: .3px; }
+.sincebar button { margin-left: auto; font: 700 12px/1 var(--display); letter-spacing: .6px; text-transform: uppercase;
+                   padding: 7px 10px; border-radius: 6px; border: 1px solid var(--line); background: var(--surface);
+                   color: var(--ink); cursor: pointer; }
+.since { margin: 8px 14px 0; padding: 6px 9px; border-radius: 6px; font-size: 12.5px; line-height: 1.4;
+         background: color-mix(in srgb, var(--accent) 12%, var(--surface)); color: var(--ink); }
+.since b { font-weight: 700; }
+body.onlychg article.card.game:not(.haschg) { display: none; }
 """
 
 JS = """
@@ -1074,6 +1086,75 @@ document.querySelectorAll('table.sortable').forEach(t => {
     rows.forEach(r => body.appendChild(r));
   });
 });
+
+// What changed since your last visit (Dylan, 2026-11-24). Everything stays in this browser: a small snapshot of each
+// upcoming game (market line, our line, injury row, Research Assistant note without its 'last verified' time, QB line)
+// is saved on each visit; the first page load of a new browser session compares against it and keeps that comparison
+// for the rest of the session, so reloading doesn't wipe it.
+(function () {
+  const page = location.pathname.split('/').pop() || 'index.html';
+  const KEY = 'ap_seen_' + page, SKEY = 'ap_base_' + page;
+  const cards = Array.from(document.querySelectorAll('article.card.game[data-gid]:not(.final)'));
+  if (!cards.length) return;
+  const clean = s => (s || '').replace(/\\s+/g, ' ').trim();
+  const hash = s => { let h = 0; for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) | 0; return s ? String(h) : ''; };
+  const foot = (c, label) => { const d = Array.from(c.querySelectorAll('footer > div')).find(x => x.textContent.indexOf(label) === 0);
+                               return d ? clean(d.textContent.slice(label.length)).replace(/^[?] */, '') : ''; };
+  const fp = c => {
+    let r = '';
+    const ra = c.querySelector('.gapwhy');
+    if (ra) { const cl = ra.cloneNode(true); cl.querySelectorAll('.hint').forEach(h => h.remove()); r = hash(clean(cl.textContent)); }
+    const inj = c.querySelector('.injrow .injlist'), qb = c.querySelector('.qbrow');
+    return { m: foot(c, 'Market'), p: foot(c, 'Projected'), i: hash(clean(inj ? inj.textContent : '')), r: r,
+             q: hash(clean(qb ? qb.textContent : '')) };
+  };
+  let base = null;
+  try { base = JSON.parse(sessionStorage.getItem(SKEY) || 'null'); } catch (e) {}
+  if (!base) {
+    try { base = JSON.parse(localStorage.getItem(KEY) || 'null') || { t: 0, g: {} }; } catch (e) { base = { t: 0, g: {} }; }
+    try { sessionStorage.setItem(SKEY, JSON.stringify(base)); } catch (e) {}
+  }
+  const now = { t: Date.now(), g: {} };
+  cards.forEach(c => { now.g[c.dataset.gid] = fp(c); });
+  try { localStorage.setItem(KEY, JSON.stringify(now)); } catch (e) {}
+  if (!base.t) return;                                   // first visit: nothing to compare yet
+  const G = new Set(), L = new Set(), I = new Set(), N = new Set();   // unique games (a game can show on two tabs)
+  cards.forEach(c => {
+    const was = base.g[c.dataset.gid], is = now.g[c.dataset.gid];
+    if (!was) return;
+    const bits = [];
+    if (was.m && is.m && was.m !== is.m) { bits.push('Market <b>' + was.m + '</b> → <b>' + is.m + '</b>'); L.add(c.dataset.gid); }
+    else if (!was.m && is.m) { bits.push('Market line posted: <b>' + is.m + '</b>'); L.add(c.dataset.gid); }
+    if (was.p && is.p && was.p !== is.p) bits.push('our line ' + was.p + ' → ' + is.p);
+    if (was.i !== is.i && is.i) { bits.push(was.i ? 'injury news updated' : 'new injury news'); I.add(c.dataset.gid); }
+    if (was.r !== is.r && is.r) { bits.push(was.r ? 'Research Assistant note updated' : 'new Research Assistant note'); N.add(c.dataset.gid); }
+    if (was.q && was.q !== is.q) bits.push('QB update');
+    if (!bits.length) return;
+    G.add(c.dataset.gid);
+    c.classList.add('haschg');
+    const d = document.createElement('div');
+    d.className = 'since';
+    d.innerHTML = 'Since your last visit: ' + bits.join(' · ');
+    const h = c.querySelector('header');
+    if (h) h.insertAdjacentElement('afterend', d);
+  });
+  const n = G.size, lines = L.size, inj = I.size, notes = N.size;
+  const when = new Date(base.t).toLocaleString([], { weekday: 'short', hour: 'numeric', minute: '2-digit' });
+  const bar = document.createElement('div');
+  bar.className = 'sincebar';
+  const parts = [lines && (lines + (lines === 1 ? ' line moved' : ' lines moved')),
+                 inj && (inj + ' injury update' + (inj === 1 ? '' : 's')),
+                 notes && (notes + ' research note' + (notes === 1 ? '' : 's'))].filter(Boolean);
+  bar.innerHTML = n ? '<span><b>Since your last visit</b> (' + when + '): ' + n + (n === 1 ? ' game' : ' games') + ' changed' +
+                      (parts.length ? ' (' + parts.join(', ') + ')' : '') + '.</span>' +
+                      '<button type="button">Show only changed</button>'
+                    : '<span><b>Since your last visit</b> (' + when + '): no line moves or new notes.</span>';
+  const btn = bar.querySelector('button');
+  if (btn) btn.addEventListener('click', () => { const on = document.body.classList.toggle('onlychg');
+                                               btn.textContent = on ? 'Show all games' : 'Show only changed'; });
+  const sec = cards[0].closest('section.page');
+  if (sec) sec.insertBefore(bar, sec.firstChild);
+})();
 """
 
 
