@@ -1,6 +1,6 @@
 {
  "sport": "cbb",
- "generated": "2026-11-23T22:41:52-05:00",
+ "generated": "2026-11-24T08:45:20-05:00",
  "teams": {
   "Dayton": {
    "watch": [
@@ -146,12 +146,12 @@
    "checked": "2026-11-23T16:05:00-05:00"
   },
   "Wright State": {
-   "checked": "2026-11-23T11:42:03-05:00",
+   "checked": "2026-11-24T08:45:20-05:00",
    "watch": [
     {
      "direction": "too_high",
      "since": "2026-11-22",
-     "text": "Dominic Pangonis and Noah Lewis (10.2 ppg, 64.7% FG) are out for the ESPN Events Invitational with injuries, per the school; ratings built with them overstate Wright State.",
+     "text": "Dominic Pangonis and Noah Lewis are out for the ESPN Events Invitational, per the school; neither played in Monday's 66-64 win over Akron.",
      "source": "Wright State Athletics",
      "url": "https://wsuraiders.com/news/2026/11/22/mens-basketball-mbb-preview-raiders-head-to-orlando-for-espn-invitational",
      "date": "2026-11-22"
@@ -242,6 +242,18 @@
   "UNC Greensboro": {
    "watch": [],
    "checked": "2026-11-23T18:43:45-05:00"
+  },
+  "Colorado": {
+   "watch": [],
+   "checked": "2026-11-24T08:45:20-05:00"
+  },
+  "Stanford": {
+   "watch": [],
+   "checked": "2026-11-24T08:45:20-05:00"
+  },
+  "St. Bonaventure": {
+   "watch": [],
+   "checked": "2026-11-24T08:45:20-05:00"
   }
  },
  "games": {
@@ -532,6 +544,32 @@
     "Stetson": "Nothing found: the market moved on Stetson without a clear reason. There's no injury news, and Stetson used its usual rotation in the 83-69 loss at Louisville (Nov 19, ESPN: https://www.espn.com/mens-college-basketball/game/_/gameId/401918950). We have been higher on Stetson than the market in both logged games and are now 1.7 pts lower on it."
    },
    "checked": "2026-11-23T22:41:52-05:00"
+  },
+  "401909763": {
+   "checked": "2026-11-24T08:45:20-05:00",
+   "verdict": "unexplained",
+   "summary": "Neutral-site game in Palm Desert; no injuries reported for either side, and the move from Stanford -2.5 to -4.5 looks like a reaction to Colorado's 77-74 home loss to Portland.",
+   "reasons": [
+    {
+     "text": "Colorado (2-3) lost 77-74 at home to Portland last Wednesday; Tad Boyle called it one of the two most disappointing losses of his 17 years.",
+     "source": "Field Level Media",
+     "url": "https://fieldlevelmedia.com/ncaab/colorado-aims-to-shake-off-ugly-defeat-in-matchup-with-stanford/",
+     "date": "2026-11-24"
+    },
+    {
+     "text": "Stanford (5-1) lists no injuries; Nick Townsend leads at 15.8 ppg and freshman Julius Price adds 14.2.",
+     "source": "Stanford Athletics",
+     "url": "https://gostanford.com/news/2026/11/22/mens-basketball-set-for-acrisure-series",
+     "date": "2026-11-22"
+    }
+   ],
+   "verified_numbers": [
+    "2-3",
+    "5-1"
+   ]
+  },
+  "401927398": {
+   "checked": "2026-11-24T08:45:20-05:00"
   }
  }
 }

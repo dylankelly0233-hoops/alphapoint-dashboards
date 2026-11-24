@@ -1,6 +1,6 @@
 {
  "sport": "cfb",
- "generated": "2026-11-23T14:45:00-05:00",
+ "generated": "2026-11-24T08:45:20-05:00",
  "teams": {
   "Clemson": {
    "watch": [
@@ -666,6 +666,40 @@
   },
   "UL Monroe": {
    "checked": "2026-11-23T09:40:04-05:00",
+   "watch": []
+  },
+  "Eastern Michigan": {
+   "checked": "2026-11-24T08:45:20-05:00",
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-10-24",
+     "text": "Starting QB Noah Kim has missed the last three games (EMU 0-3) with an undisclosed injury; Brogan McCaughey is expected to start vs Kent State.",
+     "source": "The Rx",
+     "url": "https://www.therx.com/college-football/kent-state-eastern-michigan-prediction-2026/56036/",
+     "date": "2026-11-24"
+    }
+   ]
+  },
+  "Miami (OH)": {
+   "checked": "2026-11-24T08:45:20-05:00",
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-11",
+     "text": "True freshman Drew Bellisari, the fourth-string QB, starts again; Caleb Heavner was hurt vs Ohio on 11/11 and Gotkowski and McComb are out for the season.",
+     "source": "The Rx",
+     "url": "https://www.therx.com/college-football/miami-oh-western-michigan-prediction-november-24-2026/56024/",
+     "date": "2026-11-24"
+    }
+   ]
+  },
+  "Kent State": {
+   "checked": "2026-11-24T08:45:20-05:00",
+   "watch": []
+  },
+  "Western Michigan": {
+   "checked": "2026-11-24T08:45:20-05:00",
    "watch": []
   }
  },

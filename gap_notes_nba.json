@@ -1,25 +1,25 @@
 {
  "sport": "nba",
- "generated": "2026-11-23T21:41:56-05:00",
+ "generated": "2026-11-24T08:45:20-05:00",
  "teams": {
   "OKC": {
-   "checked": "2026-11-23T17:43:18-05:00",
+   "checked": "2026-11-24T08:45:20-05:00",
    "watch": [
     {
      "direction": "too_high",
-     "since": "2026-11-22",
-     "text": "Caruso, Holmgren, Jalen Williams, Wallace, Topic, Mara and Jaylin Williams are out at IND on the 5:30 PM ET official report on 11/23.",
-     "source": "NBA official injury report",
-     "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-23_05_30PM.pdf",
-     "date": "2026-11-23"
+     "since": "2026-10-30",
+     "text": "Holmgren (knee, out 8-10 weeks from Oct 30), Jalen Williams (leg) and Cason Wallace are out long term; Caruso and Topic (hips) are out vs MIN on ESPN's report.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nba/story/_/id/50332283/thunder-say-chet-holmgren-8-10-weeks-due-knee",
+     "date": "2026-11-24"
     },
     {
      "direction": "unclear",
      "since": "2026-11-23",
-     "text": "SGA (neck/back) missed Sunday's loss at Miami but is off Monday's injury report and expected to play at Indiana.",
-     "source": "CBS Sports",
-     "url": "https://www.cbssports.com/fantasy/basketball/news/thunders-shai-gilgeous-alexander-off-injury-report-540669/",
-     "date": "2026-11-23"
+     "text": "SGA returned Monday at Indiana (38 min, 125-120 loss) after missing Sunday at Miami; Jaylin Williams and Mara are day-to-day.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nba/game/_/gameId/401910038",
+     "date": "2026-11-24"
     }
    ]
   },
@@ -27,13 +27,14 @@
    "watch": [
     {
      "direction": "too_high",
-     "since": "2026-11-21",
-     "text": "Giannis Antetokounmpo (right groin tendinitis, limited Saturday) is questionable vs OKC; he has played every game this season, so ratings assume him.",
-     "source": "NBC Sports",
-     "url": "https://www.nbcsports.com/fantasy/basketball/player-news/2026-11-21/giannis-antetokounmpo-groin-questionable-sunday",
-     "date": "2026-11-21"
+     "since": "2026-11-22",
+     "text": "Giannis Antetokounmpo missed Sunday's win over OKC (right groin tendinitis); Spoelstra is optimistic he plays Wednesday vs PHI. If he sits, ratings built with him overstate Miami.",
+     "source": "Hoops Rumors",
+     "url": "https://www.hoopsrumors.com/2026/11/injury-notes-reaves-haliburton-antetokounmpo-traore-sixers.html",
+     "date": "2026-11-22"
     }
-   ]
+   ],
+   "checked": "2026-11-24T08:45:20-05:00"
   },
   "GS": {
    "watch": [
@@ -317,8 +318,17 @@
    "checked": "2026-11-23T11:17:25-05:00"
   },
   "MIN": {
-   "checked": "2026-11-23T17:43:18-05:00",
-   "watch": []
+   "checked": "2026-11-24T08:45:20-05:00",
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-10-29",
+     "text": "Anthony Edwards (knee) has been out since late October with a return estimated around Dec 21; DiVincenzo (Achilles) is out for the season.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nba/game/_/gameId/401909320",
+     "date": "2026-11-24"
+    }
+   ]
   },
   "NO": {
    "watch": [],
@@ -559,6 +569,34 @@
    ],
    "swings": {
     "DAL": "At Utah on 11/22 the market was higher on Dallas than we were against a Jazz team missing Markkanen and Jaren Jackson Jr.; now it is lower on Dallas at Denver with Washington iffy and Lively out (Rotowire, ESPN, 11/23)."
+   }
+  },
+  "401909320": {
+   "checked": "2026-11-24T08:45:20-05:00",
+   "verdict": "unexplained",
+   "summary": "Market has OKC -3.5 at home; Minnesota is also short-handed (Edwards out), and OKC's own absences are already in our number, so nothing clearly justifies the extra 3.4 pts.",
+   "reasons": [
+    {
+     "text": "OKC is without Jalen Williams (leg, out until March), Holmgren (knee) and Caruso and Topic (hips); SGA played 38 min in Monday's 125-120 loss at Indiana.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nba/game/_/gameId/401909320",
+     "date": "2026-11-24"
+    },
+    {
+     "text": "Minnesota is without Anthony Edwards (knee, ESPN return estimate Dec 21) and DiVincenzo (Achilles), yet won Monday 142-116 vs Brooklyn.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nba/game/_/gameId/401909320",
+     "date": "2026-11-24"
+    }
+   ],
+   "swings": {
+    "OKC": "Last game (Sunday at Miami) OKC played without SGA, Holmgren and Jalen Williams, so the market faded it far more than our ratings did; with SGA back (38 min Monday at IND) the gap narrowed."
+   }
+  },
+  "401909317": {
+   "checked": "2026-11-24T08:45:20-05:00",
+   "swings": {
+    "MIA": "Sunday's game vs OKC came with SGA, Holmgren and J. Williams out (market had MIA -4.5, we were far lower on Miami); vs PHI that distortion is gone, and Giannis (groin) is expected back."
    }
   }
  }
