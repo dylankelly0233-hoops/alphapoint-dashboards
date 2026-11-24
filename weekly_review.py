@@ -66,6 +66,29 @@ def _espn_scores(sport, days):
     return out
 
 
+def _cbb_scores(days, log):
+    """CBB finals from CollegeBasketballData, keyed by ESPN id (CBBD's sourceId), in the logged home/away order."""
+    import cbb_value_metrics as vm
+    sides = dict(zip(log['game_id'].astype(str), log['home'])) if 'home' in log else {}
+    out, days = {}, sorted(days)
+    i = 0
+    while i < len(days):                                    # one request per week of dates
+        lo = days[i]
+        hi = lo + timedelta(days=6)
+        while i < len(days) and days[i] <= hi:
+            i += 1
+        for g in vm.cbbd_get('/games', {'season': vm.SEASON, 'startDateRange': lo.isoformat(),
+                                        'endDateRange': (hi + timedelta(days=1)).isoformat()}) or []:
+            h, a = g.get('homePoints'), g.get('awayPoints')
+            if str(g.get('status', '')).lower() != 'final' or h is None or a is None or not g.get('sourceId'):
+                continue
+            gid, m = str(g['sourceId']), float(h) - float(a)
+            if sides.get(gid) == g.get('awayTeam'):         # logged with the other team at home (neutral sites)
+                m = -m
+            out[gid] = (m, float(h) + float(a))
+    return out
+
+
 def _cfb_scores():
     import cfb_value_metrics as vm
     out = {}
@@ -89,28 +112,40 @@ def results(sport, log):
     cache = pd.read_csv(path, dtype={'game_id': str}) if os.path.exists(path) else pd.DataFrame(columns=['game_id', 'result', 'total'])
     if 'total' not in cache:
         cache['total'] = np.nan
+    if 'src' not in cache:
+        cache['src'] = ''
+    src = dict(zip(cache['game_id'], cache['src'].fillna('')))
     known = dict(zip(cache['game_id'], cache['result']))
     totals = {g: t for g, t in zip(cache['game_id'], cache['total']) if t == t}
     started = log[log['kickoff'] < datetime.now(timezone.utc) - timedelta(hours=4)]
     need = started[~started['game_id'].isin(totals) & (started['kickoff'] > datetime.now(timezone.utc) - timedelta(days=45))
                    | ~started['game_id'].isin(known)]
+    if sport == 'cbb':
+        # ESPN sometimes lists a neutral-site game with the teams' home/away roles the other way from our log, and
+        # 20 of the first 571 graded games got the wrong sign (found 2026-11-23). Neutral games ESPN graded are
+        # graded again from CollegeBasketballData in the logged order.
+        neu = started['neutral'].astype(str).str.lower().isin(['1', '1.0', 'true'])
+        redo = started[neu & (started['game_id'].map(src).fillna('') != 'cbbd')]
+        need = pd.concat([need, redo]).drop_duplicates('game_id')
     if len(need):
         if sport == 'cfb':
             fetched = _cfb_scores()
         elif sport == 'nfl':
             fetched = _nfl_scores()
-        else:   # ESPN files games under the US date; check the ET date and the day before
+        else:   # games are filed under the US date; check the ET date and the day before
             days = set()
             for k in need['kickoff']:
                 d = k.tz_convert(ET).date()
                 days |= {d, d - timedelta(days=1)}
-            fetched = _espn_scores(sport, days)
+            fetched = _cbb_scores(days, need) if sport == 'cbb' else _espn_scores(sport, days)
         new = {g: fetched[g] for g in need['game_id'] if g in fetched}
         if new:
             known.update({g: v[0] for g, v in new.items()})
             totals.update({g: v[1] for g, v in new.items()})
+            src.update({g: 'cbbd' if sport == 'cbb' else '' for g in new})
             pd.DataFrame({'game_id': list(known), 'result': list(known.values()),
-                          'total': [totals.get(g, np.nan) for g in known]}).to_csv(path, index=False)
+                          'total': [totals.get(g, np.nan) for g in known],
+                          'src': [src.get(g, '') for g in known]}).to_csv(path, index=False)
     return known
 
 

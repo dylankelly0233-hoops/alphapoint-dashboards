@@ -30,7 +30,6 @@ ROAD_TRIP = {1: 0.45, 2: 1.45}          # visitor's consecutive true road games 
 ALT_PER_1000FT = 0.14
 ALT_MIN_FT = 3000                       # only big climbs (below this it's under 0.4 points)
 ELEV_FILE = 'team_elev_cbb.json'        # home-city elevation (ft) per team, GeoNames via Open-Meteo geocoding
-ESPN_TEAM = 'https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/{}/schedule'
 UA = {'User-Agent': 'AlphaPoint-Sports/1.0 (automated research; +https://dylankelly0233-hoops.github.io/alphapoint-dashboards/)'}
 
 
@@ -74,23 +73,20 @@ class CbbSpots:
     def senior_night(self, g):
         """Is this the home team's last home game of the regular season? Only checked from mid-February."""
         day = g['kick'].date()
-        if not (date(day.year, 2, 15) <= day <= date(day.year, 3, 12)) or g['neutral'] or not g.get('home_espn'):
+        if not (date(day.year, 2, 15) <= day <= date(day.year, 3, 12)) or g['neutral']:
             return False
-        tid = str(g['home_espn'])
-        if tid not in self._last_home:
-            last = None
-            try:
-                for e in requests.get(ESPN_TEAM.format(tid), headers=UA, timeout=20).json().get('events', []):
-                    c = e['competitions'][0]
-                    if (e.get('seasonType') or {}).get('name') != 'Regular Season' or c.get('neutralSite'):
-                        continue
-                    if any(x['homeAway'] == 'home' and str(x['team'].get('id')) == tid for x in c['competitors']):
-                        d = pd.Timestamp(e['date']).tz_convert('America/New_York').date()
-                        last = max(last, d) if last else d
-            except Exception as ex:
-                print(f'  ! ESPN schedule for team {tid}: {ex}')
-            self._last_home[tid] = last
-        return self._last_home[tid] == day
+        if not self._last_home:      # every team's last regular-season home game, one CollegeBasketballData request
+            import cbb_value_metrics as vm
+            self._last_home['_'] = None
+            for e in vm.cbbd_get('/games', {'season': vm.SEASON, 'startDateRange': f'{day.year}-02-01',
+                                            'endDateRange': f'{day.year}-03-20'}) or []:
+                if (e.get('seasonType') != 'regular' or e.get('tournament') or e.get('gameType') == 'TRNMNT'
+                        or e.get('neutralSite')):
+                    continue
+                d = pd.Timestamp(e['startDate']).tz_convert('America/New_York').date()
+                t = e.get('homeTeam')
+                self._last_home[t] = max(self._last_home.get(t) or d, d)
+        return self._last_home.get(g['home']) == day
 
     def for_game(self, g):
         """(points to add to the home team's projected margin, [(label, points), ...]). Neutral sites get none."""
