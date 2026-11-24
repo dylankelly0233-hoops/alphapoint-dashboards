@@ -155,7 +155,7 @@ def fit(box, teams, asof=None, half_life=HALF_LIFE, ridge=RIDGE, prior=None, pri
     sw = np.sqrt(w)
 
     # Efficiency: one row per team-game (each game appears twice, once from each side)
-    ti, oi = g['team'].map(idx).values, g['opponent'].map(idx).values
+    ti, oi = g['team'].map(idx).to_numpy(dtype=int), g['opponent'].map(idx).to_numpy(dtype=int)   # int even when empty (pandas 3)
     X = np.zeros((len(g), 2 * n + 2))
     X[np.arange(len(g)), ti] = 1                  # offense of the team
     X[np.arange(len(g)), n + oi] = -1             # defense of the opponent (higher D = better defense)
@@ -176,7 +176,7 @@ def fit(box, teams, asof=None, half_life=HALF_LIFE, ridge=RIDGE, prior=None, pri
 
     # Tempo: one row per game
     one = g.drop_duplicates('game_id')
-    ti, oi = one['team'].map(idx).values, one['opponent'].map(idx).values
+    ti, oi = one['team'].map(idx).to_numpy(dtype=int), one['opponent'].map(idx).to_numpy(dtype=int)
     w1 = np.sqrt(0.5 ** ((ref - pd.to_datetime(one['date'])).dt.days.clip(lower=0).values / half_life))
     Xt = np.zeros((len(one), n + 1))
     Xt[np.arange(len(one)), ti] += 1
