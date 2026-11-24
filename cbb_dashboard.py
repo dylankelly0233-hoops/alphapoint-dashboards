@@ -813,7 +813,7 @@ def main():
     # last season's final ratings: committed cbb_prior_{season}.json, else built once from last season's cached box scores
     prev = f'cbbv_box2_{SEASON - 1}.csv'
     prior = cm.load_prior(SEASON, pd.read_csv(prev) if os.path.exists(prev) else None,
-                          set(teams['team']))
+                          set(teams['team']), cbbd_get=vm.cbbd_get)      # adjusted for roster turnover
     model = cm.fit(box, set(teams['team']), prior=prior) if (prior or not box.empty) else None
     model_v2 = cm2.model(box, set(teams['team']), SEASON)      # shadow + Best spots system only, not in the blend
     print(f"  AlphaPoint CBB model v2: {model_v2['teams']} teams, season day {model_v2['day']}." if model_v2

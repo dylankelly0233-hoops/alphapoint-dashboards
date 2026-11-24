@@ -24,6 +24,14 @@ away, each prior worth PRIOR_W games. Walk-forward on 2025-26 and 2026-27: Novem
 7.4 -> 4.5 and 8.9 -> 4.9 points, November miss vs results 15.0 -> 13.3, December 12.6 -> 12.4, January on
 unchanged (11.3), so the model can join the blend from opening night. Not a betting edge: 3+ point
 disagreements with the close still win ~50%. Regressing the prior (60-90%) and capping blowouts tested worse.
+
+Roster turnover (since 2026-11-24, cbb_prior_test.py): the starting point is adjusted for who is still on the roster,
+from CollegeBasketballData rosters and player stats. prior EM = last EM x (a + b x returning-minutes share)
++ c x roster value change (this season's roster's last-season PORPAG, transfers included, vs the team's own, per
+minute). Fit on one season's turnover, tested walk-forward on the other (pre-set rule: better in both seasons through
+December, no worse after): average miss through Dec 9.70 -> 9.59 (2024-25) and 10.00 -> 9.92 (2025-26), after
+January 8.85 -> 8.81 and 8.91 -> 8.86; 2026-27 so far 10.88 -> 10.68. The weights came out nearly the same in both
+seasons (a 0.71 / 0.72, b 0.37 / 0.48, c 3.3 / 2.6); ROSTER_COEF is their average.
 """
 
 import json
@@ -39,6 +47,7 @@ RIDGE     = 1.0      # shrinkage, in games' worth of evidence
 MIN_POSS  = 50       # ignore box scores with implausible possession counts
 PRIOR_W   = 6.0      # last season's rating counts as this many games (walk-forward best of 3 / 6 / 10)
 PRIOR_PATH = 'cbb_prior_{season}.json'
+ROSTER_COEF = (0.715, 0.42, 2.95)   # a, b, c above
 
 
 def _games(box, teams, asof=None):
@@ -60,19 +69,70 @@ def build_prior(box, teams):
             'new_O': pct(m['O']), 'new_D': pct(m['D'])}
 
 
-def load_prior(season, prev_box=None, prev_teams=None):
-    """This season's starting point: the saved file, or built from last season's box scores (and saved)."""
+def roster_turnover(season, cbbd_get):
+    """{team: (returning-minutes share, roster value change per minute)} from last season's player stats and this
+    season's rosters (CollegeBasketballData). Empty if either can't be fetched."""
+    stats = cbbd_get('/stats/player/season', {'season': season - 1}) or []
+    rosters = cbbd_get('/teams/roster', {'season': season}) or []
+    if not stats or not rosters:
+        return {}
+    pl = pd.DataFrame([{'athlete': r.get('athleteId'), 'team': r.get('team'), 'minutes': r.get('minutes') or 0,
+                        'porpag': r.get('PORPAG')} for r in stats])
+    pl = pl[pl.minutes > 0].copy()
+    pl['val'] = pl.porpag.fillna(0).clip(-2, 8) * pl.minutes
+    ro = pd.DataFrame([{'team': t['team'], 'athlete': p.get('id')} for t in rosters for p in t.get('players') or []])
+    team_min, team_val = pl.groupby('team').minutes.sum(), pl.groupby('team').val.sum()
+    on = ro.merge(pl, on='athlete', how='left', suffixes=('', '_prev'))
+    stay = on[on.team == on.team_prev].groupby('team').minutes.sum()
+    roster_val = on.groupby('team').val.sum()
+    out = {}
+    for t, tm in team_min.items():
+        if tm > 0:
+            out[t] = (float(stay.get(t, 0.0) / tm), float((roster_val.get(t, 0.0) - team_val.get(t, 0.0)) / tm))
+    return out
+
+
+def adjust_for_roster(prior, turnover, coef=ROSTER_COEF):
+    """Shift each team's starting offense and defense for roster turnover (half the change to each)."""
+    a, b, c = coef
+    O, D = dict(prior['O']), dict(prior['D'])
+    for t, (ret, dval) in turnover.items():
+        if t in O:
+            em = O[t] + D[t]
+            shift = (em * (a + b * ret) + c * dval - em) / 2
+            O[t], D[t] = O[t] + shift, D[t] + shift
+    return {**prior, 'O': O, 'D': D, 'roster_adjusted': True}
+
+
+def load_prior(season, prev_box=None, prev_teams=None, cbbd_get=None):
+    """
+    This season's starting point: the saved file, or built from last season's box scores (and saved). With cbbd_get,
+    a saved file that predates the roster adjustment is adjusted once and saved again.
+    """
     path = PRIOR_PATH.format(season=season)
     if os.path.exists(path):
         with open(path) as f:
-            return json.load(f)
+            prior = json.load(f)
+        if prior.get('roster_adjusted') or cbbd_get is None:
+            return prior
+        turnover = roster_turnover(season, cbbd_get)
+        if not turnover:
+            return prior
+        prior = adjust_for_roster(prior, turnover)
+        with open(path, 'w') as f:
+            json.dump({k: ({t: round(v, 4) for t, v in x.items()} if isinstance(x, dict) else
+                           (round(x, 4) if isinstance(x, float) else x)) for k, x in prior.items()}, f)
+        return prior
     if prev_box is None or prev_box.empty:
         return None
     prior = build_prior(prev_box, prev_teams)
+    if prior and cbbd_get is not None:
+        turnover = roster_turnover(season, cbbd_get)
+        prior = adjust_for_roster(prior, turnover) if turnover else prior
     if prior:
         with open(path, 'w') as f:
-            json.dump({k: ({t: round(v, 4) for t, v in x.items()} if isinstance(x, dict) else round(x, 4))
-                       for k, x in prior.items()}, f)
+            json.dump({k: ({t: round(v, 4) for t, v in x.items()} if isinstance(x, dict) else
+                           (round(x, 4) if isinstance(x, float) else x)) for k, x in prior.items()}, f)
     return prior
 
 
