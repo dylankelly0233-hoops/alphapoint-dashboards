@@ -1,6 +1,6 @@
 {
  "sport": "cbb",
- "generated": "2026-11-24T16:41:40-05:00",
+ "generated": "2026-11-24T16:50:54-05:00",
  "teams": {
   "Dayton": {
    "watch": [
@@ -117,15 +117,15 @@
    "checked": "2026-11-23T18:43:45-05:00"
   },
   "Louisville": {
-   "checked": "2026-11-23T15:05:00-05:00",
+   "checked": "2026-11-24T16:50:54-05:00",
    "watch": [
     {
      "direction": "too_low",
      "since": "2026-11-20",
-     "text": "Seth Trimble (28 mpg) missed the Stetson win; Kelsey says he is on track to play vs Texas Tech on 11/24, so one game in the ratings came without him.",
-     "source": "Courier-Journal (Yahoo)",
-     "url": "https://sports.yahoo.com/articles/louisvilles-isaac-ellis-miss-players-162521731.html",
-     "date": "2026-11-23"
+     "text": "Seth Trimble (28 mpg) missed the Stetson win on 11/20 and Kelsey says he plays vs Texas Tech on 11/24; that game is in our ratings without him.",
+     "source": "Athlon Sports",
+     "url": "https://athlonsports.com/college-basketball/pat-kelsey-announces-seth-trimble-news-before-texas-tech-game",
+     "date": "2026-11-24"
     },
     {
      "direction": "too_high",
@@ -138,7 +138,7 @@
    ]
   },
   "Texas Tech": {
-   "checked": "2026-11-24T10:44:37-05:00",
+   "checked": "2026-11-24T16:50:54-05:00",
    "watch": []
   },
   "Maryland": {
@@ -294,6 +294,155 @@
   "Illinois State": {
    "watch": [],
    "checked": "2026-11-24T14:44:00-05:00"
+  },
+  "UConn": {
+   "checked": "2026-11-24T16:50:54-05:00",
+   "watch": [
+    {
+     "direction": "too_low",
+     "since": "2026-11-23",
+     "text": "Solo Ball (offseason wrist surgery) has not played this season; Dan Hurley says he is nearing game-time-decision status for the 11/25 Duke game. If he plays, ratings built without him understate UConn.",
+     "source": "Yahoo Sports",
+     "url": "https://sports.yahoo.com/articles/solo-ball-nearing-game-time-234400882.html",
+     "date": "2026-11-23"
+    }
+   ]
+  },
+  "Alabama": {
+   "watch": [],
+   "checked": "2026-11-24T16:50:54-05:00"
+  },
+  "Arizona": {
+   "watch": [],
+   "checked": "2026-11-24T16:50:54-05:00"
+  },
+  "Arizona State": {
+   "watch": [],
+   "checked": "2026-11-24T16:50:54-05:00"
+  },
+  "Baylor": {
+   "watch": [],
+   "checked": "2026-11-24T16:50:54-05:00"
+  },
+  "Clemson": {
+   "watch": [],
+   "checked": "2026-11-24T16:50:54-05:00"
+  },
+  "Colorado State": {
+   "watch": [],
+   "checked": "2026-11-24T16:50:54-05:00"
+  },
+  "Duke": {
+   "watch": [],
+   "checked": "2026-11-24T16:50:54-05:00"
+  },
+  "Duquesne": {
+   "watch": [],
+   "checked": "2026-11-24T16:50:54-05:00"
+  },
+  "Georgia Tech": {
+   "watch": [],
+   "checked": "2026-11-24T16:50:54-05:00"
+  },
+  "Gonzaga": {
+   "watch": [],
+   "checked": "2026-11-24T16:50:54-05:00"
+  },
+  "Grand Canyon": {
+   "watch": [],
+   "checked": "2026-11-24T16:50:54-05:00"
+  },
+  "High Point": {
+   "watch": [],
+   "checked": "2026-11-24T16:50:54-05:00"
+  },
+  "Kansas State": {
+   "watch": [],
+   "checked": "2026-11-24T16:50:54-05:00"
+  },
+  "LSU": {
+   "watch": [],
+   "checked": "2026-11-24T16:50:54-05:00"
+  },
+  "Marquette": {
+   "watch": [],
+   "checked": "2026-11-24T16:50:54-05:00"
+  },
+  "Memphis": {
+   "watch": [],
+   "checked": "2026-11-24T16:50:54-05:00"
+  },
+  "Mississippi State": {
+   "watch": [],
+   "checked": "2026-11-24T16:50:54-05:00"
+  },
+  "Ohio State": {
+   "watch": [],
+   "checked": "2026-11-24T16:50:54-05:00"
+  },
+  "Oregon": {
+   "watch": [],
+   "checked": "2026-11-24T16:50:54-05:00"
+  },
+  "Penn State": {
+   "watch": [],
+   "checked": "2026-11-24T16:50:54-05:00"
+  },
+  "Providence": {
+   "watch": [],
+   "checked": "2026-11-24T16:50:54-05:00"
+  },
+  "SMU": {
+   "watch": [],
+   "checked": "2026-11-24T16:50:54-05:00"
+  },
+  "Saint Louis": {
+   "watch": [],
+   "checked": "2026-11-24T16:50:54-05:00"
+  },
+  "Santa Clara": {
+   "watch": [],
+   "checked": "2026-11-24T16:50:54-05:00"
+  },
+  "South Carolina": {
+   "watch": [],
+   "checked": "2026-11-24T16:50:54-05:00"
+  },
+  "St. John's": {
+   "watch": [],
+   "checked": "2026-11-24T16:50:54-05:00"
+  },
+  "Texas A&M": {
+   "watch": [],
+   "checked": "2026-11-24T16:50:54-05:00"
+  },
+  "USC": {
+   "watch": [],
+   "checked": "2026-11-24T16:50:54-05:00"
+  },
+  "Utah State": {
+   "watch": [],
+   "checked": "2026-11-24T16:50:54-05:00"
+  },
+  "VCU": {
+   "watch": [],
+   "checked": "2026-11-24T16:50:54-05:00"
+  },
+  "Vanderbilt": {
+   "watch": [],
+   "checked": "2026-11-24T16:50:54-05:00"
+  },
+  "Virginia": {
+   "watch": [],
+   "checked": "2026-11-24T16:50:54-05:00"
+  },
+  "Wake Forest": {
+   "watch": [],
+   "checked": "2026-11-24T16:50:54-05:00"
+  },
+  "Xavier": {
+   "watch": [],
+   "checked": "2026-11-24T16:50:54-05:00"
   }
  },
  "games": {
@@ -472,23 +621,29 @@
    }
   },
   "401915942": {
-   "checked": "2026-11-24T10:44:37-05:00",
+   "checked": "2026-11-24T16:50:54-05:00",
    "verdict": "unexplained",
-   "summary": "Our AlphaPoint models drive the gap; TeamRankings and Haslametrics agree with the market's Texas Tech -5.5, and Louisville's news (Trimble back, Ellis out) doesn't push toward Tech.",
+   "summary": "Our AlphaPoint model drives the gap (Texas Tech by 8.4; Haslametrics 4.5, v2 2.4); the market has moved from Tech -5.5 to -2.5 as Louisville confirmed Seth Trimble will play.",
    "reasons": [
     {
-     "text": "Seth Trimble is expected to play after missing the Stetson game; backup guard Isaac Ellis (ankle) is out all week. Neutral site in Las Vegas; line unchanged from the 5.5 opener.",
-     "source": "Courier-Journal (Yahoo)",
-     "url": "https://sports.yahoo.com/articles/louisvilles-isaac-ellis-miss-players-162521731.html",
-     "date": "2026-11-23"
+     "text": "Pat Kelsey says Seth Trimble will play after missing the Stetson win; Isaac Ellis (ankle) is out all week, and De'Shayne Montgomery and Gabe Dynes remain out.",
+     "source": "Athlon Sports",
+     "url": "https://athlonsports.com/college-basketball/pat-kelsey-announces-seth-trimble-news-before-texas-tech-game",
+     "date": "2026-11-24"
+    },
+    {
+     "text": "Texas Tech's JT Toppin (torn ACL, February) is still out; a return around the start of Big 12 play is more likely, per Grant McCasland. Neutral site in Las Vegas.",
+     "source": "Athlon Sports",
+     "url": "https://athlonsports.com/college-basketball/pat-kelsey-announces-seth-trimble-news-before-texas-tech-game",
+     "date": "2026-11-24"
     }
    ],
    "returning": [
     {
      "team": "Louisville",
      "player": "Seth Trimble",
-     "text": "On track to play after missing the Stetson win with a minor injury.",
-     "url": "https://sports.yahoo.com/articles/louisvilles-isaac-ellis-miss-players-162521731.html"
+     "text": "Confirmed to play by Pat Kelsey after missing the Stetson win.",
+     "url": "https://athlonsports.com/college-basketball/pat-kelsey-announces-seth-trimble-news-before-texas-tech-game"
     }
    ],
    "swings": {

@@ -1,72 +1,128 @@
 {
  "sport": "cbb",
- "week": 20261123,
- "generated": "2026-11-23T16:58:00-05:00",
+ "week": 20261124,
+ "generated": "2026-11-24T16:50:27-05:00",
  "movers": [
   {
-   "team": "North Carolina",
+   "team": "Wisconsin",
    "tag": "KEY",
-   "player": "Neo Avdalas",
-   "status": "out",
-   "text": "Starter Neo Avdalas (24 mpg, team-high 3.8 apg) fractured his left wrist vs. Georgia and had surgery; UNC says he is out about two months (announced 11/17).",
-   "source": "ESPN",
-   "url": "https://www.espn.com/mens-college-basketball/story/_/id/50511206/north-carolina-guard-neo-avdalas-wrist-2-months",
-   "date": "2026-11-17"
+   "text": "Wisconsin guard Jack Janicki (17.8 mpg) hurt his foot in the Murray State loss and will have season-ending surgery, Greg Gard said; Wisconsin is down to 12 available players.",
+   "source": "NBC Sports",
+   "url": "https://nbcsports.com/mens-college-basketball/news/wisconsin-guard-jack-janicki-is-undergoing-season-ending-foot-surgery",
+   "date": "2026-11-23",
+   "player": "Jack Janicki",
+   "status": "out"
+  },
+  {
+   "team": "Florida",
+   "tag": "KEY",
+   "text": "Florida's Boogie Fland (25.2 mpg, nagging shoulder) is out vs Milwaukee on 11/24, his second straight missed game, per the Gators' preview; Denzel Aberdeen runs the point.",
+   "source": "Florida Gators (official)",
+   "url": "https://floridagators.com/news/2026/11/23/mens-basketball-florida-vs-milwaukee-nov-24-2026",
+   "date": "2026-11-23",
+   "player": "Boogie Fland",
+   "status": "out"
+  },
+  {
+   "team": "Texas",
+   "tag": "KEY",
+   "text": "Texas PG Isaiah Johnson (24.2 mpg) left the Southern Indiana win after about four minutes with a glute strain; Sean Miller says his status for the Thanksgiving tournament is unknown.",
+   "source": "Austin American-Statesman",
+   "url": "https://www.statesman.com/sports/longhorns/mens-basketball/article/isaiah-johnson-injury-update-texas-longhorns-22546209.php",
+   "date": "2026-11-23",
+   "player": "Isaiah Johnson",
+   "status": "questionable"
   },
   {
    "team": "Louisville",
    "tag": "RETURNING",
+   "text": "Pat Kelsey says Seth Trimble (28 mpg) will play vs Texas Tech on 11/24 after missing the Stetson win with a minor injury.",
+   "source": "Athlon Sports",
+   "url": "https://athlonsports.com/college-basketball/pat-kelsey-announces-seth-trimble-news-before-texas-tech-game",
+   "date": "2026-11-24",
    "player": "Seth Trimble",
-   "status": "returning",
-   "text": "Louisville's Seth Trimble (28 mpg) missed the Stetson win with a minor injury; Pat Kelsey said on 11/23 he is on track to play in the Players Era opener vs Texas Tech.",
-   "source": "Courier-Journal (Yahoo)",
-   "url": "https://sports.yahoo.com/articles/louisvilles-isaac-ellis-miss-players-162521731.html",
-   "date": "2026-11-23"
+   "status": "returning"
   },
   {
-   "team": "Tennessee",
-   "tag": "KEY",
-   "player": "Jalen Haralson",
-   "status": "questionable",
-   "text": "Tennessee's Jalen Haralson (20.5 mpg, right knee hyperextension 11/17) sat out Coastal Carolina; MRI showed swelling only, and Rick Barnes thinks he will be ready for Maryland on 11/24.",
-   "source": "Knoxville News Sentinel (Yahoo)",
-   "url": "https://sports.yahoo.com/articles/jalen-haralson-injury-tennessee-basketball-230640171.html",
-   "date": "2026-11-21"
-  },
-  {
-   "team": "Syracuse",
-   "tag": "KEY",
-   "player": "Garwey Dual",
-   "status": "questionable",
-   "text": "Syracuse PG Garwey Dual (24.2 mpg) hurt his right ankle vs Lafayette on 11/21 and sat the second half in a walking boot; X-rays ordered, no status yet for UAlbany on 11/25.",
-   "source": "Yahoo Sports",
-   "url": "https://sports.yahoo.com/articles/syracuse-basketball-garwey-dual-exits-222915016.html",
-   "date": "2026-11-21"
+   "team": "Michigan State",
+   "tag": "RETURNING",
+   "text": "Michigan State's Coen Carr (21.8 mpg, knee tendinitis) was a full participant in Monday's practice after sitting the last two games; Izzo expects him back for Arkansas on Thanksgiving.",
+   "source": "Sports Illustrated",
+   "url": "https://www.si.com/college/michiganstate/spartans-tom-izzo-updates-statuses-jordan-scott-coen-carr-arkansas-matchup",
+   "date": "2026-11-23",
+   "player": "Coen Carr",
+   "status": "returning"
   }
  ],
  "teams": {
-  "North Carolina": [
+  "Wisconsin": [
    {
-    "team": "North Carolina",
+    "team": "Wisconsin",
     "tag": "KEY",
-    "player": "Neo Avdalas",
-    "status": "out",
-    "text": "Starter Neo Avdalas (24 mpg, team-high 3.8 apg) fractured his left wrist vs. Georgia and had surgery; UNC says he is out about two months (announced 11/17).",
-    "source": "ESPN",
-    "url": "https://www.espn.com/mens-college-basketball/story/_/id/50511206/north-carolina-guard-neo-avdalas-wrist-2-months",
-    "date": "2026-11-17"
+    "text": "Wisconsin guard Jack Janicki (17.8 mpg) hurt his foot in the Murray State loss and will have season-ending surgery, Greg Gard said; Wisconsin is down to 12 available players.",
+    "source": "NBC Sports",
+    "url": "https://nbcsports.com/mens-college-basketball/news/wisconsin-guard-jack-janicki-is-undergoing-season-ending-foot-surgery",
+    "date": "2026-11-23",
+    "player": "Jack Janicki",
+    "status": "out"
+   }
+  ],
+  "Florida": [
+   {
+    "team": "Florida",
+    "tag": "KEY",
+    "text": "Florida's Boogie Fland (25.2 mpg, nagging shoulder) is out vs Milwaukee on 11/24, his second straight missed game, per the Gators' preview; Denzel Aberdeen runs the point.",
+    "source": "Florida Gators (official)",
+    "url": "https://floridagators.com/news/2026/11/23/mens-basketball-florida-vs-milwaukee-nov-24-2026",
+    "date": "2026-11-23",
+    "player": "Boogie Fland",
+    "status": "out"
+   }
+  ],
+  "Texas": [
+   {
+    "team": "Texas",
+    "tag": "KEY",
+    "text": "Texas PG Isaiah Johnson (24.2 mpg) left the Southern Indiana win after about four minutes with a glute strain; Sean Miller says his status for the Thanksgiving tournament is unknown.",
+    "source": "Austin American-Statesman",
+    "url": "https://www.statesman.com/sports/longhorns/mens-basketball/article/isaiah-johnson-injury-update-texas-longhorns-22546209.php",
+    "date": "2026-11-23",
+    "player": "Isaiah Johnson",
+    "status": "questionable"
+   }
+  ],
+  "Michigan State": [
+   {
+    "team": "Michigan State",
+    "tag": "RETURNING",
+    "text": "Michigan State's Coen Carr (21.8 mpg, knee tendinitis) was a full participant in Monday's practice after sitting the last two games; Izzo expects him back for Arkansas on Thanksgiving.",
+    "source": "Sports Illustrated",
+    "url": "https://www.si.com/college/michiganstate/spartans-tom-izzo-updates-statuses-jordan-scott-coen-carr-arkansas-matchup",
+    "date": "2026-11-23",
+    "player": "Coen Carr",
+    "status": "returning"
+   },
+   {
+    "team": "Michigan State",
+    "tag": "RETURNING",
+    "text": "Michigan State starter Jordan Scott (23.4 mpg, right shoulder) practiced in a limited role Monday after missing the last two games; not yet confirmed for the Arkansas game.",
+    "source": "Sports Illustrated",
+    "url": "https://www.si.com/college/michiganstate/spartans-tom-izzo-updates-statuses-jordan-scott-coen-carr-arkansas-matchup",
+    "date": "2026-11-23",
+    "player": "Jordan Scott",
+    "status": "questionable"
    }
   ],
   "Louisville": [
    {
     "team": "Louisville",
     "tag": "RETURNING",
+    "text": "Pat Kelsey says Seth Trimble (28 mpg) will play vs Texas Tech on 11/24 after missing the Stetson win with a minor injury.",
+    "source": "Athlon Sports",
+    "url": "https://athlonsports.com/college-basketball/pat-kelsey-announces-seth-trimble-news-before-texas-tech-game",
+    "date": "2026-11-24",
     "player": "Seth Trimble",
-    "status": "returning",
-    "text": "Louisville's Seth Trimble (28 mpg) missed the Stetson win with a minor injury; Pat Kelsey said on 11/23 he is on track to play in the Players Era opener vs Texas Tech.",
-    "source": "Courier-Journal (Yahoo)",
-    "url": "https://sports.yahoo.com/articles/louisvilles-isaac-ellis-miss-players-162521731.html",
-    "date": "2026-11-23"
+    "status": "returning"
    },
    {
     "team": "Louisville",
@@ -83,24 +139,12 @@
    {
     "team": "Tennessee",
     "tag": "KEY",
+    "text": "Tennessee's Jalen Haralson (20.5 mpg, right knee hyperextension 11/17) missed Coastal Carolina, and game-day reports on 11/24 said he was expected to sit vs Maryland.",
+    "source": "CBS Sports",
+    "url": "https://www.cbssports.com/betting/news/no-9-tennessee-vs-maryland-cbb-odds-parlay-volunteers-should-have-too-much-in-players-era-16-vegas-matinee/",
+    "date": "2026-11-24",
     "player": "Jalen Haralson",
-    "status": "questionable",
-    "text": "Tennessee's Jalen Haralson (20.5 mpg, right knee hyperextension 11/17) sat out Coastal Carolina; MRI showed swelling only, and Rick Barnes thinks he will be ready for Maryland on 11/24.",
-    "source": "Knoxville News Sentinel (Yahoo)",
-    "url": "https://sports.yahoo.com/articles/jalen-haralson-injury-tennessee-basketball-230640171.html",
-    "date": "2026-11-21"
-   }
-  ],
-  "Illinois": [
-   {
-    "team": "Illinois",
-    "tag": "RETURNING",
-    "player": "Quentin Coleman",
-    "status": "questionable",
-    "text": "Illinois' Quentin Coleman (26.8 mpg), Lincoln Williams and Zvonimir Ivisic missed the Eastern Illinois win with illness; On3 reports the flu-hit Illini are close to returning for Winthrop.",
-    "source": "On3",
-    "url": "https://www.on3.com/sites/orange-blue-news/news/illinois-basketball-notebook-2/",
-    "date": "2026-11-22"
+    "status": "questionable"
    }
   ],
   "Syracuse": [
@@ -113,6 +157,18 @@
     "source": "Yahoo Sports",
     "url": "https://sports.yahoo.com/articles/syracuse-basketball-garwey-dual-exits-222915016.html",
     "date": "2026-11-21"
+   }
+  ],
+  "North Carolina": [
+   {
+    "team": "North Carolina",
+    "tag": "KEY",
+    "player": "Neo Avdalas",
+    "status": "out",
+    "text": "Starter Neo Avdalas (24 mpg, team-high 3.8 apg) fractured his left wrist vs. Georgia and had surgery; UNC says he is out about two months (announced 11/17).",
+    "source": "ESPN",
+    "url": "https://www.espn.com/mens-college-basketball/story/_/id/50511206/north-carolina-guard-neo-avdalas-wrist-2-months",
+    "date": "2026-11-17"
    }
   ]
  }

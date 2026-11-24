@@ -1,9 +1,9 @@
 {
  "sport": "nba",
- "generated": "2026-11-24T11:44:03-05:00",
+ "generated": "2026-11-24T16:50:54-05:00",
  "teams": {
   "OKC": {
-   "checked": "2026-11-24T08:45:20-05:00",
+   "checked": "2026-11-24T16:50:54-05:00",
    "watch": [
     {
      "direction": "too_high",
@@ -24,17 +24,17 @@
    ]
   },
   "MIA": {
+   "checked": "2026-11-24T16:50:54-05:00",
    "watch": [
     {
-     "direction": "too_high",
+     "direction": "too_low",
      "since": "2026-11-22",
-     "text": "Giannis Antetokounmpo missed Sunday's win over OKC (right groin tendinitis); Spoelstra is optimistic he plays Wednesday vs PHI. If he sits, ratings built with him overstate Miami.",
-     "source": "Hoops Rumors",
-     "url": "https://www.hoopsrumors.com/2026/11/injury-notes-reaves-haliburton-antetokounmpo-traore-sixers.html",
-     "date": "2026-11-22"
+     "text": "Giannis Antetokounmpo (groin) missed Sunday vs OKC but took part in most of Tuesday's practice; if he plays at PHI on 11/25 that game's absence no longer applies (ClutchPoints via ESPN).",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nba/injuries",
+     "date": "2026-11-24"
     }
-   ],
-   "checked": "2026-11-24T08:45:20-05:00"
+   ]
   },
   "GS": {
    "watch": [
@@ -67,7 +67,7 @@
      "date": "2026-11-23"
     }
    ],
-   "checked": "2026-11-24T11:44:03-05:00"
+   "checked": "2026-11-24T16:50:54-05:00"
   },
   "CHI": {
    "watch": [
@@ -83,14 +83,15 @@
    "checked": "2026-11-23T18:43:45-05:00"
   },
   "NY": {
+   "checked": "2026-11-24T16:50:54-05:00",
    "watch": [
     {
      "direction": "too_high",
-     "since": "2026-11-21",
-     "text": "OG Anunoby (calf) is out vs IND for a second straight game and Miles McBride (abdomen) is out too, per the evening 11/22 report.",
+     "since": "2026-11-22",
+     "text": "OG Anunoby (calf) has missed two games and did not practice Tuesday; day-to-day for 11/25 vs CLE (New York Post via ESPN).",
      "source": "ESPN",
      "url": "https://www.espn.com/nba/injuries",
-     "date": "2026-11-22"
+     "date": "2026-11-24"
     }
    ]
   },
@@ -108,23 +109,15 @@
    ]
   },
   "DAL": {
-   "checked": "2026-11-23T20:42:33-05:00",
+   "checked": "2026-11-24T16:50:54-05:00",
    "watch": [
     {
      "direction": "too_high",
-     "since": "2026-11-21",
-     "text": "P.J. Washington (illness) is questionable at Denver on 11/24 after missing the last two games; Zaccharie Risacher has started in his place.",
-     "source": "Rotowire",
-     "url": "https://www.rotowire.com/basketball/headlines/pj-washington-injury-iffy-for-tuesday-540703",
-     "date": "2026-11-23"
-    },
-    {
-     "direction": "too_high",
      "since": "2026-11-20",
-     "text": "C Dereck Lively II (foot) is out, listed by ESPN as out since 11/20 with 11/27 the earliest return.",
-     "source": "ESPN",
-     "url": "https://www.espn.com/nba/team/injuries/_/name/dal",
-     "date": "2026-11-23"
+     "text": "P.J. Washington (illness) is questionable at DEN on 11/24 after missing two games; Dereck Lively II (foot surgery) is out.",
+     "source": "NBA official injury report",
+     "url": "https://official.nba.com/nba-injury-report-2026-27-season/",
+     "date": "2026-11-24"
     }
    ]
   },
@@ -141,14 +134,15 @@
    ]
   },
   "DET": {
+   "checked": "2026-11-24T16:50:54-05:00",
    "watch": [
     {
      "direction": "too_high",
      "since": "2026-11-17",
-     "text": "Duncan Robinson (quad, since 11/17) and Jalen Duren (hamstring, 11 games) are out at ATL; Cade Cunningham (knee) is probable.",
-     "source": "Athlon Sports",
-     "url": "https://athlonsports.com/nba/detroit-pistons/final-injury-report-for-pistons-hawks-will-cade-cunningham-jalen-duren-play",
-     "date": "2026-11-22"
+     "text": "Jalen Duren (hamstring) and Duncan Robinson (quad) are out at ORL on the NBA's 4:30 PM ET report on 11/24; Cade Cunningham (knee soreness) is probable.",
+     "source": "NBA official injury report",
+     "url": "https://official.nba.com/nba-injury-report-2026-27-season/",
+     "date": "2026-11-24"
     }
    ]
   },
@@ -174,37 +168,30 @@
    "checked": "2026-11-23T20:42:33-05:00"
   },
   "ORL": {
+   "checked": "2026-11-24T16:50:54-05:00",
    "watch": [
     {
      "direction": "too_high",
      "since": "2026-10-24",
-     "text": "Paolo Banchero (high-ankle sprain, 4-6 weeks from 10/24) has missed 10 of 15 games; a return could come soon, check before tip.",
-     "source": "ESPN",
-     "url": "https://www.espn.com/nba/injuries",
-     "date": "2026-11-21"
+     "text": "Paolo Banchero (right high-ankle sprain) is still out vs DET on the 4:30 PM ET report on 11/24; Jonathan Isaac is out too.",
+     "source": "NBA official injury report",
+     "url": "https://official.nba.com/nba-injury-report-2026-27-season/",
+     "date": "2026-11-24"
     }
    ]
   },
   "PHI": {
+   "checked": "2026-11-24T16:50:54-05:00",
    "watch": [
     {
      "direction": "too_high",
      "since": "2026-11-23",
-     "text": "Joel Embiid (32 mpg) is still questionable vs POR on 11/23 (illness, 5:30 PM ET official report); if he sits, ratings built with him overstate PHI tonight.",
-     "source": "NBA official injury report",
-     "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-23_05_30PM.pdf",
-     "date": "2026-11-23"
-    },
-    {
-     "direction": "too_low",
-     "since": "2026-11-19",
-     "text": "Jaylen Brown and Dean Wade (hamstrings) missed the last two games and are probable vs POR on 11/23; those two games understate Philadelphia.",
+     "text": "Joel Embiid missed Monday vs POR with an illness and is day-to-day; PHI's report for 11/25 vs MIA was not yet submitted at 4:30 PM ET.",
      "source": "ESPN",
      "url": "https://www.espn.com/nba/injuries",
-     "date": "2026-11-22"
+     "date": "2026-11-24"
     }
-   ],
-   "checked": "2026-11-23T17:43:18-05:00"
+   ]
   },
   "SA": {
    "checked": "2026-11-23T21:41:56-05:00",
@@ -293,21 +280,21 @@
    "checked": "2026-11-23T17:43:18-05:00"
   },
   "CLE": {
+   "checked": "2026-11-24T16:50:54-05:00",
    "watch": [
     {
      "direction": "too_high",
      "since": "2026-11-16",
-     "text": "Evan Mobley (left great toe sprain) is out at CHI on the NBA's 6:30 PM ET report on 11/23, with Nae'Qwan Tomlin (back) also out; Jaylon Tyson (ankle) is probable.",
+     "text": "Evan Mobley (left great toe sprain) is out at NY on 11/25 on the NBA's 4:30 PM ET report on 11/24; Nae'Qwan Tomlin (back) is out too.",
      "source": "NBA official injury report",
-     "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-23_06_30PM.pdf",
-     "date": "2026-11-23"
+     "url": "https://official.nba.com/nba-injury-report-2026-27-season/",
+     "date": "2026-11-24"
     }
-   ],
-   "checked": "2026-11-23T18:43:45-05:00"
+   ]
   },
   "HOU": {
    "watch": [],
-   "checked": "2026-11-23T11:17:25-05:00"
+   "checked": "2026-11-24T16:50:54-05:00"
   },
   "LAC": {
    "watch": [],
@@ -318,7 +305,7 @@
    "checked": "2026-11-23T11:17:25-05:00"
   },
   "MIN": {
-   "checked": "2026-11-24T08:45:20-05:00",
+   "checked": "2026-11-24T16:50:54-05:00",
    "watch": [
     {
      "direction": "too_high",
@@ -336,7 +323,7 @@
   },
   "PHX": {
    "watch": [],
-   "checked": "2026-11-23T18:43:45-05:00"
+   "checked": "2026-11-24T16:50:54-05:00"
   },
   "SAC": {
    "checked": "2026-11-23T21:41:56-05:00",
@@ -347,12 +334,12 @@
    "checked": "2026-11-23T11:17:25-05:00"
   },
   "DEN": {
-   "checked": "2026-11-23T20:42:33-05:00",
+   "checked": "2026-11-24T16:50:54-05:00",
    "watch": []
   },
   "WSH": {
    "watch": [],
-   "checked": "2026-11-24T11:44:03-05:00"
+   "checked": "2026-11-24T16:50:54-05:00"
   }
  },
  "games": {
@@ -545,7 +532,7 @@
    "swings": {
     "BOS": "At GS on 11/22 the market priced Stephen Curry's absence (our ratings don't see it) and we sat 7.2 lower on Boston; at WSH the Wizards have no new absence and Paul George (rested 11/22) is expected back, so the gap closed to 2.2 (CelticsBlog, 11/23)."
    },
-   "checked": "2026-11-24T11:44:03-05:00",
+   "checked": "2026-11-24T16:50:54-05:00",
    "verdict": "partly",
    "summary": "Boston's three straight one-possession losses (two with Tatum or White out) drag our rating; with Tatum, White and Paul George expected back the market has moved from Celtics -10.5 to -11.5.",
    "reasons": [
@@ -556,9 +543,9 @@
      "date": "2026-11-22"
     },
     {
-     "text": "ESPN lists only Mitchell Robinson (illness) out for Boston; Washington is without bench pieces Tristan Vukcevic, Reece Beekman, Justin Champagnie and Jamir Watkins.",
-     "source": "ESPN",
-     "url": "https://www.espn.com/nba/game/_/gameId/401909315",
+     "text": "The 4:30 PM ET official report lists only Mitchell Robinson (illness) out for Boston; Washington has Beekman, Champagnie, Vukcevic and Watkins out and Tre Mann (illness) questionable.",
+     "source": "NBA official injury report",
+     "url": "https://official.nba.com/nba-injury-report-2026-27-season/",
      "date": "2026-11-24"
     }
    ],
@@ -569,21 +556,21 @@
    ]
   },
   "401909316": {
-   "checked": "2026-11-23T20:42:33-05:00",
+   "checked": "2026-11-24T16:50:54-05:00",
    "verdict": "partly",
-   "summary": "Dallas may be without P.J. Washington again and is without Dereck Lively II at altitude; that covers part of the gap between our Nuggets -5 and the market's -8.5. We have been lower on Denver in 4 of its last 6 games, with no injury reason found (ESPN lists no Nuggets injuries).",
+   "summary": "Dallas may again be without P.J. Washington (questionable, illness) and is without Dereck Lively II at altitude, which covers part of the gap between our Nuggets -5 and the market's -8.5; Denver lists no injuries.",
    "reasons": [
     {
-     "text": "P.J. Washington (illness) is questionable for Tuesday at Denver after missing the last two games.",
-     "source": "Rotowire",
-     "url": "https://www.rotowire.com/basketball/headlines/pj-washington-injury-iffy-for-tuesday-540703",
-     "date": "2026-11-23"
+     "text": "P.J. Washington (illness) is questionable on the NBA's 4:30 PM ET report on 11/24 after missing the last two games.",
+     "source": "NBA official injury report",
+     "url": "https://official.nba.com/nba-injury-report-2026-27-season/",
+     "date": "2026-11-24"
     },
     {
-     "text": "Dereck Lively II (foot) is out; Tobi Lawal (groin) was also ruled out on 11/23.",
-     "source": "ESPN",
-     "url": "https://www.espn.com/nba/team/injuries/_/name/dal",
-     "date": "2026-11-23"
+     "text": "Dereck Lively II (foot surgery), Tobi Lawal (groin), Tarik Biberovic and Sergio de Larrea are out for Dallas; Denver has no players on the 4:30 PM report.",
+     "source": "NBA official injury report",
+     "url": "https://official.nba.com/nba-injury-report-2026-27-season/",
+     "date": "2026-11-24"
     },
     {
      "text": "Denver has no players on ESPN's injury report and has won three straight, including 151-145 vs Chicago on 11/22.",
@@ -619,9 +606,9 @@
    }
   },
   "401909317": {
-   "checked": "2026-11-24T08:45:20-05:00",
+   "checked": "2026-11-24T16:50:54-05:00",
    "swings": {
-    "MIA": "Sunday's game vs OKC came with SGA, Holmgren and J. Williams out (market had MIA -4.5, we were far lower on Miami); vs PHI that distortion is gone, and Giannis (groin) is expected back."
+    "MIA": "Sunday's game vs OKC came with SGA, Holmgren and J. Williams out (market had MIA -4.5, we were far lower on Miami); vs PHI that distortion is gone, and Giannis (groin) took part in most of Tuesday's practice (ClutchPoints via ESPN)."
    }
   }
  }

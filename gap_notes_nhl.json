@@ -1,6 +1,6 @@
 {
  "sport": "nhl",
- "generated": "2026-11-24T11:44:03-05:00",
+ "generated": "2026-11-24T16:50:54-05:00",
  "teams": {
   "OTT": {
    "checked": "2026-11-24T11:44:03-05:00",
@@ -191,21 +191,21 @@
    ]
   },
   "EDM": {
-   "checked": "2026-11-24T09:45:00-05:00",
+   "checked": "2026-11-24T16:50:54-05:00",
    "watch": [
     {
      "direction": "too_high",
      "since": "2026-11-22",
-     "text": "Zach Hyman left Saturday's game with a migraine and sat out Sunday; his status for tonight hadn't been reported as of Tuesday morning. Coach Mike Babcock said Ryan Nugent-Hopkins (4 games missed) is likely to return tonight. Goalie Andersen on IR (knee) to ~Jan. 9; Devon Levi projected, Tristan Jarry played Sunday.",
-     "source": "TheSpread.com",
-     "url": "https://www.thespread.com/nhl-articles/golden-knights-vs-oilers-prediction-november-24-2026/",
+     "text": "Zach Hyman (migraine) is out vs Vegas on 11/24; goalie Andersen (knee) is on IR, and Devon Levi is confirmed to start.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nhl/injuries",
      "date": "2026-11-24"
     }
    ]
   },
   "VGK": {
-   "watch": [],
-   "checked": "2026-11-24T09:45:00-05:00"
+   "checked": "2026-11-24T16:50:54-05:00",
+   "watch": []
   },
   "FLA": {
    "watch": [
@@ -270,18 +270,18 @@
    ]
   },
   "401892780": {
-   "checked": "2026-11-24T09:45:00-05:00",
+   "checked": "2026-11-24T16:50:54-05:00",
    "verdict": "partly",
-   "summary": "Hyman may still miss the game (Nugent-Hopkins is expected back) and both starting goalies are unconfirmed, which covers part of the gap; the rest is our Sagarin side (EDM +0.56) vs xG (VGK +0.06).",
+   "summary": "Zach Hyman is ruled out tonight and Devon Levi is confirmed in Edmonton's net (Carter Hart likely for Vegas), which covers part of the gap; the rest is our rating split, not news.",
    "reasons": [
     {
-     "text": "Hyman (migraine) missed Sunday and his status for tonight is unreported; Babcock said Nugent-Hopkins is likely to return after missing four games.",
-     "source": "TheSpread.com",
-     "url": "https://www.thespread.com/nhl-articles/golden-knights-vs-oilers-prediction-november-24-2026/",
+     "text": "Hyman (migraine) won't play vs Vegas, per Oilers play-by-play announcer Jack Michaels; Nugent-Hopkins was expected back after missing four games.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nhl/injuries",
      "date": "2026-11-24"
     },
     {
-     "text": "Starting goalies unconfirmed: Devon Levi projected for Edmonton (Jarry played Sunday); Vegas between Carter Hart and Adin Hill.",
+     "text": "Devon Levi is confirmed to start for Edmonton; Carter Hart is the likely Vegas starter.",
      "source": "Daily Faceoff",
      "url": "https://www.dailyfaceoff.com/starting-goalies/2026-11-24",
      "date": "2026-11-24"

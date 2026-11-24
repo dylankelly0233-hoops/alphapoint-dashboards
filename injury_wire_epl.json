@@ -1,31 +1,15 @@
 {
  "sport": "epl",
- "week": 20261123,
- "generated": "2026-11-23T11:44:49-05:00",
+ "week": 20261124,
+ "generated": "2026-11-24T16:50:27-05:00",
  "movers": [
   {
-   "team": "BRE",
+   "team": "ARS",
    "tag": "KEY",
-   "text": "Brentford's first-choice striker Igor Thiago is suspended for three Premier League games, starting vs Everton on 11/23 (BBC).",
-   "source": "BBC via Yahoo Sports",
-   "url": "https://sports.yahoo.com/articles/andrews-team-news-thiagos-suspension-153425694.html",
-   "date": "2026-11-21"
-  },
-  {
-   "team": "BRE",
-   "tag": "CLUSTER",
-   "text": "Brentford defenders Nathan Collins (centre-back) and Aaron Hickey (full-back) are out for several weeks, per Keith Andrews; Rico Henry is also out. Lineups confirmed an hour before kickoff.",
-   "source": "Sports Mole",
-   "url": "https://www.sportsmole.co.uk/football/brentford/injury-news/news/andrews-confirms-double-brentford-injury-blow-ahead-of-everton-meeting_609532.html",
-   "date": "2026-11-21"
-  },
-  {
-   "team": "EVE",
-   "tag": "RETURNING",
-   "text": "Everton's Jack Grealish (regular starter, left wing) is available again after missing time with illness and a club-protocol breach, per David Moyes.",
-   "source": "Goodison News",
-   "url": "https://www.goodisonnews.com/injuries/brentford-vs-everton-team-news-latest-as-jack-grealish-ready-but-five-to-miss-out",
-   "date": "2026-11-21"
+   "text": "Arsenal goalkeeper David Raya (shoulder, hurt at Newcastle 11/21) needs no surgery but missed the Dortmund game; Arteta: 'doesn't look too serious'. Doubt for Man City 11/29.",
+   "source": "Yahoo Sports",
+   "url": "https://sports.yahoo.com/articles/mikel-arteta-provides-injury-david-160809816.html",
+   "date": "2026-11-24"
   },
   {
    "team": "CHE",
@@ -36,12 +20,28 @@
    "date": "2026-11-21"
   },
   {
-   "team": "ARS",
+   "team": "BRE",
    "tag": "KEY",
-   "text": "Arsenal goalkeeper David Raya hurt his shoulder at Newcastle on 11/21 (MRI; Arteta: 'not good news'); Saka is about four weeks away and Zubimendi (hamstring) out a few weeks.",
-   "source": "Sports Mole",
-   "url": "https://www.sportsmole.co.uk/football/arsenal/injury-news/news/not-good-news-arteta-issues-raya-update-after-injury-scare_609593.html",
+   "text": "Brentford's first-choice striker Igor Thiago is serving a three-game Premier League ban that began vs Everton on 11/23, so he misses the 11/28 trip to Man United (BBC).",
+   "source": "BBC via Yahoo Sports",
+   "url": "https://sports.yahoo.com/articles/andrews-team-news-thiagos-suspension-153425694.html",
    "date": "2026-11-21"
+  },
+  {
+   "team": "TOT",
+   "tag": "CLUSTER",
+   "text": "Spurs attackers Xavi Simons and Wilson Odobert (knees), Mathys Tel and Mykhailo Mudryk are out; Sandro Tonali (illness) is a doubt.",
+   "source": "Squawka",
+   "url": "https://www.squawka.com/us/news/premier-league/match-preview-sunderland-vs-tottenham-29-11-26-premier-league/",
+   "date": "2026-11-23"
+  },
+  {
+   "team": "SUN",
+   "tag": "CLUSTER",
+   "text": "Sunderland's joint-top scorer Brian Brobbey (thigh) and midfielder Granit Xhaka (calf) are out with no return date; Dan Ballard and Romaine Mundle are out until late December.",
+   "source": "Sunderland AFC",
+   "url": "https://www.safc.com/news/2026/november/19/every-word-le-bris-said-on-brobbey--ahoka-and-villa",
+   "date": "2026-11-19"
   }
  ],
  "teams": {
@@ -49,7 +49,7 @@
    {
     "team": "BRE",
     "tag": "KEY",
-    "text": "Brentford's first-choice striker Igor Thiago is suspended for three Premier League games, starting vs Everton on 11/23 (BBC).",
+    "text": "Brentford's first-choice striker Igor Thiago is serving a three-game Premier League ban that began vs Everton on 11/23, so he misses the 11/28 trip to Man United (BBC).",
     "source": "BBC via Yahoo Sports",
     "url": "https://sports.yahoo.com/articles/andrews-team-news-thiagos-suspension-153425694.html",
     "date": "2026-11-21"
@@ -60,16 +60,6 @@
     "text": "Brentford defenders Nathan Collins (centre-back) and Aaron Hickey (full-back) are out for several weeks, per Keith Andrews; Rico Henry is also out. Lineups confirmed an hour before kickoff.",
     "source": "Sports Mole",
     "url": "https://www.sportsmole.co.uk/football/brentford/injury-news/news/andrews-confirms-double-brentford-injury-blow-ahead-of-everton-meeting_609532.html",
-    "date": "2026-11-21"
-   }
-  ],
-  "EVE": [
-   {
-    "team": "EVE",
-    "tag": "RETURNING",
-    "text": "Everton's Jack Grealish (regular starter, left wing) is available again after missing time with illness and a club-protocol breach, per David Moyes.",
-    "source": "Goodison News",
-    "url": "https://www.goodisonnews.com/injuries/brentford-vs-everton-team-news-latest-as-jack-grealish-ready-but-five-to-miss-out",
     "date": "2026-11-21"
    }
   ],
@@ -97,10 +87,10 @@
    {
     "team": "ARS",
     "tag": "KEY",
-    "text": "Arsenal goalkeeper David Raya hurt his shoulder at Newcastle on 11/21 (MRI; Arteta: 'not good news'); Saka is about four weeks away and Zubimendi (hamstring) out a few weeks.",
-    "source": "Sports Mole",
-    "url": "https://www.sportsmole.co.uk/football/arsenal/injury-news/news/not-good-news-arteta-issues-raya-update-after-injury-scare_609593.html",
-    "date": "2026-11-21"
+    "text": "Arsenal goalkeeper David Raya (shoulder, hurt at Newcastle 11/21) needs no surgery but missed the Dortmund game; Arteta: 'doesn't look too serious'. Doubt for Man City 11/29.",
+    "source": "Yahoo Sports",
+    "url": "https://sports.yahoo.com/articles/mikel-arteta-provides-injury-david-160809816.html",
+    "date": "2026-11-24"
    }
   ],
   "TOT": [
