@@ -9855,14 +9855,14 @@ date,team,rating
 2026-11-23,Yale,-0.87
 2026-11-23,Youngstown State,-5.63
 2026-11-24,Abilene Christian,-7.31
-2026-11-24,Air Force,-9.6
-2026-11-24,Akron,3.59
+2026-11-24,Air Force,-9.62
+2026-11-24,Akron,3.57
 2026-11-24,Alabama,19.2
 2026-11-24,Alabama A&M,-10.86
 2026-11-24,Alabama State,-11.55
 2026-11-24,Alcorn State,-16.89
 2026-11-24,American University,-2.66
-2026-11-24,App State,-0.21
+2026-11-24,App State,-0.19
 2026-11-24,Arizona,21.17
 2026-11-24,Arizona State,10.05
 2026-11-24,Arkansas,13.9
@@ -9883,10 +9883,10 @@ date,team,rating
 2026-11-24,Boston University,-5.87
 2026-11-24,Bowling Green,-2.31
 2026-11-24,Bradley,-2.57
-2026-11-24,Brown,-7.21
+2026-11-24,Brown,-7.2
 2026-11-24,Bryant,-10.52
 2026-11-24,Bucknell,-12.62
-2026-11-24,Buffalo,-4.58
+2026-11-24,Buffalo,-4.56
 2026-11-24,Butler,8.24
 2026-11-24,Cal Poly,-2.9
 2026-11-24,Cal State Bakersfield,-5.88
@@ -9895,16 +9895,16 @@ date,team,rating
 2026-11-24,California,8.84
 2026-11-24,California Baptist,-9.24
 2026-11-24,Campbell,-4.38
-2026-11-24,Canisius,-16.84
+2026-11-24,Canisius,-16.82
 2026-11-24,Central Arkansas,0.33
 2026-11-24,Central Connecticut,-10.82
 2026-11-24,Central Michigan,-5.22
 2026-11-24,Charleston,1.35
 2026-11-24,Charleston Southern,-8.23
-2026-11-24,Charlotte,2.73
+2026-11-24,Charlotte,2.74
 2026-11-24,Chattanooga,-2.92
 2026-11-24,Chicago State,-14.14
-2026-11-24,Cincinnati,17.57
+2026-11-24,Cincinnati,17.58
 2026-11-24,Clemson,9.52
 2026-11-24,Cleveland State,-10.33
 2026-11-24,Coastal Carolina,-7.08
@@ -9913,7 +9913,7 @@ date,team,rating
 2026-11-24,Colorado State,6.63
 2026-11-24,Columbia,2.34
 2026-11-24,Coppin State,-15.83
-2026-11-24,Cornell,-1.36
+2026-11-24,Cornell,-1.34
 2026-11-24,Creighton,13.16
 2026-11-24,Dartmouth,-7.35
 2026-11-24,Davidson,4.6
@@ -9940,7 +9940,7 @@ date,team,rating
 2026-11-24,Fairleigh Dickinson,-12.53
 2026-11-24,Florida,24.23
 2026-11-24,Florida A&M,-18.03
-2026-11-24,Florida Atlantic,2.33
+2026-11-24,Florida Atlantic,2.31
 2026-11-24,Florida Gulf Coast,-5.66
 2026-11-24,Florida International,-0.73
 2026-11-24,Florida State,11.63
@@ -9991,10 +9991,10 @@ date,team,rating
 2026-11-24,Kentucky,12.44
 2026-11-24,LSU,13.41
 2026-11-24,La Salle,-3.82
-2026-11-24,Lafayette,-9.24
+2026-11-24,Lafayette,-9.22
 2026-11-24,Lamar,-3.26
 2026-11-24,Le Moyne,-12.18
-2026-11-24,Lehigh,-5.54
+2026-11-24,Lehigh,-5.53
 2026-11-24,Liberty,1.78
 2026-11-24,Lindenwood,-11.29
 2026-11-24,Lipscomb,-2.61
@@ -10081,7 +10081,7 @@ date,team,rating
 2026-11-24,Oregon,10.37
 2026-11-24,Oregon State,8.86
 2026-11-24,Pacific,0.91
-2026-11-24,Penn State,7.43
+2026-11-24,Penn State,7.44
 2026-11-24,Pennsylvania,0.91
 2026-11-24,Pepperdine,0.6
 2026-11-24,Pittsburgh,11.93
@@ -10112,7 +10112,7 @@ date,team,rating
 2026-11-24,Saint Mary's,13.99
 2026-11-24,Saint Peter's,-12.78
 2026-11-24,Sam Houston,4.26
-2026-11-24,Samford,-4.31
+2026-11-24,Samford,-4.33
 2026-11-24,San Diego,2.03
 2026-11-24,San Diego State,14.19
 2026-11-24,San Francisco,0.32
@@ -10134,7 +10134,7 @@ date,team,rating
 2026-11-24,Southern Indiana,-11.05
 2026-11-24,Southern Miss,-3.9
 2026-11-24,Southern Utah,-7.3
-2026-11-24,St. Bonaventure,2.96
+2026-11-24,St. Bonaventure,3.19
 2026-11-24,St. John's,20.35
 2026-11-24,St. Thomas-Minnesota,2.27
 2026-11-24,Stanford,6.87
@@ -10156,10 +10156,10 @@ date,team,rating
 2026-11-24,Texas State,8.27
 2026-11-24,Texas Tech,21.94
 2026-11-24,The Citadel,-12.09
-2026-11-24,Toledo,-0.5
+2026-11-24,Toledo,-0.52
 2026-11-24,Towson,-1.13
 2026-11-24,Troy,-2.34
-2026-11-24,Tulane,-2.87
+2026-11-24,Tulane,-2.88
 2026-11-24,Tulsa,6.9
 2026-11-24,UAB,0.61
 2026-11-24,UAlbany,-13.98
@@ -10214,8 +10214,8 @@ date,team,rating
 2026-11-24,Winthrop,-6.27
 2026-11-24,Wisconsin,11.47
 2026-11-24,Wofford,-6.61
-2026-11-24,Wright State,4.83
+2026-11-24,Wright State,4.58
 2026-11-24,Wyoming,8.94
 2026-11-24,Xavier,12.02
 2026-11-24,Yale,-0.62
-2026-11-24,Youngstown State,-5.28
+2026-11-24,Youngstown State,-5.27
