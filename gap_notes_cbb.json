@@ -1,6 +1,6 @@
 {
  "sport": "cbb",
- "generated": "2026-11-24T08:45:20-05:00",
+ "generated": "2026-11-24T10:44:37-05:00",
  "teams": {
   "Dayton": {
    "watch": [
@@ -138,7 +138,7 @@
    ]
   },
   "Texas Tech": {
-   "checked": "2026-11-23T15:05:00-05:00",
+   "checked": "2026-11-24T10:44:37-05:00",
    "watch": []
   },
   "Maryland": {
@@ -159,17 +159,8 @@
    ]
   },
   "Akron": {
-   "checked": "2026-11-23T11:42:03-05:00",
-   "watch": [
-    {
-     "direction": "too_high",
-     "since": "2026-11-23",
-     "text": "F Buddy Hammer Jr. (7.4 ppg, 5.2 rpg) is listed out for Wright State in game previews; no team confirmation or injury detail found.",
-     "source": "Covers",
-     "url": "https://www.covers.com/sport/basketball/ncaab/injuries",
-     "date": "2026-11-23"
-    }
-   ]
+   "watch": [],
+   "checked": "2026-11-24T10:44:37-05:00"
   },
   "Georgia Southern": {
    "checked": "2026-11-23T17:43:18-05:00",
@@ -185,7 +176,7 @@
   },
   "Belmont": {
    "watch": [],
-   "checked": "2026-11-23T15:06:50-05:00"
+   "checked": "2026-11-24T10:44:37-05:00"
   },
   "Nevada": {
    "watch": [],
@@ -254,6 +245,31 @@
   "St. Bonaventure": {
    "watch": [],
    "checked": "2026-11-24T08:45:20-05:00"
+  },
+  "Kent State": {
+   "watch": [],
+   "checked": "2026-11-24T10:44:37-05:00"
+  },
+  "Wyoming": {
+   "watch": [],
+   "checked": "2026-11-24T10:44:37-05:00"
+  },
+  "Oklahoma": {
+   "checked": "2026-11-24T10:44:37-05:00",
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-16",
+     "text": "Starting F Duke Brennan broke his ankle in practice on 11/16 and is out for an extended period; he started 4 of Oklahoma's 5 games, so our ratings are mostly built with him.",
+     "source": "News 9",
+     "url": "https://www.news9.com/sports/university-of-oklahoma/oklahoma-basketball-loses-duke-brennan-for-extended-time-with-broken-ankle",
+     "date": "2026-11-16"
+    }
+   ]
+  },
+  "Samford": {
+   "watch": [],
+   "checked": "2026-11-24T10:44:37-05:00"
   }
  },
  "games": {
@@ -416,7 +432,7 @@
    }
   },
   "401915942": {
-   "checked": "2026-11-23T15:05:00-05:00",
+   "checked": "2026-11-24T10:44:37-05:00",
    "verdict": "unexplained",
    "summary": "Our AlphaPoint models drive the gap; TeamRankings and Haslametrics agree with the market's Texas Tech -5.5, and Louisville's news (Trimble back, Ellis out) doesn't push toward Tech.",
    "reasons": [
@@ -436,7 +452,8 @@
     }
    ],
    "swings": {
-    "Louisville": "Louisville moved from 3 pts below the market to 4.3 above: Seth Trimble sat its last game (vs Stetson) and returns now, which the market may price differently; no other news found (Courier-Journal, 11/23)."
+    "Louisville": "Louisville moved from 3 pts below the market to 4.3 above: Seth Trimble sat its last game (vs Stetson) and returns now, which the market may price differently; no other news found (Courier-Journal, 11/23).",
+    "Texas Tech": "No new Texas Tech news (JT Toppin is still out); the line moved from Tech -5.5 to -2.5 as Louisville said Seth Trimble will be back from a minor injury (CBS Sports, 11/23)."
    }
   },
   "401906853": {
@@ -570,6 +587,43 @@
   },
   "401927398": {
    "checked": "2026-11-24T08:45:20-05:00"
+  },
+  "401921707": {
+   "checked": "2026-11-24T10:44:37-05:00",
+   "verdict": "unexplained",
+   "summary": "No injury or lineup news found for either team; Wyoming's full rotation played its Sunshine Slam opener and the line has sat at Wyoming -8.5 since it opened.",
+   "reasons": [
+    {
+     "text": "Neutral site (Sunshine Slam, Ocean Center, Daytona Beach). Wyoming's top seven all played vs Duquesne on 11/22; line unchanged from the -8.5 opener.",
+     "source": "Wyoming Athletics",
+     "url": "https://gowyo.com/news/2026/8/17/mens-basketball-cowboy-cagers-to-play-in-sunshine-slam.aspx",
+     "date": "2026-08-17"
+    },
+    {
+     "text": "Kent State freshman G Quinn Woidke (about 18 mpg early) has not played the last two games (ESPN box scores); no reason reported. That would lower Kent State, not raise it.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/mens-college-basketball/team/schedule/_/id/2309",
+     "date": "2026-11-21"
+    }
+   ],
+   "swings": {
+    "Kent State": "Nothing found: the market moved on Kent State without a clear reason; G Quinn Woidke has sat the last two games (ESPN box scores), which our ratings already include."
+   }
+  },
+  "401906806": {
+   "checked": "2026-11-24T10:44:37-05:00",
+   "swings": {
+    "Oklahoma": "F Duke Brennan (broken ankle in practice 11/16, starter, 8.3 ppg) is out long-term; the market priced it for the Campbell game and our ratings now carry a game without him (News 9, 11/16)."
+   }
+  },
+  "401920309": {
+   "checked": "2026-11-24T10:44:37-05:00",
+   "swings": {
+    "Samford": "Nothing found: the market moved on Samford without a clear reason; its regular rotation played in the 80-77 win over UNC Asheville on 11/22 (ESPN box score)."
+   }
+  },
+  "401928835": {
+   "checked": "2026-11-24T10:44:37-05:00"
   }
  }
 }
