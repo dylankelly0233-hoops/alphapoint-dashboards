@@ -1,6 +1,6 @@
 {
  "sport": "cbb",
- "generated": "2026-11-24T16:50:54-05:00",
+ "generated": "2026-11-24T17:42:02-05:00",
  "teams": {
   "Dayton": {
    "watch": [
@@ -269,7 +269,7 @@
   },
   "Samford": {
    "watch": [],
-   "checked": "2026-11-24T10:44:37-05:00"
+   "checked": "2026-11-24T17:42:02-05:00"
   },
   "Pittsburgh": {
    "watch": [],
@@ -277,11 +277,11 @@
   },
   "South Florida": {
    "watch": [],
-   "checked": "2026-11-24T12:43:54-05:00"
+   "checked": "2026-11-24T17:42:02-05:00"
   },
   "Stetson": {
    "watch": [],
-   "checked": "2026-11-24T12:43:54-05:00"
+   "checked": "2026-11-24T17:42:02-05:00"
   },
   "DePaul": {
    "watch": [],
@@ -342,7 +342,7 @@
   },
   "Georgia Tech": {
    "watch": [],
-   "checked": "2026-11-24T16:50:54-05:00"
+   "checked": "2026-11-24T17:42:02-05:00"
   },
   "Gonzaga": {
    "watch": [],
@@ -747,9 +747,9 @@
    "swings": {
     "Stetson": "Nothing found: the market moved on Stetson without a clear reason. There's no injury news, and Stetson used its usual rotation in the 83-69 loss at Louisville (Nov 19, ESPN: https://www.espn.com/mens-college-basketball/game/_/gameId/401918950). We have been higher on Stetson than the market in both logged games and are now 1.7 pts lower on it."
    },
-   "checked": "2026-11-24T12:43:54-05:00",
+   "checked": "2026-11-24T17:42:02-05:00",
    "verdict": "unexplained",
-   "summary": "No injury or lineup news for either team; South Florida's regular rotation all played its last game, and the line has sat at USF -18.5 since it opened.",
+   "summary": "No injury or lineup news for either team; South Florida's regular rotation all played its last game, and the line has dropped from USF -18.5 to -16.5 with no news behind the move.",
    "reasons": [
     {
      "text": "South Florida is 3-3 with close losses to DePaul (82-80) and Saint Joseph's (83-80) and a 73-62 loss to George Mason; the market may weight that form more than we do.",
@@ -841,7 +841,7 @@
    }
   },
   "401920309": {
-   "checked": "2026-11-24T10:44:37-05:00",
+   "checked": "2026-11-24T17:42:02-05:00",
    "swings": {
     "Samford": "Nothing found: the market moved on Samford without a clear reason; its regular rotation played in the 80-77 win over UNC Asheville on 11/22 (ESPN box score)."
    }
