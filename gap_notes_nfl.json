@@ -1,6 +1,6 @@
 {
  "sport": "nfl",
- "generated": "2026-11-24T10:43:26-05:00",
+ "generated": "2026-11-24T10:45:48-05:00",
  "teams": {
   "ARI": {
    "checked": "2026-11-24T10:43:26-05:00",
@@ -49,7 +49,7 @@
    ]
   },
   "BUF": {
-   "checked": "2026-11-24T10:43:26-05:00",
+   "checked": "2026-11-24T10:45:48-05:00",
    "watch": [
     {
      "direction": "too_high",
@@ -83,7 +83,7 @@
    "watch": []
   },
   "CLE": {
-   "checked": "2026-11-24T10:43:26-05:00",
+   "checked": "2026-11-24T10:45:48-05:00",
    "watch": []
   },
   "DAL": {
@@ -201,7 +201,7 @@
    ]
   },
   "KC": {
-   "checked": "2026-11-24T10:43:26-05:00",
+   "checked": "2026-11-24T10:45:48-05:00",
    "watch": [
     {
      "direction": "too_high",
@@ -264,7 +264,7 @@
    ]
   },
   "LV": {
-   "checked": "2026-11-24T10:43:26-05:00",
+   "checked": "2026-11-24T10:45:48-05:00",
    "watch": [
     {
      "direction": "unclear",
@@ -429,7 +429,7 @@
    ]
   },
   "SEA": {
-   "checked": "2026-11-24T10:43:26-05:00",
+   "checked": "2026-11-24T10:45:48-05:00",
    "watch": [
     {
      "direction": "too_low",
@@ -450,7 +450,7 @@
    ]
   },
   "SF": {
-   "checked": "2026-11-24T10:43:26-05:00",
+   "checked": "2026-11-24T10:45:48-05:00",
    "watch": [
     {
      "direction": "too_high",
@@ -573,7 +573,7 @@
    ]
   },
   "2026_12_KC_BUF": {
-   "checked": "2026-11-24T10:43:26-05:00",
+   "checked": "2026-11-24T10:45:48-05:00",
    "verdict": "partly",
    "summary": "Buffalo is a 3-pt favorite to our 1: Kansas City has two offensive starters and a TE not practicing, but the Bills are banged up too and the forecast is windy and wet.",
    "reasons": [
@@ -664,7 +664,7 @@
    ]
   },
   "2026_12_NE_LAC": {
-   "checked": "2026-11-24T10:43:26-05:00",
+   "checked": "2026-11-24T10:45:48-05:00",
    "verdict": "explained",
    "summary": "The market makes the 1-9 Chargers a small favorite because New England has lost Drake Maye; Justin Herbert's concussion has already moved the line from 3.5 to 1.5.",
    "reasons": [
@@ -704,7 +704,7 @@
    ]
   },
   "2026_12_WAS_ARI": {
-   "checked": "2026-11-24T10:43:26-05:00",
+   "checked": "2026-11-24T10:45:48-05:00",
    "verdict": "partly",
    "summary": "The market is 4.7 pts higher on Washington: Arizona may start 40-year-old Josh Johnson again, just fired its defensive coordinator and has a depleted secondary.",
    "reasons": [
@@ -732,7 +732,7 @@
    }
   },
   "2026_12_SEA_SF": {
-   "checked": "2026-11-24T10:43:26-05:00",
+   "checked": "2026-11-24T10:45:48-05:00",
    "verdict": "explained",
    "summary": "The market is 2 pts lower on San Francisco than we are mainly because Sam Darnold is expected back at QB for Seattle, and the 49ers lost RT Colton McKivitz.",
    "reasons": [
@@ -761,6 +761,12 @@
      "player": "Sam Darnold",
      "text": "Starting QB expected back after missing Weeks 9-10 (quadriceps/rib).",
      "url": "https://www.espn.com/nfl/story/_/id/50578357/seahawks-holding-final-sam-darnold-call-vs-49ers"
+    },
+    {
+     "team": "SEA",
+     "player": "Leonard Williams",
+     "text": "DT back at practice Monday with Darnold and LT Charles Cross after missing Week 10.",
+     "url": "https://933kjr.iheart.com/content/2026-11-23-sam-darnold-3-other-starters-return-from-injuries-to-practice-as-seahawks-begin-prep-for-49ers/"
     }
    ],
    "swings": {
@@ -768,7 +774,7 @@
    }
   },
   "2026_12_LV_CLE": {
-   "checked": "2026-11-24T10:43:26-05:00",
+   "checked": "2026-11-24T10:45:48-05:00",
    "verdict": "explained",
    "summary": "Cleveland is 4.5-pt favorites to our 2 because Las Vegas starts rookie Fernando Mendoza (third start, sacked five times at Denver) and may be without TE Brock Bowers.",
    "reasons": [
@@ -793,9 +799,9 @@
    ]
   },
   "2026_12_BAL_HOU": {
-   "checked": "2026-11-24T10:43:26-05:00",
+   "checked": "2026-11-24T10:45:48-05:00",
    "swings": {
-    "HOU": "Houston's 26-3 win over Indianapolis (Nov. 19) lifted our rating more than the market moved; Houston is -6.5 vs. a Ravens team on its backup QB with CB Marlon Humphrey uncertain."
+    "HOU": "Houston's 26-3 win over Indianapolis (Nov. 19) lifted our rating more than the market moved; Houston is -6.5 vs. a Ravens team on backup QB Jacoby Brissett, with DT Nnamdi Madubuike and S Jaylinn Hawkins uncertain."
    }
   }
  }
