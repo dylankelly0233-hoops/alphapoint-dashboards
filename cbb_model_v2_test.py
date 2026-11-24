@@ -90,6 +90,10 @@ def ats(x, col, bench):
 
 
 def system_entry(P, thr, min_day, col='v2'):
+    # Home/away games only (2026-11-24): in bt_cbb_{season}.csv about 1 in 10 2025-26 neutral-site games has the
+    # opener (and often the close) oriented the wrong way round (ESPN's home/away), which made neutral picks look like
+    # 84% winners. The live system reads CBBD's opener, which is oriented correctly.
+    P = P[~P['neutral'].astype(bool)]
     x = P[(P.day >= min_day) & P['open'].notna() & ((P[col] - P['open']).abs() >= thr)]
     out = {}
     for bench in ('open', 'close'):

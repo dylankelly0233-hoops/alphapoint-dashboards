@@ -1345,48 +1345,48 @@
     "kind": "spread",
     "open": {
      "discovery": {
-      "n": 274,
-      "rate": 0.6204,
-      "lo": 0.563,
-      "hi": 0.6779
+      "n": 227,
+      "rate": 0.5639,
+      "lo": 0.4994,
+      "hi": 0.6284
      },
      "holdout": {
-      "n": 136,
-      "rate": 0.5441,
-      "lo": 0.4604,
-      "hi": 0.6278
+      "n": 132,
+      "rate": 0.553,
+      "lo": 0.4682,
+      "hi": 0.6378
      },
      "all": {
-      "n": 410,
-      "rate": 0.5951,
-      "lo": 0.5476,
-      "hi": 0.6426
+      "n": 359,
+      "rate": 0.5599,
+      "lo": 0.5085,
+      "hi": 0.6112
      }
     },
     "close": {
      "discovery": {
-      "n": 275,
-      "rate": 0.6,
-      "lo": 0.5421,
-      "hi": 0.6579
+      "n": 228,
+      "rate": 0.5482,
+      "lo": 0.4836,
+      "hi": 0.6128
      },
      "holdout": {
-      "n": 136,
-      "rate": 0.4706,
-      "lo": 0.3867,
-      "hi": 0.5545
+      "n": 132,
+      "rate": 0.4773,
+      "lo": 0.3921,
+      "hi": 0.5625
      },
      "all": {
-      "n": 411,
-      "rate": 0.5572,
-      "lo": 0.5092,
-      "hi": 0.6052
+      "n": 360,
+      "rate": 0.5222,
+      "lo": 0.4706,
+      "hi": 0.5738
      }
     },
     "bench": "open",
     "passed": true,
-    "tentative": false,
-    "holds_to_close": true,
+    "tentative": true,
+    "holds_to_close": false,
     "min_day": 45,
     "gap": 5.0,
     "chosen_after_holdout": true,
