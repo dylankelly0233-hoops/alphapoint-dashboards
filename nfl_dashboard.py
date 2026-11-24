@@ -289,6 +289,33 @@ def _rest(g):
     return 0.0 if pd.isna(h) or pd.isna(a) else REST_PTS * float(np.clip(h - a, -7, 7))
 
 
+def qb_row(qb, away, home):
+    """Game-card line: the QB our line assumes for each team and whether the backup adjustment is in it."""
+    parts = []
+    for t in (away, home):
+        q = qb.get(t) or {}
+        name, team = q.get('name'), vm.full_name(t).split()[-1]      # nickname, as on the cards
+        adj = f"backup adjustment {q.get('points', -2.5):+.1f} in our line".replace('-', '−')
+        if q.get('wire') == 'new_starter':
+            txt = (f"{team}: new starter this week per the Injury Wire ({name or 'the previous starter'} started last "
+                   f"game{'; ' + adj if q.get('backup') else ''})")
+        elif not name:
+            txt = f'{team}: starter not known yet'
+        else:
+            txt = f'{team}: {name}'
+        if q.get('wire') == 'new_starter':
+            pass
+        elif q.get('backup'):
+            reg = q.get('regular')
+            txt += f' ({adj}' + (f'; {reg} started most of the last 8 games)' if reg and reg != name else ')')
+        elif q.get('wire') == 'uncertain':
+            txt += ' (starter uncertain per the Injury Wire; no adjustment until it is known)'
+        elif q.get('wire') == 'returning':
+            txt += ' (regular starter returning per the Injury Wire; no adjustment)'
+        parts.append(theme.esc(txt))
+    return f'<div class="lmove">{theme.k("QB")}{" · ".join(parts)}</div>'
+
+
 def build_schedule(full, week, power, metrics):
     games = full[full['week'] == week].copy()
     rating = dict(zip(power['abbr'], power['composite']))
@@ -522,6 +549,8 @@ def generate_html(power, vals, sched, week, info):
             'opened': info['opened'].get(str(r.game_id)), 'market': r.market,
             'open_total': ex.first_total('nfl', r.game_id, r.total), 'total': r.total}, hold=nh)
         move += ex.rating_confidence(by_src.get(r.home, {}), by_src.get(r.away, {}), 0.0 if r.neutral else HFA_POINTS)
+        if not r.score:
+            move += qb_row(info.get('qb') or {}, r.away, r.home)
         if not r.score and not r.neutral and r.home in wx.NFL_STADIUMS:
             move += wx.weather_row(info['weather'].get(str(r.game_id)), wx.NFL_STADIUMS[r.home][2])
         if not r.score:
@@ -702,6 +731,7 @@ def main():
     # the curated Injury Wire (when it's for this week) says which teams start a backup QB; the model adjusts for it
     pre_wire = wire.load_wire('nfl', week, {})
     power, scale_info = build_own_ratings(nflm.team_ratings(vm.SEASON, pre_wire.get('items')))
+    qb_info = nflm.qb_table(vm.SEASON, pre_wire.get('items'))       # what the line assumes at QB (shown on each card)
     for src, names in scale_info['unmatched'].items():
         print(f'  ! {src} names not matched: {", ".join(names)}')
     missing = power.loc[power['composite'].isna(), 'abbr'].tolist()
@@ -786,7 +816,7 @@ def main():
             'weather': weather, 'weeks': [(week, sched)] + ([(week + 1, next_sched)] if not next_sched.empty else []),
             'opened': {**next_opened, **{str(r['game_id']): r.get('opened') for r in market_rows}},
             'mu_prof': mu.profiles(units, MU_CATS, MU_STYLES) if not units.empty else {}, 'mu_games': cover,
-            'sr': nmf.sr_profile(vm.SEASON), 'held': nmf.missing(full, vm.SEASON)}
+            'sr': nmf.sr_profile(vm.SEASON), 'held': nmf.missing(full, vm.SEASON), 'qb': qb_info}
     generate_html(power, vals, sched, week, info)
 
 

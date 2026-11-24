@@ -93,22 +93,63 @@ def auto_backups(year, asof=None):
     last starter starts again. A safety net under the curated Injury Wire (2026-11-24 weak-points review: the Giants
     and Cardinals had a non-regular starter with no backup flag, and the curation rules let 'settled' items drop off).
     """
+    return {t: True for t, v in _starters(year, asof).items() if v['auto']}
+
+
+_ST = {}
+
+
+def _starters(year, asof=None):
+    """{team: {'last': name, 'regular': name, 'auto': bool}} from nflverse's recorded starters (last 8 starts)."""
     from collections import Counter
+    key = (year, str(asof))
+    if key in _ST:
+        return _ST[key]
     try:
         g = pd.read_csv('https://github.com/nflverse/nfldata/raw/master/data/games.csv', low_memory=False,
-                        usecols=['season', 'gameday', 'home_team', 'away_team', 'home_qb_id', 'away_qb_id', 'home_score'])
+                        usecols=['season', 'gameday', 'home_team', 'away_team', 'home_qb_id', 'away_qb_id',
+                                 'home_qb_name', 'away_qb_name', 'home_score'])
     except Exception:
         return {}
     g = g[g.season.between(year - 1, year) & g.home_score.notna()]
     if asof is not None:
         g = g[pd.to_datetime(g.gameday) < pd.Timestamp(asof)]
-    rows = [(d, FIX.get(t, t), q) for d, h, a, hq, aq in zip(g.gameday, g.home_team, g.away_team, g.home_qb_id, g.away_qb_id)
-            for t, q in ((h, hq), (a, aq))]
+    rows = [(d, FIX.get(t, t), q, n) for d, h, a, hq, aq, hn, an in
+            zip(g.gameday, g.home_team, g.away_team, g.home_qb_id, g.away_qb_id, g.home_qb_name, g.away_qb_name)
+            for t, q, n in ((h, hq, hn), (a, aq, an))]
     out = {}
-    for team, x in pd.DataFrame(rows, columns=['date', 'team', 'qb']).sort_values('date').groupby('team'):
-        seq = [q for q in x.qb if isinstance(q, str)][-8:]
-        if len(seq) >= 3 and seq[-1] != Counter(seq).most_common(1)[0][0]:
-            out[team] = True
+    for team, x in pd.DataFrame(rows, columns=['date', 'team', 'qb', 'name']).sort_values('date').groupby('team'):
+        x = x[x.qb.map(lambda q: isinstance(q, str))].tail(8)
+        if x.empty:
+            continue
+        names = dict(zip(x.qb, x.name))
+        reg = Counter(x.qb).most_common(1)[0][0]
+        out[team] = {'last': names[x.qb.iloc[-1]], 'regular': names[reg], 'auto': len(x) >= 3 and x.qb.iloc[-1] != reg}
+    _ST[key] = out
+    return out
+
+
+def qb_table(year, wire_items=None, asof=None):
+    """
+    Per team, what our line assumes at QB (shown on the NFL game cards; Dylan, 2026-11-24: 'be transparent with who
+    we have as the QB'): {'name': last starter, 'regular': name, 'backup': the adjustment is in our line,
+    'why': 'wire' | 'auto' | None, 'wire': the Injury Wire's qb_status or None, 'points': the adjustment}.
+    """
+    try:
+        pts = float(json.load(open(PARAMS.format(year=year), encoding='utf-8'))['qb']['backup'])
+    except (OSError, ValueError, KeyError):
+        pts = 0.0
+    out = {}
+    st = _starters(year, asof)
+    for t in set(st) | set(wire_items or {}):
+        qbs = [str(it.get('qb_status', '')).lower() for it in (wire_items or {}).get(t) or []
+               if str(it.get('tag', '')).upper() == 'QB']
+        s = st.get(t, {})
+        wire_on = any(x in BACKUP_STATUSES for x in qbs)
+        auto_on = bool(s.get('auto')) and 'returning' not in qbs
+        out[t] = {'name': s.get('last'), 'regular': s.get('regular'), 'backup': wire_on or auto_on,
+                  'why': 'wire' if wire_on else 'auto' if auto_on else None, 'wire': qbs[0] if qbs else None,
+                  'points': round(pts, 1)}
     return out
 
 
@@ -143,12 +184,10 @@ def team_ratings(year, wire_items=None, asof=None):
     coef = {f: b / sd for f, b, sd in zip(s2['feats'], s2['b'], s2['sd'])}
     q = p['qb']                # final = a + slope * v2 + backup * flag
     out = {}
-    auto = auto_backups(year, asof)
+    qt = qb_table(year, wire_items, asof)      # the same table the game cards show
     for i, t in enumerate(teams):
         r = sum(coef[f] * feats[f][i] for f in s2['feats'] if f != 'home')
-        qbs = [str(it.get('qb_status', '')).lower() for it in (wire_items or {}).get(t) or []
-               if str(it.get('tag', '')).upper() == 'QB']
-        backup = any(s in BACKUP_STATUSES for s in qbs) or (auto.get(t, False) and 'returning' not in qbs)
+        backup = qt.get(t, {}).get('backup', False)
         out[t] = round(float(q['slope'] * r + (q['backup'] if backup else 0.0)), 2)
     mean = np.mean(list(out.values()))
     return {t: round(v - mean, 2) for t, v in out.items()}
