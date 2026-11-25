@@ -1,24 +1,24 @@
 {
  "sport": "nba",
- "generated": "2026-11-25T16:50:30-05:00",
+ "generated": "2026-11-25T17:42:56-05:00",
  "teams": {
   "OKC": {
-   "checked": "2026-11-25T11:46:24-05:00",
+   "checked": "2026-11-25T17:42:56-05:00",
    "watch": [
     {
      "direction": "too_high",
      "since": "2026-10-30",
-     "text": "Holmgren (knee), Jalen Williams (ankle) and Cason Wallace are out long term; Mara, Topic and Jaylin Williams are also out vs MIN tonight, NBA 11:30 AM ET report.",
+     "text": "Holmgren (knee), Jalen Williams (ankle) and Cason Wallace are out long term; Mara, Topic and Sorber are also out vs MIN tonight, NBA 5:30 PM ET report.",
      "source": "NBA official injury report",
-     "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-25_11_30AM.pdf",
+     "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-25_05_30PM.pdf",
      "date": "2026-11-25"
     },
     {
      "direction": "unclear",
      "since": "2026-11-23",
-     "text": "SGA returned 11/24 at Indiana (125-120 loss) after missing 11/22 at Miami; he and Alex Caruso are not on tonight's 11:30 AM ET report.",
+     "text": "SGA returned 11/24 at Indiana (125-120 loss) after missing 11/22 at Miami; he, Alex Caruso and Jaylin Williams are not on tonight's 5:30 PM ET report.",
      "source": "NBA official injury report",
-     "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-25_11_30AM.pdf",
+     "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-25_05_30PM.pdf",
      "date": "2026-11-25",
      "verified_numbers": [
       "125-120"
@@ -77,27 +77,27 @@
    "checked": "2026-11-24T18:42:22-05:00"
   },
   "CHI": {
-   "checked": "2026-11-25T11:46:24-05:00",
+   "checked": "2026-11-25T17:42:56-05:00",
    "watch": [
     {
      "direction": "too_high",
-     "since": "2026-11-12",
-     "text": "Norman Powell (hamstring) and Caleb Wilson (hand fracture), the Bulls' two leading scorers, are out at CHA tonight; Jalen Smith is questionable (illness), NBA 11:30 AM ET report.",
+     "since": "2026-11-25",
+     "text": "Norman Powell (hamstring) and Caleb Wilson (hand fracture), the Bulls' two leading scorers, are out at CHA tonight, and Jalen Smith (illness) is now out too, NBA 5:30 PM ET report.",
      "source": "NBA official injury report",
-     "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-25_11_30AM.pdf",
+     "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-25_05_30PM.pdf",
      "date": "2026-11-25"
     }
    ]
   },
   "NY": {
-   "checked": "2026-11-25T16:50:30-05:00",
+   "checked": "2026-11-25T17:42:56-05:00",
    "watch": [
     {
      "direction": "too_high",
      "since": "2026-11-22",
-     "text": "OG Anunoby, Miles McBride and Jordan Clarkson are out vs CLE tonight; Jalen Brunson (illness), Towns and Hart are probable on the NBA's 4:30 PM ET report.",
+     "text": "OG Anunoby, Miles McBride and Jordan Clarkson are out vs CLE tonight; Jalen Brunson (illness), Towns and Hart are probable on the NBA's 5:30 PM ET report.",
      "source": "NBA official injury report",
-     "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-25_04_30PM.pdf",
+     "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-25_05_30PM.pdf",
      "date": "2026-11-25"
     }
    ]
@@ -240,14 +240,14 @@
    ]
   },
   "CHA": {
-   "checked": "2026-11-25T16:50:30-05:00",
+   "checked": "2026-11-25T17:42:56-05:00",
    "watch": [
     {
      "direction": "too_high",
      "since": "2026-11-15",
-     "text": "Kon Knueppel, Dennis Schroder (hamstrings), Grayson Allen (concussion) and Ryan Kalkbrenner (hip) are all out vs CHI tonight, NBA 4:30 PM ET report.",
+     "text": "Kon Knueppel, Dennis Schroder (hamstrings), Grayson Allen (concussion) and Ryan Kalkbrenner (hip) are all out vs CHI tonight, NBA 5:30 PM ET report.",
      "source": "NBA official injury report",
-     "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-25_04_30PM.pdf",
+     "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-25_05_30PM.pdf",
      "date": "2026-11-25"
     }
    ]
@@ -287,14 +287,14 @@
    ]
   },
   "CLE": {
-   "checked": "2026-11-25T13:42:14-05:00",
+   "checked": "2026-11-25T17:42:56-05:00",
    "watch": [
     {
      "direction": "too_high",
      "since": "2026-11-16",
      "text": "Evan Mobley (left great toe sprain) and Nae'Qwan Tomlin (back) are out at NY tonight on the NBA's 1:30 PM ET report.",
      "source": "NBA official injury report",
-     "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-25_01_30PM.pdf",
+     "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-25_05_30PM.pdf",
      "date": "2026-11-25"
     }
    ]
@@ -312,14 +312,14 @@
    "watch": []
   },
   "MIN": {
-   "checked": "2026-11-25T11:46:24-05:00",
+   "checked": "2026-11-25T17:42:56-05:00",
    "watch": [
     {
      "direction": "too_high",
      "since": "2026-10-29",
-     "text": "Anthony Edwards (right knee arthroscopy) has been out since late October; DiVincenzo (Achilles) and Jaylen Clark are out at OKC tonight, NBA 11:30 AM ET report.",
+     "text": "Anthony Edwards (right knee arthroscopy) has been out since late October; DiVincenzo (Achilles) and Jaylen Clark are out at OKC tonight, NBA 5:30 PM ET report.",
      "source": "NBA official injury report",
-     "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-25_11_30AM.pdf",
+     "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-25_05_30PM.pdf",
      "date": "2026-11-25"
     }
    ]
@@ -600,7 +600,7 @@
    }
   },
   "401909320": {
-   "checked": "2026-11-24T08:45:20-05:00",
+   "checked": "2026-11-25T17:42:56-05:00",
    "verdict": "unexplained",
    "summary": "Market has OKC -3.5 at home; Minnesota is also short-handed (Edwards out), and OKC's own absences are already in our number, so nothing clearly justifies the extra 3.4 pts.",
    "reasons": [
@@ -658,31 +658,24 @@
    }
   },
   "401909318": {
-   "checked": "2026-11-25T11:46:24-05:00",
+   "checked": "2026-11-25T17:42:56-05:00",
    "verdict": "partly",
    "summary": "Both teams are short-handed (Chicago without Powell and Wilson, Charlotte without Knueppel and Schroder); the market leans on the Bulls' missing scorers more than our ratings do.",
    "reasons": [
     {
-     "text": "Chicago's two leading scorers, Norman Powell (hamstring) and Caleb Wilson (hand fracture), are out; Jalen Smith is questionable (illness), NBA 11:30 AM ET report.",
+     "text": "Chicago's two leading scorers, Norman Powell (hamstring) and Caleb Wilson (hand fracture), are out, and Jalen Smith (illness) is now out too, NBA 5:30 PM ET report.",
      "source": "NBA official injury report",
-     "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-25_11_30AM.pdf",
+     "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-25_05_30PM.pdf",
      "date": "2026-11-25"
     },
     {
-     "text": "Charlotte has Kon Knueppel and Dennis Schroder out and Ryan Kalkbrenner doubtful; Grayson Allen is questionable (concussion protocol).",
+     "text": "Charlotte has Kon Knueppel, Dennis Schroder, Grayson Allen (concussion protocol) and Ryan Kalkbrenner (hip) all out; Sion James is available.",
      "source": "NBA official injury report",
-     "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-25_11_30AM.pdf",
+     "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-25_05_30PM.pdf",
      "date": "2026-11-25"
     }
    ],
-   "returning": [
-    {
-     "team": "CHA",
-     "player": "Grayson Allen",
-     "text": "Questionable (concussion protocol) on the 11:30 AM ET report after missing two games.",
-     "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-25_11_30AM.pdf"
-    }
-   ]
+   "returning": []
   },
   "401909322": {
    "checked": "2026-11-25T11:46:24-05:00",
@@ -697,26 +690,26 @@
    "checked": "2026-11-25T11:46:24-05:00"
   },
   "401909319": {
-   "checked": "2026-11-25T13:42:14-05:00",
+   "checked": "2026-11-25T17:42:56-05:00",
    "verdict": "explained",
-   "summary": "The market has cut the Knicks from -5.5 to -1.5 because Jalen Brunson is now questionable (illness) on top of Anunoby, McBride and Clarkson being out; Cleveland is without Evan Mobley.",
+   "summary": "The market has cut the Knicks from -5.5 to -1.5 on Jalen Brunson's illness (now probable) and Anunoby, McBride and Clarkson being out; Cleveland is without Evan Mobley.",
    "reasons": [
     {
-     "text": "Jalen Brunson (illness) was added as questionable on the NBA's 1:30 PM ET report; the line fell from Knicks -5.5 at the open to -1.5.",
+     "text": "Jalen Brunson (illness) was added as questionable at 1:30 PM and upgraded to probable on the 5:30 PM ET report; the line fell from Knicks -5.5 at the open to -1.5.",
      "source": "NBA official injury report",
-     "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-25_01_30PM.pdf",
+     "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-25_05_30PM.pdf",
      "date": "2026-11-25"
     },
     {
      "text": "New York is also without OG Anunoby (calf), Miles McBride (adductor) and Jordan Clarkson (plantar fasciitis); Towns and Hart are probable.",
      "source": "NBA official injury report",
-     "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-25_01_30PM.pdf",
+     "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-25_05_30PM.pdf",
      "date": "2026-11-25"
     },
     {
      "text": "Cleveland's Evan Mobley (toe) and Nae'Qwan Tomlin (back) are out, which offsets part of the Knicks' absences.",
      "source": "NBA official injury report",
-     "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-25_01_30PM.pdf",
+     "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-25_05_30PM.pdf",
      "date": "2026-11-25"
     }
    ],

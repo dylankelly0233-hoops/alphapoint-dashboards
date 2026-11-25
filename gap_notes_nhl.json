@@ -1,9 +1,9 @@
 {
  "sport": "nhl",
- "generated": "2026-11-25T14:43:14-05:00",
+ "generated": "2026-11-25T17:42:56-05:00",
  "teams": {
   "OTT": {
-   "checked": "2026-11-25T08:44:33-05:00",
+   "checked": "2026-11-25T17:42:56-05:00",
    "watch": [
     {
      "direction": "too_high",
@@ -16,7 +16,7 @@
    ]
   },
   "CGY": {
-   "checked": "2026-11-25T08:44:33-05:00",
+   "checked": "2026-11-25T17:42:56-05:00",
    "watch": [
     {
      "direction": "too_high",
@@ -27,9 +27,9 @@
      "date": "2026-11-25"
     },
     {
-     "direction": "unclear",
+     "direction": "too_high",
      "since": "2026-11-24",
-     "text": "C Morgan Frost (upper body) is day-to-day after getting hurt in Monday's 2-1 loss at Ottawa.",
+     "text": "C Morgan Frost (upper body), hurt in Monday's 2-1 loss at Ottawa, is ruled out at Pittsburgh tonight, per Sportsnet's Eric Francis.",
      "source": "ESPN NHL injuries",
      "url": "https://www.espn.com/nhl/injuries",
      "date": "2026-11-25"
@@ -76,7 +76,7 @@
    ]
   },
   "WPG": {
-   "checked": "2026-11-25T08:44:33-05:00",
+   "checked": "2026-11-25T17:42:56-05:00",
    "watch": [
     {
      "direction": "too_high",
@@ -102,7 +102,7 @@
    ]
   },
   "NYI": {
-   "checked": "2026-11-25T08:44:33-05:00",
+   "checked": "2026-11-25T17:42:56-05:00",
    "watch": [
     {
      "direction": "too_high",
@@ -123,12 +123,12 @@
    ]
   },
   "CBJ": {
-   "checked": "2026-11-25T08:44:33-05:00",
+   "checked": "2026-11-25T17:42:56-05:00",
    "watch": [
     {
      "direction": "unclear",
      "since": "2026-11-23",
-     "text": "C Sean Monahan (upper body) is day-to-day after missing the last trip; Mathieu Olivier went on IR on Nov. 24.",
+     "text": "Mathieu Olivier went on IR on Nov. 24; C Sean Monahan (upper body) is no longer on the injury list.",
      "source": "ESPN NHL injuries",
      "url": "https://www.espn.com/nhl/injuries",
      "date": "2026-11-25"
@@ -136,7 +136,7 @@
    ]
   },
   "NJ": {
-   "checked": "2026-11-25T08:44:33-05:00",
+   "checked": "2026-11-25T17:42:56-05:00",
    "watch": [
     {
      "direction": "too_high",
@@ -209,7 +209,7 @@
    "watch": []
   },
   "FLA": {
-   "checked": "2026-11-25T11:46:50-05:00",
+   "checked": "2026-11-25T17:42:56-05:00",
    "watch": [
     {
      "direction": "too_low",
@@ -222,7 +222,7 @@
    ]
   },
   "BOS": {
-   "checked": "2026-11-25T08:44:33-05:00",
+   "checked": "2026-11-25T17:42:56-05:00",
    "watch": [
     {
      "direction": "too_high",
@@ -235,12 +235,12 @@
    ]
   },
   "BUF": {
-   "checked": "2026-11-25T12:43:35-05:00",
+   "checked": "2026-11-25T17:42:56-05:00",
    "watch": [
     {
      "direction": "unclear",
      "since": "2026-11-24",
-     "text": "C Tyson Kozak and D Mattias Samuelsson are day-to-day (undisclosed); Konsta Helenius, Justin Danforth and Matt Grzelcyk are on IR.",
+     "text": "D Mattias Samuelsson is a game-time decision vs the Rangers and C Tyson Kozak is day-to-day; Konsta Helenius, Justin Danforth and Matt Grzelcyk are on IR.",
      "source": "ESPN NHL injuries",
      "url": "https://www.espn.com/nhl/injuries",
      "date": "2026-11-25"
@@ -248,12 +248,12 @@
    ]
   },
   "CAR": {
-   "checked": "2026-11-25T08:44:33-05:00",
+   "checked": "2026-11-25T17:42:56-05:00",
    "watch": [
     {
      "direction": "too_high",
      "since": "2026-11-24",
-     "text": "LW Nikolaj Ehlers is listed out.",
+     "text": "LW Nikolaj Ehlers is listed out and D K'Andre Miller is day-to-day; Brandon Bussi is the likely starter in goal at Tampa.",
      "source": "ESPN NHL injuries",
      "url": "https://www.espn.com/nhl/injuries",
      "date": "2026-11-25"
@@ -274,7 +274,7 @@
    ]
   },
   "DET": {
-   "checked": "2026-11-25T08:44:33-05:00",
+   "checked": "2026-11-25T17:42:56-05:00",
    "watch": [
     {
      "direction": "unclear",
@@ -291,7 +291,7 @@
    "watch": []
   },
   "NYR": {
-   "checked": "2026-11-25T12:43:35-05:00",
+   "checked": "2026-11-25T17:42:56-05:00",
    "watch": [
     {
      "direction": "too_high",
@@ -304,16 +304,16 @@
    ]
   },
   "PHI": {
-   "checked": "2026-11-25T08:44:33-05:00",
+   "checked": "2026-11-25T17:42:56-05:00",
    "watch": []
   },
   "PIT": {
-   "checked": "2026-11-25T08:44:33-05:00",
+   "checked": "2026-11-25T17:42:56-05:00",
    "watch": [
     {
      "direction": "too_high",
      "since": "2026-11-20",
-     "text": "Evgeni Malkin is day-to-day; Bryan Rust (lower body, non-contact) and Nick Robertson are on IR.",
+     "text": "Egor Chinakhov is listed out tonight; Bryan Rust (lower body) and Nick Robertson are on IR. Evgeni Malkin is no longer on the injury list.",
      "source": "ESPN NHL injuries",
      "url": "https://www.espn.com/nhl/injuries",
      "date": "2026-11-25"
@@ -321,12 +321,12 @@
    ]
   },
   "STL": {
-   "checked": "2026-11-25T08:44:33-05:00",
+   "checked": "2026-11-25T17:42:56-05:00",
    "watch": [
     {
      "direction": "too_high",
      "since": "2026-11-24",
-     "text": "Connor McMichael and D Brandon Carlo went on IR on Nov. 24; Pavel Buchnevich is day-to-day and Jimmy Snuggerud questionable vs the Islanders.",
+     "text": "Connor McMichael and D Brandon Carlo went on IR Nov 24, and Pavel Buchnevich (upper body) and Jimmy Snuggerud (did not travel) are out at the Islanders tonight.",
      "source": "ESPN NHL injuries",
      "url": "https://www.espn.com/nhl/injuries",
      "date": "2026-11-25"
@@ -334,7 +334,7 @@
    ]
   },
   "TB": {
-   "checked": "2026-11-25T08:44:33-05:00",
+   "checked": "2026-11-25T17:42:56-05:00",
    "watch": [
     {
      "direction": "too_high",
@@ -347,7 +347,7 @@
    ]
   },
   "VAN": {
-   "checked": "2026-11-25T11:46:50-05:00",
+   "checked": "2026-11-25T17:42:56-05:00",
    "watch": [
     {
      "direction": "too_high",
@@ -360,12 +360,12 @@
    ]
   },
   "WSH": {
-   "checked": "2026-11-25T08:44:33-05:00",
+   "checked": "2026-11-25T17:42:56-05:00",
    "watch": [
     {
      "direction": "unclear",
      "since": "2026-11-23",
-     "text": "Jordan Kyrou is listed out; D Vincent Desharnais (appendectomy) is day-to-day and D Rasmus Sandin cleared for contact.",
+     "text": "Jordan Kyrou is listed out and D Vincent Desharnais (appendectomy) will miss tonight vs Philadelphia; D Rasmus Sandin is cleared for contact.",
      "source": "ESPN NHL injuries",
      "url": "https://www.espn.com/nhl/injuries",
      "date": "2026-11-25"
@@ -497,7 +497,7 @@
    ]
   },
   "401892784": {
-   "checked": "2026-11-25T11:46:50-05:00",
+   "checked": "2026-11-25T17:42:56-05:00",
    "verdict": "explained",
    "summary": "Florida's captain Aleksander Barkov and Brad Marchand, out nearly all season, return tonight vs Ottawa (team announcement Wednesday morning); our ratings are built without them, which explains the market's lean to Florida.",
    "reasons": [
@@ -536,7 +536,7 @@
    ]
   },
   "401892782": {
-   "checked": "2026-11-25T12:43:35-05:00",
+   "checked": "2026-11-25T17:42:56-05:00",
    "verdict": "partly",
    "summary": "The Rangers have lost four forwards and a defenseman to injury since Nov 20, which our ratings barely see; that covers part of the gap to the Sabres' -135 price.",
    "reasons": [
@@ -547,9 +547,9 @@
      "date": "2026-11-25"
     },
     {
-     "text": "Shesterkin is out for the season (knee), so Dylan Garand (.909) carries the net; Buffalo's Luukkonen is .878.",
-     "source": "ESPN game page",
-     "url": "https://www.espn.com/nhl/game/_/gameId/401892782",
+     "text": "Shesterkin is out for the season (knee); Joonas Korpisalo is confirmed in the Rangers' net tonight and Luukkonen is the likely starter for Buffalo.",
+     "source": "Daily Faceoff",
+     "url": "https://www.dailyfaceoff.com/starting-goalies",
      "date": "2026-11-25"
     },
     {
@@ -560,8 +560,6 @@
     }
    ],
    "verified_numbers": [
-    ".909",
-    ".878",
     "2-3"
    ]
   },
@@ -589,6 +587,27 @@
      "date": "2026-11-25"
     }
    ]
+  },
+  "401892781": {
+   "checked": "2026-11-25T17:42:56-05:00"
+  },
+  "401892783": {
+   "checked": "2026-11-25T17:42:56-05:00"
+  },
+  "401892785": {
+   "checked": "2026-11-25T17:42:56-05:00"
+  },
+  "401892786": {
+   "checked": "2026-11-25T17:42:56-05:00"
+  },
+  "401892787": {
+   "checked": "2026-11-25T17:42:56-05:00"
+  },
+  "401892788": {
+   "checked": "2026-11-25T17:42:56-05:00"
+  },
+  "401892789": {
+   "checked": "2026-11-25T17:42:56-05:00"
   }
  }
 }

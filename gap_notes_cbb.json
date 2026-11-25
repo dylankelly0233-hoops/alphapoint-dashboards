@@ -1,6 +1,6 @@
 {
  "sport": "cbb",
- "generated": "2026-11-25T16:50:23-05:00",
+ "generated": "2026-11-25T17:42:56-05:00",
  "teams": {
   "Dayton": {
    "watch": [
@@ -309,14 +309,22 @@
    "checked": "2026-11-24T14:44:00-05:00"
   },
   "UConn": {
-   "checked": "2026-11-25T16:50:23-05:00",
+   "checked": "2026-11-25T17:42:56-05:00",
    "watch": [
     {
      "direction": "too_low",
      "since": "2026-11-23",
-     "text": "Solo Ball (offseason wrist surgery) has not played this season and is expected to be a game-time decision vs Duke tonight; if he plays, ratings built without him understate UConn.",
-     "source": "Yahoo Sports",
-     "url": "https://sports.yahoo.com/mens-college-basketball/articles/duke-vs-uconn-watch-odds-042447904.html",
+     "text": "Solo Ball (wrist surgery) has not played this season; Dan Hurley says he could be a game-time decision for his debut vs Duke tonight. If he plays, ratings built without him understate UConn.",
+     "source": "The Daily Campus",
+     "url": "https://dailycampus.com/2026/11/25/mens-basketball-uconn-and-duke-meet-in-las-vegas-for-elite-eight-rematch/",
+     "date": "2026-11-25"
+    },
+    {
+     "direction": "too_high",
+     "since": "2026-11-25",
+     "text": "Forward Nik Khamenia is out after left foot surgery, thinning UConn's frontcourt rotation vs Duke.",
+     "source": "247Sports",
+     "url": "https://247sports.com/college/duke/article/duke-heads-to-vegas-with-lineup-questions-and-uconn-waiting-293273877/",
      "date": "2026-11-25"
     }
    ]
@@ -347,7 +355,7 @@
   },
   "Duke": {
    "watch": [],
-   "checked": "2026-11-25T16:50:23-05:00"
+   "checked": "2026-11-25T17:42:56-05:00"
   },
   "Duquesne": {
    "watch": [],
@@ -405,7 +413,7 @@
   },
   "Memphis": {
    "watch": [],
-   "checked": "2026-11-25T15:42:24-05:00"
+   "checked": "2026-11-25T17:42:56-05:00"
   },
   "Mississippi State": {
    "watch": [],
@@ -421,7 +429,7 @@
   },
   "Penn State": {
    "watch": [],
-   "checked": "2026-11-25T15:42:24-05:00"
+   "checked": "2026-11-25T17:42:56-05:00"
   },
   "Providence": {
    "checked": "2026-11-25T15:42:24-05:00",
@@ -490,14 +498,14 @@
   },
   "George Mason": {
    "watch": [],
-   "checked": "2026-11-24T22:43:01-05:00"
+   "checked": "2026-11-25T17:42:56-05:00"
   },
   "Longwood": {
    "watch": [],
-   "checked": "2026-11-24T22:43:01-05:00"
+   "checked": "2026-11-25T17:42:56-05:00"
   },
   "Wisconsin": {
-   "checked": "2026-11-25T11:45:40-05:00",
+   "checked": "2026-11-25T17:42:56-05:00",
    "watch": [
     {
      "direction": "too_high",
@@ -510,7 +518,7 @@
    ]
   },
   "Northeastern": {
-   "checked": "2026-11-25T11:45:40-05:00",
+   "checked": "2026-11-25T17:42:56-05:00",
    "watch": []
   },
   "Miami": {
@@ -1014,7 +1022,7 @@
    "checked": "2026-11-25T10:43:06-05:00"
   },
   "401920076": {
-   "checked": "2026-11-24T22:43:01-05:00",
+   "checked": "2026-11-25T17:42:56-05:00",
    "swings": {
     "George Mason": "Nothing found: no injury news, and George Mason's usual starters all played its 73-62 home win over South Florida on 11/21 (as a 3.5-pt favorite); the market moved up on the Patriots after that result."
    },
@@ -1079,7 +1087,7 @@
    }
   },
   "401917182": {
-   "checked": "2026-11-25T15:42:24-05:00",
+   "checked": "2026-11-25T17:42:56-05:00",
    "swings": {
     "Penn State": "Nothing found: the market moved on Penn State without a clear reason (no injury news for either team before the Nov. 25 Battle 4 Atlantis game)."
    }
@@ -1105,7 +1113,7 @@
    }
   },
   "401911028": {
-   "checked": "2026-11-25T11:45:40-05:00",
+   "checked": "2026-11-25T17:42:56-05:00",
    "verdict": "partly",
    "summary": "The market has marked Wisconsin down after two straight neutral-site losses and Jack Janicki's season-ending foot injury; Janicki is a bench guard, so that covers only part of our 5-point gap.",
    "reasons": [
@@ -1272,6 +1280,9 @@
     "USC": "Nothing found: the market moved on USC without a clear reason; USC used its usual rotation in the 11/23 Louisiana win (ESPN box) and Eric Reibe has been out all season."
    },
    "checked": "2026-11-25T16:50:23-05:00"
+  },
+  "401909568": {
+   "checked": "2026-11-25T17:42:56-05:00"
   }
  }
 }
