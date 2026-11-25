@@ -25338,13 +25338,13 @@ date,team,source,rating
 2026-11-25,Brown,Haslametrics,-7.31
 2026-11-25,Canisius,Haslametrics,-15.44
 2026-11-25,Lipscomb,Haslametrics,-3.55
-2026-11-25,Dayton,Haslametrics,5.45
+2026-11-25,Dayton,Haslametrics,5.44
 2026-11-25,SE Louisiana,Haslametrics,-8.26
 2026-11-25,South Florida,Haslametrics,5.65
 2026-11-25,St. Bonaventure,Haslametrics,3.58
-2026-11-25,Tennessee,Haslametrics,18.96
+2026-11-25,Tennessee,Haslametrics,18.95
 2026-11-25,Presbyterian,Haslametrics,-6.34
-2026-11-25,Texas Tech,Haslametrics,19.93
+2026-11-25,Texas Tech,Haslametrics,19.92
 2026-11-25,Tulane,Haslametrics,-1.71
 2026-11-25,Tulsa,Haslametrics,8.36
 2026-11-25,VCU,Haslametrics,11.85
@@ -25358,7 +25358,7 @@ date,team,source,rating
 2026-11-25,Montana State,Haslametrics,3.12
 2026-11-25,North Carolina A&T,Haslametrics,-9.94
 2026-11-25,Nicholls,Haslametrics,-7.95
-2026-11-25,South Carolina Upstate,Haslametrics,-16.45
+2026-11-25,South Carolina Upstate,Haslametrics,-16.44
 2026-11-25,Missouri,Haslametrics,19.84
 2026-11-25,Alcorn State,Haslametrics,-15.45
 2026-11-25,Bethune-Cookman,Haslametrics,-0.92
@@ -25393,10 +25393,10 @@ date,team,source,rating
 2026-11-25,San Diego State,Haslametrics,12.72
 2026-11-25,Cal State Bakersfield,Haslametrics,-7.38
 2026-11-25,Tennessee State,Haslametrics,-4.99
-2026-11-25,Texas A&M,Haslametrics,16.8
+2026-11-25,Texas A&M,Haslametrics,16.79
 2026-11-25,UTSA,Haslametrics,-2.91
 2026-11-25,Toledo,Haslametrics,-0.62
-2026-11-25,UTEP,Haslametrics,-2.51
+2026-11-25,UTEP,Haslametrics,-2.5
 2026-11-25,Vermont,Haslametrics,-4.59
 2026-11-25,Virginia Tech,Haslametrics,13.77
 2026-11-25,Wake Forest,Haslametrics,10.09
@@ -25592,20 +25592,20 @@ date,team,source,rating
 2026-11-25,Pennsylvania,AlphaPoint model,1.32
 2026-11-25,Princeton,AlphaPoint model,-2.92
 2026-11-25,Radford,AlphaPoint model,-5.61
-2026-11-25,Rice,AlphaPoint model,-1.64
+2026-11-25,Rice,AlphaPoint model,-1.63
 2026-11-25,Drexel,AlphaPoint model,-3.52
 2026-11-25,Campbell,AlphaPoint model,-1.88
 2026-11-25,Quinnipiac,AlphaPoint model,-8.94
 2026-11-25,Central Arkansas,AlphaPoint model,1.06
 2026-11-25,American University,AlphaPoint model,-3.91
-2026-11-25,Clemson,AlphaPoint model,9.31
+2026-11-25,Clemson,AlphaPoint model,9.3
 2026-11-25,Cornell,AlphaPoint model,-1.33
 2026-11-25,Duke,AlphaPoint model,21.75
 2026-11-25,Eastern Kentucky,AlphaPoint model,-5.24
 2026-11-25,Sacred Heart,AlphaPoint model,-13.3
 2026-11-25,Southeast Missouri State,AlphaPoint model,-8.49
 2026-11-25,USC,AlphaPoint model,19.68
-2026-11-25,SIU Edwardsville,AlphaPoint model,-8.61
+2026-11-25,SIU Edwardsville,AlphaPoint model,-8.62
 2026-11-25,Northern Kentucky,AlphaPoint model,-7.36
 2026-11-25,Winthrop,AlphaPoint model,-7.52
 2026-11-25,Yale,AlphaPoint model,0.26
@@ -25629,7 +25629,7 @@ date,team,source,rating
 2026-11-25,Jackson State,AlphaPoint model,-15.24
 2026-11-25,Saint Louis,AlphaPoint model,12.81
 2026-11-25,Northern Iowa,AlphaPoint model,-2.23
-2026-11-25,North Dakota,AlphaPoint model,-7.6
+2026-11-25,North Dakota,AlphaPoint model,-7.69
 2026-11-25,Chicago State,AlphaPoint model,-14.74
 2026-11-25,Florida State,AlphaPoint model,12.96
 2026-11-25,Auburn,AlphaPoint model,15.08
@@ -25668,13 +25668,13 @@ date,team,source,rating
 2026-11-25,Oklahoma State,AlphaPoint model,15.18
 2026-11-25,Oral Roberts,AlphaPoint model,-4.85
 2026-11-25,Jacksonville,AlphaPoint model,-9.44
-2026-11-25,Montana,AlphaPoint model,-5.23
+2026-11-25,Montana,AlphaPoint model,-5.24
 2026-11-25,Boston University,AlphaPoint model,-5.51
 2026-11-25,Iona,AlphaPoint model,-8.81
 2026-11-25,Columbia,AlphaPoint model,2.38
 2026-11-25,Cal State Fullerton,AlphaPoint model,1.63
 2026-11-25,Dartmouth,AlphaPoint model,-6.09
-2026-11-25,Detroit Mercy,AlphaPoint model,-13.36
+2026-11-25,Detroit Mercy,AlphaPoint model,-13.37
 2026-11-25,Fordham,AlphaPoint model,2.49
 2026-11-25,Rutgers,AlphaPoint model,12.07
 2026-11-25,Southern Miss,AlphaPoint model,-3.02
@@ -25685,7 +25685,7 @@ date,team,source,rating
 2026-11-25,Temple,AlphaPoint model,-1.16
 2026-11-25,Houston Christian,AlphaPoint model,-3.99
 2026-11-25,Air Force,AlphaPoint model,-10.97
-2026-11-25,Kennesaw State,AlphaPoint model,1.22
+2026-11-25,Kennesaw State,AlphaPoint model,1.23
 2026-11-25,Gardner-Webb,AlphaPoint model,-16.44
 2026-11-25,Hampton,AlphaPoint model,-4.46
 2026-11-25,St. John's,AlphaPoint model,19.63
@@ -25700,11 +25700,11 @@ date,team,source,rating
 2026-11-25,Louisville,AlphaPoint model,15.44
 2026-11-25,Butler,AlphaPoint model,8.63
 2026-11-25,Arkansas State,AlphaPoint model,-0.21
-2026-11-25,Brown,AlphaPoint model,-7.57
+2026-11-25,Brown,AlphaPoint model,-7.56
 2026-11-25,Canisius,AlphaPoint model,-18.06
 2026-11-25,Lipscomb,AlphaPoint model,-4.56
 2026-11-25,Dayton,AlphaPoint model,1.72
-2026-11-25,SE Louisiana,AlphaPoint model,-8.33
+2026-11-25,SE Louisiana,AlphaPoint model,-8.25
 2026-11-25,South Florida,AlphaPoint model,8.46
 2026-11-25,St. Bonaventure,AlphaPoint model,3.74
 2026-11-25,Tennessee,AlphaPoint model,18.24
@@ -25746,7 +25746,7 @@ date,team,source,rating
 2026-11-25,Utah Valley,AlphaPoint model,3.82
 2026-11-25,Indiana,AlphaPoint model,14.99
 2026-11-25,Loyola Maryland,AlphaPoint model,-13.93
-2026-11-25,Minnesota,AlphaPoint model,15.77
+2026-11-25,Minnesota,AlphaPoint model,15.76
 2026-11-25,Mississippi State,AlphaPoint model,12.35
 2026-11-25,Belmont,AlphaPoint model,0.89
 2026-11-25,Florida Gulf Coast,AlphaPoint model,-5.4
@@ -25768,8 +25768,8 @@ date,team,source,rating
 2026-11-25,North Florida,AlphaPoint model,-12.26
 2026-11-25,George Washington,AlphaPoint model,7.4
 2026-11-25,Houston,AlphaPoint model,24.93
-2026-11-25,Illinois,AlphaPoint model,30.01
-2026-11-25,Utah State,AlphaPoint model,18.85
+2026-11-25,Illinois,AlphaPoint model,30.0
+2026-11-25,Utah State,AlphaPoint model,18.84
 2026-11-25,Jacksonville State,AlphaPoint model,-3.45
 2026-11-25,Kansas State,AlphaPoint model,4.98
 2026-11-25,Lafayette,AlphaPoint model,-9.81
@@ -25797,7 +25797,7 @@ date,team,source,rating
 2026-11-25,Texas Southern,AlphaPoint model,-14.1
 2026-11-25,Furman,AlphaPoint model,1.58
 2026-11-25,George Mason,AlphaPoint model,5.77
-2026-11-25,Northern Colorado,AlphaPoint model,-8.39
+2026-11-25,Northern Colorado,AlphaPoint model,-8.38
 2026-11-25,Indiana State,AlphaPoint model,-4.14
 2026-11-25,Kansas,AlphaPoint model,21.51
 2026-11-25,Loyola Marymount,AlphaPoint model,2.05
@@ -25807,7 +25807,7 @@ date,team,source,rating
 2026-11-25,Niagara,AlphaPoint model,-13.57
 2026-11-25,Oakland,AlphaPoint model,-7.43
 2026-11-25,Rhode Island,AlphaPoint model,4.54
-2026-11-25,Little Rock,AlphaPoint model,-6.51
+2026-11-25,Little Rock,AlphaPoint model,-6.5
 2026-11-25,Bryant,AlphaPoint model,-11.32
 2026-11-25,Army,AlphaPoint model,-14.33
 2026-11-25,Charleston Southern,AlphaPoint model,-7.35
@@ -25827,7 +25827,7 @@ date,team,source,rating
 2026-11-25,Bucknell,AlphaPoint model,-14.02
 2026-11-25,Harvard,AlphaPoint model,-2.89
 2026-11-25,Southern,AlphaPoint model,-11.8
-2026-11-25,Texas A&M-Corpus Christi,AlphaPoint model,-2.37
+2026-11-25,Texas A&M-Corpus Christi,AlphaPoint model,-2.36
 2026-11-25,UC Davis,AlphaPoint model,-1.8
 2026-11-25,Florida International,AlphaPoint model,-0.28
 2026-11-25,Bowling Green,AlphaPoint model,-0.97
@@ -25870,9 +25870,9 @@ date,team,source,rating
 2026-11-25,East Tennessee State,AlphaPoint model,-0.39
 2026-11-25,IU Indianapolis,AlphaPoint model,-6.25
 2026-11-25,Omaha,AlphaPoint model,-9.58
-2026-11-25,Ole Miss,AlphaPoint model,17.56
+2026-11-25,Ole Miss,AlphaPoint model,17.57
 2026-11-25,NJIT,AlphaPoint model,-16.73
-2026-11-25,Wofford,AlphaPoint model,-6.6
+2026-11-25,Wofford,AlphaPoint model,-6.61
 2026-11-25,DePaul,AlphaPoint model,14.95
 2026-11-25,South Dakota,AlphaPoint model,-6.65
 2026-11-25,North Dakota State,AlphaPoint model,-3.4
