@@ -1,6 +1,6 @@
 {
  "sport": "nba",
- "generated": "2026-11-24T22:43:01-05:00",
+ "generated": "2026-11-24T23:45:00-05:00",
  "teams": {
   "OKC": {
    "checked": "2026-11-24T16:50:54-05:00",
@@ -198,12 +198,12 @@
    ]
   },
   "SA": {
-   "checked": "2026-11-23T21:41:56-05:00",
+   "checked": "2026-11-24T23:45:00-05:00",
    "watch": [
     {
      "direction": "too_high",
      "since": "2026-11-23",
-     "text": "Wembanyama (low back tightness, first missed game of the season) and Fox (right shin contusion) are OUT at Sacramento on 11/23; Harper, Harris also out. McLaughlin cleared.",
+     "text": "Wembanyama (low back tightness, his first missed game of the season) and Fox (right shin contusion) sat 11/23 at Sacramento; both are day-to-day for 11/25 at Portland on ESPN's injury report. Harper (hip, out until about mid-December) and Harris are still out.",
      "source": "KSAT",
      "url": "https://www.ksat.com/sports/2026/11/24/spurs-rule-out-wembanyama-fox-for-game-at-kings/",
      "date": "2026-11-23"
@@ -682,6 +682,12 @@
    "swings": {
     "BKN": "Nolan Traore (22.3 mpg) went out on 11/23 with a hamstring strain (8-10 weeks; out at MIL on the 11/24 official report), so the market came down on Brooklyn toward our lower number."
    }
+  },
+  "401909325": {
+   "swings": {
+    "SA": "Wembanyama (low back) and Fox (shin) sat 11/23 at Sacramento, which made the market lower on San Antonio last game; both are now listed day-to-day for 11/25 at Portland (ESPN injury report, updated 11/24 evening) and the line has moved from Spurs -2.5 to -3.5, pricing in at least a partial return; Harper (hip) and Harris remain out."
+   },
+   "checked": "2026-11-24T23:45:00-05:00"
   }
  }
 }
