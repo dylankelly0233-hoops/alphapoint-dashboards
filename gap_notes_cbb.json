@@ -1,6 +1,6 @@
 {
  "sport": "cbb",
- "generated": "2026-11-24T20:45:00-05:00",
+ "generated": "2026-11-24T22:43:01-05:00",
  "teams": {
   "Dayton": {
    "watch": [
@@ -236,11 +236,11 @@
   },
   "Colorado": {
    "watch": [],
-   "checked": "2026-11-24T12:43:54-05:00"
+   "checked": "2026-11-24T22:43:01-05:00"
   },
   "Stanford": {
    "watch": [],
-   "checked": "2026-11-24T19:42:39-05:00"
+   "checked": "2026-11-24T22:43:01-05:00"
   },
   "St. Bonaventure": {
    "watch": [],
@@ -346,7 +346,7 @@
   },
   "Gonzaga": {
    "watch": [],
-   "checked": "2026-11-24T16:50:54-05:00"
+   "checked": "2026-11-24T22:43:01-05:00"
   },
   "Grand Canyon": {
    "watch": [],
@@ -358,7 +358,7 @@
   },
   "Kansas State": {
    "watch": [],
-   "checked": "2026-11-24T16:50:54-05:00"
+   "checked": "2026-11-24T22:43:01-05:00"
   },
   "LSU": {
    "watch": [],
@@ -443,6 +443,14 @@
   "Xavier": {
    "watch": [],
    "checked": "2026-11-24T16:50:54-05:00"
+  },
+  "George Mason": {
+   "watch": [],
+   "checked": "2026-11-24T22:43:01-05:00"
+  },
+  "Longwood": {
+   "watch": [],
+   "checked": "2026-11-24T22:43:01-05:00"
   }
  },
  "games": {
@@ -473,8 +481,9 @@
   },
   "401909800": {
    "swings": {
-    "Kansas State": "Nothing found: the market moved on Kansas State without a clear reason; no injury news found, and the line has held at Gonzaga -12.5 since it opened (11/22)."
-   }
+    "Kansas State": "Nothing found: no injury news for either team in the Players Era previews; the line moved from Gonzaga -12.5 (opened 11/22) to -15.5 by tip without a clear reason."
+   },
+   "checked": "2026-11-24T22:43:01-05:00"
   },
   "401915943": {
    "swings": {
@@ -775,7 +784,7 @@
    ]
   },
   "401909763": {
-   "checked": "2026-11-24T19:42:39-05:00",
+   "checked": "2026-11-24T22:43:01-05:00",
    "verdict": "unexplained",
    "summary": "Neutral-site game in Palm Desert; no injuries reported for either side, and the move from Stanford -2.5 to -4.5 looks like a reaction to Colorado's 77-74 home loss to Portland.",
    "reasons": [
@@ -798,7 +807,7 @@
    ],
    "swings": {
     "Colorado": "The market moved from Stanford -2.5 to -4.5 after Colorado's 77-74 home loss to Portland (Nov 19); no injuries found, and Colorado's regular rotation played that game (ESPN box score).",
-    "Stanford": "No news for either team: ESPN's DraftKings line is Stanford -3.5 (opened -2.5, -4.5 earlier today), so the market did not turn against Stanford; the swing comes from this neutral-site line being read with the sides reversed (ESPN lists Stanford as the home side for odds)."
+    "Stanford": "No news for either team: ESPN's DraftKings line is Stanford -4.5 at tip (opened -2.5), so the market did not turn against Stanford; the swing comes from this neutral-site line being read with the sides reversed (ESPN lists Stanford as the home side)."
    }
   },
   "401927398": {
@@ -866,6 +875,15 @@
     "Wright State": "Wright State lost 72-70 in OT to St. Bonaventure on Nov 24 with Dominic Pangonis and Noah Lewis out again and four starters playing 35-41 minutes; this is its third game in three days in Orlando, and the line slipped from -7.5 to -6.5 (ESPN box score, DraftKings)."
    },
    "checked": "2026-11-24T19:42:39-05:00"
+  },
+  "401920076": {
+   "checked": "2026-11-24T22:43:01-05:00",
+   "swings": {
+    "George Mason": "Nothing found: no injury news, and George Mason's usual starters all played its 73-62 home win over South Florida on 11/21 (as a 3.5-pt favorite); the market moved up on the Patriots after that result."
+   },
+   "verified_numbers": [
+    "73-62"
+   ]
   }
  }
 }

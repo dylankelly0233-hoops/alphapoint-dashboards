@@ -1,6 +1,6 @@
 {
  "sport": "nba",
- "generated": "2026-11-24T20:45:00-05:00",
+ "generated": "2026-11-24T22:43:01-05:00",
  "teams": {
   "OKC": {
    "checked": "2026-11-24T16:50:54-05:00",
@@ -37,14 +37,18 @@
    ]
   },
   "GS": {
+   "checked": "2026-11-24T22:43:01-05:00",
    "watch": [
     {
      "direction": "too_high",
-     "since": "2026-11-12",
-     "text": "Stephen Curry (oblique tear) has missed 3 straight and is out vs BOS, estimated back about Dec 12; ratings still lean on the 13 games he played. Porzingis and Butler are also out.",
-     "source": "ESPN",
-     "url": "https://www.espn.com/nba/game/_/gameId/401910035/celtics-warriors",
-     "date": "2026-11-22"
+     "since": "2026-11-14",
+     "text": "Stephen Curry (oblique tear) has missed the last 5 games (Warriors 1-4) and is out vs SAC on the NBA's 9:30 PM ET report of 11/24; Butler, Porzingis and Moody are also out.",
+     "source": "NBA official injury report",
+     "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-24_09_30PM.pdf",
+     "date": "2026-11-24",
+     "verified_numbers": [
+      "1-4"
+     ]
     }
    ]
   },
@@ -70,17 +74,17 @@
    "checked": "2026-11-24T18:42:22-05:00"
   },
   "CHI": {
+   "checked": "2026-11-24T22:43:01-05:00",
    "watch": [
     {
      "direction": "too_high",
      "since": "2026-11-12",
-     "text": "Norman Powell (hamstring) and Caleb Wilson (hand fracture) are both out vs CLE on the NBA's 6:30 PM ET report on 11/23, and Nic Claxton is questionable (illness): the Bulls are without their two leading scorers.",
+     "text": "Norman Powell (hamstring) and Caleb Wilson (hand fracture), the Bulls' two leading scorers, are out at CHA; Jalen Smith is questionable (illness), NBA 9:30 PM ET report of 11/24.",
      "source": "NBA official injury report",
-     "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-23_06_30PM.pdf",
-     "date": "2026-11-23"
+     "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-24_09_30PM.pdf",
+     "date": "2026-11-24"
     }
-   ],
-   "checked": "2026-11-23T18:43:45-05:00"
+   ]
   },
   "NY": {
    "checked": "2026-11-24T16:50:54-05:00",
@@ -233,15 +237,15 @@
    ]
   },
   "CHA": {
-   "checked": "2026-11-23T17:43:18-05:00",
+   "checked": "2026-11-24T22:43:01-05:00",
    "watch": [
     {
      "direction": "too_high",
      "since": "2026-11-15",
-     "text": "Allen (concussion), Schroder, Grant Williams and Knueppel are out vs MEM on 11/23; Brandon Miller (knee) is listed available on the 5:30 PM ET official report.",
+     "text": "Kon Knueppel and Dennis Schroder (hamstrings) are out vs CHI and Ryan Kalkbrenner is doubtful (hip); Grayson Allen is upgraded to questionable (concussion), NBA 9:30 PM ET report of 11/24.",
      "source": "NBA official injury report",
-     "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-23_05_30PM.pdf",
-     "date": "2026-11-23"
+     "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-24_09_30PM.pdf",
+     "date": "2026-11-24"
     }
    ]
   },
@@ -267,6 +271,7 @@
    ]
   },
   "BKN": {
+   "checked": "2026-11-24T22:43:01-05:00",
    "watch": [
     {
      "direction": "too_high",
@@ -276,8 +281,7 @@
      "url": "https://www.espn.com/nba/injuries",
      "date": "2026-11-23"
     }
-   ],
-   "checked": "2026-11-23T17:43:18-05:00"
+   ]
   },
   "CLE": {
    "checked": "2026-11-24T16:50:54-05:00",
@@ -301,8 +305,8 @@
    "checked": "2026-11-23T11:17:25-05:00"
   },
   "MIL": {
-   "watch": [],
-   "checked": "2026-11-23T11:17:25-05:00"
+   "checked": "2026-11-24T22:43:01-05:00",
+   "watch": []
   },
   "MIN": {
    "checked": "2026-11-24T16:50:54-05:00",
@@ -326,8 +330,17 @@
    "checked": "2026-11-24T16:50:54-05:00"
   },
   "SAC": {
-   "checked": "2026-11-23T21:41:56-05:00",
-   "watch": []
+   "checked": "2026-11-24T22:43:01-05:00",
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-24",
+     "text": "Maxime Raynaud (right patella subluxation) and Ben Simmons are listed out at GS on the NBA's 9:30 PM ET report of 11/24.",
+     "source": "NBA official injury report",
+     "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-24_09_30PM.pdf",
+     "date": "2026-11-24"
+    }
+   ]
   },
   "TOR": {
    "watch": [],
@@ -613,6 +626,62 @@
   },
   "401909314": {
    "checked": "2026-11-24T17:42:02-05:00"
+  },
+  "401909324": {
+   "checked": "2026-11-24T22:43:01-05:00",
+   "verdict": "partly",
+   "summary": "Golden State is without Curry, Butler, Porzingis and Moody; our rating still carries Curry's early games, which explains part of why we're higher on the Warriors (6 of the last 6).",
+   "reasons": [
+    {
+     "text": "Stephen Curry (oblique tear) is out vs SAC and has missed 5 straight; Jimmy Butler (ACL), Moses Moody (patellar tendon) and Kristaps Porzingis (not with team) are also out.",
+     "source": "NBA official injury report",
+     "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-24_09_30PM.pdf",
+     "date": "2026-11-24"
+    },
+    {
+     "text": "Sacramento (2-15) is without Maxime Raynaud and Ben Simmons, which pushes the other way, so the Warriors' absences don't cover the whole gap.",
+     "source": "NBA official injury report",
+     "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-24_09_30PM.pdf",
+     "date": "2026-11-24",
+     "verified_numbers": [
+      "2-15"
+     ]
+    }
+   ],
+   "returning": []
+  },
+  "401909318": {
+   "checked": "2026-11-24T22:43:01-05:00",
+   "verdict": "partly",
+   "summary": "Both teams are short-handed (Chicago without Powell and Wilson, Charlotte without Knueppel and Schroder); the market leans on the Bulls' missing scorers more than our ratings do.",
+   "reasons": [
+    {
+     "text": "Chicago's two leading scorers, Norman Powell (hamstring) and Caleb Wilson (hand fracture), are out; Jalen Smith is questionable (illness).",
+     "source": "NBA official injury report",
+     "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-24_09_30PM.pdf",
+     "date": "2026-11-24"
+    },
+    {
+     "text": "Charlotte has Kon Knueppel and Dennis Schroder out and Ryan Kalkbrenner doubtful, but Grayson Allen is upgraded to questionable from out.",
+     "source": "NBA official injury report",
+     "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-24_09_30PM.pdf",
+     "date": "2026-11-24"
+    }
+   ],
+   "returning": [
+    {
+     "team": "CHA",
+     "player": "Grayson Allen",
+     "text": "Upgraded to questionable (concussion protocol) after missing the 11/23 game vs MEM.",
+     "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-24_09_30PM.pdf"
+    }
+   ]
+  },
+  "401909322": {
+   "checked": "2026-11-24T22:43:01-05:00",
+   "swings": {
+    "BKN": "Nolan Traore (22.3 mpg) went out on 11/23 with a hamstring strain (8-10 weeks; out at MIL on the 11/24 official report), so the market came down on Brooklyn toward our lower number."
+   }
   }
  }
 }
