@@ -1,6 +1,6 @@
 {
  "sport": "cbb",
- "generated": "2026-11-25T09:42:25-05:00",
+ "generated": "2026-11-25T10:43:06-05:00",
  "teams": {
   "Dayton": {
    "watch": [
@@ -149,15 +149,16 @@
    "checked": "2026-11-24T13:50:00-05:00"
   },
   "Wright State": {
-   "checked": "2026-11-24T19:42:39-05:00",
+   "checked": "2026-11-25T10:43:06-05:00",
    "watch": [
     {
      "direction": "too_high",
      "since": "2026-11-22",
-     "text": "Dominic Pangonis and Noah Lewis are out for the ESPN Events Invitational, per the school; neither played in Monday's 66-64 win over Akron.",
+     "text": "Dominic Pangonis and Noah Lewis are out for the ESPN Events Invitational, per the school; neither played Nov 23 (66-64 win over Akron) or Nov 24 (72-70 OT loss to St. Bonaventure).",
      "source": "Wright State Athletics",
      "url": "https://wsuraiders.com/news/2026/11/22/mens-basketball-mbb-preview-raiders-head-to-orlando-for-espn-invitational",
-     "date": "2026-11-22"
+     "date": "2026-11-22",
+     "verified_numbers": []
     }
    ]
   },
@@ -175,7 +176,7 @@
   },
   "Yale": {
    "watch": [],
-   "checked": "2026-11-23T15:06:50-05:00"
+   "checked": "2026-11-25T10:43:06-05:00"
   },
   "Belmont": {
    "watch": [],
@@ -239,11 +240,11 @@
   },
   "Colorado": {
    "watch": [],
-   "checked": "2026-11-24T22:43:01-05:00"
+   "checked": "2026-11-25T10:43:06-05:00"
   },
   "Stanford": {
    "watch": [],
-   "checked": "2026-11-24T22:43:01-05:00"
+   "checked": "2026-11-25T10:43:06-05:00"
   },
   "St. Bonaventure": {
    "watch": [],
@@ -894,7 +895,7 @@
    "swings": {
     "Wright State": "Wright State lost 72-70 in OT to St. Bonaventure on Nov 24 with Dominic Pangonis and Noah Lewis out again and four starters playing 35-41 minutes; this is its third game in three days in Orlando, and the line slipped from -7.5 to -6.5 (ESPN box score, DraftKings)."
    },
-   "checked": "2026-11-24T19:42:39-05:00"
+   "checked": "2026-11-25T10:43:06-05:00"
   },
   "401920076": {
    "checked": "2026-11-24T22:43:01-05:00",
@@ -1019,6 +1020,18 @@
    "swings": {
     "Louisville": "Louisville beat Texas Tech 72-64 on 11/24 with Seth Trimble back (32 min), which lifted our rating toward the market; Texas Tech played without JT Toppin."
    }
+  },
+  "401921671": {
+   "swings": {
+    "Colorado": "Colorado beat Stanford 70-65 as a 4.5-pt underdog on Nov 24 in the Acrisure Series at Acrisure Arena; this is its second game in two days. No injury news found (ESPN box score)."
+   },
+   "checked": "2026-11-25T10:43:06-05:00"
+  },
+  "401921672": {
+   "swings": {
+    "Stanford": "Stanford lost 70-65 to Colorado as a 4.5-pt favorite on Nov 24 at Acrisure Arena and plays again a day later; no injury news found, so the market moved on Stanford without a clear reason (ESPN box score)."
+   },
+   "checked": "2026-11-25T10:43:06-05:00"
   }
  }
 }

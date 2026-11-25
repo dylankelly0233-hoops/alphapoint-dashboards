@@ -1,6 +1,6 @@
 {
  "sport": "epl",
- "generated": "2026-11-23T13:41:28-05:00",
+ "generated": "2026-11-25T10:43:06-05:00",
  "teams": {
   "BRE": {
    "checked": "2026-11-23T13:41:28-05:00",
@@ -254,7 +254,9 @@
     }
    ],
    "returning": [],
-   "swings": {}
+   "swings": {
+    "MAN": "Our xG model marked United down after the 4-0 loss at Liverpool on Nov 22 (Pochettino's first game) and Brentford's 4-0 win over Everton on Nov 23; the market stays higher on United, likely pricing Brentford's Thiago ban and missing defenders (ESPN results)."
+   }
   },
   "401878750": {
    "checked": "2026-11-23T11:44:49-05:00",
