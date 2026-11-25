@@ -1,6 +1,6 @@
 {
  "sport": "cbb",
- "generated": "2026-11-25T08:44:33-05:00",
+ "generated": "2026-11-25T09:42:25-05:00",
  "teams": {
   "Dayton": {
    "watch": [
@@ -117,15 +117,18 @@
    "checked": "2026-11-23T18:43:45-05:00"
   },
   "Louisville": {
-   "checked": "2026-11-24T18:42:22-05:00",
+   "checked": "2026-11-25T09:42:25-05:00",
    "watch": [
     {
      "direction": "too_low",
      "since": "2026-11-20",
-     "text": "Seth Trimble (28 mpg) missed the Stetson win on 11/20 and Kelsey says he plays vs Texas Tech on 11/24; that game is in our ratings without him.",
-     "source": "Athlon Sports",
-     "url": "https://athlonsports.com/college-basketball/pat-kelsey-announces-seth-trimble-news-before-texas-tech-game",
-     "date": "2026-11-24"
+     "text": "Seth Trimble (28 mpg) missed the Stetson win on 11/20 and returned for 32 minutes in the 72-64 win over Texas Tech on 11/24.",
+     "source": "ESPN box score",
+     "url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401915942",
+     "date": "2026-11-25",
+     "verified_numbers": [
+      "72-64"
+     ]
     },
     {
      "direction": "too_high",
@@ -451,6 +454,23 @@
   "Longwood": {
    "watch": [],
    "checked": "2026-11-24T22:43:01-05:00"
+  },
+  "Wisconsin": {
+   "checked": "2026-11-25T09:42:25-05:00",
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-21",
+     "text": "Guard Jack Janicki (17.8 mpg) is out for the season after foot surgery; Wisconsin has 12 available players, with Manchester and Fenderson also out.",
+     "source": "NBC Sports",
+     "url": "https://nbcsports.com/mens-college-basketball/news/wisconsin-guard-jack-janicki-is-undergoing-season-ending-foot-surgery",
+     "date": "2026-11-23"
+    }
+   ]
+  },
+  "Northeastern": {
+   "checked": "2026-11-25T09:42:25-05:00",
+   "watch": []
   }
  },
  "games": {
@@ -958,6 +978,46 @@
    "checked": "2026-11-25T08:44:33-05:00",
    "swings": {
     "Creighton": "Creighton's 99-73 rout of Michigan on Nov. 24 lifted our ratings far more than the market; TCU forward Luke Bamgboye stays out (undisclosed)."
+   }
+  },
+  "401911028": {
+   "checked": "2026-11-25T09:42:25-05:00",
+   "verdict": "partly",
+   "summary": "The market has marked Wisconsin down after two straight neutral-site losses and Jack Janicki's season-ending foot injury; Janicki is a bench guard, so that covers only part of our 5-point gap.",
+   "reasons": [
+    {
+     "text": "Guard Jack Janicki (17.8 mpg, 4.0 ppg) hurt his foot vs Murray State and is out for the season after surgery, Greg Gard said; Wisconsin is down to 12 available players.",
+     "source": "NBC Sports",
+     "url": "https://nbcsports.com/mens-college-basketball/news/wisconsin-guard-jack-janicki-is-undergoing-season-ending-foot-surgery",
+     "date": "2026-11-23"
+    },
+    {
+     "text": "Wisconsin lost both Baha Mar games, 74-69 to Seton Hall on 11/20 and 70-53 to Murray State on 11/21; the line opened Wisconsin -21.5 and has dropped to -19.5.",
+     "source": "Bucky's 5th Quarter",
+     "url": "https://www.buckys5thquarter.com/wisconsin-badgers-mens-basketball/91785/wisconsin-badgers-basketball-news-injury-update-jack-janicki-out-for-season-surgery-foot-greg-gard",
+     "date": "2026-11-24",
+     "verified_numbers": [
+      "74-69",
+      "70-53"
+     ]
+    },
+    {
+     "text": "Guards Josh Manchester (shoulder) and LaTrevion Fenderson are also listed out, so Trey Autry and Jackson Ball absorb Janicki's minutes; both sat in the Murray State loss too.",
+     "source": "Bucky's 5th Quarter",
+     "url": "https://www.buckys5thquarter.com/wisconsin-badgers-mens-basketball/91785/wisconsin-badgers-basketball-news-injury-update-jack-janicki-out-for-season-surgery-foot-greg-gard",
+     "date": "2026-11-24"
+    }
+   ],
+   "returning": [],
+   "swings": {
+    "Wisconsin": "The market dropped Wisconsin after the 74-69 Seton Hall and 70-53 Murray State losses (11/20-21) and Janicki's season-ending foot surgery (11/23); our rating moved less.",
+    "Northeastern": "Mirror of Wisconsin's move: the line fell from -21.5 to -19.5 on Wisconsin's losses and Janicki injury; Northeastern itself lost 84-77 to Butler and 95-82 at Stonehill."
+   }
+  },
+  "401920530": {
+   "checked": "2026-11-25T09:42:25-05:00",
+   "swings": {
+    "Louisville": "Louisville beat Texas Tech 72-64 on 11/24 with Seth Trimble back (32 min), which lifted our rating toward the market; Texas Tech played without JT Toppin."
    }
   }
  }
