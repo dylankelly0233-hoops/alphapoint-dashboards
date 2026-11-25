@@ -1,6 +1,6 @@
 {
  "sport": "cbb",
- "generated": "2026-11-25T17:42:56-05:00",
+ "generated": "2026-11-25T18:43:10-05:00",
  "teams": {
   "Dayton": {
    "watch": [
@@ -268,12 +268,12 @@
    "checked": "2026-11-24T15:50:00-05:00"
   },
   "Oklahoma": {
-   "checked": "2026-11-24T11:44:03-05:00",
+   "checked": "2026-11-25T18:43:10-05:00",
    "watch": [
     {
      "direction": "too_high",
      "since": "2026-11-16",
-     "text": "Starting F Duke Brennan broke his ankle in practice on 11/16 and is out for an extended period; he started 4 of Oklahoma's 5 games, so our ratings are mostly built with him.",
+     "text": "Starting F Duke Brennan broke his ankle in practice on 11/16 and is out for an extended period; he started Oklahoma's first four games and has missed the last two.",
      "source": "News 9",
      "url": "https://www.news9.com/sports/university-of-oklahoma/oklahoma-basketball-loses-duke-brennan-for-extended-time-with-broken-ankle",
      "date": "2026-11-16"
@@ -302,7 +302,7 @@
   },
   "Purdue": {
    "watch": [],
-   "checked": "2026-11-24T16:41:40-05:00"
+   "checked": "2026-11-25T18:43:10-05:00"
   },
   "Illinois State": {
    "watch": [],
@@ -596,6 +596,14 @@
      "date": "2026-11-23"
     }
    ]
+  },
+  "Georgia": {
+   "watch": [],
+   "checked": "2026-11-25T18:43:10-05:00"
+  },
+  "Cincinnati": {
+   "watch": [],
+   "checked": "2026-11-25T18:43:10-05:00"
   }
  },
  "games": {
@@ -1283,6 +1291,37 @@
   },
   "401909568": {
    "checked": "2026-11-25T17:42:56-05:00"
+  },
+  "401906807": {
+   "checked": "2026-11-25T18:43:10-05:00",
+   "verdict": "unexplained",
+   "summary": "Nothing found that justifies Purdue only -4.5 on a neutral floor: both teams played their full rotations Tuesday, and Oklahoma's Duke Brennan injury pushes toward Purdue, not away.",
+   "reasons": [
+    {
+     "text": "Purdue's top players all logged normal minutes in Tuesday's 65-56 loss to DePaul in Fort Myers, so the market's caution looks like reaction to that result, not an absence.",
+     "source": "ESPN box score",
+     "url": "https://www.espn.com/mens-college-basketball/boxscore/_/gameId/401909505",
+     "date": "2026-11-24"
+    },
+    {
+     "text": "Oklahoma lost 79-68 to Pitt Tuesday and has played without starting F Duke Brennan (broken ankle, 11/16), which if anything argues for a bigger Purdue number.",
+     "source": "ESPN box score",
+     "url": "https://www.espn.com/mens-college-basketball/boxscore/_/gameId/401906806",
+     "date": "2026-11-24"
+    },
+    {
+     "text": "The line opened Purdue -4.5 and has not moved, while our number grew after Tuesday's results.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401906807",
+     "date": "2026-11-25"
+    }
+   ]
+  },
+  "401929281": {
+   "checked": "2026-11-25T18:43:10-05:00",
+   "swings": {
+    "Georgia": "Nothing found: Georgia's full rotation played in the 88-82 win at Georgia Tech on 11/21 (ESPN box) and no injury news turned up; the market held Cincinnati -1.5 while our number on Georgia fell."
+   }
   }
  }
 }

@@ -1,6 +1,6 @@
 {
  "sport": "nhl",
- "generated": "2026-11-25T17:42:56-05:00",
+ "generated": "2026-11-25T18:43:10-05:00",
  "teams": {
   "OTT": {
    "checked": "2026-11-25T17:42:56-05:00",
@@ -63,7 +63,7 @@
    ]
   },
   "UTAH": {
-   "checked": "2026-11-25T08:44:33-05:00",
+   "checked": "2026-11-25T18:43:10-05:00",
    "watch": [
     {
      "direction": "too_high",
@@ -149,14 +149,14 @@
    ]
   },
   "MIN": {
-   "checked": "2026-11-25T11:46:50-05:00",
+   "checked": "2026-11-25T18:43:10-05:00",
    "watch": [
     {
      "direction": "too_high",
      "since": "2026-11-23",
-     "text": "No. 1 D Quinn Hughes (upper body) is on injured reserve; D Olli Maatta is also on IR.",
+     "text": "No. 1 D Quinn Hughes (upper body) is still on injured reserve for Wednesday vs Utah; D Olli Maatta is also on IR.",
      "source": "ESPN NHL injuries",
-     "url": "https://www.espn.com/nhl/injuries",
+     "url": "https://www.espn.com/nhl/game/_/gameId/401892791",
      "date": "2026-11-25"
     }
    ]
@@ -261,14 +261,14 @@
    ]
   },
   "DAL": {
-   "checked": "2026-11-25T08:44:33-05:00",
+   "checked": "2026-11-25T18:43:10-05:00",
    "watch": [
     {
      "direction": "too_high",
      "since": "2026-10-12",
-     "text": "C Matt Duchene is out about three months after core surgery; D Tyler Myers (upper body) may return vs Nashville.",
+     "text": "C Matt Duchene is on IR about three months after core surgery; D Tyler Myers (upper body) is no longer on ESPN's injury list for the Nashville game.",
      "source": "ESPN NHL injuries",
-     "url": "https://www.espn.com/nhl/injuries",
+     "url": "https://www.espn.com/nhl/game/_/gameId/401892790",
      "date": "2026-11-25"
     }
    ]
@@ -287,7 +287,7 @@
    ]
   },
   "NSH": {
-   "checked": "2026-11-25T08:44:33-05:00",
+   "checked": "2026-11-25T18:43:10-05:00",
    "watch": []
   },
   "NYR": {
@@ -478,7 +478,7 @@
    "checked": "2026-11-23T19:42:09-05:00"
   },
   "401892791": {
-   "checked": "2026-11-25T11:46:50-05:00",
+   "checked": "2026-11-25T18:43:10-05:00",
    "verdict": "partly",
    "summary": "Quinn Hughes (IR) is still out for Minnesota, which accounts for part of the gap, but Utah is short Schmaltz, Marino and Schmidt too, so the market's 59% looks cautious.",
    "reasons": [
@@ -608,6 +608,9 @@
   },
   "401892789": {
    "checked": "2026-11-25T17:42:56-05:00"
+  },
+  "401892790": {
+   "checked": "2026-11-25T18:43:10-05:00"
   }
  }
 }

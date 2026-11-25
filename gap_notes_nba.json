@@ -1,6 +1,6 @@
 {
  "sport": "nba",
- "generated": "2026-11-25T17:42:56-05:00",
+ "generated": "2026-11-25T18:43:10-05:00",
  "teams": {
   "OKC": {
    "checked": "2026-11-25T17:42:56-05:00",
@@ -227,14 +227,14 @@
    ]
   },
   "MEM": {
-   "checked": "2026-11-25T11:46:24-05:00",
+   "checked": "2026-11-25T18:43:10-05:00",
    "watch": [
     {
      "direction": "too_high",
      "since": "2026-11-21",
-     "text": "Cameron Boozer (ankle) and Jerami Grant (calf) are out vs LAC tonight; GG Jackson, Pippen Jr. and Saunders are out too, NBA 11:30 AM ET report.",
+     "text": "Cameron Boozer (ankle) and Jerami Grant (calf) are out vs LAC tonight; GG Jackson, Pippen Jr. and Saunders are out too, NBA 6:30 PM ET report.",
      "source": "NBA official injury report",
-     "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-25_11_30AM.pdf",
+     "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-25_06_30PM.pdf",
      "date": "2026-11-25"
     }
    ]
@@ -274,14 +274,14 @@
    ]
   },
   "BKN": {
-   "checked": "2026-11-25T11:46:24-05:00",
+   "checked": "2026-11-25T18:43:10-05:00",
    "watch": [
     {
      "direction": "too_high",
      "since": "2026-11-23",
-     "text": "Nolan Traore (22.3 mpg) has a right hamstring strain, re-evaluated in about 8-10 weeks; he is out at MIL tonight on the NBA's 11:30 AM ET report.",
+     "text": "Nolan Traore (22.3 mpg) has a right hamstring strain, re-evaluated in about 8-10 weeks; he is out at MIL tonight on the NBA's 6:30 PM ET report.",
      "source": "NBA official injury report",
-     "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-25_11_30AM.pdf",
+     "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-25_06_30PM.pdf",
      "date": "2026-11-25"
     }
    ]
@@ -305,10 +305,10 @@
   },
   "LAC": {
    "watch": [],
-   "checked": "2026-11-25T11:46:24-05:00"
+   "checked": "2026-11-25T18:43:10-05:00"
   },
   "MIL": {
-   "checked": "2026-11-25T11:46:24-05:00",
+   "checked": "2026-11-25T18:43:10-05:00",
    "watch": []
   },
   "MIN": {
@@ -678,7 +678,7 @@
    "returning": []
   },
   "401909322": {
-   "checked": "2026-11-25T11:46:24-05:00",
+   "checked": "2026-11-25T18:43:10-05:00",
    "swings": {
     "BKN": "Nolan Traore (22.3 mpg) went out on 11/23 with a hamstring strain (8-10 weeks; out at MIL on the 11/25 11:30 AM ET report), so the market came down on Brooklyn toward our lower number."
    }
@@ -714,6 +714,9 @@
     }
    ],
    "returning": []
+  },
+  "401909321": {
+   "checked": "2026-11-25T18:43:10-05:00"
   }
  }
 }
