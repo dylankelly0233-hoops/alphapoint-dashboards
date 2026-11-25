@@ -1,6 +1,6 @@
 {
  "sport": "cbb",
- "generated": "2026-11-25T14:43:14-05:00",
+ "generated": "2026-11-25T15:42:24-05:00",
  "teams": {
   "Dayton": {
    "watch": [
@@ -199,7 +199,7 @@
    "checked": "2026-11-23T16:45:00-05:00"
   },
   "BYU": {
-   "checked": "2026-11-25T14:43:14-05:00",
+   "checked": "2026-11-25T15:42:24-05:00",
    "watch": [
     {
      "direction": "too_high",
@@ -392,7 +392,7 @@
   },
   "Memphis": {
    "watch": [],
-   "checked": "2026-11-24T16:50:54-05:00"
+   "checked": "2026-11-25T15:42:24-05:00"
   },
   "Mississippi State": {
    "watch": [],
@@ -408,10 +408,10 @@
   },
   "Penn State": {
    "watch": [],
-   "checked": "2026-11-24T16:50:54-05:00"
+   "checked": "2026-11-25T15:42:24-05:00"
   },
   "Providence": {
-   "checked": "2026-11-25T14:43:14-05:00",
+   "checked": "2026-11-25T15:42:24-05:00",
    "watch": [
     {
      "direction": "too_low",
@@ -524,6 +524,19 @@
   "TCU": {
    "watch": [],
    "checked": "2026-11-25T11:45:40-05:00"
+  },
+  "Arkansas": {
+   "checked": "2026-11-25T15:42:24-05:00",
+   "watch": [
+    {
+     "direction": "too_low",
+     "since": "2026-11-21",
+     "text": "Guard Jordan Smith Jr. (wrist inflammation) missed the Nov. 21 Mississippi Valley State win; he practiced and Calipari said he should be good to go vs Michigan State.",
+     "source": "Yahoo Sports",
+     "url": "https://sports.yahoo.com/articles/arkansas-john-calipari-gives-jordan-203141696.html",
+     "date": "2026-11-23"
+    }
+   ]
   }
  },
  "games": {
@@ -1015,7 +1028,7 @@
    }
   },
   "401917182": {
-   "checked": "2026-11-25T08:44:33-05:00",
+   "checked": "2026-11-25T15:42:24-05:00",
    "swings": {
     "Penn State": "Nothing found: the market moved on Penn State without a clear reason (no injury news for either team before the Nov. 25 Battle 4 Atlantis game)."
    }
@@ -1132,7 +1145,7 @@
    }
   },
   "401921716": {
-   "checked": "2026-11-25T14:43:14-05:00",
+   "checked": "2026-11-25T15:42:24-05:00",
    "verdict": "partly",
    "summary": "The line fell from BYU -4.5 to -1.5 as star PG Rob Wright looks set to miss a fourth straight game; that covers part of our 4.7-pt gap.",
    "reasons": [
@@ -1163,6 +1176,12 @@
      "url": "https://www.si.com/college/byu/basketball/previewing-byu-basketball-vs-providence-in-maui-invitational"
     }
    ]
+  },
+  "401925757": {
+   "checked": "2026-11-25T15:42:24-05:00",
+   "swings": {
+    "Arkansas": "The last gap came in a 44-pt mismatch vs Mississippi Valley State (Nov. 21), played without Jordan Smith Jr. (wrist); Calipari expects Smith back vs Michigan State (Yahoo, Nov. 23)."
+   }
   }
  }
 }

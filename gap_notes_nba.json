@@ -1,6 +1,6 @@
 {
  "sport": "nba",
- "generated": "2026-11-25T13:42:14-05:00",
+ "generated": "2026-11-25T15:42:24-05:00",
  "teams": {
   "OKC": {
    "checked": "2026-11-25T11:46:24-05:00",
@@ -27,14 +27,14 @@
    ]
   },
   "MIA": {
-   "checked": "2026-11-25T11:46:24-05:00",
+   "checked": "2026-11-25T15:42:24-05:00",
    "watch": [
     {
      "direction": "unclear",
      "since": "2026-11-22",
-     "text": "Giannis Antetokounmpo (right groin tendinitis) missed Sunday vs OKC and is questionable at PHI tonight on the NBA's 11:30 AM ET report; he practiced Tuesday.",
+     "text": "Giannis Antetokounmpo (right groin tendinitis) missed Sunday vs OKC and is upgraded to probable at PHI tonight on the NBA's 3:30 PM ET report.",
      "source": "NBA official injury report",
-     "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-25_11_30AM.pdf",
+     "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-25_03_30PM.pdf",
      "date": "2026-11-25"
     }
    ]
@@ -188,14 +188,14 @@
    ]
   },
   "PHI": {
-   "checked": "2026-11-25T11:46:24-05:00",
+   "checked": "2026-11-25T15:42:24-05:00",
    "watch": [
     {
      "direction": "too_high",
      "since": "2026-11-23",
-     "text": "Joel Embiid (illness) missed Monday vs POR and is doubtful vs MIA tonight on the NBA's 11:30 AM ET report.",
+     "text": "Joel Embiid (illness) missed Monday vs POR and is ruled out vs MIA tonight on the NBA's 3:30 PM ET report.",
      "source": "NBA official injury report",
-     "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-25_11_30AM.pdf",
+     "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-25_03_30PM.pdf",
      "date": "2026-11-25"
     }
    ]
@@ -622,9 +622,9 @@
    }
   },
   "401909317": {
-   "checked": "2026-11-25T11:46:24-05:00",
+   "checked": "2026-11-25T15:42:24-05:00",
    "swings": {
-    "MIA": "Sunday's game vs OKC came with SGA, Holmgren and J. Williams out (market had MIA -4.5, we were far lower on Miami); vs PHI that is gone, and Giannis is questionable, Embiid doubtful (11:30 AM ET report)."
+    "MIA": "Sunday's game vs OKC came with SGA, Holmgren and J. Williams out (market had MIA -4.5, we were far lower on Miami); vs PHI that is gone, Giannis is probable and Embiid out (3:30 PM ET report)."
    }
   },
   "401909314": {
