@@ -1,6 +1,6 @@
 {
  "sport": "cbb",
- "generated": "2026-11-25T12:43:35-05:00",
+ "generated": "2026-11-25T14:43:14-05:00",
  "teams": {
   "Dayton": {
    "watch": [
@@ -74,7 +74,7 @@
   },
   "San Diego State": {
    "watch": [],
-   "checked": "2026-11-25T11:45:40-05:00"
+   "checked": "2026-11-25T14:43:14-05:00"
   },
   "Iowa State": {
    "watch": [],
@@ -146,7 +146,7 @@
   },
   "Maryland": {
    "watch": [],
-   "checked": "2026-11-25T11:45:40-05:00"
+   "checked": "2026-11-25T14:43:14-05:00"
   },
   "Wright State": {
    "checked": "2026-11-25T10:43:06-05:00",
@@ -199,8 +199,17 @@
    "checked": "2026-11-23T16:45:00-05:00"
   },
   "BYU": {
-   "watch": [],
-   "checked": "2026-11-23T16:58:00-05:00"
+   "checked": "2026-11-25T14:43:14-05:00",
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-19",
+     "text": "PG Rob Wright III has missed BYU's last 3 games (Nov. 19-24) and is likely out again vs Providence; most of our BYU rating comes from games he played.",
+     "source": "SI (BYU On SI)",
+     "url": "https://www.si.com/college/byu/basketball/previewing-byu-basketball-vs-providence-in-maui-invitational",
+     "date": "2026-11-25"
+    }
+   ]
   },
   "Washington": {
    "watch": [],
@@ -402,8 +411,17 @@
    "checked": "2026-11-24T16:50:54-05:00"
   },
   "Providence": {
-   "watch": [],
-   "checked": "2026-11-24T16:50:54-05:00"
+   "checked": "2026-11-25T14:43:14-05:00",
+   "watch": [
+    {
+     "direction": "too_low",
+     "since": "2026-11-10",
+     "text": "Leading scorer Devin Vanterpool (shoulder, 16 ppg) has missed the last 4 games since Nov. 10; if cleared vs BYU, our rating built without him understates the Friars.",
+     "source": "SI (BYU On SI)",
+     "url": "https://www.si.com/college/byu/basketball/previewing-byu-basketball-vs-providence-in-maui-invitational",
+     "date": "2026-11-25"
+    }
+   ]
   },
   "SMU": {
    "watch": [],
@@ -941,9 +959,9 @@
    ]
   },
   "401920528": {
-   "checked": "2026-11-25T11:45:40-05:00",
+   "checked": "2026-11-25T14:43:14-05:00",
    "verdict": "unexplained",
-   "summary": "Nothing found to justify Maryland as a 1.5-pt favorite on a neutral Las Vegas floor; neither team has a confirmed key absence after both lost Tuesday.",
+   "summary": "Nothing found to justify Maryland as a 4.5-pt favorite on a neutral Las Vegas floor; the line moved from Maryland -1.5 with no new injury news.",
    "reasons": [
     {
      "text": "Both lost on Nov. 24 in the Players Era: Maryland 72-64 to Tennessee and San Diego State 81-68 to Iowa State, so neither result moves the gap.",
@@ -957,7 +975,10 @@
      "url": "https://www.tonyspicks.com/2026/11/24/san-diego-state-vs-maryland-prediction-picks-11-26-26/",
      "date": "2026-11-24"
     }
-   ]
+   ],
+   "swings": {
+    "San Diego State": "Nothing found: the market moved on San Diego State (Maryland -1.5 to -4.5 since this morning) without a clear reason; no new Aztecs injury after the 81-68 Iowa State loss."
+   }
   },
   "401920537": {
    "checked": "2026-11-25T11:45:40-05:00",
@@ -1109,6 +1130,39 @@
     "LSU": "Not a real swing: the market line was read with home and away flipped (real line LSU -4.5, ESPN game page); LSU is 6-0 and no injury news.",
     "Arizona State": "Not a real swing: the market line was read with home and away flipped (real line LSU -4.5, ESPN game page); Arizona State is 5-0 and no injury news."
    }
+  },
+  "401921716": {
+   "checked": "2026-11-25T14:43:14-05:00",
+   "verdict": "partly",
+   "summary": "The line fell from BYU -4.5 to -1.5 as star PG Rob Wright looks set to miss a fourth straight game; that covers part of our 4.7-pt gap.",
+   "reasons": [
+    {
+     "text": "BYU point guard Rob Wright III is likely unavailable for a fourth straight game (box scores: out Nov. 19, 23 and 24).",
+     "source": "SI (BYU On SI)",
+     "url": "https://www.si.com/college/byu/basketball/previewing-byu-basketball-vs-providence-in-maui-invitational",
+     "date": "2026-11-25"
+    },
+    {
+     "text": "Providence's Devin Vanterpool (shoulder) could return; he has not played since Nov. 10.",
+     "source": "SI (BYU On SI)",
+     "url": "https://www.si.com/college/byu/basketball/previewing-byu-basketball-vs-providence-in-maui-invitational",
+     "date": "2026-11-25"
+    },
+    {
+     "text": "Neutral-site Maui third-place game, both teams' third game in three days; BYU lost 73-63 to Ole Miss, Providence 84-66 to Arizona on Tuesday.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401921716",
+     "date": "2026-11-25"
+    }
+   ],
+   "returning": [
+    {
+     "team": "Providence",
+     "player": "Devin Vanterpool",
+     "text": "Possible return from a shoulder injury; out since Nov. 10.",
+     "url": "https://www.si.com/college/byu/basketball/previewing-byu-basketball-vs-providence-in-maui-invitational"
+    }
+   ]
   }
  }
 }

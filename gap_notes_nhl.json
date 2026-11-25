@@ -1,6 +1,6 @@
 {
  "sport": "nhl",
- "generated": "2026-11-25T12:43:35-05:00",
+ "generated": "2026-11-25T14:43:14-05:00",
  "teams": {
   "OTT": {
    "checked": "2026-11-25T08:44:33-05:00",
@@ -162,15 +162,15 @@
    ]
   },
   "ANA": {
-   "checked": "2026-11-23T19:42:09-05:00",
+   "checked": "2026-11-25T14:43:14-05:00",
    "watch": [
     {
      "direction": "too_high",
      "since": "2026-11-21",
-     "text": "Leo Carlsson (upper body, 19.8 TOI) is not expected to play at SEA on 11/23 after missing Sunday's practice (Nico Myatovic recalled), and Beckett Sennecke (20.3 TOI) is on IR: two top-six forwards out. Starting goalies not confirmed yet.",
-     "source": "NHL.com",
-     "url": "https://nhl.com/news/nhl-status-report-news-and-notes-november-23-2026",
-     "date": "2026-11-23"
+     "text": "C Leo Carlsson (upper body, 19.8 TOI) is ruled out again vs SJ on 11/25 and Beckett Sennecke (20.3 TOI) is on IR: two top-six forwards out.",
+     "source": "Rotowire",
+     "url": "https://rotowire.com/hockey/headlines/leo-carlsson-injury-ruled-out-again-wednesday-601059",
+     "date": "2026-11-25"
     }
    ]
   },
@@ -179,7 +179,7 @@
    "watch": []
   },
   "SJ": {
-   "checked": "2026-11-23T20:42:33-05:00",
+   "checked": "2026-11-25T14:43:14-05:00",
    "watch": [
     {
      "direction": "too_high",
@@ -563,6 +563,31 @@
     ".909",
     ".878",
     "2-3"
+   ]
+  },
+  "401892793": {
+   "checked": "2026-11-25T14:43:14-05:00",
+   "verdict": "partly",
+   "summary": "Anaheim is without two top-six forwards (Carlsson, Sennecke), which our ratings don't see; San Jose's own absences offset some of that.",
+   "reasons": [
+    {
+     "text": "Leo Carlsson (upper body) is ruled out vs San Jose; coach Joel Quenneville doesn't expect a long absence.",
+     "source": "Rotowire",
+     "url": "https://rotowire.com/hockey/headlines/leo-carlsson-injury-ruled-out-again-wednesday-601059",
+     "date": "2026-11-25"
+    },
+    {
+     "text": "Beckett Sennecke, Ryan Poehling and A.J. Greer are on IR for Anaheim; San Jose is without D Jacob Trouba and F Kiefer Sherwood (IR).",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nhl/game/_/gameId/401892793",
+     "date": "2026-11-25"
+    },
+    {
+     "text": "Starting goalies not confirmed yet for either team.",
+     "source": "Daily Faceoff",
+     "url": "https://www.dailyfaceoff.com/teams/anaheim-ducks/line-combinations",
+     "date": "2026-11-25"
+    }
    ]
   }
  }
