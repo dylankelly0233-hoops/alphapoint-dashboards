@@ -1,15 +1,23 @@
 {
  "sport": "nhl",
- "week": 20261124,
- "generated": "2026-11-24T16:50:27-05:00",
+ "week": 20261125,
+ "generated": "2026-11-25T11:44:28-05:00",
  "movers": [
   {
-   "team": "COL",
-   "tag": "CLUSTER",
-   "text": "C Nathan MacKinnon (20.2 TOI, lower body) is expected to miss about 12 weeks (Colorado Hockey Now, 11/21); D Cale Makar (22.4) has missed 4 games but skated in a regular sweater 11/24.",
+   "team": "FLA",
+   "tag": "RETURNING",
+   "text": "Captain Aleksander Barkov (knee, out since Oct. 1) and Brad Marchand (knee) are returning vs OTT tonight, the Panthers said Wednesday morning.",
    "source": "ESPN",
-   "url": "https://www.espn.com/nhl/injuries",
-   "date": "2026-11-24"
+   "url": "https://www.espn.com/nhl/story/_/id/50594065/aleksander-barkov-brad-marchand-returning-vs-senators",
+   "date": "2026-11-25"
+  },
+  {
+   "team": "COL",
+   "tag": "RETURNING",
+   "text": "D Cale Makar (22.4 TOI, lower body, out since 11/12) practiced fully and hopes to return vs MTL tonight, decision after the morning skate; C Nathan MacKinnon is out about 12 weeks.",
+   "source": "Sports Illustrated",
+   "url": "https://www.si.com/nhl/avalanche/onsi/news/avalanche-get-positive-cale-makar-injury-update-canadiens-game",
+   "date": "2026-11-25"
   },
   {
    "team": "CHI",
@@ -28,41 +36,15 @@
    "date": "2026-11-23"
   },
   {
-   "team": "FLA",
-   "tag": "RETURNING",
-   "text": "Captain Aleksander Barkov (knee, out since early October) could return Wednesday vs OTT, Paul Maurice said; Brad Marchand (knee) is possible.",
-   "source": "Yahoo Sports",
-   "url": "https://sports.yahoo.com/articles/panthers-place-cole-reinhardt-nhl-193354501.html",
-   "date": "2026-11-22"
-  },
-  {
-   "team": "STL",
-   "tag": "CLUSTER",
-   "text": "St. Louis: Connor McMichael (15.5 TOI) isn't expected to play at NYI on 11/25 (NHL.com); Jimmy Snuggerud is questionable, and Brandon Carlo and Pavel Buchnevich are day-to-day.",
-   "source": "ESPN",
-   "url": "https://www.espn.com/nhl/injuries",
-   "date": "2026-11-24"
+   "team": "VAN",
+   "tag": "KEY",
+   "text": "C Elias Pettersson (18.7 TOI, upper body) is ruled out for the rest of the road trip, including tonight at DET, and is expected out until at least early December.",
+   "source": "CBS Sports",
+   "url": "https://www.cbssports.com/fantasy/hockey/news/canucks-elias-pettersson-ruled-out-for-remainder-of-road-trip/",
+   "date": "2026-11-25"
   }
  ],
  "teams": {
-  "COL": [
-   {
-    "team": "COL",
-    "tag": "CLUSTER",
-    "text": "C Nathan MacKinnon (20.2 TOI, lower body) is expected to miss about 12 weeks (Colorado Hockey Now, 11/21); D Cale Makar (22.4) has missed 4 games but skated in a regular sweater 11/24.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nhl/injuries",
-    "date": "2026-11-24"
-   },
-   {
-    "team": "COL",
-    "tag": "RETURNING",
-    "text": "D Cale Makar (22.4 TOI, lower body, 4 games missed) was on the ice in a regular sweater ahead of Wednesday vs MTL (Denver Gazette, 11/24).",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nhl/injuries",
-    "date": "2026-11-24"
-   }
-  ],
   "CHI": [
    {
     "team": "CHI",
@@ -103,31 +85,11 @@
     "date": "2026-11-24"
    }
   ],
-  "TB": [
-   {
-    "team": "TB",
-    "tag": "KEY",
-    "text": "LW Brandon Hagel (20.5 TOI, lower body) is on injured reserve retroactive to 11/15 and has missed 3 games (Tampa Bay Times).",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nhl/injuries",
-    "date": "2026-11-19"
-   }
-  ],
   "SJ": [
    {
     "team": "SJ",
     "tag": "KEY",
     "text": "D Jacob Trouba (22.1 TOI) is listed out; Kiefer Sherwood (upper body) went on injured reserve 11/23.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nhl/injuries",
-    "date": "2026-11-23"
-   }
-  ],
-  "VAN": [
-   {
-    "team": "VAN",
-    "tag": "KEY",
-    "text": "C Elias Pettersson (20.7 TOI) is day-to-day after missing 2 games; check his status before 11/25 at DET.",
     "source": "ESPN",
     "url": "https://www.espn.com/nhl/injuries",
     "date": "2026-11-23"
@@ -141,16 +103,6 @@
     "source": "ESPN",
     "url": "https://www.espn.com/nhl/injuries",
     "date": "2026-11-24"
-   }
-  ],
-  "FLA": [
-   {
-    "team": "FLA",
-    "tag": "RETURNING",
-    "text": "Captain Aleksander Barkov (knee, out since early October) could return Wednesday vs OTT, Paul Maurice said; Brad Marchand (knee) is possible.",
-    "source": "Yahoo Sports",
-    "url": "https://sports.yahoo.com/articles/panthers-place-cole-reinhardt-nhl-193354501.html",
-    "date": "2026-11-22"
    }
   ],
   "WPG": [
@@ -171,6 +123,36 @@
     "source": "ESPN",
     "url": "https://www.espn.com/nhl/injuries",
     "date": "2026-11-23"
+   }
+  ],
+  "COL": [
+   {
+    "team": "COL",
+    "tag": "RETURNING",
+    "text": "D Cale Makar (22.4 TOI, lower body, out since 11/12) practiced fully and hopes to return vs MTL tonight, decision after the morning skate; C Nathan MacKinnon is out about 12 weeks.",
+    "source": "Sports Illustrated",
+    "url": "https://www.si.com/nhl/avalanche/onsi/news/avalanche-get-positive-cale-makar-injury-update-canadiens-game",
+    "date": "2026-11-25"
+   }
+  ],
+  "FLA": [
+   {
+    "team": "FLA",
+    "tag": "RETURNING",
+    "text": "Captain Aleksander Barkov (knee, out since Oct. 1) and Brad Marchand (knee) are returning vs OTT tonight, the Panthers said Wednesday morning.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nhl/story/_/id/50594065/aleksander-barkov-brad-marchand-returning-vs-senators",
+    "date": "2026-11-25"
+   }
+  ],
+  "VAN": [
+   {
+    "team": "VAN",
+    "tag": "KEY",
+    "text": "C Elias Pettersson (18.7 TOI, upper body) is ruled out for the rest of the road trip, including tonight at DET, and is expected out until at least early December.",
+    "source": "CBS Sports",
+    "url": "https://www.cbssports.com/fantasy/hockey/news/canucks-elias-pettersson-ruled-out-for-remainder-of-road-trip/",
+    "date": "2026-11-25"
    }
   ]
  }

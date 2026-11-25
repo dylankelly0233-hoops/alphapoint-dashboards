@@ -1,6 +1,6 @@
 {
  "sport": "cbb",
- "generated": "2026-11-25T10:43:06-05:00",
+ "generated": "2026-11-25T11:45:40-05:00",
  "teams": {
   "Dayton": {
    "watch": [
@@ -48,15 +48,15 @@
    "checked": "2026-11-23T18:43:45-05:00"
   },
   "Tennessee": {
-   "checked": "2026-11-24T13:50:00-05:00",
+   "checked": "2026-11-25T11:45:40-05:00",
    "watch": [
     {
      "direction": "too_high",
-     "since": "2026-11-17",
-     "text": "Jalen Haralson (20.5 mpg, right knee hyperextension 11/17) missed Coastal Carolina and is expected to sit against Maryland on 11/24; day to day, not long term.",
-     "source": "CBS Sports",
-     "url": "https://www.cbssports.com/betting/news/no-9-tennessee-vs-maryland-cbb-odds-parlay-volunteers-should-have-too-much-in-players-era-16-vegas-matinee/",
-     "date": "2026-11-24"
+     "since": "2026-11-21",
+     "text": "Jalen Haralson (20.5 mpg, right knee) has missed two straight games (Coastal Carolina 11/21, Maryland 11/24); the team does not think it is long-term. Status for Iowa State not given.",
+     "source": "WIVK",
+     "url": "https://www.wivk.com/2026/11/25/ames-24-points-push-9-11-vols-past-maryland-72-64-in-players-era-16-opener/",
+     "date": "2026-11-25"
     }
    ]
   },
@@ -74,7 +74,7 @@
   },
   "San Diego State": {
    "watch": [],
-   "checked": "2026-11-24T15:50:00-05:00"
+   "checked": "2026-11-25T11:45:40-05:00"
   },
   "Iowa State": {
    "watch": [],
@@ -82,7 +82,7 @@
   },
   "Michigan": {
    "watch": [],
-   "checked": "2026-11-24T15:50:00-05:00"
+   "checked": "2026-11-25T11:45:40-05:00"
   },
   "Creighton": {
    "watch": [],
@@ -146,7 +146,7 @@
   },
   "Maryland": {
    "watch": [],
-   "checked": "2026-11-24T13:50:00-05:00"
+   "checked": "2026-11-25T11:45:40-05:00"
   },
   "Wright State": {
    "checked": "2026-11-25T10:43:06-05:00",
@@ -349,8 +349,17 @@
    "checked": "2026-11-24T17:42:02-05:00"
   },
   "Gonzaga": {
-   "watch": [],
-   "checked": "2026-11-24T22:43:01-05:00"
+   "checked": "2026-11-25T11:45:40-05:00",
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-24",
+     "text": "PG Javon Bennett (16.5 mpg, started vs Montana State) has a right knee sprain and is out for the Players Era 16 and likely into December; our ratings carry his games.",
+     "source": "Sports Illustrated",
+     "url": "https://www.si.com/college/gonzaga/basketball/gonzaga-loses-starting-guard-multiple-weeks-knee-sprain-javon-bennett",
+     "date": "2026-11-25"
+    }
+   ]
   },
   "Grand Canyon": {
    "watch": [],
@@ -457,7 +466,7 @@
    "checked": "2026-11-24T22:43:01-05:00"
   },
   "Wisconsin": {
-   "checked": "2026-11-25T09:42:25-05:00",
+   "checked": "2026-11-25T11:45:40-05:00",
    "watch": [
     {
      "direction": "too_high",
@@ -470,8 +479,33 @@
    ]
   },
   "Northeastern": {
-   "checked": "2026-11-25T09:42:25-05:00",
+   "checked": "2026-11-25T11:45:40-05:00",
    "watch": []
+  },
+  "Miami": {
+   "checked": "2026-11-25T11:45:40-05:00",
+   "watch": [
+    {
+     "direction": "too_low",
+     "since": "2026-11-24",
+     "text": "Forward Malik Reneau, first-team All-ACC last season, missed the Rider and Manhattan games and returned for 29 minutes vs TCU on 11/24; our ratings carry the games without him.",
+     "source": "Miami Herald via Yahoo",
+     "url": "https://sports.yahoo.com/articles/miami-men-basketball-ready-early-182121409.html",
+     "date": "2026-11-23"
+    }
+   ]
+  },
+  "App State": {
+   "watch": [],
+   "checked": "2026-11-25T11:45:40-05:00"
+  },
+  "Ole Miss": {
+   "watch": [],
+   "checked": "2026-11-25T11:45:40-05:00"
+  },
+  "TCU": {
+   "watch": [],
+   "checked": "2026-11-25T11:45:40-05:00"
   }
  },
  "games": {
@@ -907,7 +941,7 @@
    ]
   },
   "401920528": {
-   "checked": "2026-11-25T08:44:33-05:00",
+   "checked": "2026-11-25T11:45:40-05:00",
    "verdict": "unexplained",
    "summary": "Nothing found to justify Maryland as a 1.5-pt favorite on a neutral Las Vegas floor; neither team has a confirmed key absence after both lost Tuesday.",
    "reasons": [
@@ -926,9 +960,9 @@
    ]
   },
   "401920537": {
-   "checked": "2026-11-25T08:44:33-05:00",
+   "checked": "2026-11-25T11:45:40-05:00",
    "verdict": "partly",
-   "summary": "Miami gets forward Malik Reneau back (he played 29 minutes vs TCU after missing two games), which covers some of the gap; Michigan has lost three of its last four.",
+   "summary": "Miami gets forward Malik Reneau back (he played 29 minutes vs TCU after missing two games), which covers some of the gap; Michigan has lost its last two, to Villanova and Creighton.",
    "reasons": [
     {
      "text": "Malik Reneau (upper body), first-team All-ACC last season, missed the Rider and Manhattan games and returned for 29 minutes in the Nov. 24 loss to TCU.",
@@ -940,7 +974,11 @@
      "text": "Michigan lost 99-73 to Creighton on Nov. 24 after a 79-73 loss to Villanova; our ratings still have Michigan ahead of the market.",
      "source": "ESPN",
      "url": "https://www.espn.com/mens-college-basketball/team/schedule/_/id/130",
-     "date": "2026-11-25"
+     "date": "2026-11-25",
+     "verified_numbers": [
+      "99-73",
+      "79-73"
+     ]
     }
    ],
    "returning": [
@@ -982,7 +1020,7 @@
    }
   },
   "401911028": {
-   "checked": "2026-11-25T09:42:25-05:00",
+   "checked": "2026-11-25T11:45:40-05:00",
    "verdict": "partly",
    "summary": "The market has marked Wisconsin down after two straight neutral-site losses and Jack Janicki's season-ending foot injury; Janicki is a bench guard, so that covers only part of our 5-point gap.",
    "reasons": [

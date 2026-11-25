@@ -1,8 +1,38 @@
 {
  "sport": "cbb",
- "week": 20261124,
- "generated": "2026-11-24T16:50:27-05:00",
+ "week": 20261125,
+ "generated": "2026-11-25T11:42:54-05:00",
  "movers": [
+  {
+   "team": "Gonzaga",
+   "tag": "KEY",
+   "player": "Javon Bennett",
+   "status": "out",
+   "text": "Gonzaga PG Javon Bennett (16.5 mpg) has a right knee sprain and will miss the Players Era 16 games, a team official said; expected out a few weeks. Xaivian Lee started vs K-State.",
+   "source": "The Spokesman-Review",
+   "url": "https://www.si.com/college/gonzaga/basketball/gonzaga-loses-starting-guard-multiple-weeks-knee-sprain-javon-bennett",
+   "date": "2026-11-25"
+  },
+  {
+   "team": "Kentucky",
+   "tag": "KEY",
+   "player": "Malachi Moreno",
+   "status": "questionable",
+   "text": "Kentucky C Malachi Moreno (27.8 mpg) is in concussion protocol after the Indiana game; Mark Pope is hopeful but has not given his status for Friday's Wichita State game.",
+   "source": "Sports Illustrated",
+   "url": "https://www.si.com/college/kentucky/men-s-basketball/mark-pope-shared-some-context-on-malachi-moreno-s-injury-status",
+   "date": "2026-11-25"
+  },
+  {
+   "team": "Texas",
+   "tag": "KEY",
+   "player": "Isaiah Johnson",
+   "status": "questionable",
+   "text": "Texas PG Isaiah Johnson (24.2 mpg) left the Southern Indiana win after four minutes with a glute strain; Sean Miller called his status unknown for Georgetown (11/26) in San Diego.",
+   "source": "Austin American-Statesman",
+   "url": "https://www.statesman.com/sports/longhorns/mens-basketball/article/isaiah-johnson-injury-update-texas-longhorns-22546209.php",
+   "date": "2026-11-23"
+  },
   {
    "team": "Wisconsin",
    "tag": "KEY",
@@ -14,44 +44,14 @@
    "status": "out"
   },
   {
-   "team": "Florida",
-   "tag": "KEY",
-   "text": "Florida's Boogie Fland (25.2 mpg, nagging shoulder) is out vs Milwaukee on 11/24, his second straight missed game, per the Gators' preview; Denzel Aberdeen runs the point.",
-   "source": "Florida Gators (official)",
-   "url": "https://floridagators.com/news/2026/11/23/mens-basketball-florida-vs-milwaukee-nov-24-2026",
-   "date": "2026-11-23",
-   "player": "Boogie Fland",
-   "status": "out"
-  },
-  {
-   "team": "Texas",
-   "tag": "KEY",
-   "text": "Texas PG Isaiah Johnson (24.2 mpg) left the Southern Indiana win after about four minutes with a glute strain; Sean Miller says his status for the Thanksgiving tournament is unknown.",
-   "source": "Austin American-Statesman",
-   "url": "https://www.statesman.com/sports/longhorns/mens-basketball/article/isaiah-johnson-injury-update-texas-longhorns-22546209.php",
-   "date": "2026-11-23",
-   "player": "Isaiah Johnson",
-   "status": "questionable"
-  },
-  {
-   "team": "Louisville",
-   "tag": "RETURNING",
-   "text": "Pat Kelsey says Seth Trimble (28 mpg) will play vs Texas Tech on 11/24 after missing the Stetson win with a minor injury.",
-   "source": "Athlon Sports",
-   "url": "https://athlonsports.com/college-basketball/pat-kelsey-announces-seth-trimble-news-before-texas-tech-game",
-   "date": "2026-11-24",
-   "player": "Seth Trimble",
-   "status": "returning"
-  },
-  {
    "team": "Michigan State",
    "tag": "RETURNING",
-   "text": "Michigan State's Coen Carr (21.8 mpg, knee tendinitis) was a full participant in Monday's practice after sitting the last two games; Izzo expects him back for Arkansas on Thanksgiving.",
-   "source": "Sports Illustrated",
-   "url": "https://www.si.com/college/michiganstate/spartans-tom-izzo-updates-statuses-jordan-scott-coen-carr-arkansas-matchup",
-   "date": "2026-11-23",
    "player": "Coen Carr",
-   "status": "returning"
+   "status": "returning",
+   "text": "Michigan State's Coen Carr (21.8 mpg, knee tendinitis) sat out the Detroit Mercy win; Tom Izzo expects him to play Arkansas on Thursday, role to be decided.",
+   "source": "Detroit Free Press",
+   "url": "https://sports.yahoo.com/articles/michigan-state-basketball-expects-injured-165052874.html",
+   "date": "2026-11-23"
   }
  ],
  "teams": {
@@ -67,63 +67,89 @@
     "status": "out"
    }
   ],
-  "Florida": [
+  "Gonzaga": [
    {
-    "team": "Florida",
+    "team": "Gonzaga",
     "tag": "KEY",
-    "text": "Florida's Boogie Fland (25.2 mpg, nagging shoulder) is out vs Milwaukee on 11/24, his second straight missed game, per the Gators' preview; Denzel Aberdeen runs the point.",
-    "source": "Florida Gators (official)",
-    "url": "https://floridagators.com/news/2026/11/23/mens-basketball-florida-vs-milwaukee-nov-24-2026",
-    "date": "2026-11-23",
-    "player": "Boogie Fland",
-    "status": "out"
+    "player": "Javon Bennett",
+    "status": "out",
+    "text": "Gonzaga PG Javon Bennett (16.5 mpg) has a right knee sprain and will miss the Players Era 16 games, a team official said; expected out a few weeks. Xaivian Lee started vs K-State.",
+    "source": "The Spokesman-Review",
+    "url": "https://www.si.com/college/gonzaga/basketball/gonzaga-loses-starting-guard-multiple-weeks-knee-sprain-javon-bennett",
+    "date": "2026-11-25"
+   }
+  ],
+  "Kentucky": [
+   {
+    "team": "Kentucky",
+    "tag": "KEY",
+    "player": "Malachi Moreno",
+    "status": "questionable",
+    "text": "Kentucky C Malachi Moreno (27.8 mpg) is in concussion protocol after the Indiana game; Mark Pope is hopeful but has not given his status for Friday's Wichita State game.",
+    "source": "Sports Illustrated",
+    "url": "https://www.si.com/college/kentucky/men-s-basketball/mark-pope-shared-some-context-on-malachi-moreno-s-injury-status",
+    "date": "2026-11-25"
    }
   ],
   "Texas": [
    {
     "team": "Texas",
     "tag": "KEY",
-    "text": "Texas PG Isaiah Johnson (24.2 mpg) left the Southern Indiana win after about four minutes with a glute strain; Sean Miller says his status for the Thanksgiving tournament is unknown.",
+    "player": "Isaiah Johnson",
+    "status": "questionable",
+    "text": "Texas PG Isaiah Johnson (24.2 mpg) left the Southern Indiana win after four minutes with a glute strain; Sean Miller called his status unknown for Georgetown (11/26) in San Diego.",
     "source": "Austin American-Statesman",
     "url": "https://www.statesman.com/sports/longhorns/mens-basketball/article/isaiah-johnson-injury-update-texas-longhorns-22546209.php",
-    "date": "2026-11-23",
-    "player": "Isaiah Johnson",
-    "status": "questionable"
+    "date": "2026-11-23"
    }
   ],
   "Michigan State": [
    {
     "team": "Michigan State",
     "tag": "RETURNING",
-    "text": "Michigan State's Coen Carr (21.8 mpg, knee tendinitis) was a full participant in Monday's practice after sitting the last two games; Izzo expects him back for Arkansas on Thanksgiving.",
-    "source": "Sports Illustrated",
-    "url": "https://www.si.com/college/michiganstate/spartans-tom-izzo-updates-statuses-jordan-scott-coen-carr-arkansas-matchup",
-    "date": "2026-11-23",
     "player": "Coen Carr",
-    "status": "returning"
+    "status": "returning",
+    "text": "Michigan State's Coen Carr (21.8 mpg, knee tendinitis) sat out the Detroit Mercy win; Tom Izzo expects him to play Arkansas on Thursday, role to be decided.",
+    "source": "Detroit Free Press",
+    "url": "https://sports.yahoo.com/articles/michigan-state-basketball-expects-injured-165052874.html",
+    "date": "2026-11-23"
    },
    {
     "team": "Michigan State",
     "tag": "RETURNING",
-    "text": "Michigan State starter Jordan Scott (23.4 mpg, right shoulder) practiced in a limited role Monday after missing the last two games; not yet confirmed for the Arkansas game.",
-    "source": "Sports Illustrated",
-    "url": "https://www.si.com/college/michiganstate/spartans-tom-izzo-updates-statuses-jordan-scott-coen-carr-arkansas-matchup",
-    "date": "2026-11-23",
     "player": "Jordan Scott",
-    "status": "questionable"
+    "status": "questionable",
+    "text": "Michigan State starter Jordan Scott (23.4 mpg, right shoulder) was limited in practice early this week; Izzo expects him back for Arkansas on Thursday but has not set his minutes.",
+    "source": "Detroit Free Press",
+    "url": "https://sports.yahoo.com/articles/michigan-state-basketball-expects-injured-165052874.html",
+    "date": "2026-11-23"
+   }
+  ],
+  "Tennessee": [
+   {
+    "team": "Tennessee",
+    "tag": "KEY",
+    "player": "Jalen Haralson",
+    "status": "questionable",
+    "text": "Tennessee's Jalen Haralson (20.5 mpg, right knee) missed a second straight game in the 72-64 Maryland win on 11/24; the team does not think it is long-term. No word yet for Iowa State.",
+    "source": "WIVK",
+    "url": "https://www.wivk.com/2026/11/25/ames-24-points-push-9-11-vols-past-maryland-72-64-in-players-era-16-opener/",
+    "date": "2026-11-25"
+   }
+  ],
+  "Syracuse": [
+   {
+    "team": "Syracuse",
+    "tag": "KEY",
+    "player": "Garwey Dual",
+    "status": "questionable",
+    "text": "Syracuse PG Garwey Dual (24.2 mpg) hurt his right ankle vs Lafayette on 11/21 (10 minutes); a team spokesperson called him day-to-day Monday ahead of UAlbany on 11/25.",
+    "source": "Inside the Loud House",
+    "url": "https://insidetheloudhouse.com/update-on-syracuse-basketball-senior-pg-garwey-dual-who-injured-his-ankle-in-last-game",
+    "date": "2026-11-24"
    }
   ],
   "Louisville": [
-   {
-    "team": "Louisville",
-    "tag": "RETURNING",
-    "text": "Pat Kelsey says Seth Trimble (28 mpg) will play vs Texas Tech on 11/24 after missing the Stetson win with a minor injury.",
-    "source": "Athlon Sports",
-    "url": "https://athlonsports.com/college-basketball/pat-kelsey-announces-seth-trimble-news-before-texas-tech-game",
-    "date": "2026-11-24",
-    "player": "Seth Trimble",
-    "status": "returning"
-   },
    {
     "team": "Louisville",
     "tag": "KEY",
@@ -135,28 +161,16 @@
     "date": "2026-11-23"
    }
   ],
-  "Tennessee": [
+  "Illinois": [
    {
-    "team": "Tennessee",
+    "team": "Illinois",
     "tag": "KEY",
-    "text": "Tennessee's Jalen Haralson (20.5 mpg, right knee hyperextension 11/17) missed Coastal Carolina, and game-day reports on 11/24 said he was expected to sit vs Maryland.",
-    "source": "CBS Sports",
-    "url": "https://www.cbssports.com/betting/news/no-9-tennessee-vs-maryland-cbb-odds-parlay-volunteers-should-have-too-much-in-players-era-16-vegas-matinee/",
-    "date": "2026-11-24",
-    "player": "Jalen Haralson",
-    "status": "questionable"
-   }
-  ],
-  "Syracuse": [
-   {
-    "team": "Syracuse",
-    "tag": "KEY",
-    "player": "Garwey Dual",
+    "player": "Ethan Brown",
     "status": "questionable",
-    "text": "Syracuse PG Garwey Dual (24.2 mpg) hurt his right ankle vs Lafayette on 11/21 and sat the second half in a walking boot; X-rays ordered, no status yet for UAlbany on 11/25.",
-    "source": "Yahoo Sports",
-    "url": "https://sports.yahoo.com/articles/syracuse-basketball-garwey-dual-exits-222915016.html",
-    "date": "2026-11-21"
+    "text": "Illinois guard Ethan Brown (25.1 mpg) broke his nose in the 11/23 Winthrop win; Brad Underwood said he would be evaluated, with no timetable given for Western Kentucky.",
+    "source": "Alton Telegraph",
+    "url": "https://www.thetelegraph.com/sports/article/ethan-brown-broken-nose-illinois-injury-update-22547037.php",
+    "date": "2026-11-24"
    }
   ],
   "North Carolina": [
