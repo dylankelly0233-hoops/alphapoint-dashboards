@@ -1,6 +1,6 @@
 {
  "sport": "nba",
- "generated": "2026-11-25T11:46:24-05:00",
+ "generated": "2026-11-25T13:42:14-05:00",
  "teams": {
   "OKC": {
    "checked": "2026-11-25T11:46:24-05:00",
@@ -90,14 +90,14 @@
    ]
   },
   "NY": {
-   "checked": "2026-11-25T11:46:24-05:00",
+   "checked": "2026-11-25T13:42:14-05:00",
    "watch": [
     {
      "direction": "too_high",
      "since": "2026-11-22",
-     "text": "OG Anunoby (calf) and Jordan Clarkson are out vs CLE tonight; Towns (knee), Hart (shoulder) and McBride (adductor) are questionable, NBA 11:30 AM ET report.",
+     "text": "Jalen Brunson (illness) is questionable vs CLE tonight; OG Anunoby, Miles McBride and Jordan Clarkson are out; Towns and Hart upgraded to probable (NBA 1:30 PM ET report).",
      "source": "NBA official injury report",
-     "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-25_11_30AM.pdf",
+     "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-25_01_30PM.pdf",
      "date": "2026-11-25"
     }
    ]
@@ -287,14 +287,14 @@
    ]
   },
   "CLE": {
-   "checked": "2026-11-25T11:46:24-05:00",
+   "checked": "2026-11-25T13:42:14-05:00",
    "watch": [
     {
      "direction": "too_high",
      "since": "2026-11-16",
-     "text": "Evan Mobley (left great toe sprain) is out at NY tonight on the NBA's 11:30 AM ET report; Nae'Qwan Tomlin (back) is out too.",
+     "text": "Evan Mobley (left great toe sprain) and Nae'Qwan Tomlin (back) are out at NY tonight on the NBA's 1:30 PM ET report.",
      "source": "NBA official injury report",
-     "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-25_11_30AM.pdf",
+     "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-25_01_30PM.pdf",
      "date": "2026-11-25"
     }
    ]
@@ -692,6 +692,32 @@
     "SA": "Wembanyama (back) and Fox (shin) sat 11/23 at Sacramento, which made the market lower on San Antonio last game; both are questionable at POR tonight on the 11:30 AM ET report; Harper and Harris remain out."
    },
    "checked": "2026-11-25T11:46:24-05:00"
+  },
+  "401909319": {
+   "checked": "2026-11-25T13:42:14-05:00",
+   "verdict": "explained",
+   "summary": "The market has cut the Knicks from -5.5 to -1.5 because Jalen Brunson is now questionable (illness) on top of Anunoby, McBride and Clarkson being out; Cleveland is without Evan Mobley.",
+   "reasons": [
+    {
+     "text": "Jalen Brunson (illness) was added as questionable on the NBA's 1:30 PM ET report; the line fell from Knicks -5.5 at the open to -1.5.",
+     "source": "NBA official injury report",
+     "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-25_01_30PM.pdf",
+     "date": "2026-11-25"
+    },
+    {
+     "text": "New York is also without OG Anunoby (calf), Miles McBride (adductor) and Jordan Clarkson (plantar fasciitis); Towns and Hart are probable.",
+     "source": "NBA official injury report",
+     "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-25_01_30PM.pdf",
+     "date": "2026-11-25"
+    },
+    {
+     "text": "Cleveland's Evan Mobley (toe) and Nae'Qwan Tomlin (back) are out, which offsets part of the Knicks' absences.",
+     "source": "NBA official injury report",
+     "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-25_01_30PM.pdf",
+     "date": "2026-11-25"
+    }
+   ],
+   "returning": []
   }
  }
 }

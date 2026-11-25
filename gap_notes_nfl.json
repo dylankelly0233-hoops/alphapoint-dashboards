@@ -1,6 +1,6 @@
 {
  "sport": "nfl",
- "generated": "2026-11-25T10:41:24-05:00",
+ "generated": "2026-11-25T13:42:14-05:00",
  "teams": {
   "ARI": {
    "watch": [
@@ -171,13 +171,13 @@
     {
      "direction": "too_high",
      "since": "2026-11-24",
-     "text": "RB Josh Jacobs (broken ring finger, missed Week 11) is questionable and limited; LaFleur said he'd need to show a lot of progress to play.",
-     "source": "Packers.com (final injury report)",
-     "url": "https://www.packers.com/news/packers-list-eight-questionable-vs-rams-week-12-injury-report",
+     "text": "RB Josh Jacobs (broken ring finger, sat out the Week 10 loss to Minnesota) is questionable; LaFleur said Tuesday he is unlikely to play. Inactives come about 90 min before kickoff.",
+     "source": "SI",
+     "url": "https://www.si.com/betting/josh-jacobs-injury-update-betting-impact-for-packers-vs-rams-in-nfl-week-12-2026",
      "date": "2026-11-24"
     }
    ],
-   "checked": "2026-11-25T10:41:24-05:00"
+   "checked": "2026-11-25T13:42:14-05:00"
   },
   "HOU": {
    "watch": [
@@ -274,7 +274,7 @@
      "date": "2026-11-24"
     }
    ],
-   "checked": "2026-11-25T10:41:24-05:00"
+   "checked": "2026-11-25T13:42:14-05:00"
   },
   "LAC": {
    "watch": [
@@ -545,7 +545,7 @@
  },
  "games": {
   "2026_12_GB_LA": {
-   "checked": "2026-11-25T10:41:24-05:00",
+   "checked": "2026-11-25T13:42:14-05:00",
    "verdict": "explained",
    "summary": "The market is 4 pts lower on the Rams than we are: Micah Parsons debuts for Green Bay tonight while L.A. is without Puka Nacua, Davante Adams and two interior linemen.",
    "reasons": [
