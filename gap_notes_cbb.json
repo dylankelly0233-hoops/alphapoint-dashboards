@@ -1,6 +1,6 @@
 {
  "sport": "cbb",
- "generated": "2026-11-24T18:42:22-05:00",
+ "generated": "2026-11-24T19:42:39-05:00",
  "teams": {
   "Dayton": {
    "watch": [
@@ -146,7 +146,7 @@
    "checked": "2026-11-24T13:50:00-05:00"
   },
   "Wright State": {
-   "checked": "2026-11-24T08:45:20-05:00",
+   "checked": "2026-11-24T19:42:39-05:00",
    "watch": [
     {
      "direction": "too_high",
@@ -228,11 +228,11 @@
   },
   "UC Santa Barbara": {
    "watch": [],
-   "checked": "2026-11-23T18:43:45-05:00"
+   "checked": "2026-11-24T19:42:39-05:00"
   },
   "UNC Greensboro": {
    "watch": [],
-   "checked": "2026-11-23T18:43:45-05:00"
+   "checked": "2026-11-24T19:42:39-05:00"
   },
   "Colorado": {
    "watch": [],
@@ -240,7 +240,7 @@
   },
   "Stanford": {
    "watch": [],
-   "checked": "2026-11-24T12:43:54-05:00"
+   "checked": "2026-11-24T19:42:39-05:00"
   },
   "St. Bonaventure": {
    "watch": [],
@@ -726,9 +726,9 @@
    }
   },
   "401926184": {
-   "checked": "2026-11-23T18:43:45-05:00",
+   "checked": "2026-11-24T19:42:39-05:00",
    "swings": {
-    "UC Santa Barbara": "UNC Greensboro plays at Pepperdine tonight (11/23) and at UCSB the next night, a road back-to-back on a West Coast trip that the market prices more than our ratings do (ESPN schedule)."
+    "UC Santa Barbara": "UNC Greensboro lost 89-62 at Pepperdine on Nov 23 and plays at UCSB the next night, a road back-to-back on a West Coast trip that the market prices more than our ratings do (ESPN schedule)."
    }
   },
   "401917676": {
@@ -774,7 +774,7 @@
    ]
   },
   "401909763": {
-   "checked": "2026-11-24T12:43:54-05:00",
+   "checked": "2026-11-24T19:42:39-05:00",
    "verdict": "unexplained",
    "summary": "Neutral-site game in Palm Desert; no injuries reported for either side, and the move from Stanford -2.5 to -4.5 looks like a reaction to Colorado's 77-74 home loss to Portland.",
    "reasons": [
@@ -796,7 +796,8 @@
     "5-1"
    ],
    "swings": {
-    "Colorado": "The market moved from Stanford -2.5 to -4.5 after Colorado's 77-74 home loss to Portland (Nov 19); no injuries found, and Colorado's regular rotation played that game (ESPN box score)."
+    "Colorado": "The market moved from Stanford -2.5 to -4.5 after Colorado's 77-74 home loss to Portland (Nov 19); no injuries found, and Colorado's regular rotation played that game (ESPN box score).",
+    "Stanford": "No news for either team: ESPN's DraftKings line is Stanford -3.5 (opened -2.5, -4.5 earlier today), so the market did not turn against Stanford; the swing comes from this neutral-site line being read with the sides reversed (ESPN lists Stanford as the home side for odds)."
    }
   },
   "401927398": {
@@ -858,6 +859,12 @@
     "5-0",
     "83-39"
    ]
+  },
+  "401928831": {
+   "swings": {
+    "Wright State": "Wright State lost 72-70 in OT to St. Bonaventure on Nov 24 with Dominic Pangonis and Noah Lewis out again and four starters playing 35-41 minutes; this is its third game in three days in Orlando, and the line slipped from -7.5 to -6.5 (ESPN box score, DraftKings)."
+   },
+   "checked": "2026-11-24T19:42:39-05:00"
   }
  }
 }
