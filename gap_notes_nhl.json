@@ -1,6 +1,6 @@
 {
  "sport": "nhl",
- "generated": "2026-11-25T11:46:50-05:00",
+ "generated": "2026-11-25T12:43:35-05:00",
  "teams": {
   "OTT": {
    "checked": "2026-11-25T08:44:33-05:00",
@@ -235,12 +235,12 @@
    ]
   },
   "BUF": {
-   "checked": "2026-11-25T08:44:33-05:00",
+   "checked": "2026-11-25T12:43:35-05:00",
    "watch": [
     {
      "direction": "unclear",
      "since": "2026-11-24",
-     "text": "C Tyson Kozak (undisclosed) missed Tuesday's practice and is day-to-day; Konsta Helenius and Justin Danforth are on IR.",
+     "text": "C Tyson Kozak and D Mattias Samuelsson are day-to-day (undisclosed); Konsta Helenius, Justin Danforth and Matt Grzelcyk are on IR.",
      "source": "ESPN NHL injuries",
      "url": "https://www.espn.com/nhl/injuries",
      "date": "2026-11-25"
@@ -291,12 +291,12 @@
    "watch": []
   },
   "NYR": {
-   "checked": "2026-11-25T08:44:33-05:00",
+   "checked": "2026-11-25T12:43:35-05:00",
    "watch": [
     {
      "direction": "too_high",
      "since": "2026-11-21",
-     "text": "Oliver Bjorkstrand and D Alberts Smits are out 2-3 months (upper body); Igor Shesterkin is out for the season.",
+     "text": "Bjorkstrand and D Alberts Smits out to late Jan, Veleno (Nov 20) and Dorofeyev (Nov 24) on IR; Shesterkin out for the season.",
      "source": "ESPN NHL injuries",
      "url": "https://www.espn.com/nhl/injuries",
      "date": "2026-11-25"
@@ -533,6 +533,36 @@
      "text": "Back from a knee injury.",
      "url": "https://www.espn.com/nhl/story/_/id/50594065/aleksander-barkov-brad-marchand-returning-vs-senators"
     }
+   ]
+  },
+  "401892782": {
+   "checked": "2026-11-25T12:43:35-05:00",
+   "verdict": "partly",
+   "summary": "The Rangers have lost four forwards and a defenseman to injury since Nov 20, which our ratings barely see; that covers part of the gap to the Sabres' -135 price.",
+   "reasons": [
+    {
+     "text": "Rangers out: Bjorkstrand and D Alberts Smits (IR Nov 21, to late Jan), Joe Veleno (IR Nov 20) and Pavel Dorofeyev (IR Nov 24); only one game since, a 5-2 home loss to Carolina Nov 22.",
+     "source": "ESPN NHL injuries",
+     "url": "https://www.espn.com/nhl/injuries",
+     "date": "2026-11-25"
+    },
+    {
+     "text": "Shesterkin is out for the season (knee), so Dylan Garand (.909) carries the net; Buffalo's Luukkonen is .878.",
+     "source": "ESPN game page",
+     "url": "https://www.espn.com/nhl/game/_/gameId/401892782",
+     "date": "2026-11-25"
+    },
+    {
+     "text": "Buffalo returns home after a five-game trip (2-3, wins at WSH and TB) and lists D Mattias Samuelsson and C Tyson Kozak day-to-day.",
+     "source": "ESPN game page",
+     "url": "https://www.espn.com/nhl/game/_/gameId/401892782",
+     "date": "2026-11-25"
+    }
+   ],
+   "verified_numbers": [
+    ".909",
+    ".878",
+    "2-3"
    ]
   }
  }

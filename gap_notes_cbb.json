@@ -1,6 +1,6 @@
 {
  "sport": "cbb",
- "generated": "2026-11-25T11:45:40-05:00",
+ "generated": "2026-11-25T12:43:35-05:00",
  "teams": {
   "Dayton": {
    "watch": [
@@ -244,7 +244,7 @@
   },
   "Stanford": {
    "watch": [],
-   "checked": "2026-11-25T10:43:06-05:00"
+   "checked": "2026-11-25T12:43:35-05:00"
   },
   "St. Bonaventure": {
    "watch": [],
@@ -322,7 +322,7 @@
   },
   "Arizona State": {
    "watch": [],
-   "checked": "2026-11-24T16:50:54-05:00"
+   "checked": "2026-11-25T12:43:35-05:00"
   },
   "Baylor": {
    "watch": [],
@@ -375,7 +375,7 @@
   },
   "LSU": {
    "watch": [],
-   "checked": "2026-11-24T16:50:54-05:00"
+   "checked": "2026-11-25T12:43:35-05:00"
   },
   "Marquette": {
    "watch": [],
@@ -411,7 +411,7 @@
   },
   "Saint Louis": {
    "watch": [],
-   "checked": "2026-11-24T16:50:54-05:00"
+   "checked": "2026-11-25T12:43:35-05:00"
   },
   "Santa Clara": {
    "watch": [],
@@ -1069,7 +1069,46 @@
    "swings": {
     "Stanford": "Stanford lost 70-65 to Colorado as a 4.5-pt favorite on Nov 24 at Acrisure Arena and plays again a day later; no injury news found, so the market moved on Stanford without a clear reason (ESPN box score)."
    },
-   "checked": "2026-11-25T10:43:06-05:00"
+   "checked": "2026-11-25T12:43:35-05:00",
+   "verdict": "unexplained",
+   "summary": "No injuries found for either team; the market has moved off Saint Louis (opened -4.5, now -3.5) after three straight losses, which our ratings already include.",
+   "reasons": [
+    {
+     "text": "Saint Louis has lost three straight: 68-58 at home to High Point (Nov 15), 95-78 to Saint Mary's (Nov 21) and 91-88 to Grand Canyon (Nov 24); the recap mentions no absences.",
+     "source": "Saint Louis Athletics",
+     "url": "https://slubillikens.com/news/2026/11/24/mens-basketball-late-rally-falls-short-in-loss-to-grand-canyon.aspx",
+     "date": "2026-11-24"
+    },
+    {
+     "text": "Both teams played Nov 24 in Palm Desert (Stanford lost 70-65 to Colorado), so neither has a rest edge; Quentin Jones, earlier hampered by an ankle, played 33 minutes Nov 24.",
+     "source": "Saint Louis Athletics",
+     "url": "https://slubillikens.com/news/2026/11/24/mens-basketball-late-rally-falls-short-in-loss-to-grand-canyon.aspx",
+     "date": "2026-11-24"
+    }
+   ]
+  },
+  "401921669": {
+   "checked": "2026-11-25T12:43:35-05:00",
+   "verdict": "explained",
+   "summary": "The real market is LSU -4.5 (DraftKings via ESPN), almost exactly our LSU -4; the 'Arizona State -4.5' reading is a home/away flip, since ESPN lists Arizona State as the home team at neutral Acrisure Arena.",
+   "reasons": [
+    {
+     "text": "ESPN's game page lists Arizona State as home at Acrisure Arena (neutral site) with DraftKings' line LSU -4.5, so the 8.7-pt gap is a data mix-up, not a market view.",
+     "source": "ESPN game page",
+     "url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401921669",
+     "date": "2026-11-25"
+    },
+    {
+     "text": "The line opened LSU -4.5 and the posted line is still LSU -4.5: no real move. No injuries listed for either team.",
+     "source": "ESPN game page",
+     "url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401921669",
+     "date": "2026-11-25"
+    }
+   ],
+   "swings": {
+    "LSU": "Not a real swing: the market line was read with home and away flipped (real line LSU -4.5, ESPN game page); LSU is 6-0 and no injury news.",
+    "Arizona State": "Not a real swing: the market line was read with home and away flipped (real line LSU -4.5, ESPN game page); Arizona State is 5-0 and no injury news."
+   }
   }
  }
 }
