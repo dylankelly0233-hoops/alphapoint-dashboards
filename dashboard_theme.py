@@ -608,10 +608,11 @@ td.pos { color: var(--pos); font-weight: 600; } td.neg { color: var(--neg); font
 .card.game { scroll-margin-top: 64px; }
 .whychart { display: block; max-width: 420px; margin-top: 6px; overflow: visible; }
 .whychart .wl { font: 600 10px var(--display); fill: var(--muted); letter-spacing: .3px; }
-.whychart .wb { fill: color-mix(in srgb, var(--accent) 45%, var(--surface)); }
-.whychart .wt { fill: var(--accent); }
-.whychart .wz { stroke: var(--line); stroke-width: 1; }
-.whychart .wm { stroke: var(--ink); stroke-width: 1.2; stroke-dasharray: 3 3; }
+.whychart .wol { fill: var(--ink); }
+.whychart .wz { stroke: var(--muted); stroke-width: 1; opacity: .6; }
+.whychart .wg { fill: #e3a008; opacity: .45; }
+.whychart .wo { fill: var(--accent); }
+.whychart .wmk { fill: var(--surface); stroke: var(--ink); stroke-width: 2; }
 .lmove.pricing .pline { display: block; margin-top: 2px; } .lmove.pricing .k + .pline { display: inline; margin-top: 0; }
 .lmove .pline .tag { font: 700 10.5px/1 var(--display); letter-spacing: .8px; text-transform: uppercase; color: var(--muted); margin-right: 6px; }
 .newsflag { display: block; margin-top: 4px; padding: 5px 8px; border-radius: 6px; background: var(--neg-bg); color: var(--neg);

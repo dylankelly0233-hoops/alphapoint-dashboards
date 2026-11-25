@@ -590,35 +590,44 @@ def why_row(parts, ours, market, home, away, name=lambda t: t, unit='', digits=1
 
 def why_chart(parts, ours, market, home_name, away_name, digits=1):
     """
-    The 'Built from' parts as a small bar chart (Dylan, 2026-11-24): a centre line, the away team to the left and the
-    home team to the right, one bar per part, then our line and a dashed marker at the market's number. Inline SVG
-    using the page's colour variables, so it follows light / dark mode.
+    Our line next to the market on a number line (Dylan, 2026-11-24, option C): away team favored to the left, home
+    team to the right, 'even' in the middle; the market is a hollow dot (labelled below), our line a filled dot
+    (labelled above), the gap between them shaded. The parts stay in the 'Built from' text above it. Inline SVG using
+    the page's colour variables, so it follows light / dark mode. parts is unused here (kept for the call signature).
     """
-    rows = [(lab, float(v)) for lab, v in parts if v is not None and not _nan(v) and abs(v) >= 0.5 / 10 ** digits]
-    if not rows or _nan(ours):
+    if ours is None or _nan(ours) or market is None or _nan(market):
         return ''
-    mk = None if market is None or _nan(market) else float(market)
-    span = max([abs(v) for _, v in rows] + [abs(ours)] + ([abs(mk)] if mk is not None else [])) or 1.0
-    W, L, R, rh = 340, 96, 16, 15                    # width, label column, right pad, row height
-    mid = L + (W - L - R) / 2
-    sc = (W - L - R) / 2 / span
-    allrows = rows + [('Our line', float(ours))]
-    H = 18 + rh * len(allrows) + 6
+    ours, mk = float(ours), float(market)
+    unit = 0.5 / 10 ** digits
+    span = max(abs(ours), abs(mk), 20 * unit) * 1.25
+    W, P = 340, 14
+    x = lambda v: P + (W - 2 * P) * (v + span) / (2 * span)
+    fmt = lambda v: ('even' if abs(v) < unit else
+                     f'{home_name if v > 0 else away_name} \u2212{abs(v):.{digits}f}'.replace('.0', '') if digits == 1 and float(abs(v)).is_integer()
+                     else f'{home_name if v > 0 else away_name} \u2212{abs(v):.{digits}f}')
+    xo, xm, x0 = x(ours), x(mk), x(0)
+    lo, hi = min(xo, xm), max(xo, xm)
+    gap = abs(ours - mk)
+    H, ya = 56, 24
+    e = theme.esc
     out = [f'<svg class="whychart" viewBox="0 0 {W} {H}" width="100%" role="img" '
-           f'aria-label="How our line is built, next to the market">',
-           f'<text x="{L}" y="11" class="wl">{theme.esc(away_name)} ←</text>',
-           f'<text x="{W - R}" y="11" class="wl" text-anchor="end">→ {theme.esc(home_name)}</text>']
-    y = 18
-    for lab, v in allrows:
-        x0, x1 = (mid, mid + v * sc) if v >= 0 else (mid + v * sc, mid)
-        cls = 'wt' if lab == 'Our line' else 'wb'
-        out.append(f'<text x="{L - 6}" y="{y + 10}" class="wl" text-anchor="end">{theme.esc(lab)}</text>'
-                   f'<rect x="{x0:.1f}" y="{y + 2}" width="{max(x1 - x0, 1.5):.1f}" height="{rh - 5}" rx="2" class="{cls}"/>')
-        y += rh
-    out.append(f'<line x1="{mid}" y1="16" x2="{mid}" y2="{y}" class="wz"/>')
-    if mk is not None:
-        xm = mid + mk * sc
-        out.append(f'<line x1="{xm:.1f}" y1="16" x2="{xm:.1f}" y2="{y}" class="wm"/>'
-                   f'<text x="{xm:.1f}" y="{y + 5}" class="wl" text-anchor="middle">market</text>')
+           f'aria-label="Our line {e(fmt(ours))} next to the market {e(fmt(mk))}">',
+           f'<line x1="{P}" y1="{ya}" x2="{W - P}" y2="{ya}" class="wz"/>',
+           f'<line x1="{x0:.1f}" y1="{ya - 5}" x2="{x0:.1f}" y2="{ya + 5}" class="wz"/>']
+    if gap >= unit:
+        out.append(f'<rect x="{lo:.1f}" y="{ya - 4}" width="{hi - lo:.1f}" height="8" class="wg"/>')
+    anchor = lambda xv: 'start' if xv < 70 else 'end' if xv > W - 70 else 'middle'
+    out += [f'<circle cx="{xm:.1f}" cy="{ya}" r="5.5" class="wmk"/>',
+            f'<circle cx="{xo:.1f}" cy="{ya}" r="5.5" class="wo"/>',
+            f'<text x="{xo:.1f}" y="{ya - 10}" class="wl wol" text-anchor="{anchor(xo)}">ours {e(fmt(ours))}</text>',
+            f'<text x="{xm:.1f}" y="{ya + 19}" class="wl" text-anchor="{anchor(xm)}">market {e(fmt(mk))}</text>']
+    # which end is which: team names under the axis ends, unless the market label sits there
+    if xm > P + 90:
+        out.append(f'<text x="{P}" y="{ya + 19}" class="wl" opacity=".75">← {e(away_name)}</text>')
+    if xm < W - P - 90:
+        out.append(f'<text x="{W - P}" y="{ya + 19}" class="wl" text-anchor="end" opacity=".75">{e(home_name)} →</text>')
+    if gap >= unit and hi - lo > 60:
+        out.append(f'<text x="{(lo + hi) / 2:.1f}" y="{ya + 32}" class="wl" text-anchor="middle">gap '
+                   f'{gap:.{digits}f}</text>')
     out.append('</svg>')
     return ''.join(out)
