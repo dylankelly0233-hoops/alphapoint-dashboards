@@ -1,8 +1,17 @@
 {
  "sport": "nfl",
  "week": 12,
- "generated": "2026-11-24T10:42:02-05:00",
+ "generated": "2026-11-25T10:40:11-05:00",
  "movers": [
+  {
+   "team": "PIT",
+   "tag": "QB",
+   "text": "The Steelers benched QB Aaron Rodgers on Tuesday night; Mason Rudolph starts Friday vs. Denver and Rodgers will be inactive (coach's decision), per ESPN.",
+   "source": "ESPN",
+   "url": "https://www.espn.com/nfl/story/_/id/50589757/steelers-bench-struggling-qb-aaron-rodgers-start-mason-rudolph",
+   "date": "2026-11-25",
+   "qb_status": "new_starter"
+  },
   {
    "team": "LAC",
    "tag": "QB",
@@ -37,15 +46,6 @@
    "source": "ESPN",
    "url": "https://www.espn.com/nfl/story/_/id/50577301/sources-packers-micah-parsons-cleared-return-wednesday",
    "date": "2026-11-24"
-  },
-  {
-   "team": "NE",
-   "tag": "QB",
-   "text": "Mike Vrabel said Tommy DeVito stays QB1 while Drake Maye (fractured right fibula, Week 10) is out; Maye remains on the 53-man roster.",
-   "source": "ESPN",
-   "url": "https://www.espn.com/nfl/story/_/id/50575341/mike-vrabel-patriots-sticking-tommy-devito-qb1",
-   "date": "2026-11-23",
-   "qb_status": "new_starter"
   }
  ],
  "teams": {
@@ -118,10 +118,10 @@
    {
     "team": "GB",
     "tag": "KEY",
-    "text": "OL: guards Kevin Zeitler (triceps) and Sean Rhyan (ankle) were limited Sunday and Monday on the official report; RB Josh Jacobs (finger) also limited.",
-    "source": "Packers.com",
-    "url": "https://www.packers.com/news/packers-rams-injury-report-nov-23-2026",
-    "date": "2026-11-23"
+    "text": "Guards Kevin Zeitler (triceps) and Sean Rhyan (ankle), OT Travis Glover and RB Josh Jacobs (finger) are all questionable for tonight on the Packers' final report.",
+    "source": "Packers injury report",
+    "url": "https://www.packers.com/news/packers-list-eight-questionable-vs-rams-week-12-injury-report",
+    "date": "2026-11-24"
    }
   ],
   "NE": [
@@ -155,10 +155,10 @@
    {
     "team": "LA",
     "tag": "CLUSTER",
-    "text": "OL: Sean McVay ruled out G Steve Avila (hamstring) for Wednesday vs. Green Bay; C Coleman Shelton (hamstring) did not practice Sunday or Monday.",
-    "source": "Packers.com (joint report)",
-    "url": "https://www.packers.com/news/packers-rams-injury-report-nov-23-2026",
-    "date": "2026-11-23"
+    "text": "OL: G Steve Avila and C Coleman Shelton (hamstrings) are ruled out on the Rams' final report for tonight vs. Green Bay; TE Terrance Ferguson needs season-ending surgery.",
+    "source": "Rams injury report",
+    "url": "https://www.therams.com/news/rams-injury-report-week-12-2026-vs-packers-steve-avila-terrance-ferguson-coleman-shelton-kobie-turner",
+    "date": "2026-11-24"
    },
    {
     "team": "LA",
@@ -230,76 +230,76 @@
    {
     "team": "PHI",
     "tag": "KEY",
-    "text": "CB Quinyon Mitchell (hamstring) did not practice on Monday's estimated report; RB Saquon Barkley (neck/illness) and TE Dallas Goedert (shin) were limited.",
-    "source": "Eagles.com injury report",
-    "url": "https://www.philadelphiaeagles.com/team/injury-report/week/reg-12",
-    "date": "2026-11-23"
+    "text": "CB Quinyon Mitchell (hamstring) returned to limited work in Tuesday's walkthrough; edge Arnold Ebiketie (oblique) did not practice. TE Dallas Goedert was full.",
+    "source": "ESPN injuries",
+    "url": "https://www.espn.com/nfl/injuries",
+    "date": "2026-11-25"
    }
   ],
   "DET": [
    {
     "team": "DET",
     "tag": "CLUSTER",
-    "text": "Secondary: S Chuck Clark (hamstring) and CB Ennis Rakestraw Jr. (shoulder) did not practice Monday; CB D.J. Reed (hip), out the last three games, practiced fully.",
-    "source": "DetroitLions.com injury report",
-    "url": "https://www.detroitlions.com/team/injury-report/week/reg-12",
-    "date": "2026-11-23"
+    "text": "Secondary: S Chuck Clark (hamstring) was limited Tuesday and CB Ennis Rakestraw Jr. is questionable; CB D.J. Reed, out the last three games, practiced fully.",
+    "source": "ESPN injuries",
+    "url": "https://www.espn.com/nfl/injuries",
+    "date": "2026-11-25"
    },
    {
     "team": "DET",
     "tag": "CLUSTER",
-    "text": "Front seven: DE Aidan Hutchinson (ACL, season) and LB Jack Campbell are on IR; edge DJ Wonnum (back) did not practice Monday.",
-    "source": "DetroitLions.com injury report",
-    "url": "https://www.detroitlions.com/team/injury-report/week/reg-12",
-    "date": "2026-11-23"
+    "text": "Front seven: DE Aidan Hutchinson (ACL) and LB Jack Campbell are on IR, rookie DT Skyler Gill-Howard needs season-ending knee surgery, and edge DJ Wonnum is questionable.",
+    "source": "ESPN injuries",
+    "url": "https://www.espn.com/nfl/injuries",
+    "date": "2026-11-24"
    }
   ],
   "CHI": [
    {
     "team": "CHI",
     "tag": "KEY",
-    "text": "CB Kyler Gordon (shoulder), who missed Week 11, and OT Theo Benedet (quadriceps) did not practice on Monday's report for Thanksgiving at Detroit.",
-    "source": "DetroitLions.com (joint report)",
-    "url": "https://www.detroitlions.com/team/injury-report/week/reg-12",
-    "date": "2026-11-23"
+    "text": "Secondary: S Elijah Hicks (concussion) is ruled out for Thanksgiving at Detroit and CB Kyler Gordon (shoulder), who missed Week 11, is questionable.",
+    "source": "ESPN injuries",
+    "url": "https://www.espn.com/nfl/injuries",
+    "date": "2026-11-25"
    }
   ],
   "KC": [
    {
     "team": "KC",
     "tag": "KEY",
-    "text": "OT Jaylon Moore (ankle), RB Kenneth Walker III (groin) and TE Noah Gray (ribs) did not practice Monday; all missed or left Week 11.",
-    "source": "Chiefs.com injury report",
-    "url": "https://www.chiefs.com/team/injury-report/week/reg-12",
-    "date": "2026-11-23"
+    "text": "OT Jaylon Moore (ankle) remained out of practice Tuesday and RB Kenneth Walker III (groin) was limited; both missed Week 11. TE Noah Gray was full.",
+    "source": "ESPN injuries",
+    "url": "https://www.espn.com/nfl/injuries",
+    "date": "2026-11-24"
    },
    {
     "team": "KC",
     "tag": "RETURNING",
-    "text": "G Trey Smith (concussion), who missed Week 11, was a full participant on Monday's report.",
-    "source": "Chiefs.com injury report",
-    "url": "https://www.chiefs.com/team/injury-report/week/reg-12",
-    "date": "2026-11-23"
+    "text": "G Trey Smith (concussion), who missed Week 11, was a full participant again in Tuesday's practice.",
+    "source": "ESPN injuries",
+    "url": "https://www.espn.com/nfl/injuries",
+    "date": "2026-11-25"
    }
   ],
   "BUF": [
    {
     "team": "BUF",
     "tag": "KEY",
-    "text": "CB Christian Benford (groin) did not practice Monday; TE Dalton Kincaid, RT Spencer Brown, G O'Cyrus Torrence and edge Greg Rousseau were limited.",
-    "source": "Chiefs.com (joint report)",
-    "url": "https://www.chiefs.com/team/injury-report/week/reg-12",
-    "date": "2026-11-23"
+    "text": "CB Christian Benford (groin) was limited in Tuesday's walkthrough and is questionable; TE Dalton Kincaid and G O'Cyrus Torrence were limited, RT Spencer Brown full.",
+    "source": "ESPN injuries",
+    "url": "https://www.espn.com/nfl/injuries",
+    "date": "2026-11-25"
    }
   ],
   "DAL": [
    {
     "team": "DAL",
     "tag": "KEY",
-    "text": "TE Jake Ferguson (knee/ankle) and G Tyler Booker (ankle) did not practice Monday; QB Dak Prescott (left hand) was full.",
-    "source": "Eagles.com (joint report)",
-    "url": "https://www.philadelphiaeagles.com/team/injury-report/week/reg-12",
-    "date": "2026-11-23"
+    "text": "TE Jake Ferguson (knee/ankle) is doubtful after sitting out again Tuesday and G Tyler Booker (ankle) is out for Thanksgiving vs. Philadelphia.",
+    "source": "ESPN injuries",
+    "url": "https://www.espn.com/nfl/injuries",
+    "date": "2026-11-24"
    },
    {
     "team": "DAL",
@@ -380,29 +380,38 @@
   "PIT": [
    {
     "team": "PIT",
+    "tag": "QB",
+    "text": "The Steelers benched QB Aaron Rodgers on Tuesday night; Mason Rudolph starts Friday vs. Denver and Rodgers will be inactive (coach's decision), per ESPN.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nfl/story/_/id/50589757/steelers-bench-struggling-qb-aaron-rodgers-start-mason-rudolph",
+    "date": "2026-11-25",
+    "qb_status": "new_starter"
+   },
+   {
+    "team": "PIT",
     "tag": "KEY",
-    "text": "LB Alex Highsmith (ankle) is likely out Friday vs. Denver, per Mike McCarthy; LB Nick Herbig is questionable.",
+    "text": "LB Alex Highsmith (ankle) is listed doubtful after Mike McCarthy said it will be tough for him to play Friday; LB Nick Herbig (hip) was limited Tuesday.",
     "source": "ESPN injuries",
     "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-23"
+    "date": "2026-11-24"
    },
    {
     "team": "PIT",
     "tag": "RETURNING",
-    "text": "WR Michael Pittman Jr. (foot, IR) should play vs. Denver; Mike McCarthy is 'very confident' he'll be on the field.",
+    "text": "WR Michael Pittman Jr. (foot, IR) was a full participant in Tuesday's walkthrough and is expected back vs. Denver.",
     "source": "ESPN injuries",
     "url": "https://www.espn.com/nfl/injuries",
-    "date": "2026-11-23"
+    "date": "2026-11-24"
    }
   ],
   "HOU": [
    {
     "team": "HOU",
     "tag": "KEY",
-    "text": "LB Azeez Al-Shaair is on IR after groin surgery; DE Chris Braswell hurt his knee on the opening kickoff Nov. 19. DE Danielle Hunter is questionable.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/story/_/id/50536083/texans-lose-chris-braswell-serious-looking-knee-injury",
-    "date": "2026-11-20"
+    "text": "LB Azeez Al-Shaair is on IR after groin surgery and DE Chris Braswell (knee, Nov. 19) is out for the season; DE Danielle Hunter is questionable.",
+    "source": "ESPN injuries",
+    "url": "https://www.espn.com/nfl/injuries",
+    "date": "2026-11-24"
    }
   ],
   "JAX": [
@@ -419,10 +428,10 @@
    {
     "team": "NYG",
     "tag": "KEY",
-    "text": "CB Greg Newsome II (high ankle sprain) will miss multiple weeks, John Harbaugh said Monday.",
-    "source": "ESPN",
-    "url": "https://www.espn.com/nfl/story/_/id/50576454/giants-greg-newsome-multiple-weeks-ankle-sprain",
-    "date": "2026-11-23"
+    "text": "CB Greg Newsome II (high ankle sprain) was placed on injured reserve Tuesday after John Harbaugh said he will miss multiple weeks.",
+    "source": "ESPN injuries",
+    "url": "https://www.espn.com/nfl/injuries",
+    "date": "2026-11-24"
    }
   ],
   "TEN": [
@@ -442,6 +451,16 @@
     "text": "Secondary: CB Benjamin Morrison (hamstring) and CB Jacob Parrish (back) had MRIs Monday; S Antoine Winfield Jr. is questionable.",
     "source": "ESPN injuries",
     "url": "https://www.espn.com/nfl/injuries",
+    "date": "2026-11-24"
+   }
+  ],
+  "DEN": [
+   {
+    "team": "DEN",
+    "tag": "KEY",
+    "text": "RB J.K. Dobbins is suspended for Friday's game at Pittsburgh for conduct detrimental to the team, Sean Payton announced Tuesday.",
+    "source": "ESPN",
+    "url": "https://www.espn.com/nfl/story/_/id/50586087/broncos-payton-says-rb-dobbins-suspended-one-game",
     "date": "2026-11-24"
    }
   ]
