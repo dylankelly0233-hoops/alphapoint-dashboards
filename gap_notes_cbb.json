@@ -1,6 +1,6 @@
 {
  "sport": "cbb",
- "generated": "2026-11-25T16:43:39-05:00",
+ "generated": "2026-11-25T16:50:23-05:00",
  "teams": {
   "Dayton": {
    "watch": [
@@ -199,7 +199,7 @@
    "checked": "2026-11-23T16:45:00-05:00"
   },
   "BYU": {
-   "checked": "2026-11-25T15:42:24-05:00",
+   "checked": "2026-11-25T16:50:23-05:00",
    "watch": [
     {
      "direction": "too_high",
@@ -309,15 +309,15 @@
    "checked": "2026-11-24T14:44:00-05:00"
   },
   "UConn": {
-   "checked": "2026-11-24T16:50:54-05:00",
+   "checked": "2026-11-25T16:50:23-05:00",
    "watch": [
     {
      "direction": "too_low",
      "since": "2026-11-23",
-     "text": "Solo Ball (offseason wrist surgery) has not played this season; Dan Hurley says he is nearing game-time-decision status for the 11/25 Duke game. If he plays, ratings built without him understate UConn.",
+     "text": "Solo Ball (offseason wrist surgery) has not played this season and is expected to be a game-time decision vs Duke tonight; if he plays, ratings built without him understate UConn.",
      "source": "Yahoo Sports",
-     "url": "https://sports.yahoo.com/articles/solo-ball-nearing-game-time-234400882.html",
-     "date": "2026-11-23"
+     "url": "https://sports.yahoo.com/mens-college-basketball/articles/duke-vs-uconn-watch-odds-042447904.html",
+     "date": "2026-11-25"
     }
    ]
   },
@@ -347,7 +347,7 @@
   },
   "Duke": {
    "watch": [],
-   "checked": "2026-11-24T16:50:54-05:00"
+   "checked": "2026-11-25T16:50:23-05:00"
   },
   "Duquesne": {
    "watch": [],
@@ -547,6 +547,44 @@
      "text": "Guard Jordan Smith Jr. (wrist inflammation) missed the Nov. 21 Mississippi Valley State win; he practiced and Calipari said he should be good to go vs Michigan State.",
      "source": "Yahoo Sports",
      "url": "https://sports.yahoo.com/articles/arkansas-john-calipari-gives-jordan-203141696.html",
+     "date": "2026-11-23"
+    }
+   ]
+  },
+  "Texas": {
+   "checked": "2026-11-25T16:50:23-05:00",
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-22",
+     "text": "PG Isaiah Johnson (24.2 mpg, glute strain) left the Southern Indiana win after four minutes; Sean Miller called his status for Georgetown unknown. If he sits, our rating overstates Texas.",
+     "source": "Austin American-Statesman",
+     "url": "https://www.statesman.com/sports/longhorns/mens-basketball/article/isaiah-johnson-injury-update-texas-longhorns-22546209.php",
+     "date": "2026-11-23"
+    }
+   ]
+  },
+  "Georgetown": {
+   "watch": [],
+   "checked": "2026-11-25T16:50:23-05:00"
+  },
+  "UCLA": {
+   "watch": [],
+   "checked": "2026-11-25T16:50:23-05:00"
+  },
+  "Saint Mary's": {
+   "watch": [],
+   "checked": "2026-11-25T16:50:23-05:00"
+  },
+  "Michigan State": {
+   "checked": "2026-11-25T16:50:23-05:00",
+   "watch": [
+    {
+     "direction": "unclear",
+     "since": "2026-11-21",
+     "text": "Coen Carr (knee tendinitis) sat out the Detroit Mercy win and Jordan Scott (shoulder) was limited; Tom Izzo expects both back vs Arkansas, minutes not set.",
+     "source": "Detroit Free Press",
+     "url": "https://sports.yahoo.com/articles/michigan-state-basketball-expects-injured-165052874.html",
      "date": "2026-11-23"
     }
    ]
@@ -1228,6 +1266,12 @@
    "swings": {
     "LSU": "Nothing found: the market makes LSU 6.5 over SMU but only 3.5 over Arizona State; the one roster change, RJ Luis Jr. (added 11/17, played once), doesn't explain it."
    }
+  },
+  "401921673": {
+   "swings": {
+    "USC": "Nothing found: the market moved on USC without a clear reason; USC used its usual rotation in the 11/23 Louisiana win (ESPN box) and Eric Reibe has been out all season."
+   },
+   "checked": "2026-11-25T16:50:23-05:00"
   }
  }
 }

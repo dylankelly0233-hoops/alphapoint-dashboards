@@ -1,7 +1,7 @@
 {
  "sport": "cbb",
  "week": 20261125,
- "generated": "2026-11-25T11:42:54-05:00",
+ "generated": "2026-11-25T16:49:19-05:00",
  "movers": [
   {
    "team": "Gonzaga",
@@ -14,6 +14,16 @@
    "date": "2026-11-25"
   },
   {
+   "team": "BYU",
+   "tag": "KEY",
+   "player": "Robert Wright III",
+   "status": "questionable",
+   "text": "BYU PG Robert Wright III (30.2 mpg, lower-body muscle tightness) has missed three straight, incl. Washington and Ole Miss in Maui; called day-to-day, no word yet for Providence.",
+   "source": "Yahoo Sports",
+   "url": "https://sports.yahoo.com/articles/byu-rules-rob-wright-iii-223639831.html",
+   "date": "2026-11-23"
+  },
+  {
    "team": "Kentucky",
    "tag": "KEY",
    "player": "Malachi Moreno",
@@ -24,6 +34,14 @@
    "date": "2026-11-25"
   },
   {
+   "team": "UConn",
+   "tag": "RETURNING",
+   "text": "UConn's Solo Ball (offseason wrist surgery, has not played this season) is nearing a return and expected to be a game-time decision vs Duke tonight in Las Vegas.",
+   "source": "Yahoo Sports",
+   "url": "https://sports.yahoo.com/mens-college-basketball/articles/duke-vs-uconn-watch-odds-042447904.html",
+   "date": "2026-11-25"
+  },
+  {
    "team": "Texas",
    "tag": "KEY",
    "player": "Isaiah Johnson",
@@ -31,26 +49,6 @@
    "text": "Texas PG Isaiah Johnson (24.2 mpg) left the Southern Indiana win after four minutes with a glute strain; Sean Miller called his status unknown for Georgetown (11/26) in San Diego.",
    "source": "Austin American-Statesman",
    "url": "https://www.statesman.com/sports/longhorns/mens-basketball/article/isaiah-johnson-injury-update-texas-longhorns-22546209.php",
-   "date": "2026-11-23"
-  },
-  {
-   "team": "Wisconsin",
-   "tag": "KEY",
-   "text": "Wisconsin guard Jack Janicki (17.8 mpg) hurt his foot in the Murray State loss and will have season-ending surgery, Greg Gard said; Wisconsin is down to 12 available players.",
-   "source": "NBC Sports",
-   "url": "https://nbcsports.com/mens-college-basketball/news/wisconsin-guard-jack-janicki-is-undergoing-season-ending-foot-surgery",
-   "date": "2026-11-23",
-   "player": "Jack Janicki",
-   "status": "out"
-  },
-  {
-   "team": "Michigan State",
-   "tag": "RETURNING",
-   "player": "Coen Carr",
-   "status": "returning",
-   "text": "Michigan State's Coen Carr (21.8 mpg, knee tendinitis) sat out the Detroit Mercy win; Tom Izzo expects him to play Arkansas on Thursday, role to be decided.",
-   "source": "Detroit Free Press",
-   "url": "https://sports.yahoo.com/articles/michigan-state-basketball-expects-injured-165052874.html",
    "date": "2026-11-23"
   }
  ],
@@ -143,10 +141,10 @@
     "tag": "KEY",
     "player": "Garwey Dual",
     "status": "questionable",
-    "text": "Syracuse PG Garwey Dual (24.2 mpg) hurt his right ankle vs Lafayette on 11/21 (10 minutes); a team spokesperson called him day-to-day Monday ahead of UAlbany on 11/25.",
-    "source": "Inside the Loud House",
-    "url": "https://insidetheloudhouse.com/update-on-syracuse-basketball-senior-pg-garwey-dual-who-injured-his-ankle-in-last-game",
-    "date": "2026-11-24"
+    "text": "Syracuse PG Garwey Dual (24.2 mpg) sprained his right ankle vs Lafayette on 11/21; still day-to-day with no word for UAlbany tonight. Ryan Moesch would start if he sits.",
+    "source": "Wisevoter",
+    "url": "https://wisevoter.com/world/us/ny/syracuse/2026/11/25/syracuse-albany-basketball-garwey-dual-ankle",
+    "date": "2026-11-25"
    }
   ],
   "Louisville": [
@@ -183,6 +181,28 @@
     "source": "ESPN",
     "url": "https://www.espn.com/mens-college-basketball/story/_/id/50511206/north-carolina-guard-neo-avdalas-wrist-2-months",
     "date": "2026-11-17"
+   }
+  ],
+  "BYU": [
+   {
+    "team": "BYU",
+    "tag": "KEY",
+    "player": "Robert Wright III",
+    "status": "questionable",
+    "text": "BYU PG Robert Wright III (30.2 mpg, lower-body muscle tightness) has missed three straight, incl. Washington and Ole Miss in Maui; called day-to-day, no word yet for Providence.",
+    "source": "Yahoo Sports",
+    "url": "https://sports.yahoo.com/articles/byu-rules-rob-wright-iii-223639831.html",
+    "date": "2026-11-23"
+   }
+  ],
+  "UConn": [
+   {
+    "team": "UConn",
+    "tag": "RETURNING",
+    "text": "UConn's Solo Ball (offseason wrist surgery, has not played this season) is nearing a return and expected to be a game-time decision vs Duke tonight in Las Vegas.",
+    "source": "Yahoo Sports",
+    "url": "https://sports.yahoo.com/mens-college-basketball/articles/duke-vs-uconn-watch-odds-042447904.html",
+    "date": "2026-11-25"
    }
   ]
  }

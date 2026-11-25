@@ -1,6 +1,6 @@
 {
  "sport": "nba",
- "generated": "2026-11-25T16:43:39-05:00",
+ "generated": "2026-11-25T16:50:30-05:00",
  "teams": {
   "OKC": {
    "checked": "2026-11-25T11:46:24-05:00",
@@ -27,14 +27,14 @@
    ]
   },
   "MIA": {
-   "checked": "2026-11-25T15:42:24-05:00",
+   "checked": "2026-11-25T16:50:30-05:00",
    "watch": [
     {
      "direction": "unclear",
      "since": "2026-11-22",
-     "text": "Giannis Antetokounmpo (right groin tendinitis) missed Sunday vs OKC and is upgraded to probable at PHI tonight on the NBA's 3:30 PM ET report.",
+     "text": "Giannis Antetokounmpo (right groin tendinitis) missed Sunday vs OKC and is listed available at PHI tonight on the NBA's 4:30 PM ET report.",
      "source": "NBA official injury report",
-     "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-25_03_30PM.pdf",
+     "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-25_04_30PM.pdf",
      "date": "2026-11-25"
     }
    ]
@@ -90,14 +90,14 @@
    ]
   },
   "NY": {
-   "checked": "2026-11-25T13:42:14-05:00",
+   "checked": "2026-11-25T16:50:30-05:00",
    "watch": [
     {
      "direction": "too_high",
      "since": "2026-11-22",
-     "text": "Jalen Brunson (illness) is questionable vs CLE tonight; OG Anunoby, Miles McBride and Jordan Clarkson are out; Towns and Hart upgraded to probable (NBA 1:30 PM ET report).",
+     "text": "OG Anunoby, Miles McBride and Jordan Clarkson are out vs CLE tonight; Jalen Brunson (illness), Towns and Hart are probable on the NBA's 4:30 PM ET report.",
      "source": "NBA official injury report",
-     "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-25_01_30PM.pdf",
+     "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-25_04_30PM.pdf",
      "date": "2026-11-25"
     }
    ]
@@ -188,14 +188,14 @@
    ]
   },
   "PHI": {
-   "checked": "2026-11-25T15:42:24-05:00",
+   "checked": "2026-11-25T16:50:30-05:00",
    "watch": [
     {
      "direction": "too_high",
      "since": "2026-11-23",
-     "text": "Joel Embiid (illness) missed Monday vs POR and is ruled out vs MIA tonight on the NBA's 3:30 PM ET report.",
+     "text": "Joel Embiid (illness) missed Monday vs POR and is out vs MIA tonight on the NBA's 4:30 PM ET report.",
      "source": "NBA official injury report",
-     "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-25_03_30PM.pdf",
+     "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-25_04_30PM.pdf",
      "date": "2026-11-25"
     }
    ]
@@ -240,14 +240,14 @@
    ]
   },
   "CHA": {
-   "checked": "2026-11-25T11:46:24-05:00",
+   "checked": "2026-11-25T16:50:30-05:00",
    "watch": [
     {
      "direction": "too_high",
      "since": "2026-11-15",
-     "text": "Kon Knueppel and Dennis Schroder (hamstrings) are out vs CHI and Ryan Kalkbrenner is doubtful (hip); Grayson Allen is questionable (concussion), NBA 11:30 AM ET report.",
+     "text": "Kon Knueppel, Dennis Schroder (hamstrings), Grayson Allen (concussion) and Ryan Kalkbrenner (hip) are all out vs CHI tonight, NBA 4:30 PM ET report.",
      "source": "NBA official injury report",
-     "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-25_11_30AM.pdf",
+     "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-25_04_30PM.pdf",
      "date": "2026-11-25"
     }
    ]

@@ -1,8 +1,16 @@
 {
  "sport": "nba",
  "week": 20261125,
- "generated": "2026-11-25T11:43:59-05:00",
+ "generated": "2026-11-25T16:49:19-05:00",
  "movers": [
+  {
+   "team": "PHI",
+   "tag": "KEY",
+   "text": "Philadelphia has Joel Embiid (32.0 mpg, illness) out vs MIA tonight on the NBA's 4:30 PM ET report (doubtful at 11:30 AM); he also missed Monday vs POR.",
+   "source": "NBA official injury report",
+   "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-25_04_30PM.pdf",
+   "date": "2026-11-25"
+  },
   {
    "team": "SA",
    "tag": "CLUSTER",
@@ -12,35 +20,27 @@
    "date": "2026-11-25"
   },
   {
-   "team": "PHI",
-   "tag": "KEY",
-   "text": "Philadelphia lists Joel Embiid (32.0 mpg, illness) doubtful vs MIA tonight on the NBA's 11:30 AM ET report; he missed Monday's game vs POR.",
+   "team": "NY",
+   "tag": "CLUSTER",
+   "text": "New York has OG Anunoby (34.0 mpg, calf), Jordan Clarkson and Miles McBride out vs CLE tonight; Brunson (illness), Towns and Hart are probable, NBA 4:30 PM ET report.",
    "source": "NBA official injury report",
-   "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-25_11_30AM.pdf",
+   "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-25_04_30PM.pdf",
    "date": "2026-11-25"
   },
   {
    "team": "MIA",
+   "tag": "RETURNING",
+   "text": "Miami's Giannis Antetokounmpo (32.2 mpg, right groin tendinitis) is listed available at PHI tonight on the NBA's 4:30 PM ET report after missing one game.",
+   "source": "NBA official injury report",
+   "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-25_04_30PM.pdf",
+   "date": "2026-11-25"
+  },
+  {
+   "team": "CLE",
    "tag": "KEY",
-   "text": "Miami lists Giannis Antetokounmpo (32.2 mpg, right groin tendinitis) questionable at PHI tonight on the NBA's 11:30 AM ET report after missing one game.",
+   "text": "Cleveland's Evan Mobley (32.1 mpg, left great toe sprain) is out at NY tonight on the NBA's 11:30 AM ET report; Nae'Qwan Tomlin is out too.",
    "source": "NBA official injury report",
    "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-25_11_30AM.pdf",
-   "date": "2026-11-25"
-  },
-  {
-   "team": "NY",
-   "tag": "CLUSTER",
-   "text": "New York has OG Anunoby (34.0 mpg, calf) and Jordan Clarkson out vs CLE tonight; Towns (32.5, knee), Hart (30.7, shoulder) and McBride questionable, NBA 11:30 AM ET report.",
-   "source": "NBA official injury report",
-   "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-25_11_30AM.pdf",
-   "date": "2026-11-25"
-  },
-  {
-   "team": "DET",
-   "tag": "CLUSTER",
-   "text": "Detroit played without Cade Cunningham (34.9 mpg, right knee soreness), Duncan Robinson (30.6, quad) and Jalen Duren in the 11/24 win at ORL; Duren is practicing in the G League.",
-   "source": "ESPN",
-   "url": "https://www.espn.com/nba/game/_/gameId/401909314",
    "date": "2026-11-25"
   }
  ],
@@ -49,19 +49,19 @@
    {
     "team": "PHI",
     "tag": "KEY",
-    "text": "Philadelphia lists Joel Embiid (32.0 mpg, illness) doubtful vs MIA tonight on the NBA's 11:30 AM ET report; he missed Monday's game vs POR.",
+    "text": "Philadelphia has Joel Embiid (32.0 mpg, illness) out vs MIA tonight on the NBA's 4:30 PM ET report (doubtful at 11:30 AM); he also missed Monday vs POR.",
     "source": "NBA official injury report",
-    "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-25_11_30AM.pdf",
+    "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-25_04_30PM.pdf",
     "date": "2026-11-25"
    }
   ],
   "MIA": [
    {
     "team": "MIA",
-    "tag": "KEY",
-    "text": "Miami lists Giannis Antetokounmpo (32.2 mpg, right groin tendinitis) questionable at PHI tonight on the NBA's 11:30 AM ET report after missing one game.",
+    "tag": "RETURNING",
+    "text": "Miami's Giannis Antetokounmpo (32.2 mpg, right groin tendinitis) is listed available at PHI tonight on the NBA's 4:30 PM ET report after missing one game.",
     "source": "NBA official injury report",
-    "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-25_11_30AM.pdf",
+    "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-25_04_30PM.pdf",
     "date": "2026-11-25"
    }
   ],
@@ -79,9 +79,9 @@
    {
     "team": "NY",
     "tag": "CLUSTER",
-    "text": "New York has OG Anunoby (34.0 mpg, calf) and Jordan Clarkson out vs CLE tonight; Towns (32.5, knee), Hart (30.7, shoulder) and McBride questionable, NBA 11:30 AM ET report.",
+    "text": "New York has OG Anunoby (34.0 mpg, calf), Jordan Clarkson and Miles McBride out vs CLE tonight; Brunson (illness), Towns and Hart are probable, NBA 4:30 PM ET report.",
     "source": "NBA official injury report",
-    "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-25_11_30AM.pdf",
+    "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-25_04_30PM.pdf",
     "date": "2026-11-25"
    }
   ],
@@ -119,9 +119,9 @@
    {
     "team": "CHA",
     "tag": "CLUSTER",
-    "text": "Charlotte has Dennis Schroder (30.0 mpg, hamstring) and Kon Knueppel (hamstring) out vs CHI tonight; Grayson Allen (27.2, concussion) is questionable, NBA 11:30 AM ET report.",
+    "text": "Charlotte has Dennis Schroder (30.0 mpg), Kon Knueppel (hamstrings), Grayson Allen (27.2, concussion) and Ryan Kalkbrenner (hip) out vs CHI tonight, NBA 4:30 PM ET report.",
     "source": "NBA official injury report",
-    "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-25_11_30AM.pdf",
+    "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-25_04_30PM.pdf",
     "date": "2026-11-25"
    }
   ],
@@ -183,6 +183,16 @@
     "source": "ESPN",
     "url": "https://www.espn.com/nba/injuries",
     "date": "2026-11-24"
+   }
+  ],
+  "SAC": [
+   {
+    "team": "SAC",
+    "tag": "KEY",
+    "text": "Sacramento's Zach LaVine (32.9 mpg, right knee soreness) was downgraded to questionable at GS tonight on the NBA's 4:30 PM ET report; Ben Simmons is out.",
+    "source": "NBA official injury report",
+    "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-25_04_30PM.pdf",
+    "date": "2026-11-25"
    }
   ]
  }
