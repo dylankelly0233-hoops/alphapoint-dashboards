@@ -1,6 +1,6 @@
 {
  "sport": "cfb",
- "generated": "2026-11-24T17:42:02-05:00",
+ "generated": "2026-11-24T20:45:00-05:00",
  "teams": {
   "Clemson": {
    "checked": "2026-11-24T10:49:40-05:00",
@@ -1434,12 +1434,12 @@
    }
   },
   "401864549": {
-   "checked": "2026-11-24T09:45:00-05:00",
+   "checked": "2026-11-24T20:45:00-05:00",
    "verdict": "unexplained",
    "summary": "No injury or QB news justifies the shorter number; NDSU is still alive for the Mountain West title game and needs this win, while SJSU (5-7) plays out its season. Our line leans on SP+.",
    "reasons": [
     {
-     "text": "NDSU (9-2) must beat San José State on Nov. 27 to keep its Mountain West title-game path open, per Heavy.",
+     "text": "NDSU (9-2) needs a win against San José State on Nov. 27 to keep its Mountain West title-game path open, per Heavy.",
      "source": "Heavy (via Yahoo Sports)",
      "url": "https://sports.yahoo.com/articles/ndsu-gets-promising-squeaker-against-041914250.html",
      "date": "2026-11-22"

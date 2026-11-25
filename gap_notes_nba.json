@@ -1,6 +1,6 @@
 {
  "sport": "nba",
- "generated": "2026-11-24T18:42:22-05:00",
+ "generated": "2026-11-24T20:45:00-05:00",
  "teams": {
   "OKC": {
    "checked": "2026-11-24T16:50:54-05:00",
@@ -109,12 +109,12 @@
    ]
   },
   "DAL": {
-   "checked": "2026-11-24T16:50:54-05:00",
+   "checked": "2026-11-24T20:45:00-05:00",
    "watch": [
     {
      "direction": "too_high",
      "since": "2026-11-20",
-     "text": "P.J. Washington (illness) is questionable at DEN on 11/24 after missing two games; Dereck Lively II (foot surgery) is out.",
+     "text": "P.J. Washington (illness) is questionable at DEN on 11/24 after missing two games (took part in shootaround); Dereck Lively II (foot surgery) is out.",
      "source": "NBA official injury report",
      "url": "https://official.nba.com/nba-injury-report-2026-27-season/",
      "date": "2026-11-24"
@@ -334,7 +334,7 @@
    "checked": "2026-11-23T11:17:25-05:00"
   },
   "DEN": {
-   "checked": "2026-11-24T16:50:54-05:00",
+   "checked": "2026-11-24T20:45:00-05:00",
    "watch": []
   },
   "WSH": {
@@ -556,14 +556,14 @@
    ]
   },
   "401909316": {
-   "checked": "2026-11-24T16:50:54-05:00",
+   "checked": "2026-11-24T20:45:00-05:00",
    "verdict": "partly",
-   "summary": "Dallas may again be without P.J. Washington (questionable, illness) and is without Dereck Lively II at altitude, which covers part of the gap between our Nuggets -5 and the market's -8.5; Denver lists no injuries.",
+   "summary": "Dallas is without Dereck Lively II at altitude and P.J. Washington (illness) is a game-time call after joining shootaround, which covers part of the gap between our Nuggets -5 and the market's -8.5; Denver lists no injuries.",
    "reasons": [
     {
-     "text": "P.J. Washington (illness) is questionable on the NBA's 4:30 PM ET report on 11/24 after missing the last two games.",
-     "source": "NBA official injury report",
-     "url": "https://official.nba.com/nba-injury-report-2026-27-season/",
+     "text": "P.J. Washington (illness) is still questionable after missing the last two games, but he took part in Tuesday's shootaround in Denver; Caleb Martin is available in a thumb splint.",
+     "source": "Dallas Sports Journal",
+     "url": "https://dallassportsjournal.com/pj-washington-mavericks-shootaround-denver-nuggets/",
      "date": "2026-11-24"
     },
     {
