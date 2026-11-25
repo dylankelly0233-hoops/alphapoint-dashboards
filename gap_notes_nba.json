@@ -1,6 +1,6 @@
 {
  "sport": "nba",
- "generated": "2026-11-25T15:42:24-05:00",
+ "generated": "2026-11-25T16:43:39-05:00",
  "teams": {
   "OKC": {
    "checked": "2026-11-25T11:46:24-05:00",
@@ -40,14 +40,14 @@
    ]
   },
   "GS": {
-   "checked": "2026-11-25T11:46:24-05:00",
+   "checked": "2026-11-25T16:43:39-05:00",
    "watch": [
     {
      "direction": "too_high",
      "since": "2026-11-12",
      "text": "Stephen Curry (oblique tear, hurt 11/11 at Houston) has missed 5 straight (Warriors 1-4) and is out vs SAC tonight; Lendeborg is questionable, Butler and Moody out, NBA 11:30 AM ET report.",
      "source": "NBA official injury report",
-     "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-25_11_30AM.pdf",
+     "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-25_04_30PM.pdf",
      "date": "2026-11-25",
      "verified_numbers": [
       "1-4"
@@ -333,14 +333,14 @@
    "checked": "2026-11-25T11:46:24-05:00"
   },
   "SAC": {
-   "checked": "2026-11-25T11:46:24-05:00",
+   "checked": "2026-11-25T16:43:39-05:00",
    "watch": [
     {
      "direction": "too_high",
      "since": "2026-11-24",
-     "text": "Maxime Raynaud (right patella subluxation) and Ben Simmons are out at GS tonight on the NBA's 11:30 AM ET report.",
+     "text": "Maxime Raynaud (right patella subluxation) and Ben Simmons are out at GS tonight; Zach LaVine (right knee soreness) is questionable on the NBA's 4:30 PM ET report.",
      "source": "NBA official injury report",
-     "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-25_11_30AM.pdf",
+     "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-25_04_30PM.pdf",
      "date": "2026-11-25"
     }
    ]
@@ -631,28 +631,31 @@
    "checked": "2026-11-24T17:42:02-05:00"
   },
   "401909324": {
-   "checked": "2026-11-25T11:46:24-05:00",
+   "checked": "2026-11-25T16:43:39-05:00",
    "verdict": "partly",
    "summary": "Golden State is without Curry, Butler, Porzingis and Moody; our rating still carries Curry's early games, which explains part of why we're higher on the Warriors (6 of the last 6).",
    "reasons": [
     {
-     "text": "Stephen Curry (oblique tear) is out vs SAC and has missed 5 straight; Butler (ACL), Moody (patellar tendon) are out, Porzingis is not with the team, Lendeborg questionable.",
+     "text": "Stephen Curry (oblique tear) is out vs SAC and has missed 5 straight; Butler (ACL), Moody (patellar tendon) are out, Porzingis is not with the team, Lendeborg questionable (4:30 PM report).",
      "source": "NBA official injury report",
-     "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-25_11_30AM.pdf",
+     "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-25_04_30PM.pdf",
      "date": "2026-11-25",
      "verified_numbers": []
     },
     {
-     "text": "Sacramento (2-15) is without Maxime Raynaud and Ben Simmons, which pushes the other way, so the Warriors' absences don't cover the whole gap.",
+     "text": "Sacramento (2-15) is without Maxime Raynaud and Ben Simmons, and Zach LaVine (knee) is questionable on the 4:30 PM report, which pushes the other way, so the Warriors' absences don't cover the whole gap.",
      "source": "NBA official injury report",
-     "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-25_11_30AM.pdf",
+     "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-25_04_30PM.pdf",
      "date": "2026-11-25",
      "verified_numbers": [
       "2-15"
      ]
     }
    ],
-   "returning": []
+   "returning": [],
+   "swings": {
+    "GS": "Our line stayed near GS -10 while the market moved from 5.5 (first seen 11/23) to 7.5: Sacramento (2-15) rules out Raynaud and Simmons with LaVine questionable on the 4:30 PM report, so the Curry-less Warriors get less of a discount than vs Boston on 11/22."
+   }
   },
   "401909318": {
    "checked": "2026-11-25T11:46:24-05:00",

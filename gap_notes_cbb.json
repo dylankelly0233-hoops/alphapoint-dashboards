@@ -1,6 +1,6 @@
 {
  "sport": "cbb",
- "generated": "2026-11-25T15:42:24-05:00",
+ "generated": "2026-11-25T16:43:39-05:00",
  "teams": {
   "Dayton": {
    "watch": [
@@ -383,8 +383,21 @@
    "checked": "2026-11-24T22:43:01-05:00"
   },
   "LSU": {
-   "watch": [],
-   "checked": "2026-11-25T12:43:35-05:00"
+   "checked": "2026-11-25T16:43:39-05:00",
+   "watch": [
+    {
+     "text": "RJ Luis Jr. joined LSU's roster 11/17 under a court injunction; he scored 11 in 15 minutes vs ULM on 11/19 but did not play vs Queens on 11/21, so his role is unsettled.",
+     "source": "WAFB",
+     "url": "https://www.wafb.com/2026/11/17/lsu-adds-rj-luis-jr-basketball-roster-after-court-battle-with-sec/",
+     "date": "2026-11-17",
+     "verified_numbers": [
+      "11",
+      "15"
+     ],
+     "direction": "unclear",
+     "since": "2026-11-17"
+    }
+   ]
   },
   "Marquette": {
    "watch": [],
@@ -424,8 +437,8 @@
    ]
   },
   "SMU": {
-   "watch": [],
-   "checked": "2026-11-24T16:50:54-05:00"
+   "checked": "2026-11-25T16:43:39-05:00",
+   "watch": []
   },
   "Saint Louis": {
    "watch": [],
@@ -1181,6 +1194,39 @@
    "checked": "2026-11-25T15:42:24-05:00",
    "swings": {
     "Arkansas": "The last gap came in a 44-pt mismatch vs Mississippi Valley State (Nov. 21), played without Jordan Smith Jr. (wrist); Calipari expects Smith back vs Michigan State (Yahoo, Nov. 23)."
+   }
+  },
+  "401918972": {
+   "checked": "2026-11-25T16:43:39-05:00",
+   "verdict": "unexplained",
+   "summary": "No injuries are listed for either unbeaten team; the market (LSU -6.5 at Palm Desert, neutral) rates LSU well above us, and we've been lower on LSU in 5 of its last 6 with no clear reason found.",
+   "reasons": [
+    {
+     "text": "No injuries listed for LSU or SMU in Wednesday previews; both teams play the second game of a back-to-back in Palm Desert, so rest doesn't favor either side.",
+     "source": "Yahoo Sports",
+     "url": "https://sports.yahoo.com/mens-college-basketball/articles/lsu-tigers-set-important-acrisure-140042288.html",
+     "date": "2026-11-25"
+    },
+    {
+     "text": "RJ Luis Jr. joined LSU's roster 11/17 under a court injunction; he scored 11 in 15 minutes vs ULM on 11/19 but did not play vs Queens on 11/21, so his role is unsettled.",
+     "source": "WAFB",
+     "url": "https://www.wafb.com/2026/11/17/lsu-adds-rj-luis-jr-basketball-roster-after-court-battle-with-sec/",
+     "date": "2026-11-17",
+     "verified_numbers": [
+      "11",
+      "15"
+     ]
+    },
+    {
+     "text": "LSU's Wednesday game vs Arizona State went to double overtime (Donovan Dent played nearly the whole game), a fatigue point for LSU, not the market's way.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/mens-college-basketball/game/_/gameId/401921669",
+     "date": "2026-11-25"
+    }
+   ],
+   "returning": [],
+   "swings": {
+    "LSU": "Nothing found: the market makes LSU 6.5 over SMU but only 3.5 over Arizona State; the one roster change, RJ Luis Jr. (added 11/17, played once), doesn't explain it."
    }
   }
  }
