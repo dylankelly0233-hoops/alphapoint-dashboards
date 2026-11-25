@@ -1,30 +1,38 @@
 {
  "sport": "nhl",
- "generated": "2026-11-24T18:42:22-05:00",
+ "generated": "2026-11-25T08:44:33-05:00",
  "teams": {
   "OTT": {
-   "checked": "2026-11-24T11:44:03-05:00",
+   "checked": "2026-11-25T08:44:33-05:00",
    "watch": [
     {
      "direction": "too_high",
-     "since": "2026-11-22",
-     "text": "Forwards William Eklund (ankle), Warren Foegele (knee) and Andre Burakovsky (lower body) are out vs Calgary; Hayden Hodgson (groin) is day-to-day.",
-     "source": "Bleacher Nation",
-     "url": "https://bleachernation.com/picks/2026/11/22/senators-vs-flames-how-to-watch-odds-picks-predictions-3",
-     "date": "2026-11-22"
+     "since": "2026-11-16",
+     "text": "William Eklund (ankle) and Warren Foegele (knee) are out and Hayden Hodgson went on IR; Andre Burakovsky travels and may play on the trip.",
+     "source": "ESPN NHL injuries",
+     "url": "https://www.espn.com/nhl/injuries",
+     "date": "2026-11-25"
     }
    ]
   },
   "CGY": {
-   "checked": "2026-11-23T17:43:18-05:00",
+   "checked": "2026-11-25T08:44:33-05:00",
    "watch": [
     {
      "direction": "too_high",
-     "since": "2026-11-22",
-     "text": "D Kevin Bahl is out for the season (Achilles surgery) and Jonathan Huberdeau (hip) is out; Martin Pospisil (upper body) is day-to-day after a hit from Chicago's Wyatt Kaiser.",
-     "source": "The Hockey Writers",
-     "url": "https://thehockeywriters.com/flames-week-ahead-schedule-storylines-still-searching-for-consistency-pospisil-injury-and-more",
-     "date": "2026-11-22"
+     "since": "2026-11-08",
+     "text": "D Kevin Bahl is out for the season, Martin Pospisil (upper body) did not travel for the road trip, and Jonathan Huberdeau (hip) is on IR.",
+     "source": "ESPN NHL injuries",
+     "url": "https://www.espn.com/nhl/injuries",
+     "date": "2026-11-25"
+    },
+    {
+     "direction": "unclear",
+     "since": "2026-11-24",
+     "text": "C Morgan Frost (upper body) is day-to-day after getting hurt in Monday's 2-1 loss at Ottawa.",
+     "source": "ESPN NHL injuries",
+     "url": "https://www.espn.com/nhl/injuries",
+     "date": "2026-11-25"
     }
    ]
   },
@@ -55,29 +63,30 @@
    ]
   },
   "UTAH": {
-   "checked": "2026-11-24T11:44:03-05:00",
+   "checked": "2026-11-25T08:44:33-05:00",
    "watch": [
     {
      "direction": "too_high",
      "since": "2026-11-11",
-     "text": "Dylan Guenther (IR since Nov 11, 2-4 weeks) and D John Marino (IR) remain out of the projected lineup at Winnipeg.",
-     "source": "Daily Faceoff",
-     "url": "https://www.dailyfaceoff.com/teams/utah-mammoth/line-combinations",
-     "date": "2026-11-23"
-    },
-    {
-     "direction": "unclear",
-     "since": "2026-11-21",
-     "text": "Clayton Keller (illness) missed Saturday vs Anaheim but is projected back on PP1 Monday; Nick Schmaltz is day-to-day.",
-     "source": "Daily Faceoff",
-     "url": "https://www.dailyfaceoff.com/teams/utah-mammoth/line-combinations",
-     "date": "2026-11-23"
+     "text": "Out: D John Marino (likely the whole road trip), Nick Schmaltz (IR), D Nate Schmidt (week-to-week) and Michael Carcone (3-4 months).",
+     "source": "ESPN NHL injuries",
+     "url": "https://www.espn.com/nhl/injuries",
+     "date": "2026-11-25"
     }
    ]
   },
   "WPG": {
-   "checked": "2026-11-23T17:43:18-05:00",
-   "watch": []
+   "checked": "2026-11-25T08:44:33-05:00",
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-19",
+     "text": "D Dylan DeMelo (lower body) is out 4-6 weeks per the Jets.",
+     "source": "ESPN NHL injuries",
+     "url": "https://www.espn.com/nhl/injuries",
+     "date": "2026-11-25"
+    }
+   ]
   },
   "TOR": {
    "checked": "2026-11-23T17:43:18-05:00",
@@ -93,70 +102,62 @@
    ]
   },
   "NYI": {
-   "checked": "2026-11-23T17:43:18-05:00",
+   "checked": "2026-11-25T08:44:33-05:00",
    "watch": [
     {
      "direction": "too_high",
-     "since": "2026-11-23",
-     "text": "D Alexander Romanov is out with a torn ACL; D Ryan Pulock (lower body) is day-to-day.",
-     "source": "Bettors Insider",
-     "url": "https://bettorsinsider.com/nhl/2026/11/23/maple-leafs-vs-islanders-prediction-sorokin-edge-in-elmont/",
-     "date": "2026-11-23"
+     "since": "2026-11-24",
+     "text": "D Ryan Pulock (shoulder) is out 1-2 weeks, D Alexander Romanov (torn ACL) is out and Kyle Palmieri went on IR on Nov. 24.",
+     "source": "ESPN NHL injuries",
+     "url": "https://www.espn.com/nhl/injuries",
+     "date": "2026-11-25"
     },
     {
      "direction": "too_low",
      "since": "2026-11-14",
      "text": "Mathew Barzal returned Nov 14 after missing the start of the season.",
-     "source": "Bettors Insider",
-     "url": "https://bettorsinsider.com/nhl/2026/11/23/maple-leafs-vs-islanders-prediction-sorokin-edge-in-elmont/",
+     "source": "ESPN NHL injuries",
+     "url": "https://www.espn.com/nhl/injuries",
      "date": "2026-11-23"
     }
    ]
   },
   "CBJ": {
-   "checked": "2026-11-23T17:43:18-05:00",
+   "checked": "2026-11-25T08:44:33-05:00",
    "watch": [
     {
-     "direction": "too_high",
-     "since": "2026-11-16",
-     "text": "C Sean Monahan (did not travel, projected back Nov 25) and Conor Garland (IR) are out with upper-body injuries.",
-     "source": "Bettors Insider",
-     "url": "https://bettorsinsider.com/nhl/2026/11/23/blue-jackets-vs-devils-prediction-back-the-devils-to-cover/",
-     "date": "2026-11-23"
+     "direction": "unclear",
+     "since": "2026-11-23",
+     "text": "C Sean Monahan (upper body) is day-to-day after missing the last trip; Mathieu Olivier went on IR on Nov. 24.",
+     "source": "ESPN NHL injuries",
+     "url": "https://www.espn.com/nhl/injuries",
+     "date": "2026-11-25"
     }
    ]
   },
   "NJ": {
-   "checked": "2026-11-23T17:43:18-05:00",
+   "checked": "2026-11-25T08:44:33-05:00",
    "watch": [
     {
      "direction": "too_high",
      "since": "2026-11-17",
-     "text": "Out: Anthony Mantha (throat fracture surgery), D Johnathan Kovacevic (high ankle sprain, 4-6 weeks from Nov 17) and D Seamus Casey (knee).",
-     "source": "NHL.com",
-     "url": "https://www.nhl.com/devils/news/preview-2026020378",
-     "date": "2026-11-23"
+     "text": "Out: Anthony Mantha (neck surgery, about a month), D Johnathan Kovacevic (ankle, 4-6 weeks from Nov 17) and D Seamus Casey (knee, LTIR).",
+     "source": "ESPN NHL injuries",
+     "url": "https://www.espn.com/nhl/injuries",
+     "date": "2026-11-25"
     }
    ]
   },
   "MIN": {
-   "checked": "2026-11-24T11:44:03-05:00",
+   "checked": "2026-11-25T08:44:33-05:00",
    "watch": [
     {
      "direction": "too_high",
-     "since": "2026-11-21",
-     "text": "No. 1 D Quinn Hughes (27.8 TOI, upper body) was placed on injured reserve on 11/23 and misses tonight at SJ.",
-     "source": "ESPN",
-     "url": "https://www.espn.com/nhl/team/injuries/_/name/min",
-     "date": "2026-11-23"
-    },
-    {
-     "direction": "unclear",
      "since": "2026-11-23",
-     "text": "Filip Gustavsson starts tonight in his season debut instead of Jesper Wallstedt.",
-     "source": "Daily Faceoff",
-     "url": "https://www.dailyfaceoff.com/starting-goalies/2026-11-23",
-     "date": "2026-11-23"
+     "text": "No. 1 D Quinn Hughes (upper body) is on injured reserve; D Olli Maatta is also on IR.",
+     "source": "ESPN NHL injuries",
+     "url": "https://www.espn.com/nhl/injuries",
+     "date": "2026-11-25"
     }
    ]
   },
@@ -208,17 +209,168 @@
    "watch": []
   },
   "FLA": {
+   "checked": "2026-11-25T08:44:33-05:00",
    "watch": [
     {
      "direction": "too_low",
-     "since": "2026-10-01",
-     "text": "Captain Aleksander Barkov (knee, out since Oct. 1) and Brad Marchand (knee) may return Wednesday vs. Ottawa; our ratings are built almost entirely without them.",
-     "source": "Yahoo Sports",
-     "url": "https://sports.yahoo.com/articles/panthers-place-cole-reinhardt-nhl-193354501.html",
-     "date": "2026-11-22"
+     "since": "2026-11-24",
+     "text": "Captain Aleksander Barkov (knee, out since Oct. 1) and Brad Marchand (knee) are 'possible' to return tonight vs Ottawa; Florida cleared cap space for Barkov.",
+     "source": "NHL.com",
+     "url": "https://www.nhl.com/news/florida-panthers-aleksander-barkov-brad-marchard-injury-status-update-november-24-2026",
+     "date": "2026-11-24"
     }
-   ],
-   "checked": "2026-11-24T11:44:03-05:00"
+   ]
+  },
+  "BOS": {
+   "checked": "2026-11-25T08:44:33-05:00",
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-24",
+     "text": "C James Hagens (back) is on injured reserve, in a non-contact sweater at Tuesday's practice.",
+     "source": "ESPN NHL injuries",
+     "url": "https://www.espn.com/nhl/injuries",
+     "date": "2026-11-25"
+    }
+   ]
+  },
+  "BUF": {
+   "checked": "2026-11-25T08:44:33-05:00",
+   "watch": [
+    {
+     "direction": "unclear",
+     "since": "2026-11-24",
+     "text": "C Tyson Kozak (undisclosed) missed Tuesday's practice and is day-to-day; Konsta Helenius and Justin Danforth are on IR.",
+     "source": "ESPN NHL injuries",
+     "url": "https://www.espn.com/nhl/injuries",
+     "date": "2026-11-25"
+    }
+   ]
+  },
+  "CAR": {
+   "checked": "2026-11-25T08:44:33-05:00",
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-24",
+     "text": "LW Nikolaj Ehlers is listed out.",
+     "source": "ESPN NHL injuries",
+     "url": "https://www.espn.com/nhl/injuries",
+     "date": "2026-11-25"
+    }
+   ]
+  },
+  "DAL": {
+   "checked": "2026-11-25T08:44:33-05:00",
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-10-12",
+     "text": "C Matt Duchene is out about three months after core surgery; D Tyler Myers (upper body) may return vs Nashville.",
+     "source": "ESPN NHL injuries",
+     "url": "https://www.espn.com/nhl/injuries",
+     "date": "2026-11-25"
+    }
+   ]
+  },
+  "DET": {
+   "checked": "2026-11-25T08:44:33-05:00",
+   "watch": [
+    {
+     "direction": "unclear",
+     "since": "2026-11-22",
+     "text": "G Sam Montembeault (lower body) is on IR and D William Wallinder is day-to-day.",
+     "source": "ESPN NHL injuries",
+     "url": "https://www.espn.com/nhl/injuries",
+     "date": "2026-11-25"
+    }
+   ]
+  },
+  "NSH": {
+   "checked": "2026-11-25T08:44:33-05:00",
+   "watch": []
+  },
+  "NYR": {
+   "checked": "2026-11-25T08:44:33-05:00",
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-21",
+     "text": "Oliver Bjorkstrand and D Alberts Smits are out 2-3 months (upper body); Igor Shesterkin is out for the season.",
+     "source": "ESPN NHL injuries",
+     "url": "https://www.espn.com/nhl/injuries",
+     "date": "2026-11-25"
+    }
+   ]
+  },
+  "PHI": {
+   "checked": "2026-11-25T08:44:33-05:00",
+   "watch": []
+  },
+  "PIT": {
+   "checked": "2026-11-25T08:44:33-05:00",
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-20",
+     "text": "Evgeni Malkin is day-to-day; Bryan Rust (lower body, non-contact) and Nick Robertson are on IR.",
+     "source": "ESPN NHL injuries",
+     "url": "https://www.espn.com/nhl/injuries",
+     "date": "2026-11-25"
+    }
+   ]
+  },
+  "STL": {
+   "checked": "2026-11-25T08:44:33-05:00",
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-24",
+     "text": "Connor McMichael and D Brandon Carlo went on IR on Nov. 24; Pavel Buchnevich is day-to-day and Jimmy Snuggerud questionable vs the Islanders.",
+     "source": "ESPN NHL injuries",
+     "url": "https://www.espn.com/nhl/injuries",
+     "date": "2026-11-25"
+    }
+   ]
+  },
+  "TB": {
+   "checked": "2026-11-25T08:44:33-05:00",
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-11-15",
+     "text": "Brandon Hagel (lower body) is on IR since Nov 15 and Conor Geekie had shoulder surgery (4-5 months).",
+     "source": "ESPN NHL injuries",
+     "url": "https://www.espn.com/nhl/injuries",
+     "date": "2026-11-25"
+    }
+   ]
+  },
+  "VAN": {
+   "checked": "2026-11-25T08:44:33-05:00",
+   "watch": [
+    {
+     "direction": "unclear",
+     "since": "2026-11-21",
+     "text": "C Elias Pettersson is day-to-day; Brendan Gallagher (lower body) is on IR and G Thatcher Demko (hip) remains out.",
+     "source": "ESPN NHL injuries",
+     "url": "https://www.espn.com/nhl/injuries",
+     "date": "2026-11-25"
+    }
+   ]
+  },
+  "WSH": {
+   "checked": "2026-11-25T08:44:33-05:00",
+   "watch": [
+    {
+     "direction": "unclear",
+     "since": "2026-11-23",
+     "text": "Jordan Kyrou is listed out; D Vincent Desharnais (appendectomy) is day-to-day and D Rasmus Sandin cleared for contact.",
+     "source": "ESPN NHL injuries",
+     "url": "https://www.espn.com/nhl/injuries",
+     "date": "2026-11-25"
+    }
+   ]
   }
  },
  "games": {

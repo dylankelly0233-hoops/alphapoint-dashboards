@@ -1,6 +1,6 @@
 {
  "sport": "nba",
- "generated": "2026-11-24T23:45:00-05:00",
+ "generated": "2026-11-25T08:44:33-05:00",
  "teams": {
   "OKC": {
    "checked": "2026-11-24T16:50:54-05:00",
@@ -37,12 +37,12 @@
    ]
   },
   "GS": {
-   "checked": "2026-11-24T22:43:01-05:00",
+   "checked": "2026-11-25T08:44:33-05:00",
    "watch": [
     {
      "direction": "too_high",
      "since": "2026-11-14",
-     "text": "Stephen Curry (oblique tear) has missed the last 5 games (Warriors 1-4) and is out vs SAC on the NBA's 9:30 PM ET report of 11/24; Butler, Porzingis and Moody are also out.",
+     "text": "Stephen Curry (oblique tear, hurt Nov. 11 at Houston) has missed 5 straight games (Warriors 1-4) and was listed out vs SAC on the NBA's 11/24 9:30 PM ET report; Butler, Porzingis and Moody also out.",
      "source": "NBA official injury report",
      "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-24_09_30PM.pdf",
      "date": "2026-11-24",
@@ -50,6 +50,9 @@
       "1-4"
      ]
     }
+   ],
+   "verified_numbers": [
+    "1-4"
    ]
   },
   "BOS": {

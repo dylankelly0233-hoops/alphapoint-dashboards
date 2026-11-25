@@ -1,6 +1,6 @@
 {
  "sport": "nfl",
- "generated": "2026-11-24T11:44:03-05:00",
+ "generated": "2026-11-25T08:44:33-05:00",
  "teams": {
   "ARI": {
    "checked": "2026-11-24T10:43:26-05:00",
@@ -141,14 +141,22 @@
    ]
   },
   "GB": {
-   "checked": "2026-11-24T10:43:26-05:00",
+   "checked": "2026-11-25T08:44:33-05:00",
    "watch": [
     {
      "direction": "too_low",
      "since": "2026-11-24",
-     "text": "Edge Micah Parsons has been cleared for his season debut Wednesday at the Rams; our ratings were built without him.",
-     "source": "ESPN",
-     "url": "https://www.espn.com/nfl/story/_/id/50577301/sources-packers-micah-parsons-cleared-return-wednesday",
+     "text": "Edge Micah Parsons, activated from PUP, is questionable but expected to make his season debut tonight at the Rams; our ratings were built without him.",
+     "source": "Packers.com (final injury report)",
+     "url": "https://www.packers.com/news/packers-list-eight-questionable-vs-rams-week-12-injury-report",
+     "date": "2026-11-24"
+    },
+    {
+     "direction": "too_high",
+     "since": "2026-11-24",
+     "text": "RB Josh Jacobs (broken ring finger, missed Week 11) is questionable and limited; LaFleur said he'd need to show a lot of progress to play.",
+     "source": "Packers.com (final injury report)",
+     "url": "https://www.packers.com/news/packers-list-eight-questionable-vs-rams-week-12-injury-report",
      "date": "2026-11-24"
     }
    ]
@@ -222,7 +230,7 @@
    ]
   },
   "LA": {
-   "checked": "2026-11-24T10:43:26-05:00",
+   "checked": "2026-11-25T08:44:33-05:00",
    "watch": [
     {
      "direction": "too_high",
@@ -235,18 +243,18 @@
     {
      "direction": "too_high",
      "since": "2026-11-22",
-     "text": "G Steve Avila is ruled out for Wednesday and C Coleman Shelton did not practice Sunday or Monday (both hamstring).",
-     "source": "Packers.com (joint report)",
-     "url": "https://www.packers.com/news/packers-rams-injury-report-nov-23-2026",
-     "date": "2026-11-23"
+     "text": "G Steve Avila and C Coleman Shelton (hamstrings) and TE Terrance Ferguson (ankle) are ruled out tonight on the Rams' final report.",
+     "source": "TheRams.com (final injury report)",
+     "url": "https://www.therams.com/news/rams-injury-report-week-12-2026-vs-packers-steve-avila-terrance-ferguson-coleman-shelton-kobie-turner",
+     "date": "2026-11-24"
     },
     {
      "direction": "too_low",
      "since": "2026-11-23",
-     "text": "DT Kobie Turner (groin), designated to return from IR, practiced fully Sunday and Monday.",
-     "source": "Packers.com (joint report)",
-     "url": "https://www.packers.com/news/packers-rams-injury-report-nov-23-2026",
-     "date": "2026-11-23"
+     "text": "DT Kobie Turner (groin) is being activated from IR with no designation after full practices all week.",
+     "source": "TheRams.com (final injury report)",
+     "url": "https://www.therams.com/news/rams-injury-report-week-12-2026-vs-packers-steve-avila-terrance-ferguson-coleman-shelton-kobie-turner",
+     "date": "2026-11-24"
     }
    ]
   },
