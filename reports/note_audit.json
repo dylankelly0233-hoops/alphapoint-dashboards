@@ -1,4 +1,13 @@
 {
- "generated": "2026-11-24T10:25:59+00:00",
- "items": []
+ "generated": "2026-11-25T01:06:37+00:00",
+ "items": [
+  {
+   "sport": "cfb",
+   "where": "games/401864549/reasons[0]",
+   "text": "NDSU (9-2) must beat San José State on Nov. 27 to keep its Mountain West title-game path open, per Heavy.",
+   "issues": [
+    "\"beat san josé state\": no such game this season in CFBD results"
+   ]
+  }
+ ]
 }
