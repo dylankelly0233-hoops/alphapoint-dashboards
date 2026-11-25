@@ -1,5 +1,5 @@
-Date: 2026-11-24 20:06
+Date: 2026-11-25 04:09
 Flagged: 1 note sentences could not be confirmed against the results feeds
 
-CFB games/401864549/reasons[0]: "beat san josé state": no such game this season in CFBD results
-    "NDSU (9-2) must beat San José State on Nov. 27 to keep its Mountain West title-game path open, per Heavy."
+NBA teams/GS/watch[0]: 1-4: not found as a score or record in ESPN results
+    "Stephen Curry (oblique tear) has missed the last 5 games (Warriors 1-4) and is out vs SAC on the NBA's 9:30 PM ET report of 11/24; Butler, Porzingis and Moody are also out."
