@@ -1,6 +1,6 @@
 {
  "sport": "nhl",
- "generated": "2026-11-25T20:42:53-05:00",
+ "generated": "2026-11-26T11:42:58-05:00",
  "teams": {
   "OTT": {
    "checked": "2026-11-25T17:42:56-05:00",
@@ -157,15 +157,15 @@
    ]
   },
   "MIN": {
-   "checked": "2026-11-25T18:43:10-05:00",
+   "checked": "2026-11-26T11:42:58-05:00",
    "watch": [
     {
      "direction": "too_high",
      "since": "2026-11-23",
-     "text": "No. 1 D Quinn Hughes (upper body) is still on injured reserve for Wednesday vs Utah; D Olli Maatta is also on IR.",
+     "text": "No. 1 D Quinn Hughes (upper body, IR) is doubtful Friday vs Colorado per Michael Russo of The Athletic; D Olli Maatta is also on IR.",
      "source": "ESPN NHL injuries",
-     "url": "https://www.espn.com/nhl/game/_/gameId/401892791",
-     "date": "2026-11-25"
+     "url": "https://www.espn.com/nhl/injuries",
+     "date": "2026-11-26"
     }
    ]
   },
@@ -183,8 +183,17 @@
    ]
   },
   "SEA": {
-   "checked": "2026-11-23T19:42:09-05:00",
-   "watch": []
+   "checked": "2026-11-26T11:42:58-05:00",
+   "watch": [
+    {
+     "direction": "too_high",
+     "since": "2026-10-25",
+     "text": "Jared McCann (lower body) is on IR, out about 10 weeks from Oct 25, and Jake O'Brien (lower body) is week-to-week.",
+     "source": "ESPN NHL injuries",
+     "url": "https://www.espn.com/nhl/injuries",
+     "date": "2026-11-26"
+    }
+   ]
   },
   "SJ": {
    "checked": "2026-11-25T20:42:53-05:00",
@@ -200,15 +209,15 @@
    ]
   },
   "EDM": {
-   "checked": "2026-11-24T18:42:22-05:00",
+   "checked": "2026-11-26T11:42:58-05:00",
    "watch": [
     {
      "direction": "too_high",
      "since": "2026-11-22",
-     "text": "Zach Hyman (migraine) is out vs Vegas on 11/24; goalie Andersen (knee) is on IR, and Devon Levi is confirmed to start.",
-     "source": "ESPN",
+     "text": "Zach Hyman (migraine) missed Nov 24 at Vegas and is day-to-day; goalie Frederik Andersen (knee) is on IR, so Devon Levi keeps starting.",
+     "source": "ESPN NHL injuries",
      "url": "https://www.espn.com/nhl/injuries",
-     "date": "2026-11-24"
+     "date": "2026-11-26"
     }
    ]
   },
@@ -269,15 +278,15 @@
    ]
   },
   "DAL": {
-   "checked": "2026-11-25T18:43:10-05:00",
+   "checked": "2026-11-26T11:42:58-05:00",
    "watch": [
     {
      "direction": "too_high",
      "since": "2026-10-12",
-     "text": "C Matt Duchene is on IR about three months after core surgery; D Tyler Myers (upper body) is no longer on ESPN's injury list for the Nashville game.",
+     "text": "C Matt Duchene is on IR about three months after core surgery; D Lian Bichsel and D Kyle Capobianco are also on IR since Nov 14.",
      "source": "ESPN NHL injuries",
-     "url": "https://www.espn.com/nhl/game/_/gameId/401892790",
-     "date": "2026-11-25"
+     "url": "https://www.espn.com/nhl/injuries",
+     "date": "2026-11-26"
     }
    ]
   },
@@ -329,15 +338,15 @@
    ]
   },
   "STL": {
-   "checked": "2026-11-25T17:42:56-05:00",
+   "checked": "2026-11-26T11:42:58-05:00",
    "watch": [
     {
      "direction": "too_high",
      "since": "2026-11-24",
-     "text": "Connor McMichael and D Brandon Carlo went on IR Nov 24, and Pavel Buchnevich (upper body) and Jimmy Snuggerud (did not travel) are out at the Islanders tonight.",
+     "text": "Connor McMichael and D Brandon Carlo are on IR (Nov 24); Pavel Buchnevich and Jimmy Snuggerud missed Nov 25 at the Islanders and are day-to-day.",
      "source": "ESPN NHL injuries",
      "url": "https://www.espn.com/nhl/injuries",
-     "date": "2026-11-25"
+     "date": "2026-11-26"
     }
    ]
   },
@@ -381,7 +390,7 @@
    ]
   },
   "COL": {
-   "checked": "2026-11-25T19:43:26-05:00",
+   "checked": "2026-11-26T11:42:58-05:00",
    "watch": [
     {
      "direction": "too_high",
@@ -394,10 +403,13 @@
     {
      "direction": "too_low",
      "since": "2026-11-12",
-     "text": "D Cale Makar (lower body, out since Nov. 12) is rejoining the lineup vs MTL tonight, per ESPN; our ratings carry the games he missed.",
+     "text": "D Cale Makar (lower body) returned Nov 25 in a 6-0 win over Montreal after missing three games; our ratings carry the games he missed.",
      "source": "ESPN",
      "url": "https://www.espn.com/nhl/story/_/id/50596079/avalanche-defenseman-cale-makar-returns-3-game-absence",
-     "date": "2026-11-25"
+     "date": "2026-11-25",
+     "verified_numbers": [
+      "6-0"
+     ]
     }
    ]
   }
@@ -622,6 +634,73 @@
   },
   "401892792": {
    "checked": "2026-11-25T19:43:26-05:00"
+  },
+  "401892798": {
+   "checked": "2026-11-26T11:42:58-05:00",
+   "verdict": "partly",
+   "summary": "St. Louis is short four regulars (McMichael and Carlo on IR, Buchnevich and Snuggerud day-to-day), which covers part of why the market makes Dallas the favorite.",
+   "reasons": [
+    {
+     "text": "Connor McMichael and D Brandon Carlo went on IR Nov 24; Pavel Buchnevich and Jimmy Snuggerud missed Wednesday's 3-2 loss at the Islanders and are day-to-day.",
+     "source": "ESPN NHL injuries",
+     "url": "https://www.espn.com/nhl/injuries",
+     "date": "2026-11-26"
+    },
+    {
+     "text": "Dallas is without C Matt Duchene (core surgery, about three months), D Lian Bichsel and D Kyle Capobianco, all on IR; our ratings already carry most of those games.",
+     "source": "ESPN NHL injuries",
+     "url": "https://www.espn.com/nhl/injuries",
+     "date": "2026-11-26"
+    }
+   ],
+   "verified_numbers": [
+    "3-2"
+   ]
+  },
+  "401892803": {
+   "checked": "2026-11-26T11:42:58-05:00",
+   "verdict": "partly",
+   "summary": "Minnesota will likely be without No. 1 D Quinn Hughes and Colorado has Cale Makar back, both pushing the market's way, but MacKinnon's long absence cuts the other way.",
+   "reasons": [
+    {
+     "text": "Quinn Hughes (upper body, IR since Nov 23) is doubtful for Friday vs Colorado, expected to join the road trip that starts Sunday in Chicago, per Michael Russo of The Athletic.",
+     "source": "ESPN NHL injuries",
+     "url": "https://www.espn.com/nhl/injuries",
+     "date": "2026-11-26"
+    },
+    {
+     "text": "D Cale Makar returned from a three-game absence in Wednesday's 6-0 win over Montreal; our ratings still carry the games he missed.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nhl/story/_/id/50596079/avalanche-defenseman-cale-makar-returns-3-game-absence",
+     "date": "2026-11-25"
+    },
+    {
+     "text": "C Nathan MacKinnon is out about 12 weeks (lower body), which our ratings only partly reflect, so that leans toward our Wild number.",
+     "source": "Colorado Hockey Now via ESPN",
+     "url": "https://www.espn.com/nhl/injuries",
+     "date": "2026-11-21"
+    }
+   ],
+   "returning": [
+    {
+     "team": "COL",
+     "player": "Cale Makar",
+     "text": "Back from a three-game absence on Nov 25 vs Montreal.",
+     "url": "https://www.espn.com/nhl/story/_/id/50596079/avalanche-defenseman-cale-makar-returns-3-game-absence"
+    }
+   ],
+   "verified_numbers": [
+    "6-0"
+   ],
+   "swings": {
+    "COL": "Cale Makar returned Nov 25 (6-0 win over Montreal) after missing three games; the market prices him back, our ratings still carry his absence, and Minnesota's Quinn Hughes is doubtful."
+   }
+  },
+  "401892809": {
+   "checked": "2026-11-26T11:42:58-05:00",
+   "swings": {
+    "EDM": "Nothing firm found: Zach Hyman (missed the Nov 24 loss at Vegas) is day-to-day and may return at home, and Seattle is without Jared McCann and Jake O'Brien, so the market leans further to Edmonton."
+   }
   }
  }
 }

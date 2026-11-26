@@ -1,6 +1,6 @@
 {
  "sport": "cbb",
- "generated": "2026-11-26T10:42:00-05:00",
+ "generated": "2026-11-26T11:42:58-05:00",
  "teams": {
   "Dayton": {
    "watch": [
@@ -74,7 +74,7 @@
   },
   "San Diego State": {
    "watch": [],
-   "checked": "2026-11-25T14:43:14-05:00"
+   "checked": "2026-11-26T11:42:58-05:00"
   },
   "Iowa State": {
    "watch": [],
@@ -146,7 +146,7 @@
   },
   "Maryland": {
    "watch": [],
-   "checked": "2026-11-25T14:43:14-05:00"
+   "checked": "2026-11-26T11:42:58-05:00"
   },
   "Wright State": {
    "checked": "2026-11-25T10:43:06-05:00",
@@ -1039,9 +1039,9 @@
    ]
   },
   "401920528": {
-   "checked": "2026-11-25T14:43:14-05:00",
+   "checked": "2026-11-26T11:42:58-05:00",
    "verdict": "unexplained",
-   "summary": "Nothing found to justify Maryland as a 4.5-pt favorite on a neutral Las Vegas floor; the line moved from Maryland -1.5 with no new injury news.",
+   "summary": "Nothing found to justify Maryland as a 4.5-pt favorite on a neutral Las Vegas floor; the line moved from Maryland -1.5 and holds at -4.5 before tip with no injury news.",
    "reasons": [
     {
      "text": "Both lost on Nov. 24 in the Players Era: Maryland 72-64 to Tennessee and San Diego State 81-68 to Iowa State, so neither result moves the gap.",
