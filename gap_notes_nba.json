@@ -1,6 +1,6 @@
 {
  "sport": "nba",
- "generated": "2026-11-25T20:42:53-05:00",
+ "generated": "2026-11-26T08:43:03-05:00",
  "teams": {
   "OKC": {
    "checked": "2026-11-25T17:42:56-05:00",
@@ -59,22 +59,19 @@
    "watch": [
     {
      "direction": "too_low",
-     "since": "2026-11-21",
-     "text": "Tatum and White sat the 97-96 loss at SAC on 11/21 but are off the 11/22 report vs GS; that loss understates the Boston that plays tonight.",
-     "source": "RotoWire",
-     "url": "https://rotowire.com/basketball/headlines/jayson-tatum-news-off-injury-report-sunday-540517",
-     "date": "2026-11-22"
-    },
-    {
-     "direction": "too_high",
      "since": "2026-11-22",
-     "text": "Mitchell Robinson (illness) is still listed out for 11/24 at WSH (ESPN return estimate 11/27); Paul George, rested 11/22 at GS, is expected back.",
-     "source": "ESPN",
+     "text": "Tatum and White sat the 97-96 loss at SAC (11/22) and George the 88-87 loss at GS (11/23); all three played the 131-116 win at WSH on 11/25. Robinson (illness) is still out.",
+     "source": "ESPN box scores",
      "url": "https://www.espn.com/nba/game/_/gameId/401909315",
-     "date": "2026-11-23"
+     "date": "2026-11-25",
+     "verified_numbers": [
+      "97-96",
+      "88-87",
+      "131-116"
+     ]
     }
    ],
-   "checked": "2026-11-24T18:42:22-05:00"
+   "checked": "2026-11-26T08:43:03-05:00"
   },
   "CHI": {
    "checked": "2026-11-25T17:42:56-05:00",
@@ -103,15 +100,18 @@
    ]
   },
   "IND": {
-   "checked": "2026-11-23T17:43:18-05:00",
+   "checked": "2026-11-26T08:43:03-05:00",
    "watch": [
     {
      "direction": "too_high",
      "since": "2026-11-10",
-     "text": "Siakam (hip) is questionable vs OKC on 11/23; Nesmith and McConnell are out and Haliburton remains out.",
-     "source": "Heavy",
-     "url": "https://heavy.com/sports/nba/indiana-pacers/pascal-siakam-injury-thunder",
-     "date": "2026-11-23"
+     "text": "Haliburton (hamstring) is still out (est. 12/13); McConnell, Nesmith and Nance are day-to-day for PHI; Indiana beat OKC 125-120 on 11/24.",
+     "source": "ESPN game page (injuries)",
+     "url": "https://www.espn.com/nba/game/_/gameId/401909328",
+     "date": "2026-11-26",
+     "verified_numbers": [
+      "125-120"
+     ]
     }
    ]
   },
@@ -133,12 +133,13 @@
     {
      "direction": "too_high",
      "since": "2026-11-17",
-     "text": "CJ McCollum (calf) is out at least four weeks from 11/17 and Landale is out; Flemings (lumbar) is questionable vs DET.",
-     "source": "Yahoo Sports",
-     "url": "https://sports.yahoo.com/articles/hawks-vs-pistons-prediction-preview-113752341.html",
-     "date": "2026-11-22"
+     "text": "CJ McCollum (calf) is out until about 12/19 and Landale (toe), Gueye (foot) and Newell (toe) are also out at Boston; Flemings played 27 min in the 11/22 win over DET.",
+     "source": "ESPN game page (injuries)",
+     "url": "https://www.espn.com/nba/game/_/gameId/401909330",
+     "date": "2026-11-26"
     }
-   ]
+   ],
+   "checked": "2026-11-26T08:43:03-05:00"
   },
   "DET": {
    "checked": "2026-11-24T17:42:02-05:00",
@@ -188,15 +189,15 @@
    ]
   },
   "PHI": {
-   "checked": "2026-11-25T16:50:30-05:00",
+   "checked": "2026-11-26T08:43:03-05:00",
    "watch": [
     {
-     "direction": "too_high",
+     "direction": "unclear",
      "since": "2026-11-23",
-     "text": "Joel Embiid (illness) missed Monday vs POR and is out vs MIA tonight on the NBA's 4:30 PM ET report.",
-     "source": "NBA official injury report",
-     "url": "https://ak-static.cms.nba.com/referee/injury/Injury-Report_2026-11-25_04_30PM.pdf",
-     "date": "2026-11-25"
+     "text": "Joel Embiid (illness) missed 11/24 vs POR and 11/25 vs MIA and is day-to-day for Friday at Indiana; Jaylen Brown (hamstring, 17 min vs MIA) is also day-to-day.",
+     "source": "ESPN game page (injuries)",
+     "url": "https://www.espn.com/nba/game/_/gameId/401909328",
+     "date": "2026-11-26"
     }
    ]
   },
@@ -720,6 +721,39 @@
   },
   "401909321": {
    "checked": "2026-11-25T18:43:10-05:00"
+  },
+  "401909330": {
+   "checked": "2026-11-26T08:43:03-05:00",
+   "verdict": "partly",
+   "summary": "Boston is back at full strength (Tatum, White, George all played the 131-116 win at Washington), while our ratings still carry two 1-point losses without them; Atlanta remains short-handed.",
+   "reasons": [
+    {
+     "text": "Tatum and White sat the 97-96 loss at Sacramento on 11/22 and George sat the 88-87 loss at Golden State on 11/23; all three played the 131-116 win at Washington on 11/25.",
+     "source": "ESPN box scores",
+     "url": "https://www.espn.com/nba/game/_/gameId/401909315",
+     "date": "2026-11-25"
+    },
+    {
+     "text": "Atlanta is still without CJ McCollum (calf, est. return 12/19), Jock Landale (toe), Mouhamed Gueye and Asa Newell, which the market weighs against a Hawks rating built partly with McCollum.",
+     "source": "ESPN game page (injuries)",
+     "url": "https://www.espn.com/nba/game/_/gameId/401909330",
+     "date": "2026-11-26"
+    }
+   ],
+   "verified_numbers": [
+    "97-96",
+    "88-87",
+    "131-116"
+   ]
+  },
+  "401909328": {
+   "swings": {
+    "PHI": "Embiid (illness) sat Wednesday's 111-104 win over Miami, when the market was lower on Philadelphia; he is only day-to-day for Indiana, so the market's 76ers -4.5 likely expects him back (ESPN injuries, 11/26)."
+   },
+   "checked": "2026-11-26T08:43:03-05:00",
+   "verified_numbers": [
+    "111-104"
+   ]
   }
  }
 }
