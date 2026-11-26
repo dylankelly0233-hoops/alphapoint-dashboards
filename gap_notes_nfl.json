@@ -1,6 +1,6 @@
 {
  "sport": "nfl",
- "generated": "2026-11-26T08:43:03-05:00",
+ "generated": "2026-11-26T09:52:00-05:00",
  "teams": {
   "ARI": {
    "watch": [
@@ -122,7 +122,7 @@
      "date": "2026-11-25"
     }
    ],
-   "checked": "2026-11-26T08:43:03-05:00"
+   "checked": "2026-11-26T09:52:00-05:00"
   },
   "DEN": {
    "watch": [
@@ -471,7 +471,7 @@
      "date": "2026-11-23"
     }
    ],
-   "checked": "2026-11-26T08:43:03-05:00"
+   "checked": "2026-11-26T09:52:00-05:00"
   },
   "PIT": {
    "watch": [
@@ -1157,6 +1157,9 @@
    "swings": {
     "HOU": "Houston's 26-3 win over Indianapolis (Week 11) lifted our rating more than the market, which moved Houston from -2.5 to -3.5 here mainly on Pittsburgh's switch from Aaron Rodgers to Mason Rudolph."
    }
+  },
+  "2026_12_PHI_DAL": {
+   "checked": "2026-11-26T09:52:00-05:00"
   }
  }
 }

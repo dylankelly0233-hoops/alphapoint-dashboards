@@ -1,6 +1,6 @@
 {
  "sport": "cbb",
- "generated": "2026-11-25T22:41:29-05:00",
+ "generated": "2026-11-26T09:52:00-05:00",
  "teams": {
   "Dayton": {
    "watch": [
@@ -599,11 +599,11 @@
   },
   "Georgia": {
    "watch": [],
-   "checked": "2026-11-25T18:43:10-05:00"
+   "checked": "2026-11-26T09:52:00-05:00"
   },
   "Cincinnati": {
    "watch": [],
-   "checked": "2026-11-25T18:43:10-05:00"
+   "checked": "2026-11-26T09:52:00-05:00"
   }
  },
  "games": {
@@ -1319,7 +1319,7 @@
    ]
   },
   "401929281": {
-   "checked": "2026-11-25T18:43:10-05:00",
+   "checked": "2026-11-26T09:52:00-05:00",
    "swings": {
     "Georgia": "Nothing found: Georgia's full rotation played in the 88-82 win at Georgia Tech on 11/21 (ESPN box) and no injury news turned up; the market held Cincinnati -1.5 while our number on Georgia fell."
    }

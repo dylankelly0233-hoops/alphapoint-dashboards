@@ -1,6 +1,6 @@
 {
  "sport": "nba",
- "generated": "2026-11-26T08:43:03-05:00",
+ "generated": "2026-11-26T09:52:00-05:00",
  "teams": {
   "OKC": {
    "checked": "2026-11-25T17:42:56-05:00",
@@ -155,25 +155,25 @@
    ]
   },
   "UTAH": {
+   "checked": "2026-11-26T09:52:00-05:00",
    "watch": [
     {
      "direction": "too_high",
      "since": "2026-11-11",
-     "text": "Lauri Markkanen (hand fracture, 11/11, at least a month) has missed 9 straight games and Jaren Jackson Jr. (MCL) 14 straight; ratings still carry early games with them.",
+     "text": "Lauri Markkanen (hand fracture, out since 11/11) and Jaren Jackson Jr. (knee) are still listed out; our ratings still carry Utah's early games with both.",
      "source": "ESPN",
-     "url": "https://www.espn.com/nba/injuries",
-     "date": "2026-11-20"
+     "url": "https://www.espn.com/nba/team/injuries/_/name/utah",
+     "date": "2026-11-26"
     },
     {
      "direction": "too_high",
      "since": "2026-11-20",
-     "text": "Centers Jusuf Nurkic (foot, out since 11/20) and Jaxson Hayes (knee, ruled out 11/23) are both out vs the Lakers, thinning Utah's frontcourt further.",
+     "text": "Centers Jusuf Nurkic (foot) is out and Jaxson Hayes (knee) is day-to-day, leaving Utah's frontcourt thin.",
      "source": "ESPN",
      "url": "https://www.espn.com/nba/team/injuries/_/name/utah",
-     "date": "2026-11-23"
+     "date": "2026-11-26"
     }
-   ],
-   "checked": "2026-11-23T20:42:33-05:00"
+   ]
   },
   "ORL": {
    "checked": "2026-11-24T17:42:02-05:00",
@@ -351,7 +351,7 @@
    "checked": "2026-11-23T11:17:25-05:00"
   },
   "DEN": {
-   "checked": "2026-11-24T20:45:00-05:00",
+   "checked": "2026-11-26T09:52:00-05:00",
    "watch": []
   },
   "WSH": {
@@ -754,6 +754,26 @@
    "verified_numbers": [
     "111-104"
    ]
+  },
+  "401909334": {
+   "checked": "2026-11-26T09:52:00-05:00",
+   "verdict": "partly",
+   "summary": "Utah is without Markkanen, Jackson Jr. and Nurkic (Hayes day-to-day) while Denver lists no injuries; that covers part of the 5.4-pt gap, as our ratings already include about two weeks without them.",
+   "reasons": [
+    {
+     "text": "Jazz list Lauri Markkanen (hand), Jaren Jackson Jr. (knee) and Jusuf Nurkic (foot) out and Jaxson Hayes (knee) day-to-day.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nba/team/injuries/_/name/utah",
+     "date": "2026-11-26"
+    },
+    {
+     "text": "Denver has no players on ESPN's injury list for the game; the line opened Nuggets -9.5 and has not moved.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nba/game/_/gameId/401909334",
+     "date": "2026-11-26"
+    }
+   ],
+   "returning": []
   }
  }
 }
