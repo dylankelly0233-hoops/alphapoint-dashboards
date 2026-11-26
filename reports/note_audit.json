@@ -1,10 +1,34 @@
 {
- "generated": "2026-11-25T09:09:43+00:00",
+ "generated": "2026-11-26T00:42:05+00:00",
  "items": [
+  {
+   "sport": "cfb",
+   "where": "games/401856880/reasons[2]",
+   "text": "West Virginia (5-6) needs a win at Utah to reach bowl eligibility.",
+   "issues": [
+    "\"win at utah\": no such game this season in CFBD results"
+   ]
+  },
+  {
+   "sport": "cbb",
+   "where": "teams/BYU/watch[0]",
+   "text": "PG Rob Wright III has missed BYU's last 3 games (Nov. 19-24) and is likely out again vs Providence; most of our BYU rating comes from games he played.",
+   "issues": [
+    "19-24: not found as a score or record in CollegeBasketballData results"
+   ]
+  },
+  {
+   "sport": "cbb",
+   "where": "games/401911028/swings/Wisconsin",
+   "text": "The market dropped Wisconsin after the 74-69 Seton Hall and 70-53 Murray State losses (11/20-21) and Janicki's season-ending foot surgery (11/23); our rating moved less.",
+   "issues": [
+    "20-21: not found as a score or record in CollegeBasketballData results"
+   ]
+  },
   {
    "sport": "nba",
    "where": "teams/GS/watch[0]",
-   "text": "Stephen Curry (oblique tear) has missed the last 5 games (Warriors 1-4) and is out vs SAC on the NBA's 9:30 PM ET report of 11/24; Butler, Porzingis and Moody are also out.",
+   "text": "Stephen Curry (oblique tear, hurt 11/11 at Houston) has missed 5 straight (Warriors 1-4) and is out vs SAC tonight; Lendeborg is questionable, Butler and Moody out, NBA 11:30 AM ET report.",
    "issues": [
     "1-4: not found as a score or record in ESPN results"
    ]
