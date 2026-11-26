@@ -1,6 +1,6 @@
 {
  "sport": "cbb",
- "generated": "2026-11-25T19:43:26-05:00",
+ "generated": "2026-11-25T20:42:53-05:00",
  "teams": {
   "Dayton": {
    "watch": [
@@ -199,14 +199,14 @@
    "checked": "2026-11-23T16:45:00-05:00"
   },
   "BYU": {
-   "checked": "2026-11-25T16:50:23-05:00",
+   "checked": "2026-11-25T20:42:53-05:00",
    "watch": [
     {
      "direction": "too_high",
      "since": "2026-11-19",
-     "text": "PG Rob Wright III has missed BYU's last 3 games (Nov. 19-24) and is likely out again vs Providence; most of our BYU rating comes from games he played.",
-     "source": "SI (BYU On SI)",
-     "url": "https://www.si.com/college/byu/basketball/previewing-byu-basketball-vs-providence-in-maui-invitational",
+     "text": "PG Rob Wright III has missed BYU's last 4 games (Nov. 19 through Nov. 25), sitting again in the 85-82 Maui win over Providence; most of our BYU rating comes from games he played.",
+     "source": "ESPN box score",
+     "url": "https://www.espn.com/mens-college-basketball/boxscore/_/gameId/401921716",
      "date": "2026-11-25"
     }
    ]
@@ -1121,7 +1121,7 @@
    }
   },
   "401911028": {
-   "checked": "2026-11-25T17:42:56-05:00",
+   "checked": "2026-11-25T20:42:53-05:00",
    "verdict": "partly",
    "summary": "The market has marked Wisconsin down after two straight neutral-site losses and Jack Janicki's season-ending foot injury; Janicki is a bench guard, so that covers only part of our 5-point gap.",
    "reasons": [
@@ -1150,7 +1150,7 @@
    ],
    "returning": [],
    "swings": {
-    "Wisconsin": "The market dropped Wisconsin after the 74-69 Seton Hall and 70-53 Murray State losses (11/20-21) and Janicki's season-ending foot surgery (11/23); our rating moved less.",
+    "Wisconsin": "The market dropped Wisconsin after the 74-69 Seton Hall (11/20) and 70-53 Murray State (11/21) losses and Janicki's season-ending foot surgery (11/23); our rating moved less.",
     "Northeastern": "Mirror of Wisconsin's move: the line fell from -21.5 to -19.5 on Wisconsin's losses and Janicki injury; Northeastern itself lost 84-77 to Butler and 95-82 at Stonehill."
    }
   },

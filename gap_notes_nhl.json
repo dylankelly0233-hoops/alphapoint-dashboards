@@ -1,6 +1,6 @@
 {
  "sport": "nhl",
- "generated": "2026-11-25T19:43:26-05:00",
+ "generated": "2026-11-25T20:42:53-05:00",
  "teams": {
   "OTT": {
    "checked": "2026-11-25T17:42:56-05:00",
@@ -170,7 +170,7 @@
    ]
   },
   "ANA": {
-   "checked": "2026-11-25T14:43:14-05:00",
+   "checked": "2026-11-25T20:42:53-05:00",
    "watch": [
     {
      "direction": "too_high",
@@ -187,7 +187,7 @@
    "watch": []
   },
   "SJ": {
-   "checked": "2026-11-25T14:43:14-05:00",
+   "checked": "2026-11-25T20:42:53-05:00",
    "watch": [
     {
      "direction": "too_high",
@@ -572,7 +572,7 @@
    ]
   },
   "401892793": {
-   "checked": "2026-11-25T14:43:14-05:00",
+   "checked": "2026-11-25T20:42:53-05:00",
    "verdict": "partly",
    "summary": "Anaheim is without two top-six forwards (Carlsson, Sennecke), which our ratings don't see; San Jose's own absences offset some of that.",
    "reasons": [
@@ -589,9 +589,9 @@
      "date": "2026-11-25"
     },
     {
-     "text": "Starting goalies not confirmed yet for either team.",
-     "source": "Daily Faceoff",
-     "url": "https://www.dailyfaceoff.com/teams/anaheim-ducks/line-combinations",
+     "text": "Confirmed starters: Alex Nedeljkovic (.902) for San Jose instead of Askarov, Laurent Brossoit (.867) for Anaheim instead of Dostal (.857).",
+     "source": "Daily Faceoff starting goalies",
+     "url": "https://www.dailyfaceoff.com/starting-goalies",
      "date": "2026-11-25"
     }
    ]
