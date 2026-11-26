@@ -1,6 +1,6 @@
 {
  "sport": "nhl",
- "generated": "2026-11-25T18:43:10-05:00",
+ "generated": "2026-11-25T19:43:26-05:00",
  "teams": {
   "OTT": {
    "checked": "2026-11-25T17:42:56-05:00",
@@ -50,15 +50,23 @@
    ]
   },
   "MTL": {
-   "checked": "2026-11-23T17:43:18-05:00",
+   "checked": "2026-11-25T19:43:26-05:00",
    "watch": [
     {
      "direction": "too_low",
      "since": "2026-11-22",
-     "text": "Montreal acquired C Dylan Larkin from Detroit on 11/22 (for Kirby Dach, G Samuel Montembeault, Hage and picks); he debuts vs LA tonight as the 2nd-line center.",
+     "text": "Montreal acquired C Dylan Larkin from Detroit on 11/22 (for Kirby Dach, G Samuel Montembeault, Hage and picks); he debuted as the 2nd-line center in a 2-1 loss to LA on 11/23.",
      "source": "NHL.com",
      "url": "https://www.nhl.com/news/larkin-to-make-montreal-canadiens-debut-tonight-against-kings-after-red-wings-trade",
      "date": "2026-11-23"
+    },
+    {
+     "direction": "too_high",
+     "since": "2026-11-24",
+     "text": "F Ivan Demidov (ankle) and D Mike Matheson (lower body) were placed on injured reserve on 11/24 and are out vs COL; neither played vs LA on 11/23.",
+     "source": "ESPN injuries",
+     "url": "https://www.espn.com/nhl/injuries",
+     "date": "2026-11-25"
     }
    ]
   },
@@ -373,7 +381,7 @@
    ]
   },
   "COL": {
-   "checked": "2026-11-25T11:46:50-05:00",
+   "checked": "2026-11-25T19:43:26-05:00",
    "watch": [
     {
      "direction": "too_high",
@@ -386,9 +394,9 @@
     {
      "direction": "too_low",
      "since": "2026-11-12",
-     "text": "D Cale Makar (lower body, out since Nov. 12) practiced fully Tuesday and hopes to return vs MTL tonight, with a decision after the morning skate.",
-     "source": "Sports Illustrated",
-     "url": "https://www.si.com/nhl/avalanche/onsi/news/avalanche-get-positive-cale-makar-injury-update-canadiens-game",
+     "text": "D Cale Makar (lower body, out since Nov. 12) is rejoining the lineup vs MTL tonight, per ESPN; our ratings carry the games he missed.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nhl/story/_/id/50596079/avalanche-defenseman-cale-makar-returns-3-game-absence",
      "date": "2026-11-25"
     }
    ]
@@ -611,6 +619,9 @@
   },
   "401892790": {
    "checked": "2026-11-25T18:43:10-05:00"
+  },
+  "401892792": {
+   "checked": "2026-11-25T19:43:26-05:00"
   }
  }
 }

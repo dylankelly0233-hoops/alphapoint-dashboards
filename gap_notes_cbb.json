@@ -1,6 +1,6 @@
 {
  "sport": "cbb",
- "generated": "2026-11-25T18:43:10-05:00",
+ "generated": "2026-11-25T19:43:26-05:00",
  "teams": {
   "Dayton": {
    "watch": [
@@ -249,7 +249,7 @@
   },
   "Colorado": {
    "watch": [],
-   "checked": "2026-11-25T10:43:06-05:00"
+   "checked": "2026-11-25T19:43:26-05:00"
   },
   "Stanford": {
    "watch": [],
@@ -380,7 +380,7 @@
   },
   "Grand Canyon": {
    "watch": [],
-   "checked": "2026-11-24T16:50:54-05:00"
+   "checked": "2026-11-25T19:43:26-05:00"
   },
   "High Point": {
    "watch": [],
@@ -1164,7 +1164,7 @@
    "swings": {
     "Colorado": "Colorado beat Stanford 70-65 as a 4.5-pt underdog on Nov 24 in the Acrisure Series at Acrisure Arena; this is its second game in two days. No injury news found (ESPN box score)."
    },
-   "checked": "2026-11-25T10:43:06-05:00"
+   "checked": "2026-11-25T19:43:26-05:00"
   },
   "401921672": {
    "swings": {
@@ -1251,9 +1251,9 @@
    }
   },
   "401918972": {
-   "checked": "2026-11-25T16:43:39-05:00",
+   "checked": "2026-11-25T19:43:26-05:00",
    "verdict": "unexplained",
-   "summary": "No injuries are listed for either unbeaten team; the market (LSU -6.5 at Palm Desert, neutral) rates LSU well above us, and we've been lower on LSU in 5 of its last 6 with no clear reason found.",
+   "summary": "No injuries are listed for either unbeaten team; the market (now LSU -4.5 at Palm Desert, neutral) rates LSU well above us, and we've been lower on LSU in 5 of its last 6 with no clear reason found.",
    "reasons": [
     {
      "text": "No injuries listed for LSU or SMU in Wednesday previews; both teams play the second game of a back-to-back in Palm Desert, so rest doesn't favor either side.",
@@ -1280,7 +1280,8 @@
    ],
    "returning": [],
    "swings": {
-    "LSU": "Nothing found: the market makes LSU 6.5 over SMU but only 3.5 over Arizona State; the one roster change, RJ Luis Jr. (added 11/17, played once), doesn't explain it."
+    "LSU": "Nothing found: the market makes LSU 6.5 over SMU but only 3.5 over Arizona State; the one roster change, RJ Luis Jr. (added 11/17, played once), doesn't explain it.",
+    "SMU": "Nothing found: the market moved on SMU without a clear reason; no injury news, and its game vs Utah State tonight is still to be played (last result: 101-55 over South Alabama on Nov 20, ESPN)."
    }
   },
   "401921673": {
@@ -1322,6 +1323,18 @@
    "swings": {
     "Georgia": "Nothing found: Georgia's full rotation played in the 88-82 win at Georgia Tech on 11/21 (ESPN box) and no injury news turned up; the market held Cincinnati -1.5 while our number on Georgia fell."
    }
+  },
+  "401909506": {
+   "swings": {
+    "DePaul": "DePaul beat Purdue 65-56 as a 3.5-pt underdog on Nov 24 (neutral site, ESPN box score); our ratings moved up on DePaul more than the market did. No injury news found."
+   },
+   "checked": "2026-11-25T19:43:26-05:00"
+  },
+  "401921674": {
+   "swings": {
+    "South Carolina": "South Carolina lost 71-69 to USC on Nov 25 as a 9.5-pt underdog with its usual rotation (ESPN box score); our ratings moved up on South Carolina more than the market did."
+   },
+   "checked": "2026-11-25T19:43:26-05:00"
   }
  }
 }
