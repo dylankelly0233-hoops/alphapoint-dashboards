@@ -1,6 +1,6 @@
 {
  "sport": "cfb",
- "generated": "2026-11-25T20:42:53-05:00",
+ "generated": "2026-11-25T21:42:22-05:00",
  "teams": {
   "San José State": {
    "checked": "2026-11-25T09:48:54-05:00",
@@ -714,7 +714,7 @@
    "watch": []
   },
   "Texas A&M": {
-   "checked": "2026-11-25T09:43:59-05:00",
+   "checked": "2026-11-25T21:42:22-05:00",
    "watch": [
     {
      "direction": "unclear",
@@ -731,11 +731,19 @@
      "source": "Kickoff Status (SEC availability report)",
      "url": "https://kickoffstatus.com/teams/texas-a-m/",
      "date": "2026-11-25"
+    },
+    {
+     "direction": "too_high",
+     "since": "2026-11-21",
+     "text": "Starting WRs TK Norman and Ashton Bethel-Roman are among at least seven Aggies out for Texas, on an offense held to 9 points or fewer in five of its last six SEC games.",
+     "source": "Victoria Advocate (AP)",
+     "url": "https://victoriaadvocate.com/2026/11/25/with-limited-offense-am-preps-for-no-3-texas/",
+     "date": "2026-11-25"
     }
    ]
   },
   "Texas": {
-   "checked": "2026-11-25T09:43:59-05:00",
+   "checked": "2026-11-25T21:42:22-05:00",
    "watch": [
     {
      "direction": "too_high",
@@ -2119,7 +2127,30 @@
    "checked": "2026-11-25T09:43:59-05:00"
   },
   "401856756": {
-   "checked": "2026-11-25T09:43:59-05:00"
+   "checked": "2026-11-25T21:42:22-05:00",
+   "verdict": "partly",
+   "summary": "Texas's defensive injuries and Texas A&M's home rivalry spot explain some of the market's smaller number; A&M's own absences and QB mess point our way, so most of the 3-pt gap is unexplained.",
+   "reasons": [
+    {
+     "text": "Texas is thinner on defense: S Kobe Black is out for the season and edge Colin Simmons (high ankle, missed the Arkansas game) is questionable on Tuesday's SEC availability report.",
+     "source": "Sports Illustrated",
+     "url": "https://www.si.com/college/texas/football/texas-longhorns-list-colin-simmons-2-others-as-questionable-vs-texas-am",
+     "date": "2026-11-25"
+    },
+    {
+     "text": "Rivalry game at Kyle Field: the line has sat between Texas -10.5 and -11.5 all week (FanDuel -11.5 on Wednesday), below our number.",
+     "source": "Hook'em Headlines",
+     "url": "https://hookemheadlines.com/texas-longhorns-vs-texas-am-aggies-how-to-watch-weather-odds-announcers-more",
+     "date": "2026-11-25"
+    },
+    {
+     "text": "Against the gap: A&M has at least seven players out, incl. WRs TK Norman and Ashton Bethel-Roman, and Elko still hasn't named Brady Hart or Marcel Reed as the starter.",
+     "source": "Victoria Advocate (AP)",
+     "url": "https://victoriaadvocate.com/2026/11/25/with-limited-offense-am-preps-for-no-3-texas/",
+     "date": "2026-11-25"
+    }
+   ],
+   "returning": []
   },
   "401856878": {
    "checked": "2026-11-25T09:43:59-05:00"
