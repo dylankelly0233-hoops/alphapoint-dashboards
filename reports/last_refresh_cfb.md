@@ -1,6 +1,7 @@
-Date: 2026-11-25 09:49
+Date: 2026-11-26 09:42
 Status: pushed
-Week 13 (rivalry / Thanksgiving week, 69 games); inputs built 2026-11-25 09:21 ET.
-Injury Wire: 43 items, 38 teams (21 holding QB items); top movers Georgia Tech QB Alberto Mendoza a game-time call for Georgia (Adamson out, Knowles next), Temple QB undecided Smolik vs Sheppard, UCLA Dieffenbach still not cleared, WVU Hawkins doubtful (Fox starts at Utah).
-Research Assistant: 66 teams with rating-watch items; 26 gap games (2 explained, 17 partly, 7 unexplained)
-Full run (laptop's wire was from Nov 24 9:47 AM): all 134 watch teams re-checked; new: Hawai'i QB Alejado out (Jurgensen first start), K-State Duff day to day, Michigan Underwood lower-body (expected to start), North Texas down to 4th QB, UMass Watson probably out, Wisconsin secondary + Minnesota DT clusters out; fixed old notes (source names, CMU Flores dates, Louisville streak, Cal skid).
+Week 13 (rivalry / Thanksgiving week, 69 games); inputs built 2026-11-26 09:21 ET.
+Injury Wire: 45 items, 40 teams (22 holding QB items); top movers Auburn QB Byrum Brown questionable for the Iron Bowl (Ti'a next), Michigan QB Underwood questionable (named starter), UCLA Dieffenbach questionable for USC.
+Research Assistant: 67 teams with rating-watch items; 28 gap games (2 explained, 18 partly, 8 unexplained)
+Full run (laptop's wire was from Nov 25 9:49 AM): Wednesday availability reports added (MSU Milivojevic out, UNC Edwards off the report but no starter named, Houston Weigman / K-State Duff questionable, Miami Toney doubtful, Pitt RB Ferguson doubtful, LSU WRs Harris/Watkins questionable); Boise's 64-38 win at CSU on Nov. 7 added.
+  ! 82 of 134 watch teams and 23 of 28 flagged games re-checked today; not re-checked: FIU-Sam Houston, Missouri State-Liberty, Arkansas State-Troy, Delaware-Jax State, Washington State-SDSU (yesterday's notes kept).

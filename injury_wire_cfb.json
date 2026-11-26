@@ -1,8 +1,35 @@
 {
  "sport": "cfb",
  "week": 13,
- "generated": "2026-11-25T09:49:15-05:00",
+ "generated": "2026-11-26T09:41:18-05:00",
  "movers": [
+  {
+   "team": "Auburn",
+   "tag": "QB",
+   "text": "QB Byrum Brown is questionable for Alabama on Wednesday's SEC availability report, no injury given; he played two snaps vs Samford. Tristan Ti'a starts if he can't.",
+   "source": "AL.com (via Yahoo Sports, SEC availability report)",
+   "url": "https://sports.yahoo.com/college-football/articles/auburn-starting-qb-listed-questionable-013343759.html",
+   "date": "2026-11-25",
+   "qb_status": "uncertain"
+  },
+  {
+   "team": "Michigan",
+   "tag": "QB",
+   "text": "QB Bryce Underwood (lower body) is questionable for Ohio State on Wednesday's first Big Ten availability report; Whittingham named him the starter, Tommy Carr is No. 2.",
+   "source": "The Detroit News (via Yahoo Sports, Big Ten availability report)",
+   "url": "https://sports.yahoo.com/college-football/articles/michigans-underwood-listed-questionable-game-015508470.html",
+   "date": "2026-11-25",
+   "qb_status": "uncertain"
+  },
+  {
+   "team": "UCLA",
+   "tag": "QB",
+   "text": "QB Ty Dieffenbach (hip, carted off Nov. 21 at Michigan) is questionable for USC on Wednesday's Big Ten availability report; Madden Iamaleava starts if he can't.",
+   "source": "On3 (Big Ten availability report)",
+   "url": "https://on3.com/news/ucla-qb-ty-dieffenbach-questionable-for-usc-game-after-being-carted-off-with-injury",
+   "date": "2026-11-25",
+   "qb_status": "uncertain"
+  },
   {
    "team": "Georgia Tech",
    "tag": "QB",
@@ -13,40 +40,13 @@
    "date": "2026-11-24"
   },
   {
-   "team": "Temple",
-   "tag": "QB",
-   "qb_status": "uncertain",
-   "text": "K.C. Keeler said Jaxon Smolik and Ajani Sheppard (ankle) are both practicing and Temple has not picked a starter for Memphis; Smolik started the Rice loss, Sheppard the UAB loss.",
-   "source": "Philadelphia Inquirer",
-   "url": "https://www.inquirer.com/college-sports/temple/kc-keeler-lost-season-program-changes-memphis-preview-20261123.html",
-   "date": "2026-11-23"
-  },
-  {
-   "team": "UCLA",
-   "tag": "QB",
-   "qb_status": "uncertain",
-   "text": "QB Ty Dieffenbach (hip, carted off Nov. 21 at Michigan) practiced Monday and Tuesday and threw some passes, but Chesney hasn't cleared him for USC; Madden Iamaleava starts if he can't.",
-   "source": "Trojans Wire / NY Post",
-   "url": "https://sports.yahoo.com/college-football/articles/ucla-incentive-not-exact-details-140718050.html",
-   "date": "2026-11-25"
-  },
-  {
    "team": "West Virginia",
    "tag": "QB",
-   "qb_status": "uncertain",
-   "text": "QB Michael Hawkins Jr. (ankle) is doubtful for Utah on the Big 12 availability report and missed practice early in the week; Scotty Fox Jr., who relieved him vs Houston, is expected to start.",
-   "source": "RotoWire (Big 12 availability report)",
-   "url": "https://www.rotowire.com/cfootball/headlines/michael-hawkins-injury-doubtful-to-play-in-week-13-241440",
-   "date": "2026-11-24"
-  },
-  {
-   "team": "Indiana",
-   "tag": "QB",
-   "qb_status": "uncertain",
-   "text": "Cignetti won't name a QB for Purdue: Grant Wilson started vs USC and at Washington; Josh Hoover (right shoulder since October) relieved him at Washington. Both get first-team reps.",
-   "source": "AP",
-   "url": "https://www.wral.com/news/ap/96fa0-cignetti-non-committal-on-staring-qb-against-purdue-but-no-12-indiana-could-be-missing-its-center/",
-   "date": "2026-11-23"
+   "text": "QB Michael Hawkins Jr. (ankle) stayed doubtful for Utah on the second Big 12 availability report (Nov. 25); Scotty Fox Jr., who relieved him vs Houston, is expected to start.",
+   "source": "WV Sports / On3 (Big 12 availability report)",
+   "url": "https://www.on3.com/sites/wv-sports/news/west-virginia-vs-utah-football-availability-report-11-25/",
+   "date": "2026-11-25",
+   "qb_status": "uncertain"
   }
  ],
  "teams": {
@@ -137,18 +137,10 @@
    {
     "team": "Miami",
     "tag": "RETURNING",
-    "text": "Mario Cristobal said Ja'Boree Antoine and Max Buchanan are back at practice, S Zechariah Poyser is expected back for Boston College and WR Malachi Toney is close to returning.",
-    "source": "On3",
-    "url": "https://www.on3.com/teams/miami-hurricanes/news/cristobal-gives-miami-hurricanes-injury-update-antoine-buchanan-return-to-practice/",
-    "date": "2026-11-24"
-   },
-   {
-    "team": "Miami",
-    "tag": "RETURNING",
-    "text": "Mario Cristobal said CB Ja'Boree Antoine and RG Max Buchanan are back at practice and could play Boston College and S Zechariah Poyser is expected back; WR Malachi Toney is expected out.",
-    "source": "Yahoo Sports",
-    "url": "https://sports.yahoo.com/college-football/articles/miami-shares-malachi-toney-news-181500030.html",
-    "date": "2026-11-24"
+    "text": "Wednesday's ACC availability report for Boston College: WR Malachi Toney (ankle surgery) upgraded from out to doubtful, CB Ja'Boree Antoine and RG Max Buchanan questionable, S Poyser probable.",
+    "source": "WSVN (ACC availability report)",
+    "url": "https://wsvn.com/sports/college/miami-hurricanes/malachi-toney-injury-update/",
+    "date": "2026-11-25"
    }
   ],
   "Northwestern": [
@@ -262,11 +254,11 @@
    {
     "team": "West Virginia",
     "tag": "QB",
-    "qb_status": "uncertain",
-    "text": "QB Michael Hawkins Jr. (ankle) is doubtful for Utah on the Big 12 availability report and missed practice early in the week; Scotty Fox Jr., who relieved him vs Houston, is expected to start.",
-    "source": "RotoWire (Big 12 availability report)",
-    "url": "https://www.rotowire.com/cfootball/headlines/michael-hawkins-injury-doubtful-to-play-in-week-13-241440",
-    "date": "2026-11-24"
+    "text": "QB Michael Hawkins Jr. (ankle) stayed doubtful for Utah on the second Big 12 availability report (Nov. 25); Scotty Fox Jr., who relieved him vs Houston, is expected to start.",
+    "source": "WV Sports / On3 (Big 12 availability report)",
+    "url": "https://www.on3.com/sites/wv-sports/news/west-virginia-vs-utah-football-availability-report-11-25/",
+    "date": "2026-11-25",
+    "qb_status": "uncertain"
    }
   ],
   "Syracuse": [
@@ -294,11 +286,11 @@
    {
     "team": "Kansas State",
     "tag": "QB",
-    "qb_status": "uncertain",
-    "text": "Collin Klein called QB Dillon Duff 'day to day' after hard hits vs Arizona; Blake Barnett starts if Duff can't. Avery Johnson has been out since October.",
-    "source": "Wichita Eagle",
-    "url": "https://sports.yahoo.com/articles/five-things-know-kansas-state-161347083.html",
-    "date": "2026-11-23"
+    "text": "QB Dillon Duff is questionable for Iowa State on the Big 12 availability report after hard hits vs Arizona; Blake Barnett starts if he can't. Avery Johnson remains out.",
+    "source": "RotoWire (Big 12 availability report)",
+    "url": "https://www.rotowire.com/cfootball/headlines/dillon-duff-injury-uncertain-status-versus-iowa-state-241583",
+    "date": "2026-11-25",
+    "qb_status": "uncertain"
    }
   ],
   "Clemson": [
@@ -334,11 +326,11 @@
    {
     "team": "UCLA",
     "tag": "QB",
-    "qb_status": "uncertain",
-    "text": "QB Ty Dieffenbach (hip, carted off Nov. 21 at Michigan) practiced Monday and Tuesday and threw some passes, but Chesney hasn't cleared him for USC; Madden Iamaleava starts if he can't.",
-    "source": "Trojans Wire / NY Post",
-    "url": "https://sports.yahoo.com/college-football/articles/ucla-incentive-not-exact-details-140718050.html",
-    "date": "2026-11-25"
+    "text": "QB Ty Dieffenbach (hip, carted off Nov. 21 at Michigan) is questionable for USC on Wednesday's Big Ten availability report; Madden Iamaleava starts if he can't.",
+    "source": "On3 (Big Ten availability report)",
+    "url": "https://on3.com/news/ucla-qb-ty-dieffenbach-questionable-for-usc-game-after-being-carted-off-with-injury",
+    "date": "2026-11-25",
+    "qb_status": "uncertain"
    }
   ],
   "Indiana": [
@@ -393,10 +385,10 @@
    {
     "team": "North Carolina",
     "tag": "QB",
-    "text": "Bill Belichick calls QB Billy Edwards Jr. (upper body, hurt Nov. 14) a game-time decision for NC State; freshman Travis Burgess started the Nov. 21 loss at Virginia.",
-    "source": "On3",
-    "url": "https://www.on3.com/teams/nc-state-wolfpack/news/first-look-north-carolina-could-have-uncertainty-at-quarterback/",
-    "date": "2026-11-23",
+    "text": "QB Billy Edwards Jr. (hurt Nov. 14) is not on Wednesday's ACC availability report for NC State, but no starter is named between him and Travis Burgess, who started at Virginia.",
+    "source": "Tar Heel Times (ACC availability report)",
+    "url": "https://www.tarheeltimes.com/article170114.aspx",
+    "date": "2026-11-25",
     "qb_status": "uncertain"
    }
   ],
@@ -414,11 +406,11 @@
    {
     "team": "Michigan State",
     "tag": "QB",
-    "text": "QB Alessio Milivojevic (left arm, brace) missed the Oregon loss and his Rutgers status is unclear; Kayd Coffman made his 2nd start. The Big Ten availability report comes Wednesday night.",
-    "source": "MLive",
-    "url": "https://sports.yahoo.com/articles/michigan-state-qb-starter-remains-190246340.html",
-    "date": "2026-11-23",
-    "qb_status": "uncertain"
+    "text": "QB Alessio Milivojevic (left arm) is listed out on Michigan State's initial Big Ten availability report for Rutgers; freshman Kayd Coffman is in line for his 3rd start.",
+    "source": "Spartan Avenue (Big Ten availability report)",
+    "url": "https://spartanavenue.com/michigan-state-s-initial-rutgers-injury-report-previews-massively-shorthanded-finale-01m8avnm7bns",
+    "date": "2026-11-25",
+    "qb_status": "new_starter"
    }
   ],
   "Pittsburgh": [
@@ -430,16 +422,24 @@
     "url": "https://www.si.com/college/pittsburgh/football/which-quarterback-should-pitt-end-season-with",
     "date": "2026-11-24",
     "qb_status": "settled"
+   },
+   {
+    "team": "Pittsburgh",
+    "tag": "KEY",
+    "text": "Pitt RB Damon Ferguson Jr. (740 rushing yards, 7th in the ACC) is doubtful for the Cal game on the ACC availability report.",
+    "source": "California Golden Bears On SI (via Yahoo Sports)",
+    "url": "https://sports.yahoo.com/college-football/articles/cal-pitt-injury-report-pitts-045017028.html",
+    "date": "2026-11-25"
    }
   ],
   "Houston": [
    {
     "team": "Houston",
     "tag": "QB",
-    "text": "QB Conner Weigman (shoulder) missed the West Virginia win and will practice to some degree this week; Willie Fritz expects a decision Thu/Fri. Keisean Henderson starts if not.",
-    "source": "Rotowire (Houston Chronicle)",
-    "url": "https://www.rotowire.com/cfootball/headlines/conner-weigman-injury-set-to-practice-ahead-of-baylor-game-241175",
-    "date": "2026-11-23",
+    "text": "QB Conner Weigman (right shoulder) is questionable for Baylor on the Big 12 availability report after missing the WVU win; Fritz decides late in the week, else Keisean Henderson.",
+    "source": "RotoWire (Big 12 availability report)",
+    "url": "https://www.rotowire.com/cfootball/headlines/conner-weigman-injury-deemed-questionable-versus-baylor-241579",
+    "date": "2026-11-25",
     "qb_status": "uncertain"
    }
   ],
@@ -458,10 +458,10 @@
    {
     "team": "Michigan",
     "tag": "QB",
-    "text": "QB Bryce Underwood has a lower-body injury from the Nov. 21 UCLA game (CBS report); Whittingham named him the starter at Ohio State barring a setback. Status due on the availability report.",
-    "source": "Michigan Wolverines On SI (via Yahoo Sports)",
-    "url": "https://sports.yahoo.com/articles/michigan-qb-bryce-underwoods-status-173001871.html",
-    "date": "2026-11-23",
+    "text": "QB Bryce Underwood (lower body) is questionable for Ohio State on Wednesday's first Big Ten availability report; Whittingham named him the starter, Tommy Carr is No. 2.",
+    "source": "The Detroit News (via Yahoo Sports, Big Ten availability report)",
+    "url": "https://sports.yahoo.com/college-football/articles/michigans-underwood-listed-questionable-game-015508470.html",
+    "date": "2026-11-25",
     "qb_status": "uncertain"
    },
    {
@@ -493,6 +493,27 @@
     "url": "https://sports.yahoo.com/articles/oregon-state-qb-braden-atkinson-193332418.html",
     "date": "2026-11-23",
     "qb_status": "new_starter"
+   }
+  ],
+  "Auburn": [
+   {
+    "team": "Auburn",
+    "tag": "QB",
+    "text": "QB Byrum Brown is questionable for Alabama on Wednesday's SEC availability report, no injury given; he played two snaps vs Samford. Tristan Ti'a starts if he can't.",
+    "source": "AL.com (via Yahoo Sports, SEC availability report)",
+    "url": "https://sports.yahoo.com/college-football/articles/auburn-starting-qb-listed-questionable-013343759.html",
+    "date": "2026-11-25",
+    "qb_status": "uncertain"
+   }
+  ],
+  "LSU": [
+   {
+    "team": "LSU",
+    "tag": "KEY",
+    "text": "Leading WR Jackson Harris (lower leg, hurt Nov. 21 at Tennessee) and WR Winston Watkins Jr. are questionable for Arkansas on Wednesday's SEC availability report.",
+    "source": "WBRZ (SEC availability report)",
+    "url": "https://www.wbrz.com/news/whit-weeks-listed-as-out-for-lsu-regular-season-finale-against-arkansas",
+    "date": "2026-11-25"
    }
   ]
  }
