@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-27T00:50:34+00:00",
+ "generated": "2026-11-27T09:05:56+00:00",
  "items": [
   {
    "sport": "nba",
@@ -54,7 +54,7 @@
    "where": "teams/BRE/watch[2]",
    "text": "Fabio Carvalho has a strong chance to be in the squad after missing the last four games, per Keith Andrews.",
    "issues": [
-    "games-missed count (\"missed four games\") last verified 3 days ago: re-count it from the game log"
+    "games-missed count (\"missed four games\") last verified 4 days ago: re-count it from the game log"
    ]
   }
  ]

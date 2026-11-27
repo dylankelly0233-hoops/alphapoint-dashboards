@@ -1,4 +1,4 @@
-Date: 2026-11-26 19:50
+Date: 2026-11-27 04:05
 Flagged: 7 note sentences could not be confirmed against the results feeds
 
 NBA games/401910037/reasons[1]: games-missed count ("missed two games") last verified 3 days ago: re-count it from the game log
@@ -13,5 +13,5 @@ NBA games/401910037/returning[1]: games-missed count ("missed two games") last v
     "Probable vs POR after missing two games (hamstring)."
 NHL teams/LA/watch[0]: games-missed count ("missed 4 games") last verified 3 days ago: re-count it from the game log
     "LW Artemi Panarin (personal, missed 4 games) is projected back on the top line and PP1 at Montreal; D Erik Gustafsson is on IR and out."
-EPL teams/BRE/watch[2]: games-missed count ("missed four games") last verified 3 days ago: re-count it from the game log
+EPL teams/BRE/watch[2]: games-missed count ("missed four games") last verified 4 days ago: re-count it from the game log
     "Fabio Carvalho has a strong chance to be in the squad after missing the last four games, per Keith Andrews."
