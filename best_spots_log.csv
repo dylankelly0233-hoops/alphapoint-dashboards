@@ -373,3 +373,5 @@ listed,sport,gid,kick,reason,detail,kind,side,line,p,need
 2026-11-26T19:23-05:00,cbb,401929283,2026-11-27T16:30:00-05:00,system,cbb_3p_fade,spread,home,-9.5,,
 2026-11-26T20:21-05:00,nfl,2026_13_KC_LA,2026-12-03T20:15:00-05:00,teaser,NFL teaser leg,teaser,away,1.5,,
 2026-11-27T00:20-05:00,cbb,401920541,2026-11-27T17:30:00-05:00,system,cbb_3p_fade,spread,away,-7.5,,
+2026-11-27T01:21-05:00,cbb,401920533,2026-11-27T13:00:00-05:00,system,cbb_3p_fade,spread,away,3.5,,
+2026-11-27T01:21-05:00,cbb,401920534,2026-11-27T21:00:00-05:00,system,cbb_3p_fade,spread,home,-1.5,,
