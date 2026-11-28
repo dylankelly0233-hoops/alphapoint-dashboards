@@ -1,12 +1,12 @@
 {
- "generated": "2026-11-27T09:05:56+00:00",
+ "generated": "2026-11-28T00:15:12+00:00",
  "items": [
   {
    "sport": "nba",
    "where": "games/401910037/reasons[1]",
    "text": "Brown and Wade (hamstrings) are probable vs POR after missing two games; Adem Bona is also listed.",
    "issues": [
-    "games-missed count (\"missed two games\") last verified 3 days ago: re-count it from the game log"
+    "games-missed count (\"missed two games\") last verified 4 days ago: re-count it from the game log"
    ]
   },
   {
@@ -14,7 +14,7 @@
    "where": "games/401910037/swings/PHI",
    "text": "Jaylen Brown and Dean Wade (hamstrings) missed two games and are probable vs POR on 11/23; the market prices them back, our ratings don't (ESPN, 11/22).",
    "issues": [
-    "games-missed count (\"missed two games\") last verified 3 days ago: re-count it from the game log"
+    "games-missed count (\"missed two games\") last verified 4 days ago: re-count it from the game log"
    ]
   },
   {
@@ -22,7 +22,7 @@
    "where": "games/401910037/swings/POR",
    "text": "Nothing found on Portland itself; the move most likely reflects Philadelphia's Brown and Wade being listed probable after missing two games (ESPN, 11/22).",
    "issues": [
-    "games-missed count (\"missed two games\") last verified 3 days ago: re-count it from the game log"
+    "games-missed count (\"missed two games\") last verified 4 days ago: re-count it from the game log"
    ]
   },
   {
@@ -30,7 +30,7 @@
    "where": "games/401910037/returning[0]",
    "text": "Probable vs POR after missing two games (hamstring).",
    "issues": [
-    "games-missed count (\"missed two games\") last verified 3 days ago: re-count it from the game log"
+    "games-missed count (\"missed two games\") last verified 4 days ago: re-count it from the game log"
    ]
   },
   {
@@ -38,7 +38,7 @@
    "where": "games/401910037/returning[1]",
    "text": "Probable vs POR after missing two games (hamstring).",
    "issues": [
-    "games-missed count (\"missed two games\") last verified 3 days ago: re-count it from the game log"
+    "games-missed count (\"missed two games\") last verified 4 days ago: re-count it from the game log"
    ]
   },
   {
@@ -46,7 +46,15 @@
    "where": "teams/LA/watch[0]",
    "text": "LW Artemi Panarin (personal, missed 4 games) is projected back on the top line and PP1 at Montreal; D Erik Gustafsson is on IR and out.",
    "issues": [
-    "games-missed count (\"missed 4 games\") last verified 3 days ago: re-count it from the game log"
+    "games-missed count (\"missed 4 games\") last verified 4 days ago: re-count it from the game log"
+   ]
+  },
+  {
+   "sport": "nhl",
+   "where": "games/401892780/reasons[0]",
+   "text": "Hyman (migraine) won't play vs Vegas, per Oilers play-by-play announcer Jack Michaels; Nugent-Hopkins was expected back after missing four games.",
+   "issues": [
+    "games-missed count (\"missed four games\") last verified 3 days ago: re-count it from the game log"
    ]
   },
   {
