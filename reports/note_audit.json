@@ -1,6 +1,14 @@
 {
- "generated": "2026-11-28T00:15:12+00:00",
+ "generated": "2026-11-28T08:27:43+00:00",
  "items": [
+  {
+   "sport": "nba",
+   "where": "teams/DAL/watch[0]",
+   "text": "P.J. Washington (illness) is questionable at DEN on 11/24 after missing two games (took part in shootaround); Dereck Lively II (foot surgery) is out.",
+   "issues": [
+    "games-missed count (\"missed two games\") last verified 3 days ago: re-count it from the game log"
+   ]
+  },
   {
    "sport": "nba",
    "where": "games/401910037/reasons[1]",
@@ -42,6 +50,14 @@
    ]
   },
   {
+   "sport": "nba",
+   "where": "games/401909316/reasons[0]",
+   "text": "P.J. Washington (illness) is still questionable after missing the last two games, but he took part in Tuesday's shootaround in Denver; Caleb Martin is available in a thumb splint.",
+   "issues": [
+    "games-missed count (\"missed two games\") last verified 3 days ago: re-count it from the game log"
+   ]
+  },
+  {
    "sport": "nhl",
    "where": "teams/LA/watch[0]",
    "text": "LW Artemi Panarin (personal, missed 4 games) is projected back on the top line and PP1 at Montreal; D Erik Gustafsson is on IR and out.",
@@ -62,7 +78,7 @@
    "where": "teams/BRE/watch[2]",
    "text": "Fabio Carvalho has a strong chance to be in the squad after missing the last four games, per Keith Andrews.",
    "issues": [
-    "games-missed count (\"missed four games\") last verified 4 days ago: re-count it from the game log"
+    "games-missed count (\"missed four games\") last verified 5 days ago: re-count it from the game log"
    ]
   }
  ]

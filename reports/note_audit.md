@@ -1,6 +1,8 @@
-Date: 2026-11-27 19:15
-Flagged: 8 note sentences could not be confirmed against the results feeds
+Date: 2026-11-28 03:27
+Flagged: 10 note sentences could not be confirmed against the results feeds
 
+NBA teams/DAL/watch[0]: games-missed count ("missed two games") last verified 3 days ago: re-count it from the game log
+    "P.J. Washington (illness) is questionable at DEN on 11/24 after missing two games (took part in shootaround); Dereck Lively II (foot surgery) is out."
 NBA games/401910037/reasons[1]: games-missed count ("missed two games") last verified 4 days ago: re-count it from the game log
     "Brown and Wade (hamstrings) are probable vs POR after missing two games; Adem Bona is also listed."
 NBA games/401910037/swings/PHI: games-missed count ("missed two games") last verified 4 days ago: re-count it from the game log
@@ -11,9 +13,11 @@ NBA games/401910037/returning[0]: games-missed count ("missed two games") last v
     "Probable vs POR after missing two games (hamstring)."
 NBA games/401910037/returning[1]: games-missed count ("missed two games") last verified 4 days ago: re-count it from the game log
     "Probable vs POR after missing two games (hamstring)."
+NBA games/401909316/reasons[0]: games-missed count ("missed two games") last verified 3 days ago: re-count it from the game log
+    "P.J. Washington (illness) is still questionable after missing the last two games, but he took part in Tuesday's shootaround in Denver; Caleb Martin is available in a thumb splint."
 NHL teams/LA/watch[0]: games-missed count ("missed 4 games") last verified 4 days ago: re-count it from the game log
     "LW Artemi Panarin (personal, missed 4 games) is projected back on the top line and PP1 at Montreal; D Erik Gustafsson is on IR and out."
 NHL games/401892780/reasons[0]: games-missed count ("missed four games") last verified 3 days ago: re-count it from the game log
     "Hyman (migraine) won't play vs Vegas, per Oilers play-by-play announcer Jack Michaels; Nugent-Hopkins was expected back after missing four games."
-EPL teams/BRE/watch[2]: games-missed count ("missed four games") last verified 4 days ago: re-count it from the game log
+EPL teams/BRE/watch[2]: games-missed count ("missed four games") last verified 5 days ago: re-count it from the game log
     "Fabio Carvalho has a strong chance to be in the squad after missing the last four games, per Keith Andrews."
