@@ -1,0 +1,873 @@
+{
+ "sport": "epl",
+ "generated": "2026-11-28T12:20:18+00:00",
+ "gap_min": 0.4,
+ "swing_min": 0.6,
+ "watch_teams": [
+  "ARS",
+  "AVL",
+  "BHA",
+  "BOU",
+  "BRE",
+  "CHE",
+  "COV",
+  "CRY",
+  "EVE",
+  "FUL",
+  "HUL",
+  "IPS",
+  "LEE",
+  "LIV",
+  "MAN",
+  "MNC",
+  "NEW",
+  "NFO",
+  "SUN",
+  "TOT"
+ ],
+ "swings_to_explain": [
+  {
+   "gid": "401879220",
+   "team": "NFO"
+  }
+ ],
+ "games": [
+  {
+   "gid": "401879227",
+   "home": "LEE",
+   "away": "COV",
+   "home_name": "Leeds",
+   "away_name": "Coventry",
+   "weather": null,
+   "kick": "2026-11-28T10:00:00-05:00",
+   "ours": 1.0,
+   "market": 1.138,
+   "opened": 0.888,
+   "gap": -0.14,
+   "gap_flag": false,
+   "we_like": "Coventry",
+   "ours_text": "Leeds 60% · Draw 24% · Coventry 16%",
+   "market_text": "Leeds 64% · Draw 21% · Coventry 15%",
+   "unit": "goals",
+   "sources": {
+    "xG model": 1.0
+   },
+   "injury_wire": {
+    "LEE": [],
+    "COV": []
+   },
+   "history": {
+    "Leeds": {
+     "n": 1,
+     "higher": 1,
+     "lower": 0,
+     "avg": 0.22,
+     "last": 0.22,
+     "swing": -0.36
+    },
+    "Coventry": {
+     "n": 1,
+     "higher": 1,
+     "lower": 0,
+     "avg": 0.24,
+     "last": 0.24,
+     "swing": -0.1
+    }
+   }
+  },
+  {
+   "gid": "401879226",
+   "home": "MAN",
+   "away": "BRE",
+   "home_name": "Man Utd",
+   "away_name": "Brentford",
+   "weather": null,
+   "kick": "2026-11-28T10:00:00-05:00",
+   "ours": -0.08,
+   "market": 0.206,
+   "opened": 0.384,
+   "gap": -0.29,
+   "gap_flag": false,
+   "we_like": "Brentford",
+   "ours_text": "Man Utd 36% · Draw 24% · Brentford 40%",
+   "market_text": "Man Utd 41% · Draw 26% · Brentford 33%",
+   "unit": "goals",
+   "sources": {
+    "xG model": -0.08
+   },
+   "injury_wire": {
+    "MAN": [],
+    "BRE": [
+     "Brentford's first-choice striker Igor Thiago is serving a three-game Premier League ban that began vs Everton on 11/23, so he misses the 11/28 trip to Man United (BBC).",
+     "Brentford defenders Nathan Collins (centre-back) and Aaron Hickey (full-back) are out for several weeks, per Keith Andrews; Rico Henry is also out. Lineups confirmed an hour before kickoff."
+    ]
+   },
+   "history": {
+    "Man Utd": {
+     "n": 1,
+     "higher": 0,
+     "lower": 0,
+     "avg": 0.14,
+     "last": 0.14,
+     "swing": -0.43
+    },
+    "Brentford": {
+     "n": 1,
+     "higher": 0,
+     "lower": 0,
+     "avg": 0.08,
+     "last": 0.08,
+     "swing": 0.21
+    }
+   }
+  },
+  {
+   "gid": "401878752",
+   "home": "IPS",
+   "away": "AVL",
+   "home_name": "Ipswich",
+   "away_name": "Aston Villa",
+   "weather": null,
+   "kick": "2026-11-28T12:30:00-05:00",
+   "ours": -0.25,
+   "market": -0.434,
+   "opened": -0.432,
+   "gap": 0.18,
+   "gap_flag": false,
+   "we_like": "Ipswich",
+   "ours_text": "Ipswich 32% · Draw 25% · Aston Villa 43%",
+   "market_text": "Ipswich 28% · Draw 25% · Aston Villa 47%",
+   "unit": "goals",
+   "sources": {
+    "xG model": -0.25
+   },
+   "injury_wire": {
+    "IPS": [],
+    "AVL": []
+   },
+   "history": {
+    "Ipswich": {
+     "n": 1,
+     "higher": 1,
+     "lower": 0,
+     "avg": 0.22,
+     "last": 0.22,
+     "swing": -0.04
+    },
+    "Aston Villa": {
+     "n": 1,
+     "higher": 0,
+     "lower": 1,
+     "avg": -0.45,
+     "last": -0.45,
+     "swing": 0.27
+    }
+   }
+  },
+  {
+   "gid": "401879229",
+   "home": "EVE",
+   "away": "LIV",
+   "home_name": "Everton",
+   "away_name": "Liverpool",
+   "weather": null,
+   "kick": "2026-11-29T07:00:00-05:00",
+   "ours": -0.31,
+   "market": -0.77,
+   "opened": -0.406,
+   "gap": 0.46,
+   "gap_flag": true,
+   "we_like": "Everton",
+   "ours_text": "Everton 30% · Draw 27% · Liverpool 44%",
+   "market_text": "Everton 21% · Draw 25% · Liverpool 55%",
+   "unit": "goals",
+   "sources": {
+    "xG model": -0.31
+   },
+   "injury_wire": {
+    "EVE": [],
+    "LIV": []
+   },
+   "history": {
+    "Everton": {
+     "n": 1,
+     "higher": 0,
+     "lower": 0,
+     "avg": -0.08,
+     "last": -0.08,
+     "swing": 0.54
+    },
+    "Liverpool": {
+     "n": 1,
+     "higher": 0,
+     "lower": 0,
+     "avg": -0.14,
+     "last": -0.14,
+     "swing": -0.32
+    }
+   }
+  },
+  {
+   "gid": "401879231",
+   "home": "BHA",
+   "away": "NEW",
+   "home_name": "Brighton",
+   "away_name": "Newcastle",
+   "weather": null,
+   "kick": "2026-11-29T09:05:00-05:00",
+   "ours": 0.96,
+   "market": 1.093,
+   "opened": 1.059,
+   "gap": -0.13,
+   "gap_flag": false,
+   "we_like": "Newcastle",
+   "ours_text": "Brighton 59% · Draw 22% · Newcastle 20%",
+   "market_text": "Brighton 61% · Draw 21% · Newcastle 17%",
+   "unit": "goals",
+   "sources": {
+    "xG model": 0.96
+   },
+   "injury_wire": {
+    "BHA": [],
+    "NEW": []
+   },
+   "history": {
+    "Brighton": {
+     "n": 1,
+     "higher": 0,
+     "lower": 1,
+     "avg": -0.43,
+     "last": -0.43,
+     "swing": 0.3
+    },
+    "Newcastle": {
+     "n": 1,
+     "higher": 1,
+     "lower": 0,
+     "avg": 0.47,
+     "last": 0.47,
+     "swing": -0.34
+    }
+   }
+  },
+  {
+   "gid": "401879230",
+   "home": "CRY",
+   "away": "HUL",
+   "home_name": "C Palace",
+   "away_name": "Hull",
+   "weather": null,
+   "kick": "2026-11-29T09:05:00-05:00",
+   "ours": 0.18,
+   "market": 0.57,
+   "opened": 0.642,
+   "gap": -0.39,
+   "gap_flag": false,
+   "we_like": "Hull",
+   "ours_text": "C Palace 41% · Draw 26% · Hull 33%",
+   "market_text": "C Palace 50% · Draw 25% · Hull 25%",
+   "unit": "goals",
+   "sources": {
+    "xG model": 0.18
+   },
+   "injury_wire": {
+    "CRY": [],
+    "HUL": []
+   },
+   "history": {
+    "C Palace": {
+     "n": 1,
+     "higher": 0,
+     "lower": 1,
+     "avg": -0.24,
+     "last": -0.24,
+     "swing": -0.15
+    },
+    "Hull": {
+     "n": 1,
+     "higher": 1,
+     "lower": 0,
+     "avg": 0.43,
+     "last": 0.43,
+     "swing": -0.04
+    }
+   }
+  },
+  {
+   "gid": "401879228",
+   "home": "FUL",
+   "away": "BOU",
+   "home_name": "Fulham",
+   "away_name": "Bournemouth",
+   "weather": null,
+   "kick": "2026-11-29T09:05:00-05:00",
+   "ours": -0.16,
+   "market": -0.088,
+   "opened": -0.015,
+   "gap": -0.07,
+   "gap_flag": false,
+   "we_like": "Bournemouth",
+   "ours_text": "Fulham 32% · Draw 28% · Bournemouth 40%",
+   "market_text": "Fulham 34% · Draw 27% · Bournemouth 38%",
+   "unit": "goals",
+   "sources": {
+    "xG model": -0.15
+   },
+   "injury_wire": {
+    "FUL": [],
+    "BOU": []
+   },
+   "history": {
+    "Fulham": {
+     "n": 1,
+     "higher": 1,
+     "lower": 0,
+     "avg": 0.4,
+     "last": 0.4,
+     "swing": -0.47
+    },
+    "Bournemouth": {
+     "n": 1,
+     "higher": 0,
+     "lower": 0,
+     "avg": 0.03,
+     "last": 0.03,
+     "swing": 0.04
+    }
+   }
+  },
+  {
+   "gid": "401879224",
+   "home": "SUN",
+   "away": "TOT",
+   "home_name": "Sunderland",
+   "away_name": "Spurs",
+   "weather": null,
+   "kick": "2026-11-29T09:05:00-05:00",
+   "ours": 0.18,
+   "market": -0.521,
+   "opened": -0.257,
+   "gap": 0.7,
+   "gap_flag": true,
+   "we_like": "Sunderland",
+   "ours_text": "Sunderland 40% · Draw 29% · Spurs 31%",
+   "market_text": "Sunderland 24% · Draw 28% · Spurs 49%",
+   "unit": "goals",
+   "sources": {
+    "xG model": 0.18
+   },
+   "injury_wire": {
+    "SUN": [
+     "Sunderland's joint-top scorer Brian Brobbey (thigh) and midfielder Granit Xhaka (calf) are out with no return date; Dan Ballard and Romaine Mundle are out until late December."
+    ],
+    "TOT": [
+     "Spurs attackers Xavi Simons and Wilson Odobert (knees), Mathys Tel and Mykhailo Mudryk are out; Sandro Tonali (illness) is a doubt."
+    ]
+   },
+   "history": {
+    "Sunderland": {
+     "n": 1,
+     "higher": 1,
+     "lower": 0,
+     "avg": 0.45,
+     "last": 0.45,
+     "swing": 0.25
+    },
+    "Spurs": {
+     "n": 1,
+     "higher": 0,
+     "lower": 1,
+     "avg": -0.22,
+     "last": -0.22,
+     "swing": -0.48
+    }
+   }
+  },
+  {
+   "gid": "401878753",
+   "home": "ARS",
+   "away": "MNC",
+   "home_name": "Arsenal",
+   "away_name": "Man City",
+   "weather": null,
+   "kick": "2026-11-29T11:30:00-05:00",
+   "ours": 0.33,
+   "market": 0.425,
+   "opened": 0.393,
+   "gap": -0.1,
+   "gap_flag": false,
+   "we_like": "Man City",
+   "ours_text": "Arsenal 44% · Draw 28% · Man City 28%",
+   "market_text": "Arsenal 47% · Draw 26% · Man City 27%",
+   "unit": "goals",
+   "sources": {
+    "xG model": 0.33
+   },
+   "injury_wire": {
+    "ARS": [
+     "Arsenal goalkeeper David Raya (shoulder, hurt at Newcastle 11/21) needs no surgery but is still a doubt for Man City on 11/29; Arteta said it depends on pain and training. Kepa deputises."
+    ],
+    "MNC": []
+   },
+   "history": {
+    "Arsenal": {
+     "n": 1,
+     "higher": 0,
+     "lower": 1,
+     "avg": -0.47,
+     "last": -0.47,
+     "swing": 0.37
+    },
+    "Man City": {
+     "n": 1,
+     "higher": 0,
+     "lower": 1,
+     "avg": -0.4,
+     "last": -0.4,
+     "swing": 0.5
+    }
+   }
+  },
+  {
+   "gid": "401879221",
+   "home": "COV",
+   "away": "IPS",
+   "home_name": "Coventry",
+   "away_name": "Ipswich",
+   "weather": null,
+   "kick": "2026-12-01T15:00:00-05:00",
+   "ours": 0.39,
+   "market": 0.238,
+   "opened": 0.223,
+   "gap": 0.16,
+   "gap_flag": false,
+   "we_like": "Coventry",
+   "ours_text": "Coventry 46% · Draw 26% · Ipswich 28%",
+   "market_text": "Coventry 42% · Draw 26% · Ipswich 32%",
+   "unit": "goals",
+   "sources": {
+    "xG model": 0.4
+   },
+   "injury_wire": {
+    "COV": [],
+    "IPS": []
+   },
+   "history": {
+    "Coventry": {
+     "n": 1,
+     "higher": 1,
+     "lower": 0,
+     "avg": 0.24,
+     "last": 0.24,
+     "swing": -0.08
+    },
+    "Ipswich": {
+     "n": 1,
+     "higher": 1,
+     "lower": 0,
+     "avg": 0.22,
+     "last": 0.22,
+     "swing": -0.38
+    }
+   }
+  },
+  {
+   "gid": "401879222",
+   "home": "CHE",
+   "away": "CRY",
+   "home_name": "Chelsea",
+   "away_name": "C Palace",
+   "weather": null,
+   "kick": "2026-12-02T14:30:00-05:00",
+   "ours": 0.7,
+   "market": 0.949,
+   "opened": 0.944,
+   "gap": -0.25,
+   "gap_flag": false,
+   "we_like": "C Palace",
+   "ours_text": "Chelsea 53% · Draw 22% · C Palace 25%",
+   "market_text": "Chelsea 57% · Draw 22% · C Palace 21%",
+   "unit": "goals",
+   "sources": {
+    "xG model": 0.7
+   },
+   "injury_wire": {
+    "CHE": [
+     "Chelsea striker João Pedro (thigh) is out until about January (Alonso); Reece James (knee) is also out, and Moisés Caicedo went off vs Leeds on 11/21 with a back knock."
+    ],
+    "CRY": []
+   },
+   "history": {
+    "Chelsea": {
+     "n": 2,
+     "higher": 0,
+     "lower": 2,
+     "avg": -0.32,
+     "last": -0.42,
+     "swing": 0.17
+    },
+    "C Palace": {
+     "n": 1,
+     "higher": 0,
+     "lower": 1,
+     "avg": -0.24,
+     "last": -0.24,
+     "swing": 0.49
+    }
+   }
+  },
+  {
+   "gid": "401879220",
+   "home": "HUL",
+   "away": "NFO",
+   "home_name": "Hull",
+   "away_name": "Nottm Forest",
+   "weather": null,
+   "kick": "2026-12-02T14:30:00-05:00",
+   "ours": -0.26,
+   "market": -0.578,
+   "opened": -0.489,
+   "gap": 0.32,
+   "gap_flag": false,
+   "we_like": "Hull",
+   "ours_text": "Hull 30% · Draw 28% · Nottm Forest 42%",
+   "market_text": "Hull 23% · Draw 26% · Nottm Forest 50%",
+   "unit": "goals",
+   "sources": {
+    "xG model": -0.26
+   },
+   "injury_wire": {
+    "HUL": [],
+    "NFO": []
+   },
+   "history": {
+    "Hull": {
+     "n": 1,
+     "higher": 1,
+     "lower": 0,
+     "avg": 0.43,
+     "last": 0.43,
+     "swing": -0.11
+    },
+    "Nottm Forest": {
+     "n": 2,
+     "higher": 1,
+     "lower": 0,
+     "avg": 0.2,
+     "last": 0.42,
+     "swing": -0.74
+    }
+   }
+  },
+  {
+   "gid": "401879219",
+   "home": "LIV",
+   "away": "SUN",
+   "home_name": "Liverpool",
+   "away_name": "Sunderland",
+   "weather": null,
+   "kick": "2026-12-02T14:30:00-05:00",
+   "ours": 0.83,
+   "market": 1.214,
+   "opened": 1.148,
+   "gap": -0.38,
+   "gap_flag": false,
+   "we_like": "Sunderland",
+   "ours_text": "Liverpool 56% · Draw 24% · Sunderland 20%",
+   "market_text": "Liverpool 65% · Draw 20% · Sunderland 15%",
+   "unit": "goals",
+   "sources": {
+    "xG model": 0.83
+   },
+   "injury_wire": {
+    "LIV": [],
+    "SUN": [
+     "Sunderland's joint-top scorer Brian Brobbey (thigh) and midfielder Granit Xhaka (calf) are out with no return date; Dan Ballard and Romaine Mundle are out until late December."
+    ]
+   },
+   "history": {
+    "Liverpool": {
+     "n": 1,
+     "higher": 0,
+     "lower": 0,
+     "avg": -0.14,
+     "last": -0.14,
+     "swing": -0.24
+    },
+    "Sunderland": {
+     "n": 1,
+     "higher": 1,
+     "lower": 0,
+     "avg": 0.45,
+     "last": 0.45,
+     "swing": -0.07
+    }
+   }
+  },
+  {
+   "gid": "401879218",
+   "home": "MNC",
+   "away": "LEE",
+   "home_name": "Man City",
+   "away_name": "Leeds",
+   "weather": null,
+   "kick": "2026-12-02T14:30:00-05:00",
+   "ours": 0.64,
+   "market": 0.964,
+   "opened": 0.989,
+   "gap": -0.32,
+   "gap_flag": false,
+   "we_like": "Leeds",
+   "ours_text": "Man City 52% · Draw 26% · Leeds 23%",
+   "market_text": "Man City 60% · Draw 22% · Leeds 18%",
+   "unit": "goals",
+   "sources": {
+    "xG model": 0.64
+   },
+   "injury_wire": {
+    "MNC": [],
+    "LEE": []
+   },
+   "history": {
+    "Man City": {
+     "n": 1,
+     "higher": 0,
+     "lower": 1,
+     "avg": -0.4,
+     "last": -0.4,
+     "swing": 0.08
+    },
+    "Leeds": {
+     "n": 1,
+     "higher": 1,
+     "lower": 0,
+     "avg": 0.22,
+     "last": 0.22,
+     "swing": 0.1
+    }
+   }
+  },
+  {
+   "gid": "401879223",
+   "home": "BOU",
+   "away": "BHA",
+   "home_name": "Bournemouth",
+   "away_name": "Brighton",
+   "weather": null,
+   "kick": "2026-12-02T15:15:00-05:00",
+   "ours": 0.2,
+   "market": 0.097,
+   "opened": 0.099,
+   "gap": 0.11,
+   "gap_flag": false,
+   "we_like": "Bournemouth",
+   "ours_text": "Bournemouth 42% · Draw 26% · Brighton 33%",
+   "market_text": "Bournemouth 39% · Draw 27% · Brighton 35%",
+   "unit": "goals",
+   "sources": {
+    "xG model": 0.2
+   },
+   "injury_wire": {
+    "BOU": [],
+    "BHA": []
+   },
+   "history": {
+    "Bournemouth": {
+     "n": 1,
+     "higher": 0,
+     "lower": 0,
+     "avg": 0.03,
+     "last": 0.03,
+     "swing": 0.08
+    },
+    "Brighton": {
+     "n": 1,
+     "higher": 0,
+     "lower": 1,
+     "avg": -0.43,
+     "last": -0.43,
+     "swing": 0.32
+    }
+   }
+  },
+  {
+   "gid": "401878751",
+   "home": "AVL",
+   "away": "EVE",
+   "home_name": "Aston Villa",
+   "away_name": "Everton",
+   "weather": null,
+   "kick": "2026-12-02T15:15:00-05:00",
+   "ours": 0.45,
+   "market": 0.467,
+   "opened": 0.486,
+   "gap": -0.01,
+   "gap_flag": false,
+   "we_like": "Everton",
+   "ours_text": "Aston Villa 47% · Draw 26% · Everton 27%",
+   "market_text": "Aston Villa 47% · Draw 26% · Everton 27%",
+   "unit": "goals",
+   "sources": {
+    "xG model": 0.45
+   },
+   "injury_wire": {
+    "AVL": [],
+    "EVE": []
+   },
+   "history": {
+    "Aston Villa": {
+     "n": 1,
+     "higher": 0,
+     "lower": 1,
+     "avg": -0.45,
+     "last": -0.45,
+     "swing": 0.44
+    },
+    "Everton": {
+     "n": 1,
+     "higher": 0,
+     "lower": 0,
+     "avg": -0.08,
+     "last": -0.08,
+     "swing": 0.09
+    }
+   }
+  },
+  {
+   "gid": "401878750",
+   "home": "BRE",
+   "away": "ARS",
+   "home_name": "Brentford",
+   "away_name": "Arsenal",
+   "weather": null,
+   "kick": "2026-12-02T15:15:00-05:00",
+   "ours": -0.04,
+   "market": -0.621,
+   "opened": -0.62,
+   "gap": 0.59,
+   "gap_flag": true,
+   "we_like": "Brentford",
+   "ours_text": "Brentford 35% · Draw 29% · Arsenal 36%",
+   "market_text": "Brentford 23% · Draw 26% · Arsenal 52%",
+   "unit": "goals",
+   "sources": {
+    "xG model": -0.04
+   },
+   "injury_wire": {
+    "BRE": [
+     "Brentford's first-choice striker Igor Thiago is serving a three-game Premier League ban that began vs Everton on 11/23, so he misses the 11/28 trip to Man United (BBC).",
+     "Brentford defenders Nathan Collins (centre-back) and Aaron Hickey (full-back) are out for several weeks, per Keith Andrews; Rico Henry is also out. Lineups confirmed an hour before kickoff."
+    ],
+    "ARS": [
+     "Arsenal goalkeeper David Raya (shoulder, hurt at Newcastle 11/21) needs no surgery but is still a doubt for Man City on 11/29; Arteta said it depends on pain and training. Kepa deputises."
+    ]
+   },
+   "history": {
+    "Brentford": {
+     "n": 1,
+     "higher": 0,
+     "lower": 0,
+     "avg": 0.08,
+     "last": 0.08,
+     "swing": 0.51
+    },
+    "Arsenal": {
+     "n": 1,
+     "higher": 0,
+     "lower": 1,
+     "avg": -0.47,
+     "last": -0.47,
+     "swing": -0.12
+    }
+   }
+  },
+  {
+   "gid": "401879217",
+   "home": "NEW",
+   "away": "MAN",
+   "home_name": "Newcastle",
+   "away_name": "Man Utd",
+   "weather": null,
+   "kick": "2026-12-02T15:15:00-05:00",
+   "ours": 0.27,
+   "market": -0.018,
+   "opened": -0.019,
+   "gap": 0.29,
+   "gap_flag": false,
+   "we_like": "Newcastle",
+   "ours_text": "Newcastle 44% · Draw 23% · Man Utd 33%",
+   "market_text": "Newcastle 37% · Draw 25% · Man Utd 38%",
+   "unit": "goals",
+   "sources": {
+    "xG model": 0.27
+   },
+   "injury_wire": {
+    "NEW": [],
+    "MAN": []
+   },
+   "history": {
+    "Newcastle": {
+     "n": 1,
+     "higher": 1,
+     "lower": 0,
+     "avg": 0.47,
+     "last": 0.47,
+     "swing": -0.18
+    },
+    "Man Utd": {
+     "n": 1,
+     "higher": 0,
+     "lower": 0,
+     "avg": 0.14,
+     "last": 0.14,
+     "swing": -0.43
+    }
+   }
+  },
+  {
+   "gid": "401878749",
+   "home": "TOT",
+   "away": "FUL",
+   "home_name": "Spurs",
+   "away_name": "Fulham",
+   "weather": null,
+   "kick": "2026-12-03T15:00:00-05:00",
+   "ours": 0.37,
+   "market": 0.556,
+   "opened": 0.553,
+   "gap": -0.18,
+   "gap_flag": false,
+   "we_like": "Fulham",
+   "ours_text": "Spurs 44% · Draw 30% · Fulham 26%",
+   "market_text": "Spurs 51% · Draw 25% · Fulham 24%",
+   "unit": "goals",
+   "sources": {
+    "xG model": 0.37
+   },
+   "injury_wire": {
+    "TOT": [
+     "Spurs attackers Xavi Simons and Wilson Odobert (knees), Mathys Tel and Mykhailo Mudryk are out; Sandro Tonali (illness) is a doubt."
+    ],
+    "FUL": []
+   },
+   "history": {
+    "Spurs": {
+     "n": 1,
+     "higher": 0,
+     "lower": 1,
+     "avg": -0.22,
+     "last": -0.22,
+     "swing": 0.04
+    },
+    "Fulham": {
+     "n": 1,
+     "higher": 1,
+     "lower": 0,
+     "avg": 0.4,
+     "last": 0.4,
+     "swing": -0.22
+    }
+   }
+  }
+ ]
+}

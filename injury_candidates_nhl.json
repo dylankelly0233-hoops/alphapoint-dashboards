@@ -1,0 +1,2019 @@
+{
+ "sport": "nhl",
+ "week": 20261128,
+ "collected": "2026-11-28T12:19+00:00",
+ "games": [
+  [
+   "MTL",
+   "VGK"
+  ],
+  [
+   "TB",
+   "FLA"
+  ],
+  [
+   "NSH",
+   "DET"
+  ],
+  [
+   "WPG",
+   "NJ"
+  ],
+  [
+   "CGY",
+   "NYR"
+  ],
+  [
+   "TOR",
+   "PIT"
+  ],
+  [
+   "OTT",
+   "CAR"
+  ],
+  [
+   "WSH",
+   "STL"
+  ],
+  [
+   "NYI",
+   "PHI"
+  ],
+  [
+   "UTAH",
+   "DAL"
+  ],
+  [
+   "SJ",
+   "COL"
+  ],
+  [
+   "ANA",
+   "LA"
+  ],
+  [
+   "EDM",
+   "SEA"
+  ],
+  [
+   "MIN",
+   "CHI"
+  ],
+  [
+   "VAN",
+   "BOS"
+  ],
+  [
+   "OTT",
+   "NSH"
+  ],
+  [
+   "CAR",
+   "NYR"
+  ],
+  [
+   "CBJ",
+   "PIT"
+  ],
+  [
+   "PHI",
+   "TOR"
+  ],
+  [
+   "CHI",
+   "WPG"
+  ],
+  [
+   "MTL",
+   "UTAH"
+  ]
+ ],
+ "teams": {
+  "ANA": {
+   "name": "Anaheim Ducks",
+   "items": [
+    {
+     "team": "ANA",
+     "tag": "KEY",
+     "text": "C Leo Carlsson (20 min/game) injured reserve — ir",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nhl/injuries",
+     "date": "2026-11-27"
+    }
+   ],
+   "regulars_on_report": [
+    {
+     "name": "Leo Carlsson",
+     "pos": "C",
+     "status": "Injured Reserve",
+     "note": "ir",
+     "days_old": 0,
+     "date": "2026-11-27",
+     "toi": 19.8,
+     "start_share": 0.0,
+     "missed": 3,
+     "team_games": 27,
+     "season_total": true
+    },
+    {
+     "name": "Ryan Poehling",
+     "pos": "C",
+     "status": "Injured Reserve",
+     "note": "Poehling (knee) is expected back in the short term, with head coach Joel Quenneville telling reporters, \"He's close. Would love to see him in by the weekend. We'll see,\" Derek Lee of The Hockey News reports.",
+     "days_old": 2,
+     "date": "2026-11-25",
+     "toi": 14.2,
+     "start_share": 0.0,
+     "missed": 22,
+     "team_games": 27,
+     "season_total": true
+    },
+    {
+     "name": "A.J. Greer",
+     "pos": "LW",
+     "status": "Injured Reserve",
+     "note": "Greer (upper body) was placed on injured reserve Monday.",
+     "days_old": 25,
+     "date": "2026-11-02",
+     "toi": 12.4,
+     "start_share": 0.0,
+     "missed": 14,
+     "team_games": 27,
+     "season_total": true
+    }
+   ],
+   "headlines": [],
+   "card": [
+    {
+     "kind": "out",
+     "name": "Leo Carlsson",
+     "pos": "C",
+     "status": "Injured Reserve",
+     "missed": 3,
+     "team_games": 27,
+     "season_total": true
+    }
+   ]
+  },
+  "BOS": {
+   "name": "Boston Bruins",
+   "items": [
+    {
+     "team": "BOS",
+     "tag": "KEY",
+     "text": "RW David Pastrnak (20 min/game) day-to-day — Pastrnak sustained a lower-body injury and is unlikely to return to Friday's game against Toronto.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nhl/injuries",
+     "date": "2026-11-27"
+    }
+   ],
+   "regulars_on_report": [
+    {
+     "name": "David Pastrnak",
+     "pos": "RW",
+     "status": "Day-To-Day",
+     "note": "Pastrnak sustained a lower-body injury and is unlikely to return to Friday's game against Toronto.",
+     "days_old": 0,
+     "date": "2026-11-27",
+     "toi": 19.5,
+     "start_share": 0.0,
+     "missed": 0,
+     "team_games": 25,
+     "season_total": true
+    },
+    {
+     "name": "James Hagens",
+     "pos": "C",
+     "status": "Injured Reserve",
+     "note": "Hagens (back) is wearing a non-contact sweater ahead of Tuesday's practice, Steve Conroy of the Boston Herald reports.",
+     "days_old": 3,
+     "date": "2026-11-24",
+     "toi": 13.3,
+     "start_share": 0.0,
+     "missed": 8,
+     "team_games": 25,
+     "season_total": true
+    }
+   ],
+   "headlines": [],
+   "card": [
+    {
+     "kind": "maybe",
+     "name": "David Pastrnak",
+     "pos": "RW",
+     "status": "Day-To-Day",
+     "missed": 0,
+     "team_games": 25,
+     "season_total": true
+    }
+   ]
+  },
+  "CAR": {
+   "name": "Carolina Hurricanes",
+   "items": [],
+   "regulars_on_report": [
+    {
+     "name": "Nikolaj Ehlers",
+     "pos": "LW",
+     "status": "Day-To-Day",
+     "note": "day-to-day",
+     "days_old": 1,
+     "date": "2026-11-26",
+     "toi": 16.1,
+     "start_share": 0.0,
+     "missed": 2,
+     "team_games": 25,
+     "season_total": true
+    }
+   ],
+   "headlines": [],
+   "card": []
+  },
+  "CBJ": {
+   "name": "Columbus Blue Jackets",
+   "items": [
+    {
+     "team": "CBJ",
+     "tag": "KEY",
+     "text": "D Denton Mateychuk (21 min/game) out — out",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nhl/injuries",
+     "date": "2026-11-26"
+    }
+   ],
+   "regulars_on_report": [
+    {
+     "name": "Denton Mateychuk",
+     "pos": "D",
+     "status": "Out",
+     "note": "out",
+     "days_old": 1,
+     "date": "2026-11-26",
+     "toi": 20.7,
+     "start_share": 0.0,
+     "missed": 2,
+     "team_games": 24,
+     "season_total": true
+    }
+   ],
+   "headlines": [],
+   "card": [
+    {
+     "kind": "out",
+     "name": "Denton Mateychuk",
+     "pos": "D",
+     "status": "Out",
+     "missed": 2,
+     "team_games": 24,
+     "season_total": true
+    }
+   ]
+  },
+  "CGY": {
+   "name": "Calgary Flames",
+   "items": [
+    {
+     "team": "CGY",
+     "tag": "KEY",
+     "text": "D Kevin Bahl (22 min/game) injured reserve — Bahl will undergo surgery for a ruptured Achilles tendon and won't play again in the 2026-27 season, the Flames announced Sunday.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nhl/injuries",
+     "date": "2026-11-08"
+    }
+   ],
+   "regulars_on_report": [
+    {
+     "name": "Martin Pospisil",
+     "pos": "C",
+     "status": "Out",
+     "note": "Pospisil (upper body) didn't travel with his teammates for the start of Calgary's five-game road trip, per Eric Francis of Sportsnet on Monday.",
+     "days_old": 4,
+     "date": "2026-11-23",
+     "toi": 13.2,
+     "start_share": 0.0,
+     "missed": 3,
+     "team_games": 27,
+     "season_total": true
+    },
+    {
+     "name": "Kevin Bahl",
+     "pos": "D",
+     "status": "Injured Reserve",
+     "note": "Bahl will undergo surgery for a ruptured Achilles tendon and won't play again in the 2026-27 season, the Flames announced Sunday.",
+     "days_old": 19,
+     "date": "2026-11-08",
+     "toi": 21.9,
+     "start_share": 0.0,
+     "missed": 11,
+     "team_games": 27,
+     "season_total": true
+    }
+   ],
+   "headlines": [],
+   "card": [
+    {
+     "kind": "out",
+     "name": "Kevin Bahl",
+     "pos": "D",
+     "status": "Injured Reserve",
+     "missed": 11,
+     "team_games": 27,
+     "season_total": true
+    }
+   ]
+  },
+  "CHI": {
+   "name": "Chicago Blackhawks",
+   "items": [
+    {
+     "team": "CHI",
+     "tag": "KEY",
+     "text": "RW Patrick Kane (18 min/game) injured reserve — Kane (foot) was placed on injured reserve Friday, per the NHL media site.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nhl/injuries",
+     "date": "2026-11-27"
+    },
+    {
+     "team": "CHI",
+     "tag": "KEY",
+     "text": "C Connor Bedard (20 min/game) injured reserve — Bedard underwent successful shoulder surgery Monday and is expected to make a full recovery in approximately four months, the Blackhawks announced.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nhl/injuries",
+     "date": "2026-11-24"
+    },
+    {
+     "team": "CHI",
+     "tag": "KEY",
+     "text": "D Wyatt Kaiser (19 min/game) suspension — Kaiser was suspended for three games by the NHL Department of Player Safety on Sunday for an illegal check to the head against Calgary's Martin Pospisil (upper body) on Saturday.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nhl/injuries",
+     "date": "2026-11-22"
+    }
+   ],
+   "regulars_on_report": [
+    {
+     "name": "Jordan Greenway",
+     "pos": "LW",
+     "status": "Day-To-Day",
+     "note": "Greenway missed Friday's game versus the Rangers due to an upper-body injury, Ben Pope of the Chicago Sun-Times reports.",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "toi": 13.0,
+     "start_share": 0.0,
+     "missed": 7,
+     "team_games": 26,
+     "season_total": true
+    },
+    {
+     "name": "Tyler Bertuzzi",
+     "pos": "LW",
+     "status": "Out",
+     "note": "out",
+     "days_old": 0,
+     "date": "2026-11-27",
+     "toi": 16.9,
+     "start_share": 0.0,
+     "missed": 2,
+     "team_games": 26,
+     "season_total": true
+    },
+    {
+     "name": "Patrick Kane",
+     "pos": "RW",
+     "status": "Injured Reserve",
+     "note": "Kane (foot) was placed on injured reserve Friday, per the NHL media site.",
+     "days_old": 0,
+     "date": "2026-11-27",
+     "toi": 18.0,
+     "start_share": 0.0,
+     "missed": 4,
+     "team_games": 26,
+     "season_total": true
+    },
+    {
+     "name": "Connor Bedard",
+     "pos": "C",
+     "status": "Injured Reserve",
+     "note": "Bedard underwent successful shoulder surgery Monday and is expected to make a full recovery in approximately four months, the Blackhawks announced.",
+     "days_old": 4,
+     "date": "2026-11-24",
+     "toi": 20.1,
+     "start_share": 0.0,
+     "missed": 11,
+     "team_games": 26,
+     "season_total": true
+    },
+    {
+     "name": "Wyatt Kaiser",
+     "pos": "D",
+     "status": "Suspension",
+     "note": "Kaiser was suspended for three games by the NHL Department of Player Safety on Sunday for an illegal check to the head against Calgary's Martin Pospisil (upper body) on Saturday.",
+     "days_old": 5,
+     "date": "2026-11-22",
+     "toi": 19.3,
+     "start_share": 0.0,
+     "missed": 3,
+     "team_games": 26,
+     "season_total": true
+    },
+    {
+     "name": "Bowen Byram",
+     "pos": "D",
+     "status": "Injured Reserve",
+     "note": "Byram (upper body) didn't accompany his teammates on Chicago's three-game road trip, per Mark Lazerus of The Athletic on Saturday.",
+     "days_old": 6,
+     "date": "2026-11-21",
+     "toi": 24.7,
+     "start_share": 0.0,
+     "missed": 20,
+     "team_games": 26,
+     "season_total": true
+    }
+   ],
+   "headlines": [],
+   "card": [
+    {
+     "kind": "out",
+     "name": "Bowen Byram",
+     "pos": "D",
+     "status": "Injured Reserve",
+     "missed": 20,
+     "team_games": 26,
+     "season_total": true
+    },
+    {
+     "kind": "out",
+     "name": "Connor Bedard",
+     "pos": "C",
+     "status": "Injured Reserve",
+     "missed": 11,
+     "team_games": 26,
+     "season_total": true
+    },
+    {
+     "kind": "out",
+     "name": "Patrick Kane",
+     "pos": "RW",
+     "status": "Injured Reserve",
+     "missed": 4,
+     "team_games": 26,
+     "season_total": true
+    }
+   ]
+  },
+  "COL": {
+   "name": "Colorado Avalanche",
+   "items": [
+    {
+     "team": "COL",
+     "tag": "KEY",
+     "text": "C Martin Necas (20 min/game) out — out",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nhl/injuries",
+     "date": "2026-11-27"
+    },
+    {
+     "team": "COL",
+     "tag": "KEY",
+     "text": "C Nathan MacKinnon (20 min/game) out — MacKinnon (lower body) has been evaluated by a specialist and is expected to miss the next 12 weeks, Aarif Deen of Colorado Hockey Now reports Saturday.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nhl/injuries",
+     "date": "2026-11-21"
+    }
+   ],
+   "regulars_on_report": [
+    {
+     "name": "Martin Necas",
+     "pos": "C",
+     "status": "Out",
+     "note": "out",
+     "days_old": 0,
+     "date": "2026-11-27",
+     "toi": 19.6,
+     "start_share": 0.0,
+     "missed": 1,
+     "team_games": 25,
+     "season_total": true
+    },
+    {
+     "name": "Nathan MacKinnon",
+     "pos": "C",
+     "status": "Out",
+     "note": "MacKinnon (lower body) has been evaluated by a specialist and is expected to miss the next 12 weeks, Aarif Deen of Colorado Hockey Now reports Saturday.",
+     "days_old": 6,
+     "date": "2026-11-21",
+     "toi": 20.2,
+     "start_share": 0.0,
+     "missed": 5,
+     "team_games": 25,
+     "season_total": true
+    },
+    {
+     "name": "Josh Manson",
+     "pos": "D",
+     "status": "Injured Reserve",
+     "note": "ir",
+     "days_old": 18,
+     "date": "2026-11-09",
+     "toi": 15.0,
+     "start_share": 0.0,
+     "missed": 12,
+     "team_games": 25,
+     "season_total": true
+    }
+   ],
+   "headlines": [],
+   "card": [
+    {
+     "kind": "out",
+     "name": "Nathan MacKinnon",
+     "pos": "C",
+     "status": "Out",
+     "missed": 5,
+     "team_games": 25,
+     "season_total": true
+    },
+    {
+     "kind": "out",
+     "name": "Martin Necas",
+     "pos": "C",
+     "status": "Out",
+     "missed": 1,
+     "team_games": 25,
+     "season_total": true
+    }
+   ]
+  },
+  "DAL": {
+   "name": "Dallas Stars",
+   "items": [],
+   "regulars_on_report": [
+    {
+     "name": "Lian Bichsel",
+     "pos": "D",
+     "status": "Injured Reserve",
+     "note": "Bichsel (lower body) was placed on injured reserve Saturday.",
+     "days_old": 13,
+     "date": "2026-11-14",
+     "toi": 15.5,
+     "start_share": 0.0,
+     "missed": 7,
+     "team_games": 25,
+     "season_total": true
+    }
+   ],
+   "headlines": [],
+   "card": []
+  },
+  "DET": {
+   "name": "Detroit Red Wings",
+   "items": [],
+   "regulars_on_report": [
+    {
+     "name": "William Wallinder",
+     "pos": "D",
+     "status": "Out",
+     "note": "out",
+     "days_old": 0,
+     "date": "2026-11-27",
+     "toi": 16.8,
+     "start_share": 0.0,
+     "missed": 9,
+     "team_games": 25,
+     "season_total": true
+    },
+    {
+     "name": "Sam Montembeault",
+     "pos": "G",
+     "status": "Injured Reserve",
+     "note": "Montembeault (lower body), Kirby Dach, Michael Hage, a 2027 first-round pick, a 2029 first-round pick, a 2027 second-round pick and a 2028 fourth-round pick were traded to the Red Wings from the Canadiens on Sunday in…",
+     "days_old": 5,
+     "date": "2026-11-23",
+     "toi": 0.0,
+     "start_share": 0.0,
+     "missed": 25,
+     "team_games": 25,
+     "season_total": true
+    }
+   ],
+   "headlines": [],
+   "card": []
+  },
+  "EDM": {
+   "name": "Edmonton Oilers",
+   "items": [],
+   "regulars_on_report": [
+    {
+     "name": "Zach Hyman",
+     "pos": "LW",
+     "status": "Out",
+     "note": "out",
+     "days_old": 0,
+     "date": "2026-11-27",
+     "toi": 17.2,
+     "start_share": 0.0,
+     "missed": 14,
+     "team_games": 28,
+     "season_total": true
+    },
+    {
+     "name": "Frederik Andersen",
+     "pos": "G",
+     "status": "Injured Reserve",
+     "note": "Andersen (knee) isn't expected back until \"maybe\" December, head coach Mike Babcock told NHL.com on Tuesday.",
+     "days_old": 59,
+     "date": "2026-09-29",
+     "toi": 0.0,
+     "start_share": 0.0,
+     "missed": 28,
+     "team_games": 28,
+     "season_total": true
+    }
+   ],
+   "headlines": [],
+   "card": []
+  },
+  "FLA": {
+   "name": "Florida Panthers",
+   "items": [],
+   "regulars_on_report": [],
+   "headlines": [],
+   "card": []
+  },
+  "LA": {
+   "name": "Los Angeles Kings",
+   "items": [
+    {
+     "team": "LA",
+     "tag": "KEY",
+     "text": "D Erik Gustafsson (20 min/game) injured reserve — Gustafsson (upper body) was placed on injured reserve Monday, per the NHL media site.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nhl/injuries",
+     "date": "2026-11-23"
+    }
+   ],
+   "regulars_on_report": [
+    {
+     "name": "Erik Gustafsson",
+     "pos": "D",
+     "status": "Injured Reserve",
+     "note": "Gustafsson (upper body) was placed on injured reserve Monday, per the NHL media site.",
+     "days_old": 4,
+     "date": "2026-11-23",
+     "toi": 19.7,
+     "start_share": 0.0,
+     "missed": 7,
+     "team_games": 23,
+     "season_total": true
+    }
+   ],
+   "headlines": [],
+   "card": [
+    {
+     "kind": "out",
+     "name": "Erik Gustafsson",
+     "pos": "D",
+     "status": "Injured Reserve",
+     "missed": 7,
+     "team_games": 23,
+     "season_total": true
+    }
+   ]
+  },
+  "MIN": {
+   "name": "Minnesota Wild",
+   "items": [
+    {
+     "team": "MIN",
+     "tag": "KEY",
+     "text": "D Quinn Hughes (28 min/game) injured reserve — Hughes (upper body) is doubtful to play Friday versus the Avalanche but is expected to join the wild on their road trip, which begins Sunday in Chicago, Michael Russo of The Athletic reports.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nhl/injuries",
+     "date": "2026-11-26"
+    },
+    {
+     "team": "MIN",
+     "tag": "KEY",
+     "text": "D Olli Maatta (19 min/game) injured reserve — ir",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nhl/injuries",
+     "date": "2026-11-16"
+    }
+   ],
+   "regulars_on_report": [
+    {
+     "name": "Quinn Hughes",
+     "pos": "D",
+     "status": "Injured Reserve",
+     "note": "Hughes (upper body) is doubtful to play Friday versus the Avalanche but is expected to join the wild on their road trip, which begins Sunday in Chicago, Michael Russo of The Athletic reports.",
+     "days_old": 2,
+     "date": "2026-11-26",
+     "toi": 27.8,
+     "start_share": 0.0,
+     "missed": 4,
+     "team_games": 28,
+     "season_total": true
+    },
+    {
+     "name": "Olli Maatta",
+     "pos": "D",
+     "status": "Injured Reserve",
+     "note": "ir",
+     "days_old": 11,
+     "date": "2026-11-16",
+     "toi": 19.3,
+     "start_share": 0.0,
+     "missed": 10,
+     "team_games": 28,
+     "season_total": true
+    }
+   ],
+   "headlines": [],
+   "card": [
+    {
+     "kind": "out",
+     "name": "Olli Maatta",
+     "pos": "D",
+     "status": "Injured Reserve",
+     "missed": 10,
+     "team_games": 28,
+     "season_total": true
+    },
+    {
+     "kind": "out",
+     "name": "Quinn Hughes",
+     "pos": "D",
+     "status": "Injured Reserve",
+     "missed": 4,
+     "team_games": 28,
+     "season_total": true
+    }
+   ]
+  },
+  "MTL": {
+   "name": "Montreal Canadiens",
+   "items": [
+    {
+     "team": "MTL",
+     "tag": "KEY",
+     "text": "D Kaiden Guhle (22 min/game) out — Guhle (upper body) is considered day-to-day, the team announced Friday.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nhl/injuries",
+     "date": "2026-11-27"
+    },
+    {
+     "team": "MTL",
+     "tag": "KEY",
+     "text": "D Mike Matheson (24 min/game) injured reserve — Matheson (lower body) was placed on long-term injured reserve Tuesday, Renaud Lavoie of TVA Sports reports.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nhl/injuries",
+     "date": "2026-11-24"
+    },
+    {
+     "team": "MTL",
+     "tag": "CLUSTER",
+     "text": "2 regulars out: Ivan Demidov (16 min), Josh Anderson (14 min)",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nhl/injuries",
+     "date": "2026-11-26"
+    }
+   ],
+   "regulars_on_report": [
+    {
+     "name": "Kaiden Guhle",
+     "pos": "D",
+     "status": "Out",
+     "note": "Guhle (upper body) is considered day-to-day, the team announced Friday.",
+     "days_old": 0,
+     "date": "2026-11-27",
+     "toi": 21.7,
+     "start_share": 0.0,
+     "missed": 4,
+     "team_games": 26,
+     "season_total": true
+    },
+    {
+     "name": "Ivan Demidov",
+     "pos": "RW",
+     "status": "Injured Reserve",
+     "note": "Demidov is expected to travel to Vegas and join the Canadiens for practice Friday, Eric Engels of Sportsnet reports.",
+     "days_old": 2,
+     "date": "2026-11-26",
+     "toi": 15.6,
+     "start_share": 0.0,
+     "missed": 24,
+     "team_games": 26,
+     "season_total": true
+    },
+    {
+     "name": "Mike Matheson",
+     "pos": "D",
+     "status": "Injured Reserve",
+     "note": "Matheson (lower body) was placed on long-term injured reserve Tuesday, Renaud Lavoie of TVA Sports reports.",
+     "days_old": 3,
+     "date": "2026-11-24",
+     "toi": 23.5,
+     "start_share": 0.0,
+     "missed": 17,
+     "team_games": 26,
+     "season_total": true
+    },
+    {
+     "name": "Josh Anderson",
+     "pos": "RW",
+     "status": "Injured Reserve",
+     "note": "Anderson (lower body) will be out for approximately 3-4 weeks, per Renaud Lavoie of TVA Sports on Sunday.",
+     "days_old": 12,
+     "date": "2026-11-15",
+     "toi": 14.1,
+     "start_share": 0.0,
+     "missed": 7,
+     "team_games": 26,
+     "season_total": true
+    },
+    {
+     "name": "Chris Kreider",
+     "pos": "LW",
+     "status": "Injured Reserve",
+     "note": "ir",
+     "days_old": 12,
+     "date": "2026-11-15",
+     "toi": 13.3,
+     "start_share": 0.0,
+     "missed": 7,
+     "team_games": 26,
+     "season_total": true
+    }
+   ],
+   "headlines": [],
+   "card": [
+    {
+     "kind": "out",
+     "name": "Mike Matheson",
+     "pos": "D",
+     "status": "Injured Reserve",
+     "missed": 17,
+     "team_games": 26,
+     "season_total": true
+    },
+    {
+     "kind": "out",
+     "name": "Kaiden Guhle",
+     "pos": "D",
+     "status": "Out",
+     "missed": 4,
+     "team_games": 26,
+     "season_total": true
+    },
+    {
+     "kind": "cluster",
+     "unit": "regulars",
+     "players": [
+      {
+       "kind": "out",
+       "name": "Ivan Demidov",
+       "pos": "RW",
+       "status": "Injured Reserve",
+       "missed": 24,
+       "team_games": 26,
+       "season_total": true
+      },
+      {
+       "kind": "out",
+       "name": "Josh Anderson",
+       "pos": "RW",
+       "status": "Injured Reserve",
+       "missed": 7,
+       "team_games": 26,
+       "season_total": true
+      }
+     ]
+    }
+   ]
+  },
+  "NJ": {
+   "name": "New Jersey Devils",
+   "items": [
+    {
+     "team": "NJ",
+     "tag": "CLUSTER",
+     "text": "3 regulars out: Johnathan Kovacevic (15 min), Declan Chisholm (14 min), Brenden Dillon (14 min)",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nhl/injuries",
+     "date": "2026-11-27"
+    }
+   ],
+   "regulars_on_report": [
+    {
+     "name": "Declan Chisholm",
+     "pos": "D",
+     "status": "Out",
+     "note": "Chisholm (illness) is expected to miss Friday's game against Calgary, per Amanda Stein of the Devils' official site.",
+     "days_old": 0,
+     "date": "2026-11-27",
+     "toi": 14.3,
+     "start_share": 0.0,
+     "missed": 3,
+     "team_games": 26,
+     "season_total": true
+    },
+    {
+     "name": "Brenden Dillon",
+     "pos": "D",
+     "status": "Suspension",
+     "note": "suspension",
+     "days_old": 1,
+     "date": "2026-11-26",
+     "toi": 14.2,
+     "start_share": 0.0,
+     "missed": 10,
+     "team_games": 26,
+     "season_total": true
+    },
+    {
+     "name": "Anthony Mantha",
+     "pos": "RW",
+     "status": "Injured Reserve",
+     "note": "Mantha (neck) is expected to miss about one month after undergoing surgery, per Kristy Flannery of The Hockey News.",
+     "days_old": 10,
+     "date": "2026-11-17",
+     "toi": 13.5,
+     "start_share": 0.0,
+     "missed": 9,
+     "team_games": 26,
+     "season_total": true
+    },
+    {
+     "name": "Johnathan Kovacevic",
+     "pos": "D",
+     "status": "Injured Reserve",
+     "note": "Kovacevic (ankle) is expected to be sidelined for 4-6 weeks, per Kristy Flannery of The Hockey News.",
+     "days_old": 10,
+     "date": "2026-11-17",
+     "toi": 14.7,
+     "start_share": 0.0,
+     "missed": 13,
+     "team_games": 26,
+     "season_total": true
+    }
+   ],
+   "headlines": [],
+   "card": [
+    {
+     "kind": "cluster",
+     "unit": "regulars",
+     "players": [
+      {
+       "kind": "out",
+       "name": "Declan Chisholm",
+       "pos": "D",
+       "status": "Out",
+       "missed": 3,
+       "team_games": 26,
+       "season_total": true
+      },
+      {
+       "kind": "out",
+       "name": "Brenden Dillon",
+       "pos": "D",
+       "status": "Suspension",
+       "missed": 10,
+       "team_games": 26,
+       "season_total": true
+      },
+      {
+       "kind": "out",
+       "name": "Johnathan Kovacevic",
+       "pos": "D",
+       "status": "Injured Reserve",
+       "missed": 13,
+       "team_games": 26,
+       "season_total": true
+      }
+     ]
+    }
+   ]
+  },
+  "NSH": {
+   "name": "Nashville Predators",
+   "items": [],
+   "regulars_on_report": [],
+   "headlines": [],
+   "card": []
+  },
+  "NYI": {
+   "name": "New York Islanders",
+   "items": [
+    {
+     "team": "NYI",
+     "tag": "CLUSTER",
+     "text": "3 regulars out: Ryan Pulock (18 min), Alexander Romanov (17 min), Kyle Palmieri (16 min)",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nhl/injuries",
+     "date": "2026-11-27"
+    }
+   ],
+   "regulars_on_report": [
+    {
+     "name": "Kyle Palmieri",
+     "pos": "C",
+     "status": "Injured Reserve",
+     "note": "Palmieri is expected to miss the next 6-8 months with a torn ACL and meniscus in his right knee, the team announced Friday.",
+     "days_old": 0,
+     "date": "2026-11-27",
+     "toi": 16.1,
+     "start_share": 0.0,
+     "missed": 2,
+     "team_games": 25,
+     "season_total": true
+    },
+    {
+     "name": "Ryan Pulock",
+     "pos": "D",
+     "status": "Out",
+     "note": "Pulock (shoulder) is expected to miss 1-2 weeks, Andrew Gross of Newsday reports Tuesday.",
+     "days_old": 3,
+     "date": "2026-11-24",
+     "toi": 17.6,
+     "start_share": 0.0,
+     "missed": 8,
+     "team_games": 25,
+     "season_total": true
+    },
+    {
+     "name": "Alexander Romanov",
+     "pos": "D",
+     "status": "Injured Reserve",
+     "note": "ir",
+     "days_old": 39,
+     "date": "2026-10-19",
+     "toi": 16.6,
+     "start_share": 0.0,
+     "missed": 22,
+     "team_games": 25,
+     "season_total": true
+    }
+   ],
+   "headlines": [],
+   "card": [
+    {
+     "kind": "cluster",
+     "unit": "regulars",
+     "players": [
+      {
+       "kind": "out",
+       "name": "Kyle Palmieri",
+       "pos": "C",
+       "status": "Injured Reserve",
+       "missed": 2,
+       "team_games": 25,
+       "season_total": true
+      },
+      {
+       "kind": "out",
+       "name": "Ryan Pulock",
+       "pos": "D",
+       "status": "Out",
+       "missed": 8,
+       "team_games": 25,
+       "season_total": true
+      },
+      {
+       "kind": "out",
+       "name": "Alexander Romanov",
+       "pos": "D",
+       "status": "Injured Reserve",
+       "missed": 22,
+       "team_games": 25,
+       "season_total": true
+      }
+     ]
+    }
+   ]
+  },
+  "NYR": {
+   "name": "New York Rangers",
+   "items": [
+    {
+     "team": "NYR",
+     "tag": "CLUSTER",
+     "text": "3 regulars out: Pavel Dorofeyev (17 min), Gabe Perreault (17 min), Alberts Smits (14 min)",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nhl/injuries",
+     "date": "2026-11-26"
+    }
+   ],
+   "regulars_on_report": [
+    {
+     "name": "Gabe Perreault",
+     "pos": "RW",
+     "status": "Injured Reserve",
+     "note": "Perreault (lower body) was put on injured reserve Thursday, per Mollie Walker of the New York Post.",
+     "days_old": 1,
+     "date": "2026-11-26",
+     "toi": 16.6,
+     "start_share": 0.0,
+     "missed": 1,
+     "team_games": 25,
+     "season_total": true
+    },
+    {
+     "name": "Pavel Dorofeyev",
+     "pos": "RW",
+     "status": "Injured Reserve",
+     "note": "Dorofeyev (lower body) will join the Rangers for their two-game road trip, Mollie Walker of the New York Post reports Tuesday.",
+     "days_old": 3,
+     "date": "2026-11-24",
+     "toi": 16.8,
+     "start_share": 0.0,
+     "missed": 4,
+     "team_games": 25,
+     "season_total": true
+    },
+    {
+     "name": "Alberts Smits",
+     "pos": "D",
+     "status": "Injured Reserve",
+     "note": "Smits (upper body) is expected to miss 2-3 months, Peter Baugh of The Athletic reported Saturday.",
+     "days_old": 6,
+     "date": "2026-11-21",
+     "toi": 14.5,
+     "start_share": 0.0,
+     "missed": 8,
+     "team_games": 25,
+     "season_total": true
+    },
+    {
+     "name": "Igor Shesterkin",
+     "pos": "G",
+     "status": "Injured Reserve",
+     "note": "Shesterkin will require surgery and a lengthy rehab process to address his season-ending right knee injury, Vince Z. Mercogliano of The Athletic reports Sunday.",
+     "days_old": 47,
+     "date": "2026-10-11",
+     "toi": 0.0,
+     "start_share": 0.18,
+     "missed": 20,
+     "team_games": 25,
+     "season_total": true
+    }
+   ],
+   "headlines": [],
+   "card": [
+    {
+     "kind": "cluster",
+     "unit": "regulars",
+     "players": [
+      {
+       "kind": "out",
+       "name": "Gabe Perreault",
+       "pos": "RW",
+       "status": "Injured Reserve",
+       "missed": 1,
+       "team_games": 25,
+       "season_total": true
+      },
+      {
+       "kind": "out",
+       "name": "Pavel Dorofeyev",
+       "pos": "RW",
+       "status": "Injured Reserve",
+       "missed": 4,
+       "team_games": 25,
+       "season_total": true
+      },
+      {
+       "kind": "out",
+       "name": "Alberts Smits",
+       "pos": "D",
+       "status": "Injured Reserve",
+       "missed": 8,
+       "team_games": 25,
+       "season_total": true
+      }
+     ]
+    }
+   ]
+  },
+  "OTT": {
+   "name": "Ottawa Senators",
+   "items": [],
+   "regulars_on_report": [
+    {
+     "name": "Warren Foegele",
+     "pos": "LW",
+     "status": "Injured Reserve",
+     "note": "Head coach Travis Green said Monday that Foegele (knee) hasn't yet resumed skating, Bruce Garrioch of Postmedia reports.",
+     "days_old": 11,
+     "date": "2026-11-16",
+     "toi": 12.2,
+     "start_share": 0.0,
+     "missed": 14,
+     "team_games": 27,
+     "season_total": true
+    },
+    {
+     "name": "William Eklund",
+     "pos": "LW",
+     "status": "Injured Reserve",
+     "note": "Eklund had surgery to repair a torn ankle tendon and will be out 10-12 weeks, Bruce Garrioch of Postmedia reports Thursday.",
+     "days_old": 43,
+     "date": "2026-10-15",
+     "toi": 13.9,
+     "start_share": 0.0,
+     "missed": 23,
+     "team_games": 27,
+     "season_total": true
+    }
+   ],
+   "headlines": [],
+   "card": []
+  },
+  "PHI": {
+   "name": "Philadelphia Flyers",
+   "items": [],
+   "regulars_on_report": [
+    {
+     "name": "Owen Tippett",
+     "pos": "RW",
+     "status": "Out",
+     "note": "out",
+     "days_old": 0,
+     "date": "2026-11-27",
+     "toi": 15.0,
+     "start_share": 0.0,
+     "missed": 7,
+     "team_games": 28,
+     "season_total": true
+    }
+   ],
+   "headlines": [],
+   "card": []
+  },
+  "PIT": {
+   "name": "Pittsburgh Penguins",
+   "items": [
+    {
+     "team": "PIT",
+     "tag": "CLUSTER",
+     "text": "2 regulars out: Bryan Rust (17 min), Egor Chinakhov (15 min)",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nhl/injuries",
+     "date": "2026-11-26"
+    }
+   ],
+   "regulars_on_report": [
+    {
+     "name": "Egor Chinakhov",
+     "pos": "RW",
+     "status": "Injured Reserve",
+     "note": "ir",
+     "days_old": 2,
+     "date": "2026-11-26",
+     "toi": 15.3,
+     "start_share": 0.0,
+     "missed": 6,
+     "team_games": 25,
+     "season_total": true
+    },
+    {
+     "name": "Bryan Rust",
+     "pos": "RW",
+     "status": "Injured Reserve",
+     "note": "Rust (lower body) is skating in a non-contact sweater Friday, Seth Rorabaugh of Tribune-Review Sports reports.",
+     "days_old": 7,
+     "date": "2026-11-20",
+     "toi": 17.4,
+     "start_share": 0.0,
+     "missed": 18,
+     "team_games": 25,
+     "season_total": true
+    },
+    {
+     "name": "Nick Robertson",
+     "pos": "LW",
+     "status": "Injured Reserve",
+     "note": "ir",
+     "days_old": 7,
+     "date": "2026-11-20",
+     "toi": 13.0,
+     "start_share": 0.0,
+     "missed": 5,
+     "team_games": 25,
+     "season_total": true
+    }
+   ],
+   "headlines": [],
+   "card": [
+    {
+     "kind": "cluster",
+     "unit": "regulars",
+     "players": [
+      {
+       "kind": "out",
+       "name": "Egor Chinakhov",
+       "pos": "RW",
+       "status": "Injured Reserve",
+       "missed": 6,
+       "team_games": 25,
+       "season_total": true
+      },
+      {
+       "kind": "out",
+       "name": "Bryan Rust",
+       "pos": "RW",
+       "status": "Injured Reserve",
+       "missed": 18,
+       "team_games": 25,
+       "season_total": true
+      }
+     ]
+    }
+   ]
+  },
+  "SEA": {
+   "name": "Seattle Kraken",
+   "items": [
+    {
+     "team": "SEA",
+     "tag": "KEY",
+     "text": "G Philipp Grubauer (54% of starts) day-to-day — day-to-day",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nhl/injuries",
+     "date": "2026-11-28"
+    }
+   ],
+   "regulars_on_report": [
+    {
+     "name": "Philipp Grubauer",
+     "pos": "G",
+     "status": "Day-To-Day",
+     "note": "day-to-day",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "toi": 0.0,
+     "start_share": 0.54,
+     "missed": 8,
+     "team_games": 23,
+     "season_total": true
+    },
+    {
+     "name": "Jared McCann",
+     "pos": "LW",
+     "status": "Injured Reserve",
+     "note": "McCann (lower body) will be out for approximately 10 weeks, the team announced Sunday.",
+     "days_old": 33,
+     "date": "2026-10-25",
+     "toi": 16.1,
+     "start_share": 0.0,
+     "missed": 12,
+     "team_games": 23,
+     "season_total": true
+    }
+   ],
+   "headlines": [],
+   "card": [
+    {
+     "kind": "maybe",
+     "name": "Philipp Grubauer",
+     "pos": "G",
+     "status": "Day-To-Day",
+     "missed": 8,
+     "team_games": 23,
+     "season_total": true
+    }
+   ]
+  },
+  "SJ": {
+   "name": "San Jose Sharks",
+   "items": [
+    {
+     "team": "SJ",
+     "tag": "KEY",
+     "text": "D Jacob Trouba (22 min/game) out — out",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nhl/injuries",
+     "date": "2026-11-23"
+    }
+   ],
+   "regulars_on_report": [
+    {
+     "name": "Jacob Trouba",
+     "pos": "D",
+     "status": "Out",
+     "note": "out",
+     "days_old": 4,
+     "date": "2026-11-23",
+     "toi": 22.1,
+     "start_share": 0.0,
+     "missed": 3,
+     "team_games": 28,
+     "season_total": true
+    },
+    {
+     "name": "Kiefer Sherwood",
+     "pos": "LW",
+     "status": "Injured Reserve",
+     "note": "Sherwood (upper body) was placed on injured reserve Monday.",
+     "days_old": 4,
+     "date": "2026-11-23",
+     "toi": 15.7,
+     "start_share": 0.0,
+     "missed": 5,
+     "team_games": 28,
+     "season_total": true
+    },
+    {
+     "name": "Igor Chernyshov",
+     "pos": "LW",
+     "status": "Injured Reserve",
+     "note": "Head coach Ryan Warsofsky said Sunday that Chernyshov (upper body) is not close to returning to game action, per Curtis Pashelka of The San Jose Mercury News.",
+     "days_old": 12,
+     "date": "2026-11-15",
+     "toi": 13.6,
+     "start_share": 0.0,
+     "missed": 17,
+     "team_games": 28,
+     "season_total": true
+    },
+    {
+     "name": "Kyle Keyser",
+     "pos": "G",
+     "status": "Injured Reserve",
+     "note": "Keyser (upper body) was placed on non-roster injured reserve by the Sharks on Monday, Curtis Pashelka of The San Jose Mercury News reports.",
+     "days_old": 60,
+     "date": "2026-09-28",
+     "toi": 0.0,
+     "start_share": 0.0,
+     "missed": 28,
+     "team_games": 28,
+     "season_total": true
+    }
+   ],
+   "headlines": [],
+   "card": [
+    {
+     "kind": "out",
+     "name": "Jacob Trouba",
+     "pos": "D",
+     "status": "Out",
+     "missed": 3,
+     "team_games": 28,
+     "season_total": true
+    }
+   ]
+  },
+  "STL": {
+   "name": "St. Louis Blues",
+   "items": [
+    {
+     "team": "STL",
+     "tag": "CLUSTER",
+     "text": "2 regulars out: Jimmy Snuggerud (18 min), Brandon Carlo (18 min)",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nhl/injuries",
+     "date": "2026-11-27"
+    }
+   ],
+   "regulars_on_report": [
+    {
+     "name": "Jimmy Snuggerud",
+     "pos": "RW",
+     "status": "Injured Reserve",
+     "note": "ir",
+     "days_old": 0,
+     "date": "2026-11-27",
+     "toi": 17.7,
+     "start_share": 0.0,
+     "missed": 2,
+     "team_games": 26,
+     "season_total": true
+    },
+    {
+     "name": "Brandon Carlo",
+     "pos": "D",
+     "status": "Injured Reserve",
+     "note": "ir",
+     "days_old": 3,
+     "date": "2026-11-24",
+     "toi": 17.7,
+     "start_share": 0.0,
+     "missed": 2,
+     "team_games": 26,
+     "season_total": true
+    }
+   ],
+   "headlines": [],
+   "card": [
+    {
+     "kind": "cluster",
+     "unit": "regulars",
+     "players": [
+      {
+       "kind": "out",
+       "name": "Jimmy Snuggerud",
+       "pos": "RW",
+       "status": "Injured Reserve",
+       "missed": 2,
+       "team_games": 26,
+       "season_total": true
+      },
+      {
+       "kind": "out",
+       "name": "Brandon Carlo",
+       "pos": "D",
+       "status": "Injured Reserve",
+       "missed": 2,
+       "team_games": 26,
+       "season_total": true
+      }
+     ]
+    }
+   ]
+  },
+  "TB": {
+   "name": "Tampa Bay Lightning",
+   "items": [
+    {
+     "team": "TB",
+     "tag": "KEY",
+     "text": "D Erik Cernak (18 min/game) out — Cernak (illness) is expected to miss Friday's game against Ottawa, per Gabby Shirley of the Lightning's official site.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nhl/injuries",
+     "date": "2026-11-27"
+    },
+    {
+     "team": "TB",
+     "tag": "CLUSTER",
+     "text": "2 regulars out: Victor Hedman (15 min), Pontus Holmberg (14 min)",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nhl/injuries",
+     "date": "2026-11-27"
+    }
+   ],
+   "regulars_on_report": [
+    {
+     "name": "Victor Hedman",
+     "pos": "D",
+     "status": "Day-To-Day",
+     "note": "Hedman (undisclosed) didn't finish Friday's game versus the Senators, Benjamin Pierce of the Lightning's official site reports.",
+     "days_old": 0,
+     "date": "2026-11-27",
+     "toi": 15.4,
+     "start_share": 0.0,
+     "missed": 2,
+     "team_games": 25,
+     "season_total": true
+    },
+    {
+     "name": "Erik Cernak",
+     "pos": "D",
+     "status": "Out",
+     "note": "Cernak (illness) is expected to miss Friday's game against Ottawa, per Gabby Shirley of the Lightning's official site.",
+     "days_old": 0,
+     "date": "2026-11-27",
+     "toi": 18.4,
+     "start_share": 0.0,
+     "missed": 5,
+     "team_games": 25,
+     "season_total": true
+    },
+    {
+     "name": "Pontus Holmberg",
+     "pos": "RW",
+     "status": "Injured Reserve",
+     "note": "ir",
+     "days_old": 0,
+     "date": "2026-11-27",
+     "toi": 14.5,
+     "start_share": 0.0,
+     "missed": 1,
+     "team_games": 25,
+     "season_total": true
+    }
+   ],
+   "headlines": [],
+   "card": [
+    {
+     "kind": "out",
+     "name": "Erik Cernak",
+     "pos": "D",
+     "status": "Out",
+     "missed": 5,
+     "team_games": 25,
+     "season_total": true
+    }
+   ]
+  },
+  "TOR": {
+   "name": "Toronto Maple Leafs",
+   "items": [
+    {
+     "team": "TOR",
+     "tag": "CLUSTER",
+     "text": "4 regulars out: Chris Tanev (18 min), Jack Roslovic (17 min), Cole McWard (15 min), Marshall Rifai (14 min)",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nhl/injuries",
+     "date": "2026-11-27"
+    }
+   ],
+   "regulars_on_report": [
+    {
+     "name": "Chris Tanev",
+     "pos": "D",
+     "status": "Out",
+     "note": "out",
+     "days_old": 0,
+     "date": "2026-11-27",
+     "toi": 17.5,
+     "start_share": 0.0,
+     "missed": 11,
+     "team_games": 27,
+     "season_total": true
+    },
+    {
+     "name": "Jack Roslovic",
+     "pos": "C",
+     "status": "Out",
+     "note": "Roslovic (upper body) is expected to miss Friday's road clash against the Bruins, per Mark Masters of TSN.",
+     "days_old": 1,
+     "date": "2026-11-26",
+     "toi": 17.4,
+     "start_share": 0.0,
+     "missed": 3,
+     "team_games": 27,
+     "season_total": true
+    },
+    {
+     "name": "Cole McWard",
+     "pos": "D",
+     "status": "Injured Reserve",
+     "note": "McWard (lower body) is considered day-to-day, per David Alter of The Hockey News on Saturday.",
+     "days_old": 6,
+     "date": "2026-11-21",
+     "toi": 14.7,
+     "start_share": 0.0,
+     "missed": 25,
+     "team_games": 27,
+     "season_total": true
+    },
+    {
+     "name": "Nick Blankenburg",
+     "pos": "D",
+     "status": "Injured Reserve",
+     "note": "Blankenburg (upper body) is day-to-day, according to David Alter of The Hockey News on Saturday.",
+     "days_old": 6,
+     "date": "2026-11-21",
+     "toi": 13.1,
+     "start_share": 0.0,
+     "missed": 21,
+     "team_games": 27,
+     "season_total": true
+    },
+    {
+     "name": "Marshall Rifai",
+     "pos": "D",
+     "status": "Injured Reserve",
+     "note": "ir",
+     "days_old": 36,
+     "date": "2026-10-23",
+     "toi": 14.2,
+     "start_share": 0.0,
+     "missed": 25,
+     "team_games": 27,
+     "season_total": true
+    },
+    {
+     "name": "Elvis Merzlikins",
+     "pos": "G",
+     "status": "Injured Reserve",
+     "note": "Merzlikins is expected to miss 4-6 months to begin the 2026-27 regular season while recovering from a shoulder injury, per Luke Fox of Sportsnet.",
+     "days_old": 59,
+     "date": "2026-09-29",
+     "toi": 0.0,
+     "start_share": 0.0,
+     "missed": 27,
+     "team_games": 27,
+     "season_total": true
+    }
+   ],
+   "headlines": [],
+   "card": [
+    {
+     "kind": "cluster",
+     "unit": "regulars",
+     "players": [
+      {
+       "kind": "out",
+       "name": "Chris Tanev",
+       "pos": "D",
+       "status": "Out",
+       "missed": 11,
+       "team_games": 27,
+       "season_total": true
+      },
+      {
+       "kind": "out",
+       "name": "Jack Roslovic",
+       "pos": "C",
+       "status": "Out",
+       "missed": 3,
+       "team_games": 27,
+       "season_total": true
+      },
+      {
+       "kind": "out",
+       "name": "Cole McWard",
+       "pos": "D",
+       "status": "Injured Reserve",
+       "missed": 25,
+       "team_games": 27,
+       "season_total": true
+      },
+      {
+       "kind": "out",
+       "name": "Marshall Rifai",
+       "pos": "D",
+       "status": "Injured Reserve",
+       "missed": 25,
+       "team_games": 27,
+       "season_total": true
+      }
+     ]
+    }
+   ]
+  },
+  "UTAH": {
+   "name": "Utah Mammoth",
+   "items": [
+    {
+     "team": "UTAH",
+     "tag": "KEY",
+     "text": "D John Marino (20 min/game) injured reserve — Marino (upper body) likely won't return during Utah's four-game road trip, per Brogan Houston of the Deseret News on Monday.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nhl/injuries",
+     "date": "2026-11-23"
+    },
+    {
+     "team": "UTAH",
+     "tag": "KEY",
+     "text": "D Nate Schmidt (19 min/game) injured reserve — The Mammoth announced Thursday that Schmidt (upper body) is considered week-to-week, Cole Bagley of KSL Sports reports.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nhl/injuries",
+     "date": "2026-11-12"
+    }
+   ],
+   "regulars_on_report": [
+    {
+     "name": "Michael Carcone",
+     "pos": "LW",
+     "status": "Injured Reserve",
+     "note": "ir",
+     "days_old": 2,
+     "date": "2026-11-25",
+     "toi": 12.2,
+     "start_share": 0.0,
+     "missed": 12,
+     "team_games": 27,
+     "season_total": true
+    },
+    {
+     "name": "John Marino",
+     "pos": "D",
+     "status": "Injured Reserve",
+     "note": "Marino (upper body) likely won't return during Utah's four-game road trip, per Brogan Houston of the Deseret News on Monday.",
+     "days_old": 4,
+     "date": "2026-11-23",
+     "toi": 20.4,
+     "start_share": 0.0,
+     "missed": 18,
+     "team_games": 27,
+     "season_total": true
+    },
+    {
+     "name": "Nick Schmaltz",
+     "pos": "C",
+     "status": "Injured Reserve",
+     "note": "ir",
+     "days_old": 10,
+     "date": "2026-11-17",
+     "toi": 17.1,
+     "start_share": 0.0,
+     "missed": 8,
+     "team_games": 27,
+     "season_total": true
+    },
+    {
+     "name": "Nate Schmidt",
+     "pos": "D",
+     "status": "Injured Reserve",
+     "note": "The Mammoth announced Thursday that Schmidt (upper body) is considered week-to-week, Cole Bagley of KSL Sports reports.",
+     "days_old": 15,
+     "date": "2026-11-12",
+     "toi": 19.1,
+     "start_share": 0.0,
+     "missed": 10,
+     "team_games": 27,
+     "season_total": true
+    }
+   ],
+   "headlines": [],
+   "card": [
+    {
+     "kind": "out",
+     "name": "John Marino",
+     "pos": "D",
+     "status": "Injured Reserve",
+     "missed": 18,
+     "team_games": 27,
+     "season_total": true
+    },
+    {
+     "kind": "out",
+     "name": "Nate Schmidt",
+     "pos": "D",
+     "status": "Injured Reserve",
+     "missed": 10,
+     "team_games": 27,
+     "season_total": true
+    }
+   ]
+  },
+  "VAN": {
+   "name": "Vancouver Canucks",
+   "items": [
+    {
+     "team": "VAN",
+     "tag": "KEY",
+     "text": "C Filip Chytil (18 min/game) day-to-day — day-to-day",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nhl/injuries",
+     "date": "2026-11-27"
+    },
+    {
+     "team": "VAN",
+     "tag": "KEY",
+     "text": "C Elias Pettersson (18 min/game) out — out",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nhl/injuries",
+     "date": "2026-11-25"
+    }
+   ],
+   "regulars_on_report": [
+    {
+     "name": "Filip Chytil",
+     "pos": "C",
+     "status": "Day-To-Day",
+     "note": "day-to-day",
+     "days_old": 0,
+     "date": "2026-11-27",
+     "toi": 18.4,
+     "start_share": 0.0,
+     "missed": 13,
+     "team_games": 28,
+     "season_total": true
+    },
+    {
+     "name": "Elias Pettersson",
+     "pos": "C",
+     "status": "Out",
+     "note": "out",
+     "days_old": 2,
+     "date": "2026-11-25",
+     "toi": 18.4,
+     "start_share": 0.0,
+     "missed": 0,
+     "team_games": 28,
+     "season_total": true
+    },
+    {
+     "name": "Guillaume Brisebois",
+     "pos": "D",
+     "status": "Injured Reserve",
+     "note": "ir",
+     "days_old": 14,
+     "date": "2026-11-13",
+     "toi": 15.4,
+     "start_share": 0.0,
+     "missed": 22,
+     "team_games": 28,
+     "season_total": true
+    },
+    {
+     "name": "Thatcher Demko",
+     "pos": "G",
+     "status": "Injured Reserve",
+     "note": "Co-president of hockey operations Henrik Sedin said Monday that he hopes Demko (hip) will be ready to return before Christmas, Kevin Woodley of NHL.com reports.",
+     "days_old": 60,
+     "date": "2026-09-28",
+     "toi": 0.0,
+     "start_share": 0.0,
+     "missed": 28,
+     "team_games": 28,
+     "season_total": true
+    }
+   ],
+   "headlines": [],
+   "card": [
+    {
+     "kind": "out",
+     "name": "Elias Pettersson",
+     "pos": "C",
+     "status": "Out",
+     "missed": 0,
+     "team_games": 28,
+     "season_total": true
+    },
+    {
+     "kind": "maybe",
+     "name": "Filip Chytil",
+     "pos": "C",
+     "status": "Day-To-Day",
+     "missed": 13,
+     "team_games": 28,
+     "season_total": true
+    }
+   ]
+  },
+  "VGK": {
+   "name": "Vegas Golden Knights",
+   "items": [],
+   "regulars_on_report": [],
+   "headlines": [],
+   "card": []
+  },
+  "WPG": {
+   "name": "Winnipeg Jets",
+   "items": [
+    {
+     "team": "WPG",
+     "tag": "KEY",
+     "text": "D Dylan DeMelo (19 min/game) injured reserve — DeMelo (lower body) is expected to be out of action for 4-6 weeks, Mitchell Clinton of the Jets' official site reports Thursday.",
+     "source": "ESPN",
+     "url": "https://www.espn.com/nhl/injuries",
+     "date": "2026-11-19"
+    }
+   ],
+   "regulars_on_report": [
+    {
+     "name": "Dylan DeMelo",
+     "pos": "D",
+     "status": "Injured Reserve",
+     "note": "DeMelo (lower body) is expected to be out of action for 4-6 weeks, Mitchell Clinton of the Jets' official site reports Thursday.",
+     "days_old": 8,
+     "date": "2026-11-19",
+     "toi": 19.4,
+     "start_share": 0.0,
+     "missed": 7,
+     "team_games": 27,
+     "season_total": true
+    },
+    {
+     "name": "Vladislav Namestnikov",
+     "pos": "C",
+     "status": "Injured Reserve",
+     "note": "ir",
+     "days_old": 35,
+     "date": "2026-10-23",
+     "toi": 12.1,
+     "start_share": 0.0,
+     "missed": 21,
+     "team_games": 27,
+     "season_total": true
+    }
+   ],
+   "headlines": [],
+   "card": [
+    {
+     "kind": "out",
+     "name": "Dylan DeMelo",
+     "pos": "D",
+     "status": "Injured Reserve",
+     "missed": 7,
+     "team_games": 27,
+     "season_total": true
+    }
+   ]
+  },
+  "WSH": {
+   "name": "Washington Capitals",
+   "items": [],
+   "regulars_on_report": [
+    {
+     "name": "Jordan Kyrou",
+     "pos": "RW",
+     "status": "Injured Reserve",
+     "note": "Kyrou (upper body) was put on injured reserve Friday.",
+     "days_old": 0,
+     "date": "2026-11-27",
+     "toi": 14.4,
+     "start_share": 0.0,
+     "missed": 2,
+     "team_games": 23,
+     "season_total": true
+    }
+   ],
+   "headlines": [],
+   "card": []
+  }
+ }
+}

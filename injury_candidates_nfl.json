@@ -1,0 +1,6172 @@
+{
+ "sport": "nfl",
+ "week": 12,
+ "collected": "2026-11-28T12:18+00:00",
+ "games": [
+  [
+   "GB",
+   "LA"
+  ],
+  [
+   "CHI",
+   "DET"
+  ],
+  [
+   "PHI",
+   "DAL"
+  ],
+  [
+   "KC",
+   "BUF"
+  ],
+  [
+   "DEN",
+   "PIT"
+  ],
+  [
+   "NO",
+   "CIN"
+  ],
+  [
+   "BAL",
+   "HOU"
+  ],
+  [
+   "NYG",
+   "IND"
+  ],
+  [
+   "TEN",
+   "JAX"
+  ],
+  [
+   "NYJ",
+   "MIA"
+  ],
+  [
+   "ATL",
+   "MIN"
+  ],
+  [
+   "NE",
+   "LAC"
+  ],
+  [
+   "WAS",
+   "ARI"
+  ],
+  [
+   "SEA",
+   "SF"
+  ],
+  [
+   "LV",
+   "CLE"
+  ],
+  [
+   "CAR",
+   "TB"
+  ]
+ ],
+ "teams": {
+  "ARI": {
+   "name": "Arizona Cardinals",
+   "items": [
+    {
+     "team": "ARI",
+     "tag": "QB",
+     "text": "QB Carson Beck out (back) — Out on the Week 12 report; did not practice",
+     "source": "NFL injury report",
+     "url": "https://www.nfl.com/injuries/",
+     "date": "2026-11-28"
+    },
+    {
+     "team": "ARI",
+     "tag": "QB",
+     "text": "QB Gardner Minshew injured reserve — on injured reserve",
+     "source": "NFL injury report",
+     "url": "https://www.nfl.com/injuries/",
+     "date": "2026-11-28"
+    },
+    {
+     "team": "ARI",
+     "tag": "CLUSTER",
+     "text": "2 OL starters out: Paris Johnson Jr. (OL, Injured Reserve), Jon Gaines II (G, Out)",
+     "source": "NFL injury report",
+     "url": "https://www.nfl.com/injuries/",
+     "date": "2026-11-28"
+    },
+    {
+     "team": "ARI",
+     "tag": "CLUSTER",
+     "text": "2 secondary starters out: Will Johnson (DB, Injured Reserve), Andrew Wingard (DB, Injured Reserve)",
+     "source": "NFL injury report",
+     "url": "https://www.nfl.com/injuries/",
+     "date": "2026-11-28"
+    }
+   ],
+   "starters_on_report": [
+    {
+     "name": "Isaac Seumalo",
+     "pos": "G",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 63,
+     "date": "2026-11-28",
+     "pct": 1.0,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 11,
+     "qb1": false
+    },
+    {
+     "name": "Budda Baker",
+     "pos": "S",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 28,
+     "date": "2026-11-28",
+     "pct": 0.98,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 11,
+     "qb1": false
+    },
+    {
+     "name": "Mack Wilson",
+     "pos": "LB",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 14,
+     "date": "2026-11-28",
+     "pct": 0.99,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 11,
+     "qb1": false
+    },
+    {
+     "name": "Hjalte Froholdt",
+     "pos": "C",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 7,
+     "date": "2026-11-28",
+     "pct": 1.0,
+     "missed_recent": 1,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 11,
+     "qb1": false
+    },
+    {
+     "name": "Jon Gaines II",
+     "pos": "G",
+     "status": "Out",
+     "injury": "Ankle",
+     "note": "Out on the Week 12 report; did not practice",
+     "detail": "",
+     "days_old": 35,
+     "date": "2026-11-28",
+     "pct": 0.9,
+     "missed_recent": 3,
+     "missed_last": 1,
+     "missed": 5,
+     "team_games": 11,
+     "qb1": false
+    },
+    {
+     "name": "Carson Beck",
+     "pos": "QB",
+     "status": "Out",
+     "injury": "Back",
+     "note": "Out on the Week 12 report; did not practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 1.0,
+     "missed_recent": 2,
+     "missed_last": 1,
+     "missed": 1,
+     "team_games": 11,
+     "qb1": false
+    },
+    {
+     "name": "Gardner Minshew",
+     "pos": "QB",
+     "status": "Injured Reserve",
+     "injury": "",
+     "note": "on injured reserve",
+     "detail": "",
+     "days_old": 14,
+     "date": "2026-11-28",
+     "pct": 0.71,
+     "missed_recent": 2,
+     "missed_last": 1,
+     "missed": 2,
+     "team_games": 11,
+     "qb1": false
+    },
+    {
+     "name": "Andrew Wingard",
+     "pos": "DB",
+     "status": "Injured Reserve",
+     "injury": "",
+     "note": "on injured reserve",
+     "detail": "",
+     "days_old": 7,
+     "date": "2026-11-28",
+     "pct": 0.86,
+     "missed_recent": 1,
+     "missed_last": 1,
+     "missed": 1,
+     "team_games": 11,
+     "qb1": false
+    },
+    {
+     "name": "Paris Johnson Jr.",
+     "pos": "OL",
+     "status": "Injured Reserve",
+     "injury": "",
+     "note": "on injured reserve",
+     "detail": "",
+     "days_old": 49,
+     "date": "2026-11-28",
+     "pct": 0.99,
+     "missed_recent": 3,
+     "missed_last": 1,
+     "missed": 7,
+     "team_games": 11,
+     "qb1": false
+    },
+    {
+     "name": "Michael Wilson",
+     "pos": "WR",
+     "status": "Injured Reserve",
+     "injury": "",
+     "note": "on injured reserve",
+     "detail": "",
+     "days_old": 14,
+     "date": "2026-11-28",
+     "pct": 0.88,
+     "missed_recent": 2,
+     "missed_last": 1,
+     "missed": 2,
+     "team_games": 11,
+     "qb1": false
+    },
+    {
+     "name": "Will Johnson",
+     "pos": "DB",
+     "status": "Injured Reserve",
+     "injury": "",
+     "note": "on injured reserve",
+     "detail": "",
+     "days_old": 63,
+     "date": "2026-11-28",
+     "pct": 0.9,
+     "missed_recent": 3,
+     "missed_last": 1,
+     "missed": 9,
+     "team_games": 11,
+     "qb1": false
+    }
+   ],
+   "headlines": [
+    {
+     "title": "Injury Report: Week 12 vs Commanders",
+     "source": "Arizona Cardinals",
+     "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBCaXlYdkM2aDBpUlR3N3NYNlVabU5kYmRWVXA3STRVQXliS1lmWWg0bXFpRlo2RTRiRlBEZlRXNVA4dnBhVWpVTEtLOHRfOXhpcmNuN2NrTkJkVUVFMm51M0txa1BmbHZCRGs0bnhJaWdGTDhJeUdF?oc=5",
+     "date": "2026-11-27"
+    },
+    {
+     "title": "Cardinals-Commanders Week 12 injury report: Carson Beck ruled out",
+     "source": "Arizona Sports",
+     "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNeFk0VlB6OUo3VGVXa3Yxejlzc19xZFo1bl9LZW9OcWJvZXIyal9FQTlZYlpWc21nbFBOdy13N2dCUlVCLV9Idm1MVjJwQURVN2FTUDVKUEwxNi1IS2JhNElPdGRnZG9lcFlvRkYtZGVHZURIVldEcU1XWG1GNHJPQUpQdTVzLTZNck1GenNsY1pEbDFmR056QVlXNEJVZGtnNkNTSUVXUjhreVRXeUtUVmhEQVA?oc=5",
+     "date": "2026-11-27"
+    },
+    {
+     "title": "Game status | Amik Robertson ruled out vs. Cardinals",
+     "source": "Washington Commanders",
+     "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBSeUZIX2hOU0hBQ1J3dGpCLWI1MVdIeG8yc1JoX1ByTEVlRmJlX0V1VWtZRE5wbV9rVWc0dTlXb0JWa0xjMWt1cXRhSmRQbnhiaGFMU1dELTZQYUxmbnBmdGVUQk8yYl9ZSjF6WGctcnRXMmVYeU5Ld0NWNFE?oc=5",
+     "date": "2026-11-27"
+    },
+    {
+     "title": "Cardinals injury report: QB Carson Beck, OL Jon Gaines ruled out",
+     "source": "Merced Sun-Star",
+     "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE16ekNJMi1DclhnSVJYZ1Y2SndkUFJCUzFjTVhiVjhKMkZ6Y1BJMmh6ZEFxbC1NbTRERUlZT25kaGEwRkZvY0ZyUmFsWTF4aGtLWDVyeEhnaTdEQU5reHNOR2hrWGIyQTAteVE?oc=5",
+     "date": "2026-11-27"
+    }
+   ],
+   "card": [
+    {
+     "kind": "out",
+     "name": "Will Johnson",
+     "pos": "DB",
+     "status": "Injured Reserve",
+     "missed": 9,
+     "team_games": 11
+    },
+    {
+     "kind": "out",
+     "name": "Paris Johnson Jr.",
+     "pos": "OL",
+     "status": "Injured Reserve",
+     "missed": 7,
+     "team_games": 11
+    },
+    {
+     "kind": "out",
+     "name": "Jon Gaines II",
+     "pos": "G",
+     "status": "Out",
+     "missed": 5,
+     "team_games": 11
+    }
+   ]
+  },
+  "ATL": {
+   "name": "Atlanta Falcons",
+   "items": [
+    {
+     "team": "ATL",
+     "tag": "KEY",
+     "text": "G Matthew Bergeron out (back) — Out on the Week 12 report; did not practice",
+     "source": "NFL injury report",
+     "url": "https://www.nfl.com/injuries/",
+     "date": "2026-11-28"
+    }
+   ],
+   "starters_on_report": [
+    {
+     "name": "Jake Matthews",
+     "pos": "T",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; limited in practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.92,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Jawaan Taylor",
+     "pos": "T",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.96,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Jahan Dotson",
+     "pos": "WR",
+     "status": "Out",
+     "injury": "Hamstring",
+     "note": "Out on the Week 12 report; did not practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.7,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Cameron Thomas",
+     "pos": "DE",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.64,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Matthew Bergeron",
+     "pos": "G",
+     "status": "Out",
+     "injury": "Back",
+     "note": "Out on the Week 12 report; did not practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 1.0,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Kendal Daniels",
+     "pos": "LB",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.72,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 10,
+     "qb1": false
+    }
+   ],
+   "headlines": [
+    {
+     "title": "Final Vikings Against Falcons Injury Report for Week 12 of 2026",
+     "source": "Vikings.com",
+     "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBFT0tpQ241SmFGaGtzSXkzSnYwVVFXb2ZtcWM0S2M5WXdrNXI1ejN1TXdJOENTdDcyZmUwejRmNGZHSm9udFh0UVR2UjlWY2RvWHl1RXRselF1cENzTVNmMHJTZDNIY0RySUk3NjJpN2lqU1R4Y3diTzhSNndqcUE?oc=5",
+     "date": "2026-11-28"
+    },
+    {
+     "title": "Falcons injury report: 5 players ruled out against Minnesota Vikings",
+     "source": "Atlanta Falcons",
+     "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPRE1lQUhtQWp3bWk4cGdjMjRVcm95dm1IaFduaHd2SHcxY3NOSzZCclR1UlFqbVphajZNNHZyajNvWUZodzFQU2M3TlNOb2wydG5vb0xFWWJDLUNWSFl2SmZvRFE3WmNhc2ZZaXJhVGZrUy1BQkZTR0hiZWNzVjdSQ3Vjd05BSTl2NDg4MGU3LWtnVFNVU0Y5bUFMS0lFbnVNc2hoanFDOGJpQlBKUFZTY0tPZw?oc=5",
+     "date": "2026-11-27"
+    },
+    {
+     "title": "Falcons vs. Vikings injury report: Matthew Bergeron, four others ruled out",
+     "source": "The Falcoholic",
+     "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQS3lfS2xWc1M1dzBJSUI0Y3MxbkM4bXp3TkxtdFFqaldCNERGbjFZS2oycmVNc3VTdmtHWFZmdVZXR0NCaVJKcmVORXgxSVJSR1F3ZWpBRzFwQTZkWFBXd2J1RTlGOV9HbnZvd3ZYeHdEaTZ1WU9UeWNTMHdmWnR2UV8xcUZCXzFVNmhrSXprYURIVTBodW5fVkNOV3Y5SXU5dDczQ2hlaXQxbmN0VUpRMmZ0Rk9WYlNza1FTbjc2WDVJZ21xek5zanBYYWc?oc=5",
+     "date": "2026-11-27"
+    },
+    {
+     "title": "Vikings-Falcons Final Injury Report",
+     "source": "Daily Norseman",
+     "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOdXRERm9leUlLT3ppMHJHOFdsT1NpMDlGMFhYODZsRWg2M1c2bW82V1dualF4SnRhU0k3bjNqUEcwdGhhdUVNOWRIUFYyRlpZRkwxT0oxeGtYdC1pdE11ZVlHeXVaMlQ2T2FmOTFLdW1ONFptQzYyekpldWk0enNjYTE3TjVkbzBsdHNkaDc4T09saV9QQUJkZUlPd3hNNXEw?oc=5",
+     "date": "2026-11-27"
+    }
+   ],
+   "card": [
+    {
+     "kind": "out",
+     "name": "Matthew Bergeron",
+     "pos": "G",
+     "status": "Out",
+     "missed": 0,
+     "team_games": 10
+    }
+   ]
+  },
+  "BAL": {
+   "name": "Baltimore Ravens",
+   "items": [
+    {
+     "team": "BAL",
+     "tag": "QB",
+     "text": "QB Lamar Jackson injured reserve — on injured reserve",
+     "source": "NFL injury report",
+     "url": "https://www.nfl.com/injuries/",
+     "date": "2026-11-28"
+    },
+    {
+     "team": "BAL",
+     "tag": "QB",
+     "text": "QB Tyler Huntley injured reserve — on injured reserve",
+     "source": "NFL injury report",
+     "url": "https://www.nfl.com/injuries/",
+     "date": "2026-11-28"
+    },
+    {
+     "team": "BAL",
+     "tag": "CLUSTER",
+     "text": "2 OL starters out: Jovaughn Gwyn (OL, Injured Reserve), Olaivavega Ioane (G, Out)",
+     "source": "NFL injury report",
+     "url": "https://www.nfl.com/injuries/",
+     "date": "2026-11-28"
+    },
+    {
+     "team": "BAL",
+     "tag": "CLUSTER",
+     "text": "2 front seven starters out: Tavius Robinson (LB, Injured Reserve), Nnamdi Madubuike (DT, Out)",
+     "source": "NFL injury report",
+     "url": "https://www.nfl.com/injuries/",
+     "date": "2026-11-28"
+    }
+   ],
+   "starters_on_report": [
+    {
+     "name": "Ronnie Stanley",
+     "pos": "T",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; did not practice",
+     "detail": "",
+     "days_old": 49,
+     "date": "2026-11-28",
+     "pct": 0.96,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 11,
+     "qb1": false
+    },
+    {
+     "name": "Nnamdi Madubuike",
+     "pos": "DT",
+     "status": "Out",
+     "injury": "Hamstring",
+     "note": "Out on the Week 12 report; did not practice",
+     "detail": "",
+     "days_old": 7,
+     "date": "2026-11-28",
+     "pct": 0.7,
+     "missed_recent": 1,
+     "missed_last": 1,
+     "missed": 1,
+     "team_games": 11,
+     "qb1": false
+    },
+    {
+     "name": "Jaylinn Hawkins",
+     "pos": "S",
+     "status": "Out",
+     "injury": "Knee",
+     "note": "Out on the Week 12 report; limited in practice",
+     "detail": "",
+     "days_old": 35,
+     "date": "2026-11-28",
+     "pct": 0.81,
+     "missed_recent": 3,
+     "missed_last": 1,
+     "missed": 5,
+     "team_games": 11,
+     "qb1": false
+    },
+    {
+     "name": "John Simpson",
+     "pos": "G",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 7,
+     "date": "2026-11-28",
+     "pct": 1.0,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 11,
+     "qb1": false
+    },
+    {
+     "name": "Rashod Bateman",
+     "pos": "WR",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.74,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 11,
+     "qb1": false
+    },
+    {
+     "name": "Zay Flowers",
+     "pos": "WR",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.71,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 11,
+     "qb1": false
+    },
+    {
+     "name": "Olaivavega Ioane",
+     "pos": "G",
+     "status": "Out",
+     "injury": "Hand",
+     "note": "Out on the Week 12 report; did not practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.88,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 11,
+     "qb1": false
+    },
+    {
+     "name": "Lamar Jackson",
+     "pos": "QB",
+     "status": "Injured Reserve",
+     "injury": "",
+     "note": "on injured reserve",
+     "detail": "",
+     "days_old": 21,
+     "date": "2026-11-28",
+     "pct": 0.71,
+     "missed_recent": 3,
+     "missed_last": 1,
+     "missed": 3,
+     "team_games": 11,
+     "qb1": false
+    },
+    {
+     "name": "Tyler Huntley",
+     "pos": "QB",
+     "status": "Injured Reserve",
+     "injury": "",
+     "note": "on injured reserve",
+     "detail": "",
+     "days_old": 21,
+     "date": "2026-11-28",
+     "pct": 0.74,
+     "missed_recent": 3,
+     "missed_last": 1,
+     "missed": 3,
+     "team_games": 11,
+     "qb1": false
+    },
+    {
+     "name": "Skylar Thompson",
+     "pos": "QB",
+     "status": "Injured Reserve",
+     "injury": "",
+     "note": "on injured reserve",
+     "detail": "",
+     "days_old": 77,
+     "date": "2026-11-28",
+     "pct": 0.0,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": null,
+     "team_games": null,
+     "qb1": false
+    },
+    {
+     "name": "Tavius Robinson",
+     "pos": "LB",
+     "status": "Injured Reserve",
+     "injury": "",
+     "note": "on injured reserve",
+     "detail": "",
+     "days_old": 35,
+     "date": "2026-11-28",
+     "pct": 0.72,
+     "missed_recent": 3,
+     "missed_last": 1,
+     "missed": 5,
+     "team_games": 11,
+     "qb1": false
+    },
+    {
+     "name": "Jovaughn Gwyn",
+     "pos": "OL",
+     "status": "Injured Reserve",
+     "injury": "",
+     "note": "on injured reserve",
+     "detail": "",
+     "days_old": 56,
+     "date": "2026-11-28",
+     "pct": 0.91,
+     "missed_recent": 3,
+     "missed_last": 1,
+     "missed": 8,
+     "team_games": 11,
+     "qb1": false
+    }
+   ],
+   "headlines": [
+    {
+     "title": "Week 12 Injury Report | Texans vs Ravens",
+     "source": "Houston Texans",
+     "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1YbzdndHNzbk51TVdsSmJ3TXV5U0FpOTRnUTBjQ1Z3RG8yaklQREVhODFPNlE3WlZqdmk2U2lHRUNCSG1oU0Z6d2tKLUgtX05XaEhNZ0xiRkRCMTVEc0M1SzlNTGZmRzB0dy1Jd2F1aFNTWEVhMFdoX0drTDZPUQ?oc=5",
+     "date": "2026-11-28"
+    },
+    {
+     "title": "Vega Ioane Has Hand Injury, Among Three Ravens Ruled Out vs. Texans",
+     "source": "Baltimore Ravens",
+     "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNdERFdjk4R0dodW5kMU1lQlZNdkdmU2tpZ3h5djdxOGFKZlFHRXFVTGpleUNJMm1rQ00tcy0zNHpwZnd5UzhsWmRwUDRUOFR6VWVnNUlIcUlNUXRRb2ExUnVJU2lYTHE2Uk5fbURocVNxVGZuWkFCc0R3Zm5qbFVyc3dYbnpVem52UnY1NUpMTldYdWNaZWlOaE90THZKdw?oc=5",
+     "date": "2026-11-27"
+    },
+    {
+     "title": "Ravens Final Injury Report Week 12: Vega Ioane Now Out vs Texans",
+     "source": "Yahoo Sports",
+     "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPZlRLemJCWHVqdjR1QXhYUlhpZzdFLUNwUUNUb01oeUxadE5FbG1mOU01V2RUTVQzTmZ1cTlSd3dQeEt1MzY3a18xUHJlTXYwUGNXeHpxanFEMm1LdzdVUlgyOF90MENaQjV6RHpwS2UtQlU1Z3lEa3g2eDNOYmhKc0Z0TGEyTEo3WF8xOA?oc=5",
+     "date": "2026-11-27"
+    },
+    {
+     "title": "Injury Report: Ravens @ Texans (Game Status/Friday)",
+     "source": "Russell Street Report",
+     "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQdjhjQWJmNE1MR3ppZ0JGRTFnMnZ3NDRpQ0ZpX19xX0NpcGl6WHhNZjJJcWNneWNQcTVIamt1QVJZaEt5TTJjT1kwbnR4LUQ3Y29vOUI3VlZJZVFrbDZtSzZuT2FDcmZmT1MyRjRPMDVKV0NDOTRrWkdaOWhYR1l2ZWlrRUx2QmY0QVVacWpYNGxWMFlSSDBYb1lQYnZZbjhzNkNRU1lMTQ?oc=5",
+     "date": "2026-11-27"
+    }
+   ],
+   "card": [
+    {
+     "kind": "out",
+     "name": "Jovaughn Gwyn",
+     "pos": "OL",
+     "status": "Injured Reserve",
+     "missed": 8,
+     "team_games": 11
+    },
+    {
+     "kind": "out",
+     "name": "Jaylinn Hawkins",
+     "pos": "S",
+     "status": "Out",
+     "missed": 5,
+     "team_games": 11
+    },
+    {
+     "kind": "out",
+     "name": "Olaivavega Ioane",
+     "pos": "G",
+     "status": "Out",
+     "missed": 0,
+     "team_games": 11
+    }
+   ]
+  },
+  "BUF": {
+   "name": "Buffalo Bills",
+   "items": [
+    {
+     "team": "BUF",
+     "tag": "KEY",
+     "text": "G O'Cyrus Torrence questionable (ankle) — Questionable on the Week 12 report; limited in practice",
+     "source": "NFL injury report",
+     "url": "https://www.nfl.com/injuries/",
+     "date": "2026-11-28"
+    },
+    {
+     "team": "BUF",
+     "tag": "KEY",
+     "text": "CB Christian Benford questionable (groin) — Questionable on the Week 12 report; limited in practice",
+     "source": "NFL injury report",
+     "url": "https://www.nfl.com/injuries/",
+     "date": "2026-11-28"
+    }
+   ],
+   "starters_on_report": [
+    {
+     "name": "Amani Hooker",
+     "pos": "S",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 7,
+     "date": "2026-11-28",
+     "pct": 0.94,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 11,
+     "qb1": false
+    },
+    {
+     "name": "Connor McGovern",
+     "pos": "C",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 14,
+     "date": "2026-11-28",
+     "pct": 0.99,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 11,
+     "qb1": false
+    },
+    {
+     "name": "Spencer Brown",
+     "pos": "T",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.92,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 11,
+     "qb1": false
+    },
+    {
+     "name": "Christian Benford",
+     "pos": "CB",
+     "status": "Questionable",
+     "injury": "Groin",
+     "note": "Questionable on the Week 12 report; limited in practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.86,
+     "missed_recent": 2,
+     "missed_last": 1,
+     "missed": 2,
+     "team_games": 11,
+     "qb1": false
+    },
+    {
+     "name": "O'Cyrus Torrence",
+     "pos": "G",
+     "status": "Questionable",
+     "injury": "Ankle",
+     "note": "Questionable on the Week 12 report; limited in practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 1.0,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 11,
+     "qb1": false
+    },
+    {
+     "name": "Dalton Kincaid",
+     "pos": "TE",
+     "status": "Questionable",
+     "injury": "Thumb",
+     "note": "Questionable on the Week 12 report; limited in practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.6,
+     "missed_recent": 1,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 11,
+     "qb1": false
+    },
+    {
+     "name": "Cole Bishop",
+     "pos": "S",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 7,
+     "date": "2026-11-28",
+     "pct": 0.96,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 11,
+     "qb1": false
+    }
+   ],
+   "headlines": [
+    {
+     "title": "Buffalo Bills injury report vs. Chiefs | Week 12 Thanksgiving",
+     "source": "Buffalo Bills",
+     "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOUU53Q0FMZi0yM3U1cDZETkE4ZDRrR0hQbWlPNWFwZHhQRTRIYklQVnNxR19paENYY2plU2h0ZWhodTZCSkRNOGZuQjJJY19GMm1QZURaQktuODJ5RlFfT19IYnBUWFlwWHh1MHhMNXNlR2J3TGN2VnU1UU8xeHJRUlJvLUtQbEdaQjJjOENuaUhzZmtpSlkw?oc=5",
+     "date": "2026-11-26"
+    },
+    {
+     "title": "Week 12 Injury Report | Chiefs vs Bills",
+     "source": "Kansas City Chiefs",
+     "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE5IanZaTDBUbG14REZJYUpkLTR6dk02QW55bDJ3QlF2a1JxR2Y1T09uV0ZkQlh5anliTnJzT1p0c1QybUZIN3dPdTRMelpXZ3lFOVNDZWhJdV9PNkw0cXVoTXFNTzBlYnc4dDM3aldjX2NjWk5CbjFMdEdR?oc=5",
+     "date": "2026-11-25"
+    },
+    {
+     "title": "Bills Week 12 injury report vs. Chiefs: Dalton Kincaid among 5 players listed as questionable for Thanksgiving showdown",
+     "source": "Yahoo Sports",
+     "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNQ0N0NUpDWl9Qd2hOeEN3T0NWVlN1UUp1RXAtM0UxVUt6ejRtdDhZeGRHcUJkRlhKWm5mcmgtUGdGV1F4RmFBNmVyODFseVc2MUNoVzlWMF9zbXN1WENhQXJ6QlJKS042VjlhbnVxLVc0NUY5MnByZHFYZTRLYWNseDZWVzg4NGM?oc=5",
+     "date": "2026-11-26"
+    },
+    {
+     "title": "Bills' Updated Injury Report (Chiefs Week): Greg Rousseau, Two More Starters Upgraded",
+     "source": "Sports Illustrated",
+     "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNTHVqb1BJdGgySEJ1TUtiZUIzUjRkR2paU3VVVDNwWVB0N2RLZDNoc0NCQy1pQlBwbU5oYkFiWGpHZUZDYnZQMDRtWjN1dDBwWXMyZXBCWU5nZUpwanpWS2o4U0FNTXlnU0VNR2NONTFLcDJpQUUzbjhhVGFvbnVucW9pRE8yTDdGc3ZxNnN1N2pmMXUxdGQtaEFrRW5kUVlDRHJ2UVZIRWZXMHRfeHc?oc=5",
+     "date": "2026-11-25"
+    }
+   ],
+   "card": [
+    {
+     "kind": "maybe",
+     "name": "Christian Benford",
+     "pos": "CB",
+     "status": "Questionable",
+     "missed": 2,
+     "team_games": 11
+    },
+    {
+     "kind": "maybe",
+     "name": "O'Cyrus Torrence",
+     "pos": "G",
+     "status": "Questionable",
+     "missed": 0,
+     "team_games": 11
+    }
+   ]
+  },
+  "CAR": {
+   "name": "Carolina Panthers",
+   "items": [
+    {
+     "team": "CAR",
+     "tag": "CLUSTER",
+     "text": "2 secondary starters out: Jaycee Horn (DB, Injured Reserve), Akayleb Evans (DB, Injured Reserve)",
+     "source": "NFL injury report",
+     "url": "https://www.nfl.com/injuries/",
+     "date": "2026-11-28"
+    },
+    {
+     "team": "CAR",
+     "tag": "RETURNING",
+     "text": "LB Bobby Okereke trending back — on the Week 12 report with no game status; did not practice",
+     "source": "NFL injury report",
+     "url": "https://www.nfl.com/injuries/",
+     "date": "2026-11-28"
+    }
+   ],
+   "starters_on_report": [
+    {
+     "name": "Bobby Okereke",
+     "pos": "LB",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; did not practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.89,
+     "missed_recent": 3,
+     "missed_last": 1,
+     "missed": 3,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Jaelan Phillips",
+     "pos": "LB",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; limited in practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.7,
+     "missed_recent": 1,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Tommy Tremble",
+     "pos": "TE",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; limited in practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.61,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Patrick Jones II",
+     "pos": "LB",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; did not practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.69,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Bryce Young",
+     "pos": "QB",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 7,
+     "date": "2026-11-28",
+     "pct": 0.96,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 10,
+     "qb1": true
+    },
+    {
+     "name": "Tetairoa McMillan",
+     "pos": "WR",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; limited in practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.82,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Taylor Moton",
+     "pos": "OL",
+     "status": "Injured Reserve",
+     "injury": "",
+     "note": "on injured reserve",
+     "detail": "",
+     "days_old": 77,
+     "date": "2026-11-28",
+     "pct": 0.7,
+     "missed_recent": 3,
+     "missed_last": 1,
+     "missed": 4,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Jaycee Horn",
+     "pos": "DB",
+     "status": "Injured Reserve",
+     "injury": "",
+     "note": "on injured reserve",
+     "detail": "",
+     "days_old": 56,
+     "date": "2026-11-28",
+     "pct": 0.87,
+     "missed_recent": 3,
+     "missed_last": 1,
+     "missed": 7,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Akayleb Evans",
+     "pos": "DB",
+     "status": "Injured Reserve",
+     "injury": "",
+     "note": "on injured reserve",
+     "detail": "",
+     "days_old": 28,
+     "date": "2026-11-28",
+     "pct": 0.73,
+     "missed_recent": 3,
+     "missed_last": 1,
+     "missed": 4,
+     "team_games": 10,
+     "qb1": false
+    }
+   ],
+   "headlines": [
+    {
+     "title": "Week 12 Friday Injury Report: Tetairoa McMillan back to work",
+     "source": "Carolina Panthers",
+     "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNT2xMU244Qkpua0dka282NENGZnNrOGJXUTRzckEtUmUzM0JMUzlZMDh1NWVUanJnUVpjNTR6N2xXSi13VUJ4UjVWcjNMS09QVEdKcUE4ekdfWFQ1NnJDVU83NEVaS1djdDA0elZMVHI0cTRLSGp5Q1FvZElOVzh1a3NUYV9odVdxaXl0SEt6U0lvc0owU2paU1Q3V1NkVkpCeFZkMXdBVVlFX0tUME9wTXJKdjNrd3FrMmNXLVowNThWaUhpQS1sQ083aw?oc=5",
+     "date": "2026-11-27"
+    },
+    {
+     "title": "Carolina Panthers Dealing With Injuries Ahead of Week 12",
+     "source": "Yahoo Sports",
+     "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNZmZFUC1Pb1d5MlhZdVlWOUtHaUJFbHg4NTdDTko1WUlabnZrakhsUmtEQW1SOXZxbWhPd3JBOHk4WllTTEVRVXhKTjU5UFRpQm1zRzEwNURoNUhvVmFLa2xRS2hBbW5obFU0eWVXRV9kY29sT01oaDd6Y01SZHpBU0kxVGlVTEVyZl9KTkFpUFN3LU5LQWRaQQ?oc=5",
+     "date": "2026-11-27"
+    },
+    {
+     "title": "Week 12 Thursday Injury Report: Five listed as not participating in projected practice",
+     "source": "Carolina Panthers",
+     "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPUXpDbUlnMUlobFp5NWUzMmwzY1ExVHVlaHNwbDhzb2M3Sm5NN3BUWGRiQ2U4Vl81M1BTVHU5S0RvRnlUU0NQQXdINGJMaDF0RXlSRDY2M1QwNHNGNFpXSUZfa0l3Y2N2VEs0WDlfczZ3c3lNS0tERzFzUm1GZEowSUxQR2ZsVDgzbUtfOFNld1ZiM2N1dVZkbVdNbkFnM2RyMXJGd1JKeElKSE1RdmZ5VkdSTWp1dw?oc=5",
+     "date": "2026-11-26"
+    },
+    {
+     "title": "Buccaneers Week 12 injury report: Winfield and Morrison listed as DNP",
+     "source": "Buccaneers Wire",
+     "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOSGhvcXFmN2FJcTU3UEFlSjdVNURadDB6d0NGSGZKV1ZrTzMzU09pZ0RVeUhuMmFqU21JYjg1RlZoNE8xQl8yMnhNM3YtbHAtRUhpRGlXSzd3NXpVYUN0cGdfeTFQeFFaU1ZiaTlUazRZT2FfXzlMODRmaV9Fa3FBeTN2LVdrZTlvUkMyWXhlWjRjMXZJNWI5UTJmaGhBMS1tV3k5eGpVeWNodTFEXzBMOEJ1cUNOXzlXNGRWQ1N0c2ZoRmlibVhzU1Vfd3ZWcTk2?oc=5",
+     "date": "2026-11-27"
+    }
+   ],
+   "card": [
+    {
+     "kind": "out",
+     "name": "Jaycee Horn",
+     "pos": "DB",
+     "status": "Injured Reserve",
+     "missed": 7,
+     "team_games": 10
+    },
+    {
+     "kind": "returning",
+     "name": "Bobby Okereke",
+     "pos": "LB",
+     "status": "Active",
+     "missed": 3,
+     "team_games": 10
+    }
+   ]
+  },
+  "CHI": {
+   "name": "Chicago Bears",
+   "items": [
+    {
+     "team": "CHI",
+     "tag": "RETURNING",
+     "text": "CB Tyrique Stevenson trending back — Questionable on the Week 12 report; limited in practice",
+     "source": "NFL injury report",
+     "url": "https://www.nfl.com/injuries/",
+     "date": "2026-11-28"
+    }
+   ],
+   "starters_on_report": [
+    {
+     "name": "Tyrique Stevenson",
+     "pos": "CB",
+     "status": "Questionable",
+     "injury": "Groin",
+     "note": "Questionable on the Week 12 report; limited in practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.7,
+     "missed_recent": 1,
+     "missed_last": 1,
+     "missed": 1,
+     "team_games": 11,
+     "qb1": false
+    },
+    {
+     "name": "Theo Benedet",
+     "pos": "T",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.78,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 11,
+     "qb1": false
+    },
+    {
+     "name": "Cole Kmet",
+     "pos": "TE",
+     "status": "Injured Reserve",
+     "injury": "",
+     "note": "on injured reserve",
+     "detail": "",
+     "days_old": 28,
+     "date": "2026-11-28",
+     "pct": 0.61,
+     "missed_recent": 3,
+     "missed_last": 1,
+     "missed": 4,
+     "team_games": 11,
+     "qb1": false
+    },
+    {
+     "name": "Braxton Jones",
+     "pos": "OL",
+     "status": "Injured Reserve",
+     "injury": "",
+     "note": "on injured reserve",
+     "detail": "",
+     "days_old": 56,
+     "date": "2026-11-28",
+     "pct": 0.65,
+     "missed_recent": 3,
+     "missed_last": 1,
+     "missed": 8,
+     "team_games": 11,
+     "qb1": false
+    }
+   ],
+   "headlines": [
+    {
+     "title": "Colston Loveland week-to-week with knee injury",
+     "source": "Chicago Bears",
+     "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQWGVOd3hvRThxTjB2d2JsOVBMdDlYMmw4UnloVUJuOFdOSGJhRFJyYk5PcjNmckV3M0cxeHNMa1FGUVg5enNhT2dJY3E0OW0tRzV1QnNBdGN1SDR5RmFDZ21NT3gzRHNvT2U5dVlhVVczdkJ1UTFZRlFTcVhiekMwMTFDLWY3amc?oc=5",
+     "date": "2026-11-27"
+    },
+    {
+     "title": "Chicago Bears Injury Updates on Colston Loveland and Dayo Odeyingbo",
+     "source": "Yahoo Sports",
+     "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPdDVyZ1F5bW5ESHg3NDhYRXl5NHRhejBSSThtYm9ndndGWVZSU09ZTmJRVWtmVV9jMmNWN1IwaTJCenZsSDBNS1JDNXg4cXo3LXZydklzLTMtdVpZc2dqdE1yMVFMcGZmTDZfV1BzMk5EOGtQOHRpN3ctUGh5ai1qdlBwc1NWbWxnd21mbW10cTk1N28?oc=5",
+     "date": "2026-11-27"
+    },
+    {
+     "title": "Chicago Bears Announce Colston Loveland Injury Update That Offers More Optimism",
+     "source": "Sports Illustrated",
+     "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNOEkyQ0pOZEppbFNlUVVzMlhTYXQycC1wNDNHTlVZR0pJeDdxZFFWaHRLUk15aHVHYjVKZVhWUlYxT2VvTmtxeGZuTURBQzFZRlhrQWp1SkNzcmpHUS1NMF9Kd2VMYmpuWk9USFk3WEtUelZmcmdOU2piSEFrRk9ucGJCejNmc0lLb01nLUxPc1ZlX1dDdlhKV0g0cmU0Q0I1VjJn?oc=5",
+     "date": "2026-11-27"
+    },
+    {
+     "title": "Chicago Bears provide update on Colston Loveland's injury",
+     "source": "247Sports",
+     "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQTEljYXhzR2ZQOFhLTzlJU1p1VDRVUGxPSy1HOEFXSlVSclFQVGpIcXgyOTdnSGhxeE9OVVl0WGhpQnNGS2UyeFY2YUNUckJkbmkzdTZYVmRITGQyZzlFTnNXakRsOHNOUS1weGpfYUJqM0JBMVM4QkU2alFVLWh2YnF5eUdwNzM5ZVQyU2dJVERGRGo4YVpDV3BLZ3lUYkJFWDg1VzE1aW4wcU9kQmlZNmhQNHU3QQ?oc=5",
+     "date": "2026-11-27"
+    }
+   ],
+   "card": [
+    {
+     "kind": "returning",
+     "name": "Tyrique Stevenson",
+     "pos": "CB",
+     "status": "Questionable",
+     "missed": 1,
+     "team_games": 11
+    }
+   ]
+  },
+  "CIN": {
+   "name": "Cincinnati Bengals",
+   "items": [
+    {
+     "team": "CIN",
+     "tag": "KEY",
+     "text": "G Dalton Risner out (knee) — Out on the Week 12 report; did not practice",
+     "source": "NFL injury report",
+     "url": "https://www.nfl.com/injuries/",
+     "date": "2026-11-28"
+    }
+   ],
+   "starters_on_report": [
+    {
+     "name": "Jonathan Allen",
+     "pos": "DT",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; limited in practice",
+     "detail": "",
+     "days_old": 35,
+     "date": "2026-11-28",
+     "pct": 0.61,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Jalen Davis",
+     "pos": "CB",
+     "status": "Injured Reserve",
+     "injury": "Hamstring",
+     "note": "on injured reserve (Doubtful on the Week 12 report; full practice)",
+     "detail": "",
+     "days_old": 14,
+     "date": "2026-11-28",
+     "pct": 0.61,
+     "missed_recent": 3,
+     "missed_last": 1,
+     "missed": 7,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Dexter Lawrence",
+     "pos": "DT",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; did not practice",
+     "detail": "",
+     "days_old": 35,
+     "date": "2026-11-28",
+     "pct": 0.68,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Dalton Risner",
+     "pos": "G",
+     "status": "Out",
+     "injury": "Knee",
+     "note": "Out on the Week 12 report; did not practice",
+     "detail": "",
+     "days_old": 7,
+     "date": "2026-11-28",
+     "pct": 0.94,
+     "missed_recent": 1,
+     "missed_last": 1,
+     "missed": 1,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Tee Higgins",
+     "pos": "WR",
+     "status": "Questionable",
+     "injury": "Hamstring",
+     "note": "Questionable on the Week 12 report; did not practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.8,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Bryan Cook",
+     "pos": "S",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.91,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 10,
+     "qb1": false
+    }
+   ],
+   "headlines": [
+    {
+     "title": "Saints Friday Injury Report: 2026 Week 12 vs. Cincinnati Bengals",
+     "source": "New Orleans Saints",
+     "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPcUxRa1F2YU9OTGljdXlfb2tiRk5ZSTF4MW9wTlg5b1Z0UTI0V0pyb2dDYVFyc1ZkOUJJa2h1SEFnVXMxUWxNazlsQjRRVlFtQnQ1U2huRGF4QzY4SVFLTHhYRThVdl9vNkV3RFpqQ01iOGdBdWNWMzRXc0o1b2pjNWphdkJON2g4bnRDaG85RGxvQ1BDTTN0QlVPQ0RHalBfWUdkRW9reXNzb2tCNlFVaXVkcDE5VWc?oc=5",
+     "date": "2026-11-27"
+    },
+    {
+     "title": "Zac Taylor offers needed context regarding Tee Higgins popping up on Bengals' final injury report vs. Saints",
+     "source": "A to Z Sports",
+     "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQb0pURDVmc2tRX1hWd2h1RVFnRm5SY1FGRjBzc0dTWW44STg4OXUxaEVMRUxxRExQUU00TTVuLWJBNmhLRHFDWG5LV0I5SUJOM0JsQllNa2ZWM0F6OGxOaXBCQURaMUZUeEdrT2lsWksxRktYNXpoOXNCWU1zWnVROTNuakNiSUF5eHJRbWpfU1YzZnlvWU14MUF6WHVncEk0ZWQwSTNReWV0WVJadUs4bjh5U1duOGRjdW0tYTE0WFB0cG42anBjSXR2NzRRVFZTOEZRRnBsT253UWRQZ1E?oc=5",
+     "date": "2026-11-27"
+    },
+    {
+     "title": "Zac Taylor Drops Dalton Risner's Game Status, Tee Higgins Suffers New Injury Entering Week 12 Saints Matchup",
+     "source": "Sports Illustrated",
+     "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQYVdHX3F3bUNSVXdsOG1pNi1jc3V3M2lsM0NKeVZVUlVTQ2I2VjNLUllybS1JMVdfZkQ1UUJfNUxTOVNtcXNTOURqZG5BQ2NfN19QMmd2eEtnbElrUURBSzZNU1hISlk4b0ZUT1pLUDktamhzSkdaVzNKTTRfdGlwNUJEWVhOcWtIMzU5VDVkSUhOTm9fbWc5VEZBS1FNYTZiRVlCSWswUVFpQWRxSXMwbnl4ck5oVzQ2ZUdMdnlzYw?oc=5",
+     "date": "2026-11-27"
+    },
+    {
+     "title": "Tee Higgins misses Bengals’ Friday practice; Dalton Risner could play vs. Browns",
+     "source": "Cincy Jungle",
+     "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNNm9semxtQWtxNTJPb1FEaFBFejI1Y09OSzE1NGNrdFBpaHFqeTI4UUx4WkZ6SVlGOGdydGVub0JLa3EtcHNjM2hneVFwSElpeUlfZ1VESFJFZlB2LW92SHpvWmNaRU91ZUNyRmF2X3NBNlZ2ZEFZajl6V1lraWllNkdtNXBsMEdpdURoNjM1ODQwS0V6QU9BTHVGalBLSEM5TElNeWxtQkF0eHRLdHdFRVR4dzc?oc=5",
+     "date": "2026-11-27"
+    }
+   ],
+   "card": [
+    {
+     "kind": "out",
+     "name": "Dalton Risner",
+     "pos": "G",
+     "status": "Out",
+     "missed": 1,
+     "team_games": 10
+    },
+    {
+     "kind": "maybe",
+     "name": "Tee Higgins",
+     "pos": "WR",
+     "status": "Questionable",
+     "missed": 0,
+     "team_games": 10
+    }
+   ]
+  },
+  "CLE": {
+   "name": "Cleveland Browns",
+   "items": [
+    {
+     "team": "CLE",
+     "tag": "KEY",
+     "text": "G Austin Barber questionable (knee) — Questionable on the Week 12 report; limited in practice",
+     "source": "NFL injury report",
+     "url": "https://www.nfl.com/injuries/",
+     "date": "2026-11-28"
+    },
+    {
+     "team": "CLE",
+     "tag": "KEY",
+     "text": "WR Denzel Boston questionable (quadricep) — Questionable on the Week 12 report; did not practice",
+     "source": "NFL injury report",
+     "url": "https://www.nfl.com/injuries/",
+     "date": "2026-11-28"
+    },
+    {
+     "team": "CLE",
+     "tag": "RETURNING",
+     "text": "S Ronnie Hickman Jr. trending back — on the Week 12 report with no game status; full practice",
+     "source": "NFL injury report",
+     "url": "https://www.nfl.com/injuries/",
+     "date": "2026-11-28"
+    }
+   ],
+   "starters_on_report": [
+    {
+     "name": "Elgton Jenkins",
+     "pos": "C",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 1.0,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Quincy Williams",
+     "pos": "LB",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.96,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Isaiah McGuire",
+     "pos": "DE",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; limited in practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.64,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Ronnie Hickman Jr.",
+     "pos": "S",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.99,
+     "missed_recent": 1,
+     "missed_last": 1,
+     "missed": 1,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Harold Fannin Jr.",
+     "pos": "TE",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.86,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Denzel Boston",
+     "pos": "WR",
+     "status": "Questionable",
+     "injury": "Quadricep",
+     "note": "Questionable on the Week 12 report; did not practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.9,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Austin Barber",
+     "pos": "G",
+     "status": "Questionable",
+     "injury": "Knee",
+     "note": "Questionable on the Week 12 report; limited in practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 1.0,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 10,
+     "qb1": false
+    }
+   ],
+   "headlines": [
+    {
+     "title": "Raiders-Browns Week 12 Injury Report: Brock Bowers questionable, 3 defensive tackles ruled out",
+     "source": "Raiders.com",
+     "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1VM0dIakZHWHc3ZTdCeUtQYTh0T2FMb0d3WXFIRFlqMWpLTXY0VWFTZDFLNk9mdzhWMXhNdzdkN0JYcW5XTU5VTmp4YlVqWUtKVDRtOFkyOTBDbHZrNU5HdGF5UkktNVlzMUh0SktQMHNwNGs?oc=5",
+     "date": "2026-11-28"
+    },
+    {
+     "title": "Denzel Boston listed as questionable for Week 12 against the Raiders | Injury Report",
+     "source": "Cleveland Browns",
+     "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNZmlfd2dVanJwbU1NbWtPd3lGckZwb0pmSFpnNHZBRDA3Vm16c3Q2RWwxVmJEaVhrNmZ5b2lJNUF1YXM4czNsMms1WjVubzQtOThGRVo4cVJld2ItaDhSamdFT2JPbGNXMWQxb3ZDWGw3cVIyY3BmM2IweHB5dERTS1pwOXBWRks5U3J0S2MxRWVzV25JOGVESDI3MHZqZVdrcDM5dno2UEpJX1NZZVJLX3h6RUc1aFIxNHBR?oc=5",
+     "date": "2026-11-27"
+    },
+    {
+     "title": "Denzel Boston questionable for the Raiders game after sitting out 4th straight day with his quad injury; other Browns injuries",
+     "source": "Cleveland.com",
+     "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxNLVY3YWNyZ0dSTG5aUWNtWnZ2U1FsdkVMTk0tM2RLSnFHX1hfUk5QeGwxc1JGWEgxRC1hcDc3czZqNmozU1Z5RVM4dTg5OENNQjhQaHZlUUdzbHVwVGhmVnFwd1R2WlgtUWsyUm5nR19QOGRHU3RqQXp2WXVRRzhYWGoza3ZjbjFtWHEtSlpWcENtRTJ4Q3RsSU4zNUw3VVh6NTNBVG9FMExJaVlwcnZrc3JOT2pKczZ5M1U0aThibVVIMDI4dmM2VWVYX0ZZaVk0dHVvbno1dTF1WFpDTXc?oc=5",
+     "date": "2026-11-27"
+    },
+    {
+     "title": "Browns final injury report: Denzel Boston’s status in doubt, Isaiah McGuire cleared",
+     "source": "Dawg Pound Daily",
+     "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQM3N2MGRCM3pQQ1BYaTR3a0o0RFJ0UjVNUFFoSHpMRmgwa3k0T3dSYmx6ZnBtd01RTmRvd0F0WXNKckZkc3ZUVWlIbTJELUxQLVh4bk9HSGtOaVlqWlBuYkxDMkhJeGlTQ1hzVkx1LVdMdVVJbTJMamxLWGN4ZW9UcjJnSVA4WlVZNmk0ajg0Qi1CVXBoSEd6U2pNUEpyYjYxV3FhbmM4dldjVllHSExtU3FyTjFNSnRadjhXVVN3?oc=5",
+     "date": "2026-11-27"
+    }
+   ],
+   "card": [
+    {
+     "kind": "maybe",
+     "name": "Denzel Boston",
+     "pos": "WR",
+     "status": "Questionable",
+     "missed": 0,
+     "team_games": 10
+    },
+    {
+     "kind": "maybe",
+     "name": "Austin Barber",
+     "pos": "G",
+     "status": "Questionable",
+     "missed": 0,
+     "team_games": 10
+    },
+    {
+     "kind": "returning",
+     "name": "Ronnie Hickman Jr.",
+     "pos": "S",
+     "status": "Active",
+     "missed": 1,
+     "team_games": 10
+    }
+   ]
+  },
+  "DAL": {
+   "name": "Dallas Cowboys",
+   "items": [
+    {
+     "team": "DAL",
+     "tag": "KEY",
+     "text": "G Tyler Booker out (ankle) — Out on the Week 12 report; did not practice",
+     "source": "NFL injury report",
+     "url": "https://www.nfl.com/injuries/",
+     "date": "2026-11-28"
+    },
+    {
+     "team": "DAL",
+     "tag": "KEY",
+     "text": "DB DaRon Bland injured reserve — on injured reserve",
+     "source": "NFL injury report",
+     "url": "https://www.nfl.com/injuries/",
+     "date": "2026-11-28"
+    }
+   ],
+   "starters_on_report": [
+    {
+     "name": "Dak Prescott",
+     "pos": "QB",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 1.0,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 12,
+     "qb1": true
+    },
+    {
+     "name": "Jalen Thompson",
+     "pos": "S",
+     "status": "Questionable",
+     "injury": "Hamstring",
+     "note": "Questionable on the Week 12 report; full practice",
+     "detail": "",
+     "days_old": 7,
+     "date": "2026-11-28",
+     "pct": 0.81,
+     "missed_recent": 2,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 12,
+     "qb1": false
+    },
+    {
+     "name": "Cobie Durant",
+     "pos": "CB",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.72,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 12,
+     "qb1": false
+    },
+    {
+     "name": "Dee Winters",
+     "pos": "LB",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.64,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 12,
+     "qb1": false
+    },
+    {
+     "name": "Joey Porter Jr.",
+     "pos": "CB",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 7,
+     "date": "2026-11-28",
+     "pct": 0.67,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 12,
+     "qb1": false
+    },
+    {
+     "name": "Tyler Booker",
+     "pos": "G",
+     "status": "Out",
+     "injury": "Ankle",
+     "note": "Out on the Week 12 report; did not practice",
+     "detail": "",
+     "days_old": 7,
+     "date": "2026-11-28",
+     "pct": 0.94,
+     "missed_recent": 2,
+     "missed_last": 1,
+     "missed": 2,
+     "team_games": 12,
+     "qb1": false
+    },
+    {
+     "name": "Donovan Ezeiruaku",
+     "pos": "LB",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 7,
+     "date": "2026-11-28",
+     "pct": 0.63,
+     "missed_recent": 1,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 12,
+     "qb1": false
+    },
+    {
+     "name": "DaRon Bland",
+     "pos": "DB",
+     "status": "Injured Reserve",
+     "injury": "",
+     "note": "on injured reserve",
+     "detail": "",
+     "days_old": 7,
+     "date": "2026-11-28",
+     "pct": 0.89,
+     "missed_recent": 2,
+     "missed_last": 1,
+     "missed": 2,
+     "team_games": 12,
+     "qb1": false
+    }
+   ],
+   "headlines": [
+    {
+     "title": "Eagles at Cowboys Injury Report",
+     "source": "Philadelphia Eagles",
+     "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQWmt1MEE0dS1JTDZDR1prRWhGd1AxLS11bGdLZ25PNGlIQ0FBYXl2ODljUjlVUGw0VjJLZ2t1M3hpUUNkclBVNmJBT1QtQUlTVGwzenllWmxLN3FoNHpwYXBhdm5NTzBpdl9rSnFqT1RpSTd1dFRSTVVEUlpoZUZtXzBnOFpLYUt3UG16MGdWNDlSSzVQWU43WFJNWUxEMjY3dTdn?oc=5",
+     "date": "2026-11-25"
+    },
+    {
+     "title": "Cowboys Week 12 injury report vs. Eagles: Jake Ferguson, Tyler Booker among 4 players ruled out for Thanksgiving clash",
+     "source": "Yahoo Sports",
+     "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPZU5WbEpSeG5tdDlOcWwtQm00WXhVemNmZlJuNGRBSHktanVROG5SLUpHVFBLNXhWN3A5bUpoSUhINFBmVnQ3eDZxdDRWcXota25lWDUyVFlQTVpQWTZVWmdIRkJjdU9razNCcXFIMVVteXNlNDJMU3ZoZ01DODdGRlh6clpfdGI3MFE?oc=5",
+     "date": "2026-11-26"
+    },
+    {
+     "title": "Eagles-Cowboys Final Injury Report: Quinyon Mitchell will play in Dallas",
+     "source": "Bleeding Green Nation",
+     "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxNTWR3SmdaSU1UXzVSTEFVREpaRUJERFhYQ19wZ3d5bGlHZmZKWTZ5VldZX1AwMlFTR0d2QzFZVGRyX2J2YUNXZHJLLTN0Wi1YMnJNcm91Q05aRk1UNnh3RTZYajhialE5Q2RYUUVpcjFzdVV3aDZVQlFoSnU4eGFCUGM1cW1uZWxETHZ3V1djb0tZaE44YUlVZVpyZG5DQ2g0V1pJM3BHTWJXTW02TVVFMEh1Ul9wMGFQaWtuUnRIYnVoT3ZINkZCWVpjd3FTa3N3emFla3R6NU5fU1U?oc=5",
+     "date": "2026-11-25"
+    },
+    {
+     "title": "Week 12 Injury Report: Cowboys Down 2 Offensive Starters on Thanksgiving",
+     "source": "Sports Illustrated",
+     "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPOXdram5XMFNfQkNIZ25feEthVmIzZ2V2OVpaNFd4em53RUZXOHJCb1RFNjdUSG5UbjNPREJEUTJXREVPbHhJbElxblhXd05FUEo4TFM4VlBFdV91U3Z5YWg4TTB0MDk3UkVwc3oyOHFEbGVDQkpNNG96VXNXc05ma3FPN1llWUw0emlWTHFweEdpUFQ2cTQ4bTBtVG8tLXI1T0k4aG05aXZfLU0?oc=5",
+     "date": "2026-11-25"
+    }
+   ],
+   "card": [
+    {
+     "kind": "out",
+     "name": "Tyler Booker",
+     "pos": "G",
+     "status": "Out",
+     "missed": 2,
+     "team_games": 12
+    },
+    {
+     "kind": "out",
+     "name": "DaRon Bland",
+     "pos": "DB",
+     "status": "Injured Reserve",
+     "missed": 2,
+     "team_games": 12
+    },
+    {
+     "kind": "maybe",
+     "name": "Jalen Thompson",
+     "pos": "S",
+     "status": "Questionable",
+     "missed": 0,
+     "team_games": 12
+    }
+   ]
+  },
+  "DEN": {
+   "name": "Denver Broncos",
+   "items": [
+    {
+     "team": "DEN",
+     "tag": "RETURNING",
+     "text": "S Brandon Jones trending back — on the Week 12 report with no game status; full practice",
+     "source": "NFL injury report",
+     "url": "https://www.nfl.com/injuries/",
+     "date": "2026-11-28"
+    }
+   ],
+   "starters_on_report": [
+    {
+     "name": "Taylor Rapp",
+     "pos": "S",
+     "status": "Out",
+     "injury": "Quadricep",
+     "note": "Out on the Week 12 report; did not practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.67,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Brandon Jones",
+     "pos": "S",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.91,
+     "missed_recent": 2,
+     "missed_last": 1,
+     "missed": 2,
+     "team_games": 10,
+     "qb1": false
+    }
+   ],
+   "headlines": [
+    {
+     "title": "Week 12 Injury Report (Broncos)",
+     "source": "Steelers.com",
+     "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5LRFB3MmNRd3JUdWJtSXRJMThTdkRVYUJ5Zl94cjZGb19ERUpiYUgyRHA4cDlVREJTZm8wa3FLdXRCWUo0cThyTG50QVAxSlR3Mmk3QUVZWVVFelhhaV9SakJ0SktnYzE3VG1TSVBkWUQwWEE?oc=5",
+     "date": "2026-11-26"
+    },
+    {
+     "title": "Broncos vs. Steelers injury report for Week 12",
+     "source": "Mile High Report",
+     "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQY3JqanBFOGRMdjVRZ1hzWklPU1pnT1JsbkxUdzdMdjdjWFZQelFmeTBON1JYNkVUYTBSMjM0M2p1dW9ZOFhIUGZiMllkRU1zWkpzMzRVLUIyNndxUFQwdVZ3cGNBcGtBVFhRQ0VWd0RfbDZyZ05yN01wMThfQWFMaTF3VlQtVF9nRWZXZ284b3QyMHB3bTA4UWh2aVNGamUtVnI1ODZn?oc=5",
+     "date": "2026-11-26"
+    },
+    {
+     "title": "Steelers vs Denver Broncos Gameday: Injury Updates, Depth Charts, TV Info, Betting Lines, More",
+     "source": "Steelers Now",
+     "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQT0NkaEFraVBBcFZFZkpuWkpYcVBhR0JVTUtTM1h4NHpkcWlLWUVDV2FzVm1UM3U4SXJQLW1rTW1tSHVZaGpXUm1WbDJJakItd3FwTTZQblcybkdNcGZpX011SUVwcF85a1Z3bGEya1hvN1dDTHZXaGZ6d05JMzc3QmdGMnVxZENnd0pfcFQtVVRBTE5ubDZaMU51TWhtS3BKdGR5dWhOcVowVkxEUWIxNXROal8?oc=5",
+     "date": "2026-11-27"
+    },
+    {
+     "title": "Broncos’ Ja’Quan McMillian ‘healthy’ after injury scare, Alex Singleton uses Aaron Rodgers celebration",
+     "source": "The Denver Post",
+     "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE1SNFZ6R3lhNExUai1TdFFFWk41Rjk1eTEyd3c2MUlpMHFTYXQwR3ZBNmJENV9iWGwyMTItV3Y2ZkFRU0h6NWZZdjBRT010a2ZnMUwtbWs3U0kyVkNHMXhCSzNBcllPMkRBTkhmYXU3OHhUQmpNWGdNZEJR?oc=5",
+     "date": "2026-11-28"
+    }
+   ],
+   "card": [
+    {
+     "kind": "returning",
+     "name": "Brandon Jones",
+     "pos": "S",
+     "status": "Active",
+     "missed": 2,
+     "team_games": 10
+    }
+   ]
+  },
+  "DET": {
+   "name": "Detroit Lions",
+   "items": [
+    {
+     "team": "DET",
+     "tag": "CLUSTER",
+     "text": "2 OL starters out: Ben Bartch (OL, Injured Reserve), Cade Mays (OL, Injured Reserve)",
+     "source": "NFL injury report",
+     "url": "https://www.nfl.com/injuries/",
+     "date": "2026-11-28"
+    },
+    {
+     "team": "DET",
+     "tag": "CLUSTER",
+     "text": "2 front seven starters out: Jack Campbell (LB, Injured Reserve), Aidan Hutchinson (DL, Injured Reserve)",
+     "source": "NFL injury report",
+     "url": "https://www.nfl.com/injuries/",
+     "date": "2026-11-28"
+    },
+    {
+     "team": "DET",
+     "tag": "KEY",
+     "text": "S Chuck Clark questionable (hamstring) — Questionable on the Week 12 report; limited in practice",
+     "source": "NFL injury report",
+     "url": "https://www.nfl.com/injuries/",
+     "date": "2026-11-28"
+    }
+   ],
+   "starters_on_report": [
+    {
+     "name": "Chuck Clark",
+     "pos": "S",
+     "status": "Questionable",
+     "injury": "Hamstring",
+     "note": "Questionable on the Week 12 report; limited in practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.91,
+     "missed_recent": 1,
+     "missed_last": 1,
+     "missed": 1,
+     "team_games": 11,
+     "qb1": false
+    },
+    {
+     "name": "D.J. Reed",
+     "pos": "CB",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.87,
+     "missed_recent": 2,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 11,
+     "qb1": false
+    },
+    {
+     "name": "Sam LaPorta",
+     "pos": "TE",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.89,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 11,
+     "qb1": false
+    },
+    {
+     "name": "Avonte Maddox",
+     "pos": "DB",
+     "status": "Injured Reserve",
+     "injury": "",
+     "note": "on injured reserve",
+     "detail": "",
+     "days_old": 63,
+     "date": "2026-11-28",
+     "pct": 0.65,
+     "missed_recent": 3,
+     "missed_last": 1,
+     "missed": 9,
+     "team_games": 11,
+     "qb1": false
+    },
+    {
+     "name": "Ben Bartch",
+     "pos": "OL",
+     "status": "Injured Reserve",
+     "injury": "",
+     "note": "on injured reserve",
+     "detail": "",
+     "days_old": 35,
+     "date": "2026-11-28",
+     "pct": 0.93,
+     "missed_recent": 3,
+     "missed_last": 1,
+     "missed": 9,
+     "team_games": 11,
+     "qb1": false
+    },
+    {
+     "name": "Aidan Hutchinson",
+     "pos": "DL",
+     "status": "Injured Reserve",
+     "injury": "",
+     "note": "on injured reserve",
+     "detail": "",
+     "days_old": 7,
+     "date": "2026-11-28",
+     "pct": 0.81,
+     "missed_recent": 2,
+     "missed_last": 1,
+     "missed": 2,
+     "team_games": 11,
+     "qb1": false
+    },
+    {
+     "name": "Cade Mays",
+     "pos": "OL",
+     "status": "Injured Reserve",
+     "injury": "",
+     "note": "on injured reserve",
+     "detail": "",
+     "days_old": 77,
+     "date": "2026-11-28",
+     "pct": 0.66,
+     "missed_recent": 3,
+     "missed_last": 1,
+     "missed": 4,
+     "team_games": 11,
+     "qb1": false
+    },
+    {
+     "name": "Jack Campbell",
+     "pos": "LB",
+     "status": "Injured Reserve",
+     "injury": "",
+     "note": "on injured reserve",
+     "detail": "",
+     "days_old": 21,
+     "date": "2026-11-28",
+     "pct": 0.97,
+     "missed_recent": 3,
+     "missed_last": 1,
+     "missed": 4,
+     "team_games": 11,
+     "qb1": false
+    }
+   ],
+   "headlines": [
+    {
+     "title": "Lions Thanksgiving Snap Counts Reveal Drastic Injury Changes",
+     "source": "Sports Illustrated",
+     "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOUWtGSFR2UHktTDFveGpQV1RhU1hPajVNcU51WFNHdnc0Ujd1S3lJSV8yMjNPdkFsN3NyX1pDN2tDdUliY3c2OEc3M29CNkFhUnpMYV9CMGM2MFczdnItcmNVRWVpSGM3WTVocDA5dk50VDMzeEpBR3RfWm1JcHlWZ0R2VXNxbE10bXROZjM4dzFsQncyRUJUbGxn?oc=5",
+     "date": "2026-11-27"
+    },
+    {
+     "title": "Detroit Lions injury report: 5 players ruled out for Thanksgiving Day matchup vs. Bears",
+     "source": "ClickOnDetroit | WDIV Local 4",
+     "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPR25wT2w1Mi1vdWpPbDFldmFTcWRTekxGZnZEeFFUWlNFc093REF6SXdyMnRKSFVCS3Zwc1JaekNEa3ZZUWJnblFwVlZSc3F6djRucjdkSy1GNGpuYWpSVGdZalZOUGgyV2gwdHhGWmh0RkUzWVd6RDhZdkVqOGZMVHQxZk13eFVEYnlMNldiV2VCeXc3b24xc044UGxXZlFNZlBIeDZSMklkc014ZlpMdDc0Z3NIN0FzSU9UREFkX3E1clNkbVdHdk9zOFp5cTct?oc=5",
+     "date": "2026-11-26"
+    },
+    {
+     "title": "Malcolm Rodriguez injury update: Latest news on Lions LB’s status in Week 12 game",
+     "source": "Yahoo Sports",
+     "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPV0dIdi1iVmtKYTl1QnRYeGl3ektOazZhd2tGVndtMzJXZDRZTUJHSVlKNk9zdFZuSEtLcHJ1MEN3Y3FHX1VFbDI2VHl3THplVEZ2em05T2RCdDJpNGlBbEEtelJBWXlzSm5kcmhZa3dibjNSeXZ6UGhRZXlWZFdLeDhMNFJhbHQ2bFBFUlVBZTRXRlE?oc=5",
+     "date": "2026-11-26"
+    },
+    {
+     "title": "D.J. Reed off injury report, 2 defensive starters questionable vs. Bears",
+     "source": "Pride Of Detroit",
+     "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNbmdVaHFJaFFrSnF2TE1zeDVxN0R3d0RqRWU1eWg3MVVNRkhBR1piTzNrNTFfdmF3T0VJRVY4OUJNX0Q3RFVENDdqNGJidWxfcEZsaFlLMlpVdnZnOFFvd1lZMUFEekFySDlLbjJ1RFFBclVHY2ZXTHhhR19vSFFjeURldzRodVQ4WnQ3aHUxbHh2bXN0T2xqVUhGWm9rd1dBTDhrOFZGU0NpMDhNRFlxOFI4X3hxT1Fhd0FLNXZQYmM1dnR6UUV4Y0dR?oc=5",
+     "date": "2026-11-25"
+    }
+   ],
+   "card": [
+    {
+     "kind": "out",
+     "name": "Ben Bartch",
+     "pos": "OL",
+     "status": "Injured Reserve",
+     "missed": 9,
+     "team_games": 11
+    },
+    {
+     "kind": "out",
+     "name": "Jack Campbell",
+     "pos": "LB",
+     "status": "Injured Reserve",
+     "missed": 4,
+     "team_games": 11
+    },
+    {
+     "kind": "out",
+     "name": "Aidan Hutchinson",
+     "pos": "DL",
+     "status": "Injured Reserve",
+     "missed": 2,
+     "team_games": 11
+    }
+   ]
+  },
+  "GB": {
+   "name": "Green Bay Packers",
+   "items": [
+    {
+     "team": "GB",
+     "tag": "KEY",
+     "text": "G Travis Glover questionable (shoulder) — Questionable on the Week 12 report; limited in practice",
+     "source": "NFL injury report",
+     "url": "https://www.nfl.com/injuries/",
+     "date": "2026-11-28"
+    },
+    {
+     "team": "GB",
+     "tag": "KEY",
+     "text": "LB Zaire Franklin questionable (shin) — Questionable on the Week 12 report; limited in practice",
+     "source": "NFL injury report",
+     "url": "https://www.nfl.com/injuries/",
+     "date": "2026-11-28"
+    }
+   ],
+   "starters_on_report": [
+    {
+     "name": "Zaire Franklin",
+     "pos": "LB",
+     "status": "Questionable",
+     "injury": "Shin",
+     "note": "Questionable on the Week 12 report; limited in practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.99,
+     "missed_recent": 3,
+     "missed_last": 1,
+     "missed": 5,
+     "team_games": 11,
+     "qb1": false
+    },
+    {
+     "name": "Aaron Banks",
+     "pos": "G",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.64,
+     "missed_recent": 1,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 11,
+     "qb1": false
+    },
+    {
+     "name": "Isaiah McDuffie",
+     "pos": "LB",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.66,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 11,
+     "qb1": false
+    },
+    {
+     "name": "Sean Rhyan",
+     "pos": "C",
+     "status": "Questionable",
+     "injury": "Ankle",
+     "note": "Questionable on the Week 12 report; limited in practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.88,
+     "missed_recent": 2,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 11,
+     "qb1": false
+    },
+    {
+     "name": "Travis Glover",
+     "pos": "G",
+     "status": "Questionable",
+     "injury": "Shoulder",
+     "note": "Questionable on the Week 12 report; limited in practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 1.0,
+     "missed_recent": 2,
+     "missed_last": 1,
+     "missed": 1,
+     "team_games": 11,
+     "qb1": false
+    },
+    {
+     "name": "Brandon Cisse",
+     "pos": "CB",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.84,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 11,
+     "qb1": false
+    },
+    {
+     "name": "Jacob Monk",
+     "pos": "OL",
+     "status": "Injured Reserve",
+     "injury": "",
+     "note": "on injured reserve",
+     "detail": "",
+     "days_old": 28,
+     "date": "2026-11-28",
+     "pct": 0.74,
+     "missed_recent": 3,
+     "missed_last": 1,
+     "missed": 4,
+     "team_games": 11,
+     "qb1": false
+    },
+    {
+     "name": "Edgerrin Cooper",
+     "pos": "LB",
+     "status": "Injured Reserve",
+     "injury": "",
+     "note": "on injured reserve",
+     "detail": "",
+     "days_old": 49,
+     "date": "2026-11-28",
+     "pct": 0.82,
+     "missed_recent": 3,
+     "missed_last": 1,
+     "missed": 7,
+     "team_games": 11,
+     "qb1": false
+    }
+   ],
+   "headlines": [
+    {
+     "title": "Packers list eight questionable vs. Rams | Week 12 Injury Report",
+     "source": "Green Bay Packers – packers.com",
+     "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPakc2MmRxb3RFcjhUdnljbXFuRGZCb0V6elJtZ3l1b0YzY2JCOEVUTHg3UzJXcDJqRVFEa0hWYkZJbFZ5RTFnRmNJbG11d2x3dEJxWmxxbXhiS1lkcXpUUWlMOHJSZzM1ME9XY3dhV3RtRzRGTjJMenZNdUMxQ2ktNnpObTBuTEtQYWE5bzZFRGlpbVVq?oc=5",
+     "date": "2026-11-24"
+    },
+    {
+     "title": "Final Injury Report for Packers-Rams: Will Micah Parsons, Josh Jacobs Play?",
+     "source": "Yahoo Sports",
+     "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQd21QaFZJdmV0YWFFVkFYRkZ1RndxNHQyT0J0bEhobDgtbDZKQS16QnBXbWxCekdFRU13NkI2TzM0WEVCRGpPN0NGamZZMnBFcXRWZm8walh3YVZtYUhGMF9yc3E0Si1EX01SUWFXcTd2UTBRYkVyZ3h2S0phTDlndWtWYWZsdjFrT0U0WlJ3?oc=5",
+     "date": "2026-11-25"
+    },
+    {
+     "title": "Christian Watson injury update: Packers WR hurt on massive hit",
+     "source": "USA Today",
+     "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPSEF5cWxuUG1ZZktpcC1tTlJCMzBtd0hlaVRwYnZ0NkhVRHhvckltOHFudHIydko1cGVPTF9HY2JKbk9TQ2RSeFNNbE5TRTJmQVItNjlpY2xNV2lFdTkwelU4aDZEa3NJZjdsWXZJSVpHYXMwRHhsZnIybGJYMTZvZ0I1SkFFc29VazE5YTVZTUw5eUJIYl9ibXpYSnhLdnVIYlRaZTIwSmRpRDBGYjNFelczalo5akFBdG1j?oc=5",
+     "date": "2026-11-26"
+    },
+    {
+     "title": "Packers-Rams Final Injury Report: One Interesting Questionable for Showdown",
+     "source": "Sports Illustrated",
+     "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPTV9mYTFQZVRhX00tMGhNMXdhM2hGRXlhZGducXZBMDY2X0FNeWdTZWpjR2VkdVRXS3YxOWpibEUxYmdPTUJJOHFQazYxLUFWQ2RvYzRmeVlZVVl3cEV5M1ZBRzFyOTEzTEtpLUFLcXpIeHA4endEMDU0Z292dVpDaXV4VnJBMDBqamxYYnJhQzZydUw2Ymw2Y3o5eVFqZkhicFdDaURiQmpkUU9FWmVZ?oc=5",
+     "date": "2026-11-24"
+    }
+   ],
+   "card": [
+    {
+     "kind": "out",
+     "name": "Edgerrin Cooper",
+     "pos": "LB",
+     "status": "Injured Reserve",
+     "missed": 7,
+     "team_games": 11
+    },
+    {
+     "kind": "maybe",
+     "name": "Zaire Franklin",
+     "pos": "LB",
+     "status": "Questionable",
+     "missed": 5,
+     "team_games": 11
+    },
+    {
+     "kind": "maybe",
+     "name": "Travis Glover",
+     "pos": "G",
+     "status": "Questionable",
+     "missed": 1,
+     "team_games": 11
+    }
+   ]
+  },
+  "HOU": {
+   "name": "Houston Texans",
+   "items": [
+    {
+     "team": "HOU",
+     "tag": "CLUSTER",
+     "text": "2 front seven starters out: Azeez Al-Shaair (LB, Injured Reserve), Danielle Hunter (DE, Out)",
+     "source": "NFL injury report",
+     "url": "https://www.nfl.com/injuries/",
+     "date": "2026-11-28"
+    },
+    {
+     "team": "HOU",
+     "tag": "KEY",
+     "text": "G Keylan Rutledge out (neck) — Out on the Week 12 report; did not practice",
+     "source": "NFL injury report",
+     "url": "https://www.nfl.com/injuries/",
+     "date": "2026-11-28"
+    },
+    {
+     "team": "HOU",
+     "tag": "RETURNING",
+     "text": "RB Woody Marks trending back — on the Week 12 report with no game status; full practice",
+     "source": "NFL injury report",
+     "url": "https://www.nfl.com/injuries/",
+     "date": "2026-11-28"
+    }
+   ],
+   "starters_on_report": [
+    {
+     "name": "Danielle Hunter",
+     "pos": "DE",
+     "status": "Out",
+     "injury": "Hamstring",
+     "note": "Out on the Week 12 report; did not practice",
+     "detail": "",
+     "days_old": 14,
+     "date": "2026-11-28",
+     "pct": 0.76,
+     "missed_recent": 2,
+     "missed_last": 1,
+     "missed": 2,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Trent Brown",
+     "pos": "T",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.91,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Sheldon Rankins",
+     "pos": "DT",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.66,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Reed Blankenship",
+     "pos": "S",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 14,
+     "date": "2026-11-28",
+     "pct": 0.77,
+     "missed_recent": 1,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Jake Hansen",
+     "pos": "LB",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.65,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Kamari Lassiter",
+     "pos": "CB",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 7,
+     "date": "2026-11-28",
+     "pct": 1.0,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Woody Marks",
+     "pos": "RB",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.6,
+     "missed_recent": 1,
+     "missed_last": 1,
+     "missed": 1,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Keylan Rutledge",
+     "pos": "G",
+     "status": "Out",
+     "injury": "Neck",
+     "note": "Out on the Week 12 report; did not practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.98,
+     "missed_recent": 1,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Azeez Al-Shaair",
+     "pos": "LB",
+     "status": "Injured Reserve",
+     "injury": "",
+     "note": "on injured reserve",
+     "detail": "",
+     "days_old": 7,
+     "date": "2026-11-28",
+     "pct": 0.94,
+     "missed_recent": 2,
+     "missed_last": 1,
+     "missed": 2,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Graham Mertz",
+     "pos": "QB",
+     "status": "Injured Reserve",
+     "injury": "",
+     "note": "on injured reserve",
+     "detail": "",
+     "days_old": 77,
+     "date": "2026-11-28",
+     "pct": 0.0,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": null,
+     "team_games": null,
+     "qb1": false
+    }
+   ],
+   "headlines": [
+    {
+     "title": "Week 12 Injury Report | Texans vs Ravens",
+     "source": "Houston Texans",
+     "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1YbzdndHNzbk51TVdsSmJ3TXV5U0FpOTRnUTBjQ1Z3RG8yaklQREVhODFPNlE3WlZqdmk2U2lHRUNCSG1oU0Z6d2tKLUgtX05XaEhNZ0xiRkRCMTVEc0M1SzlNTGZmRzB0dy1Jd2F1aFNTWEVhMFdoX0drTDZPUQ?oc=5",
+     "date": "2026-11-28"
+    },
+    {
+     "title": "Vega Ioane Has Hand Injury, Among Three Ravens Ruled Out vs. Texans",
+     "source": "Baltimore Ravens",
+     "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNdERFdjk4R0dodW5kMU1lQlZNdkdmU2tpZ3h5djdxOGFKZlFHRXFVTGpleUNJMm1rQ00tcy0zNHpwZnd5UzhsWmRwUDRUOFR6VWVnNUlIcUlNUXRRb2ExUnVJU2lYTHE2Uk5fbURocVNxVGZuWkFCc0R3Zm5qbFVyc3dYbnpVem52UnY1NUpMTldYdWNaZWlOaE90THZKdw?oc=5",
+     "date": "2026-11-27"
+    },
+    {
+     "title": "Texans' Injury Report Has 4 Players Ruled Out for Week 12 vs. Ravens",
+     "source": "Sports Illustrated",
+     "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQVl81Wms0S3gxSnZXMmFYU3N2R25YWXlXdURBQkFhRHRJTzNtLUs0bzBNM21OMFJiUDJTVVcwLUxUM29FOGN6b1k2c2JmbDZrNXNLM0VDM0NaZ3E2M0dnR0l4d2dDWXVMUWRFVDBhQ1NHdWNDOEJSU0ZVZ1NIWUdITVVkY2JSZF80MG1yNG1HTE5GNlN6MHY2Zi0za2NscFBkZ24w?oc=5",
+     "date": "2026-11-27"
+    },
+    {
+     "title": "Ravens rule out three starters vs. Texans; Marlon Humphrey will play",
+     "source": "Ravens Wire",
+     "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxQRnhpOW5id29NMWlCRkllaXJkNVRDSHEzVUdvdjBVR1k3anY2andZRTFQeWFjOU5BVlRTTk91Zm04Q29CbWpDYTBsYTBZZnhXaHNZZ2ZVRjd4RmhGSEpfalhQV0xJNkpSb1NFSjRyZ0FPbzk4V1dKYVZiQ0puN1lfVWIwTl9GbU5OalBqR0lub0ZpaVp0OU1wTDhESkFiY3Z4VkZFUUdEUlF0dlFON3J5NVNDdWdEOEpKQld3NW1fcHVFVHUtMWhpazA4dUJUUUt5QkhZYzZ0d3FnUzVjbDJwcg?oc=5",
+     "date": "2026-11-27"
+    }
+   ],
+   "card": [
+    {
+     "kind": "out",
+     "name": "Danielle Hunter",
+     "pos": "DE",
+     "status": "Out",
+     "missed": 2,
+     "team_games": 10
+    },
+    {
+     "kind": "out",
+     "name": "Azeez Al-Shaair",
+     "pos": "LB",
+     "status": "Injured Reserve",
+     "missed": 2,
+     "team_games": 10
+    },
+    {
+     "kind": "out",
+     "name": "Keylan Rutledge",
+     "pos": "G",
+     "status": "Out",
+     "missed": 0,
+     "team_games": 10
+    }
+   ]
+  },
+  "IND": {
+   "name": "Indianapolis Colts",
+   "items": [
+    {
+     "team": "IND",
+     "tag": "KEY",
+     "text": "CB Charvarius Ward out (knee) — Out on the Week 12 report; did not practice",
+     "source": "NFL injury report",
+     "url": "https://www.nfl.com/injuries/",
+     "date": "2026-11-28"
+    },
+    {
+     "team": "IND",
+     "tag": "RETURNING",
+     "text": "T Bernhard Raimann trending back — on the Week 12 report with no game status; full practice",
+     "source": "NFL injury report",
+     "url": "https://www.nfl.com/injuries/",
+     "date": "2026-11-28"
+    },
+    {
+     "team": "IND",
+     "tag": "RETURNING",
+     "text": "CB Sauce Gardner trending back — on the Week 12 report with no game status; full practice",
+     "source": "NFL injury report",
+     "url": "https://www.nfl.com/injuries/",
+     "date": "2026-11-28"
+    }
+   ],
+   "starters_on_report": [
+    {
+     "name": "Grover Stewart",
+     "pos": "DT",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.61,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 11,
+     "qb1": false
+    },
+    {
+     "name": "Charvarius Ward",
+     "pos": "CB",
+     "status": "Out",
+     "injury": "Knee",
+     "note": "Out on the Week 12 report; did not practice",
+     "detail": "",
+     "days_old": 7,
+     "date": "2026-11-28",
+     "pct": 0.87,
+     "missed_recent": 1,
+     "missed_last": 1,
+     "missed": 1,
+     "team_games": 11,
+     "qb1": false
+    },
+    {
+     "name": "Sauce Gardner",
+     "pos": "CB",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.87,
+     "missed_recent": 1,
+     "missed_last": 1,
+     "missed": 1,
+     "team_games": 11,
+     "qb1": false
+    },
+    {
+     "name": "Bernhard Raimann",
+     "pos": "T",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.89,
+     "missed_recent": 1,
+     "missed_last": 1,
+     "missed": 1,
+     "team_games": 11,
+     "qb1": false
+    },
+    {
+     "name": "Jalen Travis",
+     "pos": "T",
+     "status": "Out",
+     "injury": "Knee",
+     "note": "Out on the Week 12 report; did not practice",
+     "detail": "",
+     "days_old": 14,
+     "date": "2026-11-28",
+     "pct": 0.93,
+     "missed_recent": 2,
+     "missed_last": 1,
+     "missed": 2,
+     "team_games": 11,
+     "qb1": false
+    },
+    {
+     "name": "Akeem Davis-Gaither",
+     "pos": "LB",
+     "status": "Injured Reserve",
+     "injury": "",
+     "note": "on injured reserve",
+     "detail": "",
+     "days_old": 14,
+     "date": "2026-11-28",
+     "pct": 0.92,
+     "missed_recent": 3,
+     "missed_last": 1,
+     "missed": 3,
+     "team_games": 11,
+     "qb1": false
+    }
+   ],
+   "headlines": [
+    {
+     "title": "Injury Report: Statuses for Giants vs. Colts",
+     "source": "Giants.com",
+     "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTFBOZGh5MENNRFRaZVBFcnFaRFRhQXdiY0JWbHVwWW9UR3g0N1MwOFhGbHNxUU16VzZQOGd1Yzh5cEpWbnNoSzV4alZkMVdaSHZKbUowbnJ1R2lJQTZoYnkzVW1hM3RLUU5Cdk9TYlJpTW5DdWZmVXI0M3Bn?oc=5",
+     "date": "2026-11-28"
+    },
+    {
+     "title": "Indianapolis Colts Injury Report: Week 12 Who’s In and Who’s Out",
+     "source": "Stampede Blue",
+     "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPVF9GWXcxV1Q0S0VwX05FWDVWMDU5anI0bEdtZTV6V0EyVWdob0lZam94MWV4djlqRWZnODRPV0RkNWdJZTFUWUJMeU9McnplWjVXbm1RZlR2YlFicUgzYVJub1lBbXlvR2JmUkJKMXN6c05nVUM0bWMzQ0hxNXVCclNiTmJKdHotUFFUTlFzR2Q0dU44OXJWYnJYLUtBVDI5REFUdjdxdEdRaGpMZTN0NE9aMm5BSUJ5b3dKd2g2aGxvWkk?oc=5",
+     "date": "2026-11-27"
+    },
+    {
+     "title": "NY Giants at Indianapolis Colts, Week 12: News, injuries, analysis, more",
+     "source": "Big Blue View",
+     "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNaEViV3c3MEx6T3c4OHRCc1VwNWI5THpEaGpadXZrUnlfdTBpcmtWOEQ4elhtakI5MmZuM19Dc1lLVXNMZWUzWWFYM0dIM0V1ckpvRWktYXVzd25SMHBhcFZGMkJUQmJYaHhwSVpoMHU5dk5RTmc0Z2dHYWZlY09JMXp2U2loZUc0ekp0bjN1S3RPd3l6bnVRNk5WM2VpcGxlemNJNjE4dUJqTWZDTTdUSGl4enI1RG56RWJhQ0lnV2tjS1NFblFfdFNUOGUzS0Jo?oc=5",
+     "date": "2026-11-28"
+    },
+    {
+     "title": "Colts get bittersweet injury news ahead of Anthony Richardson's return",
+     "source": "Horseshoe Heroes",
+     "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNQ0NPT1VQV2owWWxmeDlJSkxhWHJXaXFDWHp5QnFLcGExcXFpbFdKN3p3bm52QlJCN1NjMTFlY3hFaGdMWEVUZ1JBeUtaZERSTWM5NC1yS0ZuSEtjalRYbVhaSkoxR2R1d2NwSk5Rc1ZsNGJnamZQQkRWMTlHZzYzVjNWTUdtNDhjd0NjdnBFS1Zob1k?oc=5",
+     "date": "2026-11-27"
+    }
+   ],
+   "card": [
+    {
+     "kind": "out",
+     "name": "Akeem Davis-Gaither",
+     "pos": "LB",
+     "status": "Injured Reserve",
+     "missed": 3,
+     "team_games": 11
+    },
+    {
+     "kind": "out",
+     "name": "Jalen Travis",
+     "pos": "T",
+     "status": "Out",
+     "missed": 2,
+     "team_games": 11
+    },
+    {
+     "kind": "out",
+     "name": "Charvarius Ward",
+     "pos": "CB",
+     "status": "Out",
+     "missed": 1,
+     "team_games": 11
+    }
+   ]
+  },
+  "JAX": {
+   "name": "Jacksonville Jaguars",
+   "items": [
+    {
+     "team": "JAX",
+     "tag": "KEY",
+     "text": "C Robert Hainsey questionable (knee) — Questionable on the Week 12 report; limited in practice",
+     "source": "NFL injury report",
+     "url": "https://www.nfl.com/injuries/",
+     "date": "2026-11-28"
+    },
+    {
+     "team": "JAX",
+     "tag": "KEY",
+     "text": "WR Parker Washington out (shoulder) — Out on the Week 12 report; did not practice",
+     "source": "NFL injury report",
+     "url": "https://www.nfl.com/injuries/",
+     "date": "2026-11-28"
+    },
+    {
+     "team": "JAX",
+     "tag": "RETURNING",
+     "text": "CB Jarrian Jones trending back — on the Week 12 report with no game status; full practice",
+     "source": "NFL injury report",
+     "url": "https://www.nfl.com/injuries/",
+     "date": "2026-11-28"
+    }
+   ],
+   "starters_on_report": [
+    {
+     "name": "Jakobi Meyers",
+     "pos": "WR",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 21,
+     "date": "2026-11-28",
+     "pct": 0.76,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Cole Van Lanen",
+     "pos": "T",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 7,
+     "date": "2026-11-28",
+     "pct": 0.94,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Walker Little",
+     "pos": "T",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; limited in practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.69,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Robert Hainsey",
+     "pos": "C",
+     "status": "Questionable",
+     "injury": "Knee",
+     "note": "Questionable on the Week 12 report; limited in practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.91,
+     "missed_recent": 1,
+     "missed_last": 1,
+     "missed": 1,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Parker Washington",
+     "pos": "WR",
+     "status": "Out",
+     "injury": "Shoulder",
+     "note": "Out on the Week 12 report; did not practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.75,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Jarrian Jones",
+     "pos": "CB",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.71,
+     "missed_recent": 1,
+     "missed_last": 1,
+     "missed": 1,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Eric Murray",
+     "pos": "DB",
+     "status": "Injured Reserve",
+     "injury": "",
+     "note": "on injured reserve",
+     "detail": "",
+     "days_old": 21,
+     "date": "2026-11-28",
+     "pct": 0.81,
+     "missed_recent": 3,
+     "missed_last": 1,
+     "missed": 4,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Anton Harrison",
+     "pos": "OL",
+     "status": "Injured Reserve",
+     "injury": "",
+     "note": "on injured reserve",
+     "detail": "",
+     "days_old": 42,
+     "date": "2026-11-28",
+     "pct": 0.92,
+     "missed_recent": 3,
+     "missed_last": 1,
+     "missed": 5,
+     "team_games": 10,
+     "qb1": false
+    }
+   ],
+   "headlines": [
+    {
+     "title": "Week 12 Injury Report | Titans at Jaguars",
+     "source": "Tennessee Titans",
+     "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOemlCY0tBbF9vZ0JxM0RVNW8yRzhzZFFOTTZ4aG9Nb0NkRS1nVDE2RjZLandPc0Q5bFB5M0dCd0gxTnRLLUk3NTVjRzJLY0VGZzZhSE5xemFkaVJlemRfeG53YTFTTGpuSkstUER4T19SLXh1N0xMZl95VWk5N1BfUXlB?oc=5",
+     "date": "2026-11-28"
+    },
+    {
+     "title": "Jaguars Friday: Washington \"Week-To-Week\" With Shoulder Injury",
+     "source": "Jacksonville Jaguars",
+     "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNSjNHOFE4cEdsdnBmRTZlalJZaHdMYWgtbS1feWp4eXFFQUMtbUpURTZyT21yR2dibDJNd2NoUDJHNDVCcTR2NTlaRU5TQ09rN25IeDliYkJZM3EwVXpwMjVfekxKUjVsZVpNbnZyNkFhb2xKV0l5WnU0dk8xdEc3anRKODhveVRtN3JReldGdTJkZw?oc=5",
+     "date": "2026-11-27"
+    },
+    {
+     "title": "Jaguars seek offensive rebound vs. Titans amid injury concerns",
+     "source": "FL Times-Union",
+     "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxQdGZjb0hscUl5V2swRlBiX3VWMzRJV21HX2kzMzMwSlduMEdEQWxWZ2FOS0VFMThFQkpMQnRsbUxVRUg1QUJVWWFrUTUySmo0TVZUQ2dZTU1mRUZCRGhXTUd3RGpEMTNYQUNVRGozUUxBLThiY0RYRzBOYk9TelhkdnBpZGhuMzFMRzdlQnpqeFUzakdBZnpYVUpKOG1XNGFtTVNheWNwMms2elVSY0Nucl8ydnBHcVNuazlUMFYydmZ3VDAxWUlfelFacHNoWndNMkloYUpYZWpBb1BoQUU3MlowS1BTS1d5?oc=5",
+     "date": "2026-11-28"
+    },
+    {
+     "title": "Jaguars’ Parker Washington Surfaces in Disastrous Injury Rumors",
+     "source": "Yahoo Sports",
+     "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNQTZ4ZEFpRnBKVGMxUGdndXFTSlpsTk5lY0ZrNFlNSVBzWHJSTlFxcHRMNmEzZ096ZXBSM3VyUTZtbmNDUnBEaXNZTnBlUkVQN1ZrdHhWQWR4TjJLM2h1UTZvckZ6MnVrcUJaNTZ3UjZERVZJQzRlOW5LV3NkR3ZjRk1BU3hFTGRuQ2ZZQkZrbGdRUHp4Mnd3ZVZsSDY1Vzg?oc=5",
+     "date": "2026-11-27"
+    }
+   ],
+   "card": [
+    {
+     "kind": "out",
+     "name": "Anton Harrison",
+     "pos": "OL",
+     "status": "Injured Reserve",
+     "missed": 5,
+     "team_games": 10
+    },
+    {
+     "kind": "out",
+     "name": "Eric Murray",
+     "pos": "DB",
+     "status": "Injured Reserve",
+     "missed": 4,
+     "team_games": 10
+    },
+    {
+     "kind": "out",
+     "name": "Parker Washington",
+     "pos": "WR",
+     "status": "Out",
+     "missed": 0,
+     "team_games": 10
+    }
+   ]
+  },
+  "KC": {
+   "name": "Kansas City Chiefs",
+   "items": [],
+   "starters_on_report": [
+    {
+     "name": "Patrick Mahomes",
+     "pos": "QB",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 42,
+     "date": "2026-11-28",
+     "pct": 0.98,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 11,
+     "qb1": true
+    },
+    {
+     "name": "Jaylon Moore",
+     "pos": "T",
+     "status": "Out",
+     "injury": "Ankle",
+     "note": "Out on the Week 12 report; did not practice",
+     "detail": "",
+     "days_old": 14,
+     "date": "2026-11-28",
+     "pct": 0.87,
+     "missed_recent": 3,
+     "missed_last": 1,
+     "missed": 3,
+     "team_games": 11,
+     "qb1": false
+    },
+    {
+     "name": "Noah Gray",
+     "pos": "TE",
+     "status": "Questionable",
+     "injury": "Rib",
+     "note": "Questionable on the Week 12 report; full practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.62,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 11,
+     "qb1": false
+    },
+    {
+     "name": "Trey Smith",
+     "pos": "G",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.89,
+     "missed_recent": 1,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 11,
+     "qb1": false
+    },
+    {
+     "name": "Kenneth Walker III",
+     "pos": "RB",
+     "status": "Out",
+     "injury": "Groin",
+     "note": "Out on the Week 12 report; did not practice",
+     "detail": "",
+     "days_old": 7,
+     "date": "2026-11-28",
+     "pct": 0.74,
+     "missed_recent": 3,
+     "missed_last": 1,
+     "missed": 3,
+     "team_games": 11,
+     "qb1": false
+    },
+    {
+     "name": "Mansoor Delane",
+     "pos": "CB",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 7,
+     "date": "2026-11-28",
+     "pct": 0.74,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 11,
+     "qb1": false
+    },
+    {
+     "name": "L'Jarius Sneed",
+     "pos": "DB",
+     "status": "Injured Reserve",
+     "injury": "",
+     "note": "on injured reserve",
+     "detail": "",
+     "days_old": 28,
+     "date": "2026-11-28",
+     "pct": 0.64,
+     "missed_recent": 3,
+     "missed_last": 1,
+     "missed": 5,
+     "team_games": 11,
+     "qb1": false
+    }
+   ],
+   "headlines": [
+    {
+     "title": "Week 12 Injury Report | Chiefs vs Bills",
+     "source": "Kansas City Chiefs",
+     "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE5IanZaTDBUbG14REZJYUpkLTR6dk02QW55bDJ3QlF2a1JxR2Y1T09uV0ZkQlh5anliTnJzT1p0c1QybUZIN3dPdTRMelpXZ3lFOVNDZWhJdV9PNkw0cXVoTXFNTzBlYnc4dDM3aldjX2NjWk5CbjFMdEdR?oc=5",
+     "date": "2026-11-25"
+    },
+    {
+     "title": "Buffalo Bills injury report vs. Chiefs | Week 12 Thanksgiving",
+     "source": "Buffalo Bills",
+     "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOUU53Q0FMZi0yM3U1cDZETkE4ZDRrR0hQbWlPNWFwZHhQRTRIYklQVnNxR19paENYY2plU2h0ZWhodTZCSkRNOGZuQjJJY19GMm1QZURaQktuODJ5RlFfT19IYnBUWFlwWHh1MHhMNXNlR2J3TGN2VnU1UU8xeHJRUlJvLUtQbEdaQjJjOENuaUhzZmtpSlkw?oc=5",
+     "date": "2026-11-26"
+    },
+    {
+     "title": "Andy Reid gives 2 injury updates after loss to Bills",
+     "source": "Arrowhead Pride",
+     "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxObDNXOGVoQmZOTm1aeVd0VklvanVZQmhDUjQ3WUhwZVFyVlhDSEs0VjhDZHhpX0pyYVUtbFphUjdUVi1sdm9maXhkMXBicHVXcE9ndzBVYUFZTUhxVGVERDZyclFYdExrZldiWFFxM2lGblBzaTltckk1WjVqU3ZPcGtHMWhLTkxGOERqUGxXVklwVXJOZU1rNEpfejRORWJwUHZDbVp0ZVB3XzR6dVFhRTBvU3Q?oc=5",
+     "date": "2026-11-27"
+    },
+    {
+     "title": "Bills vs. Chiefs: Final injury reports for both teams",
+     "source": "Yahoo Sports",
+     "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPeGRNSFM4bE1mY2dLeWZzVTZmOE9McGtySmhNZk0tel9YOFo1OGx3TXVBWGFQazZMcHpqX3hyOHUxNWE0MEQwUkFCNVhabUtvTkNEbU5OWGIzVlI2Q0w5dlBlX2NGcE1pNzBKMHlIVkdyOFRrSGxZX0lHMjgtRjhKU1hoM1J6NkVE?oc=5",
+     "date": "2026-11-26"
+    }
+   ],
+   "card": [
+    {
+     "kind": "out",
+     "name": "Jaylon Moore",
+     "pos": "T",
+     "status": "Out",
+     "missed": 3,
+     "team_games": 11
+    }
+   ]
+  },
+  "LA": {
+   "name": "Los Angeles Rams",
+   "items": [
+    {
+     "team": "LA",
+     "tag": "CLUSTER",
+     "text": "2 OL starters out: Coleman Shelton (C, Out), Steve Avila (G, Out)",
+     "source": "NFL injury report",
+     "url": "https://www.nfl.com/injuries/",
+     "date": "2026-11-28"
+    },
+    {
+     "team": "LA",
+     "tag": "CLUSTER",
+     "text": "2 receivers starters out: Puka Nacua (WR, Injured Reserve), Davante Adams (WR, Injured Reserve)",
+     "source": "NFL injury report",
+     "url": "https://www.nfl.com/injuries/",
+     "date": "2026-11-28"
+    }
+   ],
+   "starters_on_report": [
+    {
+     "name": "Matthew Stafford",
+     "pos": "QB",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.99,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 11,
+     "qb1": true
+    },
+    {
+     "name": "Aaron Donald",
+     "pos": "DT",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.65,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 11,
+     "qb1": false
+    },
+    {
+     "name": "Tyler Higbee",
+     "pos": "TE",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.62,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 11,
+     "qb1": false
+    },
+    {
+     "name": "Myles Garrett",
+     "pos": "LB",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; limited in practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.6,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 11,
+     "qb1": false
+    },
+    {
+     "name": "Coleman Shelton",
+     "pos": "C",
+     "status": "Out",
+     "injury": "Hamstring",
+     "note": "Out on the Week 12 report; did not practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.92,
+     "missed_recent": 1,
+     "missed_last": 1,
+     "missed": 1,
+     "team_games": 11,
+     "qb1": false
+    },
+    {
+     "name": "Colby Parkinson",
+     "pos": "TE",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.68,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 11,
+     "qb1": false
+    },
+    {
+     "name": "Trent McDuffie",
+     "pos": "CB",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.96,
+     "missed_recent": 1,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 11,
+     "qb1": false
+    },
+    {
+     "name": "Kyren Williams",
+     "pos": "RB",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.64,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 11,
+     "qb1": false
+    },
+    {
+     "name": "Steve Avila",
+     "pos": "G",
+     "status": "Out",
+     "injury": "Hamstring",
+     "note": "Out on the Week 12 report; did not practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.91,
+     "missed_recent": 2,
+     "missed_last": 1,
+     "missed": 2,
+     "team_games": 11,
+     "qb1": false
+    },
+    {
+     "name": "Byron Young",
+     "pos": "LB",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.79,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 11,
+     "qb1": false
+    },
+    {
+     "name": "Davante Adams",
+     "pos": "WR",
+     "status": "Injured Reserve",
+     "injury": "",
+     "note": "on injured reserve",
+     "detail": "",
+     "days_old": 35,
+     "date": "2026-11-28",
+     "pct": 0.74,
+     "missed_recent": 3,
+     "missed_last": 1,
+     "missed": 5,
+     "team_games": 11,
+     "qb1": false
+    },
+    {
+     "name": "Jaylen Watson",
+     "pos": "DB",
+     "status": "Injured Reserve",
+     "injury": "",
+     "note": "on injured reserve",
+     "detail": "",
+     "days_old": 21,
+     "date": "2026-11-28",
+     "pct": 0.84,
+     "missed_recent": 3,
+     "missed_last": 1,
+     "missed": 3,
+     "team_games": 11,
+     "qb1": false
+    },
+    {
+     "name": "Puka Nacua",
+     "pos": "WR",
+     "status": "Injured Reserve",
+     "injury": "",
+     "note": "on injured reserve",
+     "detail": "",
+     "days_old": 14,
+     "date": "2026-11-28",
+     "pct": 0.87,
+     "missed_recent": 2,
+     "missed_last": 1,
+     "missed": 2,
+     "team_games": 11,
+     "qb1": false
+    },
+    {
+     "name": "Matthew Caldwell",
+     "pos": "QB",
+     "status": "Injured Reserve",
+     "injury": "",
+     "note": "on injured reserve",
+     "detail": "",
+     "days_old": 77,
+     "date": "2026-11-28",
+     "pct": 0.0,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": null,
+     "team_games": null,
+     "qb1": false
+    }
+   ],
+   "headlines": [
+    {
+     "title": "Injury Report, Week 12 vs. Packers: Steve Avila, Terrance Ferguson and Coleman Shelton ruled out; no designation for Kobie Turner",
+     "source": "Rams",
+     "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPNzQxMEdiSjdNbG10VldaczA4RkhBZ3R2UjVMQ3FKRUZscEZvOVoxSFNSRGpyeWx0eUw3YUF4emJkN0t2RFVWN0ZkWkdPSnl2Y1pGUDNNNUtoQzVZeTZMaFpjc3VFdDJDT01kZUtsNmlodWtrUnZfNGRoRHZfbDNLS3UyRVNXdEdjUWNJSGx0UWhVYW91YjFmMjBWRTBNVUtiVmdSbnhfejJ0cnhhNkdYZzB6eTlQaFNpaEtGemhoWnZEaGxuNm5OVUVn?oc=5",
+     "date": "2026-11-24"
+    },
+    {
+     "title": "Rams suffer four more offensive injuries, including two tight ends",
+     "source": "Turf Show Times",
+     "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNSWZ5OUtCcmpIZW1hdk50WUpwamhEdWhLY0R4bFhDWTlWSXpYajFUNXkzb2cwWE9aWWRSZUJRb2s3SFZsU0tubFFXei0xWjhLUjdOeFZuV2dQdXl2aFRGdWprM1pFTDJSNHZjOU55di1CejZtRjJOWHU3dTczbHJScFpGa3ZkUEZxLWhuZnFNSWF6U2pjMUZwbTl0Z3I?oc=5",
+     "date": "2026-11-28"
+    },
+    {
+     "title": "Packers-Rams Injury Report | Nov. 23, 2026",
+     "source": "Green Bay Packers – packers.com",
+     "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE0tYVRyWGM1X2ZxcUhvUHNZUEtRNkJjTXNobXFpOXZMQkZCUWMzRkYwTnNjRkxkdGo2dldDTE10SWxXLTNkZkhjMlZERVY5cmJwOElHMUQ2a1JqRlpJNnRKSXIwRGo2MUJEdHJEckMtY0RiU0l5b1E?oc=5",
+     "date": "2026-11-23"
+    },
+    {
+     "title": "Rams snag 49ers tight end from practice squad amid injury crisis",
+     "source": "Yahoo Sports",
+     "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPRVF4WmZCQ2NoUV8zb3R1N09ZazNEcFFqTWJWZEJQeVNUSGxhT0t2cDFwTFJ2UjhiVUluSGpldUFOcEVCbC1nTkhZUGJPa0taRENucVlMaF9KWEhQWVlwU1g1TzczeTVHTmN3RS1BZ194elpGNFhEODJWRGQ3aXBEVFFiWHA?oc=5",
+     "date": "2026-11-28"
+    }
+   ],
+   "card": [
+    {
+     "kind": "out",
+     "name": "Jaylen Watson",
+     "pos": "DB",
+     "status": "Injured Reserve",
+     "missed": 3,
+     "team_games": 11
+    },
+    {
+     "kind": "out",
+     "name": "Steve Avila",
+     "pos": "G",
+     "status": "Out",
+     "missed": 2,
+     "team_games": 11
+    },
+    {
+     "kind": "out",
+     "name": "Puka Nacua",
+     "pos": "WR",
+     "status": "Injured Reserve",
+     "missed": 2,
+     "team_games": 11
+    }
+   ]
+  },
+  "LAC": {
+   "name": "Los Angeles Chargers",
+   "items": [
+    {
+     "team": "LAC",
+     "tag": "QB",
+     "text": "QB Justin Herbert out (concussion) — Out on the Week 12 report; did not practice",
+     "source": "NFL injury report",
+     "url": "https://www.nfl.com/injuries/",
+     "date": "2026-11-28"
+    },
+    {
+     "team": "LAC",
+     "tag": "CLUSTER",
+     "text": "2 OL starters out: Rashawn Slater (OL, Injured Reserve), Trevor Penning (OL, Injured Reserve)",
+     "source": "NFL injury report",
+     "url": "https://www.nfl.com/injuries/",
+     "date": "2026-11-28"
+    },
+    {
+     "team": "LAC",
+     "tag": "KEY",
+     "text": "CB Tarheeb Still questionable (ankle) — Questionable on the Week 12 report; did not practice",
+     "source": "NFL injury report",
+     "url": "https://www.nfl.com/injuries/",
+     "date": "2026-11-28"
+    },
+    {
+     "team": "LAC",
+     "tag": "KEY",
+     "text": "LB Daiyan Henley out (knee) — Out on the Week 12 report; did not practice",
+     "source": "NFL injury report",
+     "url": "https://www.nfl.com/injuries/",
+     "date": "2026-11-28"
+    }
+   ],
+   "starters_on_report": [
+    {
+     "name": "Khalil Mack",
+     "pos": "DE",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 28,
+     "date": "2026-11-28",
+     "pct": 0.7,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Justin Herbert",
+     "pos": "QB",
+     "status": "Out",
+     "injury": "Concussion",
+     "note": "Out on the Week 12 report; did not practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.98,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 10,
+     "qb1": true
+    },
+    {
+     "name": "Daiyan Henley",
+     "pos": "LB",
+     "status": "Out",
+     "injury": "Knee",
+     "note": "Out on the Week 12 report; did not practice",
+     "detail": "",
+     "days_old": 7,
+     "date": "2026-11-28",
+     "pct": 0.87,
+     "missed_recent": 1,
+     "missed_last": 1,
+     "missed": 1,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Tuli Tuipulotu",
+     "pos": "DE",
+     "status": "Questionable",
+     "injury": "Ankle",
+     "note": "Questionable on the Week 12 report; did not practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.83,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Tarheeb Still",
+     "pos": "CB",
+     "status": "Questionable",
+     "injury": "Ankle",
+     "note": "Questionable on the Week 12 report; did not practice",
+     "detail": "",
+     "days_old": 7,
+     "date": "2026-11-28",
+     "pct": 0.95,
+     "missed_recent": 1,
+     "missed_last": 1,
+     "missed": 1,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Derwin James",
+     "pos": "DB",
+     "status": "Injured Reserve",
+     "injury": "",
+     "note": "on injured reserve",
+     "detail": "",
+     "days_old": 28,
+     "date": "2026-11-28",
+     "pct": 0.94,
+     "missed_recent": 3,
+     "missed_last": 1,
+     "missed": 7,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Rashawn Slater",
+     "pos": "OL",
+     "status": "Injured Reserve",
+     "injury": "",
+     "note": "on injured reserve",
+     "detail": "",
+     "days_old": 49,
+     "date": "2026-11-28",
+     "pct": 0.96,
+     "missed_recent": 3,
+     "missed_last": 1,
+     "missed": 6,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Trey Lance",
+     "pos": "QB",
+     "status": "Injured Reserve",
+     "injury": "",
+     "note": "on injured reserve",
+     "detail": "",
+     "days_old": 49,
+     "date": "2026-11-28",
+     "pct": 0.0,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": null,
+     "team_games": null,
+     "qb1": false
+    },
+    {
+     "name": "Trevor Penning",
+     "pos": "OL",
+     "status": "Injured Reserve",
+     "injury": "",
+     "note": "on injured reserve",
+     "detail": "",
+     "days_old": 49,
+     "date": "2026-11-28",
+     "pct": 0.68,
+     "missed_recent": 3,
+     "missed_last": 1,
+     "missed": 6,
+     "team_games": 10,
+     "qb1": false
+    }
+   ],
+   "headlines": [
+    {
+     "title": "Chargers vs. Patriots Injury Report: Justin Herbert Ruled Out; Tuli Tuipulotu Among 5 Questionable in Week 12",
+     "source": "Los Angeles Chargers",
+     "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQMUlxc3h5WF9vS2N2MjFYN0hrZ1JXa2pIbjBVVnpRaDZ2NWFfclZHVElEcWpYenhLaWREaGRIMVRMUXlYdnQ1elUzZnhFd3djNTlVckQ4ZXdkR0RoNEdicmdYblgxdFJlUnNtenM1Y0VROVZ2VlpZOFVYOE5PV09yUmU1N2E3TUxZRmhESVpWWGw?oc=5",
+     "date": "2026-11-27"
+    },
+    {
+     "title": "Week 12 Injury Report: Patriots at Chargers",
+     "source": "New England Patriots",
+     "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFB1LTZkS0ZNWHI2OWFWc0dOSGRnbGhSdXZONk1VSkNBZTFDUlNKMUEwYkJMcXYwU1lsZGkxemdyS0FxVUxBYWxtWWlNRFk1M0xsbGo5S1VXVmVLdzhIYW1fb1VEd3hxa3ZhM0tiUUFjSlZDVVA3aHBDRzY0ZmU?oc=5",
+     "date": "2026-11-27"
+    },
+    {
+     "title": "Chargers Injury Report: Justin Herbert ruled out vs. Patriots",
+     "source": "Bolts From The Blue",
+     "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNWmYyRmJmWlhGeno3SzIwUmF0OWw1d3QxVDFRVXlVMUdScEFRS1JIekV2YmlDVDVrQnRJdEk3VVpJSXZ5cE9NMU9uZG5KRDhZOU9TN0NEamo1MTlLdjlnZ0ZVLUlxTFpjNnZVLUYtV2ItLXlpZkgzdVNkN2V5ajR1bW1CVkE1UmRyMXJNNlVWOUQ1R3Z6aE9ValpaOEFQajNlRnNHRjFZYnZRTDZqaDJGazE0OVpXU1FJeWw5OU1ybG54SjVVMHZXVlEtZlc3UVFZcW94WGVB?oc=5",
+     "date": "2026-11-27"
+    },
+    {
+     "title": "Full Chargers Injury Report for Sunday’s Game Versus Patriots",
+     "source": "Yahoo Sports",
+     "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNUXVVdDUwZEpsbG14Mk5RNTVqSjREdWJ6bG5aWVg3M3ZQcGYyRUpENlJMN1RIdXFkWkFJRWxTRGJ1NUN2NDN0QXdiZVVnZ2FKanlkd281eVFuZGNGRnJQN3FhMWhTcFpNNHpMd0RESjJHLTJSa0YtbElqUGtPYTYyeVRBMENSNzBuLVU3VDEtLTk?oc=5",
+     "date": "2026-11-28"
+    }
+   ],
+   "card": [
+    {
+     "kind": "out",
+     "name": "Derwin James",
+     "pos": "DB",
+     "status": "Injured Reserve",
+     "missed": 7,
+     "team_games": 10
+    },
+    {
+     "kind": "out",
+     "name": "Rashawn Slater",
+     "pos": "OL",
+     "status": "Injured Reserve",
+     "missed": 6,
+     "team_games": 10
+    },
+    {
+     "kind": "out",
+     "name": "Daiyan Henley",
+     "pos": "LB",
+     "status": "Out",
+     "missed": 1,
+     "team_games": 10
+    }
+   ]
+  },
+  "LV": {
+   "name": "Las Vegas Raiders",
+   "items": [
+    {
+     "team": "LV",
+     "tag": "KEY",
+     "text": "G Jackson Powers-Johnson out (achilles) — Out on the Week 12 report; limited in practice",
+     "source": "NFL injury report",
+     "url": "https://www.nfl.com/injuries/",
+     "date": "2026-11-28"
+    },
+    {
+     "team": "LV",
+     "tag": "RETURNING",
+     "text": "TE Brock Bowers trending back — Questionable on the Week 12 report; did not practice",
+     "source": "NFL injury report",
+     "url": "https://www.nfl.com/injuries/",
+     "date": "2026-11-28"
+    }
+   ],
+   "starters_on_report": [
+    {
+     "name": "Quay Walker",
+     "pos": "LB",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.99,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 11,
+     "qb1": false
+    },
+    {
+     "name": "Michael Mayer",
+     "pos": "TE",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.79,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 11,
+     "qb1": false
+    },
+    {
+     "name": "Brock Bowers",
+     "pos": "TE",
+     "status": "Questionable",
+     "injury": "Ankle",
+     "note": "Questionable on the Week 12 report; did not practice",
+     "detail": "",
+     "days_old": 7,
+     "date": "2026-11-28",
+     "pct": 0.77,
+     "missed_recent": 1,
+     "missed_last": 1,
+     "missed": 1,
+     "team_games": 11,
+     "qb1": false
+    },
+    {
+     "name": "Jackson Powers-Johnson",
+     "pos": "G",
+     "status": "Out",
+     "injury": "Achilles",
+     "note": "Out on the Week 12 report; limited in practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.98,
+     "missed_recent": 3,
+     "missed_last": 1,
+     "missed": 6,
+     "team_games": 11,
+     "qb1": false
+    }
+   ],
+   "headlines": [
+    {
+     "title": "Raiders-Browns Week 12 Injury Report: Brock Bowers questionable, 3 defensive tackles ruled out",
+     "source": "Raiders.com",
+     "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1VM0dIakZHWHc3ZTdCeUtQYTh0T2FMb0d3WXFIRFlqMWpLTXY0VWFTZDFLNk9mdzhWMXhNdzdkN0JYcW5XTU5VTmp4YlVqWUtKVDRtOFkyOTBDbHZrNU5HdGF5UkktNVlzMUh0SktQMHNwNGs?oc=5",
+     "date": "2026-11-28"
+    },
+    {
+     "title": "Raiders Receive Brutal Injury News Ahead of Sunday Night Showdown",
+     "source": "Sports Illustrated",
+     "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNNFdzUjlZV2JIZjBMTXVRNnpXX2lzTWx4SWRYR0U4V2o0VklVSTRLVkZvbUNUUmlFTmlkcjJ6T2dRQW1jd2lobVhFOTdrNldWdWtGNm9JLTlLRE9ieFNMZzIyT1dtNVNuejNYc0F5MlNxRW9kYkpDTWpVckFPWXZPeFcxSGoteUFhMGpfS2ZtYlJUeDc0RFFrZlc1SThGOVdTT0E?oc=5",
+     "date": "2026-11-27"
+    },
+    {
+     "title": "Raiders’ Jackson Powers-Johnson suffers potentially serious injury at practice",
+     "source": "Yahoo Sports",
+     "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQQmRMdlk4R2I0MldmZjU5clRWU2wwbHNuTWtkeVBUS01CbXVubmEzTUlGV3ZKNXo4SkxKSkJ2elVzVnFsTXBsWmtReTBsVWJnS3lndlVzb3hfd1E4NERvVlVWUkVsMXdva2gxakZnMGo3MmZrSU42RTFyWFdqVnl1LTRzQTU2WXVTZldYRnRtYzJUWU5yakE?oc=5",
+     "date": "2026-11-27"
+    },
+    {
+     "title": "Raiders TE Brock Bowers (ankle) doesn't practice Friday, questionable vs. Browns",
+     "source": "ESPN",
+     "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQQVNZdXJrSWFGek9jdHg2aTNCN25TZlY5ZUE0X0hCdkVmVVdYUTVkWDY2OExycENXcU5VUm5NQmhEdTBWV2d0MHhCZWl4b1drNWI0dklQSnJxYXlqeWs5NlRmX004Q3AwTTMtWWJxRXprUllCWkN5S0V1dlhzUEwycFNISG51YnlwZEpzTm12U0lIWDNJOGtSUm0zNHZ2MHhUZkp0SFhsX1M?oc=5",
+     "date": "2026-11-27"
+    }
+   ],
+   "card": [
+    {
+     "kind": "out",
+     "name": "Jackson Powers-Johnson",
+     "pos": "G",
+     "status": "Out",
+     "missed": 6,
+     "team_games": 11
+    },
+    {
+     "kind": "maybe",
+     "name": "Brock Bowers",
+     "pos": "TE",
+     "status": "Questionable",
+     "missed": 1,
+     "team_games": 11
+    }
+   ]
+  },
+  "MIA": {
+   "name": "Miami Dolphins",
+   "items": [
+    {
+     "team": "MIA",
+     "tag": "QB",
+     "text": "QB Malik Willis injured reserve — on injured reserve",
+     "source": "NFL injury report",
+     "url": "https://www.nfl.com/injuries/",
+     "date": "2026-11-28"
+    },
+    {
+     "team": "MIA",
+     "tag": "RETURNING",
+     "text": "S Dante Trader Jr. trending back — on the Week 12 report with no game status; full practice",
+     "source": "NFL injury report",
+     "url": "https://www.nfl.com/injuries/",
+     "date": "2026-11-28"
+    }
+   ],
+   "starters_on_report": [
+    {
+     "name": "Austin Jackson",
+     "pos": "T",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; limited in practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 1.0,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Julius Brents",
+     "pos": "CB",
+     "status": "Out",
+     "injury": "Neck",
+     "note": "Out on the Week 12 report; did not practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.7,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Dante Trader Jr.",
+     "pos": "S",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.85,
+     "missed_recent": 1,
+     "missed_last": 1,
+     "missed": 1,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Jacob Rodriguez",
+     "pos": "LB",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.99,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Zach Sieler",
+     "pos": "DL",
+     "status": "Injured Reserve",
+     "injury": "",
+     "note": "on injured reserve",
+     "detail": "",
+     "days_old": 14,
+     "date": "2026-11-28",
+     "pct": 0.76,
+     "missed_recent": 2,
+     "missed_last": 1,
+     "missed": 2,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Malik Willis",
+     "pos": "QB",
+     "status": "Injured Reserve",
+     "injury": "",
+     "note": "on injured reserve",
+     "detail": "",
+     "days_old": 14,
+     "date": "2026-11-28",
+     "pct": 1.0,
+     "missed_recent": 2,
+     "missed_last": 1,
+     "missed": 2,
+     "team_games": 10,
+     "qb1": true
+    }
+   ],
+   "headlines": [
+    {
+     "title": "Jets Injury Report | Week 12 vs. Dolphins - Thursday",
+     "source": "New York Jets",
+     "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxONFZFT0IzSWluMkZKQ2tCV1I1UmpqbWYzbUhubmFVaUluT0xZTDluUmxRaVQyaDZzeEljRlpIMkFyakswUWhaTXZQd3FlMy1qOHZza1B6dk1felRJUFNXeDIxRUotUlA2T3NuaEJvQlZ6WjVndzhYYXN3bFdjR3hsdXpaNWxTOEVlWUhhRjB4S2dGVDNWX2c?oc=5",
+     "date": "2026-11-26"
+    },
+    {
+     "title": "Coach Jeff Hafley updates Austin Jackson, Dolphins injuries",
+     "source": "The Palm Beach Post",
+     "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNOExseGJ5ZlcwTDhmR0VHTm9iVmFJTjl1N3hBSzM2UnpnUUV1N1M4OVNTbjB2aDdXNXN2X3lDWk1mNHFlbnZzd0FEQ2liajNyVFJtb3pVdjFBN3dmeVhHRlJPMUtOMHRVVmFaa3NjSU16aXVYY1lhN0xYZmdCNmtxS05RWFVtWVljNUI1WjRES1g3ZmoyQUt2TzBIS2NRT3lJWDNVV2s5Zm54eXFVaXpBMkdNb3Nrc21xdl90bUNxWUtSUGlfRWxR?oc=5",
+     "date": "2026-11-27"
+    },
+    {
+     "title": "Dolphins' final injury report: Who won't or might not play vs. Jets?",
+     "source": "Yahoo Sports",
+     "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOYVdGZ2M4YkxLS2lGMWEtYkREanM5N0E4MUNXWnZHTmhOMEktT2hZaUliSnZjSFlEYkxrTW1jSWV6ZWlmc3l2QW9ZaVRxcHR3bmxFWmNyNFc5R2h6THl4X3lfLUFkb2VxMnNLU3lGMHY5cGlHbGQ1dkwwOUxlRU1QQ0Z6S2VQNmhJZGUzaHZKQQ?oc=5",
+     "date": "2026-11-27"
+    },
+    {
+     "title": "Dolphins’ JuJu Brents out for Jets game; Dante Trader, Austin Jackson good to go",
+     "source": "Sun Sentinel",
+     "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQdVdWa01VNXhfNGN3LW9wUXlVQ1Fla0JaQTdjcDd2dk85ZGlsMzlwcTdkdjgxb192SU50eUFkRS1qenZTRF9Xcms5OWxoOWY5YnRiLUdTOGhTSkc3dC1ydElLTFFNdVhmaWRnbnktOE5xNVVCaVQxVFVaeVllUE5ScXlkUjJKVldUNlNOTGdPTEp4R1FLUDAwRzRIYXd2d2tvOUg5S1ljVE1NMjkwWk04S1Q1ZVR2bjRjZjlTMUp0SkxBQQ?oc=5",
+     "date": "2026-11-27"
+    }
+   ],
+   "card": [
+    {
+     "kind": "out",
+     "name": "Zach Sieler",
+     "pos": "DL",
+     "status": "Injured Reserve",
+     "missed": 2,
+     "team_games": 10
+    },
+    {
+     "kind": "out",
+     "name": "Malik Willis",
+     "pos": "QB",
+     "status": "Injured Reserve",
+     "missed": 2,
+     "team_games": 10
+    },
+    {
+     "kind": "returning",
+     "name": "Dante Trader Jr.",
+     "pos": "S",
+     "status": "Active",
+     "missed": 1,
+     "team_games": 10
+    }
+   ]
+  },
+  "MIN": {
+   "name": "Minnesota Vikings",
+   "items": [
+    {
+     "team": "MIN",
+     "tag": "RETURNING",
+     "text": "QB Kyler Murray back after missing time — on the Week 12 report with no game status; full practice",
+     "source": "NFL injury report",
+     "url": "https://www.nfl.com/injuries/",
+     "date": "2026-11-28"
+    },
+    {
+     "team": "MIN",
+     "tag": "CLUSTER",
+     "text": "2 OL starters out: Christian Darrisaw (T, Out), Donovan Jackson (OL, Injured Reserve)",
+     "source": "NFL injury report",
+     "url": "https://www.nfl.com/injuries/",
+     "date": "2026-11-28"
+    },
+    {
+     "team": "MIN",
+     "tag": "KEY",
+     "text": "WR Jordan Addison out (thumb) — Out on the Week 12 report; did not practice",
+     "source": "NFL injury report",
+     "url": "https://www.nfl.com/injuries/",
+     "date": "2026-11-28"
+    },
+    {
+     "team": "MIN",
+     "tag": "KEY",
+     "text": "CB Isaiah Rodgers out (thigh) — Out on the Week 12 report; did not practice",
+     "source": "NFL injury report",
+     "url": "https://www.nfl.com/injuries/",
+     "date": "2026-11-28"
+    }
+   ],
+   "starters_on_report": [
+    {
+     "name": "Kyler Murray",
+     "pos": "QB",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.86,
+     "missed_recent": 3,
+     "missed_last": 1,
+     "missed": 3,
+     "team_games": 10,
+     "qb1": true
+    },
+    {
+     "name": "Isaiah Rodgers",
+     "pos": "CB",
+     "status": "Out",
+     "injury": "Thigh",
+     "note": "Out on the Week 12 report; did not practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.83,
+     "missed_recent": 1,
+     "missed_last": 1,
+     "missed": 1,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Christian Darrisaw",
+     "pos": "T",
+     "status": "Out",
+     "injury": "Shoulder",
+     "note": "Out on the Week 12 report; did not practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.91,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Jalen Redmond",
+     "pos": "DT",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.81,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Jordan Addison",
+     "pos": "WR",
+     "status": "Out",
+     "injury": "Thumb",
+     "note": "Out on the Week 12 report; did not practice",
+     "detail": "",
+     "days_old": 7,
+     "date": "2026-11-28",
+     "pct": 0.92,
+     "missed_recent": 2,
+     "missed_last": 1,
+     "missed": 2,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Donovan Jackson",
+     "pos": "OL",
+     "status": "Injured Reserve",
+     "injury": "",
+     "note": "on injured reserve",
+     "detail": "",
+     "days_old": 49,
+     "date": "2026-11-28",
+     "pct": 0.77,
+     "missed_recent": 3,
+     "missed_last": 1,
+     "missed": 6,
+     "team_games": 10,
+     "qb1": false
+    }
+   ],
+   "headlines": [
+    {
+     "title": "Final Vikings Against Falcons Injury Report for Week 12 of 2026",
+     "source": "Vikings.com",
+     "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBFT0tpQ241SmFGaGtzSXkzSnYwVVFXb2ZtcWM0S2M5WXdrNXI1ejN1TXdJOENTdDcyZmUwejRmNGZHSm9udFh0UVR2UjlWY2RvWHl1RXRselF1cENzTVNmMHJTZDNIY0RySUk3NjJpN2lqU1R4Y3diTzhSNndqcUE?oc=5",
+     "date": "2026-11-28"
+    },
+    {
+     "title": "Falcons injury report: 5 players ruled out against Minnesota Vikings",
+     "source": "Atlanta Falcons",
+     "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPRE1lQUhtQWp3bWk4cGdjMjRVcm95dm1IaFduaHd2SHcxY3NOSzZCclR1UlFqbVphajZNNHZyajNvWUZodzFQU2M3TlNOb2wydG5vb0xFWWJDLUNWSFl2SmZvRFE3WmNhc2ZZaXJhVGZrUy1BQkZTR0hiZWNzVjdSQ3Vjd05BSTl2NDg4MGU3LWtnVFNVU0Y5bUFMS0lFbnVNc2hoanFDOGJpQlBKUFZTY0tPZw?oc=5",
+     "date": "2026-11-27"
+    },
+    {
+     "title": "Vikings-Falcons Final Injury Report",
+     "source": "Daily Norseman",
+     "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOdXRERm9leUlLT3ppMHJHOFdsT1NpMDlGMFhYODZsRWg2M1c2bW82V1dualF4SnRhU0k3bjNqUEcwdGhhdUVNOWRIUFYyRlpZRkwxT0oxeGtYdC1pdE11ZVlHeXVaMlQ2T2FmOTFLdW1ONFptQzYyekpldWk0enNjYTE3TjVkbzBsdHNkaDc4T09saV9QQUJkZUlPd3hNNXEw?oc=5",
+     "date": "2026-11-27"
+    },
+    {
+     "title": "Vikings go into Battle Against Falcons with Three Starters Ruled out",
+     "source": "Yahoo Sports",
+     "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQMGJ0Tm93NUs2YVU5dzlnTWc4cHUtQ1dCOTZPYVYtRjNrb1FfOExFVlVuM2VTSy0zY2E5UnlfRktlWVVaOUxsM2lKbkRsOEhvYTgxTUVIYTlnM2xpZ2xNSGthT2w2YTAxS0JwR0w2cVRhZUtGYVBvMmFwRnpkOUJhNUZERTNDZTJZb1M1cGVUdDIza1E?oc=5",
+     "date": "2026-11-28"
+    }
+   ],
+   "card": [
+    {
+     "kind": "out",
+     "name": "Donovan Jackson",
+     "pos": "OL",
+     "status": "Injured Reserve",
+     "missed": 6,
+     "team_games": 10
+    },
+    {
+     "kind": "out",
+     "name": "Jordan Addison",
+     "pos": "WR",
+     "status": "Out",
+     "missed": 2,
+     "team_games": 10
+    },
+    {
+     "kind": "out",
+     "name": "Isaiah Rodgers",
+     "pos": "CB",
+     "status": "Out",
+     "missed": 1,
+     "team_games": 10
+    }
+   ]
+  },
+  "NE": {
+   "name": "New England Patriots",
+   "items": [
+    {
+     "team": "NE",
+     "tag": "QB",
+     "text": "QB Drake Maye out (fibula) — Out on the Week 12 report; did not practice",
+     "source": "NFL injury report",
+     "url": "https://www.nfl.com/injuries/",
+     "date": "2026-11-28"
+    },
+    {
+     "team": "NE",
+     "tag": "KEY",
+     "text": "G Alijah Vera-Tucker injured reserve (hamstring) — on injured reserve (Questionable on the Week 12 report; limited in practice)",
+     "source": "NFL injury report",
+     "url": "https://www.nfl.com/injuries/",
+     "date": "2026-11-28"
+    },
+    {
+     "team": "NE",
+     "tag": "KEY",
+     "text": "CB Carlton Davis III out (knee) — Out on the Week 12 report; did not practice",
+     "source": "NFL injury report",
+     "url": "https://www.nfl.com/injuries/",
+     "date": "2026-11-28"
+    },
+    {
+     "team": "NE",
+     "tag": "RETURNING",
+     "text": "C Ben Brown trending back — on the Week 12 report with no game status; full practice",
+     "source": "NFL injury report",
+     "url": "https://www.nfl.com/injuries/",
+     "date": "2026-11-28"
+    }
+   ],
+   "starters_on_report": [
+    {
+     "name": "Carlton Davis III",
+     "pos": "CB",
+     "status": "Out",
+     "injury": "Knee",
+     "note": "Out on the Week 12 report; did not practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.87,
+     "missed_recent": 1,
+     "missed_last": 1,
+     "missed": 1,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "A.J. Brown",
+     "pos": "WR",
+     "status": "Out",
+     "injury": "Hamstring",
+     "note": "Out on the Week 12 report; did not practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.65,
+     "missed_recent": 2,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Alijah Vera-Tucker",
+     "pos": "G",
+     "status": "Injured Reserve",
+     "injury": "Hamstring",
+     "note": "on injured reserve (Questionable on the Week 12 report; limited in practice)",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.89,
+     "missed_recent": 3,
+     "missed_last": 1,
+     "missed": 4,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Ben Brown",
+     "pos": "C",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.67,
+     "missed_recent": 1,
+     "missed_last": 1,
+     "missed": 1,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Drake Maye",
+     "pos": "QB",
+     "status": "Out",
+     "injury": "Fibula",
+     "note": "Out on the Week 12 report; did not practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.88,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 10,
+     "qb1": true
+    }
+   ],
+   "headlines": [
+    {
+     "title": "Week 12 Injury Report: Patriots at Chargers",
+     "source": "New England Patriots",
+     "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFB1LTZkS0ZNWHI2OWFWc0dOSGRnbGhSdXZONk1VSkNBZTFDUlNKMUEwYkJMcXYwU1lsZGkxemdyS0FxVUxBYWxtWWlNRFk1M0xsbGo5S1VXVmVLdzhIYW1fb1VEd3hxa3ZhM0tiUUFjSlZDVVA3aHBDRzY0ZmU?oc=5",
+     "date": "2026-11-27"
+    },
+    {
+     "title": "Chargers vs. Patriots Injury Report: Justin Herbert Ruled Out; Tuli Tuipulotu Among 5 Questionable in Week 12",
+     "source": "Los Angeles Chargers",
+     "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQMUlxc3h5WF9vS2N2MjFYN0hrZ1JXa2pIbjBVVnpRaDZ2NWFfclZHVElEcWpYenhLaWREaGRIMVRMUXlYdnQ1elUzZnhFd3djNTlVckQ4ZXdkR0RoNEdicmdYblgxdFJlUnNtenM1Y0VROVZ2VlpZOFVYOE5PV09yUmU1N2E3TUxZRmhESVpWWGw?oc=5",
+     "date": "2026-11-27"
+    },
+    {
+     "title": "Injury Report Analysis: Patriots rule out four players and list four players as questionable for Week 12 matchup vs. the Chargers",
+     "source": "New England Patriots",
+     "url": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxOUDRjVGZETDVVZ3JWS1ltai03TEY0aHl5dDZlS2dhQmNuQ013OGhtaVVNOExKajZSakN4N3d3RDlyZEJSdWRlZkxPS3dHanpnVXpNVlRfbHRUQ1hqU2JWS2Nubm45YTR1aTdWZlFqUmUybko0MDlXTUZQQmtDSGV5bEs4eExMVXhaWmt0S3hTMDR5OG1OTFRaZXhnLVFMQjNSM3lqTHFNVXQ4QkVscWZMajNVeFZvSWpsb1JnU3JPX2wxSWRxSU5TbG9IRFFqcmxOZ1BtY3pYMm1MQWFTdzZHZExvaWIzd1lYY0g1WnBn?oc=5",
+     "date": "2026-11-27"
+    },
+    {
+     "title": "Patriots dealt another blow with Romeo Doubs injury update",
+     "source": "Yahoo Sports",
+     "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQcm5CWnBrSW1UQjFpYVc3ZHlLYUxnVmQ4eGgySWtYckE0YWl2Ulg2UzUtUnJVV256SENlV3VaWDZKYkxqWHZSRjlGU2FrMHE2MEo3djk5RWF1Rk4wdTM5aXpmRWdUVVQzdkFmckZTZERIdHRUdGpHZThoUkxkN0Y5cXJlMVRLaml3VnZ0LWRlWQ?oc=5",
+     "date": "2026-11-27"
+    }
+   ],
+   "card": [
+    {
+     "kind": "out",
+     "name": "Alijah Vera-Tucker",
+     "pos": "G",
+     "status": "Injured Reserve",
+     "missed": 4,
+     "team_games": 10
+    },
+    {
+     "kind": "out",
+     "name": "Carlton Davis III",
+     "pos": "CB",
+     "status": "Out",
+     "missed": 1,
+     "team_games": 10
+    },
+    {
+     "kind": "out",
+     "name": "Drake Maye",
+     "pos": "QB",
+     "status": "Out",
+     "missed": 0,
+     "team_games": 10
+    }
+   ]
+  },
+  "NO": {
+   "name": "New Orleans Saints",
+   "items": [
+    {
+     "team": "NO",
+     "tag": "KEY",
+     "text": "T Taliese Fuaga questionable (knee) — Questionable on the Week 12 report; limited in practice",
+     "source": "NFL injury report",
+     "url": "https://www.nfl.com/injuries/",
+     "date": "2026-11-28"
+    },
+    {
+     "team": "NO",
+     "tag": "KEY",
+     "text": "T Asim Richards questionable (knee) — Questionable on the Week 12 report; limited in practice",
+     "source": "NFL injury report",
+     "url": "https://www.nfl.com/injuries/",
+     "date": "2026-11-28"
+    },
+    {
+     "team": "NO",
+     "tag": "RETURNING",
+     "text": "C Erik McCoy trending back — on the Week 12 report with no game status; full practice",
+     "source": "NFL injury report",
+     "url": "https://www.nfl.com/injuries/",
+     "date": "2026-11-28"
+    },
+    {
+     "team": "NO",
+     "tag": "RETURNING",
+     "text": "LB Pete Werner trending back — on the Week 12 report with no game status; full practice",
+     "source": "NFL injury report",
+     "url": "https://www.nfl.com/injuries/",
+     "date": "2026-11-28"
+    }
+   ],
+   "starters_on_report": [
+    {
+     "name": "Erik McCoy",
+     "pos": "C",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.96,
+     "missed_recent": 2,
+     "missed_last": 1,
+     "missed": 2,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "David Edwards",
+     "pos": "G",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; limited in practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 1.0,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Juwan Johnson",
+     "pos": "TE",
+     "status": "Out",
+     "injury": "Hamstring",
+     "note": "Out on the Week 12 report; did not practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.61,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Pete Werner",
+     "pos": "LB",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.74,
+     "missed_recent": 1,
+     "missed_last": 1,
+     "missed": 1,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Asim Richards",
+     "pos": "T",
+     "status": "Questionable",
+     "injury": "Knee",
+     "note": "Questionable on the Week 12 report; limited in practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.87,
+     "missed_recent": 2,
+     "missed_last": 1,
+     "missed": 1,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Taliese Fuaga",
+     "pos": "T",
+     "status": "Questionable",
+     "injury": "Knee",
+     "note": "Questionable on the Week 12 report; limited in practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 1.0,
+     "missed_recent": 2,
+     "missed_last": 1,
+     "missed": 2,
+     "team_games": 10,
+     "qb1": false
+    }
+   ],
+   "headlines": [
+    {
+     "title": "Saints Friday Injury Report: 2026 Week 12 vs. Cincinnati Bengals",
+     "source": "New Orleans Saints",
+     "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPcUxRa1F2YU9OTGljdXlfb2tiRk5ZSTF4MW9wTlg5b1Z0UTI0V0pyb2dDYVFyc1ZkOUJJa2h1SEFnVXMxUWxNazlsQjRRVlFtQnQ1U2huRGF4QzY4SVFLTHhYRThVdl9vNkV3RFpqQ01iOGdBdWNWMzRXc0o1b2pjNWphdkJON2g4bnRDaG85RGxvQ1BDTTN0QlVPQ0RHalBfWUdkRW9reXNzb2tCNlFVaXVkcDE5VWc?oc=5",
+     "date": "2026-11-27"
+    },
+    {
+     "title": "Final Saints vs. Bengals Injury Report: 3 players questionable, one ruled out",
+     "source": "Canal Street Chronicles",
+     "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxQWFRRY09jMFVITEJyZVZXd1BDSzFUU2JYc01KaldOSWVkcEg0WFc3NEdVSTBOc095UTRxMVYtMllMbzBNOWtONnBsNUl5WjFFM1FxYXdoVGk5dlpEd0djMVVmYjV6cW94cVFXNURzanJWM1hzZkVFV2pPcTJuNmxoeDExWnpPSV9LTVVocS1UT1kxTkF0M1A3Q0tOb2t2Qkh6Q3cweWNlUHlfbnhndVZOOVdtQUtVRFRnMTFzRUpGNzVJb3piZ2hLTHZiSEQzd3B2SENweC00Skkyc3ZYeGZPYUFMS29NYmtwUl8w?oc=5",
+     "date": "2026-11-27"
+    },
+    {
+     "title": "Saints-Bengals injury report: McCoy cleared, Higgins questionable",
+     "source": "Louisiana Sports",
+     "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPSkx6aUZUR3M3dWtuaktzZHFaOXI2bHVyYVFwMHNxVF8wS3FqcmQyZjl0QVhfX1ZrNEN5TW1DQnJwNV9vRFpzblEyVmxkZ1Y3MU1STzktU3M3WFZBb3g3ZlhyclBINXJWRzJjLUFmb3dRd2w3VWFuSlZxY3FYS3FodnA3OFlQSWRZWUF2OEYwTjUwZGJwNU9kQUp2Tnp2Q01QNXhTejFzeFVSRi14T3ZDa1J0dFc0SXE4dUdfRlVvZw?oc=5",
+     "date": "2026-11-27"
+    },
+    {
+     "title": "Bengals vs. Saints Injury Report: Tee Higgins questionable; Juwan Johnson out",
+     "source": "Cincy Jungle",
+     "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNbENLY2JlY2otb0dYLW8zZlQwcTN5aDV1QjJvamQ3SGFGMmRJUlJ3LWEzOHJSc0pfWi01YlB2QWNueUpNWUJSTTk4YlhsS0taWmZoQzFqZkhvTkFhbmwzQ1dPZVVLbktMN3N4bFl5dWY1TVpSaUFTWm5iQ2dfWWhDdXcwUlBWZXFEM0JBZHE3bEdDLW56WEVsOXhnaTQwU1JmMnpZYk8zUHlPeUxIZXc?oc=5",
+     "date": "2026-11-27"
+    }
+   ],
+   "card": [
+    {
+     "kind": "maybe",
+     "name": "Taliese Fuaga",
+     "pos": "T",
+     "status": "Questionable",
+     "missed": 2,
+     "team_games": 10
+    },
+    {
+     "kind": "maybe",
+     "name": "Asim Richards",
+     "pos": "T",
+     "status": "Questionable",
+     "missed": 1,
+     "team_games": 10
+    },
+    {
+     "kind": "returning",
+     "name": "Erik McCoy",
+     "pos": "C",
+     "status": "Active",
+     "missed": 2,
+     "team_games": 10
+    }
+   ]
+  },
+  "NYG": {
+   "name": "New York Giants",
+   "items": [
+    {
+     "team": "NYG",
+     "tag": "QB",
+     "text": "QB Jaxson Dart injured reserve — on injured reserve",
+     "source": "NFL injury report",
+     "url": "https://www.nfl.com/injuries/",
+     "date": "2026-11-28"
+    },
+    {
+     "team": "NYG",
+     "tag": "CLUSTER",
+     "text": "2 front seven starters out: Tremaine Edmunds (LB, Injured Reserve), Brian Burns (LB, Injured Reserve)",
+     "source": "NFL injury report",
+     "url": "https://www.nfl.com/injuries/",
+     "date": "2026-11-28"
+    },
+    {
+     "team": "NYG",
+     "tag": "KEY",
+     "text": "DB Greg Newsome II injured reserve — on injured reserve",
+     "source": "NFL injury report",
+     "url": "https://www.nfl.com/injuries/",
+     "date": "2026-11-28"
+    }
+   ],
+   "starters_on_report": [
+    {
+     "name": "Jevon Holland",
+     "pos": "S",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 1.0,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Isaiah Likely",
+     "pos": "TE",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 7,
+     "date": "2026-11-28",
+     "pct": 0.76,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Andru Phillips",
+     "pos": "CB",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; limited in practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.74,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Abdul Carter",
+     "pos": "LB",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; limited in practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.86,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Arvell Reese",
+     "pos": "LB",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.99,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Tremaine Edmunds",
+     "pos": "LB",
+     "status": "Injured Reserve",
+     "injury": "",
+     "note": "on injured reserve",
+     "detail": "",
+     "days_old": 35,
+     "date": "2026-11-28",
+     "pct": 1.0,
+     "missed_recent": 3,
+     "missed_last": 1,
+     "missed": 4,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Brian Burns",
+     "pos": "LB",
+     "status": "Injured Reserve",
+     "injury": "",
+     "note": "on injured reserve",
+     "detail": "",
+     "days_old": 56,
+     "date": "2026-11-28",
+     "pct": 0.65,
+     "missed_recent": 3,
+     "missed_last": 1,
+     "missed": 7,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Greg Newsome II",
+     "pos": "DB",
+     "status": "Injured Reserve",
+     "injury": "",
+     "note": "on injured reserve",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.83,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Jaxson Dart",
+     "pos": "QB",
+     "status": "Injured Reserve",
+     "injury": "",
+     "note": "on injured reserve",
+     "detail": "",
+     "days_old": 63,
+     "date": "2026-11-28",
+     "pct": 0.56,
+     "missed_recent": 3,
+     "missed_last": 1,
+     "missed": 8,
+     "team_games": 10,
+     "qb1": false
+    }
+   ],
+   "headlines": [
+    {
+     "title": "Injury Report: Statuses for Giants vs. Colts",
+     "source": "Giants.com",
+     "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTFBOZGh5MENNRFRaZVBFcnFaRFRhQXdiY0JWbHVwWW9UR3g0N1MwOFhGbHNxUU16VzZQOGd1Yzh5cEpWbnNoSzV4alZkMVdaSHZKbUowbnJ1R2lJQTZoYnkzVW1hM3RLUU5Cdk9TYlJpTW5DdWZmVXI0M3Bn?oc=5",
+     "date": "2026-11-28"
+    },
+    {
+     "title": "Giants Injury Report: Shelby Harris Out, Abdul Carter Good to Go Sunday",
+     "source": "Sports Illustrated",
+     "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNVFU5aWlKeDhzRHVyaEJwc3hfMVUyaDZwY1E1eUpPM2Iyd3RVd3hLWWNUMV9WeWlPMmVhYU40NEVzLURjRDlfNWpaelFrbDEtWGE4NFFIb0k2TmZmaWIwMFNqdjVSR3pwcllhYkh3LTBqSDFBOWt2MGVsZHBzcmtLV05yT1ptajl3RjlnRzAyWkxjdzZZRVc0Qm5JN0JLUnBlZk11WjFZZ25xejBBRnBnRHE2RQ?oc=5",
+     "date": "2026-11-27"
+    },
+    {
+     "title": "Giants-Colts Friday injury report: Abdul Carter expected to play",
+     "source": "Big Blue View",
+     "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPSmhzY2RVd0dfZHJfLWd5RnVDaDVzTnIzaUtmREhmd1dOX1hNaGJPWE5hRVlRY2lETmRUbDVlRC05V1c4bkF2QS12YXdNUDViX1ZzS1JzS29EdTZKWW9DOEI3NVlDNGtHdDRqTTlKOHdjUUNocXlXWTlBaUJDUWJZejFkNFR0RmlWSGx3ZEtNd2xDVjhBYnNEeXRDZVRfNmJidFV3Zl9B?oc=5",
+     "date": "2026-11-27"
+    },
+    {
+     "title": "Shelby Harris Will Not Play Against Colts; Full Injury Report",
+     "source": "Big Blue Interactive",
+     "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPVXFKcWVXQVNiVUdwX3JHSGtDVU5xOG1aQkxTNk1FNEpMLVpaOUJfVzdQN05peDVXRHBqSUNqZFpuSU5ydVlFUW5xMm1nd0xaVG1MTEROdE1hRk8zdXBDSThtZDdRYnRmZDRYZkNnWEZtLUlvQ3JVOFIyVDExNlc1OTFRMEN5VFBMVVM0OXNlSkJ1UXVDd2JEM2JvTFJpLUlwQ3Q2Tk93?oc=5",
+     "date": "2026-11-27"
+    }
+   ],
+   "card": [
+    {
+     "kind": "out",
+     "name": "Tremaine Edmunds",
+     "pos": "LB",
+     "status": "Injured Reserve",
+     "missed": 4,
+     "team_games": 10
+    },
+    {
+     "kind": "out",
+     "name": "Greg Newsome II",
+     "pos": "DB",
+     "status": "Injured Reserve",
+     "missed": 0,
+     "team_games": 10
+    }
+   ]
+  },
+  "NYJ": {
+   "name": "New York Jets",
+   "items": [],
+   "starters_on_report": [
+    {
+     "name": "Dylan Parham",
+     "pos": "G",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.82,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 11,
+     "qb1": false
+    }
+   ],
+   "headlines": [
+    {
+     "title": "Jets Injury Report | Week 12 vs. Dolphins - Thursday",
+     "source": "New York Jets",
+     "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxONFZFT0IzSWluMkZKQ2tCV1I1UmpqbWYzbUhubmFVaUluT0xZTDluUmxRaVQyaDZzeEljRlpIMkFyakswUWhaTXZQd3FlMy1qOHZza1B6dk1felRJUFNXeDIxRUotUlA2T3NuaEJvQlZ6WjVndzhYYXN3bFdjR3hsdXpaNWxTOEVlWUhhRjB4S2dGVDNWX2c?oc=5",
+     "date": "2026-11-26"
+    },
+    {
+     "title": "New York Jets Rule Omar Cooper Jr. Out for Miami Dolphins Rematch",
+     "source": "Yahoo Sports",
+     "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNMnR2LVhLUUY1cTk5bXBXemVGSFZIQ1JRSnNXbnJmNjVzRGpHNUx6eFhXX2FleDZhR3M5OHpBRXVnbW9UbVZ4dElRdlZmaXZwbVpHc1RsdjJQS1JORi1kN3RJaGpQRVhuektvTDZ0bURiWXBRZFNxa20tYWFIY05pbW1mNmpEQQ?oc=5",
+     "date": "2026-11-27"
+    },
+    {
+     "title": "Breaking Down Jets’ Week 12 Injury Report: Who’s Hurt and Who Could Return vs. Dolphins",
+     "source": "Sports Illustrated",
+     "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNZHZEYzU1UVNFbWhQTTdrQWk5V2d2VXZUYzNHYmZNN2tIU05ZTTNLRXR3ZUtudmxRQV9ZaFdfdVlsREUtUGhCMVZiLWVtQWduMjFqSEpmYjRyUC15ZGtiYkYyVUY2b1hNV0NZSTZqT0dOLUsyc3hDZHllZXVzVlpxanZ3NWJ5My1IR3Yzc2d2ZEhnTjRkWkpjeXpSRThLV1Rybnhza1NrYUhMLW43cHZQOEdNbU5raWRyUXlGeVoyd0w?oc=5",
+     "date": "2026-11-27"
+    },
+    {
+     "title": "Jets getting much-needed defensive reinforcement with David Onyemata’s return",
+     "source": "New York Post",
+     "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPdk9KWDlPX2tGYWRUM3RQbFpUcDdFSGR1bGd6Uk9hS1cwN0RvQkN6LWVFUFNEZVdWUHJxNHN0NndaX3pxUVFaZjFxbVdhdkg0eWo0d0RFamFqOGxFTkRGSlgzWkozd2VoQnV1R0tzZ1JDSl9QQ3I1U1hTcjlvR3pndEpNVWJFSnV6aGJncWRYUGZkbjQzWnpnUXcyeEhRVEJjNEljVQ?oc=5",
+     "date": "2026-11-28"
+    }
+   ],
+   "card": []
+  },
+  "PHI": {
+   "name": "Philadelphia Eagles",
+   "items": [
+    {
+     "team": "PHI",
+     "tag": "RETURNING",
+     "text": "QB Tanner McKee back after missing time — on the Week 12 report with no game status; full practice",
+     "source": "NFL injury report",
+     "url": "https://www.nfl.com/injuries/",
+     "date": "2026-11-28"
+    },
+    {
+     "team": "PHI",
+     "tag": "QB",
+     "text": "QB Jalen Hurts injured reserve — on injured reserve",
+     "source": "NFL injury report",
+     "url": "https://www.nfl.com/injuries/",
+     "date": "2026-11-28"
+    },
+    {
+     "team": "PHI",
+     "tag": "KEY",
+     "text": "LB Zack Baun injured reserve — on injured reserve",
+     "source": "NFL injury report",
+     "url": "https://www.nfl.com/injuries/",
+     "date": "2026-11-28"
+    },
+    {
+     "team": "PHI",
+     "tag": "KEY",
+     "text": "WR Dontayvion Wicks injured reserve — on injured reserve",
+     "source": "NFL injury report",
+     "url": "https://www.nfl.com/injuries/",
+     "date": "2026-11-28"
+    }
+   ],
+   "starters_on_report": [
+    {
+     "name": "Dallas Goedert",
+     "pos": "TE",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.68,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 11,
+     "qb1": false
+    },
+    {
+     "name": "DeVonta Smith",
+     "pos": "WR",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 7,
+     "date": "2026-11-28",
+     "pct": 0.84,
+     "missed_recent": 1,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 11,
+     "qb1": false
+    },
+    {
+     "name": "Jalen Carter",
+     "pos": "DT",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.84,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 11,
+     "qb1": false
+    },
+    {
+     "name": "Tanner McKee",
+     "pos": "QB",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 7,
+     "date": "2026-11-28",
+     "pct": 1.0,
+     "missed_recent": 3,
+     "missed_last": 1,
+     "missed": 3,
+     "team_games": 11,
+     "qb1": false
+    },
+    {
+     "name": "Quinyon Mitchell",
+     "pos": "CB",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.92,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 11,
+     "qb1": false
+    },
+    {
+     "name": "Jalen Hurts",
+     "pos": "QB",
+     "status": "Injured Reserve",
+     "injury": "",
+     "note": "on injured reserve",
+     "detail": "",
+     "days_old": 42,
+     "date": "2026-11-28",
+     "pct": 0.98,
+     "missed_recent": 3,
+     "missed_last": 1,
+     "missed": 6,
+     "team_games": 11,
+     "qb1": true
+    },
+    {
+     "name": "Zack Baun",
+     "pos": "LB",
+     "status": "Injured Reserve",
+     "injury": "",
+     "note": "on injured reserve",
+     "detail": "",
+     "days_old": 7,
+     "date": "2026-11-28",
+     "pct": 0.93,
+     "missed_recent": 2,
+     "missed_last": 1,
+     "missed": 2,
+     "team_games": 11,
+     "qb1": false
+    },
+    {
+     "name": "Dontayvion Wicks",
+     "pos": "WR",
+     "status": "Injured Reserve",
+     "injury": "",
+     "note": "on injured reserve",
+     "detail": "",
+     "days_old": 7,
+     "date": "2026-11-28",
+     "pct": 0.8,
+     "missed_recent": 3,
+     "missed_last": 1,
+     "missed": 5,
+     "team_games": 11,
+     "qb1": false
+    }
+   ],
+   "headlines": [
+    {
+     "title": "Eagles at Cowboys Injury Report",
+     "source": "Philadelphia Eagles",
+     "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQWmt1MEE0dS1JTDZDR1prRWhGd1AxLS11bGdLZ25PNGlIQ0FBYXl2ODljUjlVUGw0VjJLZ2t1M3hpUUNkclBVNmJBT1QtQUlTVGwzenllWmxLN3FoNHpwYXBhdm5NTzBpdl9rSnFqT1RpSTd1dFRSTVVEUlpoZUZtXzBnOFpLYUt3UG16MGdWNDlSSzVQWU43WFJNWUxEMjY3dTdn?oc=5",
+     "date": "2026-11-25"
+    },
+    {
+     "title": "Eagles Week 12 injury report vs. Cowboys: 2 players ruled out for Thanksgiving showdown",
+     "source": "Yahoo Sports",
+     "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNdmxKTXEyVm5MYXlia01wNFBzTGFLWHNCRWtiNThNQjBaWkpETWJETElpSGk5VnJwWFY2bGgyZkZwSThhSm9xSjJDT19LTEhIbXYwT21uYXc0V2NJbVhzT25HWlJQUmVfUnh3N2wxRDFFVXZELVdEQVVqekJwaFJQQk0zZ2xzaTRE?oc=5",
+     "date": "2026-11-26"
+    },
+    {
+     "title": "Fantasy Football Injury Update: DeVonta Smith Seen Limping After Win Over Cowboys, Clouding Week 13 Status",
+     "source": "Sports Illustrated",
+     "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQWTlhSzFXSDBTVW1RZm9yczJnYXNIaWFUelpMX05MMk1wblZndmkxQ0ptdDhxczNveDRqakFhM2s3YUNnaHJoLXV3Sk9JeWoycmExc2prdS1ZdGxfc3hFclRWSzlqSFdUc0lobm5OSjVCUGp5cUlRbmNXSXE4c19lTDZPNnpab0xHcVpxQk9pWkg3M3hTVFNvenRYWmFncXVhUmt0U0ZZNTlXWUpsdm1FdXo4MVcwVE5SMy1heXR1VDlFamxlRXQ4UHVHampuMWlUajAzT2FlUkVuOVRKRnc?oc=5",
+     "date": "2026-11-27"
+    },
+    {
+     "title": "Eagles injury update: Quinyon Mitchell good to go; 2 ruled out",
+     "source": "NBC Sports Philadelphia",
+     "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNWVZPWWlHbTQyZXFUblV6TlNXU2t4TkZ6bjVJWnZBVUg0Q3d0dDJGT01HMnM2NUhqYV8xaUZTWXBLYWx6UjRFY1JuOVBzM2FUR2J6VmszM2RQM0hIcnk3N0IzYXA3SVd2ZzRUVVpFZFRRekp1VUdZSURnQmltd2Uzc1RMcnJBX1gwbWxlQmJ1RjlVaG1MNTlsUEo1eFd4cnJ3aVNOdEtETzJ6UmVlVkltSHpFTGY3aWpyZTZIeGprY3LSAcgBQVVfeXFMUGU2QkhKRWVKcUlUUWZibkNhUy1HVFc4XzFYc1JHVXFZclMwTm5INHFYMHZGbTUxLXJGQkw2UE1oMDZNWUlfNEtiUGc0NkszUXFEWVZwWHN0ZmJiZ0ZSdV8zakVLQ0ZFeExQTTVjaThfcVhvQXRubGNZNEp1enRQQzgyQlUwTGJsVkV3d2JOR041LWNtR1R1TV9acmdjVEtuRVZNT200dExjZkQ0RzN6YVVPVmRFMnd1VFFsY20tOHhiQ21KX3VCclo?oc=5",
+     "date": "2026-11-25"
+    }
+   ],
+   "card": [
+    {
+     "kind": "out",
+     "name": "Jalen Hurts",
+     "pos": "QB",
+     "status": "Injured Reserve",
+     "missed": 6,
+     "team_games": 11
+    },
+    {
+     "kind": "out",
+     "name": "Dontayvion Wicks",
+     "pos": "WR",
+     "status": "Injured Reserve",
+     "missed": 5,
+     "team_games": 11
+    },
+    {
+     "kind": "out",
+     "name": "Zack Baun",
+     "pos": "LB",
+     "status": "Injured Reserve",
+     "missed": 2,
+     "team_games": 11
+    }
+   ]
+  },
+  "PIT": {
+   "name": "Pittsburgh Steelers",
+   "items": [
+    {
+     "team": "PIT",
+     "tag": "KEY",
+     "text": "OL Mason McCormick injured reserve — on injured reserve",
+     "source": "NFL injury report",
+     "url": "https://www.nfl.com/injuries/",
+     "date": "2026-11-28"
+    },
+    {
+     "team": "PIT",
+     "tag": "RETURNING",
+     "text": "WR Michael Pittman trending back — on the Week 12 report with no game status; full practice",
+     "source": "NFL injury report",
+     "url": "https://www.nfl.com/injuries/",
+     "date": "2026-11-28"
+    }
+   ],
+   "starters_on_report": [
+    {
+     "name": "Aaron Rodgers",
+     "pos": "QB",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; did not practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.97,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 10,
+     "qb1": true
+    },
+    {
+     "name": "Cameron Heyward",
+     "pos": "DT",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 14,
+     "date": "2026-11-28",
+     "pct": 0.64,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Michael Pittman",
+     "pos": "WR",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.78,
+     "missed_recent": 3,
+     "missed_last": 1,
+     "missed": 6,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Alex Highsmith",
+     "pos": "LB",
+     "status": "Out",
+     "injury": "Ankle",
+     "note": "Out on the Week 12 report; did not practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.6,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Mason McCormick",
+     "pos": "OL",
+     "status": "Injured Reserve",
+     "injury": "",
+     "note": "on injured reserve",
+     "detail": "",
+     "days_old": 7,
+     "date": "2026-11-28",
+     "pct": 0.93,
+     "missed_recent": 1,
+     "missed_last": 1,
+     "missed": 1,
+     "team_games": 10,
+     "qb1": false
+    }
+   ],
+   "headlines": [
+    {
+     "title": "Week 12 Injury Report (Broncos)",
+     "source": "Steelers.com",
+     "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5LRFB3MmNRd3JUdWJtSXRJMThTdkRVYUJ5Zl94cjZGb19ERUpiYUgyRHA4cDlVREJTZm8wa3FLdXRCWUo0cThyTG50QVAxSlR3Mmk3QUVZWVVFelhhaV9SakJ0SktnYzE3VG1TSVBkWUQwWEE?oc=5",
+     "date": "2026-11-26"
+    },
+    {
+     "title": "Steelers vs Denver Broncos Gameday: Injury Updates, Depth Charts, TV Info, Betting Lines, More",
+     "source": "Steelers Now",
+     "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQT0NkaEFraVBBcFZFZkpuWkpYcVBhR0JVTUtTM1h4NHpkcWlLWUVDV2FzVm1UM3U4SXJQLW1rTW1tSHVZaGpXUm1WbDJJakItd3FwTTZQblcybkdNcGZpX011SUVwcF85a1Z3bGEya1hvN1dDTHZXaGZ6d05JMzc3QmdGMnVxZENnd0pfcFQtVVRBTE5ubDZaMU51TWhtS3BKdGR5dWhOcVowVkxEUWIxNXROal8?oc=5",
+     "date": "2026-11-27"
+    },
+    {
+     "title": "Steelers LB Alex Highsmith sidelined as Pittsburgh tries to move on after Rodgers' exit",
+     "source": "ABC News - Breaking News, Latest News and Videos",
+     "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPZ0FVcVUySFExMnBPeEh2QnhiR3RSMVMxQlBHRlJTcEtkWnZKZk9nM193bW5Hb1U1RjdMM082SkM1VlF5ZFVPV1VlbFIxWmpVUWI2NGNsbzUycHE1cDVRcHZTOEpxeXpBVUJPWmMtZUFiaWFVcnRjSDk0MlhXdXNJcG0zOTVMdnBieVYtaDBxLUdRMVEyUmVFNXg2QnN6S2NLemRJeHJvTlDSAa4BQVVfeXFMTkJsTGJzZ3dNdmtwT1RFZjJJXzRtVEZiZXpHOG5WNlNtdnQ2ckJ3OWR5RzFCajlTQkVuZ3dFNlZ4bkcyVXpDcE5rbFVkc3RPZU5URWdLSFdtTmVuY3FpVHZmOU8zd2I1UTZoMEFfM0pCMjNmeFVVbnYxU3VqcGRVTFl5NHJoLWF5dWRjY1pqbEZ1cnFyQzlIeUdtSEdqZ0pnY0M4Slp1X3VUVUpZb21R?oc=5",
+     "date": "2026-11-27"
+    },
+    {
+     "title": "Pittsburgh Steelers’ second-year pass rusher goes down with knee injury",
+     "source": "PennLive.com",
+     "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQS1RZY09aYlZ6T25OS3NZRlI1VmtpSE84YzdiYm9jVFM4SlFQWUZQSDd5eHNHWTZXUmFyOXZ2eGdRY0ozXzFtLVJYZTJDdUtTYVNxWVBUNmdMM091T2k2SFFuWUoxeloxQkExVS1YcTlIX1NUSGc3UmdwRjF5eWxGUGd3QjRRcGpiVVU2YjhJNUllOWVvdkNTencxaUhWbE0yV3gxWGhubTZvUmZLb3h5ZjhfeExVTXhJ?oc=5",
+     "date": "2026-11-27"
+    }
+   ],
+   "card": [
+    {
+     "kind": "out",
+     "name": "Mason McCormick",
+     "pos": "OL",
+     "status": "Injured Reserve",
+     "missed": 1,
+     "team_games": 10
+    },
+    {
+     "kind": "returning",
+     "name": "Michael Pittman",
+     "pos": "WR",
+     "status": "Active",
+     "missed": 6,
+     "team_games": 10
+    }
+   ]
+  },
+  "SEA": {
+   "name": "Seattle Seahawks",
+   "items": [
+    {
+     "team": "SEA",
+     "tag": "RETURNING",
+     "text": "QB Sam Darnold back after missing time — on the Week 12 report with no game status; full practice",
+     "source": "NFL injury report",
+     "url": "https://www.nfl.com/injuries/",
+     "date": "2026-11-28"
+    },
+    {
+     "team": "SEA",
+     "tag": "CLUSTER",
+     "text": "2 OL starters out: Quenton Nelson (G, Out), Abraham Lucas (T, Out)",
+     "source": "NFL injury report",
+     "url": "https://www.nfl.com/injuries/",
+     "date": "2026-11-28"
+    },
+    {
+     "team": "SEA",
+     "tag": "RETURNING",
+     "text": "T Charles Cross trending back — on the Week 12 report with no game status; full practice",
+     "source": "NFL injury report",
+     "url": "https://www.nfl.com/injuries/",
+     "date": "2026-11-28"
+    },
+    {
+     "team": "SEA",
+     "tag": "RETURNING",
+     "text": "DT Leonard Williams trending back — on the Week 12 report with no game status; full practice",
+     "source": "NFL injury report",
+     "url": "https://www.nfl.com/injuries/",
+     "date": "2026-11-28"
+    }
+   ],
+   "starters_on_report": [
+    {
+     "name": "DeMarcus Lawrence",
+     "pos": "LB",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.63,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Leonard Williams",
+     "pos": "DT",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.72,
+     "missed_recent": 2,
+     "missed_last": 1,
+     "missed": 2,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Quenton Nelson",
+     "pos": "G",
+     "status": "Out",
+     "injury": "Knee",
+     "note": "Out on the Week 12 report; did not practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 1.0,
+     "missed_recent": 2,
+     "missed_last": 1,
+     "missed": 2,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Sam Darnold",
+     "pos": "QB",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.87,
+     "missed_recent": 2,
+     "missed_last": 1,
+     "missed": 2,
+     "team_games": 10,
+     "qb1": true
+    },
+    {
+     "name": "Drew Lock",
+     "pos": "QB",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; limited in practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.97,
+     "missed_recent": 1,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 10,
+     "qb1": true
+    },
+    {
+     "name": "Ernest Jones",
+     "pos": "LB",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 1.0,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Abraham Lucas",
+     "pos": "T",
+     "status": "Out",
+     "injury": "Ankle",
+     "note": "Out on the Week 12 report; did not practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.92,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Charles Cross",
+     "pos": "T",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.98,
+     "missed_recent": 3,
+     "missed_last": 1,
+     "missed": 3,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Jaxon Smith-Njigba",
+     "pos": "WR",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.83,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Anthony Bradford",
+     "pos": "G",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 1.0,
+     "missed_recent": 1,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Jalen Milroe",
+     "pos": "QB",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.0,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": null,
+     "team_games": null,
+     "qb1": false
+    }
+   ],
+   "headlines": [
+    {
+     "title": "Week 12 Injury Report: Seahawks at 49ers",
+     "source": "Seattle Seahawks",
+     "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1wUmxjb3J6dk0wai1ybldnSHJqUGlyRFBEVWJUdEo0ZUlWZFRQa3ZkNXdxX1hSR3Z2OU9yZlMzUmhuRnc1bGJfTWs0Q1lDclZjN0FPSDFMdE5jMURfbnNpd2hNYjRtYzFIcTZPZlBVaFBlZ21KOUJaUA?oc=5",
+     "date": "2026-11-27"
+    },
+    {
+     "title": "Seahawks Final Injury Report, Lawrence, Cross, Reed, Purdy, More",
+     "source": "Sports Illustrated",
+     "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPT1ZDWnhtWDZpTUJuX2p5Tjd3RTRJOUlkcjgtVlVEMmlJSGlPUTYxMlFfdXFRMW9KaTFBbHBBOE5SdjRTXzNhZ3JBUlRWZU5CYVhocTlvNGxobm14REo0cUhQeHRWTVhyVm1TTzh1ZEpWanZXZW03cWVUN2dZZkpQdDkxMkxheUR5SmVPVTNNU09LUTl6OXdUbWtEY1M?oc=5",
+     "date": "2026-11-27"
+    },
+    {
+     "title": "Seahawks-49ers injury designations: Jarran Reed out, but Leonard Williams returns",
+     "source": "Field Gulls",
+     "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxQd1lIWnNFalF1NGd2YXp0aGxuLXN2dkdjMjd1SEhHSG5DX2dCQnRHRjk2YkpNdV9zWXZZcDRCU0RxOGFha2dJNzNLT2hYemVNby1uOENfNC1zUjdsbG5WY2RNZmFFLTVRUkl2UTBWUDRicHNpN2FrUFpqakxTTlRCUEs2Sjl6aHE2cS1SaGVZZ3NKRmhFbXhmSWx1NWp0OVJtamFEaTZWWUFzWVlmMFlKbEs0MzBSeV9Rd1A1dzc1Q0dVVDhoTEtSR1pQMHJlcXpmLUdGLV8wMA?oc=5",
+     "date": "2026-11-28"
+    },
+    {
+     "title": "Brock Purdy OUT, Mac Jones to Start vs. Seahawks | Practice Report #SEAvsSF",
+     "source": "San Francisco 49ers",
+     "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOX25WRFdkZngzVG1FUmlPWVBVZE5rbVh4X2ZsQ3pyRGJrOWd3WUg5b3lKX0FYQTJQMDlKdHBKaHZlaHh0U0RYVGxLUWJsWmJvdlVpaTZST3g4cUNDRkdFYVQzNUxQRXJ3OUtxYTJFUTFYWlFmQnJEM3dIdEFoYXN5U1ExXzNxQmMzM01NSTJwVEJzenJRY0ZmQWlQWUFIdw?oc=5",
+     "date": "2026-11-27"
+    }
+   ],
+   "card": [
+    {
+     "kind": "out",
+     "name": "Quenton Nelson",
+     "pos": "G",
+     "status": "Out",
+     "missed": 2,
+     "team_games": 10
+    },
+    {
+     "kind": "out",
+     "name": "Abraham Lucas",
+     "pos": "T",
+     "status": "Out",
+     "missed": 0,
+     "team_games": 10
+    },
+    {
+     "kind": "returning",
+     "name": "Leonard Williams",
+     "pos": "DT",
+     "status": "Active",
+     "missed": 2,
+     "team_games": 10
+    }
+   ]
+  },
+  "SF": {
+   "name": "San Francisco 49ers",
+   "items": [
+    {
+     "team": "SF",
+     "tag": "QB",
+     "text": "QB Brock Purdy out (ankle) — Out on the Week 12 report; did not practice",
+     "source": "NFL injury report",
+     "url": "https://www.nfl.com/injuries/",
+     "date": "2026-11-28"
+    },
+    {
+     "team": "SF",
+     "tag": "KEY",
+     "text": "OL Colton McKivitz injured reserve — on injured reserve",
+     "source": "NFL injury report",
+     "url": "https://www.nfl.com/injuries/",
+     "date": "2026-11-28"
+    }
+   ],
+   "starters_on_report": [
+    {
+     "name": "Trent Williams",
+     "pos": "T",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 7,
+     "date": "2026-11-28",
+     "pct": 0.93,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Christian McCaffrey",
+     "pos": "RB",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 21,
+     "date": "2026-11-28",
+     "pct": 0.68,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Dre Greenlaw",
+     "pos": "LB",
+     "status": "Questionable",
+     "injury": "Neck",
+     "note": "Questionable on the Week 12 report; limited in practice",
+     "detail": "",
+     "days_old": 14,
+     "date": "2026-11-28",
+     "pct": 0.76,
+     "missed_recent": 1,
+     "missed_last": 1,
+     "missed": 1,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Deommodore Lenoir",
+     "pos": "CB",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.94,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Brock Purdy",
+     "pos": "QB",
+     "status": "Out",
+     "injury": "Ankle",
+     "note": "Out on the Week 12 report; did not practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.97,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 10,
+     "qb1": true
+    },
+    {
+     "name": "Upton Stout",
+     "pos": "CB",
+     "status": "Questionable",
+     "injury": "Shoulder",
+     "note": "Questionable on the Week 12 report; limited in practice",
+     "detail": "",
+     "days_old": 21,
+     "date": "2026-11-28",
+     "pct": 0.61,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Colton McKivitz",
+     "pos": "OL",
+     "status": "Injured Reserve",
+     "injury": "",
+     "note": "on injured reserve",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.93,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 10,
+     "qb1": false
+    }
+   ],
+   "headlines": [
+    {
+     "title": "Week 12 Injury Report: Seahawks at 49ers",
+     "source": "Seattle Seahawks",
+     "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1wUmxjb3J6dk0wai1ybldnSHJqUGlyRFBEVWJUdEo0ZUlWZFRQa3ZkNXdxX1hSR3Z2OU9yZlMzUmhuRnc1bGJfTWs0Q1lDclZjN0FPSDFMdE5jMURfbnNpd2hNYjRtYzFIcTZPZlBVaFBlZ21KOUJaUA?oc=5",
+     "date": "2026-11-27"
+    },
+    {
+     "title": "Brock Purdy OUT, Mac Jones to Start vs. Seahawks | Practice Report #SEAvsSF",
+     "source": "San Francisco 49ers",
+     "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOX25WRFdkZngzVG1FUmlPWVBVZE5rbVh4X2ZsQ3pyRGJrOWd3WUg5b3lKX0FYQTJQMDlKdHBKaHZlaHh0U0RYVGxLUWJsWmJvdlVpaTZST3g4cUNDRkdFYVQzNUxQRXJ3OUtxYTJFUTFYWlFmQnJEM3dIdEFoYXN5U1ExXzNxQmMzM01NSTJwVEJzenJRY0ZmQWlQWUFIdw?oc=5",
+     "date": "2026-11-27"
+    },
+    {
+     "title": "49ers rule out Brock Purdy with injury, Mac Jones to start vs Seahawks",
+     "source": "Yahoo Sports",
+     "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPbDdFRk9DLTFjbGZMdjBtemdXZ3RCZlQ5Yk04d3FybDNldHRaZTl0bC1maGJSM0o3TVB3RVlRbHFJZkVxZnMxNnlKTGlUOEJfbEJPTms4eGw2ZzhlbjNnbDJBcnFLS0pPalBYMHc2N2lpXzVtWW9yRDNmWktpUG5KVXh4VEV4dEVCR0E?oc=5",
+     "date": "2026-11-27"
+    },
+    {
+     "title": "Brock Purdy (ankle) ruled out for 49ers' game vs. Seahawks; Mac Jones to start at QB",
+     "source": "NFL.com",
+     "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPQWk1Z18yMXZiQUhyMzRianhQN1huSGRnYjZDSnFGNzg2VE1DLXRsdE5xd2ZMRU5pdzkySHE2bTV6aVFuNWxwcDQ0YkZ1UTA0aEUzZTkwWmNfaEtkRk1FbFNaRVFsUVROLXN1UVJVamVQT3FiTTBYS2ctQ1lMQlBWQzlTVQ?oc=5",
+     "date": "2026-11-27"
+    }
+   ],
+   "card": [
+    {
+     "kind": "out",
+     "name": "Brock Purdy",
+     "pos": "QB",
+     "status": "Out",
+     "missed": 0,
+     "team_games": 10
+    },
+    {
+     "kind": "out",
+     "name": "Colton McKivitz",
+     "pos": "OL",
+     "status": "Injured Reserve",
+     "missed": 0,
+     "team_games": 10
+    },
+    {
+     "kind": "maybe",
+     "name": "Dre Greenlaw",
+     "pos": "LB",
+     "status": "Questionable",
+     "missed": 1,
+     "team_games": 10
+    }
+   ]
+  },
+  "TB": {
+   "name": "Tampa Bay Buccaneers",
+   "items": [
+    {
+     "team": "TB",
+     "tag": "RETURNING",
+     "text": "S Antoine Winfield Jr. trending back — on the Week 12 report with no game status; did not practice",
+     "source": "NFL injury report",
+     "url": "https://www.nfl.com/injuries/",
+     "date": "2026-11-28"
+    }
+   ],
+   "starters_on_report": [
+    {
+     "name": "Baker Mayfield",
+     "pos": "QB",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.98,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 10,
+     "qb1": true
+    },
+    {
+     "name": "Antoine Winfield Jr.",
+     "pos": "S",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; did not practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.89,
+     "missed_recent": 1,
+     "missed_last": 1,
+     "missed": 1,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Cade Otton",
+     "pos": "TE",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 7,
+     "date": "2026-11-28",
+     "pct": 0.95,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Jacob Parrish",
+     "pos": "CB",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.81,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Josiah Trotter",
+     "pos": "LB",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.93,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 10,
+     "qb1": false
+    }
+   ],
+   "headlines": [
+    {
+     "title": "Jacob Parrish Has Encouraging Start to the Week After Back Injury | Updates",
+     "source": "Tampa Bay Buccaneers",
+     "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQM29ITElReHRhMHkyaGVBdXdMZy16UEpMVmFsRW13NkQ1YWxXbEdJNGk4RjZJVWk3ZHVEdTBDTy0tbWpNSDM0N3ZNT3k0eEFtNG9wRzhmWWtFS2V5SWVvWldiemtHWWJYaU5JbnFHMEFIV1AxejV2RWNlRTFZVllvM25ZdkpZYkluZkhvX041eDZyQQ?oc=5",
+     "date": "2026-11-25"
+    },
+    {
+     "title": "Buccaneers Week 12 injury report: Jalen McMillan downgraded",
+     "source": "Buccaneers Wire",
+     "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxQajJPSDNHREZfNHJMN2E5WlcyWXZKQU5nSEJyMVV5V1ZQTTlEcTY3eTEtYTVMTmxEVm11SGVGUVlfMUhqUV94c0gtUTNIVlNiUVJGYmdJczZ0YmZMb2hEYnBUYXVvSmNlaWRJYWh2Z3dRU2VkaV9mdk5fdURuRGhTZ0V6M0JWcDRNLWR0TUhBallYT0hYUVFsM0s5M05saU05S2RrSjFMV0F2U0pKYjJ0VVh5TEcxSkZGUGY4Y1JzbXVjYW93LXMzSzZScFoyX3Byb1dFT1c1U1VYMWs?oc=5",
+     "date": "2026-11-28"
+    },
+    {
+     "title": "Buccaneers Get Encouraging Injury Updates Ahead of Panthers Showdown",
+     "source": "BVM Sports",
+     "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxObTZVREZJM3l2VVZDTE13TVZlQ3FBR05zcjVueGt6Q0dTaW5iMzVmSXBmUXRCeGR5QmxDNWtqajZQanNsdkVveHZpbDJIUEpuWVdHUXc3NGlwLXRoMUJUbWp3WHVHOGx4Z0thM0VyUnFEbHZzd2llVkpTdWtYVXJWOVBMdFhNY3loM0l0M0tvZEFkd0dIQlBWUExzYkVnMUQzOWFKdw?oc=5",
+     "date": "2026-11-27"
+    },
+    {
+     "title": "Tampa Bay Buccaneers Injury Report Week 11",
+     "source": "A to Z Sports",
+     "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9DVjlmYW9IYzhBMUxUVkIyTzV3TEFNOUY5bEJNbFIycFF0Mmp3NHJSVU9adjBjRkpONWg0Z0t1SGxlejNodnlLWHdUT2lJMjlsdDdhd0tFb2VyZ1IzUXAtTnh0VC1faURUSUEtX0xaZzZHUkNFY0FR?oc=5",
+     "date": "2026-11-26"
+    }
+   ],
+   "card": [
+    {
+     "kind": "returning",
+     "name": "Antoine Winfield Jr.",
+     "pos": "S",
+     "status": "Active",
+     "missed": 1,
+     "team_games": 10
+    }
+   ]
+  },
+  "TEN": {
+   "name": "Tennessee Titans",
+   "items": [
+    {
+     "team": "TEN",
+     "tag": "CLUSTER",
+     "text": "3 OL starters out: Jackson Slater (OL, Injured Reserve), Peter Skoronski (OL, Injured Reserve), Fernando Carmona (G, Injured Reserve)",
+     "source": "NFL injury report",
+     "url": "https://www.nfl.com/injuries/",
+     "date": "2026-11-28"
+    },
+    {
+     "team": "TEN",
+     "tag": "KEY",
+     "text": "T Dan Moore Jr. questionable (knee) — Questionable on the Week 12 report; limited in practice",
+     "source": "NFL injury report",
+     "url": "https://www.nfl.com/injuries/",
+     "date": "2026-11-28"
+    },
+    {
+     "team": "TEN",
+     "tag": "KEY",
+     "text": "CB Cordale Flott out (neck) — Out on the Week 12 report; did not practice",
+     "source": "NFL injury report",
+     "url": "https://www.nfl.com/injuries/",
+     "date": "2026-11-28"
+    },
+    {
+     "team": "TEN",
+     "tag": "RETURNING",
+     "text": "LB Dorian Mausi trending back — on the Week 12 report with no game status; full practice",
+     "source": "NFL injury report",
+     "url": "https://www.nfl.com/injuries/",
+     "date": "2026-11-28"
+    }
+   ],
+   "starters_on_report": [
+    {
+     "name": "Tony Pollard",
+     "pos": "RB",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 14,
+     "date": "2026-11-28",
+     "pct": 0.65,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Dan Moore Jr.",
+     "pos": "T",
+     "status": "Questionable",
+     "injury": "Knee",
+     "note": "Questionable on the Week 12 report; limited in practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.96,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Cordale Flott",
+     "pos": "CB",
+     "status": "Out",
+     "injury": "Neck",
+     "note": "Out on the Week 12 report; did not practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.89,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Kevin Winston Jr.",
+     "pos": "S",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 14,
+     "date": "2026-11-28",
+     "pct": 0.99,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Dorian Mausi",
+     "pos": "LB",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.88,
+     "missed_recent": 2,
+     "missed_last": 1,
+     "missed": 1,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Fernando Carmona",
+     "pos": "G",
+     "status": "Injured Reserve",
+     "injury": "Ankle",
+     "note": "on injured reserve (Questionable on the Week 12 report; full practice)",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.67,
+     "missed_recent": 3,
+     "missed_last": 1,
+     "missed": 7,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Carnell Tate",
+     "pos": "WR",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.83,
+     "missed_recent": 2,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Wan'Dale Robinson",
+     "pos": "WR",
+     "status": "Injured Reserve",
+     "injury": "",
+     "note": "on injured reserve",
+     "detail": "",
+     "days_old": 7,
+     "date": "2026-11-28",
+     "pct": 0.65,
+     "missed_recent": 1,
+     "missed_last": 1,
+     "missed": 1,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Peter Skoronski",
+     "pos": "OL",
+     "status": "Injured Reserve",
+     "injury": "",
+     "note": "on injured reserve",
+     "detail": "",
+     "days_old": 14,
+     "date": "2026-11-28",
+     "pct": 0.97,
+     "missed_recent": 2,
+     "missed_last": 1,
+     "missed": 2,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Jackson Slater",
+     "pos": "OL",
+     "status": "Injured Reserve",
+     "injury": "",
+     "note": "on injured reserve",
+     "detail": "",
+     "days_old": 56,
+     "date": "2026-11-28",
+     "pct": 0.98,
+     "missed_recent": 3,
+     "missed_last": 1,
+     "missed": 7,
+     "team_games": 10,
+     "qb1": false
+    }
+   ],
+   "headlines": [
+    {
+     "title": "Week 12 Injury Report | Titans at Jaguars",
+     "source": "Tennessee Titans",
+     "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOemlCY0tBbF9vZ0JxM0RVNW8yRzhzZFFOTTZ4aG9Nb0NkRS1nVDE2RjZLandPc0Q5bFB5M0dCd0gxTnRLLUk3NTVjRzJLY0VGZzZhSE5xemFkaVJlemRfeG53YTFTTGpuSkstUER4T19SLXh1N0xMZl95VWk5N1BfUXlB?oc=5",
+     "date": "2026-11-28"
+    },
+    {
+     "title": "Parker Washington injury update, Titans vs Jacksonville Jaguars, Week 12",
+     "source": "The Tennessean",
+     "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNRmtGM1V6dm5RaTlsdks2V0t1NG1rakdlQmwzMmFsdHE2MnE0eDZaUWtxWjN1Y00yRE5pNC1DSzAya0dDSTRwMGZ6MUdjcldfaEJ5M05pQ0tHdlM5TF9IQ1Nqc2RDN2ItVGdadl9RQ0dYT19LX3JqV2FOXzR4NWt1cDY0T1lMbjgxdGQyRTNqYm1pY296RFk3YXVqRDJsZ3h1R2x5bC1XMGYwZmFMd1JXcG1Pb25jZm1oMi1pV2lzUmlRTEFsVnBVc3RHWU01N2hxSnRrYmFaSGdKR25r?oc=5",
+     "date": "2026-11-27"
+    },
+    {
+     "title": "Jaguars vs. Titans, odds, injuries, key matchup in game at EverBank",
+     "source": "FL Times-Union",
+     "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxORUVFR2NkNGpkVW94ckpnVE1hVGR4UUc4NHM1Uy1VYmZkbmtxSVBTZHR0VUxPMk9JTFpyZ3paTktsdk92WjRuUTZ2UmhiWHFUWkhubEQ5eVl3LTFqaVpkcXViTDZaSUMzUkVkekR0eVJzbVc3MXJvXzVwYnJRZ2p2cjlaeXZCajNVNFBSWklfNEZldUw1VE5FVjFBTGJlZEZ1dWxBUEoybzVfbU9uUnFnR2RScGswT0V0N1dDN2NsbGFRbHQwa1FKVlhwUWNOWTJaLTd1bk94ekJwM0Y1?oc=5",
+     "date": "2026-11-27"
+    },
+    {
+     "title": "Titans Injury Update vs. Jaguars Makes Bad Defensive Outlook Even Worse",
+     "source": "Yahoo Sports",
+     "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPX2dtcGpIVWNWVlBxaHB6UFdRdy1fcmtqdEhBRF9uNjFvajRDX2dHaGtQU0V2Tkl1NC1meDFNa2NSRDl6UHRoQ3ZsbDF0Q01JRVAzbU1HX05SQWhkTl9DVGRIcjNRdmp1RmFPMnB6WUNUa2NjZ0V0RFp0OHFxYnFTOHZ1VXQ?oc=5",
+     "date": "2026-11-27"
+    }
+   ],
+   "card": [
+    {
+     "kind": "out",
+     "name": "Jackson Slater",
+     "pos": "OL",
+     "status": "Injured Reserve",
+     "missed": 7,
+     "team_games": 10
+    },
+    {
+     "kind": "out",
+     "name": "Peter Skoronski",
+     "pos": "OL",
+     "status": "Injured Reserve",
+     "missed": 2,
+     "team_games": 10
+    },
+    {
+     "kind": "out",
+     "name": "Cordale Flott",
+     "pos": "CB",
+     "status": "Out",
+     "missed": 0,
+     "team_games": 10
+    }
+   ]
+  },
+  "WAS": {
+   "name": "Washington Commanders",
+   "items": [
+    {
+     "team": "WAS",
+     "tag": "CLUSTER",
+     "text": "2 front seven starters out: Daron Payne (DL, Injured Reserve), Javon Kinlaw (DL, Injured Reserve)",
+     "source": "NFL injury report",
+     "url": "https://www.nfl.com/injuries/",
+     "date": "2026-11-28"
+    },
+    {
+     "team": "WAS",
+     "tag": "KEY",
+     "text": "CB Amik Robertson out (ankle) — Out on the Week 12 report; did not practice",
+     "source": "NFL injury report",
+     "url": "https://www.nfl.com/injuries/",
+     "date": "2026-11-28"
+    }
+   ],
+   "starters_on_report": [
+    {
+     "name": "Stefon Diggs",
+     "pos": "WR",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; did not practice",
+     "detail": "",
+     "days_old": 7,
+     "date": "2026-11-28",
+     "pct": 0.62,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Amik Robertson",
+     "pos": "CB",
+     "status": "Out",
+     "injury": "Ankle",
+     "note": "Out on the Week 12 report; did not practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.98,
+     "missed_recent": 1,
+     "missed_last": 1,
+     "missed": 1,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Quan Martin",
+     "pos": "S",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 7,
+     "date": "2026-11-28",
+     "pct": 0.62,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Jayden Daniels",
+     "pos": "QB",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 28,
+     "date": "2026-11-28",
+     "pct": 0.94,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 10,
+     "qb1": true
+    },
+    {
+     "name": "Sonny Styles",
+     "pos": "LB",
+     "status": "Active",
+     "injury": "",
+     "note": "on the Week 12 report with no game status; full practice",
+     "detail": "",
+     "days_old": 0,
+     "date": "2026-11-28",
+     "pct": 0.93,
+     "missed_recent": 0,
+     "missed_last": 0,
+     "missed": 0,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Daron Payne",
+     "pos": "DL",
+     "status": "Injured Reserve",
+     "injury": "",
+     "note": "on injured reserve",
+     "detail": "",
+     "days_old": 21,
+     "date": "2026-11-28",
+     "pct": 0.74,
+     "missed_recent": 3,
+     "missed_last": 1,
+     "missed": 4,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Terry McLaurin",
+     "pos": "WR",
+     "status": "Injured Reserve",
+     "injury": "",
+     "note": "on injured reserve",
+     "detail": "",
+     "days_old": 28,
+     "date": "2026-11-28",
+     "pct": 0.6,
+     "missed_recent": 3,
+     "missed_last": 1,
+     "missed": 4,
+     "team_games": 10,
+     "qb1": false
+    },
+    {
+     "name": "Javon Kinlaw",
+     "pos": "DL",
+     "status": "Injured Reserve",
+     "injury": "",
+     "note": "on injured reserve",
+     "detail": "",
+     "days_old": 21,
+     "date": "2026-11-28",
+     "pct": 0.6,
+     "missed_recent": 3,
+     "missed_last": 1,
+     "missed": 4,
+     "team_games": 10,
+     "qb1": false
+    }
+   ],
+   "headlines": [
+    {
+     "title": "Commanders injury report: Only 1 player ruled out",
+     "source": "Yahoo Sports",
+     "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxObkt0ZmJqREktOXBqZWFCR2Nta3NQdzJfSXJ0ZWdsYW93dlV5Sk9UWERWaEo2X2N4VnRoN0RndWZjbG1GSUVSc0xBajd6VEJSVmU3VVZfazlISXF4ZnY0QlItY2MyOUJqTEhSY1RhZU1jN2tTMDY5YXNqTHJ4WlB5ZnZzeElnUmFyZlJtUw?oc=5",
+     "date": "2026-11-27"
+    },
+    {
+     "title": "Injury Report: Week 12 vs Commanders",
+     "source": "Arizona Cardinals",
+     "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBCaXlYdkM2aDBpUlR3N3NYNlVabU5kYmRWVXA3STRVQXliS1lmWWg0bXFpRlo2RTRiRlBEZlRXNVA4dnBhVWpVTEtLOHRfOXhpcmNuN2NrTkJkVUVFMm51M0txa1BmbHZCRGs0bnhJaWdGTDhJeUdF?oc=5",
+     "date": "2026-11-27"
+    },
+    {
+     "title": "Commanders vs. Cardinals Week 12 injury report",
+     "source": "Washington Commanders",
+     "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOdV9pS1EwdjdCYXk1LVVMUWM5WHlaZFBneVVNeVJGY2RtRFlTTWZlQk5Ba3k1LV9KalJtWnhCbXl2R3VfSGdsSjgzcUdrbjhoaFZDc0FhQnN6OFg5eklqcEJGT1QzUFJCWXNBRTB6T3I5cGZXZGtfXzN0TzhfVkl5T0t6VQ?oc=5",
+     "date": "2026-11-25"
+    },
+    {
+     "title": "Commanders-Cardinals Final Injury Report: Amik Robertson’s Ankle Tests Washington’s Cornerback Depth Again",
+     "source": "Sports Illustrated",
+     "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNeVhpMF9SWUZxOFJsLThwbTR0QkFOMzAyYTNTN3NUMTZzWnRrcUpWbktVeVQxNnQ5czVhbHVJNkFGOFRrRWUxd1BpRjVVZFoxMG9YTXhOcUxacVlWMkhaZFJEWldRalliajV3UHZQSXdpUVF0SlBnUjRGT2Z2M0M0cU05dnhDaGRKVmwyZ1BSdnQ?oc=5",
+     "date": "2026-11-27"
+    }
+   ],
+   "card": [
+    {
+     "kind": "out",
+     "name": "Amik Robertson",
+     "pos": "CB",
+     "status": "Out",
+     "missed": 1,
+     "team_games": 10
+    },
+    {
+     "kind": "cluster",
+     "unit": "front seven",
+     "players": [
+      {
+       "kind": "out",
+       "name": "Daron Payne",
+       "pos": "DL",
+       "status": "Injured Reserve",
+       "missed": 4,
+       "team_games": 10
+      },
+      {
+       "kind": "out",
+       "name": "Javon Kinlaw",
+       "pos": "DL",
+       "status": "Injured Reserve",
+       "missed": 4,
+       "team_games": 10
+      }
+     ]
+    }
+   ]
+  }
+ }
+}

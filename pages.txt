@@ -1,0 +1,1 @@
+Site built: {'cfb.html': 'ok', 'nfl.html': 'ok', 'cbb.html': 'ok', 'nba.html': 'ok', 'nhl.html': 'ok', 'epl.html': 'ok', 'mlb.html': 'ok', 'golf.html': 'ok'}

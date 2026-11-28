@@ -1,0 +1,1199 @@
+{
+ "sport": "nfl",
+ "generated": "2026-11-28T12:18:19+00:00",
+ "gap_min": 2.0,
+ "swing_min": 4.0,
+ "watch_teams": [
+  "ARI",
+  "ATL",
+  "BAL",
+  "BUF",
+  "CAR",
+  "CHI",
+  "CIN",
+  "CLE",
+  "DAL",
+  "DET",
+  "GB",
+  "HOU",
+  "IND",
+  "JAX",
+  "KC",
+  "LA",
+  "LAC",
+  "LV",
+  "MIA",
+  "MIN",
+  "NE",
+  "NO",
+  "NYG",
+  "NYJ",
+  "PHI",
+  "SEA",
+  "SF",
+  "TB",
+  "TEN",
+  "WAS"
+ ],
+ "swings_to_explain": [
+  {
+   "gid": "2026_12_ATL_MIN",
+   "team": "ATL"
+  },
+  {
+   "gid": "2026_12_ATL_MIN",
+   "team": "MIN"
+  },
+  {
+   "gid": "2026_12_BAL_HOU",
+   "team": "BAL"
+  },
+  {
+   "gid": "2026_12_BAL_HOU",
+   "team": "HOU"
+  },
+  {
+   "gid": "2026_12_SEA_SF",
+   "team": "SEA"
+  },
+  {
+   "gid": "2026_12_SEA_SF",
+   "team": "SF"
+  },
+  {
+   "gid": "2026_13_CAR_MIN",
+   "team": "MIN"
+  },
+  {
+   "gid": "2026_13_KC_LA",
+   "team": "LA"
+  },
+  {
+   "gid": "2026_13_LAC_TB",
+   "team": "LAC"
+  },
+  {
+   "gid": "2026_13_LAC_TB",
+   "team": "TB"
+  }
+ ],
+ "games": [
+  {
+   "gid": "2026_12_NO_CIN",
+   "home": "CIN",
+   "away": "NO",
+   "home_name": "Cincinnati Bengals",
+   "away_name": "New Orleans Saints",
+   "weather": {
+    "temp": 47.8,
+    "wind": 10.9,
+    "gust": 28.2,
+    "wet": 76
+   },
+   "kick": "2026-11-29T13:00:00",
+   "ours": 10.2,
+   "market": 9.5,
+   "opened": 9.5,
+   "gap": 0.7,
+   "gap_flag": false,
+   "we_like": "Cincinnati Bengals",
+   "ours_text": "Cincinnati Bengals −10",
+   "market_text": "Cincinnati Bengals −9.5",
+   "unit": "pts",
+   "sources": {
+    "AlphaPoint model": 10.4
+   },
+   "injury_wire": {
+    "CIN": [],
+    "NO": [
+     "OL: OTs Asim Richards and Taliese Fuaga, C Erik McCoy and G David Edwards were limited Wednesday after the three starters sat the last two games.",
+     "TE Juwan Johnson (hamstring), hurt in the 21-13 loss at Chicago, did not practice Wednesday."
+    ]
+   },
+   "history": {
+    "Cincinnati Bengals": {
+     "n": 3,
+     "higher": 2,
+     "lower": 0,
+     "avg": 1.2,
+     "last": -0.6,
+     "swing": 1.3
+    },
+    "New Orleans Saints": {
+     "n": 3,
+     "higher": 1,
+     "lower": 0,
+     "avg": 0.8,
+     "last": 3.0,
+     "swing": -3.7
+    }
+   }
+  },
+  {
+   "gid": "2026_12_BAL_HOU",
+   "home": "HOU",
+   "away": "BAL",
+   "home_name": "Houston Texans",
+   "away_name": "Baltimore Ravens",
+   "weather": {
+    "temp": 60.8,
+    "wind": 17.4,
+    "gust": 29.5,
+    "wet": 0
+   },
+   "kick": "2026-11-29T13:00:00",
+   "ours": 11.3,
+   "market": 6.5,
+   "opened": 5.5,
+   "gap": 4.8,
+   "gap_flag": true,
+   "we_like": "Houston Texans",
+   "ours_text": "Houston Texans −11.5",
+   "market_text": "Houston Texans −6.5",
+   "unit": "pts",
+   "sources": {
+    "AlphaPoint model": 10.8
+   },
+   "injury_wire": {
+    "HOU": [
+     "LB Azeez Al-Shaair is on IR after groin surgery and DE Chris Braswell (knee, Nov. 19) is out for the season; DE Danielle Hunter is questionable."
+    ],
+    "BAL": [
+     "Jacoby Brissett has started Weeks 10-11; Lamar Jackson (thumb surgery, IR) has a possible Week 16 return.",
+     "RB Derrick Henry was put back in the concussion protocol Wednesday after brief symptoms late in the Carolina game and was limited; Jesse Minter said the Ravens expect him to play.",
+     "CB Marlon Humphrey was a healthy scratch at Carolina; the Ravens are noncommittal on him for Houston. DT Nnamdi Madubuike is questionable."
+    ]
+   },
+   "history": {
+    "Houston Texans": {
+     "n": 3,
+     "higher": 1,
+     "lower": 2,
+     "avg": -1.8,
+     "last": -4.0,
+     "swing": 8.8
+    },
+    "Baltimore Ravens": {
+     "n": 3,
+     "higher": 1,
+     "lower": 0,
+     "avg": 1.3,
+     "last": 0.5,
+     "swing": -5.3
+    }
+   }
+  },
+  {
+   "gid": "2026_12_NYG_IND",
+   "home": "IND",
+   "away": "NYG",
+   "home_name": "Indianapolis Colts",
+   "away_name": "New York Giants",
+   "weather": {
+    "temp": 44.6,
+    "wind": 6.8,
+    "gust": 17.0,
+    "wet": 65
+   },
+   "kick": "2026-11-29T13:00:00",
+   "ours": -1.9,
+   "market": -5.5,
+   "opened": -4.5,
+   "gap": 3.6,
+   "gap_flag": true,
+   "we_like": "Indianapolis Colts",
+   "ours_text": "New York Giants −2",
+   "market_text": "New York Giants −5.5",
+   "unit": "pts",
+   "sources": {
+    "AlphaPoint model": -2.4
+   },
+   "injury_wire": {
+    "IND": [
+     "The Colts released QB Daniel Jones after the 26-3 loss at Houston; Anthony Richardson Sr. makes his first start of the season vs. the Giants.",
+     "OT Jalen Travis and CB Charvarius Ward did not practice Wednesday; OT Bernhard Raimann and CB Sauce Gardner, who also missed Week 11, practiced fully."
+    ],
+    "NYG": [
+     "CB Greg Newsome II (high ankle sprain) was placed on injured reserve Tuesday after John Harbaugh said he will miss multiple weeks.",
+     "Edge Abdul Carter (ankle/calf) did not practice Wednesday; TE Isaiah Likely (groin) was limited."
+    ]
+   },
+   "history": {
+    "Indianapolis Colts": {
+     "n": 3,
+     "higher": 2,
+     "lower": 0,
+     "avg": 2.1,
+     "last": 4.0,
+     "swing": -0.4
+    },
+    "New York Giants": {
+     "n": 3,
+     "higher": 0,
+     "lower": 2,
+     "avg": -1.9,
+     "last": -1.5,
+     "swing": -2.1
+    }
+   }
+  },
+  {
+   "gid": "2026_12_TEN_JAX",
+   "home": "JAX",
+   "away": "TEN",
+   "home_name": "Jacksonville Jaguars",
+   "away_name": "Tennessee Titans",
+   "weather": {
+    "temp": 64.7,
+    "wind": 4.3,
+    "gust": 10.7,
+    "wet": 3
+   },
+   "kick": "2026-11-29T13:00:00",
+   "ours": 14.4,
+   "market": 14.0,
+   "opened": 14.5,
+   "gap": 0.4,
+   "gap_flag": false,
+   "we_like": "Jacksonville Jaguars",
+   "ours_text": "Jacksonville Jaguars −14.5",
+   "market_text": "Jacksonville Jaguars −14",
+   "unit": "pts",
+   "sources": {
+    "AlphaPoint model": 14.4
+   },
+   "injury_wire": {
+    "JAX": [
+     "OL: OT Walker Little (knee) and C Robert Hainsey were limited Wednesday and RT Anton Harrison is on IR; G Patrick Mekari was designated to return. RB Bhayshul Tuten did not practice."
+    ],
+    "TEN": [
+     "OL: Peter Skoronski, Jackson Slater and Fernando Carmona are all on IR; RB Tyjae Spears (knee) also went on IR."
+    ]
+   },
+   "history": {
+    "Jacksonville Jaguars": {
+     "n": 3,
+     "higher": 1,
+     "lower": 1,
+     "avg": -1.1,
+     "last": 1.5,
+     "swing": -1.1
+    },
+    "Tennessee Titans": {
+     "n": 2,
+     "higher": 0,
+     "lower": 0,
+     "avg": 0.1,
+     "last": -0.2,
+     "swing": -0.2
+    }
+   }
+  },
+  {
+   "gid": "2026_12_NYJ_MIA",
+   "home": "MIA",
+   "away": "NYJ",
+   "home_name": "Miami Dolphins",
+   "away_name": "New York Jets",
+   "weather": {
+    "temp": 76.0,
+    "wind": 7.0,
+    "gust": 12.5,
+    "wet": 7
+   },
+   "kick": "2026-11-29T13:00:00",
+   "ours": -2.5,
+   "market": -5.5,
+   "opened": -3.0,
+   "gap": 3.0,
+   "gap_flag": true,
+   "we_like": "Miami Dolphins",
+   "ours_text": "New York Jets −2.5",
+   "market_text": "New York Jets −5.5",
+   "unit": "pts",
+   "sources": {
+    "AlphaPoint model": -2.5
+   },
+   "injury_wire": {
+    "MIA": [
+     "QB Malik Willis (groin/core) is on IR, surgery not foreseen per Jeff Hafley; Kyle McCord started Weeks 10-11 and goes again vs. the Jets."
+    ],
+    "NYJ": []
+   },
+   "history": {
+    "Miami Dolphins": {
+     "n": 3,
+     "higher": 1,
+     "lower": 0,
+     "avg": 0.5,
+     "last": 1.3,
+     "swing": 1.7
+    },
+    "New York Jets": {
+     "n": 3,
+     "higher": 0,
+     "lower": 2,
+     "avg": -0.6,
+     "last": -1.1,
+     "swing": -1.9
+    }
+   }
+  },
+  {
+   "gid": "2026_12_ATL_MIN",
+   "home": "MIN",
+   "away": "ATL",
+   "home_name": "Minnesota Vikings",
+   "away_name": "Atlanta Falcons",
+   "weather": null,
+   "kick": "2026-11-29T13:00:00",
+   "ours": 2.3,
+   "market": 7.0,
+   "opened": 7.0,
+   "gap": -4.7,
+   "gap_flag": true,
+   "we_like": "Atlanta Falcons",
+   "ours_text": "Minnesota Vikings −2.5",
+   "market_text": "Minnesota Vikings −7",
+   "unit": "pts",
+   "sources": {
+    "AlphaPoint model": 3.5
+   },
+   "injury_wire": {
+    "MIN": [
+     "QB Kyler Murray (hamstring), out Weeks 9-11, is questionable; Kevin O'Connell has said Kirk Cousins stays the starter. WR Jordan Addison (thumb) is not expected to play.",
+     "LT Christian Darrisaw hurt his right shoulder in the Week 11 loss to San Francisco; the injury is not considered serious, per ESPN's Jeremy Fowler. His status for Atlanta is not set."
+    ],
+    "ATL": []
+   },
+   "history": {
+    "Minnesota Vikings": {
+     "n": 3,
+     "higher": 2,
+     "lower": 1,
+     "avg": 0.8,
+     "last": 3.0,
+     "swing": -7.7
+    },
+    "Atlanta Falcons": {
+     "n": 2,
+     "higher": 0,
+     "lower": 2,
+     "avg": -2.5,
+     "last": -2.0,
+     "swing": 6.7
+    }
+   }
+  },
+  {
+   "gid": "2026_12_NE_LAC",
+   "home": "LAC",
+   "away": "NE",
+   "home_name": "Los Angeles Chargers",
+   "away_name": "New England Patriots",
+   "weather": null,
+   "kick": "2026-11-29T16:05:00",
+   "ours": -3.4,
+   "market": -3.0,
+   "opened": 3.5,
+   "gap": -0.4,
+   "gap_flag": false,
+   "we_like": "New England Patriots",
+   "ours_text": "New England Patriots −3.5",
+   "market_text": "New England Patriots −3",
+   "unit": "pts",
+   "sources": {
+    "AlphaPoint model": -2.2
+   },
+   "injury_wire": {
+    "LAC": [
+     "QB Justin Herbert (concussion protocol since the Week 11 loss to the Jets) did not practice Wednesday; Jim Harbaugh said DJ Uiagalelei is next up if he can't clear it.",
+     "LB Daiyan Henley (knee) and CB Tarheeb Still missed Week 11; Harbaugh said both are day to day in treatment this week."
+    ],
+    "NE": [
+     "Mike Vrabel said Tommy DeVito stays QB1 while Drake Maye (fractured right fibula, Week 10) is out; Maye remains on the 53-man roster.",
+     "G Alijah Vera-Tucker (hamstring) was designated to return from IR on Monday.",
+     "WR A.J. Brown (hamstring) wasn't on the field for Monday's practice session and is listed doubtful by ESPN."
+    ]
+   },
+   "history": {
+    "Los Angeles Chargers": {
+     "n": 3,
+     "higher": 2,
+     "lower": 0,
+     "avg": 1.5,
+     "last": 1.1,
+     "swing": -1.5
+    },
+    "New England Patriots": {
+     "n": 2,
+     "higher": 1,
+     "lower": 0,
+     "avg": 0.8,
+     "last": 1.6,
+     "swing": -1.2
+    }
+   }
+  },
+  {
+   "gid": "2026_12_WAS_ARI",
+   "home": "ARI",
+   "away": "WAS",
+   "home_name": "Arizona Cardinals",
+   "away_name": "Washington Commanders",
+   "weather": {
+    "temp": 78.0,
+    "wind": 5.0,
+    "gust": 11.9,
+    "wet": 0
+   },
+   "kick": "2026-11-29T16:25:00",
+   "ours": -5.5,
+   "market": -6.5,
+   "opened": -6.0,
+   "gap": 1.0,
+   "gap_flag": false,
+   "we_like": "Arizona Cardinals",
+   "ours_text": "Washington Commanders −5.5",
+   "market_text": "Washington Commanders −6.5",
+   "unit": "pts",
+   "sources": {
+    "AlphaPoint model": -5.7
+   },
+   "injury_wire": {
+    "ARI": [
+     "QB Carson Beck (back spasms) did not practice Wednesday after missing the loss at Kansas City; Josh Johnson is preparing to start vs. Washington. Gardner Minshew is on IR.",
+     "Secondary: DBs Will Johnson and Andrew Wingard are on IR. The Cardinals also fired DC Nick Rallis on Monday; Teryl Austin is interim DC."
+    ],
+    "WAS": []
+   },
+   "history": {
+    "Arizona Cardinals": {
+     "n": 3,
+     "higher": 1,
+     "lower": 1,
+     "avg": -0.6,
+     "last": 1.4,
+     "swing": -0.4
+    },
+    "Washington Commanders": {
+     "n": 3,
+     "higher": 0,
+     "lower": 0,
+     "avg": 0.3,
+     "last": 0.6,
+     "swing": -1.7
+    }
+   }
+  },
+  {
+   "gid": "2026_12_SEA_SF",
+   "home": "SF",
+   "away": "SEA",
+   "home_name": "San Francisco 49ers",
+   "away_name": "Seattle Seahawks",
+   "weather": {
+    "temp": 61.2,
+    "wind": 10.7,
+    "gust": 21.7,
+    "wet": 20
+   },
+   "kick": "2026-11-29T16:25:00",
+   "ours": 3.9,
+   "market": -1.5,
+   "opened": 3.0,
+   "gap": 5.4,
+   "gap_flag": true,
+   "we_like": "San Francisco 49ers",
+   "ours_text": "San Francisco 49ers −4",
+   "market_text": "Seattle Seahawks −1.5",
+   "unit": "pts",
+   "sources": {
+    "AlphaPoint model": 5.1
+   },
+   "injury_wire": {
+    "SF": [
+     "QB Brock Purdy (low ankle sprain, hurt Week 11 vs. Minnesota) did not practice Wednesday; Kyle Shanahan called him day to day with a 'possibility' he misses Seattle. Mac Jones would start.",
+     "RT Colton McKivitz (fractured, dislocated ankle) was placed on injured reserve; CB Nate Hobbs (hamstring) was activated off IR."
+    ],
+    "SEA": [
+     "QB Sam Darnold (quad/ribs), out since Week 8, practiced fully Wednesday and is on track to start Sunday at San Francisco, per Mike Macdonald. Drew Lock (elbow) was limited.",
+     "OL: RT Abraham Lucas (ankle) and G Quenton Nelson (knee) are ruled out for Sunday at San Francisco, Mike Macdonald said."
+    ]
+   },
+   "history": {
+    "San Francisco 49ers": {
+     "n": 3,
+     "higher": 0,
+     "lower": 3,
+     "avg": -2.6,
+     "last": -3.0,
+     "swing": 8.5
+    },
+    "Seattle Seahawks": {
+     "n": 2,
+     "higher": 1,
+     "lower": 0,
+     "avg": 1.2,
+     "last": 0.0,
+     "swing": -5.5
+    }
+   }
+  },
+  {
+   "gid": "2026_12_LV_CLE",
+   "home": "CLE",
+   "away": "LV",
+   "home_name": "Cleveland Browns",
+   "away_name": "Las Vegas Raiders",
+   "weather": {
+    "temp": 48.4,
+    "wind": 14.2,
+    "gust": 30.6,
+    "wet": 93
+   },
+   "kick": "2026-11-29T20:20:00",
+   "ours": 6.3,
+   "market": 4.5,
+   "opened": 3.5,
+   "gap": 1.8,
+   "gap_flag": false,
+   "we_like": "Cleveland Browns",
+   "ours_text": "Cleveland Browns −6.5",
+   "market_text": "Cleveland Browns −4.5",
+   "unit": "pts",
+   "sources": {
+    "AlphaPoint model": 5.1
+   },
+   "injury_wire": {
+    "CLE": [],
+    "LV": [
+     "Rookie Fernando Mendoza makes his third start since Kirk Cousins was traded to Minnesota; he was sacked five times in the Week 11 loss at Denver.",
+     "TE Brock Bowers (ankle/quad), who missed Week 11 at Denver, was limited in Wednesday's practice."
+    ]
+   },
+   "history": {
+    "Cleveland Browns": {
+     "n": 2,
+     "higher": 0,
+     "lower": 1,
+     "avg": -0.7,
+     "last": -1.1,
+     "swing": 2.8
+    },
+    "Las Vegas Raiders": {
+     "n": 3,
+     "higher": 1,
+     "lower": 0,
+     "avg": 0.9,
+     "last": 0.2,
+     "swing": -2.0
+    }
+   }
+  },
+  {
+   "gid": "2026_12_CAR_TB",
+   "home": "TB",
+   "away": "CAR",
+   "home_name": "Tampa Bay Buccaneers",
+   "away_name": "Carolina Panthers",
+   "weather": {
+    "temp": 67.8,
+    "wind": 6.3,
+    "gust": 9.2,
+    "wet": 12
+   },
+   "kick": "2026-11-30T20:15:00",
+   "ours": 3.6,
+   "market": 3.0,
+   "opened": 2.5,
+   "gap": 0.6,
+   "gap_flag": false,
+   "we_like": "Tampa Bay Buccaneers",
+   "ours_text": "Tampa Bay Buccaneers −3.5",
+   "market_text": "Tampa Bay Buccaneers −3",
+   "unit": "pts",
+   "sources": {
+    "AlphaPoint model": 3.6
+   },
+   "injury_wire": {
+    "TB": [
+     "Secondary: CB Benjamin Morrison (hamstring) and CB Jacob Parrish (back) had MRIs Monday; S Antoine Winfield Jr. is questionable."
+    ],
+    "CAR": []
+   },
+   "history": {
+    "Tampa Bay Buccaneers": {
+     "n": 2,
+     "higher": 0,
+     "lower": 1,
+     "avg": -1.3,
+     "last": -3.0,
+     "swing": 3.6
+    },
+    "Carolina Panthers": {
+     "n": 3,
+     "higher": 0,
+     "lower": 0,
+     "avg": -0.0,
+     "last": -0.5,
+     "swing": -0.1
+    }
+   }
+  },
+  {
+   "gid": "2026_13_KC_LA",
+   "home": "LA",
+   "away": "KC",
+   "home_name": "Los Angeles Rams",
+   "away_name": "Kansas City Chiefs",
+   "weather": null,
+   "kick": "2026-12-03T20:15:00",
+   "ours": 0.6,
+   "market": 1.5,
+   "opened": 1.5,
+   "gap": -0.9,
+   "gap_flag": false,
+   "we_like": "Kansas City Chiefs",
+   "ours_text": "Los Angeles Rams −0.5",
+   "market_text": "Los Angeles Rams −1.5",
+   "unit": "pts",
+   "sources": {
+    "AlphaPoint model": 0.4
+   },
+   "injury_wire": {
+    "LA": [],
+    "KC": [
+     "RB Kenneth Walker III (groin) is ruled out at Buffalo, his third straight missed game, and OT Jaylon Moore (ankle) is out too.",
+     "G Trey Smith (concussion), who missed Week 11, practiced fully all week and has no game status for Buffalo."
+    ]
+   },
+   "history": {
+    "Los Angeles Rams": {
+     "n": 3,
+     "higher": 1,
+     "lower": 0,
+     "avg": 1.6,
+     "last": 3.8,
+     "swing": -4.7
+    },
+    "Kansas City Chiefs": {
+     "n": 4,
+     "higher": 2,
+     "lower": 1,
+     "avg": 0.5,
+     "last": 2.1,
+     "swing": -1.2
+    }
+   }
+  },
+  {
+   "gid": "2026_13_DET_ATL",
+   "home": "ATL",
+   "away": "DET",
+   "home_name": "Atlanta Falcons",
+   "away_name": "Detroit Lions",
+   "weather": {
+    "temp": 61.9,
+    "wind": 9.3,
+    "gust": 12.5,
+    "wet": 13
+   },
+   "kick": "2026-12-06T13:00:00",
+   "ours": -6.1,
+   "market": -3.5,
+   "opened": -3.5,
+   "gap": -2.6,
+   "gap_flag": true,
+   "we_like": "Detroit Lions",
+   "ours_text": "Detroit Lions −6",
+   "market_text": "Detroit Lions −3.5",
+   "unit": "pts",
+   "sources": {
+    "AlphaPoint model": -5.6
+   },
+   "injury_wire": {
+    "ATL": [],
+    "DET": [
+     "Secondary: CB Ennis Rakestraw Jr. (shoulder) is ruled out for Thanksgiving vs. Chicago and S Chuck Clark (hamstring) is questionable; CB D.J. Reed practiced fully.",
+     "Front seven: DE Aidan Hutchinson (ACL) and LB Jack Campbell are on IR, DT Skyler Gill-Howard went on IR Wednesday, and edge DJ Wonnum (back) is questionable."
+    ]
+   },
+   "history": {
+    "Atlanta Falcons": {
+     "n": 2,
+     "higher": 0,
+     "lower": 2,
+     "avg": -2.5,
+     "last": -2.0,
+     "swing": -0.6
+    },
+    "Detroit Lions": {
+     "n": 4,
+     "higher": 2,
+     "lower": 1,
+     "avg": 1.6,
+     "last": 4.5,
+     "swing": -1.9
+    }
+   }
+  },
+  {
+   "gid": "2026_13_JAX_CHI",
+   "home": "CHI",
+   "away": "JAX",
+   "home_name": "Chicago Bears",
+   "away_name": "Jacksonville Jaguars",
+   "weather": {
+    "temp": 43.6,
+    "wind": 6.9,
+    "gust": 8.9,
+    "wet": 3
+   },
+   "kick": "2026-12-06T13:00:00",
+   "ours": 0.0,
+   "market": 3.0,
+   "opened": 2.5,
+   "gap": -3.0,
+   "gap_flag": true,
+   "we_like": "Jacksonville Jaguars",
+   "ours_text": "Chicago Bears PK",
+   "market_text": "Chicago Bears −3",
+   "unit": "pts",
+   "sources": {
+    "AlphaPoint model": -0.5
+   },
+   "injury_wire": {
+    "CHI": [
+     "Secondary: CB Kyler Gordon (shoulder) and S Elijah Hicks (concussion) are ruled out for Thanksgiving at Detroit; CB Tyrique Stevenson (groin) is questionable."
+    ],
+    "JAX": [
+     "OL: OT Walker Little (knee) and C Robert Hainsey were limited Wednesday and RT Anton Harrison is on IR; G Patrick Mekari was designated to return. RB Bhayshul Tuten did not practice."
+    ]
+   },
+   "history": {
+    "Chicago Bears": {
+     "n": 3,
+     "higher": 0,
+     "lower": 2,
+     "avg": -2.6,
+     "last": -4.5,
+     "swing": 1.6
+    },
+    "Jacksonville Jaguars": {
+     "n": 3,
+     "higher": 1,
+     "lower": 1,
+     "avg": -1.1,
+     "last": 1.5,
+     "swing": 1.5
+    }
+   }
+  },
+  {
+   "gid": "2026_13_CIN_CLE",
+   "home": "CLE",
+   "away": "CIN",
+   "home_name": "Cleveland Browns",
+   "away_name": "Cincinnati Bengals",
+   "weather": {
+    "temp": 42.6,
+    "wind": 9.9,
+    "gust": 13.0,
+    "wet": 6
+   },
+   "kick": "2026-12-06T13:00:00",
+   "ours": -7.2,
+   "market": -6.0,
+   "opened": -5.5,
+   "gap": -1.2,
+   "gap_flag": false,
+   "we_like": "Cincinnati Bengals",
+   "ours_text": "Cincinnati Bengals −7",
+   "market_text": "Cincinnati Bengals −6",
+   "unit": "pts",
+   "sources": {
+    "AlphaPoint model": -7.2
+   },
+   "injury_wire": {
+    "CLE": [],
+    "CIN": []
+   },
+   "history": {
+    "Cleveland Browns": {
+     "n": 2,
+     "higher": 0,
+     "lower": 1,
+     "avg": -0.7,
+     "last": -1.1,
+     "swing": -0.2
+    },
+    "Cincinnati Bengals": {
+     "n": 3,
+     "higher": 2,
+     "lower": 0,
+     "avg": 1.2,
+     "last": -0.6,
+     "swing": 1.9
+    }
+   }
+  },
+  {
+   "gid": "2026_13_GB_NO",
+   "home": "NO",
+   "away": "GB",
+   "home_name": "New Orleans Saints",
+   "away_name": "Green Bay Packers",
+   "weather": null,
+   "kick": "2026-12-06T13:00:00",
+   "ours": -2.6,
+   "market": -4.5,
+   "opened": -5.5,
+   "gap": 1.9,
+   "gap_flag": false,
+   "we_like": "New Orleans Saints",
+   "ours_text": "Green Bay Packers −2.5",
+   "market_text": "Green Bay Packers −4.5",
+   "unit": "pts",
+   "sources": {
+    "AlphaPoint model": -2.0
+   },
+   "injury_wire": {
+    "NO": [
+     "OL: OTs Asim Richards and Taliese Fuaga, C Erik McCoy and G David Edwards were limited Wednesday after the three starters sat the last two games.",
+     "TE Juwan Johnson (hamstring), hurt in the 21-13 loss at Chicago, did not practice Wednesday."
+    ],
+    "GB": []
+   },
+   "history": {
+    "New Orleans Saints": {
+     "n": 3,
+     "higher": 1,
+     "lower": 0,
+     "avg": 0.8,
+     "last": 3.0,
+     "swing": -1.1
+    },
+    "Green Bay Packers": {
+     "n": 3,
+     "higher": 1,
+     "lower": 1,
+     "avg": -0.4,
+     "last": -3.8,
+     "swing": 2.0
+    }
+   }
+  },
+  {
+   "gid": "2026_13_LAC_TB",
+   "home": "TB",
+   "away": "LAC",
+   "home_name": "Tampa Bay Buccaneers",
+   "away_name": "Los Angeles Chargers",
+   "weather": {
+    "temp": 83.5,
+    "wind": 3.9,
+    "gust": 3.6,
+    "wet": 9
+   },
+   "kick": "2026-12-06T13:00:00",
+   "ours": 8.5,
+   "market": 5.5,
+   "opened": 4.5,
+   "gap": 3.0,
+   "gap_flag": true,
+   "we_like": "Tampa Bay Buccaneers",
+   "ours_text": "Tampa Bay Buccaneers −8.5",
+   "market_text": "Tampa Bay Buccaneers −5.5",
+   "unit": "pts",
+   "sources": {
+    "AlphaPoint model": 8.6
+   },
+   "injury_wire": {
+    "TB": [
+     "Secondary: CB Benjamin Morrison (hamstring) and CB Jacob Parrish (back) had MRIs Monday; S Antoine Winfield Jr. is questionable."
+    ],
+    "LAC": [
+     "QB Justin Herbert (concussion protocol since the Week 11 loss to the Jets) did not practice Wednesday; Jim Harbaugh said DJ Uiagalelei is next up if he can't clear it.",
+     "LB Daiyan Henley (knee) and CB Tarheeb Still missed Week 11; Harbaugh said both are day to day in treatment this week."
+    ]
+   },
+   "history": {
+    "Tampa Bay Buccaneers": {
+     "n": 2,
+     "higher": 0,
+     "lower": 1,
+     "avg": -1.3,
+     "last": -3.0,
+     "swing": 5.9
+    },
+    "Los Angeles Chargers": {
+     "n": 3,
+     "higher": 2,
+     "lower": 0,
+     "avg": 1.5,
+     "last": 1.1,
+     "swing": -4.0
+    }
+   }
+  },
+  {
+   "gid": "2026_13_WAS_TEN",
+   "home": "TEN",
+   "away": "WAS",
+   "home_name": "Tennessee Titans",
+   "away_name": "Washington Commanders",
+   "weather": {
+    "temp": 52.9,
+    "wind": 8.9,
+    "gust": 15.4,
+    "wet": 8
+   },
+   "kick": "2026-12-06T13:00:00",
+   "ours": -4.3,
+   "market": -4.5,
+   "opened": -3.5,
+   "gap": 0.2,
+   "gap_flag": false,
+   "we_like": "Tennessee Titans",
+   "ours_text": "Washington Commanders −4.5",
+   "market_text": "Washington Commanders −4.5",
+   "unit": "pts",
+   "sources": {
+    "AlphaPoint model": -4.3
+   },
+   "injury_wire": {
+    "TEN": [
+     "OL: Peter Skoronski, Jackson Slater and Fernando Carmona are all on IR; RB Tyjae Spears (knee) also went on IR."
+    ],
+    "WAS": []
+   },
+   "history": {
+    "Tennessee Titans": {
+     "n": 2,
+     "higher": 0,
+     "lower": 0,
+     "avg": 0.1,
+     "last": -0.2,
+     "swing": 0.4
+    },
+    "Washington Commanders": {
+     "n": 3,
+     "higher": 0,
+     "lower": 0,
+     "avg": 0.3,
+     "last": 0.6,
+     "swing": -0.8
+    }
+   }
+  },
+  {
+   "gid": "2026_13_PHI_ARI",
+   "home": "ARI",
+   "away": "PHI",
+   "home_name": "Arizona Cardinals",
+   "away_name": "Philadelphia Eagles",
+   "weather": {
+    "temp": 59.4,
+    "wind": 20.3,
+    "gust": 29.5,
+    "wet": 22
+   },
+   "kick": "2026-12-06T16:05:00",
+   "ours": -0.4,
+   "market": -3.0,
+   "opened": -3.0,
+   "gap": 2.6,
+   "gap_flag": true,
+   "we_like": "Arizona Cardinals",
+   "ours_text": "Philadelphia Eagles −0.5",
+   "market_text": "Philadelphia Eagles −3",
+   "unit": "pts",
+   "sources": {
+    "AlphaPoint model": 0.1
+   },
+   "injury_wire": {
+    "ARI": [
+     "QB Carson Beck (back spasms) did not practice Wednesday after missing the loss at Kansas City; Josh Johnson is preparing to start vs. Washington. Gardner Minshew is on IR.",
+     "Secondary: DBs Will Johnson and Andrew Wingard are on IR. The Cardinals also fired DC Nick Rallis on Monday; Teryl Austin is interim DC."
+    ],
+    "PHI": [
+     "Joe Milton starts again; he started Weeks 9 and 11 after Tanner McKee (now limited, ribs) started Weeks 7-8. Jalen Hurts is on IR.",
+     "CB Quinyon Mitchell (hamstring) practiced fully and has no game status; edge Arnold Ebiketie (oblique) and CB Jonathan Jones (ankle) are ruled out at Dallas."
+    ]
+   },
+   "history": {
+    "Arizona Cardinals": {
+     "n": 3,
+     "higher": 1,
+     "lower": 1,
+     "avg": -0.6,
+     "last": 1.4,
+     "swing": 1.2
+    },
+    "Philadelphia Eagles": {
+     "n": 3,
+     "higher": 1,
+     "lower": 1,
+     "avg": 0.8,
+     "last": -1.4,
+     "swing": -1.2
+    }
+   }
+  },
+  {
+   "gid": "2026_13_CAR_MIN",
+   "home": "MIN",
+   "away": "CAR",
+   "home_name": "Minnesota Vikings",
+   "away_name": "Carolina Panthers",
+   "weather": null,
+   "kick": "2026-12-06T16:25:00",
+   "ours": 3.0,
+   "market": 5.5,
+   "opened": 4.5,
+   "gap": -2.5,
+   "gap_flag": true,
+   "we_like": "Carolina Panthers",
+   "ours_text": "Minnesota Vikings −3",
+   "market_text": "Minnesota Vikings −5.5",
+   "unit": "pts",
+   "sources": {
+    "AlphaPoint model": 2.9
+   },
+   "injury_wire": {
+    "MIN": [
+     "QB Kyler Murray (hamstring), out Weeks 9-11, is questionable; Kevin O'Connell has said Kirk Cousins stays the starter. WR Jordan Addison (thumb) is not expected to play.",
+     "LT Christian Darrisaw hurt his right shoulder in the Week 11 loss to San Francisco; the injury is not considered serious, per ESPN's Jeremy Fowler. His status for Atlanta is not set."
+    ],
+    "CAR": []
+   },
+   "history": {
+    "Minnesota Vikings": {
+     "n": 3,
+     "higher": 2,
+     "lower": 1,
+     "avg": 0.8,
+     "last": 3.0,
+     "swing": -5.5
+    },
+    "Carolina Panthers": {
+     "n": 3,
+     "higher": 0,
+     "lower": 0,
+     "avg": -0.0,
+     "last": -0.5,
+     "swing": 3.0
+    }
+   }
+  },
+  {
+   "gid": "2026_13_BUF_NE",
+   "home": "NE",
+   "away": "BUF",
+   "home_name": "New England Patriots",
+   "away_name": "Buffalo Bills",
+   "weather": {
+    "temp": 35.7,
+    "wind": 15.4,
+    "gust": 30.9,
+    "wet": 14
+   },
+   "kick": "2026-12-06T16:25:00",
+   "ours": -8.3,
+   "market": -12.5,
+   "opened": -13.5,
+   "gap": 4.2,
+   "gap_flag": true,
+   "we_like": "New England Patriots",
+   "ours_text": "Buffalo Bills −8.5",
+   "market_text": "Buffalo Bills −12.5",
+   "unit": "pts",
+   "sources": {
+    "AlphaPoint model": -7.8
+   },
+   "injury_wire": {
+    "NE": [
+     "Mike Vrabel said Tommy DeVito stays QB1 while Drake Maye (fractured right fibula, Week 10) is out; Maye remains on the 53-man roster.",
+     "G Alijah Vera-Tucker (hamstring) was designated to return from IR on Monday.",
+     "WR A.J. Brown (hamstring) wasn't on the field for Monday's practice session and is listed doubtful by ESPN."
+    ],
+    "BUF": [
+     "CB Christian Benford (groin), TE Dalton Kincaid, G O'Cyrus Torrence, DL T.J. Sanders and LB Dorian Williams are all questionable for Kansas City after limited practices."
+    ]
+   },
+   "history": {
+    "New England Patriots": {
+     "n": 2,
+     "higher": 1,
+     "lower": 0,
+     "avg": 0.8,
+     "last": 1.6,
+     "swing": 2.6
+    },
+    "Buffalo Bills": {
+     "n": 4,
+     "higher": 1,
+     "lower": 3,
+     "avg": -1.0,
+     "last": -2.1,
+     "swing": -2.1
+    }
+   }
+  },
+  {
+   "gid": "2026_13_DAL_SEA",
+   "home": "SEA",
+   "away": "DAL",
+   "home_name": "Seattle Seahawks",
+   "away_name": "Dallas Cowboys",
+   "weather": {
+    "temp": 40.8,
+    "wind": 2.8,
+    "gust": 2.2,
+    "wet": 20
+   },
+   "kick": "2026-12-07T20:15:00",
+   "ours": 4.4,
+   "market": 6.0,
+   "opened": 5.5,
+   "gap": -1.6,
+   "gap_flag": false,
+   "we_like": "Dallas Cowboys",
+   "ours_text": "Seattle Seahawks −4.5",
+   "market_text": "Seattle Seahawks −6",
+   "unit": "pts",
+   "sources": {
+    "AlphaPoint model": 4.9
+   },
+   "injury_wire": {
+    "SEA": [
+     "QB Sam Darnold (quad/ribs), out since Week 8, practiced fully Wednesday and is on track to start Sunday at San Francisco, per Mike Macdonald. Drew Lock (elbow) was limited.",
+     "OL: RT Abraham Lucas (ankle) and G Quenton Nelson (knee) are ruled out for Sunday at San Francisco, Mike Macdonald said."
+    ],
+    "DAL": [
+     "TE Jake Ferguson (knee/ankle), G Tyler Booker (ankle), WR Jonathan Mingo and S P.J. Locke (concussion) are all ruled out for Thanksgiving vs. Philadelphia.",
+     "S Jalen Thompson (hamstring) was activated off IR after a full practice Wednesday and is questionable vs. Philadelphia."
+    ]
+   },
+   "history": {
+    "Seattle Seahawks": {
+     "n": 2,
+     "higher": 1,
+     "lower": 0,
+     "avg": 1.2,
+     "last": 0.0,
+     "swing": -1.6
+    },
+    "Dallas Cowboys": {
+     "n": 4,
+     "higher": 2,
+     "lower": 1,
+     "avg": 0.3,
+     "last": 1.4,
+     "swing": 0.2
+    }
+   }
+  }
+ ]
+}

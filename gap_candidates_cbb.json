@@ -1,0 +1,206 @@
+{
+ "sport": "cbb",
+ "generated": "2026-11-28T12:19:00+00:00",
+ "gap_min": 4.0,
+ "swing_min": 4.5,
+ "watch_teams": [
+  "Boise State",
+  "California",
+  "Creighton",
+  "Louisville",
+  "Minnesota",
+  "North Texas",
+  "Seton Hall",
+  "Siena"
+ ],
+ "swings_to_explain": [
+  {
+   "gid": "401920890",
+   "team": "Siena"
+  }
+ ],
+ "games": [
+  {
+   "gid": "401920890",
+   "home": "Seton Hall",
+   "away": "Siena",
+   "home_name": "Seton Hall",
+   "away_name": "Siena",
+   "weather": null,
+   "kick": "2026-11-28T12:00:00-05:00",
+   "ours": 24.4,
+   "market": 17.5,
+   "opened": 17.5,
+   "gap": 6.9,
+   "gap_flag": true,
+   "we_like": "Seton Hall",
+   "ours_text": "Seton Hall −24.5",
+   "market_text": "Seton Hall −17.5",
+   "unit": "pts",
+   "sources": {
+    "Haslametrics": 19.6,
+    "AlphaPoint model": 24.2,
+    "AlphaPoint v2 (shadow)": 16.2
+   },
+   "injury_wire": {
+    "Seton Hall": [],
+    "Siena": []
+   },
+   "history": {
+    "Seton Hall": {
+     "n": 5,
+     "higher": 3,
+     "lower": 0,
+     "avg": 2.4,
+     "last": 7.3,
+     "swing": -0.4
+    },
+    "Siena": {
+     "n": 3,
+     "higher": 1,
+     "lower": 2,
+     "avg": -0.5,
+     "last": -1.4,
+     "swing": -5.5
+    }
+   }
+  },
+  {
+   "gid": "401929172",
+   "home": "Boise State",
+   "away": "North Texas",
+   "home_name": "Boise State",
+   "away_name": "North Texas",
+   "weather": null,
+   "kick": "2026-11-28T15:30:00-05:00",
+   "ours": 9.0,
+   "market": 4.5,
+   "opened": 3.5,
+   "gap": 4.5,
+   "gap_flag": true,
+   "we_like": "Boise State",
+   "ours_text": "Boise State −9",
+   "market_text": "Boise State −4.5",
+   "unit": "pts",
+   "sources": {
+    "Haslametrics": 6.8,
+    "AlphaPoint model": 8.9,
+    "AlphaPoint v2 (shadow)": 6.1
+   },
+   "injury_wire": {
+    "Boise State": [],
+    "North Texas": []
+   },
+   "history": {
+    "Boise State": {
+     "n": 5,
+     "higher": 4,
+     "lower": 0,
+     "avg": 1.7,
+     "last": 3.7,
+     "swing": 0.8
+    },
+    "North Texas": {
+     "n": 2,
+     "higher": 0,
+     "lower": 1,
+     "avg": -0.4,
+     "last": -1.4,
+     "swing": -3.1
+    }
+   }
+  },
+  {
+   "gid": "401916308",
+   "home": "Minnesota",
+   "away": "California",
+   "home_name": "Minnesota",
+   "away_name": "California",
+   "weather": null,
+   "kick": "2026-11-28T20:00:00-05:00",
+   "ours": 7.6,
+   "market": 7.5,
+   "opened": 9.5,
+   "gap": 0.1,
+   "gap_flag": false,
+   "we_like": "Minnesota",
+   "ours_text": "Minnesota −7.5",
+   "market_text": "Minnesota −7.5",
+   "unit": "pts",
+   "sources": {
+    "Haslametrics": 7.6,
+    "AlphaPoint model": 6.3,
+    "AlphaPoint v2 (shadow)": 4.4
+   },
+   "injury_wire": {
+    "Minnesota": [],
+    "California": []
+   },
+   "history": {
+    "Minnesota": {
+     "n": 6,
+     "higher": 1,
+     "lower": 3,
+     "avg": -1.3,
+     "last": 1.3,
+     "swing": -1.3
+    },
+    "California": {
+     "n": 5,
+     "higher": 5,
+     "lower": 0,
+     "avg": 3.4,
+     "last": 2.5,
+     "swing": -2.6
+    }
+   }
+  },
+  {
+   "gid": "401920536",
+   "home": "Louisville",
+   "away": "Creighton",
+   "home_name": "Louisville",
+   "away_name": "Creighton",
+   "weather": null,
+   "kick": "2026-11-28T22:30:00-05:00",
+   "ours": 2.2,
+   "market": 4.5,
+   "opened": 4.5,
+   "gap": -2.3,
+   "gap_flag": false,
+   "we_like": "Creighton",
+   "ours_text": "Louisville −2",
+   "market_text": "Louisville −4.5",
+   "unit": "pts",
+   "sources": {
+    "Haslametrics": 1.9,
+    "AlphaPoint model": 1.9,
+    "AlphaPoint v2 (shadow)": 5.9
+   },
+   "injury_wire": {
+    "Louisville": [
+     "Louisville reserve guard Isaac Ellis (13.5 mpg, ankle, hurt vs Stetson) will miss the Players Era Festival; Kelsey: \"We do not expect him to play this week at all.\""
+    ],
+    "Creighton": []
+   },
+   "history": {
+    "Louisville": {
+     "n": 6,
+     "higher": 1,
+     "lower": 5,
+     "avg": -3.9,
+     "last": -6.0,
+     "swing": 3.7
+    },
+    "Creighton": {
+     "n": 6,
+     "higher": 1,
+     "lower": 3,
+     "avg": -0.8,
+     "last": -0.5,
+     "swing": 2.8
+    }
+   }
+  }
+ ]
+}

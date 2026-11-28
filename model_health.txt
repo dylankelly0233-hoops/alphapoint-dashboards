@@ -1,0 +1,14 @@
+MODEL HEALTH
+  NFL: yesterday 2 games, our avg miss 14.40 vs close 13.25 pts; 7 days 8.54 vs 8.21; 30 days 9.41 vs 9.02 (n=47)
+  College football: yesterday 14 games, our avg miss 8.09 vs close 8.00 pts; 7 days 9.89 vs 9.92; 30 days 11.72 vs 11.51 (n=150)
+  College basketball: yesterday 52 games, our avg miss 11.16 vs close 10.63 pts; 7 days 10.46 vs 10.07; 30 days 10.37 vs 9.94 (n=733)
+  NBA: yesterday 11 games, our avg miss 9.30 vs close 8.68 pts; 7 days 8.55 vs 9.02; 30 days 11.02 vs 10.76 (n=159)
+  NHL: yesterday 15 games, our avg miss 2.21 vs close 2.19 goals; 7 days 2.09 vs 2.05; 30 days 2.20 vs 2.19 (n=134)
+  Premier League: yesterday 1 games, our avg miss 0.46 vs close 0.88 goals; 7 days 1.70 vs 1.91; 30 days 1.70 vs 1.91 (n=11)
+Warnings:
+  ! NFL: rating source "nfelo" hasn't updated since 2026-11-23.
+  ! NFL: rating source "sagarin" hasn't updated since 2026-11-23.
+  ! College football: rating source "sagarin" hasn't updated since 2026-11-23.
+  ! College football: rating source "sp" hasn't updated since 2026-11-23.
+  ! College basketball: rating source "TeamRankings" hasn't updated since 2026-11-23.
+  ! College basketball: rating source "Torvik preseason" hasn't updated since 2026-11-23.

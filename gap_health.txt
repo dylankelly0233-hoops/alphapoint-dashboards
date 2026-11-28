@@ -1,0 +1,21 @@
+NFL: notes 45h old · gaps researched 11/11 · rating-watch teams 28 · swings explained 8/10
+CFB: notes 46h old · gaps researched 21/23 · rating-watch teams 67 · swings explained 18/18
+NBA: notes 45h old · gaps researched 0/2 · rating-watch teams 22 · swings explained 0/3
+CBB: notes 44h old · gaps researched 0/2 · rating-watch teams 18 · swings explained 0/1
+NHL: notes 44h old · gaps researched 0/2 · rating-watch teams 28 · swings explained 0/4
+EPL: notes 68h old · gaps researched 2/3 · rating-watch teams 12 · swings explained 0/1
+Watch: NFL Research Assistant notes are 45 hours old
+Watch: NFL: 1 swings still not explained
+Watch: CFB Research Assistant notes are 46 hours old
+Watch: CFB: 2 flagged gap games still not researched (the hourly catch-up should clear them)
+Watch: NBA Research Assistant notes are 45 hours old
+Watch: NBA: 2 flagged gap games still not researched (the hourly catch-up should clear them)
+Watch: NBA: 3 swings still not explained
+Watch: CBB Research Assistant notes are 44 hours old
+Watch: CBB: 2 flagged gap games still not researched (the hourly catch-up should clear them)
+Watch: CBB: 1 swings still not explained
+Watch: NHL Research Assistant notes are 44 hours old
+Watch: NHL: 2 flagged gap games still not researched (the hourly catch-up should clear them)
+Watch: NHL: 4 swings still not explained
+Watch: EPL Research Assistant notes are 68 hours old
+Watch: EPL: 1 flagged gap games still not researched (the hourly catch-up should clear them)

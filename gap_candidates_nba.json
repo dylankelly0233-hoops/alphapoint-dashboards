@@ -1,0 +1,269 @@
+{
+ "sport": "nba",
+ "generated": "2026-11-28T12:19:08+00:00",
+ "gap_min": 3.0,
+ "swing_min": 4.0,
+ "watch_teams": [
+  "BKN",
+  "CHA",
+  "CHI",
+  "HOU",
+  "IND",
+  "MIL",
+  "OKC",
+  "ORL",
+  "PHI",
+  "WSH"
+ ],
+ "swings_to_explain": [
+  {
+   "gid": "401910046",
+   "team": "ORL"
+  },
+  {
+   "gid": "401910049",
+   "team": "MIL"
+  },
+  {
+   "gid": "401910050",
+   "team": "PHI"
+  }
+ ],
+ "games": [
+  {
+   "gid": "401910046",
+   "home": "WSH",
+   "away": "ORL",
+   "home_name": "Wizards",
+   "away_name": "Magic",
+   "weather": null,
+   "kick": "2026-11-28T17:00:00-05:00",
+   "ours": -0.2,
+   "market": -3.5,
+   "opened": -3.5,
+   "gap": 3.3,
+   "gap_flag": true,
+   "we_like": "Wizards",
+   "ours_text": "Magic PK",
+   "market_text": "Magic −3.5",
+   "unit": "pts",
+   "sources": {
+    "Sagarin": 0.3,
+    "TeamRankings": 0.0,
+    "Net rating": -0.8
+   },
+   "injury_wire": {
+    "WSH": [],
+    "ORL": []
+   },
+   "history": {
+    "Wizards": {
+     "n": 6,
+     "higher": 2,
+     "lower": 3,
+     "avg": -0.4,
+     "last": 2.2,
+     "swing": 1.1
+    },
+    "Magic": {
+     "n": 6,
+     "higher": 0,
+     "lower": 4,
+     "avg": -2.6,
+     "last": -7.4,
+     "swing": 4.1
+    }
+   }
+  },
+  {
+   "gid": "401910047",
+   "home": "CHA",
+   "away": "BKN",
+   "home_name": "Hornets",
+   "away_name": "Nets",
+   "weather": null,
+   "kick": "2026-11-28T18:00:00-05:00",
+   "ours": 6.1,
+   "market": 5.5,
+   "opened": 5.5,
+   "gap": 0.6,
+   "gap_flag": false,
+   "we_like": "Hornets",
+   "ours_text": "Hornets −6",
+   "market_text": "Hornets −5.5",
+   "unit": "pts",
+   "sources": {
+    "Sagarin": 6.0,
+    "TeamRankings": 5.5,
+    "Net rating": 6.7
+   },
+   "injury_wire": {
+    "CHA": [
+     "Charlotte has Dennis Schroder (30.0 mpg), Kon Knueppel (hamstrings), Grayson Allen (27.2, concussion) and Ryan Kalkbrenner (hip) out vs CHI tonight, NBA 4:30 PM ET report."
+    ],
+    "BKN": []
+   },
+   "history": {
+    "Hornets": {
+     "n": 6,
+     "higher": 0,
+     "lower": 4,
+     "avg": -2.4,
+     "last": -1.6,
+     "swing": 2.3
+    },
+    "Nets": {
+     "n": 6,
+     "higher": 2,
+     "lower": 1,
+     "avg": -0.2,
+     "last": 0.1,
+     "swing": -0.7
+    }
+   }
+  },
+  {
+   "gid": "401910048",
+   "home": "CHI",
+   "away": "IND",
+   "home_name": "Bulls",
+   "away_name": "Pacers",
+   "weather": null,
+   "kick": "2026-11-28T20:00:00-05:00",
+   "ours": 2.9,
+   "market": 2.5,
+   "opened": 2.5,
+   "gap": 0.4,
+   "gap_flag": false,
+   "we_like": "Bulls",
+   "ours_text": "Bulls −3",
+   "market_text": "Bulls −2.5",
+   "unit": "pts",
+   "sources": {
+    "Sagarin": 2.4,
+    "TeamRankings": 1.3,
+    "Net rating": 4.9
+   },
+   "injury_wire": {
+    "CHI": [
+     "Chicago has Norman Powell (29.5 mpg, hamstring) and Caleb Wilson (30.7, hand fracture) out at CHA tonight; Jalen Smith (25.3, GI illness) is questionable, NBA 11:30 AM ET report."
+    ],
+    "IND": [
+     "Indiana recalled Tyrese Haliburton (33.0 mpg, hamstring, 11 games missed) from G League practice on 11/24 as he nears a return (Forbes via ESPN)."
+    ]
+   },
+   "history": {
+    "Bulls": {
+     "n": 6,
+     "higher": 3,
+     "lower": 0,
+     "avg": 1.1,
+     "last": 1.6,
+     "swing": -1.3
+    },
+    "Pacers": {
+     "n": 6,
+     "higher": 3,
+     "lower": 1,
+     "avg": 1.0,
+     "last": 3.3,
+     "swing": -3.7
+    }
+   }
+  },
+  {
+   "gid": "401910049",
+   "home": "MIL",
+   "away": "OKC",
+   "home_name": "Bucks",
+   "away_name": "Thunder",
+   "weather": null,
+   "kick": "2026-11-28T20:00:00-05:00",
+   "ours": -12.0,
+   "market": -11.5,
+   "opened": -12.5,
+   "gap": -0.5,
+   "gap_flag": false,
+   "we_like": "Thunder",
+   "ours_text": "Thunder −12",
+   "market_text": "Thunder −11.5",
+   "unit": "pts",
+   "sources": {
+    "Sagarin": -11.5,
+    "TeamRankings": -12.8,
+    "Net rating": -11.1
+   },
+   "injury_wire": {
+    "MIL": [],
+    "OKC": [
+     "OKC is without Jalen Williams (31.7 mpg, ankle), Chet Holmgren (30.0, knee) and Aday Mara (22.4, shin) vs MIN tonight; Cason Wallace and Jaylin Williams are out too, NBA 11:30 AM ET report."
+    ]
+   },
+   "history": {
+    "Bucks": {
+     "n": 6,
+     "higher": 1,
+     "lower": 2,
+     "avg": -1.0,
+     "last": -4.7,
+     "swing": 4.2
+    },
+    "Thunder": {
+     "n": 6,
+     "higher": 3,
+     "lower": 1,
+     "avg": 2.0,
+     "last": -2.7,
+     "swing": 3.3
+    }
+   }
+  },
+  {
+   "gid": "401910050",
+   "home": "HOU",
+   "away": "PHI",
+   "home_name": "Rockets",
+   "away_name": "76ers",
+   "weather": null,
+   "kick": "2026-11-28T20:30:00-05:00",
+   "ours": 8.8,
+   "market": 12.5,
+   "opened": 12.5,
+   "gap": -3.7,
+   "gap_flag": true,
+   "we_like": "76ers",
+   "ours_text": "Rockets −9",
+   "market_text": "Rockets −12.5",
+   "unit": "pts",
+   "sources": {
+    "Sagarin": 8.0,
+    "TeamRankings": 8.2,
+    "Net rating": 10.0
+   },
+   "injury_wire": {
+    "HOU": [],
+    "PHI": [
+     "Philadelphia has Joel Embiid (32.0 mpg, illness) out vs MIA tonight on the NBA's 4:30 PM ET report (doubtful at 11:30 AM); he also missed Monday vs POR."
+    ]
+   },
+   "history": {
+    "Rockets": {
+     "n": 6,
+     "higher": 2,
+     "lower": 2,
+     "avg": -0.1,
+     "last": -1.9,
+     "swing": -1.8
+    },
+    "76ers": {
+     "n": 6,
+     "higher": 3,
+     "lower": 2,
+     "avg": 0.8,
+     "last": -3.3,
+     "swing": 7.0
+    }
+   }
+  }
+ ]
+}

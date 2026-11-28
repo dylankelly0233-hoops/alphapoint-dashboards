@@ -1,0 +1,1661 @@
+{
+ "sport": "cbb",
+ "week": 20261128,
+ "collected": "2026-11-28T12:19+00:00",
+ "games": [
+  [
+   "Siena",
+   "Seton Hall"
+  ],
+  [
+   "Elon",
+   "NC State"
+  ],
+  [
+   "Alcorn State",
+   "Georgia Tech"
+  ],
+  [
+   "Prairie View A&M",
+   "Iowa"
+  ],
+  [
+   "California",
+   "Minnesota"
+  ],
+  [
+   "Creighton",
+   "Louisville"
+  ],
+  [
+   "Stonehill",
+   "Notre Dame"
+  ],
+  [
+   "West Florida",
+   "Florida State"
+  ],
+  [
+   "Tennessee State",
+   "Oklahoma State"
+  ],
+  [
+   "Portland",
+   "Stanford"
+  ],
+  [
+   "Lipscomb",
+   "Ohio State"
+  ],
+  [
+   "Norfolk State",
+   "Washington"
+  ],
+  [
+   "Queens University",
+   "Houston"
+  ],
+  [
+   "Rider",
+   "UConn"
+  ],
+  [
+   "Montana",
+   "Arizona State"
+  ]
+ ],
+ "teams": {
+  "Alcorn State": {
+   "name": "Alcorn State",
+   "items": [],
+   "headlines": [],
+   "roster": [
+    {
+     "name": "Trey Thomas",
+     "mpg": 28.0,
+     "value": 0.5
+    },
+    {
+     "name": "Calvin Sirmans",
+     "mpg": 22.5,
+     "value": 0.3
+    },
+    {
+     "name": "Ma'Kye Taylor",
+     "mpg": 19.6,
+     "value": 0.1
+    },
+    {
+     "name": "Saxby Sunderland",
+     "mpg": 19.6,
+     "value": 0.2
+    },
+    {
+     "name": "Jahseem Felton",
+     "mpg": 18.9,
+     "value": 0.2
+    },
+    {
+     "name": "Bobby Cannon",
+     "mpg": 17.3,
+     "value": 0.3
+    },
+    {
+     "name": "Braylhan Thomas",
+     "mpg": 16.6,
+     "value": 0.2
+    },
+    {
+     "name": "Adam Tokpah",
+     "mpg": 14.1,
+     "value": 0.2
+    },
+    {
+     "name": "Christian Richardson",
+     "mpg": 13.4,
+     "value": 0.9
+    }
+   ]
+  },
+  "Arizona State": {
+   "name": "Arizona State",
+   "items": [],
+   "headlines": [],
+   "roster": [
+    {
+     "name": "Paulius Murauskas",
+     "mpg": 38.1,
+     "value": 6.3
+    },
+    {
+     "name": "Joel Foxwell",
+     "mpg": 36.6,
+     "value": 3.9
+    },
+    {
+     "name": "Dillan Shaw",
+     "mpg": 36.4,
+     "value": 2.3
+    },
+    {
+     "name": "JRob Croy",
+     "mpg": 20.9,
+     "value": 1.1
+    },
+    {
+     "name": "Emmanuel Innocenti",
+     "mpg": 19.8,
+     "value": 1.2
+    },
+    {
+     "name": "Jonathan Griman",
+     "mpg": 19.7,
+     "value": 1.1
+    },
+    {
+     "name": "Ben Defty",
+     "mpg": 17.4,
+     "value": 2.5
+    },
+    {
+     "name": "Bryce Ford",
+     "mpg": 15.3,
+     "value": 1.5
+    },
+    {
+     "name": "Filip Malesevic",
+     "mpg": 14.5,
+     "value": 0.8
+    }
+   ]
+  },
+  "California": {
+   "name": "California",
+   "items": [],
+   "headlines": [],
+   "roster": [
+    {
+     "name": "Nojus Indrusaitis",
+     "mpg": 29.7,
+     "value": 3.7
+    },
+    {
+     "name": "Jordan Ross",
+     "mpg": 25.9,
+     "value": 1.9
+    },
+    {
+     "name": "Michael Cooper",
+     "mpg": 25.7,
+     "value": 3.8
+    },
+    {
+     "name": "Jake Wilkins",
+     "mpg": 22.0,
+     "value": 1.7
+    },
+    {
+     "name": "Sammie Yeanay",
+     "mpg": 21.7,
+     "value": 1.4
+    },
+    {
+     "name": "Semetri Carr",
+     "mpg": 19.3,
+     "value": 1.3
+    },
+    {
+     "name": "Mantas Kocanas",
+     "mpg": 16.1,
+     "value": 0.5
+    },
+    {
+     "name": "Jovani Ruff",
+     "mpg": 14.7,
+     "value": 0.5
+    },
+    {
+     "name": "Dominykas Daubaris",
+     "mpg": 13.4,
+     "value": 1.0
+    }
+   ]
+  },
+  "Creighton": {
+   "name": "Creighton",
+   "items": [],
+   "headlines": [],
+   "roster": [
+    {
+     "name": "Wes Enis",
+     "mpg": 30.8,
+     "value": 3.8
+    },
+    {
+     "name": "BJ Davis",
+     "mpg": 28.0,
+     "value": 4.6
+    },
+    {
+     "name": "Austin Swartz",
+     "mpg": 27.6,
+     "value": 2.0
+    },
+    {
+     "name": "Jasen Green",
+     "mpg": 20.1,
+     "value": 1.8
+    },
+    {
+     "name": "Katrelle Harmon",
+     "mpg": 20.0,
+     "value": 0.6
+    },
+    {
+     "name": "Hudson Greer",
+     "mpg": 19.0,
+     "value": 1.2
+    },
+    {
+     "name": "Jackson McAndrew",
+     "mpg": 16.8,
+     "value": 1.4
+    },
+    {
+     "name": "Oswin Erhunmwunse",
+     "mpg": 13.0,
+     "value": 0.9
+    },
+    {
+     "name": "Fredrick King",
+     "mpg": 13.0,
+     "value": 2.2
+    }
+   ]
+  },
+  "Elon": {
+   "name": "Elon",
+   "items": [],
+   "headlines": [],
+   "roster": [
+    {
+     "name": "Josh Dalton",
+     "mpg": 27.7,
+     "value": 2.6
+    },
+    {
+     "name": "Raúl Villar",
+     "mpg": 26.3,
+     "value": 1.0
+    },
+    {
+     "name": "Randall Pettus II",
+     "mpg": 25.9,
+     "value": 1.6
+    },
+    {
+     "name": "Bryson Cokley",
+     "mpg": 24.4,
+     "value": 1.9
+    },
+    {
+     "name": "Isaiah Mbeng",
+     "mpg": 21.4,
+     "value": 0.0
+    },
+    {
+     "name": "Cam Thrower",
+     "mpg": 16.9,
+     "value": 1.1
+    },
+    {
+     "name": "Caleb Zhu",
+     "mpg": 16.6,
+     "value": 0.6
+    },
+    {
+     "name": "Hunter Harding",
+     "mpg": 15.3,
+     "value": 1.1
+    },
+    {
+     "name": "Iker Garmendia",
+     "mpg": 14.5,
+     "value": 0.6
+    }
+   ]
+  },
+  "Florida State": {
+   "name": "Florida State",
+   "items": [
+    {
+     "team": "Florida State",
+     "tag": "NEWS",
+     "text": "Florida State basketball's Shon Abaev sidelined after lower-leg injury",
+     "source": "Yahoo Sports",
+     "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxORUNMOTNnbURBdGpaWDN4eGM0eVplUkN1X3lxNkdSOGxMS2ZQRlA1cndtWVkzNWJmMTg2clowbjA3cjFEOE5XTHhKbDlGUU54MlFOT0hPUERHVm5qVGRjaXI4OHRzdEM0S2R3ZThJa0ctYThiSWEwUHNhc21OXzFKaXJGVzl6LVo4T1ZwNVgxb1pMVkRIVU5NMk9oazFQcjhFQ00zMWhEblBKdENtaFE?oc=5",
+     "date": "2026-11-27"
+    },
+    {
+     "team": "Florida State",
+     "tag": "NEWS",
+     "text": "Florida State basketball's Shon Abaev sidelined after lower-leg injury",
+     "source": "Miami Herald",
+     "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9iX1QtUnpyWURQQmR3Tlc3V2dHSU1JWkw5TW1vUXNQUDlrcXB5MGtMeHlSWGNKZnBJMVRlMkNHRUVXRXJ2QmlXLWhTUFYyNC1EZ2ZKdUc2M1RDQS1EUk1yTjV2LWtGLVU?oc=5",
+     "date": "2026-11-27"
+    }
+   ],
+   "headlines": [
+    {
+     "title": "Florida State basketball's Shon Abaev sidelined after lower-leg injury",
+     "source": "Yahoo Sports",
+     "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxORUNMOTNnbURBdGpaWDN4eGM0eVplUkN1X3lxNkdSOGxMS2ZQRlA1cndtWVkzNWJmMTg2clowbjA3cjFEOE5XTHhKbDlGUU54MlFOT0hPUERHVm5qVGRjaXI4OHRzdEM0S2R3ZThJa0ctYThiSWEwUHNhc21OXzFKaXJGVzl6LVo4T1ZwNVgxb1pMVkRIVU5NMk9oazFQcjhFQ00zMWhEblBKdENtaFE?oc=5",
+     "date": "2026-11-27"
+    },
+    {
+     "title": "Florida State basketball's Shon Abaev sidelined after lower-leg injury",
+     "source": "Miami Herald",
+     "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9iX1QtUnpyWURQQmR3Tlc3V2dHSU1JWkw5TW1vUXNQUDlrcXB5MGtMeHlSWGNKZnBJMVRlMkNHRUVXRXJ2QmlXLWhTUFYyNC1EZ2ZKdUc2M1RDQS1EUk1yTjV2LWtGLVU?oc=5",
+     "date": "2026-11-27"
+    },
+    {
+     "title": "Florida State's Shon Abaev out indefinitely with lower-leg injury suffered against UNC Asheville",
+     "source": "Yahoo Sports",
+     "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQTHFJU1lnVnZzSjFYcFlwdnA1TUU5ajk4ZWIxUlh4ejJSZ3RMWlUtNW5SOHdQT1BiVXo0Yk8wVnpuUWVxYjRfWEw3aDdrOFBGSktJRmQ5SDFIMlNtTW40SFNDM0ZKd2lsVE95bVYzNmxLXzRCdXNBRTBPZnBjZGIxSS1BNUV0MENUc0o1aTFTS0xmVGE4RjBEZzdUWHB2UlA0VjZsaGd2VlhOcjZQSXczOQ?oc=5",
+     "date": "2026-11-27"
+    }
+   ],
+   "roster": [
+    {
+     "name": "Sebastian Rancik",
+     "mpg": 29.4,
+     "value": 5.0
+    },
+    {
+     "name": "Kam Taylor",
+     "mpg": 27.7,
+     "value": 4.0
+    },
+    {
+     "name": "Shon Abaev",
+     "mpg": 26.9,
+     "value": 2.2
+    },
+    {
+     "name": "Anthony Robinson II",
+     "mpg": 26.0,
+     "value": 2.9
+    },
+    {
+     "name": "Marcis Ponder",
+     "mpg": 19.7,
+     "value": 1.3
+    },
+    {
+     "name": "Elise Assui",
+     "mpg": 18.6,
+     "value": 1.0
+    },
+    {
+     "name": "Alex Steen",
+     "mpg": 15.7,
+     "value": 2.3
+    },
+    {
+     "name": "Brandon Bass Jr.",
+     "mpg": 13.9,
+     "value": 1.5
+    },
+    {
+     "name": "Cooper Schwieger",
+     "mpg": 13.0,
+     "value": 0.7
+    }
+   ]
+  },
+  "Georgia Tech": {
+   "name": "Georgia Tech",
+   "items": [],
+   "headlines": [],
+   "roster": [
+    {
+     "name": "Tylis Jordan",
+     "mpg": 31.9,
+     "value": 2.6
+    },
+    {
+     "name": "Kam Craft",
+     "mpg": 28.1,
+     "value": 2.0
+    },
+    {
+     "name": "Jackson Fields",
+     "mpg": 25.1,
+     "value": 1.3
+    },
+    {
+     "name": "Colby Garland",
+     "mpg": 24.3,
+     "value": 3.9
+    },
+    {
+     "name": "Nasir Whitlock",
+     "mpg": 19.7,
+     "value": 2.4
+    },
+    {
+     "name": "Victor Valdes",
+     "mpg": 18.9,
+     "value": 2.3
+    },
+    {
+     "name": "Cole Kirouac",
+     "mpg": 13.8,
+     "value": 0.2
+    },
+    {
+     "name": "Courtland Muldrew",
+     "mpg": 11.7,
+     "value": 1.0
+    },
+    {
+     "name": "Kayden Allen",
+     "mpg": 10.7,
+     "value": 0.5
+    }
+   ]
+  },
+  "Houston": {
+   "name": "Houston",
+   "items": [],
+   "headlines": [],
+   "roster": [
+    {
+     "name": "Dedan Thomas Jr.",
+     "mpg": 30.6,
+     "value": 5.8
+    },
+    {
+     "name": "Mercy Miller",
+     "mpg": 27.0,
+     "value": 3.7
+    },
+    {
+     "name": "Delrecco Gillespie",
+     "mpg": 24.9,
+     "value": 3.7
+    },
+    {
+     "name": "Joseph Tugler",
+     "mpg": 24.4,
+     "value": 2.0
+    },
+    {
+     "name": "Chase McCarty",
+     "mpg": 22.3,
+     "value": 1.8
+    },
+    {
+     "name": "Chendall Weaver",
+     "mpg": 17.0,
+     "value": 2.6
+    },
+    {
+     "name": "Corey Hadnot II",
+     "mpg": 15.6,
+     "value": 2.9
+    },
+    {
+     "name": "Arafan Diane",
+     "mpg": 13.9,
+     "value": 1.0
+    },
+    {
+     "name": "Braden East",
+     "mpg": 13.4,
+     "value": 2.1
+    }
+   ]
+  },
+  "Iowa": {
+   "name": "Iowa",
+   "items": [
+    {
+     "team": "Iowa",
+     "tag": "NEWS",
+     "text": "Iowa men’s hoops returns home to face UMBC Tuesday",
+     "source": "HawkFanatic",
+     "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNZUVrQUdKWE0tanhpTm1DTEZEU0d1UU5RU3paQUNfeng1a3lKQzBCUXRveDlYQVZGUXM0TG9HN3hGcUpkX0JPSEUwcTNjZDA0ZXBsYTRsMU40QUYwOUQtM3Bka3ZrWXFsMndQSTZtUnV5RUdoQU1WYmVsZDEyczVMQkVIUmxlSkQ2YlpPWkt3?oc=5",
+     "date": "2026-11-23"
+    }
+   ],
+   "headlines": [
+    {
+     "title": "Iowa men’s hoops returns home to face UMBC Tuesday",
+     "source": "HawkFanatic",
+     "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNZUVrQUdKWE0tanhpTm1DTEZEU0d1UU5RU3paQUNfeng1a3lKQzBCUXRveDlYQVZGUXM0TG9HN3hGcUpkX0JPSEUwcTNjZDA0ZXBsYTRsMU40QUYwOUQtM3Bka3ZrWXFsMndQSTZtUnV5RUdoQU1WYmVsZDEyczVMQkVIUmxlSkQ2YlpPWkt3?oc=5",
+     "date": "2026-11-23"
+    }
+   ],
+   "roster": [
+    {
+     "name": "Cooper Koch",
+     "mpg": 33.0,
+     "value": 4.0
+    },
+    {
+     "name": "Isaia Howard",
+     "mpg": 27.2,
+     "value": 2.1
+    },
+    {
+     "name": "Kael Combs",
+     "mpg": 23.2,
+     "value": 2.0
+    },
+    {
+     "name": "Trevin Jirak",
+     "mpg": 21.5,
+     "value": 2.6
+    },
+    {
+     "name": "Tate Sage",
+     "mpg": 21.5,
+     "value": 1.9
+    },
+    {
+     "name": "Ty'Reek Coleman",
+     "mpg": 19.8,
+     "value": 2.3
+    },
+    {
+     "name": "Peyton McCollum",
+     "mpg": 18.5,
+     "value": 0.9
+    },
+    {
+     "name": "Jaidyn Coon",
+     "mpg": 12.2,
+     "value": 1.4
+    },
+    {
+     "name": "Trey Thompson",
+     "mpg": 11.3,
+     "value": 1.2
+    }
+   ]
+  },
+  "Lipscomb": {
+   "name": "Lipscomb",
+   "items": [],
+   "headlines": [],
+   "roster": [
+    {
+     "name": "Takai Simpkins",
+     "mpg": 30.9,
+     "value": 2.8
+    },
+    {
+     "name": "Mateo Esmeraldo",
+     "mpg": 30.1,
+     "value": 2.3
+    },
+    {
+     "name": "Titas Sargiunas",
+     "mpg": 25.4,
+     "value": 1.2
+    },
+    {
+     "name": "Devyn Martin",
+     "mpg": 22.2,
+     "value": 2.4
+    },
+    {
+     "name": "Hugo Tidare",
+     "mpg": 21.4,
+     "value": 0.9
+    },
+    {
+     "name": "Truman Byrne",
+     "mpg": 19.8,
+     "value": 0.4
+    },
+    {
+     "name": "Kennedy Okpara",
+     "mpg": 17.0,
+     "value": 1.3
+    },
+    {
+     "name": "Josh Scott",
+     "mpg": 14.8,
+     "value": 0.7
+    },
+    {
+     "name": "Sawyer Dotson",
+     "mpg": 14.6,
+     "value": 0.9
+    }
+   ]
+  },
+  "Louisville": {
+   "name": "Louisville",
+   "items": [
+    {
+     "team": "Louisville",
+     "tag": "NEWS",
+     "text": "Louisville basketball vs. St. John's: how to watch, odds, injury updates, and more",
+     "source": "Big Red Louie",
+     "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxONGpWLTZJMC13WWFQVTRiS2dLNVVCU0JZcVBqOGdFTnNzVEhYNGpPSDB4UmtLWHNDUkNLN3EwMk1ITGU5Uk1YTVNYaHlHN0pwcU4zelBzNVJiNHY0a1BRYTd3N255SzZoZzV6cTk1cU1haDNtNEtsS3N4aXRyR3ZjWG5oMm5NeVhSZHlqbEpaYlpDVzRoTV9KQjlJRW9OODhqTjVr?oc=5",
+     "date": "2026-11-26"
+    },
+    {
+     "team": "Louisville",
+     "tag": "NEWS",
+     "text": "Louisville basketball vs. Texas Tech: how to watch, odds, injury updates, and more",
+     "source": "Big Red Louie",
+     "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOSVlUU0hvWXU1d1JfVVg5REtnQjBxVng3c3RGdWc4bXR3WVZVQ2lleHFBZ21ELWk4WTN1TXU5VmtCZTltOW5mR2tTMnh3bTJmOXQ0bUN6bmJNOXRmTndJcnVQM1hDcFlRMUc5R0UyTm5CNXZXRVdLc2FfLTI1emhvUGhDR1NzLUVvOHQ0eU5BREZOSGdrTUhTU3ByNzZrY201RlZ3eldJMHI1ajQ4bUhKamg0X1I?oc=5",
+     "date": "2026-11-23"
+    }
+   ],
+   "headlines": [
+    {
+     "title": "Louisville basketball vs. St. John's: how to watch, odds, injury updates, and more",
+     "source": "Big Red Louie",
+     "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxONGpWLTZJMC13WWFQVTRiS2dLNVVCU0JZcVBqOGdFTnNzVEhYNGpPSDB4UmtLWHNDUkNLN3EwMk1ITGU5Uk1YTVNYaHlHN0pwcU4zelBzNVJiNHY0a1BRYTd3N255SzZoZzV6cTk1cU1haDNtNEtsS3N4aXRyR3ZjWG5oMm5NeVhSZHlqbEpaYlpDVzRoTV9KQjlJRW9OODhqTjVr?oc=5",
+     "date": "2026-11-26"
+    },
+    {
+     "title": "Louisville basketball vs. Texas Tech: how to watch, odds, injury updates, and more",
+     "source": "Big Red Louie",
+     "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOSVlUU0hvWXU1d1JfVVg5REtnQjBxVng3c3RGdWc4bXR3WVZVQ2lleHFBZ21ELWk4WTN1TXU5VmtCZTltOW5mR2tTMnh3bTJmOXQ0bUN6bmJNOXRmTndJcnVQM1hDcFlRMUc5R0UyTm5CNXZXRVdLc2FfLTI1emhvUGhDR1NzLUVvOHQ0eU5BREZOSGdrTUhTU3ByNzZrY201RlZ3eldJMHI1ajQ4bUhKamg0X1I?oc=5",
+     "date": "2026-11-23"
+    },
+    {
+     "title": "Louisville injury update: Seth Trimble expected to play in Las Vegas tournament",
+     "source": "On3",
+     "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQZEpJX3VQZmxNa2pnNjA3N3hBRm5JeEt4WUV6aDJleEViU1hnTzZVRXJhV0hPckdXeUlDU3JNX2I1UVM4b1dRbVZ2V01fUGxfT05zajBiYWlGdXZSdWJZOV9mMTJ4T1pMdS03bEFnT2Y2MDJLMDhUWXQ2UGlQWEdnbFZqaVJRVU1UT2Z0bTZQUnhQOExoN25LYmprOVlRZzRqSnUtMmx5YjFfWlV6aGVxY3pBWHpQVTZrMUVUSGc5dEJrVVZG?oc=5",
+     "date": "2026-11-23"
+    },
+    {
+     "title": "Louisville's Isaac Ellis to miss Players Era 16; Trimble expected to play",
+     "source": "The Courier-Journal",
+     "url": "https://news.google.com/rss/articles/CBMikwJBVV95cUxNRUwzbm02RTd6OENacHp1UlVweTU4R1hjbzloWUFmbWZjbkxTS05VdnoxaWZYejRPY2lmc3FFczVKd0V2XzhjZVFSUWNXYm9MeWFOLWs3dVJYb3lqUk9aQldWcDdZTTU1NDk3b0E0M2J1eEowNkRNVndBZ1hMVlFRM1BrT3NSYUx4R21ZenR1U0EyWjU3RGdLa3B1TEJNZlBXVmlBUnV6SXBEdlBZMm1ybXc2V0ItZHBhRGFnei1xS1ZhQ3FRUWFsWHJUU1dIUTJkTTFLeUpqUVNVemFBclF4Z1RnQXdodXEtSzY3OEpTQk1DTGc2dFBqc0ZvTmdzbWVTLTZwSjA5WWhwQU5YX0t1OFg2QQ?oc=5",
+     "date": "2026-11-23"
+    },
+    {
+     "title": "Louisville Cardinals News: 4-star flip, Players Era 16, hoops injury update",
+     "source": "Big Red Louie",
+     "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPaF9LSUhkTHlXVkRwamtkWG8zOG9Nd3hES2RjOXNkTkt6UnlVOEFEWW9aS21Od09CVUtQdEpLSGRIdF9kdl9VcklEN1FpeFdHcWI1MVBHcHBHaGE3Q3otN3g1MzMyaWhWeG1MdGlQaWVhWUxUdUlIZ2lhWTFCZXl4bVhMeE9QaW10WWZuODZjcHU5UGZyQVlBU2lsNXlZQQ?oc=5",
+     "date": "2026-11-23"
+    },
+    {
+     "title": "Pat Kelsey delivers the Seth Trimble injury update Louisville needed ahead of Texas Tech",
+     "source": "Big Red Louie",
+     "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNVmcxbUdNVDhneVljMGp6OGtZN3VzVmRpbUJacWtESEpfbG5sWjE1dkp6THpkQndCRmxTV1pOTVBfSm9SNVlTcFlzTkNrcVcxeGNITjNNYmNJMmZhc2padk9fS2p6Z3BobFo2SmFWTWRTcnZCT05saVdnMEJ2MVNaMXVqY3ZWVFRMRUhnQmVkM1BSUU93UmZ2bk05X1lyUkhBaTNMQmRkMWFTVTdabkRiQ0xwTQ?oc=5",
+     "date": "2026-11-23"
+    }
+   ],
+   "roster": [
+    {
+     "name": "Jackson Shelstad",
+     "mpg": 33.0,
+     "value": 3.4
+    },
+    {
+     "name": "Adrian Wooley",
+     "mpg": 30.0,
+     "value": 2.8
+    },
+    {
+     "name": "Seth Trimble",
+     "mpg": 29.6,
+     "value": 4.3
+    },
+    {
+     "name": "Flory Bidunga",
+     "mpg": 28.3,
+     "value": 3.8
+    },
+    {
+     "name": "Alvaro Folgueiras",
+     "mpg": 27.2,
+     "value": 2.0
+    },
+    {
+     "name": "Karter Knox",
+     "mpg": 23.0,
+     "value": 3.2
+    },
+    {
+     "name": "Obinna Ekezie Jr.",
+     "mpg": 14.2,
+     "value": 1.0
+    },
+    {
+     "name": "Isaac Ellis",
+     "mpg": 13.5,
+     "value": 0.8
+    },
+    {
+     "name": "LJ Wells",
+     "mpg": 7.0,
+     "value": 2.2
+    }
+   ]
+  },
+  "Minnesota": {
+   "name": "Minnesota",
+   "items": [],
+   "headlines": [],
+   "roster": [
+    {
+     "name": "Isaac Asuma",
+     "mpg": 32.6,
+     "value": 3.1
+    },
+    {
+     "name": "Kyan Evans",
+     "mpg": 32.3,
+     "value": 2.3
+    },
+    {
+     "name": "Bobby Durkin",
+     "mpg": 28.7,
+     "value": 3.4
+    },
+    {
+     "name": "Jaylen Crocker-Johnson",
+     "mpg": 27.6,
+     "value": 3.4
+    },
+    {
+     "name": "Grayson Grove",
+     "mpg": 22.3,
+     "value": 2.0
+    },
+    {
+     "name": "Nolan Groves",
+     "mpg": 18.6,
+     "value": 1.1
+    },
+    {
+     "name": "Kai Shinholster",
+     "mpg": 18.0,
+     "value": 1.0
+    },
+    {
+     "name": "Malick Kordel",
+     "mpg": 14.7,
+     "value": 1.0
+    },
+    {
+     "name": "Malachi Palmer",
+     "mpg": 8.6,
+     "value": 0.5
+    }
+   ]
+  },
+  "NC State": {
+   "name": "NC State",
+   "items": [],
+   "headlines": [],
+   "roster": [
+    {
+     "name": "Paul McNeil Jr.",
+     "mpg": 31.9,
+     "value": 5.1
+    },
+    {
+     "name": "Preston Edmead",
+     "mpg": 31.4,
+     "value": 4.4
+    },
+    {
+     "name": "Ven-Allen Lubin",
+     "mpg": 28.3,
+     "value": 4.4
+    },
+    {
+     "name": "Christian Hammond",
+     "mpg": 26.9,
+     "value": 3.2
+    },
+    {
+     "name": "Darius Adams",
+     "mpg": 21.1,
+     "value": 0.9
+    },
+    {
+     "name": "Eemeli Yalaho",
+     "mpg": 18.3,
+     "value": 1.7
+    },
+    {
+     "name": "Kyle Evans",
+     "mpg": 18.1,
+     "value": 2.5
+    },
+    {
+     "name": "Zymicah Wilkins",
+     "mpg": 13.3,
+     "value": 1.7
+    },
+    {
+     "name": "R.J. Keene II",
+     "mpg": 7.6,
+     "value": 0.6
+    }
+   ]
+  },
+  "Norfolk State": {
+   "name": "Norfolk State",
+   "items": [],
+   "headlines": [],
+   "roster": [
+    {
+     "name": "Bahsil Laster",
+     "mpg": 31.1,
+     "value": 3.1
+    },
+    {
+     "name": "Jordan Skyers",
+     "mpg": 30.1,
+     "value": 0.9
+    },
+    {
+     "name": "Chris Walker",
+     "mpg": 24.4,
+     "value": 1.0
+    },
+    {
+     "name": "Keon Mitchell",
+     "mpg": 21.7,
+     "value": 0.3
+    },
+    {
+     "name": "Justin Jones",
+     "mpg": 20.6,
+     "value": 0.2
+    },
+    {
+     "name": "Dramane Camara",
+     "mpg": 18.5,
+     "value": 0.8
+    },
+    {
+     "name": "J.C. Riley Jr.",
+     "mpg": 17.6,
+     "value": 1.1
+    },
+    {
+     "name": "Jahki Gupton",
+     "mpg": 17.4,
+     "value": 1.2
+    },
+    {
+     "name": "Jamese Jordan",
+     "mpg": 14.9,
+     "value": 0.2
+    }
+   ]
+  },
+  "Notre Dame": {
+   "name": "Notre Dame",
+   "items": [],
+   "headlines": [],
+   "roster": [
+    {
+     "name": "Braeden Shrewsberry",
+     "mpg": 31.8,
+     "value": 4.1
+    },
+    {
+     "name": "Braeden Smith",
+     "mpg": 29.9,
+     "value": 3.5
+    },
+    {
+     "name": "Brady Koehler",
+     "mpg": 29.2,
+     "value": 4.0
+    },
+    {
+     "name": "Ethan Roberts",
+     "mpg": 25.8,
+     "value": 4.5
+    },
+    {
+     "name": "Logan Duncomb",
+     "mpg": 23.5,
+     "value": 3.5
+    },
+    {
+     "name": "Logan Imes",
+     "mpg": 18.4,
+     "value": 1.0
+    },
+    {
+     "name": "Jonathan Sanderson",
+     "mpg": 13.6,
+     "value": 0.6
+    },
+    {
+     "name": "Tommy Ahneman",
+     "mpg": 11.7,
+     "value": 0.8
+    },
+    {
+     "name": "Bryce Ruglass Dortch",
+     "mpg": 10.8,
+     "value": 0.3
+    }
+   ]
+  },
+  "Ohio State": {
+   "name": "Ohio State",
+   "items": [],
+   "headlines": [],
+   "roster": [
+    {
+     "name": "John Mobley Jr.",
+     "mpg": 31.1,
+     "value": 4.7
+    },
+    {
+     "name": "Amare Bynum",
+     "mpg": 30.9,
+     "value": 2.3
+    },
+    {
+     "name": "Justin Pippen",
+     "mpg": 27.4,
+     "value": 2.8
+    },
+    {
+     "name": "Andrija Jelavic",
+     "mpg": 22.9,
+     "value": 1.9
+    },
+    {
+     "name": "Jimmie Williams",
+     "mpg": 19.6,
+     "value": 2.7
+    },
+    {
+     "name": "Anthony Thompson",
+     "mpg": 19.3,
+     "value": 0.8
+    },
+    {
+     "name": "LJ Smith",
+     "mpg": 16.9,
+     "value": 0.8
+    },
+    {
+     "name": "Josh Ojianwuna",
+     "mpg": 12.1,
+     "value": 0.4
+    },
+    {
+     "name": "Curtis Givens III",
+     "mpg": 10.1,
+     "value": 0.9
+    }
+   ]
+  },
+  "Oklahoma State": {
+   "name": "Oklahoma State",
+   "items": [],
+   "headlines": [],
+   "roster": [
+    {
+     "name": "Anthony Felesi",
+     "mpg": 24.6,
+     "value": 1.5
+    },
+    {
+     "name": "Kashie Natt",
+     "mpg": 24.0,
+     "value": 3.4
+    },
+    {
+     "name": "Jacob Walker",
+     "mpg": 23.1,
+     "value": 2.8
+    },
+    {
+     "name": "Jordan Burks",
+     "mpg": 21.3,
+     "value": 3.0
+    },
+    {
+     "name": "Julius Halaifonua",
+     "mpg": 19.4,
+     "value": 3.3
+    },
+    {
+     "name": "Kanye Clary",
+     "mpg": 17.2,
+     "value": 1.5
+    },
+    {
+     "name": "Luka Bogavac",
+     "mpg": 14.3,
+     "value": 2.2
+    },
+    {
+     "name": "Andrija Grbovic",
+     "mpg": 14.0,
+     "value": 1.9
+    },
+    {
+     "name": "Latrell Allmond",
+     "mpg": 13.9,
+     "value": 1.0
+    }
+   ]
+  },
+  "Portland": {
+   "name": "Portland",
+   "items": [],
+   "headlines": [],
+   "roster": [
+    {
+     "name": "Hunter Adam",
+     "mpg": 34.0,
+     "value": 2.2
+    },
+    {
+     "name": "Jaxon Olvera",
+     "mpg": 28.0,
+     "value": 2.1
+    },
+    {
+     "name": "James O'Donnell",
+     "mpg": 27.8,
+     "value": 3.0
+    },
+    {
+     "name": "Riley Parker",
+     "mpg": 27.5,
+     "value": 1.0
+    },
+    {
+     "name": "RJ Nance Jr.",
+     "mpg": 20.6,
+     "value": 1.2
+    },
+    {
+     "name": "Timo George",
+     "mpg": 19.8,
+     "value": 2.8
+    },
+    {
+     "name": "Dante Censori-Hercules",
+     "mpg": 19.6,
+     "value": 0.7
+    },
+    {
+     "name": "Kaia Isaac",
+     "mpg": 18.8,
+     "value": 0.3
+    },
+    {
+     "name": "Henry Sewell",
+     "mpg": 11.5,
+     "value": 1.2
+    }
+   ]
+  },
+  "Prairie View A&M": {
+   "name": "Prairie View A&M",
+   "items": [],
+   "headlines": [],
+   "roster": [
+    {
+     "name": "Elijah Mitchell",
+     "mpg": 32.4,
+     "value": 1.2
+    },
+    {
+     "name": "Michael Eley",
+     "mpg": 29.3,
+     "value": 2.7
+    },
+    {
+     "name": "Micah Bell",
+     "mpg": 25.6,
+     "value": 0.2
+    },
+    {
+     "name": "Anthony Gause",
+     "mpg": 24.2,
+     "value": 0.8
+    },
+    {
+     "name": "Davis Bynum",
+     "mpg": 23.3,
+     "value": 0.5
+    },
+    {
+     "name": "Davian Williams",
+     "mpg": 23.0,
+     "value": 0.7
+    },
+    {
+     "name": "Jaylen Wharton",
+     "mpg": 15.0,
+     "value": 0.2
+    },
+    {
+     "name": "Jaelyn Lee",
+     "mpg": 14.6,
+     "value": 0.6
+    },
+    {
+     "name": "Eddie Page",
+     "mpg": 13.8,
+     "value": 0.7
+    }
+   ]
+  },
+  "Queens University": {
+   "name": "Queens University",
+   "items": [],
+   "headlines": [],
+   "roster": [
+    {
+     "name": "Nasir Mann",
+     "mpg": 33.7,
+     "value": 4.4
+    },
+    {
+     "name": "Jordan Watford",
+     "mpg": 30.8,
+     "value": 3.4
+    },
+    {
+     "name": "Isaiah Henry",
+     "mpg": 26.9,
+     "value": 0.9
+    },
+    {
+     "name": "Caleb Jones",
+     "mpg": 23.7,
+     "value": 2.0
+    },
+    {
+     "name": "Avantae Parker",
+     "mpg": 22.6,
+     "value": 2.6
+    },
+    {
+     "name": "Rickey Ballard",
+     "mpg": 21.1,
+     "value": 1.7
+    },
+    {
+     "name": "Nicholas McLean",
+     "mpg": 17.3,
+     "value": 0.4
+    },
+    {
+     "name": "Dante Kearse",
+     "mpg": 16.1,
+     "value": 0.7
+    },
+    {
+     "name": "Josh Osayanrhion",
+     "mpg": 15.0,
+     "value": 1.0
+    }
+   ]
+  },
+  "Seton Hall": {
+   "name": "Seton Hall",
+   "items": [],
+   "headlines": [],
+   "roster": [
+    {
+     "name": "Elijah Fisher",
+     "mpg": 29.4,
+     "value": 2.2
+    },
+    {
+     "name": "Roddie Anderson",
+     "mpg": 23.4,
+     "value": 2.0
+    },
+    {
+     "name": "Simeon Wilcher",
+     "mpg": 22.0,
+     "value": 0.5
+    },
+    {
+     "name": "Devin Williams",
+     "mpg": 20.2,
+     "value": 1.7
+    },
+    {
+     "name": "Trey Parker",
+     "mpg": 20.1,
+     "value": 1.2
+    },
+    {
+     "name": "Mihailo Petrovic",
+     "mpg": 18.9,
+     "value": 0.7
+    },
+    {
+     "name": "Terry Copeland Jr.",
+     "mpg": 18.8,
+     "value": 2.0
+    },
+    {
+     "name": "Rodney Brown Jr.",
+     "mpg": 17.7,
+     "value": 2.5
+    },
+    {
+     "name": "Del Jones",
+     "mpg": 13.1,
+     "value": 1.2
+    }
+   ]
+  },
+  "Siena": {
+   "name": "Siena",
+   "items": [],
+   "headlines": [],
+   "roster": [
+    {
+     "name": "Pace Prosser",
+     "mpg": 35.3,
+     "value": 2.2
+    },
+    {
+     "name": "Trent Egbiremolen",
+     "mpg": 33.0,
+     "value": 1.8
+    },
+    {
+     "name": "Tim Ibukunoluwa",
+     "mpg": 32.1,
+     "value": 3.4
+    },
+    {
+     "name": "Brendan Coyle",
+     "mpg": 26.9,
+     "value": 2.2
+    },
+    {
+     "name": "Reid Ducharme",
+     "mpg": 26.1,
+     "value": 1.2
+    },
+    {
+     "name": "Tan Yildizoglu",
+     "mpg": 21.6,
+     "value": 0.6
+    },
+    {
+     "name": "Parrish Edmond Jr.",
+     "mpg": 12.7,
+     "value": 0.3
+    },
+    {
+     "name": "Owen Schlager",
+     "mpg": 6.3,
+     "value": 0.3
+    },
+    {
+     "name": "Andres Amon",
+     "mpg": 5.0,
+     "value": 0.2
+    }
+   ]
+  },
+  "Stanford": {
+   "name": "Stanford",
+   "items": [],
+   "headlines": [],
+   "roster": [
+    {
+     "name": "Nick Townsend",
+     "mpg": 34.4,
+     "value": 4.4
+    },
+    {
+     "name": "Julius Price",
+     "mpg": 33.8,
+     "value": 2.4
+    },
+    {
+     "name": "Aziz Olajuwon",
+     "mpg": 25.4,
+     "value": 0.6
+    },
+    {
+     "name": "Austin Maurer",
+     "mpg": 22.2,
+     "value": 1.7
+    },
+    {
+     "name": "Christian Bliss",
+     "mpg": 20.5,
+     "value": 3.2
+    },
+    {
+     "name": "Evan Stinson",
+     "mpg": 17.4,
+     "value": 0.8
+    },
+    {
+     "name": "Aidan Cammann",
+     "mpg": 16.2,
+     "value": 1.7
+    },
+    {
+     "name": "Isaiah Rogers",
+     "mpg": 15.9,
+     "value": 0.2
+    },
+    {
+     "name": "Elias Obenyah",
+     "mpg": 11.7,
+     "value": 0.8
+    }
+   ]
+  },
+  "Stonehill": {
+   "name": "Stonehill",
+   "items": [],
+   "headlines": [],
+   "roster": [
+    {
+     "name": "Devon Arlington",
+     "mpg": 26.6,
+     "value": 0.0
+    },
+    {
+     "name": "Trenton Ruth",
+     "mpg": 25.7,
+     "value": 1.2
+    },
+    {
+     "name": "Anquan Boldin Jr.",
+     "mpg": 22.7,
+     "value": 1.7
+    },
+    {
+     "name": "Felipe Patino",
+     "mpg": 20.3,
+     "value": 0.9
+    },
+    {
+     "name": "Pearse McGuinn",
+     "mpg": 20.0,
+     "value": 0.3
+    },
+    {
+     "name": "Eli Greenberg",
+     "mpg": 19.9,
+     "value": 0.4
+    },
+    {
+     "name": "Benicio Leons",
+     "mpg": 18.8,
+     "value": 0.8
+    },
+    {
+     "name": "Jack Medalie",
+     "mpg": 17.7,
+     "value": 1.6
+    },
+    {
+     "name": "Ewan Steele",
+     "mpg": 17.0,
+     "value": 0.2
+    }
+   ]
+  },
+  "Tennessee State": {
+   "name": "Tennessee State",
+   "items": [],
+   "headlines": [],
+   "roster": [
+    {
+     "name": "Ty-Laur Johnson",
+     "mpg": 26.6,
+     "value": 2.5
+    },
+    {
+     "name": "Deondrea Lindsey",
+     "mpg": 24.8,
+     "value": 0.8
+    },
+    {
+     "name": "Arterio Morris",
+     "mpg": 23.6,
+     "value": 0.7
+    },
+    {
+     "name": "Aaron Bradshaw",
+     "mpg": 23.4,
+     "value": 1.5
+    },
+    {
+     "name": "Jayden Jones",
+     "mpg": 23.2,
+     "value": 1.3
+    },
+    {
+     "name": "Christian Alston",
+     "mpg": 20.0,
+     "value": 0.6
+    },
+    {
+     "name": "Kavien Jones",
+     "mpg": 15.2,
+     "value": 1.2
+    },
+    {
+     "name": "Ajayi Simmons",
+     "mpg": 11.0,
+     "value": 1.3
+    },
+    {
+     "name": "Maddux Bodenhamer",
+     "mpg": 9.6,
+     "value": 0.7
+    }
+   ]
+  },
+  "UConn": {
+   "name": "UConn",
+   "items": [
+    {
+     "team": "UConn",
+     "tag": "NEWS",
+     "text": "What we know about Solo Ball’s injury: UConn guard could play vs. Duke",
+     "source": "CT Insider",
+     "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPQzVNWVFZZXFxYnNGWXFpZzhkbF9mUERUS19QMFBJLTJDa05YbHAyRjdlbUxHYWdhb2lkbkFCdFF3bEJWcUEtcE84dHU3bDdiQnYycm82TkZYQnlLTWhvaks1YzRoT291dDNJWjlYWXpUNFRTY295Zk00anNjVVJrcFozSHRmQ2lQTkVnZExHLWFGdGlZcS1xSGZfeDU5OHB6ajlpQ0ZGNHRGTUd1WUZxc292NkJHSnFjejQxYg?oc=5",
+     "date": "2026-11-23"
+    },
+    {
+     "team": "UConn",
+     "tag": "NEWS",
+     "text": "UConn Men's Basketball: Could Solo Ball Really Return From Injury This Week?",
+     "source": "roundtable.io",
+     "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQbm5IWnNsTkJ3R0dlSUtIVzRYX1VxdDUxRFZzOWZLUHhCbC1qZ29LV2V2bkJzdklxb194Z1dlaVUyXzF3YW52TGx3ZjQ3RTVPeDBSWmd1WTVLOE5tMkJtM2hUYlZFcExrWFp6U19vbWszYzF0T29Oa1R2U0owOGoyT2NZWGloNGhITkxkc2k1NFM4elNEdWFvS1dLSVFGQm9vWjVmWUM5U1hYeGpwYjEyaFpQY2FVakdN?oc=5",
+     "date": "2026-11-23"
+    }
+   ],
+   "headlines": [
+    {
+     "title": "What we know about Solo Ball’s injury: UConn guard could play vs. Duke",
+     "source": "CT Insider",
+     "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPQzVNWVFZZXFxYnNGWXFpZzhkbF9mUERUS19QMFBJLTJDa05YbHAyRjdlbUxHYWdhb2lkbkFCdFF3bEJWcUEtcE84dHU3bDdiQnYycm82TkZYQnlLTWhvaks1YzRoT291dDNJWjlYWXpUNFRTY295Zk00anNjVVJrcFozSHRmQ2lQTkVnZExHLWFGdGlZcS1xSGZfeDU5OHB6ajlpQ0ZGNHRGTUd1WUZxc292NkJHSnFjejQxYg?oc=5",
+     "date": "2026-11-23"
+    },
+    {
+     "title": "UConn Men's Basketball: Could Solo Ball Really Return From Injury This Week?",
+     "source": "roundtable.io",
+     "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQbm5IWnNsTkJ3R0dlSUtIVzRYX1VxdDUxRFZzOWZLUHhCbC1qZ29LV2V2bkJzdklxb194Z1dlaVUyXzF3YW52TGx3ZjQ3RTVPeDBSWmd1WTVLOE5tMkJtM2hUYlZFcExrWFp6U19vbWszYzF0T29Oa1R2U0owOGoyT2NZWGloNGhITkxkc2k1NFM4elNEdWFvS1dLSVFGQm9vWjVmWUM5U1hYeGpwYjEyaFpQY2FVakdN?oc=5",
+     "date": "2026-11-23"
+    }
+   ],
+   "roster": [
+    {
+     "name": "Silas Demary Jr.",
+     "mpg": 31.8,
+     "value": 4.2
+    },
+    {
+     "name": "Jayden Ross",
+     "mpg": 31.0,
+     "value": 1.6
+    },
+    {
+     "name": "Colben Landrew",
+     "mpg": 28.2,
+     "value": 1.6
+    },
+    {
+     "name": "Braylon Mullins",
+     "mpg": 27.8,
+     "value": 4.0
+    },
+    {
+     "name": "Na'jai Hines",
+     "mpg": 22.8,
+     "value": 2.4
+    },
+    {
+     "name": "Nik Khamenia",
+     "mpg": 18.7,
+     "value": 1.8
+    },
+    {
+     "name": "Oskar Giltay",
+     "mpg": 16.7,
+     "value": 0.6
+    },
+    {
+     "name": "Junior County",
+     "mpg": 16.3,
+     "value": 0.3
+    },
+    {
+     "name": "Solo Ball",
+     "mpg": 14.0,
+     "value": 2.5
+    }
+   ]
+  },
+  "Washington": {
+   "name": "Washington",
+   "items": [],
+   "headlines": [],
+   "roster": [
+    {
+     "name": "Ryan Beasley",
+     "mpg": 35.0,
+     "value": 3.7
+    },
+    {
+     "name": "Nikola Dzepina",
+     "mpg": 28.7,
+     "value": 2.7
+    },
+    {
+     "name": "Tayshawn Comer",
+     "mpg": 26.9,
+     "value": 1.8
+    },
+    {
+     "name": "LeJuan Watts",
+     "mpg": 26.9,
+     "value": 3.4
+    },
+    {
+     "name": "Steele Venters",
+     "mpg": 22.3,
+     "value": 2.9
+    },
+    {
+     "name": "Lathan Sommerville",
+     "mpg": 22.2,
+     "value": 1.2
+    },
+    {
+     "name": "Wesley Yates III",
+     "mpg": 22.0,
+     "value": 2.2
+    },
+    {
+     "name": "Parker Friedrichsen",
+     "mpg": 13.3,
+     "value": 1.8
+    },
+    {
+     "name": "Wini Braga",
+     "mpg": 7.9,
+     "value": 0.3
+    }
+   ]
+  },
+  "West Florida": {
+   "name": "West Florida",
+   "items": [],
+   "headlines": [],
+   "roster": [
+    {
+     "name": "DJ Shine",
+     "mpg": 25.8,
+     "value": 3.1
+    },
+    {
+     "name": "Isaiah Alexander",
+     "mpg": 24.1,
+     "value": 1.0
+    },
+    {
+     "name": "Eze Wali",
+     "mpg": 23.2,
+     "value": 0.6
+    },
+    {
+     "name": "Daylon Dickerson",
+     "mpg": 20.1,
+     "value": 1.2
+    },
+    {
+     "name": "Jordan Samuel",
+     "mpg": 20.0,
+     "value": 1.0
+    },
+    {
+     "name": "Alex Godley Jr.",
+     "mpg": 19.8,
+     "value": 1.4
+    },
+    {
+     "name": "Sano Rutatika",
+     "mpg": 18.9,
+     "value": 0.7
+    },
+    {
+     "name": "Rodrigo Farias",
+     "mpg": 16.0,
+     "value": 1.1
+    },
+    {
+     "name": "Christian Valarezo",
+     "mpg": 15.8,
+     "value": 0.9
+    }
+   ]
+  }
+ }
+}
